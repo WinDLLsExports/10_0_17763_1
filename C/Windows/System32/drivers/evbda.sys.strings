@@ -1,0 +1,4308 @@
+                   
+                              InTCP4Segments
+                              TxL4AssemblyBufUse
+                              TxNoSqWqe
+                             CurrentlyIpv6Established
+                             RxIndicateReturnPendingCnt
+                             TxL2AssemblyBufUse
+                            IfHCInUcastPkts
+                            IfInErrorsOctets
+                            InIpv4Reset
+                            InIpv6Reset
+                            OutXoffSent
+                           FlowControlDone
+                           IfHCInPkts
+                           InIpv4Fin
+                           InIpv6Fin
+                           OutIP4Octets
+                           OutIP6Octets
+                          IfHCInBadOctets
+                          InIP4Receives
+                          InIP4TruncatedPackets
+                          InIP6Receives
+                          InIP6TruncatedPackets
+                          l4_chip_stats_ver_num
+                          Tx_Lpi_Count
+                         IfHCOutBadOctets
+                         InIP4Delivers
+                         InIP4HeaderErrors
+                         InIP4Octets
+                         InIP6Delivers
+                         InIP6HeaderErrors
+                         InIP6Octets
+                         OutIpv4Fin
+                         OutIpv6Fin
+                        Nig_brb_truncate
+                        Nig_pbf_packet
+                        Nig_safc_inp
+                        OutTCP4Segments
+                        OutTCP6Segments
+                        RxPhyErrorCount
+                        TxNoL2Bd
+                       IfHCInFalseCarrierErrors
+                       IfHCInMulticastPkts
+                       IfHCOutOctets
+                       MacControlFramesReceived
+                       Nig_brb_packet
+                       Nig_mng_octet_inp
+                       RetransmittedTCP4Segments
+                       RetransmittedTCP6Segments
+                       RxIpCsErrorCount
+                       RxIpv6ExtCount
+                      IfHCOutMulticastPkts
+                      IfHCOutPkts
+                      IfInErrors
+                      IfInFramesL2FilterDiscards
+                      IfInNoBrbBuffer
+                      IfInxxOverflowDiscards
+                      Nig_flow_ctrl_discard
+                      RxTcpCsErrorCount
+                     EtherStatsUndersizePkts
+                     IfHCInMulticastOctets
+                     InIP4Discards
+                     InIP6Discards
+                     Nig_mng_octet_out
+                     Nig_mng_packet_inp
+                     RxLlcSnapCount
+                     TxNoL4Bd
+                    Dot3StatsAlignmentErrors
+                    IfHCOutMulticastOctets
+                    l4_driver_stats_ver_num
+                    Nig_mng_packet_out
+                    Nig_pbf_octets
+                   EtherStatsJabbers
+                   IfHCInBroadcastPkts
+                   IfHCOutUcastPkts
+                  EtherStatsFragments
+                  IfHCInUcastOctets
+                  IfHCOutBroadcastPkts
+                  Nig_flow_ctrl_packet
+                  Nig_mng_discard
+                 IfHCInBroadcastOctets
+                 IfHCInOctets
+                 IfHCOutUcastOctets
+                 InTCP6Segments
+                 l2_driver_stats_ver_num
+                 Nig_flow_ctrl_octets
+                 NoTxCqes
+                IfHCOutBroadcastOctets
+                IfHCOutDiscards
+                IfInMBUFDiscards
+                XoffPauseFramesReceived
+               CurrentlyIpv4Established
+               EtherStatsCollisions
+               EtherStatsOverrsizePkts
+               EtherStatsPktsTx64Octets
+               OutXonSent
+               RxActiveGenBufCnt
+               RxIPv4FragCount
+              Dot3StatsInternalMacTransmitErrors
+              Dot3StatsSingleCollisionFrames
+              EtherStatsPktsTx65Octetsto127Octets
+              OutIpv4Resets
+              OutIpv6Resets
+              XoffStateEntered
+             InTCP4Errors
+             InTCP6Errors
+            IfInTTL0Discards
+            RxIndicateReturnDoneCnt
+           Dot3StatsFCSErrors
+          Dot3StatsLateCollisions
+        Dot3StatsExcessiveCollisions
+        Dot3StatsMultipleCollisionFrames
+        XonPauseFramesReceived
+      Dot3StatsDeferredTransmissions
+    Dot3StatsCarrierSenseErrors
+   EtherStatsPktsTx128Octetsto255Octets
+  !!(
+  EtherStatsPktsTx256Octetsto511Octets
+  EtherStatsPktsTx512Octetsto1023Octets
+ /@805
+ 0P%4
+ A^_^
+ A^A\_
+ A^A]_
+ A^A]A\
+ A^A]A\_^
+ A__^
+ A_A\]
+ A_A]_
+ A_A]A\_^
+ A_A^]
+ A_A^_
+ A_A^_H
+ A_A^A\
+ A_A^A\_]
+ A_A^A\_^
+ A_A^A\_^[]
+ A_A^A]
+ A_A^A]_]
+ A_A^A]_^
+ A_A^A]A\]
+ A_A^A]A\^
+ A_A^A]A\_
+ A_A^A]A\_^]
+ EtherStatsPktsTx1024Octetsto1522Octets
+ Hct$pH
+ http://www.microsoft.com/windows0
+ Microsoft Operations Puerto Rico1&0$
+ Microsoft Operations Puerto Rico1'0%
+ p(P-
+ t3D9
+ YB1r5
+ YPk[
+! ( pdev && tcp )
+! (pdev && con)
+! (pdev && tcp && request)
+! (pdev && tcp)
+! command
+! N!!
+! pdev
+! rx_con
+! s_list_is_empty(&rx_conn->lm_tcp_con.active_tb_list)
+! s_list_is_empty(&rx_conn->pending_tb_list)
+! tcp->sp_request
+!( context->array)
+!( hash_info->searcher_table)
+!(b_qg_is_default || b_qg_is_rss)
+!(completed_bytes || push)
+!(con->flags & TCP_COMP_BLOCKED)
+!(con->flags & TCP_COMP_DEFERRED)
+!(con->flags & TCP_POST_BLOCKED)
+!(gen_buf->flags & GEN_FLAG_FREE_WHEN_DONE)
+!(gen_buf->flags & GEN_FLAG_SWS_UPDATE)
+!(LM_DCBX_IS_PFC_PRI_ONLY_NON_PAUSE(pdev,pri_join_mask) || LM_DCBX_IS_PFC_PRI_ONLY_PAUSE(pdev,pri_join_mask))
+!(num_isle && (num_isle <= isles_cnt))
+!(params->delayed_ack_ticks && params->nce_stale_ticks && params->push_ticks && params->sws_prevention_ticks && params->ticks_per_second)
+!(pdev && (drv_sb_id <= ARRSIZE(pdev->vars.status_blocks_arr)))
+!(pdev && ARRSIZE(pdev->fcoe_info.run_time.eq_chain) > sb_idx)
+!(pdev && ARRSIZE(pdev->iscsi_info.run_time.eq_chain) > sb_idx)
+!(pdev && ARRSIZE(pdev->toe_info.rcqs) > drv_toe_rss_id)
+!(pdev && ARRSIZE(pdev->toe_info.scqs) > drv_toe_rss_id)
+!(pdev && attn_bits && attn_ack)
+!(pdev && fcoe)
+!(pdev && IS_CHANNEL_VFDEV(pdev) && (LM_SB_CNT(pdev) <= PFVF_MAX_SBS_PER_VF))
+!(pdev && IS_CHANNEL_VFDEV(pdev) && (validation_flag & (RX_Q_VALIDATE | TX_Q_VALIDATE)) && (vf_qid < LM_SB_CNT(pdev)) && pdev->pf_vf_acquiring_resp)
+!(pdev && IS_CHANNEL_VFDEV(pdev) && (vf_qid < LM_SB_CNT(pdev)) && pdev->pf_vf_acquiring_resp)
+!(pdev && IS_CHANNEL_VFDEV(pdev) && (vf_qid < LM_SB_CNT(pdev)))
+!(pdev && IS_CHANNEL_VFDEV(pdev) && pdev->pf_vf_acquiring_resp)
+!(pdev && IS_CHANNEL_VFDEV(pdev))
+!(pdev && IS_CHANNEL_VIRT_MODE_MASTER_PFDEV(pdev) && vf_info && (vf_info->pf_vf_response.req_resp_state != VF_PF_REQUEST_IN_PROCESSING))
+!(pdev && IS_CHANNEL_VIRT_MODE_MASTER_PFDEV(pdev) && vf_info && (vf_info->pf_vf_response.req_resp_state == VF_PF_REQUEST_IN_PROCESSING))
+!(pdev && iscsi && request)
+!(pdev && iscsi)
+!(pdev && num_vfs && pdev->vfs_set.vfs_array && pdev->vfs_set.req_resp_virt_addr && pdev->vfs_set.pf_fw_stats_set_virt_data)
+!(pdev && path)
+!(pdev && rcq_chain)
+!(pdev && state_blk && fcoe)
+!(pdev && state_blk && iscsi)
+!(pdev && state_blk && neigh && neigh_const && neigh_cached && neigh_delegated)
+!(pdev && state_blk && path && neigh && path_const && path_cached && path_delegated)
+!(pdev && state_blk && tcp && path && tcp_const && tcp_cached && tcp_delegated)
+!(pdev && tcp && request)
+!(pdev && tcp && tcp_buf && frag_list)
+!(pdev && tcp)
+!(pdev && tx_chain)
+!(pdev && vf_info && vf_info->pf_vf_response.request_virt_addr && vf_info->pf_vf_response.response_virt_addr)
+!(pdev && vf_info)
+!(pdev->params.debug_me_register & ME_REG_VF_VALID)
+!(pdev->params.l4_initial_gen_blocks_cnt && pdev->params.l4_max_block_size)
+!(pdev->params.ofld_cap & LM_OFFLOAD_CHIMNEY)
+!(s_list_is_empty(&packet_list))
+!(src_ticks_per_sec && trg_ticks_per_sec)
+!(tcp && tcp->rx_con)
+!(tcp_buf->flags & TCP_BUF_FLAG_L4_POST_START ? rx_con->app_buf_bytes_acc_post == 0 : rx_con->app_buf_bytes_acc_post > 0)
+!(tcp_buf->flags & TCP_BUF_FLAG_L4_POST_START ? tx_con->app_buf_bytes_acc_post == 0 : tx_con->app_buf_bytes_acc_post > 0)
+!(tcp_state && tcp_state->rx_con)
+!(tcp->rx_con->flags & TCP_RX_IND_BLOCKED) && (tcp->rx_con->u.rx.gen_info.peninsula_nbytes != 0) && (op != TCP_IS_DEAD_OP_OFLD_COMP_DFRD)
+!(tcp->sp_flags & SP_TCP_OFLD_REQ_POSTED)
+!(tcp->sp_flags & SP_TCP_QRY_REQ_POSTED)
+!(tcp->sp_flags & SP_TCP_SRC_REQ_POSTED)
+!(tcp->sp_flags & SP_TCP_TRM_REQ_POSTED)
+!(temp<((u32_t)ILT_NUM_PAGE_ENTRIES_PER_FUNC*(FUNC_ID(pdev)+1)))
+!(tx_con->flags & TCP_FIN_REQ_POSTED)
+!(tx_con->lm_tcp_con.flags & TCP_POST_BLOCKED)
+!(val & (1L << 31))
+!(vf_info && vf_info->um_ctx)
+!@XP,
+!\$@E3
+!`V"5
+!`XP,
+!0XP,
+!AT_MOST_SINGLE_SET(GET_FLAGS(flags,MODE_E3_A0|MODE_E3_B0))
+!AT_MOST_SINGLE_SET(GET_FLAGS(flags,MODE_MF_SD|MODE_MF_SI|MODE_MF_AFEX))
+!bd_chain->b_is_chain_mode
+!bd_chain->bd_chain_virt
+!bd_chain->bd_left
+!buffered_data
+!CHIP_IS_E1(pdev)
+!CHIP_IS_E1H(pdev)
+!CHIP_IS_E1x(pdev)
+!CHIP_IS_E2(pdev)
+!CHIP_IS_E2(pdev) && !CHIP_IS_E3(pdev)
+!CHIP_IS_E2_PARAM(chip_num) && !CHIP_IS_E3_PARAM(chip_num)
+!CHIP_IS_E3(pdev)
+!client_blk
+!completed_bytes
+!cookie
+!curr_entry
+!curr_gen_buf || !curr_gen_buf->buf_phys.as_u64
+!current_isle
+!D$0E3
+!d_list_is_empty( &(pdev->lmdev.toe_info.state_blk.tcp_list))
+!d_list_is_empty(&con->u.rx.gen_info.dpc_peninsula_list) && curr_tcp_buf && con->dpc_info.dpc_comp_blocked
+!d_list_is_empty(&con->u.rx.gen_info.peninsula_list)
+!d_list_is_empty(&gen_info->peninsula_list)
+!d_list_is_empty(&gen_info->peninsula_list) && (((lm_tcp_gen_buf_t *)d_list_peek_tail(&gen_info->peninsula_list))->placed_bytes == 0)
+!d_list_is_empty(&pdev->delayed_task_item_list)
+!d_list_is_empty(&pdev->toe_info.state_blk.neigh_list)
+!d_list_is_empty(&pdev->toe_info.state_blk.path_list)
+!d_list_is_empty(&pdev->toe_info.state_blk.tcp_list)
+!d_list_is_empty(&rx_con->u.rx.gen_info.dpc_peninsula_list)
+!d_list_is_empty(&rx_con->u.rx.gen_info.peninsula_list)
+!d_list_is_empty(&tcp->rx_con->u.rx.gen_info.dpc_peninsula_list)
+!d_list_is_empty(&tcp->rx_con->u.rx.gen_info.peninsula_list)
+!d_list_is_empty(&tcp->rx_con->u.rx.gen_info.peninsula_list) && (((lm_tcp_gen_buf_t *)(d_list_peek_tail(&tcp->rx_con->u.rx.gen_info.peninsula_list)))->placed_bytes == 0)
+!DBG_BREAK_ON(UNDER_TEST)
+!dest
+!elem->cmd_len
+!f@e4
+!fcoe
+!fcoe->ctx_phys.as_u64
+!fcoe->ctx_virt
+!fD9{ t
+!fdo_ext->fc_pci_bus_if_valid
+!fdo_ext->pci_bus_if_valid
+!fdo_ext->sc_pci_bus_if_valid
+!free_list
+!gen_block
+!gen_buf
+!gen_info->wait_for_isle_left
+!grq_bd
+!HAS_MSTAT(pdev)
+!hash_entry->num_ipv4
+!hash_entry->num_ipv6
+!head_of_indication
+!IS_CHANNEL_VIRT_MODE_MASTER_PFDEV(pdev)
+!IS_L2ND_BOUND_AND_CHIMNEY(pdev)
+!IS_L2ND_BOUND_AND_CHIMNEY(umdev)
+!IS_MULTI_VNIC(pdev)
+!IS_PMF(pdev)
+!IS_VALID_PORT(port)
+!iscsi->ctx_phys.as_u64
+!iscsi->ctx_virt
+!isle_cnt
+!isles_pool
+!kcqe
+!l4buf
+!lm_bd_chain_is_full(&tx_chain->bd_chain)
+!lm_bd_chains_are_consistent( &rxq_chain->chain_arr[LM_RXQ_CHAIN_IDX_BD], &rxq_chain->chain_arr[LM_RXQ_CHAIN_IDX_SGE])
+!lm_fl_reset_is_inprogress(pdev) && (neigh->hdr.status != STATE_STATUS_UPLOAD_DONE)
+!lm_fl_reset_is_inprogress(pdev) && (path->hdr.status != STATE_STATUS_UPLOAD_DONE)
+!LM_SB_ID_VALID(pdev, drv_sb_id)
+!LM_SHMEM2_HAS(pdev, drv_info_control)
+!mem_virt
+!move_filter
+!NT_SUCCESS(nt_status)
+!NT_SUCCESS(NtStatus)
+!num_of_mblk_pages
+!out_cid
+!P[Xa4
+!P^$5
+!p^P,
+!p_hw_resp->pfdev_info.db_size
+!p_sw_resp->pfdev_info.db_size
+!pdev
+!pdev || !tcp
+!pdev->context_info
+!pdev->context_info->array
+!pdev->fdo_ext->enable_diag_mode
+!pdev->hw_info.shmem_base2
+!pdev->params.enable_error_recovery
+!pdev->params.max_func_connections
+!pdev->params.vf_miniport_supports_mac_override
+!pdev->sriov_switch_info.num_vfs
+!pdev->vars.clk_factor
+!pending
+!ptr_stats_flags_assigned
+!ptr_stats_flags_done
+!ql_hdl
+!query_set_info
+!query_set_info->client_request_ctx
+!queued
+!reconfigure && sync_with_toe
+!reg_elem
+!req_ctx
+!requested_isle
+!reset_in_progress && tcp->hdr.status >= STATE_STATUS_OFFLOAD_PENDING && tcp->hdr.status < STATE_STATUS_UPLOAD_DONE
+!return_buffer_ctx && frag_list
+!RSS_VER_1(pdev)
+!s_list_is_empty(&con->active_tb_list)
+!s_list_is_empty(&sp_req_mgr->pending_reqs)
+!s_list_is_empty(&tcp->lm_tcp.rx_con->active_tb_list)
+!s_list_is_empty(&tcp->lm_tcp.tx_con->active_tb_list)
+!s_list_is_empty(&tcp->rx_con.pending_tb_list)
+!s_list_is_empty(&tcp->tx_con.pending_tb_list)
+!s_list_is_empty(&tcp->tx_con->active_tb_list)
+!s_list_is_empty(&tx_con->pending_tb_list)
+!SINGLE_BIT_SET(GET_FLAGS(flags, MODE_EMUL|MODE_FPGA|MODE_ASIC))
+!SINGLE_BIT_SET(GET_FLAGS(flags, MODE_LITTLE_ENDIAN|MODE_BIG_ENDIAN))
+!SINGLE_BIT_SET(GET_FLAGS(flags, MODE_PORT2|MODE_PORT4))
+!SINGLE_BIT_SET(GET_FLAGS(flags, MODE_SF|MODE_MF))
+!sp_req_mgr
+!split_buffer
+!state_calc->fin_request_time
+!stats_hw->u.addr_mstat_stats_query
+!stats_hw->u.s.addr_emac_stats_query
+!tcp_buf
+!tcp->ctx_phys.as_u64
+!tcp->ctx_virt
+!tcp->in_searcher
+!This program cannot be run in DOS mode.
+!um_tcp_con->lock_acquire_hdl
+!umpkt
+!VALID_OVLAN(q_filter->vlan_tag)
+!value_ptr
+!ValueData
+!vf_info
+!vlan_tag
+!work_item
+!WorkItem->b_queue_for_fw_access
+" Driver pulse pdev is NULL"
+" Illegal TPA params"
+" invalid chain "
+" Invalid RX chain index "
+" Invalid TX chain index "
+" l2_indicate_init_done l2blk is NULL "
+" lm_cli_idx has an invalid value"
+" lm_dcbx_admin_mib_updated_init lm_dcbx_read_admin_mib failed "
+" lm_dcbx_ie_admin_mib_updated_runtime lm_dcbx_read_admin_mib failed "
+" lm_dcbx_ie_copy_alloc_classif_buffer allocation failure "
+" lm_eq_handle_mcast_eqe lm_cli_idx is invalid "
+" lm_establish_eth_con: cmd_id not set "
+" lm_init_client_con lm_cli_idx has an invalid value"
+" nP,
+" Packet is null suppose to be null"
+" Ramrod send failed "
+" um_delete_l2_cid failed "
+" Unknown mf mode\n"
+" Wrong ETS settings "
+"_mm_tcp_complete_bufs tcp_buf is NULL"
+"`F+5
+"`iP,
+"`v#5
+"2 bars are identical!\n"
+"add multicast is supported only for NDIS client\n"
+"Allocate new desc failed\n"
+"BAR 0 must be present\n"
+"Bug"
+"cannot allocate fcoe block.\n"
+"Cannot allocate IRP for config read.\n"
+"Cannot allocate IRP for um_vf_reset_thread.\n"
+"Cannot allocate irp.\n"
+"cannot allocate l2 block.\n"
+"cannot allocate l4 block.\n"
+"cannot allocate l5 block.\n"
+"Cannot allocate memory.\n"
+"Cannot find interrupt info or memory base.\n"
+"Cannot get access to nvram interface.\n"
+"Cannot get bus interface.\n"
+"Cannot get bus number.\n"
+"Cannot get device number.\n"
+"Cannot get location text\n"
+"Cannot get the vbd pdo's device name.\n"
+"Cannot read PCI config.\n"
+"Cannot write PCI config.\n"
+"Clear the MC table failed\n"
+"CQE type not supported"
+"d0A!4
+"DCBX DCBX stats supported"
+"DCBX Negotiation result not supported"
+"DCBX remote MIB not supported"
+"DCBX statistic not supported"
+"dev_dbus_check_start : dev_dbus_alloc failed"
+"dev_dbus_check_start : dev_dbus_params_per_struct failed"
+"dev_dbus_check_start : Invalid configs value"
+"dev_dbus_check_stop : dev_dbus_params_per_struct failed"
+"DMAE execution failed.\n"
+"drv_unbind_partial: lm_sc_clear_resc/lm_fc_free_resc failed.\n"
+"ECORE_GUNZIP NOT IMPLEMENTED\n"
+"evt_device_surprise_removal xdo_ext is NULL"
+"Failed to acquire context.\n"
+"Failed to acquire HW lock.\n"
+"Failed to acquire HW Recovery Counter lock.\n"
+"Failed to acquire spinlock.\n"
+"Failed to clear VIF lists on VIF delete.\n"
+"Failed to disable VIF on VIF delete.\n"
+"Failed to initialize EMAC stats DMAE operation.\n"
+"Failed to initialize NIG stats DMAE operation.\n"
+"Failed to initialize non-EMAC stats DMAE operation.\n"
+"Failed to release HW lock.\n"
+"Failed to release HW Recovery Counter lock.\n"
+"Failed to release spinlock.\n"
+"Failed to roll-back after locking failure.\n"
+"Failed to roll-back after release failure.\n"
+"Failed to write to NVM! Attemp to write to offset larger than NVM total size !\n"
+"False graceful disconnect is detected\n"
+"fc_get_bus_data fdo_ext is NULL"
+"fc_get_dma_adapter fdo_ext is NULL"
+"fc_map_mailboxq_base: Cannot map mailboxq base address.\n"
+"fc_map_mailboxq_base: Invalid cid_addr.\n"
+"fc_set_bus_data fdo_ext is NULL"
+"fc_translate_bus_address fdo is NULL"
+"FCOE is only supported in E2\n"
+"fdr_evt_add_fdo_or_fido fdo_ext is NULL"
+"fdr_evt_fdo_destroy fdo_ext is NULL"
+"fdr_evt_fdo_enter_d0 fdo_ext is NULL"
+"fdr_evt_fdo_ioctl: Irp is NULL"
+"fdr_evt_fdo_start fdo_ext is NULL"
+"fdr_evt_fdo_stop fdo_ext is NULL"
+"Filter rule completion: invalid cid\n"
+"frag list not big enough.\n"
+"FW not enabled we should return falure to any DCBX OID"
+"get_location_str: LocationStrings is NULL"
+"GilR - ISCSI NOT IMPLEMENTED!\n"
+"GilR - NOT IMPLEMENTED!\n"
+"HW lock for resource does not exist.\n"
+"Illegal slow path request type!\n"
+"illegal value for dcbx_update_lpme_task_state"
+"illegal value for tsa_assignment_table"
+"Init kwqe error.\n"
+"Input buffer too short\n"
+"invalid bar index\n"
+"Invalid byte mask size\n"
+"Invalid client type"
+"invalid cos"
+"Invalid cos"
+"Invalid crc32\n"
+"Invalid DEVICE_CAPABILITIES structure.\n"
+"invalid Diag client interface.\n"
+"Invalid DMAE user index.\n"
+"Invalid do_type.\n"
+"Invalid fcoe client interface.\n"
+"Invalid index\n"
+"invalid interface size FC.\n"
+"invalid interface size L2.\n"
+"invalid interface size MSIX_TABLE_CONFIG_INTERFACE.\n"
+"invalid interface size PCI_VIRTUALIZATION_INTERFACE.\n"
+"invalid interface size SC.\n"
+"invalid interface size VPCI.\n"
+"Invalid ioc\n"
+"Invalid ioc_buf_size.\n"
+"Invalid KWQE opcode\n"
+"Invalid l2 client interface.\n"
+"Invalid l4 client interface.\n"
+"Invalid l5 client interface.\n"
+"Invalid MF mode."
+"Invalid opcode\n"
+"Invalid Parameters"
+"Invalid parameters.\n"
+"Invalid paramter.\n"
+"Invalid PORT_ID/FUNC_ID\n"
+"Invalid type!!"
+"IoGetDeviceProperty failed.\n"
+"KDPC doesn't belong to RSS ID.\n"
+"kmdf_fdo_start_device fdo_ext is NULL"
+"L2 update RSS failed!"
+"l2_create_q_group : um_queue_work_item failed "
+"l2_destroy_q_group : um_queue_work_item failed "
+"l2_destroy_q_group(sc) : Invalid value for do_type \n"
+"l2_destroy_q_group(sc): Invalid q_group structure.\n"
+"l2_send_packets : indirection_index illegal value "
+"l2_set_information_wi: Invalid work_item structure.\n"
+"L4 update RSS failed!"
+"l5_map_mailboxq_base: Cannot map mailboxq base address.\n"
+"l5_map_mailboxq_base: Invalid cid_addr.\n"
+"lm_clear_tpa_chain failed "
+"lm_dcb_func_update_st_cos_WI lm_func_update_post_command failed"
+"lm_dcb_func_update_st_cos_WI: Invalid udev structure.\n"
+"lm_dcb_func_update_st_cos_WI: Invalid work_item structure.\n"
+"lm_dcbx_admin_mib_update_app_pri : traf_type_entry contains an invalid value "
+"lm_dcbx_admin_mib_update_app_pri illegal traffic_type entry "
+"lm_dcbx_cee_e3b0_fill_cos_params :Wrong pg_help_data->num_of_pg \n"
+"lm_dcbx_check_drv_flags error only PMF can access this field "
+"lm_dcbx_fill_cos_params : Invalid value for pri_join_mask could not find a priority \n"
+"lm_dcbx_fill_cos_params :Wrong pg_help_data->num_of_pg \n"
+"lm_dcbx_get_ets_ieee_feature parameters are check before " "this should not happen"
+"lm_dcbx_ie_admin_mib_update_runtime_classif function failed "
+"lm_dcbx_ie_admin_mib_update_runtime_classif illegal action field"
+"lm_dcbx_ie_admin_mib_update_runtime_ets function failed "
+"lm_dcbx_ie_alloc_bind_structs allocation failed given DBG"
+"lm_dcbx_ie_alloc_bind_structs allocation failed local "
+"lm_dcbx_ie_alloc_bind_structs allocation failed remote "
+"lm_dcbx_ie_classif_parse_app_arrray invalid pri for valid entry "
+"lm_dcbx_ie_classif_parse_app_arrray: invalid appBitfield\n"
+"lm_dcbx_ie_ets_dcbx_to_ieee_unparse: this is a bug we cant have 9 TC"
+"lm_dcbx_init : lm_mcp_cmd_send_recieve failed "
+"lm_dcbx_init_params : resource "
+"lm_dcbx_int : The chip QM queues are stuck until an interrupt from MCP"
+"lm_dcbx_join_pg_data required_num_of_pg can't be zero"
+"lm_dcbx_read_admin_mib couldn't read mcp offset "
+"lm_dcbx_read_admin_mib: lm_dcbx_get_admin_mib_offset failed "
+"lm_dcbx_read_local_mib_fields : prefix_seq_num doesnt equal suffix_seq_num for to much time"
+"lm_dcbx_read_remote_local_mib DCBX Negotiation result not supported"
+"lm_dcbx_runtime_params_updated_en_classif_entries : classif_version not supported "
+"lm_dcbx_runtime_params_updated_en_classif_entries : p_classif_elem is null "
+"lm_dcbx_runtime_params_updated_en_classif_entries: illegal entry "
+"lm_dcbx_runtime_params_updated_validate_ets a tc_entry can't be larger" "than the number of TC supported"
+"lm_dcbx_runtime_params_updated_validate_ets num_traffic_classes can't be larger" "than cos_max_num"
+"lm_dcbx_runtime_params_updated_validate_pfc called but is_indicate_event_en is false"
+"lm_dcbx_set_comp_recv_on_port_bit : illegal drv_flags_cmd  "
+"lm_dcbx_set_comp_recv_on_port_bit lm_hw_lock failed "
+"lm_dcbx_set_params: couldn't read local_mib"
+"lm_dcbx_spread_strict_pri- This is a bug "
+"lm_dcbx_update_ets_e3b0_params :COS can't be not BW and not SP"
+"lm_dcbx_update_ets_e3b0_params: ets_e3b0_config failed "
+"lm_dcbx_update_ets_params the function elink_ets_disabled failed"
+"lm_dcbx_update_ets_params: elinc_ets_strict failed "
+"lm_dcbx_update_lpme_set_params error"
+"lm_dmae_command: Trying to write/read to NULL address\n"
+"lm_empty_ramrod_eth: lm_wait_state_change failed"
+"lm_eq_handle_function_update_eqe unknown source"
+"lm_eq_handle_vf_flr_eqe: vf_info is not found\n"
+"lm_establish_eth_con: lm_eth_init_client_init_data or lm_eth_init_tx_queue_data failed \n "
+"lm_eth_init_client_init_general_data failed "
+"lm_eth_init_tx_queue_data: the chain isn't TX only "
+"lm_execute_generic_workitem: Invalid udev structure.\n"
+"lm_execute_generic_workitem: Invalid work_item structure.\n"
+"lm_fc_free_init_resc failed"
+"lm_fc_init: pdev->fcoe_info.run_time.num_of_cqs is bigger than 1.\n"
+"lm_get_dcbx_drv_param wrong in parameters "
+"lm_hw_lock: FAILED LM_STATUS_TIMEOUT\n"
+"lm_hw_lock: LM_STATUS_EXISTING_OBJECT\n"
+"lm_hw_lock: LM_STATUS_INVALID_PARAMETER\n"
+"lm_hw_unlock: LM_STATUS_INVALID_PARAMETER\n"
+"lm_hw_unlock: LM_STATUS_OBJECT_NOT_FOUND\n"
+"lm_mcp_cmd_init failed!\n"
+"lm_move_mac_addr: invalid params\n"
+"lm_move_mac_addr: Move not expected on VF\n"
+"lm_niv_cli_update failed "
+"lm_pf_init_vf_filters : invalid paramters"
+"lm_pf_int_vf_igu_sb_cleanup : invalid paramters"
+"lm_pf_int_vf_igu_sb_cleanup : only available on Host/PF side"
+"lm_pfc_fw_struct_e2:pfc_fw_cfg_virt was not allocated DCBX should have been disabled "
+"lm_reset_device_if_undi_active: reading from shmem when MCP is not present\n"
+"lm_sc_free_init_resc failed"
+"lm_sc_init: pdev->iscsi_info.l5_eq_chain_cnt is bigger than 1.\n"
+"lm_sc_init_sp_req_type: Illegal slow path request type!\n"
+"lm_set_mac_addr: invalid params\n"
+"lm_set_virt_mode pdev is null"
+"lm_sq_complete pending is NULL"
+"lm_tcp_get_delegated: Unsupported protocol type \n"
+"lm_tcp_rx_post_sws: Invalid operation\n"
+"lm_tpa_send_ramrod : invalid paramters"
+"lm_vf_pf_channel_get_message_to_send: UNKNOWN channel type\n"
+"lm_vf_pf_channel_send: UNKNOWN channel type\n"
+"mac_type not acceptable"
+"mac_type not acceptable\n"
+"MaskTableEntry failed.\n"
+"mcp_cmd_send_and_recieve: mcp_cmd_response failed!\n"
+"mcp_cmd_send_and_recieve: mcp_cmd_send failed!\n"
+"Memory allocation out of sync\n"
+"MichalS rcv_indication_size != 0 not implemented\n"
+"MichalS: Currently History Count = 0 is not SUPPORTED\n"
+"Microsoft Time Source Master Clock0
+"Microsoft Window
+"Miniport gave to many RSC l2pkt"
+"Miniport is supposes to block if RSC hasn't changed"
+"mm_get_sriov_info: Invalid info structure.\n"
+"mm_i2c_update: um_queue_work_item failed "
+"mm_pf_get_macs invalid parameters"
+"mm_set_done: OOO doesn't support mm_set_done "
+"mm_tcp_comp_initiate_offload_request tcp->lm_tcp.path is NULL " "|| tcp->lm_tcp.path->neigh is NULL"
+"mm_tcp_comp_slow_path_request parameter sp_request is NULL"
+"mm_tcp_complete_update_request um_req is NULL"
+"mm_tcp_get_gen_bufs curr_entry"
+"mm_tcp_return_gen_bufs is called and gen_buf is NULL"
+"mm_tcp_rx_peninsula_to_rq_copy_dmae: DMAE recovery copy failed.\n"
+"mm_tcp_rx_peninsula_to_rq_copy_dmae: Failed to acquire DMAE context.\n"
+"mm_tcp_rx_peninsula_to_rq_copy_dmae: Invalid params.\n"
+"New Chip?? initialize cam params!\n"
+"NirV: NOT IMPLEMENTED\n"
+"no attached device object.\n"
+"Not Supported\n"
+"num is larger than num_bits_supported"
+"omgr_add_creat_l2_client_wi : Invalid value for do_type \n"
+"omgr_add_creat_l2_client_wi : um_queue_work_item failed "
+"omgr_add_destroy_l2_client_wi : um_queue_work_item failed "
+"omgr_add_destroy_l2_client_wi: Invalid value for do_type \n"
+"omgr_allocate_packets : Invalid value for do_type \n"
+"omgr_allocate_packets failed "
+"omgr_creat_l2_client: Invalid value for do_type"
+"omgr_creat_l2_client_wi: Invalid qinfo allocation failed.\n"
+"omgr_creat_l2_client_wi: Invalid value for do_type"
+"omgr_destroy : Invalid value for do_type \n"
+"omgr_drop_isle : isle_item is null"
+"omgr_flush_tx_conn_chain : Invalid value for do_type \n"
+"omgr_handle_if_empty_ramrod: omgr_drop_isle failed\n"
+"omgr_indicate_packets: Invalid value for do_type \n"
+"omgr_init: Invalid value for do_type \n"
+"omgr_is_client_ooo_capable: Invalid value for do_type \n"
+"omgr_is_enabled: Invalid value for do_type \n"
+"omgr_join_isle : isle_entry is null"
+"omgr_join_isle : isle_entry_del is null"
+"omgr_opcode_add unknown opcode "
+"omgr_processing: Invalid opcode"
+"omgr_recv_packets : omgr_recv_packets doesn't support state closed \n"
+"omgr_recv_packets :Unkown OOO mgr state \n"
+"omgr_recv_packets: Invalid value for do_type \n"
+"omgr_recv_packets_handle : pkt is NULL"
+"omgr_recv_packets_handle :um_raw_data_to_omgr_data failed "
+"omgr_recv_packets_handle: omgr_drop_isle failed\n"
+"omgr_recv_packets_handle: omgr_processing failed\n"
+"omgr_release_packets : Invalid value for do_type \n"
+"omgr_return_packets: l2_recv_packets failed \n"
+"omgr_send_packets: l4_forward_catchup failed \n"
+"OOO doesn't have a txq"
+"OS gave more TC than mentioned in num_traffic_classes"
+"p/0,
+"PC#5
+"Pdo slot is being occupied.\n"
+"Please upgrade the bootcode version.\n"
+"prefix_seq_num doesnt equal suffix_seq_num for to much time"
+"Reached searcher hash limit\n"
+"Read phy register failed\n"
+"Received a fw GA/GAI without any generic buffers\n"
+"RSC state max isn't a valid value"
+"rss.base_cpu_num != 0 not supported\n"
+"rss_chain_cnt isn't a power of 2"
+"sc_get_bus_data fdo_ext is NULL"
+"sc_get_dma_adapter fdo_ext is null"
+"sc_init_cqe_work_item: Invalid client block.\n"
+"sc_init_cqe_work_item: Invalid client state.\n"
+"sc_init_cqe_work_item: Invalid udev structure.\n"
+"sc_init_cqe_work_item: Invalid work_item structure.\n"
+"sc_set_bus_data: fdo_ext is NULL"
+"sc_translate_bus_address fdo_ext is NULL"
+"service_rx_intr : l2pkt is NULL"
+"size must be greater than zero for a valid client\n"
+"Something Wrong with MSI-X number of messages\n"
+"the intermediate buffer can be used for source or destination but not both.\n"
+"This is illegal for this client\n"
+"Too many SGEs in DMAE operation"
+"tpa_desc_cnt_per_chain is zero and we got a call to initialize a RSC packet descriptor "
+"Tried to schedule task while driver state is NOT Running\n"
+"Trying to release a iscsi-handle that is not pointing to any connection\n"
+"Trying to release a toe-handle that is not pointing to any connection\n"
+"TSA_ASSIGNMENT_DCB_TSA_CBS value isn't supported by VBD"
+"um_bdrv_dcb_change_network_cos_mode: lm_func_update_post_command failed "
+"um_bdrv_dcb_disable_os_wi : um_queue_work_item failed "
+"um_bdrv_dcb_disable_os_wi: Invalid udev structure.\n"
+"um_bdrv_dcb_disable_os_wi: Invalid work_item structure.\n"
+"um_bdrv_dcb_queue_enable_os_wi : um_queue_work_item failed "
+"um_bdrv_disable_os_dcb_wi : could not allocate data \n"
+"um_bdrv_dual_media_setting illegal Dual Media setting settings"
+"um_bdrv_dummy_dpc pdev is NULL"
+"um_bdrv_generic_dpc dpc_item or pdev is NULL"
+"um_bdrv_halt_driver: lm_dcbx_free_resc failed.\n"
+"um_bdrv_imsr_vf pdev is NULL"
+"um_bdrv_set_rss_dpc_affinity: Each rss idx should have a valid value"
+"um_bdrv_set_rss_msix_affinity: array overflow should never happen" "MSIX_WIN_NUM_SPE_PROC is a part of MSIX_MAX_TABLE_SIZE_SUP.\n"
+"um_bdrv_start_l5_driver failed.\n"
+"um_bind_dcb_fill_param: IEEE/CEE mode is not provided.\n"
+"um_bind_dcb_os_enable failed"
+"um_create_delete_switch: Invalid udev structure.\n"
+"um_create_delete_switch: Invalid work_item structure.\n"
+"um_create_q_group_common failed \n"
+"um_create_q_group_common KeGetProcessorNumberFromIndex failed "
+"um_create_sriov_switch: Invalid ioc_buf structure.\n"
+"um_create_sriov_switch: Invalid udev structure.\n"
+"um_dcb_set and OS DCB interface isn't enabled "
+"um_dcb_set lm_dcbx_ie_params_updated_validate failed"
+"um_dcb_set um_queue_work_item failed"
+"um_dcb_set_free_WI_mem: Invalid work item structure.\n"
+"um_dcb_set_wi: Invalid udev structure.\n"
+"um_dcb_set_wi: Invalid work_item structure.\n"
+"um_dcb_set_wi_validate_wi_pointers: Invalid udev structure.\n"
+"um_delete_sriov_switch: Invalid udev structure.\n"
+"um_destroy_q_group : um_queue_work_item failed "
+"um_destroy_q_group: Invalid q_group structure.\n"
+"um_destroy_q_group: Invalid udev structure.\n"
+"um_destroy_q_group: Invalid work_item structure.\n"
+"um_destroy_q_group_common KeGetProcessorNumberFromIndex failed "
+"um_enable_l2_mp um_queue_work_item registration failed"
+"um_enable_l2_mp work item not allocated "
+"um_fc_completion_work_item: Invalid client block.\n"
+"um_fc_destroy() failed.\n"
+"um_fc_destroy_conn() failed.\n"
+"um_fc_disable_conn_work_item() failure.\n"
+"um_fc_enable() failed.\n"
+"um_fc_enable_work_item() failure.\n"
+"um_fc_init() failed.\n"
+"um_fc_init_work_item: lm_fc_init failed.\n"
+"um_fc_offload() failed.\n"
+"um_fc_offload_work_item() failure.\n"
+"um_fc_post_completion: Invalid client state.\n"
+"um_fc_stat() failed.\n"
+"um_fc_stat_work_item() failure.\n"
+"um_fc_terminate_work_item() failure.\n"
+"um_lpme_handle_wi: Invalid udev structure.\n"
+"um_lpme_handle_wi: Invalid work_item structure.\n"
+"um_mblk_manager_work_item : work_item wasn't allocated "
+"um_mblk_manager_work_item: Invalid udev structure.\n"
+"um_mblk_manager_work_item: Invalid work_item structure.\n"
+"um_queue_l5_workitem : um_queue_work_item failed "
+"um_rsc_set :lm_tpa_send_ramrods failed"
+"um_sc_comp_destroy_request : um_queue_work_item failed "
+"um_sc_comp_init_request : um_queue_work_item failed "
+"um_sc_comp_offload_request : um_queue_work_item failed "
+"um_sc_del_iscsi_state : um_queue_work_item failed "
+"um_sc_free_resc_work_item: Invalid udev structure.\n"
+"um_sc_free_resc_work_item: Invalid work_item structure.\n"
+"um_sc_init : um_queue_work_item failed "
+"um_sc_init_sp_req_type: Illegal slow path request type!\n"
+"um_sc_init_work_item: Invalid pdev structure.\n"
+"um_sc_init_work_item: Invalid q_group structure.\n"
+"um_sc_init_work_item: Invalid udev structure.\n"
+"um_sc_init_work_item: Invalid work_item structure.\n"
+"um_sc_offload : um_queue_work_item failed "
+"um_sc_offload_work_item: Invalid param.\n"
+"um_sc_offload_work_item: Invalid pdev structure.\n"
+"um_sc_offload_work_item: Invalid work_item structure.\n"
+"um_sriov_configuration_space_wi: Invalid udev structure.\n"
+"um_sriov_configuration_space_wi: Invalid work_item structure.\n"
+"um_sriov_create_vport : vf_info is NULL"
+"um_sriov_create_vport: Invalid q_group structure.\n"
+"um_sriov_create_vport: Invalid udev structure.\n"
+"um_sriov_delete_vport: Invalid q_group structure.\n"
+"um_sriov_delete_vport: Invalid udev structure.\n"
+"um_sriov_delete_vport: vf_info is not found\n"
+"um_sriov_get_vf_location: Invalid params.\n"
+"um_sriov_get_vf_location: Invalid udev structure.\n"
+"um_sriov_get_vf_location: SRIOV switch is not created yet.\n"
+"um_sriov_get_vf_ven_dev_id: Invalid params.\n"
+"um_sriov_get_vf_ven_dev_id: Invalid udev structure.\n"
+"um_sriov_move_q_group_filter: vf_info is not found\n"
+"um_sriov_query_probed_vf_bars: Invalid params.\n"
+"um_sriov_query_probed_vf_bars: Invalid udev structure.\n"
+"um_sriov_query_probed_vf_bars_wi: Invalid udev structure.\n"
+"um_sriov_query_probed_vf_bars_wi: Invalid work_item structure.\n"
+"um_sriov_reset_vf: vf_info is not found\n"
+"um_sriov_set_mc_wi: Invalid udev structure.\n"
+"um_sriov_set_mc_wi: Invalid work_item structure.\n"
+"um_sriov_set_rsc_wi: Invalid udev structure.\n"
+"um_sriov_set_rsc_wi: Invalid work_item structure.\n"
+"um_sriov_set_rss_wi: Invalid udev structure.\n"
+"um_sriov_set_rss_wi: Invalid work_item structure.\n"
+"um_sriov_set_rx_mask_wi: Invalid udev structure.\n"
+"um_sriov_set_rx_mask_wi: Invalid work_item structure.\n"
+"um_sriov_update_vf: update info is not provided\n"
+"um_sriov_update_vf: vf_info is not found\n"
+"um_tcp_add_generic_buffers free_gen_block_list is NULL and cnt is bigger than 0"
+"um_tcp_del_tcp_state: failed to schedule work item"
+"um_tcp_init_generic_buffers gen_block is NULL and cnt is bigger than 0"
+"um_tcp_init_ofld_wi: Invalid udev structure.\n"
+"um_tcp_init_ofld_wi: Invalid work_item structure.\n"
+"um_tcp_post tcp_buf"
+"um_update_sriov_switch: Invalid ioc_buf structure.\n"
+"um_update_sriov_switch: Invalid udev structure.\n"
+"um_util_delayed_taskq_timer_dpc pdev is NULL"
+"um_util_lals_manager_dpc pdev is NULL"
+"um_util_pf_vf_hw_back_channel_timer_dpc pdev is NULL"
+"um_util_stats_timer_dpc pdev is NULL"
+"Unable to allocate device structure.\n"
+"unable to allocate io_work_item.\n"
+"unable to copy to gen buffer.\n"
+"unable to copy to gen_buf.\n"
+"Unable To Copy"
+"Unable to read parameter from registry.\n"
+"Unexpected driver state.\n"
+"unexpected number of kwqes\n"
+"Unexpected pending mcast command failed\n"
+"Unexpected registry value type.\n"
+"unknown abort operation.\n"
+"Unknown address type.\n"
+"Unknown chip version"
+"Unknown cmd"
+"Unknown context mode.\n"
+"Unknown Cos Mode"
+"Unknown destination address type for DMAE operation.\n"
+"unknown disconnect request type\n"
+"Unknown do_type.\n"
+"Unknown do_type\n"
+"Unknown elem type received on eq\n"
+"Unknown resource descriptor\n"
+"Unknown set ioc\n"
+"Unknown source address type for DMAE operation.\n"
+"Unknown traffic type\n"
+"Unknwon ecore_status_t"
+"UnmaskTableEntry failed.\n"
+"unsupported pending sq: Not implemented yet\n"
+"VF Can't work in GRC Access mode!\n"
+"Vladz: Not implemented yet!\n"
+"WdfChildListAddOrUpdateChildDescriptionAsPresent failed "
+"WdfDeviceCreateDeviceInterface failed.\n"
+"we should not reach this line!"
+"We should not reach this line\n"
+"Write phy register failed\n"
+"Wrong Interrupt Mode\n"
+"Zero isn't a valid value for pdev->params.max_rss_chains  "
+#@~#5
+#@1r,
+#@l#5
+#C@mE
+#C` G
+#fE9C
+#HHB#
+#K@H9
+#O`9L
+#p1r,
+#Pv#5
+#r8*a
+$$fE;
+$@X24
+$`_ 5
+$`<`u
+$`2X`F
+$`R"5
+$`r$5
+$6`_A5
+$f9q*t
+$Microsoft Ireland Operations Limited1
+$p<`t
+$P<Pu
+$rPB0
+%`a/5
+%1: Driver initialization failed.
+%1The driver version running in the VM is not compatible with the firmware version running in the Host or other VMs, and the function has been disabled. Please update either the driver running in the host or the VM or the other VMs or all, so that they match.
+%1The SR-IOV driver version running in the VM is not compatible with the firmware version running in the Host, and the virtual function has been disabled. Please update either the driver running in the host or the VM or both, so that they match.
+%1The SR-IOV driver version running in the VM is not compatible with the version running in the Host, and the virtual function has been disabled. Please update either the driver running in the host or the VM or both, so that they match.
+%2 %3 (%4): An assertion happened. Please note provider of this module.
+%2 Error recovery attempt succeeded. 
+%2 Link speed was forced to 1000Mbps. Current SFP module in port %3 is not compliant with 10G Ethernet.
+%2 Port %3 Force 10GbE link request denied. current hardware configuration does not support 10GbE operation.
+%2 Port %3 MDC/MDIO access timeout.
+%2 Port %3 PHY didn't come out of reset after one second.
+%2 Power fault on Network Controller %3 Port %4 has been detected and the power to that SFP+ module has been removed to prevent failure of the card. Please remove the SFP+ module and restart the system to clear this error.
+%2 QLogic network adapter #%3 was not assigned valid SRIOV resources. Please contact your system BIOS provider.
+%2 Unqualified SFP+ module detected on Network Controller %3 Port %4 from %5 part number %6.
+%2. MFW version %3 is less than required to support Windows Server 2012 QoS feature. QoS is disabled. Please update MFW to %4 or later.
+%2. MFW version %3 is less than required to support Windows Server 2012 SR-IOV feature. SR-IOV is disabled. Please update MFW to %4 or later.
+%2: An unexpected error occurred. Management Firmware collected data of the chip registers.
+%2: Diag device bound successfully.
+%2: Diag device is not able to bind.
+%2: Diag device unbound successfully.
+%2: Driver initialization failed due to insufficient contiguous memory on system.
+%2: Driver initialized successfully.
+%2: Failed to allocate memory for the device block.  Check system.
+%2: Fan Failure on Network Controller %3 has caused the driver to shutdown the card to prevent permanent damage. Please contact OEM Support for assistance.
+%2: FCoE device bound successfully.
+%2: FCoE device is not able to bind.
+%2: FCoE device unbound successfully.
+%2: Forced installation of device driver for obsolete network controller for this operating system.
+%2: Host's MAC policy does not allow to override MAC assigned by host administrator. Please remove your locally administrated address.
+%2: Host's VLAN policy does not allow to override VLAN ID assigned by host administrator. Please remove your locally administrated VLAN ID.
+%2: iSCSI device bound successfully.
+%2: iSCSI device is not able to bind.
+%2: iSCSI device unbound successfully.
+%2: Ndis device bound successfully.
+%2: Ndis device is not able to bind.
+%2: Ndis device unbound successfully.
+%2: Network controller configured for 100Mb full-duplex link.
+%2: Network controller configured for 100Mb half-duplex link.
+%2: Network controller configured for 10Mb full-duplex link.
+%2: Network controller configured for 10Mb half-duplex link.
+%2: Network controller configured for 1Gb full-duplex link.
+%2: Network controller configured for 1Gb half-duplex link.
+%2: The network link is down.  Check to make sure the network cable.
+%2: The network link is up.
+%2: This driver does not support this device.  Upgrade to the latest.
+%2: This driver fails initialization because the system is running out of memory.
+%2: Unable to install device driver for obsolete network controller for this operating system.
+%2: Unable to map IO space.
+%2: Unable to register the interrupt service routine.
+%2: Valid MAC address is not provided to VF Network Adapter. Please ask for valid MAC address from host or use locally administrated address.
+%2: Virtual function on %3 was disabled due to repeated possible malicious behavior. Please scan VM for malicious agents and reboot to recover virtual function.
+%2: Virtual function was disabled due to repeated possible malicious behavior. Please scan VM for malicious agents and reboot to recover virtual function.
+%2: Virtual function was reset due to Host administrator forced valid MAC using.
+%2: Virtual function was reset due to possible malicious behavior.
+%2: Virtual machine %3 inappropriately accessed its virtual function. VF was reset due to possible malicious behavior.
+%2: WSD device bound successfully.
+%2: WSD device is not able to bind.
+%2: WSD device unbound successfully.
+%2@s2
+%4@*:5
+%dhavk
+%F a,
+%Microsoft Windows Production PCA 2011
+%Microsoft Windows Production PCA 20110
+%Mlie 
+%s - LCID %d CID_CAM 0x%x. Value is 0x%x
+%s. Value is 0x%x
+%s. Values are 0x%x 0x%x
+%UUUU
+&$Z!$4
+&PCI_00000000
+&REV_00
+&SUBSYS_00000000
+( ! ( ( (!tcp_buf) && (!frag_list) ) || (tcp_buf && frag_list) ) ) || ( frag_list && (frag_list->cnt == 0) )
+( &P-
+( 0 == cos_data->entry_data[0].pri_join_mask) && ( 0 == cos_data->entry_data[1].pri_join_mask)
+( Ai4
+( ECORE_SUCCESS != ecore_status ) && ( ECORE_PENDING != ecore_status )
+( LM_STATUS_SUCCESS != lm_status ) && ( LM_STATUS_LINK_DOWN != lm_status )
+( tcp->hdr.status != STATE_STATUS_NORMAL ) && ( tcp->hdr.status != STATE_STATUS_ABORTED )
+(!DBG_BREAK_ON(UNDER_TEST)) && (length > 4)
+(!DBG_BREAK_ON(UNDER_TEST)) && (length > 8)
+(!DBG_BREAK_ON(UNDER_TEST)) && (lm_status != LM_STATUS_SUCCESS)
+(!DBG_BREAK_ON(UNDER_TEST)) && (MAX_DYN_AFF_PROC_SUP < proc_num_tmp)
+(!DBG_BREAK_ON(UNDER_TEST)) && (q_group->q_info.q0_cpu.Number >= 64)
+(!DBG_BREAK_ON(UNDER_TEST)) && (TX_QIDX_LET_VBD_HASHES_TO_TX_QUEUE != qidx)
+(!DBG_BREAK_ON(UNDER_TEST))&&((LM_STATUS_SUCCESS != lm_status) || (NULL == q_group))
+(!DBG_BREAK_ON(UNDER_TEST))&&(lm_status != LM_STATUS_ABORTED)
+(!IS_SD_UFP_MODE(pdev) || !IS_SD_BD_MODE(pdev)) && (!IS_MULTI_VNIC(pdev) || !pdev->vars.is_pmf)
+(!NT_SUCCESS(ntstatus)) && ((nt_ddi >= NTDDI_VISTA) && (nt_ddi < NTDDI_WIN7))
+(((u32_t) ((u8_t *) gen_block - (u8_t *) 0)) & LM_PAGE_MASK) != (gen_block->mem_phy.as_u32.low & LM_PAGE_MASK)
+(((u32_t) (data_mem_virt - (u8_t *) 0)) & LM_PAGE_MASK) != (data_mem_phys.as_u32.low & LM_PAGE_MASK)
+((cqe->params1 & TOE_RX_CQE_COMPLETION_OPCODE) >> TOE_RX_CQE_COMPLETION_OPCODE_SHIFT) != RAMROD_OPCODE_TOE_INIT
+((gen_buf->buf_virt - (u8_t *) 0) & LM_PAGE_MASK) != (gen_buf->buf_phys.as_u32.low & LM_PAGE_MASK)
+((lm_tcp_gen_buf_t *)(d_list_peek_head(&gen_buf_list)))->placed_bytes == 0
+((lm_tcp_gen_buf_t *)(d_list_peek_tail(&start_isle->isle_gen_bufs_list_head)))->placed_bytes == 0
+((lm_tcp_gen_buf_t *)d_list_peek_head(&rx_con->u.rx.gen_info.dpc_peninsula_list))->placed_bytes == 0
+((lm_tcp_gen_buf_t *)d_list_peek_tail(&gen_info->peninsula_list))->placed_bytes == 0
+((struct toe_context *)ctx_p)->cstorm_ag_context.rel_seq != tag_tcp->snd_una
+((struct toe_context *)ctx_p)->tstorm_ag_context.__state == 0
+((struct toe_context *)ctx_p)->ustorm_ag_context.__state == 0
+((struct toe_context *)ctx_p)->xstorm_ag_context.__state == 0
+((u16_t)MSIX_ADD_ALL_PROC_LOCATION_DIS_RSS(pdev)) != MSIX_ADD_ALL_PROC_LOCATION_DIS_RSS(pdev)
+((u32_t) PTR_SUB(mem_virt, 0) & 0xfff) != (phys_mem->as_u32.low & 0xfff)
+((u32_t) PTR_SUB(mem_virt, 0) & LM_PAGE_MASK) != (mem_phy.as_u32.low & LM_PAGE_MASK)
+(_^][
+(`(P-
+-(`4'
+(`c'5
+(`n15
+(|$0I
+(0 != read_dcbx_en) && (SHMEM_LLDP_DCBX_PARAMS_NONE == lldp_params_offset)
+(0 == pdev->params.b_dcb_indicate_event)
+(A_A^A]A\_^[]
+(A_A^A]A\_^][
+(abort_dealloc == FALSE)&& (do_type_flag_mask & FDO_TYPE_FLAG_VBD)&& (pdev->bar_unmapping_cnt != pdev->bar_mapping_cnt)
+(bd_chain->page_cnt + 1) * BD_PER_PAGE(bd_size) > 0xffff
+(c) COPYRIGHT 2014-2016 QLogic Corporation
+(cli_idx) >= MAX_DO_TYPE_CNT
+(client_qg_idx != umpkt->lmpkt.u1.rx.qidx) && (client_qg_idx != umpkt->client_l2pkt.qidx)
+(cmd != RAMROD_OPCODE_TOE_RESET_SEND) && (cmd != RAMROD_OPCODE_TOE_INVALIDATE) && (cmd != RAMROD_OPCODE_TOE_EMPTY_RAMROD) && (cmd != RAMROD_OPCODE_TOE_TERMINATE)
+(cnt > to_cnt)
+(completed_bytes - actual_completed) != 1
+(con->flags & ~TCP_INDICATE_REJECTED) != (TCP_POST_BLOCKED | TCP_COMP_DEFERRED)
+(con->type == TCP_CON_TYPE_RX) && !tcp_buf
+(con->type == TCP_CON_TYPE_RX) && (completed_bytes != 0)
+(con->type == TCP_CON_TYPE_RX) && (con->u.rx.skp_bytes_copied)
+(con->type == TCP_CON_TYPE_RX) && completed_bytes && !tcp_buf
+(con->type == TCP_CON_TYPE_TX) && (completed_bytes > 1)
+(con->type == TCP_CON_TYPE_TX) && completed_bytes > 1 && !tcp_buf
+(cos > 0) && (FALSE == mp_l2_chain_param->is_enabled)
+(CSTORM_SP_STATUS_BLOCK_DATA_SIZE % 4) != 0
+(CSTORM_SP_STATUS_BLOCK_SIZE % 4) != 0
+(CSTORM_SP_SYNC_BLOCK_SIZE % 4) != 0
+(CSTORM_STATUS_BLOCK_DATA_SIZE % 4) != 0
+(CSTORM_STATUS_BLOCK_SIZE % 4) != 0
+(CSTORM_SYNC_BLOCK_SIZE % 4) != 0
+(db_data->bds_prod & 0xff) == 0
+(DBUS_STATE_FREE != global_driver_info.bugchk_info.crash_dump_buf[array_index].dbus_param.state) && (DBUS_STATE_NOT_ALOC != global_driver_info.bugchk_info.crash_dump_buf[array_index].dbus_param.state)
+(DBUS_STATE_FREE != global_driver_info.bugchk_info.crash_dump_buf[i].dbus_param.state) && (DBUS_STATE_NOT_ALOC != global_driver_info.bugchk_info.crash_dump_buf[i].dbus_param.state)
+(DCBX_STRICT_PRI_PG != pg_help_data->pg_entry_data[i].pg) && (DCBX_MAX_NUM_PG_BW_ENTRIES <= pg_help_data->pg_entry_data[i].pg)
+(def_params->l4cli_flags != 0) && (def_params->l4cli_flags != OFLD_PARAM_FLAG_SNAP_ENCAP)
+(elem->message.data.vif_list_event.echo != VIF_LIST_RULE_CLEAR_ALL) && (elem->message.data.vif_list_event.echo != VIF_LIST_RULE_CLEAR_FUNC) && (elem->message.data.vif_list_event.echo != VIF_LIST_RULE_GET) && (elem->message.data.vif_list_event.echo != VIF_LIST_RULE_SET)
+(entry)->refcnt < 0
+(fdo_ext->create_pdo_flag & PDO_TYPE_FLAG_L5WSD) == 0
+(FUNC_UPDATE_RAMROD_SOURCE_NIV != elem->message.data.function_update_event.echo) && (FUNC_UPDATE_RAMROD_SOURCE_L2MP != elem->message.data.function_update_event.echo) && (FUNC_UPDATE_RAMROD_SOURCE_ENCAP != elem->message.data.function_update_event.echo) && (FUNC_UPDATE_RAMROD_SOURCE_UFP != elem->message.data.function_update_event.echo)
+(fw_sge_index != (sge_num_elem - 1)) && (sge_size < LM_TPA_PAGE_SIZE )
+(LM_MAX_RSS_CHAINS(&pdev->lmdev) == 0)
+(lm_status != LM_STATUS_SUCCESS) && (lm_status != LM_STATUS_CONNECTION_CLOSED) && (lm_status != LM_STATUS_RESOURCE)
+(lm_status != LM_STATUS_SUCCESS) && (lm_status != LM_STATUS_PENDING)
+(lm_status == LM_STATUS_SUCCESS) && !(tx_con->lm_tcp_con.app_buf_bytes_acc_post == 0)
+(lm_status == LM_STATUS_SUCCESS) && !(tx_con->lm_tcp_con.db_more_bds == 0)
+(lm_status == LM_STATUS_SUCCESS) && !(tx_con->lm_tcp_con.db_more_bytes == 0)
+(lm_status == LM_STATUS_SUCCESS) && !(tx_con->lm_tcp_con.u.tx.bds_without_comp_flag == 0)
+(lm_status!=LM_STATUS_SUCCESS) && DBG_BREAK_ON(MEMORY_ALLOCATION_FAILURE)
+(LM_STATUS_SUCCESS != lm_status ) && ((LM_STATUS_ABORTED != lm_status ))
+(LM_TPA_ACTIVE_DESCQ_ARRAY_ELEM(pdev,chain_idx) <= (active_entry))
+(LM_TPA_ACTIVE_DESCQ_ARRAY_ELEM(pdev,idx) <= (active_entry))
+(mblk_idx == MBLK_POOL_UNKNOWN) || (mblk_idx > NUM_OF_MBLK_POOLS)
+(nbufs_received != nbufs) && DBG_BREAK_ON(MEMORY_ALLOCATION_FAILURE)
+(NIV_RAMROD_COMPLETED == curr_state)|| (NIV_RAMROD_NOT_POSTED == curr_state)
+(NULL != indicate_event->remote_params.classif_params.classif_table) || (NULL != indicate_event->local_params.classif_params.classif_table) || (NULL != indicate_event->dcb_params_given_dbg.classif_params.classif_table)
+(pdev->eq_info.function_state == FUNCTION_STOP_POSTED) || (pdev->eq_info.function_state == FUNCTION_STOP_COMPLETED)
+(pdev->lmdev.params.rss_chain_cnt * pdev->lmdev.params.tpa_desc_cnt_per_chain) != s_list_entry_cnt(desc_list_arr[idx])
+(pdev->slowpath_info.niv_ramrod_state != NIV_RAMROD_VIF_LISTS_POSTED) && (!lm_reset_is_inprogress(pdev))
+(pdev->slowpath_info.niv_ramrod_state == NIV_RAMROD_COMPLETED)|| (pdev->slowpath_info.niv_ramrod_state == NIV_RAMROD_NOT_POSTED)
+(pdev->slowpath_info.ufp_func_ramrod_state == UFP_RAMROD_COMPLETED)|| (pdev->slowpath_info.ufp_func_ramrod_state == UFP_RAMROD_NOT_POSTED)
+(pdev->vars.mac_type != MAC_TYPE_EMAC) && (pdev->vars.mac_type != MAC_TYPE_BMAC)
+(presc->type) >= RESOURCE_TYPE_MAX
+(push == 1) && (tcp_buf->flags & TCP_BUF_FLAG_L4_RX_NO_PUSH)
+(q_group == NULL) || (query_set_info == NULL)
+(q_group->do_type != DO_TYPE_IS_L2ND_PDO) && (q_group->do_type != DO_TYPE_IS_DIAG_PDO)
+(ret_chain_index < chain_base)|| (ret_chain_index >= ((chain_cnt + chain_base)))
+(rx_buffer_nbytes % 64) != 0
+(rx_con->db_more_bds + frag_list->cnt) > (u32_t)(rx_con->bd_chain.capacity + rx_con->bd_chain.page_cnt)
+(RX_ETH_CQE_TYPE_ETH_START_AGG == cqe_type)&& (lm_tpa_state_disable == tpa_chain->state)
+(sp_req_mgr->blocked == FALSE) && (sp_req_mgr->posted_req != NULL)
+(t$@L
+(t$`H
+(t$PH
+(t$pL
+(tcp_buf->more_to_comp == tcp_buf->size) && !(tcp_buf->flags & TCP_BUF_FLAG_L4_POST_START ? con->app_buf_bytes_acc_comp == 0 : con->app_buf_bytes_acc_comp > 0)
+(tcp_con->app_buf_bytes_acc_post != 0) || (tcp_con->db_more_bytes != 0) || (tcp_con->db_more_bds != 0) || (tcp_con->u.tx.bds_without_comp_flag != 0)
+(tcp->hdr.status != STATE_STATUS_INIT_OFFLOAD_ERR) && (tcp->hdr.status != STATE_STATUS_INIT) && (tcp->hdr.status != STATE_STATUS_INIT_CONTEXT)
+(tcp->hdr.status != STATE_STATUS_NORMAL ) && (tcp->hdr.status != STATE_STATUS_ABORTED)
+(tcp->hdr.status != STATE_STATUS_NORMAL) && (tcp->hdr.status != STATE_STATUS_ABORTED)
+(tcp->hdr.status != STATE_STATUS_NORMAL) && (tcp->hdr.status != STATE_STATUS_UPLOAD_PENDING)
+(tcp->sp_request->type != SP_REQUEST_PENDING_LOCAL_FIN_DISCONNECT) && (tcp->sp_request->type != SP_REQUEST_PENDING_REMOTE_DISCONNECT) && (tcp->sp_request->type != SP_REQUEST_PENDING_TX_RST)
+(tcp->sp_request->type != SP_REQUEST_UPDATE_NEIGH) && (tcp->sp_request->type != SP_REQUEST_UPDATE_PATH) && (tcp->sp_request->type != SP_REQUEST_UPDATE_TCP) && (tcp->sp_request->type != SP_REQUEST_UPDATE_PATH_RELINK)
+(TJ)4
+(u16_t)index_cpu != index_cpu
+(u16_t)proc_num_tmp != proc_num_tmp
+(u32_t)(tcp->tcp_delegated.send_una + (u32_t)tcp->tx_con->bytes_comp_cnt + (u32_t)tcp->tx_con->bytes_trm_aborted_cnt - (u32_t)tcp->tx_con->bytes_aborted_cnt) != tag_tcp->snd_una
+(u8_t)idx != idx
+(u8_t)pdev->rss.cpu_cnt != pdev->rss.cpu_cnt
+(u8_t)reg_chain_idx != reg_chain_idx
+(u8_t)ret_chain_index != ret_chain_index
+(UM_BDRV_QUEUE_NUM_INVALID == q_group->chain_idx_base) && (UM_BDRV_MSG_NUM_INVALID == q_group->msg_id_base)
+(UM_DCBX_OS_STATE_ENABLE == pdev->vars.um_dcbx_os_state) && (FALSE == pdev->lmdev.dcbx_info.is_indicate_event_en)
+(update_req_type == SP_REQUEST_UPDATE_PATH_RELINK) && (new_state == NULL)
+(XSTORM_SPQ_DATA_SIZE % 4) != 0
+)BO'5
+)havk
+)J`zP
+)JAUR
+)Microsoft Root Certificate Authority 20100
+)t$`H
+)t$PH
+*#`%#5
+*#`^$
+*#`I$
+*(@b15
+*(@m:
+*(@o:5
+*(Ab1
+*(ab15
+*3`q3
+*6`NF5
+*6ANF5
+*A`9>5
+*FlowControl
+*ReceiveBuffers
+*SpeedDuplex
+, Ai4
+,*`K'5
+,@ Q-
+,+@L25
+,0&P-
+,0@T3
+,Yixtf/kshrIjDNJg72NtZGqtBGjiFN67TkREDbChAgA=0Z
+.(@](5
+.@B15
+.`?25
+.`u15
+.00cfg
+.3@"-
+.3@7-5
+.data
+.gfids$y
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.kmdfclassbind$a
+.kmdfclassbind$c
+.kmdfclassbind$d
+.kmdftypeinit$a
+.kmdftypeinit$c
+.pdata
+.rdata
+.rdata$zzzdbg
+.rsrc$01
+.rsrc$02
+.S@pY5
+.text
+.text$mn
+.text$mn$00
+.text$mn$21
+.text$s
+.xdata
+/"0aP
+/=`1@5
+/=AD@
+/=P*=5
+:(u H
+:@n;5
+:\tII+
+:`r95
+:h(a,
+:P!B5
+:PO:5
+:QxDq
+:X0a,
+;(vGA
+;.sHD
+;|$pr
+;Axt>
+;D$ r
+;D$ t8A
+;D$xu'D
+;E$t<
+;p,v1
+;PuDH
+;SPu!IcF
+;T$$tJA;
+;w(v8A
+?)b='
+?+P{*
+?L9?u
+?M9'u
+@ Ai4
+@ D;B
+@#0O3
+@:qes
+@@j=5
+@` P-
+@`/C5
+@`_A5
+@`=C5
+@`VA5
+@+0$3
+@30R-
+@4A~4
+@4B~4
+@8:u8
+@8|$`t
+@8|$`u
+@8|$`u,
+@8|$P
+@8|$pt
+@8|$x
+@8|$XE
+@8|$xu
+@8h0t&H
+@8l$pt
+@8t$pv
+@A\_^
+@A^_^
+@A^_^[]
+@A^A\]
+@A^A\_
+@A^A\_^]
+@A^A]]
+@A^A]A\_^
+@A__^
+@A_A\_H
+@A_A^]
+@A_A^_
+@A_A^_^]
+@A_A^A\
+@A_A^A\_^][
+@A_A^A]
+@A_A^A]_^][
+@A_A^A]A\^
+@A_A^A]A\_^]
+@fD9F t
+@HfD9p2u7
+@HfD9p2u8A
+@IM3g
+@SUVH
+@SUVWATAUAVAWH
+@SUVWATAVAWH
+@SUVWAUAVAWH
+@SUVWAVAWH
+@SUVWAVH
+@SUVWAWH
+@SUWH
+@SVWATAUAVAWH
+@SVWH
+@toA8
+@u*fA
+@USVWATAUAVAWH
+@USVWATAUAVH
+@USVWATAVAWH
+@USVWAUAVAWH
+@USVWAVAWH
+@USVWAVH
+@USWAVH
+@USWH
+@UVWATAUAVAWH
+@v@`,
+[ UVWATAUAVAWH
+[b@kd
+[hq0D(
+[hqPD(
+[J@{K
+\$ E3
+\$ UVWATAUAVAWH
+\$ UVWATAVH
+\$ UVWAUAVH
+\$ UVWAVAWH
+\$ UVWH
+\$ WH
+\$(A:
+\$(E3
+\$@E+
+\$@E3
+\$0uxA
+\$2A;
+\$PD#
+\$PfA
+\$xE3
+\$xfA
+\;`ZF5
+\_`}g
+\CurrentControlSet\Control\Class\
+\Device\
+\Device\PhysicalMemory
+\iscsi
+\REGISTRY\MACHINE\SYSTEM
+\REGISTRY\MACHINE\SYSTEM\CurrentControlSet\Enum\
+\Registry\Machine\System\CurrentControlSet\Services\%ws
+\x{0D3
+\x{PD3
+\x~0D3
+\x~PD3
+]"P-"
+']@|]5
+^/ W[4
+^Er@7
+__l5sc_max_pending_tasks
+_L`.c
+_L`Ic5
+_vsnprintf
+_vsnwprintf
+_xQ0D
+_xQPD
+` AUAVAWH
+` AWH
+` UAVAWH
+`.3D3
+`|'Fx
+`9`N<5
+`9Aa<
+`9P[9
+`A^_^[]
+`A^_^][
+`A_A^_^]
+`A_A^A\_^][
+`A_A^A]A\_^]
+`INIT
+`t:$3
+{ AVH
+{ UATAUAVAWH
+{#`n#
+{#`y#
+{\t3D
+|$ ATH
+|$ AVH
+|$ AWH
+|$ E3
+|$ fD9|$ t
+|$ fE
+|$ UATAUAVAWH
+|$ UATAWH
+|$ UAVAWH
+|$ UH
+|$(A^
+|$(E3
+|$@A9}
+|$@L9
+|$[fA+
+|$\D8d$pt
+|$\uZD9
+|$`@rvA
+|$`Hs
+|$0+\$0u
+|$0E3
+|$0f;
+|$8A_A^A\
+|$8D;
+|$8E3
+|$h t;H
+|$ht0
+|$pD9
+|$pE3
+|$PH+
+|$PHk
+|$pt<H
+|8OX4
+|a'P-
+|hK,_
+|p@@,
+|YP&Z5
+|YPw[5
+})B7'5
+}XtQA
+~(fD9m2t<
+~(lcl_attn_bits ^ lcl_attn_ack) & (lcl_attn_bits ^ _state)
+~\t8A
+~2fA+
+~6@Z75
+~H!`,
+~h`t_
+~pdev->vars.attn_state & deassertion_proc_flgs
++@K+5
++'@Z$
+++wait_cnt > wait_cnt_limit
++<`b<
++<`k<
++<`Y<5
++7@h5
+< wTL9
+<!u+D
+<@O:5
+<@vBA
+<`~=5
+<`H=5
+<`m<5
+=[@T]
+=`2G5
+=`5G5
+=`m;5
+'=`OG5
+'=aE@5
+=B@>5
+=BFFTt
+=BIFTu)
+=iBFTt
+'=P!@5
+>5P855
+>B@MA5
+>D9s`
+>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0
+>http://www.microsoft.com/pki/certs/MicTimStaPCA_2010-07-01.crt0
+>If%m
+>PFB5
+0 != (ieee_classif_alloc_size % sizeof(dcb_classif_elem_t))
+0 != (lm_bd_chain_bds_per_page(bd_chain) & BIT_VEC64_ELEM_MASK)
+0 != (lm_bd_chain_cons_idx(bd_chain) & BIT_VEC64_ELEM_MASK)
+0 != (mcp_pg_bw_tbl_size_in_bytes % sizeof(u32_t))
+0 != (mcp_pri_pg_tbl_size_in_bytes % sizeof(u32_t))
+0 != (pdev->params.dcbx_port_params.ets.cos_params[i].pri_bitmask & pdev->params.dcbx_port_params.ets.cos_params[j].pri_bitmask)
+0 != buf_continues_size
+0 != chk_buf[i]
+0 != cqe->fast_path_cqe.pkt_len_or_gro_seg_len
+0 != i
+0 != LM_DCBX_PFC_PRI_GET_NON_PAUSE(pdev,cos_params->pri_bitmask)
+0 != LM_DCBX_PFC_PRI_GET_PAUSE(pdev,cos_params->pri_bitmask)
+0 != mm_le32_to_cpu(kcqe->completion_status)
+0 != pdev->worker_threads[type].wi_fw_access_cnt
+0 != proc_num.Group
+0 != q_group->q_info.vmq_lookahead_size
+0 != s_list_entry_cnt(&pdev->worker_threads[type].pending_work_list)
+0 != tpa_info->ramrod_recv_cnt
+0 == (ets->cos_params[0].bw_tbl + ets->cos_params[1].bw_tbl)
+0 == (pdev)->mp_l2_param.chain_params[drv_rss_id].num_active_cos
+0 == (pdev)->mp_l2_param.chain_params[idx].num_active_cos
+0 == (val & MISC_REGISTERS_RESET_REG_1_RST_RBCP)
+0 == context->completion_word_paddr.as_u64
+0 == cos_data.num_of_cos
+0 == drop_isle
+0 == GET_FLAGS(cli_params.attributes, LM_CLIENT_ATTRIBUTES_RX )
+0 == GET_FLAGS(cqe->status_flags, ETH_FAST_PATH_RX_CQE_IP_XSUM_NO_VALIDATION_FLG)
+0 == GET_FLAGS(remote_tlv_feature_flag , (DCBX_REMOTE_ETS_TLV_NOT_FOUND | DCBX_REMOTE_PFC_TLV_NOT_FOUND | DCBX_REMOTE_APP_TLV_NOT_FOUND))
+0 == IS_MULTI_VNIC(pdev)
+0 == length_limit
+0 == LM_TPA_MASK_TEST_ACTIVE_BIT(pdev,chain_idx,active_entry)
+0 == pdev->recover_info.ioc_in_process
+0 == pdev->rss.chain_indirection_table_size
+0 == pri_join_mask
+0 == sw_mess->vfdev_info.vf_fw_hsi_version
+0*`9)5
+0*`p)
+0*P"+
+0@ P-
+0@`.5
+0@>15
+0@A05
+0@n25
+0@t,5
+0`#,5
+0`,,5
+0`/45
+0`:-5
+0`=/5
+0`g/5
+0`S.5
+0=@?;
+00&R-
+00.00.00
+00000000
+040904B0
+0A^_^
+0A^_^[]
+0A^_^][
+0A^A\_
+0A^A]_^]
+0A^A]A\
+0A^A]A\_^
+0A__^
+0A_A\_
+0A_A]_
+0A_A]A\
+0A_A]A\_^
+0A_A^_
+0A_A^_^]
+0A_A^A\
+0A_A^A\_]
+0A_A^A\_^
+0A_A^A]
+0A_A^A]_^
+0A_A^A]A\]
+0A_A^A]A\_
+0A_A^A]A\_^]
+0Ak45
+0B1/5
+0k8~3
+0k8~-A
+0kh|(H
+0kh}1H
+0khD;
+0kht/A
+0khu1H
+0P^45
+0P0.5
+0P1`,
+0Pb.5
+0Pd.5
+0Pm.5
+0PN-5
+0Ps.5
+0Pt35
+1 != mp_l2_chain_param->num_active_cos
+1 == max_num_cos
+1 == required_win_table_entries[i]
+1(0&0
+1,0*0
+1@W25
+1@Y05
+100701213655Z
+111019184142Z
+16@,6
+180703204550Z
+180823202633Z
+190726204550Z0p1
+191123202633Z0
+1http://www.microsoft.com/PKI/docs/CPS/default.htm0@
+2 != ets->num_of_cos
+2@r=A
+2`)45
+2`=,5
+2`245
+20180915045340.196Z0
+20180915082128Z
+20180916082128Z0t0:
+229879+4379540
+250701214655Z0|1
+261019185142Z0
+2A -5
+2Ah05
+2B~45
+2BH,5
+2Bx,5
+2kh|&H
+2p)p,
+3 != num_of_dif_pri
+3@/95
+3kh~hA
+3kht4A
+3khugD
+4@$,5
+4@.95
+4@u.5
+4`..5
+4`?05
+4`+05
+4`I/5
+43Bs#
+4k`ao
+4kaDp5
+4kh|IH
+4khtB
+4Pw95
+4T@m4
+5@:75
+5`M75
+566778899::;;<<==D
+5b475
+5D9|$@u
+5PX95
+5PZ85
+6@|65
+6@9G5
+65`29
+6EP}F5
+7.13.65.105
+7@h55
+7@Pu@5
+7`0=5
+7`3W5
+7`e95
+7`fR5
+7`iX5
+7`U;5
+7`UB5
+7`vB5
+71@N*5
+74A~4
+79P]B5
+7F[r 
+7H!7H
+8@,05
+8@:/5
+8]GH9
+8]hu"A
+8`;B5
+8`<?5
+8A,55
+8A_A^_^[]
+8A_A^A]A\_^[]
+8A_A^A]A\_^][
+8Bp95
+8D$`s
+8D$hs
+8D$hu
+8D$ps
+8L9!u
+8tOHi
+8Z4tkH
+9\$`t7
+9\u.H
+9`NC5
+9`QC5
+9{@vED
+9{Tu2H
+9|$Dt
+9|$pvRH
+9A(t1
+9A(t6
+9B$<5
+9D$@t
+9D$@w8H
+9D$hu
+9D$x}
+9f1`,
+9H0sH
+9H8t3A
+9jN# 
+9kPtFH
+9l$xsL
+9l$xsQ
+9l`?g
+9lP1p5
+9lPip
+9P(wDA
+9p8t3A
+9pHu8A
+9PLB5
+9T$$s
+9T$,s2H
+9T$,sc@
+9W,t8
+9whtBH
+A f9h(
+A f9X(
+A fD9`(
+A fD9x(
+A#N*M
+A;0vHH
+A;h,v8A
+A@XP,
+A]A\_^]
+A^_[]
+A^_^][
+A^A]_^]
+A^A]A\_^
+A^A]A\_^[]
+A__^][
+A_A\_
+A_A]A\_^
+A_A^]
+A_A^_
+A_A^_^]
+A_A^_^][
+A_A^A\
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[]
+A_A^A\_^][
+A_A^A]
+A_A^A]_]
+A_A^A]_^
+A_A^A]_^[]
+A_A^A]A\]
+A_A^A]A\_
+A_A^A]A\_^[
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A_A^A]A\_^][
+A`YP,
+a+@f1
+A<1O3
+a>@nB5
+a>`kB
+A4B@/
+A4B]/
+A4BP.
+a8!F@
+A8D$4tNM
+A8VDt
+A9:uj3
+A9~(u
+A9O t<A
+accepted_bytes > gen_buf->ind_bytes
+accepted_bytes > ind_bytes
+actual_completed > completed_bytes
+admin_app_priority_willing
+admin_application_priority_tx_enable
+admin_configuration_bw_percentage_0
+admin_configuration_bw_percentage_1
+admin_configuration_bw_percentage_2
+admin_configuration_bw_percentage_3
+admin_configuration_bw_percentage_4
+admin_configuration_bw_percentage_5
+admin_configuration_bw_percentage_6
+admin_configuration_bw_percentage_7
+admin_configuration_ets_pg_0
+admin_configuration_ets_pg_1
+admin_configuration_ets_pg_2
+admin_configuration_ets_pg_3
+admin_configuration_ets_pg_4
+admin_configuration_ets_pg_5
+admin_configuration_ets_pg_6
+admin_configuration_ets_pg_7
+admin_dcbx_enable
+admin_dcbx_version
+admin_default_priority
+admin_ets_configuration_tx_enable
+admin_ets_enable
+admin_ets_reco_valid
+admin_ets_recommendation_tx_enable
+admin_ets_willing
+admin_pfc_bitmap
+admin_pfc_enable
+admin_pfc_tx_enable
+admin_pfc_willing
+admin_priority_app_table_0_app_id
+admin_priority_app_table_0_priority
+admin_priority_app_table_0_traffic_type
+admin_priority_app_table_0_valid
+admin_priority_app_table_1_app_id
+admin_priority_app_table_1_priority
+admin_priority_app_table_1_traffic_type
+admin_priority_app_table_1_valid
+admin_priority_app_table_2_app_id
+admin_priority_app_table_2_priority
+admin_priority_app_table_2_traffic_type
+admin_priority_app_table_2_valid
+admin_priority_app_table_3_app_id
+admin_priority_app_table_3_priority
+admin_priority_app_table_3_traffic_type
+admin_priority_app_table_3_valid
+admin_recommendation_bw_percentage_0
+admin_recommendation_bw_percentage_1
+admin_recommendation_bw_percentage_2
+admin_recommendation_bw_percentage_3
+admin_recommendation_bw_percentage_4
+admin_recommendation_bw_percentage_5
+admin_recommendation_bw_percentage_6
+admin_recommendation_bw_percentage_7
+admin_recommendation_ets_pg_0
+admin_recommendation_ets_pg_1
+admin_recommendation_ets_pg_2
+admin_recommendation_ets_pg_3
+admin_recommendation_ets_pg_4
+admin_recommendation_ets_pg_5
+admin_recommendation_ets_pg_6
+admin_recommendation_ets_pg_7
+admin_tc_supported_tx_enable
+'Ae(5
+AEU: MCP AFTER_INVERT_1 is not 0
+AEU: MCP AFTER_INVERT_2 is not 0
+AEU: MCP AFTER_INVERT_3 is not 0
+AEU: MCP AFTER_INVERT_4 is not 0
+AEU: P0 AFTER_INVERT_1 is not 0
+AEU: P0 AFTER_INVERT_2 is not 0
+AEU: P0 AFTER_INVERT_3 is not 0
+AEU: P0 AFTER_INVERT_4 is not 0
+AEU: P1 AFTER_INVERT_1 is not 0
+AEU: P1 AFTER_INVERT_2 is not 0
+AEU: P1 AFTER_INVERT_3 is not 0
+AEU: P1 AFTER_INVERT_4 is not 0
+Ah @@
+alloc == NULL
+app_bytes_xferred < tcp_con->u.rx.compared_bytes
+arr_size < MAX_ATTN_REGS
+ARRSIZE(app->app_pri_tbl) <= traf_type_entry
+ARRSIZE(cqe->sgl_or_raw_data.sgl) < sge_num_elem
+ARRSIZE(cqe->sgl_or_raw_data.sgl) <= fw_sge_index
+ARRSIZE(ets_drv_param->cos_params) <= cos_entry
+ARRSIZE(pdev->fcoe_info.run_time.eq_chain) <= sb_idx
+ARRSIZE(pdev->iscsi_info.run_time.eq_chain) <= sb_idx
+ARRSIZE(pdev->mp_l2_param.chain_params) < cos
+ARRSIZE(pdev->mp_l2_param.chain_params) < mp_l2_chain_param->num_active_cos
+ARRSIZE(pdev->mp_l2_param.chain_params) < num_of_opr_cos
+ATAUAVH
+ATAVAWH
+aW]@,
+aZfD9
+B lP,
+B t>A
+B(6`,
+B.reloc
+b.rsrc
+B@$D5
+b@\f5
+b@rd5
+b_assert_on_error && (excpected_val != ( val & valid_bits ))
+b`t:$
+B4@8z7u
+B8t:`
+B9`58
+bandwidth_max
+bandwidth_min
+base_cpu_num
+BBPeP
+BD@~F5
+bd_chain->bd_left == bd_chain->capacity
+bd_chain->bd_size != bd_size
+bd_chain->bds_per_page != log2_align((u32_t)bd_chain->bds_per_page)
+bd_chain->capacity > MAX_EQ_SIZE_FCOE(is_chain_mode)
+bd_chain->capacity > MAX_EQ_SIZE_ISCSI(is_chain_mode)
+bdrv.c
+bdrv_dmp.c
+bdrv_ioc.c
+bdrv_pnp.c
+BFFTt
+BFFTtU
+BIFTtA
+BIFTu
+BIT_VEC64_ELEM_SZ >= lm_bd_chain_bds_per_page(bd_chain)
+block_idx == num_of_blocks
+block_idx == pdev->params.l4_num_of_blocks_per_connection
+BPeP,
+bPWf5
+BQr@0
+BRB1: BRB is not empty
+BRB1: Interrupt status is not 0
+BRB1: parity status is not 0
+brcgA
+brcgH
+brcmA
+BRcmA
+brcmA
+BRcmE
+BRcmH
+brcmH
+BRcmH
+brcmI
+BRcmt:H
+BRcmt<
+BRcmt=
+BRcmt>H
+BRcmt6
+BRcmt8A
+BRcmtE
+BRcmtHH
+buf_hdr->state != DRV_TRACE_STOPPED && buf_hdr->state != DRV_TRACE_STARTED
+bus_num >= ARRSIZE(global_driver_info.chip_global_info)
+BXc@e
+bytes_to_compare > tcp_buf->lm_tcp_buf.size
+C f9G
+c fE;
+c"L9c
+C"p/0,
+c$@]2
+C&fD;
+C(9C0t>H
+C:uKf
+C@D8]wt
+C@f;C
+C+<VB4
+C09C,t7
+CCM: CFC_INIT_CRD is not 1
+CCM: CQM_INIT_CRD is not 32
+CCM: CSDM declared message length unequal to actual
+CCM: FIC0_INIT_CRD is not 64
+CCM: FIC1_INIT_CRD is not 64
+CCM: Interrupt status is not 0
+CCM: parity status is not 0
+CCM: PBF declared message length unequal to actual
+CCM: STORM declared message length unequal to actual
+CCM: TSEM declared message length unequal to actual
+CCM: USEM declared message length unequal to actual
+CCM: XSEM declared message length unequal to actual
+CCM: XX protection CAM is not empty
+CCM: XX_FREE differs from expected 24
+CDfA+
+CDU: ERROR_DATA is not 0
+CDU: Interrupt status is not 0
+CDU: parity status is not 0
+CFC: AC is neither 0 nor 2 on connType 0 (ETH)
+CFC: AC is not 0 on connType 1 (TOE)
+CFC: AC is not 0 on connType 3 (iSCSI)
+CFC: AC is not 0 on connType 4 (FCoE)
+CFC: error vector is not 0
+CFC: Interrupt status is not 0
+CFC: number of alloc LCIDs is not 0
+CFC: number of arriving LCIDs is not 0
+CFC: number of leaving LCIDs is not 0
+CFC: parity status is not 0
+cfc_last_lcid
+chain_cnt >= pdev->interrupt_info.dynamic_affinity_rss_chain_cnt
+CHf9h2u<
+CHIP_IS_E1(pdev)
+CHIP_IS_E1x(pdev)
+CHIP_IS_E1x_PARAM(chip_num)
+CHK_NULL(in_buf)
+CHK_NULL(pdev)
+CHK_NULL(pdev->clients[do_type].omgr.isle_con)
+CHK_NULL(pdev->dcbx_info.pfc_fw_cfg_virt)
+CHK_NULL(work_item)
+Chttp://www.microsoft.com/pkiops/crl/MicWinProPCA2011_2011-10-19.crl0a
+cid < (pdev->context_info->proto_start[type])
+cid == FWD_CID(pdev)
+cid > (pdev->context_info->proto_end[MAX_PROTO - 1])
+cid > (pdev->context_info->proto_end[type])
+cid > pdev->params.max_func_connections
+cid >= MAX_RX_CHAIN(pdev)
+cid_allocation_mode
+ClALW 
+Class\
+classif_dbg[i].pri != pdev->params.dcbx_port_params.app.traffic_type_priority[i]
+cli_comp_ctx == NULL
+client_blk && client_blk->do_type != do_type
+client_id >= ARRSIZE(pdev->client_info)
+client_id >= ARRSIZE(pdev->params.l2_cli_con_params)
+client_info_idx >= ARRSIZE(pdev->client_info)
+CLIENT_REFCNT(pdev, do_type)
+CLIENT_STATE(pdev, client_blk->do_type) == CLIENT_STATE_NORMAL
+cmng_activate_safc
+cmng_enable
+cmng_eth_rate
+cmng_eth_weight
+cmng_fair_port0_rate
+cmng_fairness_enable
+cmng_iscsi_con_number
+cmng_iscsi_rate
+cmng_iscsi_weight
+cmng_rate_shaping_enable
+cmng_rdma_con_number
+cmng_rdma_rate
+cmng_rdma_weight
+cmng_safc_rate_thresh
+cmng_toe_con_number
+cmng_toe_rate
+cmng_toe_weight
+cnt == 0
+cnt == LM_TIMERS_SCAN_POLL
+cnt > o->max_cmd_len
+code_path
+CompanyName
+completed_bytes > tcp_buf->more_to_comp
+con_status != LM_STATUS_SUCCESS && con_status != LM_STATUS_CONNECTION_CLOSED
+con->dpc_info.dpc_completed_tail == NULL
+con->dpc_info.snapshot_flags != 0
+con->flags & TCP_DB_BLOCKED
+con->flags & TCP_REMOTE_FIN_RECEIVED
+con->rq_nbytes < con->dpc_info.dpc_actual_bytes_completed
+con->rq_nbytes < tcp_buf->size
+con->type != TCP_CON_TYPE_RX
+conn > omgr->max_num_conn
+context == NULL
+context.c
+context->array[cid].ip_type
+context->completion_word != context->completion_value
+context->mode != operation->mode
+context->proto_end[MAX_PROTO - 1] > pdev->params.max_func_connections -1
+cos_max_num < num_of_tc_used
+Cp1r,
+cPfD9X2u9
+cpu_num >= MAX_DYN_AFF_PROC_SUP
+cpu_num >= win_util_KeQueryActiveProcessorCountEx(ALL_PROCESSOR_GROUPS)
+CPVE5
+cq_old_idx != cq_new_idx
+cqe->len
+cqe->len & 0xc0000000
+crash_grc_dump_size
+create_pdo_flag
+CSDM: interrupt 0 is active
+CSDM: parity status is not 0
+CSDM: Parser serial FIFO is not empty
+CSDM: Parser SYNC serial FIFO is not empty
+CSDM: pxp_ctrl rd_data fifo is not empty in sdm_dma_rsp block
+CSEM: External store FIFO is not empty
+CSEM: FOC0 credit less than initial credit
+CSEM: FOC1 credit less than initial credit
+CSEM: FOC2 credit less than initial credit
+CSEM: FOC3 credit less than initial credit
+CSEM: interrupt 0 is active
+CSEM: interrupt 1 is active
+CSEM: parity status 0 is not 0
+CSEM: parity status 1 is not 0
+CSEM: There are sleeping threads
+CSEM_0
+CSEM_1
+CSTORM_IGU_MODE_SIZE != 1
+CSTORM_TOE_CQ_CONS_PTR_HI_SIZE != 4
+CSTORM_TOE_CQ_CONS_PTR_LO_SIZE != 4
+CSTORM_TOE_CQ_CONS_SIZE != 2
+CSTORM_TOE_CQ_NEXT_PAGE_BASE_ADDR_HI_SIZE != 4
+CSTORM_TOE_CQ_NEXT_PAGE_BASE_ADDR_LO_SIZE != 4
+CSTORM_TOE_CQ_NXT_PAGE_ADDR_VALID_SIZE != 1
+CSTORM_TOE_CQ_PROD_SIZE != 2
+current_isle->dedicated_cid != 0
+d!@$!5
+D!d$PH
+d"@&r,
+d#O6 
+D$ A9N
+D$ E3
+d$ E3
+D$ E3
+D$ fA
+D$ fD
+D$ fD9g"t
+D$ fE
+D$ H#
+D$ tJ
+d$ UAUAVH
+D$"f;F
+D$"L+
+D$$fD
+D$( L
+D$(@8n
+D$(@H
+D$(E3
+D$(fD
+D$(L9
+D$;pA
+D$@A;
+D$@A;E
+D$@E3
+D$@fD
+D$\Hc
+D$`A;
+D$`E3
+D$`fA
+D$`L+
+D$09L$@t
+D$0E;
+D$0E3
+d$0E3
+D$0E3
+d$0E3
+D$0E3
+d$0f9
+D$0fD
+d$0fF
+D$0H!|$(
+D$0Hk
+D$48A!u`
+D$4f;
+D$4u5
+D$7HcA
+D$7t:
+D$7t6
+D$7t8A
+D$8E2
+D$8E3
+D$8fD
+D$DE3
+D$dH9
+D$h t
+D$H@8r
+d$hE2
+D$HE3
+D$hE3
+D$HE3
+D$Ot8A
+D$P t
+D$p;s
+D$pA;
+D$PD"
+D$PD#
+D$PE3
+d$PE3
+D$PE3
+D$pE3
+D$pfA
+D$PH+
+D$pHi
+D$VfD
+D$X t
+D$X!D$8E3
+D$xD8`
+D$XE3
+D$Xf#
+D$xHi
+D.!Hi
+D:0D:GBr
+D:L$`t8
+D:L$PvCH
+D:l$xr
+D:P(A;;GA;;;SY)(A;;GA;;;BA)
+D;?s7
+D;d$hr
+D;p,v8A
+d_list_entry_cnt(&gen_info->dpc_peninsula_list) && ((lm_tcp_gen_buf_t *)(d_list_peek_tail(&gen_info->dpc_peninsula_list)))->placed_bytes == 0
+d_list_is_empty(&return_to_peninsula_list)
+d_list_is_empty(&rx_con->u.rx.gen_info.dpc_peninsula_list)
+d`@e4
+D+t$DH
+D<>@E
+D<PO:
+D2 Li
+d3O6 
+D6 E3
+D6 Hi
+d7 fA
+D8&u8A
+D8.u0H
+D8:u:A
+D8{ u<
+D8{QfE
+D8{Qu
+D8|$xt[
+D8~Du8A
+D82u@A
+D8bGt]
+D8c"t
+D8eRu
+D8esu
+D8eSu
+D8eTu
+D8etu
+D8euu
+D8l$xt"
+D8Mwt
+D8s(t3A
+D8X$t
+D9|$ 
+D9|$Dt
+D9|$Ht
+D9~(~
+D9>@u<
+D97u;D9w
+D9c(tJA
+D9c(u
+D9cPt;
+D9D$hr
+D9D$hs
+D9D$PA
+D9ePt
+D9k(u
+D9k`u
+D9l$0t
+D9npt
+D9ohuO
+D9oPt6
+D9opu
+D9yPt8A
+data_bits != 32
+data_len == 0
+db_data->flags & (TOE_TX_DB_DATA_FIN << TOE_TX_DB_DATA_FIN_SHIFT)
+DBG: parity status is not 0
+DBG_BREAK_ON(ABORTIVE_DISCONNECT_DURING_IND)
+DBG_BREAK_ON(INVALID_MESSAGE_ID)
+DBG_BREAK_ON(MEMORY_ALLOCATION_FAILURE)
+DBG_BREAK_ON(SRIOV_TEST)
+DbgBreak
+DbgPrint
+dbus_buff_size
+dbus_config
+DBUS_STATE_FREE != global_driver_info.bugchk_info.crash_dump_buf[empty_entry].dbus_param.state
+dcb_config != dcb_config_sf
+dcb_enable
+dcb_indicate_event
+DCBX_COS_MAX_NUM_E3B0 < cos_data->num_of_cos
+DCBX_INVALID_COS_BW != ets->cos_params[tc_assign].bw_tbl
+DCBX_INVALID_COS_BW == ets->cos_params[tc_assign].bw_tbl
+DCBX_MAX_NUM_PG_BW_ENTRIES != bw_tbl_size
+DCBX_MAX_NUM_PRI_PG_ENTRIES != pri_pg_size
+DCBX_STRICT_PRI_PG != pg_help_data->pg_entry_data[0].pg
+DCBX_STRICT_PRI_PG != pg_help_data->pg_entry_data[i].pg
+DCBX_UPDATE_TASK_STATE_FREE != pdev->dcbx_info.dcbx_update_lpme_task_state
+DD fD;
+debug_cap_flags
+debug_level
+debug_sriov
+debug_sriov_vfs
+debug_vf_flr
+def_params->l4cli_ack_frequency > 0xff
+def_params->l4cli_delayed_ack_ticks > 0xff
+def_params->l4cli_doubt_reachability_retx > 0xff
+def_params->l4cli_max_retx > 0xff
+def_params->l4cli_starting_ip_id > 0xffff
+default_q_group == NULL
+dest_offset > MAX_GRC_OFFSET
+dev_to_delete != fdo_ext->l5wsd_device_to_remove
+df9D$Pup3
+dGa[Ms
+DIAG Client For QLogic 10 Gigabit Ethernet Adapter
+disable_dynamic_msix_affinity
+disable_ooo_optimization
+disable_pcie_nfr
+dJ:uM
+DL fA
+DMAE: command 0 go is not 0
+DMAE: command 1 go is not 0
+DMAE: command 10 go is not 0
+DMAE: command 11 go is not 0
+DMAE: command 12 go is not 0
+DMAE: command 13 go is not 0
+DMAE: command 14 go is not 0
+DMAE: command 15 go is not 0
+DMAE: command 2 go is not 0
+DMAE: command 3 go is not 0
+DMAE: command 4 go is not 0
+DMAE: command 5 go is not 0
+DMAE: command 6 go is not 0
+DMAE: command 7 go is not 0
+DMAE: command 8 go is not 0
+DMAE: command 9 go is not 0
+DMAE: parity status is not 0
+DO(I;
+do_type >= MAX_DO_TYPE_CNT
+DORQ: Credit to UCM is not full
+DORQ: Credit to XCM is not full
+DORQ: DORQ queue is full
+DORQ: DORQ queue is not empty
+DORQ: Interrupt status is not 0
+DORQ: parity status is not 0
+dpc_constant_btb_mcs_th
+dpc_dummy_min_duration_mcs
+dpc_importance
+dpc_inserted == FALSE
+DPC_INVALID_CPU != pdev->rss.rss_idx_to_dpc_affinty_required[base_rss_idx]
+dpc_loop_cnt
+dpc_min_gap_btb_mcs_th
+dpc_wd_trigger
+DRHA4
+Driver
+driver.
+DRV_DUMP_INVALID_CONFIG <= pdev->params.dbus_config
+drv_rss_id != (pdev)->mp_l2_param.chain_params[drv_rss_id].cos_mapping[0]
+drv_trace.c
+DtA#4
+dual_media_speed_duplex
+DUAL_MEDIA_SPEED_DUPLEX_NONE == dual_media_setting
+DURING_RECOVERY_RELOAD (pdev) || DURING_RECOVERY_WAIT(pdev)
+Dwww6
+E ;E$t7
+E%fA#
+e:\inbox\sources\evbd\577xx\drivers\common\ecore\ecore_common.h
+E:\Inbox\Sources\evbd\577xx\drivers\common\ecore\ecore_init.h
+E:\Inbox\Sources\evbd\577xx\drivers\common\ecore\ecore_init_ops.h
+E:\Inbox\Sources\evbd\577xx\drivers\common\include\mm.h
+e:\inbox\sources\evbd\577xx\drivers\common\lm\device\bd_chain.h
+E:\Inbox\Sources\evbd\577xx\drivers\common\lm\device\bd_chain.h
+E:\Inbox\Sources\evbd\577xx\drivers\common\lm\include\lm5710.h
+e:\inbox\sources\evbd\577xx\drivers\windows\b10bdrv\um.h
+E;{@t
+e@!g5
+E@f;E
+e@fD9o 
+E@kH5
+E`?F5
+E>@cC5
+E0fA;
+E8]Dt
+E8`#t@A
+E8|$4
+E8|$4tQH
+E8t$ I
+E9h,E
+EBDRV\
+ecore_sp_verbs.c
+EeeCtrlMode
+EHfD;
+EHfD+
+EHfD9mPv
+EHfE9f
+Ehttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z
+Ehttp://crl.microsoft.com/pki/crl/products/MicTimStaPCA_2010-07-01.crl0Z
+Ehttp://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt0
+ELINK_STATUS_OK != elink_status
+ELINK_STATUS_OK != rc
+EM@`\5
+EM@+O
+enable_error_recovery
+enable_rss
+encaps_info->new_encap_offload_state != encaps_info->current_encap_offload_state
+encaps_info->update_cookie
+END_SIG(curr_gen_buf->buf_virt, LM_TCP_GEN_BUF_SIZE(pdev)) != L4GEN_BUFFER_SIG_END
+END_SIG(gen_buf->buf_virt, LM_TCP_GEN_BUF_SIZE(pdev)) != L4GEN_BUFFER_SIG_END
+entry == NULL
+entry_data->cos_bw > DCBX_MAX_COS_BW
+entry->refcnt != 0
+EPf9C 
+EtherStatsPktsTxOver1522Octets
+ets->cos_params[0].s_pri == ets->cos_params[1].s_pri
+evbda.pdb
+evbda.sys
+evbda.sys"
+eVBD-DRV: DEBUG BREAK! Condition failed: if(!(gen_buf->flags & GEN_FLAG_SWS_UPDATE))
+eVBD-DRV: DEBUG BREAK! Condition failed: if(!gen_block)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(!gen_buf)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(!head_of_indication)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(!l4buf)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(!LM_SHMEM2_HAS(pdev, drv_info_control))
+eVBD-DRV: DEBUG BREAK! Condition failed: if(!mem_virt)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(!pkt)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(!umpkt)
+eVBD-DRV: DEBUG BREAK! Condition failed: if("New Chip?? initialize cam params!\n")
+eVBD-DRV: DEBUG BREAK! Condition failed: if((rx_con->db_more_bds + frag_list->cnt) > (u32_t)(rx_con->bd_chain.capacity + rx_con->bd_chain.page_cnt))
+eVBD-DRV: DEBUG BREAK! Condition failed: if(++wait_cnt > wait_cnt_limit)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(1)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(cqe->len & 0xc0000000)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(d_list_is_empty(&rx_con->u.rx.gen_info.dpc_peninsula_list))
+eVBD-DRV: DEBUG BREAK! Condition failed: if(DURING_RECOVERY_RELOAD (pdev) || DURING_RECOVERY_WAIT(pdev))
+eVBD-DRV: DEBUG BREAK! Condition failed: if(GET_DRV_STATE(pdev) != DRIVER_STATE_RUNNING)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(last_gen_buf == NULL)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(last_gen_buf->placed_bytes != 0)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(nbytes & 0xc0000000)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(nbytes > LM_TCP_GEN_BUF_SIZE(pdev))
+eVBD-DRV: DEBUG BREAK! Condition failed: if(ramrod_type & COMMON_RAMROD_ETH_RX_CQE_ERROR)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(rd_val != 0)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(rd_val_32 != 0)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(sp_cqes->idx >= MAX_NUM_SPE)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(tcp_cached->initial_rcv_wnd > MAX_INITIAL_RCV_WND)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(tcp->tcp_cached.initial_rcv_wnd > MAX_INITIAL_RCV_WND)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(tcp->tcp_const.hash_value >= (u8_t)USTORM_INDIRECTION_TABLE_SIZE)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(TRUE)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(val != 1)
+eVBD-DRV: DEBUG BREAK! Condition failed: if(val >= MAX_STATS_TIMER_WAKEUP_NO_COMPLETION)
+EwH!]gL
+ExAcquireFastMutexUnsafe
+ExAllocatePoolWithTag
+ExDeleteNPagedLookasideList
+ExFreePoolWithTag
+ExGetCurrentProcessorCounts
+ExInitializeNPagedLookasideList
+ExpInterlockedPopEntrySList
+ExpInterlockedPushEntrySList
+ExQueryDepthSList
+ExReleaseFastMutexUnsafe
+F t8A
+F!|)|
+f#D$pD
+f#E0f;
+f#KBf;KBu?@8kDt
+f#KBf;KBu@D8{Dt
+f#KBf;KBu>@8sDt
+f#KBf;KBuB@8sDt
+f#QBM
+f#UBL
+F&fA+
+F(D9pPtBH
+F(D9pPtCH
+F)fD;
+f;E@r
+f;FPr
+f;QBu>3
+f;UBu@3
+F@fA;F
+f+n2L
+F<H9D$(t8A
+f0@n55
+F09F,t>
+F2@53
+f3D$PH
+F89F$v8A
+f9\$p
+f9~0u
+f9A*rG
+f9C*u.H
+f9C*uPH
+f9C*ve
+f9C0u
+f9C0u,I
+f9D$4u*@
+f9D$xu
+f9E2uVH
+f9F*u>
+f9F2u3A
+f9G$t6
+f9H2u3A
+f9K*t
+f9L$P
+f9l$PuI
+f9l$xt
+f9O(t
+f9O*t
+f9O*t8
+f9O*u
+f9o*u?
+f9q(t
+f9q*u
+f9w0u1
+fA#>f;
+fA#VBfA;VBuJ3
+fA)v2
+fA+n2
+fA9^0u]
+fA98u
+fA9G2u8A
+fA9T$
+fA9v@
+FALSE != IS_DCB_ENABLED(pdev)
+FALSE != pdev->clients[do_type].omgr.b_error
+FALSE != pdev->dcbx_info.is_dcbx_neg_received
+FALSE != tpa_chain->start_coales_bd[queue_index].is_entry_used
+FALSE == ((GET_FLAGS_WITH_OFFSET(parse_flags,PARSING_FLAGS_OVER_ETHERNET_PROTOCOL, PARSING_FLAGS_OVER_ETHERNET_PROTOCOL_SHIFT) == PRS_FLAG_OVERETH_IPV4) || (GET_FLAGS_WITH_OFFSET(parse_flags,PARSING_FLAGS_OVER_ETHERNET_PROTOCOL, PARSING_FLAGS_OVER_ETHERNET_PROTOCOL_SHIFT) == PRS_FLAG_OVERETH_IPV6))
+FALSE == (qg_is_default(q_group_iter)|| qg_is_rss(q_group_iter))
+FALSE == b_can_update_ie
+FALSE == CHIP_IS_E2E3A0(pdev)
+FALSE == CHIP_IS_E3B0(pdev)
+FALSE == is_ets_admin_updated
+FALSE == LM_DCBX_IS_PFC_PRI_ONLY_NON_PAUSE(pdev,pri_join_mask)
+FALSE == LM_STATS_IS_HW_ACTIVE( pdev )
+FALSE == MM_DCB_MP_L2_IS_ENABLE(pdev)
+FALSE == omgr->b_is_valid
+FALSE == pdev->clients[do_type].omgr.b_is_valid
+FALSE == pdev->params.dcbx_port_params.dcbx_enabled
+FALSE == pdo_ext_old->b_start_reject
+FALSE == pdo_ext->b_start_reject
+FALSE == POWER_OF_2(LM_DCBX_PFC_PRI_GET_NON_PAUSE(pdev,pri_join_mask))
+FALSE == POWER_OF_2(pdev->lmdev.params.override_rss_chain_cnt)
+FALSE == POWER_OF_2(ret)
+FALSE == win_util_is_win7_or_later()
+FCoE Client For QLogic 10 Gigabit Ethernet Adapter
+fD#T$@fD
+fD;|$Ht:H
+fD;b@utL
+fD;tT uwA
+fD9;u
+fD9?u
+fD9~0t8A
+fD90u
+fD93t
+fD9a2
+fD9c t3A
+fD9c0
+fD9g@t8A
+fD9g0u
+fD9k*t
+fD9l$`u
+fD9L$0u
+fD9m2
+fD9mH
+fD9o@t3A
+fD9Q*u
+fD9'u
+fD9v8u
+fD9x(
+fdo_ext->loc_string[1] == NULL
+fdo_ext->pdo_ext_list[DO_TYPE_IS_L5WSD_PDO] == NULL
+FDO_REFCNT(fdo_ext)
+FDO_REFCNT(fdo_ext) != 1
+FDOxH
+FDOxt:H
+FDOxt;
+FDOxt<
+FDOxt>H
+FDOxt1
+FDOxt6
+fdr_H
+fdr_I
+fE90u
+fE9f2tQA
+fE9'u
+fE9'u%A
+FfD;}
+ffffff
+fffffff
+FileDescription
+FileVersion
+filter_type != Q_FILTER_MC
+flow_control_reporting_mode
+fM@e_
+force_auto_sel_dcbx_mode
+force_vf_flr
+ForceSupportForObsoletedDevice
+FQr@1
+frag_list && (frag_list->size != copied_bytes)
+frag_list->cnt == 0
+frag_list->cnt > 0xffff
+frag_list->cnt > TCP_MAX_SGL_SIZE
+frag_list->size != tcp_buf->client_l4buf.buffer_size
+frag_list->size != utcp_buf->client_l4buf.buffer_size
+frag->size > 0xffff || frag->size == 0
+frag->size > TCP_MAX_SGE_SIZE || frag->size == 0
+free == NULL
+FriendlyName
+ftq_mask != val
+func >= ARRSIZE(lm_hw_lock_table)
+FW Compile:1
+FW Ver:7.13.1.0
+fw_flow_ctrl
+fw_valid_mask
+fxq:$3
+fxs:$
+fxv:$
+FYRH!
+G 8P(
+G 9hTu3A
+G 9pHu
+G D8p(
+G D8p(A
+G D9p
+G&f+E
+G&fD;
+G\t?A
+g_lm_loader.lock_owner != FUNC_ID(pdev)+1
+g_lm_loader.path_arr[PATH_ID(pdev)].func_arr[FUNC_ID(pdev)].b_loaded == b_new_state
+g`*c5
+g`3a5
+G`f9p2u8A
+g`Mb5
+g`VJ5
+g0@o55
+G0@p55
+G0A,5
+G8D;p8t7A
+G8D;p8t8A
+G8D9`8
+GdD9D$hs
+gen_block_virt == NULL && DBG_BREAK_ON(MEMORY_ALLOCATION_FAILURE)
+gen_block->mem_size < GEN_BLOCK_SIZE(gen_block->gen_buf_cnt, gen_buf_size)
+gen_buf != NULL
+gen_buf == NULL
+gen_buf_size < pdev->lmdev.params.l2_cli_con_params[LM_SW_LEADING_RSS_CID(pdev)].mtu
+gen_buf_size > 0xffff
+gen_buf->refcnt != 0
+gen_buf->tcp->rx_con->flags & TCP_INDICATE_REJECTED
+gen_info->peninsula_blocked == TRUE
+gen_info->peninsula_nbytes < ind_nbytes
+gen_info->wait_for_isle_left
+gen_pool->num_allocated != d_list_entry_cnt(&gen_pool->pending_gen_list)
+gen_pool->num_allocated > pdev->params.l4_max_gen_buf_cnt
+GET_DRV_STATE(pdev) != DRIVER_STATE_RUNNING
+GET_DRV_STATE(pdev) != DRIVER_STATE_SETUP
+GET_DRV_STATE(pdev) != DRIVER_STATE_SETUP && GET_DRV_STATE(pdev) != DRIVER_STATE_SHUTDOWN && GET_DRV_STATE(pdev) != DRIVER_STATE_INITIALIZED
+GET_DRV_STATE(pdev) != DRIVER_STATE_SETUP && GET_DRV_STATE(pdev) != DRIVER_STATE_UNLOADED && GET_DRV_STATE(pdev) != DRIVER_STATE_WOL && GET_DRV_STATE(pdev) != DRIVER_STATE_INITIALIZED
+GET_DRV_STATE(pdev) == DRIVER_STATE_RUNNING
+GET_FLAGS(con->flags, TCP_POST_DELAYED) == 0
+GET_FLAGS(cqe->status_flags, ETH_FAST_PATH_RX_CQE_IP_XSUM_NO_VALIDATION_FLG)
+GET_FLAGS(cqe->status_flags, ETH_FAST_PATH_RX_CQE_L4_XSUM_NO_VALIDATION_FLG)
+GET_FLAGS(cqe->type_error_flags, ETH_FAST_PATH_RX_CQE_IP_BAD_XSUM_FLG)
+GET_FLAGS(cqe->type_error_flags, ETH_FAST_PATH_RX_CQE_L4_BAD_XSUM_FLG)
+GET_FLAGS(flags, MODE_E3)&& !(GET_FLAGS(flags,MODE_E3_A0|MODE_E3_B0) )
+GET_FLAGS(flags, MODE_MF)&& !(GET_FLAGS(flags,MODE_MF_SD|MODE_MF_SI|MODE_MF_AFEX) )
+GET_FLAGS(parse_flags,PARSING_FLAGS_FRAGMENTATION_STATUS)
+GET_FLAGS(q_group->q_info.flags, Q_GROUP_FLAG_AFFINITIZE_Q_ZERO_TO_CPU)
+GET_FLAGS(rx_con->flags, TCP_RX_COMP_BLOCKED)
+GET_PNP_STATE(pdo_ext) != PNP_STATE_STOPPED
+gffff
+GGD8GBv+A
+GHfA;
+GO@7Z
+GO@v]5
+GO`9\
+GOP.Y
+GOP1Y5
+GOPb\5
+GOQnR5
+grc_timeout_max_ignore
+grq->bd_chain.capacity < (GRQ_XON_TH + USTORM_TOE_GRQ_CACHE_NUM_BDS)
+grq->low_bds_threshold < USTORM_TOE_GRQ_CACHE_NUM_BDS
+gxC:$3
+gxF:$3
+GXfD9h2u1
+GXrV(cL
+h +$(
+H D9q
+h VWATAVAWH
+H WATAUAVAWH
+H!o8E
+H!t$ 
+H.data
+H.gfids
+h.rdata
+H@'F5
+H@fD9g"t
+H@ID5
+H`R@5
+h`r^5
+H`Sg5
+h`sg5
+H0fA;
+H9\$0u/A
+H9]Xu
+H9|$`
+H9P t
+H9Q t
+H9Sxu
+H9t$`u
+H9ZXH
+hA_A^_^[]
+HA_A^_^][
+HA_A^A]A\_^[]
+hA_A^A]A\_^][
+HA_A^A]A\_^][
+hA_A^A]A\_^][
+HA_A^A]A\_^][
+HAL.dll
+handled_events != niv_event
+HAS_MSTAT(pdev)
+HAsA4
+havk^a"
+HC: parity status is not 0
+Hcl$xD
+Hcl$xH
+HP<B5
+HP4H5
+HPAGE
+hw_debug.c
+I y0D
+I yPD
+I!8I!x
+I@aF5
+I@fA;H
+I@iP5
+I=`X;5
+i>PWG5
+I0G1-0+
+i2c_%02X%02X%02X
+i2c_BBPPOO
+i2c_interval_sec
+I2C_SECTION_A2 != i2c_section
+I9n I
+IB`E5
+IB-F5
+iBFTt
+iBFTti
+id`@e
+idx != (pdev)->mp_l2_param.chain_params[idx].cos_mapping[0]
+idx != 0
+idx >= ARRSIZE(pdev->vars.status_blocks_arr)
+idx_port >= PORT_MAX
+ieee_ets->num_traffic_classes < next_free_cos_entry
+iFBTH
+IGU attention message write done pending is not empty
+IGU MSI/MSIX message write done pending is not empty
+IGU: block is not in idle. INT_HANDLE_FSM should be zero in idle state
+IGU: block is not in idle. SB_ARB_FSM should be zero in idle state
+IGU: block is not in idle. SB_ATTN_FSMshould be zeroor two in idle state
+IGU: block is not in idle. SB_CTRL_FSM should be zero in idle state
+IGU: block is not in idle. There are pending write done
+IGU: parity status is not 0
+IGU: some unauthorized commands arrived to the IGU. Use igu_dump_fifo utility for more details.
+in_buf != NULL
+in_buf_len != 0
+index >= MSIX_MAX_TABLE_SIZE_SUP
+indirection_table[i] >= win_util_KeQueryActiveProcessorCountEx(ALL_PROCESSOR_GROUPS)
+int_coalesing_mode
+int_per_sec_rx
+int_per_sec_rx_2
+int_per_sec_rx_3
+int_per_sec_tx
+int_per_sec_tx_2
+int_per_sec_tx_3
+int3_and_smi_on_err
+InternalName
+IoAllocateErrorLogEntry
+IoAllocateIrp
+IoAllocateWorkItem
+IoBuildDeviceIoControlRequest
+ioc_buf_size < sizeof(KEY_VALUE_FULL_INFORMATION)
+ioc_buf_size < sizeof(l4_internal_ioc_iscsi_info_t)
+ioc_buf_size < sizeof(l5_ioc_fcoe_info_t)
+IoConnectInterrupt
+IoConnectInterruptEx
+IoDisconnectInterrupt
+IoDisconnectInterruptEx
+IofCallDriver
+IoFreeIrp
+IoFreeMdl
+IoFreeWorkItem
+IoGetDeviceProperty
+IoGetDevicePropertyData
+IoGetDmaAdapter
+IoInvalidateDeviceState
+IoRaiseInformationalHardError
+IoSetDevicePropertyData
+IoSetThreadHardErrorMode
+IovEnableOverride
+IoWriteErrorLogEntry
+IPCAH
+IPED5
+is properly connected.
+is_clear || (buf_len != sizeof(lm_rx_mask_t))
+is_ndis_mp_en
+IS_VFDEV(&pdev->lmdev)
+IS_VFDEV((pdev))
+IS_VFDEV(cb)
+IS_VFDEV(pdev)
+iscsi
+iSCSI Client For QLogic 10 Gigabit Ethernet Adapter
+iscsi->hdr.status != STATE_STATUS_INIT_CONTEXT
+iscsi->hdr.status != STATE_STATUS_NORMAL
+iscsi->hdr.status != STATE_STATUS_UPLOAD_DONE && iscsi->hdr.status != STATE_STATUS_INIT_OFFLOAD_ERR
+iscsi->hdr.status >= STATE_STATUS_OFFLOAD_PENDING && iscsi->hdr.status < STATE_STATUS_UPLOAD_DONE
+iSHp6
+isle_nbytes > gen_info->isle_nbytes
+isles_cnt == T_TCP_MAX_ISLES_PER_CONNECTION_TOE
+iV1`,
+J#`?#
+J#`}#
+J%wpv
+J` A@
+J`8c5
+j`Jp5
+J`jT5
+j`pp5
+j`Ze5
+j0@h65
+J7`YW
+JP9O5
+jPNo5
+k VWATAVAWH
+k VWAUAVAWH
+k VWAVH
+k VWAWH
+K"@F"5
+k#`-!5
+k(D9c
+K(fA+
+K/m3b,
+k:`d>
+k@ p5
+K@/H5
+K@|K5
+k@Do5
+K@hL5
+k\f+K\L
+k\fD9
+K`Cg5
+k`SZ5
+K>PFG5
+K0uBE
+kBIf5
+KeAcquireInStackQueuedSpinLock
+KeAcquireInStackQueuedSpinLockAtDpcLevel
+KeAcquireInStackQueuedSpinLockForDpc
+KeAcquireSpinLockAtDpcLevel
+KeAcquireSpinLockRaiseToDpc
+KeCancelTimer
+KeDelayExecutionThread
+KeDeregisterBugCheckReasonCallback
+KeEnterCriticalRegion
+keep_vlan_tag
+KeFlushQueuedDpcs
+KeGetCurrentProcessorNumber
+KeGetCurrentProcessorNumberEx
+KeGetProcessorIndexFromNumber
+KeGetProcessorNumberFromIndex
+KeInitializeDpc
+KeInitializeEvent
+KeInitializeSpinLock
+KeInitializeTimer
+KeInsertQueueDpc
+KeLeaveCriticalRegion
+KeLowerIrql
+KeNumberProcessors
+KeQueryActiveProcessorCount
+KeQueryActiveProcessorCountEx
+KeQueryDpcWatchdogInformation
+KeQueryPerformanceCounter
+KeRegisterBugCheckReasonCallback
+KeReleaseInStackQueuedSpinLock
+KeReleaseInStackQueuedSpinLockForDpc
+KeReleaseInStackQueuedSpinLockFromDpcLevel
+KeReleaseSpinLock
+KeReleaseSpinLockFromDpcLevel
+KeResetEvent
+KeSetEvent
+KeSetImportanceDpc
+KeSetPriorityThread
+KeSetTargetProcessorDpc
+KeSetTargetProcessorDpcEx
+KeSetTimer
+KeStallExecutionProcessor
+KeWaitForSingleObject
+KfRaiseIrql
+kI@Z[5
+kI`-g
+kIIxg5
+kl@4p5
+KmdfLibrary
+L Ai4
+L!s0A
+l"@F"5
+L$ @2
+l$ @8n
+L$ A;
+l$ E3
+L$ fD
+L$ fD+
+L$ SH
+L$ SUVWH
+L$ SVWH
+L$ USVWATAUAVAWH
+L$ UVWATAUAVAWH
+l$ VH
+l$ VWATAVAWH
+l$ VWAVH
+l$ VWAWH
+l$ WATAUAVAWH
+l$ WH
+L$ WH
+L$!A;
+L$(A;
+L$(E3
+L$(fD
+L$(H3
+L$,A;
+L$?pH
+L$@;L$`
+L$@D;
+L$@E3
+L$@H3
+L$@H9
+L$@t3
+l$\D9
+L$`9:u
+L$`E3
+l$`fA
+L$`H3
+l$`t'fA
+L$<@A
+L$0D;
+l$0D8
+L$0E3
+L$0f;
+l$0fA+n2I
+L$0H3
+l$0Li
+l$8D2
+L$8H3
+l$8Hi
+l$8L#
+L$h@8t$x
+L$HE+
+L$HE3
+L$HE8
+L$HH3
+L$OpL
+L$p@H
+L$PE3
+L$pE3
+L$PE3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$ufD
+L$WHi
+l$XD;
+L$xE3
+l$xfE
+L$XH3
+L$xH3
+L$XH3
+L@#_5
+L@%_5
+L@)I5
+L@@94
+l@4o5
+L0A `
+l2_chip_stats_ver_num
+l2_dynamic_hc_min_bytes_per_packet
+l2_int_per_sec_rx
+l2_int_per_sec_tx
+L2_PKT_FLAGS_IS_RSC_BUF != (GET_FLAGS(l2pkt->flags,L2_PKT_FLAGS_IS_RSC_BUF))
+l2_rx_desc_cnt0
+l2_rx_desc_cnt1
+l2_rx_desc_cnt2
+l2_rx_desc_cnt3
+l2_rx_desc_cnt4
+l2_rx_desc_cnt5
+l2_rx_enable_dynamic_hc
+l2_rx_hc_timeout0
+l2_rx_hc_timeout1
+l2_rx_hc_timeout2
+l2_rx_hc_timeout3
+l2_tx_coal_buf_cnt0
+l2_tx_coal_buf_cnt1
+l2_tx_coal_buf_cnt2
+l2_tx_coal_buf_cnt3
+l2_tx_coal_buf_cnt4
+L2NDV
+l2pkt->sgl->Elements[0].Length < expected_size_sgl_bd
+l2pkt->sgl->Elements[1].Length < expected_size_sgl_sge
+L2rxA
+l3CM6
+l4_data_integrity
+l4_disable_cam_filter
+l4_dominance_threshold
+l4_enable_rss
+l4_free_cid_delay_time
+l4_fw_flow_ctrl
+l4_gen_buf_size
+l4_gen_buf_threshold
+l4_grq_filling_threshold
+l4_grq_page_cnt
+l4_hc_scaling_factor
+l4_hc_ustorm_thresh
+l4_history_cqe_cnt
+l4_ignore_grq_push_enabled
+l4_initial_common_gen_buf_cnt
+l4_int_per_sec_rx
+l4_int_per_sec_tx
+l4_isles_pool_size
+l4_limit_isles
+l4_max_block_size
+l4_max_dominance_value
+l4_max_gen_buf_cnt
+l4_max_gen_bufs_in_archipelago
+l4_max_gen_bufs_in_isle
+l4_max_rcv_wnd_size
+l4_num_of_ports
+l4_pending_sp_req_complete
+l4_preallocate_blk_size
+l4_preallocate_cnt
+l4_preallocate_retry_cnt
+l4_rcq_page_cnt
+l4_rx_chain_page_cnt
+l4_rx_enable_dynamic_hc
+l4_rx_hc_timeout0
+l4_rx_hc_timeout1
+l4_rx_hc_timeout2
+l4_rx_hc_timeout3
+l4_scq_page_cnt
+l4_skip_start_bytes
+l4_start_port
+l4_tx_chain_page_cnt
+l4_tx_enable_dynamic_hc
+l4_tx_hc_timeout0
+l4_tx_hc_timeout1
+l4_tx_hc_timeout2
+l4_tx_hc_timeout3
+l4_upload_req_on_ad
+l4_valid_gen_bufs_in_archipelago
+l4buf_list->buffer_size == 0
+L5WSD
+L9&t5L
+L9;t5L
+L9[Hu
+L9b(u8A
+L9bHu
+L9cxu
+L9ePu
+LA`tA
+lal->type != LAL_TYPE_MBLK_POOL
+last_gen_buf == NULL
+last_gen_buf->placed_bytes
+last_gen_buf->placed_bytes != 0
+last_gen_buf->placed_bytes == 0
+lC@?H5
+lCAA4
+Legal_Policy_Statement
+LegalCopyright
+lh:$(
+link_chng_mode
+list_bitmap > 0xFF
+list_idx > 0xFFFF
+lm_bd_chain_avail_bds(&rxq_chain->chain_arr[LM_RXQ_CHAIN_IDX_BD]) <= lm_bd_chain_avail_bds(&rcq_chain->bd_chain)
+lm_bd_chain_avail_bds(rx_chain) < frag_list->cnt
+lm_bd_chain_phys_addr(&pdev->eq_info.eq_chain.bd_chain, 0).as_u64 == 0
+lm_chain_type_cos_reg != lm_mp_get_chain_type(&(pdev->lmdev), reg_chain_idx)
+lm_chain_type_cos_tx_only == lm_mp_get_chain_type(&pdev->lmdev,reg_chain_idx)
+lm_chain_type_not_cos == lm_mp_get_chain_type(pdev, chain)
+lm_cli_idx != indicate_event->lm_cli_idx
+lm_cli_idx != pdev->dcbx_info.indicate_event.lm_cli_idx
+LM_CLI_IDX_MAX != indicate_event->lm_cli_idx
+LM_CLI_IDX_MAX == lm_cli_idx
+LM_CLI_UPDATE_NOT_USED != pdev->client_info[client_idx].update.state
+LM_CLI_UPDATE_NOT_USED != pdev->client_info[LM_SW_VF_CLI_ID(vf_info, q_idx)].update.state
+LM_CLIENT_ATTRIBUTES_REG_CLI != GET_FLAGS(cli_params->attributes, LM_CLIENT_ATTRIBUTES_REG_CLI)
+LM_CLIENT_ATTRIBUTES_RX != GET_FLAGS(attributes_bitmap,LM_CLIENT_ATTRIBUTES_RX )
+LM_CLIENT_ATTRIBUTES_RX == GET_FLAGS(attributes_bitmap,LM_CLIENT_ATTRIBUTES_RX )
+lm_dcb_dont_break_bad_oid
+lm_dcbx.c
+lm_dcbx_ets_ieee_config_di != ets_ieee_config_state
+lm_dcbx_ets_ieee_config_not_valid != indicate_event->ets_ieee_config_state
+lm_dcbx_ets_ieee_config_not_valid == indicate_event->ets_ieee_config_state
+lm_dcbx_mp.c
+lm_devinfo.c
+lm_dmae.c
+LM_DMAE_MODE_SGL != context->mode
+LM_DMAE_MODE_SGL != operation->mode
+LM_DMAE_MODE_SINGLE_BLOCK != context->mode
+lm_er.c
+LM_EVENT_CODE_DCBX_REMOTE_CHANGE != event
+lm_get_con_state(pdev, cid) != LM_CON_STATE_HALT
+lm_get_con_state(pdev, cid) != LM_CON_STATE_HALT_SENT
+lm_get_con_state(pdev, cid) != LM_CON_STATE_OPEN_SENT
+lm_get_con_state(pdev, cid) != LM_CON_STATE_TERMINATE
+lm_get_con_state(pdev, FWD_CID(pdev)) != LM_CON_STATE_OPEN_SENT
+lm_get_con_state(pdev, fwd_cid) != LM_CON_STATE_OPEN
+lm_hw_access.c
+lm_hw_attn.c
+lm_hw_init_reset.c
+lm_l4fp.c
+lm_l4rx.c
+lm_l4sp.c
+lm_l4tx.c
+lm_l5.c
+lm_l5sp.c
+LM_LOADER_OPCODE_LOAD == opcode_arr[opcode_idx]
+LM_LOADER_RESPONSE_UNLOAD_COMMON != resp
+lm_mcp.c
+lm_niv.c
+lm_nvram.c
+lm_pf.c
+lm_phy.c
+lm_power.c
+lm_recv.c
+lm_resc.c
+lm_sb.c
+lm_send.c
+lm_sp.c
+lm_sp_req_mgr.c
+lm_stat != LM_STATUS_SUCCESS
+lm_stats.c
+lm_status != LM_STATUS_ABORTED
+lm_status != LM_STATUS_REQUEST_NOT_ACCEPTED
+lm_status != LM_STATUS_SUCCESS
+lm_status == LM_STATUS_RESOURCE
+lm_status == LM_STATUS_SUCCESS
+lm_status!=LM_STATUS_SUCCESS
+LM_STATUS_ABORTED != ind_status
+LM_STATUS_ABORTED == umpkt->lmpkt.status
+LM_STATUS_SUCCESS != ind_status
+LM_STATUS_SUCCESS != lm_status
+LM_STATUS_SUCCESS != umpkt->lmpkt.status
+LM_TCP_GEN_BUF_SIZE(pdev) > 0xffff
+LM_TPA_MASK_LEN(pdev, chain_idx) <= i
+LM_TPA_MASK_LEN(pdev, chain_idx) <= mask_entry_idx
+LM_TPA_MASK_LEN(pdev,chain_idx) < loop_cnt_dbg
+lm_tpa_state_disable == tpa_chain->state
+lm_tpa_state_wait_packets != tpa_chain->state
+lm_util.c
+lm_vf.c
+load_cnt > MAX_FUNC_NUM
+load_cnt >= MAX_FUNC_NUM
+loc_str == NULL
+LP;O5
+lP^m5
+LPEO5
+lPXg5
+LT fD9tT u?A
+M"0aP,
+M$A9O
+M@E8]Dt.
+M@t1A
+M`QL5
+M`xV5
+M=fA#
+M0K0I
+mac_query == NULL
+max_chains_per_vf
+max_driver_traces
+MAX_DYN_AFF_PROC_SUP <= cpu
+MAX_DYN_AFF_PROC_SUP <= rss_idx_to_dpc_affinty_required
+MAX_ETH_RX_CQE_TYPE <= cqe_type
+max_fcoe_cons
+max_fcoe_exchanges
+max_iscsi_cons
+max_l2_cli_buffer_size < q_group->q_info.mtu
+max_malicious_vf_cnt
+max_num_bytes_to_copy < currently_copied
+max_rdma_cons
+MAX_RSS_CHAINS < num_required_entries
+max_tc_sup < ets->num_of_cos
+max_tc_sup < ieee_ets->num_traffic_classes
+max_toe_cons
+max_vmq_lookahead_size
+MB0aP,
+MBeS5
+mblk_pool->free == NULL
+mblk->left < mem_size
+mblk->start || mblk->total
+Mcf K
+mcp_resp != DRV_MSG_CODE_OEM_UPDATE_SVID_ACK
+mcp_resp != FW_MSG_CODE_AFEX_LISTGET_ACK
+mcp_resp != FW_MSG_CODE_AFEX_LISTSET_ACK
+mcp_resp != FW_MSG_CODE_AFEX_STATSGET_ACK
+mcp_resp != FW_MSG_CODE_AFEX_VIFSET_ACK
+mcp_resp != FW_MSG_CODE_OEM_ACK
+mcp_resp != FW_MSG_CODE_SET_MF_BW_DONE
+Mcw,K
+mem_size != eq_addr_save->prev_mem_size
+mem_size > phy_mblk[block_idx].left
+memcpy_s
+memory resource usage.
+memory_consumption
+mf_mode
+MHf;u@s
+Microsoft Corporation1
+Microsoft Corporation1&0$
+Microsoft Corporation1)0'
+Microsoft Corporation1.0,
+Microsoft Corporation1200
+Microsoft Time-Stamp PCA 2010
+Microsoft Time-Stamp PCA 20100
+Microsoft Time-Stamp Service
+Microsoft Time-Stamp Service0
+Microsoft Windows0
+min_bw == 0
+min_vmq_lookahead_size
+MiniNT
+MISC: parity status is not 0
+MISC: pcie_rst_b was asserted without perst assertion
+MISC: system kill occurd;
+MISC: system kill occurd; status_0 register
+MISC: system kill occurd; status_1 register
+MISC: system kill occurd; status_2 register
+MISC: system kill occurd; status_3 register
+MISC_REG_GRC_TIMEOUT_ATTN: GRC timeout attention parameters (FUNC_0).
+MISC_REG_GRC_TIMEOUT_ATTN: GRC timeout attention parameters (FUNC_1).
+MISC_REG_GRC_TIMEOUT_ATTN: GRC timeout attention parameters (MCP).
+MISC_REG_GRC_TIMEOUT_ATTN_FULL_FID: GRC timeout attention FID (FUNC_0).
+MISC_REG_GRC_TIMEOUT_ATTN_FULL_FID: GRC timeout attention FID (FUNC_1).
+MISC_REG_GRC_TIMEOUT_ATTN_FULL_FID: GRC timeout attention FID (MCP).
+mm_l4.c
+mm_le16_to_cpu(cqe->pkt_len) != pkt->l2pkt_rx_info->size
+mm_le16_to_cpu(cqe->pkt_len) < pkt->l2pkt_rx_info->size
+mm_tcp_indicating_bufs(rx_con)
+MmGetPhysicalMemoryRanges
+MmGetSystemRoutineAddress
+MmMapIoSpaceEx
+MmUnmapIoSpace
+MNNOOPPQQRRSSTTUU
+mp_tuning
+mp0y%
+mPfE;
+msg_fast_tx
+msg_tx_hold
+msg_tx_interval
+MSIX_WIN_TABLE_SIZE(pdev) > ARRSIZE(pdev->interrupt_info.msix_table_indirection)
+Mx#L$3
+Mx3LD
+MXfB;
+MXt)H
+n:6@i.
+n\@82u8A
+n|hL 
+N0L0J
+N4@e05
+N4@h5
+N4@y0
+N4`l0
+N4`v05
+N5102INB7JF102
+nbits > 64
+nbytes
+nbytes & 0xc0000000
+nbytes && tcp->rx_con->dpc_info.dpc_comp_blocked
+nbytes > 0xffff
+nbytes > LM_TCP_GEN_BUF_SIZE(pdev)
+nCipher NTS ESN:57F6-C1E0-554C1+0)
+ncopy > 0xffff
+NDIS Client For QLogic 10 Gigabit Ethernet Adapter
+ndsb_type
+neigh_state->dbg_neigh_pending_update_complete
+neigh_state->hdr.state_id != STATE_ID_NEIGH
+neigh_state->hdr.status != STATE_STATUS_NORMAL
+neigh_state->hdr.status != STATE_STATUS_UPLOAD_PENDING
+neigh_state->lm_neigh.hdr.state_id != STATE_ID_NEIGH
+neigh_state->lm_neigh.num_dependents != 0
+neigh_state->num_dependents
+neigh->hdr.state_id != STATE_ID_NEIGH || neigh->hdr.status != STATE_STATUS_NORMAL
+neigh->neigh_const.vlan_tag > 0xfff
+new_mss > 0xffff
+NIG:  Port 0 RX LLH FIFO is not empty.
+NIG:  Port 0 TX LLH FIFO is not empty.
+NIG:  Port 1 RX LLH FIFO is not empty.
+NIG:  Port 1 TX LLH FIFO is not empty.
+NIG: Access to BMAC while not active. If tested on FPGA, ignore this warning.
+NIG: Debug FIFO is not empty.
+NIG: interrupt 0 is active
+NIG: interrupt 1 is active
+NIG: LB EOP FIFO is not empty.
+NIG: parity 0 interrupt is active
+NIG: parity 1 interrupt is active
+NIG: parity interrupt is active
+NIG: PBF IF0 FIFO is not empty.
+NIG: PBF IF1 FIFO is not empty.
+NIG: PBF IF2 FIFO is not empty.
+NIG: PBF IF3 FIFO is not empty.
+NIG: PBF IF4 FIFO is not empty.
+NIG: PBF IF5 FIFO is not empty.
+NIG: PBF LB FIFO is not empty.
+NIG: Port 0 EOP FIFO is not empty.
+NIG: Port 0 RX MAC interface FIFO is not empty.
+NIG: Port 0 RX MCP descriptor FIFO for traffic from the host is not empty.
+NIG: Port 0 RX MCP descriptor FIFO is not empty.
+NIG: Port 0 TX MAC interface FIFO is not empty.
+NIG: Port 0 TX MCP FIFO for traffic going to the host is not empty.
+NIG: Port 0 TX MCP FIFO is not empty.
+NIG: Port 1 EOP FIFO is not empty.
+NIG: Port 1 RX MAC interface FIFO is not empty.
+NIG: Port 1 RX MCP descriptor FIFO for traffic from the host is not empty.
+NIG: Port 1 RX MCP descriptor FIFO is not empty.
+NIG: Port 1 TX MAC interface FIFO is not empty.
+NIG: Port 1 TX MCP FIFO for traffic going to the host is not empty.
+NIG: Port 1 TX MCP FIFO is not empty.
+NIG: port cos was paused too long
+NIG_0
+NIG_1
+npar_vm_switching_enable
+npD9nX
+nt_status != STATUS_SUCCESS
+NT_SUCCESS(ntstatus) && (nt_ddi < NTDDI_VISTA)
+ntkmdf.c
+ntoskrnl.exe
+ntstatus != STATUS_NOT_SUPPORTED
+ntstatus != STATUS_SUCCESS
+NULL != encaps_info->update_cookie
+NULL != pdev->cid_recycled_callbacks[type]
+NULL != tpa_info->update_cookie
+NULL == entry_isle_del
+NULL == indicate_event->dcb_params_given_dbg.classif_params.classif_table
+NULL == indicate_event->local_params.classif_params.classif_table
+NULL == indicate_event->remote_params.classif_params.classif_table
+NULL == isle_item
+NULL == operation
+NULL == pdev->clients[do_type].omgr.omgr_desc_data.base_pkt_desc
+NULL == pdev->clients[do_type].omgr.omgr_desc_data.base_pkt_entries
+NULL == pdev->clients[do_type].omgr.omgr_desc_data.base_pkt_entries[i].base_mem_virt
+NULL == pdev->lals_manager.io_work_item
+num_bufs != tmp_gen_buf_list.cnt
+num_isle > isle_cnt
+num_of_opr_cos != mp_l2_chain_param->num_active_cos
+num_queues != 1
+num_rx_desc != current_rx_desc
+nXL9.uDA
+O H;BXH
+O*@#)
+O@ [5
+O@B`5
+O@G`5
+O@GZ5
+O@IX5
+O@u]5
+O@UZ5
+O@Y[5
+O<aI)
+o->total_pending_num < 0
+O0M0K
+o3< ,
+O8@*:5
+O8@985
+O8@T65
+o8`}B
+o8`8B5
+O8P;6
+o8P~:
+O8P9J
+o8Ph:5
+o8Pr:
+oB@:k
+ObfDereferenceObject
+ObReferenceObjectByHandle
+offset != LM_DCBX_ADMIN_MIB_OFFSET(pdev, mf_cfg_offset_value)
+offset & 0x3
+offset == INVALID_NIG_OFFSET
+offset > MAX_VARIABLE_VALUE(address.u.grc_offset)
+ofld_cap
+oK0D$"<
+OMGR_DESC_STATE_RX != omgr_desc->state
+omgr_desc->um_packet.client_l2pkt.u.rx.size > omgr_desc->um_packet.client_l2pkt.u.rx.mem_size
+omgr_supported_iscsi
+ooo_data.sw_cid != SW_CID(ooo_data.sw_cid)
+OP"]5
+OP&Y5
+OP(Q5
+OP*Z5
+OP:Q5
+OP;\5
+OP\Q5
+OP{Q5
+OP=\5
+OP=Z5
+OP3]5
+OP7\5
+OPaZ5
+OPbY5
+OPf]5
+OPgZ5
+OPj]5
+OPlQ5
+OPMQ5
+OPQ\5
+OPU]5
+OPwQ5
+orig_val != 1
+OriginalFilename
+out_buf != NULL
+out_buf_len != 0
+out_buf_len < bytes_written
+override_mf_cfg
+overwrite_settings
+oya@d3
+oyy)d3
+p $$(
+p AWH
+p WATAUAVAWH
+p WAVAWH
+P\Pe 
+p<@r;
+p0@g25
+p0`j25
+p2A>25
+p2P>25
+p2Q>2
+p7`C?
+pA@$D5
+PA^_^
+PA_A^_^]
+pA_A^_^]
+PA_A^_^]
+pA_A^A\_^[]
+PA_A^A]_^][
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+PAGE$s
+page_cnt * BD_PER_PAGE(bd_size) > 0xffff
+params.Version != CONNECT_LINE_BASED
+path_mtu < MIN_MTU
+path_state->dbg_path_pending_update_complete
+path_state->hdr.state_id != STATE_ID_PATH
+path_state->hdr.status != STATE_STATUS_NORMAL
+path_state->hdr.status != STATE_STATUS_UPLOAD_PENDING
+path_state->lm_path.hdr.state_id != STATE_ID_PATH
+path_state->lm_path.num_dependents != 0
+path_state->neigh->num_dependents == 0
+path_state->num_dependents
+path->hdr.state_id != STATE_ID_PATH || path->hdr.status != STATE_STATUS_NORMAL
+path->neigh->hdr.status != STATE_STATUS_NORMAL
+PBF: Interrupt status is not 0
+PBF: LB Q credit is not equal to init_crd
+PBF: LB Q task_cnt is not 0
+PBF: P0 credit is not equal to init_crd
+PBF: P0 task_cnt is not 0
+PBF: P1 credit is not equal to init_crd
+PBF: P1 task_cnt is not 0
+PBF: P4 credit is not equal to init_crd
+PBF: P4 task_cnt is not 0
+PBF: Q0 credit is not equal to init_crd
+PBF: Q0 task_cnt is not 0
+PBF: Q1 credit is not equal to init_crd
+PBF: Q1 task_cnt is not 0
+PBF: Q2 credit is not equal to init_crd
+PBF: Q2 task_cnt is not 0
+PBF: Q3 credit is not equal to init_crd
+PBF: Q3 task_cnt is not 0
+PBF: Q4 credit is not equal to init_crd
+PBF: Q4 task_cnt is not 0
+PBF: Q5 credit is not equal to init_crd
+PBF: Q5 task_cnt is not 0
+pci_table_entry != win_message_id
+PCIE: attentions register is not 0x40040100
+PCIE: attentions register is not 0x40100
+PCIE: corr_err_status is not 0x2000
+PCIE: error packet header is not 0
+PCIE: Func 0 1: attentions register is not 0x2040902
+PCIE: Func 2 3 4: attentions register is not 0x10240902
+PCIE: Func 5 6 7: attentions register is not 0x10240902
+PCIE: Overflow in DLP2TLP buffer
+PCIE: TTX_BRIDGE_FORWARD_ERR - Received master request while BME was 0.
+PCIE: ucorr_err_status - Flow Control Protocol Error
+PCIE: ucorr_err_status - Unsupported request error
+PCIE: ucorr_err_status is not 0
+pdev_context_t
+pdev->client_info[chain_idx].set_rx_mode_cookie != NULL
+pdev->client_info[cid].set_mac_cookie != NULL
+pdev->client_info[sw_client_id].set_mac_cookie != NULL
+pdev->clients[client_blk->do_type].client_blk
+pdev->clients[do_type].omgr.omgr_desc_data.base_pkt_desc
+pdev->clients[do_type].omgr.omgr_desc_data.base_pkt_entries
+pdev->clients[do_type].omgr.q_group->q_info.num_rx_desc != s_list_entry_cnt( &(pdev->clients[do_type].omgr.ooo_list))
+pdev->clients[do_type].omgr.q_group->q_info.num_rx_desc <= current_rx_desc
+pdev->context_info != NULL
+pdev->context_info->array[cid].cid_resc.cookies[proto_idx]
+pdev->context_info->array[cid].invalid != LM_CONTEXT_INVALID_DELETE
+pdev->context_info->array[cid].invalid != LM_CONTEXT_INVALID_WAIT
+pdev->context_info->array[cid].invalid != LM_CONTEXT_VALID
+pdev->iscsi_info.run_time.num_of_cqs > MAX_EQ_CHAIN
+pdev->lals_manager.workitem_scheduled == 1
+pdev->lmdev.hw_info.max_port_conns < pdev->lmdev.params.max_func_connections
+pdev->lmdev.params.l4_rss_base_chain_idx != LM_SW_LEADING_RSS_CID(pdev)
+pdev->lmdev.params.l4_rss_chain_cnt != 1
+pdev->lmdev.params.l4_rss_chain_cnt > 1
+pdev->lmdev.params.l4_tss_chain_cnt != 1
+pdev->lmdev.params.tss_chain_cnt != pdev->lmdev.params.rss_chain_cnt
+pdev->mp_l2_param.is_enabled
+pdev->params.dcbx_port_params.app.traffic_type_priority[i] >= MAX_PFC_PRIORITIES
+pdev->params.dcbx_port_params.app.traffic_type_priority[LLFC_TRAFFIC_TYPE_ISCSI] != indicate_event->iscsi_tcp_pri
+pdev->params.dcbx_port_params.app.traffic_type_priority[pri] >= MAX_PFC_PRIORITIES
+pdev->params.fw_client_cnt <= pdev->params.max_pf_fw_client_cnt
+pdev->params.l4_enable_rss != L4_RSS_DYNAMIC
+pdev->params.l4_max_gen_buf_cnt % pdev->params.l4_gen_buf_in_block
+pdev->params.map_client_to_cid[LM_CLI_IDX_OOO] > pdev->params.map_client_to_cid[LM_CLI_IDX_FCOE]
+pdev->params.max_pf_sb_cnt > pdev->params.fw_sb_cnt
+pdev->params.mf_mode >= MAX_MF_MODE
+pdev->params.multi_vnics_mode ^ val
+pdev->params.network_type != LM_NETOWRK_TYPE_LAN
+pdev->params.sb_cnt > pdev->params.max_pf_sb_cnt
+pdev->params.update_comp_cnt
+pdev->q_group_info.chain_idx_to_q_group_id_map[idx] != q_group->q_group_id
+pdev->rss.rss_idx_to_win_table_entry[rss_idx] != RSS_TO_WINTABLE_ENTRY_INVALID
+pdev->rss.rss_idx_to_win_table_entry[rss_idx] == RSS_TO_WINTABLE_ENTRY_INVALID
+pdev->rss.trace_handle[um_handle->cid] != handle
+pdev->slowpath_info.l2mp_func_update_ramrod_state != L2MP_FUNC_UPDATE_RAMROD_NOT_POSTED
+pdev->slowpath_info.niv_ramrod_state != NIV_RAMROD_NOT_POSTED
+pdev->slowpath_info.set_mcast_cookie[lm_cli_idx] != NULL
+pdev->slowpath_info.set_rss_cookie
+pdev->slowpath_info.ufp_func_ramrod_state != UFP_RAMROD_NOT_POSTED
+pdev->sq_info.num_pending_high > MAX_HIGH_PRIORITY_SPE
+pdev->sq_info.num_pending_normal > MAX_NORMAL_PRIORITY_SPE
+pdev->sriov_switch_info.current_number_of_pf_nd_vports
+pdev->um_i2c_info.work_item
+pdev->vars.attn_state & assertion_proc_flgs
+pdev->vars.in_dpc_cnt
+pdev->vars.mac_type >= MAC_TYPE_MAX
+pdev->vars.num_attn_sig_regs > arr_size
+pdev->vars.num_attn_sig_regs > ARRSIZE(pdev->vars.attn_sig_af_inv_reg_addr)
+pdev->worker_threads[type].f_exit_worker_thread
+pdo_device_name == NULL || *pdo_device_name == 0
+pdo_ext->xdo.type == DO_TYPE_IS_DIAG_PDO
+pdo_ext->xdo.type >= MAX_DO_TYPE_CNT
+PDOxD
+PFDEV(pdev)->client_info[connection_info_idx].update.state != LM_CLI_UPDATE_USED
+pg_help_data->num_of_pg > LLFC_DRIVER_TRAFFIC_TYPE_MAX
+PGL: Cfg-Space A request is set
+PGL: Cfg-Space B request is set
+PGL: FLR request is set for PF addresses 7-0
+PGL: FLR request is set for VF addresses 127-96
+PGL: FLR request is set for VF addresses 31-0
+PGL: FLR request is set for VF addresses 63-32
+PGL: FLR request is set for VF addresses 95-64
+PGL: SR-IOV disable request is set 
+PGLUE: Error in master read address(31:0) is not 0
+PGLUE_B
+PGLUE_B: ATS TCPL received with error. (2:0) - PFID. (3) - VF_VALID. (9:4) - VFID. (11:10) - Error code : 0 - Completion Timeout ; 1 - Unsupported Request; 2 - Completer Abort. (16:12) - OTB Entry ID. (17) - valid bit.
+PGLUE_B: Completion received with error. (2:0) - PFID. (3) - VF_VALID. (9:4) - VFID. (11:10) - Error code : 0 - Completion Timeout ; 1 - Unsupported Request; 2 - Completer Abort. (12) - valid bit.
+PGLUE_B: Error in master read address(63:32) is not 0
+PGLUE_B: Error in master read Error details 2nd register is not 0. (21) - was_error set; (22) - BME cleared; (23) - FID_enable cleared; (24) - VF with parent PF FLR_request or IOV_disable_request.
+PGLUE_B: Error in master read Error details register is not 0. (4:0) VQID. (23:21) - PFID. (24) - VF_VALID. (30:25) - VFID.
+PGLUE_B: Error in master write. Address(31:0) is not 0
+PGLUE_B: Error in master write. Address(63:32) is not 0
+PGLUE_B: Error in master write. Error details 2nd register is not 0. (21) - was_error set; (22) - BME cleared; (23) - FID_enable cleared; (24) - VF with parent PF FLR_request or IOV_disable_request.
+PGLUE_B: Error in master write. Error details register is not 0. (4:0) VQID. (23:21) - PFID. (24) - VF_VALID. (30:25) - VFID.
+PGLUE_B: Interrupt status is not 0
+PGLUE_B: Packet received from PCIe not according to the rules.
+PGLUE_B: parity status is not 0
+PGLUE_B: Target VF GRC space access failed permission check.
+PGLUE_B: Target VF length violation access.
+PGLUE_B: There are outstanding read requests for tags 32-63. Not all completios have arrived for read requests on tags that are marked with 0
+PGLUE_B: was_error for PFs 0-7 is not 0
+PGLUE_B: was_error for VFs 0-31 is not 0
+PGLUE_B: was_error for VFs 32-63 is not 0
+PGLUE_B: was_error for VFs 64-95 is not 0
+PGLUE_B: was_error for VFs 96-127 is not 0
+Ph9WP
+phy_int_mode
+phy_mblk[block_idx].free_phy.as_u32.low & CACHE_LINE_SIZE_MASK
+phy_mblk[block_idx].left < mem_size
+phy_priority_mode
+PlPe 
+port > 1
+POWER_OF_2(LM_DCBX_PFC_PRI_GET_NON_PAUSE(pdev,pri_join_mask))
+PPIcF
+PPSX5
+preemphasis_enable
+preemphasis_rx_0
+preemphasis_rx_1
+preemphasis_rx_2
+preemphasis_rx_3
+preemphasis_tx_0
+preemphasis_tx_1
+preemphasis_tx_2
+preemphasis_tx_3
+prev_cid != 0
+pri_join_mask != (pdev->params.dcbx_port_params.ets.cos_params[0].pri_bitmask | pdev->params.dcbx_port_params.ets.cos_params[1].pri_bitmask | pdev->params.dcbx_port_params.ets.cos_params[2].pri_bitmask)
+product_version
+ProductName
+ProductVersion
+PRS: CFC_LD current credit is not 0
+PRS: CFC_SEARCH current credit is not 0
+PRS: Interrupt status is not 0
+PRS: parity status is not 0
+PRS: PENDING_BRB_CAC_RQ is not 0
+PRS: PENDING_BRB_PRS_RQ is not 0
+PRS: SERIAL_NUM_STATUS_LSB is not 0
+PRS: SERIAL_NUM_STATUS_MSB is not 0
+PRS: SRCH current credit is not 0
+PRS: TCM current credit is not 0
+PRS: TSDM current credit is not 0
+PRS_FLAG_OVERIP_TCP != GET_FLAGS_WITH_OFFSET(parse_flags,PARSING_FLAGS_OVER_IP_PROTOCOL, PARSING_FLAGS_OVER_IP_PROTOCOL_SHIFT)
+PsCreateSystemThread
+PsGetVersion
+PsTerminateSystemThread
+PsThreadType
+PUQ5 
+-pv*?
+PXP: Access to disabled VF took place
+PXP: HST arbiter is not idle
+PXP: HST Close the gates: Discarding doorbells
+PXP: HST Close the gates: Discarding internal writes
+PXP: HST one of the clients is waiting for delivery
+PXP: Incorrect transaction took place
+PXP: P0 Interrupt status is not 0
+PXP: P1 Interrupt status is not 0
+PXP: parity status is not 0
+PXP: Zone A permission violation occurred
+PXP2: Completion received with error. Error details 2nd register is not 0. (4:0) - VQ ID. (8:5) - client ID. (9) - valid bit.
+PXP2: Completion received with error. Error details register is not 0. (15:0) - ECHO. (28:16) - Sub Request length plus start_offset_2_0 minus 1.
+PXP2: HST data FIFO status is not 0
+PXP2: HST header FIFO status is not 0
+PXP2: Interrupt status 0 is not 0
+PXP2: Interrupt status 1 is not 0
+PXP2: P0 All delivery ports are not idle
+PXP2: P1 All delivery ports are not idle
+PXP2: parity status 0 is not 0
+PXP2: parity status 1 is not 0
+PXP2: pgl_read_blocked is not 0
+PXP2: pgl_write_blocked is not 0
+PXP2: PSWRD inputs are disabled
+PXP2: PSWRQ Close the gates is asserted. Check AEU AFTER_INVERT registers for parity errors.
+PXP2: rd_almost_full is not 0
+PXP2: rd_blk_cnt is not equal to rd_blk_num_cfg
+PXP2: rd_init_done is not 1
+PXP2: rd_sr_cnt is not equal to rd_sr_num_cfg
+PXP2: rd_start_init is not 1
+PXP2: rq_cfg_done is not 1
+PXP2: rq_rbc_done is not 1
+PXP2: rq_read_credit and rq_write_credit are not 3
+PXP2: rq_read_credit and rq_write_credit are not 5
+PXP2: rq_ufifo_num_of_entry is not 0
+PXP2: There are more than two unused blocks
+PXP2: There are more than two unused SRs
+PXP2: There are outstanding read requests for tags 0-31. Not all completios have arrived for read requests on tags that are marked with 0
+PXP2: There are outstanding read requests. Not all completios have arrived for read requests on tags that are marked with 0
+PXP2: There is data which is ready
+PXP2: VQ0 is not empty
+PXP2: VQ1 is not empty
+PXP2: VQ10 is not empty
+PXP2: VQ11 is not empty
+PXP2: VQ12 is not empty
+PXP2: VQ13 is not empty
+PXP2: VQ14 is not empty
+PXP2: VQ15 is not empty
+PXP2: VQ16 is not empty
+PXP2: VQ17 is not empty
+PXP2: VQ18 is not empty
+PXP2: VQ19 is not empty
+PXP2: VQ2 is not empty
+PXP2: VQ20 is not empty
+PXP2: VQ21 is not empty
+PXP2: VQ22 is not empty
+PXP2: VQ23 is not empty
+PXP2: VQ24 is not empty
+PXP2: VQ25 is not empty
+PXP2: VQ26 is not empty
+PXP2: VQ27 is not empty
+PXP2: VQ28 is not empty
+PXP2: VQ29 is not empty
+PXP2: VQ3 is not empty
+PXP2: VQ30 is not empty
+PXP2: VQ31 is not empty
+PXP2: VQ4 is not empty
+PXP2: VQ5 is not empty
+PXP2: VQ6 is not empty
+PXP2: VQ7 is not empty
+PXP2: VQ8 is not empty
+PXP2: VQ9 is not empty
+PXP2_0
+PXP2_1
+q;`6C5
+Q@SR5
+q[fD9
+q_group_iter->q_group_state == Q_GROUP_STATE_DESTROY_PENDING
+q_group->q_info.num_rx_queues != 1
+q`@e4
+qB*Z5
+qB;p5
+qBGe5
+qidx != 0
+qidx > MAX_VARIABLE_VALUE(pkt->lmpkt.u1.rx.qidx)
+Qkkbal
+QLogic 10 GigE
+QLogic 10 GigE VBD
+QLogic Corporation
+QM: Byte credit 0 is not equal to initial credit
+QM: Byte credit 1 is not equal to initial credit
+QM: Byte credit 2 is not equal to initial credit
+QM: Byte credit 3 is not equal to initial credit
+QM: Byte credit 4 is not equal to initial credit
+QM: Byte credit 5 is not equal to initial credit
+QM: Byte credit 6 is not equal to initial credit
+QM: Byte credit error register is not 0 (Byte credit overflow/underflow)
+QM: CQM wrc_fifolvl is not 0
+QM: Credit error register is not 0 (byte or credit overflow/underflow)
+QM: FwVoq0 is mapped to HwVoq7 (non-TX HwVoq)
+QM: FwVoq1 is mapped to HwVoq7 (non-TX HwVoq)
+QM: FwVoq2 is mapped to HwVoq7 (non-TX HwVoq)
+QM: FwVoq3 is mapped to HwVoq7 (non-TX HwVoq)
+QM: FwVoq4 is mapped to HwVoq7 (non-TX HwVoq)
+QM: FwVoq5 is mapped to HwVoq7 (non-TX HwVoq)
+QM: FwVoq6 is mapped to HwVoq7 (non-TX HwVoq)
+QM: FwVoq7 is mapped to HwVoq7 (non-TX HwVoq)
+QM: Interrupt status is not 0
+QM: OVFERROR is not 0
+QM: OVFQNUM is not 0
+QM: P0 Byte credit is not equal to initial credit
+QM: P1 Byte credit is not equal to initial credit
+QM: parity status is not 0
+QM: PAUSESTATE0 is not 0
+QM: PAUSESTATE1 is not 0
+QM: PAUSESTATE2 is not 0
+QM: PAUSESTATE3 is not 0
+QM: PAUSESTATE4 is not 0
+QM: PAUSESTATE5 is not 0
+QM: PAUSESTATE6 is not 0
+QM: PAUSESTATE7 is not 0
+QM: PTRTBL entry %d- rd_bank is not equal to wr_bank. Values are 0x%x 0x%x
+QM: PTRTBL entry %d- rd_ptr is not equal to wr_ptr. Values are 0x%x 0x%x
+QM: Q_EXT_A (upper 64 queues), Queue is not empty
+QM: QSTATUS_HIGH is not 0
+QM: QSTATUS_HIGH_EXT_A is not 0
+QM: QSTATUS_LOW is not 0
+QM: QSTATUS_LOW_EXT_A is not 0
+QM: Queue is not empty
+QM: TQM wrc_fifolvl is not 0
+QM: UQM wrc_fifolvl is not 0
+QM: VOQ credit error register is not 0 (VOQ credit overflow/underflow)
+QM: VOQ_0, VOQ credit is not equal to initial credit
+QM: VOQ_1, VOQ credit is not equal to initial credit
+QM: VOQ_2, VOQ credit is not equal to initial credit
+QM: VOQ_3, VOQ credit is not equal to initial credit
+QM: VOQ_4, VOQ credit is not equal to initial credit
+QM: VOQ_5, VOQ credit is not equal to initial credit
+QM: VOQ_6 (LB VOQ), VOQ credit is not equal to initial credit
+QM: XQM wrc_fifolvl is not 0
+QP"_5
+qP(r5
+QpCs4
+query_set_info == NULL
+R L9P s
+R!s4Z
+R"pfP
+R%`d*5
+R*.`,
+R/@&+5
+R/@<+
+R/@k*
+R/@p+5
+R/`$*
+R/`\05
+R/`]-
+R/`2+
+R/`C25
+R/`K,
+R/`U+5
+R/`V*
+R/P%/5
+R/P*,5
+R/P;45
+R/Pd25
+R/PD4
+R/PF+
+R/PM/
+R{.`,
+r~akow
+r->check_pending(r)
+ramrod_type & COMMON_RAMROD_ETH_RX_CQE_ERROR
+rcq->suspend_processing == TRUE
+rcv_buffer_offset
+rd_val != 0
+rd_val_32 != 0
+reconfig_hc_interval_ms
+record_sp
+Redmond1
+reg_offset & 0x3
+repeated_high_importance_th
+req_medium
+request == NULL
+request->type != SP_REQUEST_ABORTIVE_DISCONNECT
+request->type != SP_REQUEST_INVALIDATE
+request->type != SP_REQUEST_TERMINATE_OFFLOAD
+request->type != SP_REQUEST_TERMINATE1_OFFLOAD
+required_win_table_entries[0] == 1
+required_win_table_entries[win_table_entry] != 1
+resp != FW_MSG_CODE_SET_MF_BW_SENT
+result > 0xffffffff
+ret_tcp_delegated == NULL
+return_buffer_ctx && !frag_list
+Rich-
+RNP*O
+RR@e4
+rsc_cap_flags
+RSDS,
+rss_chain_cnt
+rss_idx_temp_dpc_affinty[rss_idx] == DPC_INVALID_CPU
+RSS_TO_WINTABLE_ENTRY_INVALID != pdev->rss.rss_idx_to_win_table_entry[base_rss_idx]
+rtE+)
+RtlAppendUnicodeToString
+RtlCheckRegistryKey
+RtlCompareMemory
+RtlCopyUnicodeString
+RtlGetVersion
+RtlInitUnicodeString
+RtlIntegerToUnicodeString
+RtlIsNtDdiVersionAvailable
+RtlQueryRegistryValues
+RtlQueryRegistryValuesEx
+RtlUnicodeStringToInteger
+RtlWriteRegistryValue
+run_driver_pulse
+rx_comp_timeout_us
+rx_con->flags & TCP_INV_REQ_COMPLETED
+rx_con->flags & TCP_INV_REQ_POSTED
+rx_con->flags & TCP_REMOTE_FIN_RECEIVED
+rx_con->flags & TCP_REMOTE_FIN_RECEIVED_ALL_RX_INDICATED
+rx_con->flags & TCP_REMOTE_RST_RECEIVED
+rx_con->flags & TCP_REMOTE_RST_RECEIVED_ALL_RX_INDICATED
+rx_con->flags & TCP_RX_COMP_BLOCKED
+rx_con->flags & TCP_TRM_REQ_COMPLETED
+rx_con->flags & TCP_TRM_REQ_POSTED
+rx_conn->u.rx.posting_new_buf && !(rx_conn->u.rx.indicating_buffered_data || rx_conn->completing_tcp_buf)
+rx_conn->u.rx.posting_new_buf && !rx_conn->u.rx.indicating_buffered_data
+rx_desc_low_wmark
+rx_hc_threshold0
+rx_hc_threshold1
+rx_hc_threshold2
+RX_SGL_VMQ_NUM < l2pkt->sgl->NumberOfElements
+rxq_params->sge_addr == 0
+rxq->q_group->chain_idx_base > rxq->chain_idx
+s WATAUAVAWH
+s WATAWH
+s WAVAWH
+S!`k 5
+S!Pw 
+s"fD;
+s"PA15
+S&fD;
+s_list_entry_cnt(&con->active_tb_list) != 1
+s_list_entry_cnt(&tx_chain->coalesce_buf_list) != tx_chain->coalesce_buf_cnt
+s_list_is_empty(&completed_bufs)
+s_list_is_empty(&pdev->toe_info.gen_mem.free_gen_block_list)
+s_list_is_empty(&rx_con->active_tb_list)
+s_list_is_empty(buf_list)
+s0@8s6u
+s0rP,
+S16_SUB(cq_new_idx, cq_old_idx) < 0
+S16_SUB(cq_new_idx, cq_old_idx) <= 0
+S16_SUB(eq_new_idx, eq_old_idx) < 0
+S16_SUB(eq_new_idx, eq_old_idx) <= 0
+S16_SUB(new_prod, old_prod) < tcp_buf->bd_used
+S16_SUB(new_prod, old_prod) <= 0
+S16_SUB(new_prod, old_prod) >= 3
+S16_SUB(xag_toe->cmp_bd_cons, cst_toe->bd_cons) > 0
+S16_SUB(xst_toe->bd_prod, tcp->tx_con->db_data.tx->bds_prod) > 0
+S16_SUB(xst_toe->tx_bd_cons, xst_toe->bd_prod) > 0
+S32_SUB(S64_SUB(con->bytes_post_cnt, con->bytes_comp_cnt), (tcp_buf->app_buf_size - tcp_buf->app_buf_xferred)) < 0
+S32_SUB(snd_nxt, cur_seq) < 0
+S32_SUB(snd_nxt, cur_seq) > 0xffff
+S32_SUB(tag_tcp->snd_una, tag_tcp->snd_max) > 0
+S32_SUB(tag_tcp->snd_una, xag_tcp->snd_nxt) > 0
+S32_SUB(tst_tcp->rcv_nxt, xag_tcp->ack_to_far_end) != 0
+S32_SUB(tst_tcp->timestamp_recent, xag_tcp->ts_to_echo) < 0
+S32_SUB(tx_con->bytes_post_cnt ,S32_SUB(snd_nxt, snd_una)) < 0
+S32_SUB(xag_tcp->snd_nxt, xst_tcp->snd_max) > 0
+S32_SUB(xag_tcp->snd_una, tag_tcp->snd_una) != 0
+S32_SUB(xag_toe->cmp_bd_start_seq, tag_tcp->snd_una) > 0
+S64_SUB(rx_con->bytes_post_cnt + rx_con->db_more_bytes, rx_con->bytes_comp_cnt) < 0
+S64_SUB(rx_con->bytes_post_cnt, rx_con->bytes_comp_cnt) < 0
+S64_SUB(tcp_con->bytes_post_cnt + 1, tcp_con->bytes_comp_cnt) < 0
+S64_SUB(tx_con->bytes_post_cnt + tx_con->db_more_bytes, tx_con->bytes_comp_cnt) < 0
+S64_SUB(tx_con->bytes_post_cnt, tx_con->bytes_comp_cnt) < 0
+s8fD9
+sb_cpu_affinity
+sb_id >= ARRSIZE(pdev->vars.status_blocks_arr)
+sb_index & ~IGU_REGULAR_SB_INDEX
+selective_autoneg
+seq_num != sp_req_mgr->req_seq_number
+set_configuration_bw_size != mcp_pg_bw_tbl_size
+set_priority_app_size != (mcp_pri_pg_tbl_size)
+SHMEM_LLDP_DCBX_PARAMS_NONE == dcbx_lldp_params_offset
+siD;p,wcH
+SIG(CMBLK(fcblk)->pdev) != LM_DEVICE_SIG
+SIG(CMBLK(l5blk)->pdev) != LM_DEVICE_SIG
+SIG(curr_gen_buf->buf_virt) != L4GEN_BUFFER_SIG
+SIG(fdo_ext) != FDO_SIGNATURE
+SIG(gen_buf->buf_virt) != L4GEN_BUFFER_SIG
+SIG(pdev) != LM_DEVICE_SIG
+sizeof(lm_tcp_mem_block_t) > virt_mblk->total
+sizeof(lm_tcp_phy_mem_block_t) > mem_size
+sizeof_port_stats >= 1u<<(sizeof(u16_t)*8)
+snd_nxt != snd_una
+snd_unack_data == NULL && !(l4buf->flags & L4BUFFER_FLAG_BUFFER_END)
+Some messages were not executed in the IGU.
+source_offset > MAX_GRC_OFFSET
+sp_cqes->idx >= MAX_NUM_SPE
+sp_req_mgr->sp_data_phys_addr.as_u32.low & CACHE_LINE_SIZE_MASK
+sp_type != tcp->sp_request->type
+SRCH: Interrupt status is not 0
+SRCH: parity status is not 0
+sriov_inc_mac
+stats_timer_interval_ms
+STATUS_SUCCESS != nt_status
+StringFileInfo
+strrchr
+SUVWATAUAVAWH
+SUVWAUAVAWH
+sw_cid < PFDEV(pdev)->context_info->proto_start[ETH_CONNECTION_TYPE]
+sw_cid > PFDEV(pdev)->context_info->proto_end[ETH_CONNECTION_TYPE]
+sw_config
+t L9sXu
+t!s\A
+t$ D9c
+T$ E3
+t$ UH
+t$ UWATAVAWH
+t$ UWAUAVAWH
+t$ UWAVH
+t$ UWAWH
+t$ WATAUAVAWH
+t$ WATAVH
+t$ WATAWH
+t$ WAVAWH
+t$ WH
+t$(E2
+t$(E3
+t$(f#
+T$@@:
+t$@E2
+t$@Hk
+T$`A;
+t$0A;
+T$0E:
+t$0E3
+t$0IcF
+T$H@*
+T$HfD
+T$hH;
+T$pD9
+T$pE3
+t$PE3
+T$PfE
+T$pL+
+t$ps\B
+T$tM+
+t$XA#
+T$XD;?sIA
+T$XD9?
+t$xD9k
+T$XE:
+T$XE;
+t(fE9C
+t?E9A
+t@f;:t;f
+t[@T]5
+t_D8c#tYD9cPt8A
+T| fD;
+t~HcM
+t>D8c#t8A
+t>HcG
+t6@8n
+tA;p,
+tA=,!
+tA9\$0u?
+tAHcH
+tAIcF
+tc_entry == merge_tc
+tCf9kps
+TCM: CFC_INIT_CRD is not 1
+TCM: CSEM declared message length unequal to actual
+TCM: FIC0_INIT_CRD is not 64
+TCM: FIC1_INIT_CRD is not 64
+TCM: Interrupt status is not 0
+TCM: parity status is not 0
+TCM: PBF declared message length unequal to actual
+TCM: PRS declared message length unequal to actual
+TCM: STORM declared message length unequal to actual
+TCM: TQM_INIT_CRD is not 32
+TCM: TSDM declared message length unequal to actual
+TCM: USEM declared message length unequal to actual
+TCM: XX protection CAM is not empty
+TCM: XX_FREE differs from expected 29
+TCM: XX_FREE differs from expected 32
+tcp != gen_buf->tcp
+tcp_buf && dbg_no_more_bufs
+tcp_buf_offset > frag_list->size || tcp_buf_offset + nbytes > frag_list->size
+tcp_buf_offset > tcp_buf->size || tcp_buf_offset + nbytes > tcp_buf->size
+tcp_buf->app_buf_size < con->app_buf_bytes_acc_comp
+tcp_buf->app_buf_xferred != tcp_buf->app_buf_size
+tcp_buf->app_buf_xferred > tcp_buf->app_buf_size
+tcp_buf->app_buf_xferred >= tcp_buf->app_buf_size
+tcp_buf->size != dbg_buf_size
+tcp_cached->initial_rcv_wnd > MAX_INITIAL_RCV_WND
+tcp_cached->rcv_indication_size != 0
+tcp_cached->user_priority > 0x7
+tcp_con->flags & TCP_FIN_REQ_POSTED
+tcp_state != lm_cid_cookie(&pdev->lmdev, TOE_CONNECTION_TYPE, tcp_state->lm_tcp.cid)
+tcp_state != lm_cid_cookie(&umdev->lmdev, TOE_CONNECTION_TYPE, tcp_state->lm_tcp.cid)
+tcp_state != lm_cid_cookie(lmdev, TOE_CONNECTION_TYPE, tcp_state->cid)
+tcp_state->lm_tcp.hdr.state_id != STATE_ID_TCP
+tcp_state->lm_tcp.hdr.status == STATE_STATUS_NORMAL
+tcp_state->lm_tcp.ulp_type == ISCSI_CONNECTION_TYPE
+tcp->cid
+tcp->cid && (tcp != lm_cid_cookie(pdev, TOE_CONNECTION_TYPE, tcp->cid))
+tcp->hdr.state_id != STATE_ID_TCP
+tcp->hdr.status != STATE_STATUS_INIT_CONTEXT
+tcp->hdr.status != STATE_STATUS_NORMAL && tcp->hdr.status != STATE_STATUS_ABORTED
+tcp->hdr.status != STATE_STATUS_NORMAL && tcp->hdr.status != STATE_STATUS_UPLOAD_PENDING
+tcp->hdr.status != STATE_STATUS_OFFLOAD_PENDING
+tcp->hdr.status != STATE_STATUS_UPLOAD_PENDING
+tcp->hdr.status < STATE_STATUS_NORMAL
+tcp->hdr.status == STATE_STATUS_UPLOAD_DONE
+tcp->hdr.status >= STATE_STATUS_OFFLOAD_PENDING && tcp->hdr.status < STATE_STATUS_UPLOAD_DONE
+tcp->hdr.status >= STATE_STATUS_UPLOAD_PENDING
+tcp->lm_tcp.hdr.state_id != STATE_ID_TCP
+tcp->lm_tcp.hdr.status != STATE_STATUS_UPLOAD_PENDING
+tcp->lm_tcp.path->hdr.status != STATE_STATUS_NORMAL
+tcp->lm_tcp.path->neigh->hdr.status != STATE_STATUS_NORMAL
+tcp->path->hdr.status != STATE_STATUS_NORMAL
+tcp->path->neigh->hdr.status != STATE_STATUS_NORMAL
+tcp->path->num_dependents == 0
+tcp->rx_con->flags & TCP_INDICATE_REJECTED
+tcp->rx_con->rq_nbytes <= tcp->rx_con->u.rx.gen_info.dpc_peninsula_nbytes+tcp->rx_con->u.rx.skp_bytes_copied
+tcp->rx_con->u.rx.sws_info.mss > 0xffff
+tcp->sp_flags & ( SP_REQUEST_COMPLETED_TX | SP_REQUEST_COMPLETED_RX )
+tcp->sp_flags & (SP_REQUEST_COMPLETED_RX | SP_REQUEST_COMPLETED_TX)
+tcp->sp_request
+tcp->sp_request == NULL
+tcp->sp_request->type != SP_REQUEST_ABORTIVE_DISCONNECT
+tcp->sp_request->type != SP_REQUEST_INITIATE_OFFLOAD
+tcp->sp_request->type != SP_REQUEST_INVALIDATE
+tcp->sp_request->type != SP_REQUEST_QUERY
+tcp->sp_request->type != SP_REQUEST_TERMINATE_OFFLOAD
+tcp->sp_request->type != SP_REQUEST_TERMINATE1_OFFLOAD
+tcp->tcp_cached.flow_label > 0xffff
+tcp->tcp_cached.initial_rcv_wnd == 0
+tcp->tcp_cached.initial_rcv_wnd > MAX_INITIAL_RCV_WND
+tcp->tcp_cached.ka_interval == 0
+tcp->tcp_cached.ka_time_out == 0
+tcp->tcp_cached.rcv_indication_size != 0
+tcp->tcp_cached.rcv_indication_size > 0xffff
+tcp->tcp_cached.user_priority > 0x7
+tcp->tcp_const.hash_value >= (u8_t)USTORM_INDIRECTION_TABLE_SIZE
+tcp->tx_con->bytes_comp_cnt
+tcp->tx_con->dpc_info.dpc_comp_blocked
+tcp->tx_con->flags & TCP_FIN_REQ_COMPLETED
+tdD8}
+tEHcN
+test_mode
+t'fA;
+tffE;
+Thales TSS ESN:F528-3777-8A761%0#
+TIMERS: Interrupt status is not 0
+Tj@e4
+tJ= N
+tjfD;
+tJH;u
+tkL9g0teD
+tLD9{
+tLfA;
+TlP0X
+tmr_reload_value1
+tnIcF
+to_cnt == 0
+toe_info->grqs[i].isles_pool
+toe_info->state != LM_TOE_STATE_INIT
+tpa_desc_cnt_per_chain
+tpa_info->ipvx_enabled_required != tpa_info->ipvx_enabled_current
+tpa_info->update_cookie
+Translation
+TRUE != IS_DCB_ENABLED(pdev)
+TRUE != tpa_chain->start_coales_bd[queue_index].is_entry_used
+TRUE == b_can_update_ie
+TRUE == b_found_strict
+TRUE == pdev->clients[do_type].omgr.b_is_valid
+TRUE == pdev->um_i2c_info.b_work_item_queued
+TS}C9
+tS=4 
+TSDM: interrupt 0 is active
+TSDM: parity status is not 0
+TSDM: Parser serial FIFO is not empty
+TSDM: Parser SYNC serial FIFO is not empty
+TSDM: pxp_ctrl rd_data fifo is not empty in sdm_dma_rsp block
+TSEM: External store FIFO is not empty
+TSEM: FOC0 credit less than initial credit
+TSEM: FOC1 credit less than initial credit
+TSEM: FOC2 credit less than initial credit
+TSEM: FOC3 credit less than initial credit
+TSEM: interrupt 0 is active
+TSEM: interrupt 1 is active
+TSEM: parity status 0 is not 0
+TSEM: parity status 1 is not 0
+TSEM: There are sleeping threads
+TSEM_0
+TSEM_1
+tSI;^
+TSTORM_TCP_DUPLICATE_ACK_THRESHOLD_SIZE != 4
+TSTORM_TCP_MAX_CWND_SIZE != 4
+TSTORM_TOE_DOMINANCE_THRESHOLD_SIZE != 1
+TSTORM_TOE_DOUBT_REACHABILITY_SIZE != 1
+TSTORM_TOE_MAX_DOMINANCE_VALUE_SIZE != 1
+TSTORM_TOE_MAX_SEG_RETRANSMIT_SIZE != 4
+TUUUUUUU
+tW9F vRA
+twfD9x2upE3
+tx_comp_timeout_us
+tx_con->bd_chain.cons_idx != 0
+tx_con->bytes_comp_cnt
+tx_con->bytes_post_cnt != tx_con->bytes_comp_cnt
+tx_con->bytes_post_cnt > 0
+tx_con->flags & TCP_FIN_REQ_POSTED
+tx_con->flags & TCP_INV_REQ_COMPLETED
+tx_con->flags & TCP_INV_REQ_POSTED
+tx_con->flags & TCP_REMOTE_RST_RECEIVED
+tx_con->flags & TCP_REMOTE_RST_RECEIVED_ALL_RX_INDICATED
+tx_con->flags & TCP_TRM_REQ_COMPLETED
+tx_con->flags & TCP_TRM_REQ_POSTED
+tx_con->flags & TCP_TX_COMP_BLOCKED
+tx_con->lm_tcp_con.flags & TCP_DB_BLOCKED
+tx_con->u.tx.graceful_disconnect_req != NULL
+tx_conn->u.tx.graceful_disconnect_pending
+tx_credit_max
+tx_fast
+tx_hc_threshold0
+tx_hc_threshold1
+tx_hc_threshold2
+txq->chain_idx!= pdev->lmdev.tx_info.catchup_chain_idx
+txq->in_mp_send
+type >= ARRSIZE( pdev->cid_recycled_callbacks )
+type >= ARRSIZE(pdev->context_info->proto_end)
+type >= ARRSIZE(pdev->context_info->proto_pending)
+type >= MAX_PROTO
+tz=(!
+u-!D$8
+u!Hc@
+u!HcC
+u!HcE
+u!HcF
+u!HcG
+u!HcK
+u!HcM
+u!HcN
+u!IcE
+u!IcF
+u!IcG
+U"`H"5
+U"`S"5
+u"D8eQu
+u"IcD$
+u#F8l
+u%D8-Y
+u&IcG
+u*F8l
+u,D9e@u#
+u.D8-`
+u.HcG
+u;PO:
+u?D8d$Pu8A
+u?f92
+u@D8-u
+u[D8-
+u\u8A
+u^D8}
+u|fD9
+u<D8KDt
+u=H9_ t7
+u>IcN
+U0S0Q
+u1F8l
+u6@W/5
+u7D8-n
+u8F8l
+UATAUAVAWH
+UATAVH
+UAVAWH
+UCM: CFC_INIT_CRD is not 1
+UCM: CSEM declared message length unequal to actual
+UCM: DORQ declared message length unequal to actual
+UCM: FIC0_INIT_CRD is not 64
+UCM: FIC1_INIT_CRD is not 64
+UCM: Interrupt status is not 0
+UCM: parity status is not 0
+UCM: STORM declared message length unequal to actual
+UCM: TM_INIT_CRD is not 4
+UCM: TSEM declared message length unequal to actual
+UCM: UQM_INIT_CRD is not 32
+UCM: USDM declared message length unequal to actual
+UCM: XSEM declared message length unequal to actual
+UCM: XX protection CAM is not empty
+UCM: XX_FREE differs from expected 27
+u'D8equ!D8eru
+udD8-
+Ufac 
+uFD8}
+ufHcE
+uID8-|
+uJfA;
+UKPUg
+uLD8}
+um_bdrv.c
+UM_BDRV_QUEUE_NUM_INVALID != pdev->q_group_info.chain_idx_to_q_group_id_map[i]
+um_clnt.c
+um_dbg_log.c
+UM_DCBX_OS_STATE_NOT_ENABLE != pdev->vars.um_dcbx_os_state
+UM_DCBX_OS_STATE_WAIT_FOR_INIT_END == pdev->vars.um_dcbx_os_state
+um_dgif.c
+um_er.c
+um_l2if.c
+um_l4fp.c
+um_l4if.c
+um_l4sp.c
+um_l5.c
+um_l5if.c
+um_l5sp.c
+um_omgr.c
+um_req->lm_req.type != SP_REQUEST_TERMINATE_OFFLOAD
+um_sriov.c
+um_tcp_con->lock_acquire_hdl
+um_tcp_con->lock_acquire_hdl != (KLOCK_QUEUE_HANDLE *)ql_hdl
+um_tcp_con->lock_release_hdl
+um_tcp_con->u.rx.indicating_buffered_data
+um_util.c
+umD8-
+umpkt_cmp != umpkt
+uN9l$@tH
+unmap_cnt > fcblk->map_mbq_cnt
+unmap_cnt > l5blk->map_mbq_cnt
+uO9\$0tI
+UPB: Interrupt status is not 0
+UPB: parity status is not 0
+UPY0D(
+UPYPD(
+ur!C0H
+uRD8-
+uRD8}
+USDM: interrupt 0 is active
+USDM: parity status is not 0
+USDM: Parser serial FIFO is not empty
+USDM: Parser SYNC serial FIFO is not empty
+USDM: pxp_ctrl rd_data fifo is not empty in sdm_dma_rsp block
+USEM: External store FIFO is not empty
+USEM: FOC0 credit less than initial credit
+USEM: FOC1 credit less than initial credit
+USEM: FOC2 credit less than initial credit
+USEM: FOC3 credit less than initial credit
+USEM: interrupt 0 is active
+USEM: interrupt 1 is active
+USEM: parity status 0 is not 0
+USEM: parity status 1 is not 0
+USEM: There are sleeping threads
+USEM_0
+USEM_1
+USTORM_ETH_DYNAMIC_HC_PARAM_SIZE != sizeof(u16_t)
+USTORM_INDIRECTION_TABLE_ENTRY_SIZE != 1
+USTORM_TOE_CQ_CONS_PTR_HI_SIZE != 4
+USTORM_TOE_CQ_CONS_PTR_LO_SIZE != 4
+USTORM_TOE_CQ_CONS_SIZE != 2
+USTORM_TOE_CQ_NEXT_PAGE_BASE_ADDR_HI_SIZE != 4
+USTORM_TOE_CQ_NEXT_PAGE_BASE_ADDR_LO_SIZE != 4
+USTORM_TOE_CQ_NXT_PAGE_ADDR_VALID_SIZE != 1
+USTORM_TOE_CQ_PROD_SIZE != 2
+USTORM_TOE_GRQ_BUF_SIZE_SIZE != 2
+USTORM_TOE_GRQ_CACHE_NUM_BDS > lm_bd_chain_usable_bds_per_page(&grq->bd_chain)
+USTORM_TOE_GRQ_CONS_PTR_HI_SIZE != 4
+USTORM_TOE_GRQ_CONS_PTR_LO_SIZE != 4
+USTORM_TOE_GRQ_CONS_SIZE != 2
+USTORM_TOE_GRQ_LOCAL_CONS_SIZE != 1
+USTORM_TOE_GRQ_LOCAL_PROD_SIZE != 1
+USTORM_TOE_GRQ_PROD_SIZE != 2
+USTORM_TOE_TCP_PUSH_TIMER_TICKS_SIZE != 4
+USVWATAUAVAWH
+USVWATAVAWH
+USVWH
+UUUUH
+uvD8-
+UVWATAUAVAWH
+UVWATAUH
+UVWATAVH
+UVWAUAVH
+UVWAVAWH
+UWATAVAWH
+UWAUAVAWH
+UWAVH
+uXD8}
+uyf9C*uaH
+-v a,
+v$`k$5
+V(IcF
+val != 1
+val & (MCPR_NVM_SW_ARB_ARB_ARB1 << port_num)
+val >= MAX_STATS_TIMER_WAKEUP_NO_COMPLETION
+VarFileInfo
+VATAUAVAWH
+vbd_57710_bugcheck
+vDbgPrintEx
+vf_high_int_per_sec_rx
+vf_high_int_per_sec_tx
+vf_info
+vf_info->vf_stats.vf_stats_state != VF_STATS_NONE
+vf_info->vf_stats.vf_stats_state != VF_STATS_REQ_READY
+vf_low_int_per_sec_rx
+vf_low_int_per_sec_tx
+vf_medium_int_per_sec_rx
+vf_medium_int_per_sec_tx
+vf_pmode_restricted
+virt_mblk->total
+Virtualization\
+vmq_cap_flags
+VS_VERSION_INFO
+VWATAUAVH
+VWATAUAWH
+VWATAVAWH
+VWATH
+VWAUAVAWH
+VWAVH
+VWAWH
+Vxc0D3
+VxcPD3
+VZ'![
+w"M!K
+w$@S$
+w(fD9e2t3A
+W`a0D3
+W`aPD3
+w8t3A
+wait_for_acks
+Washington1
+WATAUAVAWH
+WATAVH
+WATAWH
+WAUAVH
+WAUAWH
+WAVAWH
+wcsrchr
+wcsstr
+WDFLDR.SYS
+WdfVersionBind
+WdfVersionBindClass
+WdfVersionUnbind
+WdfVersionUnbindClass
+whole_pool && (mblk_pool->allocated != mblk_pool->freed)
+wI`nI
+wn>Jj
+wol_cap
+WSD Client For QLogic 10 Gigabit Ethernet Adapter
+WXa0D
+WXaPD
+x ATAUAVH
+x ATAUAWH
+x ATAVAWH
+x ATAVAWM
+x ATH
+x AUAVAWH
+x AV3
+x AVH
+x AWH
+x E9!5
+x UATAUAVAWH
+x UAVAWH
+X*@&=
+X*`d25
+X`S]5
+X3`F/
+X4A`.5
+X4A+/
+X4Aq1
+X4At/
+X9`kC
+X9ab<
+X9P><5
+xA_A^_^[]
+XA_A^A]A\_^[]
+XA_A^A]A\_^][
+XCM: CFC_INIT_CRD is not 1
+XCM: CSEM declared message length unequal to actual
+XCM: DORQ declared message length unequal to actual
+XCM: FIC0_INIT_CRD is not 64
+XCM: FIC1_INIT_CRD is not 64
+XCM: Interrupt status is not 0
+XCM: NIG0 declared message length unequal to actual
+XCM: NIG1 declared message length unequal to actual
+XCM: parity status is not 0
+XCM: PBF declared message length unequal to actual
+XCM: STORM declared message length unequal to actual
+XCM: TM_INIT_CRD is not 4
+XCM: TSEM declared message length unequal to actual
+XCM: USEM declared message length unequal to actual
+XCM: XQM_INIT_CRD is not 32
+XCM: XSDM declared message length unequal to actual
+XCM: XX protection CAM is not empty
+XCM: XX_FREE differs from expected 31
+XCM: XX_FREE differs from expected 32
+xdo_ext->type >= MAX_DO_TYPE_CNT
+xdo_extension_t
+XF%]5
+xI@=B
+xI@PB5
+Xl5^o_CK
+XP}[5
+XPB: Interrupt status is not 0
+XPB: parity status is not 0
+XPr[5
+XSDM: interrupt 0 is active
+XSDM: parity status is not 0
+XSDM: Parser serial FIFO is not empty
+XSDM: Parser SYNC serial FIFO is not empty
+XSDM: pxp_ctrl rd_data fifo is not empty in sdm_dma_rsp block
+XSEM: External store FIFO is not empty
+XSEM: FOC0 credit less than initial credit
+XSEM: FOC1 credit less than initial credit
+XSEM: FOC2 credit less than initial credit
+XSEM: interrupt 0 is active
+XSEM: interrupt 1 is active
+XSEM: parity status 0 is not 0
+XSEM: parity status 1 is not 0
+XSEM: There are sleeping threads
+XSEM_0
+XSEM_1
+XSTORM_COMMON_RTC_RESOLUTION_SIZE != 2
+XSTORM_TCP_GLOBAL_DEL_ACK_COUNTER_ENABLED_SIZE != 1
+XSTORM_TCP_GLOBAL_DEL_ACK_COUNTER_MAX_COUNT_SIZE != 1
+XSTORM_TCP_IPID_SIZE != 2
+XSTORM_TCP_TX_SWS_TIMER_VAL_SIZE != 4
+XSTORM_TOE_LLC_SNAP_ENABLED_SIZE != 1
+xtcp_ag->mss < 4
+xv:$3
+Xxn0D3
+XxnPD3
+xxxx6
+Y&`&*
+Y@T]5
+Y`i0D(
+Y`iPD(
+Y`Y@,
+Yd1I@
+YdQI@
+YH?N*#sGn"
+ySZi4
+Yxi0D3
+YxiPD3
+z.9Wv
+z:PbC
+z+`J-5
+Z6``,
+ZJ@c7
+ZwClose
+ZwCreateKey
+ZwEnumerateKey
+ZwMapViewOfSection
+ZwOpenKey
+ZwOpenSection
+ZwQuerySystemInformation
+ZwQueryValueKey
+ZwSetValueKey
+ZwUnmapViewOfSection

@@ -1,0 +1,286 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\WinSxS\amd64_microsoft-hyper-v-winhvr_31bf3856ad364e35_10.0.17763.1_none_37320ac966ba3b92\winhvr.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C0014000 Import Address Table
+             1C00142F8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         239 HviIsAnyHypervisorPresent
+                         23A HviIsHypervisorMicrosoftCompatible
+                         AA1 ZwSetSystemInformation
+                         24B HvlRegisterInterruptCallback
+                         24D HvlUnregisterInterruptCallback
+                         234 HviGetHypervisorFeatures
+                         ABB __C_specific_handler
+                         153 ExpInterlockedPopEntrySList
+                          83 ExAcquireFastMutex
+                         3C9 KeAcquireSpinLockRaiseToDpc
+                         108 ExReleaseFastMutex
+                         47D KeReleaseSpinLock
+                         154 ExpInterlockedPushEntrySList
+                          EC ExQueryDepthSList
+                          9C ExAllocatePoolWithTag
+                         50F MmGetPhysicalAddress
+                          C3 ExFreePoolWithTag
+                         A6C ZwQuerySystemInformation
+                         32B IoRegisterDriverReinitialization
+                          D1 ExInitializeNPagedLookasideList
+                         423 KeInitializeSpinLock
+                         41B KeInitializeEvent
+                          AC ExDeleteNPagedLookasideList
+                         23F HvlInvokeHypercall
+                         4EF MmAllocateContiguousNodeMemory
+                         507 MmFreeContiguousMemory
+                         44C KeQueryActiveProcessorCountEx
+                         7FF RtlInitializeBitMap
+                         8BA RtlTestBit
+                         4A9 KeSetSystemGroupAffinityThread
+                         492 KeRevertToUserGroupAffinityThread
+                         45A KeQueryMaximumProcessorCountEx
+                         451 KeQueryGroupAffinity
+                         551 MmUnmapIoSpace
+                         526 MmMapIoSpaceEx
+                         89B RtlSetBit
+                         743 RtlClearAllBits
+                         4C7 KfRaiseIrql
+                         441 KeLowerIrql
+                         40E KeGetProcessorIndexFromNumber
+                         40F KeGetProcessorNumberFromIndex
+                         760 RtlCopyUnicodeString
+                         455 KeQueryHighestNodeNumber
+                         45B KeQueryNodeActiveAffinity
+                         7EC RtlGetVersion
+                         295 IoCreateDriver
+                         2AB IoDeleteDriver
+                         4B0 KeSignalCallDpcDone
+                         405 KeGenericCallDpc
+                          94 ExAcquireSpinLockShared
+                         11B ExReleaseSpinLockShared
+                          92 ExAcquireSpinLockExclusive
+                         119 ExReleaseSpinLockExclusive
+                         4F5 MmAllocatePagesForMdlEx
+                         4F2 MmAllocateNodePagesForMdlEx
+                         50B MmFreePagesFromMdl
+                         802 RtlInitializeGenericTable
+                         808 RtlInsertElementGenericTable
+                         779 RtlDeleteElementGenericTable
+                         49C KeSetEvent
+                         4AB KeSetTargetProcessorDpcEx
+                         42E KeInsertQueueDpc
+                         45E KeQueryPriorityThread
+                         23E HvlInvokeFastExtendedHypercall
+                         497 KeSetActualBasePriorityThread
+                         3C7 KeAcquireSpinLockAtDpcLevel
+                         47F KeReleaseSpinLockFromDpcLevel
+                         456 KeQueryInterruptTimePrecise
+                         124 ExSetTimer
+                         134 ExTryAcquirePushLockExclusiveEx
+                         10F ExReleasePushLockExclusiveEx
+                         ABA ZwYieldExecution
+                         3E9 KeDelayExecutionThread
+                         462 KeQueryTotalCycleTimeThread
+                         4C3 KeWaitForMultipleObjects
+                         6CD PsIsThreadTerminating
+                             Ordinal     6
+                         417 KeInitializeDpc
+                         A31 ZwOpenKey
+                         A6F ZwQueryValueKey
+                         9E3 ZwClose
+                         461 KeQueryTimeIncrement
+                          9E ExAllocateTimer
+                          88 ExAcquirePushLockExclusiveEx
+                         4C5 KeWaitForSingleObject
+                          AF ExDeleteTimer
+                         441 KePrepareToDispatchVirtualProcessor
+
+  Section contains the following exports for winhvr.sys
+
+    00000000 characteristics
+    BDDA6167 time date stamp
+        0.00 version
+           1 ordinal base
+         152 number of functions
+         152 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0001A370 DllInitialize
+          2    1 00016A40 DllUnload
+          3    2 0001A3D0 DriverEntry
+          4    3 00004FA0 WinHvAcceptGpaPages
+          5    4 00005050 WinHvAcquireSparseGpaPageHostAccess
+          6    5 000050E0 WinHvAcquireSparseSpaPageHostAccess
+          7    6 00008610 WinHvAddLogicalProcessor
+          8    7 00005D80 WinHvAllocateOverlayPages
+          9    8 00005E70 WinHvAllocatePartitionSintIndex
+         10    9 00015A10 WinHvAllocatePortId
+         11    A 00006130 WinHvAllocateSingleSintIndex
+         12    B 00008090 WinHvAssertDeviceInterrupt
+         13    C 00002E30 WinHvAssertVirtualInterrupt
+         14    D 00008110 WinHvAttachDevice
+         15    E 00016E60 WinHvCancelRestorePartitionState
+         16    F 00016EE0 WinHvCancelSavePartitionState
+         17   10 00006C10 WinHvCancelTimer
+         18   11 0000B010 WinHvCancelVpDispatchLoop
+         19   12 00001F30 WinHvCheckForIoIntercept
+         20   13 00005160 WinHvCheckSparseGpaPageVtlAccess
+         21   14 000036A0 WinHvClearVirtualInterrupt
+         22   15 00007FE0 WinHvCompleteIntercept
+         23   16 00009AC0 WinHvConfigureProfiler
+         24   17 000063D0 WinHvConfigureVirtualInterruptLine
+         25   18 00002550 WinHvConnectPort
+         26   19 00007C20 WinHvCreateCpuGroup
+         27   1A 00009B40 WinHvCreateEventLogBuffer
+         28   1B 00015320 WinHvCreatePartition
+         29   1C 00002480 WinHvCreatePort
+         30   1D 00016800 WinHvCreateTimer
+         31   1E 00001E20 WinHvCreateVp
+         32   1F 00007D00 WinHvDeleteCpuGroup
+         33   20 00009BA0 WinHvDeleteEventLogBuffer
+         34   21 00015010 WinHvDeletePartition
+         35   22 00003610 WinHvDeletePort
+         36   23 000168A0 WinHvDeleteTimer
+         37   24 000035A0 WinHvDeleteVp
+         38   25 00015150 WinHvDepositMemory
+         39   26 00001570 WinHvDepositMemoryFromMdl
+         40   27 000081B0 WinHvDetachDevice
+         41   28 00007900 WinHvDisablePartitionVtl
+         42   29 00007970 WinHvDisableVpVtl
+         43   2A 00003640 WinHvDisconnectPort
+         44   2B 000079F0 WinHvEnablePartitionVtl
+         45   2C 00007A50 WinHvEnableVpVtl
+         46   2D 00009BD0 WinHvFinalizeEventLogBufferGroup
+         47   2E 00003520 WinHvFinalizePartition
+         48   2F 00003670 WinHvFlushEventLogBuffer
+         49   30 00009AB0 WinHvForceSmallPages
+         50   31 00005E50 WinHvFreeOverlayPages
+         51   32 00016470 WinHvFreePartitionSintIndex
+         52   33 00015CF0 WinHvFreePortId
+         53   34 000165F0 WinHvFreeSingleSintIndex
+         54   35 00007D30 WinHvGetCpuGroupAffinity
+         55   36 00007E10 WinHvGetCpuGroupProperty
+         56   37 00007240 WinHvGetCurrentVpIndex
+         57   38 00005200 WinHvGetGpaPagesAccessState
+         58   39 000063E0 WinHvGetLocalInterruptControllerState
+         59   3A 00008660 WinHvGetLogicalProcessorProperty
+         60   3B 000086F0 WinHvGetLogicalProcessorRegisters
+         61   3C 00008750 WinHvGetLogicalProcessorRunTime
+         62   3D 000014A0 WinHvGetMemoryBalance
+         63   3E 00008B10 WinHvGetNextChildPartition
+         64   3F 00007E90 WinHvGetNextCpuGroup
+         65   40 00007F00 WinHvGetNextCpuGroupPartition
+         66   41 00003830 WinHvGetNextQueuedPort
+         67   42 000040F0 WinHvGetPartitionId
+         68   43 00002610 WinHvGetPartitionProperty
+         69   44 00001D90 WinHvGetPortProperty
+         70   45 00003F50 WinHvGetSintEventFlags
+         71   46 000064E0 WinHvGetSintMessage
+         72   47 00001210 WinHvGetSystemInformation
+         73   48 00003D50 WinHvGetVpRegisters
+         74   49 000072A0 WinHvGetXsaveData
+         75   4A 00009C00 WinHvInitializeEventLogBufferGroup
+         76   4B 000073A0 WinHvInjectSyntheticMachineCheckEvent
+         77   4C 00002CB0 WinHvInstallIntercept
+         78   4D 00003900 WinHvLookupPortId
+         79   4E 000010D0 WinHvLowMemoryPolicyAutoDeposit
+         80   4F 00008B00 WinHvLowMemoryPolicyReturnStatus
+         81   50 000081F0 WinHvMapDeviceInterrupt
+         82   51 000082C0 WinHvMapDeviceInterruptEx
+         83   52 00009CA0 WinHvMapEventLogBuffer
+         84   53 00005280 WinHvMapGpaPages
+         85   54 000052E0 WinHvMapGpaPagesFromMbpArray
+         86   55 00002690 WinHvMapGpaPagesFromMbpArrayScanLargePages
+         87   56 00005370 WinHvMapGpaPagesScanLargePages
+         88   57 000053B0 WinHvMapGpaPagesSpecial
+         89   58 000053F0 WinHvMapSparseGpaPages
+         90   59 00015780 WinHvMapStatsPage
+         91   5A 000156D0 WinHvMapVpRegisterPage
+         92   5B 00001630 WinHvModifySparseGpaPages
+         93   5C 00005520 WinHvModifySparseGpaPagesFromMbpArray
+         94   5D 000055A0 WinHvModifyVtlProtectionMask
+         95   5E 000056E0 WinHvModifyVtlProtectionMaskRange
+         96   5F 00009A40 WinHvNotifyStandbyTransition
+         97   60 00003F90 WinHvNtProcessorToVpIndex
+         98   61 00002B70 WinHvPostMessage
+         99   62 000028F0 WinHvPrecommitGpaPages
+        100   63 000087F0 WinHvProcessorIndexToLpIndex
+        101   64 000073F0 WinHvProcessorNumberToVpIndex
+        102   65 000084B0 WinHvQueryDeviceInterruptTarget
+        103   66 000041C0 WinHvQueryInterceptIrql
+        104   67 00003AB0 WinHvQueryReferenceCounter
+        105   68 00005770 WinHvQueryVtlProtectionMaskRange
+        106   69 00005800 WinHvReadGpa
+        107   6A 00001D20 WinHvRegisterInterceptResult
+        108   6B 00003570 WinHvReleaseEventLogBuffer
+        109   6C 000058D0 WinHvReleaseSparseGpaPageHostAccess
+        110   6D 00005960 WinHvReleaseSparseSpaPageHostAccess
+        111   6E 00008850 WinHvRemoveLogicalProcessor
+        112   6F 00016A80 WinHvReportPresentHypervisor
+        113   70 00016F50 WinHvRestorePartitionState
+        114   71 0000B0A0 WinHvRunVpDispatchLoop
+        115   72 00017080 WinHvSavePartitionState
+        116   73 00001070 WinHvScrubPartition
+        117   74 00006D90 WinHvSetAbsoluteTimer
+        118   75 00007F80 WinHvSetCpuGroupProperty
+        119   76 00003B20 WinHvSetEndOfMessage
+        120   77 00009D30 WinHvSetEventLogCompletedNotificationRoutine
+        121   78 00009D40 WinHvSetEventLogGranularSources
+        122   79 00009E80 WinHvSetEventLogGroupSources
+        123   7A 00007B70 WinHvSetHvDebugProperty
+        124   7B 00008B90 WinHvSetInterceptRoutine
+        125   7C 00006520 WinHvSetLocalInterruptControllerState
+        126   7D 000088A0 WinHvSetLogicalProcessorProperty
+        127   7E 00008900 WinHvSetLogicalProcessorRegisters
+        128   7F 00008C70 WinHvSetLowMemoryPolicyRoutine
+        129   80 00001EE0 WinHvSetPartitionProperty
+        130   81 00002C30 WinHvSetPortProperty
+        131   82 000171B0 WinHvSetSchedulerAssistData
+        132   83 00017200 WinHvSetSchedulerNotificationRoutine
+        133   84 00006620 WinHvSetSint
+        134   85 00006710 WinHvSetSintOnCurrentProcessor
+        135   86 00007750 WinHvSetSystemInformation
+        136   87 000063D0 WinHvSetVirtualInterruptLineState
+        137   88 000016B0 WinHvSetVpRegisters
+        138   89 00007440 WinHvSetXsaveData
+        139   8A 000036D0 WinHvSignalEvent
+        140   8B 00002ED0 WinHvTranslateVirtualAddress
+        141   8C 00001FE0 WinHvUncommitGpaPages
+        142   8D 000085C0 WinHvUnmapDeviceInterrupt
+        143   8E 00009F00 WinHvUnmapEventLogBuffer
+        144   8F 00002050 WinHvUnmapGpaPages
+        145   90 000155E0 WinHvUnmapStatsPage
+        146   91 00015550 WinHvUnmapVpRegisterPage
+        147   92 000012F0 WinHvUnregisterInterceptResult
+        148   93 00007BF0 WinHvUpdateHvProcessorFeatures
+        149   94 00017210 WinHvWaitForInflightVpSignals
+        150   95 00001540 WinHvWithdrawAllMemory
+        151   96 000154C0 WinHvWithdrawMemory
+        152   97 000059E0 WinHvWriteGpa
+
+  Summary
+
+        5000 .data
+        2000 .edata
+        1000 .idata
+        1000 .pdata
+        2000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        A000 .text
+        1000 GFIDS
+        1000 INIT
+        1000 NONPAGED
+        3000 PAGE

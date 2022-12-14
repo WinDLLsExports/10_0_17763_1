@@ -1,0 +1,556 @@
+            />
+            level="asInvoker"
+            uiAccess="false"
+        <requestedExecutionLevel
+      </requestedPrivileges>
+      <dpiAware>true</dpiAware>
+      <requestedPrivileges>
+    />
+    </asmv3:windowsSettings>
+    </security>
+    <asmv3:windowsSettings xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">
+    <security>
+    >
+    manifestVersion="1.0" 
+    name="Microsoft.MbaeParserTask.PROGRAM"
+    processorArchitecture="amd64"
+    type="win32"
+    version="5.1.0.0"
+    xmlns:asmv3="urn:schemas-microsoft-com:asm.v3"
+    xmlns="urn:schemas-microsoft-com:asm.v1"
+  </asmv3:application>
+  </trustInfo>
+  <asmv3:application>
+  <assemblyIdentity
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+ A^_^
+ A^A\_
+ A__^
+ A_A^_
+ A_A^_^]
+ A_A^A\
+ A_A^A\_^
+ A_A^A]A\_
+ A_A^A]A\_^]
+ H3E H3E
+ Microsoft Corporation. All rights reserved.
+ Operating System
+ Windows
+!L$0H
+!L$4A
+!This program cannot be run in DOS mode.
+%PROGRAMDATA%\Microsoft\Windows\DeviceMetadataCache\
+(_^][
+(A_A^A]A\_^][
+./mv1:IgnorePassword
+./mv1:UserName
+.?AV_com_error@@
+.?AVbad_alloc@std@@
+.?AVCAtlException@ATL@@
+.?AVexception@@
+.00cfg
+.CRT$XCA
+.CRT$XCAA
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIY
+.CRT$XIZ
+.CRT$XLA
+.CRT$XLZ
+.data
+.data$brc
+.data$r$brc
+.gfids
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.pdata
+.rdata
+.rdata$brc
+.rdata$T$brc
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zzzdbg
+.rsrc$01
+.rsrc$02
+.text
+.text$mn
+.text$mn$00
+.text$x
+.tls$
+.tls$ZZZ
+.xdata
+.xdata$x
+/mv1:MBNProfile
+/mv1:MBNProfile/%s:%s
+/mv1:MBNProfile/mv1:ConnectionMode
+/mv1:MBNProfile/mv1:Context/mv1:UserLogonCred
+/mv1:MBNProfile/mv1:ICONFilePath
+/mv1:MBNProfile/mv1:IsDefault
+/mv1:MBNProfile/mv1:Name
+/mv1:MBNProfile/mv1:SimIccID
+/mv1:MBNProfile/mv1:SubscriberID
+/mv1:MBNProfile/mv2:DisplayProviderName
+/mv1:MBNProfile/mv2:IsPurchaseProfile
+??0exception@@QEAA@AEBQEBDH@Z
+??0exception@@QEAA@AEBV0@@Z
+??1exception@@UEAA@XZ
+??1type_info@@UEAA@XZ
+?Create@MbaeXmlParser@@SAJPEAPEAV1@@Z
+?terminate@@YAXXZ
+?what@exception@@UEBAPEBDXZ
+@.data
+@.reloc
+@.rsrc
+@A\_^
+@A^_^
+@A_A^_
+@A_A^_^]
+@A_A^A\_^
+@A_A^A]
+@A_A^A]_^][
+@A_A^A]A\_^]
+@SUVWAUAVAWH
+@SUVWAVAWH
+@UATAUAVAWH
+@USVWATAUAVAWH
+@USVWATAVAWH
+@USVWAUAVAWH
+@USVWAVH
+@UVWAVAWH
+@VWAVH
+\$ UH
+\$ UVWATAUAVAWH
+\$ UVWATAWH
+\$`fE
+\$0E3
+\$0I;
+]D9t$@v#H
+__C_specific_handler
+__CxxFrameHandler3
+__set_app_type
+__setusermatherr
+__wgetmainargs
+_amsg_exit
+_callnewh
+_cexit
+_commode
+_CxxThrowException
+_errno
+_exit
+_fmode
+_initterm
+_purecall
+_vsnwprintf
+_wcsicmp
+_wcsnicmp
+_XcptFilter
+` AUAVAWH
+` UAVAWH
+`.rdata
+`A^_^
+`A_A^_^]
+|$ AVH
+|$ AWH
+|$0I;
+|$8E3
++f9+u
+<!-- Copyright (c) Microsoft Corporation -->
+</assembly>
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<?xml version='1.0'?><xsl:stylesheet version='1.0' xmlns:xsl='http://www.w3.org/1999/XSL/Transform' xmlns:mv1='http://www.microsoft.com/networking/WWAN/profile/v1' xmlns:mv2='http://www.microsoft.com/networking/WWAN/profile/v2'>  <xsl:template match='/'>    <xsl:apply-templates/>  </xsl:template>  <xsl:template match='mv1:UserLogonCred'>    <xsl:copy>      <xsl:copy-of select='@*'/>      <xsl:copy-of select='mv1:UserName'/>    </xsl:copy>  </xsl:template>  <xsl:template match='mv1:Context'>    <xsl:copy>      <xsl:copy-of select='@*'/>      <xsl:copy-of select='mv1:AccessString'/>      <xsl:apply-templates select='mv1:UserLogonCred'/>      <xsl:copy-of select='mv1:Compression'/>      <xsl:copy-of select='mv1:AuthProtocol'/>    </xsl:copy>  </xsl:template>  <xsl:template match='mv1:MBNProfile'>    <xsl:copy>      <xsl:copy-of select='@*'/>      <xsl:copy-of select='mv1:Name'/>      <xsl:copy-of select='mv1:Description'/>      <xsl:copy-of select='mv1:IsDefault'/>      <xsl:copy-of select='mv1:ProfileCreationType'/>      <xsl:copy-of select='mv1:SubscriberID'/>      <xsl:copy-of select='mv1:SimIccID'/>      <xsl:copy-of select='mv1:AutoConnectOnInternet'/>      <xsl:copy-of select='mv1:ConnectionMode'/>      <xsl:apply-templates select='mv1:Context'/>      <xsl:copy-of select='mv1:DataRoamingPartners'/>      <xsl:copy-of select='mv2:IsPurchaseProfile'/>      <xsl:copy-of select='mv2:DisplayProviderName'/>    </xsl:copy>  </xsl:template></xsl:stylesheet>
+<?xml version='1.0'?><xsl:stylesheet version='1.0' xmlns:xsl='http://www.w3.org/1999/XSL/Transform' xmlns:mv1='http://www.microsoft.com/networking/WWAN/profile/v1' xmlns:mv2='http://www.microsoft.com/networking/WWAN/profile/v2'>  <xsl:template match='mv1:MBNProfile'>    <xsl:copy>      <xsl:copy-of select='@*'/>      <xsl:copy-of select='mv1:Name'/>      <xsl:copy-of select='mv1:Description'/>      <xsl:copy-of select='mv1:ICONFilePath'/>      <xsl:copy-of select='mv1:IsDefault'/>      <xsl:copy-of select='mv1:ProfileCreationType'/>      <xsl:copy-of select='mv1:SubscriberID'/>      <xsl:copy-of select='mv1:SimIccID'/>      <xsl:copy-of select='mv1:AutoConnectOnInternet'/>      <xsl:copy-of select='mv1:ConnectionMode'/>      <xsl:copy-of select='mv1:Context'/>      <xsl:copy-of select='mv1:DataRoamingPartners'/>      <xsl:copy-of select='mv2:IsPurchaseProfile'/>      <xsl:copy-of select='mv2:DisplayProviderName'/>    </xsl:copy>  </xsl:template></xsl:stylesheet>
+<assembly
+<QueryList> <Query Id='1'>  <Select Path='Microsoft-Windows-DeviceSetupManager/Operational'>    *[System/EventID=302] and *[EventData/Data[@Name='Prop_ServiceInfoNamespace']='http://schemas.microsoft.com/windows/2010/12/DeviceMetadata/MobileBroadBandInfo']   </Select>  </Query></QueryList>
+<unknown>
+040904B0
+0A^_^
+0A^A\_
+0A^A]A\_^
+0A_A^_
+0A_A^_^[
+0A_A^A\
+0A_A^A]
+0A_A^A]_^
+0A_A^A]A\_
+0x%08X: 
+10.0.17763.1
+10.0.17763.1 (WinBuild.160101.0800)
+4E9n8}.A
+8A^_^[
+A^_^[]
+A^A\_
+A^A\_^]
+A_A\_^]
+A_A^]
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[]
+A_A^A]_^[]
+A_A^A]A\]
+A_A^A]A\_
+A_A^A]A\_^[]
+A_A^A]A\_^]
+AcquireSRWLockExclusive
+activitySucceeded
+AdjustTokenPrivileges
+ADVAPI32.dll
+AllowStandardUserPinUnlock
+api-ms-win-core-path-l1-1-0.dll
+AppsAccountIsVisibleTo
+Assert
+assertVersion
+AUAVAWH
+bad allocation
+calloc
+CertVerifyCertificateChainPolicy
+CFGMGR32.dll
+CHANH
+CloseHandle
+CLSIDFromString
+CoCreateInstance
+CoInitializeEx
+CompanionAppId
+CompanionAppPackageFamilyName
+CompanyName
+CompletedTasks
+ConnectionMode
+CoTaskMemAlloc
+CoTaskMemFree
+CoUninitialize
+count
+CreateFileW
+CRIM 
+CRYPT32.dll
+CryptCATAdminCalcHashFromFileHandle
+CryptProtectData
+CryptUnprotectData
+culture
+CurrentNetworkDeviceId
+d$ E3
+D$ E3
+D$ I;
+D$@9|$0
+D$@E3
+D$0E3
+D$8E3
+D$HE3
+d$hfD9"
+D$HH!
+D$hI+
+D$p;D$0
+D$PE3
+D$pE3
+D$XE3
+D8d$0
+D8d$P
+D9t$0u
+DevFreeObjectProperties
+DevFreeObjects
+DevGetObjectProperties
+DevGetObjects
+DisplayProviderName
+E\$hH
+EncryptedCurrentMobileEquipmentId
+EncryptedSimIccId
+EncryptedSubscriberId
+en-US
+error
+Event/EventData/Data[@Name='Prop_ContainerId']
+Event/EventData/Data[@Name='Prop_CultureCode']
+Event/System/TimeCreated/@SystemTime
+EventData
+EventProviderEnabled
+EventRegister
+EventSetInformation
+EventUnregister
+EventWriteTransfer
+EVNTP
+EvtClose
+EvtCreateRenderContext
+EvtNext
+EvtQuery
+EvtRender
+ExpandEnvironmentStringsW
+f9<Bu
+f9<Cu
+f9<Ju
+f94Au
+f94Cu
+f9H\u
+fA9<@u
+fA9<Hu
+fA9<Iu
+fA9<Ju
+fA9<Ku
+fA9<Nu
+fA9<Ou
+fA9<Su
+fA94Au
+fA9Z*v$A
+false
+fB9|u
+fB94Su
+fD9$Bu
+fD9$Fu
+fD9$Hu
+fD9$ou
+fD9,Au
+fD9/u
+fD9<~u
+fD9<Cu
+fD9<Gu
+fD9<pu
+fD90t
+fD93u
+fD94Au
+fD94Gu
+fD9t}
+fF9,{u
+FileDescription
+FileVersion
+FindClose
+FindFirstFileW
+FormatMessageW
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThreadId
+GetFileAttributesW
+GetFileInformationByHandle
+GetFullPathNameW
+GetLastError
+GetMBAEProperties
+GetModuleFileNameA
+GetModuleHandleW
+GetPersistentRegPath
+GetSystemTimeAsFileTime
+GetTickCount
+GetTokenInformation
+GetTraceEnableFlags
+GetTraceEnableLevel
+GetTraceLoggerHandle
+GlobalCollection
+H UVWATAUAVAWH
+H VWAVH
+H!\$ E3
+H!\$ L
+H!t$ @
+H!t$ I
+H!t$(I
+H;L$Pt2
+H9D$P
+HcA<H
+hIi%}
+hresult
+HRESULT 0x%08X
+HRESULT 0x8007000E
+http://schemas.microsoft.com/windows/2010/12/DeviceMetadata/MobileBroadBandInfo
+http://www.microsoft.com/networking/WWAN/profile/v1
+http://www.microsoft.com/networking/WWAN/profile/v2
+I;n8v
+I;v8r
+ICONFilePath
+IDispatch error #%d
+IgnorePassword
+imageName
+imageSize
+InitOnceExecuteOnce
+InternalName
+internet
+Invalid parameter passed to C runtime function.
+isalpha
+IsPurchaseProfile
+KERNEL32.dll
+L$ E3
+L$ SH
+L$ SUVWH
+L$ UH
+l$ VWATAVAWH
+l$ WH
+L$(E3
+L$@H3
+L$`H3
+L$0H3
+L$8E3
+l$Hu4L
+L$P!t$03
+L$PH3
+L$XH3
+L9a u
+L9d$ht
+L9t$hH
+LcA<E3
+LegalCopyright
+LocalAlloc
+LocalFree
+LogServiceProviderId
+M9n(tlH
+malloc
+manual
+MaxXMLSize
+MBAE Parser Task
+MbaeParserTask.exe
+MbaeParserTask.pdb
+MbaeXmlParser.DLL
+memcpy
+memcpy_s
+memmove
+memmove_s
+memset
+MetadataPackageId
+Microsoft
+Microsoft Corporation
+Microsoft.Windows.CellCore.Provisioning.ParserTask
+Microsoft-Windows-Mobile-Broadband-Experience-Parser-Task
+Microsoft-Windows-Mobile-Broadband-Experience-Parser-Task/Analytic
+Microsoft-Windows-Mobile-Broadband-Experience-Parser-Task/Operational
+Mobile Broadband Account Experience Parser Task
+MobileBroadbandAccounts\Accounts
+MobileBroadbandInfo:NetworkConfiguration/MobileBroadbandProfiles/Internet
+MobileBroadbandInfo:NetworkConfiguration/MobileBroadbandProfiles/Purchase
+MobileNetworking.dll
+ModuleCollection
+msvcrt.dll
+ntdll.dll
+NtQueryKey
+NtQuerySystemInformation
+ole32.dll
+OLEAUT32.dll
+OleRun
+OPCOT
+OpenProcessToken
+OperatorProvisioned
+OriginalFilename
+OutputDebugStringA
+pA_A^A]A\_^]
+ParseMBAEProperties
+PathCchAppend
+PathFileExistsW
+ProductName
+ProductVersion
+profile
+ProfileCreationType
+providerName
+Pu=Hc
+purchase
+Qo@Zh
+QueryPerformanceCounter
+R$fA;Z*
+ReadFile
+realloc
+RegCloseKey
+RegCreateKeyExW
+RegGetValueW
+RegisterTraceGuidsW
+RegOpenKeyExW
+RegSetValueExW
+ReleaseSRWLockExclusive
+RSDSh
+RtlCaptureContext
+RtlLookupFunctionEntry
+RtlVirtualUnwind
+SelectionLanguage
+SelectionNamespaces
+ServiceInfo:ServiceIconFile
+ServiceProviderFriendlyName
+ServiceProviderGuid
+ServiceProviderIconPath
+ServiceProviderId
+ServiceProviderName
+ServiceProviderType
+SetFilePointerEx
+SetThreadPreferredUILanguages
+SetUnhandledExceptionFilter
+SHLWAPI.dll
+sign.cat
+SimIccID
+Sleep
+SleepConditionVariableSRW
+Software\Microsoft
+StartParserTask
+StopParserTask
+StringFileInfo
+StringFromGUID2
+SUVWATAUAVAWH
+SUVWAUAVAWH
+SVWAVAWH
+SVWAVH
+SWD\MBAE\
+SWD\MBAE\SMS_
+t#E8n0u
+t$ WATAUAVAWH
+t$(E3
+t$`D!t$dD!t$hL!t$pH
+T$`L;u
+T$0E3
+T$HE3
+T$XE3
+t/L;u
+TelemetryAssert
+TelemetryAssertDiagTrack
+TEMPl
+TEMPp
+TEMPt
+TerminateProcess
+t-fD91t'I
+timestamp
+totalHits
+toupper
+TraceMessage
+Translation
+TTBLd
+tZL;w
+u HcA<H
+u#H91t
+u*9Q<|%
+UATAUAVAWH
+UAVAWH
+UnhandledExceptionFilter
+Unknown error 0x%0lX
+UnregisterTraceGuids
+UVWATAUAVAWH
+UVWATAVH
+UVWAVAWH
+UWATAVAWH
+UWAWH
+V:MbnInternetProfileTemplatePath
+V:MbnPurchaseProfileTemplatePath
+VarFileInfo
+VS_VERSION_INFO
+VWATAUAVH
+VWATAVAWH
+VWATH
+VWAUAVAWH
+VWAVH
+VWAWH
+w$H;q
+WakeAllConditionVariable
+WATAUAVAWH
+WATAVH
+WAVAWH
+WEVT_TEMPLATE
+wevtapi.dll
+win:Critical
+win:Error
+win:Informational
+win:Start
+win:Stop
+win:Warning
+WINTRUST.dll
+WinVerifyTrustEx
+WTHelperGetProvSignerFromChain
+WTHelperProvDataFromStateData
+x ATAVAWH
+x AVH
+x AWH
+x>9t$`}8L
+XA_A^_^][
+xC@8|.
+xmlns:mv1='http://www.microsoft.com/networking/WWAN/profile/v1' xmlns:mv2='http://www.microsoft.com/networking/WWAN/profile/v2'
+XPath
+y#A8w

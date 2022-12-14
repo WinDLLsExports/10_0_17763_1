@@ -1,0 +1,1238 @@
+        <element name="BuiltIn"         type="bidi:BUILT_IN"/>
+        <element name="Const"           type="bidi:CONST"/>
+        <element name="Event"           type="bidi:EVENT"/>
+        <element name="IndexedProperty"    type="bidi:INDEXED_PROPERTY"/>
+        <element name="IndexedProperty" type="bidi:INDEXED_PROPERTY"/>
+        <element name="NonIndexedProperty" type="bidi:NON_INDEXED_PROPERTY"/>
+        <element name="PortStatus" type="bidi:PortStatusType" minOccurs="0" maxOccurs="1"/>
+        <element name="Property"        type="bidi:PROPERTY"/>
+        <element name="Property" type="bidi:PROPERTY" minOccurs="1" maxOccurs="unbounded"/>
+        <element name="Value"              type="bidi:VALUE"/>
+        <element name="Value"           type="bidi:VALUE"/>
+        targetNamespace="http://schemas.microsoft.com/windows/2010/09/printing/usbbidi">
+        xmlns:bidi="http://schemas.microsoft.com/windows/2010/09/printing/usbbidi"
+      </choice>
+      </sequence>
+      <BuiltIn name='CompatibleId' id='DeviceInfo:CompatibleId'/>
+      <BuiltIn name='HardwareId' id='DeviceInfo:HardwareId'/>
+      <BuiltIn name='IEEE1284DeviceId' id='DeviceInfo:IEEE1284DeviceId'/>
+      <BuiltIn name='Manufacturer'     id='DeviceInfo:Manufacturer'/>
+      <BuiltIn name='ModelName'        id='DeviceInfo:ModelName'/>
+      <BuiltIn name='SerialNumber' id='DeviceInfo:SerialNumber'/>
+      <choice>
+      <Code>0</Code>
+      <Code>10</Code>
+      <Code>2</Code>
+      <Code>3</Code>
+      <Code>4</Code>
+      <Code>5</Code>
+      <Code>6</Code>
+      <Code>7</Code>
+      <Code>8</Code>
+      <element name="Code" type="int"/>
+      <element name="Keyword" type="bidi:string64"/>
+      <element name="Severity" type="int"/>
+      <element name="Status" type="bidi:StatusEntryType" maxOccurs="unbounded" />
+      <enumeration value="BIDI_BLOB"/>
+      <enumeration value="BIDI_BOOL"/>
+      <enumeration value="BIDI_ENUM"/>
+      <enumeration value="BIDI_FLOAT"/>
+      <enumeration value="BIDI_INT"/>
+      <enumeration value="BIDI_STRING"/>
+      <enumeration value="BIDI_TEXT"/>
+      <enumeration value="Get"/>
+      <enumeration value="GetSet"/>
+      <enumeration value="Set"/>
+      <extension base="bidi:INDEXED_PROPERTY"/>
+      <Keyword>AttentionRequired</Keyword>
+      <Keyword>DoorOpen</Keyword>
+      <Keyword>MarkerSupplyEmpty</Keyword>
+      <Keyword>MarkerSupplyLow</Keyword>
+      <Keyword>MediaEmpty</Keyword>
+      <Keyword>MediaJam</Keyword>
+      <Keyword>MediaNeeded</Keyword>
+      <Keyword>None</Keyword>
+      <Keyword>OutputAreaFull</Keyword>
+      <maxLength value='64'/>
+      <pattern value="\w+"/>
+      <pattern value='\w+'/>
+      <sequence minOccurs="1" maxOccurs="unbounded">
+      <Severity>0</Severity>
+      <Severity>1</Severity>
+      <Severity>2</Severity>
+      Copyright (c) Microsoft Corporation.  All rights reserved.
+      USB Printing Bidi Extension XML Schema for Print Class Driver v1.0
+    </complexContent>
+    </complexType>
+    </documentation>
+    </Property>
+    </restriction>
+    </sequence>
+    </Status>
+    <attribute name="accessType"        type="bidi:ACCESS_TYPE"  use="required"/>
+    <attribute name="drvPrinterEvent"   type="boolean"           use="optional"/>
+    <attribute name="id"                type="string"   use="required"/>
+    <attribute name="name"              type="bidi:VALUE_NAME"   use="required"/>
+    <attribute name="name"              type="string"   use="required"/>
+    <attribute name="name" type="bidi:PROPERTY_NAME" use="required"/>
+    <attribute name="queryKey"          type="string"            use="optional"/>
+    <attribute name="refreshInterval"   type="integer"           use="optional"/>
+    <attribute name="type"              type="bidi:BIDI_TYPE"    use="required"/>
+    <attribute name="value"             type="string"            use="required"/>
+    <complexContent>
+    <complexType>
+    <documentation>
+    <Property name='DeviceInfo'>
+    <restriction base="string">
+    <restriction base='string'>
+    <sequence minOccurs="1" maxOccurs="unbounded">
+    <sequence>
+    <Status>
+  </annotation>
+  </complexType>
+  </element>
+  </PortStatus>
+  </Property>
+  </simpleType>
+  <annotation>
+  <complexType name ="PortStatusType">
+  <complexType name ="StatusEntryType">
+  <complexType name="BUILT_IN" >
+  <complexType name="CONST">
+  <complexType name="EVENT">
+  <complexType name="INDEXED_PROPERTY">
+  <complexType name="NON_INDEXED_PROPERTY">
+  <complexType name="PROPERTY">
+  <complexType name="VALUE">
+  <element name="Schema">
+  <PortStatus>
+  <Property name='Printer'>
+  <simpleType name="ACCESS_TYPE">
+  <simpleType name="BIDI_TYPE">
+  <simpleType name="PROPERTY_NAME">
+  <simpleType name="VALUE_NAME">
+  <simpleType name='string64'>
+ A^_^
+ A^A\_
+ A_A^_
+ A_A^A\
+ A_A^A\_^
+ A_A^A]
+ A_A^A]A\_
+ A_A^A]A\_^]
+ H3E H3E
+ Microsoft Corporation. All rights reserved.
+ Operating System
+ Windows
+!D$ D
+!D$ L
+!D$`H
+!JavaScriptExecutionTerminatedData
+!t$LL
+!This program cannot be run in DOS mode.
+"#AddFloat
+#GetInt32
+%%s%%s%s
+%hs!%p: 
+%hs(%d) tid(%x) %08X %ws
+%hs(%d)\%hs!%p: 
+%I64d
+%s%03u
+%s%c%c%s
+%s%c%s
+&`BidiType
+&pArrayWW
+($pbstrSchemaWd
+(caller: %p) 
+(t$ H
+(t$@H
+(t$@L
+)D$PL
+)t$ H
+)t$@H
+.?AUhr_error@@
+.?AVbad_alloc@std@@
+.?AVCAtlException@ATL@@
+.?AVexception@@
+.?AVlength_error@std@@
+.?AVlogic_error@std@@
+.?AVout_of_range@std@@
+.?AVResultException@wil@@
+.?AVWindowsError@PrintCore@@
+.\WriteWWW
+.00cfg
+.bss$00
+.bss$01
+.bss$dk00
+.bss$pr00
+.bss$zz
+.CRT$XCA
+.CRT$XCL
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIZ
+.data
+.data$00
+.data$00$brc
+.data$01
+.data$dk00$brc
+.data$r$brc
+.data$zz
+.data$zz$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.edata
+.gfids
+.giats
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.pdata
+.rdata
+.rdata$00
+.rdata$brc
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zz
+.rdata$zz$brc
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.t&f;
+.text
+.text$di
+.text$lp01UsbMon.dll!20_pri7
+.text$mn
+.text$mn$00
+.text$np
+.text$x
+.text$yd
+.text$zy
+.text$zz
+.xdata
+.xdata$x
+//bidi:Notification
+//Const | //Value | //BuiltIn | //Event
+//PortStatus
+/fD;e
+/PrinterBidiSchemaElementType_EnumWWWd
+:IPrinterBidiSchemaElementWWW
+??_V@YAXPEAX@Z
+??0exception@@QEAA@AEBQEBD@Z
+??0exception@@QEAA@AEBQEBDH@Z
+??0exception@@QEAA@AEBV0@@Z
+??0exception@@QEAA@XZ
+??1exception@@UEAA@XZ
+??1type_info@@UEAA@XZ
+??3@YAXPEAX@Z
+?{uQH
+?IPrinterScriptableSequentialStreamWW,
+?terminate@@YAXXZ
+?what@exception@@UEBAPEBDXZ
+@.data
+@.didat
+@.reloc
+@A^_]
+@A^_^
+@A^A]A\
+@A__^][
+@A_A]A\_^[]
+@A_A^]
+@A_A^_
+@A_A^_^]
+@A_A^A\
+@A_A^A\_]
+@A_A^A\_^
+@A_A^A\_^[]
+@A_A^A]A\_^]
+@D t"
+@Qm6t
+@SATAWH
+@SUVWATAVH
+@SUVWATH
+@SUVWAUAVAWH
+@SUVWAVH
+@SUVWAWH
+@SUVWH
+@SVWATAUAVAW
+@SVWATAUAVAWH
+@SVWH
+@UAVAWH
+@USVWATAUAVAWH
+@USVWATAUAVH
+@USVWATAUAWH
+@USVWATAVAWH
+@USVWAVAWH
+@USVWAVH
+@USWH
+@UVWATAUAVAWH
+@UVWATAVH
+@UVWAVAWH
+@UVWH
+@UWATAVAWH
+@UWAVH
+@VWATAVAWH
+@VWATH
+@VWAVH
+@VWAWH
+@WATAVH
+@WAVAWH
+@wcit
+[%hs(%hs)]
+[%hs]
+\$ A;
+\$ E3
+\$ UH
+\$ UVWATAUAVAW
+\$ UVWATAUAVAWH
+\$ UVWAVAWH
+\$(E3
+\$@H!\$HH
+\$PI;
+\\?\Root#RDPBUS#0000#{28d78fad-5a12-11d1-ae5b-0000f803a8c2}\TS
+\\CSR|
+\Printer.Status.Summary:State
+\Printer.Status.Summary:StateReason
+__C_specific_handler
+__CxxFrameHandler3
+__dllonexit
+_0f9+u
+_amsg_exit
+_callnewh
+_CxxThrowException
+_errno
+_get_errno
+_Hf9+t
+_initterm
+_lock
+_onexit
+_purecall
+_set_errno
+_unlock
+_vsnprintf_s
+_vsnwprintf
+_wcsicmp
+_wcsnicmp
+_wtol
+_XcptFilter
+`.rdata
+`A^_^
+`A^_^[]
+`A_A^_^[
+`A_A^_^]
+`A_A^A]A\_^[
+`A_A^A]A\_^]
+|$ "u
+|$ AVH
+|$ AWH
+|$ E3
+|$(E3
+|$@E3
+|$`H;
+|$HPs
+|$pA!?
+|AddInt32
+|SuccessW
+~tagSTREAM_SEEKWW 
+</bidi:Schema>
+</schema>
+<?xml version='1.0'?>
+<bidi:Schema xmlns:bidi="http://schemas.microsoft.com/windows/2010/09/printing/usbbidi">
+<DeviceBusyWW
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+=?tUd
+=L9o<
+040904B0
+0A\_^
+0A\_^][
+0A^_^
+0A^A\_
+0A^A\_^]
+0A__^
+0A_A^_
+0A_A^_^]
+0A_A^A\
+0A_A^A\_^
+0A_A^A]A\_
+0A_A^A]A\_^]
+10.0.17763.1
+10.0.17763.1 (WinBuild.160101.0800)
+7fD;>u
+8\$0t
+8A^_^[
+8A_A]_]
+8A_A^_^[]
+8PrinterBidiLibWW
+9_TtE9_Xt@
+9|$0tZH
+9bstrValueWWW
+9k$tC9k(t>H;
+9s$t?9s(t:H;
+9YPt/H
+A@wcitD
+A^_^[]
+A^A\_
+A^A\_^]
+A^A]_^]
+A^A]A\_^[]
+A_A]_^]
+A_A^]
+A_A^_
+A_A^_^[
+A_A^_^[]
+A_A^_^]
+A_A^A\
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[]
+A_A^A]
+A_A^A]_^
+A_A^A]_^][
+A_A^A]A\]
+A_A^A]A\_
+A_A^A]A\_^[
+A_A^A]A\_^[]
+A_A^A]A\_^]
+accessType
+AddBlobW
+AddBoolW
+AddEnumW
+AddNullW
+AddRequeryKeyWWW
+AddStringWWW
+advapi32.dll
+anyDL
+anyDu
+api-ms-win-core-com-l1-1-0.dll
+api-ms-win-core-debug-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-1.dll
+api-ms-win-core-errorhandling-l1-1-0.dll
+api-ms-win-core-file-l1-1-0.dll
+api-ms-win-core-file-l1-2-0.dll
+api-ms-win-core-handle-l1-1-0.dll
+api-ms-win-core-heap-l1-1-0.dll
+api-ms-win-core-heap-l2-1-0.dll
+api-ms-win-core-io-l1-1-0.dll
+api-ms-win-core-io-l1-1-1.dll
+api-ms-win-core-libraryloader-l1-2-0.dll
+api-ms-win-core-libraryloader-l1-2-1.dll
+api-ms-win-core-localization-l1-2-0.dll
+API-MS-Win-Core-LocalRegistry-L1-1-0.dll
+api-ms-win-core-memory-l1-1-0.dll
+api-ms-win-core-misc-l1-1-0.dll
+api-ms-win-core-privateprofile-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-0.dll
+api-ms-win-core-profile-l1-1-0.dll
+api-ms-win-core-registry-l1-1-0.dll
+api-ms-win-core-string-l1-1-0.dll
+api-ms-win-core-synch-l1-1-0.dll
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-core-synch-l1-2-1.dll
+api-ms-win-core-sysinfo-l1-1-0.dll
+api-ms-win-core-threadpool-l1-2-0.dll
+api-ms-win-devices-query-l1-1-0.dll
+api-ms-win-eventing-classicprovider-l1-1-0.dll
+api-ms-win-eventing-provider-l1-1-0.dll
+api-ms-win-security-base-l1-1-0.dll
+APPID
+AppID
+Array
+ATAVAWH
+AttentionRequired
+bad allocation
+Base Name
+BD t[
+bidi:Notification
+bidi:Schema/PortStatus/Status[Keyword='%s']/Code
+bidi:Schema/PortStatus/Status[Keyword='%s']/Severity
+BIDI_BLOB
+BIDI_BOOL
+BIDI_ENUM
+BIDI_FLOAT
+BIDI_INT
+BIDI_NULL
+BIDI_STRING
+BIDI_TEXT
+BidiFiles
+BidiSPMFile
+BidiUSBFile
+BidiUSBJSFile
+BidiUSBStatusInterface
+BidiWSDFile
+bstrQueryKey,
+bstrSchemaWW
+BuiltIn
+bValueWW
+C(refcH
+C@!{DH
+C@9C<
+C@9C<vTH
+C@9C<w
+C@H9{
+C@wcrw
+callContext
+CallContext:[%hs] 
+CancelIo
+CancelIoEx
+CatalogFile
+CFGMGR32.dll
+cfgmgr32.dll
+CGetBoolW
+CHANx
+CharNextW
+CHcrit
+CloseHandle
+ClosePrinter
+CloseThreadpoolTimer
+CLSID
+CLSIDFromProgID
+CM_Reenumerate_DevNode_Ex
+CM_Register_Notification
+CM_Unregister_Notification
+CoCreateInstance
+CoGetClassObject
+Column
+CommitWW 
+CompanyName
+Component Categories
+Const
+ConstraintScript
+CoTaskMemAlloc
+CoTaskMemFree
+CoTaskMemRealloc
+CoWaitForMultipleHandles
+CreateEventW
+CreateFileMappingW
+CreateFileW
+CreateMutexExW
+CreatePort
+CreateSemaphoreExW
+CreateSemaphoreW
+CreateThread
+CreateThreadpoolTimer
+CreateWellKnownSid
+CRIMp
+crit3
+CRYPT32.dll
+CryptBinaryToStringW
+CryptStringToBinaryW
+currentContextId
+currentContextMessage
+currentContextName
+D!`$H
+D!p$H
+D!vHD!vDH
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ fD
+D$(E3
+D$(H9
+D$(strgH
+d$@D9c u
+D$@E3
+D$@I+
+D$0;CDw
+D$0f90t
+D$0fD98t
+D$0L;
+D$0strgH
+D$89s\t
+D$8E3
+D$8H!t$8H
+D$8strgH
+D$HE3
+D$PfD
+D$PI;
+D$xE3
+D$xH9D$pt
+D$xstrgH
+D;d$@
+D9|$8
+D9A t
+D9A$t
+D9A(t
+D9C(t
+D9vHt
+D9yPt
+DataFile
+DataFileType
+DBT_DEVICEARRIVAL
+DBT_DEVICEREMOVECOMPLETE
+DebugBreak
+DelayLoadFailureHook
+Delete
+DeleteCriticalSection
+DevCloseObjectQuery
+DevCreateObjectQuery
+DevFreeObjectProperties
+DevFreeObjects
+DevGetObjectProperties
+DevGetObjects
+DeviceInfo:CompatibleId
+DeviceInfo:HardwareId
+DeviceInfo:IEEE1284DeviceId
+DeviceInfo:Manufacturer
+DeviceInfo:ModelName
+DeviceInfo:SerialNumber
+DeviceIoControl
+DevicePath
+DevmodeMap
+DisableThreadLibraryCalls
+DllAllocSplMem
+DllFreeSplMem
+DllMain
+DriverConfig
+DriverFile
+DriverName
+drvPrinterEvent
+DuplicateHandle
+DuplicateTokenEx
+Dynamic Print Monitor
+DynaMon.dll
+E(=csm
+e1SetBoolWX
+E8=csm
+EDP://EnterpriseIds
+EDP://EvaluationFlags
+EDP://ExemptEnterpriseIds
+EDP://PolicyFlags
+Eh=csm
+EH=csm
+EnableJavaScriptDebugging
+endPrintJob
+EnterCriticalSection
+EnumPrintersW
+EnumSchema
+en-US
+EoA;E
+ErrorMessage
+ErrorText
+EtwTraceMessage
+Event
+EventData
+EventEnabled
+EventFile
+EventRegister
+EventSetInformation
+EventUnregister
+EventWrite
+EventWriteTransfer
+EX=csm
+Ex=csm
+Exception
+ExitProcess
+ExtensionFileLoadFailedData
+f;D$@uhD
+f9,Au
+f9,Cu
+f9,Zu
+f9.u*I;
+f9<Au
+f9<Bu
+f9<Ju
+f9<Nu
+f98tP
+fA9,Cu
+fA9<@u
+fA9<^u
+fA9<Cu
+fA9<Hu
+fA9<Nu
+fA9Z*v#A
+FailFast
+FailingLine
+failureCount
+failureId
+failureType
+FallbackError
+false
+fB9,Bu
+fB9<@u
+fC9,Qu
+fC9<Qu
+fC94Gu
+fD;;u
+fD;<_u
+fD;8ugH
+fD9 u
+fD9$Au
+fD9$Qu
+fD9+t
+fD9<Au
+fD90t(L
+fD94Bu
+fD94Gu
+fD94Hu
+fD94ou
+fD94Zu
+fD96u
+fD99t
+fD9d$X
+fE9<vu
+fE91tFI
+fF94Bu
+FileDescription
+fileName
+FilePath
+FileType
+FileVersion
+FindResourceExW
+FindResourceW
+Flags
+ForceRemove
+FormatMessageW
+FPrinterBidiSchemaElementType_NullWWWd
+FreeLibrary
+function
+fValueWW
+GEFailureW
+GetAll
+GetBytesX
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+GetFileAttributesW
+GetFileSize
+GetFileSizeEx
+GetIsEdpEnabled
+GetJobW
+GetLastError
+GetModuleFileNameA
+GetModuleFileNameW
+GetModuleHandleExW
+GetModuleHandleW
+GetOverlappedResult
+GetPrinterDataW
+GetPrinterDriverW
+GetPrinterW
+GetPrivateProfileSectionW
+GetPrivateProfileStringW
+GetProcAddress
+GetProcessHeap
+GetReadStreamWWW
+getSchemas
+GetSet
+getStatus
+GetStringWWW
+GetSystemTimeAsFileTime
+GetTempFileNameW
+GetTempPathW
+GetTickCount
+GetTickCount64
+GetTokenInformation
+GetTraceEnableFlags
+GetTraceEnableLevel
+GetTraceLoggerHandle
+GetWriteStreamWW
+GHA;F
+GHstrgH
+H UATAUAVAWH
+H!\$`H
+H!\$P
+H!|$PH
+H!T$HH
+H!t$X
+H;~Hr
+H9\$`
+H9\$P
+H9\$p
+H9\$X
+H9^Hw4H;
+H9{`ti@8
+H9{Hs<
+H9C(u
+H9D$(t
+H9D$0t
+H9GPu
+H9o8u
+H9xHt
+hA_A^A]A\_^[]
+Hardware
+HardwareId
+HcL$ HcD$$H
+HeapAlloc
+HeapFree
+HKEY_CLASSES_ROOT
+HKEY_CURRENT_CONFIG
+HKEY_CURRENT_USER
+HKEY_DYN_DATA
+HKEY_LOCAL_MACHINE
+HKEY_PERFORMANCE_DATA
+HKEY_USERS
+HostBasedDevice
+hresult
+HResult
+hresult
+http://schemas.microsoft.com/windows/2005/03/printing/bidi
+http://schemas.microsoft.com/windows/2010/09/printing/usbbidi
+I;EPs6I
+ImpersonatePrinterClient
+IndexedProperty
+InitializeCriticalSection
+InitializeCriticalSectionAndSpinCount
+InitializePrintMonitor2
+InitOnceBeginInitialize
+InitOnceComplete
+Interface
+Interface Number
+internal\sdk\inc\wil\resource.h
+InternalName
+Invalid parameter passed to C runtime function.
+invalid string position
+IPrinterScriptablePropertyBagWWWX
+IPrinterScriptableStream
+IPrinterScriptUsbJobContextReturnCodesWW
+IPrinterScriptUsbJobContextWX
+IPrinterScriptUsbWritePrintDataProgressW
+IsDebuggerPresent
+IsPortActive
+IsWellKnownSid
+iswspace
+JavaScriptException
+JavaScriptExecutionErrorData
+JScript
+K SVWH
+k VWATAVAWH
+K<!{\D+
+KcbReadWW
+kernelbase.dll
+KERNELBASE.dll
+KOJobPropertyBagWW
+KpH91t
+KValueWWW
+L!d$ H
+L$ E3
+L$ SH
+L$ SUVWAUAVAWH
+L$ SWH
+L$ USVWATAUAVAWH
+L$ USVWATAVAWH
+l$ VWATAVAWH
+l$(E3
+L$(fD
+l$(I;
+L$@E3
+L$@H3
+L$`H3
+L$0E3
+L$0H;
+L$0H3
+l$4E3
+L$8E3
+l$8H+
+L$8H3
+l$hD9fP
+L$HE3
+L$HH3
+L$PE3
+L$pH3
+L$PH3
+L$XH+
+l&;20
+L9{@u
+L9{0t#H
+L9|$0t
+L96t-H
+LcA<E3
+LeaveCriticalSection
+LegalCopyright
+LEVL@
+lineNumber
+LoadLibraryExW
+LoadResource
+LoadStringW
+Local\SM0:%d:%d:%hs
+LocalAlloc
+LocalFree
+LockResource
+lOffsetW
+LogHr
+lstrcmpiW
+lstrcmpW
+lValueWW
+M9't9L
+malloc
+-manifest.ini
+MapViewOfFile
+MaxBufferSize
+MbstrName
+memcmp
+memcpy
+memcpy_s
+memmove
+memset
+message
+Microsoft
+Microsoft Corporation
+Microsoft USB Port Monitor Bidi Extensions Type LibraryWWW
+Microsoft.Windows.Print.JScriptLib
+Microsoft.Windows.Print.USBMon
+Microsoft-Windows-PrintService-USBMon
+Microsoft-Windows-PrintService-USBMon/Debug
+module
+Module
+module
+Module_Raw
+Msg:[%ws] 
+msvcrt.dll
+MultiByteToWideChar
+N0I!~(
+NERetryWWW
+NIPrinterBidiSchemaResponsesW
+NonIndexedProperty
+NoRemove
+ntdll.dll
+NtSetInformationToken
+nValueWWX
+o\$PH
+oD$ f
+oL$0f
+OLEAUT32.dll
+olSizeWWWX
+onecoreuap\printscan\print\spooler\jscriptlib\lib\jscriptdocument.cpp
+OpenPrinterW
+OpenSemaphoreW
+OpenThreadToken
+OriginalFilename
+originatingContextId
+originatingContextMessage
+originatingContextName
+oT$@f
+OutputDebugStringA
+OutputDebugStringW
+p AWH
+p WAVAWH
+PA^_^
+pA^_^
+PA^_^][
+PA_A\[
+PA_A^_
+PA_A^_^]
+PA_A^A\_^[]
+PA_A^A]_^][
+PA_A^A]A\_^[
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+pbstrValueWWX
+pbValueWX
+pcbWrittenWW
+PCL4RES.dll
+PCL5ERES.dll
+PCL5URES.dll
+PCLXL.dll
+pDt.H
+pDt3H
+plPositionWW
+pnValueWX
+Port Description
+Port Number
+PortName
+portName
+ppArrayW,
+ppPropertyBagWWW
+ppReturnCodesWWW
+ppStreamX
+Print Service JScriptHost
+PrintConfig.dll
+PrintedPageCount
+PrinterBidiSchemaElementType_BlobWWW
+PrinterBidiSchemaElementType_BoolWWWd
+PrinterBidiSchemaElementType_Intd
+PrinterBidiSchemaElementType_StringWd
+PrinterBidiSchemaElementType_TextWWWd
+PrinterDriverID
+PrinterExtensionUrl
+PrinterName
+PrintQueueV4DriverDirectory
+ProcessedByteCountWW7
+ProductName
+ProductVersion
+PropertyBag
+PRVA`
+pTypeWWW
+pValueWW
+QAddTextW
+qDt"H
+qDt$H
+Qhttp://manifests.microsoft.com/win/2011/04/windows/printing/spooler/usbmon/events
+queryKey
+QueryPerformanceCounter
+QueueProperties
+r o1zF
+R$fA;Z*
+RAbortTheJobW
+RaiseException
+RaiseFailFastException
+ReadFile
+realloc
+recyclable
+refcA
+refcH
+refreshInterval
+RegCloseKey
+RegCreateKeyExW
+RegDeleteKeyExW
+RegDeleteKeyW
+RegDeleteValueW
+RegEnumKeyExW
+RegisterTraceGuidsW
+REGISTRY
+RegOpenKeyExW
+RegQueryInfoKeyW
+RegQueryValueExW
+RegSetValueExW
+ReleaseMutex
+ReleaseSemaphore
+requestStatus
+RequiredClass
+ResetEvent
+ResolveDelayLoadedAPI
+ResourceFile
+RetrievePrintDeviceCapabilitiesFromDevice
+RetrievePrintPageDescriptionLanguageFromDevice
+ReturnCodesW
+ReturnHr
+RevertToPrinterSelf
+RevertToSelf
+RouterAllocBidiMem
+RouterAllocBidiResponseContainer
+RouterCreatePrintAsyncNotificationChannel
+RouterFreeBidiMem
+RouterFreeBidiResponseContainer
+RtlAllocateHeap
+RtlCaptureContext
+RtlDllShutdownInProgress
+RtlFreeHeap
+RtlInitUnicodeString
+RtlLookupFunctionEntry
+RtlNtStatusToDosError
+RtlVirtualUnwind
+s<;s@vk
+Schema
+SECURITY
+SelectionNamespaces
+Serial Number
+SetErrorMode
+SetEvent
+SetFilePointerEx
+SetInt32
+SetJobW
+SetLastError
+SetPortW
+SetPrinterW
+setSchema
+SetStringWWWX
+SetThreadpoolTimer
+SetThreadToken
+SetTokenInformation
+SetUnhandledExceptionFilter
+setupapi
+SetupDiCreateDeviceInfoList
+SetupDiDestroyDeviceInfoList
+SetupDiEnumDeviceInfo
+SetupDiEnumDeviceInterfaces
+SetupDiGetClassDevsW
+SetupDiGetDeviceInterfaceDetailW
+SetupDiOpenDeviceInterfaceRegKey
+SetupDiOpenDeviceInterfaceW
+SizeofResource
+Sleep
+Software
+Source
+SPOOLSS.DLL
+Standard Dynamic Printing Port Monitor DLL
+startPrintJob
+stdole2.tlbWWW
+Stopped
+STREAM_SEEK_CURW 
+STREAM_SEEK_ENDW
+STREAM_SEEK_SETW 
+streamSeekWW
+strgH
+string too long
+StringFileInfo
+SVWATAUAVAWH
+SVWAVAWH
+SVWAVH
+SYSTEM
+System\CurrentControlSet\Control\Print
+t!D9t$pu
+t"D8=
+t$ E3
+T$ E3
+t$ H;
+t$ UWATAVAWH
+t$ WATAUAVAWH
+t$ WATAVH
+t$ WAVAWH
+t$ WH
+t$P+t$H
+t$P+t$H3
+T$XE3
+t[H9ZhtUH
+t^@8=
+t{D9N
+t7D9CPH
+t7HcS
+tAD9{Pu;H
+tagPrinterBidiSchemaElementTypeWd
+tcH!|$PL
+TEMP$
+TemporaryStreams
+TEMPP
+TerminateProcess
+TerminateThread
+threadId
+tIH9{ tCH9{(t=H9{0t7H9{8t1H
+tlnkH
+tlstH
+tOH9{
+TpAllocAlpcCompletion
+TpAllocIoCompletion
+TpAllocPool
+TpAllocTimer
+TpAllocWait
+TpAllocWork
+TpCallbackMayRunLong
+TpPostWork
+TpReleaseAlpcCompletion
+TpReleaseIoCompletion
+TpReleasePool
+TpReleaseTimer
+TpReleaseWait
+TpReleaseWork
+TpSetPoolMaxThreads
+TpSetTimer
+TpSetWait
+TpSimpleTryPost
+TpStartAsyncIoOperation
+TpWaitForAlpcCompletion
+TpWaitForIoCompletion
+TpWaitForTimer
+TpWaitForWait
+TpWaitForWork
+TraceMessage
+Translation
+TROPH
+TROPu
+TSPortsEnumAllLimit
+TTBL,
+tU9hPuP
+tUH9{
+TYPELIB
+TypeLib
+u HcA<H
+u~fA9
+u59_Tt09_Xt+H
+u99GTt49GXt/H
+UATAUAVAWH
+UAVAWH
+uF9D$0t@H
+uKL9vPt
+uND9o8uHH
+UnhandledExceptionFilter
+unires.dll
+UnmapViewOfFile
+UnregisterClassA
+UnregisterTraceGuids
+USBMON.DLL
+UsbMon.pdb
+USBMon_Task_ExtensionFile_Load
+USBMon_Task_JavaScript_Execution
+USER32.dll
+USVWATAUAVAWH
+USVWAVH
+uTf9C
+UVWATAUAVAWH
+UVWATAVH
+UVWAUAVH
+UVWAUAWH
+UVWAVAWH
+UWATAVAWH
+UWAUAWH
+UWAVH
+uxxPH
+V A9V$u
+v/Rich
+V4_Connection_Name
+V4_Merged_ConfigFile_Name
+V4_PrintDeviceCapabilities
+Value
+value
+VarFileInfo
+vector<T> too long
+Version
+VS_VERSION_INFO
+VWATAUAVAWH
+VWATAVAWH
+VWAUAVAWH
+VWAVH
+VWAWH
+W8L92u
+WaitForMultipleObjects
+WaitForMultipleObjectsEx
+WaitForSingleObject
+WaitForSingleObjectEx
+WATAUAVAWH
+WATAVH
+WAVAWH
+wcschr
+wcscmp
+wcsncmp
+wcsncpy_s
+wcsrchr
+wcsstr
+wcstod
+wcstok_s
+wcstol
+WEVT_TEMPLATE
+WEVTL
+WilError_02
+wilResult
+WIN://PKG
+WIN://PKGHOSTID
+WIN://SYSAPPID
+win:Informational
+winspool.drv
+WinSqmIncrementDWORD
+WriteFile
+writePrintData
+x ATAUAVH
+x ATAVAWH
+x AUAVAWH
+x AVH
+x AWH
+x UATAUAVAWH
+x UAVAWH
+xA^_^[
+XA^A\_^][
+XA_A^A]A\_^
+XA_A^A]A\_^[]
+xk;\$8sLL
+xmlns
+xmlns:bidi='http://schemas.microsoft.com/windows/2005/03/printing/bidi'
+xmlns:bidi='http://schemas.microsoft.com/windows/2010/09/printing/usbbidi'
+xPrinterBidiSchemaElementType_FloatWWd
+xqA;v
+Y@H9;u%L
+Y3SetSizeW
+yDt0H
+ySetBytes
+z wcrw
+z@wcitA
+z@wcitH

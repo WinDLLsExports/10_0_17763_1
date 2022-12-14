@@ -1,0 +1,5618 @@
+  -  
+     
+        
+          
+            <xs:element minOccurs='0' maxOccurs='unbounded' name='document' type='xs:string' />
+            <xs:element minOccurs='0' maxOccurs='unbounded' name='type' type='xs:string' />
+            <xs:group ref='wsdl:request-response-or-one-way-operation' />
+            <xs:group ref='wsdl:solicit-response-or-notification-operation' />
+           elementFormDefault='qualified' >
+           targetNamespace='http://schemas.xmlsoap.org/soap/encoding/' >
+           targetNamespace='http://schemas.xmlsoap.org/wsdl/'
+           xmlns:tns='http://schemas.xmlsoap.org/soap/encoding/'
+           xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/'
+          </xs:choice>
+          </xs:documentation>
+          </xs:sequence>
+          <xs:any namespace='##other' minOccurs='0' maxOccurs='unbounded' processContents='lax' />
+          <xs:choice>
+          <xs:documentation>
+          <xs:element minOccurs='0' maxOccurs='unbounded' ref='soap:headerfault' />
+          <xs:element name='fault' type='wsdl:tBindingOperationFault' minOccurs='0' maxOccurs='unbounded' />
+          <xs:element name='input' type='wsdl:tBindingOperationMessage' minOccurs='0' />
+          <xs:element name='operation' type='wsdl:tBindingOperation' minOccurs='0' maxOccurs='unbounded' />
+          <xs:element name='operation' type='wsdl:tOperation' minOccurs='0' maxOccurs='unbounded' />
+          <xs:element name='output' type='wsdl:tBindingOperationMessage' minOccurs='0' />
+          <xs:element name='part' type='wsdl:tPart' minOccurs='0' maxOccurs='unbounded' />
+          <xs:element name='port' type='wsdl:tPort' minOccurs='0' maxOccurs='unbounded' />
+          <xs:enumeration value='enableDataBinding' />
+          <xs:enumeration value='newAsync' />
+          <xs:enumeration value='oldAsync' />
+          <xs:enumeration value='order' />
+          <xs:enumeration value='properties' />
+          <xs:field xpath='@name' />
+          <xs:group ref='wsdl:anyTopLevelOptionalElement'  minOccurs='0'   maxOccurs='unbounded' />
+          <xs:selector xpath='wsdl:part' />
+          <xs:selector xpath='wsdl:port' />
+          <xs:sequence>
+          This type is extended by component types to allow attributes from other namespaces to be added.
+          This type is extended by component types to allow elements from other namespaces to be added.
+        </xs:annotation>
+        </xs:complexType>
+        </xs:restriction>
+        </xs:sequence>
+        </xs:unique>
+        <xs:annotation>
+        <xs:anyAttribute namespace='##other' processContents='lax' />   
+        <xs:anyAttribute namespace='##other' processContents='lax' />    
+        <xs:attribute name='binding' type='xs:QName' use='required' />
+        <xs:attribute name='element' type='xs:QName' use='optional' />
+        <xs:attribute name='location' type='xs:anyURI' use='required' />
+        <xs:attribute name='message' type='xs:QName' use='required' />
+        <xs:attribute name='name' type='xs:NCName'  use='required' />
+        <xs:attribute name='name' type='xs:NCName' use='optional' />
+        <xs:attribute name='name' type='xs:NCName' use='required' />
+        <xs:attribute name='namespace' type='xs:anyURI' use='required' />
+        <xs:attribute name='parameterOrder' type='xs:NMTOKENS' use='optional' />
+        <xs:attribute name='parts' type='xs:NMTOKENS' use='optional' />
+        <xs:attribute name='parts' type='xs:NMTOKENS' use='prohibited' />
+        <xs:attribute name='soapAction' type='xs:anyURI' use='optional' />
+        <xs:attribute name='style' type='soap:tStyleChoice' use='optional' />
+        <xs:attribute name='targetNamespace' type='xs:anyURI' use='optional' />
+        <xs:attribute name='transport' type='xs:anyURI' use='required' />
+        <xs:attribute name='type' type='xs:QName' use='optional' />    
+        <xs:attribute name='type' type='xs:QName' use='required' />
+        <xs:attribute ref='wsdl:required' use='optional' />
+        <xs:attributeGroup ref='soap:tBodyAttributes' />
+        <xs:attributeGroup ref='soap:tHeaderAttributes' />
+        <xs:attributeGroup ref='tns:commonAttributes' />
+        <xs:complexType>
+        <xs:element name='fault' type='wsdl:tFault' minOccurs='0' maxOccurs='unbounded' />
+        <xs:element name='input' type='wsdl:tParam' />
+        <xs:element name='output' type='wsdl:tParam' />
+        <xs:restriction base='xs:string'>
+        <xs:sequence>
+        <xs:unique name='part' >
+        <xs:unique name='port' >
+       <xs:attributeGroup ref='tns:commonAttributes' />
+       <xs:pattern value='0|1' />
+      </xs:documentation>
+      </xs:element>
+      </xs:extension>
+      </xs:restriction>
+      </xs:sequence>
+      </xs:simpleType>
+      <xs:any minOccurs='0' maxOccurs='unbounded' processContents='lax' />
+      <xs:any namespace='##any' minOccurs='0' maxOccurs='unbounded' processContents='lax' />
+      <xs:documentation>
+      <xs:element minOccurs='0' default='client' name='style' type='tns:style' />
+      <xs:element minOccurs='0' default='false' name='verbose' type='xs:boolean' />
+      <xs:element minOccurs='0' default='oldAsync' name='codeGenerationOptions' type='tns:options' />
+      <xs:element minOccurs='0' name='appSettingBaseUrl' type='xs:string' />
+      <xs:element minOccurs='0' name='appSettingUrlKey' type='xs:string' />
+      <xs:element minOccurs='0' name='documents'>
+      <xs:element minOccurs='0' name='domain' type='xs:string' />
+      <xs:element minOccurs='0' name='language' type='xs:string' />
+      <xs:element minOccurs='0' name='namespace' type='xs:string' />
+      <xs:element minOccurs='0' name='nologo' type='xs:boolean' />
+      <xs:element minOccurs='0' name='out' type='xs:string' />
+      <xs:element minOccurs='0' name='parsableerrors' type='xs:boolean' />
+      <xs:element minOccurs='0' name='password' type='xs:string' />
+      <xs:element minOccurs='0' name='protocol' type='xs:string' />
+      <xs:element minOccurs='0' name='proxy' type='xs:string' />
+      <xs:element minOccurs='0' name='proxydomain' type='xs:string' />
+      <xs:element minOccurs='0' name='proxypassword' type='xs:string' />
+      <xs:element minOccurs='0' name='proxyusername' type='xs:string' />
+      <xs:element minOccurs='0' name='schemaImporterExtensions'>
+      <xs:element minOccurs='0' name='sharetypes' type='xs:boolean' />
+      <xs:element minOccurs='0' name='username' type='xs:string' />
+      <xs:element minOccurs='0' name='webReferenceOptions' type='tns:webReferenceOptions' />
+      <xs:element name='binding'  type='wsdl:tBinding' />
+      <xs:element name='documentation' type='wsdl:tDocumentation' minOccurs='0' />
+      <xs:element name='import' type='wsdl:tImport' />
+      <xs:element name='input' type='wsdl:tParam' />
+      <xs:element name='message'  type='wsdl:tMessage' >
+      <xs:element name='output' type='wsdl:tParam' />
+      <xs:element name='portType' type='wsdl:tPortType' />
+      <xs:element name='service'  type='wsdl:tService' >
+      <xs:element name='types' type='wsdl:tTypes' />                     
+      <xs:enumeration value='client' />
+      <xs:enumeration value='document' />
+      <xs:enumeration value='encoded' />
+      <xs:enumeration value='literal' />
+      <xs:enumeration value='rpc' />
+      <xs:enumeration value='server' />
+      <xs:enumeration value='serverInterface' />
+      <xs:extension base='soap:tFaultRes'>
+      <xs:extension base='wsdl:tDocumented' >
+      <xs:extension base='wsdl:tExtensibilityElement'>
+      <xs:extension base='wsdl:tExtensibleAttributesDocumented' >
+      <xs:extension base='wsdl:tExtensibleDocumented' />
+      <xs:extension base='wsdl:tExtensibleDocumented' >
+      <xs:extension base='xs:anyURI' >
+      <xs:extension base='xs:base64Binary' >
+      <xs:extension base='xs:boolean' >
+      <xs:extension base='xs:byte' >
+      <xs:extension base='xs:date' >
+      <xs:extension base='xs:dateTime' >
+      <xs:extension base='xs:decimal' >
+      <xs:extension base='xs:double' >
+      <xs:extension base='xs:duration' >
+      <xs:extension base='xs:ENTITIES' >
+      <xs:extension base='xs:ENTITY' >
+      <xs:extension base='xs:float' >
+      <xs:extension base='xs:gDay' >
+      <xs:extension base='xs:gMonth' >
+      <xs:extension base='xs:gMonthDay' >
+      <xs:extension base='xs:gYear' >
+      <xs:extension base='xs:gYearMonth' >
+      <xs:extension base='xs:ID' >
+      <xs:extension base='xs:IDREF' >
+      <xs:extension base='xs:IDREFS' >
+      <xs:extension base='xs:int' >
+      <xs:extension base='xs:integer' >
+      <xs:extension base='xs:language' >
+      <xs:extension base='xs:long' >
+      <xs:extension base='xs:Name' >
+      <xs:extension base='xs:NCName' >
+      <xs:extension base='xs:negativeInteger' >
+      <xs:extension base='xs:NMTOKEN' >
+      <xs:extension base='xs:NMTOKENS' >
+      <xs:extension base='xs:nonNegativeInteger' >
+      <xs:extension base='xs:nonPositiveInteger' >
+      <xs:extension base='xs:normalizedString' >
+      <xs:extension base='xs:positiveInteger' >
+      <xs:extension base='xs:QName' >
+      <xs:extension base='xs:short' >
+      <xs:extension base='xs:string' >
+      <xs:extension base='xs:time' >
+      <xs:extension base='xs:token' >
+      <xs:extension base='xs:unsignedByte' >
+      <xs:extension base='xs:unsignedInt' >
+      <xs:extension base='xs:unsignedLong' >
+      <xs:extension base='xs:unsignedShort' >
+      <xs:field xpath='@name' />
+      <xs:field xpath='@namespace' />
+      <xs:restriction base='soap:tBody'>
+      <xs:selector xpath='wsdl:binding' />
+      <xs:selector xpath='wsdl:import' />
+      <xs:selector xpath='wsdl:message' />
+      <xs:selector xpath='wsdl:portType' />
+      <xs:selector xpath='wsdl:service' />
+      <xs:sequence minOccurs='0' >
+      <xs:simpleType>
+      Any top level optional element allowed to appear more then once - any child of definitions element except wsdl:types. Any extensibility element is allowed in any place.
+      'encodingStyle' indicates any canonicalization conventions followed in the contents of the containing element.  For example, the value 'http://schemas.xmlsoap.org/soap/encoding/' indicates the pattern described in SOAP specification
+      This type is extended by  component types to allow them to be documented
+     </xs:extension>
+     </xs:restriction>
+     <xs:extension base='xs:hexBinary' >
+     <xs:restriction base='xs:boolean'>
+    {1}: {2}
+    </xs:all>
+    </xs:annotation>
+    </xs:choice>
+    </xs:complexContent>
+    </xs:complexContent>   
+    </xs:key>
+    </xs:list>
+    </xs:restriction>
+    </xs:sequence>
+    </xs:simpleContent>
+    <xs:all>
+    <xs:annotation>
+    <xs:anyAttribute namespace='##other' processContents='lax' />
+    <xs:attribute name='encodingStyle' type='soap:encodingStyle' use='optional' />
+    <xs:attribute name='href' type='xs:anyURI' />
+    <xs:attribute name='id' type='xs:ID' />
+    <xs:attribute name='message' type='xs:QName' use='required' />
+    <xs:attribute name='namespace' type='xs:anyURI' use='optional' />
+    <xs:attribute name='part' type='xs:NMTOKEN' use='required' />
+    <xs:attribute name='use' type='soap:useChoice' use='optional' />
+    <xs:attribute name='use' type='soap:useChoice' use='required' />
+    <xs:attribute ref='tns:arrayType' />
+    <xs:attribute ref='tns:offset' />
+    <xs:attribute ref='tns:position' />
+    <xs:attribute ref='wsdl:required' use='optional' />
+    <xs:attributeGroup ref='soap:tHeaderAttributes' />
+    <xs:attributeGroup ref='tns:arrayAttributes' />
+    <xs:attributeGroup ref='tns:commonAttributes' />
+    <xs:attributeGroup ref='tns:commonAttributes'/>
+    <xs:choice>
+    <xs:complexContent mixed='false'>
+    <xs:complexContent>
+    <xs:complexContent>   
+    <xs:group ref='tns:Array' minOccurs='0' />
+    <xs:group ref='tns:Struct' minOccurs='0' />
+    <xs:key name='binding' >
+    <xs:key name='import' >
+    <xs:key name='message' >
+    <xs:key name='portType' >
+    <xs:key name='service' >
+    <xs:list itemType='xs:anyURI' />
+    <xs:list>
+    <xs:restriction base='xs:base64Binary' />
+    <xs:restriction base='xs:string' />
+    <xs:restriction base='xs:string'>
+    <xs:sequence>
+    <xs:simpleContent>
+    Caller: {1}
+    Method: {2}
+  - {0}
+   </xs:simpleType>
+   <xs:simpleType>
+  <!-- original wsdl removed as part of swa124 resolution
+  </xs:attributeGroup>
+  </xs:attributeGroup>    
+  </xs:complexType>
+  </xs:complexType> 
+  </xs:element>
+  </xs:group>
+  </xs:simpleType>
+  <xs:attribute name='arrayType' type='xs:string' />
+  <xs:attribute name='offset' type='tns:arrayCoordinate' />
+  <xs:attribute name='position' type='tns:arrayCoordinate' /> 
+  <xs:attribute name='required' type='xs:boolean' />
+  <xs:attributeGroup name='arrayAttributes' >
+  <xs:attributeGroup name='arrayMemberAttributes' >
+  <xs:attributeGroup name='commonAttributes' >
+  <xs:attributeGroup name='tBodyAttributes'>
+  <xs:attributeGroup name='tHeaderAttributes'>
+  <xs:complexType mixed='true' name='tDocumentation' >
+  <xs:complexType name='anyURI' >
+  <xs:complexType name='Array' >
+  <xs:complexType name='base64Binary' >
+  <xs:complexType name='boolean' >
+  <xs:complexType name='byte' >
+  <xs:complexType name='date' >
+  <xs:complexType name='dateTime' >
+  <xs:complexType name='decimal' >
+  <xs:complexType name='double' >
+  <xs:complexType name='duration' >
+  <xs:complexType name='ENTITIES' >
+  <xs:complexType name='ENTITY' >
+  <xs:complexType name='float' >
+  <xs:complexType name='gDay' >
+  <xs:complexType name='gMonth' >
+  <xs:complexType name='gMonthDay' >
+  <xs:complexType name='gYear' >
+  <xs:complexType name='gYearMonth' >
+  <xs:complexType name='hexBinary' >
+  <xs:complexType name='ID' >
+  <xs:complexType name='IDREF' >
+  <xs:complexType name='IDREFS' >
+  <xs:complexType name='int' >
+  <xs:complexType name='integer' >
+  <xs:complexType name='language' >
+  <xs:complexType name='long' >
+  <xs:complexType name='Name' >
+  <xs:complexType name='NCName' >
+  <xs:complexType name='negativeInteger' >
+  <xs:complexType name='NMTOKEN' >
+  <xs:complexType name='NMTOKENS' >
+  <xs:complexType name='nonNegativeInteger' >
+  <xs:complexType name='nonPositiveInteger' >
+  <xs:complexType name='normalizedString' >
+  <xs:complexType name='NOTATION' >
+  <xs:complexType name='positiveInteger' >
+  <xs:complexType name='QName' >
+  <xs:complexType name='short' >
+  <xs:complexType name='string' >
+  <xs:complexType name='Struct' >
+  <xs:complexType name='tAddress'>
+  <xs:complexType name='tBinding' >
+  <xs:complexType name='tBinding'>
+  <xs:complexType name='tBindingOperation' >
+  <xs:complexType name='tBindingOperationFault' >
+  <xs:complexType name='tBindingOperationMessage' >
+  <xs:complexType name='tBody'>
+  <xs:complexType name='tDefinitions' >
+  <xs:complexType name='tDocumented' >
+  <xs:complexType name='tExtensibilityElement' abstract='true' >
+  <xs:complexType name='tExtensibleAttributesDocumented' abstract='true' >
+  <xs:complexType name='tExtensibleDocumented' abstract='true' >
+  <xs:complexType name='tFault' >
+  <xs:complexType name='tFault'>
+  <xs:complexType name='tFaultRes' abstract='true'>
+  <xs:complexType name='tHeader'>
+  <xs:complexType name='tHeaderFault'>
+  <xs:complexType name='time' >
+  <xs:complexType name='tImport' >
+  <xs:complexType name='tMessage' >
+  <xs:complexType name='token' >
+  <xs:complexType name='tOperation' >
+  <xs:complexType name='tOperation'>
+  <xs:complexType name='tParam' >
+  <xs:complexType name='tPart' >
+  <xs:complexType name='tPort' >
+  <xs:complexType name='tPortType' >
+  <xs:complexType name='tService' >
+  <xs:complexType name='tTypes' >
+  <xs:complexType name='unsignedByte' >
+  <xs:complexType name='unsignedInt' >
+  <xs:complexType name='unsignedLong' >
+  <xs:complexType name='unsignedShort' >
+  <xs:complexType name='webReferenceOptions'>
+  <xs:complexType name='wsdlParameters'>
+  <xs:element name='address' type='soap:tAddress' />
+  <xs:element name='anyType' />
+  <xs:element name='anyURI' type='tns:anyURI' />
+  <xs:element name='Array' type='tns:Array' />
+  <xs:element name='base64Binary' type='tns:base64Binary' />
+  <xs:element name='binding' type='soap:tBinding' />
+  <xs:element name='body' type='soap:tBody' />
+  <xs:element name='boolean' type='tns:boolean' />
+  <xs:element name='byte' type='tns:byte' />
+  <xs:element name='date' type='tns:date' />
+  <xs:element name='dateTime' type='tns:dateTime' />
+  <xs:element name='decimal' type='tns:decimal' />
+  <xs:element name='definitions' type='wsdl:tDefinitions' >
+  <xs:element name='double' type='tns:double' />
+  <xs:element name='duration' type='tns:duration' />
+  <xs:element name='ENTITIES' type='tns:ENTITIES' />
+  <xs:element name='ENTITY' type='tns:ENTITY' />
+  <xs:element name='fault' type='soap:tFault' />
+  <xs:element name='float' type='tns:float' />
+  <xs:element name='gDay' type='tns:gDay' />
+  <xs:element name='gMonth' type='tns:gMonth' />
+  <xs:element name='gMonthDay' type='tns:gMonthDay' />
+  <xs:element name='gYear' type='tns:gYear' />
+  <xs:element name='gYearMonth' type='tns:gYearMonth' />
+  <xs:element name='header' type='soap:tHeader' />
+  <xs:element name='headerfault' type='soap:tHeaderFault' />
+  <xs:element name='hexBinary' type='tns:hexBinary' />
+  <xs:element name='ID' type='tns:ID' />
+  <xs:element name='IDREF' type='tns:IDREF' />
+  <xs:element name='IDREFS' type='tns:IDREFS' />
+  <xs:element name='int' type='tns:int' />
+  <xs:element name='integer' type='tns:integer' />
+  <xs:element name='language' type='tns:language' />
+  <xs:element name='long' type='tns:long' />
+  <xs:element name='Name' type='tns:Name' />
+  <xs:element name='NCName' type='tns:NCName' />
+  <xs:element name='negativeInteger' type='tns:negativeInteger' />
+  <xs:element name='NMTOKEN' type='tns:NMTOKEN' />
+  <xs:element name='NMTOKENS' type='tns:NMTOKENS' />
+  <xs:element name='nonNegativeInteger' type='tns:nonNegativeInteger' />
+  <xs:element name='nonPositiveInteger' type='tns:nonPositiveInteger' />
+  <xs:element name='normalizedString' type='tns:normalizedString' />
+  <xs:element name='NOTATION' type='tns:NOTATION' />
+  <xs:element name='operation' type='soap:tOperation' />
+  <xs:element name='positiveInteger' type='tns:positiveInteger' />
+  <xs:element name='QName' type='tns:QName' />
+  <xs:element name='short' type='tns:short' />
+  <xs:element name='string' type='tns:string' />
+  <xs:element name='Struct' type='tns:Struct' />
+  <xs:element name='time' type='tns:time' />
+  <xs:element name='token' type='tns:token' />
+  <xs:element name='unsignedByte' type='tns:unsignedByte' />
+  <xs:element name='unsignedInt' type='tns:unsignedInt' />
+  <xs:element name='unsignedLong' type='tns:unsignedLong' />
+  <xs:element name='unsignedShort' type='tns:unsignedShort' />
+  <xs:element name='webReferenceOptions' type='tns:webReferenceOptions' />
+  <xs:element name='wsdlParameters' type='tns:wsdlParameters' />
+  <xs:group name='anyTopLevelOptionalElement' >
+  <xs:group name='Array' >
+  <xs:group name='request-response-or-one-way-operation' >
+  <xs:group name='solicit-response-or-notification-operation' >
+  <xs:group name='Struct' >
+  <xs:import namespace='http://schemas.xmlsoap.org/wsdl/' />
+  <xs:simpleType name='arrayCoordinate' >
+  <xs:simpleType name='base64' >
+  <xs:simpleType name='encodingStyle'>
+  <xs:simpleType name='options'>
+  <xs:simpleType name='style'>
+  <xs:simpleType name='tStyleChoice'>
+  <xs:simpleType name='useChoice'>
+ .NET Framework
+ <!-- allow extensibility via elements and attributes on all elements swa124 -->
+ </xs:attribute>
+ <xs:attribute name='root' >
+ <xs:complexType name='tExtensibleAttributesDocumented' abstract='true' >
+ ---> 
+ An error occurred on the server.
+ ClientProtocolClientCertificates
+ Microsoft Corporation.  All rights reserved.
+ Microsoft Operations Puerto Rico1
+ Missing soap:body input binding.
+ Response is not well-formed XML.
+ Return from {0}
+ xmlns
+!ClientProtocol must be set first.
+!ClientProtocolEnableDecompression
+!margin-top: 10px; color: #000000;
+!Missing soap:body output binding.
+!RequestResponse is not supported.
+!SolicitResponse is not supported.
+!The encoding to use for requests.
+!This program cannot be run in DOS mode.
+!Unable to import operation '{0}'.
+!XmlSerializer [Read SOAP Headers]
+"Error: {0} Line {1}, position {2}.
+"Microsoft Time Source Master Clock0
+"Namespace prefix '{0}' not defined
+"-quot
+"Server was unable to read request.
+"XmlSerializer [Write SOAP Headers]
+#;BYs
+#Binding '{0}' from namespace '{1}'.
+#Blob
+#GUID
+#Message style {0} is not supported.
+#SOAP header {0} was not understood.
+#Strings
+#Value '{0}' is not an absolute URI.
+#Vx"&6
+$`2X`F
+$1AF04045-6659-4aaa-9F4B-2741AC56224B
+$26E7F0F1-B49C-48cb-B43E-78DCD577E1D9
+$C43CC2F3-90AF-4e93-9112-DFB8B36749B5
+$margin-top: 10px; margin-left: 20px;
+$Method {0}.{1} can not be reflected.
+$Microsoft Root Certificate Authority
+$Microsoft Root Certificate Authority0
+$The encoding '{0}' is not supported.
+$Warning: {0} Line {1}, position {2}.
+$XmlSerializer [Create XmlSerializer]
+% moa
+%f:\dd\tools\devdiv\FinalPublicKey.snk
+%font-family: Verdana; font-size: 1em;
+%Server was unable to process request.
+%There was an error downloading '{0}'.
+%Web Service methods cannot be static.
+&*2(&
+&-amp
+&Exception caught in {0}.
+&Exception thrown in {0}.
+&Item id='{0}' was not referenced: {1}.
+&No input HTTP formats were recognized.
+&No input MIME formats were recognized.
+&serviceDescriptionFormatExtensionTypes
+&The document format is not recognized.
+(]W%#
+(null)
+){0} Web Service method name is not valid.
+)Microsoft Root Certificate Authority 20100
+)Microsoft Root Certificate Authority 20110
+*--- End of inner exception stack trace ---
+*.asmx
+*.disco
+*.vsdisco
+*.xsd
+*?*kXIc
+*Enables pre authentication of the request.
+*Method '{0}' was not found in service {1}.
+*One-way methods cannot have return values.
+*The encoding style '{0}' is not supported.
+*The request failed with an empty response.
+*The request failed with the error message:
+*XML Web service description was not found.
+,+s&s
+,2+H~
+,Enabling http post protocol in configuration
+."+(r
+.++rrW
+.8+>rm
+.appDomain
+.cctor
+.ctor
+.disco
+.Enable automatic handling of server redirects.
+.NET Framework
+.system.web.services.dl
+.text
+.tq[m
+.wsdl
+/ K!O"Q$S%U&W'Z(\)^+b,c-d0e1g2h3j5k6l8m9o:p;q<r=s>t?}B~C
+/~+n`
+/=aJcY
+/AbstractTypes
+/encodedTypes
+/literalTypes
+/Port '{0}' on service {1} from namespace='{2}'.
+/ROOT
+/Rq{6TS
+/Service description with targetNamespace='{0}'.
+/The base URL to the server to use for requests.
+/w!'T
+/W3SVC
+:address, :binding
+:Can't call the end method of an async call more than once.
+:Envelope
+:InHeaders
+:name, :type, :group, :capture, :repeats, :pattern, :ignoreCase
+:OutHeaders
+:ref, :docRef
+:ref, :targetNamespace
+:Response
+:Return
+:source
+:source, http://www.w3.org/XML/1998/namespace
+:System.Web.Services.Configuration.SoapExtensionTypeElement
+:The domain to be used for basic and digest authentication.
+:The header property/field {0}.{1} could not be written to.
+:The operation '{0}' from namespace '{1}' was ignored.  {2}
+; action="
+; charset=
+;ClientProtocol property must be set before calling Resolve.
+;Custom attributes on return value are not supported by {0}.
+;Server did not recognize the value of HTTP Header {0}: {1}.
+;The document was understood, but it could not be processed.
+;The header property/field {0}.{1} is missing or not public.
+?Click <a href="{0}">here</a> for a complete list of operations.
+?FBoZM
+?http://crl.microsoft.com/pki/crl/products/microsoftrootcert.crl0T
+?No more than one input and one output message may be specified.
+?schema=
+?The combination of style=rpc with use=literal is not supported.
+?The Group attribute must be set to a valid PriorityGroup value.
+?wsdl
+?wsdl=
+@.reloc
+@002400000c800000140100000602000000240000525341310008000001000100613399aff18ef1a2c2514a273a42d9042b72321f1757102df9ebada69923e2738406c21e5b801552ab8d200a65a235e001ac9adc25f2d811eb09496a4c6a59d4619589c69f5baf0c4179a47311d92555cd006acc8b5959f2bd6e10e360c34537a1d266da8085856583c85d81da7f3ec01ed9564c58d93d713cd0172c8e23a10f0239b80c96b07736f5d8b022542a4e74251a5f432824318b3539a5a087f8e53d2f135f9ca47f3bb2e10aff0af0849504fb7cea3ff192dc8de0edad64c68efde34c56d302ad55fd6e80f302d5efcdeae953658d3452561b5f36c542efdbdd9f888538d374cef106acf7d93a4445c3c73cd911f0571aaf3d54da12b11ddec375b3
+@2P<x
+@Client found response content type of '{0}', but expected '{1}'.
+@Each message part in an use=encoded message must specify a type.
+@Ignoring duplicate schema with TargetNamespace='{0}' from '{1}'.
+@The elementType must be one of SoapReflectedExtension or Object.
+[No test form is available as this service or method does not support the HTTP GET protocol.
+\font-size: 1.1em; color: #000000; margin-left: -15px; margin-top: 10px; margin-bottom: 10px;
+\G[^<]+
+\G\s+(?=<|\Z)
+\G<!--(?>[^-]*-)+?->
+\G<!doctype\b(([\s\w]+)|(".*"))*>
+\G<(?<prefix>[\w:.-]+(?=:)|):?(?<tagname>[\w.-]+)(?:\s+(?<attrprefix>[\w:.-]+(?=:)|):?(?<attrname>[\w.-]+)\s*=\s*(?:"(?<attrval>[^"]*)"|'(?<attrval>[^']*)'|(?<attrval>[a-zA-Z0-9\-._:]+)))*\s*(?<empty>/)?>
+\G</(?<prefix>[\w:-]+(?=:)|):?(?<tagname>[\w-]+)\s*>
+\No test form is available as this service or method does not support the HTTP POST protocol.
+]For more details on WSDL, see the <a href="http://www.w3.org/TR/wsdl">WSDL Specification</a>.
+]To make it conformant modify all import statements to include a non-empty location attribute.
+]Unable to handle request without a valid action parameter. Please supply a valid soap action.
+^An unexpected attribute was encountered: {0}='{1}'. No attributes were expected in this scope.
+^font-family: Verdana; font-size: .7em; margin-top: 8px; margin-bottom: 0px; margin-left: 32px;
+^Schema with targetNamespace='{0}' has invalid syntax. Check schema item '{1}' named '{2}': {3}
+_-*rI
+_-[(J
+__StaticArrayInitTypeSize=32
+__StaticArrayInitTypeSize=40
+__StaticArrayInitTypeSize=56
+_CorDllMain
+_entitiesList
+_entitiesLookupTable
+_lookupLockObject
+_The operation '{0}' on portType '{1}' from namespace '{2}' had the following syntax error:  {3}
+`.rsrc
+`Ge`@N
+`More than one message part named '{0}' was specified. Each message part must have a unique name.
+'{0} must have the {1} custom attribute.
+{0}://{1}{2}
+{WebMethod {0} on WebService {1} claims conformance, but use=encoded is non-conformant according to WS-I Basic Profile v1.1.
+{When using a Bare parameter style and a service RoutingStyle of RequestElement, the method must have exactly one parameter.
+|{MA}
+|hK,_
+|Pp#Mg
+}\hs@
+}One of the extensibility elements on Binding '{0}' from namespace '{1}' has more then one part listed in the '{2}' attribute.
+}WebMethod {0} on WebService {1} claims conformance. Using SOAP header with {2}={3}.{4} is not allowed on conformant methods. 
++index must be between 0 and {0}, inclusive.
++Missing message '{0}' from namespace '{1}'.
++Protocol with name '{0}' is not recognized.
++Schema item '{1}' from namespace '{0}'. {2}
++The syntax of type {0} may not be extended.
++There was an error during async processing.
+<.ctor>b__0
+<.ctor>b__1
+<.ctor>b__2
+</xs:schema>
+<?xml version='1.0' encoding='UTF-8' ?>
+<?xml version='1.0' encoding='UTF-8' ?> 
+<>c__DisplayClass10_0
+<>c__DisplayClass10_1
+<>c__DisplayClass10_2
+<>c__DisplayClass11_0
+<>c__DisplayClass11_1
+<>c__DisplayClass2_0
+<>c__DisplayClass25_0
+<>c__DisplayClass43_0
+<AddExternal>b__0
+<AddExternal>b__1
+<BeginClass>b__0
+<Cannot run in partial trust outside the ASP.NET environment.
+<CreateSoapAddressBinding>b__0
+<GetCreateCustomKeyForAspNetWebServiceMetadataCacheDelegate>b__0
+<http://www.microsoft.com/pki/certs/MicrosoftTimeStampPCA.crt0
+<Module>
+<PrivateImplementationDetails>
+<remarks/>
+<Specifying a type for use=literal messages is not supported.
+<The password to be used for basic and digest authentication.
+<The timeout period expired before the response was received.
+<The WSDL document contains links that could not be resolved.
+<The XML Web service help page encountered an internal error.
+<There is no CodeDom provider defined for the language '{0}'.
+<UriFixups>k__BackingField
+<xs:schema xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:wsdl='http://schemas.xmlsoap.org/wsdl/' targetNamespace='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+<xs:schema xmlns:tns='http://microsoft.com/webReference/' elementFormDefault='qualified' targetNamespace='http://microsoft.com/webReference/' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+<xs:schema xmlns:xs='http://www.w3.org/2001/XMLSchema'
+=color: cc3300; font-weight: bold; text-decoration: underline;
+=t]o-
+=The user name to be sent for basic and digest authentication.
+=This web service does not conform to WS-I Basic Profile v1.1.
+>..</
+>color: #336699; font-weight: bold; text-decoration: underline;
+>color: #6699cc; font-weight: bold; text-decoration: underline;
+>http://www.microsoft.com/pki/certs/MicCodSigPCA_08-31-2010.crt0
+>http://www.microsoft.com/pki/certs/MicCodSigPCA_2010-07-06.crt0
+>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0
+>http://www.microsoft.com/pki/certs/MicTimStaPCA_2010-07-01.crt0
+>Request format is invalid: Missing required soap:Body element.
+>Required XmlFormatExtension attribute is missing on class {0}.
+>The operation style=rpc but both messages are not use=encoded.
+>Unable to handle request. The action '{0}' was not recognized.
+0123456789ABCDEF '"
+040904B0
+06?q)
+070403125309Z
+0O)/;GY
+0Sets the user agent http header for the request.
+0This stream does not support seeking operations.
+1(0&0
+1,0*0
+1/0-0
+1~NOd
+100701213655Z
+100706204017Z
+100831221932Z
+110708205909Z
+12A5B9F0-7A1C-4fcb-8163-160A30F519B5
+160907175654Z
+160907175656Z
+160907175854Z
+170912180706Z
+170912183919Z
+180712201119Z
+180807090636Z0#
+180907175654Z0
+180907175656Z0
+180907175854Z0
+180912180706Z0t1
+180912183919Z0t1
+190726201119Z0t1
+1AF04045-6659-4aaa-9F4B-2741AC56224B
+1http://www.microsoft.com/PKI/docs/CPS/default.htm0@
+1Jv1=+r
+1System.Web.Services.Configuration.ProtocolElement
+1The name of the proxy server to use for requests.
+200831222932Z0y1
+20180806214323Z
+20180807070643Z
+20180807090644.892Z0
+20180807090648.307Z0
+20180807214323Z0w0=
+20180808070643Z0t0:
+210403130309Z0w1
+229803+4379500
+230217+2423640
+230865+2424060
+250701214655Z0|1
+250706205017Z0~1
+260708210909Z0~1
+2One-way methods cannot have out or ref parameters.
+2The element was not expected in this context: {0}.
+2The GetReaderForMessage method cannot return null.
+2The GetWriterForMessage method cannot return null.
+2The protocol does not support async serialization.
+306A23127E1FA780CBC93A80670F47DC4CF90E44
+3An unexpected attribute was encountered: {0}='{1}'.
+3http://www.microsoft.com/pkiops/docs/primarycps.htm0@
+3System.Web.Services.Configuration.TypeTypeConverter
+3The ASP.NET context object for the current request.
+3The ASP.NET session object for the current request.
+3The ASP.NET utility object for the current request.
+3The header property/field {0}.{1} cannot be static.
+3The value may not be accessed in message stage {0}.
+3Web Directory '{0}' must be same or below to '{1}'.
+4.0.0.0
+4.7.3190.0
+4.7.3190.0 built by: NET472REL1LAST_C
+44799DB57AA47E4E5F41CCDD45E01D3684970BFD
+4Element {0} named {1} from namespace {2} is missing.
+4No methods were found in the WSDL for this protocol.
+4System.Web.Services.Configuration.WsiProfilesElement
+4Unable to import binding '{0}' from namespace '{1}'.
+59F5BD34B6C013DEACC784F69C67E95150033A84
+5Discovery document at the URL {0} could not be found.
+5EA19964EF3BCFE3516273580C08920DB6013B8E
+5The header property/field {0}.{1} could not be  read.
+5The value '{0}' was not found in the enum type '{1}'.
+6+0@YHF
+6color: #000000; font-family: Verdana; font-size: .7em;
+6Operation '{0}' on binding '{1}' from namespace '{2}'.
+6System.Web.Services.Configuration.TypeAndNameConverter
+6The version of the SOAP protocol used for the request.
+7(EK5
+7Operation '{0}' on portType '{1}' from namespace '{2}'.
+7The ASP.NET application object for the current request.
+7Unknown XML Web services protocol '{0}' in config file.
+7Z>@B1
+8{0} from service description with targetNamespace='{1}'.
+8http://www.microsoft.com/pki/certs/MicrosoftRootCert.crt0
+8Missing required 'use' attribute on 'soap:body' element.
+8The binding '{0}' from namespace '{1}' was ignored.  {2}
+8The port number of the proxy server to use for requests.
+8WebServiceBindingAttribute is required on proxy classes.
+9!0f6
+9B[x=&
+9margin-left: 30px; font-size: .70em; padding-bottom: 2em;
+9Path property must be set before calling the Send method.
+9Schema with targetNamespace='{0}' has invalid syntax. {1}
+9The request element <{0} xmlns='{1}'> was not recognized.
+A DESCRIPTION MUST NOT use Solicit-Response and Notification type operations in a wsdl:portType definition. Solicit-Response and Notification operations are not well defined by WSDL 1.1; furthermore, WSDL 1.1 does not define bindings for them. 
+A DESCRIPTION MUST specify a non-empty location attribute on the wsdl:import element. Although the wsdl:import statement is modeled after the xsd:import statement, the location attribute is required by wsdl:import while the corresponding attribute on xsd:import, schemaLocation is optional. Consistent with location being required, its content is not intended to be empty.
+A DESCRIPTION MUST use the same value of, either 'rpc' or 'document' for the style attribute for all of its operations in a portType, in the SOAP Binding description. 
+A DESCRIPTION SHOULD NOT include extension elements with a wsdl:required attribute value of "true" on any WSDL construct (wsdl:binding, wsdl:portType, wsdl:message, wsdl:types or wsdl:import) that claims conformance to the Profile.
+A DESCRIPTION using the WSDL namespace and the WSDL SOAP binding namespace MUST be valid according to the XML Schemas found at http://schemas.xmlsoap.org/wsdl/2003-02-11.xsd and http://schemas.xmlsoap.org/wsdl/soap/2003-02-11.xsd.
+A document-literal binding in a DESCRIPTION MUST NOT have the namespace attribute specified on contained soapbind:body, soapbind:header, soapbind:headerfault and soapbind:fault elements. 
+A document-literal binding in a DESCRIPTION MUST refer, in each of its soapbind:body element(s), only to wsdl:part element(s) that have been defined using the element attribute. 
+A document-literal binding in a DESCRIPTION MUST, in each of its soapbind:body element(s), have at most one part listed in the parts attribute, if the parts attribute is specified.
+A wsdl:binding element in a DESCRIPTION MUST specify the HTTP transport protocol with SOAP binding. Specifically, the transport attribute of its soapbind:binding child MUST have the value "http://schemas.xmlsoap.org/soap/http". Note that this requirement does not prohibit the use of HTTPS; See R5000.
+A wsdl:binding in a DESCRIPTION MUST NOT use the attribute named parts on contained soapbind:header and soapbind:headerfault elements. 
+A wsdl:binding in a DESCRIPTION MUST refer, in each of its soapbind:header, soapbind:headerfault and soapbind:fault elements, only to wsdl:part element(s) that have been defined using the element attribute. Because faults and headers do not contain parameters, soapbind:fault, soapbind:header and soapbind:headerfault assume, per WSDL 1.1, that the value of the style attribute is 'document'. R2204 requires that all wsdl:part elements with a style attribute whose value is 'document' that are bound to soapbind:body be defined using the element attribute. This requirement does the same for soapbind:fault, soapbind:header and soapbind:headerfault elements. 
+A wsdl:binding in a DESCRIPTION MUST use the attribute named part with a schema type of "NMTOKEN" on all contained soapbind:header and soapbind:headerfault elements.
+A wsdl:binding in a DESCRIPTION MUST use the value of "literal" for the use attribute in all soapbind:body, soapbind:fault, soapbind:header and soapbind:headerfault elements. 
+A14p,C
+a5a866e1ee186f807668209f3b11236ace5e21f117803a3143abb126dd035d7d2f876b6938aaf2ee3414d5420d753621400db44a49c486ce134300a2106adb6bdb433590fef8ad5c43cba82290dc49530effd86523d9483c00f458af46890036b0e2c61d077d7fbac467a506eba29e467a87198b053c749aa2a4d2840c784e6d
+-aacute
+-Aacute
+Abort
+abortProcessing
+absolutePathAndQuery
+abstract
+abstractSchemas
+AbstractTypes
+AccessRead
+-Acirc
+-acirc
+acolor: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px;
+action
+Action`1
+Activator
+Activeds
+activeds.dll
+actor
+actualPath
+-acute
+add_DomainUnload
+add_ProcessExit
+add_UnhandledException
+add_UnknownElement
+add_ValidationEventHandler
+AddAsyncMethod
+AddCallbackDeclaration
+AddCallbackImplementation
+AddClass
+AddClassMetadata
+AddConformanceClaims
+AddConstructor
+AddCustomAttribute
+AddDelegate
+AddDocument
+AddEvent
+AddExtensionWarningComments
+AddExternal
+AddFilename
+AddFormatter
+AddHeader
+AddImport
+AddImports
+additionalInformation
+AddMappingMetadata
+AddMappings
+AddMember
+AddMetadataProperty
+AddMethod
+AddParameter
+AddRange
+AddReference
+AddReserved
+address
+address%http://schemas.xmlsoap.org/wsdl/http/$System.Web.Services.Description.Port
+address%http://schemas.xmlsoap.org/wsdl/soap/$System.Web.Services.Description.Port
+address'http://schemas.xmlsoap.org/wsdl/soap12/$System.Web.Services.Description.Port
+AddSchema
+AddSchemaImports
+AddSeconds
+AddServiceDescription
+AddSignature
+addStackPointer
+AddToCache
+AddUnique
+AddUriFixup
+AddValue
+AddWarningComment
+Advapi32
+advapi32.dll
+-aelig
+-AElig
+AfterDeserialize
+AfterSerialize
+-Agrave
+-agrave
+aHttpContext is not available.   This class can only be used in the context of an ASP.NET request.
+AInvalid null web reference encountered in the discovery document.
+-alefsym
+All xsd:schema elements contained in a wsdl:types element of a DESCRIPTION MUST have a targetNamespace attribute with a valid and non-null value, UNLESS the xsd:schema element has xsd:import and/or xsd:annotation as its only child element(s). 
+allExtensions
+allowAutoRedirect
+allowElements
+AllowExtensionsToReflectDescription
+AllowExtensionsToReflectMethod
+AllowMultiple
+AllowPartiallyTrustedCallersAttribute
+allSchemas
+AllSync
+-Alpha
+-alpha
+alternate
+An internal error occurred.G
+An operation can have only one in or out header of a given type. {0}.{1} conflicts with another header field of the same type and direction.
+An rpc-literal binding in a DESCRIPTION MUST have the namespace attribute specified, the value of which MUST be an absolute URI, on contained soapbind:body elements. 
+An rpc-literal binding in a DESCRIPTION MUST NOT have the namespace attribute specified on contained soapbind:header, soapbind:headerfault and soapbind:fault elements. 
+An rpc-literal binding in a DESCRIPTION MUST refer, in its soapbind:body element(s), only to wsdl:part element(s) that have been defined using the type attribute. 
+AnalyzeBinding
+AnalyzeDescription
+annotation
+anyAttribute
+AnyHttpSoap
+anyPorts
+AnyReturnReader
+AOC1'0%
+AppDomain
+appDomainShutdown
+AppDomainUnloadEvent
+Append
+AppendChild
+AppendHeader
+AppendMetadata
+appinfo
+application
+application/dime
+application/octet-stream
+application/soap+xml
+application/xml
+application/x-www-form-urlencoded
+ApplicationBase
+ApplicationOctetStream
+ApplicationSoap
+ApplicationXml
+appSettingBaseUrl
+AppSettings
+appSettingUrlKey
+AreUrlParametersSupported
+ArgumentException
+ArgumentNullException
+ArgumentOutOfRangeException
+arguments
+-aring
+-Aring
+array
+Array
+array1
+array2
+array3
+ArrayList
+ASCIIEncoding
+asmxTraceSource
+ASP.NET
+AspNetHostingPermission
+AspNetHostingPermissionAttribute
+AspNetHostingPermissionLevel
+assembly
+AssemblyCompanyAttribute
+AssemblyCopyrightAttribute
+AssemblyDefaultAliasAttribute
+AssemblyDelaySignAttribute
+AssemblyDescriptionAttribute
+AssemblyFileVersionAttribute
+AssemblyInformationalVersionAttribute
+AssemblyKeyFileAttribute
+AssemblyName
+AssemblyProductAttribute
+AssemblySignatureKeyAttribute
+AssemblyTitleAttribute
+Assert
+-asymp
+Async
+asyncBeginComplete
+AsyncBufferedSerialize
+asyncCall
+asyncCallback
+asyncCallbackCalls
+AsyncCompletedEventArgs
+AsyncDuplicateUserState
+asyncInvokes
+AsyncOperation
+AsyncOperationManager
+asyncResult
+AsyncSessionHandler
+AsyncSessionlessHandler
+asyncState
+AThe Binding property of {0} may not be specified in this context.
+aThere was an exception running the extensions specified in the config file (or via an attribute).
+-Atilde
+-atilde
+AttemptResolve
+attribute
+attributeFormDefault
+attributeGroup
+attributes
+AttributeTargets
+attributeType
+AttributeUsageAttribute
+attrname
+attrs
+attrval
+-Auml
+-auml
+B{0} on operation '{1}' on portType '{2}' from namespace '{3}'. {4}
+background-color: #dcdcdc; font-family: Verdana; font-size: 1em; border-top: #cccccc 1px solid; border-bottom: #666666 1px solid; border-left: #cccccc 1px solid; border-right: #666666 1px solid;
+background-color: #e5e5cc; padding: 5px; font-family: Courier New; font-size: x-small; margin-top: -5px; border: 1px #f0f0e0 solid;
+BadArguments
+BadCaptureIndexException
+BadGroupIndexException
+BaseAdd
+baseClassName
+BaseClear
+baseContentType
+BaseGet
+BaseIndexOf
+baseName
+BaseRemove
+BaseRemoveAt
+baseUrl
+BasicProfile1_1
+BasicProfileViolation
+BasicProfileViolationCollection
+BasicProfileViolationEnumerator
+BDeclaring parameters to be 'out' or 'ref' is not supported by {0}.
+-bdquo
+BeforeDeserialize
+BeforeSerialize
+Begin
+BeginClass
+BeginCoreProcessRequest
+BeginGetRequestStream
+BeginGetResponse
+BeginInvoke
+BeginMetadata
+beginMethodInfo
+BeginNamespace
+BeginProcessRequest
+BeginRead
+BeginSend
+BeginWrite
+-beta
+-Beta
+Bhttp://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt0
+Binder
+binding
+Binding
+binding
+Binding '{0}' from namespace '{1}' contains operations with matching wire signatures. Wire signature of message '{2}' matches message '{3}'.
+binding%http://schemas.xmlsoap.org/wsdl/http/'System.Web.Services.Description.Binding
+binding%http://schemas.xmlsoap.org/wsdl/soap/'System.Web.Services.Description.Binding
+bindingAttr
+bindingCount
+BindingFlags
+binding'http://schemas.xmlsoap.org/wsdl/soap12/'System.Web.Services.Description.Binding
+BindingInvalidAttribute
+BindingMissingAttribute
+BindingMultipleParts
+bindingName
+bindingNs
+bindingOperation
+bindingOperationFault
+BindingOperationMissing
+bindings
+bindingServiceDescription
+block
+blockDefault
+BMessage '{0}' from service description with targetNamespace='{1}'.
+BMissing message part '{0}' for message '{1}' from namespace '{2}'.
+bMore than one fault binding named '{0}' was specified. Each fault binding must have a unique name.
+body%http://schemas.xmlsoap.org/wsdl/soap/,System.Web.Services.Description.InputBinding-System.Web.Services.Description.OutputBinding(System.Web.Services.Description.MimePart
+body'http://schemas.xmlsoap.org/wsdl/soap12/,System.Web.Services.Description.InputBinding-System.Web.Services.Description.OutputBinding(System.Web.Services.Description.MimePart
+BooleanSwitch
+Both {0} and {1} use the message name '{2}'.  Use the MessageName property of the WebMethod custom attribute to specify unique message names for the methods.
+BothAndUseTheMessageNameUseTheMessageName3
+BPConformanceHeaderFault
+BPConformanceSoapEncodedMethod
+BRequest format is invalid: Missing required soap:Envelope element.
+BrowsableAttribute
+-brvbar
+BSchema item '{1}' named '{2}' from namespace '{0}' is invalid. {3}
+BServer found request content type to be '{0}', but expected '{1}'.
+BThe Binding property '{0}' does not match interface binding '{1}'.
+BThe document format is not recognized (the content type is '{0}').
+BThe operation binding '{0}' from namespace '{1}' was ignored.  {2}
+BThe XML schema document contains links that could not be resolved.
+buffer
+BufferedResponseStream
+bufferResponse
+bufferResponseSpecified
+bufferSize
+buffersize
+builder
+-bull
+bypassCache
+c\FaWU
+cache
+CacheDependency
+cacheDuration
+cacheDurationSpecified
+CacheItemPriority
+CacheItemRemovedCallback
+CachePressure
+callback
+callbackMember
+callbackName
+callbackParam
+callDetails
+caller
+CallId
+callId
+Calling {0}
+-Calling {0}
+Calling WorkItem.Post({0})
+CallString
+callWriteAsyncRequest
+CancelAsync
+canceled
+Cancelled
+cancelled
+CanConvertFrom
+CanDeserialize
+CanMerge
+Cannot add service description with targetNamespace='{0}': binding with name='{1}' already present in the description collection.
+Cannot add service description with targetNamespace='{0}': message with name='{1}' already present in the description collection.
+Cannot add service description with targetNamespace='{0}': portType with name='{1}' already present in the description collection.
+Cannot add service description with targetNamespace='{0}': schema with targetNamespace='{1}' already present in the description collection.
+Cannot add service description with targetNamespace='{0}': service with name='{1}' already present in the description collection.
+Cannot convert {0} to {1}.
+CannotRunInPartialTrustOutsideAspNet
+CanTCallTheEndMethodOfAnAsyncCallMoreThan
+CanTMergeBinding
+CanTMergeMessage
+CanTMergePortType
+CanTMergeService
+CanTMergeTypes
+CanTSpecifyElementOnEncodedMessagePartsPart
+capture
+Capture
+capture
+CaptureCollection
+category
+-Ccedil
+-ccedil
+CEach message part in a use=literal message must specify an element.
+-cedil
+-cent
+ChainStream
+ChangeExtension
+ChangeType
+chars
+charset
+CheckConformance
+CheckContractOverride
+CheckExtensions
+CheckForDuplicateMethods
+CheckHelperVersion
+CheckIOReadPermission
+CheckMessagePart
+CheckMessageParts
+CheckMessageStyles
+CheckOperationDuplicates
+CheckReaderCount
+checkRequiredHeaders
+checkSpecifiedCount
+CheckTimeout
+checkType
+CheckTypes
+CheckWsdlImports
+choice
+Chttp://crl.microsoft.com/pki/crl/products/MicrosoftTimeStampPCA.crl0X
+Chttp://www.microsoft.com/pkiops/crl/MicCodSigPCA2011_2011-07-08.crl0a
+-circ
+Claim
+ClaimPrefix
+claims
+classes
+classHeaders
+className
+classSyncObject
+CleanupCache
+ClearHeaders
+ClearSubCode
+client
+Client
+client
+Client
+clientCertificates
+clientProtocol
+ClientProtocolAllowAutoRedirect
+ClientProtocolClientCertificates
+ClientProtocolCookieContainer
+ClientProtocolDomain
+ClientProtocolEnableDecompression
+ClientProtocolEncoding
+ClientProtocolPassword
+ClientProtocolPreAuthenticate
+ClientProtocolProxyName
+ClientProtocolProxyPort
+ClientProtocolSoapVersion
+ClientProtocolTimeout
+ClientProtocolUrl
+ClientProtocolUserAgent
+ClientProtocolUsername
+clientType
+ClientTypeCache
+Close
+CloseSharedResources
+clr.dll
+CLSCompliantAttribute
+clsid
+-clubs
+CoCreateInstance
+CodeAccessPermission
+CodeArgumentReferenceExpression
+CodeArrayCreateExpression
+CodeArrayIndexerExpression
+CodeAssignStatement
+CodeAttributeArgument
+CodeAttributeArgumentCollection
+CodeAttributeDeclaration
+CodeAttributeDeclarationCollection
+CodeBaseReferenceExpression
+CodeBinaryOperatorExpression
+CodeBinaryOperatorType
+CodeCastExpression
+codeClass
+codeClasses
+CodeCommentStatement
+CodeCommentStatementCollection
+codeCompileUnit
+CodeConditionStatement
+CodeConstructor
+CodeDelegateCreateExpression
+CodeDelegateInvokeExpression
+CodeDomProvider
+CodeEventReferenceExpression
+CodeExpression
+CodeExpressionCollection
+CodeExpressionStatement
+CodeFieldReferenceExpression
+codeFlags
+CODEGEN: {0}
+codeGenerationOptions
+CodeGenSupportParameterAttributes
+CodeGenSupportReferenceParameters
+CodeGenSupportReturnTypeAttributes
+CodegenWarningDetails
+CodeIdentifier
+CodeIdentifiers
+CodeIndexerExpression
+CodeMemberEvent
+CodeMemberField
+CodeMemberMethod
+CodeMemberProperty
+codeMethod
+CodeMethodInvokeExpression
+CodeMethodReturnStatement
+codeNamespace
+CodeNamespaceImport
+CodeNamespaceImportCollection
+CodeObject
+CodeObjectCreateExpression
+CodeParameterDeclarationExpression
+CodeParameterDeclarationExpressionCollection
+CodePrimitiveExpression
+CodePropertyReferenceExpression
+codeProvider
+CodeRemarks
+CodeStatement
+CodeStatementCollection
+CodeThisReferenceExpression
+CodeTypeDeclarationCollection
+CodeTypeDelegate
+CodeTypeMember
+CodeTypeMemberCollection
+CodeTypeOfExpression
+CodeTypeReference
+CodeTypeReferenceCollection
+CodeTypeReferenceExpression
+CodeVariableDeclarationStatement
+CodeVariableReferenceExpression
+CollapseWhitespace
+collection
+CollectionBase
+color: #000000; background: #dcdcdc; font-family: Verdana; font-size: .7em; font-weight: normal; border-bottom: 1px solid #dcdcdc; padding-top: 2px; padding-bottom: 2px;
+color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal; background-color: #003366; margin-top: 0px; margin-bottom: 0px; margin-left: -30px; padding-top: 10px; padding-bottom: 3px; padding-left: 15px; width: 105%;
+color: darkblue; font: bold;
+color: darkgreen; font: bold;
+color: darkred; font: bold;
+Combine
+CombineCompletedSynchronously
+CombineExtensionsHelper
+CombineUris
+Comctl32
+comctl32.dll
+Comdlg32
+comdlg32.dll
+ComInterfaceType
+commentRegex
+comments
+Comments
+CompanyName
+comparand
+Compare
+CompareExchange
+CompareTo
+CompilationRelaxationsAttribute
+Compile
+CompilerGeneratedAttribute
+Complete
+Completed
+CompletedAsyncResult
+CompletedEventArgs
+CompletedEventHandler
+completedSynchronously
+complexContent
+complexType
+CompModSwitches
+Compose
+ComputeHash
+ComVisibleAttribute
+Concat
+concreteSchemas
+config
+ConfigKeyNotFoundInElementCollection
+ConfigKeysDoNotMatch
+ConfigurationCollectionAttribute
+ConfigurationElement
+ConfigurationElementCollection
+ConfigurationPermissionAttribute
+ConfigurationProperty
+ConfigurationPropertyAttribute
+ConfigurationPropertyCollection
+ConfigurationPropertyOptions
+ConfigurationSection
+ConfigurationValidatorBase
+ConformanceClaim
+conformanceWarnings
+conformsTo
+-cong
+connection
+connectionGroupName
+ConnectionStringSettingsCollection
+Consider changing config settings in web.config file in your application or site root directory to enable SOAP 1.1 protocol for your Web service.
+Contains
+ContainsKey
+content
+content%http://schemas.xmlsoap.org/wsdl/mime/(System.Web.Services.Description.MimePart,System.Web.Services.Description.InputBinding-System.Web.Services.Description.OutputBinding
+contentEncoding
+Content-Encoding
+contentLength
+contentType
+Content-type
+context
+ContextInformation
+ContractOverride
+contractRef
+ContractReference
+contractReference
+ContractSearchPattern
+ControlEvidence
+ConvertTo
+cookieJar
+-copy
+CopyTo
+CoreGetHandler
+CoreProcessRequest
+count
+-crarr
+Create
+CreateArgsClass
+CreateAttribute
+CreateClass
+CreateCustomKeyForAspNetWebServiceMetadataCache
+CreateCustomKeyForAspNetWebServiceMetadataCache-
+CreateElement
+CreateEncodedMessage
+CreateHeaderMessages
+CreateIfRequestCompatible
+CreateInvalidAnyTypeException
+CreateInvalidEnumValueException
+CreateInvokeParams
+CreateKey
+createKeyMethod
+CreateLiteralMessage
+CreateMessage
+CreateNewElement
+CreateOperation
+CreatePropertyDeclaration
+CreateReader
+CreateResponseExceptionString
+CreateServerInstance
+CreateSoapAddressBinding
+CreateSoapBinding
+CreateSoapBodyBinding
+CreateSoapHeaderBinding
+CreateSoapImporter
+CreateSoapOperationBinding
+CreateSuppressedException
+CreateTextNode
+CreateUnknownConstantException
+CreateUnknownNodeException
+CreateUnknownTypeException
+CreateUpgradeEnvelope
+CreateUpgradeHeader
+CreateWriter
+CreateXmlImporter
+CredentialCache
+credentials
+Crypt32
+crypt32.dll
+CSharpCodeProvider
+culture
+CultureInfo
+-curren
+current
+currentThread
+custom
+d{0} is not a valid group index for match '{1}'. The highest valid group index for this match is {2}.
+D=xz#
+-dagger
+-Dagger
+-dArr
+-darr
+DataEncodingUnknown
+DataEncodingUnknownFaultCode
+DateTime
+DBinding '{0}' from namespace '{1}' has invalid attribute: {2}='{3}'.
+DBinding '{0}' from namespace '{1}' missing required '{2}' attribute.
+DDBLD438
+DealWithAmbiguity
+DebuggableAttribute
+debugger
+debuggerHeader
+DebuggerHiddenAttribute
+DebuggerStepThroughAttribute
+DebuggingModes
+Decimal
+declaration
+declarations
+declaringType
+DecompressionMethods
+default
+DefaultCreateCustomKeyForAspNetWebServiceMetadataCache
+DefaultDllImportSearchPathsAttribute
+defaultFormatTypes
+DefaultMemberAttribute
+defaultNs
+defaultNS
+DefaultValue
+DefaultValueAttribute
+DefaultValueU
+DefaultValueU/System.Web.Services.Configuration.PriorityGroup
+DefaultValueU5System.Web.Services.Configuration.WebServiceProtocols
+DefaultWsdlHelpGenerator.aspx
+definitions
+DelegateInfo
+-delta
+-Delta
+Demand
+depth
+Description
+description
+Description
+descriptions
+descriptionSpecified
+descriptionsWithPost
+Deserialize
+DeserializeElement
+DesignerCategoryAttribute
+DesignerSerializationVisibility
+DesignerSerializationVisibilityAttribute
+destinationType
+destMachine
+detail
+Detail
+detail
+Detail
+DetailElementName
+details
+diagnostics
+DiagnosticsElement
+-diams
+DictionaryBase
+DictionaryEntry
+didUnderstand
+DimeContentType
+DInvalid web reference encountered. Missing required '{0}' attribute.
+direction
+Direction
+directory
+DirectoryEntries
+DirectoryEntry
+DirectoryInfo
+dirName
+Disable remote debugging for web methods.
+disableExtensions
+disableRemoteDebugging
+disco
+DISCO Document
+discoDoc
+Discover
+DiscoverAny
+discovery
+DiscoveryClientDocumentCollection
+DiscoveryClientProtocol
+DiscoveryClientReferenceCollection
+DiscoveryClientResult
+DiscoveryClientResultCollection
+DiscoveryClientResultsFile
+DiscoveryDocument
+DiscoveryDocumentLinksPattern
+DiscoveryDocumentReference
+DiscoveryDocumentSearchPattern
+DiscoveryDocumentSerializationReader
+DiscoveryDocumentSerializationWriter
+discoveryDocumentSerializer
+DiscoveryExceptionDictionary
+DiscoveryIsNotPossibleBecauseTypeIsMissing1
+discoveryRef
+DiscoveryReferenceCollection
+discoveryReferenceTypes
+DiscoveryRequestHandler
+DiscoverySearchPattern
+DiscoveryServerProtocol
+DiscoveryServerProtocolFactory
+DiscoveryServerType
+Dispose
+DisposeServerInstance
+disposing
+-divide
+DllImportSearchPath
+DoCallback
+docRef
+doctypeDirectiveRegex
+document
+Document URI is '{2}'.
+DocumentableItem
+documentation
+Documentation
+documentationElement
+DocumentationServerProtocol
+DocumentationServerProtocolFactory
+DocumentationServerType
+documentBinding
+documents
+DOnly objects of type OperationInput or OperationOutput may be added.
+DOnly one WebServiceBinding attribute may be specified on type '{0}'.
+Double
+Download
+DRequest format is unrecognized for URL unexpectedly ending in '{0}'.
+dThe binding named '{0}' from namespace '{1}' was not found in the discovery document found at '{2}'.
+DThe test form is only available for requests from the local machine.
+Duplicate input/output names.
+duplicateByRequestElement
+duplicateBySoapAction
+DuplicateInputOutputNames0
+duplicateMethods
+dwPid
+dwSidLen
+dwTid
+dynamicDiscoSearcher
+DynamicDiscoSearcher
+dynamicDiscovery
+DynamicDiscoveryDocument
+DynamicDiscoverySearcher
+DynamicDiscoveryVirtualSearch
+dynamicDiscoVirtualSearch
+DynamicPhysicalDiscoSearcher
+DynamicVirtualDiscoSearcher
+e_.,>
+e'{0}' is not a valid value for the 'relay' attribute. Valid values are '0', '1', 'true', and 'false'.
+E0C1)0'
+e7/}hi7
+eA non-CLS Compliant Exception (i.e. an object that does not derive from System.Exception) was thrown.
+Each XML Web service needs a unique namespace in order for client applications to distinguish it from other services on the Web. http://tempuri.org/ is available for XML Web services that are under development, but published XML Web services should use a more permanent namespace.
+EachMessagePartInAnUseEncodedMessageMustSpecify0
+EachMessagePartInAUseLiteralMessageMustSpecify0
+EachMessagePartInRpcUseLiteralMessageMustSpecify0
+-eacute
+-Eacute
+EAsynchronous method {0}.{1} does not have a corresponding {2} method.
+-ecirc
+-Ecirc
+ECustom attributes on parameter declarations are not supported by {0}.
+EFault '{0}' on operation '{1}' on binding '{2}' from namespace '{3}'.
+-egrave
+-Egrave
+Ehttp://crl.microsoft.com/pki/crl/products/MicCodSigPCA_08-31-2010.crl0Z
+Ehttp://crl.microsoft.com/pki/crl/products/MicCodSigPCA_2010-07-06.crl0Z
+Ehttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z
+Ehttp://crl.microsoft.com/pki/crl/products/MicTimStaPCA_2010-07-01.crl0Z
+Ehttp://www.microsoft.com/pkiops/certs/MicCodSigPCA2011_2011-07-08.crt0
+Element
+element
+Element
+element
+Element
+element=
+ElementEncodedExtension
+elementFormDefault
+elementName
+elementNamespace
+elements
+elementType
+ElementTypeMustBeObjectOrSoapExtensionOrSoapReflectedException
+ElementTypeMustBeObjectOrSoapReflectedException
+elemName
+emitClaims
+-empty
+emptyBinding
+emptyObjectArray
+-emsp
+Enable tracing for remote method calls.
+Enable tracing for the DynamicDiscoverySearcher class.
+enableDataBinding
+enableDecompression
+enabledProtocols
+enableSession
+enableSessionSpecified
+encoded
+encodedBinding
+encodedTypes
+EncodeLocalName
+encoding
+EncodingMissingIdFaultCode
+EncodingMissingIDFaultSubcode
+encodingStyle
+EncodingUntypedValueFaultCode
+EncodingUntypedValueFaultSubcode
+EndClass
+EndCoreProcessRequest
+EndGetRequestStream
+EndGetResponse
+EndInvoke
+EndMetadata
+endMethodInfo
+EndNamespace
+EndProcessRequest
+EndRead
+EndSend
+EndSendCalled
+EndsWith
+endtagRegex
+EndWrite
+-ensp
+EnsureArrayIndex
+EnsureHeadersUnderstood
+EnsureInStage
+EnsureNoException
+EnsureOutStage
+EnsureStage
+EnsureStreamReady
+entity
+entry
+entryPathPrefix
+entryPoint
+EnumConverter
+enumeration
+EnumFromString
+EnumToString
+en-US
+Envelope
+envelopeNS
+envelopeNs
+-Epsilon
+-epsilon
+Equals
+-equiv
+Error
+Error reflecting {0}.{1}.
+errors
+EscapeStringInternal
+EscapeUri
+escapeUriStuff
+eSets the timeout in milliseconds to be used for synchronous calls.  The default of -1 means infinite.
+ESpecifying an element for use=encoded message parts is not supported.
+EThe HTML document does not contain Web service discovery information.
+eThe value of use defined on the soap:header element must match that defined on the soap:body element.
+-Euml
+-euml
+-euro
+eventType
+EventWaitHandle
+exception
+Exception Details:
+'Exception ignored in {0}.
+ExceptionCatch
+ExceptionIgnore
+ExceptionThrow
+excludedUrls
+excludedUrlsTable
+ExcludePathInfo
+excludePaths
+excludeSchemeHostPort
+excludeSchemeHostPortFromCachingKey
+exclude-System.Web.Services.Discovery.ExcludePathInfo
+excludeUrlsList
+-exist
+ExportAnyType
+exportContext
+exporter
+ExportMembersMapping
+ExportTypeMapping
+extension
+extensionInitializers
+extensionPoint1
+extensionPoint2
+extensionPoint3
+extensionPoint4
+extensionPoints
+extensions
+Extensions
+extensionStream
+extensionTypes
+ExternDll
+Failed to handle request.
+FailedToHandleRequest0
+FailIfInPartialTrustOutsideAspNet
+false
+fault
+Fault
+fault%http://schemas.xmlsoap.org/wsdl/soap/,System.Web.Services.Description.FaultBinding
+FaultActor
+faultactor
+FaultBinding
+FaultBindingCollection
+faultcode
+FaultDetail
+fault'http://schemas.xmlsoap.org/wsdl/soap12/,System.Web.Services.Description.FaultBinding
+FaultNode
+FaultReason
+FaultReasonText
+FaultRole
+faultstring
+FI&Q:P&
+Field
+field
+FieldDirection
+FieldInfo
+fieldName
+fields
+FileAccess
+FileAttributes
+FileDescription
+FileInfo
+FileIOPermission
+FileIOPermissionAccess
+FileIOPermissionAttribute
+FileMode
+filename
+fileName
+filename
+FilenameFromUrl
+filenames
+filePath
+filesFound
+FileStream
+FileSystemInfo
+fileToSkipAtBegin
+fileToSkipFirst
+FileVersion
+final
+finalDefault
+Finalize
+FindAll
+FindChar
+FindImporterByName
+FindInterfaceMethodInfo
+FindMapping
+FindOperation
+FindPartByName
+FindPartsByName
+FindSoapBodyBinding
+FindUse
+FInput message '{0}' from namespace '{1}' has wire signature '{2}:{3}'.
+fixed
+fixup
+FixupReferences
+flags
+Flags
+FlagsAttribute
+Flavor=Retail
+flushEnabled
+FlushWrite
+fMore than one operation fault named '{0}' was specified. Each operation fault must have a unique name.
+-fnof
+font-size: 1.5em; font-weight: bold; margin-top: 25px; margin-bottom: 10px; border-top: 1px solid #003366; margin-left: -15px; color: #003366;
+For Document-literal bindings, the Profile requires that at most one part, abstractly defined with the element attribute, be serialized into the soap:Body element. When using a Bare parameter style, a conformant method must have at most one parameter.
+For more details on Basic Profile Version 1.1, see the <a href="http://www.ws-i.org/Profiles/BasicProfile-1.1.html"> Basic Profile Specification</a>.
+For more details on XML namespaces, see the W3C recommendation on <a href="http://www.w3.org/TR/REC-xml-names/">Namespaces in XML</A>.
+For server-side asynchronous method calls, your Begin method must return a valid IAsyncResult. Your Begin method cannot return null.
+For XML Web services creating using ASP.NET, the default namespace can be changed using the WebService attribute's Namespace property. The WebService attribute is an attribute applied to the class that contains the XML Web service methods. Below is a code example that sets the namespace to "http://microsoft.com/webservices/":
+-forall
+Force virtual search for DiscoveryRequestHandler class.
+format
+FormatException
+formatterType
+formatterTypes
+-frac12
+-frac14
+-frac34
+fractionDigits
+-frasl
+FreeCoTaskMem
+FromBase64String
+FromEnum
+FromMappings
+FromXmlQualifiedName
+FThe last two parameters of method {0}.{1} must be of type {2} and {3}.
+fullPath
+FullTrust
+FullTypeName
+Fxassert
+Fxassert.dll
+g?{LPl
+-gamma
+-Gamma
+GCheck content definition of schema type '{0}' from namespace '{1}'. {2}
+Gdi32
+gdi32.dll
+Gdiplus
+gdiplus.dll
+GenerateClassForBinding
+GenerateCode
+GenerateConstructorStatements
+generatedCodeAttribute
+GenerateExtensionMetadata
+GenerateFaultString
+GenerateHeaders
+GenerateMethod
+GenerateTypeName
+GenerateWebReferences
+GenerateXmlMappings
+GeneratorSupport
+get_AbsolutePath
+get_AbsoluteUri
+get_AbstractSchemas
+get_Action
+get_Actor
+get_AdditionalInformation
+get_Address
+get_AllowAutoRedirect
+get_AllowElements
+get_AllSchemas
+get_Annotation
+get_Any
+get_AnyAttribute
+get_Application
+get_ApplicationVirtualPath
+get_AppSettingBaseUrl
+get_AppSettingUrlKey
+get_Arguments
+get_Asmx
+get_Assembly
+get_AssemblyQualifiedName
+get_AsyncCallbackParameter
+get_AsyncInvokes
+get_AsyncResultParameter
+get_AsyncState
+get_AsyncStateParameter
+get_AsyncWaitHandle
+get_Attr
+get_AttributeFormDefault
+get_Attributes
+get_Authority
+get_BaseClass
+get_BaseConstructorArgs
+get_BaseType
+get_BaseTypeName
+get_BaseTypes
+get_BeginMethodInfo
+get_Binding
+get_Bindings
+get_BindingUse
+get_Block
+get_BlockDefault
+get_BufferResponse
+get_BufferResponseSpecified
+get_BypassCache
+get_Cache
+get_CacheDuration
+get_CacheDurationSpecified
+get_Callback
+get_CanRead
+get_CanSeek
+get_CanWrite
+get_Capture
+get_Captures
+get_Chars
+get_CheckSpecified
+get_CheckSpecifiedCount
+get_Children
+get_Claims
+get_ClassName
+get_ClassNames
+get_ClassSyncObject
+get_Client
+get_ClientCertificates
+get_ClientProtocol
+get_Code
+get_CodeCompileUnit
+get_CodeGenerationOptions
+get_CodeGenerationOptionsValues
+get_CodeGenerator
+get_CodeNamespace
+get_CodeTypeDeclaration
+get_Comments
+get_CompareInfo
+get_CompletedSynchronously
+get_ConcreteSchemas
+get_ConformanceWarnings
+get_ConformsTo
+get_Connection
+get_ConnectionGroupName
+get_ConnectionStrings
+get_Constraints
+get_Content
+get_ContentEncoding
+get_ContentLength
+get_ContentModel
+get_ContentType
+get_Context
+get_Contract
+get_CookieContainer
+get_Count
+get_Credentials
+get_Culture
+get_CurrentCulture
+get_CurrentDomain
+get_CurrentThread
+get_Custom
+get_CustomAttributeProvider
+get_CustomAttributes
+get_Data
+get_Declaration
+get_DeclaringType
+get_Default
+get_DefaultCredentials
+get_DefaultFilename
+get_DefaultNamespace
+get_DefaultValue
+get_Depth
+get_Description
+get_DescriptionSpecified
+get_Detail
+get_Details
+get_Diagnostics
+get_Dictionary
+get_DidUnderstand
+get_Direction
+get_DisableRemoteDebugging
+get_Disco
+get_DiscoveryDocument
+get_DiscoveryDocumentSerializer
+get_DiscoveryReferenceTypes
+get_DocRef
+get_Document
+get_Documentation
+get_DocumentationElement
+get_DocumentElement
+get_Documents
+get_DuplicateByRequestElement
+get_DuplicateBySoapAction
+get_DynamicDiscoverySearcher
+get_DynamicDiscoveryVirtualSearch
+get_Element
+get_ElementFormDefault
+get_ElementName
+get_Elements
+get_EmitConformanceClaims
+get_Enabled
+get_EnabledConformanceWarnings
+get_EnableDecompression
+get_EnabledProtocols
+get_EnableSession
+get_EnableSessionSpecified
+get_EncodedMustUnderstand
+get_EncodedMustUnderstand12
+get_EncodedRelay
+get_Encoding
+get_EncodingNs
+get_EndMethodInfo
+get_EnvelopeNs
+get_EOF
+get_Errors
+get_EvaluationContext
+get_Evidence
+get_Exception
+get_ExceptionObject
+get_ExcludePaths
+get_Exists
+get_ExpectedAttributes
+get_ExpectedElements
+get_ExportContext
+get_Exporter
+get_ExtensibleAttributes
+get_ExtensionPoints
+get_Extensions
+get_ExtensionType
+get_ExtraCodeClasses
+get_Facets
+get_Fault
+get_Faults
+get_Fields
+get_FieldType
+get_Filename
+get_Final
+get_FinalDefault
+get_FirstChild
+get_FixedValue
+get_Flow
+get_Form
+get_FullName
+get_GeneratedCodeAttribute
+get_GetStatements
+get_Group
+get_Groups
+get_Handled
+get_HashAlgorithm
+get_HasWritten
+get_HeaderMessages
+get_Headers
+get_HeaderType
+get_HelpGeneratorPath
+get_HelpGeneratorVirtualPath
+get_Host
+get_HostingContext
+get_HostName
+get_HostNameType
+get_Href
+get_HttpCode
+get_HttpContentType
+get_HttpMethod
+get_Id
+get_IgnoreCase
+get_ImportContext
+get_Importer
+get_Imports
+get_InCheckSpecifiedCount
+get_IncludeMetadata
+get_Includes
+get_Index
+get_Indices
+get_InformationalVersion
+get_InHeaderMappings
+get_InHeaderSerializer
+get_InlinedSchemas
+get_InnerException
+get_InnerXml
+get_InParameters
+get_Input
+get_InputMessage
+get_InputStream
+get_InternalActor
+get_InternalMustUnderstand
+get_InternalRelay
+get_InternalSyncObject
+get_InvariantCulture
+get_InvariantInfo
+get_IsAbstract
+get_IsArray
+get_IsAsync
+get_IsAttached
+get_IsByRef
+get_IsClaimsConformance
+get_IsCompleted
+get_IsCustomErrorEnabled
+get_IsDebuggingEnabled
+get_IsEmpty
+get_IsEmptyBinding
+get_IsEmptyElement
+get_IsEncodedBinding
+get_IsEnum
+get_IsFixed
+get_IsFullyTrusted
+get_IsHomogenous
+get_IsHosted
+get_IsInterface
+get_IsLocal
+get_IsLoopback
+get_IsMixed
+get_IsNillable
+get_IsOneWay
+get_IsOut
+get_IsPublic
+get_IsReusable
+get_IsSealed
+get_IsSpecialName
+get_IsStatic
+get_IsStrict
+get_IsVerbose
+get_IsVirtualSearch
+get_IsVoid
+get_Item
+get_ItemOf
+get_Items
+get_ItemType
+get_ItemTypeName
+get_Key
+get_Keys
+get_Lang
+get_Language
+get_Length
+get_LineNumber
+get_LinePosition
+get_List
+get_LocalName
+get_LocalPath
+get_Location
+get_MachineConfigurationDirectory
+get_MapToProperty
+get_Markup
+get_Matches
+get_MaxOccursString
+get_MaxRepeats
+get_MemberInfo
+get_MemberName
+get_Members
+get_MemberType
+get_MemberTypes
+get_Message
+get_MessageName
+get_MessageNameSpecified
+get_Messages
+get_MetadataPropertiesAdded
+get_Method
+get_MethodAttribute
+get_MethodInfo
+get_MethodName
+get_MethodNames
+get_Methods
+get_MethodUrl
+get_MimeImporterTypes
+get_MimeReflectorTypes
+get_MinOccursString
+get_MustUnderstand
+get_Name
+get_Namespace
+get_Namespaces
+get_NamespaceURI
+get_NameTable
+get_NewLine
+get_Next
+get_NextSibling
+get_Node
+get_NodeType
+get_NormativeStatement
+get_NotifySink
+get_Now
+get_NullToken
+get_On
+get_OneWay
+get_OnewayInitException
+get_Operation
+get_OperationBinding
+get_Operations
+get_OutCheckSpecifiedCount
+get_OutHeaderMappings
+get_OutHeaderSerializer
+get_OutParameters
+get_Output
+get_OutputMessage
+get_OutputStream
+get_OwnerDocument
+get_ParameterFormatter
+get_ParameterOrder
+get_ParameterOrderString
+get_ParameterReaderTypes
+get_Parameters
+get_ParameterSerializer
+get_ParameterStyle
+get_ParameterType
+get_Parent
+get_Part
+get_Particle
+get_Parts
+get_PartsString
+get_Path
+get_PathAndQuery
+get_PathInfo
+get_Pattern
+get_PendingSyncRequest
+get_PhysicalPath
+get_Port
+get_Ports
+get_PortType
+get_PortTypes
+get_Position
+get_PreAuthenticate
+get_Prefix
+get_PrimarySearchPattern
+get_Priority
+get_ProcessContents
+get_Properties
+get_PropertyType
+get_Protocol
+get_ProtocolImporterTypes
+get_ProtocolName
+get_ProtocolReflectorTypes
+get_Protocols
+get_Proxy
+get_ProxyCode
+get_Public
+get_QualifiedName
+get_QueryString
+get_Reader
+get_ReaderCount
+get_ReaderType
+get_ReadState
+get_ReadTimeout
+get_Recommendation
+get_Ref
+get_Refer
+get_ReferencedAssemblies
+get_References
+get_ReferenceTypeName
+get_ReflectionContext
+get_ReflectionImporter
+get_RefName
+get_Relay
+get_Remote
+get_Repeats
+get_RepeatsString
+get_Request
+get_RequestElementName
+get_RequestEncoding
+get_RequestNamespace
+get_RequestUri
+get_Required
+get_Resources
+get_Response
+get_ResponseElementName
+get_ResponseNamespace
+get_ResponseUri
+get_Results
+get_RetrievalUrl
+get_Return
+get_ReturnFormatter
+get_ReturnSerializer
+get_ReturnType
+get_ReturnTypeCustomAttributeProvider
+get_ReturnTypeCustomAttributes
+get_ReturnWriterTypes
+get_Role
+get_RoutingStyle
+get_Rpc
+get_Schema
+get_SchemaClassName
+get_SchemaExporter
+get_SchemaImporterExtensions
+get_SchemaLocation
+get_Schemas
+get_SchemasWithPost
+get_SchemaType
+get_SchemaTypeName
+get_Scheme
+get_SecondarySearchPattern
+get_Selector
+get_Serializer
+get_Server
+get_ServerMethod
+get_ServerProtocol
+get_ServerProtocolFactories
+get_ServerType
+get_Service
+get_ServiceAttribute
+get_ServiceDefaultIsEncoded
+get_ServiceDescription
+get_ServiceDescriptionExtended
+get_ServiceDescriptionFormatExtensionTypes
+get_ServiceDescriptions
+get_ServiceDescriptionsWithPost
+get_ServiceImporter
+get_ServiceNamespace
+get_ServiceRoutingOnSoapAction
+get_Services
+get_ServiceType
+get_ServiceUrl
+get_Session
+get_SetStatements
+get_Severity
+get_SoapAction
+get_SoapActionRequired
+get_SoapBinding
+get_SoapEncodingSchema
+get_SoapEnvelopeProcessing
+get_SoapExporter
+get_SoapExtensionImporterTypes
+get_SoapExtensionReflectorTypes
+get_SoapExtensionTypes
+get_SoapImporter
+get_SoapMethod
+get_SoapServerProtocolFactory
+get_SoapServerProtocolFactoryType
+get_SoapTransportImporters
+get_SoapTransportImporterTypes
+get_SoapVersion
+get_Source
+get_SourceSchemaObject
+get_StackTrace
+get_Stage
+get_Statements
+get_StatusCode
+get_StatusDescription
+get_Stream
+get_Style
+get_SubCode
+get_SubstitutionGroup
+get_Success
+get_SuppressReturningExceptions
+get_Switch
+get_System
+get_Table
+get_Target
+get_TargetNamespace
+get_TextBinding
+get_Ticks
+get_Timeout
+get_TraceVerbose
+get_TransactionEnabled
+get_TransactionOption
+get_TransactionOptionSpecified
+get_Transport
+get_Type
+get_TypeAttributes
+get_TypedDataSetSchemaImporterExtension
+get_TypeFullName
+get_TypeHandle
+get_TypeIdentifiers
+get_TypeMapping
+get_TypeName
+get_TypeNamespace
+get_Types
+get_UnhandledAttributes
+get_UnreferencedObject
+get_UnsafeAuthenticatedConnectionSharing
+get_Uri
+get_UriFixups
+get_Url
+get_UrlReferrer
+get_Use
+get_UseDefaultCredentials
+get_User
+get_UserAgent
+get_UserHostAddress
+get_UserHostName
+get_UserState
+get_UserSuppliedState
+get_UsesWriteRequest
+get_UtcNow
+get_UTF8
+get_ValidationWarnings
+get_Value
+get_Values
+get_VaryByHeaders
+get_VaryByParams
+get_Verb
+get_Verbose
+get_Version
+get_Warnings
+get_WebName
+get_Writer
+get_WriterType
+get_WsdlHelpGenerator
+get_WsiClaims
+get_XmlAnyElements
+get_XmlAttributes
+get_XmlElements
+get_XmlExporter
+get_XmlImporter
+get_XmlRoot
+get_XmlSchemaDerivationMethodValues
+get_XPath
+get_XsdElementName
+GetAction
+GetAllFormatExtensionTypes
+GetAppSettings
+GetArrayRank
+GetAttribute
+GetBase
+GetBinding
+GetBufferSize
+GetBytes
+GetCharset
+GetClientMethod
+GetCodeFlags
+GetCompiledPageInstance
+GetCompiledType
+GetComponents
+GetConfigFromHttpContext
+GetConfigurationDirectory
+GetConformanceClaims
+getConnection
+GetCreateCustomKeyForAspNetWebServiceMetadataCacheDelegate
+GetCustomAttribute
+GetCustomAttributes
+GetData
+GetDefaultAction
+GetDeserializationEvents
+GetDirectories
+GetDirectoryName
+GetDirPartOfPath
+GetDiscoveryReference
+GetDocumentationElement
+GetDocumentNoParse
+GetDomain
+GetDuplicateMessage
+GetDuplicateMethod
+GetElementAttribute
+GetElementKey
+GetElementType
+GetEncodedNamespace
+GetEncoding
+GetEncoding2
+GetEntryAssembly
+GetEvidenceForType
+GetExecutingAssembly
+GetExtension
+GetExtensionPointAttribute
+GetField
+GetFileName
+GetFilePartOfPath
+GetFiles
+GetFromCache
+GetFullPath
+GetGetMethod
+GetHandler
+GetHashCode
+GetHeaderElementName
+GetHeaderMembers
+GetHelper
+GetHostByAddress
+GetInitializer
+GetInitializers
+GetInParameters
+GetInParameterValue
+GetInterfaceMap
+GetInterfaces
+GetKey
+GetLeftPart
+GetLiteralNamespace
+GetLoader
+GetLocalizedString
+GetMediaType
+GetMembers
+GetMessage
+GetMessageName
+GetMessageParts
+GetMethod
+GetMethodIgnoreCase
+GetMethods
+GetMostDerivedType
+GetName
+GetNames
+GetNamespacesForTypes
+GetObject
+GetObjectData
+GetOutParameters
+GetOutParameterValue
+GetParameter
+GetParameterOrder
+GetParameters
+GetParameterValues
+GetParameterWriter
+GetParentName
+GetPhysicalDir
+GetPortType
+GetProductVersion
+GetProperty
+GetReaderForMessage
+GetRelativePath
+GetRequestElement
+GetRequestStreamAsyncCallback
+getRequestStreamAsyncCallback
+GetRequestUrl
+GetResponse
+GetResponseAsyncCallback
+getResponseAsyncCallback
+GetResponseAsyncCallback
+GetResponseStream
+GetReturnValue
+GetSchema
+GetSchemaItem
+GetSchemas
+GetSection
+GetServerProtocolFactories
+GetServerTypeEvidence
+GetService
+GetServiceDescription
+GetSoapMethodAttribute
+GetSoapMethodBinding
+GetSoapServiceAttribute
+GetSoapServiceRoutingStyle
+GetStatusDescription
+GetString
+GetTransport
+GetType
+GetTypeFromHandle
+GetTypeFullNames
+GetUniqueFilename
+GetValue
+GetValues
+GetWebRequest
+GetWebResponse
+GetWebServerForUrl
+GetWriterForMessage
+GetXmlMappingsForMethod
+GetXmlReader
+GetXsiType
+global::System.Xml.Schema.XmlSchemaDerivationMethod
+GlobalSoapHeader
+GMulti-dimensional arrays are not supported. Use a jagged array instead.
+Gppu4
+group
+Group
+group
+GroupCollection
+GThere is no SoapTransportImporter that understands the transport '{0}'.
+GThis web service is using http://tempuri.org/ as its default namespace.
+GuessVersion
+GuidAttribute
+H\t6#
+h{0} is not a valid capture index for match '{1}'. The highest valid capture index for this match is {2}.
+H0F0D
+hA wsdl:message in a DESCRIPTION MUST NOT specify both type and element attributes on the same wsdl:part.
+handled
+handledElements
+HandleOneWayException
+handler
+handlerArgs
+handlerName
+handlerType
+-hArr
+-harr
+HasAttribute
+HashString
+Hashtable
+hasInputPayload
+HasItems
+hasWrapper
+hasWritten
+header
+Header
+header%http://schemas.xmlsoap.org/wsdl/soap/,System.Web.Services.Description.InputBinding-System.Web.Services.Description.OutputBinding
+headerfault
+HeaderFault
+header'http://schemas.xmlsoap.org/wsdl/soap12/,System.Web.Services.Description.InputBinding-System.Web.Services.Description.OutputBinding
+headerMessages
+headers
+headerType
+-hearts
+-hellip
+helper
+HelpGeneratorDefaultNamespaceHelp1
+HelpGeneratorDefaultNamespaceHelp2
+HelpGeneratorDefaultNamespaceHelp3
+HelpGeneratorDefaultNamespaceHelp4
+HelpGeneratorDefaultNamespaceHelp5
+HelpGeneratorDefaultNamespaceHelp6
+HelpGeneratorDefaultNamespaceWarning1
+HelpGeneratorDefaultNamespaceWarning2
+HelpGeneratorEnableHttpPostHeader
+HelpGeneratorEnableHttpPostInstructions
+HelpGeneratorHttpGetText
+HelpGeneratorHttpGetTitle
+HelpGeneratorHttpPostText
+HelpGeneratorHttpPostTitle
+HelpGeneratorImplementation
+HelpGeneratorInternalError
+HelpGeneratorInvokeButton
+HelpGeneratorLanguageConfig
+HelpGeneratorLinkBack
+HelpGeneratorMethodNotFound
+HelpGeneratorMethodNotFoundText
+HelpGeneratorNoHttpGetTest
+HelpGeneratorNoHttpPostTest
+HelpGeneratorNoTestFormRemote
+HelpGeneratorNoTestNonPrimitive
+HelpGeneratorOperationsIntro
+HelpGeneratorParameter
+HelpGeneratorRecommendation
+HelpGeneratorServiceConformance
+HelpGeneratorServiceConformanceConfig
+HelpGeneratorServiceConformanceDetails
+HelpGeneratorServiceConformanceHelp
+HelpGeneratorServiceConformanceR1014
+HelpGeneratorServiceConformanceR1014_r
+HelpGeneratorServiceConformanceR2007
+HelpGeneratorServiceConformanceR2007_r
+HelpGeneratorServiceConformanceR2026
+HelpGeneratorServiceConformanceR2028
+HelpGeneratorServiceConformanceR2105
+HelpGeneratorServiceConformanceR2105_r
+HelpGeneratorServiceConformanceR2201
+HelpGeneratorServiceConformanceR2203
+HelpGeneratorServiceConformanceR2204
+HelpGeneratorServiceConformanceR2205
+HelpGeneratorServiceConformanceR2210
+HelpGeneratorServiceConformanceR2210_r
+HelpGeneratorServiceConformanceR2303
+HelpGeneratorServiceConformanceR2304
+HelpGeneratorServiceConformanceR2304_r
+HelpGeneratorServiceConformanceR2306
+HelpGeneratorServiceConformanceR2701
+HelpGeneratorServiceConformanceR2702
+HelpGeneratorServiceConformanceR2705
+HelpGeneratorServiceConformanceR2705_r
+HelpGeneratorServiceConformanceR2706
+HelpGeneratorServiceConformanceR2706_r
+HelpGeneratorServiceConformanceR2710
+HelpGeneratorServiceConformanceR2710_r
+HelpGeneratorServiceConformanceR2716
+HelpGeneratorServiceConformanceR2717
+HelpGeneratorServiceConformanceR2718
+HelpGeneratorServiceConformanceR2720
+HelpGeneratorServiceConformanceR2721
+HelpGeneratorServiceConformanceR2726
+HelpGeneratorServiceConformanceR2749
+HelpGeneratorServiceConformanceR2754
+HelpGeneratorServiceConformanceR2803
+HelpGeneratorServiceConformanceR2803_r
+HelpGeneratorServiceConformanceRxxxx
+HelpGeneratorServiceConformanceRxxxx_r
+HelpGeneratorSoap1_2Text
+HelpGeneratorSoap1_2Title
+HelpGeneratorSoapText
+HelpGeneratorSoapTitle
+HelpGeneratorStyleAactive
+HelpGeneratorStyleAhover
+HelpGeneratorStyleAlink
+HelpGeneratorStyleAvisited
+HelpGeneratorStyleBODY
+HelpGeneratorStylebutton
+HelpGeneratorStylecontent
+HelpGeneratorStylefontError
+HelpGeneratorStylefontkey
+HelpGeneratorStylefontvalue
+HelpGeneratorStylefrmheader
+HelpGeneratorStylefrmInput
+HelpGeneratorStylefrmtext
+HelpGeneratorStyleh2
+HelpGeneratorStyleh3
+HelpGeneratorStyleheading1
+HelpGeneratorStyleintro
+HelpGeneratorStyleli
+HelpGeneratorStyleol
+HelpGeneratorStyleP
+HelpGeneratorStylepre
+HelpGeneratorStyletd
+HelpGeneratorStyleul
+HelpGeneratorTestHeader
+HelpGeneratorTestText
+HelpGeneratorValue
+HelpGeneratorWebService
+HexEscape16
+HexEscape8
+HexUpperChars
+Hhctrl
+hhctrl.ocx
+highestIndex
+highPriConfigExtensions
+HighPriExtensionInitializers
+HighPriExtensions
+hMore than one format extension named '{0}' was specified. Each format extension must have a unique name.
+HostingEnvironment
+HThe {0} parameter of the {1}.{2} method must be an input-only parameter.
+HtmlDecode
+HtmlEncode
+HtmlEntities
+htmlEscapeMessage
+HtmlFormParameterReader
+HtmlFormParameterWriter
+hTo make it conformant modify all import statements to use an absolute URI for namespace attribute value.
+HTTP GET
+HTTP POST
+Http referrer: {0}
+http%http://schemas.xmlsoap.org/wsdl/http/
+http://microsoft.com/soap/
+http://microsoft.com/webReference/
+http://microsoft.com/webReference/:codeGenerationOptions, http://microsoft.com/webReference/:schemaImporterExtensions, http://microsoft.com/webReference/:style, http://microsoft.com/webReference/:verbose
+http://microsoft.com/webReference/:type
+http://microsoft.com/webReference/:webReferenceOptions
+http://microsoft.com/wsdl/mime/textMatching/
+http://microsoft.com/wsdl/mime/textMatching/:match
+http://microsoft.com0
+http://schemas.xmlsoap.org/disco/
+http://schemas.xmlsoap.org/disco/:discovery
+http://schemas.xmlsoap.org/disco/:discoveryRef, http://schemas.xmlsoap.org/disco/scl/:contractRef, http://schemas.xmlsoap.org/disco/schema/:schemaRef, http://schemas.xmlsoap.org/disco/soap/:soap
+http://schemas.xmlsoap.org/disco/schema/
+http://schemas.xmlsoap.org/disco/scl/
+http://schemas.xmlsoap.org/disco/soap/
+http://schemas.xmlsoap.org/soap/encoding/
+http://schemas.xmlsoap.org/soap/envelope/
+http://schemas.xmlsoap.org/soap/http
+http://schemas.xmlsoap.org/wsdl/
+http://schemas.xmlsoap.org/wsdl/:definitions
+http://schemas.xmlsoap.org/wsdl/:documentation
+http://schemas.xmlsoap.org/wsdl/:documentation, http://schemas.xmlsoap.org/wsdl/:import, http://schemas.xmlsoap.org/wsdl/:types, http://schemas.xmlsoap.org/wsdl/:message, http://schemas.xmlsoap.org/wsdl/:portType, http://schemas.xmlsoap.org/wsdl/:binding, http://schemas.xmlsoap.org/wsdl/:service
+http://schemas.xmlsoap.org/wsdl/:documentation, http://schemas.xmlsoap.org/wsdl/:input, http://schemas.xmlsoap.org/wsdl/:output, http://schemas.xmlsoap.org/wsdl/:fault
+http://schemas.xmlsoap.org/wsdl/:documentation, http://schemas.xmlsoap.org/wsdl/:operation
+http://schemas.xmlsoap.org/wsdl/:documentation, http://schemas.xmlsoap.org/wsdl/:part
+http://schemas.xmlsoap.org/wsdl/:documentation, http://schemas.xmlsoap.org/wsdl/:port
+http://schemas.xmlsoap.org/wsdl/:documentation, http://schemas.xmlsoap.org/wsdl/http/:address, http://schemas.xmlsoap.org/wsdl/soap/:address, http://schemas.xmlsoap.org/wsdl/soap12/:address
+http://schemas.xmlsoap.org/wsdl/:documentation, http://schemas.xmlsoap.org/wsdl/http/:binding, http://schemas.xmlsoap.org/wsdl/soap/:binding, http://schemas.xmlsoap.org/wsdl/soap12/:binding, http://schemas.xmlsoap.org/wsdl/:operation
+http://schemas.xmlsoap.org/wsdl/:documentation, http://schemas.xmlsoap.org/wsdl/http/:operation, http://schemas.xmlsoap.org/wsdl/soap/:operation, http://schemas.xmlsoap.org/wsdl/soap12/:operation, http://schemas.xmlsoap.org/wsdl/:input, http://schemas.xmlsoap.org/wsdl/:output, http://schemas.xmlsoap.org/wsdl/:fault
+http://schemas.xmlsoap.org/wsdl/:documentation, http://schemas.xmlsoap.org/wsdl/http/:urlEncoded, http://schemas.xmlsoap.org/wsdl/http/:urlReplacement, http://schemas.xmlsoap.org/wsdl/mime/:content, http://schemas.xmlsoap.org/wsdl/mime/:mimeXml, http://schemas.xmlsoap.org/wsdl/mime/:multipartRelated, http://microsoft.com/wsdl/mime/textMatching/:text, http://schemas.xmlsoap.org/wsdl/soap/:body, http://schemas.xmlsoap.org/wsdl/soap/:header, http://schemas.xmlsoap.org/wsdl/soap12/:body, http://schemas.xmlsoap.org/wsdl/soap12/:header
+http://schemas.xmlsoap.org/wsdl/:documentation, http://schemas.xmlsoap.org/wsdl/mime/:content, http://schemas.xmlsoap.org/wsdl/mime/:mimeXml, http://schemas.xmlsoap.org/wsdl/mime/:multipartRelated, http://microsoft.com/wsdl/mime/textMatching/:text, http://schemas.xmlsoap.org/wsdl/soap/:body, http://schemas.xmlsoap.org/wsdl/soap/:header, http://schemas.xmlsoap.org/wsdl/soap12/:body, http://schemas.xmlsoap.org/wsdl/soap12/:header
+http://schemas.xmlsoap.org/wsdl/:documentation, http://schemas.xmlsoap.org/wsdl/soap/:fault, http://schemas.xmlsoap.org/wsdl/soap12/:fault
+http://schemas.xmlsoap.org/wsdl/:documentation, http://www.w3.org/2001/XMLSchema:schema
+http://schemas.xmlsoap.org/wsdl/:required
+http://schemas.xmlsoap.org/wsdl/:required, :location
+http://schemas.xmlsoap.org/wsdl/:required, :message, :part, :use, :encodingStyle, :namespace
+http://schemas.xmlsoap.org/wsdl/:required, :part
+http://schemas.xmlsoap.org/wsdl/:required, :part, :type
+http://schemas.xmlsoap.org/wsdl/:required, :soapAction, :style
+http://schemas.xmlsoap.org/wsdl/:required, :soapAction, :style, :soapActionRequired
+http://schemas.xmlsoap.org/wsdl/:required, :transport, :style
+http://schemas.xmlsoap.org/wsdl/:required, :use, :name, :namespace, :encodingStyle
+http://schemas.xmlsoap.org/wsdl/:required, :use, :namespace, :encodingStyle, :parts
+http://schemas.xmlsoap.org/wsdl/:required, :verb
+http://schemas.xmlsoap.org/wsdl/http/
+http://schemas.xmlsoap.org/wsdl/mime/
+http://schemas.xmlsoap.org/wsdl/mime/:content, http://schemas.xmlsoap.org/wsdl/mime/:mimeXml, http://microsoft.com/wsdl/mime/textMatching/:text, http://schemas.xmlsoap.org/wsdl/soap/:body, http://schemas.xmlsoap.org/wsdl/soap12/:body
+http://schemas.xmlsoap.org/wsdl/mime/:part
+http://schemas.xmlsoap.org/wsdl/soap/
+http://schemas.xmlsoap.org/wsdl/soap/:headerfault
+http://schemas.xmlsoap.org/wsdl/soap12/
+http://schemas.xmlsoap.org/wsdl/soap12/:headerfault
+http://tempuri.org/
+http://ws-i.org/profiles/basic/1.1
+http://ws-i.org/schemas/conformanceClaim/
+http://www.w3.org/2000/xmlns/
+http://www.w3.org/2001/XMLSchema
+http://www.w3.org/2001/XMLSchema:annotation
+http://www.w3.org/2001/XMLSchema:annotation, http://www.w3.org/2001/XMLSchema:any, http://www.w3.org/2001/XMLSchema:choice, http://www.w3.org/2001/XMLSchema:sequence, http://www.w3.org/2001/XMLSchema:element, http://www.w3.org/2001/XMLSchema:group
+http://www.w3.org/2001/XMLSchema:annotation, http://www.w3.org/2001/XMLSchema:attribute, http://www.w3.org/2001/XMLSchema:attributeGroup, http://www.w3.org/2001/XMLSchema:anyAttribute
+http://www.w3.org/2001/XMLSchema:annotation, http://www.w3.org/2001/XMLSchema:attributeGroup, http://www.w3.org/2001/XMLSchema:attribute, http://www.w3.org/2001/XMLSchema:anyAttribute
+http://www.w3.org/2001/XMLSchema:annotation, http://www.w3.org/2001/XMLSchema:choice, http://www.w3.org/2001/XMLSchema:group, http://www.w3.org/2001/XMLSchema:all, http://www.w3.org/2001/XMLSchema:sequence, http://www.w3.org/2001/XMLSchema:attributeGroup, http://www.w3.org/2001/XMLSchema:attribute, http://www.w3.org/2001/XMLSchema:anyAttribute
+http://www.w3.org/2001/XMLSchema:annotation, http://www.w3.org/2001/XMLSchema:complexContent, http://www.w3.org/2001/XMLSchema:simpleContent, http://www.w3.org/2001/XMLSchema:group, http://www.w3.org/2001/XMLSchema:sequence, http://www.w3.org/2001/XMLSchema:choice, http://www.w3.org/2001/XMLSchema:all, http://www.w3.org/2001/XMLSchema:attribute, http://www.w3.org/2001/XMLSchema:attributeGroup, http://www.w3.org/2001/XMLSchema:anyAttribute
+http://www.w3.org/2001/XMLSchema:annotation, http://www.w3.org/2001/XMLSchema:element
+http://www.w3.org/2001/XMLSchema:annotation, http://www.w3.org/2001/XMLSchema:element, http://www.w3.org/2001/XMLSchema:sequence, http://www.w3.org/2001/XMLSchema:any, http://www.w3.org/2001/XMLSchema:choice, http://www.w3.org/2001/XMLSchema:group
+http://www.w3.org/2001/XMLSchema:annotation, http://www.w3.org/2001/XMLSchema:extension, http://www.w3.org/2001/XMLSchema:restriction
+http://www.w3.org/2001/XMLSchema:annotation, http://www.w3.org/2001/XMLSchema:group, http://www.w3.org/2001/XMLSchema:choice, http://www.w3.org/2001/XMLSchema:all, http://www.w3.org/2001/XMLSchema:sequence, http://www.w3.org/2001/XMLSchema:attributeGroup, http://www.w3.org/2001/XMLSchema:attribute, http://www.w3.org/2001/XMLSchema:anyAttribute
+http://www.w3.org/2001/XMLSchema:annotation, http://www.w3.org/2001/XMLSchema:list, http://www.w3.org/2001/XMLSchema:restriction, http://www.w3.org/2001/XMLSchema:union
+http://www.w3.org/2001/XMLSchema:annotation, http://www.w3.org/2001/XMLSchema:restriction, http://www.w3.org/2001/XMLSchema:extension
+http://www.w3.org/2001/XMLSchema:annotation, http://www.w3.org/2001/XMLSchema:selector, http://www.w3.org/2001/XMLSchema:field
+http://www.w3.org/2001/XMLSchema:annotation, http://www.w3.org/2001/XMLSchema:sequence, http://www.w3.org/2001/XMLSchema:choice, http://www.w3.org/2001/XMLSchema:all
+http://www.w3.org/2001/XMLSchema:annotation, http://www.w3.org/2001/XMLSchema:simpleType
+http://www.w3.org/2001/XMLSchema:annotation, http://www.w3.org/2001/XMLSchema:simpleType, http://www.w3.org/2001/XMLSchema:complexType, http://www.w3.org/2001/XMLSchema:key, http://www.w3.org/2001/XMLSchema:unique, http://www.w3.org/2001/XMLSchema:keyref
+http://www.w3.org/2001/XMLSchema:annotation, http://www.w3.org/2001/XMLSchema:simpleType, http://www.w3.org/2001/XMLSchema:fractionDigits, http://www.w3.org/2001/XMLSchema:minInclusive, http://www.w3.org/2001/XMLSchema:maxLength, http://www.w3.org/2001/XMLSchema:length, http://www.w3.org/2001/XMLSchema:totalDigits, http://www.w3.org/2001/XMLSchema:pattern, http://www.w3.org/2001/XMLSchema:enumeration, http://www.w3.org/2001/XMLSchema:maxInclusive, http://www.w3.org/2001/XMLSchema:maxExclusive, http://www.w3.org/2001/XMLSchema:whiteSpace, http://www.w3.org/2001/XMLSchema:minExclusive, http://www.w3.org/2001/XMLSchema:minLength
+http://www.w3.org/2001/XMLSchema:annotation, http://www.w3.org/2001/XMLSchema:simpleType, http://www.w3.org/2001/XMLSchema:minInclusive, http://www.w3.org/2001/XMLSchema:maxExclusive, http://www.w3.org/2001/XMLSchema:whiteSpace, http://www.w3.org/2001/XMLSchema:minLength, http://www.w3.org/2001/XMLSchema:pattern, http://www.w3.org/2001/XMLSchema:enumeration, http://www.w3.org/2001/XMLSchema:maxInclusive, http://www.w3.org/2001/XMLSchema:length, http://www.w3.org/2001/XMLSchema:maxLength, http://www.w3.org/2001/XMLSchema:minExclusive, http://www.w3.org/2001/XMLSchema:totalDigits, http://www.w3.org/2001/XMLSchema:fractionDigits, http://www.w3.org/2001/XMLSchema:attributeGroup, http://www.w3.org/2001/XMLSchema:attribute, http://www.w3.org/2001/XMLSchema:anyAttribute
+http://www.w3.org/2001/XMLSchema:attributeGroup, http://www.w3.org/2001/XMLSchema:complexType, http://www.w3.org/2001/XMLSchema:simpleType, http://www.w3.org/2001/XMLSchema:annotation, http://www.w3.org/2001/XMLSchema:group
+http://www.w3.org/2001/XMLSchema:documentation, http://www.w3.org/2001/XMLSchema:appinfo
+http://www.w3.org/2001/XMLSchema:include, http://www.w3.org/2001/XMLSchema:import, http://www.w3.org/2001/XMLSchema:redefine, http://www.w3.org/2001/XMLSchema:simpleType, http://www.w3.org/2001/XMLSchema:complexType, http://www.w3.org/2001/XMLSchema:annotation, http://www.w3.org/2001/XMLSchema:notation, http://www.w3.org/2001/XMLSchema:group, http://www.w3.org/2001/XMLSchema:element, http://www.w3.org/2001/XMLSchema:attribute, http://www.w3.org/2001/XMLSchema:attributeGroup
+http://www.w3.org/2001/XMLSchema-instance
+http://www.w3.org/2003/05/soap-encoding
+http://www.w3.org/2003/05/soap-envelope
+http://www.w3.org/2003/05/soap-rpc
+http://www.w3.org/XML/1998/namespace
+HttpAddressBinding
+httpAddressBinding
+HttpApplicationState
+HttpBinding
+HttpCacheability
+HttpCachePolicy
+HttpCacheVaryByHeaders
+HttpCacheVaryByParams
+HttpClientMethod
+HttpClientType
+httpCode
+HttpException
+HttpGet
+HttpGetClientProtocol
+HttpGetProtocolImporter
+HttpGetProtocolReflector
+HttpGetServerProtocol
+HttpGetServerProtocolFactory
+HttpMethodAttribute
+HttpMethodInfo
+HttpOperationBinding
+HttpPost
+HttpPostClientProtocol
+HttpPostLocalhost
+HttpPostLocalhostServerProtocolFactory
+HttpPostProtocolImporter
+HttpPostProtocolReflector
+HttpPostServerProtocol
+HttpPostServerProtocolFactory
+HttpProtocolImporter
+HttpProtocolReflector
+HttpRequest
+HttpResponse
+httpResponse
+HttpRuntime
+HttpServerMethod
+HttpServerProtocol
+HttpServerType
+HttpServerUtility
+HttpSessionState
+HttpSimpleClientProtocol
+HttpSoap12
+HttpStatusCode
+HttpTransport
+HttpUrlEncodedBinding
+HttpUrlReplacementBinding
+HttpUtility
+HttpWebClientProtocol
+HttpWebRequest
+HttpWebResponse
+HttpWorkerRequest
+I0G0E
+IA container for all cookies received from servers in the current session.
+-iacute
+-Iacute
+IAsyncResult
+-icirc
+-Icirc
+ICollection
+IComparable
+IComparer
+IComparer`1
+ICredentials
+ICustomAttributeProvider
+id1_definitions
+id1_discovery
+id1_webReferenceOptions
+id10_Item
+id10_message
+id100_elementFormDefault
+id101_version
+id102_id
+id103_include
+id104_redefine
+id105_simpleType
+id106_complexType
+id107_annotation
+id108_notation
+id109_attribute
+id11_portType
+id11_SoapBinding
+id110_attributeGroup
+id111_XmlSchemaAttributeGroup
+id112_anyAttribute
+id113_XmlSchemaAnyAttribute
+id114_processContents
+id115_XmlSchemaAnnotation
+id116_appinfo
+id117_XmlSchemaAppInfo
+id118_source
+id119_XmlSchemaDocumentation
+id12_address
+id12_binding
+id120_lang
+id121_Item
+id122_XmlSchemaAttributeGroupRef
+id123_ref
+id124_XmlSchemaAttribute
+id125_default
+id126_fixed
+id127_form
+id128_XmlSchemaSimpleType
+id129_final
+id13_Item
+id13_service
+id130_list
+id131_restriction
+id132_union
+id133_XmlSchemaSimpleTypeUnion
+id134_memberTypes
+id135_XmlSchemaSimpleTypeRestriction
+id136_base
+id137_fractionDigits
+id138_minInclusive
+id139_maxLength
+id14_binding
+id14_Service
+id140_length
+id141_totalDigits
+id142_enumeration
+id143_maxInclusive
+id144_maxExclusive
+id145_whiteSpace
+id146_minExclusive
+id147_minLength
+id148_XmlSchemaMinLengthFacet
+id149_value
+id15_port
+id15_SchemaReference
+id150_XmlSchemaMinExclusiveFacet
+id151_XmlSchemaWhiteSpaceFacet
+id152_XmlSchemaMaxExclusiveFacet
+id153_XmlSchemaMaxInclusiveFacet
+id154_XmlSchemaEnumerationFacet
+id155_XmlSchemaPatternFacet
+id156_XmlSchemaTotalDigitsFacet
+id157_XmlSchemaLengthFacet
+id158_XmlSchemaMaxLengthFacet
+id159_XmlSchemaMinInclusiveFacet
+id16_Port
+id16_ref
+id160_XmlSchemaFractionDigitsFacet
+id161_XmlSchemaSimpleTypeList
+id162_itemType
+id163_XmlSchemaElement
+id164_minOccurs
+id165_maxOccurs
+id166_abstract
+id167_block
+id168_nillable
+id169_substitutionGroup
+id17_address
+id17_targetNamespace
+id170_key
+id171_unique
+id172_keyref
+id173_XmlSchemaKeyref
+id174_refer
+id175_selector
+id176_field
+id177_XmlSchemaXPath
+id178_xpath
+id179_XmlSchemaUnique
+id18_ContractReference
+id18_Item
+id180_XmlSchemaKey
+id181_XmlSchemaComplexType
+id182_mixed
+id183_complexContent
+id184_simpleContent
+id185_sequence
+id186_choice
+id187_all
+id188_XmlSchemaAll
+id189_XmlSchemaChoice
+id19_docRef
+id19_Item
+id190_any
+id191_XmlSchemaGroupRef
+id192_XmlSchemaSequence
+id193_XmlSchemaAny
+id194_XmlSchemaSimpleContent
+id195_extension
+id196_Item
+id197_Item
+id198_XmlSchemaComplexContent
+id199_Item
+id2_Item
+id20_DiscoveryDocumentReference
+id20_Item
+id200_Item
+id201_XmlSchemaGroup
+id202_XmlSchemaNotation
+id203_public
+id204_system
+id205_XmlSchemaRedefine
+id206_schemaLocation
+id207_XmlSchemaImport
+id208_XmlSchemaInclude
+id209_Import
+id21_Soap12AddressBinding
+id22_required
+id23_location
+id24_SoapAddressBinding
+id25_HttpAddressBinding
+id26_Binding
+id27_type
+id28_operation
+id29_OperationBinding
+id3_codeGenerationOptions
+id3_DiscoveryDocument
+id3_ServiceDescription
+id30_input
+id31_output
+id32_fault
+id33_FaultBinding
+id34_Soap12FaultBinding
+id35_use
+id36_namespace
+id37_encodingStyle
+id38_SoapFaultBinding
+id39_OutputBinding
+id4_discoveryRef
+id4_name
+id4_schemaImporterExtensions
+id40_content
+id41_Item
+id42_mimeXml
+id43_multipartRelated
+id44_text
+id45_Item
+id46_body
+id47_header
+id48_Soap12HeaderBinding
+id49_part
+id5_contractRef
+id5_Item
+id5_type
+id50_headerfault
+id51_SoapHeaderFaultBinding
+id52_Soap12BodyBinding
+id53_parts
+id54_SoapHeaderBinding
+id55_SoapBodyBinding
+id56_MimeTextBinding
+id57_match
+id58_MimeTextMatch
+id59_group
+id6_Item
+id6_style
+id6_targetNamespace
+id60_capture
+id61_repeats
+id62_pattern
+id63_ignoreCase
+id64_MimeMultipartRelatedBinding
+id65_MimePart
+id66_MimeXmlBinding
+id67_MimeContentBinding
+id68_InputBinding
+id69_urlEncoded
+id7_documentation
+id7_schemaRef
+id7_verbose
+id70_urlReplacement
+id71_HttpUrlReplacementBinding
+id72_HttpUrlEncodedBinding
+id73_Soap12OperationBinding
+id74_soapAction
+id75_style
+id76_soapActionRequired
+id77_SoapOperationBinding
+id78_HttpOperationBinding
+id79_Soap12Binding
+id8_import
+id8_Item
+id80_transport
+id81_SoapBinding
+id82_HttpBinding
+id83_verb
+id84_PortType
+id85_Operation
+id86_parameterOrder
+id87_OperationFault
+id88_OperationOutput
+id89_OperationInput
+id9_soap
+id9_types
+id90_Message
+id91_MessagePart
+id92_element
+id93_Types
+id94_schema
+id95_Item
+id96_XmlSchema
+id97_attributeFormDefault
+id98_blockDefault
+id99_finalDefault
+identifiers
+IDictionary
+IDictionaryEnumerator
+IDisposable
+IEach message part in a use=literal style=rpc message must specify a type.
+IEnumerable
+IEnumerable`1
+IEnumerator
+IEnumerator`1
+-iexcl
+If a document-literal binding in a DESCRIPTION does not specify the parts attribute on a soapbind:body element, the corresponding abstract wsdl:message MUST define zero or one wsdl:parts.
+IfAppSettingBaseUrlArgumentIsSpecifiedThen0
+IFormatProvider
+ignoreCase
+IgnoreCase
+ignoreCase
+-igrave
+-Igrave
+Ihttp://crl.microsoft.com/pki/crl/products/MicRooCerAut2011_2011_03_22.crl0^
+IHttpAsyncHandler
+IHttpAsyncHandler.BeginProcessRequest
+IHttpAsyncHandler.EndProcessRequest
+IHttpHandler
+IHttpHandler.ProcessRequest
+IHttpHandlerFactory
+IHttpHandlerFactory.GetHandler
+IID_NotifyConnection2Guid
+IID_NotifyConnectionClassGuid
+IIS://
+IIsWebDirectory
+IIsWebServer
+IIsWebVirtualDir
+IList
+-image
+Imm32
+imm32.dll
+implementation
+implementedInterfaceNames
+import
+Import
+import
+ImportAnyType
+ImportClass
+importContext
+ImportDerivedTypeMapping
+importedParameters
+importedReturn
+importedReturns
+ImportEncodedMessage
+importer
+importers
+ImportHeaderSerializers
+ImportLiteralMessage
+ImportMembersMapping
+ImportMessage
+ImportMethod
+ImportMimeParameters
+ImportMimeReturn
+ImportParameters
+ImportReflectedMethod
+ImportReturn
+imports
+ImportSerializers
+ImportStringParametersMessage
+ImportTypeMapping
+ImportUrlParameter
+ImportUrlParameters
+In a DESCRIPTION, the value of the name attribute on a soapbind:fault element MUST match the value of the name attribute on its parent wsdl:fault element. 
+in_BufferSize
+in_NotifyFilter
+in_pBuffer
+in_pNotifySource
+in_pUserThreadFilter
+inCheckSpecifiedCount
+include
+IncludeInSchema
+IncludeTypes
+Increment
+index
+indexMustBeBetweenAnd0Inclusive
+IndexOfAny
+IndexOutOfRangeException
+-infin
+InfiniteIntConverter
+inHeaderMappings
+InHeaders
+inHeaderSerializer
+InitCallbacks
+InitExtensionStreamChain
+InitFailed
+Initialize
+InitializeArray
+InitializeAsyncRequest
+InitializeDefault
+initializedExtensions
+InitializeExtensions
+InitializeLogging
+initializer
+InitializeRequest
+InitIDs
+inlinedSchemas
+inner
+innerCompletedSynchronously
+innerException
+innerStream
+INotifyConnection2
+INotifySink2
+INotifySource2
+InOut
+inout_pBufferSize
+inParameters
+inParams
+INPROC_SERVER
+input
+Input message does not conform to Simple SOAP Binding Profile Version 1.0. Requirement R1012: A MESSAGE MUST serialize the envelope using either UTF-8 or UTF-16 character encoding.
+input.System.Web.Services.Description.OperationInput
+InputBinding
+InputElement
+inputFile
+inputMessage
+InsertBefore
+IntegerValidator
+IntegerValidatorAttribute
+InterfaceMapping
+InterfaceMethods
+InterfaceTypeAttribute
+Interlocked
+Internal configuration error.
+internalAsyncState
+InternalAsyncState
+InternalConfigurationError0
+internalError0
+InternalName
+internalSyncObject
+IntPtr
+Invalid hex digit: '{0}'.
+Invalid method name '{0}',  method names are case sensitive.   The method name '{1}' with the same name but different casing was found.
+Invalid_priority_group_value
+InvalidContentTypeException
+InvalidDocumentContentsException
+InvalidOperationException
+InvalidPathChars
+InvariantComparer
+Invoke
+invoke
+Invoke
+invokeArgs
+InvokeAsync
+InvokeAsyncCallback
+InvokeAsyncState
+InvokeCompletedEventArgs
+InvokeCompletedEventHandler
+invokeParams
+-iota
+-Iota
+ipAddress
+IPHostEntry
+IPrincipal
+-iquest
+IRequiresSessionState
+IsApplication
+IsAssignableFrom
+IsBeginMethod
+IsBindingSupported
+IsBoundBy
+IsCacheUnderPressure
+IsClientCallOutEnabled
+IsClientFaultCode
+isCompleted
+IsDataSet
+IsDefined
+isEncoded
+IsEndMethod
+IsExcluded
+IsFilenameInUse
+IsHandled
+IsHtml
+-isin
+IsInParameter
+isInPartialTrustOutsideAspNet
+isInPartialTrustOutsideAspNetInitialized
+isInput
+IsKey
+IsKnownNamespace
+isLiteral
+IsMustUnderstandFaultCode
+IsNew
+isNullable
+IsNullOrEmpty
+isOneWay
+IsOperationFlowSupported
+IsOutParameter
+isPartial
+IsPrimary
+IsRepeatingParameter
+IsRequired
+IsSafe
+IsServerCallInEnabled
+IsServerFaultCode
+IsSoap
+IsSoapEncodingPresent
+IsStartElement
+IsSubclassOf
+IsSupported
+IsSupportedTransport
+IsTypeSupported
+IsValidProtocolsValue
+IsValidWsiProfilesValue
+IsVersionMismatchFaultCode
+isVoid
+IsVolatile
+IsXml
+IsXmlnsAttribute
+ItemNotFound
+itemType
+IThe {0} parameter of the {1}.{2} method must be an output-only parameter.
+IThe operation binding '{0}' from namespace '{1}' had invalid syntax.  {2}
+ITypeDescriptorContext
+-iuml
+-Iuml
+IWebProxy
+jBinding '{0}' from namespace '{1}' missing some operations defined on portType '{2}' from namespace '{3}'.
+JInvalid Document type. Expecting '{0}', got '{1}'.
+jMore than one operation binding named '{0}' was specified. Each operation binding must have a unique name.
+jMore than one operation message named '{0}' was specified. Each operation message must have a unique name.
+jrTUK
+JThe element was not expected in this context: {0}. Expected elements: {1}.
+-kappa
+-Kappa
+Kcolor: #000000; margin-top: 0px; margin-bottom: 12px; font-family: Verdana;
+KElement reference '{0}' declared in schema type '{1}' from namespace '{2}'.
+Kernel32
+kernel32.dll
+KeyNotFoundException
+keyref
+keySuffix
+kh`'kj`'kk`'kl`'km`'ko`'k
+kIx:T
+KMore than one service description with targetNamespace '{0}' was specified.
+KnILk
+kSyntax error in WSDL document: Message '{0}' does not have an operation associated with it in the portType.
+kThe key does not match the indexer key. Key on element (expected value): {0}. Key provided to indexer: {1}.
+KThere was an exception running the extensions specified in the config file.
+kV2Er
+L&*H$_Z
+L0J0H
+-Lambda
+-lambda
+-lang
+-laquo
+-larr
+-lArr
+LastIndexOf
+-lceil
+-ldquo
+Legal_Policy_Statement
+Legal_policy_statement
+Legal_Policy_Statement
+LegalCopyright
+length
+Level
+-lfloor
+LinkGrep
+List`1
+literal
+literalTypes
+loadedExternals
+loader
+LoadExternals
+Loadperf
+Loadperf.dll
+LoadXmlFormatExtensions
+localDir
+LocalSoapHeader
+location
+LogicalMethodInfo
+LogicalMethodTypes
+Lookup
+LookupNamespace
+LookupPrefix
+-lowast
+LowPriExtensionInitializers
+LowPriExtensions
+LPF~-C9
+-lsaquo
+-lsquo
+lSystem.Resources.ResourceReader, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet
+m_compareInfo
+M0K0I
+machine
+-macr
+MakeAbsExcludedPath
+MakeCamel
+MakeFieldName
+MakePascal
+MakeRelative
+MakeResultPath
+MakeUnique
+MakeValid
+MakeValidFilename
+manualResetEvent
+ManualResetEvent
+MapPath
+mapping
+mappings
+mappingsList
+mapToProperty
+margin-left: -15px;
+Marshal
+MarshalByValueComponent
+Match
+match
+MatchAttribute
+MatchClass
+matcher
+matches
+Matches
+MatchesBase
+MatchMember
+matchName
+MatchString
+match-System.Web.Services.Description.MimeTextMatch
+MatchType
+matchType
+MAttribute reference '{0}' declared in schema type '{1}' from namespace '{2}'.
+MAX_PATH_SIZE
+Max16BitUtf8SequenceLength
+maxExclusive
+maxInclusive
+maxLength
+maxOccurs
+MaxRepeats
+maxRepeats
+-mdash
+MemberAttributes
+MemberHelper
+memberInfo
+memberName
+members
+memberTypes
+Message
+message
+Message '{0}' has no parts.
+messageBinding
+MessageBinding
+MessageHasNoParts1
+messageName
+MessageName
+messageNameSpecified
+messageNs
+messagePart
+MessagePart
+MessagePartCollection
+messages
+MessageString
+metadata
+method
+Method {0} on type {1} is an implementation of the service contract interface {2}. Service Description altering attributes cannot be specified on service implementation.  Please place custom attribute on the interface declaration: interface: {2}, method: {3}, attribute: {4}.
+Method {0}.{1} can not be reflected. Parameter '{2}' has invalid accessor: If you are using the Rpc\Literal method, you can set the part's namespace.
+Method {0}.{1} can not be reflected. Parameter '{2}' may not be used with Rpc\Literal SOAP messages because it is declared using an anonymous schema type, only top-level named types can be used with rpc\literal SOAP messages.
+Method Not Found
+methodAttr
+MethodBase
+methodHasOutParameters
+MethodId
+methodInfo
+methodInfos
+methodList
+methodName
+methodNames
+MethodNotAllowed
+methods
+MethodSignature
+mFor asynchronous method calls, you must supply a non-null IAsyncResult instance when you call the End method.
+-micro
+Microsoft
+Microsoft Code Signing PCA
+Microsoft Code Signing PCA 2010
+Microsoft Code Signing PCA 20100
+Microsoft Code Signing PCA 2011
+Microsoft Code Signing PCA 20110
+Microsoft Code Signing PCA0
+Microsoft Corporation
+Microsoft Corporation0
+Microsoft Corporation1
+Microsoft Corporation1!0
+Microsoft Corporation1#0!
+Microsoft Corporation1&0$
+Microsoft Corporation1(0&
+Microsoft Corporation1200
+Microsoft Time-Stamp PCA
+Microsoft Time-Stamp PCA 2010
+Microsoft Time-Stamp PCA 20100
+Microsoft Time-Stamp PCA0
+Microsoft Time-Stamp Service
+Microsoft Time-Stamp Service0
+Microsoft.CSharp
+Microsoft.WFC.Remote
+microsoft1-0+
+-middot
+MIgnoring duplicate service description with TargetNamespace='{0}' from '{1}'.
+mime%http://schemas.xmlsoap.org/wsdl/mime/
+MimeAnyImporter
+MimeContentBinding
+MimeFormatter
+MimeFormImporter
+MimeFormReflector
+MimeImporter
+mimeImporterTypes
+MimeMultipartRelatedBinding
+MimeParameter
+MimeParameterCollection
+MimeParameterReader
+MimeParameterWriter
+mimePart
+MimePart
+MimePartCollection
+MimeReflector
+mimeReflectorTypes
+MimeReturnReader
+MimeReturnWriter
+MimeTextBinding
+MimeTextImporter
+MimeTextMatch
+MimeTextMatchCollection
+MimeTextReturn
+MimeType
+mimeXml
+mimeXml%http://schemas.xmlsoap.org/wsdl/mime/(System.Web.Services.Description.MimePart,System.Web.Services.Description.InputBinding-System.Web.Services.Description.OutputBinding
+MimeXmlBinding
+MimeXmlImporter
+MimeXmlReflector
+MimeXmlReturn
+minExclusive
+minInclusive
+minLength
+minOccurs
+-minus
+MinValue
+Missing {0}.{1}
+Missing http:operation element.
+Missing input binding.
+Missing match element.
+Missing output binding.
+Missing parameter: {0}.
+Missing required header '{0}'.
+Missing soap:operation binding.
+Missing2
+MissingBinding0
+MissingHttpOperationElement0
+MissingID
+MissingInputBinding0
+MissingMatchElement0
+MissingMessage2
+MissingMessagePartForMessageFromNamespace3
+MissingOutputBinding0
+MissingSoapBodyInputBinding0
+MissingSoapBodyOutputBinding0
+MissingSoapOperationBinding0
+mixed
+ModifyInitializedExtensions
+Monitor
+MOPR1
+MOPR1'0%
+MoveNext
+MoveToBinding
+MoveToContent
+MoveToElement
+MoveToMethod
+MoveToNextAttribute
+MoveToOperation
+Mozilla/4.0 (compatible; MSIE 6.0; MS Web Services Client Protocol 
+mqrt.dll
+Mscoree
+mscoree.dll
+mscorlib
+msi.dll
+MThis allows user to easily leverage HTTP compression that's built into IIS 6.
+MulticastDelegate
+multipartRelated
+multipartRelated%http://schemas.xmlsoap.org/wsdl/mime/,System.Web.Services.Description.InputBinding-System.Web.Services.Description.OutputBinding
+MultipleBindingsWithSameName2
+mustBeIn
+mustBeOut
+MustUnderstand
+mustUnderstand
+MustUnderstand
+N`)`_C
+N=|)H
+N0L0J
+-nabla
+nameAdsiDir
+namespace
+Namespace
+Namespace http://schemas.xmlsoap.org/wsdl/
+Namespace http://schemas.xmlsoap.org/wsdl/\
+Namespace http://www.w3.org/2001/XMLSchema:
+Namespace!http://schemas.xmlsoap.org/disco/?
+Namespace!http://schemas.xmlsoap.org/disco/O
+Namespace"http://microsoft.com/webReference/B
+Namespace%http://schemas.xmlsoap.org/disco/scl/<
+Namespace&http://schemas.xmlsoap.org/disco/soap/
+Namespace(http://schemas.xmlsoap.org/disco/schema/<
+Namespace)http://schemas.xmlsoap.org/soap/envelope/
+Namespace)http://schemas.xmlsoap.org/soap/envelope/=
+Namespace'http://www.w3.org/2003/05/soap-envelope
+Namespace'http://www.w3.org/2003/05/soap-envelope@
+Namespace'http://www.w3.org/2003/05/soap-envelope>
+namespaces
+Namespace-urn:schemas-dynamicdiscovery:disco.2000-03-17C
+NameValueCollection
+-nbsp
+nCipher DSE ESN:2137-37A0-4AAA1%0#
+nCipher DSE ESN:7AB5-2DF2-DA3F1%0#
+nCipher DSE ESN:B1B7-F67F-FEC21%0#
+nCipher NTS ESN:2665-4C3F-C5DE1+0)
+-ndash
+NeedConcreteType
+needToValidateHref
+needType
+NeutralResourcesLanguageAttribute
+newAsync
+newValue
+NextMatch
+nillable
+NMore than one {0} named '{1}' was specified. Each {0} must have a unique name.
+'No output MIME formats were recognized.
+NoAbsoluteExpiration
+NoCodeGenerated
+NoInputHTTPFormatsWereRecognized0
+NoInputMIMEFormatsWereRecognized0
+NoMethodsGenerated
+NoMethodsGeneratedWarning
+NoMethodsWereFoundInTheWSDLForThisProtocol
+NonClsCompliantException
+NoOutputMIMEFormatsWereRecognized0
+NopHandler
+NopReturnReader
+normativeStatement
+NoSlidingExpiration
+notation
+Notification is not supported.
+NotificationIsNotSupported0
+NotifyClientCallOut
+NotifyClientCallReturn
+notifyFilter
+NotifyServerCallEnter
+NotifyServerCallExit
+notifySink
+-notin
+NotSupportedException
+nsIsDefault
+-nsub
+Ntdll
+ntdll.dll
+-Ntilde
+-ntilde
+NTo test the operation using the HTTP POST protocol, click the 'Invoke' button.
+nullToken
+numberEncoded
+NumberFormatInfo
+NumberStyles
+o%"Adx
+o'{0}' is not a valid value for the field EncodedMustUnderstand. Valid values are '0', '1', 'true', and 'false'.
+O0M0K
+-Oacute
+-oacute
+object
+objectToSerialize
+objectValue
+ObsoleteAttribute
+oci.dll
+OciDll
+-ocirc
+-Ocirc
+Odbc32
+odbc32.dll
+-oelig
+-OElig
+offset
+-ograve
+-Ograve
+OInitialization failure. Please review input options and documents for validity.
+OInput message '{0}' from namespace '{1}' has no elements (empty wire signature)
+OInvalid empty reference of type '{0}' encountered in the document at URI '{1}'.
+oK0D$"<
+oldAsync
+oldValue
+Ole32
+ole32.dll
+Oleacc
+oleacc.dll
+Oleaut32
+oleaut32.dll
+Olepro32
+olepro32.dll
+-oline
+-omega
+-Omega
+-omicron
+-Omicron
+OnAppDomainUnload
+OnClear
+OneWay
+oneWay
+OneWay is not supported.
+OneWayAsyncInvoke
+OneWayCallback
+onewayInitException
+OneWayInvoke
+OneWayInvokeTransacted
+OneWayIsNotSupported0
+OnInsert
+OnInsertComplete
+OnlyOneWebServiceBindingAttributeMayBeSpecified1
+OnlyOperationInputOrOperationOutputTypes
+OnlyXmlElementsOrTypesDerivingFromServiceDescriptionFormatExtension0
+OnProcessExit
+OnRemove
+OnSet
+OnSyncCallEnter
+OnSyncCallExit
+OnSyncCallOut
+OnSyncCallReturn
+OnValidate
+OOperation '{0}' on portType '{1}' from namespace '{2}' defined as Notification.
+OOperation '{0}' on portType '{1}' from namespace '{2}' has no matching binding.
+op_Equality
+op_Explicit
+op_Inequality
+openModel
+OpenRead
+Operation
+operation
+Operation
+Operation name overloading in a wsdl:portType is disallowed by the Profile. A wsdl:portType in a DESCRIPTION MUST have operations with distinct values for their name attributes. Note that this requirement applies only to the wsdl:operations within a given wsdl:portType. A wsdl:portType may have wsdl:operations with names that are the same as those found in other wsdl:portTypes.
+operation%http://schemas.xmlsoap.org/wsdl/http/0System.Web.Services.Description.OperationBinding
+operation%http://schemas.xmlsoap.org/wsdl/soap/0System.Web.Services.Description.OperationBinding
+operationBinding
+OperationBinding
+OperationBindingCollection
+OperationBindingSyntaxException
+OperationCollection
+OperationCompleted
+OperationFault
+OperationFaultCollection
+operationFaultMessage
+OperationFlow
+OperationFlowNotification
+OperationFlowSolicitResponse
+operation'http://schemas.xmlsoap.org/wsdl/soap12/0System.Web.Services.Description.OperationBinding
+OperationInput
+operationMessage
+OperationMessageCollection
+OperationMissingBinding
+operationName
+OperationOutput
+OperationOverload
+operations
+OperationSyntaxException
+-oplus
+optional
+OptionalExtensionsIgnored
+options
+oramts.dll
+OraMtsDll
+order
+-ordf
+-ordm
+origin
+OriginalFilename
+originalKey
+originalString
+origUrl
+-Oslash
+-oslash
+OThe optional WSDL extension element '{0}' from namespace '{1}' was not handled.
+OThe required WSDL extension element '{0}' from namespace '{1}' was not handled.
+OThe test form is only available for methods with primitive types as parameters.
+otherExtensions
+oThis method will be removed from a future version. The method call is no longer required for resource discovery
+-otilde
+-Otilde
+-otimes
+-ouml
+-Ouml
+out_ppBuffer
+outCheckSpecifiedCount
+outHeaderMappings
+OutHeaders
+outHeaderSerializer
+OutOfMemoryException
+outParameters
+outParams
+output
+output/System.Web.Services.Description.OperationOutput
+OutputBinding
+OutputElement
+outputMessage
+outputStream
+overrides
+PADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGX
+PADPADP
+PageParser
+-para
+ParamArrayAttribute
+Parameter
+parameter
+parameterAttributes
+parameterFlags
+parameterFormatter
+parameterInfo
+ParameterModifier
+parameterNames
+parameterOrder
+parameterReaderTypes
+parameters
+parameterSerializer
+ParameterStyle
+parameterTypeNames
+parameterTypes
+parameterValues
+paramInfo
+paramInfos
+paramName
+paramNames
+paramStyle
+paramTypes
+paramWriter
+ParamWriter
+parent
+parentElement
+ParseWsdlArrayType
+-part
+Part '{0}' from message '{1}' in namespace '{2}' defines both the element and type attributes. Only the element attribute is used for headers when Use=Literal.
+Part '{0}' from message '{1}' in namespace '{2}' defines both the element and type attributes. Only the type attribute is used for headers when Use=Encoded.
+Part '{0}' from message '{1}' in namespace '{2}' is missing the element attribute. The element attribute is required for headers when Use=Literal.
+Part '{0}' from message '{1}' in namespace '{2}' is missing the type attribute. The type attribute is required for headers when Use=Encoded.
+PartialTrustHelpers
+partName
+partNames
+parts
+Path:{0} could not be found.
+pathRelativ
+pattern
+PatternMatcher
+patterns
+pendingSyncRequest
+PerfCounter
+perfcounter.dll
+-permil
+PermissionSet
+PermissionSetAttribute
+PermissionState
+-perp
+PInput element {0} of operation '{1}' on portType '{2}' from namespace '{3}'. {4}
+Please examine each of the normative statement violations below. Follow the recommendations to remedy it, or add setting to the &lt;webServices&gt; config section to turn off BP 1.1 conformance warnings for the entire vroot.
+Please examine your schema definitions and add explicit targetNamespace attribute. Requiring a targetNamespace on all xsd:schema elements that are children of wsdl:types is a good practice, places a minimal burden on authors of WSDL documents, and avoids the cases that are not as clearly defined as they might be.
+-plusmn
+PMore than one port named '{0}' was specified. Each port must have a unique name.
+PortCollection
+portNames
+PortType
+portType
+PortTypeCollection
+PortTypeOperationMissing
+portTypes
+position
+PostOperationCompleted
+-pound
+Powrprof
+Powrprof.dll
+PPart '{0}' of message '{1}' from service description with targetNamespace='{2}'.
+preAuthenticate
+prefix
+PrepareContext
+PrepareHeaders
+primarySearchPatterns
+-prime
+-Prime
+priority
+PriorityGroup
+PrivateBuild
+PrivilegedConfigurationManager
+ProcedureNotPresent
+ProcessAsyncException
+ProcessAsyncResponseStreamResult
+processContents
+ProcessExitEvent
+ProcessMessage
+ProcessRequest
+-prod
+ProductName
+ProductVersion
+PROFILE_DATA
+prohibited
+-prop
+properties
+PropertyInfo
+propertyNames
+PropertyValueCollection
+propertyValues
+propNames
+propValues
+protocol
+ProtocolDoesNotAsyncSerialize
+ProtocolElement
+ProtocolElementCollection
+protocolImporter
+protocolImporterTypes
+ProtocolImporterUtil
+protocolName
+protocolReflector
+protocolReflectorTypes
+protocols
+protocolsSupported
+protocolType
+ProtocolWithNameIsNotRecognized1
+proxy
+proxyCode
+Psapi
+psapi.dll
+pSidBuffer
+PThe elementType must be one of SoapExtension, SoapReflectedExtension, or Object.
+public
+punkOuter
+qA web service can't have both a SoapDocumentServiceAttribute and a SoapRpcServiceAttribute. Use one or the other.
+qA wsdl:binding in a DESCRIPTION MUST have the name attribute specified on all contained soapbind:fault elements. 
+qCannot create an instance of an interface {0}. Please specify a concrete implementation of the interface instead.
+QEX82q'
+qname
+QOutput element {0} of operation '{1}' on portType '{2}' from namespace '{3}'. {4}
+QSchema with targetNamespace='{0}' has invalid syntax. {1} Line {2}, position {3}.
+qTo make service conformant please make sure that all web methods belonging to the same binding have unique names.
+qualified
+r:xcf.
+r~akow
+R0P0N
+R1014
+R2007
+R2026
+R2028, R2029
+R2105
+R2201
+R2203
+R2204
+R2210
+R2303
+R2304
+R2306
+R2701
+R2702
+R2705
+R2706
+R2710
+R2716
+R2717
+R2718
+R2720
+R2721
+R2726
+R2754
+R2803
+rA wsdl:binding in a DESCRIPTION MUST have the same set of wsdl:operations as the wsdl:portType to which it refers.
+-radic
+RaiseExceptionIfNecessary
+-rang
+-raquo
+-rArr
+-rarr
+-rceil
+-rdquo
+Read1_CodeGenerationOptions
+Read10_discovery
+Read10_XmlSchemaAppInfo
+Read100_SoapBindingUse
+Read102_Soap12BodyBinding
+Read103_MimePart
+Read104_MimeMultipartRelatedBinding
+Read105_SoapHeaderFaultBinding
+Read106_SoapHeaderBinding
+Read107_SoapHeaderFaultBinding
+Read109_Soap12HeaderBinding
+Read11_XmlSchemaAnnotation
+Read110_InputBinding
+Read111_OutputBinding
+Read112_SoapFaultBinding
+Read114_Soap12FaultBinding
+Read115_FaultBinding
+Read116_OperationBinding
+Read117_Binding
+Read118_HttpAddressBinding
+Read119_SoapAddressBinding
+Read12_XmlSchemaInclude
+Read121_Soap12AddressBinding
+Read122_Port
+Read123_Service
+Read124_ServiceDescription
+Read125_definitions
+Read13_XmlSchemaImport
+Read17_XmlSchemaSimpleTypeList
+Read2_ServiceDescriptionImportStyle
+Read20_XmlSchemaFractionDigitsFacet
+Read21_XmlSchemaMinInclusiveFacet
+Read22_XmlSchemaMaxLengthFacet
+Read23_XmlSchemaLengthFacet
+Read24_XmlSchemaTotalDigitsFacet
+Read25_XmlSchemaPatternFacet
+Read26_XmlSchemaEnumerationFacet
+Read27_XmlSchemaMaxInclusiveFacet
+Read28_XmlSchemaMaxExclusiveFacet
+Read29_XmlSchemaWhiteSpaceFacet
+Read3_DiscoveryDocumentReference
+Read30_XmlSchemaMinExclusiveFacet
+Read31_XmlSchemaMinLengthFacet
+Read32_XmlSchemaSimpleTypeRestriction
+Read33_XmlSchemaSimpleTypeUnion
+Read34_XmlSchemaSimpleType
+Read35_XmlSchemaUse
+Read36_XmlSchemaAttribute
+Read37_XmlSchemaAttributeGroupRef
+Read38_XmlSchemaContentProcessing
+Read39_XmlSchemaAnyAttribute
+Read4_Import
+Read4_WebReferenceOptions
+Read40_XmlSchemaAttributeGroup
+Read44_XmlSchemaGroupRef
+Read46_XmlSchemaAny
+Read47_XmlSchemaXPath
+Read49_XmlSchemaKey
+Read5_ContractReference
+Read5_webReferenceOptions
+Read50_XmlSchemaUnique
+Read51_XmlSchemaKeyref
+Read52_XmlSchemaElement
+Read53_XmlSchemaSequence
+Read54_XmlSchemaChoice
+Read55_XmlSchemaAll
+Read56_Item
+Read57_Item
+Read58_XmlSchemaComplexContent
+Read59_Item
+Read6_XmlSchemaForm
+Read60_Item
+Read61_XmlSchemaSimpleContent
+Read62_XmlSchemaComplexType
+Read63_XmlSchemaGroup
+Read64_XmlSchemaRedefine
+Read65_XmlSchemaNotation
+Read66_XmlSchema
+Read67_Types
+Read68_MessagePart
+Read69_Message
+Read7_SchemaReference
+Read7_XmlSchemaDerivationMethod
+Read71_OperationInput
+Read72_OperationOutput
+Read73_OperationFault
+Read74_Operation
+Read75_PortType
+Read77_HttpBinding
+Read79_SoapBindingStyle
+Read8_SoapBinding
+Read80_SoapBinding
+Read82_SoapBindingStyle
+Read84_Soap12Binding
+Read85_HttpOperationBinding
+Read86_SoapOperationBinding
+Read88_Soap12OperationBinding
+Read9_DiscoveryDocument
+Read9_XmlSchemaDocumentation
+Read90_HttpUrlEncodedBinding
+Read91_HttpUrlReplacementBinding
+Read93_MimeContentBinding
+Read94_MimeXmlBinding
+Read96_MimeTextMatch
+Read97_MimeTextBinding
+Read98_SoapBindingUse
+Read99_SoapBodyBinding
+ReadAll
+ReadAsyncResponse
+ReadAsyncResponseStream
+ReadByte
+ReadDocument
+ReadElementString
+ReadEndElement
+ReadEntireStream
+reader
+readerInitializer
+readerInitializers
+readerTimedout
+readerType
+readerTypes
+ReadFaultCode
+ReadHeaders
+ReadNode
+ReadNull
+ReadParameters
+ReadResponse
+ReadResponseAsyncCallback
+readResponseAsyncCallback
+ReadResponseAsyncCallback
+ReadSoap12FaultCode
+ReadSoap12FaultCodesRecursive
+ReadSoapException
+ReadStartElement
+ReadString
+readTimeout
+ReadToEnd
+ReadXmlNode
+-real
+Reason
+Receiver
+ReceiverFaultCode
+recommendation
+Recommendation
+redefine
+Redmond1
+refer
+reference
+References
+references
+referenceType
+referenceTypeName
+Reflect
+ReflectBinding
+reflectedBinding
+ReflectedBinding
+reflectedExtensions
+ReflectInternal
+reflectionContext
+ReflectMethodBinding
+ReflectMimeParameters
+ReflectMimeReturn
+reflector
+reflectors
+reflectorsWithPost
+ReflectParameters
+ReflectReturn
+ReflectStringParametersMessage
+ReflectUrlParameters
+regex
+RegexOptions
+RegisterNotifySource
+relativeTo
+relay
+ReleaseComObject
+ReleaseHandler
+relUrl
+remote
+Remote.Disable
+RemoteDebugger
+RemoveAttribute
+RemoveByRefMapping
+RemoveValue
+repeats
+Replace
+replaced
+Report from '{0}' is '{1}'.
+request
+Request
+Request format is invalid.
+Request format is invalid: {0}.
+Request format is unrecognized.
+Request Host Address: {0}
+Request Host Name: {0}
+Request Url: [{0}] {1}
+RequestCacheLevel
+RequestCachePolicy
+requestElement
+RequestElementName
+requestElementName
+requestElements
+requestEncoding
+requestMapping
+requestMappings
+requestMessage
+requestName
+RequestNamespace
+requestNamespace
+requestNs
+RequestResponse
+RequestResponseIsNotSupported0
+RequestResponseUtils
+requestStream
+requestUri
+requestUrl
+required
+RequiredExtensionsIgnored
+RequiredXmlFormatExtensionAttributeIsMissing1
+ResCategoryAttribute
+ResDescriptionAttribute
+Resolve
+ResolveAll
+ResolveOneLevel
+ResourceManager
+Response
+response
+ResponseBufferedStream
+ResponseElementName
+responseList
+responseMappings
+responseMessage
+responseName
+responseNamespace
+ResponseNamespace
+responseNs
+responseStream
+restriction
+result
+Result
+Result was not XML.
+resultParam
+results
+Results
+resultsName
+retrievalUrl
+retType
+Return from WorkItem.Post({0})
+returnFormatter
+returns
+returnSerializer
+returnType
+returnTypeName
+returnValue
+returnValues
+returnWriterTypes
+-rfloor
+RNo elements matching the key {0} were found in the ConfigurationElementCollection.
+rootPathAsdi
+rootUrl
+RouteRequest
+routingOnSoapAction
+routingStyle
+RpcBadArgumentsFaultCode
+RpcBadArgumentsSubcode
+RpcNamespace
+RpcProcedureNotPresentFaultCode
+RpcProcedureNotPresentSubcode
+-rsaquo
+-rsquo
+rThe element attribute is not allowed on encoded message parts. The erroneous part is named '{0}' in message '{1}'.
+RunExtensions
+RuntimeCompatibilityAttribute
+RuntimeFieldHandle
+RuntimeHelpers
+RuntimeTypeHandle
+RuntimeUtils
+RunUriFixups
+Rxxxx
+s_entityEndingChars
+s_InternalSyncObject
+S0Q0O
+SatelliteContractVersionAttribute
+-sbquo
+SByte
+ScalarFormatter
+ScanDirByPattern
+ScanDirectory
+SCannot find definition for {0}.  Service Description with namespace {1} is missing.
+-Scaron
+-scaron
+schema
+Schema not found.
+Schema validation error: {0}
+Schema validation warning: {0}
+SchemaCompiler
+SchemaImporterExtensionCollection
+schemaImporterExtensions
+schemajSystem.Xml.Schema.XmlSchema, System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+schemaLocation
+schemaRef
+SchemaReference
+schemas
+schemasWithPost
+SchemaSyntaxErrorDetails
+SchemaSyntaxErrorItemDetails
+schemaTable
+SchemaValidation
+SchemaValidationError
+SchemaValidationHandler
+SchemaValidationWarning
+schemeHostPort
+scope
+-sdot
+searchDir
+SearchForLink
+SearchInit
+SearchSubDirectories
+secondarySearchPatterns
+-sect
+SectionName
+sectionName
+SecurityAction
+SecurityCriticalAttribute
+SecurityException
+SecurityPermission
+SecurityPermissionAttribute
+SecurityPermissionFlag
+SecurityRulesAttribute
+SecurityRuleSet
+SecuritySafeCriticalAttribute
+SeekOrigin
+selector
+sender
+Sender
+SenderFaultCode
+SendOrPostCallback
+sequence
+SerializationInfo
+Serialize
+serializeCollectionKey
+serializer
+Server
+server
+ServerBindings
+serverEvidence
+serverInterface
+ServerInterface
+serverMethod
+ServerProtocolCachePressure
+serverProtocolFactories
+serverType
+Service
+service
+Service '{0}' does not conform to WS-I Basic Profile v1.1. Please examine each of the normative statement violations below. To turn off conformance check set the ConformanceClaims property on corresponding WebServiceBinding attribute to WsiClaims.None.
+serviceAttr
+ServiceCollection
+serviceDefaultIsEncoded
+ServiceDescription
+serviceDescription
+ServiceDescriptionBaseCollection
+ServiceDescriptionCollection
+ServiceDescriptionFormatExtension
+ServiceDescriptionFormatExtensionCollection
+serviceDescriptionFormatExtensionTypes
+ServiceDescriptionImporter
+ServiceDescriptionImportWarnings
+ServiceDescriptionReflector
+serviceDescriptions
+ServiceDescriptionSerializationReader
+ServiceDescriptionSerializationWriter
+ServiceDescriptionSerializer
+serviceDescriptionsWithPost
+ServiceDescriptionWasNotFound0
+serviceNamespace
+services
+serviceType
+serviceUrl
+set_Action
+set_Actor
+set_Address
+set_AllowAutoRedirect
+set_AllowElements
+set_AllowWriteStreamBuffering
+set_Annotation
+set_AnyAttribute
+set_AppSettingBaseUrl
+set_AppSettingUrlKey
+set_AttributeFormDefault
+set_Attributes
+set_AutomaticDecompression
+set_BaseType
+set_BaseTypeName
+set_Binding
+set_Block
+set_BlockDefault
+set_BufferOutput
+set_BufferResponse
+set_CacheDuration
+set_CachePolicy
+set_Capture
+set_ClientProtocol
+set_CodeGenerationOptions
+set_CodeGenerator
+set_ConformsTo
+set_ConnectionGroupName
+set_Content
+set_ContentEncoding
+set_ContentLength
+set_ContentModel
+set_ContentType
+set_CookieContainer
+set_CreateType
+set_Credentials
+set_Current
+set_CustomAttributes
+set_DecodeName
+set_DefaultValue
+set_DelegateType
+set_Description
+set_DescriptionValue
+set_Diagnostics
+set_DidUnderstand
+set_Direction
+set_DocRef
+set_Documentation
+set_DocumentationElement
+set_DtdProcessing
+set_DuplicateByRequestElement
+set_DuplicateBySoapAction
+set_Element
+set_ElementFormDefault
+set_ElementName
+set_EmitConformanceClaims
+set_EnableDecompression
+set_EnableSession
+set_EncodedMustUnderstand
+set_EncodedMustUnderstand12
+set_EncodedRelay
+set_Encoding
+set_EscapeName
+set_Exception
+set_ExcludePaths
+set_Expression
+set_ExtensibleAttributes
+set_ExtensionPoints
+set_Fault
+set_Filename
+set_Final
+set_FinalDefault
+set_FixedValue
+set_FlushEnabled
+set_Form
+set_Formatting
+set_Group
+set_Handled
+set_Href
+set_Id
+set_IgnoreCase
+set_ImportContext
+set_Indentation
+set_InitExpression
+set_Input
+set_InternalActor
+set_InternalMustUnderstand
+set_InternalRelay
+set_IsAbstract
+set_IsEncodedBinding
+set_IsFixed
+set_IsInterface
+set_IsMixed
+set_IsNillable
+set_IsPartial
+set_IsReturnValue
+set_IsStrict
+set_IsStruct
+set_Item
+set_ItemType
+set_ItemTypeName
+set_Language
+set_Location
+set_MapToProperty
+set_Markup
+set_MaxOccurs
+set_MaxOccursString
+set_MaxRepeats
+set_MemberName
+set_MemberType
+set_MemberTypes
+set_Message
+set_MessageName
+set_Method
+set_MethodName
+set_MinOccurs
+set_MinOccursString
+set_MustUnderstand
+set_Name
+set_Namespace
+set_Namespaces
+set_Next
+set_Normalization
+set_OneWay
+set_OnUnknownAttribute
+set_OnUnknownElement
+set_OnUnreferencedObject
+set_Output
+set_OverrideIsNullable
+set_ParameterFormatter
+set_ParameterOrder
+set_ParameterOrderString
+set_ParameterStyle
+set_Part
+set_Particle
+set_Parts
+set_PartsString
+set_Path
+set_Pattern
+set_PendingSyncRequest
+set_Position
+set_PreAuthenticate
+set_Prefix
+set_Priority
+set_ProcessContents
+set_ProtocolImporterTypes
+set_ProtocolName
+set_ProtocolReflectorTypes
+set_Proxy
+set_Public
+set_ReaderType
+set_ReadTimeout
+set_Ref
+set_Refer
+set_ReferenceTypeName
+set_ReflectionContext
+set_RefName
+set_Relay
+set_Repeats
+set_RepeatsString
+set_RequestElementName
+set_RequestEncoding
+set_RequestNamespace
+set_Required
+set_ResponseElementName
+set_ResponseNamespace
+set_RetrievalUrl
+set_ReturnFormatter
+set_ReturnType
+set_Role
+set_RoutingStyle
+set_Schema
+set_SchemaLocation
+set_SchemaType
+set_SchemaTypeName
+set_Selector
+set_SendChunked
+set_SoapAction
+set_SoapActionRequired
+set_SoapAttributes
+set_SoapEnvelopeProcessing
+set_SoapVersion
+set_Source
+set_StatusCode
+set_StatusDescription
+set_Style
+set_SubstitutionGroup
+set_SuppressReturningExceptions
+set_System
+set_TargetNamespace
+set_TargetObject
+set_TextBinding
+set_Timeout
+set_TransactionOption
+set_Transport
+set_TrySkipIisCustomErrors
+set_Type
+set_TypeAttributes
+set_TypeMapping
+set_TypeName
+set_Types
+set_UnhandledAttributes
+set_UnsafeAuthenticatedConnectionSharing
+set_Uri
+set_UriFixups
+set_Url
+set_Use
+set_UseDefaultCredentials
+set_UserAgent
+set_ValidationFlags
+set_ValidationType
+set_Value
+set_Verb
+set_Verbose
+set_Version
+set_Warnings
+set_WhitespaceHandling
+set_WriterType
+set_XmlAttributes
+set_XmlResolver
+set_XmlRoot
+set_XPath
+SetCacheability
+SetContext
+SetDefaults
+SetExpires
+SetExtensionStream
+SetHandled
+SetHeaderMembers
+SetHelper
+SetHttpResponseStatusCode
+SetInnerStream
+SetKey
+SetLength
+SetMaxAge
+SetNoServerCaching
+SetParameterValues
+SetParent
+SetResponseErrorCode
+SetSlidingExpiration
+SetStage
+SetStream
+SetStreamReady
+SettingsBindableAttribute
+SetValue
+SetWarnings
+SHA256
+Shell32
+shell32.dll
+Shfolder
+shfolder.dll
+Shlwapi
+shlwapi.dll
+ShouldSerializeTypes
+ShouldTrace
+ShrinkArray
+-sigma
+-Sigma
+-sigmaf
+signature
+simpleContent
+simpleType
+Single
+SkipVerificationInFullTrust
+SOAP 1.1
+SOAP 1.1 binding was not found
+SOAP 1.2
+soap%http://schemas.xmlsoap.org/wsdl/soap/
+soap11
+Soap11
+soap11PortType
+Soap11ServerProtocolHelper
+soap12
+Soap12
+Soap12AddressBinding
+Soap12Binding
+Soap12BodyBinding
+Soap12FaultBinding
+Soap12FaultCodes
+Soap12HeaderBinding
+soap12'http://schemas.xmlsoap.org/wsdl/soap12/
+Soap12OperationBinding
+Soap12ProtocolImporter
+Soap12ProtocolReflector
+Soap12ServerProtocolHelper
+SOAPAction
+soapAction
+soapActionRequired
+soapAddress
+SoapAddressBinding
+SoapAttributeAttribute
+soapAttributes
+soapbind:body
+soapbind:header
+soapbind:headerfault
+soapBinding
+SoapBinding
+soapBindingStyle
+SoapBodyBinding
+soapBodyBinding
+SoapClientMessage
+SoapClientMethod
+SoapClientType
+SoapCodeExporter
+SoapContentType
+SoapDocumentMethodAttribute
+SoapDocumentServiceAttribute
+soapenc
+soapenc)http://schemas.xmlsoap.org/soap/encoding/
+SoapEncoding
+soapEncodingSchema
+soapEnvelopeProcessing
+SoapEnvelopeProcessingElement
+SoapEnvelopeReader
+soapException
+soapExporter
+SoapExtension
+SoapExtensionAttribute
+SoapExtensionImporter
+soapExtensionImporterTypes
+SoapExtensionReflector
+soapExtensionReflectorTypes
+SoapExtensionStream
+SoapExtensionTypeElement
+SoapExtensionTypeElementCollection
+soapExtensionTypes
+SoapFaultBinding
+SoapFaultSubCode
+SoapHeaderAttribute
+SoapHeaderAttributeComparer
+SoapHeaderBinding
+SoapHeaderCollection
+SoapHeaderDirection
+SoapHeaderException
+SoapHeaderFaultBinding
+SoapHeaderHandling
+SoapHeaderMapping
+SoapHttpClientProtocol
+SoapHttpTransportImporter
+SoapIgnoreAttribute
+soapImporter
+soapMembers
+SoapMessage
+SoapMessageStage
+soapMethod
+soapMethodList
+SoapOperationBinding
+SoapParameter
+SoapParameterInfo
+SoapParameters
+SoapParameterStyle
+SoapProtocolImporter
+SoapProtocolReflector
+SoapProtocolVersion
+SoapReflectedExtension
+SoapReflectedHeader
+SoapReflectedMethod
+SoapReflectionImporter
+SoapReflector
+SoapRpcMethodAttribute
+SoapRpcServiceAttribute
+SoapSchemaExporter
+SoapSchemaImporter
+SoapSchemaMember
+SoapServerMessage
+SoapServerMethod
+SoapServerProtocol
+soapServerProtocolFactory
+soapServerProtocolFactoryType
+SoapServerProtocolHelper
+SoapServerType
+soapServiceAttribute
+SoapTransportImporter
+soapTransportImporterTypes
+SoapTypeAttribute
+SoapUnknownHeader
+SoapVersion
+soapVersion
+SoapVersionContextSlot
+SolicitResponseIsNotSupported0
+SOperation '{0}' on portType '{1}' from namespace '{2}' defined as Solicit-Response.
+source
+SourceSwitch
+sourceType
+-spades
+Specified
+specifiedCount
+specifiedName
+Specifying a type for use=literal messages is not supported. Type name='{0}' from targetNamespace='{1}' cannot be used as top-level any element.
+SpecifyingAnElementForUseEncodedMessageParts0
+SpecifyingATypeForUseLiteralMessagesIs0
+SpecifyingATypeForUseLiteralMessagesIsAny
+Split
+Ssoapbind:fault '{0}' on operation '{1}' on portType '{2}' from namespace '{3}'. {4}
+StackOverflowException
+stackPtr
+StackTrace
+StackTraceEnd
+stage
+start
+startDir
+StartsWith
+startUrl
+state
+stateParam
+statusCode
+stream
+StreamDoesNotRead
+StreamDoesNotSeek
+StreamingContext
+StreamReader
+streamReady
+StreamToMemoryStream
+StreamWriter
+strict
+string
+String
+StringArray
+stringBuffer
+StringBuilder
+StringCollection
+StringComparison
+StringEnumerator
+StringFileInfo
+StringReader
+StringWriter
+style
+subCode
+Subcode
+subcode
+subCode
+Subcode
+subDirLevel
+-sube
+substitution
+substitutionGroup
+Substring
+-sup1
+-sup2
+-sup3
+-supe
+SupportedClaims
+SupportedEnvelope
+Supports
+suppressReturningExceptions
+SuppressUnmanagedCodeSecurityAttribute
+SwitchContext
+Synchronized
+syncRoot
+SyncSessionHandler
+SyncSessionlessHandler
+SyntaxErrorInWSDLDocumentMessageDoesNotHave1
+system
+System.CodeDom
+System.CodeDom.Compiler
+System.Collections
+System.Collections.Generic
+System.Collections.Generic.IEnumerable<System.Web.Services.Description.BasicProfileViolation>.GetEnumerator
+System.Collections.IEnumerator.Current
+System.Collections.IEnumerator.get_Current
+System.Collections.IEnumerator.Reset
+System.Collections.Specialized
+System.ComponentModel
+System.Configuration
+System.Configuration.ConfigurationPermissionAttribute, System.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Configuration.InfiniteIntConverter, System.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Data
+System.Data.Design
+System.Data.dll
+System.Design
+System.Diagnostics
+System.DirectoryServices
+System.dll
+System.EnterpriseServices
+System.EnterpriseServices.dll
+System.Globalization
+System.IO
+System.Net
+System.Net.Cache
+System.Reflection
+System.Resources
+System.Runtime.CompilerServices
+System.Runtime.InteropServices
+System.Runtime.Serialization
+System.Security
+System.Security.Cryptography
+System.Security.Cryptography.X509Certificates
+System.Security.Permissions
+System.Security.Permissions.FileIOPermissionAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Security.Permissions.PermissionSetAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Security.Permissions.SecurityPermissionAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Security.Permissions.SecurityPermissionFlag, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Security.Policy
+System.Security.Principal
+System.Text
+System.Text.RegularExpressions
+System.Threading
+System.Web
+System.Web.Caching
+System.Web.Configuration
+System.Web.Hosting
+System.Web.Services
+System.Web.Services.Asmx
+System.Web.Services.Configuration
+-System.Web.Services.Configuration.TypeElement
+System.Web.Services.Description
+System.Web.Services.Description.ServiceDescriptionImportStyle
+System.Web.Services.Description.SoapBindingStyle
+System.Web.Services.Description.SoapBindingUse
+System.Web.Services.Diagnostics
+System.Web.Services.Discovery
+System.Web.Services.dll
+System.Web.Services.Interop
+System.Web.Services.Interop.INotifySource2.SetNotifyFilter
+System.Web.Services.pdb
+System.Web.Services.Protocols
+System.Web.Services.resources
+System.Web.Services.WsiProfiles
+System.Web.SessionState
+System.Web.UI
+System.Web.Util
+system.web/webServices
+System.Xml
+System.Xml.dll
+System.Xml.Schema
+System.Xml.Schema.XmlSchemaContentProcessing
+System.Xml.Schema.XmlSchemaDerivationMethod
+System.Xml.Schema.XmlSchemaForm
+System.Xml.Schema.XmlSchemaUse
+System.Xml.Serialization
+System.Xml.Serialization.Advanced
+System.Xml.Serialization.CodeGenerationOptions
+SystemException
+szDestinationMachine
+szEntryPoint
+-szlig
+szMachine
+T\L@T
+tagname
+TAn unexpected element was encountered: {0}. No elements were expected in this scope.
+target
+TargetInvocationException
+TargetMethods
+targetNamespace
+TElement '{0}' on Binding '{1}' from namespace '{2}' has invalid attribute {3}='{4}'.
+text,http://microsoft.com/wsdl/mime/textMatching/,System.Web.Services.Description.InputBinding-System.Web.Services.Description.OutputBinding(System.Web.Services.Description.MimePart
+text/html
+text/plain
+text/xml
+TextBase
+textBinding
+TextHtml
+TextPlain
+textReader
+textRegex
+TextReturnReader
+TextXml
+The children of the soap:Body element in a ENVELOPE MUST be namespace qualified. The use of unqualified element names may cause naming conflicts, therefore qualified names must be used for the children of soap:Body.
+The document at the url {0} was not recognized as a known document type.
+The document was not recognized as a known document type (WSDL, XML Schema, or Discovery document) for the following reason: 
+The error message from each known type may help you fix the problem:
+The following is a sample HTTP GET request and response.  The <font class=value>placeholders</font> shown need to be replaced with actual values.
+The following is a sample HTTP POST request and response.  The <font class=value>placeholders</font> shown need to be replaced with actual values.
+The following is a sample SOAP 1.1 request and response.  The <font class=value>placeholders</font> shown need to be replaced with actual values.
+The following is a sample SOAP 1.2 request and response.  The <font class=value>placeholders</font> shown need to be replaced with actual values.
+The header property/field {0}.{1} must be of type SoapHeader or a derived type, or an array of SoapHeader or SoapUnknownHeader.
+The method {0} does not have a request element. You can use a RoutingStyle of SoapAction on the XML Web service, use the Wrapped parameter style on the method, or add a parameter to the method.
+The methods {0} and {1} use the same request element <{2} xmlns='{3}'> and the methods {0} and {4} use the same SOAPAction '{5}'. Each method on the XML Web service must have a unique SOAPAction or request element. If you are using the Rpc style, you can change the message name with the RequestElementName and RequestElementNamespace parameters to SoapRpcMethodAttribute. For document style using wrapped parameter style, use the RequestElementName and RequestElementNamespace parameters to SoapDocumentMethodAttribute. For the bare parameter style, you must change the element that represents the parameter. Alternatively, you can specify a unique SoapAction for each method using the Action parameter to SoapRpcMethodAttribute or SoapDocumentMethodAttribute.
+The methods {0} and {1} use the same request element <{2} xmlns='{3}'>. When the RoutingStyle of the XML Web service is RequestElement, request elements must be unique across methods on the XML Web service. If you are using the Rpc style, you can change the message name with the RequestElementName and RequestElementNamespace parameters to SoapRpcMethodAttribute. For document style using wrapped parameter style, use the RequestElementName and RequestElementNamespace parameters to SoapDocumentMethodAttribute. For the bare parameter style, you must change the element that represents the parameter. Alternatively, you can specify a RoutingStyle of SoapAction on the XML Web service.
+The methods {0} and {1} use the same SOAPAction '{2}'. When the RoutingStyle of the XML Web service is SoapAction, SOAPAction values must be unique across methods on the XML Web service. You can change the SOAPAction with the Action parameter to the SoapDocumentMethod or SoapRpcMethod attributes, or you can specify a RoutingStyle of RequestElement on the XML Web service.
+The operation has no matching binding. Check if the operation, input and output names in the Binding section match with the corresponding names in the PortType section.
+The operations in a wsdl:binding in a DESCRIPTION MUST result in wire signatures that are different from one another. An endpoint that supports multiple operations must unambiguously identify the operation being invoked based on the input message that it receives. This is only possible if all the operations specified in the wsdl:binding associated with an endpoint have a unique wire signature. 
+The Profile defines the "wire signature" of an operation in a wsdl:binding to be the fully qualified name of the child element of the soap:Body of the SOAP input message it describes. For the case of an empty soap:Body this name is an empty string. In the case of rpc-literal binding, the operation name is used as a wrapper for the part accessors. In the document-literal case, since a wrapper with the operation name is not present, the message signatures must be correctly designed so that they meet this requirement.
+-The request failed with HTTP status {0}: {1}.
+The root element for the request could not be determined. When RoutingStyle is set to RequestElement, SoapExtensions configured via an attribute on the method cannot modify the request stream before it is read. The extension must be configured via the SoapExtensionTypes element in web.config, or the request must arrive at the server as clear text.
+The SOAP 1.1 encoding style is not supported for operations that use SOAP 1.2. Use the URI '{0}' to refer to the SOAP 1.2 encoding style.
+'The value for '{0}' cannot be negative.
+The wsdl:binding element in a DESCRIPTION MUST be constructed so that its soapbind:binding child element specifies the transport attribute. 
+TheBinding0FromNamespace1WasIgnored2
+TheBindingNamedFromNamespaceWasNotFoundIn3
+TheCombinationOfStyleRpcWithUseLiteralIsNot0
+TheDocumentWasNotRecognizedAsAKnownDocumentType
+TheDocumentWasUnderstoodButContainsErrors
+TheEncodingIsNotSupported1
+TheHTMLDocumentDoesNotContainDiscoveryInformation
+TheMethodDoesNotHaveARequestElementEither1
+TheMethodsAndUseTheSameRequestElementAndSoapActionXmlns6
+TheMethodsAndUseTheSameRequestElementXmlns4
+TheMethodsAndUseTheSameSoapActionWhenTheService3
+TheOperation0FromNamespace1WasIgnored2
+TheOperationBinding0FromNamespace1WasIgnored
+TheOperationBindingFromNamespaceHadInvalid3
+TheOperationFromNamespaceHadInvalidSyntax3
+TheOperationStyleRpcButBothMessagesAreNot0
+There is no return value.
+There was an error during asynchronous processing. Unique state object is required for multiple asynchronous simultaneous operations to be outstanding.
+-there4
+ThereIsNoSoapTransportImporterThatUnderstands1
+TheRequestElementXmlnsWasNotRecognized2
+ThereWasAnErrorDownloading0
+ThereWasAnErrorDuringAsyncProcessing
+TheRootElementForTheRequestCouldNotBeDetermined0
+TheSchemaDocumentContainsLinksThatCouldNotBeResolved
+TheSyntaxOfTypeMayNotBeExtended1
+-theta
+-Theta
+-thetasym
+TheWSDLDocumentContainsLinksThatCouldNotBeResolved
+-thinsp
+This property will be removed from a future version. The presence of a particular header in a SOAP message is no longer enforced
+-This stream does not support read operations.
+-THORN
+-thorn
+ThreadAbortException
+ThrowInitException
+throwOnError
+throwOnException
+-tilde
+timeout
+-times
+TimeSpan
+TInvalid empty reference of type '{0}' encountered. Missing required '{1}' attribute.
+tm,http://microsoft.com/wsdl/mime/textMatching/
+TMore than one import named '{0}' was specified. Each import must have a unique name.
+To make binding conformant make sure that all response and request elements are namespace qualified. Use RequestNamespace and ResponseNamespace properties on the SoapDocumentMethod or SoapRpcMethod attribute to control the namespace.
+To make it conformant change the implementation of the service to use 'rpc-literal' or 'document-literal' SOAP messages. You need to add explicit <font class=value>Use=SoapBindingUse.Literal</font> property to all service and method level attributes: SoapRpcService, SoapRpcMethod, SoapDocumentService, SoapDocumentMethod.
+To turn off BP 1.1 conformance warnings for the entire vroot remove the 'BP1.1' value from the &lt;conformanceWarnings&gt; section of the configuration file of your application:
+ToArray
+ToBase64String
+ToBoolean
+ToEnum
+ToInt32
+ToLower
+TopLevelElement
+topLevelFilename
+totalDigits
+ToXmlQualifiedName
+TProperties and methods of the stream can't be accessed in the BeforeSerialize stage.
+TraceCallEnter
+TraceCallEnterDetails
+TraceCallExit
+TraceCreateSerializer
+TraceEvent
+TraceEventType
+TraceExceptionCought
+TraceExceptionDetails
+TraceExceptionIgnored
+TraceExceptionThrown
+TraceFlush
+TraceId
+traceLevel
+TraceMethod
+TracePostWorkItemIn
+TracePostWorkItemOut
+TraceReadHeaders
+TraceReadRequest
+TraceReadResponse
+traceSource
+TraceSourceAsmx
+TraceSwitch
+TraceUrl
+TraceUrlReferrer
+TraceUserHostAddress
+TraceUserHostName
+TraceWriteHeaders
+TraceWriteRequest
+TraceWriteResponse
+Tracing
+tracingEnabled
+tracingInitialized
+-trade
+TransactedCallback
+transactionOption
+transactionOptionSpecified
+Transactions
+Transactions are not supported for asynchronous method calls. Provide a synchronous version of the method or unset the TransactionOption property of the WebMethodAttribute.
+TranslateFaultCode
+Translation
+transport
+TrimStart
+TryCreate
+TThe attribute was not expected in this context: {0}='{1}'. Expected attributes: {2}.
+TurnOnGetAndPost
+TUrSystem.Web.AspNetHostingPermissionLevel, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+type=
+TypeAndName
+TypeAndNameConverter
+TypeConverterAttribute
+typedDataSetSchemaImporterExtension
+typeFullNames
+TypeIsMissingWebServiceBindingAttributeThat2
+typeName
+types
+Types
+types
+TypeTypeConverter
+U.System.Web.Services.Description.SoapBindingUse
+U{0} is an invalid value for the extension priority. The priority must be nonnegative.
+U}System.Xml.Serialization.CodeGenerationOptions, System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+U=System.Web.Services.Description.ServiceDescriptionImportStyle
+U0S0Q
+U0System.Web.Services.Description.SoapBindingStyle
+U1System.Web.Services.Protocols.SoapProtocolVersion
+-uacute
+-Uacute
+-uArr
+-uarr
+-ucirc
+-Ucirc
+-Ugrave
+-ugrave
+UInt16
+UInt32
+UInt64
+Unable to handle request.
+UnableToHandleRequest0
+UnableToHandleRequestActionNotRecognized1
+UnableToHandleRequestActionRequired0
+UnableToImportBindingFromNamespace2
+UnableToImportOperation1
+Unexpected flush
+UnexpectedFlush
+UnhandledExceptionEventArgs
+UnhandledExceptionEventHandler
+UnhandledExceptionHandler
+UnicodeEncoding
+union
+unique
+UniqueName
+unknownHeaders
+UnknownNode
+UnknownWebServicesProtocolInConfigFile1
+unqualified
+unreferencedHeaders
+UnreferencedObjectEventArgs
+UnreferencedObjectEventHandler
+UnregisterNotifySource
+Unrestricted
+unsafeAuthenticatedConnectionSharing
+UnsafeNativeMethods
+UnsupportedBindingsIgnored
+UnsupportedBindingWarning
+UnsupportedMediaType
+UnsupportedMediaTypeFaultCode
+UnsupportedMessageStyle1
+UnsupportedOperationBindingWarning
+UnsupportedOperationsIgnored
+UnsupportedOperationWarning
+UnsupportedRequestProtocol
+UntypedValue
+UOptional attribute 'type' was ignored because the match does not contain sub-matches.
+Upgrade
+UpgradeEnvelopeQname
+UPossible SOAP version mismatch: Envelope namespace {0} was unexpected. Expecting {1}.
+-upsih
+-Upsilon
+-upsilon
+uR1[j
+UriComponents
+uriFixups
+UriFormat
+UriHostNameType
+UriKind
+uriList
+UriPartial
+UriSchemeFile
+UriSchemeFtp
+UriToString
+UriValueRelative
+UrlDecode
+UrlEncode
+urlEncoded
+urlEncoded%http://schemas.xmlsoap.org/wsdl/http/,System.Web.Services.Description.InputBinding
+UrlEncodedParameterWriter
+UrlEncoder
+UrlEscapeString
+UrlEscapeStringUnicode
+UrlParameterReader
+UrlParameterWriter
+urlReplacement
+urlReplacement%http://schemas.xmlsoap.org/wsdl/http/,System.Web.Services.Description.InputBinding
+urlSetting
+urn:schemas-dynamicdiscovery:disco.2000-03-17
+usedFallback
+User32
+user32.dll
+userAgent
+UserAgentDefault
+userAsyncState
+userCallback
+userState
+UserState
+UserThread
+userThread
+UserToken
+UTF8Encoding
+UThe client certificates that will be sent to the server, if the server requests them.
+uTo enable the http post protocol add the following to the web.config file in your application or site root directory.
+UType '{0}' is missing WebServiceBinding attribute that defines a binding named '{1}'.
+uu<?wuy
+-Uuml
+-uuml
+Uxtheme
+uxtheme.dll
+v4.0.30319
+vA web service method can't have both a SoapDocumentMethodAttribute and a SoapRpcMethodAttribute. Use one or the other.
+validate
+ValidateIdentifiers
+ValidateSettings
+ValidationCallbackWithErrorCode
+ValidationError
+ValidationEventArgs
+validationEventHandler
+validationWarnings
+Value
+value
+Value
+value__
+ValueCollectionParameterReader
+values
+ValueType
+VarFileInfo
+VDiscovery is not possible because type '{0}' is missing a WebServiceBinding attribute.
+verbose
+version
+version.dll
+VersionMismatch
+violation
+violations
+virtualPath
+VMore than one binding named '{0}' was specified. Each binding must have a unique name.
+VMore than one message named '{0}' was specified. Each message must have a unique name.
+VMore than one service named '{0}' was specified. Each service must have a unique name.
+VPath
+Vs\hXs&{Xs
+VS_VERSION_INFO
+Vsassert
+vsassert.dll
+VsDebuggerCausalityData
+vSystem.Web.AspNetHostingPermissionAttribute, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+WaitForResponse
+WaitOne
+Warning: {0}
+warnings
+Washington1
+WEach match element must have a pattern attribute containing a valid regular expression.
+Web Service
+webApps
+WebAsyncMissingEnd
+WebAsyncTransaction
+WebBadEnum
+WebBadHex
+WebBadOutParameter
+WebBadStreamState
+WebBothMethodAttrs
+WebBothServiceAttrs
+WebCannotAccessValue
+WebCannotAccessValueStage
+WebCannotUnderstandHeader
+WebChangeTypeFailed
+WebClientAsyncResult
+WebClientBindingAttributeRequired
+WebCodeGenerator
+WebConfigExtensionError
+WebConfigInvalidExtensionPriority
+WebContext
+WebContractReferenceName
+WebDescriptionHeaderAndBodyUseMismatch
+WebDescriptionMissing
+WebDescriptionMissingBodyUseAttribute
+WebDescriptionMissingItem
+WebDescriptionPartElementRequired
+WebDescriptionPartElementWarning
+WebDescriptionPartTypeRequired
+WebDescriptionPartTypeWarning
+WebDescriptionTooManyMessages
+WebDiscoRefReport
+WebDiscoveryDocumentReferenceName
+WebDuplicateBinding
+WebDuplicateFaultBinding
+WebDuplicateFormatExtension
+WebDuplicateImport
+WebDuplicateMessage
+WebDuplicateMessagePart
+WebDuplicateOperation
+WebDuplicateOperationBinding
+WebDuplicateOperationFault
+WebDuplicateOperationMessage
+WebDuplicatePort
+WebDuplicatePortType
+WebDuplicateService
+WebDuplicateServiceDescription
+WebDuplicateUnknownElement
+WebEmptyRef
+WebException
+WebExceptionStatus
+WebExtensionError
+WebHeaderCollection
+WebHeaderInvalidMustUnderstand
+WebHeaderInvalidRelay
+WebHeaderMissing
+WebHeaderOneWayOut
+WebHeaderRead
+WebHeaderStatic
+WebHeaderType
+WebHeaderWrite
+WebHttpHeader
+WebInOutParameter
+WebInvalidBindingName
+WebInvalidBindingPlacement
+WebInvalidContentType
+WebInvalidDocType
+WebInvalidEnvelopeNamespace
+WebInvalidFormat
+WebInvalidMethodName
+WebInvalidMethodNameCase
+WebInvalidRequestFormat
+WebInvalidRequestFormatDetails
+webMethod
+WebMethod
+WebMethod.MessageName
+WebMethodAttribute
+WebMethodMissingParams
+WebMethodReflector
+WebMethodStatic
+WebMissingBodyElement
+WebMissingClientProtocol
+WebMissingCustomAttribute
+WebMissingDocument
+WebMissingEnvelopeElement
+WebMissingHeader
+WebMissingHelpContext
+WebMissingParameter
+WebMissingPath
+WebMissingResource
+WebMultiDimArray
+WebMultiplyDeclaredHeaderTypes
+WebNegativeValue
+WebNoReturnValue
+WebNullAsyncResultInBegin
+WebNullAsyncResultInEnd
+WebNullReaderForMessage
+WebNullRef
+WebNullWriterForMessage
+WebOneWayOutParameters
+WebOneWayReturnValue
+WebPathNotFound
+WebQNamePrefixUndefined
+WebRef
+WebRefDuplicateSchema
+WebRefDuplicateService
+webReference
+WebReference
+WebReferenceCollection
+webReferenceOptions
+WebReferenceOptionsSerializationReader
+WebReferenceOptionsSerializationWriter
+webReferenceOptionsSerializer
+webReferences
+WebRefInvalidAttribute
+WebRefInvalidAttribute2
+WebReflectionError
+WebReflectionErrorMethod
+WebRequest.GetResponse
+WebRequestContent
+WebRequestUnableToProcess
+WebRequestUnableToRead
+WebResolveMissingClientProtocol
+WebResponseBadXml
+WebResponseContent
+WebResponseKnownError
+WebResponseUnknownError
+WebResponseUnknownErrorEmptyBody
+WebResultNotXml
+WebSchemaNotFound
+WebServiceAttribute
+WebServiceBindingAttribute
+WebServiceBindingReflector
+WebServiceContext
+WebServiceDescriptionIgnoredOptional
+WebServiceDescriptionIgnoredRequired
+WebServiceHandler
+WebServiceHandlerFactory
+WebServiceParser
+WebServiceProtocols
+WebServiceReflector
+WebServicesDescriptionAttribute
+WebServiceServer
+WebServiceSession
+WebServicesInteroperability
+WebServiceSoapVersion
+WebServicesSection
+WebServiceUser
+WebShemaReferenceName
+WebSoap11EncodingStyleNotSupported1
+WebSuppressedExceptionMessage
+WebTextMatchBadCaptureIndex
+WebTextMatchBadGroupIndex
+WebTextMatchIgnoredTypeWarning
+WebTextMatchMissingPattern
+WebTimeout
+WebUnknownAttribute
+WebUnknownAttribute2
+WebUnknownAttribute3
+WebUnknownElement
+WebUnknownElement1
+WebUnknownElement2
+WebUnknownEncodingStyle
+WebUnrecognizedRequestFormat
+WebUnrecognizedRequestFormatUrl
+WebUnreferencedObject
+WebVirtualDisoRoot
+WebWsiContentTypeEncoding
+WebWsiViolation
+-weierp
+WhenUsingAMessageStyleOfParametersAsDocument0
+whiteSpace
+whitespaceRegex
+WinMM
+winmm.dll
+Winspool
+winspool.drv
+WireSignature
+WireSignatureEmpty
+wireSignatures
+WOnly XmlElements or types deriving from ServiceDescriptionFormatExtension may be added.
+wOperation '{0}' on binding '{1}' from namespace '{2}' has no matching operation on portType '{3}' from namespace '{4}'.
+WorkItem
+WorkItemCallback
+WqVNHE
+WrapNonExceptionThrows
+wrapped
+Wrapped
+WRecommendation: Change the default namespace before the XML Web service is made public.
+Write
+Write1_CodeGenerationOptions
+Write10_discovery
+Write10_XmlSchemaAppInfo
+Write100_SoapBindingUse
+Write102_Soap12BodyBinding
+Write103_MimePart
+Write104_MimeMultipartRelatedBinding
+Write105_SoapHeaderFaultBinding
+Write106_SoapHeaderBinding
+Write107_SoapHeaderFaultBinding
+Write109_Soap12HeaderBinding
+Write11_XmlSchemaAnnotation
+Write110_InputBinding
+Write111_OutputBinding
+Write112_SoapFaultBinding
+Write114_Soap12FaultBinding
+Write115_FaultBinding
+Write116_OperationBinding
+Write117_Binding
+Write118_HttpAddressBinding
+Write119_SoapAddressBinding
+Write12_XmlSchemaInclude
+Write121_Soap12AddressBinding
+Write122_Port
+Write123_Service
+Write124_ServiceDescription
+Write125_definitions
+Write13_XmlSchemaImport
+Write17_XmlSchemaSimpleTypeList
+Write2_ServiceDescriptionImportStyle
+Write20_XmlSchemaFractionDigitsFacet
+Write21_XmlSchemaMinInclusiveFacet
+Write22_XmlSchemaMaxLengthFacet
+Write23_XmlSchemaLengthFacet
+Write24_XmlSchemaTotalDigitsFacet
+Write25_XmlSchemaPatternFacet
+Write26_XmlSchemaEnumerationFacet
+Write27_XmlSchemaMaxInclusiveFacet
+Write28_XmlSchemaMaxExclusiveFacet
+Write29_XmlSchemaWhiteSpaceFacet
+Write3_DiscoveryDocumentReference
+Write30_XmlSchemaMinExclusiveFacet
+Write31_XmlSchemaMinLengthFacet
+Write32_XmlSchemaSimpleTypeRestriction
+Write33_XmlSchemaSimpleTypeUnion
+Write34_XmlSchemaSimpleType
+Write35_XmlSchemaUse
+Write36_XmlSchemaAttribute
+Write37_XmlSchemaAttributeGroupRef
+Write38_XmlSchemaContentProcessing
+Write39_XmlSchemaAnyAttribute
+Write4_Import
+Write4_WebReferenceOptions
+Write40_XmlSchemaAttributeGroup
+Write44_XmlSchemaGroupRef
+Write46_XmlSchemaAny
+Write47_XmlSchemaXPath
+Write49_XmlSchemaKey
+Write5_ContractReference
+Write5_webReferenceOptions
+Write50_XmlSchemaUnique
+Write51_XmlSchemaKeyref
+Write52_XmlSchemaElement
+Write53_XmlSchemaSequence
+Write54_XmlSchemaChoice
+Write55_XmlSchemaAll
+Write56_Item
+Write57_Item
+Write58_XmlSchemaComplexContent
+Write59_Item
+Write6_XmlSchemaForm
+Write60_Item
+Write61_XmlSchemaSimpleContent
+Write62_XmlSchemaComplexType
+Write63_XmlSchemaGroup
+Write64_XmlSchemaRedefine
+Write65_XmlSchemaNotation
+Write66_XmlSchema
+Write67_Types
+Write68_MessagePart
+Write69_Message
+Write7_SchemaReference
+Write7_XmlSchemaDerivationMethod
+Write71_OperationInput
+Write72_OperationOutput
+Write73_OperationFault
+Write74_Operation
+Write75_PortType
+Write77_HttpBinding
+Write79_SoapBindingStyle
+Write8_SoapBinding
+Write80_SoapBinding
+Write82_SoapBindingStyle
+Write84_Soap12Binding
+Write85_HttpOperationBinding
+Write86_SoapOperationBinding
+Write88_Soap12OperationBinding
+Write9_DiscoveryDocument
+Write9_XmlSchemaDocumentation
+Write90_HttpUrlEncodedBinding
+Write91_HttpUrlReplacementBinding
+Write93_MimeContentBinding
+Write94_MimeXmlBinding
+Write96_MimeTextMatch
+Write97_MimeTextBinding
+Write98_SoapBindingUse
+Write99_SoapBodyBinding
+writeAccess
+WriteAll
+WriteAttribute
+WriteAttributeString
+WriteByte
+WriteDocument
+WriteElementLiteral
+WriteElementString
+WriteElementStringRaw
+WriteEndElement
+WriteException
+WriteException_TryWriteFault
+WriteFaultCodeValue
+WriteFile
+WriteHeaders
+WriteLine
+WriteNullableStringLiteral
+WriteNullTagLiteral
+WriteObjectId
+WriteOneWayResponse
+WriteQualifiedName
+writer
+WriteReturnMappings
+WriteReturns
+writerInitializer
+writerType
+WriteStartDocument
+WriteStartElement
+WriteString
+WriteTo
+WriteUnknownHeaders
+WriteValue
+WriteXmlAttribute
+WriteXsiType
+wroteException
+WSDL Document
+wsdl:required
+wsdl:types
+WsdlGenRpcLitAccessorNamespace
+WsdlGenRpcLitAnonimousType
+wsdlHelpGenerator
+WsdlHelpGeneratorElement
+WsdlInstanceValidation
+WsdlInstanceValidationDetails
+wsdls
+wsdlsWithPost
+wsdlTable
+wsiClaims
+WsiConformance
+WsiProfiles
+WsiProfilesElement
+WsiProfilesElementCollection
+WS-I's Basic Profile 1.1 consists of implementation guidelines that recommend how a set of core Web services specifications should be used together to develop interoperable Web services. For the 1.1 Profile, those specifications are SOAP 1.1, WSDL 1.1, UDDI 2.0, XML 1.0 and XML Schema.
+WThe ASP.NET user object for the current request.  The object is used for authorization.
+WThe value can not be accessed because there was an exception during message processing.
+Wtsapi32
+wtsapi32.dll
+WType '{0}' has multiple WebServiceBinding attributes that define a binding named '{1}'.
+X/X[7
+X509CertificateCollection
+x6I]l9f[{y*
+XIf 'appSettingBaseUrl' argument is specified then 'url' argument must also be specified.
+XIn a DESCRIPTION, the namespace attribute of the wsdl:import MUST NOT be a relative URI.
+XML Schema
+XmlAnyAttributeAttribute
+XmlAnyElementAttribute
+XmlAnyElementAttributes
+XmlArrayAttribute
+XmlArrayItemAttribute
+XmlAttributeAttribute
+XmlAttributeCollection
+XmlAttributeEventArgs
+XmlAttributeEventHandler
+XmlAttributeOverrides
+xmlAttributes
+XmlCodeExporter
+XmlConvert
+XmlDeserializationEvents
+XmlDocument
+XmlElement
+XmlElementAttribute
+XmlElementAttributes
+XmlElementEventArgs
+XmlElementEventHandler
+XmlEnumAttribute
+XmlException
+xmlExporter
+XmlFormatExtensionAttribute
+XmlFormatExtensionPointAttribute
+XmlFormatExtensionPrefixAttribute
+XmlIgnoreAttribute
+xmlImporter
+XmlLang
+XmlMapping
+XmlMappingAccess
+XmlMemberMapping
+xmlMembers
+XmlMembersMapping
+XmlNamespace
+XmlNamespaceDeclarationsAttribute
+XmlNameTable
+XmlNodeType
+xmlns
+xmlReader
+XmlReaderSettings
+XmlReflectionImporter
+XmlReflectionMember
+XmlReturnReader
+XmlReturnWriter
+XmlRoot
+XmlRootAttribute
+XmlSchema
+XmlSchemaAll
+XmlSchemaAnnotated
+XmlSchemaAnnotation
+XmlSchemaAny
+XmlSchemaAnyAttribute
+XmlSchemaAppInfo
+XmlSchemaAttribute
+XmlSchemaAttributeGroup
+XmlSchemaAttributeGroupRef
+XmlSchemaAttributeReference
+XmlSchemaChoice
+XmlSchemaCollection
+XmlSchemaComplexContent
+XmlSchemaComplexContentExtension
+XmlSchemaComplexContentRestriction
+XmlSchemaComplexType
+XmlSchemaContent
+XmlSchemaContentDef
+XmlSchemaContentModel
+XmlSchemaDocumentation
+XmlSchemaElement
+XmlSchemaElementReference
+XmlSchemaEnumerationFacet
+XmlSchemaException
+XmlSchemaExporter
+XmlSchemaExternal
+XmlSchemaFacet
+XmlSchemaFractionDigitsFacet
+XmlSchemaGroup
+XmlSchemaGroupBase
+XmlSchemaGroupRef
+XmlSchemaIdentityConstraint
+XmlSchemaImport
+XmlSchemaImporter
+XmlSchemaInclude
+XmlSchemaItem
+XmlSchemaKey
+XmlSchemaKeyref
+XmlSchemaLengthFacet
+XmlSchemaMaxExclusiveFacet
+XmlSchemaMaxInclusiveFacet
+XmlSchemaMaxLengthFacet
+XmlSchemaMinExclusiveFacet
+XmlSchemaMinInclusiveFacet
+XmlSchemaMinLengthFacet
+XmlSchemaNamedItem
+XmlSchemaNotation
+XmlSchemaObject
+XmlSchemaObjectCollection
+XmlSchemaObjectEnumerator
+XmlSchemaParticle
+XmlSchemaPatternFacet
+XmlSchemaRedefine
+XmlSchemas
+XmlSchemaSearchPattern
+XmlSchemaSequence
+XmlSchemaSet
+XmlSchemaSimpleContent
+XmlSchemaSimpleContentExtension
+XmlSchemaSimpleContentRestriction
+XmlSchemaSimpleType
+XmlSchemaSimpleTypeContent
+XmlSchemaSimpleTypeList
+XmlSchemaSimpleTypeRestriction
+XmlSchemaSimpleTypeUnion
+XmlSchemaTotalDigitsFacet
+XmlSchemaType
+XmlSchemaUnique
+XmlSchemaValidationFlags
+XmlSchemaWhiteSpaceFacet
+XmlSchemaXPath
+XmlSerializationReader
+XmlSerializationWriter
+xmlSerializer
+XmlSerializer
+XmlSerializer [Read Request]
+XmlSerializer [Read Response]
+XmlSerializer [Write Request]
+XmlSerializer [Write Response]
+XmlSerializerNamespaces
+XmlSeverityType
+XmlText
+XmlTextReader
+XmlTextWriter
+XmlTypeAttribute
+XmlTypeMapping
+XmlValidatingReader
+XmlWriter
+xpath
+XThe header property/field {0}.{1} cannot be an out header because the method is one-way.
+XThe version of the SOAP protocol to use for requests. By default, SOAP 1.1 will be used.
+xTo make binding conformant add explicit SoapRpcMethod or SoapDocumentMethod attribute to all WebMethods of this binding.
+-Yacute
+-yacute
+YFor more details on URIs, see <a href="http://www.ietf.org/rfc/rfc2396.txt">RFC 2396</a>.
+Your XML Web service should be identified by a namespace that you control. For example, you can use your company's Internet domain name as part of the namespace. Although many XML Web service namespaces look like URLs, they need not point to actual resources on the Web. (XML Web service namespaces are URIs.)
+-Yuml
+-yuml
+z.9Wv
+-zeta
+-Zeta
+ZMore than one operation named '{0}' was specified. Each operation must have a unique name.
+ZMore than one port type named '{0}' was specified. Each port type must have a unique name.
+zThe following operations are supported.  For a formal definition, please review the <a href="{0}">Service Description</a>.
+-zwnj

@@ -1,0 +1,2584 @@
+------------------
+ -------------------------
+     00
+   0000
+  00000
+  Number of ARGUMENT is less than 3
+ %s = %ld
+ %s=%ld
+ (] : 
+ (Size) : Num of decimal dword max size < 4096
+ (SIze): DEC 0-64.
+ (xxx) --> Optional argument
+ ...... Future use 
+ ...... Future use.
+ [dbg_comp_bit]: If arg1=40, decimal value for debug comp bit
+ [Dbg_Type] : Decimal -->45/40/ 0-??
+ [dbg_type]: If arg1=0-39 This element = debug glag value(HEX)
+ [dbg_type]: If arg1=40 This element 1/0=Enable/Disable DBG_COMP
+ [dm  ] <Type> <Arg1>
+ [dm  ] <Type> <Arg1> (Arg...)
+ [eepr  ] <Addr> (Size)
+ [Flag_Type] : Decimal 0-39=RTPRINT debug flag
+ [Flag_Type] : Decimal 45=Display_DBG_COMP/40=Change_DBG_COMP of RT_TRACE
+ [Flag_Type] : Decimal 50=Clear all DBG_COMP
+ [ForTFI] (Arg1) (Arg2)
+ [fwbuf  ] (Arg1) (Arg2) (Arg3)
+ [fwctrl  ] (Arg1) (Arg2)
+ [fwdm  ] <Type> <Arg1> (Arg...)
+ [help] (Directory) (Command)
+ [MCS power base index = 0x%x]
+ [OFDM power base index = 0x%lx]
+ [r1  ] <Addr> (Size)
+ [r2  ] <Addr> (Size)
+ [r4  ] <Addr> (Size)
+ [rada  ] <} <} (]
+ [regdump  ] (Arg1) (Arg2) (Arg3)
+ [reset  ] (Arg1) 
+ [rxPathSel] <Type> <Arg1> (Arg...)
+ [sec  ] (Arg1) (Arg2) (Arg3)
+ [txrahis  ] (Arg1) (Arg2)
+ [vera  ] (Arg1) (Arg2) (Arg3) (Arg4)
+ [verify  ] (Arg1) (Arg2) (Arg3)
+ [w1  ] <Addr> <Data> (Size)
+ [w2  ] <Addr> <Data> (Size)
+ [w4  ] <Addr> <Data> (Size)
+ [wada  ] <} <} (]
+ [xxx] --> Command string
+ <} : 
+ <Addr_End> : HEX, 0~2E
+ <Addr_Start> : HEX, 0~2E
+ <Addr> : Readable memory address. For driver --> Page 0~15?
+ <Addr> : Writable memory address. For driver --> Page 0~15?
+ <Addr>: HEX 0=Read, 0x1234=Write
+ <Arg1>: DEC or CHAR
+ <Arg1>: HEX
+ <Arg2>: HEX or DEC
+ <Arg3>: HEX or DEC
+ <Data> : HEX value
+ <Data> : HEX value 0x00000000-->0xFFFFFFFF
+ <RF-Path> : 0~3=A~D, 4=All RF path
+ <Type> : UI debug type
+ <xxx> --> Necessary argument
+ >1=Display All TX DESC by SEQ
+ -->Arg2 = 0/1 : Disable/Enable
+ 0/1/2/3 or m/b/r=MAC/BB/RF/ 
+ 0/1: TX/RX DESC
+ 0= TX DESC info
+ 0-0x1FF=Read,
+ 0-27 CCK+OFDM_HT_MCS=4+8+16=28
+ 0-3 = CCK1-11M
+ 0-499 =legal len, NULL or >=500=Random len
+ 0x01 : Print 20/40M info
+ 0x0-1FF: DEC 0-200 (Word Unit)
+ 0x02 : False alarm counter
+ 0x03 : AMPDU info
+ 0x04 : Print RX status info
+ 0x05 : Print RX status info
+ 0x06 : Print RX status info2
+ 0x07 : Print RX status info3
+ 0x08 : Print CCK long/short preamble/GI
+ 0x09 : Print OFDM long/short preamble/GI
+ 0x0A : Print MCS0-7 long/short preamble/GI
+ 0x0B : Print MCS8-15 long/short preamble/GI
+ 0x0C : Print Rx SNR
+ 0x0D : IBSS mode debug
+ 0x0E : BW 20/40 Judgement
+ 0x0F : TX FW INFO
+ 0x10 : Display ISR time
+ 0x11 : Clear ISR time table
+ 0x12 : Display beacon info
+ 0x1234=Write real Efuse by map file
+ 0x1235/1237: HEX Address
+ 0x1235/1237: HEX Value 0x0-FF 
+ 0x1235=Write real Efuse by byte unit
+ 0x13 : Retry packet histogram
+ 0x14 : RF read/write page counters
+ 0x15 : Connection state log(from connected to disconnected state)
+ 0x16 : Display the connection mgnt information counters
+ 0x17 : TX statistics1
+ 0x18 : TX statistics2
+ 0x19 : EEPROM Content
+ 0x1A : EEPROM Tx Power Content
+ 0x1B : Rate Adaptive Related
+ 0x1C : Reset counter for endurance test
+ 0x1D : Different transmit packet type display
+ 0x1E : RX status display
+ 0x1F : Tx Power tracking information
+ 0x20 : RX reorder info
+ 0x21 : 
+ 0x22 : AMSDU info
+ 0x23 : DIG display
+ 0x24 : RF Tx/Rx register
+ 0x25 : General information display
+ 0x27 : None
+ 0x28 : Current RF RX path state
+ 0x29 : Display MAC/PHY shadow register value
+ 0x2A : Actions for IOT
+ 0x2B : Rx Path Selection
+ 0x2C : Association Entry
+ 0x2D : RSSI
+ 1= RX DESC info
+ 11/12= capture/Display MAX MP tx num
+ 12-27 = HT_MCS0-15
+ 13/14= Capture/Display MAX MP Poll range(TSF)
+ 15= Beacon Tx ISR CNT
+ 17: AMPDU_TYPE=Auto/En/Disable=0/1/2 
+ 17= AMPDU_TYPE 
+ 18: BW=40/20 MHZ=1/0
+ 18= BW_TYPE 
+ 19= Current TX data
+ 2: 1/0=En/Disable
+ 2= QoS type chk info
+ 20: Disable/En=1/0
+ 20= Disable/En Beacon TX
+ 21= All SSID/BSSID info
+ 22: En/Disable= 1/0
+ 22= En/Disable probereq TX
+ 24= TX bcn content and Len
+ 25: En/Disable= 1/0
+ 25= Rx virtual addr
+ 26= RFD initl info (memory addr and len)
+ 27= TCB initl info like RFD
+ 28: 0-28 --> CCK(0-3)/OFDM_LEGACY(4-11)/HT_MCS(12-27 LG,28-43 SG)
+ 28= Force Tx rate
+ 29: 0-10000000ms
+ 29= Force rate by periodic timer(ms unit)
+ 3/4/5/6 : Arg2=1/0=En/Disable to display info
+ 3/4/5/6= Every T_Desc/T_Data/R_Desc/R_Data 
+ 30: 0/1/2=Auto/En/Disable
+ 30: 0/1=4K/8K
+ 30= Change AMSDU type
+ 31= Free NDISPKT
+ 32/33: 1/0=En/Disable
+ 32= Free Protec mode
+ 33= Dbginfo ISR
+ 34: 1/2/3/4/5=ALL/TX/RX....
+ 34= Reset
+ 35= BW info
+ 36: QUE: 0/1/2/3=BK/BE/VI/VO
+ 36: TID 0/3=BE 1/2=BK 4/5=VI 6/7=VO
+ 36= Force TX TID
+ 37= Rx Defrag info
+ 38= Efuse force 0x10ec
+ 39= Efuse utilization
+ 4-11= OFDM6-54M
+ 4Ti\
+ 4Tid
+ 4Til
+ 4TiT
+ 7/8= Current T_Data/R_Data 
+ 9/10= Capture/Display MAX DMA poll range(TSF)
+ 9/11/13: 1=Start to capture
+ 92U EEPROM Def Version = %x
+ A\_^
+ A\_^][
+ A]_^
+ A]A\_
+ A]A\_^]
+ A^A\_
+ A^A]_
+ A^A]A\
+ A^A]A\_^
+ A^A]A\H
+ A_A\_
+ A_A]A\_^
+ A_A^A\
+ A_A^A\_^
+ A_A^A]
+ A_A^A]A\_
+ A_A^A]A\_^]
+ Adhoc Disconnect Cnt = %lu
+ Aggregation Info --> 
+ AMPDU Rx Num Info --> 
+ AMPDU Rx Size Info --> 
+ AMSDU NumOutOfBufferInTCB = %ld
+ AMSDU NumOutOfTCB = %I64d
+ AMSDU NumOutOfTxDesc = %ld
+ AMSDU Rx Num Info --> 
+ Antenna[%x] = %d
+ Arg1 = (Decimal) ALL/TX/RX/SCHEDULE/BB= 1/2/3/4/5
+ Arg1 = (Decimal) Change AUTO/SW/ HW encryot = 0/1/2
+ Arg1 = (Decimal) MAC/BB/RF= 1/2/3
+ Arg1 = (Decimal),  12=Read ERR RX PKT BUF
+ Arg1 = (Decimal),  packet_Buf = 1/2/3/4/5=TX/RX/CMD/TRPT/RRPT
+ Arg1 = (Decimal),  Read Lbus_Reg = 6/7/8=SCHE/WMAC/FW2HW/
+ Arg1 = (Decimal),  Transmit Packet Number
+ Arg1 = (Decimal),  Write Lbus_Reg = 9/10/11=SCHE/WMAC/FW2HW/
+ Arg1 = 0 Control IPS, 0:Disable IPS, 1: Enable IPS
+ Arg1 = 0(Decimal), --> You must enter rate type in Arg2
+ Arg1 = 1(Decimal) Clear all TX rate history
+ Arg1 = 2(Decimal) Use TX_CMD to Control FW to collect TX Rate History
+ Arg1 = 3(Decimal) Different TX Rate History Display
+ Arg1 = 4(Decimal) Send RSSI to FW
+ Arg1 = 5(Decimal) Send TX Power Tracking event to FW
+ Arg1 --> 0/1 = Don't Force TxSubCarrier/Force
+ Arg1 --> 0/1/2/3/=Thresh High/Low/HighPwr_High/HighPwr_Low
+ Arg1 --> 0/1/2/3/4 = Enable/DbgMode/SS_TH_low/diff_TH/cck_method
+ Arg1 --> 0/1/2~# Driver/Firmware/Original
+ Arg1 --> 0/1/2=Thresh High/Low40M/Low20M
+ Arg1 --> 0/1=CTSToSelf enable/Threshold
+ Arg1 --> 0/1=Disable/Enable
+ Arg1 --> 0=0xc38 monitor
+ Arg1 --> 10/11/12/13 = rssi for A/B/C/D
+ Arg1 --> 20/21 = PingRSSIenable/PingRSSITh
+ Arg1 --> 20/30=DIG Enable/DIG Disable
+ Arg1 --> 3/4/5/6=RATR0 Value High/Middle/Low40M/Low20M
+ Arg1 --> 4/5/6/7=DbgMode/Rssi_val/DIG Algorithm/BackOffval
+ Arg1 --> Dynamic Ctrl Type
+ Arg1 --> the value will set to threshold of 40Mhz to 20Mhz
+ Arg1= DEC
+ Arg2 = (Decimal) Change security type NONE/WEP40 or WEP104/TKIP/AES=0/1/2/3
+ Arg2 = (Decimal) RSSI Value
+ Arg2 = (Decimal),  Transmit Queue Type
+ Arg2 = (HEX) bit0-7 TX_PWR Bit 8-15 RF_Type(0/1=1T2R/2T4R)
+ Arg2 = (HRX), Start Address
+ Arg2 = 0/1(Decimal) Disable/Enable
+ Arg2 = 0/1(Decimal) UI can support/ Both pomelo and UI
+ Arg2 = 0x0-0x3f(HEX), --> You must enter rate type in Arg2
+ Arg2 = Force value 
+ Arg2 --> For Arg1(0-3), Decimal. For Arg1(4-7), HEX
+ Arg2 --> Set value, Decimal
+ Arg2~n --> For different DM type, you need different arguments
+ Arg2= DEC
+ Arg3 = (Decimal),  Length (For buf 8 byte unit For LBus 4 byte unit)
+ Arg3 = (Decimal),  Transmit Rate
+ Arg3 = (HEX),  Data (arg2=9-11)
+ Arg3 = (String) Security password
+ Arg3= DEC
+ Arg4 = (Decimal),  Tx Pkt Len
+ ARGUMENT is not 3
+ Associate to [%ld]
+ AutoloadFailFlag = %d
+ Bandwidth autoswitch Disable
+ Bandwidth autoswitch Enable
+ Bandwidth autoswitch Enable/Disable: Fail arguments
+ Bandwidth autoswitch set 20Mhz to 40Mhz (%d) <= Threshold40Mhzto20Mhz (%ld)
+ Bandwidth autoswitch set 20Mhz to 40Mhz = %ld
+ Bandwidth autoswitch set 20Mhz to 40Mhz threshold Fail
+ Bandwidth autoswitch set 40Mhz to 20Mhz (%d) >= Threshold20Mhzto40Mhz (%ld)
+ Bandwidth autoswitch set 40Mhz to 20Mhz = %ld
+ Bandwidth autoswitch set 40Mhz to 20Mhz threshold Fail
+ bCurBW40MHz =%x
+ bCurrentHTSupport =%x
+ bCurShortGI20MHz =%x
+ bCurShortGI40MHz =%x
+ BE_QUEUE 
+ BEACON_QUEUE 
+ BecomeDisconnectedIndex = %lu
+ BecomeDisconnectedTime[%d] = 0x%lX %lX
+ bForcedTx20Mhz Disable
+ BK_QUEUE 
+ BW0_SG0=0
+ BW0_SG1=2
+ BW1_SG0=1
+ BW1_SG1=3
+ BW-20/40 Judgement:
+ CCK avg pwdb[%d] = %ld
+ cck rx path = 0x%x
+ cck rx path sel method = version 1
+ cck rx path sel method = version 2
+ CCK Rx Reg 0x%x = 0x%lx
+ CCK TxRx, rCCK0_AFESetting(reg0xa04) = 0x%lx
+ CCK-[1][2][5.5][11]=
+ CCKPresentAttentuation = %d dB
+ CCKTxPowerAdjustCntCh14 = %ld
+ CCKTxPowerAdjustCntNotCh14 = %ld
+ Change 
+ cmd 13 0 0 40 --> DIG high threshold = 40
+ cmd 13 0 1 30 --> DIG low threshold = 30
+ cmd 13 0 10 60(dec)    --> DIG Max rx gain = 0x3c(60)
+ cmd 13 0 2 70 --> DIG HPWR high threshold = 70
+ cmd 13 0 20 80 --> DIG enable
+ cmd 13 0 3 60 --> DIG HPWR low threshold = 60
+ cmd 13 0 30 80 --> DIG disable
+ cmd 13 0 4 0/1  --> DIG DbgMode = 0/1
+ cmd 13 0 5 72  --> DIG Rssi_val = 72
+ cmd 13 0 6 0/1  --> DIG Algorithm by FW false alm=0/ by SW rssi=1
+ cmd 13 0 7 12   --> DIG BackOff value = 12
+ cmd 13 0 9 18(dec)    --> DIG Min rx gain = 0x12(18)
+ cmd 13 1 0 50 --> High threshold = 50~55
+ cmd 13 1 1 10 --> Low threshold 40M = 10~15
+ cmd 13 1 4 01234567 --> RA change high RATA0 value=0x01234567
+ cmd 13 1 4 ffffffff --> RA change middle RATA0 value=0xffffffff
+ cmd 13 2 0 0 --> Enter IPS
+ cmd 13 2 0 1 --> Leave IPS
+ cmd 13 3 0 0/1 --> monitor reg0xc38/disable monitor reg0xc38
+ cmd 13 4 0 0/1 --> disable/enable CTSToSelf
+ cmd 13 4 1 30 --> Th=30~35
+ cmd 14 0 1/0 (Enable or disable)
+ cmd 14 1 value (value is the threshold we want to set Threshold40Mhzto20Mhz)
+ cmd 14 2 value (value is the threshold we want to set Threshold20Mhzto40Mhz)
+ cmd 16 0 0 -----> don't force TxSC
+ cmd 16 1 2 ---> force TxSC value = 2
+ Cmd_Idx = 10
+ Cmd_Idx = 11
+ Cmd_Idx = 12
+ Cmd_Idx = 13
+ Cmd_Idx = 14
+ Cmd_Idx = 15
+ Cmd_Idx = 16
+ Cmd_Idx = 17
+ Cmd_Idx = 18
+ Cmd_Idx = 19
+ Cmd_Idx = 20
+ Cmd_Idx = 21
+ Cmd_Idx = 22
+ Cmd_Idx = 23
+ Cmd_Idx = 24
+ Cmd_Idx = 25
+ Cmd_Idx = 26
+ Cmd_Idx = 27
+ Cmd_Idx = 28
+ Cmd_Idx = 9
+ Command index = 0
+ Command index = 1
+ Command index = 2
+ Command index = 3
+ Command index = 4
+ Command index = 5
+ Command index = 6
+ Command index = 7
+ Command index = 8
+ Connect but doesn't rcv Beacon Period Cnt = %lu
+ Connect but doesn't rcv Data Period Cnt = %lu
+ Connect Resume From Roaming = %lu
+ CRC=%10ld,
+ CTSToSelfEnable = %d
+ CTSToSelfTH = %d
+ CurCS_ratioState = higher CS ratio
+ CurCS_ratioState = lower CS ratio
+ CurCS_ratioState = NA
+ CurPD_TH = high power state
+ CurPD_TH = low power state
+ CurPD_TH = NA
+ CurPD_TH = normal power state
+ Current TX FW info
+ CurrentChannel = %d
+ CurrentWirelessMode =%x
+ Dbg rf_rssi[%x] = %d
+ dbgcmd 14 0 0 --> Disable the Bandwidth autoswitch
+ dbgcmd 14 0 1 --> Enable  the Bandwidth autoswitch
+ dbgcmd 14 1 15 --> Set the 40Mhz to 20Mhz threshold = 15
+ dbgcmd 14 1 20 --> Set the 40Mhz to 20Mhz threshold = 20
+ dbgcmd 14 2 20 --> Set the 20Mhz to 40Mhz threshold = 20
+ dbgcmd 14 2 25 --> Set the 20Mhz to 40Mhz threshold = 25
+ dbgcmd 14 3 --> Query all our threshold
+ dbgcmd 19 0 0 0/1 --> RxPathSelection disable/enable
+ dbgcmd 19 0 1 0/1 --> DbgMode OFF/ON
+ dbgcmd 19 0 10/11/12/13 50 --> set rssi A/B/C/D = 50
+ dbgcmd 19 0 2 30 --> set SS_TH_low = 30
+ dbgcmd 19 0 20 0/1 --> testRSSI disable/enable
+ dbgcmd 19 0 21 20 --> set TestRSSITh = 20
+ dbgcmd 19 0 3 15 --> set diff_TH = 15
+ dbgcmd 19 0 4 0/1 --> cck method version1/version2
+ dbgf [Flag_Type] [dbg_type] [dbg_comp_bit]
+ DbgMode RSSI=%ld
+ DbgMode RSSI=NA
+ DbgMode=%d
+ DbgMode=NA
+ Default framesync(0x%x) = 0x%x
+ DefaultInitialGain[0x%x,0x%x,0x%x,0x%x] = [0x%x,0x%x,0x%x,0x%x]
+ diff_TH = %d
+ DIG Algorithm=FW DIG by False Alarm
+ DIG Algorithm=SW DIG by RSSI
+ DIG Enable=%d
+ DIG High Pwr State=%d
+ DIG High Pwr State=NA
+ disabled RF = 0x%x
+ dm_WA_Broadcom_IOT(), disable HT_IOT_ACT_WA_IOT_Broadcom
+ dot11CurrentWirelessMode =%x
+ Dump TX/RX buffer
+ Dump TX/RX desc
+ Error cmd string
+ Error dbg flag
+ False alarm counter --> 
+ FW DIG State=%d
+ FW DM CTRL 0--RX_CMD_PACKET-----------------------
+ FW DM CTRL 1--Rate Adaptive-----------------------
+ FW DM CTRL 2--Debug Port Switch-----------------------
+ FwCPUCnt(reg0x120) = 0x%lx
+ FwIMR(reg0xf4) = 0x%lx
+ FwISR(reg0xf8) = 0x%lx
+ FwRxCnt(reg0x130) = 0x%lx
+ FwTxCnt(reg0x128) = 0x%lx
+ HCCA_QUEUE
+ HEX 0x1236=Read shadow modify map
+ HEX 0x1237=Write shadow modify map
+ HEX 0x1238=Use 8192se.map to update shadow modify table
+ HEX 0x1239=Update shadow modify map to real efuse area
+ High PWR High Thresh=%ld
+ High PWR Low Thresh=%ld
+ High Thresh=%ld
+ HIGH_QUEUE 
+ IC Version = 0x%x
+ ICV=%10ld
+ If 20Mhz to 40Mhz threshold <= 40Mhz to 20Mhz threshold
+ If 40Mhz to 20Mhz threshold >= 20Mhz to 40Mhz threshold
+ If Arg1 = 0 : RX_CMD_PACKET Switch
+ If Arg1 = 0/1 : UART/RX_CMD
+ If Arg1 = 1 : Rate Adaptive Switch
+ If directory=100, print all command index definition.
+ If you do not input type argument, we execute all TX/RX test
+ If you do not input type argument, we will display all TX rate hostory
+ If you do not input type argument, we will display some FW info
+ Inactive Power Save (Previous Stae)= %s
+ Inactive Power Save = %s
+ Indicate Disconnect Cnt = %lu
+ Infra Disconnect Roaming Fail Cnt = %lu
+ Infra Disconnect Roaming Start Cnt = %lu
+ IOT:[%s] ADDBA Request
+ IOT:Allow Aggregation [%s] one packet
+ IOT:Associate to Atheros AP
+ IOT:Associate to Broadcom AP
+ IOT:Associate to Cisco
+ IOT:Associate to Ralink AP
+ IOT:Associate to Realtek 90 AP
+ IOT:Associate to Realtek 92SE AP
+ IOT:Associate to Unknown AP
+ IOT:CDD fsync is Turn [%s]
+ IOT:EDCA Trubo is Turn [%s]
+ IOT:Force AMSDU is [%s]
+ IOT:Force CTS2Self is Turn [%s]
+ IOT:Force RTS-CTS is Turn [%s]
+ IOT:MCS14 is [%s]
+ IOT:MCS15 is [%s]
+ IOT:MCS8~MCS15 is [%s]
+ IOT:Peer [%s] Realtek AP
+ IOT:Use MGNT Rate [%s]
+ LastTxPacketRate = 0x%X 
+ Link status from connected to disconnected Cnt = %lu
+ Low Thresh=%ld
+ MAC_REG%x=0x%02lx
+ Max Dig initial gain = 0x%x
+ MAX RF Path=%d
+ MCS_BW0_SG0[0-15]=
+ MCS_BW0_SG1[0-15]=
+ MCS_BW1_SG0[0-15]=
+ MCS_BW1_SG1[0-15]=
+ MGNT_QUEUE 
+ Min Dig initial gain = 0x%x
+ NewDig Backoff value=%d
+ NewDig Backoff value=NA
+ Num of OnBeacon() called = %I64u
+ Num of OnBeacon_Bss() called = %I64u
+ Num of OnBeacon_Ibss() called = %I64u
+ Num of OnBeacon_Join() called = %I64u
+ Num of OnBeacon_Scan() called = %I64u
+ Num of OnDeauth() called = %lu
+ Num of OnDisassoc() called = %lu
+ Number of  ARGUMENT is less than 3
+ Number of ARGUMENT is less than 3
+ NumMpSendPackets() = %I64d
+ NumOutOfTCB = %I64d
+ NumRxDescFilled(%d) =  %I64d
+ NumRxDescReturn(%d) =  %I64d
+ NumRxInterrupt = %I64d
+ NumTransmitTCB(%d) = %I64d
+ NumTransmitTCB_Available(%d) = %I64d
+ NumTransmitTCB_NotAvailable(%d) = %I64d
+ NumTransmitTCBInsertTcbBusyQueue(%d) = %I64d
+ NumTxBroadcast= %I64d
+ NumTxDescClosed(%d) =  %I64d
+ NumTxDescFill(%d) =  %I64d
+ NumTxErrTotal= %I64d
+ NumTxInterrupt = %I64d
+ NumTxMulticast= %I64d
+ NumTxOkTotal= %I64d
+ NumTxRetryCount= %I64d
+ NumTxUnicast= %I64d
+ OFDM Rx Reg 0x%x = 0x%lx
+ OFDM Rx, rOFDM0_TRxPathEnable(reg0xc04) = 0x%lx
+ OFDM Rx, rOFDM1_TRxPathEnable(reg0xd04) = 0x%lx
+ OFDM Tx, rFPGA0_TxInfo(reg0x804) = 0x%lx
+ OFDM Tx, rFPGA1_TxInfo(reg0x90c) = 0x%lx
+ OFDM-[6][9][12][18][24][36][48][54]=
+ OK=%10ld,
+ pAdapter->RxStats.NumCMPKRXQID = %I64d
+ pAdapter->RxStats.NumNotCMPKRXQID = %I64d
+ pAdapter->RxStats.NumPacketMatchBSSID = %I64d
+ pAdapter->RxStats.NumPacketToSelf = %I64d
+ pAdapter->RxStats.NumProcessPhyInfo = %I64d
+ pAdapter->RxStats.NumQryPhyStatus = %I64d
+ pAdapter->RxStats.NumQryPhyStatusCCK = %I64d
+ pAdapter->RxStats.NumQryPhyStatusHT = %I64d
+ pAdapter->RxStats.SignalStrength = %ld
+ Peer_bssDesc.BssHT.bdSupportHT =%d
+ Peer_bssDesc.BssQos.bdQoSMode =%ld
+ pHalData->eRFPowerState = RF %s
+ pHTInfo->bEnableHT =%d
+ PHY register.
+ PHY_REG%x=0x%08lx
+ Please refer to [r4]
+ Please refer to [w4]
+ pMgntInfo->mAssoc =%x
+ pMgntInfo->mIbss =%x
+ pMgntInfo->pStaQos->CurrentQosMode =%lx
+ pMgntInfo->pStaQos->QosCapability =%lx
+ pMgntInfo->pwrsave_cnt= %ld
+ pMgntInfo->RfOffReason = %lx
+ pPSC->eInactivePowerState = RF %s
+ PreRfd->SQ=%d
+ print fw help
+ Rate_Type = 0/1=CCK/OFDM
+ Rate_Type = 2/3/4/5=HT_MCS BW0_SG0/BW1_SG0/BW0_SG1/BW01_SG1
+ Rate_Type = HEX BIT 0-5 to displaydifferent rate type
+ RcvdRate Info --> 
+ Real RSSI=%ld
+ Reg 0x%x = 0x%lx
+ RegWirelessMode =%x
+ Return fail
+ RF A I/Q Amplify Gain = %ld
+ RF C I/Q Amplify Gain = %ld
+ rf enable rssi th[%d] = %d
+ RF-%c
+ RFA_txPowerTrackingIndex = %d
+ RFC_txPowerTrackingIndex = %d
+ rfd (RF-Path) (Addr_Start) (Addr_End)
+ rfm <RF-Path> <Addr_Start> (Addr_End) <Data>
+ RfMode = RF_1T2R
+ RfMode = RF_2T4R
+ RfMode = Unknown
+ RF-Path[%d]= %d
+ rOFDM_PHYCounter1 = 0x%08lX
+ rOFDM_PHYCounter2 = 0x%08lX
+ rOFDM_PHYCounter3 = 0x%08lX
+ RSSI = %ld
+ --------Rx Path Selection --------- = -------
+ Rx Path selection = disabled
+ Rx Path selection = enabled
+ Rx Path selection DbgMode = disabled
+ Rx Path selection DbgMode = enabled
+ Rx Reorder Drop Counter = %d
+ Rx Reorder Enable = %x
+ RxSNR-%c=%lddB 
+ SC=0x%02lx
+ Send ALL_QUEUE 
+ Send ALL_RATE=255
+ ShortGI/Preamble=%10ld
+ SilentReset executed num = %ld
+ SS_TH_low = %d
+ start_addr=%lx L=%ld
+ T$""
+ t6A:
+ ThermalMeter in EEPROM[0] = %d
+ ThermalMeter in EEPROM[1] = %d
+ ThermalReadback Value(C/A)[%d] = 0x%x
+ ThermalReadBackIndex = %d
+ This function is default enable
+ TXCMD_QUEUE 
+ TxPowerCheckCnt = %ld
+ TXPowercount = %d
+ TxPowerLevelCCK[%d] = 0x%x
+ TxPowerLevelOFDM24G[%d] = 0x%x
+ TXPowerTracking enabled = %d
+ TXPowerTrackingCallbackCnt = %ld
+ TXPowerTrackingInitialized = %d
+ Type = 0x01~....
+ Type 0 =>Enable this function
+ Type 1 =>Modify 40Mhz to 20Mhz Threshold
+ Type 2 =>Modify 20Mhz to 40Mhz Threshold
+ Type 3 =>Query all the Threshold Data
+ Type help <command> --> Print
+ Type help <directory index> --> Print command in the directory
+ Type rfd --> Read RF-A~D all reg
+ Type rfd 3 --> Read RF-D all reg
+ Type rfd 3 0 --> Read RF-D address 0 reg
+ Type rfm 2 0 2e 123 --> Modify RF-C address 0~2E to 0x123
+ Type rfm 3 0 123 --> Modify RF-D address 0 to 0x123
+ Type rfm 3 0 2e --> Read RF-D address 0~2E reg
+ Type rfm 4 0 1a --> Read RF-A~D address 0~1A reg
+ Type rfm 4 0 2e 123 --> Modify RF-A~D address 0~2E to 0x123
+ Type=0 DBG Mode Switch
+ Type=0 DIG
+ Type=0 Enable
+ Type=0 RxPathSelection
+ Type=1 FW Dynamic Control --> Switch to drv dbg mode at first
+ Type=1 RateAdaptive
+ Type=1 Set the threshold 40Mhz to 20Mhz
+ Type=2 RF ON OFF Control --> RF ONF OFF dbg mode
+ Type=2 Set the threshold 20Mhz to 40Mhz
+ Type=3 FrameSync
+ Type=3 Query threshold 
+ Type=4 CTSToSelf
+ uidbg <Type>
+ Usage: cmd 14 [type] [Value]
+ Value is out of range
+ Value of Bandwidth autoswitch 20Mhz to 40Mhz is %ld
+ Value of Bandwidth autoswitch 40Mhz to 20Mhz is %ld
+ Value of UndecoratedSmoothedPWDB is %ld
+ VI_QUEUE 
+ VO_QUEUE 
+ We can not support HCCA_QUEUE/HIGH_QUEUE now
+ wZiK
+ You can only input decimal arguments and a double word
+ You can type help to print all debug command directory/index
+!\$,!\$H!\$L!\$PH
+!H88p
+!This program cannot be run in DOS mode.
+!tI)i
+!tX)i
+""""""""
+""""""""D
+""""****
+""Df**T~
+"&.$C
+"&0$H
+"Df"*T~*
+####====
+#&-$b
+#&,$b
+#(*,-
+$$$$\\\\
+$$Hl\\
+$(,048<@
+$0<HH
+$0H`l
+$Hl$\
+$l^1(
+$u#A8D$
+%%%%rrrr
+%%Jo..\r
+%02lX%01s
+%02X%s
+%04lX%01s
+%04X%01s
+%08lX
+%6! @
+%6! `
+%hhX:
+%s %s
+%s,LongGI/PreamblePacketNum=%ld 
+%s,RcvdCRCErrorPacket=%ld 
+%s,RcvdOKPacket=%ld 
+%s,ShortGI/PreamblePacketNum=%ld 
+%s,TotalRcvdPacket=%ld 
+%s=%ld
+%s=%ld 
+&&&&6666????
+&&Lj66lZ??~A
+&Lj&6lZ6?~A?
+&''Ni
+(((((
+(|$@E3
+(D$ f
+(D$ H
+(D$ I
+(D$ L
+(D$@f
+(D$@H
+(D$@L
+(D$@M
+(D$`f
+(D$`H
+(D$`L
+(D$0f
+(D$0H
+(D$0I
+(D$pf
+(D$Pf
+(D$pH
+(D$PH
+(D$pH
+(D$PL
+(D$pL
+(l$ f
+(l$@f
+(l$`f
+(l$Pf
+(t$@H
+(t$`L
+(t$0A
+(t$0f
+(t$pL
+)D$@f
+)t$`I
+)t$0f
+)w--Z
+,  @`
+, <^w
+, LongGI/Preamble=%10ld,
+, Total=%10ld,
+,\@~V
+,4$8_@
+.6$:g
+.pdata
+.rsrc
+.text
+/.-*0
+;;;;MMMM
+;|$$v
+;|$0}>H
+;|$p}=H
+;|$p}>H
+;22dV::tN
+;dVtN
+;f[4~
+;fD4~
+;PuDH
+? t'E
+@:l$p
+@8)t6f;
+@8,0w
+@8-\0
+@8|$0t
+@8|$0u
+@8}$t+@8
+@8=_"
+@8>twE
+@8h t
+@8h t]E3
+@8h tvH
+@8h)t
+@8h0t$H
+@8-I-
+@8k%u
+@8n tMH
+@8p u
+@8p!tKH
+@8p!u
+@8q0t
+@8t$ unA
+@8t$ptlA
+@8u t.H
+@8u u5
+@8x t
+@8x!t6I
+@8x"r1A
+@8x#t
+@8x#t2
+@8x%u
+@8x)t
+@8x't
+@A\_^
+@A\_^][
+@A]A\_
+@A]A\_^]
+@A^A]_
+@A^A]A\
+@A^A]A\_^
+@A_A\_
+@A_A^A]A\_^]
+@fD9lJ
+@SUVWATAUAVAWH
+@SUVWATAUAVH
+@SUVWATAUAWH
+@SUVWATAUH
+@SUVWATH
+@SUVWH
+@SVWH
+@v2D8
+[ UVWH
+[%ld]
+[.X U6n3
+[[[[jjjj
+[ALM]  
+[CMPK] 
+[MANS] 
+[PEM]  
+[QUMG] 
+[RAPD] 
+[RTOS] 
+[TXPB] 
+\$ D8
+\$ D8]
+\$ E;
+\$ fD
+\$ L;
+\$ UVWATAUAVAWH
+\$ UVWH
+\$ VH
+\$"D8]
+\$$D8]
+\$$I;
+\$&D8]
+\$(E3
+\$@D8
+\$@E3
+\$@fD
+\$@H;
+\$`@8
+\$`E8
+\$`I;
+\$0E3
+\$0fD
+\$0I;
+\$0t"H
+\$4t,D
+\$8E3
+\$8fA;
+\$DfD
+\$HD8
+\$LA3
+\$PE3
+\$PI;
+\$Xf;
+\$XfD;
+\\\\\\\\H
+\h!T[
+]]]]eeee
+____````QQQQ
+_jbF~T
+_TbF~
+_vsnprintf
+` AUH
+`3QbE
+`3SbE
+`A]A\_^]
+`A^A]A\_^][
+`A_A]A\_^
+`A_A^A]A\_^]
+`tt>H
+{ ATAUAVH
+|$ A#
+|$ f;
+|$$fD
+|$(&H
+|$(&u
+|$(I;
+|$(Ic
+|$@3t$(A
+|$@D3d$,
+|$`A+
+|$`E:
+|$`E;
+|$`H;
+|$<A#
+|$0&H
+|$0&u
+|$0@:
+|$0@8
+|$0A3
+|$0E;
+|$0E3
+|$0fE
+|$0tE
+|$4:D$Ht
+|$8f;
+|$8fA;
+|$D3D$0A
+|$HfD
+|$HIc
+|$HL;\$P
+|$pD8
+|$pH;
+|$xD8
+|$Xf;
+|$XfD
+}{))R>
+}0x800
+~~~~====dddd]]]]
+~~zG==
+~=zG=d
+~GfE;
++2g$@
++HpXhE
++t$p@
+<??B4
+<??c4$ 
+<@u>M
+<\;H$
+<0Te4
+<1. COMMON>
+<1CMN> <2MANS> <3?>
+<2. CMD_92S>
+<2. DYNAMIC_SCHEME>
+<2. TX_PROCESS_CMD>
+<22c4
+<3. RX_PROCESS_CMD>
+<3TE4
+<4. SECURITY_CMD>
+<6upL
+<D;c$
+<d;J$
+<ffB4
+<l,c$
+<L;B$
+= 255
+=====================================
+===============================================
+==zGdd
+='9-6d
+=j&&LZ66lA??~
+=jLZlA~
+>//^q
+>{'!`
+>4$8,@
+>hsrK :
+>wY&Drf
+0 Umv
+0. STA: %02X-%02X-%02X-%02X-%02X-%02X
+00   02   04   06   08   0A   0C   0E
+00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+00006666
+0123456701234567012345670123456701234567012345670123456701234567
+0123456789ABCDEF
+040904B0
+0A\_^
+0A\_^][
+0A]_^
+0A]_^][
+0A]A\_
+0A]A\_^]
+0A^A]_
+0A^A]A\
+0A^A]A\_^
+0A^A]A\_^][
+0A_A]A\_^
+0A_A]A\_^][
+0A_A^A\
+0A_A^A]_^
+0A_A^A]A\_
+0A_A^A]A\_^]
+0D$2f
+0x%08lX%01s
+1&@%0
+1. [r4  ] 
+1. Type dbgcmd + cmd_index + 
+1. Type help + directory index(1~)
+1086.51.0328.2013
+1086.51.0328.2013 built by: WinDDK
+11#?*0
+11nAdhoc
+12345678123456781234567812345678
+2&,$B
+2. <Addr> 
+2. Type Cmd_String + 
+2. Type help + directory index(1~) + cmd_index
+20/40 MHZ packet
+20MHz finalPowerIndex (A / B) = 0x%x / 0x%x
+20MPacket
+2222::::
+2bb["
+2dV2:tN:
+2Ht\l
+3. (Size> 
+3\$<A3
+3\$LA3
+3|$ A3
+3|$$A3
+3|$<A3
+34 AA 97 3C D4 C4 DA A4 F6 1E EB 2B DB AD 27 31 65 34 01 6F
+3D$ A
+3D$ A3
+3D$$3
+3D$$A3
+3D$(3
+3D$,A3
+3D$,D3|$$
+3D$0A
+3D$8A3
+3D$LD3d$0D3d$X
+3l$ A3
+3l$(E3
+3l$@A
+3l$0A
+3l$HD
+3T$ 3
+3T$(A3
+3T$8A
+3t$DA3
+3t$LA
+3t$P#
+40MDuplicate
+40MFull
+40MHz finalPowerIndex (A / B) = 0x%x / 0x%x
+40MLower
+40MUpper
+4D8j!tO
+4DDB4
+'4Nhu
+55j_WW
+66666666H
+6V0&6
+7777mmmm
+7D9:t?E;
+7L!f`A
+7nY7m
+7t0fA;
+7tV-?
+8\$0t
+8\$0t 
+8187A
+84 98 3E 44 1C 3B D2 6E BA AE 4A A1 F9 51 29 E5 E5 46 70 F1
+8A]A\_^][
+8A_A^A]A\_^][
+8A0t*
+8D$ht
+8M#u%9
+8X#uJD
+9 tZA:
+9\$0uy
+9|$ u
+9|$ uiA;
+9999JJJJLLLLXXXX
+99rKJJ
+9C!vx
+9D$0t%L
+9htt2@
+9htv`A9
+9l$ t
+9l$hu
+9ptr*
+9r$~PH
+9rK9J
+9t$$u
+9t$$u(
+9t$Hu?
+9t$XuHA
+A"0fA
+A\_^][
+A]A\_
+A]A\_^]
+A]A\_^][
+A^A\_
+A^A\_^]
+A^A]A\
+A^A]A\_^
+A^A]A\_^][
+A_A\_
+A_A]_
+A_A]A\_^
+A_A^A\_^
+A_A^A]A\
+A_A^A]A\_
+A_A^A]A\_^]
+A_A^A]A\_^][
+A3A %
+a5j_5W
+A8^$t
+A8_$t
+A80uUA
+A8C t
+A8h$t
+A8O#t
+A8O#u
+A8t$$tLA8
+A8u t
+A8u!t
+A9 99 3E 36 47 06 81 6A BA 3E 25 71 78 50 C2 6C 9C D0 D8 9D
+A9\$*t
+A9Htv
+A9l$tvWA
+A9Q"v
+A9utv(I
+aaaa5555WWWW
+AAAAAA
+AAAAOOOOgggg
+aaj_55
+abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq
+Ac<vw
+Accept
+AcceptAddbaReq
+ACK sip:
+ACMTimer
+ActingAsAp
+Active scan: Channels
+Active scan: Max Tx Power (dBm)
+Addr-%ld = %lx
+Addr=%d
+AddTsTimer
+AdhocLinkState
+AH_BcnIntv
+aiKwZ
+AMPDU Number   < 5
+AMPDU Number   >40
+AMPDU Number  5~10
+AMPDU Number 10~20
+AMPDU Number 20~40
+AMPDU Size   < 4 K
+AMPDU Size  4K~8 K
+AMPDU Size  8K~16K
+AMPDU Size 16K~32K
+AMPDU Size 32K~64K
+AMPDU_Factor
+AMPDUEnable
+AMSDU
+AMSDU Size   < 1 K
+AMSDU Size  1K~2 K
+AMSDU Size  2K~4K
+AMSDU Size  4K~6K
+AMSDU Size  6K~8K
+AMSDU_MaxSize
+Antenna Diff from RF-B to RF-A = %d (0x%x)
+ApEDCAParamBE
+ApEDCAParamBK
+ApEDCAParamVI
+ApEDCAParamVO
+ApStartRequestWorkItem
+Argc=%d
+ARP TranslateHeader(), pTcb->DataRate = 0x%x
+AsocTimer
+AuthentAlg
+AuthTimer
+AutoSelChnl
+AwakeTimer
+AwakeTimerCallback awake 2ns later!!!
+AwakeWorkItem
+B$! b
+B$%(e
+B$l,c$
+B$y%B
+b& $D
+b&"$@
+b&-$C
+b&&$D
+B&\$C
+b&\$D
+B&`$C
+b&`$D
+b&A$C
+B&D$C
+b&D$D
+b&D%D
+B&H$C
+b&H$D
+b&I%D
+B&L$C
+B&P$C
+b&P$D
+B&T$C
+b&T$D
+B&X$C
+b&X$D
+b&x%D
+b&y%D
+b(!@@
+B.reloc
+B0!0R
+B0%@b
+B4$ b
+b4$H'
+b4$H&
+B4P>c$
+B6fA#
+BA_AddBaReq
+BA_AddBaRsp
+BA_DelBa
+bandctrl
+BB_WDOG
+BBBBBB
+BBBBhhhhAAAA
+BBR MASK=0x%lx Addr[0x%lx]=0x%lx
+BBW MASK=0x%lx Addr[0x%lx]=0x%lx
+Bc!! 0
+BcnDenominator
+Better regulatory, writeVal = 0x%x
+bFwCtrlLPS
+bHwParaFile
+bit oriented
+bLeisurePs
+BlinkTimer
+BlinkWorkItem
+bPacketToSelf = %d, bPacketMatchBSSID=%d bPacketBeacon=%d 
+bRateAdaptive
+bRegTxPowerControl
+bS11*?
+BssCoexist
+Bssid
+Bt4A;
+BW40MHz
+BYE sip:
+c!!B0
+C!f;k%sYE;
+c$ $C
+c$.$C
+C$p$b
+c&"$b
+C77nYmm
+C7fD9|$Pv
+Call-ID:
+cccc||||wwww{{{{
+CCCCDDDD
+CCCCMMMM3333
+ccccUUUU!!!!
+CCK PWR= %x (reg 0x%x)
+CCK_11M
+CCK_1M 
+CCK_2M 
+CCK_5.5M
+CckPwEnl
+CCX4_CAC SIP parser
+CcxCAC
+CcxEnable
+CcxOffLineDurUpLimit
+CcxRm
+CcxUpdateTxCellPwr
+Change dbg op=%ld
+Change debug print flag
+Change print range
+Channel
+Channel-%d, cckPowerLevel (A / B) = 0x%x / 0x%x,   ofdmPowerLevel (A / B) = 0x%x / 0x%x
+ChannelPlan
+ChargePump
+ChnlWeight
+cmd string
+cmd_inde 2
+common
+CompanyName
+Copyright (C) 2013 Realtek Semiconductor Corporation                            
+CornerChange
+CpuStuckCheckTimer
+CpuStuckWorkItem
+Ctrl rate tbl
+CtsToSelfRate
+CurAll=0x%08lX
+CurCntCrc8Fail=0x%08lX
+CurCntParityFail=0x%08lX
+CurCntRateIllegal=0x%08lX
+Current TX AMPDU Factor(Infrastructure) = %d
+Customer, writeVal = 0x%x
+CustomerID
+Customer's limit = 0x%x
+customer's limit, 20MHz = 0x%x
+customer's limit, 40MHz = 0x%x
+CWinMaxMin
+CYcVl
+D!t$$H
+D$ !D$$H
+D$ A:
+D$ A;
+D$ A8i!t8L
+D$ D;
+D$ E3
+D$ fA
+D$ fB
+D$ fD
+D$ fE
+D$ H;
+d$ I;
+D$ Lc
+D$!8E
+D$!fE
+D$!I;
+D$#8E
+D$#D8
+D$$A;
+d$$fA
+D$$fA#
+D$%8E
+D$%I;
+D$%M;
+D$(!D$(L
+D$(!T$ E3
+D$(!T$ L
+d$(3D$@A
+D$(8187
+D$(D8
+D$(E;
+D$(E3
+D$(fE
+D$(I;
+D$)fE
+D$,A:
+D$,fA#
+D$,vT2
+D$:ukA
+D$@@2
+D$@D:
+D$@D8
+D$@E;
+D$@E3
+D$@f#
+D$@f;D$H
+D$@fA)@
+D$@fD9|$HA
+D$@H;
+D$@I;
+D$`A:
+D$`I;
+D$}D8W
+D$</P
+D$<E3
+D$<fA;
+D$0@:
+D$0@8
+D$0A8
+D$0D:
+D$0D8
+D$0E;
+D$0E3
+D$0f9\$8tM
+D$0f9l$8
+D$0f9l$8t
+D$0f9l$8t7H
+D$0f9t$8
+D$0f9t$8u:H
+D$0f9t$8vJ
+D$0fA
+D$0fD
+D$0fD9|$8r
+D$0fD9t$8t
+D$0fD9t$8v
+D$0H;
+D$0L;
+D$0Lc
+D$0t<
+d$4A;
+d$4A+
+D$4D9
+D$4E3
+D$4fA;
+D$5D9K
+D$8D8
+D$8E3
+D$8f;
+D$8fA;
+D$8H;
+D$A0D$3E
+D$aD8
+D$c3I;
+D$-D;[+sM@
+D$dE;
+D$DH;
+D$DtR
+D$GI;
+D$HD8h$t
+d$hE;
+D$hE;
+D$hE3
+D$HE3
+D$HH;
+D$HI;
+D$hI;
+D$lD8T$x
+D$lH;
+D$P@2
+D$p@8x!t)I
+D$PA;
+D$PD8
+D$pD8
+d$pD8
+D$Pf9|$Xt
+D$Pf9|$Xta
+D$Pf9D$Xu)H
+D$Pf9l$Xt
+D$Pf9t$Xu
+D$PfA;
+D$PfD
+D$PfD9|$X
+D$PfD9|$Xu!H
+D$PfD9d$Xt
+D$TD9
+D$XA;
+D$xD#
+D$XE3
+D$xE3
+D$XE3
+D$xE3
+D$XE3
+D$Xf;
+D$XHk
+D$xI;
+d&!@D
+D0"L9
+D3|$$A3
+D3|$,3t$ 
+D3|$@
+D3|$4
+D3|$HA
+D3D$$3
+D3d$0
+D3d$4A3
+D3D$8A#
+D3D$LA
+D3D$P
+D3E(I
+D3E8@
+D3EH@
+D3Eh@
+D3Ex@
+D3EXA
+D3l$4A
+D3l$XA
+D3L$XA
+D3M$H
+D3M4H
+D3MDH
+D3MdH
+D3MTH
+D3MtH
+D3t$ A
+D3T$ D3
+D3t$,A
+D3t$<#
+D3T$D
+D3t$PA
+D8 fA;
+D8%T,
+D8)tPA:
+D8)txfA;
+D8@!t8
+D8@"t
+D8@"u
+D8@#u
+D8@%u
+D8@)t)H
+D8@)tAfA;
+D8@'t
+D8\$0t
+D8\$8t
+D8` t
+D8`!t%
+D8`!tKH
+D8`)tGD8
+D8|$p
+D8~!t2D8
+D8~%t
+D8+u.D8k
+D88tGA
+D8B!tP
+D8B#t
+D8B#u
+D8d$@u
+D8e"u^A
+D8f#t
+D8g t1H
+D8G(u
+D8H t
+D8h t
+D8h!t D8h#t
+D8h"t
+D8H#u
+D8h$t
+D8h(t
+D8h)t
+D8h)tFD8
+D8k0t.I
+D8l$`tSD8
+D8L$XtJ
+D8m"t
+D8n t1H
+D8n!uC
+D8n)t
+D8p t
+D8p t7D8
+D8p!t
+D8p!u
+D8p!u+D9
+D8p)t
+D8p)u
+D8p0t
+D8q0t
+D8R0t
+D8T${
+D8T$|
+D8T$}
+D8t$0t
+D8T$x
+D8T$y
+D8T$z
+D8u t
+D8u!t
+D8v t/H
+D8v u3
+D8w$t
+D8w&t
+D8w(t
+D8x!t 
+D8X!u
+D9\$0
+D9`ptTD
+D9`tt9H
+D9`tvo
+D9|$P
+D9~$I
+D9d$`u
+D9D$Xu
+D9g u
+D9h(~7A:
+D9kOvX
+D9l$ u
+D9L$0
+D9l$xu
+D9ptr
+D9ptt~H
+D9ptv
+D9Rtt
+D9xtu
+D9Xtv
+D9ytv
+Data from upper layer  FillPartialHeader
+DataEncAlg
+dbg <flag> <value>
+Dbg cmd help
+DBG CMDs:
+DbgCmdWorkItem
+DbgPrint
+DbgRmCase
+DbgWorkItem
+DE A3 56 A2 CD DD 90 C7 A7 EC ED C5 EB B5 63 93 4F 46 04 52
+Debug command help
+debug command table
+DefaultKey0
+DefaultKey1
+DefaultKey2
+DefaultKey3
+DefaultKeyId
+DefaultKeyW0
+DefaultKeyW1
+DefaultKeyW2
+DefaultKeyW3
+DelayStartTimer
+Delta-%d=%I64d
+Df""T~**;
+DfT~;
+DgQP'
+DHCP TranslateHeader(), pTcb->DataRate = 0x%x
+DIR list:
+Disable
+DISABLED
+DisableRateFallBack
+DisableSilentReset
+Display TX Rate History --> Cmd_Idx = 15
+Dl@f;
+dm_CheckRfCtrlGPIO 
+DM_RFPathCheckWorkItem
+dm_WA_Broadcom_IOT() ==> WA_IOT disable cck rates
+dm_WA_Broadcom_IOT() ==> WA_IOT enable cck rates
+dm_WA_Broadcom_IOT(), from connect to disconnected, disable HT_IOT_ACT_WA_IOT_Broadcom
+dm_WA_Broadcom_IOT(), UndecoratedSmoothedPWDB = %d
+DMInitialGain
+DoReserved
+DOT11D
+Dot11dEnable
+double word
+DozeWorkItem
+DriverDesc
+DtimPeriod
+Dump 92S register 
+Dump all RF register. --> Cmd Index=5
+Dump FW buffer
+dV22tN::
+Dynamic Control --> Cmd_Idx = 13
+Dynamic Control --> Cmd_Idx = 14
+E @8~0t
+e##F^
+e%! 0
+e4$(E
+E8a tA
+E8c t
+E8s t
+E8t$"
+E8t$"t
+E8t$$t
+E8t$(
+E9`Jv
+E9ctt
+E9ctv*
+E9ftv
+E9itv
+E9jtv
+E9q"v
+E9rtv
+E9wtt2I
+EAPOL TranslateHeader(), pTcb->DataRate = 0x%x
+eD8~%t
+eeeezzzz
+eeprom
+EEPROM operate to R/W 
+EEPROM PG FAIL
+efuse
+EFUSE Content
+EFUSE Content Write
+EFUSE operate to R/W/Update for Real or Shadow Table
+EFUSE PG FAIL
+EFUSE PG OK
+EFUSE PG_STATE_DATA
+EFUSE PG_STATE_HEADER
+EFUSE PG_STATE_HEADER-1
+EFUSE PG_STATE_HEADER-2
+EFUSE PG_STATE_HEADER-3
+EFUSE Power ON
+EFUSE Shadow Modify Content
+EFUSE write finish
+efuse_PgPacketWrite error 
+EID_HTCapability HTCapIE.Length=%d
+EID_Vendor HTCapIE.Length=%d
+Em|6""}
+Enable
+ENABLED
+EnableFwCalcDur
+EnablePreAuth
+EnableRxImmBA
+EnableUsbSS
+EncAlgorithm
+Enter-%d=%I64d
+Entering a regulatory domain
+entry index[%d],ratr_index[%d],WirelessMode[%d],Support 40M[%s],MacAddr[]
+EntryMaxPWDB = 0x%x(%d)
+EntryMinPWDB = 0x%x(%d)
+Err Arg
+err cmd
+err dbg
+Err DIR
+Error
+EVMdbToPercentage92S Value=%d / %x 
+Exit-%d=%I64d
+F H9O
+f!C3H
+f!H J
+f""D~**T
+f%! F
+f;.srD
+f;{%r
+f;k%D
+f;k%r
+f;s%r
+f;W%r
+F4!(D
+f9|$xt
+f9D$0t
+f9D$0u
+f9Gpw
+f9l$H
+f9z%u79
+fA;+t
+fA;A%
+fA;I%r
+fA;L4
+fA;T$
+fA;Z@t
+fA9D$
+FALSE
+fD;{%D
+fD;C%s@
+fD;g%s1
+fD;K%r
+fD;S%
+fD;s%snH
+fD;w%r
+fD;w%sH
+fD;W%siE
+f-D8p 
+fD9&t"D
+fD9,Hu7fE;
+fD9|$PA
+fD9>u
+fD9g!vx
+fD9p!v
+fE;/r
+fE;/sLH
+fE;i%
+fE;'r
+fE;'sKH
+fE;'sLH
+fE;y%sBA
+ffff((((
+fffffff
+ffffHHHH
+FFFFWWWW
+fG;D2
+FHfD+
+FileDescription
+FileVersion
+FillPartialHeader CurrentQosMode=%ld
+Final QueryRate = 0x%x
+Find first BasicRate = 0x%x
+Find small BasicRate = 0x%x
+FixInPipeErrorWorkItem
+FixOutPipeErrorWorkItem
+for utility debug page use only
+Force TxFwInfo --> Cmd_Idx = 17
+ForcedDataRate
+ForcedPriority
+ForTFI
+FragThresh
+FsyncTimer
+FW Control --> Cmd_Idx = 16
+FW Dynamic Control --> Cmd_Idx = 18
+fwbuf
+FwCmdIOWorkItem
+fwctrl
+FwRWRF
+G[r4  ] <Addr> (Size) 
+g+V}+
+g4d0B$
+G7vIB
+Gc<vw
+Gdbgcmd 1 0 20 -->
+Get a valid country IE
+GetValueFromBeaconOrProbeRsp HT N mode
+GetValueFromBeaconOrProbeRsp Not HT N mode
+gfffA
+gfffffff@
+gffffffff
+gfffffffH
+gfffffffHk
+gfffffffI
+gfffffffL
+gfffffffL;
+gfffffffM
+gggg++++
+ggV}++
+Ghelp 1   
+Ghelp 1 3 
+gK99r
+globalKeyInfo.KeyMgntTimer
+GPIO_IN=%02x
+GPIOChangeRFWorkItem
+GpioPollingTimer
+GpioPollingWorkItem
+GPIORFSW
+Gr2 800 20 -->
+gu>t9
+H UVWATAUAVAWH
+h VWATH
+H WATAUAVAWH
+H!\$H2
+H!_(H!_ 
+H.data
+h.rdata
+H;^ u
+H;L$[s
+H;NQu
+H;NYu
+H;w u
+H;w$|
+h\44Q
+H_^][
+h8,4$
+H96t@H
+H96t]
+H96t=H
+H9l$P
+H9ohH
+hA]A\_^][
+hA_A^A]A\_^][
+HA_A^A]A\_^][
+HAL.dll
+HalfNMode
+HcL$$H
+HctTest
+HeD:J
+help <DIR> 
+Helper_ActiveScanChannelCount
+Helper_BSSEntryExpireTime
+Helper_BSSEntryMaxCount
+Helper_InterScanTime
+Helper_PassiveScanChannelCount
+Helper_RSSILinkQualityThreshold
+Helper_ScanRescheduleTime
+HHHH\
+Hi There
+HighPowerMechanism
+HINIT
+HT_EnableCck
+HT_MimoPS
+Ht9D8
+HTOnAssocRsp(): call HTSetConnectBwMode HT_CAP=%04x HT_INFO=%04x
+HTResetSelfAndSavePeerSetting() set bIOTAction for HT_IOT_ACT_WA_IOT_Broadcom
+httrH
+IbssBeacon
+IbssStartRequestWorkItem
+Idle_TCB=%ld
+IfF9|
+IfF9d
+IIIImmmm
+InactivePs
+InactivePsTimer
+InactivePsWorkItem
+InCommandTimer
+Incorrect cmd index
+IndicateByDeauth
+InitGainState
+InitializeAdapterWorkItem
+InitializeTimer
+InMpduTimer
+InternalName
+INVITE sip:
+IOT Broadcom 40MHz.
+IOT Broadcom PEER.
+IOT RSSI = %d
+IOT STA 20MHz.
+IS NOT
+isCCKrate=%d
+J D8!t
+J;w$|
+J0%PC
+J0A\'(
+J9t+ u
+JD;f$
+Jo\r8$W
+JoinConfirm
+JoinTimer
+k fD9
+k VWATH
+K+B2T
+k0+0j
+kD8e"u
+KeAcquireSpinLockRaiseToDpc
+KeBugCheckEx
+KeClearEvent
+KeepAliveLevel
+KeFlushQueuedDpcs
+KeInitializeEvent
+KeReleaseSpinLock
+KeSetEvent
+KeStallExecutionProcessor
+KeWaitForSingleObject
+KfF9t
+kkkk::::
+kkkkoooo
+KmdfLibrary
+L!l$ L
+L!L$HE2
+L$ $?
+l$ 3D$4A#
+L$ A3
+L$ D+
+L$ E3
+l$ E3
+L$ fA
+L$ H3
+l$ I;
+L$ Ic
+L$ SUVWATAUAVAWH
+L$ SVWH
+L$ UVWATAUAVAWH
+l$ VWATAUAVH
+l$ VWATAUAWH
+l$ VWATAVAWH
+l$ VWATH
+l$ VWAUH
+l$"u/
+l$$3D$PA
+L$(!T$ H
+l$(A3
+L$(E3
+l$(fD
+L$(H3
+L$(Hi
+L$(I;
+L$,A3
+L$@E3
+L$@fA;
+L$@fD;
+l$@H;
+L$@H;
+L$@H3
+L$@I;
+l$\fA#
+L$`A:
+L$`D8
+L$`E3
+L$`fA;
+L$`H3
+L$`I;
+L$=I;
+l$0D9
+L$0E3
+l$0f9
+L$0fA;
+L$0fD
+L$0fD;
+L$0H3
+L$0I;
+L$0u$;
+L$8D+
+L$8E3
+L$8f;L$Hu
+L$8H;
+L$8H3
+L$8Hk
+L$'8M
+l$DA#
+L$HD8
+l$hE;
+L$HE3
+l$HfE;
+L$HH;
+L$HH3
+L$hH3
+L$HH3
+L$hH3
+L$HH3
+L$JfA
+L$PA3
+L$pD8
+L$PE3
+l$pE3
+L$PE3
+L$pE3
+L$PfA;
+l$PfD
+L$PfD
+L$PfD;
+L$PH;
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+l$pI;
+l$qu/
+l$TA3
+l$TD9
+L$XE3
+l$XfA;
+L$XfD
+L$XH3
+L$xH3
+L$XH3
+L$xH3
+L$XH3
+'l;,'
+l_x\9|
+l389^
+L4PI;
+L8@I;
+L9*t'H
+L9|$xt
+L98t4A
+L9AAu
+L9d; 
+LedCtrl
+LegalCopyright
+Line-%ld String =%s
+LinkQualityReportTimer
+LiveTime
+Lj&&lZ66~A??
+LjlZ~A
+llllppppHHHHPPPP
+llllVVVV
+LowRfdThreshold
+LPSIntvl
+M;;va
+m=audio
+M3fU3
+M9$$t
+M9$$u
+MAX-%d=%I64d
+MaxBulkInCnt
+MaxSPLength
+MCS_0
+MCS_1
+MCS_10
+MCS_11
+MCS_12
+MCS_13
+MCS_14
+MCS_15
+MCS_2
+MCS_3
+MCS_32
+MCS_4
+MCS_5
+MCS_6
+MCS_7 
+MCS_8
+MCS_9
+MCSTxPowerLevelOriginalOffset[%d][%d] = 0x%x
+MgntQuery_MgntFrameTxRate(), rate = 0x%x
+MgntQuery_TxRateExcludeCCKRates(), BasicRate = 0x%x
+MimoPs
+MIN-%d=%I64d
+MMfU33
+MmMapLockedPagesSpecifyCache
+Modify dedicated RF register --> Cmd Index=8
+Modify RF-%ld Addr%02lx~%02lx=%02lx
+More Than
+MPDU_Density
+mteA+
+MY68L1
+N62CApSendDisassocWithOldChnlWorkitem
+NDIS.SYS
+Ndis62ContextSwitchWorkItem
+Ndis62CreateDeleteWorkitem
+NdisAllocateIoWorkItem
+NdisAllocateMdl
+NdisAllocateMemoryWithTagPriority
+NdisAllocateNetBufferAndNetBufferList
+NdisAllocateNetBufferListPool
+NdisAllocateTimerObject
+NdisCancelTimerObject
+NdisCloseConfiguration
+NdisCloseFile
+NdisFreeIoWorkItem
+NdisFreeMdl
+NdisFreeMemory
+NdisFreeNetBufferList
+NdisFreeNetBufferListPool
+NdisFreeTimerObject
+NdisGetVersion
+NdisInitializeEvent
+NdisInitializeString
+NdisMAllocatePort
+NdisMapFile
+NdisMDeregisterMiniportDriver
+NdisMFreePort
+NdisMGetDeviceProperty
+NdisMIndicateReceiveNetBufferLists
+NdisMIndicateStatusEx
+NdisMNetPnPEvent
+NdisMOidRequestComplete
+NdisMRegisterMiniportDriver
+NdisMSendNetBufferListsComplete
+NdisMSetMiniportAttributes
+NdisMSleep
+NdisOpenConfigurationEx
+NdisOpenFile
+NdisQueueIoWorkItem
+NdisReadConfiguration
+NdisReadNetworkAddress
+NdisResetEvent
+NdisSetEvent
+NdisSetTimerObject
+NdisUnmapFile
+NdisWaitEvent
+NdisWriteConfiguration
+NetworkAddress
+NetworkType
+NIC Verify Console
+nnnnGGGG
+nnnnZZZZ
+No BasicRate found!!
+NoAck
+NOTIFY sip:
+nRemain_Length is %d and nSubframe_Length is : %d
+NRM_TCB=%ldx
+ntoskrnl.exe
+NumRx20MHzPacket=%ld
+NumRx40MHzPacket=%ld
+o%%Jr..\$
+o?fA;
+O44h\
+oD$ D
+oD$0H
+OFDM_12M
+OFDM_18M
+OFDM_24M
+OFDM_36M
+OFDM_48M
+OFDM_54M
+OFDM_6M
+OFDM_9M
+Offset-%d Worden=%x
+OID_RT_PRO_DBGCMD_CHECK........ DCMD_Message_Handler_Check
+OID_RT_PRO_DBGCMD_RETURN........ DCMD_Message_Handler_Rx
+OID_RT_PRO_DBGCMD_SEND........ DCMD_Message_Handler_Tx
+oJr\$8
+OnAction
+OnAssocReq
+OnAssocRsp
+OnATIM
+OnAuth
+OnBeacon
+OnDeAuth
+OnDisassoc
+Only Support 92S now
+OnProbeReq
+OnProbeRsp
+OnReAssocReq
+OnReAssocRsp
+Operating Band=lower
+Operating Band=upper
+OriginalFilename
+otcA+
+Overflow
+p ATH
+p AWH
+p WATAUAVAWH
+p WATAUH
+p\lHtW
+P<xD<
+p>|B>
+PA\_]
+pA]A\_^]
+PA]A\_^]
+PA_A]A\_^][
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+PacketBufferPage
+Pairwise key expansion
+ParseSubframe(): A-MSDU subframe parse error!! pRfd->nTotalSubframe : %d
+ParseSubframe(): A-MSDU subframe parse error!! Subframe Length: %d
+Passive scan: Channels
+pEntry->MacAddr =
+pEntry->rssi = 0x%x(%d)
+pHalData->UndecoratedSmoothedPWDB = 0x%x( %d)
+PHY_STS = [%08lx]-[%08lx]-[%08lx]-[%08lx]-[%08lx]-[%08lx]-[%08lx]-[%08lx]
+PlatformScheduleWorkItem AwakeWorkItem
+PNPCapabilities
+PnPWakeUpJoinTimerCallback
+PnpWorkItem
+Pomelo
+PowerSaveMode
+pp|B>>q
+PPPP<<<<
+pppp>>>>
+PPxD<<%
+prange
+PreambleMode
+Print Firmware CMD Table.
+ProductName
+ProductVersion
+ProtectionImpMode
+PSPXlinkMode
+Pts@:
+pTxFwInfo->AllowAggregation=%d
+pTxFwInfo->CtsEnable=%d
+pTxFwInfo->EnableCPUDur=%d
+pTxFwInfo->RtsBandwidth=%d
+pTxFwInfo->RtsEnable=%d
+pTxFwInfo->RtsHT=%d
+pTxFwInfo->RtsRate =%d
+pTxFwInfo->RtsShort =%d
+pTxFwInfo->RtsSTBC =%d
+pTxFwInfo->RtsSubcarrier =%d
+pTxFwInfo->RxAMD=%ld
+pTxFwInfo->RxMF=%ld
+pTxFwInfo->Short=%d
+pTxFwInfo->TxAGCOffset=%ld
+pTxFwInfo->TxAGCSign =%ld
+pTxFwInfo->TxBandwidth=%d
+pTxFwInfo->TxHT=%d
+pTxFwInfo->TxRate=0x%02x
+pTxFwInfo->TxSubCarrier =%d
+Public_BssCoexist
+PWDB_ALL=%d
+pZlNr
+QA80u
+Qos data SEQ=%04d TID = %d
+QoS Field=%04x
+QPeA~S
+QSeA~
+Que-%ld NumTxDesc=%d
+QZ^&A
+r @8;s?
+R mem addr by Dword
+R##Fe
+r)D9e
+R;vM;
+r|D9J
+r0fD9m
+r4 <Addr> {Size}Size: num of decimal dword <4096
+RA: Adjustive RATR is  =%s
+RA: H 2 L Thresh =%ld
+RA: L 2 H Thresh for 20M =%d
+RA: L 2 H Thresh for 40M =%d
+RA: RATR state=%d
+RA: RATR0 High_Level =0x%08lx
+RA: RATR0 Low_Level_20 =0x%08lx
+RA: RATR0 Low_Level_40 =0x%08lx
+RA: RATR0 Middle_Level =0x%08lx
+RA: RSSI Average =%ld
+RA: RSSI High Thresh =%ld
+RA: RSSI Low Threshold for 20M =%ld
+RA: RSSI Low Threshold for 40M =%ld
+ractrl
+ractrl <Type> <R/W/P>
+RateChangeTimer
+Rcvd_HW_err
+rD9z"v
+Read memory address by char
+Read memory address by Double Word
+Read memory address by word
+Read NIC adapter
+Realtek regulatory, 20MHz, writeVal = 0x%x
+Realtek regulatory, 40MHz, writeVal = 0x%x
+Realtek RTL8192S USB NDIS Driver
+Realtek RTL8192S Wireless LAN USB NIC                                     
+Realtek RTL8192S Wireless USB 2.0 Adapter                                        
+Realtek Semiconductor Corporation                           
+Realtek Wireless LAN
+regdump
+RegRoamingLimit
+RegROAMSensitiveLevel
+RegSWRxDecryptFlag
+RegSWTxEncryptFlag
+Reject
+reset
+Reset 92S HW block
+Reset Failed!!
+RF-%d RXPWR=%x RSSI=%ld
+rfa_lower_bound= %d
+rfa_pwr[%d]=%x
+rfa_upper_bound= %d
+RFOff
+RFR-%d MASK=0x%lx Addr[0x%lx]=0x%lx
+RFW-%d MASK=0x%lx Addr[0x%lx]=0x%lx
+RM_RmRequest
+RmWorkitem
+ROF_MON
+RRRR;;;;
+rrtl8192SU\radio_b.txt
+RRvM;;
+RT_PROTOCOL_802_3 PreTransmitTCB
+RT2RTAggregation
+RTK better performance, writeVal = 0x%x
+rtl8192su.pdb
+Rtl8192su.sys 
+rtl8192SU\8192su.map
+rtl8192SU\radio_a.txt
+rtl8192SU\radio_b.txt
+rtl8192SU\radio_b_gm.txt
+rtl8192SU\radio_c.txt
+rtl8192SU\radio_d.txt
+RtlCopyUnicodeString
+RTP/AVP
+RtUsbCheckForHangWorkItem
+RtUsbCheckResetWorkItem
+Rx OK Packet Large(>1000)=%I64d
+Rx OK Packet Middle(500-1000)=%I64d
+Rx OK Packet Small(0-500)=%I64d
+Rx Path Selection Control --> Cmd_Idx = 19
+Rx Retry Packet Large(>1000)=%I64d
+Rx Retry Packet Middle(500-1000)=%I64d
+Rx Retry Packet Small(0-500)=%I64d
+RxAdmittedBARecordTimer
+RXAntenna
+rxPathSel
+RxPktPendingTimer
+RXRATE=%lx RXEVM=%x EVM=%s%d
+RxReorder
+RxReorder_PendTime
+RxReorder_WinSize
+RxTsCommonInfo_InactTimer
+RxTsCommonInfo_SetupTimer
+S @8{
+s WATAUAVAWH
+s WATAUH
+S11b?
+s11bS
+SbEwd
+sbS*?
+ScanTimer
+SD82v
+Security control console
+SessionRetryTimer
+Set 0x%x = %08x
+SetAdhocLinkStateWorkItem
+SetBWModeTimer
+SetBWModeWorkItem
+SetCCXAssocInfoTimer
+SetRFPowerStateWorkItem
+SetupJoinInfraInfo() set bIOTAction for HT_IOT_ACT_WA_IOT_Broadcom
+SG0 BW0
+SG0 BW1
+SG1 BW0
+SG1 BW1
+shadow
+shadow operate for RF / BB/ MAC shadow operation
+ShortGI20MHz
+ShortGI40MHz
+Show TX Table
+ShowRate
+SIP/2.0
+SLEEP/OFF
+ssss````
+STA_AdhocStationMaxCount
+STA_BSSEntryExpireTime
+STA_LostAPRoamBeaconCount
+STA_RSSIRoamBeaconCount
+StaCntAll=0x%08lX
+StaCntCrc8Fail=0x%08lX
+StaCntParityFail=0x%08lX
+StaCntRateIllegal=0x%08lX
+StaEDCAParamBE
+StaEDCAParamBK
+StaEDCAParamVI
+StaEDCAParamVO
+StaUapsd
+StopScanUnderHT
+StringFileInfo
+Support dbg cmd for 92SE verify
+Support MOde=%x pMgntInfo->mIbss=%d pMgntInfo->dot11CurrentWirelessMode=%x
+SUVWATAUAVAW
+SUVWATAUAVAWH
+SUVWATH
+SUVWAUH
+SUVWH
+SwAntennaDiversity
+SwBeaconTimer
+SwBwTimer
+SwChnlTimer
+SwChnlWorkItem
+Switch dbg flag
+sys + arg
+SYS ctrl
+SYS dump
+sysctrl
+SystemRemoteWakeup
+szEepromFile(): Fail read%s
+szEepromFile(): read %s ok
+t"fA;
+t#fA;
+T$ D:
+t$ E2
+T$ E3
+t$ f;
+T$ fD
+T$ M;
+t$ WATAUAVAWH
+t$ WATAUH
+t$ WATAVH
+t$ WATAWH
+t$ WAUAVH
+t$ WAUAWH
+t$ WH
+t$"uMH
+T$$E3
+t$(A#
+T$?E3
+t$@9L
+T$@A8
+T$@E3
+T$@f#
+t$@fA;
+T$@fD
+T$@fE;
+T$@I;
+T$`C8D.
+T$`E3
+T$`fA;
+T$`fD
+T$`I;
+T$0A;
+T$0D9sB
+T$0E3
+t$0E3
+T$0f!
+t$0f;
+T$0f+
+T$0fA;
+T$0fD
+T$0I;
+T$8@2
+t$8A3
+T$8D8
+T$8E3
+t$DA3
+t$HfA;
+t$HI;
+t$HIc
+t$ID8m
+T$PA;
+T$PD8X u
+T$PE2
+T$PE3
+t$pE3
+T$PE3
+t$PE3
+T$pE3
+T$PfD
+T$PH;
+T$PI;
+T$XD+
+T$xE3
+t$XE3
+t$Xf;
+t$xI;
+t&D8f
+t&fA;
+t(D8A0t"
+t(v*<
+t,,X.
+t,@8)u'
+t/8X0t*H
+t:fA;
+t?fA;
+t?v4<
+T[$:.6
+t\lHBW
+t<vE<
+t=fD9X
+T00`P
+t1f9T$8
+t2@8p
+T4 L;
+T6$:.
+t6D8p
+t8fA;
+tafB;\
+TbttPollingWorkItem
+TcaCheckTimer
+t-D8I
+tDD9w
+tdfA;
+Test --> receive write adapter command
+The Packet SeqNum is %d
+tif9t$8vbD
+tJfD9
+TKIPinNmode
+tNM9Y
+Total SQ=%ld PreRfd->SQ = %d
+tQD8e$tK
+trA8[CtZI
+Translate Header pTcb->priority = %d
+TranslateHeader QoS header
+Translation
+TsmTimer
+tTE8a
+tttt""""
+TTTT{{{{
+TurboMode
+TurboScan
+tvH;O(u
+tX.4-6
+tX@8r
+TX_Rate =
+TX_Rate =%02x
+TxAdmittedBARecordTimer
+TXAntenna
+TxPendingBARecordTimer
+TxPowerLevel
+TxPwrPercentage
+txrahis
+txtbl
+TxTsAddBaTimer
+TxTsCommonInfo_InactTimer
+TxTsCommonInfo_SetupTimer
+tYD8e$tSD8
+tYH;N uIL
+tZE8a
+u D9'u
+u!!Bc
+u!D8}
+u!D8H
+u"A8@
+u"D8A
+u"D8k
+u$D8n
+u%fA;
+u(D8k
+u(fD;
+U(Px(
+u,fD;
+u.f9K
+u:fD;{%t8H
+u@f;O!u
+u^fD;
+u+@8t$Pt$@8
+u0@8}
+u1fD;
+u3!D$0H
+u3+Rox
+u4F9|
+u4fD;
+u6D8e
+uafD;
+uBc 0
+uGfA;
+uHF:L
+UI RSSI = %ld, ui_rssi.TotalVal = %ld, ui_rssi.TotalNum = %ld 
+uidbg
+Uindex
+ujfA;
+uM8K%t
+umfA;
+uMfD;
+Underflow
+unknow
+Unknow command
+UpdateTxPowerWorkItem
+urfD;
+USAGE:
+UsbIF
+UsbInTokenRev
+UsbRxFwAggrEn
+UsbRxFwAggrPacketNum
+UsbRxFwAggrPageNum
+UsbRxFwAggrTimeout
+UsbTxAggrNum
+UseDriverAssingedRate
+uU9Y^u!
+UUPx((
+UUUU((((
+UVWATAUAVAWH
+UVWATAUH
+UVWATAVH
+UWATH
+uWfD;
+uz;5O3
+v/fA;
+v0fA;
+v1fA;
+V22dN::t
+VarFileInfo
+Verification Console
+verify
+VL!l$(L
+VS_VERSION_INFO
+VUUUA
+VUUUL
+vvvv[[[[
+VVVV>>>>KKKK
+VWATAUAVH
+VWATAUAWH
+VWATAVAWH
+VWATH
+VWAUAVAWH
+VWAUH
+VWifiSupport
+W mem addr by Dword
+w4 <Addr> <Data> {Size}Size: num of decimal dword <4096
+WaitWakeUsbSSIntv
+WATAUAVAWH
+WATAUH
+WATAVH
+WATAWH
+WAUAVH
+WDF_USB_DEVICE_CONTEXT
+WDFLDR.SYS
+WdfVersionBind
+WdfVersionBindClass
+WdfVersionUnbind
+WdfVersionUnbindClass
+WdsMode
+WEPinNmode
+WiFi11bIbss
+WiFi11gIbss
+WiFiConfg
+Wireless Mode=%02x
+WirelessBgSku
+WirelessMode
+WirelessMode4ScanList
+WMM_AddTsReq
+WMM_AddTsRsp
+WMM_DelTs
+Write BCD-Diff(0x%x) = 0x%lx
+Write memory address by char
+Write memory address by Dword
+Write memory address by word --> Cmd Index=10
+Write NIC adapter
+Wy~$E
+x ATAUAVAW
+x ATAUAVAWA
+x ATAUAVH
+x ATAUE3
+x ATAVAWH
+x ATD
+x ATE3
+x ATH
+x AUAV
+x AUAVAWH
+x AUH
+X UVWATAUAVAWH
+X UVWH
+x%Jo%.\r.
+x((Pz
+x_^][
+xA]A\_^][
+XA_A^A]A\_^][
+xA_A^A]A\_^][
+XA_A^A]A\_^][
+Xt,,4.
+Xt4.6-
+xtt'H
+xxJo%%\r..8$
+xxxx%%%%....
+Yh"5gW
+ypt~D8
+YYYY''''
+yyyy    
+YYYYGGGG
+Zwhat do ya want for nothing?

@@ -1,0 +1,200 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\luafv.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    FLTMGR.SYS
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C000B1B8 Import Address Table
+             1C000B700 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          AD ExDeletePagedLookasideList
+                         423 KeInitializeSpinLock
+                         3C9 KeAcquireSpinLockRaiseToDpc
+                         47D KeReleaseSpinLock
+                         4C5 KeWaitForSingleObject
+                          F1 ExQueueWorkItem
+                         36C IoSetThreadHardErrorMode
+                         49C KeSetEvent
+                         74C RtlCompareMemory
+                         76A RtlCreateSecurityDescriptor
+                         927 SeExports
+                         763 RtlCreateAcl
+                         719 RtlAddAccessAllowedAce
+                         8A1 RtlSetDaclSecurityDescriptor
+                         840 RtlLengthRequiredSid
+                         805 RtlInitializeSid
+                         8B5 RtlSubAuthoritySid
+                         7E1 RtlGetOwnerSecurityDescriptor
+                         794 RtlEqualSid
+                         76C RtlCreateUnicodeString
+                         7C3 RtlFreeUnicodeString
+                         8F9 SeAccessCheckFromState
+                          EC ExQueryDepthSList
+                         926 SeExamineSacl
+                         93D SeQueryAuthenticationIdToken
+                         950 SeSetAuditParameter
+                         94D SeReportSecurityEventWithSubCategory
+                         8A4 RtlSetOwnerSecurityDescriptor
+                         8B1 RtlSplay
+                         888 RtlRealPredecessor
+                         77D RtlDeleteNoSplay
+                         889 RtlRealSuccessor
+                         5F9 ObfDereferenceObjectWithTag
+                         949 SeRegisterLogonSessionTerminatedRoutineEx
+                         964 SeUnregisterLogonSessionTerminatedRoutineEx
+                         944 SeQueryServerSiloToken
+                         5FB ObfReferenceObjectWithTag
+                         75D RtlCopySid
+                         934 SeMarkLogonSessionForTerminationNotificationEx
+                         667 PsCreateSystemThread
+                         3DF KeClearEvent
+                         467 KeReadStateEvent
+                         4C3 KeWaitForMultipleObjects
+                         70F PsTerminateSystemThread
+                         154 ExpInterlockedPushEntrySList
+                         153 ExpInterlockedPopEntrySList
+                          D2 ExInitializePagedLookasideList
+                         A31 ZwOpenKey
+                         339 IoRemoveShareAccess
+                         21F FsRtlTeardownPerStreamContexts
+                         2F4 IoGetTopLevelIrp
+                         2F5 IoGetTransactionParameterBlock
+                          75 EtwUnregister
+                         3E9 KeDelayExecutionThread
+                          59 DbgPrint
+                         146 ExWaitForRundownProtectionRelease
+                          73 EtwSetInformation
+                          70 EtwRegister
+                          D5 ExInitializeRundownProtection
+                          7B EtwWriteTransfer
+                         870 RtlPrefixUnicodeString
+                          76 EtwWrite
+                         842 RtlLengthSid
+                         94B SeReleaseSubjectContext
+                         93E SeQueryInformationToken
+                         910 SeCaptureSubjectContext
+                         931 SeLocateProcessImageName
+                         A59 ZwQueryInformationFile
+                         A51 ZwQueryDirectoryFile
+                         115 ExReleaseRundownProtection
+                          8C ExAcquireRundownProtection
+                         185 FsRtlDoesNameContainWildCards
+                         297 IoCreateFileEx
+                          D3 ExInitializePushLock
+                         A6A ZwQuerySymbolicLinkObject
+                         A6F ZwQueryValueKey
+                         72D RtlAppendUnicodeStringToString
+                         72E RtlAppendUnicodeToString
+                         A3D ZwOpenSymbolicLinkObject
+                         A0C ZwEnumerateKey
+                         760 RtlCopyUnicodeString
+                         9E3 ZwClose
+                         796 RtlEqualUnicodeString
+                         8DA RtlUpcaseUnicodeChar
+                         21E FsRtlTeardownPerFileContexts
+                         41B KeInitializeEvent
+                         284 IoCheckShareAccess
+                         2B9 IoFileObjectType
+                         5E8 ObReferenceObjectByHandle
+                         74F RtlCompareUnicodeString
+                         528 MmMapLockedPagesSpecifyCache
+                         7E4 RtlGetSaclSecurityDescriptor
+                         7FC RtlInitUnicodeString
+                         5F8 ObfDereferenceObject
+                          C3 ExFreePoolWithTag
+                          9C ExAllocatePoolWithTag
+                         2DD IoGetFileObjectGenericMapping
+                         ABB __C_specific_handler
+                         75E RtlCopySidAndAttributesArray
+                         8AE RtlSidHashInitialize
+                         755 RtlConvertSidToUnicodeString
+                         71A RtlAddAccessAllowedAceEx
+                         759 RtlCopyLuidAndAttributesArray
+
+    FLTMGR.SYS
+             1C000B000 Import Address Table
+             1C000B548 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          18 FltCancelIo
+                          B8 FltPerformAsynchronousIo
+                          5F FltFreeGenericWorkItem
+                          CB FltQueueGenericWorkItem
+                          11 FltAllocateGenericWorkItem
+                          81 FltGetRequestorProcessId
+                          83 FltGetRequestorSessionId
+                          5C FltFreeExtraCreateParameter
+                          DA FltRemoveExtraCreateParameter
+                          9B FltInsertExtraCreateParameter
+                           D FltAllocateExtraCreateParameter
+                          E9 FltSetEcpListIntoCallbackData
+                           F FltAllocateExtraCreateParameterList
+                          A9 FltLockUserBuffer
+                          96 FltGetVolumeProperties
+                          49 FltDoCompletionProcessingWhenSafe
+                          5A FltFreeCallbackData
+                          B9 FltPerformSynchronousIo
+                           9 FltAllocateCallbackData
+                          17 FltCancelFileOpen
+                          F6 FltSetStreamHandleContext
+                          3E FltDeleteContext
+                          A0 FltIsEcpFromUserMode
+                          58 FltFindExtraCreateParameter
+                          6B FltGetEcpListFromCallbackData
+                          D6 FltReleaseFileNameInformation
+                          21 FltCheckAndGrowNameControl
+                          6E FltGetFileNameInformationUnsafe
+                          6D FltGetFileNameInformation
+                          EE FltSetInstanceContext
+                           B FltAllocateContext
+                         104 FltUnregisterFilter
+                          FA FltStartFiltering
+                          D0 FltRegisterFilter
+                          E6 FltSetCallbackDataDirty
+                          87 FltGetStreamHandleContext
+                          D3 FltReleaseContext
+                          74 FltGetInstanceContext
+                          80 FltGetRequestorProcess
+                           4 FltAcquirePushLockSharedEx
+                          9A FltInitializePushLock
+                          CE FltReferenceContext
+                          D8 FltReleasePushLockEx
+                           2 FltAcquirePushLockExclusiveEx
+                          C1 FltQueryDirectoryFile
+                         106 FltWriteFile
+                          CC FltReadFile
+                          F4 FltSetSecurityObject
+                          C7 FltQuerySecurityObject
+                          ED FltSetInformationFile
+                          28 FltClose
+                          C3 FltQueryEaFile
+                          C5 FltQueryInformationFile
+                          35 FltCreateFileEx2
+
+  Summary
+
+        2000 .data
+        2000 .idata
+        1000 .pdata
+        5000 .rdata
+        1000 .reloc
+        4000 .rsrc
+        2000 .text
+        1000 GFIDS
+        3000 INIT
+        2000 INITDATA
+        F000 PAGE
+        1000 PAGEDATA

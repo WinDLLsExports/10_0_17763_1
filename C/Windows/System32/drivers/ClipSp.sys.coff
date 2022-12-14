@@ -1,0 +1,168 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\ClipSp.sys
+
+File Type: DLL
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    FLTMGR.SYS
+    HAL.dll
+    ksecdd.sys
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C00A90E0 Import Address Table
+             1C00A9428 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         461 KeQueryTimeIncrement
+                         AE7 _wcsicmp
+                         7FC RtlInitUnicodeString
+                         B3F wcsnlen
+                         1BD FsRtlIsNameInExpression
+                         B2C towupper
+                         143 ExUpdateLicenseData
+                         AE4 _vsnwprintf
+                         A74 ZwReadFile
+                         9EE ZwCreateFile
+                         7C3 RtlFreeUnicodeString
+                         AB9 ZwWriteFile
+                         8B2 RtlStringFromGUID
+                         9E3 ZwClose
+                         B2B towlower
+                         AB6 ZwUpdateWnfStateData
+                         7E2 RtlGetPersistedStateLocation
+                         9F1 ZwCreateKey
+                         B37 wcscpy_s
+                         69D PsGetProcessProtection
+                         877 RtlQueryPackageClaims
+                         A02 ZwDeleteKey
+                         673 PsGetCurrentProcess
+                          9C ExAllocatePoolWithTag
+                         A6F ZwQueryValueKey
+                         794 RtlEqualSid
+                         AA6 ZwSetValueKey
+                         A31 ZwOpenKey
+                         A0C ZwEnumerateKey
+                         870 RtlPrefixUnicodeString
+                         796 RtlEqualUnicodeString
+                          C3 ExFreePoolWithTag
+                          70 EtwRegister
+                          75 EtwUnregister
+                         842 RtlLengthSid
+                          7B EtwWriteTransfer
+                         93E SeQueryInformationToken
+                          73 EtwSetInformation
+                         3AE KdDebuggerNotPresent
+                         528 MmMapLockedPagesSpecifyCache
+                         552 MmUnmapLockedPages
+                         41B KeInitializeEvent
+                          83 ExAcquireFastMutex
+                         2BF IoFreeMdl
+                         4FB MmChangeImageProtection
+                         26B IoAllocateMdl
+                         108 ExReleaseFastMutex
+                         521 MmLockPagableDataSection
+                         54E MmUnlockPagableImageSection
+                         3D9 KeBugCheckEx
+                         53B MmProbeAndLockPages
+                         54F MmUnlockPages
+                         18B FsRtlFindExtraCreateParameter
+                         ABB __C_specific_handler
+                         A6C ZwQuerySystemInformation
+                         7E0 RtlGetNtSystemRoot
+                         9ED ZwCreateEvent
+                         A06 ZwDeviceIoControlFile
+                         AB8 ZwWaitForSingleObject
+                         3AD KdDebuggerEnabled
+                         ABC __chkstk
+
+    FLTMGR.SYS
+             1C00A9000 Import Address Table
+             1C00A9348 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          42 FltDeletePushLock
+                           2 FltAcquirePushLockExclusiveEx
+                           4 FltAcquirePushLockSharedEx
+                          9A FltInitializePushLock
+                          D8 FltReleasePushLockEx
+
+    HAL.dll
+             1C00A9030 Import Address Table
+             1C00A9378 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          53 KeQueryPerformanceCounter
+
+    ksecdd.sys
+             1C00A9040 Import Address Table
+             1C00A9388 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          12 BCryptExportKey
+                          1F BCryptOpenAlgorithmProvider
+                          1C BCryptImportKey
+                          17 BCryptGenerateKeyPair
+                          13 BCryptFinalizeKeyPair
+                          14 BCryptFinishHash
+                          1A BCryptGetProperty
+                           A BCryptDestroyHash
+                          1D BCryptImportKeyPair
+                          24 BCryptSignHash
+                          1B BCryptHashData
+                          23 BCryptSetProperty
+                           5 BCryptCreateHash
+                          1E BCryptKeyDerivation
+                           4 BCryptCloseAlgorithmProvider
+                          16 BCryptGenRandom
+                           B BCryptDestroyKey
+                          26 BCryptVerifySignature
+                          18 BCryptGenerateSymmetricKey
+
+  Section contains the following exports for clipsp.sys
+
+    00000000 characteristics
+    5B9C4BAE time date stamp Fri Sep 14 17:00:46 2018
+        0.00 version
+           1 ordinal base
+           4 number of functions
+           4 number of names
+
+    ordinal hint RVA      name
+
+          1    0 000B7F50 ClipSpInitialize
+          2    1 000BAD30 ClipSpUninitialize
+          3    2 000B8080 DllInitialize
+          4    3 000B8080 DllUnload
+
+  Summary
+
+        2000 .data
+        1000 .edata
+        1000 .idata
+        9000 .pdata
+       69000 .rdata
+        3000 .reloc
+        1000 .rsrc
+       34000 .text
+        C000 .xdata
+        2000 GFIDS
+        1000 INIT
+       3A000 PAGE
+        1000 PAGEHrx
+        1000 PAGEwx1
+        1000 PAGEwx2
+        4000 PAGEwx3
+        5000 PAGEwx4
+        6000 PAGEwx5
+        2000 PAGEwx6

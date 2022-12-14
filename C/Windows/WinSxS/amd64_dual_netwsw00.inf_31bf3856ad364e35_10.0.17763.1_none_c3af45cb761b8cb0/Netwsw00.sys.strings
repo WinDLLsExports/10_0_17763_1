@@ -1,0 +1,9914 @@
+--------------
+----------------
+----------------------------
+---------------------------------------------------------------------
+------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+ ------------------------------------------------------------------------------------------------------------
+                     
+                                                 |========== Various Capabilities Support (0/1)==========|
+                                          (S51minRssi)  Delta        [Mbps]   [Mbps]               Priority  
+                                        |
+                   | 1st Channel   |   MaxTxPower  |
+                   | 1st Channel   |   NumChannels |   MaxTxPower  |
+                   |---------------|---------------|
+                   |---------------|---------------|---------------|
+              |           | in slot | out of slot |                                |
+              |   1  |   2  |  5.5 |  11  |  12  |  18  |  24  |  36  |  48  |  54  |
+              |------|------|------|------|------|------|------|------|------|------|
+             Field                 |    Current Value     |   Default Value
+           ======= 'Various Capabilities' indices =======
+          Field             
+        %u         |    %s
+        Interface       |  Port
+       %-5d   |
+       Port       |    VMAC Type
+      %-5d    |
+      %-6d|
+     %-10d|
+     %-5d     |
+     %-5d|
+     %-5s|
+     %-9d|
+     %s - %s
+     CLIENTS INFORMATION (Connected: %d)
+    %-5d|
+    %-6d|
+    |                      |                ||   Current Priorities ||   Registry Priorities
+    | Coex Event           | Open Envelopes ||   RP | WP |  Flags   ||   RP | WP |   Flags  
+    Description("AMT own radio"),
+    Description("Authentication mode"),
+    Description("band"),
+    Description("Channel for IBSS creation"),
+    Description("channel24"),
+    Description("channel52"),
+    Description("cts-to-self state."),
+    Description("Duration of measurement"),
+    Description("encryption status"),
+    Description("ESSID"),
+    Description("HD Mode"),
+    Description("IEEE 11N channel mode for 2.4 band"),
+    Description("IEEE 11N channel mode for 5.2 band"),
+    Description("IEEE 11N fat channel intolerant"),
+    Description("IEEE 11N mode"),
+    Description("Key length"),
+    Description("Key material"),
+    Description("Leap/Rouge mask"),
+    Description("Length in bytes of the whole data"),
+    Description("Mandatory BSSID"),
+    Description("Network type"),
+    Description("preferred BSSID"),
+    Description("Profile name"),
+    Description("radio measurements state"),
+    Description("Registration status"),
+    Description("Reserved"),
+    Description("Roam aggressiveness level"),
+    Description("the ACK mode"),
+    Description("the Ad Hoc QoS style"),
+    Description("the atim window size"),
+    Description("the band preference."),
+    Description("the band type."),
+    Description("the data rates - 1_MBit"),
+    Description("the data rates - 11_MBit"),
+    Description("the data rates - 12_MBit"),
+    Description("the data rates - 18_MBit"),
+    Description("the data rates - 2_MBit"),
+    Description("the data rates - 24_MBit"),
+    Description("the data rates - 36_MBit"),
+    Description("the data rates - 48_MBit"),
+    Description("the data rates - 5_5_MBit"),
+    Description("the data rates - 54_MBit"),
+    Description("the data rates - 6_MBit"),
+    Description("the data rates - 9_MBit"),
+    Description("the data rates"),
+    Description("the modulation type."),
+    Description("the networkType"),
+    Description("the packet burst state."),
+    Description("the power mode"),
+    Description("the preamble mode"),
+    Description("the radio state."),
+    Description("the radio switch state."),
+    Description("the TX powerLevel"),
+    Description("Type of measurement"),
+    Description("WEP key index"),
+    WmiDataId(1)] uint16   DATA_RATE_1_MBit;
+    WmiDataId(1)] uint16   networkType;
+    WmiDataId(1)] uint16   RegistrationStatus;
+    WmiDataId(1)] uint32   AckMode;
+    WmiDataId(1)] uint32   AtimWindowSize;
+    WmiDataId(1)] uint32   AuthenticationMode;
+    WmiDataId(1)] uint32   BandPreference;
+    WmiDataId(1)] uint32   DataRates;
+    WmiDataId(1)] uint32   EncryptionStatus;
+    WmiDataId(1)] uint32   HardwareRadioSwitchState;
+    WmiDataId(1)] uint32   IbssQosStyle;
+    WmiDataId(1)] uint32   IEEE11nChannelMode24;
+    WmiDataId(1)] uint32   IEEE11nChannelMode52;
+    WmiDataId(1)] uint32   IEEE11nFatChannelIntolerant;
+    WmiDataId(1)] uint32   IEEE11nMode;
+    WmiDataId(1)] uint32   Length;
+    WmiDataId(1)] uint32   MeasureType;
+    WmiDataId(1)] uint32   PacketBurstState;
+    WmiDataId(1)] uint32   PowerMode;
+    WmiDataId(1)] uint32   PreambleMode;
+    WmiDataId(1)] uint32   RadioState;
+    WmiDataId(1)] uint32   RoamAggressivenessLevel;
+    WmiDataId(1)] uint32   RogueLeapMask;
+    WmiDataId(1)] uint8   AmtOwnRadio;
+    WmiDataId(1)] uint8   Channel24;
+    WmiDataId(1)] uint8   CtsToSelf;
+    WmiDataId(1)] uint8   hdMode;
+    WmiDataId(1)] uint8   ModulationType;
+    WmiDataId(1)] uint8   ProfileName[256];
+    WmiDataId(1)] uint8   RadioMeasurementsState;
+    WmiDataId(10)] uint16   DATA_RATE_36_MBit;
+    WmiDataId(11)] uint16   DATA_RATE_48_MBit;
+    WmiDataId(12)] uint16   DATA_RATE_54_MBit;
+    WmiDataId(2)] sint16   PowerLevel;
+    WmiDataId(2)] uint16   DATA_RATE_2_MBit;
+    WmiDataId(2)] uint32   KeyIndex;
+    WmiDataId(2)] uint32   MeasureDuration;
+    WmiDataId(2)] uint8    ESSID[32];
+    WmiDataId(2)] uint8   BandType;
+    WmiDataId(2)] uint8   Channel52;
+    WmiDataId(3)] uint16   DATA_RATE_5_5_MBit;
+    WmiDataId(3)] uint32   KeyLength;
+    WmiDataId(3)] uint32   Reserved[14];
+    WmiDataId(3)] uint8   Band;
+    WmiDataId(3)] uint8   MandatoryBSSID[6];
+    WmiDataId(4)] uint16   DATA_RATE_6_MBit;
+    WmiDataId(4)] uint8    KeyMaterial[13];
+    WmiDataId(4)] uint8   PreferredBSSID[6];
+    WmiDataId(5)] uint16   DATA_RATE_9_MBit;
+    WmiDataId(5)] uint16   NetworkType;
+    WmiDataId(6)] uint16   ChannelID;
+    WmiDataId(6)] uint16   DATA_RATE_11_MBit;
+    WmiDataId(7)] uint16   DATA_RATE_12_MBit;
+    WmiDataId(8)] uint16   DATA_RATE_18_MBit;
+    WmiDataId(9)] uint16   DATA_RATE_24_MBit;
+   %- 18s   |   %c 
+   %- 18s   |   %u 
+   %-4u|
+   [key, read]
+   [read,
+   [read, write,
+   [read,write,
+   [read]
+   [write,
+   Actual Band-Connection      %-10s
+   Band                        %s%s%s
+   boolean  Active;
+   Connection Type             %-5s
+   CT Kill state                 : %-5s 
+   CTS/RTS enabled             %-10s
+   Current Channel             %-5d
+   Current PM                  %-5d
+   Current TX-Power [dBm]      %-5d
+   Driver Version+Date         %d.%d.%d.%d
+   Fragmentation threshold     %-5d
+   Greenfield Supported        %-5s
+   Hardware RF Kill state        : %-5s 
+   IBSS Channel                [%s] %-5d
+   Last Antenna used - Rx      %-10s
+   Last Tx-Rate used           
+   MIMO2 Supported             %-5s
+   MIMO3 Supported             %-5s
+   NIC temperature (in degrees C): %-5d
+   NIC temperature (in degrees C): NA
+   Non Permanent Exclude List
+   Permanent Exclude List
+   Rate table entries: 
+   Retransmitted Packets - HT - Gf
+   Retransmitted Packets - HT - GF and SGI
+   Retransmitted Packets - HT - no GF and Sgi
+   Retransmitted Packets - HT - Sgi
+   Retransmitted Packets - legacy throughput
+   Runtime Limitations: 
+   SGI 20 Supported            %-5s
+   SGI 40 Supported            %-5s
+   SISO Supported              %-5s
+   Software RF Kill state        : %-5s 
+   string   InstanceName;           // Instance name returned from WMI
+   Supported Rates             
+   The Aggregation Time Limit (miliseconds)    : %d
+   The application's limitations mask :0x%X
+   The connected antennas mask        : 0x%X
+   The connected antennas mask        :0x%X
+   The Dual Stream Antenna mask                : 0x%X
+   The Dual Stream Antenna mask                : NA
+   The ForceChain flag                : %s 
+   The idle state count is            : 
+   The idle state selection antennas  : 
+   The MIMO Force flag                : %s 
+   The OEM limitations mask           : 0x%X
+   The OEM limitations mask           :0x%X
+   The rx state count is              : 
+   The rx state selection antennas    : 
+   The Scan limitations mask for 2.4  : 0x%X
+   The Scan limitations mask for 5.2  : 0x%X
+   The Single Stream Antenna mask              : 0x%X
+   The Single Stream Antenna mask              : NA
+   The valid antennas are             : 
+   Thermal throttling limitations mask:
+   UCode Version               %-10s
+   Wide Channel Supported      %-5s
+  !""#$$%&&CDDEFFGHHIJJKLLMNNOPPQnnoppqrrsttuvvwxxxxxxxxx
+  %-27s|
+  %-2u - %s
+  %-4d|
+  |#|
+  DOT11 MIB
+ !"#$%&'()*+,-./@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+ # |              SSID              | unicastCipher | authAlgo | Hinted Channels 
+ ############ 
+ #5z'
+ %02X:%02X:%02X:%02X:%02X:%02X |
+ %02X:%02X:%02X:%02X:%02X:%02X,    %-32s,  
+ %-12s | %-9s | %-7d | %-11d | (%d) %-26s |
+ %2d      |%02X:%02X:%02X:%02X:%02X:%02X| %32s | %X
+ %2d      |%02X:%02X:%02X:%02X:%02X:%02X| %X
+ %2d      |%3s      | %5s |                | %-8d             | %-3d%% 
+ %2d      |%3s      | %5s |                | NA
+ %2d      |%-9s|                | %-8d             | %-3d%% 
+ %2d      |%-9s|                | NA 
+ %2d     |     NA         |                | NA 
+ %2d     | %15s|                | (0x%X)
+ %2d | %s |       %02d       ||   %02d | %02d |    %02d
+ %2d | %s |       %02d       ||   %02d | %02d |    %02d    ||   %02d | %02d |   %02d
+ %-2d|
+ %-3d | 
+ %-3u|
+ &HpU
+ (most new)
+ / H S ~
+ /wB 
+ ?D+>
+ @ P 
+ @!A 
+ [write,
+ | %02X%02X%02X%02X%02X%02X | %s  |
+ }4y!`
+ < u!
+ =Ex@
+ 0       | NA              | NA                  
+ 0       | NA              | NA                             | NA                  
+ 0x%X
+ a L 
+ A#:uQ 
+ A#8`
+ A#X`
+ A$8`
+ A.Pq
+ A\][
+ A\^[
+ A\^]
+ A\_[
+ A\_]
+ A\_^
+ A]^]
+ A]_]
+ A]_^
+ A]_^][
+ A]A\]H
+ A]A\^
+ A]A\^H
+ A]A\_
+ A]A\_^]
+ A^^[
+ A^A\^][
+ A^A]A\
+ A^A]A\][
+ A^A]A\_]
+ A_A]A\_^][
+ A_A^A\^]
+ A_A^A]_]
+ A_A^A]_^
+ A_A^A]A\_
+ A_A^A]A\_^]
+ Actual MAM cycle = %d
+ Bandwidth allocation info
+ bUy`
+ Clear medium info: Request map = 0x%X (TS = %d), Response map = 0x%X
+ Description("check if AMT own the radio")]
+ Description("Enable/Disable Muroc specific features")]
+ Description("Read authentication mode")]
+ Description("Read encription status")]
+ Description("Read the adapter data rates")]
+ Description("Read the radio state")]
+ Description("Read/Write 11N channel mode in band 2.4")]
+ Description("Read/Write 11N channel mode in band 5.2")]
+ Description("Read/Write 11N fat channel intolerant")]
+ Description("Read/Write 11N mode")]
+ Description("Read/Write current profile")]
+ Description("Read/Write radio measurements state")]
+ Description("Read/Write the ACK mode")]
+ Description("Read/Write the Ad Hoc QoS style")]
+ Description("Read/Write the atim window size")]
+ Description("Read/Write the cts-to-self state ")]
+ Description("Read/Write the hardware radio switch state")]
+ Description("Read/Write the power mode")]
+ Description("Read/Write the preamble mode")]
+ Description("Read/Write the roaming aggressiveness level")]
+ Description("Read/Write the TX power control")]
+ Description("Set WEP key")]
+ Description("Toggles HD feature")]
+ Description("Toggles leap & rogue feature")]
+ Description("Write radio measurements request")]
+ Description("Write the adapter data rates")]
+ Description("Write the adhoc channels")]
+ Description("Write the band preference")]
+ Description("Write the packet burst state")]
+ Description("Write the protocol preference")]
+ g4x@
+ guid("{0823F433-154D-4c22-A55E-13C896203160}"),
+ guid("{08539379-BD1D-48d2-BFBD-264BAD48DDA4}"),
+ guid("{230D3BF7-367F-4385-B161-18C28F0819FE}"),
+ guid("{2D491413-FCE8-4682-AF79-0A2FC2BE1801}"),
+ guid("{2FA5A3CF-CD18-43be-85FB-B74E3B98955D}"),
+ guid("{32B7642B-1694-4132-9D25-45C7B6CCB3B7}"),
+ guid("{3384ED5B-4FD6-4b6b-8C33-7CD15CEDC97D}"),
+ guid("{4B129EF3-94EA-40f8-AF41-2B918BED80C9}"),
+ guid("{5218DED1-DC4D-467E-8C9D-388DEAD3D353}"),
+ guid("{549FF812-283E-4742-BC1F-77C4D25F097B}"),
+ guid("{587B18AD-BC2C-4c7e-B2AE-A0F3EC2C60F5}"),
+ guid("{73D04FC3-7F37-4b83-A556-4B13067396D7}"),
+ guid("{73D60AAF-AEE9-461c-A4FC-3547734676C9}"),
+ guid("{73F6BE20-E6AF-4ab2-A032-48E3C1C7E155}"),
+ guid("{8097F4A9-658C-41d5-BA2A-A70822EC5A7F}"),
+ guid("{835F1228-2DA6-4447-BD42-EE866C6EA2C6}"),
+ guid("{900F5806-67A0-4563-A3A1-4BDC2F9A4010}"),
+ guid("{992851DD-F102-4dbb-937D-513D4C80B451}"),
+ guid("{9C36240E-063E-4623-9704-C4E4D9888E75}"),
+ guid("{A6D7126E-80E8-4f55-9C2D-3A23E5404DBE}"),
+ guid("{A7EFA472-9320-46c8-B6B4-D519ED8A4698}"),
+ guid("{AF0ED3A0-729B-40b3-846F-C430E6F8B922}"),
+ guid("{BC18E5B6-002F-4ae0-B157-DC59A40BFB96}"),
+ guid("{C24C702B-4D23-4145-9AE5-8E23C2719B4D}"),
+ guid("{C8F170CA-B958-4a79-A6A1-1EB232F846F9}"),
+ guid("{D0542DA8-6C3D-46f1-BB7B-A676E6F1025C}"),
+ guid("{D191594F-FF87-4fd9-AD58-464D5D65EB0B}"),
+ guid("{E1F99A19-12EC-41de-812D-33DD70A90872}"),
+ guid("{E34B42A7-2A21-49fb-8E2F-C07BC4C19A67}"),
+ guid("{EB0ECB78-6035-48ee-9086-3764EA06EE79}"),
+ HcD$hLcl$pLct$xH
+ HMAC PAN CONNECTION VIEW
+ Intel Corporation 2011
+ IUy`
+ iZwK
+ J @ 
+ J @&D
+ J!@ 
+ JD.>
+ Jq/(A
+ localeid(0x409),
+ MEDIUM ALLOCATION MANAGER VIEW
+ MEDIUM Request history
+ MEDIUM Users status:
+ Number of slots = %d
+ P L 
+ P L%
+ Response: TS = %d, Status = %s, Traffic Load: MAIN = %d, PAN = %d, Real time traffic =%d
+ Rrnv{)`
+ SCAN VIEW
+ SequNum: %d, TS = %d, User: %s, Priority: %s (%d), 
+ ssidCount: %-1d                                                                      |
+ t4{@
+ t4x@
+ tDE3
+ u`yH
+ User         | Interface | Min req | Max allowed | Priority                       |
+ Wireless WiFi Link Adapter
+ Wireless WiFi Link Driver
+ z4{@
+ z4x@
+ ZTx`
+!""L!@
+!*r/x
+!*r/x(
+!@)A!V
+!@)A!W
+!@)A!X
+!@.'p
+!@t5x
+!88Hp
+!9\$P
+!a L!
+!A#2$B#
+!A#2$B#>
+!A#2$B#2
+!A#2$B#j
+!A$'p
+!A.Pq
+!At#c
+!b L!
+!B#Pz
+!B$J$
+!B$L 
+!H88p
+!Q J @ 
+!This program cannot be run in DOS mode.
+!tX)i
+""fD**~T
+"$&(*,.048<@dhlptx|
+"%.32s"
+"@$2$
+"@%Bx
+"<BOGUS SSID>"
+"<Null SSID>"
+"a L"
+"A#2#B#
+"A$8`
+"D$sA
+"fD"*~T*
+"p:pC-
+"p:pC/
+"xLx/p
+"xLx/pF
+"xLx/pN
+"xLx/pz
+"zezz
+"zya0yr
+##$%%&''())FGGHIIfgghiijkklmmnoopqqrsstuuvwwxxxxxxxx
+##$%%&''())FGGHIIfgghiijkklmmnoopqqrsstuuvwwxxxxxxxxxxxxxx
+##$%%&''())FGGHIIfgghiijkklmmnoopqqrsstuuvwwxxxxxxxxxxxxxxxxxx
+##) MAC Address       , staId , isHT , legacyRates , htRates , flags      , flagsMask
+#$%&'()DEFFGGHHIIJKhhijklmmnoopqqrrssssssssssssssssss
+#:*Lf|
+#@$/)
+#@%Bx
+#_X#_P
+#74m*b
+#a L#
+#ffffff
+#L$LA
+#L9#u"
+#MJRich
+#S J @ 
+$ < @
+$$%&&'DDEFFGHHIJJKLLMjjkllmnnoppqrrsttuvvvvvvvvvvvvvvvvvvvv
+$$,,0066BBHH``ll
+$$lH\\
+$%%&'((DEFFGHHIJJKLhhijklmmnoopqqrrrrrrrrrrrrrrrrrrrr
+$(,048<@dhlptx|
+$(< A
+$/!J 
+$@ 0#
+$@0G"
+$@x  @
+$`< A
+$`< t
+$`< t'
+$`<@A
+$`<`t
+$`<`u
+$`<`u=H
+${DyS"
+$}!Hc
+$})E3
+$0<0uAE3
+$0H`l
+$4,8-9'66.:$?#1*HhXpAeS~ZrNlS
+$64~Q$
+$9_dE
+$b L#
+$B#Pz
+$Bia 
+$D8\$y
+$DD.>
+$DIRECT-
+$f;]4t
+$H9j@
+$HcHp8
+$i6xD
+$Id: WIFICommon.h 50259 2011-09-22 16:15:59Z rnevo1 $
+$lH$\
+$p<@u
+$w3Hc
+$xexq
+$xexs
+$xexv
+$Y6z 
+$YVyA
+$zExC(
+% (%-5d) 
+%$#"! 
+%%oJ..r\
+%.2X 
+%~DxA(A
+%02X/%02X %02X:%02X 
+%02X:%02X:%02X:%02X:%02X:%02X
+%03d|%-32s|     0x%02X      |   0x%02X   | %2d  %2d  %2d  %2d
+%-10.10i
+%2d) %02X:%02X:%02X:%02X:%02X:%02X , 0x%02X  , %u    , 0x%08X  , 0x%04X  , 0x%08X , 0x%08X
+%2d,  
+%-32s                                          |
+%3u,  
+%4m*b
+%-5d |
+%-5s |
+%d,  
+%s SM: current state = %s (%d), prev state = %s (%d)
+%s=%-12d
+%U 'hc
+%u.%u.%u
+%X.%02X
+%X.%X
+%x2o5yUy
+%x2o5yUy!q
+%xdho{
+%xdho{jp
+%xRyx`
+%z/!G
+%zPzBrPzg
+&'(()*FFGHHIJJKLhijjkllmnnoppqrrsttuuuuuuuuuuuuuuuuuuu
+&'()*FFGHHIJJKLhijjkllmnnoppqrrssttttttttttttttttttt
+&{2jty
+&jL&6Zl6?A~?
+&N''i
+&V J @ 
+(          )
+(   %-20s )
+(  %-4d)
+(%02X:%02X:%02X:%02X:%02X:%02X  )
+(%-11d)
+(%-12d)
+(%-13d)
+(%-9d)
+(%-9s)
+((0,,(<4((40,,D<@<
+((0,,(<4@<
+((40,,D<,,<40,TD
+(,6x"
+(@x  @
+(_^][
+(_N!B
+(3KcD
+'(4m*b
+(6@)@!
+(6@,@
+(6uicf
+(84x@
+(9Hby
+(A]^][
+(A]_^]
+(A]A\
+(A]A\_[
+(A]A\_]
+(A^_][
+(A^A]_[
+(A^A]_^][
+(A_A^^]
+(a6xD
+(dlt|
+(HcD$@
+(NEx@
+(O@)@!
+(O@,@
+(OD(>
+(Ouicf
+(OVx@
+(p(r(s
+(p(r(s2
+(p/ H
+(p@(@!
+(pX%A
+(Q4x@
+(rJ$@
+(S@,@
+(S[a(w@*A!8c
+(S51)
+(SVx@
+(U4x@
+(uHv`
+(uZp:r
+(v(r(s
+(v(u(s
+(v:rL$
+(v4x@
+(v6xa
+(vHu@
+(WN!B
+)@x  @
+)~ 0 @
+)> 'w
+)>0/p
+)w--Z
+)--wZ
+)X`@}
+*** profile %d::
+*@#$x
+*@#$x)
+*@#$xY
+*4m*b
+*p*p+
+*p*pn
+, %xB
+, 5.5
+, 6x"
+, unicastCipher: %d, authAlgo: %d
+,$9l$8@
+,*HpU
+,,<40,TDTTl`\T
+,;D(>
+,;D)>
+,?D+>
+,@  `
+,@x  @
+,4$8_@
+,6D)>
+,6uy,
+,8$4_
+,8$4'6-9:$6.1*?#XpHhS~AeNlZrEbS
+,BD.>
+,i3&Ap
+,S4x`
+,Stz 
+,Z/`-
+.;D)>
+.;D*>
+.D9gHu
+.HcT$`H
+.pdata
+.rsrc
+.text
+/!G!A+
+/!G$>
+/!G$2
+/!G$9
+/!G$M
+/!G$r
+/!H$@)
+/!H6%x
+/!H6@)
+/!H6v
+/"G$L"
+/#H #
+/#H 3
+/%G%A+
+/%H%@-
+// OID_INTEL_11K_RADIO_MEASURMENTS_REQUEST
+// OID_INTEL_11K_RADIO_MEASURMENTS_STATE
+// OID_INTEL_ACK_MODE
+// OID_INTEL_ADAPTER_DATA_RATES_GET
+// OID_INTEL_ADAPTER_DATA_RATES_SET
+// OID_INTEL_ADD_WEP
+// OID_INTEL_ADHOC_CHANNELS
+// OID_INTEL_ATIM_WINDOW_SIZE
+// OID_INTEL_BAND_PREFERENCE
+// OID_INTEL_CISCO_HD_STATUS
+// OID_INTEL_CISCO_LEAP_ROGUE_MODE
+// OID_INTEL_CTS_TO_SELF
+// OID_INTEL_CURRENT_PROFILE
+// OID_INTEL_HARDWARE_RADIO_SWITCH
+// OID_INTEL_IBSS_QOS_STYLE
+// OID_INTEL_INTEL_PACKET_BURST
+// OID_INTEL_POWER_MODE
+// OID_INTEL_PREAMBLE_MODE
+// OID_INTEL_PROP_AUTHENTICATION_MODE
+// OID_INTEL_PROP_ENCRYPTION_STATUS
+// OID_INTEL_PROTOCOL_PREFERENCE
+// OID_INTEL_RADIO_STATE
+// OID_INTEL_REGISTER_PROFILE_SERVICE
+// OID_INTEL_ROAM_AGGRESSIVENESS
+// OID_INTEL_TX_POWER_CONTROL
+// OID_WMI_INTEL_11N_CHANNEL_MODE_24
+// OID_WMI_INTEL_11N_CHANNEL_MODE_52
+// OID_WMI_INTEL_11N_FAT_CHANNEL_INTOLERANT
+// OID_WMI_INTEL_11N_MODE
+// OID_WMI_INTEL_AMT_OWN_RADIO
+//class INTEL_GOLAN  
+//Serial driver's base class for event blocks
+/^&QZ
+/O5h*b
+/q2!@ 
+/S5h*b
+/unIa
+/y2$@0
+/y2$M0B H
+/yPq!
+:D$4u
+:D$5t
+:p(uHv
+:pezH
+:pZpq
+:pzqHvhu
+:pzqHwhv
+:pZqzr
+:qezH
+:w@(O!
+;\$Pt+E3
+;\>pr
+;_DMIu
+;4~Q$
+;73/+'#
+;D$\w
+;D$Pv:
+;d22Vt::N
+;dVtN
+;fD4~
+;j<t 
+;k2$A D#
+;q(w(v
+;w w5H
+?g@$A /y
+@ *v(u
+@ @ /
+@ @ ?
+@ A I!
+@ B @
+@ l$0L
+@ P / 
+@ P 8`
+@ X0L 
+@!@#>
+@!@#F
+@!@#V
+@!A !
+@!B _
+@!Q !
+@!Q 2p
+@!Q e
+@!Q L!
+@"@ ~
+@"@ b
+@"@ n
+@"@ Z
+@"l$ @"
+@"R !
+@#@%!!!!@@@@@
+@#S "
+@#S (
+@#S *
+@#S L#
+@#UxG
+@%U '
+@%U !
+@(`}P
+@(4~Q
+@:;t(A
+@:;t:
+@:8tr
+@:l$Pu
+@@@@@
+@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@[U%@
+@[U%A
+@]Ex@
+@`6z 
+@<@u!
+@0)fa
+@09HPv
+@0JfI"
+@3JePq
+@5HpU
+@6D(>
+@6D)>
+@8{du#H
+@8{Xt
+@8|$@
+@8|$@u@
+@8|$`t
+@8|$`u(E3
+@8|$0u
+@8|$4
+@8|$4u
+@8|$6
+@8|$8t
+@8|$AtcH
+@8|$pt
+@80tJ
+@83u0
+@88usH
+@8l$@
+@8l$@H
+@8l$@u
+@8l$pt
+@8l$pu
+@8olt
+@8p%H
+@8q!t%@8q"t
+@8t$ 
+@8t$@
+@8t$`
+@8t$`u
+@8t$<u
+@8t$>u
+@8t$0
+@8t$4u
+@8t$6t 
+@8t$A
+@8t$d
+@8t$Dt)E
+@8t$hu
+@8t$P
+@8t$Pu
+@8t$Xu
+@A\][
+@A\^]
+@A\_]
+@A\_^
+@A\_^][
+@A]][
+@A]^]
+@A]_[
+@A]_]
+@A]_^
+@A]A\[
+@A]A\]
+@A]A\^
+@A]A\_
+@A]A\_^[
+@A]A\_^]
+@A^^[
+@A^_]
+@A^_^][
+@A^A\]
+@A^A\^
+@A^A\^][
+@A^A\_
+@A^A\_][
+@A^A\_^[
+@A^A\_^]
+@A^A]^][
+@A^A]_
+@A^A]_^[
+@A^A]_^]
+@A^A]A\
+@A^A]A\^[
+@A^A]A\^]
+@A^A]A\_]
+@A^A]A\_^
+@A_^[
+@A__^][
+@A_A\^
+@A_A\_][
+@A_A\_^[
+@A_A]_
+@A_A]A\
+@A_A]A\_^
+@A_A^[
+@A_A^_
+@A_A^_][
+@A_A^A\
+@A_A^A\^[
+@A_A^A]
+@A_A^A]_[
+@A_A^A]_]
+@A_A^A]_^
+@A_A^A]_^][
+@A_A^A]A\[
+@A_A^A]A\]
+@A_A^A]A\_
+@A_A^A]A\_][
+@A_A^A]A\_^]
+@d6z 
+@DyA)
+@fA9<Qt]f
+@ffff
+@g4x@
+@J!@ 
+@k6z 
+@p5x@
+@RiTz
+@SATAUAVAWH
+@SATAUAVH
+@SATAUH
+@SATAVAWH
+@SATAVH
+@SATH
+@SAUAVAWH
+@SAUAVH
+@SAUAWH
+@SAUH
+@SAVAWH
+@SAVH
+@SUATAUAVAWH
+@SUATAUAVH
+@SUATAUAWH
+@SUATAUH
+@SUATAVAWH
+@SUATAVH
+@SUATAWH
+@SUATH
+@SUAUAVH
+@SUAUAWH
+@SUAUH
+@SUAVAWH
+@SUVATAUAVAWH
+@SUVATAUAVH
+@SUVATAUH
+@SUVATAVH
+@SUVATH
+@SUVAUAVAWH
+@SUVAUAVH
+@SUVAUAWH
+@SUVAUH
+@SUVAVAWH
+@SUVAVH
+@SUVAWH
+@SUVH
+@SUVWATAUAVAWH
+@SUVWATAUAVH
+@SUVWATAUAWH
+@SUVWATAUH
+@SUVWATAVAWH
+@SUVWATAVH
+@SUVWATAWH
+@SUVWATH
+@SUVWAUAVAWH
+@SUVWAUH
+@SUVWAVAWH
+@SUVWAVH
+@SUVWAWH
+@SUVWH
+@SUWATAUAVAWH
+@SUWATAUAWH
+@SUWATAUH
+@SUWATAVH
+@SUWATAWH
+@SUWATH
+@SUWAUAVH
+@SUWAUH
+@SUWAVAWH
+@SUWAVH
+@SUWAWH
+@SUWH
+@SVATAUAVAWH
+@SVATAUAVH
+@SVATAUH
+@SVATAVAWH
+@SVATAVH
+@SVATAWH
+@SVATH
+@SVAUAVAWH
+@SVAUAVH
+@SVAUAWH
+@SVAUH
+@SVAVAWH
+@SVAVH
+@SVAWH
+@SVWATAUAVAWH
+@SVWATAUAVH
+@SVWATAUAWH
+@SVWATAUH
+@SVWATAVAWH
+@SVWATAVH
+@SVWATAWH
+@SVWATH
+@SVWAUAVAWH
+@SVWAUAVH
+@SVWAUAWH
+@SVWAUH
+@SVWAVAWH
+@SVWAVH
+@SVWH
+@SWATAUAVAWH
+@SWATAUAVH
+@SWATAUAWH
+@SWATAUH
+@SWATAVAWH
+@SWATAVH
+@SWATH
+@SWAUAVAWH
+@SWAUAVH
+@SWAUH
+@SWAVAWH
+@SWAWH
+@t%fA;
+@t+fE;
+@Tz4| |X`
+@UATAUAVAWH
+@UATAUH
+@UATAVH
+@UATAWH
+@UATH
+@UAUAVH
+@UAUH
+@UAVH
+@UAWH
+@UVATAVAWH
+@UVATAWH
+@UVATH
+@UVAUAVAWH
+@UVAUAVH
+@UVAUH
+@UVAVAWH
+@UVAVH
+@UVWATAUH
+@UVWATAVH
+@UVWATH
+@UVWAUAVH
+@UVWAUH
+@UVWAVAWH
+@UVWAVH
+@UVWAWH
+@UVWH
+@UWATAUAVH
+@UWATAUH
+@UWATAVAWH
+@UWATAVH
+@UWATH
+@UWAUAVAWH
+@UWAUAVH
+@UWAUAWH
+@UWAUH
+@UWAVAWH
+@UWAVH
+@VATAUAVH
+@VATAUH
+@VATAVH
+@VATAWH
+@VATH
+@VAUH
+@VAVAWH
+@VAVH
+@VWATAUAVH
+@VWATAUAWH
+@VWATAUH
+@VWATAVAWH
+@VWATH
+@VWAUAVAWH
+@VWAUAWH
+@VWAUH
+@VWAVAWH
+@VWAVH
+@WATAUAWH
+@WATAUH
+@WATH
+@WAUAVAWH
+@WAUAVH
+@WAUAWH
+@WAUH
+@WAVAWH
+@WAVH
+@WAWH
+@x  @
+'@x  @
+@x5x@
+[ #]       BSSID                      PMKID
+[ UATAUH
+[ UVATAUAVH
+[ UVATAUAWH
+[ UVATH
+[ UVWATAUAVAWH
+[ UVWAVAWH
+[ UVWH
+[ UWATH
+[ UWAUAVAWH
+[ VWATAUAVH
+[ VWATH
+[ VWAUH
+[%2u] %02X:%02X:%02X:%02X:%02X:%02X -
+[%s] %02X%02X%02X%02X%02X%02X Ch:%d Rssi:%d
+[%s] Bssid:%02X%02X%02X%02X%02X%02X Ch:%d
+[%s] Bssid:%02X%02X%02X%02X%02X%02X Ch:%d Rssi:%d
+[%s] Bssid:%02X%02X%02X%02X%02X%02X Reason:%d
+[%s] Bssid:%02X%02X%02X%02X%02X%02X Ssid:%.32s Ch:%d Reason:%s
+[%s] Bssid:%02X%02X%02X%02X%02X%02X Ssid:%.32s Ch:%d RoamP:%d Rssi:%d Reason:%s
+[%s] Bssid:%02X%02X%02X%02X%02X%02X Ssid:%.32s Ch:%d Rssi:%d
+[%s] Bssid:%02X%02X%02X%02X%02X%02X Ssid:%.32s Ch:%d Rssi:%d ConsMissBeac:%d RssiThreshold %d Reason:%s
+[%s] CandNum:%d PrintingTop %d
+[%s] Reason:%d
+[.:$6g
+[[[\\]
+[0fA;
+[0fE;
+[9\$Dt
+[T:$6.
+[WMI, Dynamic, Provider("WMIProv"),
+[z%z(
+[z{{E
+[zEx5
+[zEyS
+\#5}@
+\$ 8_du$H
+\$ ATH
+\$ D3
+\$ E3
+\$ fD
+\$ fE#
+\$ UATAUH
+\$ UH
+\$ UVATAUAVH
+\$ UVATH
+\$ UVAUAVAWH
+\$ UVWATAUAVAWH
+\$ UVWATAUH
+\$ UVWATAVH
+\$ UVWAUAWH
+\$ UVWAVAWH
+\$ UVWH
+\$ UWATAVAWH
+\$ UWATH
+\$ VATAUH
+\$ VH
+\$ VWATAUAVH
+\$ VWATH
+\$ VWAUAVAWH
+\$ VWAUH
+\$ VWAVH
+\$ WATAUAVAWH
+\$ WATAUH
+\$ WAUAVH
+\$ WH
+\$(9\$h
+\$(E3
+\$(Hi
+\$,E3
+\$@8F
+\$@8F`
+\$@E3
+\$@fA
+\$@fD
+\$@ff
+\$@Hc
+\$@Hi
+\$@Ic
+\$@Mk
+\$@u#
+\$@u0H
+\$`D#
+\$`E+
+\$`fD
+\$`fff
+\$`H9+
+\$`L+\$XI
+\$<fA
+\$<H+
+\$0A#
+\$0D9
+\$0E;
+\$0E2
+\$0E3
+\$0f;
+\$0fA
+\$0H+
+\$0Hc
+\$0Mk
+\$0t<H
+\$0uQ
+\$4D;
+\$4fD
+\$8@8
+\$8A3
+\$8E3
+\$8fD
+\$8H+
+\$8Hi
+\$8M9
+\$8Mk
+\$DD97
+\$dE3
+\$HD;\$@
+\$HD;\$@rTD
+\$hE3
+\$HE3
+\$hfA
+\$HfA
+\$HfD
+\$hfD
+\$HfD
+\$HL9
+\$JfA
+\$pD+
+\$PE3
+\$Pf;
+\$pH;
+\$PIc
+\$PL;\$Xt
+\$PtAA
+\$PusH
+\$xA3
+\$xf)
+\$xfD
+\$XfD9_(u
+\$xHc
+\$XIc
+\$XL+
+\$Xs&A
+\$Xt(E3
+\$Xta
+\$XtyA
+\* 8D
+\/Tz4| |X`
+\}`yH
+\<pE3
+\>D.>
+\3:p 
+\6)`?
+\9 uY
+\JD.>
+\K%x 
+\YD.>
+](`Bx
+]HcCp
+]zEy2
+^!Q#@
+^!Q%@
+^(`Bx
+^hA9s0t
+^zgzzzP
+_(ffffff
+_`D9[
+_111A
+_521H
+_621A
+_A11H
+_c01H
+_c05A
+_C06H
+_c0EH
+_C10H
+_c15H
+_c16H
+_c17H
+_c18H
+_c19H
+_c1CH
+_C30H
+_C96H
+_D04H
+_D05H
+_E05H
+_G09H
+_G17H
+_G233
+_G243
+_G253
+_G263
+_G43L
+_G443
+_G4AI
+_G4BI
+_G4CI
+_G50H
+_G573
+_G5A3
+_G5B3
+_G5C3
+_G5D3
+_G5E3
+_G5F3
+_G613
+_G62H
+_G63A
+_G66A
+_G66H
+_jbF~T
+_L01H
+_L04I
+_L05H
+_L06H
+_M02H
+_O04H
+_O06H
+_O09H
+_O0AH
+_O0BH
+_O11A
+_O13A
+_O14A
+_O21H
+_OlaH
+_P03I
+_P09H
+_P0DH
+_P0EH
+_P0FH
+_P11H
+_P3DH
+_PHcGHI
+_Q02H
+_Q03H
+_Q04H
+_Q06H
+_Q08H
+_r0EA
+_r15H
+_r16I
+_snprintf
+_T05H
+_TCAH
+_U00k
+_u02H
+_u03H
+_U04A
+_U08A
+_U0AH
+_U0BH
+_U0EH
+_U10H
+_U15H
+_U16H
+_U19H
+_U1AH
+_U1BH
+_U1CH
+_U1DH
+_U1EH
+_U27A
+_U29H
+_U2AH
+_U2BH
+_U2CH
+_U2EH
+_U31H
+_U36H
+_U3FH
+_U42H
+_U47H
+_U48H
+_U49H
+_U4DH
+_U4EH
+_U50A
+_U51H
+_U52I
+_U53A
+_U57I
+_U58H
+_U5FH
+_U67I
+_U6FH
+_U77H
+_vsnprintf
+_w02H
+_w12H
+_w22H
+`#q@(M
+`(@x  @
+`)gkg
+`*)ba
+`*kfa
+`}J%@
+`~@%@
+`~J%@
+`+4~Q
+`1yEy0y
+`2n6y
+`6`}0
+`6`}p
+`7@x  @
+`8`Hq
+`8`HqZ
+`84~Q$
+`A\][
+`A\^[
+`A\^]
+`A\_]
+`A\_^
+`A\_^][
+`A]^]
+`A]_[
+`A]_^
+`A]A\^][
+`A]A\_
+`A]A\_][
+`A]A\_^[
+`A]A\_^]
+`A^_[
+`A^_^][
+`A^A\[
+`A^A\^][
+`A^A]^
+`A^A]_^[
+`A^A]A\_^][
+`A__[
+`A_A]^
+`A_A^A\_]
+`A_A^A]
+`A_A^A]_^
+`A_A^A]A\]
+`A_A^A]A\^
+`A_A^A]A\_
+`A_A^A]A\_^[
+`A_A^A]A\_^]
+`a4x`
+`atz 
+`h4{@
+`h4x@
+`i6xa
+`INIT
+`MD.>
+`rTx`
+`t4A;
+`v3&Ap
+`X`@(
+`y*pa
+`yJpB!@ 
+`zS&A
+{ ATAUAVH
+{ ATH
+{{ex*
+{{ex{i"
+{{ex{i*
+{{ex{j*
+{{exp
+{{ez{h
+{{ezS
+{ezEy'
+{J$@!d
+{R))>
+------------------|-----------------------------
+------------------------|--------
+|         | RSSI   | COUNT    | RSSI   | COUNT    | COUNT    | HOLD  | LAST UPDATE |
+| % 10u | % 10u 
+| %02X%02X%02X%02X%02X%02X 
+| %02X:%02X:%02X:%02X:%02X:%02X 
+| %-11d%% 
+| %-12d 
+| %-12s 
+| %-16s 
+| %-26d 
+| %-26s 
+| %-2d|
+| %-3d 
+| %-3d    |
+| %-4d   
+| %-5d 
+| %-8d 
+| %-8d   
+| %s 
+| 0x%08X | 0x%08X 
+| ASSOC | MAC ADDRESS       | T SINCE  | DEAUTH REASON              | CLIENT DEAUTH REASON       | CLIENT STATE | SEQ | CNCT     |
+| AVG BSF  
+| B:%-2X | S:%-3X 
+| CHANNEL | B ONLY | B ONLY   | G PROT | G PROT   | TOTAL    | THRES | TIME SINCE  |
+| Current %d  | Default %d  
+| ID    |                   | DEAUTH   |                            |                            |              |     | TIME     |
+| ID  | TYPE    | DWELL TIME | Probe OPT |#| ID  | TYPE    | DWELL TIME | Probe OPT |
+| Length | SSID                                                                     |
+| NONE       
+| RX %s    | TX %s    
+| SLOT 
+|"HpU
+|$ ATA
+|$ ATAU3
+|$ ATAUAVAWL
+|$ ATAUAVH
+|$ ATAUAWH
+|$ ATAUHc
+|$ ATH
+|$ ATHc
+|$ E3
+|$ fE
+|$ u"
+|$$fA;
+|$(fD
+|$@9yHu2I
+|$@A_A^A]A\
+|$@f;
+|$@fff
+|$@Hi
+|$@L;
+|$@s&H
+|$@tE
+|$@tgL
+|$@u H
+|$`!>
+|$`<r
+|$`5u
+|$`9^
+|$`A:
+|$`A97u
+|$`A98u
+|$`E3
+|$`Hi
+|$`u%A
+|$`uNHk
+|$< s
+|$<A#
+|$<E2
+|$= s
+|$> r5H
+|$0@2
+|$0A]A\
+|$0A9
+|$0E3
+|$0Ei
+|$0Ek
+|$0f;
+|$0fD
+|$0H9{
+|$0L9l$8u
+|$0u$
+|$0u>H
+|$0uOH
+|$4 s
+|$4@8
+|$4D3
+|$5 s
+|$6 r1H
+|$89u
+|$8E2
+|$8fD
+|$8t#
+|$8tNH
+|$H<s
+|$hE3
+|$HE3
+|$HE9|$
+|$hfA
+|$HfA
+|$HfD
+|$ht3H
+|$Hu(
+|$hu:H
+|$l s
+|$m s
+|$n r5H
+|$p5u"A
+|$pE2
+|$pf;
+|$pHi
+|$Pt*L
+|$PtP
+|$Pu#H
+|$T9:
+|$tD3
+|$TD3
+|$xD9
+|$Xf;
+|$xf+
+|$xfD
+|$Xfffff
+|$XHi
+|$Yu$
+|%-12s
+|%-3d|
+|) B8D*z
+|{~bzbP
+|------------|------------
+|---------------------------------------------------------------------------------------------------------|
+|--------------------------------------------------------------------------------------------------------------------------------|
+---------|-----------------|----------------------
+-----------------------------------|----------------------|----------------------
+--------|----------------|----------------|-----------------
+---------|-----------------|--------------------------------|----------------------
+---|--------------------------------|---------------|----------|-----------------
+---------|---------|----------------|----------------------|----------------------
+---------|---------|-------|----------------|----------------------|-----------------------
+|---|---------|---------|-----------------------------|-------|------|----------|----------|------------|--------------|----------|---------------|
+|---|-----------------------------|----|-------------------|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|>>Bq
+|>HpU
+|74~Q
+|bUxA
+|buyC
+|d4x`
+|DD.>
+|dtz 
+|Ind|        SSID                 |Chan|       BSSID       | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10| 11| 12| 13| 14|
+|Ind| Age sec | Age cnt |        SSID                 | Chan  | RSSI | DTIM cnt.| DTIM per.| Beacon Int.| S31 Cl.Power | BSS/IBSS |MaxNumOfClients|
+|J @ 
+|J"@ 
+|M(`Bx
+|M)ga
+|M2!A
+|m6xB
+|s4x`
+|stz 
+|u6xB
+|X4x@
+|x4x`
+|xtz 
+|ZTx`
+})){R
+};ce}'}
+}@fffff
+}{))R>
+}{ey2
+}>ddi
+}6fff
+}Dy;y%z
+}Dy;y%z7
+}Dygy
+}eD)>
+}Gygy
+}gzDy
+~ ffff
+~(pHqhr
+~]zEy
+~~Gz==
+~=Gz=d
+~3fffff
+~4[C)v
+~B$T 
+~B&V 
+~Huv}
+~Zb(u
++|$l+\$dD
++l$8k
++XpHh
+< t'<
+<$`~X%A
+<$xr+@
+<(wHu
+<@u(H
+<@uwA
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+<=)ga
+<=2!A
+<4~Q$
+<4m*b
+<5UxG
+<7`}P
+<840,($ 
+<96x"
+<a|I<f
+<jTy0z
+<-KcD
+<No current ssid>
+<ntw<sts<%
+<O)ga
+<O2!A
+<Pt`H
+<Pt2H
+<Pt-D
+<PtUE
+<y>g?g0
+=&&jL66Zl??A~
+== BSSID                   SSID                       Active Chnl AvgRssi   NoMatch  RoamTrigMask
+== consecutiveMissedBeaconsThreshold is: %d
+== Roaming threshold is: %d
+===== %d ==========
+===== numOfRecords=%d ==========
+===========
+============
+================
+==================== AVAILABLE NETWORKS ======================
+==================== ROAMING AGGRESSIVENESS ======================
+==================== ROAMING CANDIDATES (descending priority) ======================
+==================== ROAMING TRIGGERS DETAILS ======================
+======================== Asset Tracking Configuration ======================================
+======================== Asset Tracking last S3 statistic ======================================
+======================== Asset Tracking Statistics =========================================
+================================= MMAC SCAN INFORMATION =============================
+=========================================
+====================================================
+=========================================================================
+=====================================================================================
+=============================================================================================
+=================================================================================================
+===========================================================================================================================================
+==================================HMAC SCAN INFORMATION =============================
+==Gzdd
+=-9'6
+='9-6d
+=eD*>
+=j&&LZ66lA??~
+=jLZlA~
+=zpZq
+>)`0v>
+>^//q
+>8$4,
+>D8L$Du.
+0!:p 
+0!@#!
+0%:p 
+0)D(>
+0)D)>
+0/%H%
+0:6z 
+0:bOz2$
+0?4~Q
+0?vx`
+0}E @
+0~6xa
+0<y@,
+0=b2'
+0>6z 
+000000000000
+00000000111111112222222233333333444444445555555566666666777777773120
+00CCAACCAA00
+00CCCCCCCC00
+00CCDDCCDD00
+02!@ 
+040904B0
+07`}P
+09:11:39
+09:12:09
+096{d
+096zA
+0A\][
+0A\^[
+0A\^]
+0A\_[
+0A\_]
+0A\_^
+0A\_^][
+0A]][
+0A]^]
+0A]_]
+0A]_^
+0A]_^][
+0A]A\]
+0A]A\^
+0A]A\^][
+0A]A\_
+0A]A\_][
+0A]A\_^]
+0A^^]
+0A^_^
+0A^A\]
+0A^A\^
+0A^A\_
+0A^A\_][
+0A^A\_^[
+0A^A\_^]
+0A^A][
+0A^A]_
+0A^A]_^[
+0A^A]_^]
+0A^A]A\
+0A^A]A\^]
+0A^A]A\_[
+0A^A]A\_]
+0A^A]A\_^
+0A^A]A\_^][
+0A_A]A\_[
+0A_A]A\_^][
+0A_A^^][
+0A_A^_][
+0A_A^_^[
+0A_A^_^]
+0A_A^A\][
+0A_A^A\^[
+0A_A^A\_]
+0A_A^A\_^
+0A_A^A\_^][
+0A_A^A]^]
+0A_A^A]_[
+0A_A^A]_]
+0A_A^A]_^
+0A_A^A]_^][
+0A_A^A]A\]
+0A_A^A]A\^
+0A_A^A]A\^][
+0A_A^A]A\_
+0A_A^A]A\_^[
+0A_A^A]A\_^]
+0'D)>
+'0e=eJ"@#
+0gz\y
+0Ic8I
+0Icx4M
+0mE @
+0p{@,
+0qVyD
+0R6{d
+0R6x[
+0R6zA
+0Tz@,
+0Uvx`
+0'uy,
+0V6{d
+0V6x[
+0V6zA
+0w@$T /$
+0W0"E
+0x%08X
+0x%08X,  
+0y:bN
+0ya/y
+0yAiPp
+0ZTx`
+1 = RM                                     8  = Block-Ack support type (1 = Immediate) 
+1${pq
+1*?#0
+1,2,3,4,5,6,7,8,9,10,11,12,13
+1;yF 
+1?#1*
+101112131415161718191A1B1C
+11#?*0
+11h TPC:                       %-10d
+15.4.1.1
+18:29:31
+18:34:49
+1Exoz
+1X_AUTH_FAILURE
+1xEnable
+2 = Short/Long Preamble (1 = Short)        9  = ERP (1 = Non-ERP present) 
+2!A./p
+2#A./p
+2$A0gy
+2$C0x`
+2%T :qL$
+2)D)>
+2)D*>
+2.4GHz
+2\tHlWB
+20:24:20
+20:24:23
+20:24:25
+20:24:26
+20:31:32
+20:31:49
+20:31:51
+20:34:14
+20:34:32
+20:34:34
+20:34:39
+20:37:12
+20:37:26
+20:39:58
+20:40:12
+20:40:17
+20:42:54
+20:42:57
+20:43:09
+20:43:10
+20:45:53
+20:46:09
+20:46:12
+20:49:03
+202122232425262728292A2B2C
+22Vd::Nt
+2h4y!e
+2h4y!e0s
+2h4y:bp
+2h6y1b
+2k4y%`>b
+2m4y:gH
+2o4y:fH
+2o6y0'A
+2S5h1b
+2Vd2:Nt:
+2-WIRE
+2y0y$x/(
+3 = Qos                                    10 = 11d 
+3 333!3"3#333$3%3&333'3(3)333*3333+333,3-3.333/30313332
+3\$DA
+3|$@A
+303132333435363738393A3B3C
+33333333333333333333
+33333333333333333333333333333333333
+3478;<
+36,40,44,48,52,56,60,64,100,104,108,112,116,120,124,128,132,136,140,149,153,157,161,165
+3A99u,H
+3h5y1fS!
+3n5yV%
+3-WIRE
+4 = HT (not supported)                     11 = DLS (not supported) 
+4!:p 
+4!N.x
+4"N.x
+4#N.x
+4(`}P
+4,8$9'6-.:$6#1*?hXpHeS~ArNlZ
+4}0 @
+4}0!A
+404142434445464748494A4B4C
+43JePq
+4d(`Bx
+4dJfa
+4lTx`
+4mBqM
+4n2#B 
+4nBqM
+'4Nhu
+4PfD;
+4Tz4| |X`
+4U$B8V$C4
+4U$C8
+4U$C8"
+4U$C8J
+4U$C8N
+4U$C8Z
+4u:rh
+4'vb'
+4WAY_HANDSHAKE_IE_UNMATCH
+4WAY_HANDSHAKE_TO
+4-WIRE
+4X`@~p
+4y:b@'
+4y=bYa4
+4y8`f
+4yTzYa
+5 = Spectrum Management                    12 = Privacy 
+5*>C,
+5.2GHz
+5.2GHz: %s
+5_5M 
+54~Q$
+55_jWW
+5h;be
+5y1bS!
+5y2`8`
+5y2`8`E"
+6 = Short Slot time                        13 = High Density (not supported) 
+6*p@"
+'6-9d
+6Dxdy%x
+6dxdzEx
+6Dydx
+6dzdx
+6y0"D
+7 = APSD                                   14 = BCS 
+77Ynmm
+7nUUU
+7Yn7m
+8$4,6-9'$6.:*?#1pHhX~AeSlZrNbS
+8%`~X%A
+8?ia 
+8\$:u
+8\$;u
+8\$@u
+8\$<u
+8\$=t
+8\$0u@
+8\$9u
+8`5m!c
+8`5m!c%
+8`Ux0$
+8}e}!
+802.11d Mode:      %-10s
+802_11_ASSOC_FAILURE
+802_11_AUTH_FAILURE
+802_11_DISASSOC_1XAUTH_FAILURE
+802_11_DISASSOC_4WAY_FAILURE
+802_11_DISASSOC_CLS2_NONAUTH
+802_11_DISASSOC_CLS3_NONASSOC
+802_11_DISASSOC_IE_FAILURE
+802_11_DISASSOC_MIC_FAILURE
+802_11_REASSOC_FAILURE
+8021X_AUTH_FAILED
+84~Q$
+86D.>
+87D.>
+8A\_][
+8A\_^[
+8A]^][
+8A]_][
+8A]A\_]
+8A^^][
+8A^A\][
+8A^A]][
+8A^A]_[
+8A^A]A\[
+8A^A]A\^
+8A_^][
+8A__^]
+8A_A\][
+8A_A\^[
+8A_A]][
+8A_A]^[
+8A_A]_]
+8A_A]A\_^[
+8A_A^^[
+8A_A^^]
+8A_A^_[
+8A_A^_^
+8A_A^A\^][
+8A_A^A][
+8A_A^A]_
+8A_A^A]_^[
+8A_A^A]A\
+8A_A^A]A\^[
+8A_A^A]A\_[
+8CD->
+8Clu3
+8D$Au
+8D$au
+8D$AuHL
+8D$Bu
+8D$Cu
+8D$Du
+8D$Et
+8D$it
+8D$Mu
+8D$PtBH
+8D$Rt
+8eS"E
+8h5x@
+8hD(>
+8L$@t0A
+8L$bu
+8Slu*
+8Slu.D
+8T$`t
+8X`@}
+9\$ u
+9\$@tV
+9\$0t
+9\$0tHH
+9\$0u
+9\$8uWH
+9\$Hu
+9\$hu'H
+9\$Lt
+9\$Pt%
+9\$Pt2H
+9\$pt5M
+9\$Pu
+9\$Pu9I
+9|$@t
+9|$@t8D
+9|$@u
+9|$@uBfD
+9|$`t
+9|$`u
+9|$0u
+9|$0ujH
+9|$4u
+9|$8u
+9|$8uhH
+9|$Dt
+9|$Ht~9
+9|$Hu
+9|$Lt
+9|$Pt
+9|$pt
+9|$Pt2H
+9|$pufH
+9|$PuI
+9|$XuIH
+9}$t#E3
+9+t$H
+9+t1fC
+9>vEH
+93vyH
+9a4yVz^a
+9a5y'q8`
+9D$0s"
+9D$0t(E3
+9D$0u
+9D$Hu
+9D$Ps
+9D$xt
+9F s+L
+9F$sED
+9h8t.3
+9h8u]
+9JePp
+9Kr9J
+9l$ vNH9
+9l$$@
+9l$@u
+9l$@u!
+9l$@u/H
+9l$`t
+9l$<u4H
+9L$0u
+9l$0u'
+9L$4r
+9l$8u
+9l$Dt
+9l$Ht
+9l$PtKH
+9L$pv6I
+9l$xu
+9S(s#H
+9s|vYL
+9sPvbL
+9t$@t
+9t$@uk
+9t$\toH
+9t$`t
+9t$`u
+9t$0t
+9t$4t
+9t$8t(
+9t$Du=
+9t$Pt H
+9t$pu%H
+9t$tu
+9t$xtKL
+9t$Xu7H
+9t) t
+9wPviL
+9XDt+H
+9Z\tIH
+A H;H
+A L9c t D9k
+A#T$ 
+'A(O!
+'A(O!&
+'A(O!~
+'A)O!
+A)O!$
+'A)O!B
+'A)O!b
+'A)O!J
+'A)O!R
+'A)O!V
+A)P!Zp
+A*B$+`
+'A*O!
+'A*O!B
+'A*O!j
+A*Q!@
+A,Q!$
+A,X!,
+A,X!<
+A,X!D
+A,X!d
+A,X!H
+A,X!X
+A,Y!\
+A,Y!h
+A,Y!l
+A.!t!L
+A:1u:
+a:b@*
+A;\$>r
+a;c@+A
+a;c6k:
+A\^][
+A\_][
+A\_^[
+A\_^]
+A\_^][
+A\_^H
+A]^][
+A]_][
+A]_^[
+A]_^]
+A]_^][
+A]A\[
+A]A\][
+A]A\^
+A]A\^[
+A]A\^][
+A]A\_
+A]A\_[
+A]A\_]
+A]A\_^
+A]A\_^[
+A]A\_^]
+A]A\_^][
+A^^][
+A^_][
+A^_^[
+A^_^]
+A^_^][
+A^A\[
+A^A\]
+A^A\][
+A^A\^
+A^A\^[
+A^A\^][
+A^A\_
+A^A\_[
+A^A\_]
+A^A\_][
+A^A\_^
+A^A\_^[
+A^A\_^]
+A^A\_^][
+A^A][
+A^A]]
+A^A]][
+A^A]^
+A^A]^[
+A^A]^]
+A^A]_
+A^A]_[
+A^A]_]
+A^A]_][
+A^A]_^[
+A^A]_^]
+A^A]_^][
+A^A]A\
+A^A]A\[
+A^A]A\][
+A^A]A\^[
+A^A]A\^]
+A^A]A\^][
+A^A]A\_
+A^A]A\_[
+A^A]A\_]
+A^A]A\_][
+A^A]A\_^
+A^A]A\_^[
+A^A]A\_^][
+A__][
+A__^[
+A__^]
+A__^][
+A_A\[
+A_A\]
+A_A\][
+A_A\^]
+A_A\^][
+A_A\_][
+A_A\_^
+A_A\_^[
+A_A\_^][
+A_A][
+A_A]^][
+A_A]_[
+A_A]_]
+A_A]_^
+A_A]_^[
+A_A]_^]
+A_A]A\[
+A_A]A\]
+A_A]A\][
+A_A]A\^
+A_A]A\^]
+A_A]A\_
+A_A]A\_[
+A_A]A\_]
+A_A]A\_][
+A_A]A\_^
+A_A]A\_^][
+A_A^][
+A_A^^
+A_A^^[
+A_A^^][
+A_A^_
+A_A^_[
+A_A^_]
+A_A^_][
+A_A^_^
+A_A^_^[
+A_A^_^]
+A_A^_^][
+A_A^A\[
+A_A^A\][
+A_A^A\^[
+A_A^A\^]
+A_A^A\^][
+A_A^A\_[
+A_A^A\_]
+A_A^A\_][
+A_A^A\_^
+A_A^A\_^[
+A_A^A\_^][
+A_A^A][
+A_A^A]][
+A_A^A]^[
+A_A^A]^][
+A_A^A]_]
+A_A^A]_^
+A_A^A]_^[
+A_A^A]_^][
+A_A^A]A\
+A_A^A]A\[
+A_A^A]A\][
+A_A^A]A\^
+A_A^A]A\^[
+A_A^A]A\^][
+A_A^A]A\_
+A_A^A]A\_[
+A_A^A]A\_]
+A_A^A]A\_][
+A_A^A]A\_^
+A_A^A]A\_^[
+A_A^A]A\_^]
+A_A^A]A\_^][
+A+Q!$
+A+X!(
+a=e@-
+A34$I
+A3KDA
+a5_j5W
+A8;t I
+a8`@(A
+A88u)A8x
+A8HcAHH
+A9:u!A
+A9^4u
+A91ue
+A9D$8
+A9l$\t
+A9NHt
+A9t$$
+aa_j55
+ABBBBBBBBBBBBBBCCBBBBCCCCCCDCDCDDD
+ABORT
+ABORT_CNCT
+Above
+ABOVE   
+AC %s: AIFSN = %-4d, CWMIN = %-4d, Factor = %-8d
+AcOnLineAutoPowerIndex
+acquisition_data: %d, 
+Action
+ACTIVATED
+ActivateDisconnectedAntennaOnly
+ACTIVATION
+ACTIVE
+ACTIVE  | %-3d        | 
+Active roam triggers: 
+Actual 11d settings (merge of EEPROM and Country IE)
+ADD_EXCLUDE
+add_immediate_ba_start_seq: %d
+add_immediate_ba_tid: %d, 
+ADDBA_REQUESTED
+ADDBA_WFP
+ADL         
+ADL_STATUS_APP_ASSOCIATION_COMPLETE
+advancedTT
+advancedTTDegreesOverride
+Aggregated Traffic Load = 0x%X
+AggThresholdDisableStart
+AggThresholdFrameLimit
+AggThresholdMaxTimeUSsec
+aiKwZ
+AJ`Pv<
+AJePp
+AKMP_NOT_VALID
+Allowed channel list:          
+Allowed entry age: %d
+Almagor
+ALON        
+ALONA
+AlonAPM
+ALONAPM     
+AlonDBG
+ALONDBG     
+AlonEEPROM
+ALONEEPROM  
+AlonEx
+ALONEX      
+AlonIMG
+ALONIMG     
+AlonISR
+ALONISR     
+AlonNAL
+ALONNAL     
+AlonRX
+ALONRX      
+AlonSM
+ALONSM      
+AlonTX
+ALONTX      
+AMSDU8K
+AMSDUEnabled
+AMT_STATE_HOST_PASSIVE
+AMT_STATE_IDLE
+AMT_STATE_PIPING_ENABLED
+AMT_STATE_SENDING_ADDRESS
+AMT_STATE_STAND_ALONE
+AMT_STATE_WAITING_FOR_OWNERSHIP
+AMT_SW_WATCHDOG
+Antenna Coupling
+Antenna coupling Isolation (calibration result val): %d
+Antenna coupling Threshold (registry Val): %d
+AP Selection
+AP SELECTION
+AP selection chicken bits (enabled): 
+AP_DEAUTH
+AP_DISASSOC
+AP_IN_ADJ_CHANNEL
+AP_PROPERTIES_MISMATCH
+APM_EVENT_INIT
+APM_EVENT_MAX
+APM_EVENT_RESET
+APM_EVENT_RESUME
+APM_EVENT_START
+APM_EVENT_SUSPEND
+APMMode
+APP_SCAN
+APP_SCAN    
+AppendReasonIeToDeauth
+ApsdFillCmd
+ApsdPeriod
+ApsdTid
+ApsdTriggerEnable
+ApsdTriggerMode
+ApsdTriggerQueues
+ApSelectionChickenBits
+ApTblAgeTime
+aR{%{
+arnv{
+Asset Tracking
+ASSET_TRACK 
+ASSET_TRACKING
+AssetTrackingChannelBurstLen
+AssetTrackingMaxOutOfChanTime
+AssetTrackingS3ScanPeriod
+AssetTrackingTagTxChanDwellTime
+ASSOC ID
+Assoc ID: %d, 
+ASSOC_ACTIVE_LEVEL  
+ASSOC_AUTO_SCAN     
+ASSOC_FAIL
+assoc_id: %d, 
+ASSOC_MANUAL_SCAN   
+ASSOC_RESPONSE_FAIL
+ASSOC_RESPONSE_TIMEOUT
+ASSOC_TX_FAILURE
+ASSOCIATED
+ASSOCIATED_IDLE     
+ASSOCIATING
+Association request
+Association response
+Association time = %d
+ATAUAVAWH
+ATAUAVH
+ATAUAWH
+ATAUH
+ATAVAWH
+ATAVH
+ATAWH
+AtomMaxDpcTime
+AtomRxDpcDelay
+ATTEMPT_TO_CONNECT
+AUAVAWH
+AUAWH
+AumIa
+AUTH_SEQ_1_ATTEMPTS_EXHAUSTED
+AUTH_SEQ_1_RESPONSE_FAIL
+AUTH_SEQ_1_TX_FAILURE
+AUTH_SEQ_3_RESPONSE_FAIL
+AUTH_SEQ_3_RESPONSE_TIMEOUT
+AUTH_SEQ_3_TX_FAILURE
+AUTHENTICATED
+AUTHENTICATING
+Authentication
+AutoConnectFromRegistryEnabled
+AutoCorrCckMinVal
+AVAILABLE
+AVAWH
+AverageRssiMultiplier
+AVG_RSSI_ON_ASSOC
+AWAKE TIME
+awKiZ
+AXfB9D+x
+aYa0yt
+B @ A
+B B B 
+B fD;
+B P  
+B P L 
+B X0L 
+B!Q L!
+B"@ C
+B"R 8`"m
+B"R 8`"n
+B"R L"
+B#A J$
+B$ t-A
+B$A ]
+B$T L$
+B%@ J$
+B%U L%
+B&V B$A 
+B&V L&
+B(s2I
+B)Ar6
+B.reloc
+b[c@+
+b[c@+B
+B0fD;
+b3&Ap
+B6D)>
+B6D*>
+B9t!Du
+BackWatchdogFreq
+BAckWindowAgingOn
+Band = %s
+Band 2.4 Noise info
+Band 5.2 Noise info
+Band:              %-10d
+Band: %s  
+Band24LimitChannels
+Band24LimitTxPower
+Band52LimitChannels
+Band52LimitTxPower
+BandType
+Bandwidth Allocation Data
+BatteryAutoPowerIndex
+bAuthenticationNegotiated %d
+bDot11ExcludeUnencrypted %d
+bDrainRequested: %s
+Beacon
+BEACON
+Beacon interval: %d, 
+Beacon interval: Desired = %d ms, Actual average = %d uSec
+Below
+BELOW   
+bEncryptionNegotiated %d
+bForced: %s
+bFromOid: %s
+bHPCustomizedPowerIndex
+bkg)g
+blockAckBufferAgingThreshold
+blockAckBufferSize
+blockAckTimeout
+blockAckWindowSafegaurds
+blockAckWindowStartMaxTolerance
+Boost register = 0x%X
+BoostReg
+bOz2$
+bp:pC-
+bp:pC.
+bp:pC/
+bpzpC/
+BR/EDR Last Tx Power = 0x%X, Inquiry/Page SR Mode = 0x%X, LE Master = 0x%X
+BSODonSpecificSysAssert
+BSS Key: BSSID = %02X:%02X:%02X:%02X:%02X:%02X, 
+BSSID %02X:%02X:%02X:%02X:%02X:%02X
+BSSID: %02X:%02X:%02X:%02X:%02X:%02X  
+bssid_addr: %02X:%02X:%02X:%02X:%02X:%02X, 
+BSSID= %.2X:%.2X:%.2X:%.2X:%.2X:%.2X
+BssIdListTable
+BssTbl 
+BT Coex
+BT Coex is in Legacy mode, no data available
+BT Coex Op mode = %d
+BT Coex service is %sactive
+BT Min RSSI = 0x%X, LE Scanning/Initiating Mode = 0x%X, LE Advertising Mode = 0x%X
+BT Status = %s
+BT Traffic Load = %s
+BT3         
+BT3HS
+BT3HS11nEnabled
+BT3HSMode
+BT3HSQoSEnabled
+BTAntennaCouplingThresh
+BTDuration
+BTDynamicAggThresh
+BTDynamicFragThresh
+BTEnableFlags
+BTIgnoreAll
+BTKillAckMask
+BTKillCTSMask
+BTLeadTime
+BTMaxKill
+BTOnThreshold
+BTProfilesConfig
+BTPsPollDisableThresh
+BTPsPollEnableThresh
+BTReducedTxPowerDisableThresh
+BTReducedTxPowerEnableThresh
+BUILD
+buildAndSendPwrTableCmd
+bUnicastUseGroupEnabled %d
+buz8`'
+B'W L'
+Bw/y`
+bx"xH 
+Bx,x/p
+Bx,x/pV
+bxBxH 
+BXfA9@X
+By8`#
+By8`2p
+By9a&
+By9a*
+By9a:
+By9a~
+By9a>
+By9aN
+By9aR
+By9aV
+By9av
+By9aZ
+bYa0y
+bYaUi;
+BYf;X
+byLy/p
+bzb@*
+c @8;t
+c AUH
+C fA;
+c!!B0
+C$ t!L
+C$@8y
+C$Lc^
+C(`*e
+C(f9E(
+c(uZM
+C,@8y
+C@t*H
+c[cUk;
+c}e@-
+C~fffff
+C>D9L
+C09C4
+C0D9hPv
+C0D9pPv
+C0fD;
+C49C<
+C9D( 
+Calibration
+CALIBRATION         
+Calibration Service
+CalibrationActive
+CalibrationActiveUcode
+CalibrationWdEnabled
+CandNum:%d Bssid:%02X%02X%02X%02X%02X%02X ExpectedTptP:%d RssiP:%d ConnAtemptsP:%d DirectRoamP:%d Rssi:%d
+CANT_ASSOC_NONAUTH
+cB!!0 
+CB_ACTION
+CB_CLEAR_STATS
+CB_GET_STATS
+CB_STATS
+CCK RATES
+cck_basic_rates: 0x%X, 
+CckFalseAlarmMax
+CckFalseAlarmMin
+CckMaxSensitivity
+CckMinSensitivity
+CcmpReKeyPnCheckMode
+CCX CNCT
+CCX S36
+ccx.bCckmEnabled %d
+ccx.bMixedCellsEnabled %d
+ccx.cckmKrk.bValid %d
+ccx.cckmKrk.material[0] %X
+CCX_RG_802_INVALID_AUTH_TYPE
+CCX_RG_AUTH_TIMEOUT
+CCX_RG_CHLNG_2_AP_FAILED
+CCX_RG_CHLNG_FROM_AP_FAILED
+CCX_RG_DISABLED
+CcxApAssistedRoaming
+CcxCCKM
+CcxLeap
+CcxQoSParameterSetIE
+CcxRadioMeasurements
+CcxSdkActive
+CcxTPC
+CCXv4FeatureSet
+CCXv4SDKOverride
+CcxVersion
+cD9OPu
+ce_calibConfig
+ce_calibOrdinalGet
+ce_calibOrdinalSet
+ce_Fem
+ce_getCardType
+ce_isShl1x2
+ce_isSip
+CE_READ_MULTIPLE_MIB_OP
+ce_readEeprom
+ce_readMib
+ce_readMultipleRadioRef
+ce_readOtpChunk
+ce_readRadio
+ce_rfKill
+ce_runFuncRef
+ce_sendHC
+ce_sysAssert
+ce_tune
+CE_UNUSED_FUNC_OP
+ce_wait
+ce_writeMib
+ce_writeMultipleMibRef
+ce_writeMultipleRadioRef
+ce_writeRadio
+CH8WVD
+Chain noise
+chan_num: %d, 
+Channel   %2d       avg. Noise  %3d
+Channel %d 
+channel width capability: 0x%X, 
+Channel-%-3d        |
+Channel:                       %-10d
+Channel: %d, 
+CHANNEL_SWITCH
+channelCount: %d
+ChannelMaskBand24B
+ChannelMaskBand24G
+ChannelMaskBand52
+ChannelMaskBand52J
+channelNumber
+channels: %d, 
+ChannelWidth24
+ChannelWidth52
+ChfD;
+ChTbl 
+CI compliance ok? %s
+CISCO
+Ck@8j
+class INTEL_11K_RADIO_MEASURMENTS_REQUEST_OID
+class INTEL_11K_RADIO_MEASURMENTS_STATE_OID
+class INTEL_11N_CHANNEL_MODE_24_OID
+class INTEL_11N_CHANNEL_MODE_52_OID
+class INTEL_11N_FAT_CHANNEL_INTOLERANT_OID
+class INTEL_11N_MODE_OID
+class INTEL_ACK_MODE_OID
+class INTEL_ADAPTER_DATA_RATES_OID_GET
+class INTEL_ADAPTER_DATA_RATES_OID_SET
+class INTEL_ADD_WEP_OID
+class INTEL_ADHOC_CHANNELS_OID
+class INTEL_ATIM_WINDOW_SIZE_OID
+class INTEL_BAND_PREFERENCE_OID
+class INTEL_CISCO_HD_STATUS_OID
+class INTEL_CISCO_LEAP_ROGUE_MODE_OID
+class INTEL_CTS_TO_SELF_OID
+class INTEL_CURRENT_PROFILE_OID
+class INTEL_HARDWARE_RADIO_SWITCH_OID
+class INTEL_IBSS_QOS_STYLE_OID
+class INTEL_INTEL_AMT_OWN_RADIO_OID
+class INTEL_INTEL_PACKET_BURST_OID
+class INTEL_POWER_MODE_OID
+class INTEL_PREAMBLE_MODE_OID
+class INTEL_PROP_AUTHENTICATION_MODE_OID
+class INTEL_PROP_ENCRYPTION_STATUS_OID
+class INTEL_PROTOCOL_PREFERENCE_OID
+class INTEL_RADIO_STATE_OID //: INTEL_GOLAN
+class INTEL_REGISTER_PROFILE_SERVICE_OID
+class INTEL_ROAM_AGGRESSIVENESS_OID
+class INTEL_TX_POWER_CONTROL_OID
+CLASS2_NONAUTH
+CLASS3_NONASSOC
+CLEAR MEDIUM REQUIRED
+CLEAR_EXCLUDE
+CLEAR_MEDIUM
+Client Exclude list
+Client Info
+Clients information 
+CLK_SYN_START
+CLK_SYN_STOP
+CLK_SYN_TEMP_STOP
+CLK_SYNC_TRANS_MINIPORT_HALT
+CLK_SYNC_TRANS_MINIPORT_RESET_INIT
+CLK_SYNC_TRANS_NMPR_SERVICE_INIT
+CLK_SYNC_TRANS_OID_CLK_SYNC_START
+CLK_SYNC_TRANS_OID_CLK_SYNC_STOP
+CLK_SYNC_TRANS_RXON_SENT_ASSOC_BSS
+CLK_SYNC_TRANS_RXON_SENT_UNASSOC
+CLSGUID
+Cm@8o
+CM_NOT_READY
+cmg)g
+Cn77Y
+CNCT MGR
+CNCT MGR    
+CNCT TIME
+CNCT_ASSOC_REFUSED
+CNCT_ASSOC_TIMEOUT
+CNCT_GENERAL_FAILURE
+cnctMgrLmacUtilCbAddBroadcast
+cnctMgrLmacUtilCbSendCmd
+cnctMgrPluginNotifyConnectionTerminated
+cnctMgrWiFiUtilIsAuthSeq3Needed
+cnctMgrWiFiUtilSendAuthSeq1
+cnctPluginBssAddApStation
+cnctPluginBssOnActiveConnectionUpdated
+cnctPluginBssOnChannelSwitchComplete
+cnctPluginBssOnFillAssocReq
+cnctPluginBssPrepareForConnection
+cnctPluginBssProcessBeaconInfo
+cnctPluginBssRequestMedium
+cnctPluginBssSendFirstRxOnFull
+cnctPluginUtilAddNotificationToActionList
+cnctPluginXvtAddNewStation
+cnctPluginXvtConfigStaToAssoc
+cnctPluginXvtConfigStaToUnassoc
+cnctPluginXvtNotifyRxonUpdateComplete
+cnctPluginXvtRequestMedium
+cnctPluginXvtSaveStationInfo
+Coex2040Enabled
+Coexistence
+CoexistenceEnabled
+CoexistenceEnabled:                    %s
+CoexistenceForcedVector
+CoexistenceForcedVector:               NOT FOUND
+CoexistenceForcedVector:               see table below
+CoexistenceScanTimeout
+CoexistenceSystemMode
+CoexistenceSystemMode:                 %s mode
+Command queue length = %d
+Comments
+Common
+CompanyName
+compensateForTemperatureDif
+configCmdCount:          %d
+configOidErrorCount:     %d
+configOidSuccessCount:   %d
+ConfigurationName
+Connect State:                         %s
+CONNECT.ASSOC
+CONNECT.AUTH_SEQ_1
+CONNECT.AUTH_SEQ_3
+CONNECT.FLUSH_ASSOC
+CONNECT.FLUSH_AUTH_SEQ_1
+CONNECT.FLUSH_AUTH_SEQ_3
+CONNECT.FLUSH_PROBE_REQ
+CONNECT.POST_CONFIG
+CONNECT.PROBE_REQ
+CONNECT_MEDIUM_GRANTED
+CONNECT_NO_REQUEST
+CONNECT_TIMER_EXPIRED
+CONNECT_WAIT_FIRST_NOTIFICATION
+CONNECT_WAIT_SECOND_NOTIFICATION
+CONNECT_WIMAX_FAIL_DISCONNECT
+CONNECTED
+CONNECTED.IDLE
+CONNECTED.PAUSED
+CONNECTING
+Connection Info
+Connection Manager
+CONNECTION MANAGER SERVICE
+CONNECTION MANAGER VIEW:
+CONNECTION_ESTAB    
+CONNECTION_FAILED
+CONNECTION_TERMINATED
+ConnectionPriority
+consecutive missed beacons: %d 
+ContinousMissedBeaconsThreshold
+Copyright 
+correctPower
+Country IE
+Country String:    %c%c%c
+CountryIeSendEnable
+CountryIeTimeout
+CP Capability
+CP DEAUTH
+CPu>@
+CpuTptEstimationWindow
+CpuTptLowerTH
+CpuTptUpperTH
+CPuUH
+CRAD_EVENT_ASSOCIATION_FAIL
+CRAD_EVENT_ASSOCIATION_SUCCESS
+CRAD_EVENT_ATTEMPT_TO_CONNECT
+CRAD_EVENT_CANDIDATE_LIST_EXHAUSTED
+CRAD_EVENT_CLEAR_INDICATIONS
+CRAD_EVENT_CONNECTION_TERMINATED
+CRAD_EVENT_CONNECTION_TERMINATED_AMT
+CRAD_EVENT_CONNECTION_TERMINATED_ASSC_FAIL
+CRAD_EVENT_CONNECTION_TERMINATED_IMPLICIT
+CRAD_EVENT_IND_CONN_START_COMPLETE
+CRAD_EVENT_INDICATE_APP_ASSOC_START
+CRAD_EVENT_MAX
+CRAD_EVENT_SET_BSS_STATE
+CRAD_EVENT_SET_IBSS_STATE
+CRAD_EVENT_STATION_TABLE_CHANGED_ADD
+CRAD_EVENT_STATION_TABLE_CHANGED_REMOVE
+CRAD_EVENT_SUSPEND
+CRAD_STATE_ASSOC_BLOCK
+CRAD_STATE_CONN_ROAM_BLOCK
+CRAD_STATE_CONNECTED
+CRAD_STATE_DISCONNECTED
+CRAD_STATE_IBSS_CONNECTED
+CRAD_STATE_IBSS_DISCONNECTED
+CRAD_STATE_IBSS_SUSPENDED
+CRAD_STATE_MAX
+CRAD_STATE_SUSPENDED
+CTkillExitTryPeriodic
+CTkillTimeout
+ctrlAddModify: 0x%X, 
+ctrlRequestMiniportReset
+CtsToItself
+CTS-to-self
+CURRENT 
+Current Band: %s
+Current Bssid: %02X:%02X:%02X:%02X:%02X:%02X 
+Current RSSI = %d
+Current RSSI roam hysteresis = %d, (High = %d)
+Current State:                  %s
+Current state: %s
+Current System Mode:                   %s
+Currently connected to:   %s  (%02X:%02X:%02X:%02X:%02X:%02X)
+Currently NOT connected
+Cx@8{
+cx`@(
+cx`@(C
+cX`A-
+cya@)
+cya0y
+cyavi:
+czb@*
+D \$5E
+D \$-H
+D!;F;
+D""fT**~;
+D"\$$D
+D$  u
+D$ #D$@
+D$ #H
+D$ $H
+D$ &!
+D$ &%
+D$ (%
+D$ ;)
+D$ ;D5
+D$ _!
+D$ _1ta
+D$ _G07
+D$ _G12
+D$ _G13
+D$ _G14
+D$ _G15
+D$ _G16L
+D$ _G18
+D$ _G19
+D$ _G1A
+D$ _G1B
+D$ _G1E
+D$ _G1F
+D$ _G20
+D$ _G22
+D$ _G27
+D$ _G28H
+D$ _G29
+D$ _G2AL
+D$ _G2B
+D$ _G2E
+D$ _G2FL
+D$ _G3
+D$ _G30
+D$ _G31
+D$ _G31L
+D$ _G32
+D$ _G33
+D$ _G35
+D$ _G38
+D$ _G39
+D$ _G3AH
+D$ _G3C
+D$ _G3D
+D$ _G3E
+D$ _G3ED
+D$ _G3F
+D$ _G3X
+D$ _G40
+D$ _G52
+D$ _G54
+D$ _G98
+D$ _GA8
+D$ _GB8
+D$ _P3D
+D$ }"
+D$ ~"
+D$ <)
+D$ =)
+D$ >)
+D$ 1 
+D$ 1+
+D$ 3*
+D$ A;
+D$ A3
+D$ D3
+D$ E3
+D$ f!
+d$ f;
+D$ fD
+D$ g,
+D$ Hc
+d$ Hi
+D$ Hi
+D$ K"
+D$ k%
+D$ L"
+D$ l%
+D$ M"
+D$ m%
+D$ N"
+D$ o 
+D$ o+
+D$ Q&
+D$ r-
+D$ R#
+D$ s-
+D$ S"
+D$ S#
+D$ um
+D$ Y!
+D$ z-
+D$ Z!
+D$"fA
+D$$D3
+D$$E3
+D$$f;
+D$$IntOH
+D$&fA
+D$(#D$H
+D$((#
+D$(@2
+D$(0u
+D$(9Cxv\
+d$(E3
+D$(E3
+D$(fA
+D$(fD
+D$(W3RxH
+D$(W3TxH
+D$(WMTx
+D$(Yt
+D$,#D$L
+D$,9Cxv\3
+D$,9Cxv^
+D$,E3
+D$:D9e
+D$:t,A
+D$;A9
+D$@(H
+D$@@2
+d$@=l
+D$@9D$Du
+D$@D:
+D$@E3
+d$@E3
+D$@E3
+d$@E3
+D$@E3
+d$@E3
+D$@E3
+d$@E3
+D$@E3
+D$@f;D$F
+D$@fA;
+D$@fD
+D$@H+
+d$@H9k
+d$@Hc
+D$@Hk
+D$@L;
+d$@Lc
+D$@u.
+D$\`@
+D$\A;
+D$\B9D
+D$^fA
+D$`@2
+d$`==
+D$`0H
+D$`90u-A
+D$`9j
+D$`A3
+D$`A9
+D$`D:
+D$`D;
+D$`E3
+d$`E3
+D$`E3
+D$`Ei
+D$`fA
+d$`fA;
+D$`fD
+D$`H+
+d$`I9
+D$`l@
+D$`L9h
+d$`L9k
+D$`L9p
+D$`L9x
+D$`Lcl$x
+D$`McT$
+D$|@2
+D$<D3
+D$<E3
+D$<E3\
+D$=fD;
+D$0"f
+D$0"H
+D$0$H
+D$0$L
+D$0:D$1
+D$0\fD
+D$0~L
+D$09G(
+D$09p
+D$0A;
+d$0A;
+D$0A;
+D$0D;
+D$0D+
+D$0D3
+D$0D8
+d$0D9}
+D$0E:E
+D$0E3
+d$0E3
+D$0E3
+d$0E3
+D$0E3
+d$0E3
+D$0E3
+D$0ef
+D$0eH
+D$0Ei
+D$0f;l$8u
+D$0fA
+D$0fD
+d$0fD
+D$0fD
+D$0H+
+D$0HH
+D$0Hk
+D$0HL
+d$0L9{
+D$0L9p
+d$0L9s
+d$0Lc
+D$0Mi
+D$0Mk
+D$0NfD
+D$0OH
+D$0qH
+D$0TH
+D$0vH
+D$0VI
+D$0wH
+D$0WH
+D$0wL
+D$0YI
+D$0ZL
+D$2:D$1s
+D$28D$1
+D$2fA
+D$2fE
+D$4A3
+D$4D3
+D$4E3
+D$8_pPF
+D$89k
+D$8A3
+D$8D3
+D$8E3
+D$8f;D$pu
+D$8fA
+d$8fA
+D$8fA
+D$8fD
+D$8fffff
+D$8H;
+D$8tf
+D$8TH
+D$8wH
+D$8WH
+D$8XH
+D$9$p
+D$AE3
+d$afD
+D$aHk
+D$b8Gjt
+D$BE3
+D$BfA
+D$BHi
+D$D tBD
+D$D#D$$
+D$D$@
+D$DfD
+D$duY@
+D$FA8
+D$-fD;
+D$FtdH
+D$G@D
+D$H,@
+d$H+w 
+D$H9D$4
+D$HA;
+D$hD:
+D$hE2
+D$HE2
+d$hE3
+D$HE3
+d$hE3
+D$HE3
+D$hE3
+D$HE3
+D$hE3
+D$HE3
+D$hE3
+D$HE3
+d$hE3
+D$HE3
+d$HE3
+D$HE3
+D$hE3
+D$HE3
+D$hE3
+D$HE3
+d$HE3
+D$HE3
+D$HfA
+D$HfD
+D$hfD
+D$HfD
+D$HH;
+D$HH+
+D$HH+D$P
+D$hH9<
+D$HHi
+D$HIc
+d$hL9k
+D$hMi
+D$HrL
+D$Ht.3
+d$ht8H
+d$Hu+L
+D$I=H
+D$JfD
+D$kf#
+D$l@2
+D$L0@
+D$lA;
+D$LD3
+D$LfD
+D$lfE
+D$LHi
+D$m fD
+D$nfD
+D$NHi
+D$O$D
+D$O>A
+D$P(f
+D$P(L
+D$p@2
+D$P@8p:
+D$p=+
+D$P6@
+D$p9(u
+D$P9x
+D$PA;
+D$PA+
+d$pA8w 
+D$PA9]
+D$pD8t$Ht
+D$PD9
+D$pD9
+D$pE2
+D$pE3
+D$PE3
+D$pE3
+D$PE3
+D$pE3
+D$PE3
+D$pE3
+D$PE3
+D$pE3
+D$PE3
+D$pE3
+D$PE3
+D$pE3
+D$PE3
+D$Pf;
+D$pf9
+D$pf9D$8u
+D$PfA
+d$PfD
+D$pfD
+D$PfD
+D$pfD
+d$Pffff
+d$pffff
+D$pH+
+D$PH2
+D$PH9
+d$PH9|$X
+D$PH9C
+D$PHi
+D$PHk
+D$pIc
+d$pL9{
+D$pL9p
+d$pL9s
+D$PMc
+D$q4H
+d$rD9$
+D$RE3
+D$rf9
+D$S:D$Ps
+D$S8D$P
+D$t@2
+D$TB@
+D$TfD
+D$vfff
+D$X@2
+D$x@2
+D$X@2
+D$x0H
+d$x9}
+D$x9X
+D$XA;
+D$xE2
+D$xE3
+D$XE3
+D$xE3
+D$XE3
+D$xE3
+D$XE3
+D$xE3
+D$XE3
+D$xE3
+D$XE3
+D$xE3
+D$XE3
+D$xf!G
+D$Xf+
+D$xfA
+d$xfA;
+D$XfD
+D$xfD
+D$XfD
+D$xfD;
+d$xfE
+D$xffff
+d$xffffff
+D$XH;
+D$XH@
+d$xL9{
+d$xL9s
+D$xL9x
+D$XLc
+d$Xuj
+D$zfD
+D$ZfD
+D$zfD
+d)gkg
+D*0fA
+D/0f#
+D/0fA
+D/dfA
+D:|$0
+D:l$ szA
+D;[ v&
+D;|$0s
+D;|$Pv
+D;|$xt I
+D;D$@t>H
+D;D$dr
+D;d$p
+D;gj2#
+D;l>pr
+D;t$t
+D;t>pr
+D@!~!
+D\$4A
+D\$4E
+D\$HA
+D\$HE
+D\$LA
+d\4x@
+d]2"B
+d'`}0
+d'`}p
+D{eyC)
+D|$0A
+D|$4A
+D+\$xE
+D+|$HH
+d<"xn
+D<pE3
+D0'z\y
+D2\$xA
+D2xIc
+D3 MGR
+D3 MGR      
+D3\$8
+D3\$p
+D3\$P
+D3\$t@
+D3_CONFIG_STEP_CALIBRATE
+D3_CONFIG_STEP_DONE
+D3_CONFIG_STEP_IMAGE_CONFIG
+D3_CONFIG_STEP_INACTIVE
+D3_CONFIG_STEP_RESTORE_CNCT
+D3D$\A
+D3D$|A
+D3D$<A
+D3D$4A
+D3D$HA
+D3D$hA
+D3D$HA
+D3D$hD
+D3D$lA
+D3D$pA
+D3D$tA
+D3D$TA
+D3D$XA
+D3D$xA
+D3D$XA
+D3D$xA
+D3DebugCollectionEnable
+D3L$@@
+D3L$`
+D3L$`@
+D3L$lE3
+D3L$T@
+D3L$t@
+D3MinSleepTimeInSec
+D3T$hA
+D3T$L@
+D3T$p@
+D3T$P@
+D3T$T@
+D3U$@=
+D3WakeOnRfKill
+D3WakeOnUcodeSysAssert
+D8&rbA
+D8` u
+D8|$1t
+D8|$4t
+D8|$ht5
+D8|$i
+D848u
+D8d$0
+D8D$h
+D8gdt
+D8gkt
+D8glu
+D8J;A
+D8l$@
+D8l$0
+D8l$P
+D8l$Pt
+D8l$ptc
+D8met
+D8t$0
+D8t$Pt
+D8wfu
+D8wnt
+D9 tW3
+D9;ubD
+D9;uhD
+D9?t#D9;t
+D9\$0A
+D9\$0u<H
+D9\$0upH
+D9\$du
+D9|$`
+D9|$0t
+D9|$ht
+D9|$pt
+D9-'~
+D90`tk
+D9d$@t-D9d$4t
+D9d$`
+D9d$`u
+D9d$<
+D9d$0
+D9d$8
+D9d$8v
+D9d$pt
+D9d$Pt
+D9d$pt%
+D9d$Pu
+D9h4t
+D9h8t
+D9IHD
+D9IHL
+D9kHuA
+D9l$ 
+D9l$ u\H
+D9l$@t
+D9l$@u
+D9l$`t-A
+D9l$<
+D9l$4t
+D9l$8v
+D9l$Pt
+D9l$Pu
+D9l$pu
+D9l$Tt
+D9l$xt
+D9l$xtBL
+D9l>pvgL9l>ht`
+D9-Lrx
+D9m t
+D9m0t
+D9o4u
+D9optv
+D9p<t
+D9q4E
+D9t$@tCH
+D9t$@u#H
+D9t$\t<I
+D9t$`
+D9t$`t
+D9t$0
+D9t$0t7H
+D9t$0u%D
+D9t$4t
+D9t$8u#H
+D9t$D
+D9t$H
+D9t$htEH
+D9t$p
+D9t$T
+D9t$xH
+D9t$Xu
+D9t1 H
+D9upu
+D9w`t
+D9w4t
+D9w4tR
+D9x t*H
+D9xPv
+DATA PEND
+DATA PENDING
+DbgAssertEnabled
+DbgBreakEnabled
+DbgFlags
+DbgPrint
+DbmDataSelectCtl
+DbmEnableMask
+DbmEnableMode
+DbmEndMsk
+DbmEndThreshold
+DbmLdbgCfg1
+DbmLdbgCfg2
+DbmLdbgCfg3
+DbmLdbgCfg4
+DbmLdbgCfg5
+DbmLdbgCfg6
+DbmLdbgCfg7
+DbmLdbgCfg8
+DbmLdbgCfg9
+DbmMcMsk
+DbmMemPower
+DbmNevoTestCtl
+DbmPeriphEnableMask
+DbmSampleCtl
+DbmSampleMsk
+DbmSamplePeriod
+DbmStartMsk
+DD$0A
+Dd$0A
+DD$0A
+DD$HA
+Dd$HA
+DD$HA
+DD$LA
+D'D(>
+D'D)>
+DEACTIVATION
+DEACTIVATION_ROAMING
+DEAUTH_LEAVING
+Deauthentication
+DEAUTHENTICATION HISTORY
+Debug State:                           %s
+Debug States
+DebugPolicyManagerPolicyDump
+decisionNum
+DECLINE_TO_USE OR END_BA
+Default RX chains = 0x%X, 
+DefaultTtl
+Delayed 
+DenseIntaLowerTH
+DenseIntaUpperTH
+DesiredAuthenticationMode
+DesiredBand
+DesiredCipher
+DesiredDefaultKeyId
+DesiredKeyLength
+DesiredPortType
+DesiredPSKey1
+DesiredPSKey2
+DesiredPSKey3
+DesiredPSKey4
+DesiredSsid
+dev_type: %d, 
+Df;4[
+Df~4[
+DFS_CHANNEL_NOT_ALLOWED
+DfT~;
+DG.ffffff
+dGD)>'@ 
+DHCP_FAILURE
+dhlptx|
+DidFlags
+DIRECT-
+DIRECT_ROAM
+directed
+DisableAdHoc
+DisableAutoChannelAging
+Disabled
+DISABLED
+disabledCount:           %d
+DISASSOC_AP_BUSY
+DISASSOC_INACTIVE
+DISASSOC_NO_ACKS
+DISASSOC_NO_BANDWIDTH
+DISASSOC_OUT_TXOPS
+DISASSOC_QOS_RELATED
+DISASSOC_STA_HASLEFT
+Disassociation
+DISCONNECT_NO_PENALTY
+DISCONNECT_UNDEFINED_REASON
+Diversity11a
+Diversity11b
+Diversity11g
+DJePq
+DjHpN
+Dl$HD
+dlTx`
+DlTx`
+DMEx@
+dn(`Bx
+dnJfa
+DORMANT
+DOT11 XYU UNKNOWN
+DOT11_RESET_STEP_ABORT_SCAN
+DOT11_RESET_STEP_DISCONNECT
+DOT11_RESET_STEP_FLUSH_RX
+DOT11_RESET_STEP_NONE
+DOT11_RESET_STEP_RESET_MIB
+dot11ADDBAFailureTimeout
+dot11AssociationParams             | IEs Length: %- 4d | BSSID: 0x%X 0x%X 0x%X 0x%X 0x%X 0x%X
+dot11AssociationParams             | IEs Length: %- 4d | NONE
+dot11AutoConfigEnabled      
+Dot11ExcludeUnencrypted
+dot11FragmentationThreshold        |     % 4u             |     % 4u
+dot11HiddenNetworkEnabled          |     %- 5s            |     %- 5s
+dot11IbssParams                    | IEs Length: %- 4d | bJoinOnly: %- 5s
+dot11MediaStreamingEnabled         |     % 4u             |     % 4u
+dot11QoSParams                     |     %- 9s        |     %- 9s
+dot11RTSThreshold           
+dot11SafeMode                      |     %- 11s      |     %- 11s
+dot11Stats.ullTKIPCounterMeasuresInvoked %lu
+dot11Stats.ullWEPExcludedMcastCount %lu
+dot11Stats.ullWEPExcludedUcastCount %lu
+dot11UnicastUseGroupEnabled        |     %- 5s            |     %- 5s
+dot11UnreachableDetectionThreshold |     % 4u             |     % 4u
+dpTx`
+Driver miniport interface
+DriverDesc
+DriverZombieEnabled
+Dropped packets TX:   %d   RX:%d
+DRP TX PKT CNT
+DT$HD
+dT4x@
+DTBfA
+DTIM period: %d, 
+DuplicateRateSupported
+duz8`'
+DV4~Q$
+DxdzPp
+Dy%xB
+Dy%xC
+Dy%xC(
+dy/)A
+Dy/)A
+dy/)A
+Dy/)A
+dy/)A
+Dy/)A
+dy/)A
+Dy/)A
+dY4x`
+DygyC(
+dYtz 
+DZ@f;
+E <7u
+e##F^
+E$ t&
+E$ t)
+E$ tC
+E;|$$
+E;D9t>pvUL9t>htNf
+E{/%G
+E~E{|
+E0fD;
+E90tXI
+E9itH
+E9n\r
+EAPOL packets   TX:   %d   RX:%d
+EapolPriority
+Ebl\tHeQ
+Ebron
+Ebron Coexistence View
+EbS\tHlQ
+eBssType %d
+EDCA Schedulers statistics
+EDCA#%d: %02d
+EDCA_IDLE_STATE
+EDCA_INVALID_STATE
+EDCA_RESET_STATE
+EDCA_SCHED_STATE
+edcaFetchPacketsFromTID
+eDot11MulticastCipherAlgo[0] %d
+EEPROM Settings
+eF##^
+e'fffff
+EHl\tFeQ
+EL$4A
+eLastDot11UnicastCipherAlgo[0] %d
+eLastTempDot11UnicastCipherAlgo[0] %d
+ELEGANT_SCAN_DISABLED
+Enabled
+enabledCount:            %d
+EnableL1
+EnableNmprClkSyn
+EnableNmprStats
+EnablePncByPass
+enablePollStat
+ENCRYPTION_READY
+eP2POpMode_Device
+eP2POpMode_GO
+eP2POpMode_STA
+eP2POpMode_Undefined
+ERASE_KEYS
+EtwRegisterClassicProvider
+EtwUnregister
+EV_DUMMY
+EV_HMAC_11N_MODE_UPDATED
+EV_HMAC_ACCUMULATE_AUTH_CIPHER_ALGO_LISTS
+EV_HMAC_ACCUMULATE_AUTH_MODE
+EV_HMAC_ACCUMULATE_ENCR_STATUS
+EV_HMAC_ACTION_BACK_RECEIVED
+EV_HMAC_ACTION_CCX_FILL
+EV_HMAC_ACTION_CCX_RECEIVED
+EV_HMAC_ACTION_COEX_20_40_FILL
+EV_HMAC_ACTION_COEX_20_40_RECEIVED
+EV_HMAC_ACTION_FRAME_P2P_FILL_GO_DISCOVERABILITY_REQUEST
+EV_HMAC_ACTION_FRAME_P2P_FILL_P2P_PRESENCE_REQUEST
+EV_HMAC_ACTION_FRAME_P2P_FILL_P2P_PRESENCE_RESPONSE
+EV_HMAC_ACTION_FRAME_P2P_GROUP_FORMATION_STATE
+EV_HMAC_ACTION_FRAME_P2P_INITIATE_DEVICE_DISCOVERABILITY_REQUEST
+EV_HMAC_ACTION_FRAME_P2P_INITIATE_P2P_PRESENCE_REQUEST
+EV_HMAC_ACTION_FRAME_P2P_PRESENCE_REQUEST
+EV_HMAC_ACTION_FRAME_PUBLIC_P2P_FILL_DEVICE_DISCOVERABILITY_REQUEST
+EV_HMAC_ACTION_FRAME_PUBLIC_P2P_FILL_DEVICE_DISCOVERABILITY_RESPONSE
+EV_HMAC_ACTION_FRAME_PUBLIC_P2P_FILL_INVITATION_RESPONSE
+EV_HMAC_ACTION_FRAME_PUBLIC_P2P_FILL_OUT_OF_CHANNEL_REQUEST
+EV_HMAC_ACTION_FRAME_PUBLIC_P2P_FILL_OUT_OF_CHANNEL_REQUEST_COMPLETE
+EV_HMAC_ACTION_FRAME_PUBLIC_P2P_FILL_PROVISION_DISCOVERY_RESPONSE
+EV_HMAC_ACTION_FRAME_PUBLIC_P2P_GO_NEGOTIATION_CONFIRMATION_FILL
+EV_HMAC_ACTION_FRAME_PUBLIC_P2P_GO_NEGOTIATION_REQUEST_FILL
+EV_HMAC_ACTION_FRAME_PUBLIC_P2P_GO_NEGOTIATION_RESPONSE_FILL
+EV_HMAC_ACTION_HT_FILL
+EV_HMAC_ACTION_HT_RECEIVED
+EV_HMAC_ACTION_ON_ASSOC
+EV_HMAC_ACTION_QOS_RECEIVED
+EV_HMAC_ACTION_TGE_FILL
+EV_HMAC_ACTION_TGH_FILL
+EV_HMAC_ACTION_TGH_RECEIVED
+EV_HMAC_ACTION_TGK_FILL
+EV_HMAC_ACTION_TGK_RECEIVED
+EV_HMAC_ACTIVE_RSSI_LEVEL_CHANGE
+EV_HMAC_ADAPTER_SETTINGS_UPDATED
+EV_HMAC_ADD_BROADCAST_STATUS
+EV_HMAC_ADD_LINK_COMPLETE
+EV_HMAC_ADD_LINK_RESP
+EV_HMAC_ADD_STATION_STATUS
+EV_HMAC_ADDBA
+EV_HMAC_AMT_DELAY_AFTER_SHARED_DATA_READY
+EV_HMAC_AMT_H2M_WD_TIMEOUT
+EV_HMAC_AMT_M2H_WD_TIMEOUT
+EV_HMAC_AMT_ME_ALIVE_TIMOUT
+EV_HMAC_AMT_MINIPORT_RESET
+EV_HMAC_AMT_RESET_AMT
+EV_HMAC_AMT_RX_DATA_PACKET
+EV_HMAC_AMT_SND_ADDR_TIMEOUT
+EV_HMAC_AMT_SND_LONG_MSG 
+EV_HMAC_AMT_SND_SHORT_MSG 
+EV_HMAC_AMT_START
+EV_HMAC_AMT_TX_DATA_PACKET
+EV_HMAC_ASSOC_REQ_FILL
+EV_HMAC_ASSOC_REQ_FILL_COMPLETE
+EV_HMAC_ASSOC_REQ_RECEIVED
+EV_HMAC_ASSOC_RES_FILL
+EV_HMAC_ASSOC_RES_FILL_COMPLETE
+EV_HMAC_ASSOC_RESP_RECEIVED
+EV_HMAC_ASSOCIATION_FAILURE
+EV_HMAC_ASSOCIATION_SUCCESS
+EV_HMAC_ATTEMPT_TO_CONNECT
+EV_HMAC_AUTH_REQ_FILL
+EV_HMAC_AUTH_REQ_RECEIVED
+EV_HMAC_AUTH_RES_FILL
+EV_HMAC_AUTH_RESP_RECEIVED
+EV_HMAC_BAD_ATIM_TERMINATE_CONNECTION
+EV_HMAC_BAND_MODULATION_CHANGED
+EV_HMAC_BEACON_FILL
+EV_HMAC_BEACON_FILL_COMPLETE
+EV_HMAC_BEACON_FILL_EX
+EV_HMAC_BEACON_RECEIVED
+EV_HMAC_BEACON_TX_STATUS
+EV_HMAC_BSS_ENTRY_CHANGED
+EV_HMAC_BSS_TABLE_ACTIVE_ENTRY_CHANGED
+EV_HMAC_BSS_TABLE_PRIORITIES_UPDATED
+EV_HMAC_BSS_TABLE_PRIORITY_UPDATED
+EV_HMAC_BT_COEX_INIT_CONFIG
+EV_HMAC_BT_COEX_PUBLISH_INFO
+EV_HMAC_BT_STATUS_NOTIFICATION
+EV_HMAC_CCX_FEATURE_S62_SDK_OVERRIDE_WHATCHDOG
+EV_HMAC_CCX_FRAME_DATA
+EV_HMAC_CCX_MEASUREMENT_NOTIFY
+EV_HMAC_CCX_MEASUREMENT_REPORT_RECEIVED
+EV_HMAC_CCX_S32_S51_LAST_AP_SEND_TIMER
+EV_HMAC_CCX_S51_NEIGHBOR_LIST_LIFE_TIMER
+EV_HMAC_CCX_S61_CHECK_KEEP_ALIVE
+EV_HMAC_CHANGE_OWNERSHIP
+EV_HMAC_CHECK_FOR_HANG
+EV_HMAC_CHECK_STATUS
+EV_HMAC_CLEAN_UP
+EV_HMAC_CLEAR_APPS_DATA
+EV_HMAC_CLEAR_MEDIUM_REQUEST
+EV_HMAC_CLEAR_MEDIUM_RESPONSE
+EV_HMAC_CLEAR_TO_CONNECT_REQUEST
+EV_HMAC_CLEAR_TO_CONNECT_REQUEST_COMPLETE
+EV_HMAC_CNCT_CHANNEL_SWITCH_COMPLETE
+EV_HMAC_CNCT_CONNECTION_INVALID
+EV_HMAC_CNCT_INTERFACE_SETUP_COMPLETE
+EV_HMAC_CNCT_PAUSE_CONNECTION
+EV_HMAC_CNCT_RESTORE_CONNECTION
+EV_HMAC_CNCT_RLC_SETTINGS_CHANGED
+EV_HMAC_CNCT_SMART_SNIFFER_CONFIG
+EV_HMAC_CNCT_SYNC_INTERFACE_RXON
+EV_HMAC_CNCT_TERMINATE_CONNECTION
+EV_HMAC_CNCT_UPDATE_FILTER_FLAGS
+EV_HMAC_COEX_CURRENT_PHY_ID
+EV_HMAC_COEX_NIC_POWER_STATE
+EV_HMAC_COEX_PAN_RF_ACTIVE
+EV_HMAC_COEX_PAN_RF_BUSY
+EV_HMAC_COEX_POLICY_RF_ACTIVE
+EV_HMAC_COEX_POLICY_RF_BUSY
+EV_HMAC_COEX_SCAN_RF_ACTIVE
+EV_HMAC_COEX_SCAN_RF_BUSY
+EV_HMAC_COEX_SCAN_RF_REGAINED
+EV_HMAC_COEX_SCAN_RF_RELEASE
+EV_HMAC_COEX_SCAN_WATCHDOG
+EV_HMAC_CONFIG_STA_TO_ASSOC
+EV_HMAC_CONFIG_STA_TO_UNASSOC
+EV_HMAC_CONNECTION_INVALID
+EV_HMAC_CONNECTION_REFRESH_PM_INFO
+EV_HMAC_CONNECTION_TERMINATED
+EV_HMAC_CONNECTION_TERMINATED_COMPLETED
+EV_HMAC_CRAD_INDICATION_INTERNAL_EVENT
+EV_HMAC_CREATE_CP_BEACON
+EV_HMAC_CUSTOM_MGMT_FILL
+EV_HMAC_D3_CNCT_PAUSE
+EV_HMAC_D3_CNCT_RESTORE
+EV_HMAC_D3_IMAGE_CONFIG_COMPLETE
+EV_HMAC_D3_RESUME_HOTSPOTS_QUERY_RSP
+EV_HMAC_D3_RESUME_QUERY_RSP
+EV_HMAC_DEACTIVATE_COMPLETE
+EV_HMAC_DEAUTH_RECEIVED
+EV_HMAC_DEAUTH_REQ_FILL
+EV_HMAC_DELBA
+EV_HMAC_DISASSOC_RECEIVED
+EV_HMAC_DISASSOCIATED
+EV_HMAC_DOT11_DEFAULTS_LOADED
+EV_HMAC_DOT11_FLUSH_BSS_LIST
+EV_HMAC_DOT11_LQ_PERIODIC_ACTIVE_ESTIMATION
+EV_HMAC_DOT11_PAN_STA_LQ_PERIODIC_ACTIVE_ESTIMATION
+EV_HMAC_DOT11_RELOAD_DEFAULTS
+EV_HMAC_ENCRYPTION_READY
+EV_HMAC_EXAMINE_ACTIVE_POLICY
+EV_HMAC_FAKE_OPEN_NONE_SET_KEYS
+EV_HMAC_FLUSH_RX
+EV_HMAC_FLUSH_TX
+EV_HMAC_GO_NEGOTIATION_WATCHDOG
+EV_HMAC_HALT
+EV_HMAC_HANDLE_BORDERLINE_AP
+EV_HMAC_HAP_LONG_MSG_RECEIVED
+EV_HMAC_HAP_SHORT_MSG_RECEIVED
+EV_HMAC_HAP_SHORT_MSG_RECEIVED_ACK
+EV_HMAC_HARDWARE_RADIO_SWITCH
+EV_HMAC_HOST_OWNERSHIP_TRANSITION_COMPLETE
+EV_HMAC_HT_ADDBA_SEND
+EV_HMAC_IBSS_ATTEMPT_MERGE
+EV_HMAC_IBSS_CONNECTION_TERMINATED
+EV_HMAC_INDICATE_DISCONNECT
+EV_HMAC_INITIALIZE
+EV_HMAC_INTEL_PAN_P2P_MODIFY_IES
+EV_HMAC_INTEL_PAN_P2P_PROBE_RSP_RECEIVED
+EV_HMAC_IS_KEY_ABSENT
+EV_HMAC_JAWS
+EV_HMAC_JAWS_11D
+EV_HMAC_JAWS_ASSET_TRACKING
+EV_HMAC_JAWS_BSS
+EV_HMAC_JAWS_BSS_TBL_BASIC1
+EV_HMAC_JAWS_BSS_TBL_BASIC2
+EV_HMAC_JAWS_BT_COEX
+EV_HMAC_JAWS_CNCT
+EV_HMAC_JAWS_DOT11_MIB
+EV_HMAC_JAWS_DUMMY
+EV_HMAC_JAWS_EXCLUDE_LIST
+EV_HMAC_JAWS_MAM
+EV_HMAC_JAWS_NLO
+EV_HMAC_JAWS_PAN_CNCT
+EV_HMAC_JAWS_PAN_POLICY
+EV_HMAC_JAWS_PAN_SECURITY
+EV_HMAC_JAWS_SCAN
+EV_HMAC_JAWS_STATISTICS
+EV_HMAC_JAWS_TEST
+EV_HMAC_LEGACY_DELBA
+EV_HMAC_LINK_DOWN
+EV_HMAC_LOW_PRIORITY_SCAN_OVERRIDE
+EV_HMAC_ME_OWNERSHIP_TRANSITION_COMPLETE
+EV_HMAC_ME_REQUESTED_OWNSHP
+EV_HMAC_MEASURE_DURATION_NOTIFY
+EV_HMAC_MEDIA_STREAM_MODE_CHANGED
+EV_HMAC_MEDIUM_PRIORITY_CHANGED
+EV_HMAC_MEDIUM_REQUEST
+EV_HMAC_MEDIUM_RESPONSE
+EV_HMAC_MEDIUM_STATUS_CHANGED
+EV_HMAC_MEDIUM_USAGE_REDUCED
+EV_HMAC_MGMT_FILL_ADDRESS
+EV_HMAC_MGMT_FILL_COMPLETE
+EV_HMAC_MGMT_FRAME_CREATE
+EV_HMAC_MH_OID_CCX_8021X
+EV_HMAC_MH_OID_CCX_8021X_RESULT
+EV_HMAC_MH_OID_CCX_ADD_KRK
+EV_HMAC_MH_OID_CCX_MIXED_CELLS
+EV_HMAC_MH_OID_CCX_RAP_STATUS
+EV_HMAC_MH_OID_CCX_REMOVE_KRK
+EV_HMAC_MINIPORT_RESET_WATCHDOG
+EV_HMAC_MINIPORT_RESET_WATCHDOG_FLUSH_BSSID_LIST
+EV_HMAC_MINIPORT_RESET_WATCHDOG_TERMINATE_CONNECTION
+EV_HMAC_MISSED_BCONS_PERCENT
+EV_HMAC_MMAC_INIT_COMPLETE
+EV_HMAC_MMAC_RESUME_DONE
+EV_HMAC_MMAC_SETUP_START
+EV_HMAC_MODIFY_STATION_FLAGS
+EV_HMAC_NIC_CHANNEL_RESULT
+EV_HMAC_NIC_CHANNEL_START
+EV_HMAC_NIC_PHY_READY
+EV_HMAC_NIC_RESUME_COMPLETE
+EV_HMAC_NIC_RESUME_INIT
+EV_HMAC_NIC_SCAN_COMPLETE
+EV_HMAC_NIC_SETUP_COMPLETE
+EV_HMAC_OFFLOAD_NETWORK_LIST
+EV_HMAC_OID_802_11_ADD_KEY
+EV_HMAC_OID_802_11_ADD_WEP
+EV_HMAC_OID_802_11_ASSOCIATION_INFORMATION
+EV_HMAC_OID_802_11_AUTHENTICATION_MODE
+EV_HMAC_OID_802_11_BSSID_LIST
+EV_HMAC_OID_802_11_CAPABILITY
+EV_HMAC_OID_802_11_CONFIGURATION
+EV_HMAC_OID_802_11_NETWORK_TYPE_IN_USE
+EV_HMAC_OID_802_11_NETWORK_TYPES_SUPPORTED
+EV_HMAC_OID_802_11_NON_BCAST_SSID_LIST
+EV_HMAC_OID_802_11_PMKID
+EV_HMAC_OID_802_11_PRIVACY_FILTER
+EV_HMAC_OID_802_11_RELOAD_DEFAULTS
+EV_HMAC_OID_802_11_REMOVE_KEY
+EV_HMAC_OID_802_11_REMOVE_WEP
+EV_HMAC_OID_802_11_RSSI
+EV_HMAC_OID_802_11_SUPPORTED_RATES
+EV_HMAC_OID_802_11_TEST
+EV_HMAC_OID_APP_SET_ASSOC_INFO
+EV_HMAC_OID_COEX_20_40_SEND_REPORT
+EV_HMAC_OID_DOT11_ACTIVE_PHY_LIST
+EV_HMAC_OID_DOT11_BEACON_PERIOD
+EV_HMAC_OID_DOT11_BSSID
+EV_HMAC_OID_DOT11_CIPHER_DEFAULT_KEY
+EV_HMAC_OID_DOT11_CIPHER_DEFAULT_KEY_ID
+EV_HMAC_OID_DOT11_CIPHER_KEY_MAPPING_KEY
+EV_HMAC_OID_DOT11_CONNECT_REQUEST
+EV_HMAC_OID_DOT11_CURRENT_CHANNEL
+EV_HMAC_OID_DOT11_CURRENT_FREQUENCY
+EV_HMAC_OID_DOT11_CURRENT_PHY_ID
+EV_HMAC_OID_DOT11_DESIRED_BSS_TYPE
+EV_HMAC_OID_DOT11_DESIRED_BSSID_LIST
+EV_HMAC_OID_DOT11_DESIRED_PHY_LIST
+EV_HMAC_OID_DOT11_DESIRED_SSID_LIST
+EV_HMAC_OID_DOT11_DISCONNECT_REQUEST
+EV_HMAC_OID_DOT11_ENABLED_AUTHENTICATION_ALGORITHM
+EV_HMAC_OID_DOT11_ENABLED_MULTICAST_CIPHER_ALGORITHM
+EV_HMAC_OID_DOT11_ENABLED_UNICAST_CIPHER_ALGORITHM
+EV_HMAC_OID_DOT11_ENUM_ASSOCIATION_INFO
+EV_HMAC_OID_DOT11_ENUM_BSS_LIST
+EV_HMAC_OID_DOT11_EXCLUDE_UNENCRYPTED
+EV_HMAC_OID_DOT11_EXCLUDED_MAC_ADDRESS_LIST
+EV_HMAC_OID_DOT11_NIC_POWER_STATE
+EV_HMAC_OID_DOT11_PMKID_LIST
+EV_HMAC_OID_DOT11_PORT_STATE_NOTIFICATION
+EV_HMAC_OID_DOT11_PRIVACY_EXEMPTION_LIST
+EV_HMAC_OID_DOT11_SCAN_REQUEST
+EV_HMAC_OID_DOT11_SCAN_REQUEST_CONFIRM
+EV_HMAC_OID_DOT11_STATISTICS
+EV_HMAC_OID_DOT11_SUPPORTED_ALGORITHM_PAIR
+EV_HMAC_OID_DOT11_SUPPORTED_PHY_TYPES
+EV_HMAC_OID_EOU_CONTROL
+EV_HMAC_OID_GEN_MEDIA_CONNECT_STATUS
+EV_HMAC_OID_GEN_RCV_OK
+EV_HMAC_OID_GEN_SUPPORTED_GUIDS
+EV_HMAC_OID_GEN_XMIT_ERROR
+EV_HMAC_OID_GEN_XMIT_OK
+EV_HMAC_OID_GENERIC_DEBUG
+EV_HMAC_OID_GET_CISCOACU_PARAMS
+EV_HMAC_OID_INTEL_11K_RADIO_MEASURMENTS_REQUEST
+EV_HMAC_OID_INTEL_11K_RADIO_MEASURMENTS_STATE
+EV_HMAC_OID_INTEL_11N_CHANNEL_MODE_24
+EV_HMAC_OID_INTEL_11N_CHANNEL_MODE_52
+EV_HMAC_OID_INTEL_11N_FAT_CHANNEL_INTOLERANT
+EV_HMAC_OID_INTEL_11N_MODE
+EV_HMAC_OID_INTEL_ACK_MODE
+EV_HMAC_OID_INTEL_AD_HOC_CONNECTION
+EV_HMAC_OID_INTEL_ADAPTER_DATA_RATES
+EV_HMAC_OID_INTEL_ADAPTER_STATISTICS
+EV_HMAC_OID_INTEL_ADD_EXCLUDED_AP
+EV_HMAC_OID_INTEL_ADHOC_CHANNELS
+EV_HMAC_OID_INTEL_ANT_RSSI
+EV_HMAC_OID_INTEL_ANTENNA_DIVERSITY
+EV_HMAC_OID_INTEL_APP_DRV_INTERFACE_VERSION
+EV_HMAC_OID_INTEL_ASSOCIATION_STATUS
+EV_HMAC_OID_INTEL_ATIM_WINDOW_SIZE
+EV_HMAC_OID_INTEL_BAND_PREFERENCE
+EV_HMAC_OID_INTEL_BEACON_CHANGE_IND_CONFIG
+EV_HMAC_OID_INTEL_BSS_MODE
+EV_HMAC_OID_INTEL_BSS_PROBE_REQ_ADDITIONAL_IES
+EV_HMAC_OID_INTEL_BT_COEX_BT_ACTIVE
+EV_HMAC_OID_INTEL_BT_COEX_FORCE_SHARED_ANT
+EV_HMAC_OID_INTEL_BT_COEX_WLAN_ACTIVE
+EV_HMAC_OID_INTEL_CCX_SDK_DIAGNOSTIC_MODE
+EV_HMAC_OID_INTEL_CCX_SDK_DIRECTED_ROAM
+EV_HMAC_OID_INTEL_CCX_SDK_FRAME_LOGGING_MODE
+EV_HMAC_OID_INTEL_CCX_SDK_KEEP_ALIVE_REFRESH
+EV_HMAC_OID_INTEL_CCX_SDK_LAST_BCN_TIME
+EV_HMAC_OID_INTEL_CCX_SDK_NEIGHBOR_LIST
+EV_HMAC_OID_INTEL_CCX_SDK_RM_REQUEST
+EV_HMAC_OID_INTEL_CCX_SDK_SEND_PACKET
+EV_HMAC_OID_INTEL_CCX_SDK_STA_STATISTICS_2
+EV_HMAC_OID_INTEL_CCX_SDK_TSF
+EV_HMAC_OID_INTEL_CHANNEL_ID
+EV_HMAC_OID_INTEL_CISCO_ASSISTED_ROAMING
+EV_HMAC_OID_INTEL_CISCO_CCKM
+EV_HMAC_OID_INTEL_CISCO_CCX_VERSION
+EV_HMAC_OID_INTEL_CISCO_CWMIN_CWMAX
+EV_HMAC_OID_INTEL_CISCO_ENCRYPT_EAP_PKTS
+EV_HMAC_OID_INTEL_CISCO_HD_MODE
+EV_HMAC_OID_INTEL_CISCO_LEAP_ROGUE_MODE
+EV_HMAC_OID_INTEL_CISCO_MIXED_CELLS_MODE
+EV_HMAC_OID_INTEL_CISCO_QoS_PARAMETER_SET_IE
+EV_HMAC_OID_INTEL_CISCO_RADIO_MEASURMENTS
+EV_HMAC_OID_INTEL_CISCO_TPC
+EV_HMAC_OID_INTEL_CLEAR_EXCLUDE_LIST
+EV_HMAC_OID_INTEL_CTS_TO_SELF
+EV_HMAC_OID_INTEL_CURR_RSSI_ACTIVE_AP
+EV_HMAC_OID_INTEL_CURRENT_BAND
+EV_HMAC_OID_INTEL_CURRENT_PROFILE
+EV_HMAC_OID_INTEL_EXCLUDE_ENABLE
+EV_HMAC_OID_INTEL_FEATURES_SUPPORTED
+EV_HMAC_OID_INTEL_GET_CISCO_VERSION
+EV_HMAC_OID_INTEL_GET_CURRENT_POWER
+EV_HMAC_OID_INTEL_GET_EXCLUDE_LIST
+EV_HMAC_OID_INTEL_GET_IWA_VERSION
+EV_HMAC_OID_INTEL_GET_IWT_NOISE_DATA
+EV_HMAC_OID_INTEL_GET_POWER_LEVEL
+EV_HMAC_OID_INTEL_IBSS_QOS_STYLE
+EV_HMAC_OID_INTEL_IS_INTEL_CARD
+EV_HMAC_OID_INTEL_ISV_ASSOCIATION_STATUS
+EV_HMAC_OID_INTEL_ISV_CURRENT_BAND_CHANNEL
+EV_HMAC_OID_INTEL_ISV_CURRENT_BAND_CHANNEL_EX
+EV_HMAC_OID_INTEL_ISV_PMODE_DISABLE
+EV_HMAC_OID_INTEL_ISV_PMODE_ENABLE
+EV_HMAC_OID_INTEL_ISV_PMODE_PACKET_SLICE
+EV_HMAC_OID_INTEL_MAIN_UPDATE_IES
+EV_HMAC_OID_INTEL_PAN_ADD_DEVICES_TO_EXCLUDE_LIST
+EV_HMAC_OID_INTEL_PAN_ASSOCIATION_STATUS
+EV_HMAC_OID_INTEL_PAN_CIPHER_GROUP_KEY
+EV_HMAC_OID_INTEL_PAN_CIPHER_P2P_STA_GROUP_KEY
+EV_HMAC_OID_INTEL_PAN_CIPHER_PAIRWISE_KEY
+EV_HMAC_OID_INTEL_PAN_CLEAR_EXCLUDE_LIST
+EV_HMAC_OID_INTEL_PAN_DEAUTH_DEVICE
+EV_HMAC_OID_INTEL_PAN_INTERFACE
+EV_HMAC_OID_INTEL_PAN_IP_FILTER
+EV_HMAC_OID_INTEL_PAN_P2P_ABORT_GROUP_FORMATION
+EV_HMAC_OID_INTEL_PAN_P2P_CREDENTIALS_READY
+EV_HMAC_OID_INTEL_PAN_P2P_DIRECTED_SCAN
+EV_HMAC_OID_INTEL_PAN_P2P_ENABLE_UAPSD
+EV_HMAC_OID_INTEL_PAN_P2P_INVITATION_CREDENTIALS_READY
+EV_HMAC_OID_INTEL_PAN_P2P_INVITATION_CREDENTIALS_READY_V2
+EV_HMAC_OID_INTEL_PAN_P2P_MODIFY_IES
+EV_HMAC_OID_INTEL_PAN_P2P_NOA_TEST
+EV_HMAC_OID_INTEL_PAN_P2P_OPPPS_TEST
+EV_HMAC_OID_INTEL_PAN_P2P_QUERY_DEVICE_LIST
+EV_HMAC_OID_INTEL_PAN_P2P_SCAN_REQUEST
+EV_HMAC_OID_INTEL_PAN_P2P_SET_ACTION_LIST
+EV_HMAC_OID_INTEL_PAN_P2P_SET_NETWORK_CONFIG
+EV_HMAC_OID_INTEL_PAN_P2P_WPS_SUPPORTED_CONFIG_METHODS
+EV_HMAC_OID_INTEL_PAN_QUERY_CAPABILITY_INFO
+EV_HMAC_OID_INTEL_PAN_QUERY_DEVICE_LIST
+EV_HMAC_OID_INTEL_PAN_QUERY_EXCLUDE_LIST
+EV_HMAC_OID_INTEL_PAN_QUERY_OPERATIONAL_STATUS
+EV_HMAC_OID_INTEL_PAN_REMOVE_DEVICE_FROM_EXCLUDE_LIST
+EV_HMAC_OID_INTEL_PLATFORM_MOTION_DETECTION
+EV_HMAC_OID_INTEL_PLATFORM_MOTION_DETECTOR_STATE
+EV_HMAC_OID_INTEL_PREAMBLE_MODE
+EV_HMAC_OID_INTEL_PROTOCOL_PREFERENCE
+EV_HMAC_OID_INTEL_PROTOCOL_TYPE
+EV_HMAC_OID_INTEL_QOS_ADDTS_REQUEST
+EV_HMAC_OID_INTEL_QOS_DELTS_REQUEST
+EV_HMAC_OID_INTEL_RADIO_STATE
+EV_HMAC_OID_INTEL_REGISTER_PROFILE_SERVICE
+EV_HMAC_OID_INTEL_REMOVE_AP_FROM_EXCLUDE_LIST
+EV_HMAC_OID_INTEL_ROAM_AGGRESSIVENESS
+EV_HMAC_OID_INTEL_RX_FILTER_CONFIG
+EV_HMAC_OID_INTEL_SCAN_ABORT
+EV_HMAC_OID_INTEL_SCAN_REQUEST
+EV_HMAC_OID_INTEL_SCAN_WHEN_ASSOC
+EV_HMAC_OID_INTEL_SET_IWT_SAMPLE_VALID_PERIOD
+EV_HMAC_OID_INTEL_SNIFFER_STATS_START
+EV_HMAC_OID_INTEL_SNIFFER_STATS_STOP
+EV_HMAC_OID_INTEL_SNIFFER_STATS_STOP_ALL
+EV_HMAC_OID_INTEL_START_NON_DFS_SESSION
+EV_HMAC_OID_INTEL_STOP_NON_DFS_SESSION
+EV_HMAC_OID_INTEL_WEV_ENABLED
+EV_HMAC_OID_INTEL_WIFI_AUTO_CONNECT
+EV_HMAC_OID_INTEL_WSE_REMOVE_ALL_KEYS
+EV_HMAC_OID_IS_SECURITY_DEFINED
+EV_HMAC_OID_IWLAN_ADDBA
+EV_HMAC_OID_IWLAN_DELBA
+EV_HMAC_OID_IWLAN_HT_ADDBA
+EV_HMAC_OID_IWLAN_INITIATOR_DELBA_REQ
+EV_HMAC_OID_IWLAN_RECIPIENT_DELBA_REQ
+EV_HMAC_OID_IWLAN_RX_BACK_DISABLED
+EV_HMAC_OID_IWLAN_SEND_TX_CHANNEL_WIDTH_HT_ACTION
+EV_HMAC_OID_IWLAN_SSID
+EV_HMAC_OID_PAN_DOT11_CIPHER_DEFAULT_KEY
+EV_HMAC_OID_PAN_DOT11_CIPHER_DEFAULT_KEY_ID
+EV_HMAC_OID_PAN_DOT11_CIPHER_KEY_MAPPING_KEY
+EV_HMAC_OID_PAN_DOT11_CONNECT_REQUEST
+EV_HMAC_OID_PAN_DOT11_DESIRED_BSS_TYPE
+EV_HMAC_OID_PAN_DOT11_DESIRED_BSSID_LIST
+EV_HMAC_OID_PAN_DOT11_DESIRED_SSID_LIST
+EV_HMAC_OID_PAN_DOT11_DISCONNECT_REQUEST
+EV_HMAC_OID_PAN_DOT11_ENABLED_AUTHENTICATION_ALGORITHM
+EV_HMAC_OID_PAN_DOT11_ENABLED_MULTICAST_CIPHER_ALGORITHM
+EV_HMAC_OID_PAN_DOT11_ENABLED_UNICAST_CIPHER_ALGORITHM
+EV_HMAC_OID_PAN_DOT11_ENUM_ASSOCIATION_INFO
+EV_HMAC_OID_PAN_DOT11_EXCLUDE_UNENCRYPTED
+EV_HMAC_OID_PAN_DOT11_FLUSH_BSS_LIST
+EV_HMAC_OID_PAN_DOT11_PRIVACY_EXEMPTION_LIST
+EV_HMAC_OID_PAN_DOT11_SCAN_REQUEST
+EV_HMAC_OID_PAN_DOT11_WPS_ENABLED
+EV_HMAC_OID_PAN_INTEL_QOS_ADDTS_REQUEST
+EV_HMAC_OID_PAN_INTEL_QOS_DELTS_REQUEST
+EV_HMAC_OID_PAN_P2P_ACTIVATE_P2P_DEVICE
+EV_HMAC_OID_PNP_QUERY_POWER
+EV_HMAC_OID_QOS_ROAM_TRIG
+EV_HMAC_OID_QOS_UAPSD_DEEP_SLEEP_MODE
+EV_HMAC_OID_SEND_MGMT_FRAME
+EV_HMAC_OID_SET_CLIENTNAME_TO_CISCOAP
+EV_HMAC_OID_SV_API_VERSION
+EV_HMAC_OID_SV_BSS_TBL_FLD_POLICY
+EV_HMAC_OID_SV_BSS_TBL_FLD_SECURITY
+EV_HMAC_OID_SV_BT_COEX_PROFILE
+EV_HMAC_OID_SV_BT_PROFILE_NOTIFICATION
+EV_HMAC_OID_SV_CHANNEL_SWITCH
+EV_HMAC_OID_SV_CONNECTION_PRIORITY_SWITCH
+EV_HMAC_OID_SV_DRV_MEM
+EV_HMAC_OID_SV_DRV_OBJ_ADDR
+EV_HMAC_OID_SV_ENABLE_INDICATIONS_TO_SV
+EV_HMAC_OID_SV_ERROR_LOG_ENABLE
+EV_HMAC_OID_SV_GET_STATISTICS
+EV_HMAC_OID_SV_JAWS
+EV_HMAC_OID_SV_KEY_TBL
+EV_HMAC_OID_SV_LOG_BUFFER_DESC
+EV_HMAC_OID_SV_LOG_LEVEL
+EV_HMAC_OID_SV_LOG_MODULE_LIST
+EV_HMAC_OID_SV_ORDINAL
+EV_HMAC_OID_SV_QOS_PER_STA_PER_TID_DATA
+EV_HMAC_OID_SV_QUERY_ERROR_LOG
+EV_HMAC_OID_SV_QUERY_TFD_QUEUES_INFO
+EV_HMAC_OID_SV_RESET_DRIVER
+EV_HMAC_OID_SV_RX_ON_STATE
+EV_HMAC_OID_SV_SCAN_ENABLED
+EV_HMAC_OID_SV_SET_DATA
+EV_HMAC_OID_SV_SET_STA
+EV_HMAC_OID_SV_SET_STA_FLAGS
+EV_HMAC_OID_SV_STA_CONFIGURATION
+EV_HMAC_OID_SV_THERMAL_MANAGEMENT
+EV_HMAC_OID_SV_TRIGGER_SCAN
+EV_HMAC_OID_SV_TX_FILTER_MODE
+EV_HMAC_OID_SV_TX_LOOP
+EV_HMAC_OID_VOW_FEATURES_SUPPORTED
+EV_HMAC_P2P_ACTION_FRAME_RECEIVED
+EV_HMAC_P2P_PUBLIC_ACTION_FRAME_RECEIVED
+EV_HMAC_P2P_SCAN_INDICATION_TIMEOUT
+EV_HMAC_PAN_ACTION_HT_RECEIVED
+EV_HMAC_PAN_ACTIVATION_DONE
+EV_HMAC_PAN_ASSOCIATION_FAILURE
+EV_HMAC_PAN_ASSOCIATION_SUCCESS
+EV_HMAC_PAN_ATTEMPT_TO_CONNECT
+EV_HMAC_PAN_BEACON_FILL
+EV_HMAC_PAN_CLEAR_TO_CONNECT_REQUEST_COMPLETE
+EV_HMAC_PAN_CLIENT_ASSOC_REQ_PROCESS
+EV_HMAC_PAN_CLIENT_ASSOC_REQ_PROCESS_COMPLETE
+EV_HMAC_PAN_CLIENT_ASSOC_RSP_DECISION
+EV_HMAC_PAN_CLIENT_DAEMON
+EV_HMAC_PAN_CONFIG_DONE
+EV_HMAC_PAN_CONNECTION_TERMINATED
+EV_HMAC_PAN_DEACTIVATION_DONE
+EV_HMAC_PAN_DEAUTH_DEVICE
+EV_HMAC_PAN_DEAUTH_RECEIVED
+EV_HMAC_PAN_DEL_CP_NETWORK
+EV_HMAC_PAN_DEVICE_ENTRY_DATA
+EV_HMAC_PAN_DEVICE_ENTRY_LENGTH
+EV_HMAC_PAN_DISASSOC_RECEIVED
+EV_HMAC_PAN_FIRST_CLIENT_ASSOCIATED
+EV_HMAC_PAN_FLUSH_TX_REQUEST
+EV_HMAC_PAN_INCOMING_ASSOC_DECISION
+EV_HMAC_PAN_INDICATE_TO_OS
+EV_HMAC_PAN_LAST_CLIENT_DISASSOCIATED
+EV_HMAC_PAN_LINK_ADDED
+EV_HMAC_PAN_LINK_REMOVED
+EV_HMAC_PAN_MEDIUM_REQUEST_REJECTED
+EV_HMAC_PAN_P2P_ACTIVATE_P2P_DEVICE
+EV_HMAC_PAN_P2P_CHANNEL_SWITCH
+EV_HMAC_PAN_P2P_CHANNEL_SWITCH_COMPLETE
+EV_HMAC_PAN_P2P_DEVICE_ACTIVATION_DONE
+EV_HMAC_PAN_P2P_DEVICE_ACTIVATION_FAILURE
+EV_HMAC_PAN_P2P_DEVICE_ACTIVATION_SUCCESS
+EV_HMAC_PAN_P2P_GO_NEGOTIATION_START
+EV_HMAC_PAN_P2P_INVITATION_RESPONSE_RX
+EV_HMAC_PAN_P2P_OUT_OF_CHANNEL_PUBLIC_ACTION_FRAME_TX_COMPLETE
+EV_HMAC_PAN_P2P_PRIVATE_SET_NETWORK_CONFIG
+EV_HMAC_PAN_P2P_PRIVATE_SET_NETWORK_CONFIG_COMPLETE
+EV_HMAC_PAN_P2P_PROVISION_DISCOVERY_RESPONSE_RX
+EV_HMAC_PAN_P2P_ROAMING_START
+EV_HMAC_PAN_P2P_SEARCH_FOR_GO
+EV_HMAC_PAN_P2P_SEARCH_FOR_GO_TIMEOUT
+EV_HMAC_PAN_P2P_STA_ROAMING_TIMEOUT
+EV_HMAC_PAN_PEER_INFO
+EV_HMAC_PAN_PEER_TIM_UPDATED
+EV_HMAC_PAN_PM_STATUS_CHANGED
+EV_HMAC_PAN_POLICY_SET_INFORMATION
+EV_HMAC_PAN_QUERY_PEERS_INFO
+EV_HMAC_PAN_RADIO_OFF
+EV_HMAC_PAN_RX_DATA_FRAME
+EV_HMAC_PAN_RX_MGMT_FRAME
+EV_HMAC_PAN_RX_SEC_CLASSIFICATION
+EV_HMAC_PAN_SET_BAND_CHANNEL
+EV_HMAC_PAN_TEARDOWN_GO_IN_PAN_POLICY
+EV_HMAC_PAN_TERMINATE_CONNECTION
+EV_HMAC_PAN_TX_REPEATEAD_DATA_FRAME
+EV_HMAC_PAN_TX_SEC_CLASSIFICATION
+EV_HMAC_PENDING_OID_WD_EXPIRED
+EV_HMAC_PERIODIC_COEX_20_40_SEND_REPORT
+EV_HMAC_PHY_CONFIG_COMPLETE
+EV_HMAC_PHY_CONFIG_RESP
+EV_HMAC_PHY_INITIALIZED
+EV_HMAC_PHY_STATE_CHANGE
+EV_HMAC_PHY_STATE_CHANGE_INDICATION
+EV_HMAC_PMODE_SCAN_DISABLE
+EV_HMAC_PMODE_SCAN_ENABLE
+EV_HMAC_POLICY_CONN_START_COMPL_IND_WATCHDOG
+EV_HMAC_POLICY_INDICATION_EVENT
+EV_HMAC_POLICY_INFO_COLLECT_TIMER
+EV_HMAC_POLICY_RSSI_ROAM_TRIGGER_RESET
+EV_HMAC_POLICY_RSSI_ROAM_TRIGGER_SET_AGGRESSIVENESS
+EV_HMAC_POLICY_RSSI_ROAM_TRIGGER_SET_S51_THRESHOLD
+EV_HMAC_POLICY_SCAN_WATCHDOG_TIMEOUT
+EV_HMAC_POLICY_UPDATED
+EV_HMAC_POWER_DOWN
+EV_HMAC_POWER_DOWN_SUSPEND_SCAN
+EV_HMAC_PREPARE_TO_TERMINATE_CONNECTION
+EV_HMAC_PROBE_REQ_FILL
+EV_HMAC_PROBE_REQ_FILL_COMPLETE
+EV_HMAC_PROBE_REQ_FILL_EX
+EV_HMAC_PROBE_REQ_RECEIVED
+EV_HMAC_PROBE_RES_RECEIVED
+EV_HMAC_PROBE_RESP_FILL
+EV_HMAC_PROBE_RESP_FILL_EX
+EV_HMAC_QOS_PARAMS_UPDATED
+EV_HMAC_QOS_TIMER
+EV_HMAC_QOS_TRAFFIC_ACTIVITY_TIMEOUT
+EV_HMAC_QUERY_PEER_ADDR
+EV_HMAC_QUIET_STATE_CHANGED
+EV_HMAC_RADIO_OFF_NO_SETUP
+EV_HMAC_REASSOC_REQ_FILL
+EV_HMAC_REASSOC_REQ_FILL_COMPLETE
+EV_HMAC_REASSOC_REQ_RECEIVED
+EV_HMAC_REASSOC_RES_FILL
+EV_HMAC_REASSOC_RESP_RECEIVED
+EV_HMAC_REASSOCIATION
+EV_HMAC_REASSOCIATION_FAILURE
+EV_HMAC_REMOVE_ROAMING_TRIGGER
+EV_HMAC_REMOVE_STATION_STATUS
+EV_HMAC_RESET_COMPLETE
+EV_HMAC_RESET_INIT
+EV_HMAC_RESTART
+EV_HMAC_RF_KILL_STATE_CHANGE
+EV_HMAC_ROAM_PERIODIC_SCAN_ALLOWED_EXCEEDED
+EV_HMAC_ROAMING_PREVENT
+EV_HMAC_ROAMING_SCAN_TIMER
+EV_HMAC_RX_CONNECTION_PORT
+EV_HMAC_RX_DATA_FRAME
+EV_HMAC_RX_DATA_INDICATE_COMPLETE
+EV_HMAC_RX_DATA_INDICATE_INIT
+EV_HMAC_RX_MGMT_FRAME
+EV_HMAC_RX_MGMT_INDICATE
+EV_HMAC_RX_NOTIFY_FRAMES
+EV_HMAC_RX_PACKET_HEADER
+EV_HMAC_RX_PACKET_READY
+EV_HMAC_RX_RETURN_PACKET
+EV_HMAC_RX_SEC_CLASSIFICATION
+EV_HMAC_RXDATA_CCX_DATA_FRAME
+EV_HMAC_RXDATA_PAN_REPEAT_FRAME
+EV_HMAC_RXON_ASSOCIATED_STATUS
+EV_HMAC_RXON_FULL_STATUS
+EV_HMAC_RXON_SENT
+EV_HMAC_RXON_TIMING_STATUS
+EV_HMAC_SAFE_MODE_CHANGED
+EV_HMAC_SCAN_ABORT
+EV_HMAC_SCAN_ABORT_NO_SCAN_PEND
+EV_HMAC_SCAN_ABORT_WATCHDOG
+EV_HMAC_SCAN_APPROVED
+EV_HMAC_SCAN_CHANNEL_RESULT
+EV_HMAC_SCAN_COMPLETE
+EV_HMAC_SCAN_INIT_PHASE_COMPLETE
+EV_HMAC_SCAN_MEDIUM_RELEASED
+EV_HMAC_SCAN_P2P_ENABLE_DISABLE
+EV_HMAC_SCAN_REQ_FAIL
+EV_HMAC_SCAN_REQUEST_FOR_MEDIUM
+EV_HMAC_SCAN_RESUME
+EV_HMAC_SCAN_TRIGGER
+EV_HMAC_SCAN_WATCHDOG
+EV_HMAC_SEC_MIC_FAILURE
+EV_HMAC_SEND_MIMO_PS_HT_ACTION
+EV_HMAC_SEND_MMAC_EVENT
+EV_HMAC_SEND_TX_CHANNEL_WIDTH_HT_ACTION
+EV_HMAC_SEND_UCODE_DELAYED_SCAN
+EV_HMAC_SET_POWER
+EV_HMAC_SET_ROAMING_TRIGGER
+EV_HMAC_SET_STATION
+EV_HMAC_SET_VMAC_PORT_CONFIG
+EV_HMAC_SETUP_COMPLETE
+EV_HMAC_SIMULATE_HW_RF_TOGGLE
+EV_HMAC_SM_TIMEOUT_CNCT
+EV_HMAC_SM_TIMEOUT_CNCT_MAIN
+EV_HMAC_SM_TIMEOUT_CNCT_PAN
+EV_HMAC_SM_TIMEOUT_MAM
+EV_HMAC_SM_TIMEOUT_RSSI_ROAM_TRIGGER
+EV_HMAC_SM_TIMEOUT_STA_CNCT_MAIN
+EV_HMAC_SM_TIMEOUT_STA_CNCT_PAN
+EV_HMAC_SNIFFER_STATS_INDICATE
+EV_HMAC_SPCTRM_PERIODIC_TIMEOUT
+EV_HMAC_STATION_TABLE_CHANGED
+EV_HMAC_SUSPEND
+EV_HMAC_SUSPEND_LINK
+EV_HMAC_SUSPEND_LS_ON
+EV_HMAC_SUSPEND_STREAMS
+EV_HMAC_SV_QOS_PARAMS_UPDATED
+EV_HMAC_SV_UPDATE_CONN_PRIORITY_SWITCH_STATE
+EV_HMAC_TERMINATE_CONNECTION
+EV_HMAC_TEST
+EV_HMAC_TGH_CHAN_SWITCH_NOTIFY
+EV_HMAC_TGH_MEASUREMENT_NOTIFY
+EV_HMAC_TGH_TIMER_IBSS_CHAN_MOVE_TIMEOUT
+EV_HMAC_TGH_TIMER_IBSS_CHAN_SWTCH_TIMEOUT
+EV_HMAC_TGK_MEASUREMENT_NOTIFY
+EV_HMAC_TGK_MEASUREMENT_REPORT_RECEIVED
+EV_HMAC_TIMER_ATTEMPT_TO_CNCT_EXPIRED
+EV_HMAC_TIMER_RESUME_EXPIRED
+EV_HMAC_TKIP_COUNTERMEASURE_BLOCKING_TIMER
+EV_HMAC_TKIP_COUNTERMEASURE_DISASSOCIATION_TIMER
+EV_HMAC_TSPEC_ACTION
+EV_HMAC_TSPEC_DELETED
+EV_HMAC_TX_ALLOCATE_SGL
+EV_HMAC_TX_CCX_SDK_COMPLETE
+EV_HMAC_TX_COMPLETE
+EV_HMAC_TX_COMPLETE_DATA
+EV_HMAC_TX_DATA_COMPLETE
+EV_HMAC_TX_DATA_FRAME
+EV_HMAC_TX_FLUSH_COMPLETE
+EV_HMAC_TX_FLUSH_STA_COMPLETE
+EV_HMAC_TX_MGMT_COMPLETE
+EV_HMAC_TX_MGMT_FRAME
+EV_HMAC_TX_NULL_DATA_PKT
+EV_HMAC_TX_NULL_DATA_PKT_OID
+EV_HMAC_TX_PACKET_ARRAY
+EV_HMAC_TX_PACKET_COMPLETE
+EV_HMAC_TX_PACKET_HEADER
+EV_HMAC_TX_PACKET_INIT
+EV_HMAC_TX_PACKET_LLC_HDR
+EV_HMAC_TX_PACKET_RECONSTRUCTION
+EV_HMAC_TX_QOS_CLASSIFICATION
+EV_HMAC_TX_SEC_CLASSIFICATION
+EV_HMAC_TX_SKIP_SGL
+EV_HMAC_UCODE_INDICATION_STATISTICS
+EV_HMAC_UCODE_MISSED_BEACONS
+EV_HMAC_UCODE_PAN_MISSED_BEACONS
+EV_HMAC_UCODE_PAN_NOA_IND
+EV_HMAC_UCODE_STATISTICS_UPDATED
+EV_HMAC_WZC_MASTERING_STATUS
+EV_MULTIPURPOSE_TEST_EVENT
+EV_PAN_EXCLUDE_UNENCRYPTED_INFO
+EV_RESERVED_CURRENT_FLOW_FINISH
+EV_RESERVED_CURRENT_FLOW_START
+EventLogFlags
+EVERYTHING'S DISABLED
+Ex%xD'
+Ex%xD&
+ex/%G
+Ex:pN
+ExAllocatePoolWithTag
+Exclude List
+EXCLUDE LIST
+Exclude list
+EXCLUDE LST
+ExcludeEnable
+ExcludeEntryMaxAge
+ExDeleteNPagedLookasideList
+ExFreePoolWithTag
+ExInitializeNPagedLookasideList
+ExpInterlockedPopEntrySList
+ExpInterlockedPushEntrySList
+ExQueryDepthSList
+ExtensionChannelOffset
+externalEEPROM
+externalEEPROM_High
+ExternalImage
+Ey%},
+Ey%x 
+Ey%x"
+Ey%x_
+Ey/y'
+Ey/y)
+Ey0y?g
+Ey0y8`
+EyA)@
+ezPz%}
+f!CRH
+f!CRI
+f!CRL
+f!GRA
+f""D~**T
+f;|$x
+f;3tS
+f;A0u"H
+f;A0u4L
+f;C w
+f;CRH
+f;FPr
+f;GPr
+f;K0u%
+f;L$l
+f;M0u
+f;O0u%
+f;QPw
+f;QRr
+f;QRu
+f;t$0
+F~f9GZt&
+F~FbTwKiZ
+f+A L
+f+F H
+f+Gzf+Gxf
+f+u f
+F0fD;
+F0uVH
+f3BCfA#
+F4m*b
+f9B!u\A
+f9B#uIA
+f9D)xt
+f9O^f
+F9t! t
+fA!@RH
+fA;4Rt
+fA;D$
+fA;D$x
+fA;Hdt
+fA;IRA
+fA;L$0u$
+fA;T$
+fA;xRu
+fA3@CfA#
+fA9B@s5A
+fA9BBs)A
+FakeOpenNoneActualAuthType
+FakeOpenNoneActualMcastCipher
+FakeOpenNoneActualUcastCipher
+FakeOpenNoneCipherDefaultKeyId
+FakeOpenNoneEnabled
+FakeOpenNoneKeyDefaultKey
+FakeOpenNoneKeyMappingKey
+FakeOpenNoneSsid
+FALSE
+Fast scan iterations = %d
+Fast scan iterations left = %d
+Fast scan period = %d sec
+FastData
+FastPDEnabled
+FastResumeReconnect
+FatChannelIntolerant
+fB9L^
+fD""~T**
+F'D)>
+F'D*>
+fD;;u
+fD;{R
+fD;1u
+fD;7u
+fD;APu
+fD;APw
+fD;ARr
+fD;cR
+fD;ghu
+fD;kRuIL
+fD;o0
+fD;p0t
+fD;wR
+fD;y0t
+fD9JAt
+fD9'u
+fE;|$
+fE;Hdt
+fE;Hdu
+fE;L$
+FeFbT~KiZw
+FeQbT~FiZwK
+fF;D1
+fffff
+ffffff
+fffffff
+FileDescription
+FileVersion
+Filter
+filter_flags: 0x%X
+FIRST WLAN CONNECTION
+FixAssociatedScanFreq
+FixDisassociatedScanFreq
+FixedLongPreamble
+FixedProtection
+FixedSupportedHtRates
+FixedSupportedRates
+FixedTid
+FixPassiveDwellTimeBase
+Flags = %s (0x%X)
+Flags = 0x%X
+flags: 0x%X, 
+FLOWS
+FO:W:
+FORCE_ACTIVE
+FORCE_AT_ANY_CASE
+FORCE_PASSIVE
+FORCE_RX_ANT_SELECT
+FORCE_RX_ANT_SWITCH
+FORCE_TX_ANT_SELECT
+ForceBcnAware
+FORCED SCAN
+ForceDisableFatIn24
+ForceWiFiCompatibility
+FP          
+fPHcEHH
+FragmentationThreshold
+FragRatio: %d, 
+FragScan
+fragScan: %s
+Full Concurrency
+FullTxop
+FXf9CX
+FyDxQ 
+G 3D$P
+G fA;
+G PROTECTION
+G Protection:   Current = OFF, Original = OFF
+G$9C$u
+G$IcD$
+G,D8k
+G,fA;l$hu
+G.0u2M
+G@0.0.
+G@uBL
+G~f9CZt+L
+g+}V+
+G0fD;
+G4~Q$
+G8;G4upH
+G8tNH
+g99KrJJ
+GAIN_OWNERSHIP_FAIL
+gD9v$L
+GF enabled = %s, 
+gfffA
+gfffD
+gfffffffH
+gfffffffL+
+gg}V++
+GK_UPDATE_TO
+gK99r
+globalKey %d flags %d
+globalKey %d installCnt %d
+globalKey %d length %d
+globalKey %d material[0] %X
+GO_FOUND_WAIT_FOR_DOT11_CONN_REQ
+GOING_TO_SX
+gotActiveCount:          %d
+gotNonactiveCount:       %d
+GreenFieldCapable
+Group Key Installed:            %s
+GsoAllowed
+gxf;F
+Gy'x&
+Gy'xF
+Gy'xj
+gzGy#
+H LcC
+H SVH
+H UATAUAVAWH
+h VATAUAVAWH
+h VWAUH
+H$u-A
+H&6x"
+H(4~Q
+h)5x@
+h)Ux 
+h)Ux"
+h)Ux`
+h*"xv
+H,@!Q 
+H,@"R 
+H.data
+h.rdata
+H;Jeu
+H;Jmu
+H;L$@
+H;qH@
+h_^][
+H_^][
+H{(w@
+H{6y!b
+H{rmv{bb
+H{v{``
+H{Vz@`
+H{VzAa
+h~3&Ap
+H+B`H=
+H+D$0H
+H+J(H
+H+K(H
+H=@KL
+h4,8$@_
+H86x`
+H86z!
+H9/uXH
+H9\$(t
+H9\$(u
+H9\$`
+H9\$0
+H9\$0t
+H9\$0t'
+H9\$0tQH
+H9\$0u
+H9\$8
+H9\$8t
+H9\$h
+H9\$ht
+H9\$P
+H9\$p
+H9\$P
+H9\$x
+H9\$Xt
+H9\$xt
+H9_(t}A
+H9_(u
+H9_(u(
+H9_(u*
+H9_pu)
+H9{ u0
+H9{ uj
+H9{(t
+H9{(t{
+H9{(t{A
+H9{(t|
+H9{(t|A
+H9{(t}A
+H9{(t~
+H9{(t~A
+H9{(u*
+H9{pu)
+H9|$ 
+H9|$@t
+H9|$@t&
+H9|$@u#H
+H9|$@u=
+H9|$0
+H9|$8
+H9|$8u
+H9|$H
+H9|$ht&
+H9|$Hu
+H9|$Pt&
+H9|$x
+H9|$xt
+H9|$Xt6D
+H9|$xu
+H9|$Xu
+H9~(u
+H97uB
+H9Cpu*
+H9D$p
+H9GPu
+H9ipt
+H9k u2
+H9k(t
+H9k(t}
+H9k(t~
+H9k(tz
+H9k@u-
+H9KxH
+H9l$ t!
+H9l$ u#
+H9l$@
+H9l$@t
+H9l$@u
+H9l$`
+H9l$0
+H9l$0t
+H9l$8
+H9l$8t
+H9l$8u
+H9l$8uA
+H9l$Ht
+H9l$ht!
+H9l$Hu
+H9l$Hu@
+H9l$Hu3
+H9l$P
+H9l$p
+H9l$Pt&
+H9l$PtoH
+H9l$X
+H9l$Xt
+H9l$xt
+H9OPu
+H9Q(u#
+H9r u2
+H9s u2
+H9s(t|3
+H9s(t~
+H9s(tz
+H9t$@u
+H9t$`
+H9t$0t
+H9t$0t&
+H9t$0tG
+H9t$8
+H9t$8t
+H9t$h
+H9t$hL
+H9t$Hu6
+H9t$P
+H9t$p
+H9t$P
+H9t$p
+H9t$X
+H9t$x
+H9u(u
+H9w(t
+H9w(t|A
+H9w(u&
+H9X(u
+H9x(u$
+H9x(u%
+H9Z t&H
+H9z ul
+hA\_][
+HA\_^[
+HA\_^]
+hA\_^]
+HA\_^]
+hA\_^]
+HA\_^]
+hA]^][
+HA]_^[
+HA]A\
+HA]A\][
+hA]A\_[
+HA]A\_]
+HA]A\_^][
+hA^_][
+hA^_^[
+HA^_^]
+HA^A\^[
+HA^A\_]
+HA^A]_[
+hA^A]_[
+HA^A]_[
+HA^A]_]
+hA^A]A\_^[
+HA^A]A\_^]
+HA__][
+HA_A\
+hA_A\][
+HA_A\][
+hA_A\_^
+HA_A]^]
+hA_A]_[
+hA_A^^[
+HA_A^_[
+HA_A^_]
+HA_A^_^][
+HA_A^A\_
+HA_A^A]^][
+HA_A^A]_
+hA_A^A]A\][
+HA_A^A]A\_^][
+HAL.dll
+HALTED
+HAP_STATE_NOT_READY
+HAP_STATE_SND_SHRT
+HAP_STATE_SND_SHRT_READY_LONG
+HAP_STATE_WAIT_SHRT
+HAP_STATE_WAIT_SHRT_READY_LONG
+HardwareVersion
+hB$T L$
+hBtCoexEvBcnProbeResReceived
+hBtCoexSendBtConfigCmd
+hBtCoexSendPrioTableCmd
+Hc\$ 
+Hc\$@
+Hc\$0H
+HcApD
+HcCHH
+HcCpH
+HcCpL
+hCcxHandleAssocReqFill
+hCcxHandleAttemptToConnect
+hccxHandleBssEntryChange
+hccxHandleCcxPacketSendComplete
+hccxHandleGetCiscoAcuParams
+hCcxHandleGetLastBeaconTimeEvent
+hCcxHandleGetSdkTsfEvent
+hccxHandleMachineNameSet
+hccxHandleOidCcxSdkDirectedRoam
+hccxHandleOidCcxSdkNeighborList
+hccxHandleRxDataFrame
+hCcxS36BeaconReceived
+hCcxS36HandleEvtAttempToConnect
+hCcxS36HandleEvtOidCiscoRadioMeasurments
+hCcxS36HandleEvtTxAssocReqFill
+hCcxS36HandleMeasurementNotification
+hCcxS36HandleMgmtFrameRecieved
+hCcxS36PerformRMRequest
+HcD$(H
+HcD$@
+HcD$@I
+HcD$`H
+HcD$`Hk
+HcD$<
+HcD$0
+HcD$0H
+HcD$H
+HcD$P
+HcGlH
+HcGpH
+HcH J
+HcH$J
+HcHpB
+HcL$@
+HcL$@Hi
+HcL$0
+HcL$8Hi
+HcL$P
+hCnctPluginBssJawsPrintStaInfo
+hCnctPluginIdleJawsPrintStaInfo
+HcP4H
+hcPsPollCb
+HcT$`H
+hcUapsdCb
+hD3MgrSendD3Config
+hD3MgrSendNDConfig
+hD3MgrSendNDConfigForAssetTrackingOnly
+hD3MgrSendNDHotSpotsConfig
+hD3MgrSendWowConfig
+hD3MgrSendWowPatterns
+hDot11LinkQualityAssociatedStateDaemon
+hDot11LinkQualityPanStaAssociatedStateDaemon
+HF%x 
+hfVy@
+hg4x@
+hHtHandleEvtActionFrameRecieved
+hHtHandleEvTxAssocReqFillHtIes
+hHtHandleOid11nChannelMode24
+hHtHandleOid11nChannelMode52
+HhXpE
+hICnctEvAttemptMerge
+hICnctEvBeaconFillComplete
+hICnctEvBeaconProbeResFill
+hICnctEvBeaconStatusNotification
+hICnctEvBssEntryChanged
+hICnctEvPhyConfigResp
+hICnctEvPolicyUpdated
+hICnctEvProbeRequestReceived
+hICnctEvStationTableChanged
+hICnctEvSuspend
+hICnctEvTerminateConnection
+HiddenNetworkEnabledDefault
+hiS"E
+hkgJg
+hL4x@
+hLD.>
+hLinkQualEvAssociationSuccess
+hLinkQualEvGetIwtNoiseData
+hLinkQualEvSnifferStatsIndicate
+hLinkQualHandleEvMissedBeacons
+hLinkQualHandleEvOidMimoPSHtAction
+hLinkQualHandleTxChannelWidthHtAction
+hLinkQualityEvRxMgmtFrame
+HMAC BT COEX SERVICE
+HMAC D3 MGR
+HMAC HT
+HMAC HT     
+HMAC IBSS CONNECTION MANAGER
+HMAC LINK QUALITY
+HMAC MAM SERVICE
+HMAC MIB
+HMAC PAN POLICY VIEW
+HMAC PAN SECURITY VIEW
+HMAC SCAN SERVICE
+Hmac scan state: %s
+HMAC SV SERVICE
+HMAC SYS SERVICE
+HMAC_AmtService
+HMAC_CCXService
+HMAC_ICNCT_STATE_ASSOCIATED
+HMAC_ICNCT_STATE_MAX
+HMAC_ICNCT_STATE_UNASSOCIATED
+HMAC_ICNCT_STATE_WAIT_FOR_ASSOCIATE_RESP
+HMAC_ICNCT_STATE_WAIT_FOR_MEDIUM_CLEARED
+HMAC_ICNCT_STATE_WAIT_FOR_SETUP_COMPLETE
+HMAC_ICNCT_STATE_WAIT_FOR_TERMINATION
+HMAC_QOS_MODE_MAX
+HMAC_QOS_MODE_TGE
+HMAC_QOS_MODE_UNDEFINED
+HMAC_QOS_MODE_WMM
+HMAC_QOS_MODE_WMM_SA
+HMAC_QOS_VENDOR_NOT_SPECIFIEDHMAC_QOS_VENDOR_CCX
+HMACA
+HMACAL
+HMACAL      
+hmacAlIndicateWev
+hmacAlPtIndicateStatus
+HMACAMT
+HMACAMT     
+HMACBTCOEX
+HMACBTCOEX  
+HMACCCX
+HMACCCX     
+HMACCCX-CNCT
+hMacCcxS36
+HMACCCX-S36
+HMACCCX-S36 
+HMACCNCT
+HMACCNCT    
+HMACD
+hmacFP
+HMACH
+HmacHighThroughput
+HMACICNCT
+HMACICNCT   
+HMACLINKQ
+HMACLINKQ   
+HMACMGMTFRM
+HMACMGMTFRM 
+HMACPANCNCT
+HMACPANCNCT 
+HMACPANPOLICY
+HMACPOLICY
+HMACPOLICY  
+HmacPolicyService
+HMACQOS
+HMACQOS     
+HmacQosService
+HMACRX
+HMACRX      
+HmacRxService
+HMACSCAN
+HMACSCAN    
+HMACSECRX
+HMACSECRX   
+HMACSECTX
+HMACSECTX   
+HMACSECURITY
+HmacSecurityService
+HMACSPECTRUM
+HmacSpectrum
+HMACSPECTRUM
+HMACSV
+HMACSV      
+HMACSYS
+HMACSYS     
+HMACTGH
+HmacTGh
+HMACTGH     
+HMACTGK
+HmacTGk
+HMACTGK     
+HMACTX
+HMACTX      
+HmacTxService
+hMeasureUtilCheckValidChannel
+hmfmBssTableDeleteAll
+hmfmCommonUpdateBssEntry
+hmfmEvActiveEntryChanged
+hmfmEvBssTableCleanUp
+hmfmEvOidBssidList
+hmfmEvOidDot11EnumBssList
+hmfmEvOidPanP2PDeviceList
+hmfmEvResetInit
+HM'q'
+HOST_2_ME_WD_TOUCH
+HOST_ASK_FOR_OWNERSHIP
+HOST_BAND_SELECTION
+HOST_DRIVER_ALIVE
+HOST_DRIVER_ALIVE_ACK
+HOST_GOES_DOWN
+HOST_HAP_VERSION_INFO_MSG
+HOST_LINK_DOWN
+HOST_LINK_DOWN_EXT_DATA
+HOST_LINK_UP
+HOST_LINK_UP_EXT_DATA
+HOST_NIC_INFO_MSG
+HOST_OWNERSHIP_CONFIRMED
+HOST_OWNERSHIP_DENIED
+HostIntTimeout
+HostIntTimeoutCalib
+hp4x 
+HPAGE
+HPAN_CNCT_STATE_ACTIVATED
+HPAN_CNCT_STATE_ACTIVATION
+HPAN_CNCT_STATE_CONFIG
+HPAN_CNCT_STATE_DEACTIVATION
+HPAN_CNCT_STATE_IDLE
+HPAN_CNCT_STATE_P2P_DEVICE_ACTIVATED
+HPAN_CNCT_STATE_P2P_DEVICE_ACTIVATION
+HPAN_P2P_GO_NEGOTIATION_STATE_Config
+HPAN_P2P_GO_NEGOTIATION_STATE_Idle
+HPAN_P2P_GO_NEGOTIATION_STATE_WaitForRxConfirmation
+HPAN_P2P_GO_NEGOTIATION_STATE_WaitForRxResponse
+HPAN_P2P_GO_NEGOTIATION_STATE_WaitForTxConfirmationComplete
+HPAN_P2P_GO_NEGOTIATION_STATE_WaitForTxRequestComplete
+HPAN_P2P_GO_NEGOTIATION_STATE_WaitForTxResponseComplete
+HPAN_SECURITY_CONTROLLED_PORT_CLOSE
+HPAN_SECURITY_CONTROLLED_PORT_OPEN 
+HPAN_SECURITY_STATE_ACTIVE
+HPAN_SECURITY_STATE_IDLE
+HPAN_SECURITY_STATE_SETUP
+hPanCnctActivatedOnBeaconReceived
+hPanCnctActivatedOnEvBeaconFillComplete
+hPanCnctClientAssocReqProcess
+hPanCnctClientAssocReqProcessComplete
+hPanCnctClientOnActionHTReceived
+hPanCnctClientOnAssocReqProcessDecision
+hPanCnctClientOnAssocReqReceived
+hPanCnctClientOnAssocRspFill
+hPanCnctClientOnAssocRspFillComplete
+hPanCnctClientOnAuthReqReceived
+hPanCnctClientOnClientDaemon
+hPanCnctClientOnDeauthDeviceOid
+hPanCnctClientOnDeauthReqReceived
+hPanCnctClientOnDisassocReqReceived
+hPanCnctClientOnIncomingAssocDecision
+hPanCnctClientOnQueryDeviceList
+hPanCnctClientOnQueryPeersInfo
+hPanCnctClientOnReAssocReqReceived
+hPanCnctClientOnRxFrame
+hPanCnctClientOnTimUpdated
+hPanCnctClientOnTxDataComplete
+hPanCnctClientOnTxMngmntComplete
+hPanCnctConfigOnEvBeaconFillComplete
+hPanCnctDeactivationAttemptToProceedDeactivation
+hPanCnctDeactivationOnEvTxFlushComplete
+hPanCnctDefaultOnSuspend
+hPanCnctDisconnectAllStations
+hPanCnctEvP2PDirectedScan
+hPanCnctEvP2PPrivateSetNetworkConfig
+hPanCnctHandleConnectionTerminated
+hPanCnctHandlePanStaAssocSuccess
+hPanCnctIdleOnEvAttemptToConnect
+hPanCnctIdleOnEvMainAttemptToConnect
+hPanCnctIfOnOidAddDevicesToExcludeList
+hpanCnctInterfaceIndicateAssocComplete
+hpanCnctInterfaceIndicateAssocReqRecv
+hpanCnctInterfaceIndicateAssocStart
+hpanCnctInterfaceIndicateClientLeft
+hpanCnctInterfaceIndicateGONegotiationComplete
+hPanCnctInterfaceIndicateLinkState
+hpanCnctInterfaceIndicateRxP2PRequest
+hpanCnctInterfaceIndicateRxProbe
+hpanCnctInterfaceIndicateRxProbeRsp
+hpanCnctInterfaceIndicateWifiAutoConnectProbe
+hPanCnctModifyP2PDeviceInfoIeData
+hPanCnctP2P_LookupDeviceInBssTable
+hPanCnctP2PDeleteGOsFromBssTable
+hPanCnctP2PDeviceActivatedOnEvChannelSwitch
+hPanCnctP2PDeviceActivatedOnTerminateConnection
+hPanCnctP2PDeviceActivationOnEvMediumResponse
+hPanCnctP2PGet_ActiveBssChannel
+hPanCnctP2POutOfChannelPublicActionFrameTxComplete
+hPanCnctPanCommonContextCopy
+hPanCnctSendConfigOid
+hPanPolicyActiveBssEntryChangedEv
+hPanPolicyAddService
+hPanPolicyClearToConnectRequest
+hPanPolicyDelCPNetwork
+hPanPolicyDisconnectBeforeConnectionStart
+hPanPolicyDisconnectRequestEv
+hPanPolicyDiscoveryScanOnScanTimeout
+hPanPolicyEvBandModulationChanged
+hPanPolicyEvBeaconFillComplete
+hPanPolicyHandleConnectionInvalidEv
+hPanPolicyHandleMissedBeacons
+hPanPolicyIndicateRxProbeRsp
+hPanPolicyMainAttemptToConnectCheckParameters
+hPanPolicyOnEvActivationSuccess
+hPanPolicyOnEvP2PDeviceActivationSuccess
+hPanPolicyPhyStateChangeIndicationEvEx
+hPanPolicyPrivateClearToConnectRequestComplete
+hPanPolicyRequestRf
+hPanPolicyRoamingStart
+hPanPolicySetIdleStateParams
+hPanPolicySetNetworkConfig
+hPanPolicySetPwrMgmtState
+hPanPolicySTAIndicateAssocComplete
+hPanPolicyStateActivated
+hPanPolicyStateActivation
+hPanPolicyStateGOFoundWaitForConnReq
+hPanPolicyStateRequestRf
+hPanPolicyStateRfKill
+hPanPolicyStateSearchForGO
+hPanPolicyVerifyChannel
+hPanSecurityClientAssocReqProcess
+hPanSecurityServiceReset
+hPanSecurityStateIdle
+'Hpjq
+'Hpjq:
+'Hpjq6
+'Hpjqz
+hPolicy80211ConfigurationEvent
+hPolicyAccumulateAuthCipherAlgoList
+hPolicyAccumulateEncrStatusEvent
+hPolicyAdapterDataRatesEvent
+hPolicyAddExcludeEvent
+hPolicyAdHocStatusEvent
+hPolicyApSelectionClearNoMatch
+hPolicyAssociationFailureEvent
+hPolicyAssociationStatusEvent
+hPolicyAssociationSuccessEvent
+hPolicyBeaconPeriodEvent
+hPolicyBeaconProbeReceivedEvent
+hPolicyBssEntryChangedEvent
+hPolicyBssEntryPriorityUpdatedEvent
+hPolicyBssModeEvent
+hPolicyCcxTxRogueListAndFlush
+hPolicyClearAppsDataEvent
+hPolicyClearExcludeListEvent
+hPolicyCoexRFActiveEvent
+hPolicyConnectionTerminatedEvent
+hPolicyCurrentProfileEvent
+hPolicyDot11DesiredBssidListEvent
+hPolicyDot11EnumAssociationInfo
+hPolicyDot11QueryBssidInBssMode
+hPolicyDot11ReloadDefaults
+hPolicyEncryptionReadyEvent
+hPolicyGetExcludeListEvent
+hPolicyHaltEvent
+hPolicyHandleAssocInfoEvent
+hPolicyHandleBorderlineAP
+hPolicyHandleEnumAssociationInfoBSS
+hPolicyHandleEv11nModeUpdated
+hPolicyHandleEvAssocResponse
+hPolicyHandleEvAtcTimerExpired
+hPolicyHandleEvConnectionInvalid
+hPolicyHandleEvIndicateDisconnect
+hPolicyHandleEvOidAssociationInfo
+hPolicyHandleEvOidStartNonDfsSession
+hPolicyHandleEvOidStopNonDfsSession
+hPolicyHandleEvTxAssocReqFillAdditionalIes
+hPolicyHandleMissedBcons
+hPolicyHmacInitCompleteEvent
+hPolicyIndicationEventHandler
+hPolicyInitializeEvent
+hPolicyJawsGetNonPermanentExcludeList
+hPolicyModulationAndBandEvent
+hPolicyNotifyAppExcludeListChange
+hPolicyOidSvBssTblEvent
+hPolicyPhyStateChange
+hPolicyPhyStateChangeIndicationEv
+hPolicyProbeReqFillEvent
+hPolicyProcessS51Message
+hPolicyProtocolTypeEvent
+hPolicyRadioOffNoSetup
+hPolicyRadioSwitch
+hPolicyRegisterProfileEvent
+hPolicyRemoveExcludeEvent
+hPolicyResetCompleteEvent
+hPolicyResumeEvent
+hPolicyRoamingPreventEvent
+hPolicyRogueStatusEvent
+hPolicyRssiRoamTriggerEventHandler
+hPolicyScanCompleteEvent
+hPolicySendConnStartComplHandle
+hPolicySendRoamCompleteAndResetRoaming
+hPolicySetRoamEvent
+hPolicySetRoamingTriggerEv
+hPolicySsidGet
+hPolicyStationTableChangedEvent
+hPolicySuspendLinkEvent
+hPolicySwResetInitEvent
+hPolicyTerminateConnectionEvent
+hPolicyUpdateBssMatchingPriority
+HQ6x`
+HQ6z!
+hqosHandleActionOnAssocRespReceived
+hqosHandleActiveBeaconChanged
+hqosHandleBssEntryChanged
+hqosHandleOidAddtsRequest
+HRDSSS
+hrxHandleFlushRx
+hscnHandleEventScanApproved
+hSecCheckAuthenticationAndUcastMatch
+hSecGetAPMac
+hSecGetBssSaMode
+hSecGetInfrastructureMode
+hSecHandleDot11CipherDefaultKeyId
+hSecHandleEvt8021x
+hSecHandleEvt8021xResult
+hSecHandleEvtActionOnAssoc
+hSecHandleEvtAddKrk
+hSecHandleEvtAssocFailure
+hSecHandleEvtAssociationSuccess
+hSecHandleEvtAssocReqFill
+hSecHandleEvtAttemptToConnect
+hSecHandleEvtAuthReqFill
+hSecHandleEvtAuthRespReceived
+hSecHandleEvtBeaconFill
+hSecHandleEvtBssEntryChanged
+hSecHandleEvtDesiredBssType
+hSecHandleEvtFakeOpenNoneSetKeys
+hSecHandleEvtInfrastructureMode
+hSecHandleEvtIsSecurityDefined
+hSecHandleEvtMmacStaTblChanged
+hSecHandleEvtOidDOT11PrivacyExemptionList
+hSecHandleEvtRxData
+hSecHandleEvtRxDeauth
+hSecHandleEvtScanComplete
+hSecHandleEvtSuspend
+hSecHandleEvtTerminateConnection
+hSecHandleEvtTkipMicFailure
+hSecHandleEvtTxMsdu
+hSecJawsContext
+hSecLockGetBSSEntryEx
+hSecLockGetKeyEntry
+hSecLockOrdVarTbl
+hSecSaInstallKey
+hSecSaInstallNullKey
+hSecSaRemoveKey
+hSecUpdatePolicyMatchingForAll
+hSecurityHandleDot11DefaultsLoaded
+hSpctrmHandleEvtAssociationSuccess
+hSpctrmHandleEvtAttempToConnect
+hSpctrmHandleEvtBeaconRcv
+hSpctrmHandleJaws11d
+hStateDefaultIpRefresh
+hsvHandleEvPhyConfigResp
+hsvHandleEvRxOnState
+hsvHandleJawsBssTblBasic1View
+hsvHandleJawsBssTblBasic2View
+hsvHandleJawsBssView
+hsvHandleJawsDot11MIBView
+hsvHandleSvOidChannelSwitch
+hsvHandleSvOidGetStatistics
+hsvHandleSvOidOrdinal
+hsvHandleSvOidSetLocalSta
+hsvHandleSvOidSetSta
+hsvHandleSvOidStaConfig
+hsysHandleEvLinkDown
+hsysHandleEvOid
+hsysHandleEvResetInit
+HT Rates: Single = 0x%X, Dual = 0x%X, Triple = 0x%X
+HT sta: 
+HT: Fat channel allowed = %s Extension channel offset
+HT_BACK
+HT_CHANNEL_MODE_CHANGED
+ht_dual_stream_basic_rates: 0x%X, 
+HT_MODE_CHANGED
+ht_single_stream_basic_rates: 0x%X, 
+ht_tripple_stream_basic_rates: 0x%X
+ht1Hc
+hTGhHandleEvtActionFrameRecieved
+hTGhHandleEvtAttempToConnect
+hTGhHandleEvtBeaconProbeResFill
+hTGhHandleEvtBeaconRcv
+hTGhHandleEvtChanSwitchNotify
+hTGhHandleEvtIbssBeaconTxStatus
+hTGhHandleEvtIbssStationChanged
+hTGhHandleEvtSuspend
+hTGhHandleEvtTxAssocReqFill
+HtPropertiesTbl 
+htxHandlePcktReconstructEvent
+htxHandleTxDataFrame
+htxHandleTxPacketEventComplete
+HU6x`
+HU6z!
+hUtilPolicyGetCurrentInfrastructureType
+hUtilPolicyLinkDown
+Hv4x@
+HvO%A
+HW Phy State: %s
+HW_RFKILL_STATE
+HwRfKillFeatureEnable
+HwsoA)
+I;S u
+I;S(u
+I;S0u
+I|A9q|L
+I+@`H=
+I0u<3
+i2"M#D!
+i3&Ap
+I9,$t
+I9,$u~M
+I9,$u>H
+I9<$t
+I91u*H
+I96u"
+I9D$(
+I9L$Pu
+I9t$(
+IbmMutualAuthDisabled
+IbssQosEnabled
+IBSSTxPower
+IcE(H
+IcE4H
+ICNCT
+IDLE ASSOC
+IDLE ASSOC ROAM BLOCKED
+Idle duration = 0x%X
+Idle Plugin, Interface %s
+IE Mapping
+IE_ADDITIONAL_HT_INFO
+IE_AGERE_PRO
+IE_AIRONET
+IE_BCS_CAPABILITY
+IE_CCKM
+IE_CCX_MHDR
+IE_CCX_S21
+IE_CCX_SFA
+IE_CCX_VERSION
+IE_CF_PARAMETERS
+IE_CHALLENGE
+IE_CHNL_SWITCH_ANNOUNCMENT
+IE_CISCO_CELL_PWR
+IE_CISCO_RADIO_MANGMENT
+IE_COEX_20_40
+IE_COUNTRY
+IE_CUSTOM
+IE_DEAUTH_REASON
+IE_DS_PARAMETERS
+IE_EDCA_PARAMETER_SET
+IE_EOU
+IE_EXTENDED_CAPABILITIES
+IE_EXTENDED_CHANNEL_SWITCH
+IE_EXTENDED_SUPPORTED_RATES
+IE_EXTENSION_CHANNEL_OFFSET
+IE_FH_PARAMETERS
+IE_HD_ENABLE
+IE_HD_TUPLE_IE
+IE_HT_CAPABILITY
+IE_IBSS_DFS
+IE_IBSS_PARAMETERS
+IE_INTOLERANT_CHANNEL_REPORT
+IE_INVALID
+IE_LINKSYS_PRO
+IE_LOAD_INFO
+IE_MEASUREMENT_REPORT
+IE_MEASUREMENT_REQUEST
+IE_NON_ERP_INDICATION
+IE_OBSS_PARAMETERS
+IE_P2P
+IE_PAN_CAPABILITY
+IE_POWER_CAPABILITY
+IE_POWER_CONSTRAINT
+IE_QBSS_LOAD
+IE_QOS_ACTION
+IE_QOS_CAPABILITY
+IE_QUIET
+IE_RATES
+IE_REQUEST_INFO
+IE_RSN
+IE_RSN_WPA1
+IE_SAMSUNG
+IE_SCHEDULE
+IE_SSID
+IE_SSIDL
+IE_SUPPORTED_CHANNELS
+IE_SYMBOL_CTRY
+IE_SYMBOL_RQST
+IE_TCLAS
+IE_TCLAS_PROC
+IE_TIM
+IE_TPC_REPORT
+IE_TPC_REQUEST
+IE_TS_DELAY
+IE_TSPEC
+IE_TX_POWER_INFO
+IE_VENDOR_SPECIFIC_UNRECOGNIZED
+IE_WMM
+IE_WSC
+IEEE11dMode
+IEEE11dMode: %d
+IEEE11nMode
+IEMAP
+IEMAP       
+ifzTx
+IHV_END
+IHV_START
+IHVExtensions
+IIcL$
+IKVVV$
+INACTIVE
+Ind=0x%X
+Indication -> Association time = %d (ms)
+Indication time = %d
+InitializeSListHead
+INITIALIZING
+INITIATOR_DELBA_WFP
+Insert time: %d:%d, 
+InstMemProtectEnable
+IntAD
+IntBD
+Intel
+Intel Corporation
+INTEL EXECUTE
+INTEL GET
+INTEL METHOD
+INTEL SET
+Intel Wireless WiFi Link Adapter
+INTEL_EVENT_QOS_ADDTS
+INTEL_EVENT_QOS_DELTS
+INTEL_EVENT_QOS_STATISTICS
+INTEL_EVENT_START_NON_DFS_SESSION_COMPLETE
+INTEL_EVENT_STOP_NON_DFS_SESSION_COMPLETE
+interface: %s, 
+INTERNAL_ERROR
+InternalName
+IntHD
+IntRD
+IntWD
+INVALID
+Invalid
+INVALID_IE
+INVALID_REASON
+INVALID_RSNE_CAP
+INVALID_TYPE
+IoGetStackLimits
+IoWMIOpenBlock
+IoWMIQueryAllData
+IoWMIRegistrationControl
+IoWMIWriteEvent
+IPAN is not enabled, when possible, please make a legal u turn
+iPan State:                            %s
+IPAN_ASSOC_LEVEL    
+isDeauthAfterEAPOL
+IsFragmented: %d, 
+isMatched: %d, isPhyActive: %d
+isPanClientQoS
+IsSip
+isUniquePanSsid
+IWL_INTERFACE_MAIN
+IWL_INTERFACE_PAN
+IWLAN_STATUS_AP_ACTIVATION_DONE
+IWLAN_STATUS_AP_RF_KILL_STATE
+IWLAN_STATUS_CHANNEL_SWITCH_REQUESTED
+IWLAN_STATUS_DISCONNECT_COMPLETE
+IWLAN_STATUS_MEDIA_STREAM_MODE_OFF
+IWLAN_STATUS_PAN_CAN_SUSTAIN
+IWLAN_STATUS_PAN_FREQUENCY_ADOPTED
+IWLAN_STATUS_PAN_PEER_ASSOC_COMPLETE
+IWLAN_STATUS_PAN_PEER_ASSOC_REQUEST
+IWLAN_STATUS_PAN_PEER_ASSOC_START
+IWLAN_STATUS_RX_FLUSH_COMPLETE
+IWLAN_STATUS_SCAN_ABORT_COMPLETE
+IWLAN_STATUS_SV_ASSOC_FAILURE
+IWLAN_STATUS_SV_ASSOC_TIMER_EXPIRED
+IWLAN_STATUS_SV_ASSOCIATED
+IWLAN_STATUS_SV_AUTH_FAILURE
+IWLAN_STATUS_SV_AUTH_TIMER_EXPIRED
+IWLAN_STATUS_SV_CALIB_SUCCESS
+IWLAN_STATUS_SV_OTP_TEST_AREA_FAILURE
+IWLAN_STATUS_SV_OTP_TEST_AREA_SUCCESS
+IWLAN_STATUS_SV_QOS_CONFIG_UPDATED
+IWLAN_STATUS_SV_QOS_PARAMS_UPDATED
+IWLAN_STATUS_SV_SCAN_COMPLETE
+IWLAN_STATUS_SV_SCAN_REQ
+IWLAN_STATUS_SV_SET_LED_BLINK
+IWLAN_STATUS_SV_SET_LED_OFF
+IWLAN_STATUS_SV_SET_STA_SUCCESS
+IWLAN_STATUS_SV_SV_RXON_SUCCESS
+IWLAN_STATUS_SV_SV_TX_FAILURE
+IWLAN_STATUS_SV_SV_TX_SUCCESS
+IWLAN_STATUS_SV_TXPWR_CALIB_FAILURE
+IWLAN_STATUS_SV_TXPWR_CALIB_SUCSESS
+J @  
+J @ #
+J @ `y
+J @ ~
+J @ a
+J @ J!
+J @ J"
+J @ J&@ J#
+J @ V
+J!@ (u
+J!@ `y
+J!@ A
+J!@ a
+J!@ A
+J!@ a
+J!@ A
+J!@ a
+J!@ A
+J!@ a
+J!@ A
+J!@ a
+J!@ A
+J!@ a
+J!@ A
+J!@ a
+J!@ A
+J!@ a
+J!@ A
+J!@ a
+J!@ A
+J!@ a
+J!@ A
+J!@ C
+J!@ J 
+J!@ J"
+J!@ P
+J!@ Q
+J!@!Q @
+J"@  
+J"@ J 
+J"@ p
+J"@ Q
+J#@  
+J#@ !
+J#@ Q
+J#@ S 
+J$@  
+J%%o\..r8
+J&@ Q%@
+J(`Bx
+j_FbT~
+j~FbT
+JAWS_NUM_OF_VIEWS
+JAWS_VIEW_11D
+JAWS_VIEW_ASSET_TRACKING
+JAWS_VIEW_BSS
+JAWS_VIEW_BSS_TBL
+JAWS_VIEW_BSS_TBL_BASIC1
+JAWS_VIEW_BSS_TBL_BASIC2
+JAWS_VIEW_BT_COEX_INFO
+JAWS_VIEW_CNCT
+JAWS_VIEW_COEXISTENCE
+JAWS_VIEW_DLS
+JAWS_VIEW_DOT11_MIB
+JAWS_VIEW_EXCLUDE_LIST
+JAWS_VIEW_HMAC_HD
+JAWS_VIEW_HMAC_PAN_CNCT
+JAWS_VIEW_HMAC_SECURITY_BSS_TBL_FLD
+JAWS_VIEW_HMAC_SECURITY_CONTEXT
+JAWS_VIEW_HMAC_SECURITY_STA_TBL_FLD
+JAWS_VIEW_MAM
+JAWS_VIEW_MMAC_ICNCT_STA_TBL_FLD
+JAWS_VIEW_MMAC_SECURITY_STA_TBL_FLD
+JAWS_VIEW_NLO
+JAWS_VIEW_NOISE_INFO
+JAWS_VIEW_PAN_POLICY
+JAWS_VIEW_PAN_SECURITY
+JAWS_VIEW_RF_KILL
+JAWS_VIEW_RLC
+JAWS_VIEW_ROAM_INFORMATION
+JAWS_VIEW_SCAN
+JAWS_VIEW_SCHEDULER_INFO
+JAWS_VIEW_STATISTICS
+JAWS_VIEW_TEST
+JAWS_VIEW_TLC
+jb"hB
+jL&&Zl66A~??
+Jo\r8$W
+JpL!@
+JPNLegacyChannels
+Jq/(A
+JsJ$@
+JTz4| |X`
+K 0D8
+K SUVH
+K SUVWAWH
+K SVWAVH
+K SWATAVH
+K UVWH
+K VATAUAVAWH
+k VATAUAVAWH
+k VATAUH
+k VWATAUAVH
+k VWATAVAWH
+k VWATH
+k WATAUH
+K\HcKp
+K`f;M
+K`f;N
+K0fD;
+K8D9cp
+KeAcquireSpinLockRaiseToDpc
+KeBugCheckEx
+KeDeregisterBugCheckReasonCallback
+Kedron
+KeepAlivePeriod
+KeQueryPerformanceCounter
+KeRegisterBugCheckReasonCallback
+KeReleaseSpinLock
+KeStallExecutionProcessor
+key.groupcast.bAlreadySetToImmediate %d
+key.groupcast.cipher %X
+key.groupcast.flags %X
+key.groupcast.id %lu
+key.groupcast.initialRSC %ul
+key.groupcast.length %lu
+key.groupcast.material[0] %.2X
+key.unicast.bAlreadySetToImmediate %d
+key.unicast.cipher %X
+key.unicast.flags %X
+key.unicast.id %lu
+key.unicast.initialRSC %ul
+key.unicast.length %lu
+key.unicast.material[0] %.2X
+keyTbl 
+Kill ACK mask = 0x%X
+Kill CTS mask = 0x%X
+Kilmer
+kL@8kd
+KPD#D$0
+KPu#H
+Krmv{)`
+L"HpU
+L$ 9K
+l$ ATAUAVH
+l$ ATH
+L$ ATH
+l$ ATH
+l$ AVH
+L$ E3
+L$ fA
+L$ H3
+l$ Hi
+l$ Lc
+l$ s$H
+L$ SH
+L$ SUVATAUAVAWH
+L$ SUVATAVAWH
+L$ SUVWATAUH
+L$ SUVWAUAVH
+L$ SUVWAUH
+L$ SUVWAWH
+L$ SUWH
+L$ SVWATAUAVH
+L$ SVWH
+L$ SWAUH
+L$ UVAUAWH
+l$ VATAUAVAWH
+l$ VATAUH
+l$ VATAVH
+l$ VAUAVH
+L$ VAUAWH
+l$ VH
+l$ VWATAUAVH
+l$ VWATH
+l$ VWATL
+l$ VWAUAVAWH
+l$ VWAUH
+l$ VWAVH
+l$ WATAUAVAWH
+l$ WATAUH
+l$ WATAVH
+L$ WAUH
+l$ WH
+L$ WH
+l$ WH
+L$$ M
+l$$A3
+l$$E3
+L$(E3
+l$(E3
+L$(E3
+l$(fA
+L$(fD
+L$(H3
+l$(Hi
+L$(L9
+l$(t\
+L$;t#A
+L$@=p
+l$@D9k
+L$@E3
+L$@fA
+L$@fD+
+l$@ff
+l$@ffff
+L$@H;
+L$@H+
+L$@H3
+L$@H9
+l$@Hc
+l$@Hi
+l$@ux
+L$\fD
+l$`9/
+L$`D;
+L$`D9
+L$`E2
+L$`E3
+l$`E3
+L$`E3
+l$`f;
+l$`f9D$Zv
+L$`fB
+l$`fD
+L$`fD
+L$`H3
+l$`M9`
+l$`t=
+l$|A3
+l$<@8sltiH
+l$<A3
+L$<E3
+L$0;Hh
+l$0;l$4
+L$0@2
+L$09p0t
+L$0A8
+L$0D;
+l$0D;
+L$0D8
+L$0E2
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E9
+l$0f;
+L$0fA
+l$0fA
+l$0fD
+l$0fD;
+l$0ffffff
+L$0H;
+L$0H+
+L$0H3
+L$0H9
+l$0H9{
+l$0Hc,
+l$0Hi
+L$0Hi
+L$0Hk
+L$0I+
+L$0Mi
+L$0te
+L$0uL
+L$2:L$0
+L$28L$0
+L$2E3
+l$48C
+l$4A3
+L$4E3
+l$8@8u
+l$8A\_^
+L$8E2
+l$8E3
+L$8E3
+l$8f#
+L$8f3A
+l$8fD
+L$8H;
+L$8H+
+L$8H3
+l$8Hi
+L$8Hk
+l$8I9
+l$8Mi
+l$8uzE
+l$9A8
+L$9fD
+L$9t5A
+L$B:L$@
+L$B8L$@
+L$BE3
+L$bE3
+L$bH;
+L$D L
+l$D9\$@u'
+l$dA3
+L$DE3
+l$dE3
+l$DE3
+L$DE3
+L$ffD;
+l$HA;}
+l$HA_A^A]A\^
+l$HA9i
+l$hD;
+L$HD;
+L$HD8
+l$HD8)vA
+l$HD9m
+L$HE3
+l$hE3
+L$HE3
+L$hE3
+L$HE3
+L$hE3
+L$HE3
+L$hE3
+L$HE3
+l$Hf#
+L$hf;
+L$HfA
+L$hfA
+l$HfD
+l$Hfffffff
+L$hH;
+L$HH+
+L$hH3
+L$HH3
+L$hH3
+L$HH3
+L$hH3
+L$HH3
+L$hH3
+L$HH3
+L$hH3
+L$HH3
+L$hH3
+L$HH3
+L$hH3
+L$HH3
+L$hH3
+L$HH3
+L$hH3
+L$HH3
+L$hH3
+L$HH3
+L$hH3
+L$HH3
+L$hH3
+L$HH3
+l$hH9s
+l$HHcGHH
+L$hIc
+l$HL9s
+l$hLc
+l$HMc
+l$ht=H
+l$hu|H
+l$HuU
+L$IfA
+L$L L
+l$lA3
+l$LE3
+l$P@:
+l$p@2
+l$P@8
+l$P=,
+L$pA:
+L$PD;
+l$PD;
+l$pD8
+L$PD9
+l$PD9t$@ul
+L$pE3
+L$PE3
+L$pE3
+L$PE3
+l$pE3
+L$PE3
+l$pE3
+L$pE3
+L$PE3
+l$PE3
+L$PE3
+L$pE3
+L$PE3
+l$PE3
+L$PE3
+L$pE3
+L$PE3
+l$pE3
+L$PE3
+L$pE3
+l$pE3
+L$PE3
+L$pE3
+L$PE3
+l$pE3
+L$PE3
+l$pE3
+L$pE8|$
+l$Pf;
+l$pf;
+L$PfD
+l$pfD
+L$PH;
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+l$pH9{
+l$PHcX
+l$PHk
+L$PI9@
+l$pL9c
+l$pL9t$`tn
+l$pt)
+L$RE3
+L$S@L
+l$TD3
+l$TD9*u{3
+L$TE3
+l$TE3
+l$tE3
+L$TE3
+l$Tff
+l$THk
+l$X8X
+l$XE;
+L$xE2
+L$XE3
+L$xE3
+L$XE3
+L$xE3
+L$XE3
+L$xE3
+l$xfA
+l$XfD
+l$Xfff
+L$XH3
+L$xH3
+L$XH3
+L$xH3
+L$XH3
+L$xH3
+L$XH3
+L$xH3
+L$XH3
+L$xH3
+L$XH3
+L$xH3
+L$XH3
+L$xH3
+L$XH3
+L$xH3
+L$XH3
+L$xH3
+L$XH3
+L$xH3
+L$XH3
+l$XH9
+l$xH9s
+l$XHc
+l$XHk
+L$XMk
+l$xt!H
+l$xu"A
+L&&jl66Z~??A
+L($;M
+L(8E;
+l*@x  @
+l:4 @
+L;IPuTH
+L;P u
+l~7qB
+L0)fa
+L0JfI"
+l2D.>
+L4~Q$
+l6`}0
+l6`}p
+L9&t+H
+L9(u$H
+L9/u%H
+L9{ u1
+L9{(t
+L9{(t~E
+L9{(tyE
+L9|$@
+L9|$0
+L9|$0t
+L9|$0u"H
+L9|$8
+L9|$8t
+L9|$8u
+L9|$Ht
+L9|$Xu1
+L9c(tzD
+L9cpu
+L9d$(
+L9d$@
+L9d$@u
+L9d$`
+L9d$`u
+L9d$`uM
+L9d$0t
+L9d$0u
+L9d$8t
+L9d$Hu3
+L9d$Pt&
+L9d$X
+L9d$Xt
+L9d$xu
+L9Jyu
+L9k u3
+L9K(tyL9K
+L9kpu*A
+L9l$@
+L9l$@t
+L9l$`
+L9l$0
+L9l$0t
+L9l$0t|H
+L9l$0u
+L9l$0uG
+L9l$8
+L9l$8t
+L9l$8t3
+L9l$8u
+L9l$H
+L9l$Ht
+L9l$Pt
+L9l$Pu:
+L9l$Pu=
+L9l$Pu5A
+L9l$xt
+L9l$Xu
+L9l$xu
+L9l$Xu
+L9m u
+L9s u3
+L9s(ty3
+L9spu
+L9t$@
+L9t$@t
+L9t$@u
+L9t$0
+L9t$0t
+L9t$8
+L9t$8t
+L9t$H
+L9t$Ht
+L9t$Hu0
+L9t$Hu3
+L9'tSH
+L9Z t
+Last %s scan on band 
+Last BT UART message 1:
+Last BT UART message 2:
+Last roaming trigger: 
+Last Rx chain 2.4GHz: %s, 
+Last scan ended %d seconds ago
+Last Tx chains: 2.4GHz: %s, 
+lastAuthType %d
+lastBandAttempedToConnect %d
+LastChannelGroupLength
+LastFragDwellTime: %d, 
+lastSsidApplied 
+lastTempAuthType %d
+Lc\$|A
+Lc\$HM
+Lc\$XM
+Lc^$H
+LcCpH
+LcD$4J
+LcE0H
+LcFPH
+LcG0H
+LcL$`Lc
+LcRHI
+LcT$@D
+Lct$@H
+LcT$8D
+LCT_IMAGES\mu_d0_data.bin
+LCT_IMAGES\mu_d0_inst.bin
+LCT_IMAGES\mu_d0r_data.bin
+LCT_IMAGES\mu_d0r_inst.bin
+LCT_IMAGES\mu_d3_data.bin
+LCT_IMAGES\mu_d3_inst.bin
+LctModeEnabled
+LE Connection Interval = 0x%X, RFU = 0x%X
+LE ConnSlaveLatency = 0x%X, LE Profile 1 = 0x%X, LE Profile 2 = 0x%X, LE Profile Other = 0x%X
+LE Last Tx Power = 0x%X, Open LE connections = 0x%X
+LedDutyCycling
+LedInterval
+LedMode
+LedTimeOff
+LedTimeOn
+LEGACY
+LEGACY 
+Legacy Rates: Basic CCK = 0x%X, Supp CCK = 0x%X, Basic OFDM = 0x%X, Supp OFDM = 0x%X
+LegalCopyright
+Length = %d, Count = %d
+Level: %d): 
+lHcCp
+Link Quality
+LINK SPEED
+List of supported algorithms. (Total number: %d)
+LjlZ~A
+lL(`A.
+LMAC_ERROR
+Ln5x)
+LO Leakage
+lO(`Bx
+lO2"N
+LogCyclicBufferSizeInKB
+LogLevelsNew
+LogNotifBufferSize
+LogToDriverEnabled
+LogTraceBufferSize
+Loose
+LP_ENABLED
+LUVyD
+Lv5x)
+l-X`@~p
+Lx<A;
+lX4x@
+Ly0 @
+LZ6z 
+lZTx`
+M(`Bx
+m:,09:11:47
+M;;va
+M;J u
+M3Uf3
+m4L+\$PI
+M9<$t
+M9L$(
+M9X t/M
+M9X t;M
+MAC ADDR
+MAC ADDR: %02X:%02X:%02X:%02X:%02X:%02X
+MAIN BSS PLUGIN
+MAIN CNCT
+MAIN CNCT ACTIVE
+MAIN MEASUREMENTS
+MAM         
+MandatoryBssid
+matchedCount:            %d
+matchedNum
+MATCHING_BT_COEX
+MATCHING_CHANNEL_LOAD
+MATCHING_CONNECTION
+MATCHING_DIRECT_ROAM
+MATCHING_ESTIMATED_THROUGHPUT
+MATCHING_ESTIMATED_TX_RATE
+MATCHING_EXCLUDE
+MATCHING_FIPS
+MATCHING_FOUND_IN_SCAN
+MATCHING_MISSED_BEACONS
+MATCHING_PACKET_ERROR_RATE
+MATCHING_POLICY
+MATCHING_PREFERRED_BAND
+MATCHING_PREFERRED_PROTOCOL
+MATCHING_QOS
+MATCHING_RSSI
+MATCHING_SCAN_FAILURE
+MATCHING_SECURITY
+MATCHING_SSID
+MATCHING_WRONG_CHANNEL_FAILURE
+Max allowed out of slot = %d ms
+Max allowed out of slot = FULL
+Max client tx failures: %d 
+MAX LINK SPEED
+Max Number of clients: %d 
+maxAMsduSize: 0x%X, 
+MaxConnection1xFailures
+MaxConnectionFailures
+MaxDpcTime
+maxOutOfChTime: %d, 
+MaxRssiFluctuationThreshold
+MaxTxDataPacketsAllowed
+mBfHandleTriggerEv
+Mc]4L
+mcalibEvResetComplete
+mcalibEvResetInit
+mcalibEvSetup
+mcalibEvuCodeCalibration
+mcalibEvWatchdog
+mcalibHandleCmdWatchDogError
+mcalibOlamonChainNoiseHandleStatCommand
+mcalibOlamonSendResults
+mcalibOlamonSensitivityHandleStatCommand
+mcalibOlamonTxPowerGetPower
+mcalibOlamonTxPowerOnChannelPowerChange
+mcalibOlamonTxPowerOnChannelSwitch
+mcalibOlamonTxPowerSetUcodeTable
+mcalibOverrideAnalogMib
+mcalibPmaCompensateForTemperatureDif
+mcalibPmaCorrectPower
+mcalibPmaTxGetPower
+mcalibPmaTxPowerSetUcodeTable
+mcalibResetComplete
+mcalibShlCompensateForTemperatureDif
+mcalibShlCorrectPower
+mcalibShlSendResults
+mcalibShlSensitivityHandleStatCommand
+mcalibShlTxGetPower
+mcalibShlTxPowerSetUcodeTable
+mcalibTylCorrectPower
+mcalibTylSendResults
+mcalibTylSensitivityHandleStatCommand
+mcalibTylTxGetPower
+mcalibTylTxPowerSetUcodeTable
+mcalibuCodeCalibrationSendResult
+mcalibXtalCalib
+mCnctUtilDeleteStation
+mcnctUtilNoisyPlatformCmd
+mCnctUtilSendRxOnCmd
+MCST_CIPHER_NOT_VALID
+ME_2_HOST_WD_TOUCH
+ME_ASK_FOR_OWNERSHIP
+ME_ASK_IP_REFRESH
+ME_DRIVER_ALIVE
+ME_DRIVER_ALIVE_ACK
+ME_GOES_DOWN
+ME_HAP_VERSION
+ME_LINK_PROTECTION_MODE
+ME_LINK_PROTECTION_MODE_ACK
+ME_LINK_UP
+ME_OWNERSHIP_CONFIRMED
+ME_OWNERSHIP_RELEASE
+ME_OWNERSHIP_RELEASE_ACK
+Measurement
+MEASUREMENTS
+Medium alloc mgr
+Medium allocation manager
+MEM         
+MemBuffersPerTfd
+Message Type = 0x%X, SSN = 0x%X
+Message Type = 0x%X, SSN = 0x%X, Update Req = 0x%X
+MeSxCoexistenceMode
+MeSxLinkPolicy
+Mgmt Frame
+MGMT FRAME service
+MH_OID_CCX_8021X
+MH_OID_CCX_8021X_RESULT
+MH_OID_CCX_ADD_KRK
+MH_OID_CCX_MIXED_CELLS
+MH_OID_CCX_RAP_STATUS
+MH_OID_CCX_REMOVE_KRK
+MH_OID_KEY_CAPABILITY
+MH_OID_KEY_MATERIAL
+mhiffCheckShilohPanRxOnAssocCommand
+mhiffCheckShilohRxOnAssocCommand
+mhiffRegulatoryCheckRegulatoryData
+MhiffTbl 
+MIB         
+mibOrdVarLenTblSetLocked
+mibStaTblForEachLocked
+MIC_FAILURE
+mICnctDot11EnumAssociationInfo
+mICnctDot11SetExcludedMacAddressList
+mICnctEvAtimRequestUpdated
+mICnctEvOidPowerMgmtState
+mICnctEvRadioOff
+mICnctEvResetComplete
+mICnctEvRxOnCmdUpdated
+mICnctEvStartRequest
+mICnctEvStationTableDaemon
+mICnctEvUpdateBeacon
+mICnctJawsStaTbl
+MIMO PS: RX: 0x%X, TX:0x%X, 
+MIMO2 
+MIMO3 
+MIMOPowerSaveMode
+Min req slot = %d ms, 
+Min req slot = FULL, 
+MinidumpCallbackSupported
+Miniport
+MINIPORT    
+MISSED_BCONS
+MISSED_BEACONS
+MIXED
+Mixed
+MixedCellsEnabled
+mledHandleEvUCodeStatistics
+mledHandleEvUnassocSet
+MlEnabled
+mLinkQualAllStasExecRS
+mLinkQualEvAggregatedTxResponse
+mLinkQualEvBaResponse
+mLinkQualEvBAStatus
+mLinkQualEvBtCoexInvalidTlcUpdate
+mLinkQualEvGetMaxLinkSpeed
+mLinkQualEvLinkSpeed
+mLinkQualEvOidPeerStat
+mLinkQualEvOidSetTxAntennas
+mLinkQualEvRfOn
+mLinkQualEvRxOnSent
+mLinkQualEvSetBeaconNotificationThreshold
+mLinkQualEvTxComplete
+mLinkQualGetIpanLinkSpeed
+mLinkQualHandleJawsBSSView
+mLinkQualInitXvtSta
+mLinkQualNewStationAdded
+mLinkQualOidAddBa
+mLinkQualOidDelba
+mLinkQualOidRemoteBA
+mLinkQualPanStaLinkSpeed
+mLinkQualRlcEvSvOidRLCParams
+mLinkQualRlcPrvCollectData
+mLinkQualSendLQCmd
+mLinkQualStationUpdated
+mlmeApGetPanBssid
+mlmeApGetPanSSID
+MMAC IBSS CONN MGR
+MMAC LED SERVICE
+MMAC LINK QUALITY MGR
+MMAC MIB
+MMAC POWER SERVICE
+MMAC SCAN SERVICE
+MMAC SV SERVICE
+MMAC SYS SERVICE
+MMAC_HapService
+MMAC_ICNCT_ASSOCIATED
+MMAC_ICNCT_RESET
+MMAC_ICNCT_UNASSOCIATED
+MMAC_ICNCT_WAITING_FOR_ASSOCIATION
+MMACA
+mmacAcCalcFragThreshold
+mmacAcTxComplete
+MMACAL
+MMACAL      
+mmacAlMpQueryOrdinal
+mmacAlMpSetOrdinal
+MMACBF
+MMACBF      
+MmacBf Service
+MMACCALIB
+MMACCALIB   
+mmacCalibSendCommand
+mmacCalibSendCommandNoTranslation
+MMACCNCT
+MMACCNCT    
+MMACCOEX
+MMACCOEX    
+MmacCoex Service
+mmacCoexHandleEvCloseAllEnvelopes
+mmacCoexHandleEvStatusError
+mmacCoexHandleRxOnSentBtLegacy
+MMACE
+mmacFP
+MMACH
+MMACHAP
+MMACHAP     
+MMACICNCT
+MMACICNCT   
+MMACLEDS
+MMACLEDS    
+MMACLINKQ
+MMACLINKQ   
+MMACMEASURE
+MMACMEASURE 
+MmacMeasurements
+MMACNMPR
+MMACNMPR    
+MmacNmprService
+MMACPANCNCT
+MMACPANCNCT 
+MMACPNC
+MMACPNC     
+MmacPNC Service
+MMACPOWER
+MMACPOWER   
+MmacRadar
+MMACRDR
+MMACRDR     
+MMACRFKILL
+MMACRFKILL  
+MMACRX
+MMACRX      
+MmacRxService
+MMACSCAN
+MMACSCAN    
+MMACSCHED
+MMACSCHED   
+mmacSchedAckSchedulerActivate
+mmacSchedAckSchedulerDeactivate
+mmacSchedAckSchedulerSchedule
+mmacSchedEvScdQueueConfigResponse
+mmacSchedEvWoWDeleteBaStreams
+mmacSchedHandleAddbaResp
+mmacSchedHandleCalcFrameDurationOid
+mmacSchedHandleCTRLFrameReady
+mmacSchedHandleHTAddba
+mmacSchedHandleHTBackAddbaReqTimeout
+mmacSchedHandleHTBackInactivityTimeout
+mmacSchedHandleHwSsn
+mmacSchedHandleInit
+mmacSchedHandleInitiatorDelbaReq
+mmacSchedHandleIntelBurstOid
+mmacSchedHandlePacketRelease
+mmacSchedHandleRecipientDelbaReceived
+mmacSchedHandleResetComplete
+mmacSchedHandleStaBackFlush
+mmacSchedTxComplete
+MmacScheduler
+MMACSECRX
+MMACSECRX   
+MMACSECTX
+MMACSECTX   
+MMACSECURITY
+MmacSecurityService
+mmacSendQoSParams
+MMACSLIDEWND
+MMACSPECTRUM
+MmacSpectrum
+MMACSPECTRUM
+MMACSV
+MMACSV      
+MMACSYS
+MMACSYS     
+MMACTHERMAL
+mmacTidContextEnableDisableTxForTid
+mmacTidExtractPackets
+mmacTidFlushIterators
+MMACTX
+MMACTX      
+MmacTxService
+MMACUCODEMSG
+mmacUpdateQoSParams
+mMeasureRxOnSent
+MmGetSystemRoutineAddress
+MmMapIoSpace
+MmMapLockedPagesSpecifyCache
+mmsgHalHapMbxDirectWrite
+MMUf33
+MmUnmapIoSpace
+mNmprHandleMsduReady
+mNmprHandleStatsTimer
+modify_mask: 0x%X, 
+ModulationType
+ModulationType %s 
+MOFDATA
+MOZZZ(
+MPAN_CNCT_STATE_ACTIVATED
+MPAN_CNCT_STATE_DE_ACTIVATION
+MPAN_CNCT_STATE_IDLE
+MPAN_CNCT_STATE_INITIAL_ACTIVATION
+MPAN_CNCT_STATE_P2P_DEVICE_ACTIVATED
+MPAN_CNCT_STATE_P2P_DEVICE_ACTIVATION
+MPAN_CNCT_STATE_P2P_DEVICE_RE_ACTIVATION
+MPAN_CNCT_STATE_RE_ACTIVATION
+MPAN_CNCT_STATE_RF_KILL
+MPAN_CNCT_STATE_SETUP
+MPAN_UCODE_CMD_ADD_STA
+MPAN_UCODE_CMD_INIT
+MPAN_UCODE_CMD_INIT_FOR_SUSPEND
+MPAN_UCODE_CMD_MODIFY_STA
+MPAN_UCODE_CMD_P2P_CHANNEL_SWITCH
+MPAN_UCODE_CMD_PAN_PARAMS
+MPAN_UCODE_CMD_REMOVE_STA
+MPAN_UCODE_CMD_RXON
+MPAN_UCODE_CMD_RXON_P2P_DEVICE
+MPAN_UCODE_CMD_RXON_P2P_GO
+MPAN_UCODE_CMD_RXON_P2P_STA
+MPAN_UCODE_CMD_RXON_TIMING
+MPAN_UCODE_CMD_TX_BEACON
+mPanCnctActivatedOnLqCommandSent
+mPanCnctAddStation
+mPanCnctDeActivationOnCbRxOn
+mPanCnctDelStation
+mPanCnctIsAssociated
+mPanCnctMarkStationDoNotRestore
+mPanCnctP2PSendChannelSwitchCommand
+mPanCnctPrvInitRxOnOrdinals
+mPanCnctRemovePanMibStations
+mPanCnctSendPanParamsCommand
+mPanCnctSendPanRxOnTimingCommand
+mPanCnctSendTxBeaconCommand
+mPanCnctSendUcodeAddStation
+mPanCnctSendUcodeDelStation
+mPanCnctSendUcodeModifyStation
+mPanCnctSetRxOnDevType
+mPanCnctTDPreparation
+mPanCnctUpdateAssociationBit
+mPanCnctUpdateRxOnCandFromPanConfig
+mPanCnctUpdateStaGF
+mPanCnctUpdateStation
+MPDL        
+MpduDensity
+mpmHandleEvForcePowerMgmnt
+mpmHandleEvHalt
+mpmHandleEvKeepAliveUpdated
+mpmHandleEvOidBssTableActiveEntryChanged
+mpmHandleEvOidPowerMgmtState
+mpmHandleEvOidUapsdDeepSleepMode
+mpmHandleEvOidUsrPowerMode
+mpmHandleEvOidUsrPowerSource
+mpmHandleEvOidWinPowerMode
+mpmHandleEvPanSetPwrMgmtState
+mpmHandleEvRadioOn
+mpmHandleEvRxOnSentDuringD3CnctRestore
+mpmHandleEvSetup
+mpmHandleEvTemperatureChanged
+mpmHandleEvWinPowerSource
+mpmHandleEvWoWPmDisable
+mpmHandleJawsBssView
+mPncHandleSendPNCTable
+mPncHandleTriggerEv
+mrfKillEvCtKillExit
+mrfKillEvRadioOffComplete
+mrfkillNotifyUcodeSwwd
+mrfkillPostRadioOff
+mRxBaResetComplete
+mRxHandleCleanUp
+mrxHandleCrcOk
+mrxHandleGetMacAddress
+mrxHandleMpduReady
+mrxPanSetStaAwake
+mrxParsePanFrame
+mscnHandleEvOidScanAbort
+mscnHandleEvOidScanComplete
+mscnHandleEvOidScanReq
+mSecHandleGetMacAddress
+mSecJawsStaTbl
+mSecurityD3Config
+mSecurityFreeUCodeKeyIndex
+mSecurityHandleEvOldKeyDel
+mSecurityHandleNewAddStationEvent
+mSecurityHandleWoWlanStationAdded
+mSecurityLockMib
+mSecuritySetKeyAckFlag
+mSecuritySetSvMicKey
+mSecuritySetSvReplaycounter
+mSecuritySetWepKeyAckFlag
+mSecurityTxGetKey
+mSecurityTxMpdu
+mSecurityTxMsdu
+mSecurityUnLockMib
+mSmartSnifferEvOidSSnifferBandChannel
+mSnifferFillIndicationBuffer
+mSpctrmHandle11dCountryIe
+mSpctrmHandleEvOidIntel
+mSpctrmHandleEvtCloseChanTimeout
+mSpctrmHandleEvtNtfyChanSwtch
+mSpctrmHandleEvtOidDfsChannel
+mSpctrmHandleEvtOidSupportedChannels
+mSpctrmHandleEvtResetComplete
+mSpctrmHandleEvtRxOnCmdSent
+mSpctrmHandleEvtSvChannelTbl
+mSpctrmHandleEvtSvPowerTargetControl
+mSpctrmHandleJaws11d
+mSpctrmHandleMeasurementNotification
+mSpctrmRestoreEeprom
+mSpctrmWriteChannelMask
+msvHandleEvNicStatistics
+msvHandleEvRxOnSent
+msvHandleOTPTestArea
+msvHandleSvOidNicMemoryAccess
+msvHandleSvOidOrdinal
+msvHandleSvOidReset
+msvHandleSvOidTxMaxPower
+msvInitStatistics
+MSYS_STATE_ALIVE
+MSYS_STATE_IDLE
+MSYS_STATE_MAX
+MSYS_STATE_NULL
+MSYS_STATE_RESET
+MSYS_STATE_SUSPEND
+msysHandleEvCheckForHang
+msysHandleEvDeleteAllStations
+msysHandleEvDeleteStation
+msysHandleEvInitNic
+msysHandleEvNicAlive
+msysHandleEvNicError
+msysHandleEvOid8023
+msysHandleEvOidDebugDump
+msysHandleEvOidGen
+msysHandleEvOidMmacHang
+msysHandleEvOidUcodeNmi
+msysHandleEvResumeNic
+msysSuspendNic
+mtxBARCb
+mtxBARGenerate
+mtxBARGetState
+mtxBARSaveNextSeqCtrl
+mtxBARSetState
+mtxHandleCompleteFragmentationEvent
+mTxHandleDrainFlowStart
+mtxHandleFragmentationThreshold
+mtxHandlePacketArrayEvent
+mtxHandleRxonSent
+mtxHandleSvOids
+mtxQueuesConfigShl
+mtxQueuesStats
+mTxRxStatRxFrame
+mTxRxStatUpdateTxDuration
+mTxUtilGetAcQueue
+mTxUtilPrintMapping
+mtxWhoIsAwake
+MU D0 DATA
+MU D0 INST
+MU D0R DATA
+MU D0R INST
+MU D3 DATA
+MU D3 INST
+mu_d0_data.bin
+mu_d0_inst.bin
+mu_d0r_data.bin
+mu_d0r_inst.bin
+mu_d3_data.bin
+mu_d3_inst.bin
+MulticastKey.Cipher %lu
+MulticastKey.CKipIV %lu
+MulticastKey.keyCounter %lu
+MulticastKey.KeyFlags %lu
+MulticastKey.KeyIndex %lu
+MulticastKey.KeyLength %lu
+MulticastKey.KeyMaterial[0] %X
+MulticastKey.liTimeStamp %lu
+MulticastKey.RSC[0] %X
+MulticastKey.staId %d
+MulticastKey.TSC[0] %X
+multicastTxKeyId: %d, 
+mUtilRemoveStaCmd
+Mutual supported rates: Legacy: 0x%X, HT: 0x%X
+n:2 @
+n:2 B
+n~S!~
+N4fA;K
+NDIS 6.2 Miniport Driver
+NDIS GET
+NDIS METHOD
+NDIS SET
+NDIS.SYS
+NDIS_STATUS_DOT11_ASSOCIATION_COMPLETION
+NDIS_STATUS_DOT11_ASSOCIATION_START
+NDIS_STATUS_DOT11_CAN_SUSTAIN_AP
+NDIS_STATUS_DOT11_CONNECTION_COMPLETION
+NDIS_STATUS_DOT11_CONNECTION_START
+NDIS_STATUS_DOT11_DISASSOCIATION
+NDIS_STATUS_DOT11_LINK_QUALITY
+NDIS_STATUS_DOT11_PHY_STATE_CHANGED
+NDIS_STATUS_DOT11_PMKID_CANDIDATE_LIST
+NDIS_STATUS_DOT11_ROAMING_COMPLETION
+NDIS_STATUS_DOT11_ROAMING_START
+NDIS_STATUS_DOT11_SCAN_CONFIRM
+NDIS_STATUS_DOT11_STOP_AP
+NDIS_STATUS_DOT11_TKIPMIC_FAILURE
+NDIS_STATUS_LINK_STATE
+NdisAllocateIoWorkItem
+NdisAllocateMdl
+NdisAllocateMemoryWithTag
+NdisAllocateNetBufferAndNetBufferList
+NdisAllocateNetBufferListPool
+NdisAllocateTimerObject
+NdisCancelTimerObject
+NdisCloseConfiguration
+NdisCloseFile
+NdisCopyFromNetBufferToNetBuffer
+NdisFreeIoWorkItem
+NdisFreeMdl
+NdisFreeMemory
+NdisFreeNetBufferList
+NdisFreeNetBufferListPool
+NdisFreeTimerObject
+NdisGetCurrentProcessorCounts
+NdisGetSystemUpTimeEx
+NdisInitializeString
+NdisMAllocateNetBufferSGList
+NdisMAllocatePort
+NdisMAllocateSharedMemory
+NdisMapFile
+NdisMDeregisterInterruptEx
+NdisMDeregisterMiniportDriver
+NdisMDeregisterScatterGatherDma
+NdisMFreeNetBufferSGList
+NdisMFreePort
+NdisMFreeSharedMemory
+NdisMGetBusData
+NdisMIndicateReceiveNetBufferLists
+NdisMIndicateStatusEx
+NdisMMapIoSpace
+NdisMNetPnPEvent
+NDISMOFRESOURCE
+NdisMOidRequestComplete
+NdisMRegisterInterruptEx
+NdisMRegisterMiniportDriver
+NdisMRegisterScatterGatherDma
+NdisMResetComplete
+NdisMSendNetBufferListsComplete
+NdisMSetBusData
+NdisMSetMiniportAttributes
+NdisMSleep
+NdisMSynchronizeWithInterruptEx
+NdisMUnmapIoSpace
+NdisOpenConfigurationEx
+NdisOpenConfigurationKeyByName
+NdisOpenFile
+NdisQueueIoWorkItem
+NdisReadConfiguration
+NdisReadNetworkAddress
+NdisSetTimerObject
+NdisUnmapFile
+NdisWriteConfiguration
+NdisWriteErrorLogEntry
+NetDetectEnable
+NetworkAddress
+NETwsw00.pdb
+NETwsw00.SYS
+New network indication = 0x%X
+new non-QOS STA joined the IBSS
+new TGe STA joined the IBSS 
+new WMM STA joined the IBSS 
+new WMMSA STA joined the IBSS 
+NEW_PROFILE
+NewLogLevelsAPI
+NIC_CFG_D0
+NIC_CFG_D0R
+NIC_CFG_D3
+NIC_EVENT_ALIVE
+NIC_EVENT_HW_ERROR
+NIC_EVENT_INIT
+NIC_EVENT_LOAD_COMPLETE
+NIC_EVENT_MAX
+NIC_EVENT_RESET
+NIC_EVENT_RESUME
+NIC_EVENT_SM_ERROR
+NIC_EVENT_SUSPEND
+NIC_EVENT_SW_ERROR
+NIC_PROPERTIES_CHANGED
+nKfff
+NLO         
+NLO is %sactive
+NLO VIEW
+NloCapable
+NO DATA
+No profile
+NO ROAMING TRIGGER
+No scan performed until now
+NO_MEDIUM
+NO_ROAM
+node_addr: %02X:%02X:%02X:%02X:%02X:%02X, 
+NOISE
+Noisy extension
+NoisyPlatformCmdSend
+NoisyPlatformDisabled
+NonDfsSessionStartRoamTimeout
+None (20MHz)
+nonmatchedCount:         %d
+NORMAL MODE
+not supported
+NOT_CONNECTED
+NPHcNHI
+ntoskrnl.exe
+Num of entries = %d
+Number   | Channel |Rate   |                | Packets retransmissed| Percentage of Packets Retransmitted  
+Number   | MAC address     | Exclude reasons (0x)
+Number   | MAC address     | SSID                           | Exclude reasons (0x)
+Number   | Rate    |                | Packets retransmissed| Percentage of Packets Retransmitted  
+Number  | Name           |                | Rate 
+Number of completed scans: %d
+Number of connected clients: %d 
+Number of connections since init = %d, 
+Number of fragments sent                       %-5d
+Number of interfaces = %d, n
+numOfChannels
+numOfChannels: %d
+numOfProfiles
+numOfProfiles: %d
+N'vb'
+o%%Jr..\$
+o&4m*b
+o(D9k(u"
+O{VzKc
+O0fD;
+oaS&M
+ObfDereferenceObject
+OFDM RATES
+ofdm_basic_rates: 0x%X, 
+OfdmFalseAlarmMax
+OfdmFalseAlarmMin
+OfdmMaxSensitivity
+OfdmMinSensitivity
+Oh44\Q
+OID_802_11_ADD_KEY
+OID_802_11_ADD_WEP
+OID_802_11_ASSOCIATION_INFORMATION
+OID_802_11_AUTHENTICATION_MODE
+OID_802_11_BSSID
+OID_802_11_BSSID_LIST
+OID_802_11_BSSID_LIST_SCAN
+OID_802_11_CAPABILITY
+OID_802_11_CONFIGURATION
+OID_802_11_DESIRED_RATES
+OID_802_11_ENCRYPTION_STATUS
+OID_802_11_FRAGMENTATION_THRESHOLD
+OID_802_11_INFRASTRUCTURE_MODE
+OID_802_11_MEDIA_STREAM_MODE
+OID_802_11_NETWORK_TYPE_IN_USE
+OID_802_11_NETWORK_TYPES_SUPPORTED
+OID_802_11_NUMBER_OF_ANTENNAS
+OID_802_11_PMKID
+OID_802_11_POWER_MODE
+OID_802_11_PRIVACY_FILTER
+OID_802_11_RELOAD_DEFAULTS
+OID_802_11_REMOVE_KEY
+OID_802_11_REMOVE_WEP
+OID_802_11_RSSI
+OID_802_11_RSSI_TRIGGER
+OID_802_11_RTS_THRESHOLD
+OID_802_11_RX_ANTENNA_SELECTED
+OID_802_11_SSID
+OID_802_11_SUPPORTED_RATES
+OID_802_11_TEST
+OID_802_11_TX_ANTENNA_SELECTED
+OID_802_11_WEP_STATUS
+OID_802_3_CURRENT_ADDRESS
+OID_802_3_MAXIMUM_LIST_SIZE
+OID_802_3_MULTICAST_LIST
+OID_802_3_PERMANENT_ADDRESS
+OID_802_3_RCV_ERROR_ALIGNMENT
+OID_802_3_XMIT_MORE_COLLISIONS
+OID_802_3_XMIT_ONE_COLLISION
+OID_DOT11_ACTIVE_PHY_LIST
+OID_DOT11_ADDITIONAL_IE
+OID_DOT11_ASSOCIATION_PARAMS
+OID_DOT11_AUTO_CONFIG_ENABLED
+OID_DOT11_AVAILABLE_CHANNEL_LIST
+OID_DOT11_AVAILABLE_FREQUENCY_LIST
+OID_DOT11_BEACON_PERIOD
+OID_DOT11_CIPHER_DEFAULT_KEY
+OID_DOT11_CIPHER_DEFAULT_KEY_ID
+OID_DOT11_CIPHER_KEY_MAPPING_KEY
+OID_DOT11_CONNECT_REQUEST
+OID_DOT11_CREATE_MAC
+OID_DOT11_CURRENT_ADDRESS
+OID_DOT11_CURRENT_CHANNEL
+OID_DOT11_CURRENT_FREQUENCY
+OID_DOT11_CURRENT_OPERATION_MODE
+OID_DOT11_CURRENT_PHY_ID
+OID_DOT11_CURRENT_REG_DOMAIN
+OID_DOT11_CURRENT_TX_POWER_LEVEL
+OID_DOT11_DATA_RATE_MAPPING_TABLE
+OID_DOT11_DELETE_MAC
+OID_DOT11_DESIRED_BSS_TYPE
+OID_DOT11_DESIRED_BSSID_LIST
+OID_DOT11_DESIRED_PHY_LIST
+OID_DOT11_DESIRED_SSID_LIST
+OID_DOT11_DISASSOCIATE_PEER_REQUEST
+OID_DOT11_DISCONNECT_REQUEST
+OID_DOT11_DTIM_PERIOD
+OID_DOT11_ENABLED_AUTHENTICATION_ALGORITHM
+OID_DOT11_ENABLED_MULTICAST_CIPHER_ALGORITHM
+OID_DOT11_ENABLED_UNICAST_CIPHER_ALGORITHM
+OID_DOT11_ENUM_ASSOCIATION_INFO
+OID_DOT11_ENUM_BSS_LIST
+OID_DOT11_ENUM_PEER_INFO
+OID_DOT11_EXCLUDE_UNENCRYPTED
+OID_DOT11_EXCLUDED_MAC_ADDRESS_LIST
+OID_DOT11_EXTSTA_CAPABILITY
+OID_DOT11_FLUSH_BSS_LIST
+OID_DOT11_FRAGMENTATION_THRESHOLD
+OID_DOT11_HARDWARE_PHY_STATE
+OID_DOT11_HIDDEN_NETWORK_ENABLED
+OID_DOT11_IBSS_PARAMS
+OID_DOT11_INCOMING_ASSOCIATION_DECISION
+OID_DOT11_LONG_RETRY_LIMIT
+OID_DOT11_MAC_ADDRESS
+OID_DOT11_MAXIMUM_LIST_SIZE
+OID_DOT11_MEDIA_STREAMING_ENABLED
+OID_DOT11_MPDU_MAX_LENGTH
+OID_DOT11_MULTICAST_LIST
+OID_DOT11_NIC_POWER_STATE
+OID_DOT11_OPERATION_MODE_CAPABILITY
+OID_DOT11_OPERATIONAL_RATE_SET
+OID_DOT11_PERMANENT_ADDRESS
+OID_DOT11_PMKID_LIST
+OID_DOT11_PORT_STATE_NOTIFICATION
+OID_DOT11_POWER_MGMT_REQUEST
+OID_DOT11_PRIVACY_EXEMPTION_LIST
+OID_DOT11_QOS_ADDTS_REQUEST
+OID_DOT11_QOS_DELTS_REQUEST
+OID_DOT11_QOS_PARAMS
+OID_DOT11_REG_DOMAINS_SUPPORT_VALUE
+OID_DOT11_RESET_REQUEST
+OID_DOT11_RTS_THRESHOLD
+OID_DOT11_SAFE_MODE_ENABLED
+OID_DOT11_SCAN_REQUEST
+OID_DOT11_SHORT_RETRY_LIMIT
+OID_DOT11_START_AP_REQUEST
+OID_DOT11_STATISTICS
+OID_DOT11_SUPPORTED_DATA_RATES_VALUE
+OID_DOT11_SUPPORTED_MULTICAST_ALGORITHM_PAIR
+OID_DOT11_SUPPORTED_PHY_TYPES
+OID_DOT11_SUPPORTED_UNICAST_ALGORITHM_PAIR
+OID_DOT11_UNICAST_USE_GROUP_ENABLED
+OID_DOT11_UNREACHABLE_DETECTION_THRESHOLD
+OID_DOT11_VIRTUAL_STATION_CAPABILITY
+OID_DOT11_WPS_ENABLED
+OID_GEN_CURRENT_LOOKAHEAD
+OID_GEN_CURRENT_PACKET_FILTER
+OID_GEN_DRIVER_VERSION
+OID_GEN_HARDWARE_STATUS
+OID_GEN_LINK_SPEED
+OID_GEN_MAC_OPTIONS
+OID_GEN_MAXIMUM_FRAME_SIZE
+OID_GEN_MAXIMUM_LOOKAHEAD
+OID_GEN_MAXIMUM_SEND_PACKETS
+OID_GEN_MAXIMUM_TOTAL_SIZE
+OID_GEN_MEDIA_CONNECT_STATUS
+OID_GEN_MEDIA_IN_USE
+OID_GEN_MEDIA_SUPPORTED
+OID_GEN_PHYSICAL_MEDIUM
+OID_GEN_RCV_ERROR
+OID_GEN_RCV_NO_BUFFER
+OID_GEN_RCV_OK
+OID_GEN_RECEIVE_BLOCK_SIZE
+OID_GEN_RECEIVE_BUFFER_SPACE
+OID_GEN_STATISTICS
+OID_GEN_SUPPORTED_GUIDS
+OID_GEN_TRANSMIT_BLOCK_SIZE
+OID_GEN_TRANSMIT_BUFFER_SPACE
+OID_GEN_VENDOR_DESCRIPTION
+OID_GEN_VENDOR_DRIVER_VERSION
+OID_GEN_VENDOR_ID
+OID_GEN_XMIT_ERROR
+OID_GEN_XMIT_OK
+OID_INTEL_ISV_ASSOCIATION_STATUS
+OID_INTEL_ISV_CHANNEL_LIST
+OID_INTEL_ISV_CURRENT_BAND_CHANNEL
+OID_INTEL_ISV_CURRENT_BAND_CHANNEL_EX
+OID_INTEL_ISV_PMODE_BAND_CHANNEL
+OID_INTEL_ISV_PMODE_BAND_CHANNEL_EX
+OID_INTEL_ISV_PMODE_DISABLE
+OID_INTEL_ISV_PMODE_ENABLE
+OID_INTEL_ISV_PMODE_PACKET_SLICE
+OID_INTEL_QOS_ADDTS_REQUEST
+OID_INTEL_QOS_DELTS_REQUEST
+OID_INTEL_START_NON_DFS_SESSION
+OID_INTEL_STOP_NON_DFS_SESSION
+OID_IWLAN_CALC_FRAME_DURATION
+OID_IWLAN_HT_ADDBA
+OID_IWLAN_INITIATOR_DELBA_REQ
+OID_IWLAN_MMAC_ADDBA
+OID_IWLAN_MMAC_INITIATOR_DELBA
+OID_IWLAN_MMAC_REMOTE_BA
+OID_IWLAN_QOS_UAPSD_DEEP_SLEEP_MODE
+OID_IWLAN_RECIPIENT_DELBA_REQ
+OID_IWLAN_RX_BACK_DISABLED
+OID_IWLAN_SEND_MIMO_PS_HT_ACTION
+OID_IWLAN_SEND_TX_CHANNEL_WIDTH_HT_ACTION
+OID_PM_ADD_PROTOCOL_OFFLOAD
+OID_PM_ADD_WOL_PATTERN
+OID_PM_GET_PROTOCOL_OFFLOAD
+OID_PM_PARAMETERS
+OID_PM_REMOVE_PROTOCOL_OFFLOAD
+OID_PM_REMOVE_WOL_PATTERN
+OID_PNP_CAPABILITIES
+OID_PNP_QUERY_POWER
+OID_PNP_SET_POWER
+OID_SV_AC_QUEUE
+OID_SV_API_VERSION
+OID_SV_BF_RESULTS
+OID_SV_BF_TRIGGER
+OID_SV_BSS_TBL_FLD_POLICY
+OID_SV_BSS_TBL_FLD_SECURITY
+OID_SV_BT_COEX_PROFILE
+OID_SV_BT_PROFILE_NOTIFICATION
+OID_SV_CALIB_PERIODIC_CONTROL
+OID_SV_CALIB_START
+OID_SV_CF_POLL_STAT
+OID_SV_CHANNEL_SWITCH
+OID_SV_CHANNEL_TBL
+OID_SV_CLOCKS_INIT_ANALOG_MIB
+OID_SV_CLOCKS_INIT_CCK_MIB
+OID_SV_CLOCKS_INIT_OFDM_MIB
+OID_SV_COEX_PRIORITIES
+OID_SV_COEX_RELEASE_DEBUG_STATE
+OID_SV_COEX_REQ_DEBUG_STATE
+OID_SV_COMMAND
+OID_SV_CONNECTION_PRIORITY_SWITCH
+OID_SV_D3_MANAGER_DEBUG_CONFIG
+OID_SV_D3_MANAGER_DEBUG_QUERY
+OID_SV_DIRECT_ACCESS
+OID_SV_DRV_MEM
+OID_SV_DRV_OBJ_ADDR
+OID_SV_EEPROM
+OID_SV_EEPROM_BURN_QUERY
+OID_SV_EEPROM_COMMIT
+OID_SV_EEPROM_COMMIT_HIGH
+OID_SV_EEPROM_HIGH
+OID_SV_EEPROM_MAX_TX_POWER
+OID_SV_EEPROM_TEST
+OID_SV_ENABLE_INDICATIONS_TO_SV
+OID_SV_ERROR_LOG_ENABLE
+OID_SV_FORCE_POWER_MGMNT
+OID_SV_GET_STATISTICS
+OID_SV_INDIRECT_ACCESS
+OID_SV_INDIRECT_ACCESS_EX
+OID_SV_JAWS
+OID_SV_KEY_TBL
+OID_SV_LINK_QUAL_CMD
+OID_SV_LOG_BUFFER_DESC
+OID_SV_LOG_LEVEL
+OID_SV_LOG_MODULE_LIST
+OID_SV_MEASURE_CRYSTAL_INIT_TIME
+OID_SV_MMAC_DEBUG_DUMP
+OID_SV_NVM_TYPE
+OID_SV_OID_BA_HISTORY
+OID_SV_ORDINAL
+OID_SV_OTP_STATISTICS
+OID_SV_OTP_TEST_AREA
+OID_SV_PCI_CFG
+OID_SV_PM_PARAMETERS
+OID_SV_PNC_NUMBER_OF_SAMPLES
+OID_SV_PNC_RESULTS
+OID_SV_PNC_SEND_PNC_TABLE
+OID_SV_PNC_TRIGGER
+OID_SV_POWER_TARGET_CONTROL
+OID_SV_QOS_MMAC_RX_BACK_INFO
+OID_SV_QOS_MMAC_TX_BACK_INFO
+OID_SV_QOS_PER_STA_PER_TID_DATA
+OID_SV_QUERY_ERROR_LOG
+OID_SV_QUERY_MMAC_DEBUG_DUMP
+OID_SV_QUERY_NUM_OTP_BLOCKS
+OID_SV_QUERY_TFD_QUEUES_INFO
+OID_SV_RADAR_THRESHOLD
+OID_SV_READ_EEPROM
+OID_SV_RELOAD_CHANNELS
+OID_SV_RESET_DRIVER
+OID_SV_RESPONSE
+OID_SV_RLC_PARAMETERS
+OID_SV_RX_HDR_MODE
+OID_SV_RX_ON_STATE
+OID_SV_SCAN_ENABLED
+OID_SV_SEND_TX_TEMP_GAIN_TABLE
+OID_SV_SET_DATA
+OID_SV_SET_POWER
+OID_SV_SET_STA
+OID_SV_SET_STA_FLAGS
+OID_SV_SNR
+OID_SV_STA_CONFIGURATION
+OID_SV_STA_TBL_FLD_RX
+OID_SV_STA_TBL_FLD_SECURITY
+OID_SV_STA_TBL_FLD_TX
+OID_SV_START_PSEUDO_S3
+OID_SV_SYSTEM_MONITOR_CONFIG
+OID_SV_SYSTEM_MONITOR_DATA_REQ
+OID_SV_THERMAL_MANAGEMENT
+OID_SV_TLC_PARAMETERS
+OID_SV_TLC_THRESHOLDS
+OID_SV_TRIGGER_SCAN
+OID_SV_TX_CMD
+OID_SV_TX_FILTER_MODE
+OID_SV_TX_LOOP
+OID_SV_TX_PWR_CALIB_ACTIVATE
+OID_SV_TX_PWR_CALIB_CONTROL
+OID_SV_TX_PWR_SF
+OID_SV_UCODE_TRACE_STOP_SAMPLING
+OID_SV_XTAL_STABILITY_TEST
+OID_SV_XVT_GET_CALIB_DATA
+OID_WIFI_11K_RADIO_MEASURMENTS_REQUEST
+OID_WIFI_11K_RADIO_MEASURMENTS_STATE
+OID_WIFI_11N_CHANNEL_MODE_24
+OID_WIFI_11N_CHANNEL_MODE_52
+OID_WIFI_11N_FAT_CHANNEL_INTOLERANT
+OID_WIFI_11N_MODE
+OID_WIFI_ACK_MODE
+OID_WIFI_AD_HOC_CONNECTION
+OID_WIFI_ADAPTER_CONFIGURATION
+OID_WIFI_ADAPTER_DATA_RATES
+OID_WIFI_ADAPTER_MAXIMUM_TXPOWER
+OID_WIFI_ADAPTER_STATISTICS
+OID_WIFI_ADD_EXCLUDED_AP
+OID_WIFI_ADD_WEP
+OID_WIFI_ADHOC_CHANNELS
+OID_WIFI_ALLOWED_TX_ANTENNAS
+OID_WIFI_AMT_OWN_RADIO
+OID_WIFI_ANT_RSSI
+OID_WIFI_ANTENNA_DIVERSITY
+OID_WIFI_AP_BSS_ID
+OID_WIFI_APP_DRV_INTERFACE_VERSION
+OID_WIFI_APP_SET_ASSOC_INFO
+OID_WIFI_ASSET_TRACKING_CONFIG
+OID_WIFI_ASSOCIATION_STATUS
+OID_WIFI_ATIM_WINDOW_SIZE
+OID_WIFI_AUTHENTICATION_MODE
+OID_WIFI_AUTO_CONNECT
+OID_WIFI_BAND_PREFERENCE
+OID_WIFI_BEACON_CHANGE_IND_CONFIG
+OID_WIFI_BSS_MODE
+OID_WIFI_BSS_PROBE_REQ_ADDITIONAL_IES
+OID_WIFI_BT_COEX_BT_ACTIVE
+OID_WIFI_BT_COEX_FORCE_SHARED_ANT
+OID_WIFI_BT_COEX_WLAN_ACTIVE
+OID_WIFI_BT3HS_INTERFACE
+OID_WIFI_BTHS_DIRECT_OID_API_CLEAN_UP
+OID_WIFI_BTHS_DIRECT_OID_API_INSTALL_CALLBACKS
+OID_WIFI_BTHS_DIRECT_OID_API_REVERT_EXCLUSION_OFF
+OID_WIFI_BTHS_DIRECT_OID_API_REVERT_EXCLUSION_ON
+OID_WIFI_BTHS_DIRECT_OID_API_START
+OID_WIFI_BTHS_DIRECT_OID_API_STOP
+OID_WIFI_BTHS_GET_REGISTRY_CLSGUID
+OID_WIFI_CCX_SDK_DIAGNOSTIC_MODE
+OID_WIFI_CCX_SDK_DIRECTED_ROAM
+OID_WIFI_CCX_SDK_FRAME_LOGGING_MODE
+OID_WIFI_CCX_SDK_KEEP_ALIVE_REFRESH
+OID_WIFI_CCX_SDK_LAST_BCN_TIME
+OID_WIFI_CCX_SDK_NEIGHBOR_LIST
+OID_WIFI_CCX_SDK_RM_REQUEST
+OID_WIFI_CCX_SDK_SEND_PACKET
+OID_WIFI_CCX_SDK_STA_STATISTICS_2
+OID_WIFI_CCX_SDK_TSF
+OID_WIFI_CHANNEL_ID
+OID_WIFI_CISCO_ASSISTED_ROAMING
+OID_WIFI_CISCO_CCKM
+OID_WIFI_CISCO_CCX_VERSION
+OID_WIFI_CISCO_CWMIN_CWMAX
+OID_WIFI_CISCO_ENCRYPT_EAP_PKTS
+OID_WIFI_CISCO_HD_STATUS
+OID_WIFI_CISCO_LEAP_ROGUE_MODE
+OID_WIFI_CISCO_MIXED_CELLS_MODE
+OID_WIFI_CISCO_QoS_PARAMETER_SET_IE
+OID_WIFI_CISCO_RADIO_MEASURMENTS
+OID_WIFI_CISCO_TPC
+OID_WIFI_CLEAR_EXCLUDE_LIST
+OID_WIFI_COEX_20_40_SEND_REPORT
+OID_WIFI_COEX_SDK_SCAN_ERROR_CODE
+OID_WIFI_COEX_SDK_SYSTEM_MODE
+OID_WIFI_CTS_TO_SELF
+OID_WIFI_CURR_RSSI_ACTIVE_AP
+OID_WIFI_CURRENT_BAND
+OID_WIFI_CURRENT_PROFILE
+OID_WIFI_DEVICE_INFORMATION
+OID_WIFI_DISASSOCIATE
+OID_WIFI_DPPM
+OID_WIFI_ENCRYPTION_STATUS
+OID_WIFI_EXCLUDE_ENABLE
+OID_WIFI_FEATURES_SUPPORTED
+OID_WIFI_FIRMWARE_VERSION
+OID_WIFI_GET_CISCO_VERSION
+OID_WIFI_GET_CISCOACU_PARAMS
+OID_WIFI_GET_CURRENT_POWER
+OID_WIFI_GET_EXCLUDE_LIST
+OID_WIFI_GET_IWA_VERSION
+OID_WIFI_GET_IWT_NOISE_DATA
+OID_WIFI_GET_POWER_LEVEL
+OID_WIFI_HARDWARE_RADIO_SWITCH
+OID_WIFI_HMAC_GENERIC_DEBUG
+OID_WIFI_IBSS_QOS_STYLE
+OID_WIFI_INSTANT_CONNECT
+OID_WIFI_INTEL_PACKET_BURST
+OID_WIFI_IS_INTEL_CARD
+OID_WIFI_ISV_SNIFFER_STATE
+OID_WIFI_MAIN_UPDATE_IES
+OID_WIFI_MMAC_GENERIC_DEBUG
+OID_WIFI_NETDETECT_HOTSPOTS_LIST
+OID_WIFI_NETDETECT_PROFILES_LIST
+OID_WIFI_NMPR_CLOCK_SYNC_STATUS
+OID_WIFI_NMPR_STATS_STATUS
+OID_WIFI_PAN_ADD_DEVICES_TO_EXCLUDE_LIST
+OID_WIFI_PAN_CIPHER_GROUP_KEY
+OID_WIFI_PAN_CIPHER_PAIRWISE_KEY
+OID_WIFI_PAN_CLEAR_EXCLUDE_LIST
+OID_WIFI_PAN_DEAUTH_DEVICE
+OID_WIFI_PAN_INTERFACE
+OID_WIFI_PAN_IP_FILTER
+OID_WIFI_PAN_P2P_ABORT_GROUP_FORMATION
+OID_WIFI_PAN_P2P_ACTIVATE_P2P_DEVICE
+OID_WIFI_PAN_P2P_CREDENTIALS_READY
+OID_WIFI_PAN_P2P_DIRECTED_SCAN
+OID_WIFI_PAN_P2P_ENABLE_DISABLE
+OID_WIFI_PAN_P2P_ENABLE_UAPSD
+OID_WIFI_PAN_P2P_GROUP_FORMATION_STATE
+OID_WIFI_PAN_P2P_INITIATE_DISCOVERY
+OID_WIFI_PAN_P2P_INVITATION_CREDENTIALS_READY
+OID_WIFI_PAN_P2P_INVITATION_CREDENTIALS_READY_V2
+OID_WIFI_PAN_P2P_MODIFY_IES_V2
+OID_WIFI_PAN_P2P_MODIFY_IES_V3
+OID_WIFI_PAN_P2P_NOA_TEST
+OID_WIFI_PAN_P2P_OP_MODE
+OID_WIFI_PAN_P2P_OPPPS_TEST
+OID_WIFI_PAN_P2P_QUERY_DEVICE_LIST
+OID_WIFI_PAN_P2P_SET_ACTION_LIST
+OID_WIFI_PAN_P2P_SET_NETWORK_CONFIG
+OID_WIFI_PAN_P2P_SET_NETWORK_CONFIG_V2
+OID_WIFI_PAN_P2P_SET_NETWORK_CONFIG_V3
+OID_WIFI_PAN_P2P_STA_ROAMING_TIMEOUT
+OID_WIFI_PAN_P2P_WFA_CERT_DEVICE_DISCOVERABILITY_REQUEST
+OID_WIFI_PAN_P2P_WFA_CERT_PRESENCE_REQUEST
+OID_WIFI_PAN_P2P_WPS_SUPPORTED_CONFIG_METHODS
+OID_WIFI_PAN_QUERY_CAPABILITY_INFO
+OID_WIFI_PAN_QUERY_EXCLUDE_LIST
+OID_WIFI_PAN_QUERY_OPERATIONAL_STATUS
+OID_WIFI_PAN_QUERY_OPERATIONAL_STATUS_V2
+OID_WIFI_PAN_REMOVE_DEVICE_FROM_EXCLUDE_LIST
+OID_WIFI_PEER_STAT
+OID_WIFI_PLATFORM_MOTION_DETECTION
+OID_WIFI_PLATFORM_MOTION_DETECTOR_STATE
+OID_WIFI_POWER_MODE
+OID_WIFI_POWER_SOURCE
+OID_WIFI_PREAMBLE_MODE
+OID_WIFI_PROP_AUTHENTICATION_MODE
+OID_WIFI_PROP_ENCRYPTION_STATUS
+OID_WIFI_PROTOCOL_PREFERENCE
+OID_WIFI_PROTOCOL_TYPE
+OID_WIFI_QUERY_DEVICE_LIST
+OID_WIFI_REGISTER_PROFILE_SERVICE
+OID_WIFI_REMOVE_AP_FROM_EXCLUDE_LIST
+OID_WIFI_ROAM_AGGRESSIVENESS
+OID_WIFI_RX_FILTER_CONFIG
+OID_WIFI_SCAN_ABORT
+OID_WIFI_SCAN_REQUEST
+OID_WIFI_SCAN_WHEN_ASSOC
+OID_WIFI_SEND_MGMT_FRAME
+OID_WIFI_SET_CLNTNAME_CISCOAP
+OID_WIFI_SET_IWT_SAMPLE_VALID_PERIOD
+OID_WIFI_SMART_WIRELESS
+OID_WIFI_SNIFFER_STATS_BAND_CHANNEL
+OID_WIFI_SNIFFER_STATS_START
+OID_WIFI_SNIFFER_STATS_STOP
+OID_WIFI_SNIFFER_STATS_STOP_ALL
+OID_WIFI_TX_POWER_CONTROL
+OID_WIFI_VOW_FEATURES_SUPPORT
+OID_WIFI_WAKE_REASON
+OID_WIFI_WEV_ENABLED
+OID_WIFI_WSE_REMOVE_ALL_KEYS
+Oid=0x%X
+oJr\$8
+Olamon
+OldFormatMimoPSAction
+onChannelPmaPowerChange
+onChannelShlPowerChange
+onChannelTylPowerChange
+oO~>f
+Open connections = 0x%X, Traffic load = 0x%X, Chl_SeqN = 0x%X, In band = 0x%X
+OPEN_GREEN_LIGHT
+OpenLoopOnlyEnabled
+OrdTbl 
+OrdVarLenTbl 
+OriginalFilename
+origShlTxCalibChangeChannel
+origShlTxPowerCalibUpdateChannels
+OS_EXCLUDED
+OSC         
+oscOid80211Bssid
+OsRequestedScan: %s, 
+OTHER
+OverrideEapolRate
+OzHp'
+OzmoDebug
+OzS A
+p WATAUH
+p$CC,
+p$n@&
+p$o@'
+P$u-A
+P%X%A
+P&X%A
+p(u:r
+p(uHwhv8c
+p(uHwhv8c"
+p(uHwhv8cf
+p(uHwhv8cz
+p(v:r
+p(vHu
+p(vHu:
+p(vHu^
+p(vHu~
+p(vHuF
+p(vHuv
+p(vHuz
+p(vHw
+p(vHw"
+p(vHw:
+p(vHw>
+p(vHwb
+p(vHwf
+p(vHwF
+p(vHwn
+p(vHwZ
+p(wHv
+p(wZr:s
+p*qjr
+p,5x@
+p,Ux 
+p,Ux"
+p,Ux`
+p:5{`
+p:pC-
+p:pC/
+P:'q'
+p:qHu
+p:qHub
+p:qHv
+p:qHv"
+p:qHv2
+p:qHvF
+p:qHvz
+p:qZr
+p:qZr"
+p:qZr*
+p:qZrF
+p:qZrZ
+p:Uy@
+p:uz@
+P@HcT$0H
+P[%d]=%d,
+p_^]H
+p'`}0
+p'`}p
+p`6z 
+P`HcL$@
+P`HcT$0H
+P{6xl
+p{x`3
+p{zb2
+P~AeS
+P<Dx<
+p>B|>
+P0fD;
+P0fE;
+P0UxG
+p2o4y
+P2P_IE_ATTRIBUTE_TYPE_ChannelList
+P2P_IE_ATTRIBUTE_TYPE_ConfigurationTimeout
+P2P_IE_ATTRIBUTE_TYPE_ExtendedListenTiming
+P2P_IE_ATTRIBUTE_TYPE_GroupOwnerIntent
+P2P_IE_ATTRIBUTE_TYPE_Intended_P2P_InterfaceAddress
+P2P_IE_ATTRIBUTE_TYPE_InvitationFlags
+P2P_IE_ATTRIBUTE_TYPE_ListenChannel
+P2P_IE_ATTRIBUTE_TYPE_MinorReasonCode
+P2P_IE_ATTRIBUTE_TYPE_NoticeOfAbsence
+P2P_IE_ATTRIBUTE_TYPE_OperatingChannel
+P2P_IE_ATTRIBUTE_TYPE_P2P_Capability
+P2P_IE_ATTRIBUTE_TYPE_P2P_DeviceID
+P2P_IE_ATTRIBUTE_TYPE_P2P_DeviceInfo
+P2P_IE_ATTRIBUTE_TYPE_P2P_GroupBSSID
+P2P_IE_ATTRIBUTE_TYPE_P2P_GroupID
+P2P_IE_ATTRIBUTE_TYPE_P2P_GroupInfo
+P2P_IE_ATTRIBUTE_TYPE_P2P_Interface
+P2P_IE_ATTRIBUTE_TYPE_P2P_Manageability
+P2P_IE_ATTRIBUTE_TYPE_Status
+P2P_IE_INVALID
+P2PSSID1P2PSSID2P2PSSID3P2PSSID4
+P5:p 
+PA\][
+pA\^[
+pA\^]
+PA\^]
+pA\^]
+PA\^]
+pA\^]
+pA\_[
+pA\_]
+PA\_]
+pA\_]
+PA\_]
+pA\_]
+PA\_]
+pA\_]
+PA\_]
+pA\_]
+PA\_^
+pA\_^
+PA\_^
+pA\_^
+PA\_^
+pA\_^
+PA\_^
+pA\_^
+PA\_^
+pA\_^
+PA\_^
+pA\_^
+PA\_^
+pA\_^
+PA\_^
+pA\_^
+pA\_^][
+PA\_^][
+pA\_^][
+pA]^[
+PA]^]
+pA]_[
+PA]_[
+pA]_[
+PA]_[
+PA]_]
+PA]_^
+pA]_^
+PA]_^
+pA]_^
+PA]_^][
+PA]A\]
+pA]A\^
+PA]A\^][
+pA]A\^][
+PA]A\^][
+PA]A\_
+pA]A\_
+PA]A\_
+PA]A\_][
+pA]A\_^]
+PA]A\_^]
+pA]A\_^]
+PA]A\_^]
+pA]A\_^]
+PA^^]
+pA^_^][
+pA^A\_
+pA^A\_][
+PA^A\_^[
+PA^A\_^]
+pA^A\_^]
+pA^A][
+PA^A]^][
+PA^A]_
+pA^A]_][
+pA^A]_^[
+PA^A]_^[
+pA^A]_^[
+PA^A]_^[
+pA^A]_^[
+PA^A]_^[
+pA^A]_^]
+PA^A]A\
+PA^A]A\][
+PA^A]A\_[
+PA^A]A\_^
+pA__^][
+PA__^][
+pA__^][
+PA__^][
+pA_A\^
+PA_A\_^[
+pA_A]_
+PA_A]_^[
+pA_A]_^]
+pA_A]A\
+pA_A]A\^]
+pA_A]A\_[
+pA_A]A\_^
+pA_A]A\_^][
+PA_A]A\_^][
+pA_A]A\_^][
+PA_A]A\_^][
+pA_A]A\_^][
+PA_A^[
+PA_A^_^[
+pA_A^_^]
+PA_A^A\_]
+pA_A^A\_^
+PA_A^A\_^
+PA_A^A\_^][
+pA_A^A\_^][
+PA_A^A\_^][
+pA_A^A\_^][
+PA_A^A]
+PA_A^A]][
+pA_A^A]_]
+PA_A^A]_]
+PA_A^A]_^
+pA_A^A]_^
+PA_A^A]_^][
+pA_A^A]A\]
+PA_A^A]A\^
+pA_A^A]A\^][
+pA_A^A]A\_^[
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+p-A9},H
+PACKET
+PAN BSS PLUGIN
+PAN CLIENT
+PAN CNCT
+PAN Connection manager
+PAN CP ACTIVE NO CLIENTS
+PAN CP ACTIVE WITH CLIENTS
+PAN DISCOVERABLE
+PAN policy manager
+Pan Policy state: %s
+PAN Security
+PAN Security Service
+PAN STA ACTIVE
+PAN_CLIENT
+PAN_CLIENT  
+PAN_CP_STATE_ACTIVE
+PAN_CP_STATE_IDLE
+PAN_SECURITY
+Pan11gOnlyBasicRates
+Pan11nEnabled
+PanBasicRates
+PanBeaconAdjChanRssiTreshold
+PanBeaconCurChanRssiTreshold
+PanBeaconDeviationLimit
+PanBeaconNumOfSamples
+PanBeaconSampleTimeout
+PanBwaNumEntries
+PanBwaSampleTime
+PanCheckAliveInactivityTimeout
+PanDeleteStaInactivityTimeout
+PanDtimPeriod
+PanEnabled
+PanExcludeListLength
+PanForwardRxToTx
+PanGFEnabled
+PanIgnoreClientLongPreamble
+PanIgnoreClientLongSlot
+PanMaxClients
+PanMaxClientTxFailures
+PanP2PClientDiscoverability
+PanP2PGOCTWindow
+PanP2PGOEnableOppPS
+PanP2PGOIntent
+PanP2PInitialDialogToken
+PanP2PSigmaMode
+PanPeriodicScanEnabled
+PANPOLICY
+PANPOLICY   
+PanQoSEnabled
+PanSecurityEnabled
+PanSGIEnabled
+PanStealthMode
+PanSupportedRates
+PanTearDownABandGoTimerInSec
+PanTimeoutForResetTxFailCnt
+PAPD read
+papdCalibrationImage.bin
+PapdEnableduCode
+PapdImageSource
+Passive
+PASSIVE | %-3d        | 
+PAUSE_WHILE_CONNECTING
+PAUSED
+PAUSED_CNCT
+PAUSED_TERM
+PAUSING
+pB @  
+pB P  
+pB P L 
+pB#A 
+PBANumber
+PBD)>'@ 
+pBssTbl %X
+pd6z 
+pdzD#
+perClientKey flags %d
+perClientKey installCnt %d
+perClientKey length %d
+perClientKey material[0] %X
+PERIODIC_CALIBRATION
+PERIORIC SCAN
+Pf5x)
+pFixedOrdTbl %X
+pG4xA
+pHcAHH
+PhHcL$@
+PHHcL$@
+PHHcT$8H
+pHl\t
+pHmfmFlushBssTable
+phphq
+phqhp
+PIBSS
+PibssBestEffortTxop
+PibssBkTxop
+PibssPeerMacAddress
+PibssShortSlot
+PibssTggProtection
+PibssVideoTxop
+PibssVoiceTxop
+pJ @ 
+pJ$@ 
+pjE @
+pjHq&
+pJq*r
+pjq`}
+pJq`}*r
+pjqJr
+pKeyTbl %X
+PlatformMaxTxPower24
+PlatformMaxTxPower52
+PmaBuildAndSendPwrTableCmd
+pmaOnChannelSwitch
+pmaPapdEnableduCode
+PmaTestMeasuredVdet
+PmaTxCalibChangeChannel
+PmaTxPowerCalibUpdateChannelDefaults
+PmControlEnabled
+pMib %X
+PMKID Cache
+PmkidEntries
+PncPeriod
+PncPeriodWhenFail
+pNlZr
+Policy
+Policy Util
+POLICY_MANAGER_IDLE_WAIT_INIT
+POLICY_MANAGER_IDLE_WAIT_SCAN
+POLICY_MANAGER_MATCHING_AP_SELECTION
+POLICY_MANAGER_MATCHING_COLLECT_INFO
+POLICY_MANAGER_MATCHING_POLICY
+POLICY_MANAGER_MATCHING_SEND_ATC
+POLICY_MANAGER_MATCHING_WAIT_COEX_RF
+POLICY_MANAGER_MAX
+POLICY_MANAGER_NO_MATCH
+POLICY_MANAGER_POLICY_APPLIED
+POLICY_MANAGER_POLICY_NOT_DEFINED
+POLICY_MANAGER_RADIO_OFF_POLICY_DEFINED
+POLICY_MANAGER_RADIO_OFF_POLICY_UNDEFINED
+POLICY_MANAGER_RE_MATCHING_POLICY
+POLICY_MANAGER_WAITING_FOR_TERMINATION
+POLICY_PHY_EVENT_MAX
+POLICY_PHY_EVENT_RADIO_STATE_OFF
+POLICY_PHY_EVENT_RADIO_STATE_ON
+POLICY_PHY_EVENT_RADIO_SWITCH
+POLICY_PHY_EVENT_RESET_HW_OFF_SW_ON
+POLICY_PHY_EVENT_RESET_HW_ON_SW_OFF
+POLICY_PHY_EVENT_RESET_OFF
+POLICY_PHY_EVENT_RESET_ON
+POLICY_PHY_EVENT_SINGLE_PHY_CHANGED
+POLICY_PHY_EVENT_SW_RADIO_SET_OFF
+POLICY_PHY_EVENT_SW_RADIO_SET_ON
+POLICY_PHY_STATE_HW_OFF_SW_OFF
+POLICY_PHY_STATE_HW_OFF_SW_OFF_WAIT_RADIO_OFF
+POLICY_PHY_STATE_HW_OFF_SW_ON
+POLICY_PHY_STATE_HW_OFF_SW_ON_WAIT_RADIO_OFF
+POLICY_PHY_STATE_HW_ON_SW_OFF
+POLICY_PHY_STATE_HW_ON_SW_OFF_WAIT_RADIO_OFF
+POLICY_PHY_STATE_IDLE
+POLICY_PHY_STATE_MAX
+POLICY_PHY_STATE_RADIO_ON
+POLICY_PHY_STATE_WAIT_RADIO_ON
+POLICYUTIL
+POLICYUTIL  
+pOrdVarTbl %X
+Port=%d
+POST_TERMINATION
+Power
+PowerIndex
+p'p=y
+pP6z 
+ppB|>>
+PPDx<<
+PPHcL$@
+PPHcT$0H
+PQAeS~
+PrefBand
+pRegTbl %X
+PREPARE_CNCT.ADD_STATION
+PREPARE_CNCT.CONFIG_RX_CHAINS
+PREPARE_CNCT.PREPARE_LMAC
+PREPARE_CNCT.REQUEST_MEDIUM_CNCT
+PREPARE_CNCT.TX_FLUSH
+Previous indicated networks = 0x%X
+PRIOR_AUTH_INVALID
+Priority params:  
+Probe request
+PROBE RESPONSE
+Probe response
+PROBE_RESPONSE_TIMEOUT
+PROBE_TX_FAILURE
+ProductName
+PropPacketBurstEnabled
+ProtectNonGF: %s, 
+ProviderData
+PrTx`
+prTx`
+prvAddtsIndicationSend
+prvAssetTrackingGetTxParameters
+prvAssetTrackingMatchBssTbl
+prvAssetTrackingSendConfigCmd
+prvAssetTrackingTagTxCmd
+prvCmdQueueAbortAll
+prvCmdQueueFillMeasureCmd
+prvCmdQueueSendCmd
+prvCnctMgrLmacUtilUpdateRxOnAssociatedInfo
+prvCnctMgrLmacUtilUpdateRxOnInfo
+prvCnctMgrRefreshPm
+prvCnctPluginBssBuildAndSendAddBroadcastCmd
+prvCnctPluginBssBuildAndSendRxOnTimingCmd
+prvCnctPluginBssRestoreAddStationCmd
+prvCoexScanRequestRF
+prvDeltsIndicationSend
+prvGetLastConnectedAndProbeSSID
+prvGetReadyForActiveQos
+prvhAmtGetConnectionInfo
+prvHandlePanQosParamUpdate
+prvhAppScanCalcDwellTimeLimit
+prvhAppScanNotifyApplicationScanComplete
+prvhBtCoexUpdateRoaming
+prvhCcxGetMinMaxTxPower
+prvhCcxMeasureNotificationBeacon
+prvhCcxMeasureNotificationFrame
+prvhCcxSendNullDataPkt
+prvhCnctClientStartStationFlush
+prvhCnctPluginBssIsFatChannelAllowed
+prvHCnctPluginXvtAddAndSendDefaultStation
+prvhCnctPluginXvtAddStaStatus
+prvhCnctPluginXvtOnSetStationFlags
+prvhD3MgrSendNetDetectNicHotspotsQuery
+prvhD3MgrSendNetDetectNicQuery
+prvhDot11LinkQualityIndicate
+prvhFilterBssEntriesByRsnMatch
+prvhFilterFramesLH
+prvhHscnClearMatchingFoundInScan
+prvhHtHandleMimoPsModeAction
+prvhHtHandleTxChannelWidthAction
+prvhHtParseActionFrame
+prvhICnctRadioOff
+prvhICnctUpdateAttemptToConnectData
+prvhIcnctWevAssocFail
+prvhInitPathlossPacket
+prvhMacIsIbss
+prvHmacPolicyNloSendMatchIndication
+prvHmfmBuildCoex2040Report
+prvHmfmCheckIeChange
+prvHmfmEvBeaconProbeFillEx
+prvHmfmUpdateScanParams
+prvhPanCnctFillOperationalRates
+prvhPanCnctFindBssCommon
+prvhPanCnctFindP2PDeviceAddr
+prvhPanCnctHandleMimoPsModeAction
+prvhPanCnctIssueMmacDriverHang
+prvhPanCnctJawsPrintStations
+prvhPanCnctP2PGet_PanActiveBssChannel
+prvhPanCnctReceiveInvitationResponse
+prvhPanCnctReceiveProvisionDiscoveryResponse
+prvhPanCnctSendClientOid
+prvhPanCnctSendModifyClientOid
+prvhPanCnctSupportedChannelsGet
+prvhPanPolicyActivateP2PDeviceEv
+prvhPanPolicyBssUpdateEntry
+prvhPanPolicyConnectRequestEv
+prvhPanPolicyCreateBssEntry
+prvhPanPolicyDiscoveryScanOnScanComplete
+prvhPanPolicyGetDisassocMacAddr
+prvhPanPolicyIndicateCanSustain
+prvhPanPolicyIndicateChannelSwitch
+prvhPanPolicyIndicateConnComplete
+prvhPanPolicyIndicateConnStart
+prvhPanPolicyIndicateDisassoc
+prvhPanPolicyIndicateLinkState
+prvhPanPolicyIndicatePhyState
+prvhPanPolicyIndicateRoamingCompletion
+prvhPanPolicyIndicateRoamingStart
+prvhPanPolicyIndicateScanCnfrm
+prvhPanPolicyIndicateStatus
+prvhPanPolicyIndicateStopAp
+prvhPanPolicyIsBssEntryExists
+prvhPanPolicyNICSetUpCompleteEv
+prvhPanPolicyPanAssocReqFill
+prvhPanPolicyPanStaGOMatchManager
+prvhPanPolicyPostRoamingCompleteIndEv
+prvhPanPolicyPostRoamingStartIndEv
+prvhPanPolicySearchForMatchingCandidateGO
+prvhPanSecurityInstallCipherKey
+prvhPanSecurityIsExempt
+prvhPanSecurityPrivateSetNetworkConfig
+prvhPanSecurityTxSecClassification
+prvhPolicyBeforeInitiateConnectRequest
+prvhPolicyClearAppsData
+prvhPolicyCoexRequestRF
+prvhPolicyConfigureRoamAggressiveness
+prvhPolicyCreateBssEntry
+prvhPolicyDot11CurrentChannelIBSS
+prvhPolicyDot11CurrentFrequencyIBSS
+prvhPolicyEstablishIbss
+prvhPolicyExamineActivePolicy
+prvhPolicyGetActiveBandAndModulation
+prvhPolicyGetCurrentProfile
+prvhPolicyGetDesiredBssidList
+prvhPolicyGetDot11ExcludedMacAddressList
+prvhPolicyGetIbssChannelBand
+prvhPolicyGetRegistryOsParameters
+prvhPolicyGetRegistryParameters
+prvhPolicyHandleFirstFoundCandidate
+prvhPolicyIndicateAppAssocStart
+prvhPolicyIndicateAppDisassoc
+prvhPolicyIndicateAppRoamComplete
+prvhPolicyIndicateAppRoamStart
+prvhPolicyIndicateAsscComplete
+prvhPolicyIndicateAsscStart
+prvhPolicyIndicateConComplete
+prvhPolicyIndicateConStart
+prvhPolicyIndicateDisassociation
+prvhPolicyIndicateIBSSAsscComplete
+prvhPolicyIndicateLinkSpeed
+prvhPolicyIndicateRoamComplete
+prvhPolicyIndicateRoamConnStart
+prvhPolicyIndicateRoamStart
+prvhPolicyInitiateConnectRequest
+prvhPolicyInitRoamTriggerState
+prvhPolicyInvalidatePolicy
+prvhPolicyJawsBssTblEvent
+prvhPolicyJawsRoamViewEvent
+prvhPolicyMarkScanNoMatch
+prvhPolicyNoCandidate
+prvhPolicyNoCandidatePeriodic
+prvhPolicyNotifyDisconnectComplete
+prvhPolicyPhySetResetEvent
+prvhPolicyPolicySanityCheck
+prvhPolicyRadioOff
+prvhPolicyRadioOn
+prvhPolicyRefreshBssTableCandidates
+prvhPolicyRefreshNeighborCandidates
+prvhPolicyRefreshUrgentCandidate
+prvhPolicyReleaseMibAndPolicyLockEx
+prvhPolicyRemoveDfsBssTableEntries
+prvhPolicyRequestNeighborList
+prvhPolicyResetPolicyInternals
+prvhPolicyRoamResetHandler
+prvhPolicyS32UpdateLastApParam
+prvhPolicySelectCandidate
+prvhPolicySetAccumulatedDesiredSsidList
+prvhPolicySetAccumulatedSsid
+prvhPolicySetConnectionReason
+prvhPolicySetDesiredBssidList
+prvhPolicySetDot11ExcludedMacAddressList
+prvhPolicySetModulationAndBand
+prvhPolicyTerminateConnection
+prvhPolicyTerminateUrgent
+prvhPolicyUpdatePowerState
+prvhPolicyUpdatePriorities
+prvHpolicyWevRoamCandidates
+prvHpolicyWevRoamTrigger
+prvHqosAnalyzeAndUpdateQueuePriority
+prvhqosHandleAssocReqFill
+prvHscanHndleScanWhenAssocEvent
+prvHscnAddActiveChannels
+prvHscnAddPassiveChannels
+prvHscnBuildScanJob
+prvHscnBuildScanJobWrap
+prvHscnBuildScanReqFull
+prvHscnBuildScanReqNormal
+prvHscnBuildScanReqP2PDirect
+prvHscnBuildScanReqP2PDiscovery
+prvHscnBuildScanReqP2PFull
+prvHscnBuildScanReqRoamingPerBand
+prvHscnCalcSuspendTime
+prvHscnCheckIfMediumIsClearForScan
+prvHscnDot11ScanRequestBuild
+prvHscnDot11ScanRequestIdle
+prvHscnDot11ScanRequestPend
+prvHscnDot11ScanRequestWaitMedium
+prvHscnFragmentScanJob
+prvHscnGetBssParameters
+prvHscnGetLastConnInfo
+prvHscnGetPassiveDwellTime
+prvHscnIndicateScanConfirm
+prvHscnNicChannelResult
+prvHscnNotifyScanAbortComplete
+prvHscnRadioOff
+prvHscnRadioOn
+prvHscnRequestMedium
+prvHscnReschedule
+prvHscnResetStats
+prvHscnSendScanJob
+prvHscnSetStateStdby
+prvHscnSortAllChannels
+prvHscnStateAbort
+prvHscnStateBuild
+prvHscnStateIdle
+prvHscnStatePend
+prvHscnStateStdby
+prvHscnStateWaitForMedium
+prvHscnUpdateChannelMaps
+prvHscnUpdateLastConnInfo
+prvhSecAddLegacyKeyGroupcast
+prvhSecAddLegacyKeyUnicast
+prvhSecAddPMKIDCandidates
+prvhSecAddTemporalKeyGroupcast
+prvhSecAddTemporalKeyUnicast
+prvhSecCckmAssocReqFill
+prvhSecCckmReassocFailure
+prvhSecDot11CipherDefaultKey
+prvHSecGetSvBssTbl
+prvHSecGetSvKeyTbl
+prvhSecHasStaKeys
+prvhSecInvalidateAllTemporalKeys
+prvhSecIsKeyAbsent
+prvhSecMark1xProfile
+prvhSecOneKeyMappingKey
+prvhSecPostEncrReadyEvent
+prvhSecPostTerminateConnection
+prvhSecRemoveKeyTriggerActive
+prvhSecRemoveKeyTriggerAll
+prvhSecRemoveKeyTriggerBssid
+prvhSecRemoveKrk
+prvhSecRemovePrivacyExemptionList
+prvhSecRemoveTemporalKeyGroupcast
+prvhSecRemoveTemporalKeyUnicast
+prvhSecRemoveWepPerClient
+prvhSecSaCheckForFips
+prvhSecSaCheckForGSO
+prvhSecSaInstallKey
+prvhSecSaInstallNullKey
+prvhSecSaRemoveAllKeys
+prvhSecSaRemovePairwiseKey
+prvhSecSaRsnaAssocReqFill
+prvhSecSendPmkidCandidatesList
+prvhSecSetDeuthEvent
+prvhSpctrmCheckPassiveChannelTimeout
+prvHsysGetSnifferBandChannel
+prvHsysReadOrdinal
+prvhTGhParseActionFrameChanSwitchReq
+prvhTGkSendNeighborReport
+prvhTGkSendStatisticsMeasurement
+prvhTxDropBeforeTx
+prvIsBogusAnySsid
+prvMamCalcCycleTime
+prvMamSendSlotsAllocationOid
+prvmBtCoexSendBtCoexEnvelope
+prvmDelGlobalKey
+prvmDelGlobalKeys
+prvmICnctAddStation
+prvmICnctAddStationCB
+prvmICnctParseBeacon
+prvmICnctRemoveStation
+prvmICnctRemoveStationCB
+prvmICnctTerminateConnection
+prvmLedD3SetOnOff
+prvmLedSetSolidOn
+prvmLinkQualGetRateSizeData
+prvmLinkQualGetSvBAHistory
+prvmLinkQualGetSvLinkQualCmd
+prvmLinkQualGetSvTlcParams
+prvmLinkQualInitBroadcastStation
+prvmLinkQualOrdinalUpdate
+prvmLinkQualResetAllStations
+prvmLinkQualSetLowestRate
+prvmLinkQualSetSvTlcParams
+prvmLinkQualUpdateTxRtsCts
+prvMmacCoexSendEnvelopeCommand
+prvMmacSchedAckResetComplete
+prvmNmprGetBssAttr
+prvmNmprUpdateUCodeRelatedStats
+prvmPanCnctAddAllMibStationTblToUCode
+prvMpmGetChannelWidth
+prvmPmGetDtim
+prvMpmIsAssociated
+prvmPmThermalThrottlingSendBackoff
+prvMpmUpdatePowerVector
+prvmRfKillCardStateNotification
+prvmRfKillCtKillConfig
+prvmRxAddBaToSta
+prvmRXClassifyPacket
+prvmRXClassifyPacketPan
+prvmRxDataAddBaToSta
+prvmRxHandleCtrlFrameBlockAckReq
+prvmRxHandleCtrlFramePSPoll
+prvmRxHandleDataFrameUapsdMode
+prvmRXHandleTxComplete
+prvmRxHtFillFrameInfo
+prvmRxUpdateDot11StatsOnNotifyRcvFrame
+prvmSchedHandleFlushRequest
+prvmSchedulerInitQoSParams
+prvmSecurityAddKeyToStationTable
+prvmSecurityAddWepCmd
+prvmSecurityDelAllKeysFromStationTable
+prvmSecurityDelKeyFromStationTable
+prvmSecurityDelKeysFromStationTableEntry
+prvmSecurityDelWepKeysCmd
+prvmSecurityGetSecforStaAndLockMib
+prvmSecurityGetUnicastAndGroupCastKeys
+prvmSecurityHandleCurrentProfileSet
+prvmSecurityHandleSvOids
+prvmSecurityModifyStaCmd
+prvmSecurityRestoreGlobalKeys
+prvmSensitivityWriteMib
+prvmSetClocks
+prvmShlSensitivityWriteMib
+prvmSpctrmUpdatePowersIfLimitChanged
+prvmStoreGlobalKey
+prvMsvHandleSysMonDataRequest
+prvMsysGetNicInfo
+prvMsysGetVersionInfo
+prvMsysIsDefaultResetParams
+prvMsysNicDisable
+prvMsysNicDisableSv
+prvMsysResetRequest
+prvMsysSetDefaultResetParams
+prvMsysSetSnifferOrdinals
+prvmTGhOidChanSwitch
+prvmTGhOidQuietPeriod
+prvmTxAtimTxComplete
+prvmTxFlagsSelection
+prvmTxFlushQueues
+prvmTxFragMpduParams
+prvmTxResetComplete
+prvmTxUpdateBackoffOrdinal
+prvmTylSensitivityWriteMib
+prvPanPolicyAssocCompleteInd
+prvPmaTxPowerAntennaCouplingConfigure
+prvPmaTxPowerCalibUpdateChannels
+prvPSModeReset
+prvPSPollComplete
+PrvQosStaTbl 
+prvQueryAccumulatedDesiredSsidList
+prvQueryAndUpdateTSState
+prvRxDataBackResetComplete
+prvRxDataHandleDelba
+prvRxDataSecHasStaKeys
+prvRxDataUpdateRxOnCmdOrd
+prvS32SendLastAPPacket
+prvSendPrioritiesTableCommand
+prvTSReportStatisticsIndicationSend
+prvTylTxPowerCalibUpdate2040CurrentChannel
+prvTylTxPowerCalibUpdateChannels
+prvUpdateCtsToSelfForRxOnCandidate
+prvUtilInterLayerActionPerformAction
+PS[['
+Ps6xl
+PsGetVersion
+PsPoll: MSDUCount: %d, FrameNeed: %d, 
+pSS"E
+Pt2fA
+PTD.>
+pu$D;
+pu6z 
+PuHuv}
+PuVy@
+pv/N9l
+pv/N9t
+pv4x@
+pvTx 
+PwAHc
+pwotZ
+PwVy@
+PxHcL$@
+PXHcL$P
+PXHcT$XH
+pZHq&
+pzpC-
+Pzpr:
+pZpzq
+pzq:rZs
+pZqJ$
+PzV{A
+Pzvxa
+Q I;S u
+Q(I;S(u
+Q(v_a@)@!
+q*rjs
+q,x/p
+q,x/pL
+q:pJ%
+q@ @/
+q@ @/^
+q@ @/j
+q@ @/R
+q@!@/b
+Q@)@!
+q@*M!
+Q0I;S0u
+Q3`bS
+Q3EbS
+Q5h*b
+qB$T L$
+qDxD"
+qHphq
+qHu@(
+qIr)s
+qirIs
+qJ @#
+qJ @#7
+qJr*s
+qjr*s
+qJr*sJ$@
+qJr*sN
+Qkkbal
+QOS MODE
+QosClassMap
+QSeA~
+QSTA_LEAVING
+qU#O&
+QueueWatchDogEnabled
+Quicf
+QZ^&A
+qZrhv@#
+qzrZs
+qZZZZ
+r "uJvJw
+R(`A.
+r*s`}
+r,fffff
+r:2 @
+R;Mv;
+R@HcL$@Hi
+r|9Qlv
+r5fE9u
+r6y!b
+Radar
+RadarCloseChanTime
+RadarMode
+RadarTuneTime
+Radio saturation
+RADIO_OFF
+RadioEnable
+rB%@ 
+RbTimeout
+rc1=%d
+rc2=%d
+rc3=%d
+rc4=%d
+rc5=%d
+rc6=%d
+READY
+REASON_NONE
+Reassociation request
+Reassociation response
+RECEIVE_ONLY
+RECIPIENT_DELBA_WFP
+RecommendedAtimWindow
+RecommendedBand
+RecommendedBeaconInterval
+RecommendedChannel24
+RecommendedChannel52
+REDUCED
+REDUCED w/ Calib
+reducedTxPower
+REG         
+Registry Keys
+RegStrTbl 
+RegTbl 
+REGULAR
+REGULAR no RXON
+REGULAR w/ Calib
+REMOVE_EXCLUDE
+remove_immediate_ba_tid: %d, 
+Req=%c
+REQUEST RF
+REQUEST_MEDIUM_CONNECT
+reserved
+RESET.PAUSE
+RESET.RESTORE
+resetCompleteCount:      %d
+resetSelfRecoveryNum
+ResetTimeout
+RESTARTED
+RESTORE
+Resume -> Match indication time = %d (ms)
+Resume time = %d
+resumeCount:             %d
+RF Kill
+RF KILL
+RF Kill data
+RF KILL service
+RF##e
+RF_KILL_STATE_CHANGE
+RF_OFF              
+RF_ON               
+RF_ON_INIT_FLOW
+RF_ON_MEDIUM_GRANTED
+RF_ON_NO_REQUEST
+RF_ON_RF_KILL_FLOW
+RF_ON_SWITCH_SYSTEM_MODE
+RF_ON_TIMER_EXPIRED
+RF_ON_WAIT_FIRST_NOTIFICATION
+RF_ON_WAIT_SECOND_NOTIFICATION
+RF_ON_WAITING_FOR_CLEAN_DISCONNECT
+RF_ON_WIMAX_FAIL_DISCONECT
+RfdBadRbdCheck
+RfdQueueSize
+RhTzBe1
+RhTzBePs
+rhv{zaE
+RhVz[ae
+Ri9aTz4y]c
+RiTzzb
+rJ"@ 
+RLC         
+RLC data
+rlcChainSettings
+RLf;Q
+rmv{bb
+rnv{bb
+ROAM_CANDIDATES
+ROAM_EVENT_CANDIDATE_FOUND
+ROAM_EVENT_CANDIDATE_NOT_FOUND
+ROAM_EVENT_CANDIDATE_NOT_FOUND_AND_ROAM_TRIGGER
+ROAM_EVENT_CREATE_IBSS
+ROAM_EVENT_DIRECT_ROAM_TRIGGER
+ROAM_EVENT_ENTRY_CHANGED
+ROAM_EVENT_FIRST_AP_SELECTION
+ROAM_EVENT_IBSS_CREATION_FAILED
+ROAM_EVENT_INVALIDATE_ACTIVE_ENTRY
+ROAM_EVENT_NO_NEIGHBOR_LIST
+ROAM_EVENT_REMOVE_ROAM_TRIGGER
+ROAM_EVENT_RESET
+ROAM_EVENT_ROAM_TRIGGER
+ROAM_EVENT_SCAN_COMPLETE
+ROAM_EVENT_SCAN_TIMER
+ROAM_STATE_EXAMINE_BSS_TABLE_CANDIDATE
+ROAM_STATE_EXAMINE_BSS_TABLE_CANDIDATE_PERIODIC
+ROAM_STATE_EXAMINE_DIRECT_ROAM_CANDIDATE
+ROAM_STATE_EXAMINE_NEIGHBOR_LIST_CANDIDATE
+ROAM_STATE_EXAMINE_URGENT_CANDIDATE
+ROAM_STATE_IDLE
+ROAM_STATE_MAX
+ROAM_STATE_SCAN_ROAM_CANDIDATE
+ROAM_STATE_WAIT_BSS_TABLE_REFRESHED
+ROAM_STATE_WAIT_DIRECT_ROAM_LIST_REFRESHED
+ROAM_STATE_WAIT_IBSS_CREATION
+ROAM_STATE_WAIT_NEIGHBOR_LIST_REFRESHED
+ROAM_STATE_WAIT_PERIODIC_SCAN
+ROAM_STATE_WAIT_URGENT_CANDIDATE_REFRESHED
+ROAM_TO
+ROAM_TRIGGER
+RoamAggressiveness
+RoamIdleTimeoutSec
+Roaming
+ROAMING
+ROAMING     
+Roaming is BLOCKED: %d sec remained
+Roaming trigger bits (enabled): 
+Roaming trigger chicken bits (enabled): 
+RoamingBtCoexScale
+RoamingChannelLoadRule
+RoamingMissedBeaconsWindow
+RoamingPreferredBandScale
+RoamingPreferredBandType
+RoamingPreferredBandTypeScale
+RoamingQosScale
+RoamingRateDelta
+RoamingRequestedScan: %s
+RoamingRssiDelta
+RoamingRssiScale
+RoamingSoftExcludeScale
+RoamingSsidScale
+RoamingThroughputDelta
+RoamingThroughputScale
+RoamingThroughputTrigger
+RoamingTriggerChickenBits
+RoamMaxMatchedFreshnessSec
+RoamMovingRSSIDelta
+RoamRatePeriod
+RoamRssiHysteresis
+RoamScanDataValidSec
+RoamScanTooOldSec
+RogueEnable
+RpHcL$P
+RRMv;;a
+rrnv{bb
+RSNA_PSK
+RSRVD1              
+RSRVD2              
+RSSI        
+RSSI                                           %-5d dBm
+RSSI LOW
+RSSI ROAM
+RSSI roam trigger
+RSSI roam trigger thresholds: Low = %d, High = %d, Original = %d
+RSSI:              threshold = %d %s, delta = %d %s
+rssi:%d dBm
+RSSI_DEGRADATION
+RSSI_ROAM   
+RssiAgeTime
+rT} }
+RtlCompareMemory
+RtlInitUnicodeString
+RtlUnicodeStringToAnsiString
+RTSThreshold
+rU#@&
+rU#@&f
+rU#@&F
+rU#@&Z
+RUNNING
+'ruzF
+rv{``
+rVz@`
+rVzAa
+rVzKc
+Rx counter                                     %-5d Packets ; %-5d Bytes
+Rx IQ
+RX PACKETS CNT
+Rx per-rate   | %-5d| %-5d| %-5d| %-5d| %-5d| %-5d| %-5d| %-5d| %-5d| %-5d|
+RX RATE
+RX RSSI
+RX_ASSOC_SUCCESS
+RX_AUTH_SUCCESS
+rx_chain_select_flags: 0x%X, 
+RX_DEAUTH
+RX_DISASSOC
+RxADDBADisable
+RxAmpduFactor
+RxBlockAckTimeout
+rxChainMode: %d
+RXDATA
+RXDATA      
+RXDATA Service
+rxDataAcquireAccessRXDB
+rxDataGetMacAddress
+rxDataHandleAddbaReq
+rxDataHandleEventPanPS
+rxDataHandleEventPanUapsdEosp
+rxDataHandleEventPanUapsdTrigger
+rxDataHandleEventPSPoll
+rxDataHandleQosTimer
+rxDataProcessPanFrameForPS
+rxDataPsPollCallback
+rxDataSyncBlockAckInfo
+rxDataSyncStatistics
+RxDataTimeout
+rxDataUpdateAgeForIbssConn
+RxDpcDelay
+RxLinkSpeedEnabled
+RXON Info
+RxStbc
+Ry0y$x/(
+s ATH
+S B!Fx
+S B!S @ L
+s WATAUAVAWH
+s WATAUH
+s WATAVH
+s#fff
+s(ffff
+s(vHu
+S{:e`
+S0fD;
+s0Movement: %d, s0NoMovement: %d, sxMovement: %d, sxNoMovement: %d
+s0MovementTagTxPeriod
+s0NoMovementTagTxPeriod
+s0rHv
+s0rHw
+S11b?
+S31 TPC:                       %-10d
+s3n3p3r3
+s3Statistic[%d]:   %d   (%s)
+S51SupportEnabled
+s9fD;;u3H
+SA_EVENT_802_1X_FAULT
+SA_EVENT_802_1X_SUCCESS
+SA_EVENT_802_1X_SUCCESS_ENCRYPTION_DISABLED
+SA_EVENT_ADD_KRK
+SA_EVENT_ASSOC_FAILURE
+SA_EVENT_ASSOC_REQ_FILL
+SA_EVENT_ASSOC_SUCCESS
+SA_EVENT_ASSOC_SUCCESS_AND_WEP_KEY
+SA_EVENT_ASSOC_SUCCESS_COMPLETE
+SA_EVENT_ASSOC_SUCCESS_COMPLETE_ENCR_DISABLED
+SA_EVENT_AUTH_SEQ1_TX
+SA_EVENT_AUTH_SEQ2_RX_FAULT
+SA_EVENT_AUTH_SEQ2_RX_SUCCESS
+SA_EVENT_AUTH_SEQ2_TX
+SA_EVENT_AUTH_SEQ3_RX_FAULT
+SA_EVENT_AUTH_SEQ3_RX_SUCCESS
+SA_EVENT_AUTH_SEQ3_TX
+SA_EVENT_AUTH_SEQ4_RX_FAULT
+SA_EVENT_AUTH_SEQ4_RX_SUCCESS
+SA_EVENT_AUTH_SEQ4_TX
+SA_EVENT_AUTH_TX
+SA_EVENT_AUTH_TX_AND_WEP_KEY
+SA_EVENT_BEGIN_802_1X
+SA_EVENT_CCKM
+SA_EVENT_CCKM_FAST
+SA_EVENT_DEAUTH
+SA_EVENT_DISABLE_ENCRYPTION_OFFLOAD
+SA_EVENT_ENABLE_ENCRYPTION_OFFLOAD
+SA_EVENT_IBSS_STATION_DISCONNECT
+SA_EVENT_INVALID
+SA_EVENT_MAX
+SA_EVENT_OPEN_AUTH
+SA_EVENT_OPEN_AUTH_WEP
+SA_EVENT_OPEN_AUTH_WEP_IBSS
+SA_EVENT_POLICY_UPDATED
+SA_EVENT_REMOVE_KEY
+SA_EVENT_REMOVE_KRK
+SA_EVENT_RSNA
+SA_EVENT_RSNA_IBSS
+SA_EVENT_SCAN_COMPLETE
+SA_EVENT_SET_GROUP_KEY
+SA_EVENT_SET_KEY
+SA_EVENT_SHARED_AUTH
+SA_EVENT_TERMINATE_CONNECTION
+SA_MODE_NOT_DEFINED
+SA_MODE_OPEN
+SA_MODE_OPEN_WEP
+SA_MODE_OPEN_WEP_EAP
+SA_MODE_RSNA
+SA_MODE_RSNA_IBSS
+SA_MODE_SHARED_KEY
+SA_STATE_BEFORE_ASSOC
+SA_STATE_BEFORE_AUTH
+SA_STATE_BEFORE_REASSOC
+SA_STATE_DELETE_ASSOC
+SA_STATE_ENCR_DISABLED
+SA_STATE_ENCR_NOT_DEFINED
+SA_STATE_ENCR_NOT_READY
+SA_STATE_ENCR_READY
+SA_STATE_ENCR_READY_FIPS_ENABLED
+SA_STATE_FIPS_ENABLED
+SA_STATE_MAX
+Sample time: %d ms, number of samples: %d
+SATAUAVAWH
+SATAUAVH
+SATAUAWH
+SATAUH
+SATAVAWH
+SATAWH
+SAUAVAWH
+SAUAVH
+sB"@ 
+Sb11?*
+sb11S*
+sbS*?
+Scan Enabled: %s, 
+Scan intervals (ms): 
+Scan State:                            %s
+Scan timeout: %d (ms). 
+SCAN_ALLOWED_INFO
+SCAN_COMPLETE
+SCAN_INIT
+SCAN_NO_REQUEST
+SCAN_RESULT
+SCAN_RF_ACTIVE
+SCAN_RF_BUSY
+SCAN_START
+SCAN_TIMER_EXPIRED
+SCAN_WAIT_FIRST_NOTIFICATION
+SCAN_WAIT_NEXT_NOTIFICATION
+ScanChainSelection
+scanCompleteCount:       %d
+ScanEnabled
+ScanFilterMode
+ScanHighTrafficThreshold
+ScanMode
+scanMode: 
+ScanWhenAssociated
+ScanWhenAssociated : %s, 
+ScanWhenAssociatedFreshness
+Sched
+SchedAcFactor
+SchedTfdFactor
+SCO/eSCO
+SCO/eSCO = 0x%X, Sniff = 0x%X, A2DP = 0x%X, ACL = 0x%X, Master = 0x%X, OBEX = 0x%X
+SEARCH_FOR_GO
+SEARCH_FOR_GO_DOT11_CONN_REQ_RCVD
+Sec packets     TX:   %d   RX:%d
+SecKeyExchangeDeauthInterval
+Security
+Security RX
+Security TX
+sEffff
+SendVendorSpecificHtIe
+Sensitivity
+SensitivityMode
+Set WEP Bit:                    %s
+SET_HOST_OPERATION_PARAMS
+SET_ME_OPERATION_PARAMS
+SET_ME_OPERATION_PARAMS_V40
+SET_ME_OPERATION_PARAMS_V60
+SET_STATION.ADD_NEW
+SET_STATION.REMOVE_CURRENT
+SETUP
+SEWIXTPD 
+Sf;|$@u'H
+s'ffff
+ShadowRegistersEnabled
+SHARED
+Shared ant to BT
+Shared ant to WiFi
+SHARED_DATA_READY_0
+SHARED_DATA_READY_1
+SHARED_DATA_READY_2
+SHARED_DATA_READY_3
+SHARED_DATA_READY_4
+SHARED_DATA_READY_5
+SHARED_DATA_READY_6
+SHARED_DATA_READY_7
+SHARED_DATA_READY_ACK
+Shiloh
+shlChainNoiseHandleStatCommand
+shlOnChannelSwitch
+shlShlTxCalibChangeChannel
+shlShlTxPowerCalibUpdateChannels
+shlTestMeasuredVdet
+shlTxPowerCalibUpdateChannelDefaults
+SHORT PREAMBLE
+Short Preamble: Current = ON, Original = ON
+SHORT SLOT
+Short Slot:     Current = ON, Original = ON
+ShortGI enabled: %d, 
+ShortGICapabilities
+ShTzYa
+SHUTDOWN
+ShUzRfS"
+Si%zN
+Si%zO
+SISO 
+sju{p`
+SkezM
+SkezN
+SKU Max Tx Power:              %-10d
+SLEEP TIME
+sleeping_sta_tx_counter: %d, 
+SleepModes
+SleepVector
+Slide Window
+Slow scan period = %d sec
+sND9'tI
+Sniff Activity = 0x%X, Page = 0x%X, Inquiry = 0x%X, Connectable = 0x%X
+Sniff Interval = 0x%X, Discoverable = 0x%X
+Spectrum
+sprintf
+sqffffff
+SRT PREAMBLE RX
+SSID                 BSSID                RSSI [dBm]    Roam Prior   TX rate  Throughput  State    Roam      
+SSID = %-32s
+SSID: %s
+SsidStatsLength
+sT} }
+STA_CONFIGURATION_WHEN_ASSOC
+STAND BY
+STAND_ALONE_DEBUG   
+StaTbl 
+STATE
+State history: (left is oldest)
+State machine
+STATE_CHANGE
+Station %d info:
+station_flags: 0x%X, 
+station_flags_msk: 0x%X, 
+STATS_START
+STATS_STOP
+STATS_TEMP_STOP
+STATS_TRANS_MINIPORT_HALT
+STATS_TRANS_MINIPORT_RESET_INIT
+STATS_TRANS_NMPR_SERVICE_INIT
+STATS_TRANS_OID_STATS_START
+STATS_TRANS_OID_STATS_STOP
+STATS_TRANS_ORDINAL_RESET_COMPLETE
+STATS_TRANS_ORDINAL_RESET_REQUEST
+STATS_TRANS_RXON_SENT_ASSOC_BSS
+STATS_TRANS_RXON_SENT_UNASSOC
+status
+status: %d
+status: %d, tagType: %s (%d)
+STCEH
+Stealth mode = %s
+STOPPED
+StringFileInfo
+strncat
+strncmp
+strncpy
+SUATAUAVAWH
+SUATAUAVH
+SUATAUAWH
+SUATAUH
+SUATAVAWH
+SUATAWH
+SUATH
+SUAUAVAWH
+SUAUAVH
+SUAUH
+SUAVH
+SUAWH
+SubBand-%-3d        |
+Supported rates: Legacy: 0x%X, HT: 0x%X
+SUSPEND
+suspendCount:            %d
+suspendTime: %d, 
+SUVATAUAVAWH
+SUVATAUAVH
+SUVATAUH
+SUVATAVAWH
+SUVATAVH
+SUVATAWH
+SUVATH
+SUVAUAVAWH
+SUVAUAVH
+SUVAUAWH
+SUVAUH
+SUVAVH
+SUVWATAUAVAWH
+SUVWATAUAVH
+SUVWATAUAWH
+SUVWATAUH
+SUVWATAVAWH
+SUVWATAVH
+SUVWATAWH
+SUVWATH
+SUVWAUAVAWH
+SUVWAUAVH
+SUVWAUH
+SUVWAVAWH
+SUVWAVH
+SUVWAWH
+SUVWH
+SUWATAUAVAWH
+SUWATAUAVH
+SUWATAUAWH
+SUWATAUH
+SUWATAVAWH
+SUWATAVH
+SUWATAWH
+SUWATH
+SUWAUAVH
+SUWAVAWH
+SUWAVH
+SUWAWH
+SVATAUH
+SVATAVAWH
+SVATAVH
+SVATH
+SVAUAVAWH
+SVAUH
+SVAVAWH
+SVAVH
+SVWATAUAVAWH
+SVWATAUAVH
+SVWATAUH
+SVWATAVAWH
+SVWATAVH
+SVWATAWH
+SVWATH
+SVWAUAVAWH
+SVWAUAVH
+SVWAUAWH
+SVWAUH
+SVWAVAWH
+SVWAVH
+SVWAWH
+SW Phy State: %s
+SW_RFKILL_STATE
+SWATAUAVAWH
+SWATAUAVH
+SWATAUAWH
+SWATAUH
+SWATAVAWH
+SWATAVH
+SWATH
+SWAUAVH
+SWAUAWH
+SWAUH
+SWAVAWH
+SWAVH
+SWAWH
+SX_COEXISTENCE_CONFIG
+sxMovementTagTxPeriod
+sxNoMovementTagTxPeriod
+SYNC        
+SystemAllowedAntennas
+SystemMonitorConfig
+t < u
+t =@Z
+t D9Y
+t fD;
+T SINCE ACTIVITY
+T SINCE TX FAIL
+t!fD;
+t"f;X
+t"fD;
+t#D9?t
+t#fD;
+T$ A;V
+t$ ATAUAVH
+t$ ATH
+t$ AVH
+T$ D+
+t$ D3
+T$ D3
+T$ E3
+t$ E3
+T$ E3
+T$ Hk
+t$ L9{
+t$ WA
+t$ WATAUAVAWH
+t$ WATAUH
+t$ WATAVH
+t$ WH
+t$$@8
+t$$E3
+T$(E3
+t$(fD
+T$(Hi
+T$)E3
+t$@@2
+T$@A:
+T$@D8E
+t$@D9
+T$@E3
+t$@E3
+T$@E3
+t$@E3
+T$@E3
+T$@fD
+T$@H;
+T$@Hk
+t$@I;
+T$`D9
+T$`E:
+T$`E2
+T$`E3
+t$`E3
+T$`E3
+T$`fD
+T$`Hc
+t$0@2
+T$0E+
+T$0E3
+t$0E3
+T$0E3
+t$0E3
+T$0E3
+t$0E3
+T$0E3
+t$0E3
+T$0E3
+t$0E3
+T$0E3
+t$0E3
+T$0E3
+t$0E3
+T$0E3
+t$0E3
+T$0E3
+t$0E3
+T$0E3
+t$0E3
+T$0E3
+t$0E3
+T$0E3
+t$0E3
+T$0E3
+t$0E3
+T$0E3
+t$0E3
+t$0f;
+T$0fA
+t$0fA
+T$0fA
+t$0fD
+T$0H;
+t$0H9{
+t$0t4L
+T$1f;
+T$2fA
+T$3E3
+t$4;t$8
+t$4D;t$8
+t$88A
+t$8A9q
+t$8D3
+t$8E+
+T$8E3
+t$8E3
+T$8E3
+t$8E3
+T$8E3
+t$8E3
+T$8E3
+T$8fA
+t$8fD
+T$8Hi
+T$8Mk
+T$9Hc
+T$A;j
+t$A8@
+t$A9i
+t$A9q
+t$A9y
+T$AfD
+t$D9{
+t$D9c
+t$D9m
+T$DE3
+t$fD;
+t$h@8
+t$H=7
+t$HA3
+t$hA3
+t$HA3
+t$hD3
+T$HE3
+T$hE3
+T$HE3
+T$hE3
+T$HE3
+T$hE3
+T$HE3
+T$hE3
+T$HE3
+T$hE3
+T$HE3
+T$hE3
+T$HE3
+T$hE3
+T$HE3
+T$hE3
+T$HE3
+T$hE3
+T$HE3
+t$hE3
+T$HE3
+T$hE3
+T$HE3
+T$hE3
+T$HE3
+T$hE3
+t$hf;
+t$Hf+_ I
+T$hfA
+T$HfD
+T$hff
+t$HHc7H
+t$HHi
+t$HLc
+t$Hu"
+T$JIc
+t$LE3
+t$lE3
+t$P!K(H
+t$P=,
+t$pA+
+t$PA3
+t$PD;
+t$pD3
+T$pE2
+T$PE2
+t$PE2
+T$PE3
+T$pE3
+t$PE3
+T$PE3
+T$pE3
+T$PE3
+T$pE3
+T$PE3
+t$pE3
+T$PE3
+T$pE3
+T$PE3
+T$pE3
+T$PE3
+T$pE3
+T$PE3
+T$pE3
+T$PE3
+T$pE3
+T$PE3
+t$pfA;
+t$pHk
+T$PHk
+t$Pu H
+t$Pu0
+t$TD;
+T$X%A
+t$xA3
+T$XE2
+T$XE3
+t$xE3
+T$XE3
+T$xE3
+T$XE3
+T$xE3
+T$XE3
+t$XE3
+T$XE3
+T$xE3
+T$XE3
+T$xE3
+T$XE3
+T$xE3
+T$XE3
+T$xE3
+T$XE3
+T$xE3
+T$XE3
+T$xE3
+T$XE3
+T$xE3
+T$XE3
+T$xE3
+T$XE3
+T$xE3
+T$XE3
+T$xE3
+T$XE3
+T$xE3
+T$XE3
+T$xE3
+T$XE3
+T$xE3
+T$XE3
+T$xE3
+T$XE3
+T$xE3
+T$XE3
+t$xE3
+t$xfD
+T$xfD;
+T$xH9
+T$XHc
+t$xL9{
+t%fA;
+t%fE;
+t&fD;
+t(@8/u#A
+T(`Bx
+t(fD;
+t)A8]
+t)D9't
+t)fD;
+T*:p 
+t*D9u
+t*fD;
+t,,X.
+t,fD;
+t.fD;
+t/fD;
+t:D9n
+t:fD;
+t;fD;
+t?fD;
+t@fD;
+t[fD;
+T\4x@
+t\fD;
+t\H9w(tVA
+t\lHBW
+t]fD;
+t^fD;
+t_fD;
+T`00P
+t`fD;
+t{b`x`F
+t{fD;
+t{fff
+t{L9{(tuD
+t{U{ya
+t|L9{(tvE
+t}`yH
+T}E @
+T~FbZwKi
+t~H9{(txA
+t~H9s(tx
+t~H9u(txA
+t~H9w(txA
+t~L9{(txE
+t+fD;
+t<fD;
+t<fE;
+t=fD;
+t>D9 t9
+t>fD;
+t0fD;
+t0ia 
+t1fD;
+t1H90t,3
+t2f9Q
+t2fD;
+T2HpU
+t38D$@u
+t3D8h
+t3fD;
+t4fD;
+t4Tz4| |X`
+t5fD;
+t6fD;
+t74~Q$
+t7fD;
+t8D9/t
+t8fD;
+t9fD;
+tAD8_
+tafD;
+tAfD;
+tafD;
+tAfD;
+tafD;
+tAfD;
+tagTxCmdCount:           %d
+tagTxCompletedNum
+tagTxDroppedNum
+tagTxStartedNum
+tagTxTimerExpiredCount:  %d
+tagTxWaitingNum
+tagType
+tbfD;
+tBfD;
+tbfD;
+tBfD;
+tbfD;
+tBfD;
+tbfD;
+tBfD;
+tbfD;
+tBfD;
+tbfD;
+tBfD;
+tbfD;
+tBfD;
+tbfD;
+tCA9~
+tCfA;
+tCfD;
+tcfD;
+tCfD;
+tcfD;
+tCfD;
+tcfD;
+tCfD;
+tcfD;
+tCfD;
+tcfD;
+tCfD;
+tcfD;
+tCfD;
+tcfD;
+tCfD;
+tcfD;
+tCfD;
+tcfD;
+tCfD;
+tDfA#
+tdfD;
+tDfD;
+tdfD;
+tDfD;
+tdfD;
+tDfD;
+tdfD;
+tDfD;
+tdfD;
+tDfD;
+tdfD;
+tDfD;
+tdfD;
+tDfD;
+tdfD;
+tDfD;
+tdfD;
+tdH9{(t^
+tEfD;
+tefD;
+tEfD;
+tefD;
+tEfD;
+tefD;
+tEfD;
+tefD;
+tEfD;
+tefD;
+tEfD;
+tefD;
+tEfD;
+tefD;
+tEfD;
+teH9{(t_
+Temp Sensor Offset
+Temperature
+TERMINATION_DEAUTH.DEAUTH
+TERMINATION_DEAUTH.REQUEST_MEDIUM
+TERMINATION_DEAUTH.TX_FLUSH
+TERMINATION_NO_DEAUTH
+testMeasuredVdet
+t'fD;
+t-fD;
+TfdQHangThreshold
+TfdQueueSize
+tFfD;
+tffD;
+tFfD;
+tffD;
+tFfD;
+tffD;
+tFfD;
+tffD;
+tFfD;
+TGeEnableBits
+TGeNoAckEnabled
+TGeOnVista
+tGfD;
+tgfD;
+tGfD;
+tgfD;
+tGfD;
+tgH9{(ta
+TGhFtrFlags
+tgj_air_propagation: %d
+tHE9k
+Thermal
+tHfD;
+thfD;
+tHfD;
+thfD;
+tHfD;
+thfD;
+tHfD;
+thH9{(tbA
+tHl\B
+tID.>
+tid_disable_tx: %d, 
+TID_INVALID_STATE
+TID_SCD_QUEUE_CONFIG_STATE
+tIfD;
+tifD;
+tIfD;
+tifD;
+tIfD;
+tifD;
+tIfD;
+tifD;
+tIfD;
+Tight
+tiH9{(tc
+tiL9s(tc3
+Time from last scan: %d (sec)
+TIMEOUT
+Timeout for reset tx failures counter: %d msec
+TIMING
+tj5x@
+T-JePp
+tJfD;
+tjfD;
+tJfD;
+tjfD;
+tJfD;
+tjfD;
+tJfD;
+tjfD;
+tJfD;
+tjfD;
+tjH9{(td
+tjH9{(tdA
+tjH9k(td3
+tjH9s(td3
+tjL9{(tdD
+tJ'q'
+tKfD;
+tkfD;
+tKfD;
+tkipCntMeasure.bBlockingActive %d
+tkipCntMeasure.bOccuredDuringRSNA %d
+tkipCntMeasure.lastFailureTime %lu
+TKIPOldKeyTimeout
+tkL9g(teD
+TkS"E
+TLC data
+tlcAddbaHisteresis
+tlcAggLongLim
+tlcAggSetLong
+tlcAggShortLim
+tlcAutoAggregation
+tlcControlFlags
+tlcFixedRate
+tlcFixedRateFlags
+tlcHtFlushStatsMs
+tlcHtFlushStatsPackets
+tlcHtSRNoDecrease
+tlcHtStayInColFailThresh
+tlcHtStayInColPassThresh
+tlcInvalidAntsConfigsHB
+tlcInvalidAntsConfigsLB
+tlcLegacyFlushStatsMs
+tlcLegacyFlushStatsPackets
+tlcLegacySRNoDecrease
+tlcLegacyStayInColFailThresh
+tlcLegacyStayInColPassThresh
+tlcNoBaCountedAsOne
+tlcNumOfMiliSecToCountLoad
+tlcRetryPerHtRate
+tlcRetryPerRate
+tlcSpatialStreamSupported
+tlcSRAllowIncrease
+tlcSRForceDecrease
+tlcSRMinFail
+tlcSRMinPass
+tlcStayInColTimeOut
+tlcSupportedTxHtRates
+tlcSupportedTxRates
+tlcTidLoadBEThreshold
+tlcTidLoadBKThreshold
+tlcTidLoadVIThreshold
+tlcTidLoadVOThreshold
+tlcValidAntenna
+tLfD;
+tlfD;
+tlH9{(tfA
+tlH9w(tfA
+tlL9{(tfE
+TlTx`
+tm4z`
+TMdisable
+tMfD;
+tmfD;
+tMfD;
+tmfD;
+tMfD;
+tmfD;
+tMfD;
+tmfD;
+tMfD;
+tmfD;
+tMfD;
+tmH9{(tg
+tmH9{(tgA
+tn`yH
+tNfD;
+tnfD;
+tNfD;
+tnH9{(thA
+tnL9s(thD
+tOfD;
+tofD;
+tOfD;
+tofD;
+tOfD;
+toH9{(tiA
+toL9{(tiE
+toL9k(tiD
+toL9o(tiD
+toL9s(tiE
+Total packets sent with Retry-flag = 1         %-5d
+tpfD;
+tPfD;
+tpH9{(tjA
+tpH9s(tj
+tpH9w(tjA
+tpL9c(tj3
+tpL9s(tjE
+tptDaemonTimeout
+tpTx`
+tPzD*
+tQfD;
+tqH9{(tk3
+tqH9{(tkA
+tqH9w(tkA
+tqL9{(tkE
+tqL9v(tkE
+trA8@.u2H
+Traffic
+Translation
+transmittedTagNum
+tRfD;
+trH9{(tlA
+trL9{(tlE
+trL9s(tlE
+trL9v(tlE
+tSfD;
+tsfD;
+tSfD;
+tsfD;
+tSfD;
+tsH9{(tmA
+tsL9{(tm3
+tsL9c(tmE
+tsL9k(tm3
+tsL9k(tmE
+tsL9s(tm3
+tsL9s(tmE
+TT4x@
+ttCtKillEnter
+ttCtKillExit
+tTfD;
+ttfD;
+tTfD;
+ttffff
+ttH9{(tnA
+ttH9s(tnE
+ttH9w(tnA
+TTl`\T
+ttT0T1
+ttT1T0
+ttT1T2
+ttT2T1
+tuADDBAFailureTimeout
+tuADDTSFailureTimeout
+tUfD;
+tufD;
+tuH9{(toA
+tuH9w(toA
+tuL9{(toE
+tuL9s(toE
+tuQosTimerQuantum
+tuRxQosTimer
+tuTSStatisticsReport
+tuTsTimeCheckMinPhyRate
+tV9Qdv
+tVfD;
+tVfD9
+tvH9{(tpA
+tvL9{(tpE
+tvL9k(tpE
+tvL9s(tp3
+tW< tS
+tWfD;
+tWfffff
+twH9{(tqA
+tWH9K(tQ
+twH9s(tq
+twL9{(tq3
+twL9s(tqE
+Tx Aborts                                      %-5d
+Tx Activity = 0x%X, Rx Activity = 0x%X, eSCO Retransmissions = 0x%X
+Tx Atten
+Tx counter                                     %-5d Packets ; %-5d Bytes
+Tx Errors                                      %-5d
+TX FAIL CNT
+Tx IQ
+TX PACKETS CNT
+Tx per-rate   | %-5d| %-5d| %-5d| %-5d| %-5d| %-5d| %-5d| %-5d| %-5d| %-5d|
+Tx Power
+Tx Power:                      %-10d
+tX,,.4
+tX.4-6
+tx_rate_non_agg.flags: 0x%X, 
+tx_rate_non_agg.rate: 0x%X, 
+txCalibChangeChannel
+txChannelWidth: %d 
+TxDataTimeout
+tXfD;
+txfD;
+tXfD;
+txH9{(trA
+txIcHpA
+txL9{(trE
+txL9c(tr3
+txL9s(trE
+TxPacketCopyChangeThreshold
+TxPacketCopyLowerWatermark
+TxPacketCopyUpperWatermark
+TxPower2040Mode
+txPowerCalibUpdateChannels
+Ty4&A
+tYfD;
+tyH9{(tsA
+tYH99tTI
+tyH9s(tsE
+tyL9s(tsD
+TylAntennaCoupling
+TylBuildAndSendPwrTableCmd
+tylChainNoiseHandleStatCommand
+tylOnChannelSwitch
+TylPapdEnableduCode
+TylTestMeasuredVdet
+TylTxCalibChangeChannel
+TylTxPowerCalibUpdateChannelDefaults
+TYPE_MAX
+Tz_g%
+tZA9l$
+TzC`a
+TzE`a
+tZfD;
+tzH9{(ttA
+tZL9;uU
+tzL9{(ttE
+tzL9s(ttE
+u!A8B
+u"fD;t$@t-
+u"HcK
+u#@8k
+u#A8x
+u#D8F
+u#D8G
+u#D8R
+U$@=i
+u$8D$Pu
+u$8Xdt
+u$9|$`t
+u$9D$8u
+u$D8k 
+u%D95W
+u%D9k
+u&< t"<#t
+u&D8J
+U(`Bx
+u(vJ$
+u(wHv
+U(xP(
+u)@8k
+u,9L$Xu
+u,A9w
+u,D8J
+u,fD;
+u/@8k
+u?A8Y
+u@D9#u/D
+u@H9\$0t9
+u[L9|$0uT
+u`9t$Tu:D
+u{x`@
+u{zb 
+u<fD;
+u=D85
+u2D8J
+u3&Ap
+u3A8Y
+u4A8B
+u5@8k
+u59D$`t/H
+u6@8|$8t/H
+u7HcKp
+u8D8J
+u9A8Y
+UapsdPanEnabled
+UATAUAVAWH
+UATAUAWH
+UATAUH
+UATAVH
+UATAWH
+UAUAVH
+uB!!c 
+uB!@ 
+uBc 0
+ucD9t$@u
+UCode Dbg Msg
+uCode Parser
+ucode_dbg_string.hex
+UCODE_PARSER
+ucodeDbgBreakPoint0
+ucodeDbgBreakPoint1
+UcodeParserFilter
+uCodeTimeStamp
+UcodeVersion
+UCST_CIPHER_NOT_VALID
+uDD8J
+UDffffff
+uEA8Y
+uF8D$Pu"E3
+uh9k\t+
+uI9D$8uC
+uJ @ 
+uJD9l$X
+uJH9l$(tCH
+uKA;~
+uKA8Y
+uKD8&
+ulDefaultKeyId %lu
+UNASSOC_AUTO_SCAN   
+UNASSOC_IDLE        
+UNASSOC_MANUAL_SCAN 
+UNAVAILABLE
+Undefined
+UnicastKey.Cipher %lu
+UnicastKey.CKipIV %lu
+UnicastKey.keyCounter %lu
+UnicastKey.KeyFlags %lu
+UnicastKey.KeyIndex %lu
+UnicastKey.KeyLength %lu
+UnicastKey.KeyMaterial[0] %X
+UnicastKey.liTimeStamp %lu
+UnicastKey.RSC[0] %X
+UnicastKey.staId %d
+UnicastKey.TSC[0] %X
+unicastTxKeyId: %d, 
+UNKNOWN
+unknown
+UNKNOWN
+UNKNOWN/ANY
+UNKNOWN_TS OR UNKNOWN_BA
+UNSPEC
+UNSPECIFIED 10
+UNSPECIFIED 11
+UNSPECIFIED 12
+UNSPECIFIED 24
+UNSPECIFIED 25
+UNSPECIFIED 26
+UNSPECIFIED 27
+UNSPECIFIED 28
+UNSPECIFIED 29
+UNSPECIFIED 30
+UNSPECIFIED 31
+UNSPECIFIED 40
+UNSPECIFIED 41
+UNSPECIFIED 42
+UNSPECIFIED 43
+UNSPECIFIED 44
+UNSUPPORTED_CIPHER
+UNSUPPORTED_RSNE_VER
+uOA;w
+uoD8q
+uP9zHt
+updateChannelDefaults
+uRD9l$ uK
+uS@85E
+uS8D$Pt
+uSE9t$
+UseNextFrameInfo
+UsePumaMacAsTaylors
+User Manual Tx Power settings: %d%%
+uT;t$8u?H
+uTD9t$@u)
+UTIL        
+utilGetCurrentBssBandChannel
+utilGetCurrentBssid
+utilGetNetAddr
+utilIsPanClient
+utilPanClientProcessContext
+uU8T$@uO
+uUH9t$`tN
+UUu!H
+UUxP((z
+UVATAUAVH
+UVATAUAWH
+UVATH
+UVAUH
+UVAVH
+UVAWH
+uVfD;
+UVWATAUAVAWH
+UVWATAUAVH
+UVWATAUH
+UVWATAVH
+UVWATH
+UVWAUAVH
+UVWAUAWH
+UVWAUH
+UVWAVAWH
+UVWAVH
+UVWAWH
+UWATAUAVAWH
+UWATAUAVH
+UWATAUAWH
+UWATAUH
+UWATAVH
+UWATAWH
+UWATH
+UWAUAVAWH
+UWAUAVH
+UWAUAWH
+UWAUH
+UWAVAWH
+UWAWH
+uX8D$Pt
+uz8`'
+UzPaYa
+UzPaYaE 
+UzVaYaD&
+UzX` 
+UzYaZ
+v#fffff
+v$ffff
+V(`Bx
+v(u(pB
+v(u(pHq
+v(u(pHq^
+v(uHw
+v)ffff
+v,ffff
+v.fE3
+v:qHw@ 
+v@#S 
+v@$T 
+v\fffff
+v{``R
+v{``U
+v{bb5
+V},z7
+V22dN::t
+Valid BT Coex cmd:
+VarFileInfo
+VATAUAVAWH
+VATAUAVAWL
+VATAUAWH
+VATAUH
+VATAVH
+VATAWH
+VAUAVH
+VauxFixChickenbit
+Vd22Nt::
+version (Maj.Min) %d.%d
+vHuhw
+View Description
+VistaSafeModePacketProc
+VMAC_TYPE_BT3HS
+VMAC_TYPE_CLIFFSIDE
+VMAC_TYPE_SOFT_AP
+VMAC_TYPE_STA
+VMAC_TYPE_UNIDENTIFIED
+Voltage
+vRnTz
+VS_VERSION_INFO
+vUffff
+vvfff
+VWATAUAVAWH
+VWATAUAVH
+VWATAUAWH
+VWATAUH
+VWATAVAWH
+VWATAVH
+VWATAWH
+VWATH
+VWAUAVAWH
+VWAUH
+VWAVAWH
+VWAVH
+Vz@`5
+vzbS"@
+vZq:r
+vZqHu:sHp
+vzqZr:s
+w(uHv
+w(uHv&
+w(uHv2
+w(uHvF
+w(uHvr
+w(uJ$
+w(vHqZs
+w*u2 
+w,f9Q
+w:pL 
+w]tI-
+w}9G4wxE
+w+p`~
+W4f;Q
+w6y!b
+WAIT FOR CLEAR MEDIUM RESPONSE
+WAIT MEDIUM
+WAIT RECEIVE ONLY TERMINATION
+WAIT SCAN COMPLETE
+WAIT_DEAUTH
+WAIT_FLUSH
+WATAUAVAWH
+WATAUAVH
+WATAUAWH
+WATAUH
+WATAVAWH
+WATAVH
+WatchDogEnabled
+WAUAVAWH
+WAUAVH
+WDRVA
+WDRVH
+WEP104
+WEP40
+WevEnabled
+WIDI RX
+WIDI RX     
+WiDiCopyPacket
+WiFi Radio Ownership:                  %s
+WIFI_EVENT_AD_HOC_NOT_ALLOWED_BY_SKU
+WIFI_EVENT_AD_HOC_STATUS
+WIFI_EVENT_AMT_RENEW_IP
+WIFI_EVENT_APP_ASSOCIATION_START
+WIFI_EVENT_APP_ROAM_COMPLETE
+WIFI_EVENT_APP_ROAM_START
+WIFI_EVENT_APP_SCAN_COMPLETE
+WIFI_EVENT_ASSERT_OCCURRED_SV
+WIFI_EVENT_BEACON_DATA_CHANGE
+WIFI_EVENT_CCX_SDK_IAPP_PACKET_RECEIVED
+WIFI_EVENT_CCX_SDK_RM_REPORT
+WIFI_EVENT_CCX_SDK_SEND_PACKET_COMPLETE
+WIFI_EVENT_COEX_SWITCH_SYSTEM_MODE
+WIFI_EVENT_DRIVER_ZOMBIE_STATE
+WIFI_EVENT_ERROR_LOG_IHV
+WIFI_EVENT_ERROR_LOG_SV
+WIFI_EVENT_EXCLUDE_LIST_CHANGED
+WIFI_EVENT_HARDWARE_RADIO_SWITCH
+WIFI_EVENT_IBSS_NETWORK_CREATED
+WIFI_EVENT_INSTANT_CONNECT
+WIFI_EVENT_NDIS_WLAN_OIDS_USED
+WIFI_EVENT_NMPR_CLOCK_SYNC
+WIFI_EVENT_NMPR_STATISTICS
+WIFI_EVENT_PAN_CHANNEL_SWITCH
+WIFI_EVENT_PAN_CLIENT_JOINED
+WIFI_EVENT_PAN_CLIENT_LEFT
+WIFI_EVENT_PAN_IBSS_REJECTION_BY_PAN
+WIFI_EVENT_PAN_P2P_CONNECTION_TIMEOUT
+WIFI_EVENT_PAN_P2P_DISCONNECT_BEFORE_CONNECTION_START
+WIFI_EVENT_PAN_P2P_GO_NEGOTIATION_COMPLETE
+WIFI_EVENT_PAN_P2P_GO_NEGOTIATION_REQUEST
+WIFI_EVENT_PAN_P2P_INITIATE_DISCOVERY_COMPLETE
+WIFI_EVENT_PAN_P2P_INVITATION_REQUEST
+WIFI_EVENT_PAN_P2P_INVITATION_RESPONSE
+WIFI_EVENT_PAN_P2P_PROVISION_DISCOVERY_REQUEST
+WIFI_EVENT_PAN_P2P_PROVISION_DISCOVERY_RESPONSE
+WIFI_EVENT_PAN_P2P_ROAMING_COMPLETION
+WIFI_EVENT_PAN_P2P_ROAMING_START
+WIFI_EVENT_PAN_PAN_REJECTION_BY_IBSS
+WIFI_EVENT_PAN_PROBE_REQ_RECEIVED
+WIFI_EVENT_PAN_PROBE_RSP_RECEIVED
+WIFI_EVENT_PAN_TEMPORAL_DISCONNECT_DONE
+WIFI_EVENT_PAN_TEMPORAL_DISCONNECT_START
+WIFI_EVENT_RBS_STATE_IDLE
+WIFI_EVENT_ROAMING
+WIFI_EVENT_SNIFFER_STATS_STATS
+WIFI_EVENT_SOFTWARE_RADIO_SWITCH
+WIFI_EVENT_TGH_RADAR_CHANNEL_SWITCH
+WIFI_EVENT_TGH_RADAR_CHECK
+WIFI_EVENT_TGK_REPORT_NOTIFICATION
+WIFI_EVENT_THERMAL_THROTTLING
+WIFI_EVENT_WEV_LOG_IHV
+WIFI_EVENT_WEV_LOG_SV
+WIFI_EVENT_WIFI_AUTO_CONNECT
+WIFI_NLO_FLAG_SCAN_AT_SYSTEM_RESUME
+WIFI_NLO_FLAG_SCAN_AT_SYSTEM_RESUME_PERSISTENT
+WIFI_NLO_FLAG_SCAN_ON_AOAC_PLATFORM
+WIFI_NLO_FLAG_START_NLO_INDICATION
+WIFI_NLO_FLAG_STOP_NLO_INDICATION
+WirelessMode
+wJ @ 
+wlap_bssid_addr: %02X:%02X:%02X:%02X:%02X:%02X, 
+WmiQueryTraceInformation
+WmiTraceMessage
+WMM + 11E
+wn>Jj
+WoWLanEnable
+WoWLanEnableMaxDelay
+WoWLanLedOn
+WoWLanTxTempCalibMode
+WPA_PSK
+WPA_RSNA_NONE
+WPA_USE_GROUP
+WPA2_PSK
+WPS is Enabled:                 %s
+WPS_IE_ATTRIBUTE_TYPE_ASSOCIATION_STATE
+WPS_IE_ATTRIBUTE_TYPE_CONFIG_METHODS
+WPS_IE_ATTRIBUTE_TYPE_CONFIGURATION_ERROR
+WPS_IE_ATTRIBUTE_TYPE_DEVICE_NAME
+WPS_IE_ATTRIBUTE_TYPE_DEVICE_PASSWORD_ID
+WPS_IE_ATTRIBUTE_TYPE_MANUFACTURER
+WPS_IE_ATTRIBUTE_TYPE_MODEL_NAME
+WPS_IE_ATTRIBUTE_TYPE_MODEL_NUMBER
+WPS_IE_ATTRIBUTE_TYPE_PRIMARY_DEVICE_TYPE
+WPS_IE_ATTRIBUTE_TYPE_REQUEST_TYPE
+WPS_IE_ATTRIBUTE_TYPE_REQUESTED_DEVICE_TYPE
+WPS_IE_ATTRIBUTE_TYPE_RESPONSE_TYPE
+WPS_IE_ATTRIBUTE_TYPE_RF_BANDS
+WPS_IE_ATTRIBUTE_TYPE_SECONDARY_DEVICE_TYPE_LIST
+WPS_IE_ATTRIBUTE_TYPE_SERIAL_NUMBER
+WPS_IE_ATTRIBUTE_TYPE_UUID_E
+WPS_IE_ATTRIBUTE_TYPE_VERSION
+WPS_IE_ATTRIBUTE_TYPE_WIDI
+WPS_IE_ATTRIBUTE_TYPE_WIFI_PROTECTED_SETUP_STATE
+WPS_IE_INVALID
+wrnv{bb
+wv{``
+wVz@`
+wVzAa
+wVzKc
+x ATAUAVH
+X UVWAUAVH
+X UWATAUAVH
+X!UxG
+x"p`~
+x"xH 
+x%D)>
+x%oJ%.r\.
+x%uy,
+x((Pz
+X,,t4
+X.HpU
+X?D.>
+x_^][
+X_^][
+x_^][
+X_^][
+x_^][
+X`"xE
+X`@~p
+X`3hS%
+X`5x0$
+X`Ya0p
+X{eyXx
+x<<D%
+X0:p 
+x2!@.
+x3h5y2#A 
+x5x4 
+xA\_][
+xA\_^[
+XA\_^[
+xA\_^[
+XA\_^]
+xA\_^]
+XA\_^]
+xA]^][
+XA]_^[
+XA]A\
+xA]A\^[
+xA]A\_^
+xA]A\_^][
+XA^A\
+xA^A\_]
+xA^A\_^
+xA^A]_]
+XA^A]A\[
+xA^A]A\_][
+xA_^][
+XA_A\_]
+xA_A\_^][
+XA_A^A\[
+xA_A^A\_^[
+XA_A^A\_^[
+xA_A^A\_^[
+XA_A^A\_^[
+xA_A^A]_^[
+XA_A^A]A\
+XA_A^A]A\_^][
+xA_A^A]A\_^][
+XA_A^A]A\_^][
+XbX`H @
+xcx`H @
+xdz@(
+xexA/
+Xg"x?
+xilxxH
+xITz4| |X`
+xJ @ 
+xJ$@s
+XJ6z 
+XK4x`
+XkgJg
+XKtz 
+XL4x@
+xl5x@
+XL6z 
+xm`yH
+XOR RF_ON Flow:                        %s
+XOR RF_ON State:                       %s
+xp{Ey
+xp{Ey:
+xp{Ey^
+xp{Eyb
+xp{EyF
+xp{EyJ
+xp{EyN
+xp{Eyn
+xp{Eyr
+XpMaxBssidBufLen
+xR}8`
+xrh0#
+Xt!)I
+Xt4.6-
+X-talk
+Xti)I
+xTzX`
+XVT CNCT
+XVTModeEnabled
+xVTPapdChannelGroupLimit_1
+xVTPapdChannelGroupLimit_2
+xVTPapdShiftDef_B
+xVTPapdShiftDef_C
+xVTPapdShiftNom_B
+xVTPapdShiftNom_C
+XVTRadioType
+xw`yH
+xX`Ya
+x'xA(
+xxoJ%%r\..$8
+y%xD 
+y&x/(
+y/y0u
+y@ @/
+y[cey
+y0y8`S#
+y2!A.
+y4 @ 
+Y8Slu+D
+Ya;c@+
+ya=e5m;
+Ya0yAi
+Ya0yAiPp
+Ya0yF
+ya0yh
+Ya0yj
+Ya0yr
+Ya0yt
+yHuv}
+yr}Ya%}G}
+yzbEy
+Z(`Bx
+z[cn{J$
+z0u(H
+z2~zbE~
+zbPpR
+zbPzh
+zbX`th<
+zbYa0y
+zczbH"B
+zdxQ%@
+zEyey'
+zFy/)A
+zkg)g
+Zp(vHw
+Zp:qHw
+ZpezH
+Zpo%C
+zpu.@
+ZpzpJ 
+zqZrhu
+zYa=e@-

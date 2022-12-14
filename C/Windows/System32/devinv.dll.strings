@@ -1,0 +1,3101 @@
+                              <xsl:value-of select="'DriverName'" />
+                              <xsl:value-of select="'DriverVersion'" />
+                              <xsl:value-of select="'HardwareID'" />
+                              <xsl:value-of select="HWID[1]" />
+                              <xsl:value-of select="InstalledDriver/@driverVerVersion" />
+                              <xsl:value-of select="InstalledDriver/@fileName" />
+                            </xsl:attribute>
+                            <xsl:attribute name="id">
+                            <xsl:attribute name="value">
+                            <xsl:value-of select="concat(InstalledDriver/@classDescription,' (',InstalledDriver/@model,')' )" />
+                          <!-- == Select the first Hardware ID  == -->
+                          <!-- =================================== -->
+                          </xsl:attribute>
+                          </xsl:element>
+                          <xsl:attribute name="id">
+                          <xsl:attribute name="keywords">
+                          <xsl:attribute name="text">
+                          <xsl:element name="StaticValue">
+                        </xsl:element>
+                        <xsl:element name="Area">
+                      </xsl:if>
+                      <xsl:if test="InstalledDriver/@class!='HIDClass'">
+                    </xsl:if>
+                    <xsl:if test="InstalledDriver/@class!='fdc'">
+                  </xsl:if>
+                  <xsl:if test="InstalledDriver/@class!='Ports'">
+                </xsl:if>
+                <xsl:if test="InstalledDriver/@class!='Computer'">
+              </xsl:if>
+              <xsl:if test="InstalledDriver/@class!='Processor'">
+            </xsl:if>
+            <xsl:if test="InstalledDriver/@class!='USB'">
+          </xsl:if>
+          <xsl:if test="InstalledDriver/@class!='hdc'">
+        <!-- == Exclude any of the following device classes.          == -->
+        <!-- =========================================================== -->
+        </xsl:if>
+        <xsl:if test="InstalledDriver/@class!='System'">
+      </xsl:for-each>
+      <xsl:call-template name="DeviceList" />
+      <xsl:for-each select="//Device[generate-id()=generate-id(key('distinct-device',InstalledDriver/@model)[1])]">
+    <!-- ============ Areas END ============= -->
+    <!-- ============ Areas START ============= -->
+    <!-- ====================================== -->
+    </xsl:element>
+    </xsl:if>
+    <xsl:element name="Areas">
+    <xsl:if test="//SystemSpec">
+    <xsl:text>&#xA;</xsl:text>
+  <!-- ========== DeviceList END ============ -->
+  <!-- ========== DeviceList START ========== -->
+  <!-- ========== VARIABLE SECTION END ========== -->
+  <!-- ========== VARIABLE SECTION START ========== -->
+  <!-- ====================================== -->
+  <!-- ========================================== -->
+  <!-- ============================================ -->
+  </xsl:template>
+  </xsl:variable>
+  <xsl:key name="distinct-device" match="Device" use="InstalledDriver/@model"/>
+  <xsl:output method="xml" encoding="utf-8" indent="yes" />
+  <xsl:template match="/">
+  <xsl:template name="DeviceList">
+  <xsl:variable name="LOWERCASE" select="'abcdefghijklmnopqrstuvwxyz'" />
+  <xsl:variable name="NEWLINE">
+  <xsl:variable name="UPPERCASE" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" />
+  cat signers: %ws
+  embedded signers: %ws
+  thumbprint: %ws
+ ;\$hr
+ A^_^
+ A^A]A\_^
+ A_A\_^]
+ A_A^_
+ A_A^A\
+ A_A^A\_^
+ A_A^A]
+ A_A^A]A\_
+ A_A^A]A\_^]
+ H3E H3E
+ http://www.microsoft.com/windows0
+ Inve
+ InventoryDeviceContainerAdd
+ InventoryDeviceContainerRemove
+ InventoryDeviceContainerStartSync
+ InventoryDeviceInterfaceAdd
+ InventoryDeviceInterfaceStartSync
+ InventoryDeviceMediaClassAdd
+ InventoryDeviceMediaClassRemove
+ InventoryDeviceMediaClassStartSync
+ InventoryDevicePnpAdd
+ InventoryDevicePnpRemove
+ InventoryDevicePnpStartSync
+ InventoryDeviceUsbHubClassAdd
+ InventoryDeviceUsbHubClassStartSync
+ InventoryDriverBinaryAdd
+ InventoryDriverBinaryRemove
+ InventoryDriverBinaryStartSync
+ InventoryDriverPackageAdd
+ InventoryDriverPackageRemove
+ Microsoft Code Verification Root
+ Microsoft Corporation. All rights reserved.
+ Microsoft Operations Puerto Rico1&0$
+ Microsoft Operations Puerto Rico1'0%
+ Operating System
+ Ry10D
+ t H+
+ Windows
+!\$ 3
+!\$(L
+!\$`H
+!D$ L
+!D$@!D$DH
+!l$ H
+!l$ L
+!t$ L
+!t$(H
+!This program cannot be run in DOS mode.
+"Copyright (c) 1997 Microsoft Corp.1
+"Copyright (c) 1999 Microsoft Corp.1
+"Microsoft Time Source Master Clock0
+"Microsoft Window
+$`2X`F
+$Microsoft Ireland Operations Limited1
+$Microsoft Root Certificate Authority
+$u)eH
+%.02u-%.02u-%.04u
+%.16ls|%I64x
+%{XFRVT
+%02d%01d%05d
+%02d/%02d/%02d %02d:%02d:%02d
+%02d/%02d/%04d %02d:%02d:%02d
+%02x-%02x-%02x-%02x-%02x-%02x
+%08x CDevHelper::StrToUnicode failed to convert domain
+%08x CreateFile failed for device: %ls
+%08x DeviceIoControl failed for device: %ls and feature %d. Skipping this feature
+%08x GetAdaptersInfo failed
+%08x GetNetworkParams failed
+%ALLUSERSPROFILE%\Microsoft\Windows NT\CompatibilityInventory
+%d-%d-%d
+%d.%d
+%d.%d.%d
+%d.%d.%d.%d
+%hs!%p: 
+%hs(%d) tid(%x) %08X %ws
+%hs(%d)\%hs!%p: 
+%I64u
+%ls ProviderVersion did not match RequestedVersion.
+%ls ProviderVersion did not match RequestedVersion. Using temp cache.
+%ls version block after re-mapping as image [%x]
+%ls.tmp
+%ls\%ls
+%ls\compattel\DismApi.dll
+%ls\DismApi.dll
+%ls\kernel32.dll
+%Microsoft Windows Production PCA 2011
+%Microsoft Windows Production PCA 20110
+%programfilesnative%
+%s failed %#x
+%s#%d
+%s#%s
+%s,%s,%d,
+%s\%s
+%s\Temp\AslLog_%S_%s_%d.txt
+%sysnative%
+%system32%
+%systemdrive%\Program Files
+%systemroot%
+%systemroot%\system32
+%u.%u.%u.%u
+%u.%u:%u
+%windir%
+%windir%\SMScfg.ini
+&Microsoft Digital Media Authority 2005
+(_^][
+(A_A^A]A\_^][
+(caller: %p) 
+(D$0H
+(D$p3
+(H;]`u
+(tYD9
+)Microsoft Authenticode(tm) Root Authority
+)Microsoft Root Certificate Authority 2010
+)Microsoft Root Certificate Authority 20100
+*9ixv)H
+*HcD$P
+, <^w
+,BaseboardManufacturer:
+,BaseboardProduct:
+,BaseboardVersion:
+,BiosMajorRelease:
+,BiosMinorRelease:
+,BiosReleaseDate:
+,BiosVersion:
+,EnclosureType:
+,fKSYiwQKS5uDYxH2frFWQqX4HCMLyAPlR0dOUXv0DcA=0Z
+,SystemFamily:
+,SystemManufacturer:
+,SystemProduct:
+,SystemSKUNumber:
+.?AVbad_alloc@std@@
+.?AVCAtlException@ATL@@
+.?AVexception@@
+.?AVlength_error@std@@
+.?AVlogic_error@std@@
+.?AVout_of_range@std@@
+.?AVResultException@wil@@
+.00cfg
+.CRT$XCA
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIZ
+.CRT$XLA
+.CRT$XLZ
+.data
+.data$brc
+.data$r$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.edata
+.gfids
+.giats
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.pdata
+.rdata
+.rdata$brc
+.rdata$r
+.rdata$T$brc
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.securom
+.text
+.text$di
+.text$mn
+.text$mn$00
+.text$x
+.text$yd
+.tls$
+.tls$ZZZ
+.xdata
+.xdata$x
+/fD9{
+: 0x%x
+:7n8bD
+;C u A;
+;K w{E
+? uRL
+??_V@YAXPEAX@Z
+??0exception@@QEAA@AEBQEBD@Z
+??0exception@@QEAA@AEBQEBDH@Z
+??0exception@@QEAA@AEBV0@@Z
+??0exception@@QEAA@XZ
+??1exception@@UEAA@XZ
+??1type_info@@UEAA@XZ
+??3@YAXPEAX@Z
+?D8wIt
+?D8wit
+?D8wIt
+?terminate@@YAXXZ
+?W;)g
+?what@exception@@UEBAPEBDXZ
+@.data
+@.didat
+@.reloc
+@8,1u
+@8{it
+@8{Iu
+@8{iuIH
+@8~Iu H
+@8~Iu(H
+@8=CV
+@8=k3
+@87t6!t$(A
+@8nIu.I
+@8p(u
+@8p)u
+@8p8u
+@8p9u
+@8pHu
+@8pIu
+@8x)t
+@8xhu
+@8xIt
+@8xiu
+@8xIu
+@8xiu
+@8y=t
+@8yIu
+@A^_^
+@A^_^][
+@A^A\]
+@A^A\_^]
+@A_A^_
+@A_A^_^[
+@A_A^_^]
+@A_A^A\
+@A_A^A\^[
+@A_A^A\_^
+@A_A^A\_^[]
+@A_A^A\_^][
+@A_A^A]A\_
+@A_A^A]A\_^]
+@pb{uw
+@SUVWATAUAVAWH
+@SUVWATAVAWH
+@SUVWAVH
+@SVATAUAVAWH
+@SVWATAUAVAWH
+@SVWAVAWH
+@SVWAVH
+@SVWH
+@USVWATAUAVAWH
+@USVWATAVAWH
+@USVWAVAWH
+@USVWAVH
+@USVWH
+@UVWATAWH
+@WAVAWH
+[ UVWATAUAVAWH
+[%hs(%hs)]
+[%hs]
+[%s][%d] Page error exception occurred
+[0x%x]
+\$ A;
+\$ E3
+\$ UH
+\$ UVWATAUAVAWH
+\$ UVWAVAWH
+\$ UVWH
+\$ VWAVH
+\$@@8
+\$hE3
+\$hH;
+\$LfD;l$B
+\$pE3
+\$PE3
+\$PL95
+\$XL9d$`
+\\.\PhysicalDrive%d
+\\.\X:
+\compattel
+\DriverStore\FileRepository\*
+\Parameters\Wdf
+\properties
+\REGISTRY\A\
+\Registry\Machine
+\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\ProfileList
+\Registry\Machine\Software\Microsoft\Windows\CurrentVersion
+\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags
+\StringFileInfo\%04X%04X\%s
+\StringFileInfo\%04X%04X\%ws
+\StringFileInfo\%08x\%ws
+\StringFileInfo\000004B0\
+\StringFileInfo\000004E4\
+\StringFileInfo\040904B0\
+\StringFileInfo\040904E4\
+\SysARM32
+\sysnative\
+\System32
+\system32\
+\SystemRoot\
+\systemroot\system32
+\SysWOW64
+\VarFileInfo\Translation
+]H9]8
+]HD9e8wgL
+__C_specific_handler
+__CxxFrameHandler3
+__dllonexit
+__iob_func
+__TlgCV__
+_amsg_exit
+_AttributesFromAsl
+_AttributesFromBOE
+_AttributesFromHashing
+_AttributesFromPath
+_AttributesFromRunLevelInfo
+_AttributesFromSignatureInfo
+_beginthreadex
+_callnewh
+_ComputeFileId
+_ComputePeHeaderHash
+_CxxThrowException
+_errno
+_getmbcp
+_GetNtImageHeader
+_initterm
+_LoadSystemModule failed for shlwapi.dll
+_LoadSystemModule failed for wintrust.dll
+_lock
+_mktime64
+_onexit
+_PageErrorExceptionHandler
+_purecall
+_SecondsSince1970ToFileTime
+_set_errno
+_SetFarAttributeFromAslAttribute
+_SetFarAttributeFromAslAttribute failed to set FA_BIN_TYPE [%x]
+_SetFileAttributeValue
+_SetFileAttributeValue failed [%x]
+_StringFromFileTime
+_ui64tow_s
+_unlock
+_vsnprintf
+_vsnprintf_s
+_vsnwprintf
+_vsnwprintf_s
+_wcsicmp
+_wcsnicmp
+_wctime64
+_wsplitpath_s
+_XcptFilter
+` AUAVAWH
+` UAVAWH
+`.rdata
+`A^A\_^]
+`A_A^_^[
+`A_A^_^]
+`A_A^A]A\_^[
+`A_A^A]A\_^]
+`D9t$0wTH
+{%08lx-%04hx-%04hx-%02hx%02hx-%02hx%02hx%02hx%02hx%02hx%02hx}
+{%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X}
+{`H9sPr
+{00000000-0000-0000-ffff-ffffffffffff}
+{11517B7C-E79D-4e20-961B-75A811715ADD}
+{4d36e979-e325-11ce-bfc1-08002be10318}
+{83da6326-97a6-4088-9453-a1923f573b29},3
+{8H9s(r
+{b3f8fa53-0004-438e-9003-51a46e139bfc},2
+{FFFFFFFF-FFFF-0000-0000-000000000000}
+|$ AVH
+|$ E3
+|$ Hu.H
+|$ UATAUAVAWH
+|$(A^
+|$(H+
+|$(L+
+|$@H9=
+|$`fD
+|$|L9@
+|$<9~Ht
+|$0A_A^
+|$0E3
+|$0H9
+|$8H+
+|$pH9=kg
+|$PL9=
+|$XfD
+|$xL;
+|hK,_
+},L9@
+}<L9@
+~M9\$P~G
+~oD9d$0thD
++T$0E3
+<!-- ============ Copyright (c) 2010  Microsoft Corporation ============= -->
+<!-- ==================================================================== -->
+</xsl:stylesheet>
+<?xml version="1.0"?>
+<Chain>
+<Expires>
+<Hash>
+<Issued By>
+<Issued To>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" >
+=?9EEH
+='IBt
+>(uBI
+>=u;A
+>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0
+>http://www.microsoft.com/pki/certs/MicTimStaPCA_2010-07-01.crt0
+0.0.0.0
+00-00-00-00-00-00
+0000da39a3ee5e6b4b0d3255bfef95601890afd80709
+0000f519feec486de87ed73cb92d3cac802400000000
+0'1%0#
+011/0-
+0123456789ABCDEF
+0123456789abcdef
+040904B0
+0A^_^
+0A^A\_
+0A^A\_^]
+0A^A]A\
+0A_A\_^]
+0A_A]A\_^
+0A_A^_
+0A_A^_^[
+0A_A^A\
+0A_A^A\_^
+0A_A^A\_^][
+0A_A^A]
+0A_A^A]A\_
+0A_A^A]A\_^]
+0A_A^A]A\_H
+0JA"a
+0p1+0)
+0r?(Y
+0u1+0)
+0x%.16I64X
+0x%08x AddDriver failed on [%ws]
+0x%08x CDevHelper::ExecWmiQuery failed
+0x%08x CDevHelper::ExecWmiQuery for CIM_Chassis failed
+0x%08x CDevHelper::ExecWmiQuery for Win32_bios failed
+0x%08x CDevHelper::ExecWmiQuery for Win32_ComputerSystem failed
+0x%08x CDevInventory::CreateDevInventoryToCache failed
+0x%08x CDevInventory::Initialize failed
+0x%08x CoCreateInstance failed
+0x%08x CoInitializeSecurity failed
+0x%08x CoInitilizeEx failed
+0x%08x ConnectServer failed
+0x%08x CoSetProxyBlanket failed
+0x%08x CreateDeviceInventory failed
+0x%08x CreateDirectory failed
+0x%08x CreateFile Failed
+0x%08x CreateFile failed (path=%ls).
+0x%08x CreateFile failed for file %ws
+0x%08x CreateThread failed for printer enumeration
+0x%08x CryptCATAdminCalcHashFromFileHandle failed for file %ws
+0x%08x CryptCATAdminReleaseCatalogContext failed for file %ws
+0x%08x CryptCATCatalogInfoFromContext failed for file %ws
+0x%08x DeviceMap failed to collect device information
+0x%08x DeviceMap failed to collect driver information
+0x%08x DeviceMap failed to initialize with
+0x%08x DevObjEnumDeviceInterfaces failed
+0x%08x DevObjGetClassDevs failed
+0x%08x DevObjGetDeviceInterfaceDetail failed
+0x%08x DevObjGetDeviceInterfaceDetail failed determining size
+0x%08x DriverMap failed to initialize with
+0x%08x DriverMap telecommand context null
+0x%08x EnumDeviceDrivers failed
+0x%08x EnumPrinterDrivers failed
+0x%08x ExecQuery failed
+0x%08x ExpandEnvironmentStrings failed
+0x%08x Failed DismGetDrivers
+0x%08x Failed LoadLibraryExW for %ws
+0x%08x Failed SetDllDirectory
+0x%08x Failed StringCchPrintf
+0x%08x Failed StringCchPrintf, dllFolder=%ws
+0x%08x Failed to acquire cat admin context.
+0x%08x Failed to add driver [%ws] path [%ws]
+0x%08x Failed to add driver store drivers
+0x%08x Failed to add kernel mode drivers
+0x%08x Failed to add printer drivers
+0x%08x Failed to add SCM drivers
+0x%08x Failed to add service (%ws) to service map
+0x%08x Failed to add user mode driver [%ws]
+0x%08x Failed to add user mode drivers
+0x%08x Failed to collect driver information
+0x%08x Failed to copy Mac address
+0x%08x Failed to create device inventory filename
+0x%08x Failed to enumerate filter drivers
+0x%08x Failed to enumerate services from SCM manager
+0x%08x Failed to expand environment variable
+0x%08x Failed to find SmsHwIdName in SmsCfgData
+0x%08x Failed to find SmsUidName in SmsCfgData
+0x%08x Failed to generate device map
+0x%08x Failed to get BiosCharacteristics
+0x%08x Failed to get CIM_Chassis
+0x%08x Failed to get CPU0 speed reg value
+0x%08x Failed to get ImagePath for service (%ws)
+0x%08x Failed to get sys signing info for %ws
+0x%08x Failed to get user mode driver path
+0x%08x Failed to get Win32_bios
+0x%08x Failed to get Win32_ComputerSystem
+0x%08x Failed to get Win32_PhysicalMemory
+0x%08x Failed to get Win32_Processor
+0x%08x Failed to GetACPICapability
+0x%08x Failed to initialize dism session
+0x%08x Failed to initialize import functions
+0x%08x Failed to initialize inventory cache
+0x%08x Failed to open CPU0 registry key
+0x%08x Failed to open dism driver store
+0x%08x Failed to open SCM manager
+0x%08x Failed to open service key: %ws
+0x%08x Failed to open user mode service key
+0x%08x Failed to query service start type for [%ws]
+0x%08x Failed to retrieve dism apis.
+0x%08x Failed to retrieve ps apis.
+0x%08x Failed to retrieve SmsHwIdVal
+0x%08x Failed to retrieve SmsUidVal
+0x%08x Failed to send signing info for file: %ws
+0x%08x GetChassisInfo failed
+0x%08x GetComputerName failed
+0x%08x GetDeviceDriverFileName failed
+0x%08x GetDeviceMap failed
+0x%08x GetDiskFreeSpaceEx failed
+0x%08x GetDiskInfo failed
+0x%08x GetDriverPathFromServiceName failed for (%ws)
+0x%08x GetFileAttributes failed
+0x%08x GetFileSize Failed
+0x%08x GetLogicalDriveStrings failed
+0x%08x GetMachineInfo failed
+0x%08x GetMediaDriveInfo failed
+0x%08x GetMediaProperties failed for %ls device, Skipping it
+0x%08x GetMemoryInfo failed
+0x%08x GetModuleFileNameEx failed
+0x%08x GetNetworkAddresses failed
+0x%08x GetNetworkInfo failed
+0x%08x GetPingBackInfo failed
+0x%08x GetProcessorInfo failed
+0x%08x GetSystemDirectory failed
+0x%08x GetVersionEx failed
+0x%08x GetVideoInfo failed
+0x%08x GetWindowsDirectory failed
+0x%08x Insufficient buffer size
+0x%08x Invalid Arguments
+0x%08x Invalid XML data.
+0x%08x It is Wow64 process. We won't collect driver info due to DISM
+0x%08x LoadLibrary for dismapi.dll failed, 0x%08x, 0x%08x, 0x%08x
+0x%08x MultiByteToWideChar failed
+0x%08x Out of Memory
+0x%08x Out of memory
+0x%08x pDeviceMapHandle is null.
+0x%08x QueryInterface failed
+0x%08x ReadFile Failed
+0x%08x ReadFileData failed
+0x%08x RegEnumKeyEx failed
+0x%08x RegOpenKeyEx failed
+0x%08x RegQueryValueEx failed, keyName (%ws)
+0x%08x StringCbCopyW failed
+0x%08x StringCchCat
+0x%08x StringCchLengthA failed
+0x%08x Unable to initialize Device Driver Map
+0x%08x Unexpected CPU0 speed reg value type
+0x%08x Watson report submission failed. wer:0x%08x
+0x%08x wcsrchr failed, dllFolder=%ws
+0x%08x WriteBstrToFile failed
+0x%08x WriteFile failed (path=%ls).
+0x%I64X
+0x%lX
+0x%x File not found. Path: (%ws)
+1(0&0
+1.2.840.113549.1.9.5
+1.2.840.113549.1.9.6
+1/0-0
+10.0.17763.1
+10.0.17763.1 (WinBuild.160101.0800)
+100701213655Z
+111019184142Z
+180703204550Z
+180823202626Z
+190726204550Z0p1
+191123202626Z0
+1http://www.microsoft.com/PKI/docs/CPS/default.htm0@
+1Microsoft Testing Root Certificate Authority 2010
+1n,.}
+20180915013530.438Z0
+20180915082638Z
+20180916082638Z0w0=
+229879+4379540
+250701214655Z0|1
+261019185142Z0
+2lKL?
+5Microsoft Development Root Certificate Authority 2014
+6@8~It
+8_^[]
+8A^_^[
+8A_A^_^[]
+8A_A^A]A\_^][
+8BSJBt
+8Q)u#L9Y
+8Q)u0H
+8S)uIL
+9.edat
+9.t!H
+9\$`t
+9\$`u;H
+9\$0v
+9\$hv,H
+9|$0t
+9D$pt
+9fD9e
+9INITu
+9PAGEt
+9u@uDL
+9z8ub3
+A]A\]
+A^_^[
+A^_^[]
+A^_^][
+A^A\]
+A^A]]
+A^A]A\_^
+A_A\_^]
+A_A]_
+A_A]A\_]
+A_A^]
+A_A^]H
+A_A^_
+A_A^_^[
+A_A^_^[]
+A_A^_^]
+A_A^A\
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[]
+A_A^A\_^][
+A_A^A]
+A_A^A]_]
+A_A^A]_^[
+A_A^A]A\]
+A_A^A]A\^
+A_A^A]A\^[
+A_A^A]A\_
+A_A^A]A\_^[
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A=fD9B
+A0H9A(t
+A8~3u!H9
+A84>u
+A8nIt
+A8Q)t
+A8Q)u
+A9_0u
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/0x%08x Invalid Arguments.
+Accelerometer3D
+acpi_hal
+Acquired container collection
+Acquired IFunctionDiscovery COM
+Acquired sm bios data
+Acquired SMBIOS(baseboard) information (Type 1)
+Acquired SMBIOS(bios) information (Type 0)
+Acquired SMBIOS(enclosure) information (Type 3)
+Acquired SMBIOS(system) information (Type 1)
+AcquireSRWLockExclusive
+action
+Activity
+ActivityDetection
+ActivityResults
+AdapterCompatibility
+AdapterRAM
+Add: DeviceId is %ws
+Added kernel mode drivers
+Added printer drivers
+Adding container DMID [%ws] Model [%ws] Category [%ws]
+advapi32
+AeComputeFileHash
+AeComputeFileHashFromHandle
+AeComputeProgramIdentityHash
+AeComputeProgramIdentityHash failed [%x]
+AeComputeStringHash
+AeGetPersistedLocation failed [%#x]
+aeinv.dll
+AeWERQueryFileInfo
+Alignment error in the end of file view for CRC checksum
+All containers initialized successfuly
+All instance IDs are unique (good).
+AllocAndInitFileAttributes failed [%x]
+AllowTelemetry
+AllowTelemetry_PolicyManager
+Alpha
+Already initialized [%#x]
+AmbientLight
+Amcache
+amcache-
+Amcache.hve
+AmiClearProviderData [%d]
+AmiFixKeyPermissionsRecursive
+AmiFixKeyPermissionsRecursive failed [%d]
+AmiFixKeyPermissionsRecursiveHelper
+AmiFixKeyPermissionsRecursiveHelper failed [%d]
+AmiGetItem
+AmiHiveOwnerCorrect
+AmiHivePermissionsCorrect
+AmiOverridePath
+AmipCreateNewCacheFile
+AmipCreateNewCacheFile [%d]
+AmiProviderGetMetadata [%d]
+AmiProviderInit
+AmiProviderInit [%d]
+AmiProviderSetMetadata [%d]
+AmipStoreInitialize
+AmipStoreInitialize [%d]
+AmipTryAcquireProviderMutex
+AmipVerifyCachePermissionsCorrect
+AmiRegGetStoreFullPath
+AmiStoreInitialize
+AmiUtilityGetPersistedLocation [%#x]
+AmiUtilityGetPersistedLocation failed [%#x]
+AmiUtilityGivePrivilegesToServices
+AmiUtilityGivePrivilegesToServices failed [%d]
+AmiUtilityInitSecurityDescriptor
+AmiUtilityInitSecurityDescriptor failed [%d]
+AmiUtilityRegEnsureKey
+AmiUtilityRegGetValue
+AmiUtilityRegGetValue failed, %d, %ws
+AmiUtilityRegGetValue failed, (%d), %s
+AmiUtilityRegGetValue failed, (%d), %ws
+AmiUtilityRegOpenKey
+AmiUtilityRegSetValue
+AmiUtilityRegSetValue failed, (%d), %ws
+AmiUtilitySetPrivilege
+Ansi string is too long to convert at %d
+api-ms-win-base-util-l1-1-0.dll
+api-ms-win-core-apiquery-l1-1-0.dll
+api-ms-win-core-com-l1-1-0.dll
+api-ms-win-core-debug-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-1.dll
+api-ms-win-core-errorhandling-l1-1-0.dll
+api-ms-win-core-file-l1-1-0.dll
+api-ms-win-core-file-l1-2-0.dll
+api-ms-win-core-file-l2-1-0.dll
+api-ms-win-core-handle-l1-1-0.dll
+api-ms-win-core-heap-l1-1-0.dll
+api-ms-win-core-heap-l2-1-0.dll
+api-ms-win-core-io-l1-1-0.dll
+api-ms-win-core-kernel32-legacy-l1-1-0.dll
+api-ms-win-core-kernel32-legacy-l1-1-1.dll
+api-ms-win-core-libraryloader-l1-2-0.dll
+api-ms-win-core-localization-l1-2-0.dll
+api-ms-win-core-memory-l1-1-0.dll
+api-ms-win-core-path-l1-1-0.dll
+api-ms-win-core-processenvironment-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-0.dll
+api-ms-win-core-profile-l1-1-0.dll
+api-ms-win-core-psapi-l1-1-0.dll
+api-ms-win-core-realtime-l1-1-0.dll
+api-ms-win-core-registry-l1-1-0.dll
+api-ms-win-core-registry-l1-1-1.dll
+api-ms-win-core-registry-l2-1-0.dll
+api-ms-win-core-rtlsupport-l1-1-0.dll
+api-ms-win-core-shlwapi-legacy-l1-1-0.dll
+api-ms-win-core-sidebyside-l1-1-0.dll
+api-ms-win-core-string-l1-1-0.dll
+api-ms-win-core-string-obsolete-l1-1-0.dll
+api-ms-win-core-synch-l1-1-0.dll
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-core-synch-l1-2-1.dll
+api-ms-win-core-sysinfo-l1-1-0.dll
+api-ms-win-core-sysinfo-l1-2-0.dll
+api-ms-win-core-timezone-l1-1-0.dll
+api-ms-win-core-version-l1-1-0.dll
+api-ms-win-core-version-l1-1-1.dll
+api-ms-win-eventing-provider-l1-1-0
+api-ms-win-eventing-provider-l1-1-0.dll
+api-ms-win-security-base-l1-1-0.dll
+api-ms-win-security-cryptoapi-l1-1-0.dll
+api-ms-win-security-provider-l1-1-0.dll
+api-ms-win-service-core-l1-1-1.dll
+api-ms-win-service-management-l1-1-0.dll
+api-ms-win-service-management-l2-1-0.dll
+ApiSetQueryApiSetPresence
+AppCompat\Programs
+AppCompatFlags
+ApplicationName
+ApplicationVersion
+Architecture
+AsInvoker
+ASL_LOG FAIL: 
+AslAnsiStringCreate
+AslEnvBuildBasic
+AslEnvExpandStrings
+AslEnvExpandStrings failed [%x]
+AslEnvExpandStrings2
+AslEnvExpandStrings2 failed to expand strings for %ws [%x]
+AslEnvGetProcessWowInfo
+AslEnvGetProcessWowInfo failed [%x]
+AslEnvVarQuery failed [%x]
+AslFileAllocAndGetAttributes
+AslFileAllocAndGetAttributes failed [%x]
+AslFileAttributeToString
+AslFileKindDetailToString
+AslFileKindDetailToString failed [%x]
+AslFileMapping::AttributeToString
+AslFileMapping::GetAttribute
+AslFileMapping::GetAttribute failed (BOE Publisher) [%x]
+AslFileMapping::GetAttribute failed [%x]
+AslFileMapping::GetAttribute failed to get asl attribute index %d [%x]
+AslFileMapping::GetAttribute failed to get PRODUCT_NAME [%x]
+AslFileMapping::GetAttribute failed to get VER_LANGUAGE [%x]
+AslFileMapping::GetFileKindDetails failed [%x]
+AslFileMapping::InitializeAttributes
+AslFileMapping::InitializeAttributes failed [%x]
+AslFileMappingCreate
+AslFileMappingCreate failed [%x]
+AslFileMappingEnsure
+AslFileMappingEnsure failed [%x]
+AslFileMappingEnsureMappedAs
+AslFileMappingEnsureMappedAs failed [%x]
+AslFileMappingGetFileKindDetail
+AslFileMappingGetFileKindDetails failed [%x]
+AslFileMappingGetImageTypeEx
+AslFileMappingGetImageTypeEx failed [%x]
+AslFileMappingGetNtHeaders
+AslGuidToString
+AslpEnvResolveVars
+AslpEnvResolveVars failed [%x]
+AslpEnvResolveVars failed to fail properly for null buffer
+AslpFileGet16BitDescription
+AslpFileGet16BitModuleName
+AslpFileGetChecksum
+AslpFileGetChecksum failed [%x]
+AslpFileGetChecksumAttributes
+AslpFileGetChecksumAttributes called with a partial view which is not supported
+AslpFileGetChecksumAttributes failed [%x]
+AslpFileGetClrVersion
+AslpFileGetClrVersion failed [%x]
+AslpFileGetClrVersionAttribute
+AslpFileGetClrVersionAttribute failed [%x]
+AslpFileGetCrcChecksum
+AslpFileGetCrcChecksum failed [%x]
+AslpFileGetExeWrapper
+AslpFileGetExportName
+AslpFileGetFileKindDetailAttribute
+AslpFileGetFileKindDetailAttribute failed [%x]
+AslpFileGetHeaderAttributesNE
+AslpFileGetHeaderAttributesNE failed [%x]
+AslpFileGetHeaderAttributesPE
+AslpFileGetHeaderAttributesPE failed [%x]
+AslpFileGetImageNtHeader
+AslpFileGetImageNtHeader failed [%x]
+AslpFileGetNtHeaderAttributes
+AslpFileGetPeExportNameExeWrapper
+AslpFileGetPeExportNameExeWrapper failed [%x]
+AslpFileGetVersionAttributes
+AslpFileGetVersionAttributes failed [%x]
+AslpFileGetVersionBlock
+AslpFileGetVersionBlock failed [%x]
+AslpFileHasActiveMarkWrapper
+AslpFileHasActiveMarkWrapper failed (FileSize: %I64u) [%x]
+AslpFileHasActiveMarkWrapper failed [%x]
+AslpFileLargeEnsureLargeFileMapping
+AslpFileLargeEnsureLargeFileMapping failed [%x]
+AslpFileLargeGetChecksum
+AslpFileLargeGetChecksum failed [%x]
+AslpFileLargeGetChecksumAttributes
+AslpFileLargeGetChecksumAttributes failed to get checksum attributes [%x]
+AslpFileLargeGetCrcChecksum
+AslpFileLargeMapCreate
+AslpFileMakeStringVersionAttributes
+AslpFileMakeStringVersionAttributes failed [%x]
+AslpFileMappingGetFileKind
+AslpFileMappingGetFileKind failed %S [%x]
+AslpFileQuery16BitDescription
+AslpFileQuery16BitDescription failed [%x]
+AslpFileQuery16BitModuleName
+AslpFileQuery16BitModuleName failed [%x]
+AslpFileQueryExportName
+AslpFileQueryExportName failed [%x]
+AslpFileQueryVersionString
+AslpFileQueryVersionString failed [%x]
+AslpFileVerQueryBlock
+AslpFileVerQueryBlock failed [%x]
+AslRegistryBuildMachinePath
+AslRegistryBuildMachinePath failed for %ws [%x]
+AslRegistryGetKey
+AslRegistryGetString
+AslRegistryGetStringExpand
+AslRegistryGetUInt32
+AslRegistryGetUInt32_UStr
+AslRegistryOpenKey
+AslRegistryOpenKey passed bad Path [%x]
+AslStringAnsiToUnicode
+AslStringAnsiToUnicode failed [%x]
+AslStringDuplicate
+AslStringDuplicate failed [%x]
+AslStringDuplicate failed with "%s" [%x]
+AslStringDuplicateA
+AslStringXmlSanitize failed [%x]
+AslTelemetryCreate
+ATAUAVH
+ATAVAWH
+Attempting to read SMBIOS data
+Attribute (index %d) was too large. Size was %x bytes
+AUAVAWH
+Audio_CaptureDriver
+Audio_RenderDriver
+aw }l
+b"]/wP|
+B,G7]C
+bad allocation
+Bad parameter [%d]
+Barometer
+Baseboard manufacturer is not present
+Baseboard product name is not present
+Baseboard version is not present
+bcrypt.dll
+BCryptCloseAlgorithmProvider
+BCryptCreateHash
+BCryptDestroyHash
+BCryptDestroyKey
+BCryptFinishHash
+BCryptGetProperty
+BCryptHashData
+BCryptImportKeyPair
+BCryptOpenAlgorithmProvider
+BCryptVerifySignature
+Begin CDeviceMap::GetDevices, flags: 0x%08x
+Begin CDriverMap::GetDrivers
+Begin DismDrivers
+BinaryType
+BinFileVersion
+BinProductVersion
+Bios release date is not present
+Bios vendor is not present
+Bios version is not present
+BiosCharacteristics
+biosDate
+biosName
+BiosVendor:
+BIOSVersion
+biosVersion
+BMSRE3
+BMSRH
+BoeProgramId
+BoeProgramLanguage
+BoeProgramName
+BoeProgramPublisher
+BoeProgramVersion
+bthenum\dev_
+bthle\dev_
+Buffer overflow
+Built HardwareIds string
+BusReportedDescription
+Bytes written to buffer does not match size of buffer
+C(9G(uAH
+C(H;C(H
+C@9G@uI
+C\$hA
+C\$PA
+C\$XA
+c2Y@6
+C84>u
+Calculated absolute address out of bounds
+CallContext:[%hs] 
+CancelWaitableTimer
+Cannot create inventory cache. Out of memory
+Capacity
+Caption
+Catalog handle is null in call to function
+CatalogSigners
+Categories
+CCachedFile::_ComputeFileId
+CCachedFile::_ReloadFileProperties
+CCachedFile::_ReloadPEProperties
+CCachedFile::ComputeFileKey
+CCachedFile::GetImageProperties
+CCachedFile::GetSignatureInfo
+CCachedFile::GetVersionStrings
+CCachedFile::Initialize
+CCachedFolder::ComputeFolderKey
+CCachedFolder::Initialize
+CCachedFolder::LookupFile
+CD$@f
+CD$`A
+CD$`E3
+CD$`H
+CD$8H
+CD$Hf
+CD$PD
+CD$PE
+CD$Pf
+CD$PH
+CD$PI
+CD$XH
+CD$xH
+CD$XH
+CD$xH
+CD$XI
+CDevHelper::ExecWmiQuery
+CDevHelper::GetCpuMaxSpeedFromRegistry
+CDevHelper::IdsFromSmsCfgIni
+CDevHelper::ReadFileData
+CDevHelper::StrToUnicode
+CDevHelper::WriteBstrToFile
+CDevice::AddToTelemetryCache
+CDevice::Initialize
+CDevice::InitializeHardwareIds
+CDevice::InitializeStackIds
+CDeviceClassDataManager::Initialize
+CDeviceClassDataManager::SetClassData
+CDeviceContainer::AddDevice
+CDeviceContainer::CalcDeviceDataId
+CDeviceContainer::CalcDeviceModelId
+CDeviceContainer::EnumerateDevicesCallback
+CDeviceContainer::InitDeviceModelId
+CDeviceContainer::InitDeviceOrderId
+CDeviceContainer::InitDevicesAsync
+CDeviceContainer::InitDevicesSync
+CDeviceContainer::Initialize
+CDeviceContainer::InitSingleDevice
+CDeviceContainer::Insert
+CDeviceContainer::OnChange
+CDeviceContainer::OnRemove
+CDeviceContainer::Retrieve
+CDeviceContainer::RetrieveSyncId
+CDeviceContainer::SendStartSync
+CDeviceDriverMap::Initialize
+CDeviceDriverMap::InitializeDrivers
+CDeviceInterface::Initialize
+CDeviceInterface::Insert
+CDeviceInterface::OnChange
+CDeviceInterface::Retrieve
+CDeviceInterface::RetrieveSyncId
+CDeviceInterface::SendStartSync
+CDeviceInventoryItem::GetClassListProperty
+CDeviceInventoryItem::GetListProperty
+CDeviceInventoryItem::IsDeviceBlackListed
+CDeviceInventoryItem::OnChange
+CDeviceInventoryItem::OnRemove
+CDeviceInventoryItem::PopulateListClassProperties
+CDeviceInventoryItem::PopulateListDeviceProperties
+CDeviceInventoryItem::PopulateMiscProperties
+CDeviceInventoryItem::PopulateScalarGuidProperties
+CDeviceInventoryItem::PopulateScalarStringProperties
+CDeviceInventoryItem::ProvideInventory
+CDeviceInventoryItem::RetrieveSyncId
+CDeviceInventoryItem::SendStartSync
+CDeviceInventoryItem::SetDeviceId
+CDeviceInventoryItem::SetItemKey
+CDeviceMap::AddContainer
+CDeviceMap::AddDevice
+CDeviceMap::CheckDeviceTree
+CDeviceMap::CheckEssentialProperties
+CDeviceMap::CheckNullProperties
+CDeviceMap::EnumerateContainersCallback
+CDeviceMap::GetClassFilters
+CDeviceMap::GetDevices
+CDeviceMap::GetIdProperty
+CDeviceMap::GetStringListProperty
+CDeviceMap::GetStringProperty
+CDeviceMap::GetStringVectorProperty
+CDeviceMap::InitContainersAsync
+CDeviceMap::InitContainersSync
+CDeviceMap::Initialize
+CDeviceMap::InitializeImportFunctions
+CDeviceMap::InitSingleContainer
+CDeviceMap::LookupString
+CDeviceMap::Release
+CDeviceMap::SetThreadLanguages
+CDevInventory::CreateDevInventoryToCache
+CDevInventory::GetACPICapability
+CDevInventory::GetChassisInfo
+CDevInventory::GetDeviceMap
+CDevInventory::GetDiskInfo
+CDevInventory::GetDiskInfoList
+CDevInventory::GetMachineInfo
+CDevInventory::GetMediaDriveInfo
+CDevInventory::GetMediaProperties
+CDevInventory::GetMemoryInfo
+CDevInventory::GetNetworkAddresses
+CDevInventory::GetNetworkInfo
+CDevInventory::GetPingBackInfo
+CDevInventory::GetProcessorInfo
+CDevInventory::GetVideoInfoList
+CDevInventory::Initialize
+CDevInventory::ReportWatsonEvent
+CDriver::Initialize
+CDriver::Insert
+CDriver::OnChange
+CDriver::OnRemove
+CDriver::Retrieve
+CDriver::RetrieveSyncId
+CDriver::SendStartSync
+CDriverMap::AddDriver
+CDriverMap::AddDriverStorePackage
+CDriverMap::AddDriverStorePackageDetailed
+CDriverMap::AddDriverStorePackages
+CDriverMap::AddKernelDrivers
+CDriverMap::AddPackageToCache
+CDriverMap::AddPrinterDrivers
+CDriverMap::AddScmDrivers
+CDriverMap::AddService
+CDriverMap::AddUserDrivers
+CDriverMap::CheckProcessWow64
+CDriverMap::FindDriver
+CDriverMap::FindService
+CDriverMap::GetDriverFileNameFromServiceName
+CDriverMap::GetDriverInfFromServiceName
+CDriverMap::GetDriverPathFromServiceName
+CDriverMap::GetDrivers
+CDriverMap::GetFilterDrivers
+CDriverMap::GetUserModeDriverPath
+CDriverMap::Initialize
+CDriverMap::InitializeImportFunctions
+CDriverMap::IsServiceBootStart
+CDriverMap::LookupString
+CDriverMap::NormalizeFilePath
+CDriverMap::Release
+CDriverMap::RemoveDeletedDriverPackages
+CDriverPackage::AddToTelemetryCache
+CDriverPackage::Compare
+CDriverPackage::Initialize
+CDriverPackage::InitializeHardwareIds
+CDriverPackage::InitializeSysFiles
+CDriverPackage::OnChange
+CDriverPackage::OnRemove
+CDriverPackage::RetrieveSyncId
+CDriverPackage::SendStartSync
+CDriverPackageDetailed::GetSysSigningInfo
+CDriverPackageDetailed::Initialize
+CDriverPackageDetailed::InitializeSysFiles
+CDriverPackageDetailed::RetrieveSyncId
+CDriverPackageDetailed::SendStartSync
+CDriverPackageDetailed::SendUTC
+CertCloseStore
+CertDuplicateCertificateContext
+CertFreeCertificateContext
+CertGetCertificateContextProperty
+CertGetNameStringW
+cfgmgr32.dll
+ChannelName
+Checking full-connectedness ... visiting node: %p
+Chttp://www.microsoft.com/pkiops/crl/MicWinProPCA2011_2011-10-19.crl0a
+CInventoryCache::_LookupFolder
+CInventoryCache::~CInventoryCache
+CInventoryCache::GetCachedFile
+CInventoryCache::GetFileProperties
+CInventoryCache::Load
+CInventoryCache::SplitFileNameAndPath
+circlass
+CL$@H
+CL$hA
+CL$HH
+CL$hI
+CL$PA
+CL$PH
+CL$pH
+CL$PH
+CL$PI
+CL$XD
+CL$xI
+Class
+ClassGuid
+ClearDevinvCacheAndSendStartSyncs
+CloseHandle
+CloseServiceHandle
+Closing SCM Manager handle
+CLR version string null or too long
+ClrVersion
+CMachine::Initialize
+CMachine::InitializeHardwareIds
+CMachine::ParseBaseboardAttributes
+CMachine::ParseBiosAttributes
+CMachine::ParseEnclosureAttributes
+CMachine::ParseSystemAttributes
+CMachine::QuerySmBiosData
+CMediaClassData::SetClassData
+CMediaClassItem::OnChange
+CMediaClassItem::OnRemove
+CMediaClassItem::RetrieveSyncId
+CMediaClassItem::SendStartSync
+CoCreateInstance
+CodeIntegrity.Telemetry
+CoInitializeEx
+CoInitializeSecurity
+CommercialDataOptIn
+CommonFilesDir
+CommonFilesDir (x86)
+CommonProgramFiles
+CommonProgramFiles(x86)
+CompanyName
+CompatFailure01
+Compattel folder does not exist
+COMPID
+ComputerHardwareId
+ComputerMetaData\
+ComputeSha1Hash failed [%x]
+ConfigureTelemetryOptInChangeNotification
+ConfigureTelemetryOptInSettingsUx
+ConstructPartialMsgVW
+ContainerId
+ConvertKeyToPath
+ConvertListToStr
+ConvertPathToKey
+CorrelationVectors
+CoSetProxyBlanket
+Could not find a root node (not good).
+CoUninitialize
+Counts
+CPropertyStore::GetValue
+CPropertyStore::Initialize
+CrcChecksum
+CrcFileStart  : %I64u
+CrcViewOffset : %I64u
+CreateActCtxW
+Created
+CreateDeviceInventory
+CreateDeviceInventoryTC
+CreateDeviceInventoryTC2
+CreateDirectoryW
+CreateEvent failed
+CreateEventW
+CreateFile failed for file [%ws] with error 0x%08x
+CreateFile for usb hub failed for %ws, %d
+CreateFileMapping failed with 0x%08x
+CreateFileMappingW
+CreateFileW
+CreateMutexW
+CreateSemaphoreW
+CreateWaitableTimerW
+CRYPT32.dll
+CryptAcquireContext failed with 0x%08x
+CryptAcquireContext succeeded
+CryptAcquireContextW
+CryptCATAdminAcquireContext
+CryptCATAdminCalcHashFromFileHandle
+CryptCATAdminEnumCatalogFromHash
+CryptCATAdminReleaseCatalogContext
+CryptCATAdminReleaseContext
+CryptCATCatalogInfoFromContext
+CryptCATClose
+CryptCATEnumerateCatAttr
+CryptCATOpen
+CryptCreateHash
+CryptDecodeObject
+CryptDestroyHash
+CryptGetHashParam
+CryptHashData
+CryptMsgClose
+CryptMsgGetParam
+CryptQueryObject
+CryptReleaseContext
+CT$@M
+CT$`H
+CT$`I
+CT$8I
+CT$HH
+CT$PH
+CT$XH
+CUsbHubClass::Initialize
+CUsbHubClass::Insert
+CUsbHubClass::OnChange
+CUsbHubClass::Retrieve
+CUsbHubClass::RetrieveSyncId
+CUsbHubClass::SendStartSync
+Custom
+cv?|U
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+D$ fD
+D$ I!
+d$(E3
+D$(E3
+D$(H;
+D$@;E
+D$@D;d$<
+d$@E3
+D$@f;D$B
+D$@fA
+d$@fA9
+D$@H;
+D$@H+
+D$@H+D$8H
+D$\:8
+D$\I!C
+D$`E3
+D$`f9
+d$`fD
+D$`L+
+D$01E
+D$0E3
+d$0E3
+D$0E3
+D$0fD
+D$0H;
+D$8A;
+D$8E3
+D$8fA
+D$8fE
+D$8H!\$0
+D$8H;G
+D$8H9
+D$8J9
+D$8L+
+D$8t'H
+D$DE3
+D$H9D$@
+D$hD!t$DH
+D$HE3
+d$HfD
+D$HL9A
+D$PE3
+d$pfD
+D$PH!D$0
+D$pIc
+D$PL+
+D$TH!D$8H
+D$xE3
+D$XE3
+D$xE3
+D;|$@
+D;C$r
+D;d$0r
+D;l$0
+D8\$0t!H
+D8{9H
+D8=]o
+D8h9t
+D8h9u
+D8hIt
+D8hIu
+D8i9u-H
+D8iIu8H
+D8k9uCH
+D8kIuRL
+D8rIuJH
+D8vIt
+D8wIu&H
+D8wiu)H
+D8x9t
+D8x9u
+D9%@w
+D9%>|
+D9%3"
+D9%I 
+D9%O}
+D9%pt
+D9-@i
+D9{ u
+D9|$Hu
+D9}Ht;f9E8u
+D9=!3
+D9=a2
+D9=cb
+D9=m&
+D9=O.
+D9=xx
+D9=Y0
+D95 4
+D95% 
+D95+h
+D95AL
+D95gM
+D95jJ
+D95O"
+D95t?
+D95vD
+D95VI
+D95zp
+D9d$@v}L
+D9d$`
+D9d$Du
+D9d$H
+D9-dg
+D9fhvoH
+D9l$`
+D9l$0
+D9-Pe
+D9-rd
+D9t$@
+D9t$p
+DATA_ONLY
+DebugBreak
+DelayLoadFailureHook
+DeleteCriticalSection
+DeleteFileW
+deque<T> too long
+Description
+Detailed Driver Package, sysfiles: %ws
+DevCloseObjectQuery
+DevCreateObjectQuery
+DevCreateObjectQuery failed with 0x%08x
+Device [%ws] has a null container device model id.
+Device [%ws] has a null container id (a.k.a. model instance ID).
+Device [%ws] has no IDs (hardware or compatible)
+Device [%ws] has null hardwareids/compatibleids lists.
+Device [???] has a null hardwareid.
+Device container categories is null for all devices.
+Device container icon is null for all devices.
+Device container manufacturer is null for all devices.
+Device container model instance ID is null for all devices.
+Device container primary category is null for all devices.
+Device description property is null for all devices.
+Device id is NULL
+Device Inventory Library
+Device last removal date is not set for instance ID %ws
+Device manufacturer is null for all devices.
+Device model name is null for all devices.
+Device store is not initialized
+Device store isn't initialized
+Device: node: %p, parent: %p, ID: [%ws]
+DeviceContainer [%ws] was disconnected recently, marking as active
+DeviceDisplayObject\HardwareId\ComputerMetadata#
+DeviceId is black-listed, %ws
+DeviceInstanceId
+DeviceInterfaces
+DeviceInventory.xml
+DeviceIoControl
+DeviceMap Initialized
+DeviceMapInitialize
+DeviceMapInitializeTelemetryAndCache
+Devices in DeviceContainer [%ws] being initialized asynchronously
+Devices in DeviceContainer [%ws] being initialized synchronously
+DeviceState
+DeviceUsbHubClass
+devinv
+devinv.dll
+DevInv.dll
+devinv.dll
+DevInv.pdb
+Devinv_Nightly_Cpu_0.1gCycles
+Devinv_Nightly_Ms
+Devinv_Oobe_Cpu_0.1gCycles
+Devinv_Oobe_Ms
+Devinv_SetupDevices_Cpu_0.1gCycles
+Devinv_SetupDevices_Ms
+Devinv_SetupSystem_Cpu_0.1gCycles
+Devinv_SetupSystem_Ms
+DEVOBJ.dll
+DevObjCreateDeviceInfoList
+DevObjCreateDeviceInfoList failed, %d
+DevObjCreateDeviceInfoList or DevObjGetClassDevs failed with 0x%08x
+DevObjDestroyDeviceInfoList
+DevObjEnumDeviceInfo
+DevObjEnumDeviceInterfaces
+DevObjGetClassDevs
+DevObjGetClassProperty
+DevObjGetDeviceInterfaceDetail
+DevObjGetDeviceInterfaceDetail failed: %d
+DevObjGetDeviceProperty
+DevObjOpenDeviceInfo
+DevObjOpenDeviceInfo failed, %d
+Did not find
+Directory
+DisableDeviceDelete
+DisableDiagnosticDataViewer
+DisableTelemetryOptInChangeNotification
+DisableTelemetryOptInSettingsUx
+DiscoveryMethod
+DISM_{53BFAE52-B167-4E2F-A258-0A37B57FF845}
+dismapi.dll
+dismapi.dll not found
+DismCloseSession
+DismDelete
+DismGetDriverInfo
+DismGetDriverInfo failed %x
+DismGetDrivers
+DismInitialize
+DismOpenSession
+DismShutdown
+DLdE3
+DOS_MODULE
+Driver binary does not exist
+Driver binary does not exist %ls
+Driver is not CI signed. 0x%x
+Driver path could not be normalized [%ws]
+driver path longer than MAX_PATH-1 
+Driver store inf path is bad. %ws
+DriverCheckSum
+DriverCompany
+DriverId
+DriverInBox
+DriverIsKernelMode
+DriverLastWriteTime
+DriverName
+DriverPackageExtended
+DriverPackageExtendedAdd
+DriverPackageExtendedStartSync
+DriverPackageStore store is not initialized
+DriverPackageStrongName
+DriverSigned
+DriverTimeStamp
+DriverType
+DriverVerDate
+DriverVersion
+DriverVerVersion
+dump_
+DyR4(
+E%oE:FO
+E(=csm
+E/H9G
+E8=csm
+E8iIt
+E8iIu
+E8x9t
+E8y9t
+effffff
+Eh=csm
+EH=csm
+eHD9f
+Ehttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z
+Ehttp://crl.microsoft.com/pki/crl/products/MicTimStaPCA_2010-07-01.crl0Z
+Ehttp://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt0
+EmbeddedSigners
+Empty syncId
+empty syncId
+Encountered null NT header
+End CDeviceMap::GetDevices
+End CDriverMap::GetDrivers
+End DismDrivers
+EnergyMeter
+EnterCriticalSection
+Entered CreateDeviceInventory
+Entered CreateDevInventoryToCache
+entoryDriverPackageStartSync
+EnumDeviceDrivers
+Enumerator
+EnumPrinterDriversW
+EnumServicesStatusExW
+EnumSystemFirmwareTables
+en-us
+ERROR
+Error accessing the cache: %d %ws
+ERROR#%s#%d
+Error: %s, %u: 
+EtwEventRegister
+EtwEventUnregister
+EtwEventWrite
+EtwTraceMessage
+EventRegister
+EventSetInformation
+EventUnregister
+EventWriteTransfer
+Ex=csm
+EX=csm
+Exception
+Exception encountered [%x]
+Exception retrieving version block [%x] for '%ls'
+ExpandEnvironmentStringsW
+Export directory invalid or invalid image format
+Export directory pointer invalid (points to location outside file), invalid image format
+ext-ms-win-printer-winspool-l1-1-3.dll
+ext-ms-win-setupapi-classinstallers-l1-1-0
+ext-ms-win-setupapi-classinstallers-l1-1-1
+ext-ms-win-setupapi-classinstallers-l1-1-2
+ext-ms-win-setupapi-classinstallers-l1-1-2.dll
+ext-ms-win-setupapi-inf-l1-1-0
+ext-ms-win-setupapi-inf-l1-1-1
+f;D$ t
+f;D$hu$L
+f;D$pu
+f9,Au
+f9,Ku
+f9,zu
+f9\$@
+f9\$P
+f9|$0u
+f9<Au
+f9<Ku
+f9<Xu
+f9D$ u
+f9D$@u
+f9t$(u
+fA9<Bu
+fA9>t\L
+fA98u0I
+fA9TM
+Faield to map hardware ids 0x%08x
+Failed enum device function 0x%08x
+Failed get device count 0x%08x
+Failed getting file image information for [%ws] 0x%08x
+Failed getting file version for [%ws] 0x%08x
+Failed getting FileId for [%ws] 0x%08x
+Failed getting path to system binary kernel32.dll
+Failed getting path to system directory
+Failed hashing for %ws, 0x%08x
+Failed hashing for [%ws] 0x%08x
+Failed StringCchPrintf
+Failed to acquire cat admin context. 0x%08x
+Failed to add computer hardware id container and device 0x%08x
+Failed to add detailed driver package %08x
+Failed to add dism driver package %08x
+Failed to add driver [%ws]
+Failed to alloc language string
+Failed to alloc memory for string value (index %d)
+Failed to alloc name string
+Failed to allocate %d bytes for user key buffer
+Failed to allocate ami store [%d]
+Failed to convert attribute to string [%x]
+Failed to convert container guid string to guid 0x%08x
+Failed to convert GUID
+Failed to convert GUID.
+Failed to convert hash to string 0x%08x
+Failed to copy attribute value (index %d) [%x]
+Failed to copy NULL file ID [%x]
+Failed to create activation context [%x]
+Failed to create device event. 0x%08x
+Failed to create event [%d]
+Failed to create hash 0x%08x
+Failed to create semaphore [%d]
+Failed to create test key under provider: %ws [%d]
+Failed to create timer [%d]
+Failed to delete test key under provider: %ws [%d]
+Failed to ensure file mapping as data [%x]
+Failed to ensure the file mapping as data [%x]
+Failed to find driver [%ws]
+Failed to find the Cor20Header
+Failed to format attribute index: %d
+Failed to get a value to use for BOE App name.
+Failed to get association array %08x
+Failed to get attribute index %u [%x]
+Failed to get class data from media device %08x
+Failed to get computer hwid %08x
+Failed to get container count 0x%08x
+Failed to get file id [%d]
+Failed to get file last write time 0x%x
+Failed to get file last write time: 0x%x
+Failed to get file version info for %ws: 0x%x
+Failed to get filter drivers
+Failed to get filter name
+Failed to get function SHGetSignatureInfo [%x]
+Failed to get hash value 0x%08x
+Failed to get IFunctionDiscovery COM 0x%08x
+Failed to get image properties for %ws: 0x%x
+Failed to get image signature info for %ws: 0x%x
+Failed to get instance collection 0x%08x
+Failed to get Inventory (Census) ID %d
+Failed to get key [%d]
+Failed to get module type attribute [%x]
+Failed to get ntheaders [%x]
+Failed to get NtHeaders for PE file %S [%x]
+Failed to get os version
+Failed to get program id [%d]
+Failed to get root key [%d]
+Failed to get single container 0x%08x
+Failed to get sm bios data 0x%08x
+Failed to get SMBIOS(baseboard) information (Type 1). 0x%08x
+Failed to get SMBIOS(bios) information (Type 0). 0x%08x
+Failed to get SMBIOS(enclosure) information (Type 3). 0x%08x
+Failed to get SMBIOS(system) information (Type 1). 0x%08x
+Failed to get store full path [%d]
+Failed to get USB hub container id, %d
+Failed to get USB hub device id: %d
+Failed to get version info for [%ws] 0x%08x
+Failed to get version info size for [%ws]. 0x%08x
+Failed to give privilege [%d]
+Failed to hash File path [%#x]
+Failed to hash id 0x%08x [%ws]
+Failed to init container instance 0x%08x
+Failed to init device instance 0x%08x
+Failed to init single container 0x%08x
+Failed to initialize detailed driver store package %08x
+Failed to initialize dism driver store package %08x
+Failed to initialize imported apis from cfgmgr32.dll. 0x%08x
+Failed to initialize imports. 0x%08x
+Failed to initialize machine hardware ids. 0x%08x
+Failed to initialize media class data %08x
+Failed to initialize new cached folder: 0x%x
+Failed to initialize property store for container 0x%08x
+Failed to initialize security descriptor [%d]
+Failed to initialize single container 0x%08x
+Failed to initialize store [%d]
+Failed to initialize store [%d] - Attempting to reset cache permissions
+Failed to initialize UtcThrottle [%d]
+Failed to insert mac address string
+Failed to lookup file: 0x%x
+Failed to lookup folder %ws: 0x%x
+Failed to open file key [%d]
+Failed to open file: 0x%x
+Failed to open property store 0x%08x
+Failed to open reg key [%x]
+Failed to open service key: 0x%x, (%ws)
+Failed to open timer [%d]
+Failed to query activation context [%x]
+Failed to query key value [%x]
+Failed to retrieve inventory item %ws from the cache
+Failed to send Watson report
+Failed to split file path into folder path and file name: 0x%x
+Failed to store Ami cache path [%d]
+Failed to update store permissions [%d]
+Failed to write to provider: %ws [%d]
+Failed with %08x
+Failed with 0x%08x
+FailedToGetValue
+FailFast
+Failure in initialization with 0x%08x
+Failure in initializing container categories with 0x%08x
+Failure in initializing Device Data ID with 0x%08x
+Failure in initializing Device Model ID with 0x%08x
+Failure in initializing Device Order ID with 0x%08x
+FailureReason
+false
+Family
+Far::AttributeValueToString
+Far::RetrieveSpecifiedFileAttributes
+Far::StringFromBinaryType
+fB9,ru
+fB94Bu
+fD;)u
+fD;1t
+fD;t$8
+fD9"t
+fD9#u
+fD9$Au
+fD9$Bu
+fD9$Cu
+fD9$Hu
+fD9$ou
+fD9$Xu
+fD9&u
+fD9(t
+fD9)t
+fD9)u
+fD9,Au
+fD9,Bu
+fD9,Hu
+fD9,Xu
+fD9.I
+fD9?u
+fD9<Au
+fD9<Gu
+fD9<Hu
+fD9<Xu
+fD94Au
+fD94Bu
+fD94Cu
+fD94Gu
+fD94Hu
+fD94Pu
+fD94Vu
+fD94Xu
+fD94xu
+fD94Xu
+fD94xu
+fD94Xu
+fD94xu
+fD94Xu
+fD94xu
+fD94Xu
+fD94xu
+fD98t
+fD98u
+fD9t$(u
+fD9t$8u
+fD9t]
+fE; t
+fE;2t
+fE9<Du
+fE9<Fu
+fE94@u
+fE94Du
+fE94Gu
+fE94pu
+fE9dE
+fE9Lm
+fE9T]
+fE9tE
+FEEDBACKTOOL.XSL
+fF9<qu
+fffffff
+fG9T}
+File [%ws] does not have a version resource.
+File mapping invalid
+File mapping invalid [%x]
+File mapping not a PE [%x]
+File name argument is null in call to function
+File name/path argument is null in call to function
+FileDescription
+FileId
+FileName
+Filename parameter was null in call to function
+FileSigningInfo
+FileSigningInfo::GetCatalogSignerInfo
+FileSigningInfo::SendSigningUTC
+FileSigningInfoAdd
+FileSigningInfoStartSync
+FileSize
+FileSize      : %I64u
+FileTimeToLocalFileTime
+FileTimeToSystemTime
+FileTimeToSystemTime failed [%d]
+FileTimeToSystemTime failed, %d
+FileType
+FileVersion
+Filter info size is too big %d
+FilterFindClose
+FilterFindFirst
+FilterFindNext
+FindClose
+FindFirstFileW
+FindNextFileW
+FloorElevation
+FLTLIB.DLL
+Folder path argument is null in call to function
+Folder path is null in call to function
+For file %ws, type %ws, name %ws
+FormatMessageW
+FormatNPVString
+Found
+Found duplicate instance ID: %p
+Found more than one root node for the device tree (not good).
+Found root node of the device tree: %p.
+Found root node: %p
+fprintf
+Freeing cfgmgr32.dll
+Freeing dismapi.dll
+Freeing memory for ContainerList and DeviceList
+Freeing memory for DriverList and DriverPackageList
+Freeing psapi.dll
+FreeLibrary
+FreeLibraryAndExitThread
+FriendlyName
+Full driver path expected instead of [%ws]
+FullPath
+Function [%hs] from library [%ws] imported successfully
+G(H;G(H
+G(L9x
+Gathering chassis info
+Gathering disk info
+Gathering machine info
+Gathering machine memory info
+Gathering media info
+Gathering network info
+Gathering ping back info
+Gathering processor info
+Gathering video info
+GeomagneticOrientation
+Get subfolder failed: %d
+GetAdaptersInfo
+GetAdditionalInventory
+GetAndSaveDriverIdFromService
+GetComputerNameW
+GetCounterSignerInfo
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+GetDeviceDriverFileNameW
+GetDeviceMap timeout
+GetDevInventory
+GetDiskFreeSpaceExW
+GetDriverSignInfo
+GetDriveTypeW
+GetFileAttributesW
+GetFileImageInfo
+GetFileImageInfo failed for for [%ws] 0x%08x
+GetFileLastWriteTime
+GetFileLastWriteTime failed for %ws. Folder optimization disabled
+GetFileProperties failed for [%ws] with 0x%08x
+GetFileSize
+GetFileSize failed, 0 file size
+GetFileTime
+GetFileVersionInfoSizeW
+GetFileVersionInfoW
+GetFileVersions
+GetInvInboxRedirectImpl
+GetInvIsSystemModule
+GetInvModuleInPath
+GetInvModuleInPath failed %#x
+GetInvModuleVersion
+GetItemsFromCache
+GetItemsFromProvider
+GetItemsFromProvider %ls FAILED %#x
+GetKmdfVersion
+GetLastError
+GetListProperty out of memory.
+GetLogicalDriveStringsW
+GetModuleBaseNameW
+GetModuleFileName failed %#x
+GetModuleFileNameA
+GetModuleFileNameW
+GetModuleHandle failed with 0x%08x
+GetModuleHandleEx failed %#x
+GetModuleHandleExW
+GetModuleHandleW
+GetNdisVersion
+GetNetworkParams
+GetPhysicallyInstalledSystemMemory
+GetPhysicallyInstalledSystemMemory API is not available; falling back to GlobalMemoryStatusEx.
+GetPhysicallyInstalledSystemMemory failed.
+GetProcAddress
+GetProcAddress failed for [%hs] [%ws] with 0x%08x
+GetProcAddress failed with 0x%08x
+GetProcedureAddress
+GetProcessHeap
+GetRegistryKeyString
+GetRegistryKeyString failed %d for %ws
+GetSystemDefaultLangID
+GetSystemDirectory failed %#x
+GetSystemDirectory failed with %d
+GetSystemDirectoryW
+GetSystemFirmwareTable
+GetSystemInfo
+GetSystemTimeAsFileTime
+GetSystemWindowsDirectory [%d]
+GetSystemWindowsDirectoryW
+GetTempFileNameW
+GetTempFileNameW [%d]
+GetTempPathW
+GetTempPathW [%d]
+GetThreadPreferredUILanguages
+GetTickCount
+GetTickCount64
+GetUmdfVersion
+GetVersion [%#x]
+GetVersionExW
+GetVolumeInformationW
+GetWindowsDirectoryW
+gfffffffH
+gfffffffH+
+gfffffffI
+Global\AmiProviderMutex_
+Global\AmiUtcThrottlingSemaphore
+Global\AmiUtcThrottlingTimer2
+GlobalMemoryStatusEx
+GlobalMemoryStatusEx failed.
+Got a handle to kernel32
+Got function address to GetSystemFirmware
+GPL9x
+GravityVector
+Gyrometer3D
+H USVWH
+h VWATAUAWH
+H WATAUAVAWH
+h WAVAWH
+H!\$ H
+H!\$(E3
+H!\$@E3
+H!\$pH
+H!\$xH
+H!|$0D
+H!|$8H
+H!|$xL
+H!D$0H
+H!t$ L
+H!t$(
+H;\$pr"M
+H;]`u
+H;_@u
+H;_Pu
+H;|$Hr
+H;0u$A
+H;C(H
+H;D$xr
+H;J sXH
+H;l$`
+H;O@t
+H;t$`r
+H;t$Hr
+H;t$pr
+H+9L;
+H+B H
+H+D$pH;
+H+s8I+
+H9- #
+H9\$Pt
+H9|$HvpH
+H9|$x
+H9}(H
+H9}(r
+H9=!:
+H9-=$
+H9=[y
+H9=^2
+H9=};
+H9=47
+H9=8}
+H9=9|
+H9=B6
+H9=IA
+H9=nY
+H9=R?
+H9=Y=
+H9=yp
+H9B(r
+H9-o!
+H9OHw
+H9sxr
+H9-v%
+H9VHw
+HA_A^A]A\_^
+hA_A^A]A\_^][
+Hardware\Description\System\BIOS
+Hardware\Description\System\CentralProcessor\0
+HashDigestLength
+HcEHH
+HcT$XH
+hdaudio
+HEALTH#%s#%s
+HeapAlloc
+HeapFree
+HighestAvailable
+Hub container id is %ws
+Humidity
+Hwids
+I;@(H
+I;_Hu(H
+I;FPu
+I;G(H
+I;M@u
+I0G1-0+
+ieee1667
+Ignore inbox driver package, %ws
+Ignore non-present device: %ws
+IIDFromString
+Image does not have an exports section.
+ImageDirectoryEntryToData
+imagehlp.dll
+ImageInfo argument was NULL in call to function
+ImageNtHeader
+ImagePath
+ImageSize
+Import functions initialized
+Info: %s, %u: 
+Initialize Containers asynchronously
+Initialize containers failed with 0x%08x
+Initialize Containers synchronously
+InitializeCriticalSection
+InitializeCriticalSectionEx
+Initialized import functions
+InitializeSecurityDescriptor
+InitializeSecurityDescriptor failed [%d]
+InsertStringTypeAttributes
+InstallState
+InternalName
+Invalid args
+Invalid arguments
+Invalid COM Descriptor virtual address encountered
+Invalid combination of Host/Current processor architectures passed to AslpEnvResolveVars Host: %x4 Current: %x4
+Invalid COR20 Metadata signature encountered
+Invalid COR20 Metadata virtual address encountered
+Invalid Export Directory Entry size returned: %u
+Invalid file attribute array
+Invalid parameters [%x]
+Invalid value type
+InventoryApplicationFile
+InventoryDeviceContainer
+InventoryDeviceInterface
+InventoryDeviceMediaClass
+InventoryDevicePnp
+InventoryDeviceUsbHubClass
+InventoryDriverBinary
+InventoryDriverPackage
+inventoryId
+InventoryVersion
+IOCTL_USB_GET_HUB_INFORMATION_EX failed: %d
+IOCTL_USB_GET_PORT_CONNECTOR_PROPERTIES failed: %d
+IPHLPAPI.DLL
+IsActive
+IsCertTimeStamped
+IsConnected
+IsDebuggerPresent
+iSHp6
+IsMachineContainer
+IsNetworked
+IsPaired
+IsTextUnicode
+iswalnum
+IsWow64Process
+iswprint
+JanFebMarAprMayJunJulAugSepOctNovDec
+JRich
+K D9~
+K SVWH
+k WAVAWH
+K{D?u
+k0L9s r
+K32EnumDeviceDrivers
+K32GetDeviceDriverFileNameW
+K32GetModuleFileNameExW
+Kdf99t
+Kernel version earlier than Vista, No WoW64 emulation
+kernel32
+Kernel32.dll
+Kernel32.dll could not be loaded; falling back to GlobalMemoryStatusEx.
+kernelbase.dll
+Kernel-ProductInfo
+kXL9sHr
+L!d$ E3
+L!d$(L!d$ 
+L!t$ A
+L!t$(H
+L!t$@H
+L!t$8L!t$0L!t$(L!t$ L!t$H3
+L$ E3
+L$ SUVWATAVAW
+L$ SUVWH
+L$ SVWH
+l$ VWATAUAVH
+l$ VWATAVAWH
+l$ VWAWH
+l$(E3
+L$(H3
+l$@fD
+L$@H3
+L$`@2
+L$`E3
+L$`eH
+l$`fD
+L$`H;
+L$`H;W
+L$`H3
+L$`LcA<M
+L$0E3
+l$0E3
+L$0L+
+L$4E3
+L$8E3
+L$8H+
+L$8H3
+L$8L+
+L$DE3
+L$H!D$8L
+L$hE3
+L$HH;
+l$HH+
+L$hH3
+L$HH3
+L$hH3
+L$hHcA<L
+L$hL9}
+L$LE3
+l$PE3
+L$pE3
+L$PE3
+L$pfD
+L$PH+L$XH
+L$pH3
+L$PH3
+l$xE3
+l$XE3
+l$XfD
+L$XH;
+L$XH3
+L$xH3
+L$XH3
+L$XHcA<L
+L$XL+
+L2CacheSize
+L2CacheSpeed
+L9#u]M9
+L9%$b
+L9%>Y
+L9%a[
+L9%R]
+L9%S`
+L9%U^
+L9-)J
+L9-@L
+L9[ht
+L9_xt
+L9{@u
+L9{0t#H
+L9|$xr
+L9|$Xr
+L9|$xr
+L9=_f
+L9=|h
+L9=1G
+L9=J]
+L9=P 
+L9=QF
+L9=Qi
+L9=qj
+L91uMH
+L95"l
+L95$.
+L95*/
+L95.o
+L95_*
+L95_D
+L95AU
+L95B$
+L95bc
+L95-d
+L95hO
+L95I)
+L9-6}
+L9d$HvnI
+L9d$Xt
+L9-KI
+L9l$`vNI
+L9l$0ud
+L9l$8
+L9NHw
+L9o@u
+L9opuwH
+L9qxt
+L9-sO
+L9spr
+L9t$`
+L9T$0t
+L9-vM
+L9-X{
+LastAccessed
+LcA<E3
+LcJ<I
+LdrResFindResource failed %ls [%x]
+LdrResFindResource failed [%x]
+LdrResFindResource returned null version block with status: [%x]
+LdrResSearchResource
+LeaveCriticalSection
+Legal_Policy_Statement
+LegalCopyright
+Level
+Library [%ws] loaded successfully
+LimitEnhancedDiagnosticDataWindowsAnalytics
+LinearAccelerometer
+LinkDate
+LinkerVersion
+list<T> too long
+liTime.QuadPart is overflowed
+LoadLibraryExW
+Local\TKDisableControlEvent
+Local\TKPingEvent
+LocalAlloc
+LocalFree
+LogFlags
+LogHr
+LowerClassFilters
+LowerFilters
+lstrcmpA
+m,L9P
+M;]@t]I;
+M;P(M
+M;VPt}I;
+M@8P)
+M@H;V
+m|L9P
+m<L9P
+M0K0I
+M9x(t\E9x tVM
+MachineID
+Magic
+Magnetometer3D
+MakeStructuredArrayBuffer
+malloc
+manufacturer
+Manufacturer
+map/set<T> too long
+MapRelativeAddress
+MapRelativeAddress failed on exported Functions
+MapViewOfFile
+MapViewOfFile failed with 0x%08x
+MatchingID
+MaxClockSpeed
+media
+Media store is not initialized
+Media store is NULL
+memcmp
+memcpy
+memcpy_s
+memmove
+MemoryInfo
+memset
+Message
+Message too long!
+Messages
+Metric
+Metrics
+Microsoft
+Microsoft Base Cryptographic Provider v1.0
+Microsoft Corporation
+Microsoft Corporation1
+Microsoft Corporation1!0
+Microsoft Corporation1&0$
+Microsoft Corporation1)0'
+Microsoft Corporation1.0,
+Microsoft Corporation1:08
+Microsoft Corporation1>0<
+Microsoft Corporation1200
+Microsoft Primitive Provider
+Microsoft Root Authority
+Microsoft Test Root Authority
+Microsoft Time-Stamp PCA 2010
+Microsoft Time-Stamp PCA 20100
+Microsoft Time-Stamp Service
+Microsoft Time-Stamp Service0
+microsoft windows
+microsoft windows hardware compatibility publisher
+Microsoft Windows Operating System
+Microsoft Windows0
+Microsoft.Windows.Compatibility.Asl
+Microsoft.Windows.Inventory.Core
+Microsoft_WDF_UMDF_Version
+microsoft1-0+
+Missing
+missing required argument [%d]
+mlL9P
+model
+Model
+ModelId
+ModelName
+ModelNumber
+Modified
+ModuleName
+ModuleVersion
+MoveFileExW
+MS Protected Media Test Root
+MSFT1200
+Msg:[%ws] 
+msvcrt.dll
+MultiByteToWideChar
+n)n!!A&
+N0L0J
+Names
+nCipher NTS ESN:57F6-C1E0-554C1+0)
+NdisMajorVersion
+NdisMinorVersion
+NE16_MODULE
+nmwcd
+No driver package file in: %ws
+No network card present
+No user mode driver path found under the registry key.
+-no_driver_package_info
+ntdll.dll
+NtLoadKeyEx
+NtOpenKey failed for %ws [%x]
+NtQueryInformationFile failed [%x]
+NtQueryKey
+NtQueryLicenseValue
+NtQuerySecurityPolicy
+NtQuerySystemInformation
+NtQuerySystemTime
+NULL argument in call to function
+Number of ports for the hub: %d
+Number of usable ports for the hub is: %d
+o(L9w
+o\$PH
+O0M0K
+objectInstanceId
+ObjectLength
+ObjectRetrieverInstance::AddItemProperty failed %#x
+ObjectRetrieverInstance::StartItem failed %#x
+objectType
+oD$ f
+oK0D$"<
+oL$0f
+OLEAUT32.dll
+onecore\base\appcompat\inventory\hardware\deviceinv\src\deviceinv.cpp
+onecore\base\telemetry\permission\product\telemetrypermission.cpp
+Opened SCM Manager
+OpenEventW
+OpenSCManagerW
+OpenServiceW
+OpenTempProvider [%#x]
+OpenWaitableTimerW
+OptInLevel
+Order
+Orientation
+OriginalFileName
+OriginalFilename
+OriginalInf
+OsComponent
+OSVersion
+oT$@f
+Out of memory
+Out of Memory
+Out of memory
+Out of memory [%x]
+Out of memory while checking if HW tree is fully connected.
+Out of memory while checking the device tree.
+Out of memory.
+OutputDebugStringA
+OutputDebugStringW
+p AWH
+p WATAUAVAWH
+p WAUAWH
+p WAVAWH
+p%s_%s_%s
+p[F5_
+PA^^[
+PA^_^
+PA_A\_^]
+pA_A^A\_^
+PA_A^A]A\_
+PA_A^A]A\_^[
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+pageFile
+ParentId
+PartB_Ms.Device.DeviceInventoryChange
+Path and filename must both be NULL or not NULL
+PathCchRemoveFileSpec
+PathCommonPrefixW
+PathFindFileNameW
+pciide
+pcmcia
+PE32_ARM
+PE32_CLR_32
+PE32_CLR_IL
+PE32_CLR_IL_PREFER32
+PE32_I386
+PE32_UNKNOWN
+PE64_AMD64
+PE64_ARM64
+PE64_CLR_64
+PE64_IA64
+PE64_UNKNOWN
+PeChecksum
+Pedometer
+PeHeaderHash
+PeImageType
+PermissionsCheckTestKey
+PeSubsystem
+PfnRetrieveGroupAttributes for index %u failed [%x]
+PingBackInfo
+policymanager.dll
+PolicyManager_FreeGetPolicyData
+PolicyManager_GetPolicy
+PowerPC
+PrimaryCategory
+print
+PRINT
+printer
+ProblemCode
+Procedure [%hs] not found.
+Process is not WoW64
+Process is WoW64
+ProcessorId
+ProcessorType
+Product
+ProductName
+ProductVersion
+ProgramData
+ProgramFiles
+ProgramFiles(x86)
+ProgramFilesDir
+ProgramFilesDir (x86)
+ProgramId
+PropVariantClear
+ProvideInventory FAILED %#x
+Provider
+Provider\Microsoft.Base.DeviceDisplayObjects
+ProviderName argument is null [%#x]
+ProviderSyncId
+ProviderVersion
+Proximity
+psapi.dll
+Public
+PwstrToWstringNoChange
+Qkkbal
+Queried SMBIOS data size
+QueryActCtxW
+QueryFileVersionString
+QueryFullProcessImageNameW
+QueryPerformanceCounter
+QueryServiceConfigW
+QueryThreadCycleTime
+R!s4Z
+r/D;C w)C
+r~akow
+RaiseFailFastException
+ramKB
+rbIcP,H
+Read SMBIOS data into buffer
+ReadFile
+realloc
+Redmond1
+RegCloseKey
+RegCreateKeyEx failed [%d]
+RegCreateKeyExW
+RegDeleteKeyExW
+RegDeleteKeyValueW
+RegDeleteKeyW
+RegDeleteTreeW
+RegDeleteValueW
+RegEnumKeyEx failed [%d]
+RegEnumKeyExW
+RegGetValue failed [%d]
+RegGetValueW
+RegLoadAppKey failed [%d]
+RegLoadAppKeyW
+RegLoadKey failed [%d]
+RegLoadKeyW
+RegOpenKey failed [%d]
+RegOpenKeyEx failed [%d]
+RegOpenKeyExW
+RegQueryInfoKeyW
+RegQueryValueExW
+RegSaveKeyEx failed [%d]
+RegSaveKeyExW
+RegSetKeySecurity
+RegSetKeySecurity failed [%d]
+RegSetKeyValueW
+RegSetValueEx failed [%d]
+RegSetValueExW
+RegUnLoadKeyW
+RelativeOrientation
+ReleaseActCtx
+ReleaseDate
+ReleaseMutex
+ReleaseSemaphore
+ReleaseSRWLockExclusive
+Releasing cat admin context
+Releasing crypto context
+Re-mapped file as image to get version block: %ls
+Remove: DeviceId is %ws
+ReportDeviceAdd
+ReportDeviceAddFromLib
+ReportDeviceRemove
+ReportDeviceRemoveFromLib
+RequireAdministrator
+Required APIs missing, driver scan impossible.
+Reserved.PlatformSigned
+ResetEvent
+ResolveDelayLoadedAPI
+ResolveImportedApis
+RetrieveStringTypeAttributes
+RetrieveStringTypeAttributes failed, (%d)
+ReturnHr
+ROOT\CIMV2
+RPCRT4.dll
+RSAPUBLICBLOB
+RSDSL
+RtlAdjustPrivilege
+RtlAllocateAndInitializeSid
+RtlAllocateAndInitializeSid failed [%d]
+RtlAllocateHeap
+RtlAnsiStringToUnicodeString
+RtlAnsiStringToUnicodeString failed [%x]
+RtlAppendUnicodeStringToString
+RtlAppendUnicodeToString
+RtlCaptureContext
+RtlDeleteCriticalSection
+RtlDosPathNameToNtPathName_U_WithStatus
+RtlDosPathNameToNtPathName_U_WithStatus failed for %S [%x]
+RtlDosPathNameToRelativeNtPathName_U
+RtlEnterCriticalSection
+RtlEqualString
+RtlFileMapInitializeByFilePath failed %S [%x]
+RtlFileMapMapView failed [%x]
+RtlFreeHeap
+RtlFreeSid
+RtlFreeUnicodeString
+RtlGetNativeSystemInformation
+RtlGetNativeSystemInformation failed [%x]
+RtlGetNtSystemRoot
+RtlGetPersistedStateLocation
+RtlGetVersion
+RtlImageDirectoryEntryToData
+RtlImageDirectoryEntryToData returned ExportDirectory that was too small
+RtlInitAnsiString
+RtlInitializeCriticalSection
+RtlInitString
+RtlInitUnicodeString
+RtlInitUnicodeStringEx
+RtlInitUnicodeStringEx failed [%x]
+RtlLeaveCriticalSection
+RtlLookupFunctionEntry
+RtlMultiByteToUnicodeN
+RtlNtStatusToDosError
+RtlRandomEx
+RtlReAllocateHeap
+RtlReleaseRelativeName
+RtlSecondsSince1970ToTime
+RtlStringCchCatW failed [%x]
+RtlStringCchCopyA failed [%x]
+RtlStringCchCopyW failed [%x]
+RtlStringCchLengthA failed [%x]
+RtlStringCchLengthW failed [%x]
+RtlStringCchPrintfW failed [%x]
+RtlStringFromGUID
+RtlTimeToTimeFields
+RtlUpcaseUnicodeChar
+RtlVerifyVersionInfo
+RtlVirtualUnwind
+RtlxAnsiStringToUnicodeSize
+RunDeviceInventoryW
+RunLevel
+s WATAUAVAWH
+s WAVAWH
+s+H;{
+S0A+S
+SELECT * FROM Win32_bios
+SELECT * FROM Win32_ComputerSystem
+select Architecture, Caption, Family, L2CacheSize, L2CacheSpeed, Level, Manufacturer, MaxClockSpeed, Name, ProcessorId, ProcessorType, Stepping from Win32_Processor
+select Capacity from Win32_PhysicalMemory
+select Name,AdapterRAM,DriverVersion,VideoProcessor,AdapterCompatibility from Win32_VideoController
+select SMBIOSAssetTag, Manufacturer, SerialNumber from Win32_SystemEnclosure
+sensors\locationprovider
+SerialNumber
+Service
+Service name lookup failed.
+SetDevInvDebugCorrelationVector
+SetDllDirectoryW
+SetEntriesInAcl [%d]
+SetEntriesInAclW
+SetEvent
+SetLastError
+SetSecurityDescriptorDacl
+SetSecurityDescriptorDacl failed [%d]
+SetSecurityDescriptorOwner
+SetSecurityDescriptorOwner failed [%d]
+SetThreadPreferredUILanguages
+SetUnhandledExceptionFilter
+SetupDiEnumDeviceInterfaces failed: %d
+SetupDiGetDeviceInterfaceDetail failed: %d
+SetupGetInfDriverStoreLocationW
+SetVersion [%#x]
+SetWaitableTimer
+s-f9>t(
+sfc.dll
+SfcIsFileProtected
+sH@8l9
+SHA256
+SHA384
+SHA512
+SHGetSignatureInfo failed [%x]
+shlwapi.dll
+SigDisplayName
+SigFriendlyPublisherName
+SigMoreInfoURL
+SigPublisherName
+Simple
+SimpleDeviceOrientation
+SIZE_T arithmetic failed [%x]
+SizeOfImage
+Skipping device (with known root issue): node: %p, parent: %p, ID: [%ws]
+s'L;,
+Sleep
+SleepConditionVariableSRW
+SleepEx
+smbios: Added BaseboardManufacturer:[%ws]
+smbios: Added BaseboardProduct:[%ws]
+smbios: Added BaseboardVersion:[%ws]
+smbios: Added BiosMajorRelease:[%ws]
+smbios: Added BiosMinorRelease:[%ws]
+smbios: Added BiosReleaseDate:[%ws]
+smbios: Added BiosVendor:[%ws]
+smbios: Added BiosVersion:[%ws]
+smbios: Added EnclosureType:[%ws]
+smbios: Added SystemFamily:[%ws]
+smbios: Added SystemManufacturer:[%ws]
+smbios: Added SystemProduct:[%ws]
+smbios: Added SystemSKUNumber:[%ws]
+SMBIOSAssetTag
+SMBIOSBIOSVersion
+SMS Hardware Identifier=
+SMS Unique Identifier=GUID:
+SOFTWARE\Microsoft\SystemCertificates\Root\Certificates\2BD63D28D7BCD0E251195AEB519243C13142EBC3
+SOFTWARE\Microsoft\SystemCertificates\Root\Certificates\8A334AA8052DD244A647306A76B8178FA215F344
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\{11517B7C-E79D-4e20-961B-75A811715ADD}
+Software\Microsoft\Windows Nt\CurrentVersion\WUDF\Services
+SOFTWARE\Microsoft\Windows\CurrentVersion\MMDevices\Audio\Capture
+SOFTWARE\Microsoft\Windows\CurrentVersion\MMDevices\Audio\Render
+Software\Microsoft\Windows\CurrentVersion\Policies\DataCollection
+Software\Microsoft\Windows\CurrentVersion\Policies\DataCollection\Users
+SOFTWARE\Microsoft\Windows\Windows Error Reporting
+Software\Policies\Microsoft\Windows\DataCollection
+sprintf_s
+STACKID
+Start Time:  %02d:%02d:%02d.%03d
+State
+Stepping
+Stop Time:  %02d:%02d:%02d.%03d
+storage\volumesnapshot\
+strchr
+strcmp
+strcpy_s
+string too long
+StringCbCopy failed to copy string attribute (index %d) [%x]
+StringCbCopyW failed [%x]
+StringCchCat failed %#x
+StringCchCopyN failed: 0x%x
+StringCchCopyW [%#x]
+StringCchCopyW failed %#x
+StringCchCopyW failed %ws
+StringCchCopyW failed to copy full path [%x]
+StringCchPrinf failed: 0x%08x
+StringCchPrintf [%#x]
+StringCchPrintf failed with 0x%08x
+StringCchPrintf failed: 0x%x
+StringCchPrintf for StoreDirectory [%#x]
+StringCchPrintfW [%#x]
+StringCchPrintfW failed %#x
+StringCchPrintfW failed [%x]
+StringFileInfo
+StringToDword
+strncmp
+strncpy_s
+strnlen
+strstr
+strtol
+Submission ID
+SubmissionId
+SUVWATAUAVAWH
+SUVWATAVAWH
+SUVWAVH
+SVATAVAWH
+SVAVH
+SVWATAUAVAWH
+SVWAUAVAWH
+SVWAVAWH
+SVWAVH
+SwitchBackContext
+swscanf_s
+syncId
+SYSFILE
+SysFiles
+System
+System family is not present
+System manufacturer is not present
+System Out of memory
+System product name is not present
+System SKU number is not present
+System\CurrentControlSet\Control\SystemInformation
+SYSTEM\CurrentControlSet\Control\SystemInformation
+System\CurrentControlSet\Services
+System\Setup
+system32
+SystemDrive=
+SystemManufacturer
+SystemProductName
+systemroot
+SystemRoot=
+SystemSetupInProgress
+SZ^invalid string position
+t D9b
+t"D8=<
+t$ 8P)H
+t$ A^
+T$ E3
+t$ E3
+T$ E3
+t$ E3
+t$ UAVAWH
+t$ UWATAVAWH
+t$ UWAUAVAWH
+t$ WATAUAVAWH
+t$ WAVAWH
+t$ WH
+T$(E3
+t$@E3
+T$@H!\$@A
+t$@H+
+T$@L9|$XH
+t$@L9}
+t$`fD
+t$|L9H
+t$0L+
+t$0L95
+t$HfD
+t$PE3
+t$PfD
+t$pLc
+t$XE3
+T$XE3
+t$xE3
+t$xfD
+t(@8=
+t(@8=6
+t(@8=c
+t*E9x t$I
+t?L9w@r
+t@D9{ t/H
+t^@8=}
+t+H9{
+t0fA9
+t0fE9U
+t1;}<r,
+t2fD9
+t2M;<$u
+t5H;0u!A
+t5H+9H
+t6fD9[
+t8H9Z
+tBf9+t=L
+tbH!\$ E3
+teD9d$0vOH
+tefD9
+Telcache container count after scan is %d
+Telcache device count after scan is %d
+TelCache driverBinary count after scan is %d
+TelCache driverPackage count after scan is %d
+Telcache is not initialized
+Telcache is NULL
+TelCacheProvider invalid %#x
+TelCacheProvider::AddItem failed %#x
+TelCacheProvider::AddItem failed %d#x
+TelCacheProvider::BatchBegin failed with %#x
+TelCacheProvider::BatchEnd failed with %#x
+TelCacheProvider::ClearData %ls FAILED %#x
+TelCacheProvider::GetFirst/NextItem FAILED %#x
+TelCacheProvider::GetItemCount failed %#x
+TelCacheProvider::GetVersion
+TelCacheProvider::Initialize
+TelCacheProvider::Initialize failed %#x
+TelCacheProvider::OpenTempProvider
+TelCacheProvider::RemoveItem failed %#x
+TelCacheProvider::RemoveItem failed %d
+TelCacheProvider::SetVersion
+TelemetryClient
+TelemetryPermission-AllowDisable
+TelemetryPermission-DefaultLevel
+Temperature
+TerminateProcess
+Thales TSS ESN:BBEC-30CA-2DBE1%0#
+The cache %ws does not yet exist.  Creating a new one.
+The cached file object is not initialized
+The cached folder object is not initialized
+The HW tree is a fully connected tree (good).
+The HW tree is not really a fully connected tree (not good).
+ThrottlingCleanupEvent null value
+ThrottlingSemaphore null value
+ThrottlingTimer null value
+Thumbprint
+tKHcD$PL
+TlP0X
+TMSAMVOF
+tNH;{
+tOf9]
+tolower
+Total number of usable ports: %d, type-C ports: %d
+TotalUserConnectablePorts
+TotalUserConnectableTypeCPorts
+towlower
+towupper
+tpfD9[
+TRACE
+Translation
+TUUUUUU
+Types
+u 9\$pt
+u HcA<H
+u!L9z
+u,L9H
+u.E9B<txIcR<I
+u.fD;R
+u\L9H
+u^H9\$0tJH
+u|L9H
+u<L9H
+U0S0Q
+UATAUAVAWH
+UATAVH
+UAUAVH
+UAVAWH
+u-D;+u(H
+UiAccess
+ulL9H
+uLL9H
+uMH9]
+Unable to add Enclosure Type
+Unable to decode counter signer info %08x
+Unable to get counter signer info %08x %ws
+Unable to get message handle %08x %ws
+Unable to get signer info %08x %ws
+Unable to retrieve counter signer info %08x
+Unable to write to buffer with 0x%08x
+Unexpected NULL argument in call to function
+Unexpected NULL argument(s) in call to function
+Unexpected NULL arguments in call to function
+Unexpected NULL imageInfo argument in call to function
+Unhandled ASL_FILE_KIND: %d
+Unhandled ASL_FILE_KIND_DETAIL: %d
+UnhandledExceptionFilter
+UNINITIALIZED
+UNKNOWN
+Unknown
+Unknown attribute index: %d
+UNKNOWN_VALUE_%I64u
+UnmapViewOfFile
+Unspecified
+Updated store permissions
+UpperClassFilters
+UpperFilters
+USB hub device id: %ws
+usbprint
+usbstor
+USVWATAUAVAWH
+USVWATAVAWH
+UtcThrottle::Initialize
+UtcThrottle::InitializeSecurityDesc
+UtcThrottle::Throttle
+UuidCreate
+UUUUUUU
+uVD9e@t
+UVWATAUAVAWH
+UVWATAVH
+UVWATAWH
+UVWAVAWH
+UWATAUAWH
+UWATAVAWH
+UWAUAVAWH
+UWAVH
+UWAWH
+uWMaQ
+UXH9Q
+v+H9{
+Value
+VarFileInfo
+VATAUAVAWH
+vector<T> too long
+VerifyIsFileCISigned
+VerifyVersionInfoW
+VerLanguage
+VerQueryValueW
+VerSetConditionMask
+Version
+Version block has bad size
+Version block invalid
+Version block out of range
+version.dll
+VersionBlock is too long
+VersionBlock not long enough
+VideoProcessor
+ViewFileOffset: %I64u
+ViewFileSize  : %u
+virtual
+virtualKB
+VS_VERSION_INFO
+VWATAUAVAWH
+VWATAUAVH
+VWATAVAWH
+VWAVH
+w)H9Q
+w*H9Q
+w/H9Q
+WaitForMultipleObjects
+WaitForSingleObject
+WakeAllConditionVariable
+Warning: %s, %u: 
+Washington1
+WATAUAVAWH
+WATAVH
+WAVAWH
+wcscat_s
+wcschr
+wcscmp
+wcscpy_s
+wcscpy_s failed
+wcsncmp
+wcsrchr
+wcsstr
+wcstok_s
+wcstoul
+WdfMajorVersion
+WdfMinorVersion
+WdfVersion
+wdscore.dll
+WdsSetupLogMessageW
+We don't collect USB port info below RS1 release.
+wer.dll
+WerpGetReportConsent
+WerReportAddDump
+WerReportCloseHandle
+WerReportCreate
+WerReportSetParameter
+WerReportSubmit
+w-H9S
+WIN16
+WIN32
+WinDir=
+WinSqmIsOptedInEx
+wintrust.dll
+WINTRUST.dll
+WinVerifyTrust
+wn>Jj
+WriteFile
+WritePermissionsCheck
+WstringToWstring
+WTGetSignatureInfo
+WTGetSignatureInfo failed [%x]
+WTHelperGetProvSignerFromChain
+WTHelperProvDataFromStateData
+wXH;OPt
+x ATAVAWH
+x AVAWD
+x AVE3
+x AVH
+x AVI
+x AWH
+x UATAUAVAWH
+x UATAUH
+x UATAVH
+x UAUAVH
+x(D;w
+xA_A^A]A\_^[]
+xBf9=B:
+xff;|$0uZL
+xN9u8t
+xPttI
+xqfD;t$(ucH
+xZD9w
+y+H9{
+You must be logged on as Administrator/System [%d]
+You must be logged on as Administrator/System to access the cache.
+z.9Wv
+ZERO_BYTE
+zf9E8u2
+zH!\$0E3
+zt*E3
+ZwClose
+ZwCreateFile
+ZwCreateSection
+ZwCreateSection failed [%x]
+ZwMapViewOfSection
+ZwMapViewOfSection failed to map the end of the file [%x]
+ZwMapViewOfSection failed to map the start of the file [%x]
+ZwOpenKey
+ZwQueryInformationFile
+ZwQuerySystemInformation
+ZwQuerySystemInformation failed [%x]
+ZwQueryValueKey
+ZwUnmapViewOfSection

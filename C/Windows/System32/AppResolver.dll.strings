@@ -1,0 +1,1980 @@
+        
+          
+                    <xsl:value-of select="@Center"/>
+                    <xsl:value-of select="@Extents"/>
+                  </xsl:attribute>
+                  <xsl:attribute name="Center">
+                  <xsl:attribute name="Extents">
+                </xsl:if>
+                <xsl:if test="@Center != ''">
+                <xsl:if test="@Extents != ''">
+                <xsl:value-of select="@Path"/>
+              </xsl:attribute>
+              </xsl:element>
+              <xsl:attribute name="Path">
+              <xsl:element name="SpatialBoundingBox">
+              <xsl:value-of select="/Application/VisualElements/DefaultTile/@ShortName"/>
+              <xsl:value-of select="/Application/VisualElements/DefaultTile/@ShowName"/>
+              <xsl:value-of select="/Application/VisualElements/SplashScreen/@Image"/>
+            </xsl:attribute>
+            </xsl:for-each>
+            </xsl:if>
+            <xs:element name="DefaultTile" type="ct_defaulttile" minOccurs="0"/>
+            <xs:element name="HoloContent" type="st_filename" minOccurs="0"/>
+            <xs:element name="MixedRealityModel" type="ct_mixedrealitymodel" minOccurs="0"/>
+            <xs:element name="SpatialBoundingBox" type="ct_spatialboundingbox" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="SplashScreen" type="ct_splashscreen"/>
+            <xs:element name="VisualElements" type="ct_visualelements" />
+            <xs:enumeration value="allLogos"/>
+            <xs:enumeration value="dark"/>
+            <xs:enumeration value="light"/>
+            <xs:enumeration value="logoOnly"/>
+            <xs:enumeration value="noLogos"/>
+            <xs:enumeration value="off"/>
+            <xs:enumeration value="on"/>
+            <xs:enumeration value="wideLogoOnly"/>
+            <xs:maxLength value="256"/>
+            <xs:maxLength value="32767"/>
+            <xs:minLength value="1"/>
+            <xs:pattern value="#[\da-fA-F]{6}"/>
+            <xs:pattern value="([^/\\]*[^./\\]+)(/[^/\\]*[^./\\]+)*"/>
+            <xs:pattern value="([^/\\]*[^./\\]+)(\\[^/\\]*[^./\\]+)*"/>
+            <xs:pattern value="([1-9]+(\.[0-9]+)?|[0-9]*\.[0-9]*[1-9]),([1-9]+(\.[0-9]+)?|[0-9]*\.[0-9]*[1-9]),([1-9]+(\.[0-9]+)?|[0-9]*\.[0-9]*[1-9])"/>
+            <xs:pattern value=".{1,13}"/>
+            <xs:pattern value=".{1,256}"/>
+            <xs:pattern value=".+\.((jpg)|(png)|(jpeg))"/>
+            <xs:pattern value=".+\.((jpg)|(png)|(jpeg)|(gif))"/>
+            <xs:pattern value="[^&lt;&gt;&quot;:%\|\?\*]+"/>
+            <xs:pattern value="[^\s]|([^\s].*[^\s])"/>
+            <xs:pattern value="\-?[0-9]*\.?[0-9]+,\-?[0-9]*\.?[0-9]+,\-?[0-9]*\.?[0-9]+"/>
+            <xs:pattern value="Auto"/>
+            <xs:pattern value="black|silver|gray|white|maroon|red|purple|fuchsia|green|lime|olive|yellow|navy|blue|teal|aqua"/>
+            <xs:pattern value="ms-resource:.{1,256}"/>
+            <xsl:attribute name="Image">
+            <xsl:attribute name="ShortName">
+            <xsl:attribute name="ShowName">
+            <xsl:for-each select="SpatialBoundingBox">
+            <xsl:if test="@Path != ''">
+            <xsl:value-of select="/Application/VisualElements/@BackgroundColor"/>
+            <xsl:value-of select="/Application/VisualElements/@DisplayName"/>
+            <xsl:value-of select="/Application/VisualElements/@ForegroundText"/>
+            <xsl:value-of select="/Application/VisualElements/@Logo"/>
+            <xsl:value-of select="/Application/VisualElements/@ShowNameOnSquare150x150Logo"/>
+            <xsl:value-of select="/Application/VisualElements/@SmallLogo"/>
+            <xsl:value-of select="/Application/VisualElements/@Square150x150Logo"/>
+            <xsl:value-of select="/Application/VisualElements/@Square70x70Logo"/>
+            <xsl:value-of select="/Application/VisualElements/HoloContent"/>
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          </xsl:attribute>
+          </xsl:element>
+          </xsl:if>
+          <xsl:attribute name="BackgroundColor">
+          <xsl:attribute name="DisplayName">
+          <xsl:attribute name="ForegroundText">
+          <xsl:attribute name="Logo">
+          <xsl:attribute name="ShowNameOnSquare150x150Logo">
+          <xsl:attribute name="SmallLogo">
+          <xsl:attribute name="Square150x150Logo">
+          <xsl:attribute name="Square70x70Logo">
+          <xsl:element name="HoloContent">
+          <xsl:element name="MixedRealityModel">
+          <xsl:if test="/Application/VisualElements/DefaultTile/@ShortName != ''">
+          <xsl:if test="/Application/VisualElements/DefaultTile/@ShowName != ''">
+          <xsl:if test="/Application/VisualElements/SplashScreen/@Image != ''">
+        <!-- Attributes of the VisualElements element -->
+        <!-- Default tile sub-element -->
+        <!-- Splash screen sub-element -->
+        </xs:all>
+        </xs:restriction>
+        </xsl:element>
+        </xsl:for-each>
+        </xsl:if>
+        <xs:all>
+        <xs:attribute name="BackgroundColor" type="st_color" use="required"/>
+        <xs:attribute name="Center" type="st_vector3" use="required"/>
+        <xs:attribute name="DisplayName" type="st_displayname" use="required"/>
+        <xs:attribute name="Extents" type="st_vector3positiveorauto" use="required"/>
+        <xs:attribute name="ForegroundText" type="st_foregroundtext" use="required"/>
+        <xs:attribute name="Image" type="st_imagefile" use="required"/>
+        <xs:attribute name="Logo" type="st_imagefile" use="required"/>
+        <xs:attribute name="Path" type="st_filename" use="required"/>
+        <xs:attribute name="ShortName" type="st_shortdisplayname" use="optional"/>
+        <xs:attribute name="ShowName" type="st_showname" use="optional"/>
+        <xs:attribute name="ShowNameOnSquare150x150Logo" type="st_showname" use="required"/>
+        <xs:attribute name="SmallLogo" type="st_imagefile" use="required"/>
+        <xs:attribute name="Square150x150Logo" type="st_imagefile" use="optional"/>
+        <xs:attribute name="Square70x70Logo" type="st_imagefile" use="optional"/>
+        <xs:pattern value="[^&lt;&gt;&quot;:%\|\?\*]+"/>
+        <xs:restriction base="st_filename">
+        <xs:restriction base="st_filenamecharset">
+        <xs:restriction base="st_nonemptystring">
+        <xs:restriction base="xs:string">
+        <xsl:element name="DefaultTile">
+        <xsl:element name="SplashScreen">
+        <xsl:for-each select="/Application/VisualElements/MixedRealityModel">
+        <xsl:if test="/Application/VisualElements/@BackgroundColor != ''">
+        <xsl:if test="/Application/VisualElements/@DisplayName != ''">
+        <xsl:if test="/Application/VisualElements/@ForegroundText != ''">
+        <xsl:if test="/Application/VisualElements/@Logo != ''">
+        <xsl:if test="/Application/VisualElements/@ShowNameOnSquare150x150Logo != ''">
+        <xsl:if test="/Application/VisualElements/@SmallLogo != ''">
+        <xsl:if test="/Application/VisualElements/@Square150x150Logo != ''">
+        <xsl:if test="/Application/VisualElements/@Square70x70Logo != ''">
+        <xsl:if test="/Application/VisualElements/HoloContent != ''">
+      </xs:restriction>
+      </xsl:element>
+      <xs:pattern value="aliceBlue|antiqueWhite|aqua|aquamarine|azure|beige|bisque|black|blanchedAlmond|blue|blueViolet|brown|burlyWood"/>
+      <xs:pattern value="cadetBlue|chartreuse|chocolate|coral|cornflowerBlue|cornsilk|crimson|cyan|darkBlue|darkCyan|darkGoldenrod|darkGray"/>
+      <xs:pattern value="darkGreen|darkKhaki|darkMagenta|darkOliveGreen|darkOrange|darkOrchid|darkRed|darkSalmon|darkSeaGreen|darkSlateBlue"/>
+      <xs:pattern value="darkSlateGray|darkTurquoise|darkViolet|deepPink|deepSkyBlue|dimGray|dodgerBlue|firebrick|floralWhite|forestGreen"/>
+      <xs:pattern value="fuchsia|gainsboro|ghostWhite|gold|goldenrod|gray|green|greenYellow|honeydew|hotPink|indianRed|indigo|ivory"/>
+      <xs:pattern value="khaki|lavender|lavenderBlush|lawnGreen|lemonChiffon|lightBlue|lightCoral|lightCyan|lightGoldenrodYellow|lightGreen"/>
+      <xs:pattern value="lightGray|lightPink|lightSalmon|lightSeaGreen|lightSkyBlue|lightSlateGray|lightSteelBlue|lightYellow|lime|limeGreen"/>
+      <xs:pattern value="linen|magenta|maroon|mediumAquamarine|mediumBlue|mediumOrchid|mediumPurple|mediumSeaGreen|mediumSlateBlue|mediumSpringGreen"/>
+      <xs:pattern value="mediumTurquoise|mediumVioletRed|midnightBlue|mintCream|mistyRose|moccasin|navajoWhite|navy|oldLace|olive|oliveDrab"/>
+      <xs:pattern value="orange|orangeRed|orchid|paleGoldenrod|paleGreen|paleTurquoise|paleVioletRed|papayaWhip|peachPuff|peru|pink|plum"/>
+      <xs:pattern value="powderBlue|purple|red|rosyBrown|royalBlue|saddleBrown|salmon|sandyBrown|seaGreen|seaShell|sienna|silver|skyBlue"/>
+      <xs:pattern value="slateBlue|slateGray|snow|springGreen|steelBlue|tan|teal|thistle|tomato|transparent|turquoise|violet|wheat|white"/>
+      <xs:pattern value="whiteSmoke|yellow|yellowGreen"/>
+      <xs:restriction base="st_nonemptystring">
+      <xsl:element name="VisualElements">
+    </xs:complexType>
+    </xs:simpleType>
+    </xsl:element>
+    <xs:complexType name="ct_application">
+    <xs:complexType name="ct_defaulttile">
+    <xs:complexType name="ct_mixedrealitymodel">
+    <xs:complexType name="ct_spatialboundingbox">
+    <xs:complexType name="ct_splashscreen">
+    <xs:complexType name="ct_visualelements">
+    <xs:element name="Application" type="ct_application" />
+    <xs:simpleType name="st_color">
+    <xs:simpleType name="st_displayname">
+    <xs:simpleType name="st_filename">
+    <xs:simpleType name="st_filenamecharset">
+    <xs:simpleType name="st_foregroundtext">
+    <xs:simpleType name="st_imagefile">
+    <xs:simpleType name="st_nonemptystring">
+    <xs:simpleType name="st_shortdisplayname">
+    <xs:simpleType name="st_showname">
+    <xs:simpleType name="st_vector3">
+    <xs:simpleType name="st_vector3positiveorauto">
+    <xsl:element name="Application">
+  </xsl:template>
+  <xsl:template match="/">
+ A^_^
+ A^_^[]
+ A^A]A\
+ A_A^_
+ A_A^_^]
+ A_A^A\
+ A_A^A\_^
+ A_A^A]A\_
+ A_A^A]A\_^]
+ a2b.b
+ H3E H3E
+ http://www.microsoft.com/windows0
+ Microsoft Corporation. All rights reserved.
+ Operating System
+ Windows
+!86Kp
+!D$d!D$`!D$\H
+!jRich
+!t$ H
+!t$X!t$T!t$P
+!This program cannot be run in DOS mode.
+"Microsoft Window
+#ARCManager_RegisterForDiskNotifications
+$&}1^:~
+$`2X`F
+$0< u;3
+$Microsoft Ireland Operations Limited1
+$Microsoft Ireland Operations Limited1&0$
+$pOM6
+%0I64x
+%1.8e;%1.8e;%1.8e;%1.8e;%1.8e;%1.8e
+%f,%f,%f
+%hs!%p: 
+%hs(%d) tid(%x) %08X %ws
+%hs(%d)\%hs!%p: 
+%Microsoft Windows Production PCA 2011
+%Microsoft Windows Production PCA 20110
+%s%c%s
+%s-%d
+%s*%s
+%s;%s
+%SystemRoot%\explorer.exe
+&!Os>
+&internal\shellcommonshell\inc\DataStoreCacheItemIdentifier.h
+(_^][
+(A_A^_^[]
+(caller: %p) 
+(H!:H;
+(J.(v
+)D$0I
+)Microsoft Root Certificate Authority 20100
+,3O?vc
+,MtkDn8DpKCkCIwFRTaHH0k8or0r6V/wgxnmZpLW+8Zs=0Z
+.?AVbad_alloc@std@@
+.?AVbad_array_new_length@std@@
+.?AVCAtlException@ATL@@
+.?AVexception@std@@
+.?AVResultException@wil@@
+.?AVtype_info@@
+.00cfg
+.CRT$XCA
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIC
+.CRT$XIZ
+.CRT$XLA
+.CRT$XLZ
+.CRT$XPA
+.CRT$XPZ
+.CRT$XTA
+.CRT$XTZ
+.data
+.data$brc
+.data$r$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.edata
+.gfids
+.giats
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.jpeg
+.pdata
+.rdata
+.rdata$brc
+.rdata$r
+.rdata$T$brc
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.rtc$IAA
+.rtc$IZZ
+.rtc$TAA
+.rtc$TZZ
+.text
+.text$di
+.text$mn
+.text$mn$00
+.text$x
+.text$yd
+.tls$
+.tls$ZZZ
+.VisualElementsManifest.xml
+.xdata
+.xdata$x
+/Application/VisualElements
+/Application/VisualElements/DefaultTile
+/Application/VisualElements/HoloContent
+/Application/VisualElements/MixedRealityModel
+/Application/VisualElements/MixedRealityModel/SpatialBoundingBox
+/Application/VisualElements/SplashScreen
+;\$`r
+?_Xlength_error@std@@YAXPEBD@Z
+?-t_fB
+@ u#A
+@%windir%\system32\shell32.dll,-51201
+@%windir%\system32\shell32.dll,-51394
+@.data
+@.didat
+@.reloc
+@8,1u
+@8=)N
+@8t$0@
+@8t$H
+@8t$Ht
+@8t$ht
+@8t$Ht
+@8t$Htw
+@8t$Xt
+@A^_]
+@A^_^
+@A^_^[]
+@A^A\_^]
+@A_A^]
+@A_A^_
+@A_A^_^]
+@A_A^A\_]
+@A_A^A\_^
+@A_A^A]A\_
+@A_A^A]A\_^]
+@AumId
+@Qm6t
+@Qmu'
+@Qmu,
+@Qmu+
+@Qmu3
+@ShortcutPath
+@SUVWATAUAVAW
+@SUVWATAUAVAWH
+@SUVWAVAWH
+@SUVWH
+@SVWH
+@UAVAWH
+@USVWATAUAVAWH
+@USVWATAVAWH
+@USVWAUAVAWH
+@USVWAVAWH
+@USVWAVH
+@USWH
+@UVWATAUAVAWH
+@UVWH
+@UWATAVAWH
+@UWAVH
+@VWAVH
+@WATAUAVAWH
+[ UVWH
+[!Se*|
+[%hs(%hs)]
+[%hs]
+\$ E3
+\$ H!\$(H
+\$ UH
+\$ UVWATAUAVAWH
+\$ UVWATAV
+\$ UVWAVAW
+\$ UVWAVAWH
+\$ UVWH
+\$ VWAVH
+\$ WH
+\$8E3
+\$HH+
+\VisualElementsManifest.xml
+]/qNnN
+^@H9]
+^`H9]
+^HH9]
+^PH9]
+^XH9]
+__C_specific_handler
+__CxxFrameHandler3
+__std_terminate
+_CxxThrowException
+_initterm
+_initterm_e
+_o___std_exception_copy
+_o___std_exception_destroy
+_o___std_type_info_destroy_list
+_o___stdio_common_vsnprintf_s
+_o___stdio_common_vsnwprintf_s
+_o___stdio_common_vswprintf
+_o___stdio_common_vswscanf
+_o__callnewh
+_o__cexit
+_o__configure_narrow_argv
+_o__crt_atexit
+_o__errno
+_o__execute_onexit_table
+_o__get_errno
+_o__initialize_narrow_environment
+_o__initialize_onexit_table
+_o__invalid_parameter_noinfo
+_o__invalid_parameter_noinfo_noreturn
+_o__itow_s
+_o__purecall
+_o__register_onexit_function
+_o__seh_filter_dll
+_o__set_errno
+_o__ui64tow_s
+_o__wcstoui64
+_o__wtoi
+_o_free
+_o_malloc
+_o_towupper
+` UAVAWH
+`.rdata
+`A^_^[]
+`A_A^_^]
+`A_A^A\_^[]
+`A_A^A]A\_^]
+{ L95
+{8uOH
+{F1B32785-6FBA-4FCF-9D55-7B8E7F157091}\Temp
+{F1B32785-6FBA-4FCF-9D55-7B8E7F157091}\Temp\Microsoft
+|$ AVH
+|$ E3
+|$ u23
+|$ UH
+|$(E3
+|$`E3
+|$0A_A^
+|$0f;
+|$HD;j
+|$PH+|$HH
+|$XE3
+|$xH;
+|hK,_
+|QZp01"
+}0H+}(H
+}0tUH
+}1$_=C
+}otkH
+~;8(K
+~0uUH
+~H9n8tSH
+</xs:schema>
+</xsl:stylesheet>
+<?xml version="1.0" encoding="utf-8"?>
+<8gCu
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+>fD9?t&
+>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0
+>http://www.microsoft.com/pki/certs/MicTimStaPCA_2010-07-01.crt0
+0[S`)M
+0123456789ABCDEFabcdef
+040904B0
+0A^_]
+0A^_^
+0A^A\_
+0A_A^_
+0A_A^_^]
+0A_A^A\_^
+0A_A^A]
+0A_A^A]_^
+0A_A^A]A\_
+0A_A^A]A\_^]
+0D;l$@r
+0D9~,u
+1(0&0
+1/0-0
+10.0.17763.1
+10.0.17763.1 (WinBuild.160101.0800)
+100701213655Z
+111019184142Z
+180703204550Z
+180823202651Z
+190726204550Z0p1
+191123202651Z0
+1http://www.microsoft.com/PKI/docs/CPS/default.htm0@
+2!cI;
+2]&d,
+20180915045553.468Z0
+20180915065255Z
+20180916065255Z0w0=
+229879+4379540
+250701214655Z0|1
+261019185142Z0
+2hKu%
+3AppLifecycleReconcilerOnSecondaryTilesChanged
+3llu*
+4qMV<
+5Olx^R
+64??`
+6E9'u
+6H951
+6L1u(
+78av0
+89:u!
+89:u6
+8A_A^A]A\_^][
+9\$Pu
+99~$3
+9D$0t
+9D$4tT
+9D$Pu&
+9l$0@
+9Q(rx9A(ssD9I,tm9Q,rh9A,scD9I4t
+9Q<r(9A<s#D9I@t
+9Q0rH9A0sCD9I8t
+9Q4rX9A4sSD9I0t
+9Q8r89A8s3D9I<t
+9X8vBA
+A D9b
+a/.pO
+A]A\_^]
+A^_^[]
+A^A\_^]
+A_A^]
+A_A^_
+A_A^_^]
+A_A^_^][
+A_A^A\
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[]
+A_A^A]_]
+A_A^A]_^[]
+A_A^A]A\]
+A_A^A]A\_
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A_A^A]A\_^][
+A8]8t
+A9F @
+A9N4u
+AcquireSRWLockExclusive
+AcquireSRWLockShared
+activatibleClassId
+ActivityError
+ActivityFailure
+ActivityIntermediateStop
+ActivityStoppedAutomatically
+ActivityTracker_AppLaunch
+addend
+AddRemoveApps
+aliceblue
+allLogos
+antiquewhite
+ANtQueryWnfStateData
+Ap uDH
+api-ms-win-appmodel-runtime-internal-l1-1-2.dll
+api-ms-win-appmodel-runtime-l1-1-0.dll
+api-ms-win-appmodel-runtime-l1-1-1.dll
+api-ms-win-core-debug-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-1.dll
+api-ms-win-core-errorhandling-l1-1-0.dll
+api-ms-win-core-file-l1-1-0.dll
+api-ms-win-core-file-l1-2-0.dll
+api-ms-win-core-file-l2-1-2.dll
+api-ms-win-core-handle-l1-1-0.dll
+api-ms-win-core-heap-l1-1-0.dll
+api-ms-win-core-heap-l2-1-0.dll
+api-ms-win-core-heap-obsolete-l1-1-0.dll
+api-ms-win-core-interlocked-l1-1-0.dll
+api-ms-win-core-largeinteger-l1-1-0.dll
+api-ms-win-core-libraryloader-l1-2-0.dll
+api-ms-win-core-localization-l1-2-0.dll
+api-ms-win-core-localization-obsolete-l1-2-0.dll
+api-ms-win-core-memory-l1-1-0.dll
+api-ms-win-core-memory-l1-1-1.dll
+api-ms-win-core-path-l1-1-0.dll
+api-ms-win-core-processenvironment-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-1.dll
+api-ms-win-core-profile-l1-1-0.dll
+api-ms-win-core-psapi-l1-1-0.dll
+api-ms-win-core-registry-l1-1-0.dll
+api-ms-win-core-registry-l1-1-1.dll
+api-ms-win-core-rtlsupport-l1-1-0.dll
+api-ms-win-core-string-l1-1-0.dll
+api-ms-win-core-string-obsolete-l1-1-0.dll
+api-ms-win-core-synch-l1-1-0.dll
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-core-sysinfo-l1-1-0.dll
+api-ms-win-core-threadpool-l1-2-0.dll
+api-ms-win-core-util-l1-1-0.dll
+api-ms-win-core-winrt-error-l1-1-0.dll
+api-ms-win-core-winrt-error-l1-1-1.dll
+api-ms-win-core-winrt-l1-1-0.dll
+api-ms-win-core-winrt-string-l1-1-0.dll
+api-ms-win-crt-private-l1-1-0.dll
+api-ms-win-crt-runtime-l1-1-0.dll
+api-ms-win-crt-string-l1-1-0.dll
+api-ms-win-eventing-provider-l1-1-0.dll
+api-ms-win-security-base-l1-1-0.dll
+api-ms-win-security-cryptoapi-l1-1-0.dll
+api-ms-win-shcore-stream-l1-1-0.dll
+api-ms-win-shell-namespace-l1-1-0.dll
+api-ms-win-storage-exports-internal-l1-1-0.dll
+App Resolver
+AppActivation.ActivationTypeRequest
+appID
+appId
+AppId
+appId
+AppLifecycleReconcilerCleanedUpTaskbarPin
+AppLifecycleReconcilerDesktopPinMigrationCandidateEnumerationComplete
+AppLifecycleReconcilerDesktopPinMigrationCandidateEnumerationStarted
+AppLifecycleReconcilerDesktopPinMigrationDesktopAppShortcutEnumerated
+AppLifecycleReconcilerDesktopPinMigrationDesktopAumidEnumerated
+AppLifecycleReconcilerDesktopPinMigrationReplacingStartPinAttempted
+AppLifecycleReconcilerDesktopPinMigrationReplacingTaskbarPinAttempted
+AppLifecycleReconcilerDesktopPinMigrationTileAlreadyPinnedToStart
+AppLifecycleReconcilerDesktopPinMigrationTileAlreadyPinnedToTaskbar
+AppLifecycleReconcilerInitialize
+AppLifecycleReconcilerOnPackageInstalling
+AppLifecycleReconcilerOnPackageUninstalling
+AppLifecycleReconcilerOnSecondaryTilesChanged
+appPath
+AppResolver.AppLifecycleReconciler
+AppResolver.dll
+AppResolver.pdb
+AppResolver.SharedFactoryHelper
+AppResolver.UserAssistReconciler
+AppResolver_CacheLanguageChanged
+AppResolver_CanPinAppPath
+AppResolver_CanPinAppShortcut
+AppResolver_CreatePropStoreForLauncherItem
+AppResolver_EnumCachedItems
+AppResolver_EnumItems
+AppResolver_GenerateShortcutFromItemProperties
+AppResolver_GenerateShortcutFromWindowProperties
+AppResolver_GetAppIDForProcess
+AppResolver_GetAppIDForShortcutImpl
+AppResolver_GetAppIDForWindow
+AppResolver_GetBestShortcutAndAppIDForAppPath
+AppResolver_GetBestShortcutForAppID
+AppResolver_GetFullListOfAppIDs
+AppResolver_GetItem
+AppResolver_GetItemByAppPath
+AppResolver_GetLauncherAppIDForItem
+AppResolver_GetRelaunchPropertiesFromPropertyStore
+AppResolver_GetShortcutForAppID
+AppResolver_GetShortcutForProcess
+AppResolver_NotifyWnd
+AppResolver_SetPinToStartOnDiscovery
+AppsFolder
+AppsFolder_BindToObject
+AppsFolder_CreateMergedPropertyStore
+AppsFolder_CreateViewObject
+AppsFolder_EnumNext
+AppsFolder_EnumObjects
+AppsFolder_GetAttributesOf
+AppsFolder_GetDetailsEx
+AppsFolder_GetDisplayNameOf
+AppsFolder_GetPropertyStore
+AppsFolder_GetPropertyStoreForKeys
+AppsFolder_GetScopeAndSubQueries
+AppsFolder_GetStartMenuAppItemsEnumerator
+AppsFolder_GetThumbnailAndIconExtractor
+AppsFolder_GetUIObjectOf
+AppsFolder_ParseDisplayName
+AppsFolder_Update
+APPSu
+AppUsageReconcilerAllRanksHaveChanged
+AppUsageReconcilerPromoteAppsToTopOfFrequentList
+AppUsageReconcilerRankChangedForApp
+AppUsageReconcilerUpdateAppUsageForTrackedApps
+aquamarine
+-ARC: abort RefreshCache because the cache object has already been shut down
+-ARC: argument updated in shortcut (old=%ls, new=%ls). Treating app as new.
+-ARC: cache is up to date, folder scan is not performed
+-ARC: Cache object will not be created because the process is shutting down
+-ARC: Change notify=%d; Item: (%x) %s; need scan=%x
+-ARC: Committing updated cache to disk. Cache size=%d
+-ARC: Detected invalid cache. Will force rebuilding cache.
+-ARC: No change detected during folder scan. New cache is thrown away
+-ARC: Paused/Resumed root#%d for change notification: Pause=%d Success=%d
+-ARC: RefreshCache: smrcf=0x%x
+-ARC: Registered root#%d for change notification: id=%d
+-ARC: UpdateCache: smrcf=0x%x
+ARCBuilder_AddShortcutToCache
+ARCBuilder_AddShortcutToCacheCriticalFailure
+ARCBuilder_ScanFoldersAndCreateNewCache
+ARCM_GetCacheInstance
+ARCM_Initialize
+ARCM_RefreshCache
+ARCM_SetPinToStartOnDiscovery
+ARCManager_CommittingNewAppResolverCache
+ARCManager_CortanaJumplistChangedForItem
+ARCManager_InvalidCacheDetected
+ARCManager_RegisterForDiskNotifications
+ARCShortcut_PopulatePropertyStore
+ARLinkParse_DesktopTileColorized
+ARLinkParse_GetAppPathFromLink
+ARLinkParse_GetInstallPathFromDarwinID
+ARLinkParse_InitDesktopTileColorFromShellItem
+ARLinkParse_InitShortcutDataFromLink
+ARLinkParse_InitTargetInfoFromLink
+ARLinkParse_ManifestParseFailed
+AssocCreate
+AssocCreateForClasses
+AsyncFlag
+ATAVAWH
+Aumid
+AuthD
+azure
+BackgroundColor
+bad allocation
+bad array new length
+Badge
+BadgeAndTileText
+Bcp47Langs.dll
+beige
+BindApplicationAsFolder
+bisque
+black
+blanchedalmond
+blueviolet
+brown
+burlywood
+C D8U@u
+C^yiq
+C0E8p
+C9fD9?u-
+Ca A;
+cacheSize
+cadetblue
+callContext
+CallContext:[%hs] 
+callerModule
+callerReturnAddressOffset
+CandidateFound
+Center
+chartreuse
+CharUpperBuffW
+chocolate
+Chttp://www.microsoft.com/pkiops/crl/MicWinProPCA2011_2011-10-19.crl0a
+CloseHandle
+ClosePackageInfo
+CloseThreadpoolTimer
+CoAllowSetForegroundWindow
+CoCreateFreeThreadedMarshaler
+CoCreateGuid
+CoCreateInstance
+CoCreateInstance ImmersiveShell
+CoGetCallContext
+CoGetInterfaceAndReleaseStream
+CoGetMalloc
+CoInitializeEx
+color
+colorizationType
+CoMarshalInterThreadInterfaceInStream
+CompanyName
+CompareFileTime
+CompareStringOrdinal
+connectNetworkDrive
+CopyFileW
+CopyImage
+coral
+CoReleaseMarshalData
+cornflowerblue
+cornsilk
+CoTaskMemAlloc
+CoTaskMemFree
+CoTaskMemRealloc
+CoUninitialize
+CoWaitForMultipleHandles
+CreateBindCtx
+CreateCompatibleDC
+CreateDIBSection
+CreateDirectoryW
+CreateEventExW
+CreateEventW
+CreateFileMappingW
+CreateFileW
+CreateIconIndirect
+CreateMutexExW
+CreatePopupMenu
+CreateSemaphoreExW
+CreateThreadpoolTimer
+CreateUri
+crimson
+CryptAcquireContextW
+CryptCreateHash
+CryptDestroyHash
+CryptGetHashParam
+CryptHashData
+CryptReleaseContext
+currentContextId
+currentContextMessage
+currentContextName
+Cy(A;
+D!t$$H
+D$ !t$\H
+D$ E3
+D$ fD
+D$(E3
+D$(H!|$ 3
+D$(Lc
+D$@E3
+D$@fD
+D$@tUH
+d$\fD
+D$`E3
+D$|+D$t
+D$0E3
+D$0f;
+D$0H;
+D$8E;
+D$8E3
+D$8H;
+D$dA;
+D$DA;F
+D$DH!|$0E3
+D$hD+
+d$HD9k
+D$HE3
+D$hE3
+D$HE3
+D$hH;
+D$hL;
+D$PE3
+D$PH;
+D$PL;
+D$T9p
+D$x+D$p
+D$XD9X
+D$xD9x4u
+D$XI;
+D;a D
+D;A(D
+D;y(D
+D\$xH
+D8}ot.L
+D8d$4u+H
+D8d$ht
+D8f(u
+D8l$x
+D8l$xt
+D8t$ 
+D8t$H
+D8t$ht
+D8t$Ht
+D9[(tTD
+D9}@t
+D9~$u
+D9~(u
+D9~,u
+D9~@u
+D9~<u
+D9~8u
+D9D$huWH
+D9d$P}
+D9E`t
+D9EHt
+D9f u
+D9f$u
+D9f(u
+D9f,u
+D9f@u
+D9f<u
+D9f0u
+D9f4u
+D9f8u
+D9fDu
+D9g u
+D9g$u
+D9g(u
+D9I t
+D9I$t
+D9I(t
+D9IDt
+D9K(t
+D9K(t%D
+D9k4u
+D9k8u
+D9m0A
+D9mHthH
+D9mHu
+D9O r59W s09o$t
+D9O$r%9W$s 9o(t
+D9O(r
+D9O,r
+D9P$u
+D9P,u
+D9pDu
+D9PDu
+D9R4u
+D9R8u
+D9s u=H
+D9S(@
+D9S,u
+D9t$dH
+D9u@u
+D9u0t
+D9w tVH
+D9X,u
+D9Y8u
+D9yL|
+D9Z8u
+darkblue
+darkcyan
+darkgoldenrod
+darkgray
+darkgreen
+darkkhaki
+darkmagenta
+darkolivegreen
+darkorange
+darkorchid
+darkred
+darksalmon
+darkseagreen
+darkslateblue
+darkslategray
+darkturquoise
+darkviolet
+DebugBreak
+DecodePointer
+deeppink
+deepskyblue
+DefWindowProcW
+DelayLoadFailureHook
+DeleteCriticalSection
+DeleteDC
+DeleteFileW
+DeleteObject
+DesktopApp
+DesktopAppMigration
+DestroyIcon
+DestroyMenu
+DestroyWindow
+dimgray
+DisableThreadLibraryCalls
+disconnectNetworkDrive
+DisplayName
+Dl$xA
+DllCanUnloadNow
+DllGetActivationFactory
+DllGetClassObject
+dodgerblue
+Don't Translate Aliases
+DragQueryFileW
+E0D9x
+E9,$t
+E9~<u
+E9<$u
+E9'u_
+E9V0u
+E9wht;L
+E9Y,t
+E9y,u
+eAU(L
+Ehttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z
+Ehttp://crl.microsoft.com/pki/crl/products/MicTimStaPCA_2010-07-01.crl0Z
+Ehttp://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt0
+elscore.dll
+ELwV3
+enabled
+EnabledFeatureUsage
+EncodePointer
+EnterCriticalSection
+EnterpriseDataProtectionId
+EnterprisePinned
+en-US
+eo,Uj
+EventActivityIdControl
+EventRegister
+EventSetInformation
+EventUnregister
+EventWriteTransfer
+Exception
+ExpandEnvironmentStringsW
+expectedSize
+EXPLORER.EXE
+explorer-AlwaysShowRunAsDifferentUser
+Extents
+ext-ms-win-core-iuri-l1-1-0.dll
+ext-ms-win-shell-shell32-l1-2-0.dll
+ext-ms-win-shell-shell32-l1-2-1.dll
+ext-ms-win-shell-shell32-l1-2-2.dll
+ext-ms-win-uxtheme-themes-l1-1-0.dll
+ExtractIconExW
+f;|$2
+F0D8#ukD8c
+f9,Au
+f9,Ku
+f9|$X
+f9<Au
+f9<Bu
+f90uUI
+f94Au
+f94Qu
+f94Xu
+f9t$P
+fA;9u
+fA9,Du
+fA9<@u
+fA9<Bu
+fA9<Iu
+fA94@u
+fA94Ku
+fA98t
+fA9Z*v$A
+FailFast
+failureCount
+failureId
+failureType
+FallbackError
+fB9,wu
+fB9<Hu
+fB94Bu
+fB94Hu
+fC94Hu
+fD;+tBfD
+fD9 A
+fD9 t
+fD9 u
+fD9#t
+fD9$wu
+fD9$Xu
+fD9(A
+fD9(t
+fD9,Fu
+fD9,Gu
+fD9,Pu
+fD9,Qu
+fD9,Xu
+fD9,xu
+fD9,yu
+fD9.t
+fD9/t
+fD9?t&
+fD9<Au
+fD9<Bu
+fD9<Cu
+fD9<Hu
+fD9<pu
+fD9<Zu
+fD9>u$H
+fD90A
+fD90t,
+fD90u;H
+fD90u4I
+fD90u6H
+fD90u8H
+fD91t
+fD93t
+fD94^u
+fD94Au
+fD94Cu
+fD94Hu
+fD94Ou
+fD97t
+fD9hHtoH
+fD9t]
+fD9't5
+fD9'u
+fE9$@u
+fE9$Bu
+fE9$Gu
+fE9$zu
+fE9&t
+fE9,Hu
+fE9,Qu
+fE9<Ru
+fE94@u
+fE94Xu
+featureBaseVersion
+FeatureError
+featureId
+featureStage
+FeatureUsage
+FeatureVariantUsage
+featureVersion
+fF9$@u
+fF9$Nu
+fF9,@u
+fF9,Bu
+fF9,Fu
+fF9,qu
+fF9<Hu
+fF94@u
+fF94Bu
+fF94Hu
+fF94Ou
+fF9lC
+fG9$Ku
+fG9,Fu
+fG9,Gu
+FgkWsO
+File System Bind Data
+file://
+file:///
+FileDescription
+FileGroupDescriptor
+FileGroupDescriptorW
+fileName
+FileVersion
+FindWindowW
+firebrick
+floralwhite
+folder
+ForegroundText
+forestgreen
+FormatMessageW
+fuchsia
+function
+G0A8@
+G0A8H
+gainsboro
+GDI32.dll
+GdiAlphaBlend
+GetAce
+GetColorFromPreference
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+GetDC
+GetEffectivePackageStatusForUser
+GetFileSecurityW
+GetFileSizeEx
+GetLastError
+GetLongPathNameW
+GetMenuDefaultItem
+GetModuleFileNameA
+GetModuleFileNameW
+GetModuleHandleExW
+GetModuleHandleW
+GetObjectW
+GetPackageInfo
+GetProcAddress
+GetProcessHeap
+GetProcessTimes
+GetProfileType
+GetScaleFactorForDevice
+GetSecurityDescriptorSacl
+GetSidSubAuthority
+GetStagedPackagePathByFullName
+GetStartPinContextMenuCommand
+GetSysColor
+GetSystemTimeAsFileTime
+GetTempPathW
+GetThreadFlags
+GetThreadPreferredUILanguages
+GetTokenInformation
+GetUserColorPreference
+GetUserDefaultLCID
+GetUserDefaultUILanguage
+GetUserGeoID
+GetUserLanguages
+GetWindowLongPtrW
+GetWindowThreadProcessId
+ghostwhite
+Global\UFH_{DC27E4C7-C59E-4710-927B-9F9C958092B1}
+GlobalAssocChangedCounter
+GlobalLock
+GlobalUnlock
+goldenrod
+green
+greenyellow
+Gs]XM
+H AVH
+H SUVWATAUAVAWH
+H SVWH
+H UATAUAVAWH
+h UAVAWH
+H WATAUAVAWH
+H!:H;
+H!^(H!^0H!^8H!^@3
+H!|$8H
+H!EpH
+H!t$0E3
+H!T$0H
+H!ugH
+H!wPH
+H;;t<H
+H;{0r
+H;A u
+H;K@H
+H;K`H
+H;l$`t=
+H9-@'
+H9^ t*H
+H9_Hs<
+H9{Pu
+H9|$0
+H9=s-
+H9t$ 
+'H9t$ 
+H9t$ tyH
+H9y0v#H
+hA_A^A]A\_^][
+HcD$ H
+HcE`H
+HcEXH
+Hcu0L
+HcUXH
+HcW8A;T$
+HeapAlloc
+HeapFree
+HeapReAlloc
+HeterogeneousContextMenu
+honeydew
+HostApps
+hotpink
+hresult
+I#N0M
+I#v0I
+I0G1-0+
+ILClone
+ILCloneFirst
+ILCombine
+ILFindLastID
+ILFree
+ILGetSize
+ILIsEqual
+ILIsParent
+Image
+indianred
+indigo
+InitializeConditionVariable
+InitializeCriticalSection
+InitializeCriticalSectionAndSpinCount
+InitializeCriticalSectionEx
+InitializeSListHead
+InitializeSRWLock
+InitOnceBeginInitialize
+InitOnceComplete
+inOldCache
+InsertMenuW
+InstallDate
+InstalledWin32AppsRevision
+internal\onecoreshell\inc\propertysethelpers.h
+internal\onecoreuapshell\inc\shellmrthelper.common.h
+internal\onecoreuapshell\inc\shellmrthelper.h
+internal\onecoreuapshell\private\inc\secondarytileidentifierhelpers.h
+internal\onecoreuapshell\private\inc\shouldswitchtodesktop.h
+internal\onecoreuapshell\private\inc\uem.h
+internal\sdk\inc\wil/result.h
+internal\sdk\inc\wil\com.h
+internal\sdk\inc\wil\Resource.h
+internal\sdk\inc\wil\ResultMacros.h
+internal\sdk\inc\wil\staging.h
+internal\shellcommoncomposable\inc\tabbedprojecthelpers.h
+InternalName
+isCurrentVersion
+IsDebuggerPresent
+IsHostApp
+iSHp6
+IsProcessorFeaturePresent
+IStream_Read
+IStream_Size
+isValidSignature
+IUnknown_GetSite
+IUnknown_QueryService
+IUnknown_Set
+ivory
+J9>tFA
+jH9t$ 
+K H!9H
+k H9-y
+k H9-yO
+K SVWH
+K VWATAVAWH
+K0H!~
+kernel32.dll
+kernelbase.dll
+khaki
+KillTimer
+Klqto%
+L!u H
+L$ A;
+L$ E3
+L$ eH
+l$ fI
+L$ SUVWH
+L$ SWH
+L$ UH
+L$ UVWATAUAVAWH
+L$ UVWAVAWH
+l$ VWATAVAWH
+l$ VWAVH
+L$ WH
+L$@A;A
+L$@E3
+L$@H3
+L$@I+
+L$`E3
+L$`E9<$
+L$`H3
+L$0E3
+L$0H3
+L$8E3
+L$8H!L$HH!L$@I
+L$HA;
+L$HE3
+L$hH3
+L$HH3
+L$hH3
+L$HH3
+L$hH3
+L$HH3
+L$hH3
+L$lE+
+L$PD9
+L$PE3
+l$pfD
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$PL+
+L$XE3
+L$xH+
+L$XH+
+L$XH3
+L;t$`}
+L9{@u
+L9{0t#H
+L96u4L
+L9d$@t
+L9d$x
+L9f A
+L9o@t
+L9t$ 
+Launcher.AllAppsDesktopApplication
+Launcher.Computer
+Launcher.DesktopPackagedApplication
+Launcher.ImmersiveApplication
+Launcher.SystemSettings
+lavender
+lavenderblush
+lawngreen
+Lct$$H
+LeaveCriticalSection
+Legal_Policy_Statement
+LegalCopyright
+lemonchiffon
+light
+lightblue
+lightcoral
+lightcyan
+lightgoldenrodyellow
+lightgray
+lightgreen
+lightpink
+lightsalmon
+lightseagreen
+lightskyblue
+lightslategray
+lightsteelblue
+lightyellow
+limegreen
+linen
+lineNumber
+list<T> too long
+LJ3u3
+LoadStringA
+LoadStringW
+Local\SM0:%d:%d:%hs
+LocalAlloc
+LocalFree
+LocalReAlloc
+LogHr
+logoOnly
+lstrlenW
+M f91
+M H1E
+M#J0I
+M#J0M
+M0K0I
+M9&ujL
+M9'u?L
+Ma[&7=
+magenta
+ManifestName
+ManifestType
+MappingFreePropertyBag
+MappingGetServices
+MappingRecognizeText
+MapViewOfFile
+maroon
+MdwUI;
+mediumaquamarine
+mediumblue
+mediumorchid
+mediumpurple
+mediumseagreen
+mediumslateblue
+mediumspringgreen
+mediumturquoise
+mediumvioletred
+memcmp
+memcpy
+memmove
+memset
+message
+Microsoft
+Microsoft Corporation
+Microsoft Corporation1
+Microsoft Corporation1&0$
+Microsoft Corporation1.0,
+Microsoft Corporation1-0+
+Microsoft Corporation1200
+Microsoft Time-Stamp PCA 2010
+Microsoft Time-Stamp PCA 20100
+Microsoft Time-Stamp service
+Microsoft Time-Stamp service0
+Microsoft Windows0
+Microsoft.AutoGenerated.%s
+Microsoft.MicrosoftEdge_8wekyb3d8bbwe
+Microsoft.Windows.Computer
+Microsoft.Windows.Cortana_cw5n1h2txyewy!CortanaUI
+Microsoft.Windows.Explorer
+Microsoft.Windows.PeopleExperienceHost_cw5n1h2txyewy!App
+Microsoft.Windows.Wil.FeatureLogging
+Microsoft-Windows-Shell-AppResolver
+Microsoft-Windows-Shell-Launcher
+midnightblue
+minATL$__a
+minATL$__f
+minATL$__m
+minATL$__z
+mintcream
+mistyrose
+moccasin
+module
+MonitorFromPoint
+MRR-uC
+ms-appdata:///local/
+ms-appx:///
+Msg:[%ws] 
+msi.dll
+ms-resource:
+msvcp_win.dll
+ms-windows-store:InstallProgress?PFN=%s
+ms-windows-store:PDP?PFN=%s
+ms-windows-store:Remediation?PFN=%s&PN=%s&appId=%s&errorCode=%d&appxState=0
+MulDiv
+N0L0J
+navajowhite
+NewTileId
+No transparent thumbnail
+NoStartPage
+NotifyFileActivityListenerOfJumpListChange
+ntdll.dll
+ntelD
+NtQueryInformationProcess
+NtQueryInformationToken
+NtUpdateWnfStateData
+NumCandidates
+NumReferencesOnOldCache
+o 8_(t
+o\$PH
+O0M0K
+oD$ f
+OEMPinned
+OH;L$XuIH
+Ok:@+
+oK0D$"<
+oL$0f
+oldlace
+ole32.dll
+OLEAUT32.dll
+olive
+olivedrab
+onecore\shell\lib\calleridentity\calleridentity.cpp
+OneCoreAppsFolder_AddAllPackagedAppsProperties
+onecoreuap\shell\lib\stockatl\xml.cpp
+OpenEventW
+OpenFileLocation
+OpenPackageInfoByFullName
+OpenProcess
+OpenProcessToken
+OpenSemaphoreW
+OpenThreadToken
+orange
+orangered
+orchid
+OriginalFilename
+originatingContextId
+originatingContextMessage
+originatingContextName
+originCallerModule
+originCallerReturnAddressOffset
+originFile
+originLineNumber
+originModule
+originName
+oT$@f
+OutputDebugStringW
+p AWH
+p WAVAWH
+PA^_^
+pA^_^[]
+PA^_^[]
+pA_A]A\_^[]
+PA_A^_^]
+pA_A^_^]
+PA_A^A\_^[]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+PackageFamilyNameFromFullName
+palegoldenrod
+palegreen
+paleturquoise
+palevioletred
+papayawhip
+PathAllocCombine
+PathCchAppend
+PathCchCombine
+PathCchFindExtension
+PathCchRemoveBackslash
+PathCchRemoveExtension
+PathCchRemoveFileSpec
+PathCommonPrefixW
+PathFileExistsW
+PathFindExtensionW
+PathFindFileNameW
+PathGetArgsW
+PathGetDriveNumberW
+PathIsFileSpecW
+PathIsPrefixW
+PathIsRelativeW
+PathIsUNCW
+PathIsURLW
+PathParseIconLocationW
+PathRemoveBlanksW
+PathRemoveExtensionW
+PathRemoveFileSpecW
+PathUnquoteSpacesW
+pcshell\shell\appresolver\appsfolder\appsfolder.cpp
+pcshell\shell\appresolver\appsfolder\appsthumb.cpp
+pcshell\shell\appresolver\appsfolder\tilestoreappsfolder.cpp
+pcshell\shell\appresolver\lib\appresolver.cpp
+pcshell\shell\appresolver\lib\appresolvercache.cpp
+pcshell\shell\appresolver\lib\appresolvercachebuilder.cpp
+pcshell\shell\appresolver\lib\appresolvercacheschema.cpp
+pcshell\shell\appresolver\lib\appresolverlinkparse.cpp
+pcshell\shell\appresolver\lib\appresolverstatichelpers.cpp
+pcshell\shell\appresolver\lib\pintostartcontextmenu.cpp
+pcshell\shell\appresolver\lib\userpinnedtilemanager.cpp
+pcshell\shell\appresolver\lib\visualelementsmanifest.cpp
+pcshell\shell\appresolver\unifiedtilemodelreconciler\applifecyclereconciler.cpp
+pcshell\shell\appresolver\unifiedtilemodelreconciler\appusagereconciler.cpp
+pcshell\shell\appresolver\unifiedtilemodelreconciler\sharedfactoryhelper.cpp
+peachpuff
+PeopleExperienceHostVS_ccv6fwk6gx0xp!App
+pinned.lnk
+PinToStartScreen
+PinUserCreatedItemToStart
+PostMessageW
+powderblue
+PPISHELL.EXE
+PrefetchVirtualMemory
+process
+ProcessIdToSessionId
+ProductName
+ProductVersion
+ProhibitDTD
+PROPSYS.dll
+PropVariantClear
+PropVariantToBoolean
+PropVariantToGUID
+PropVariantToStringAlloc
+PropVariantToUInt32
+PropVariantToUInt64
+PropVariantToVariant
+PSCreateMemoryPropertyStore
+PSCreateMultiplexPropertyStore
+PSFormatForDisplay
+PSGetPropertyFromPropertyStorage
+purple
+qlH8e=1
+QueryFullProcessImageNameW
+QueryPerformanceCounter
+QueryService SID_IImmersiveMonitorService
+QueryService SID_SwitchController
+R!s4Z
+R$fA;Z*
+r~akow
+r6fA9
+RaiseException
+RaiseFailFastException
+RDPINIT.EXE
+ReadProcessMemory
+Redmond1
+RegCloseKey
+RegCreateKeyExW
+RegDeleteValueW
+RegEnumValueW
+RegGetValueW
+RegisterClipboardFormatW
+RegOpenKeyExW
+RegQueryInfoKeyW
+RegQueryValueExW
+RegSetKeyValueW
+RegSetValueExW
+ReleaseDC
+ReleaseMutex
+ReleaseSemaphore
+ReleaseSRWLockExclusive
+ReleaseSRWLockShared
+ReleaseStgMedium
+Replaced
+ResetCache
+ResetCacheCount
+ResetEvent
+ResolveDelayLoadedAPI
+resources.pri
+result
+ReturnHr
+rMfD9?w
+RoActivateInstance
+RoGetActivationFactory
+RoGetAgileReference
+RoGetMatchingRestrictedErrorInfo
+RoOriginateError
+RoOriginateErrorW
+Root index: %d
+rootFolderIndex
+RootNotificationRegistrationFailed
+rootRefreshState
+RootSkipped
+rosybrown
+royalblue
+RSDS}Z
+RtlAcquireSRWLockExclusive
+RtlAllocateHeap
+RtlCaptureContext
+RtlCompareUnicodeString
+RtlDllShutdownInProgress
+RtlFreeHeap
+RtlInitUnicodeString
+RtlLookupFunctionEntry
+RtlNtStatusToDosError
+RtlNtStatusToDosErrorNoTeb
+RtlPublishWnfStateData
+RtlReleaseSRWLockExclusive
+RtlSubscribeWnfStateChangeNotification
+RtlUnsubscribeWnfNotificationWaitForCompletion
+RtlVirtualUnwind
+RTv3W@(
+runas
+runasuser
+RWyM)}
+s*D8s)
+s@9o t
+saddlebrown
+salmon
+sandybrown
+seagreen
+search-ms:
+seashell
+SelectObject
+SendNotifyMessageW
+SetEvent
+SetLastError
+SetRestrictedErrorInfo
+SetThreadpoolTimer
+SetTimer
+SetUnhandledExceptionFilter
+SetWindowLongPtrW
+SetWindowTextW
+SHAnsiToUnicode
+SHBindToFolderIDListParentEx
+SHBindToObject
+SHBindToParent
+SHChangeNotification_Lock
+SHChangeNotification_Unlock
+SHChangeNotify
+SHChangeNotifyDeregister
+SHChangeNotifyRegister
+SHChangeNotifySuspendResume
+SHCORE.dll
+SHCreateDataObject
+SHCreateDefaultContextMenu
+SHCreateItemFromIDList
+SHCreateItemFromParsingName
+SHCreateItemInKnownFolder
+SHCreateItemWithParent
+SHCreateShellItemArrayFromIDLists
+SHCreateShellItemArrayFromShellItem
+SHCreateStreamOnFileW
+Shell IDList Array
+Shell Object Offsets
+shell:::{98F275B4-4FFF-11E0-89E2-7B86DFD72085}
+shell\lib\activationerror.cpp
+Shell_TrayWnd
+'SHELL32.dll
+SHGetDesktopFolder
+SHGetIDListFromObject
+SHGetKnownFolderIDList
+SHGetKnownFolderPath
+SHGetLocalizedName
+SHGetPathFromIDListW
+SHGetPropertyStoreForWindow
+SHGetSpecialFolderLocation
+SHGetValueW
+SHLWAPI.dll
+SHOpenFolderAndSelectItems
+shortcutFlags
+ShortName
+ShowName
+ShowNameOnSquare150x150Logo
+SHParseDisplayName
+SHQueryValueExW
+SHSetLocalizedName
+SHSetValueW
+SHStrDupA
+SHStrDupW
+SHTaskPoolGetUniqueContext
+SHTaskPoolQueueTask
+sienna
+silver
+skyblue
+slateblue
+slategray
+SLC.dll
+SleepConditionVariableCS
+SLGetWindowsInformationDWORD
+SmallLogo
+Software\Microsoft\Windows NT\CurrentVersion
+Software\Microsoft\Windows\CurrentVersion\Explorer
+SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+Software\Microsoft\Windows\CurrentVersion\Explorer\FileAssociation
+Software\Microsoft\Windows\CurrentVersion\Explorer\FileAssociation\NoStartPageAppUserModelIDs
+SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StartPage
+Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\StateStore
+Software\Microsoft\Windows\CurrentVersion\Search
+Software\Microsoft\Windows\CurrentVersion\Search\JumplistData
+Software\Microsoft\Windows\CurrentVersion\UFH\SHC
+springgreen
+Square150x150Logo
+Square70x70Logo
+Start.TileGrid
+START_MENU_REFRSH_CACHE_FLAGS
+Start_NotifyNewApps
+Start_TrackEnabled
+Start_TrackProgs
+StartMenu_Start_Time
+StartMode=Proactive&QuerySource=Tile
+std::exception: %hs
+steelblue
+StrChrW
+StrCmpW
+StrDupW
+StretchDIBits
+StringFileInfo
+StringFromGUID2
+StrStrIW
+SUVWATAUAVAWH
+System Tools\Control Panel.lnk
+System Tools\Default Programs.lnk
+System Tools\Run.lnk
+SystemParametersInfoW
+SystemPinned
+t fA9
+t!fD9#t
+t"D8=#R
+t"fD9't
+t#E9V0t
+t#H9F
+t$ D8s*t
+T$ E3
+t$ E3
+T$ E3
+t$ E3
+t$ UWATAVAWH
+t$ UWAUAVAWH
+t$ UWAVH
+t$ WATAUAVAWH
+t$ WAVAWH
+t$ WH
+T$$D!t$ H
+T$(A+
+t$(Hc
+t$@E3
+t$`E3
+T$`L9 t4H
+T$0E3
+T$0H!|$0H
+t$0H+
+T$8E3
+T$8H!\$8
+t$fD9#t
+t$htID
+T$PA;
+T$PE3
+T$PH9T$Xt
+T$PH9T$Xt"H
+T$PL;
+t$XE3
+T$XH+
+t&fD9u
+t(fD;
+t)H9}
+t*fD91t$
+t*fD92t$L
+t,f9*t'L
+t/fE9 t)I
+t[fD9!tUM
+t^@8=
+t_fD9*tYL
+t_fD9i
+t{H!|$@L
+t>E9},u
+t>fD92t8M
+t3H9-
+t4f9*t/L
+t4fD92t.L
+t5fD9
+t9D9f
+TabGroupingPreference.TargetTabGroupId
+taD9k8u
+TAR_PublishAppResovlerScannedEvent
+tDE9Z
+telemetryNoAppId
+TerminateProcess
+t-fD9 t'H
+tfH9=
+tGfD9+tAI
+t'H9P
+Thales TSS ESN:0842-4BE6-C29A1%0#
+thistle
+threadId
+tiH9=
+tKD9[
+tL9l$0
+TlP0X
+tMf92tHE
+tOA9N
+tomato
+tQfD90tKL
+Translation
+transparent
+tUA9X
+turquoise
+tVf9;tQH
+tVfD93tPH
+tX~Q@~
+txH9=
+tyHcA8A;@
+u D9J
+u#D9R
+U0S0Q
+u8D9R
+u8H!t$@H
+UATAUAVAWH
+UAVAWH
+uFD9R
+UfhRecentShortcutAdd: %ls
+uML95[
+uN!|$ A
+unH9A
+UnhandledExceptionFilter
+UniformResourceLocator
+Unknown exception
+unknown file type
+UnmapViewOfFile
+UPTM_CreateUserPinnedTileShortcut
+UPTM_DeleteUserPinnedTileShortcut
+urlmon.dll
+USER32.dll
+USERENV.dll
+UserPinned
+USVWATAUAVAWH
+USVWATAUAWH
+USVWAVH
+uTH!3H!u
+UVWATAUAVAWH
+UVWATAUH
+UVWATAVH
+UVWAVAWH
+UWATAVAWH
+UWATH
+UWAUAVAWH
+UWAVH
+uwHcE H
+uWL95
+v H!^ I
+V:Sw$+b
+V<:;>
+VarFileInfo
+variant
+VariantCompare
+variantKind
+VariantToPropVariant
+vector<T> too long
+violet
+VisualElementsManifestParse
+VS_VERSION_INFO
+VWATAVAWH
+VWAUAVAWH
+VWAVH
+VWAWH
+w-`]&
+w`I96uB3
+WaitForSingleObject
+WaitForSingleObjectEx
+WaitForThreadpoolTimerCallbacks
+WakeAllConditionVariable
+Washington1
+WATAUAVAWH
+WATAVH
+WAVAWH
+wcschr
+wcscmp
+wcsrchr
+wcsspn
+wheat
+white
+whitesmoke
+wideLogoOnly
+wilActivity
+WilError_02
+wilResult
+WilStaging_02
+WIN://SYSAPPID
+Windows.ApplicationModel.PackageCatalog
+windows.desktopAppMigration
+Windows.Foundation.PropertyValue
+windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel
+Windows.Internal.StateRepository.Application
+Windows.Internal.StateRepository.ApplicationExtension
+Windows.Internal.StateRepository.PrimaryTileView
+Windows.Internal.StateRepository.SecondaryTileUser
+Windows.Internal.StateRepository.SecondaryTileUserNotifier
+Windows.Internal.StateRepository.TileView
+Windows.Internal.StateRepository.User
+Windows.Internal.Tiles.TileQueryFilter
+Windows.Internal.Tiles.TileStore
+Windows.Storage.dll
+WindowsCreateString
+WindowsCreateStringReference
+WindowsDeleteString
+WindowsDuplicateString
+WindowsGetStringRawBuffer
+WindowsInternal.Shell.CDSProperties.CDSTilePropertiesBatched
+WindowsInternal.Shell.LauncherPolicy.LauncherPolicy
+WindowsInternal.Shell.UnifiedTile.CuratedTileCollections.CuratedTileCollectionManager
+WindowsInternal.Shell.UnifiedTile.Private.UnifiedTileUserPinHelper
+WindowsInternal.Shell.UnifiedTile.UnifiedTileIdentifier
+WindowsInternal.Shell.UnifiedTile.UnifiedTileIdentifierExtractor
+WindowsIsStringEmpty
+WindowsStringHasEmbeddedNull
+x ATAUAVH
+x ATAVAWH
+x AUAVAWH
+x AVAW
+x AVH
+x AWH
+x UATAUAVAWH
+x UAVAWH
+x"f9]
+x#9}0w
+x&I9.u!H
+x(9}@t#D
+x(A9?t#A
+x)f;t$ t
+x?D9}
+x?D9~Du
+x?D9e
+x?D9m
+x?D9u
+x=D9k
+x5fD9e
+x9H9\$Pt2H
+XA_A^_^[]
+xA_A^A]A\_^[]
+XA_A^A]A\_^[]
+XA_A^A]A\_^][
+x'E9D$
+x'fD;u
+xK@8u(tEH
+XSDFILE
+XSLFILE
+xtD9g,u
+xUf;E
+xY;|$XsSH
+Y(HcQ
+yellow
+yellowgreen
+z.9Wv
+'zO{T

@@ -1,0 +1,2139 @@
+        <xs:schema id="embedfiles" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">          <xs:simpleType name="IndexerConfigEmbeddedFilesType">            <xs:restriction base="xs:string">                <xs:pattern value="((e|E)(m|M)(b|B)(e|E)(d|D)(f|F)(i|I)(l|L)(e|E)(s|S))"/>            </xs:restriction>          </xs:simpleType>          <xs:element name="indexer-config">            <xs:complexType>              <xs:attribute  name="type"  type="IndexerConfigEmbeddedFilesType" use="required"/>            </xs:complexType>          </xs:element>        </xs:schema>    
+        <xs:schema id="prifile" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">          <xs:simpleType name="IndexerConfigPriType">            <xs:restriction base="xs:string">                <xs:pattern value="((p|P)(r|R)(i|I))"/>            </xs:restriction>          </xs:simpleType>          <xs:element name="indexer-config">            <xs:complexType>              <xs:attribute name="type" type="IndexerConfigPriType" use="required"/>            </xs:complexType>          </xs:element>        </xs:schema>    
+        <xs:schema id="priinfo" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">          <xs:simpleType name="IndexerConfigPriInfoType">            <xs:restriction base="xs:string">            <xs:pattern value="((p|P)(r|R)(i|I)(i|I)(n|N)(f|F)(o|O))"/>            </xs:restriction>          </xs:simpleType>          <xs:element name="indexer-config">            <xs:complexType>              <xs:attribute name="type" type="IndexerConfigPriInfoType" use="required"/>              <xs:attribute name="emitStrings" type="xs:boolean" use="optional"/>              <xs:attribute name="emitPaths" type="xs:boolean" use="optional"/>              <xs:attribute name="emitEmbeddedData" type="xs:boolean" use="optional"/>            </xs:complexType>          </xs:element>        </xs:schema>    
+        <xs:schema id="resjson" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">          <xs:simpleType name="IndexerConfigResJsonType">            <xs:restriction base="xs:string">                <xs:pattern value="((r|R)(e|E)(s|S)(j|J)(s|S)(o|O)(n|N))"/>            </xs:restriction>          </xs:simpleType>          <xs:element name="indexer-config">            <xs:complexType>              <xs:attribute  name="type"  type="IndexerConfigResJsonType" use="required"/>              <xs:attribute  name="initialPath"  type="xs:string" use="optional"/>            </xs:complexType>          </xs:element>        </xs:schema>    
+        <xs:schema id="resw" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">          <xs:simpleType name="IndexerConfigResxType">            <xs:restriction base="xs:string">                <xs:pattern value="((r|R)(e|E)(s|S)(w|W))"/>            </xs:restriction>          </xs:simpleType>          <xs:element name="indexer-config">            <xs:complexType>              <xs:attribute  name="type"  type="IndexerConfigResxType" use="required"/>              <xs:attribute  name="convertDotsToSlashes"  type="xs:boolean" use="required"/>              <xs:attribute  name="initialPath"  type="xs:string" use="optional"/>            </xs:complexType>          </xs:element>        </xs:schema>    
+        <xs:schema id="resx" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">          <xs:simpleType name="IndexerConfigResFilesType">            <xs:restriction base="xs:string">                <xs:pattern value="((r|R)(e|E)(s|S)(f|F)(i|I)(l|L)(e|E)(s|S))"/>            </xs:restriction>          </xs:simpleType>          <xs:element name="indexer-config">            <xs:complexType>              <xs:attribute  name="type"  type="IndexerConfigResFilesType" use="required"/>              <xs:attribute  name="qualifierDelimiter"  type="xs:string" use="required"/>            </xs:complexType>          </xs:element>        </xs:schema>    
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" >      <xs:simpleType name="candidateType">        <xs:restriction base="xs:string">          <xs:pattern value="Path|String|EmbeddedData"/>        </xs:restriction>      </xs:simpleType>      <xs:complexType name="scopeType">        <xs:sequence>          <xs:element name="ResourceMapSubtree" type="scopeType" minOccurs="0" maxOccurs="unbounded"/>          <xs:element name="NamedResource" minOccurs="0" maxOccurs="unbounded">            <xs:complexType>              <xs:sequence>                <xs:element name="Decision" minOccurs="0" maxOccurs="unbounded">                  <xs:complexType>                    <xs:sequence>                      <xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded"/>                    </xs:sequence>                    <xs:anyAttribute processContents="skip" />                  </xs:complexType>                </xs:element>                <xs:element name="Link" type="xs:string" minOccurs="0" maxOccurs="1" />                <xs:element name="Candidate" minOccurs="0" maxOccurs="unbounded">                  <xs:complexType>                    <xs:sequence>                      <xs:element name="QualifierSet" minOccurs="0" maxOccurs="unbounded">                        <xs:complexType>                          <xs:sequence>                            <xs:element name="Qualifier" minOccurs="0" maxOccurs="unbounded">                              <xs:complexType>                                <xs:attribute name="name" type="xs:string" use="required" />                                <xs:attribute name="value" type="xs:string" use="required" />                                <xs:attribute name="scoreAsDefault" type="xs:decimal" use="optional" />                                <xs:anyAttribute processContents="skip" />                              </xs:complexType>                            </xs:element>                          </xs:sequence>                          <xs:anyAttribute processContents="skip" />                        </xs:complexType>                      </xs:element>                      <xs:choice>                        <xs:element name="Value" minOccurs="0" maxOccurs="unbounded">                          <xs:complexType>                            <xs:simpleContent>                              <xs:extension base="xs:string">                                <xs:attribute name="rawLocator" type="xs:string" use="optional"/>                              </xs:extension>                            </xs:simpleContent>                          </xs:complexType>                        </xs:element>                        <xs:element name="Base64Value" minOccurs="0" maxOccurs="unbounded">                          <xs:complexType>                            <xs:simpleContent>                              <xs:extension base="xs:base64Binary">                                <xs:attribute name="rawLocator" type="xs:string" use="optional"/>                              </xs:extension>                            </xs:simpleContent>                          </xs:complexType>                        </xs:element>                      </xs:choice>                    </xs:sequence>                    <xs:attribute name="type" type="candidateType" use="required" />                  </xs:complexType>                </xs:element>              </xs:sequence>              <xs:attribute name="name" use="required" type="xs:string" />              <xs:anyAttribute processContents="skip" />            </xs:complexType>          </xs:element>        </xs:sequence>        <xs:attribute name="name" use="required" type="xs:string" />        <xs:anyAttribute processContents="skip" />      </xs:complexType>      <xs:element name="PriInfo">        <xs:complexType>          <xs:sequence>            <xs:element name="PriHeader" minOccurs="0" maxOccurs="1">              <xs:complexType>                <xs:sequence>                  <xs:any minOccurs ="0" maxOccurs="unbounded" processContents="skip" />                </xs:sequence>                <xs:anyAttribute processContents="skip" />              </xs:complexType>            </xs:element>            <xs:element name="QualifierInfo" minOccurs="0" maxOccurs="1">              <xs:complexType>                <xs:sequence>                  <xs:any minOccurs="0" maxOccurs="unbounded" processContents="skip" />                </xs:sequence>              </xs:complexType>            </xs:element>            <xs:element name="ResourceMap">              <xs:complexType>                <xs:sequence>                  <xs:element name="VersionInfo" minOccurs="0" maxOccurs="1">                    <xs:complexType>                      <xs:anyAttribute processContents="skip" />                    </xs:complexType>                  </xs:element>                  <xs:element minOccurs="0" maxOccurs="unbounded" name="ResourceMapSubtree" type="scopeType" />                </xs:sequence>                <xs:attribute name="name" type="xs:string" use="optional" />                <xs:anyAttribute processContents="skip" />              </xs:complexType>            </xs:element>          </xs:sequence>        </xs:complexType>      </xs:element>    </xs:schema>
+ - 0x%8x
+ !"#$%&'()*+,-./0123
+ _^]H
+ A^_^
+ A^_^[]
+ A^_^H
+ A^A]A\_^
+ A_A^_
+ A_A^_^]
+ A_A^A\
+ A_A^A\_^
+ A_A^A\_^][
+ A_A^A]A\_
+ H3E H3E
+ Microsoft Corporation. All rights reserved.
+ Operating System
+ ref="%s", buf="%s", cch=%i
+ uj;H
+ Windows
+!\$(A
+!\$(D
+!\$(H
+!\$(L
+!|$(D
+!|$(H
+!|$(L
+!C !C$
+!L$(E
+!L$(L
+!L$0H
+!L$4A
+!T$(D
+!t$(D
+!T$(D
+!t$(D
+!T$(L
+!t$(L
+!T$(L
+!t$(L
+!T$(L
+!t$(L
+!T$hH
+!This program cannot be run in DOS mode.
+"fD98
+#<%s:%p
+#D$`H
+$;C8}
+%hs!%p: 
+%hs(%d) tid(%x) %08X %ws
+%hs(%d)\%hs!%p: 
+%s : %s %s %08x : 
+%s Qualifiers: %s
+%s(%d) : %s %s %08x : 
+%s(%d,%d) : %s %s %08x : 
+(%d,%d)
+(_^][
+(|$`I
+(0,0)
+(caller: %p) 
+(D$@L
+(D$Pf
+(H;\$@
+(index)
+(size_t)cchSubStr
+(size_t)size
+(t$ H
+(t$@H
+(t$`I
+(t$`L
+(t$PH
+(t$pH
+(t$PH
+(t$PI
+(t$pI
+(t$PI
+(t$pI
+(t$pL
+(this)
+(this)->m_pHeader
+(this)->pHeader->flags
+)D$@f
+)D$@H
+)D$@H!4
+)D$`H
+)D$P3
+)D$PH
+)D$PL
+)t$ H
+)t$pH
+)t$PH
+*.pri
+.*.pri
+.?AV_com_error@@
+.?AVbad_alloc@std@@
+.?AVexception@@
+.?AVfailure@ios_base@std@@
+.?AVlength_error@std@@
+.?AVlogic_error@std@@
+.?AVout_of_range@std@@
+.?AVResultException@wil@@
+.?AVruntime_error@std@@
+.00cfg
+.CRT$XCA
+.CRT$XCC
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIZ
+.CRT$XLA
+.CRT$XLZ
+.data
+.data$brc
+.data$r$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.edata
+.gfids
+.giats
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.pdata
+.pri.xml
+.priinfo
+.rdata
+.rdata$brc
+.rdata$T$brc
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zzzdbg
+.resfiles
+.resjson
+.Resw
+.resw
+.rsrc
+.rsrc$01
+.rsrc$02
+.text
+.text$di
+.text$mn
+.text$mn$00
+.text$x
+.text$yd
+.tls$
+.tls$ZZZ
+.xdata
+.xdata$x
+/:*?"<>|
+/:*?"<>|\
+/uTfD;
+::UuidCreate Failed
+::UuidToString Failed
+:@8y]tCH
+:oku(
+;\u9H
+;{(}G
+;EPuBH
+;EwuUH
+;FLsaH
+;t$ }1
+;uw}TH
+;uX}'
+??0exception@@QEAA@AEBQEBD@Z
+??0exception@@QEAA@AEBQEBDH@Z
+??0exception@@QEAA@AEBV0@@Z
+??0exception@@QEAA@XZ
+??1exception@@UEAA@XZ
+??1type_info@@UEAA@XZ
+?456789:;<=
+?9]@~XI
+?f92u
+?I;~pu
+?terminate@@YAXXZ
+?what@exception@@UEBAPEBDXZ
+@.data
+@.didat
+@.reloc
+@8,1u
+@8|$Pt\@8|$Qu"
+@8h@u
+@8h8u
+@8h9u
+@8hAu
+@8hHu
+@8hhu
+@8hit
+@8hiu
+@8hIu
+@8hiu
+@8hIu
+@8hiu
+@8hIu
+@8hiu
+@8hIu
+@8hiu
+@8hIu
+@8hiu
+@8hIu
+@8jAu@H
+@8jhuUD
+@8jhuVD
+@8jit
+@8jiu
+@8jIu@H
+@8jiu`H
+@8jYuJH
+@8kIuDH
+@8l$PuCH
+@8nAt
+@8nIt
+@8nYt
+@8oAt
+@8oAuDH
+@8oit
+@8oIt
+@8oIuGH
+@8oYt
+@8oYuQH
+@8q t>M
+@8y)t
+@A^_^
+@A^A\_
+@A^A]_
+@A_A]A\_^][
+@A_A^]
+@A_A^_
+@A_A^_^[
+@A_A^_^]
+@A_A^A\
+@A_A^A\_]
+@A_A^A\_^
+@A_A^A]
+@A_A^A]A\_
+@A_A^A]A\_^]
+@HcK(H
+@P!\$(
+@SUVWATAUAVAWH
+@SUVWATAVAWH
+@SUVWAVAWH
+@SUVWAVH
+@SUVWH
+@SVWH
+@USVWATAUAVAWH
+@USVWATAUAWH
+@USVWATAVAWH
+@USVWAUAVAWH
+@USVWAVAWH
+@USVWAVH
+@USWH
+@UVWH
+@UWATAVAWH
+@VWAVH
+@WAVAWH
+@XD9AHu
+[%hs(%hs)]
+[%hs]
+[def_file_list]
+[def_hnames]   
+[def_hnamesx]  
+[Makepri.exe] 
+[mrm_dataitem] 
+[mrm_decn_info]
+[mrm_env_map]  
+[mrm_hschema]  
+[mrm_hschemaex] mrm_pri3"
+[mrm_hschemarf]
+[mrm_pridescex]
+[mrm_res_link] 
+[mrm_res_map__]
+[mrm_res_map2_]
+[mrm_rev_map]  
+\$ A;
+\$ E;f
+\$ E3
+\$ UH
+\$ UVWATAUAVAWH
+\$ UVWAVAW
+\$ UVWAVAWH
+\$ UVWH
+\$ VWAVH
+\$@E3
+\$`9x
+\$`E3
+\$0E3
+\$8E3
+\$8I;
+\$hE3
+\$P9Z
+\$PH;
+\$PH;\$@u
+\$xE3
+\$XH;
+\\?\UNC\
+]@I9^Xt?H
+]hH;]`t3H
+]hH;]Pt3H
+]w;Eg
+^8NIt
+___lc_codepage_func
+___lc_handle_func
+___mb_cur_max_func
+__C_specific_handler
+__crtGetStringTypeW
+__crtLCMapStringW
+__CxxFrameHandler3
+__dllonexit
+__mb_cur_max
+__pctype_func
+__uncaught_exception
+_amsg_exit
+_callnewh
+_CxxThrowException
+_errno
+_filelengthi64
+_fileno
+_initterm
+_lock
+_onexit
+_purecall
+_t$Hf
+_ui64tow_s
+_unlock
+_vscwprintf_l
+_vsnprintf_s
+_vsnwprintf
+_wcsicmp
+_wcsnicmp
+_wfopen
+_wtof
+_wtoi
+_XcptFilter
+` AUAVAWH
+` UAVAWH
+`.rdata
+`A^_[
+`A^_^
+`A^_^][
+`A_A^_^[
+`A_A^_^]
+`A_A^A\_^][
+`A_A^A]A\_^]
+{ ATAVAWH
+{ ATH
+{ AVH
+{(t8H
+{xH;{pt7H
+|$ AVH
+|$ E3
+|$ UATAUAVAWH
+|$ UAVAWH
+|$ UH
+|$(A^
+|$(L!t$ 
+|$@A_A^A]A\
+|$@E3
+|$@H;|$X
+|$`E3
+|$0A^A]
+|$0H!\$(H
+|$8E3
+|$HE3
+|$pE3
+|$XfD
+}+D9Q
+}X2s6H
+~BLcF
+~vD;h
+<?xml version="1.0" encoding="utf-8"?><resources %s %s>    <index root="" startIndexAt="">        <default>            <qualifier name="Language" value="en-us"/>        </default>        <indexer-config type="PRI" />        <indexer-config type="PRIINFO" emitStrings="true" emitPaths="true" />        <indexer-config type="RESW" convertDotsToSlashes="true" initialPath="" />        <indexer-config type="RESJSON" initialPath="" />    </index>    <index root="" startIndexAt="">        <default>            <qualifier name="Language" value="en-us"/>        </default>    </index></resources>
+<?xml version="1.0" encoding="utf-8"?><xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">  <xs:element name="resources">    <xs:complexType>      <xs:sequence>        <xs:element name="packaging" maxOccurs="1" minOccurs="0">          <xs:complexType>            <xs:sequence>              <xs:element name="autoResourcePackage" maxOccurs="unbounded" minOccurs="0">                <xs:complexType>                  <xs:sequence>                    <xs:element name="autoPackages" minOccurs="0" maxOccurs="unbounded">                      <xs:complexType>                        <xs:sequence minOccurs="1" maxOccurs="unbounded">                          <xs:any processContents="skip" />                        </xs:sequence>                      </xs:complexType>                    </xs:element>                  </xs:sequence>                  <xs:attribute name="qualifier" type="xs:string" use="required" />                </xs:complexType>              </xs:element>              <xs:element name="resourcePackage" maxOccurs="unbounded" minOccurs="0">                <xs:complexType>                  <xs:sequence>                    <xs:element name="qualifierSet" maxOccurs="unbounded" minOccurs="0">                      <xs:complexType>                        <xs:attribute name="definition" type="xs:string" use="required" />                      </xs:complexType>                    </xs:element>                  </xs:sequence>                  <xs:attribute name="name" type="xs:string" use="required" />                </xs:complexType>              </xs:element>              <xs:element name="omitSchemaFromResourcePacks" maxOccurs="1" minOccurs="0" />              <xs:element name="splitLanguageVariants" maxOccurs="1" minOccurs="0" />              <xs:element name="granularSplit" maxOccurs="1" minOccurs="0" />              <xs:element name="packagingOptions" maxOccurs="1" minOccurs="0">                <xs:complexType>                  <xs:attribute name="packageBy" type="xs:string" use="required" />                </xs:complexType>              </xs:element>            </xs:sequence>          </xs:complexType>        </xs:element>        <xs:element maxOccurs="unbounded" name="index">          <xs:complexType>            <xs:sequence>              <xs:element name="qualifiers" minOccurs="0" maxOccurs="unbounded">                <xs:complexType>                  <xs:sequence>                    <xs:element minOccurs="1" maxOccurs="unbounded" name="qualifier">                      <xs:complexType>                        <xs:attribute name="name" type="xs:string" use="required" />                        <xs:attribute name="value" type="xs:string" use="required" />                      </xs:complexType>                    </xs:element>                  </xs:sequence>                </xs:complexType>              </xs:element>              <xs:element name="default" minOccurs="0" maxOccurs="unbounded">                <xs:complexType>                  <xs:sequence>                    <xs:element minOccurs="1" maxOccurs="unbounded" name="qualifier">                      <xs:complexType>                        <xs:sequence>                          <xs:element name="allowed" minOccurs="0" maxOccurs="1">                            <xs:complexType>                              <xs:sequence minOccurs="1" maxOccurs="unbounded">                                <xs:any processContents="skip" />                              </xs:sequence>                            </xs:complexType>                          </xs:element>                        </xs:sequence>                        <xs:attribute name="name" type="xs:string" use="required" />                        <xs:attribute name="value" type="xs:string" use="required" />                      </xs:complexType>                    </xs:element>                  </xs:sequence>                </xs:complexType>              </xs:element>              <xs:element name="indexer-config" minOccurs="0" maxOccurs="unbounded">                <xs:complexType>                  <xs:sequence>                    <xs:any minOccurs="0" maxOccurs="unbounded" processContents="skip"/>                  </xs:sequence>                  <xs:attribute name="type" type="xs:string" use="required" />                  <xs:anyAttribute processContents="skip"/>                </xs:complexType>              </xs:element>            </xs:sequence>            <xs:attribute name="root" type="xs:string" use="required" />            <xs:attribute name="startIndexAt" type="xs:string" use="required" />          </xs:complexType>        </xs:element>      </xs:sequence>      <xs:attribute name="targetOsVersion" type="xs:string" use="optional" />      <xs:attribute name="targetPlatform" type="xs:string" use="optional" />      <xs:attribute name="majorVersion" type="xs:positiveInteger" use="optional" />      <xs:attribute name="isDeploymentMergeable" type="xs:boolean" use="optional" />    </xs:complexType>  </xs:element></xs:schema>
+<unknown>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">            <xs:simpleType name="ExclusionTypeList">            <xs:restriction base="xs:string">                <xs:enumeration value="path"/>                <xs:enumeration value="extension"/>                <xs:enumeration value="name"/>                <xs:enumeration value="tree"/>            </xs:restriction>            </xs:simpleType>            <xs:complexType name="FolderExclusionType">            <xs:attribute  name="type"  type="ExclusionTypeList" use="required"/>            <xs:attribute  name="value"  type="xs:string" use="required"/>            <xs:attribute  name="doNotTraverse"  type="xs:boolean" use="required"/>            <xs:attribute  name="doNotIndex"  type="xs:boolean" use="required"/>            </xs:complexType>            <xs:simpleType name="IndexerConfigFolderType">            <xs:restriction base="xs:string">                <xs:pattern value="((f|F)(o|O)(l|L)(d|D)(e|E)(r|R))"/>            </xs:restriction>            </xs:simpleType>            <xs:element name="indexer-config">            <xs:complexType>                <xs:sequence>                <xs:element name="exclude" type="FolderExclusionType"  minOccurs="0" maxOccurs="unbounded"/>                </xs:sequence>                <xs:attribute  name="type"  type="IndexerConfigFolderType" use="required"/>                <xs:attribute  name="foldernameAsQualifier"  type="xs:boolean" use="required"/>                <xs:attribute  name="filenameAsQualifier"  type="xs:boolean" use="required"/>                <xs:attribute  name="qualifierDelimiter"  type="xs:string" use="required"/>            </xs:complexType>            </xs:element>            </xs:schema>
+040904B0
+0A^_]
+0A^_^
+0A^_^][
+0A^A]A\_^[]
+0A_A^_
+0A_A^_^]
+0A_A^A\
+0A_A^A\_^
+0A_A^A\_^[]
+0A_A^A]
+0A_A^A]_^[]
+0A_A^A]A\_
+0A_A^A]A\_^]
+10.0.0
+10.0.0.5
+10.0.17763.1
+10.0.17763.1 (WinBuild.160101.0800)
+2333333
+333333
+6.2.1
+6.3.0
+6.3.1
+68^It
+8.u4H
+8.u8H
+8\$8u
+8^Iu&H
+89:u!
+8A^_^[
+8A`uJ
+8D$@t|E
+8H!(H
+8L9L;(u
+8QAu+H
+8QYu+H
+8wekyb3d8bbwe\Windows\
+8Ymu5
+9\$\t
+9^,v#L
+9{4v0L
+9|$`t6
+9+|ZL
+99.0.1
+9A0|E
+9D$`u
+9D$<}
+9D$PtJH
+9D$pu
+9D$xt8H
+9h$uOH
+9jPtV
+9k(~83
+9MTt[A
+9NTtIA
+9ODtE
+9OTt2
+9OTt6
+9S(~~L
+9s0~9L
+A!4$I
+A(D;@
+A(HcL$\
+A,9A(|K
+A;R<|@M
+A]A\_
+A^_^[]
+A^_^][
+A^A\]
+A^A\_^]
+A^A]_^]
+A^A]A\_^[]
+A_A\]
+A_A]A\_]
+A_A]A\_^[]
+A_A^]
+A_A^_
+A_A^_^[]
+A_A^_^]
+A_A^_^][
+A_A^A\
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[]
+A_A^A\_^][
+A_A^A]
+A_A^A]_]
+A_A^A]_^
+A_A^A]_^[]
+A_A^A]A\]
+A_A^A]A\_
+A_A^A]A\_^[
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A_A^A]A\_^][
+A_A^A]A\_H
+A0fD9h
+a0H9Yp
+A8hit
+A8hiu
+A8qxtfH
+A8U*t
+A9AHt<M
+A9W@|!E9o@t
+A9wPu!L
+abort
+AcquireSRWLockExclusive
+AcquireSRWLockShared
+activatibleClassId
+AddAccessAllowedAceEx
+AddResourceMapBuilder
+AHA;@
+AHA;P
+aHcK0H
+AL9AH
+AllocateAndInitializeSid
+allowed
+AlternateForm
+altform
+api-ms-win-appmodel-runtime-l1-1-0.dll
+api-ms-win-core-apiquery-l1-1-0.dll
+api-ms-win-core-com-l1-1-0.dll
+api-ms-win-core-com-l1-1-1.dll
+api-ms-win-core-debug-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-1.dll
+api-ms-win-core-errorhandling-l1-1-0.dll
+api-ms-win-core-file-l1-1-0.dll
+api-ms-win-core-file-l1-2-0.dll
+api-ms-win-core-handle-l1-1-0.dll
+api-ms-win-core-heap-l1-1-0.dll
+api-ms-win-core-heap-l2-1-0.dll
+api-ms-win-core-libraryloader-l1-2-0.dll
+api-ms-win-core-localization-l1-2-0.dll
+api-ms-win-core-memory-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-1.dll
+api-ms-win-core-profile-l1-1-0.dll
+api-ms-win-core-registry-l1-1-0.dll
+api-ms-win-core-rtlsupport-l1-1-0.dll
+api-ms-win-core-shlwapi-legacy-l1-1-0.dll
+api-ms-win-core-string-l1-1-0.dll
+api-ms-win-core-synch-l1-1-0.dll
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-core-sysinfo-l1-1-0.dll
+api-ms-win-core-threadpool-l1-2-0.dll
+api-ms-win-core-timezone-l1-1-0.dll
+api-ms-win-core-url-l1-1-0.dll
+api-ms-win-core-util-l1-1-0.dll
+api-ms-win-core-winrt-error-l1-1-0.dll
+api-ms-win-core-winrt-error-l1-1-1.dll
+api-ms-win-core-winrt-l1-1-0.dll
+api-ms-win-core-winrt-string-l1-1-0.dll
+api-ms-win-eventing-provider-l1-1-0.dll
+api-ms-win-security-base-l1-1-0.dll
+api-ms-win-security-provider-l1-1-0.dll
+api-ms-win-shcore-path-l1-1-0.dll
+ApiSetQueryApiSetPresence
+AsciiPath
+AsciiString
+Assert
+assertVersion
+ATAVAWH
+Attributes
+AttributeTypes
+AUAVAWH
+autoPackages
+autoResourcePackage
+AX+A\
+AX9A\v
+bad allocation
+Base64Value
+bcp47mrm.dll
+bestActualMatchPriority
+bestActualMatchScore
+black
+blank
+BPH90teL
+bsearch
+buffer
+builder
+Bx9ATt
+C H;x
+c UAVAWH
+C,9C(|
+c@A9l$
+C\$pH
+C`Hc0H
+C8D9{8|
+CallContext:[%hs] 
+Candidate
+CandidateMerge
+candidatePrisFolderName
+cbBuf
+cbBuffer
+cbBufferMin
+cbData
+cbDataOut
+cbElem
+cbElem x newSize
+cbElem x nNewElems
+cbElem x nOldElems
+cbElem x offset
+cbElem x oldSize
+cbItem
+cbNew < cbOld
+cbRef
+cchBuffer
+cchBufferMin
+cchInitial
+cchPool
+CD$xH
+CFIXmlConfig::_ProcessIndexerConfigNode
+CFolderIndexer::Init
+CFolderIndexer::Process
+CheckIsCompatible
+child::
+childIndex
+CL$HH
+client
+CloseHandle
+CloseOverlayPaths
+CloseThreadpoolWork
+CoCreateFreeThreadedMarshaler
+CoCreateInstance
+CoMarshalInterface
+comment
+CompanyName
+CompareBcp47Tags
+CompareFileTime
+CompareStringOrdinal
+ComputeChecksum
+ConcatPathElement
+ConditionOperators
+config
+Configuration
+contrast
+Contrast
+ContrastMode
+convertDotsToSlashes
+CoReleaseMarshalData
+CoTaskMemAlloc
+count
+CpI94
+CQualifierApplicator::ApplyQualifier
+CQualifierApplicator::ApplyQualifierSetBuilder
+CQualifierApplicator::CQualifierApplicator
+CQualifierApplicator::CQualifierSetBuilder::AddQualifier
+CreateDirectoryW
+CreateEventExW
+CreateFileMappingW
+CreateFileW
+CreateMutexExW
+CreateSemaphoreExW
+CreateStreamOnHGlobal
+CreateThreadpoolWork
+Creating Merged file path
+CT$xL
+custom
+Custom
+CustomQualifier
+CXmlHelper::GetNodeName Error Getting Node Name 
+CXmlHelper::GetNodeText Error Getting Node Text 
+D!D$(A
+D!D$(E
+D!t$$H
+D!t$(L
+D$ E3
+d$ E3
+D$ E3
+D$ fD
+d$(E3
+D$(E3
+D$@A;
+D$@E3
+D$@H;
+D$@H;C
+D$@H;G
+D$@H9D$Hte8WYt
+D$\fA
+D$`9B
+D$`E3
+D$`fD
+D$`H;X
+D$0E3
+d$0E3
+D$0E3
+D$0H#
+D$0H;
+D$4H;\$0u
+D$80f
+D$8E3
+D$8L;
+D$bD;
+D$HD9@
+D$HE3
+D$HH9A
+D$HI;
+D$hL98t
+D$l;A
+D$LD;D$d
+D$P%H
+D$PE3
+D$pfA
+D$PH;
+D$PH;CPu
+D$pL;
+D$x9Yl~
+D$XfB
+D$XfD9
+D$XM;
+D;_0|
+D;|$(
+D;|$@sX
+D;|$4
+D;|$H
+D;d$4s H
+D;eP}8
+D;F\u
+D;GLs)H
+D;h,s
+D;t$4
+D;u@|
+D+FPA
+D8"u*H
+D8$9t
+D8$9u
+D8@)t
+D8@0toH
+D8@9t
+D8@It
+D8@it
+D8`At
+D8`Au
+D8`It
+D8`Iu H
+D8`Yt
+D8`Yu
+D8|$Tt
+D8|$Ut
+D8A)t
+D8A)u
+D8A9t
+D8A9u
+D8aAu-H
+D8AIt
+D8Ait
+D8Aiu
+D8AIu
+D8aYu-H
+D8B)u
+D8B9u
+D8BIu
+D8Biu
+D8c ufL
+D8d$0
+D8gYt
+D8IIt
+D8IIu!9Y
+D8L$0uqL
+D8sIt
+D8sIu*H
+D8t$@t
+D8t$Pt H
+D8XHu
+D8Xhu
+D8XHu
+D8XhuTE
+D8XIu
+D8Xiu
+D8XIu
+D8Xiu
+D8XIu
+D8XXu
+D8XYu
+D8y2u
+D9}g~bH
+D91t`
+D9a(wAH
+D9d$4
+D9g0~6M
+D9K(t
+D9l$@
+D9p$u#L
+D9S,v
+D9t$pu
+D9'te
+D9y(~fM
+D9y(~xM
+DataItemsSectionLocator
+dataReference
+DebugBreak
+decisionInfo
+DecisionMerge
+DecodePointer
+default
+defaultEnvironmentIndex
+definition
+DefStatus:
+DelayLoadFailureHook
+DeleteCriticalSection
+DeleteFileW
+deque<T> too long
+DeviceFamily
+devicefamily
+DllCanUnloadNow
+DllGetActivationFactory
+DllGetClassObject
+done %d %I64u %I64u %s
+doNotIndex
+doNotTraverse
+downlevel
+DXFeatureLevel
+E I+E
+E(=csm
+E(L;E8u
+E;gHr
+E@H9GXt
+E0A9D
+E8=csm
+E8B(t
+E8Yhu
+E94$u
+E9gHvf3
+eachQualifier
+effffff
+EH;E@t
+Eh=csm
+EH=csm
+eL9y 
+eL9y0
+EmbeddedData
+embedfiles
+emitEmbeddedData
+emitPaths
+emitStrings
+EncodePointer
+EnterCriticalSection
+EnumOverlayPaths
+en-US
+environment
+EqualSid
+error
+EventName
+EventProviderEnabled
+EventRegister
+EventSetInformation
+EventUnregister
+EventWriteTransfer
+Ex=csm
+EX=csm
+Ex9GTtkA
+Exception
+exclude
+exists %d %I64u %I64u %s
+extension
+ext-ms-win-resources-languageoverlay-l1-1-0
+ext-ms-win-resources-languageoverlay-l1-1-0.dll
+ext-ms-win-resources-languageoverlay-l1-1-1
+F A;v4
+F f9X
+f#D$XH
+F(fD9`
+f;C$s
+F0HcU8
+f9(u)M
+f9,Au
+f9,Bu
+f9,Ku
+f9,yu
+f9,Zu
+f9\$`A
+f94Hu
+f9D$X
+f9iNt;H
+fA9<Fu
+fA94Du
+fA9Z*v$A
+Failed - 
+Failed - Allocating CQualifierApplicator
+failed to caculate hash
+Failed to get file size
+Failed to map view of file
+Failed to read from file
+FailFast
+fallbackScore
+false
+fB9,Bu
+fB9<Bu
+fB9<ku
+fB9<Ru
+fB94@u
+fB94Bu
+fB94Cu
+fB94Ju
+fclose
+fD;L$(t
+fD;s8s,H
+fD9$_u
+fD9$Cu
+fD9$Fu
+fD9$Gu
+fD9$h}UH
+fD9$OtlH
+fD9$pu
+fD9&t|A
+fD9(s
+fD9)A
+fD9)v7H
+fD9*t
+fD9,Cs
+fD9,Gu
+fD9,Hu
+fD9,Qu
+fD9,Ss
+fD9|}
+fD9|E
+fD9<^u
+fD9<Cu
+fD9<Fu
+fD9<ru
+fD9<xu
+fD90t
+fD93H
+fD93u
+fD94>tD
+fD94Cu
+fD94Gu
+fD94qu
+fD96t
+fD98t
+fD9l$@v0H
+fD9lE
+fD9mg
+fD9't
+fD9t]
+fD9v:
+fD9v<
+fE9$Gu
+fE9,Fu
+fE9'u
+fF9$@u
+fF9$Bu
+fF9$Cu
+fF9$Gu
+fF9$Hu
+fF9,@u
+fF9,Bu
+fF9,Cu
+fF9,Gu
+fF9<@u
+fF9<Bu
+fF9<Gu
+fF94@u
+fF94Bu
+ffffff
+fffffff
+fG9$Fu
+fG9$Gu
+fgetwc
+fhD+`
+FhD9h
+FhfD9(v^D
+FhfD9h
+Fi8+OY
+File - 
+File Excluded: 
+FileDescription
+fileIndex
+FileListLocator
+filenameAsQualifier
+Files
+FileVersion
+FindClose
+FindFirstFileW
+FindNextFileW
+FlushFileBuffers
+folder
+Folder - 
+Folder Excluded: 
+Folder traversal
+folderIndex
+foldernameAsQualifier
+FolderPath - 
+FormatLanguageTag
+FormatMessageW
+FPE9<
+FPF;,
+FPHcL$\
+fread
+FreeLibraryWhenCallbackReturns
+FreeSid
+fromPool
+Function
+Fx9GTt/
+FxfD9i
+G 9AXu
+G 9GLt
+G Lcm
+G(D;p
+G`H9oXt/H
+G`H9oXtZH
+G0HcT$@
+G0HcU0
+G8@8,
+GenericEvent
+GetAce
+GetAppOrSysFolder
+GetClosenessOfUnIsoRegionTags
+GetCompositeRegionCode
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThreadId
+GetDistanceOfClosestLanguageInList
+GetFileAttributesExW
+GetFileAttributesW
+GetFileSizeEx
+GetFinalPathNameByHandleW
+GetFinalPathNameByHandleW Failed
+GetFinalPathNameByHandleW returned incorrect size
+GetFullPathNameW
+GetLastError
+GetLengthSid
+GetModuleFileNameA
+GetModuleHandleExW
+GetModuleHandleW
+GetNamedSecurityInfoW
+GetOrCreateFilesList
+GetParentCompositeRegionCode
+GetPrimaryResourceMap
+GetProcAddress
+GetProcessHeap
+GetRestrictedErrorInfo
+GetSystemTime
+GetSystemTimeAsFileTime
+GetSystemWindowsDirectoryW
+GetTempPathW
+GetTickCount
+GetTokenInformation
+gfffffffL
+gfffffffM
+GlobalCollection
+GPD8m
+granularSplit
+GXL9wHu
+H UATAUAVAWH
+h UAVAWH
+H USVWATAUAVAWH
+H UWATAVAWH
+H WATAUAVAWH
+H!)H!i
+H!\$@H
+H!]wE2
+H!^PH!^XH!^`
+H!_@3
+H!{HH
+H!}@I
+H!FxH
+H!h H
+H!l$@
+H!sPH!sXH!s`@
+H;\$@u
+H;_0t
+H;0u!A
+H;0u$A
+H;8u$A
+H;CXu
+H;D$@r
+H;E`u
+H;EPu
+H;kpu
+H;Q0s
+H;S(v
+H;t$hr
+H_^][
+h_^][
+H+L$8
+H+NpH9FpH
+H9\$@v!H
+H9\$Pt
+H9]0t
+H9_ s
+H9_Hs<
+H9_Xt"
+H9{ s
+H9Aps
+H9EXt
+H9FXtuH
+H9h@u
+H9o s
+H9PPE
+H9Q r H
+H9s s
+H9sxu
+H9t$hvO
+H9u`u
+H9w s
+H9y t^H
+H9Y u=M
+H9Yht
+hA^_^[
+hA_A^A]A\_^[]
+hA_A^A]A\_^][
+HA_A^A]A\_^][
+hA_A^A]A\_^][
+hashIndex
+HcD$ H
+HcD$\
+HcD$tH
+HcD$TL
+HcD$Xf
+HcF4M
+HcK0H
+HcK8H
+HcL$@
+HcL$`fD
+HcL$D
+HcM@+
+HcM0H
+HcM8I
+HcT$`H
+HcV$L
+HcV(L
+Hcy<HcY8
+HeapAlloc
+HeapFree
+highestPriorityQualifier
+HomeRegion
+HRESULT
+HtIc@hH
+HX9OHu
+I;^pu
+I9:u)A8hit
+I9~Pt:H
+IA8YIt
+IcF4L
+imageName
+imageSize
+index
+index is out of range
+Index Pass Completed.
+Index Pass Completed: %s
+indexCounts
+indexer-config
+indexInSchema
+Init failed:
+InitializeCriticalSection
+InitializeSRWLock
+initialPath
+InitOnceExecuteOnce
+InstanceLocators
+InstanceTypes
+Internal
+internal\minwin\priv_sdk\inc\mrm/build/DefList.h
+internal\minwin\priv_sdk\inc\mrm/Collections.h
+internal\sdk\inc\wil/resource.h
+internalIndex
+InternalName
+Invalid "qualifierDelimiter" attribute
+Invalid Input in CQualifierApplicator::ApplyQualifier
+Invalid Input in QualifierApplicator Constructor
+invalid map/set<T> iterator
+Invalid parameter passed to C runtime function.
+invalid string position
+invalid vector<T> subscript
+ios_base::badbit set
+ios_base::eofbit set
+ios_base::failbit set
+isalpha
+IsDebuggerPresent
+isDeploymentMergeable
+isdigit
+IsErrorPropagationEnabled
+IsValidTag
+IsValidUnIsoRegionTag
+iswalnum
+iswdigit
+IsWellFormedTag
+iswspace
+isxdigit
+itemIndex
+itemName
+ItemTypes
+k AVH
+K SVWH
+K WATAUAVAWH
+K0;D$p@
+K0H9{
+kernelbase.dll
+KHH9i@t
+L!t$@M
+L!t$H
+L"atom pool mapping but count is 0"
+L#d$PH
+L$ E3
+l$ E3
+L$ E3
+L$ SH
+L$ SUVWH
+L$ SVWH
+L$ SWH
+L$ UH
+L$ UVWATAUAVAWH
+l$ VWATAVAWH
+l$ VWAVH
+l$(E3
+L$(E3
+L$@H3
+L$`9L$pt
+L$`A+
+L$`D;
+L$`f;
+L$`fD
+L$`H3
+L$`xTI
+l$09\$,
+L$0E3
+L$0H+
+L$0H3
+l$8A;w
+L$8D9L$8t
+L$8E3
+l$HD8t$@
+L$hE3
+l$HE3
+L$hE3
+L$hH3
+L$HH3
+L$hx"H
+L$P+L$X
+L$P9L$Xu
+L$pE3
+L$PE3
+l$pfA
+L$pfA
+L$pfD
+L$PfD;D
+L$pH!|$pH
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+l$XfD;
+L$xfE
+L$XH+
+L$XH3
+L9{@u
+L9{0t#H
+L9{Xt
+L9a0u
+L9d$ 
+L9d$(t
+L9d$@
+L9d$8
+L9Ipv'H
+L9o@t
+L9s8t
+L9w s
+L9y@u,H
+Language
+LanguageExperiencePack
+LanguageList
+layoutdir
+LayoutDirection
+LayoutDirectionValue
+Lc]@+
+Lc~<H
+Lc~0H
+LcA<E3
+LcFlH
+LcG<L
+LcGXL
+LCMapStringEx
+Lct$$H
+LeaveCriticalSection
+LegalCopyright
+LH9i t3H
+light
+linkFromResourceName
+linkIndexInSection
+linkToResourceName
+linkToSchema
+list<T> too long
+LL9q t3H
+Local\SM0:%d:%d:%hs
+LocalAlloc
+localeconv
+LocalFree
+LogHr
+M@H9M
+m_nSections
+m_pChars
+m_pDecisions->Merge
+m_pFileManager->GetOrAddFile
+m_pFiles
+m_pFiles->Add
+m_pHashes
+m_pHeader
+m_pOffsets
+m_pools
+m_pPool
+m_ppSections
+m_pSections
+m_pSubfolders
+M`fE#
+M9B t
+majorVersion
+malloc
+map/set<T> too long
+MapViewOfFile
+memchr
+memcmp
+memcpy
+memcpy_s
+memmove
+memmove_s
+memset
+Merge: GetOrAddAutoMergedFile
+mergedPath
+MergeInfo
+MergeState
+Message_1
+Message_2
+Microsoft
+Microsoft Corporation
+Microsoft Windows MRM
+Microsoft.Windows.Mrt.Runtime
+Microsoft::Resources::Build::PriFileMerger::AddAllApplicationPackagesSid
+Microsoft::Resources::Build::PriFileMerger::CreateUniqueTempDirectory
+Microsoft::Resources::Build::PriFileMerger::TryDeleteOldMergedFiles
+Microsoft::Resources::Build::PriFileMerger::WriteToFile
+Microsoft::Resources::Build::PriFileMerger::WriteToUniqueTempDirectory
+Microsoft::Resources::Build::PriMapMerger::MergeMap
+Microsoft::Resources::Indexers::CBootStrapIndexer::_AdjustSlashes
+Microsoft::Resources::Indexers::CBootStrapIndexer::_Init
+Microsoft::Resources::Indexers::CBootStrapIndexer::_NormalizePath
+Microsoft::Resources::Indexers::CBootStrapIndexer::_ParseNode
+Microsoft::Resources::Indexers::CBootStrapIndexer::_ProcessConditionsNode
+Microsoft::Resources::Indexers::CBootStrapIndexer::_ProcessIndexNode
+Microsoft::Resources::Indexers::CBootStrapIndexer::_ProcessUltimateFallbackNode
+Microsoft::Resources::Indexers::CBootStrapIndexer::CreateStringEntry
+Microsoft::Resources::Indexers::CBootStrapIndexer::New
+Microsoft::Resources::Indexers::CEmbedFilesIndexer::_AddEmbeddedFileEntry
+Microsoft::Resources::Indexers::CEmbedFilesIndexer::_ParseIndexPassNode
+Microsoft::Resources::Indexers::CEmbedFilesIndexer::Init
+Microsoft::Resources::Indexers::CEmbedFilesIndexer::Process
+Microsoft::Resources::Indexers::CHIndexerBase::_InitializeEnvironment
+Microsoft::Resources::Indexers::CHIndexerBase::_InitializeIbc
+Microsoft::Resources::Indexers::CHIndexerBase::_InitializeQualifierNameTokenMap
+Microsoft::Resources::Indexers::CHIndexerBase::_ParseAutoPackagesNode
+Microsoft::Resources::Indexers::CHIndexerBase::_ParseAutoResourcePackageNodeList
+Microsoft::Resources::Indexers::CHIndexerBase::_ParseIndexNodes
+Microsoft::Resources::Indexers::CHIndexerBase::_ParseManualQualifierSetNodeList
+Microsoft::Resources::Indexers::CHIndexerBase::_ParseManualResourcePackageNodeList
+Microsoft::Resources::Indexers::CHIndexerBase::_SetDeploymentMergeableFlag
+Microsoft::Resources::Indexers::CHIndexerBase::_SetMajorVersionNumber
+Microsoft::Resources::Indexers::CHIndexerBase::_SetPlatformVersionAndProfile
+Microsoft::Resources::Indexers::CHIndexerBase::_ValidateConfigurationSchema
+Microsoft::Resources::Indexers::CHIndexerBase::ParsePackagingNode
+Microsoft::Resources::Indexers::CIndexPass::_DisplayQualifierInfo
+Microsoft::Resources::Indexers::CIndexPass::_Init
+Microsoft::Resources::Indexers::CIndexPass::_InitializeIndexers
+Microsoft::Resources::Indexers::CIndexPass::_InstantiateIndexer
+Microsoft::Resources::Indexers::CIndexPass::_ParseAllowedNodeQualifierValues
+Microsoft::Resources::Indexers::CIndexPass::_ParseAllowedNodes
+Microsoft::Resources::Indexers::CIndexPass::_ParseNode
+Microsoft::Resources::Indexers::CIndexPass::_ProcessIndexerNodes
+Microsoft::Resources::Indexers::CIndexPass::New
+Microsoft::Resources::Indexers::CIndexPass::Process
+Microsoft::Resources::Indexers::CQualifierApplicator::_AddQualifierToQSB
+Microsoft::Resources::Indexers::CQualifierApplicator::_GetOrAddQualifierSet
+Microsoft::Resources::Indexers::CQualifierApplicator::_IsUltFallbackQualifier
+Microsoft::Resources::Indexers::CQualifierApplicator::_ValidateAndAddUltFallbackPair
+Microsoft::Resources::Indexers::CQualifierApplicator::_ValidateAttributeValueMap
+Microsoft::Resources::Indexers::CQualifierApplicator::ApplyQualifier
+Microsoft::Resources::Indexers::CQualifierApplicator::CQualifierSetBuilder::_AddQualifier
+Microsoft::Resources::Indexers::CQualifierApplicator::ValidateAllowedQualiferMapSet
+Microsoft::Resources::Indexers::CQualifierApplicator::ValidateUltFallbackQualifiers
+Microsoft::Resources::Indexers::CResFilesIndexer::_ParseIndexPassNode
+Microsoft::Resources::Indexers::CResFilesIndexer::_ParseResFile
+Microsoft::Resources::Indexers::CResFilesIndexer::Init
+Microsoft::Resources::Indexers::CResFilesIndexer::Process
+Microsoft::Resources::ManagedFile::New
+Microsoft::Resources::ManagedFile::NormalizeFilePath
+Microsoft::Resources::ManagedResourceMap::AttemptRuntimeMerge
+Microsoft::Resources::ManagedResourceMap::NoteFileAdded
+Microsoft::Resources::ResourcePackMerge::AddPriFile
+Microsoft::Resources::UnifiedResourceView::GetOrAddAutoMergedFile
+Microsoft::Resources::UnifiedResourceView::GetOrAddManagedResourceMap
+Microsoft::Resources::UnifiedResourceView::GetOrAddReferencedFile
+Microsoft::Resources::UnifiedResourceView::New
+Microsoft::Resources::UnifiedResourceView::UnifiedViewFileInfo::GetOrCreateMergedIndexFile
+MicrosoftInternalMetadata/ContentChecksumValue
+minATL$__a
+minATL$__m
+minATL$__r
+minATL$__z
+minkernel\mrt\mrm\include\mrm/Atoms.h
+minkernel\mrt\mrm\include\mrm/build/AIDict.h
+minkernel\mrt\mrm\include\mrm/build/DefList.h
+minkernel\mrt\mrm\include\mrm/build/WriteableStringPool.h
+minkernel\mrt\mrm\include\mrm/Collections.h
+minkernel\mrt\mrm\include\mrm/MrmQualifiers.h
+minkernel\mrt\mrm\include\mrm/readers/FileLists.h
+minkernel\mrt\mrm\include\mrm/readers/HNames.h
+minkernel\mrt\mrm\include\mrm/readers/SectionParser.h
+minkernel\mrt\mrm\include\mrm/Results.h
+minkernel\mrt\mrm\src\mrmex\aidict.cpp
+minkernel\mrt\mrm\src\mrmex\automergebehavior.cpp
+minkernel\mrt\mrm\src\mrmex\automergepribuilder.cpp
+minkernel\mrt\mrm\src\mrmex\dataitemorchestrator.cpp
+minkernel\mrt\mrm\src\mrmex\datasectionbuilder.cpp
+minkernel\mrt\mrm\src\mrmex\environmentex.cpp
+minkernel\mrt\mrm\src\mrmex\environmentmappingbuilder.cpp
+minkernel\mrt\mrm\src\mrmex\fileatompool.cpp
+minkernel\mrt\mrm\src\mrmex\filebuilder.cpp
+minkernel\mrt\mrm\src\mrmex\filefilelist.cpp
+minkernel\mrt\mrm\src\mrmex\filelistbuilder.cpp
+minkernel\mrt\mrm\src\mrmex\hnamesbuilder.cpp
+minkernel\mrt\mrm\src\mrmex\hschemabuilder.cpp
+minkernel\mrt\mrm\src\mrmex\instancereferences.cpp
+minkernel\mrt\mrm\src\mrmex\linkbuilder.cpp
+minkernel\mrt\mrm\src\mrmex\mapbuilder.cpp
+minkernel\mrt\mrm\src\mrmex\overlaypriprovider.cpp
+minkernel\mrt\mrm\src\mrmex\priautomerger.cpp
+minkernel\mrt\mrm\src\mrmex\primerge.cpp
+minkernel\mrt\mrm\src\mrmex\primergeutils.cpp
+minkernel\mrt\mrm\src\mrmex\prisectionbuilder.cpp
+minkernel\mrt\mrm\src\mrmex\resourcepackmerge.cpp
+minkernel\mrt\mrm\src\mrmex\reversemap.cpp
+minkernel\mrt\mrm\src\mrmex\systempriprovider.cpp
+minkernel\mrt\mrm\src\mrmmin\atom.cpp
+minkernel\mrt\mrm\src\mrmmin\atomgroup.cpp
+minkernel\mrt\mrm\src\mrmmin\basefile.cpp
+minkernel\mrt\mrm\src\mrmmin\baseproviders.cpp
+minkernel\mrt\mrm\src\mrmmin\basequalifiertypes.cpp
+minkernel\mrt\mrm\src\mrmmin\blobresult.cpp
+minkernel\mrt\mrm\src\mrmmin\blobresult_c.c
+minkernel\mrt\mrm\src\mrmmin\checksums.cpp
+minkernel\mrt\mrm\src\mrmmin\coreprofile.cpp
+minkernel\mrt\mrm\src\mrmmin\corequalifiertypes.cpp
+minkernel\mrt\mrm\src\mrmmin\decisioninfo.cpp
+minkernel\mrt\mrm\src\mrmmin\decisioninfobuilder.cpp
+minkernel\mrt\mrm\src\mrmmin\defobject.cpp
+minkernel\mrt\mrm\src\mrmmin\environment.cpp
+minkernel\mrt\mrm\src\mrmmin\filedatasection.cpp
+minkernel\mrt\mrm\src\mrmmin\hnames.cpp
+minkernel\mrt\mrm\src\mrmmin\hschema.cpp
+minkernel\mrt\mrm\src\mrmmin\managedfiles.cpp
+minkernel\mrt\mrm\src\mrmmin\managers.cpp
+minkernel\mrt\mrm\src\mrmmin\mrmfile.cpp
+minkernel\mrt\mrm\src\mrmmin\platform.c
+minkernel\mrt\mrm\src\mrmmin\prifile.cpp
+minkernel\mrt\mrm\src\mrmmin\prifilemanager.cpp
+minkernel\mrt\mrm\src\mrmmin\remapinfo.cpp
+minkernel\mrt\mrm\src\mrmmin\resolvers.cpp
+minkernel\mrt\mrm\src\mrmmin\resourcelink.cpp
+minkernel\mrt\mrm\src\mrmmin\resourcemap.cpp
+minkernel\mrt\mrm\src\mrmmin\staticatompool.cpp
+minkernel\mrt\mrm\src\mrmmin\stringresult.cpp
+minkernel\mrt\mrm\src\mrmmin\stringresult_c.c
+minkernel\mrt\mrm\src\mrmmin\unifiedview.cpp
+minkernel\mrt\mrm\src\mrmmin\util.c
+minorVersion
+ModuleCollection
+mrm_pri1
+mrm_pri2[mrm_data]     
+mrm_prifmrm_pri0
+mrm_vnxt
+MrmIndexer
+MrmIndexer.dll
+MrmIndexer.pdb
+MRT_Dummy
+ms-appx://%s/
+Msg:[%ws] 
+ms-resource:///
+msvcrt.dll
+MultiByteToWideChar
+mwL!m
+NamedResource
+neutral
+newMaxIndex
+newSize
+Ni!t$(L
+nNewElems
+no memory
+No merged output file path
+nodeIndex
+nOldElems
+nPools
+ntdll.dll
+numPools
+numQualifierNames
+numStrings
+Nv!t$(L
+nwkt[A;
+o\$PH
+oD$ f
+offset
+offset+cbData
+oL$0f
+oldSize
+OLEAUT32.dll
+omitSchemaFromResourcePacks
+onecoreuap\base\mrt\fsi\folder\src\cfolderindexer.cpp
+onecoreuap\base\mrt\fsi\prifile\src\cprifileindexer.cpp
+onecoreuap\base\mrt\fsi\priinfo\src\cpriinfoindexer.cpp
+onecoreuap\base\mrt\ibc\src\cbootstrapindexer.cpp
+onecoreuap\base\mrt\ibc\src\chindexerbase.cpp
+onecoreuap\base\mrt\ibc\src\cindexpass.cpp
+onecoreuap\base\mrt\ibc\src\citeminstancesink.cpp
+onecoreuap\base\mrt\ibc\src\cutilities.cpp
+onecoreuap\base\mrt\mrm\src\mrm\clientprofilebase.cpp
+onecoreuap\base\mrt\mrm\src\mrm\downlevelprofiles.cpp
+onecoreuap\base\mrt\mrm\src\mrm\legacyapps.cpp
+onecoreuap\base\mrt\mrm\src\mrm\mrmprofile.cpp
+onecoreuap\base\mrt\mrm\src\mrm\qualifiertypes.cpp
+OpenOverlayPaths
+OpenProcess
+OpenProcessToken
+OpenSemaphoreW
+OpH9u
+OriginalFilename
+OsApps
+oT$@f
+OutputDebugStringA
+OutputDebugStringW
+OverlayFileName
+p AWH
+p WATAUAVAWH
+p WAVAWH
+PA_A^A]A\_
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+packageBy
+PackageIdFromFullName
+packaging
+packagingOptions
+ParentFolderPath - 
+parentIndex
+PathCreateFromUrlW
+PathFileExistsW
+PathIsRelativeW
+PathRelativePathToW
+PathRemoveBackslashW
+pAtomIndexOut
+pAtoms
+pBaseFileData
+pBlob
+pBlobResult
+pBuffer
+pBuilder
+pBuildInstanceReference
+pcbBufferOut
+pcchBufferOut
+pCharPos
+pCharPosFirstReplace
+pChecksumOut
+pChildItemIndexOut
+pChildScopeIndexOut
+pCloneBuffer
+pCrcChecksum
+pData
+pDataOut
+pDecisionIndexOut
+pDecisionInfoBuilder
+pDecisions
+pDict
+pEnvironment
+pEnvironmentOut
+PfA9(t
+pFile
+pFileBuilder
+pFileInfo
+pFileName
+pFilePath
+pFileRef
+pFileSection
+pFileSize
+pFirstCandidateIndexOut
+pFolder
+pFolderInfo
+pFullMap
+pFullName
+pFullPath
+pHandle
+pHaveEnvironment
+pHaveSchema
+pHeader
+pHSchema
+pIndexOut
+pInitBuf
+pInitialFile
+pInitialMap
+pInitialSchema
+pInstanceIndex
+pItemName
+pL9f8t
+Platform
+pLengthOut
+pManager
+pMergedPriSectionBuilder
+pName
+pName->GetName()
+pNameOut
+pNames
+pNewBuf
+pNewHSchema
+pNewMapping
+pNextFile
+pNextFolder
+pNormalizedPath
+pNormalizedPath->GetRef()
+poolGroup
+pOther
+pParent
+pParentFile
+pParentFolderIndexOut
+pPath
+pPathOut
+ppBufferOut
+ppEnvironmentOut
+ppFileOut
+ppFolderOut
+ppItemOut
+ppNewOut
+pPool
+pPool->GetPoolIndex()
+pPoolMappingsOut
+ppRangeInOut
+pPreBuildItemReference
+pPrebuildRef
+pPreviousSchema
+pPriBuilder
+pPriFilePath
+pProfile
+ppScopeOut
+pQualifierNames
+pQualifierOut
+preBuildItemReference
+pRefOut
+pRelativeFolderPath
+pResMap
+pResourceCandidateResult
+PriFile::New
+priFileInfoCollection
+priFileName
+PriInfo
+priinfo
+PriMergeError
+PriMergeInfo
+priority
+priPath
+pris\
+Process failed: %#010x
+ProductName
+ProductVersion
+pRtrn
+pRtrn->m_pAssumeOwnership
+pRtrn->m_pools
+pSchema
+pSchemaBuilder
+pSchemaId
+pScope
+pSection
+pSectionBuilder
+pSectionIndexes[i]
+pSectionOut
+pSections
+pSegment->GetName()
+pSelf
+pSelf->cbBuf
+pSelf->cchBuf
+pSelf->pBuf
+pState
+pState->GetDictionary()
+pString
+pStringOut
+pStringResult
+pStringResult->GetRef()
+pStringRtrn
+pszBuffer
+pszFilePath
+pszRet
+pTempBuf
+pUnifiedResourceView
+pUniqueName
+pVersion
+pVersion1
+pVersion2
+pView
+pWantEnvironment
+pWantRef
+pWantVersion
+pWrittenOffset
+q L9F(t
+q0;D$@
+QD;CLr
+qfD9!u
+QHHcD$\;B
+Qkkbal
+qsort_s
+qualifier
+Qualifier
+qualifierDelimiter
+qualifierIndex
+qualifierName.GetIndex()
+qualifiers
+qualifierSet
+QualifierSet
+qualValues
+QueryPerformanceCounter
+R$fA;Z*
+r, ccs=UTF-8
+raB3G
+RaiseException
+RaiseFailFastException
+rawData
+ReadFile
+realloc
+RedirectedStorageRoot
+RegCloseKey
+RegCreateKeyExW
+RegGetValueW
+region
+RegionId
+RegSetValueExW
+relativeToScope
+ReleaseMutex
+ReleaseSemaphore
+ReleaseSRWLockExclusive
+ReleaseSRWLockShared
+rescache\_merged
+resfiles
+resjson
+ResolveDelayLoadedAPI
+ResourceMap
+ResourceMapSubtree
+resourceName
+resourcePackage
+resources
+resourceValueType
+ReturnHr
+Rich'
+rL9q tCH
+RoGetActivationFactory
+RoGetAgileReference
+RoGetMatchingRestrictedErrorInfo
+RoInitialize
+RoOriginateError
+RoOriginateErrorW
+RoReportFailedDelegate
+RoTransformError
+RoUninitialize
+RPCRT4.dll
+RpcStringFreeW
+RtlCaptureContext
+RtlDllShutdownInProgress
+RtlLookupFunctionEntry
+RtlPublishWnfStateData
+RtlVirtualUnwind
+s AVH
+s AWH
+s WATAUAVAWH
+s WAVAWH
+s$fE;
+S,D9SLv
+Scale
+scale
+ScaleFactor
+schema
+schemaName
+scopeIndex
+score
+scoreAsDefault
+searchPattern
+SelectionLanguage
+SetEvent
+SetLastError
+setlocale
+SetNamedSecurityInfoW
+SetRestrictedErrorInfo
+SetUnhandledExceptionFilter
+size_t add error
+size_t multiplication error
+Sleep
+SleepConditionVariableSRW
+Software\Microsoft\Windows\CurrentVersion\Mrt\_Merged
+sourceDataRef
+splitLanguageVariants
+sprintf_s
+standard
+Start - Microsoft::Resources::Indexers::CBootStrapIndexer::_AdjustSlashes
+Start - Microsoft::Resources::Indexers::CBootStrapIndexer::_Init
+Start - Microsoft::Resources::Indexers::CBootStrapIndexer::_NormalizePath
+Start - Microsoft::Resources::Indexers::CBootStrapIndexer::_ParseNode
+Start - Microsoft::Resources::Indexers::CBootStrapIndexer::_ProcessConditionsNode
+Start - Microsoft::Resources::Indexers::CBootStrapIndexer::_ProcessIndexNode
+Start - Microsoft::Resources::Indexers::CBootStrapIndexer::_ProcessUltimateFallbackNode
+Start - Microsoft::Resources::Indexers::CBootStrapIndexer::CreateStringEntry
+Start - Microsoft::Resources::Indexers::CBootStrapIndexer::New
+Start - Microsoft::Resources::Indexers::CEmbedFilesIndexer::_AddEmbeddedFileEntry
+Start - Microsoft::Resources::Indexers::CEmbedFilesIndexer::_ParseIndexPassNode
+Start - Microsoft::Resources::Indexers::CEmbedFilesIndexer::Init
+Start - Microsoft::Resources::Indexers::CEmbedFilesIndexer::Process
+Start - Microsoft::Resources::Indexers::CHIndexerBase::_InitializeEnvironment
+Start - Microsoft::Resources::Indexers::CHIndexerBase::_InitializeIbc
+Start - Microsoft::Resources::Indexers::CHIndexerBase::_InitializeQualifierNameTokenMap
+Start - Microsoft::Resources::Indexers::CHIndexerBase::_ParseAutoPackagesNode
+Start - Microsoft::Resources::Indexers::CHIndexerBase::_ParseAutoResourcePackageNodeList
+Start - Microsoft::Resources::Indexers::CHIndexerBase::_ParseIndexNodes
+Start - Microsoft::Resources::Indexers::CHIndexerBase::_ParseManualQualifierSetNodeList
+Start - Microsoft::Resources::Indexers::CHIndexerBase::_ParseManualResourcePackageNodeList
+Start - Microsoft::Resources::Indexers::CHIndexerBase::_SetDeploymentMergeableFlag
+Start - Microsoft::Resources::Indexers::CHIndexerBase::_SetMajorVersionNumber
+Start - Microsoft::Resources::Indexers::CHIndexerBase::_SetPlatformVersionAndProfile
+Start - Microsoft::Resources::Indexers::CHIndexerBase::_ValidateConfigurationSchema
+Start - Microsoft::Resources::Indexers::CHIndexerBase::ParsePackagingNode
+Start - Microsoft::Resources::Indexers::CIndexPass::_DisplayQualifierInfo
+Start - Microsoft::Resources::Indexers::CIndexPass::_Init
+Start - Microsoft::Resources::Indexers::CIndexPass::_InitializeIndexers
+Start - Microsoft::Resources::Indexers::CIndexPass::_InstantiateIndexer
+Start - Microsoft::Resources::Indexers::CIndexPass::_ParseAllowedNodeQualifierValues
+Start - Microsoft::Resources::Indexers::CIndexPass::_ParseAllowedNodes
+Start - Microsoft::Resources::Indexers::CIndexPass::_ParseNode
+Start - Microsoft::Resources::Indexers::CIndexPass::_ProcessIndexerNodes
+Start - Microsoft::Resources::Indexers::CIndexPass::New
+Start - Microsoft::Resources::Indexers::CIndexPass::Process
+Start - Microsoft::Resources::Indexers::CQualifierApplicator::_AddQualifierToQSB
+Start - Microsoft::Resources::Indexers::CQualifierApplicator::_GetOrAddQualifierSet
+Start - Microsoft::Resources::Indexers::CQualifierApplicator::_IsUltFallbackQualifier
+Start - Microsoft::Resources::Indexers::CQualifierApplicator::_ValidateAndAddUltFallbackPair
+Start - Microsoft::Resources::Indexers::CQualifierApplicator::_ValidateAttributeValueMap
+Start - Microsoft::Resources::Indexers::CQualifierApplicator::ApplyQualifier
+Start - Microsoft::Resources::Indexers::CQualifierApplicator::CQualifierSetBuilder::_AddQualifier
+Start - Microsoft::Resources::Indexers::CQualifierApplicator::ValidateAllowedQualiferMapSet
+Start - Microsoft::Resources::Indexers::CQualifierApplicator::ValidateUltFallbackQualifiers
+Start - Microsoft::Resources::Indexers::CResFilesIndexer::_ParseIndexPassNode
+Start - Microsoft::Resources::Indexers::CResFilesIndexer::_ParseResFile
+Start - Microsoft::Resources::Indexers::CResFilesIndexer::Init
+Start - Microsoft::Resources::Indexers::CResFilesIndexer::Process
+start %I64u %s
+startIndexAt
+std::exception: %hs
+strcspn
+String
+string too long
+StringFileInfo
+strtol
+SubmitThreadpoolWork
+Succeeded - 
+SUVWATAUAVAWH
+SUVWATAUAWH
+SUVWAVH
+SVWATAUAVAWH
+SVWAVAWH
+SVWAVH
+SWAVH
+SystemTimeToFileTime
+szExtend
+t!H+}`H
+t"D8=
+t#HcD$`H
+t$ D+
+T$ E3
+t$ E3
+T$ E3
+t$ UWATAUAWH
+t$ UWATAVAWH
+t$ UWAVH
+t$ WATAUAVAWH
+t$ WAVAWH
+t$ WH
+T$$D!t$ H
+T$@E3
+t$`E3
+t$`fD
+T$0H;U
+t$8fD
+T$8H!\$8
+T$8H!t$8H
+T$DE3
+t$HE3
+T$hE3
+t$HE3
+T$hE3
+T$HE3
+T$PD;R
+T$pD9B
+t$pE3
+T$pE3
+t$pI+
+T$xE3
+t$XE3
+t%fD92t
+t(f99t#
+t(M9x
+t)A!H
+t)A!P
+t.!T$(L
+t/A9(|*H
+t/A91|*H
+t/E98|*H
+t;fD9:t5A
+t;fE91t5H
+t?f98t:M
+t?Lcf
+t@fD92t:H
+t^@8=
+t_fD98tYL
+t|f9*twM
+t|f9.tw
+t+H9Eht
+t<f90t7L
+t=D;p
+t=H9Q
+t0D9`
+t1H!}
+t1H9<
+t1I!m
+t2!L$(A
+t2!L$(L
+t3fA91t-H
+t4fD9&t.L
+t6A;n
+t6fA9
+t6HcE H
+t7;{Lr_H
+t7fA9
+t7H91uOI
+t8;Q(r:I
+t8;Q4t:A
+t8D;~
+t8fD9u
+t8H9Y
+t9f99t43
+tAf9l$@thH
+tAfA9
+tafA9
+target
+targetOsVersion
+targetPlatform
+TargetSize
+TargetSizeValue
+tB;n,r4H
+tB9|$\u
+tBfD9:t<A
+tBH9]
+tcfD92t]A
+TD9d$8u:D9l$0u3H
+tdfD93t^H
+TelemetryAssert
+TelemetryAssertDiagTrack
+TerminateProcess
+tG9^htBH
+theme
+Theme
+tIfD92tCM
+timestamp
+tMH!}8L
+tmH!2H
+tN9h0uIH
+tnD8cAt
+tNfE98tHI
+tOHcW
+tOHcW8H
+totalHits
+toupper
+towlower
+towupper
+tQf9>tLI
+tqHcL$0H
+Translation
+trfD9:tlH
+tRfE9>tLH
+Try writing to app folder file path
+tsD9g
+tSf98tNH
+tSfD9 tM
+TTBLTR
+TTBRTL
+ttD9!|oL
+tUfD9
+TUUUUUU
+tWL9w
+tXfD9:tRA
+tYf9*tTI
+tYfD98tSH
+tzfD9:ttH
+tZH+C
+u HcA<H
+u"H!GHH
+u%A8hit
+u^HcL$@H
+U`D;B
+u}!L$(L
+u=!T$(H
+u2!T$(H
+u4!l$(H
+u6!T$(H
+u7!L$(L
+u9!L$(L
+UATAUAVAWH
+UATAVH
+UATAWH
+UAVAWH
+uBD!L$(H
+uD!L$(A
+uD!L$(L
+u-D9v
+uE!\$(H
+uG!L$(E
+uI!L$(L
+ujD!D$(H
+uL9q tFH
+Unable to close handle
+Unable to create file mapping
+Unable to open file
+UnableToOpenOverlayFile
+uND8{4tHH
+UnhandledExceptionFilter
+universal
+Universal
+UnmapViewOfFile
+uO!L$(L
+UoD9Ug
+USVWATAUAVAWH
+USVWATAUAVH
+USVWATAVAWH
+USVWAUAVAWH
+Utf8Path
+Utf8String
+UuidCreate
+UuidToStringW
+UUUUUUU
+UVWATAUAVAWH
+UVWATAVH
+UVWAUAVH
+UVWAVAWH
+UWATAVAWH
+UWAUAVAWH
+UWAVH
+ux!T$(H
+uXH9_
+v:fD;
+V8fA;
+Validation Failed
+value
+Value
+VarFileInfo
+vector<T> too long
+VS_VERSION_INFO
+vswprintf_s
+VWATAUAVH
+VWATAVAWH
+VWAUAVAWH
+VWAVH
+vwprintf_s
+w+H9Q t%A
+WaitForSingleObject
+WaitForSingleObjectEx
+WakeAllConditionVariable
+wantSlash
+WATAUAVAWH
+WATAUH
+WATAVH
+WAUAVH
+WAVAWH
+wcschr
+wcscmp
+wcscpy_s
+wcscspn
+wcsncmp
+wcsncpy_s
+wcsnlen
+wcsrchr
+wcsstr
+wcstoul
+white
+WideCharToMultiByte
+WilError_02
+win://WinCore/1
+win://Windows/1
+win://WindowsPhone/1
+WinCore
+Windows
+Windows 8 PRI files do not support merging
+Windows.ApplicationModel.Resources.Management.IndexedResourceCandidate
+Windows.ApplicationModel.Resources.Management.IndexedResourceQualifier
+Windows.ApplicationModel.Resources.Management.ResourceIndexer
+Windows.Foundation.AsyncOperationCompletedHandler`1<Windows.Foundation.Collections.IVectorView`1<Windows.ApplicationModel.Resources.Management.IndexedResourceCandidate>>
+Windows.Foundation.Collections.IIterable`1<Windows.Foundation.Collections.IKeyValuePair`2<String, String>>
+Windows.Foundation.Collections.IIterator`1<Windows.ApplicationModel.Resources.Management.IndexedResourceCandidate>
+Windows.Foundation.Collections.IIterator`1<Windows.ApplicationModel.Resources.Management.IndexedResourceQualifier>
+Windows.Foundation.Collections.IIterator`1<Windows.Foundation.Collections.IKeyValuePair`2<String, String>>
+Windows.Foundation.Collections.IKeyValuePair`2<String, String>
+Windows.Foundation.Collections.IMap`2<String, String>
+Windows.Foundation.Collections.IMapView`2<String, String>
+Windows.Foundation.Collections.IVector`1<Windows.ApplicationModel.Resources.Management.IndexedResourceCandidate>
+Windows.Foundation.Collections.IVector`1<Windows.ApplicationModel.Resources.Management.IndexedResourceQualifier>
+Windows.Foundation.Collections.IVectorView`1<Windows.ApplicationModel.Resources.Management.IndexedResourceCandidate>
+Windows.Foundation.Collections.IVectorView`1<Windows.ApplicationModel.Resources.Management.IndexedResourceQualifier>
+Windows.Foundation.Diagnostics.AsyncCausalityTracer
+Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVectorView`1<Windows.ApplicationModel.Resources.Management.IndexedResourceCandidate>>
+Windows.Foundation.Uri
+WindowsCreateString
+WindowsCreateStringReference
+WindowsDeleteString
+WindowsDuplicateString
+WindowsGetStringRawBuffer
+WindowsIsStringEmpty
+WindowsPhone
+WindowsStringHasEmbeddedNull
+wn>Jj
+wprintf
+wprintf_s
+WriteFile
+WriteToUniqueTempDirectory failed
+x ATAUAVAWD
+x ATAVAWH
+x ATH
+x AUAVAWH
+x AUAVI
+x AVH
+x AVM
+x AWH
+x UATAUAVAWH
+x UAVAWH
+X UVWATAUAVAWH
+x)L9d$0t"H
+x)L9m
+x,f9|$0
+x@L9~
+x^;s,sYL
+x1@8|$@t*H
+xA;{Ls<H
+XA_A^_^][
+xA_A^A]A\_^[]
+XA_A^A]A\_^[]
+XA_A^A]A\_^][
+xAL9m
+xfE9L
+xG8\$0u
+xG8CxtBL
+XPath
+y0;D$`
+y1M9|$

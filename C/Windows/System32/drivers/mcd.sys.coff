@@ -1,0 +1,108 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\mcd.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    CLASSPNP.SYS
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C0006088 Import Address Table
+             1C0006270 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         A0C ZwEnumerateKey
+                          9C ExAllocatePoolWithTag
+                         A6F ZwQueryValueKey
+                          C3 ExFreePoolWithTag
+                         35B IoSetHardErrorOrVerifyDevice
+                         73C RtlCharToInteger
+                         29E IoCreateSymbolicLink
+                         267 IoAllocateDriverObjectExtension
+                         AA6 ZwSetValueKey
+                         2C8 IoGetAttachedDeviceReference
+                         A31 ZwOpenKey
+                         277 IoBuildDeviceIoControlRequest
+                         3A9 IofCallDriver
+                         41B KeInitializeEvent
+                         4C5 KeWaitForSingleObject
+                         A02 ZwDeleteKey
+                         8CB RtlUnicodeStringToAnsiString
+                         273 IoAttachDeviceToDeviceStack
+                         2AC IoDeleteSymbolicLink
+                         2CC IoGetConfigurationInformation
+                         2AA IoDeleteDevice
+                         9F1 ZwCreateKey
+                         7FC RtlInitUnicodeString
+                         AE2 _vsnprintf
+                         7C3 RtlFreeUnicodeString
+                         5F8 ObfDereferenceObject
+                         352 IoSetDeviceInterfaceState
+                         2DC IoGetDriverObjectExtension
+                         AE4 _vsnwprintf
+                         7BE RtlFreeAnsiString
+                         9E3 ZwClose
+                         32A IoRegisterDeviceInterface
+                         B35 wcscmp
+
+    CLASSPNP.SYS
+             1C0006000 Import Address Table
+             1C00061E8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          3C ClassWmiCompleteRequest
+                          2A ClassReleaseRemoveLock
+                           D ClassEnableMediaChangeDetection
+                           C ClassDisableMediaChangeDetection
+                           7 ClassCompleteRequest
+                           A ClassDeleteSrbLookasideList
+                          18 ClassInitializeSrbLookasideList
+                          15 ClassInitialize
+                           8 ClassCreateDeviceObject
+                          36 ClassSetMediaChangeState
+                          3B ClassUpdateInformationInRegistry
+                          17 ClassInitializeMediaChangeDetection
+                          10 ClassGetDescriptor
+                           5 ClassClaimDevice
+                          32 ClassSendSrbSynchronous
+                           B ClassDeviceControl
+
+  Section contains the following exports for MCD.SYS
+
+    00000000 characteristics
+    59CEE4DA time date stamp
+        0.00 version
+           1 ordinal base
+           5 number of functions
+           5 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00001CA0 ChangerClassAllocatePool
+          2    1 00001CF0 ChangerClassDebugPrint
+          3    2 00001CD0 ChangerClassFreePool
+          4    3 00001A60 ChangerClassInitialize
+          5    4 00001C70 ChangerClassSendSrbSynchronous
+
+  Summary
+
+        1000 .data
+        1000 .edata
+        1000 .idata
+        1000 .pdata
+        1000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        2000 .text
+        1000 GFIDS
+        1000 INIT
+        2000 PAGE

@@ -1,0 +1,4124 @@
+      
+        
+          
+              
+                
+                  
+                    ,
+                    [bool] $PSDisableSerialization,
+                    [Nullable[uint32]] $PSActionRetryCount,
+                    [NUllable[uint32]] $PSActionRetryIntervalSec,
+                    [NUllable[uint32]] $PSActionRunningTimeoutSec,
+                    [string[]] $PSRequiredModules
+                    [System.Collections.ArrayList] $PSDebug,
+                    [System.Collections.ArrayList] $PSError,
+                    [System.Collections.ArrayList] $PSInformation,
+                    [System.Collections.ArrayList] $PSProgress,
+                    [System.Collections.ArrayList] $PSVerbose,
+                    [System.Collections.ArrayList] $PSWarning,
+                    [System.Collections.ArrayList] $Result,
+                    <xsd:attribute name="Name" type="cps:NonEmptyString" use="required" />
+                  </xsd:extension>
+                  <xsd:extension base="xsd:string">
+                  Get-MyObject -ExcludeObjectId 123,456
+                  Get-MyObject -LiteralName p*,q* 
+                  Get-MyObject -MaxWorkingSet 123
+                  Get-MyObject -MinWorkingSet 123
+                  Get-MyObject -Name p*,q* 
+                  Get-MyObject -ObjectId 123,456
+                  SELECT * FROM MyObject WHERE ((Name = &quot;p*&quot;) OR (Name = &quot;q*&quot;)) 
+                  SELECT * FROM MyObject WHERE ((Name like &quot;p%&quot;) OR (Name like &quot;q%&quot;)) 
+                  SELECT * FROM MyObject WHERE ((NOT Name = 123) AND (NOT Name = 456)) 
+                  SELECT * FROM MyObject WHERE ((ObjectId = 123) OR (ObjectId = 456)) 
+                  SELECT * FROM MyObject WHERE (WorkingSet &gt;= 123)
+                  SELECT * FROM MyObject WHERE (WorkingSet =&lt; 123)
+                &lt;CmdletParameterMetadata PSName=&quot;LiteralName&quot; /&gt;
+                (i.e. "Networking.MyEnum" will become "Microsoft.PowerShell.Cmdletization.GeneratedTypes.Networking.MyEnum").
+                (i.e. the name should be "Networking.MyEnum" rather than "MyEnum").
+                </xsd:simpleContent>
+                <xsd:attribute name="Name" type="cps:EnumValueName" use="required" />
+                <xsd:attribute name="Value" type="xsd:integer" use="required" />
+                <xsd:element name="Parameter" type="cps:InstanceMethodParameterMetadata" maxOccurs="unbounded" />
+                <xsd:element name="Parameter" type="cps:StaticMethodParameterMetadata" maxOccurs="unbounded" />
+                <xsd:field xpath="@Aliases" />
+                <xsd:field xpath="@CmdletParameterSet" />
+                <xsd:field xpath="@DefaultCmdletParameterSet" />
+                <xsd:field xpath="@PSName" />
+                <xsd:selector xpath=".//cps:CmdletMetadata" />
+                <xsd:selector xpath=".//cps:CmdletParameterMetadata" />
+                <xsd:selector xpath=".//cps:Method" />
+                <xsd:simpleContent>
+                BitwiseFlags attribute specifies if the .NET enum will be decorated with a System.FlagsAttribute.                
+                byte (System.Byte), 
+                C# Language Specification allows (in section 4.1.9 "Enumeration types") only the following
+                EnumName attribute specifies the name of a .NET enum.
+                int (System.Int32), 
+                long (System.Int64),
+                sbyte (System.SByte), 
+                short (System.Int16), 
+                targetCommand.AddParameter("{1}", {0}.Get(context));
+                targetCommand.AddParameter("ComputerName", PSComputerName.Get(context));
+                The following cmdlet invocation:
+                The name should include a namespace to avoid naming conflicts 
+                The system will prefix the name of the enum with the following namespace: "Microsoft.PowerShell.Cmdletization.GeneratedTypes"
+                This is the name to use in a PSType attribute.
+                uint (System.UInt32), 
+                ulong (System.UInt64).
+                Underlying type of the enum.
+                underlying types: 
+                ushort (System.UInt16), 
+                When referring to the enum in types.ps1xml and format.ps1xml files, one has to use the full, prefixed name of the enum.
+                will be translated into the following WQL query:
+              - only objects with a property value *not* equal to the cmdlet parameter argument will be processed.
+              - only objects with a property value equal to the cmdlet parameter argument will be processed.
+              - only objects with a property value greater than or equal to the cmdlet parameter argument will be processed.
+              - only objects with a property value less than or equal to the cmdlet parameter argument will be processed.
+              &lt;!-- &quot;LiteralName&quot; is used as the cmdlet parameter name --&gt;
+              &lt;!-- &quot;Name&quot; is used as the cmdlet parameter name --&gt;
+              &lt;/RegularQuery&gt;
+              &lt;RegularQuery AllowGlobbing=&quot;false&quot;&gt;
+              &lt;RegularQuery AllowGlobbing=&quot;true&quot; /&gt;
+              ...
+              </xsd:complexType>
+              </xsd:documentation>
+              </xsd:keyref>
+              </xsd:sequence>
+              </xsd:unique>
+              <xsd:attribute name="DefaultCmdletParameterSet" type="cps:ParameterSetName" use="optional" />
+              <xsd:complexType>
+              <xsd:documentation xml:lang="en-us">
+              <xsd:field xpath="@ParameterName" />
+              <xsd:field xpath="@Position" />
+              <xsd:keyref name="DefaultCmdletParameterSetKeyRef" refer="cps:UniqueParameterSetNamesInStaticCmdlet">
+              <xsd:selector xpath=".//cps:CmdletParameterMetadata" />
+              <xsd:selector xpath=".//cps:Parameter" />
+              <xsd:sequence>
+              <xsd:unique name="UniqueCmdletParameterAliasesUnderGetCmdletParametersElement_1">
+              <xsd:unique name="UniqueCmdletParameterNamesUnderGetCmdletParametersElement_1">
+              <xsd:unique name="UniqueParameterSetNamesInStaticCmdlet">
+              AllowGlobbing attribute specifies if strings with globbing characters (wildcards) are supported.  
+              CmdletParameterSet attribute specifies the name of a cmdlet parameter set associated with the static method.
+              CmdletParameterSets attribute is a whitespace-separated list of names of parameter sets,
+              Comparison of strings and characters is always case-insensitive.
+              Example for &lt;ExcludeQuery&gt; element that is applied to an ObjectId property:
+              Example for &lt;MaxValueQuery&gt; element that is applied to an WorkingSet property:
+              Example for &lt;MinValueQuery&gt; element that is applied to an WorkingSet property:
+              Example for &lt;RegularQuery AllowGlobbing=&quot;false&quot; &gt; element that is applied to a Name property:
+              Example for &lt;RegularQuery AllowGlobbing=&quot;true&quot; &gt; element that is applied to a Name property:
+              Example for &lt;RegularQuery&gt; element that is applied to an ObjectId property:
+              Example of a wildcard: "foo*" (matches all strings beginning with "foo")
+              ExcludeQuery element defines a cmdlet parameter that limits which objects will be processed by the cmdlet
+              If AllowGlobbing attribute is ommited then its value is based on the type of the filtered property.
+              If CmdletParameterSet is ommited, then the name of the cmdlet parameter set is auto-generated based on the name of the method.
+              If this parameter is ommited, then the cmdlet parameter belongs to all parameter sets.
+              Language-Tag = Primary-tag *( "-" Subtag )
+              MaxValueQuery element defines a cmdlet parameter that limits which objects will be processed by the cmdlet
+              MinValueQuery element defines a cmdlet parameter that limits which objects will be processed by the cmdlet
+              Primary-tag = 1*8ALPHA
+              RegularQuery element defines a cmdlet parameter that limits which objects will be processed by the cmdlet
+              Subtag = 1*8ALPHA
+              that the cmdlet parameter should belong to.
+            &lt;/Property&gt;
+            &lt;Property PropertyName=&quot;Name&quot;&gt;
+            // Initialize the arguments
+            {
+            {{
+            {5}
+            }
+            }}
+            </xsd:annotation>
+            </xsd:complexType>
+            </xsd:documentation>
+            </xsd:element>
+            </xsd:extension>
+            </xsd:key>
+            </xsd:unique>
+            <xsd:annotation>
+            <xsd:complexType>
+            <xsd:documentation xml:lang="en-us">
+            <xsd:element name="AllowedValue" type="xsd:string" maxOccurs="unbounded" />
+            <xsd:element name="Association" type="cps:Association" maxOccurs="unbounded" />
+            <xsd:element name="Cmdlet" type="cps:InstanceCmdletMetadata" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="Cmdlet" type="cps:StaticCmdletMetadata">
+            <xsd:element name="CmdletOutputMetadata" type="cps:CmdletOutputMetadata" minOccurs="0" />
+            <xsd:element name="CmdletParameterMetadata" type="cps:CmdletParameterMetadataForGetCmdletFilteringParameter" />
+            <xsd:element name="Data" maxOccurs="unbounded">
+            <xsd:element name="GetCmdlet" type="cps:GetCmdletMetadata" minOccurs="0" />
+            <xsd:element name="GetCmdletParameters" type="cps:GetCmdletParameters">
+            <xsd:element name="Option" type="cps:QueryOption" maxOccurs="unbounded" />
+            <xsd:element name="Property" type="cps:PropertyMetadata" maxOccurs="unbounded" />
+            <xsd:element name="Type" type="cps:TypeMetadata" />
+            <xsd:element name="Value" maxOccurs="unbounded">
+            <xsd:extension base="cps:CommonCmdletMetadata">
+            <xsd:key name="UniqueParameterNamesWithinMethod">
+            <xsd:key name="UniqueParameterNamesWithinStaticMethod">
+            <xsd:unique name="UniquePositionWithinMethodParameters">
+            <xsd:unique name="UniquePositionWithinStaticMethodParameters">
+            DefaultNoun element specified the default noun for cmdlets defined in this document.
+            if({0}.Expression != null)
+            if(GetIsComputerNameSpecified(context) && (PSRemotingBehavior.Get(context) == RemotingBehavior.Custom))
+            return new ActivityImplementationContext() {{ PowerShellInstance = invoker }};
+            System.Management.Automation.PowerShell invoker = global::System.Management.Automation.PowerShell.Create();
+            System.Management.Automation.PowerShell targetCommand = invoker.AddCommand(PSCommandName);
+            this.DisplayName = "{8}";
+            Version element is semantically equivalent to the ModuleVersion entry in a module manifest (psd1) file.
+           RFC-1766 defines the format of a culture identifier as:
+          "cim:CreateInstance" is mapped to the WMI's static, intrinsic CreateInstance method.  Names of method parameters have to map to names of properties.
+          "cim:DeleteInstance" is mapped to the WMI's instance, intrinsic DeleteInstance method.  All method parameters are ignored.
+          "cim:ModifyInstance" is mapped to the WMI's instance, intrinsic ModifyInstance method.  Names of method parameters have to map to names of properties.
+          </xsd:annotation>
+          </xsd:attribute>
+          </xsd:choice>
+          </xsd:complexContent>
+          </xsd:documentation>
+          </xsd:element>
+          </xsd:sequence>
+          <xsd:annotation>
+          <xsd:attribute name="BitwiseFlags" type="xsd:boolean" use="optional">
+          <xsd:attribute name="EnumName" type="cps:EnumTypeName" use="required">
+          <xsd:attribute name="Max" type="xsd:integer" use="required" />
+          <xsd:attribute name="Max" type="xsd:nonNegativeInteger" use="required" />
+          <xsd:attribute name="Min" type="xsd:integer" use="required" />
+          <xsd:attribute name="Min" type="xsd:nonNegativeInteger" use="required" />
+          <xsd:attribute name="UnderlyingType" type="cps:PowerShellTypeIdentifier" use="optional">
+          <xsd:choice maxOccurs="unbounded">
+          <xsd:complexContent>
+          <xsd:documentation xml:lang="en-us">
+          <xsd:documentation>
+          <xsd:element name="CmdletOutputMetadata" type="cps:CmdletOutputMetadata" minOccurs="0" />
+          <xsd:element name="CmdletParameterMetadata" type="cps:CmdletParameterMetadataForInstanceMethodParameter" minOccurs="0" />
+          <xsd:element name="CmdletParameterMetadata" type="cps:CmdletParameterMetadataForStaticMethodParameter" minOccurs="0" />
+          <xsd:element name="Parameters" minOccurs="0">
+          <xsd:field xpath="@Aliases" />
+          <xsd:field xpath="@Name" />
+          <xsd:field xpath="@PropertyName" />
+          <xsd:field xpath="@PSName" />
+          <xsd:selector xpath=".//cps:CmdletParameterMetadata" />
+          <xsd:selector xpath=".//cps:Data" />
+          <xsd:selector xpath=".//cps:Property" />
+          <xsd:selector xpath=".//cps:Value" />
+          <xsd:sequence>
+          Aliases attribute specifies a white-space separated list of aliases for the cmdlet parameter.
+          Aliases attribute specifies a white-space separated list of aliases for the cmdlet.
+          and provide descriptive error message if it cannot invoke the WMI provider - i.e. if the client attempts to use a non-existant method, property or parameter).
+          Association attribute is equivalent to the associationClassName parameter of EnumerateAssociatedInstances method of Microsoft.Management.Infrastructure.CimSession class.
+          Association attribute specifies the name of the association between the cmdlet argument and the instances the cmdlet acts against.
+          before cmdlet parameters defined under Method element. 
+          ClassName attribute specified the class that the cmdlets work against.
+          ClassVersion attribute describes the version of the implementation of the class from the ClassName attribute.
+          cmdlet invocations into queries and method invocations.  
+          CmdletAdapter attribute specifies which .NET class is responsible for translating
+          ConfirmImpact attribute determines the default -Confirm and -WhatIf behavior.
+          ConfirmImpact attribute is equivalent to the ConfirmImpact property of System.Management.Automation.CmdletAttribute.
+          ConfirmImpact attribute specifies the impact of the cmdlet.
+          Contents of the ClassVersion attribute are passed without interpretation inside
+          ETSType attribute is equivalent to System.Management.Automation.PSTypeNameAttribute.
+          ETSType attribute specifies the PowerShell type name of the type of the cmdlet parameter.
+          Example:
+          Example: "http://go.microsoft.com/fwlink/?LinkID=113309"
+          Example: "Microsoft.Management.Infrastructure.CimInstance#Win32_Process"
+          Example: "root/cimv2/Win32_Process"
+          Example: "System.String"
+          HelpUri attribute is equivalent to the HelpUri property of System.Management.Automation.CmdletAttribute
+          HelpUri attribute is used for the following help experience: Get-Help -Online &lt;cmdlet name&gt;
+          HelpUri attribute specifies the URI with the help content.
+          If Position attribute is ommited, then the cmdlet parameter cannot be used positionally - the user always has to explicitly specify the name of the parameter.
+          If PSName attribute is ommited then it is based on the contents of PropertyName or ParameterName or OptionName attribute (whichever one is applicable).
+          If the Noun attribute is ommited, then contents of the DefaultNoun element are used.
+          If this attribute is ommited, then by default the cmdlets are translated into WMI queries and method invocations. 
+          If WMI infrastructure can invoke the WMI provider, then the provider is responsible for further versioning decisions.
+          MethodName attribute specified the name of the method that the cmdlet invocations are mapped to.
+          Noun attribute is equivalent to the nounName parameter of System.Management.Automation.CmdletAttribute constructor.
+          Noun attribute specifies the noun of the cmdlet.
+          Please refer to Cmdlet Design Guidelines for a list of approved verbs.
+          Position attribute specifies position of the cmdlet parameter.
+          Presence of the ConfirmImpact attribute is equivalent to setting to true the SupportsShouldProcess property of System.Management.Automation.CmdletAttribute.
+          PSName attribute specifies the name of a cmdlet parameter.
+          PSType attribute specifies the name of the .NET type of the cmdlet parameter.
+          ResultRole attribute is equivalent to the resultRole parameter of EnumerateAssociatedInstances method of Microsoft.Management.Infrastructure.CimSession class.
+          ResultRole attribute specifies the role of the cmdlet argument (in the association between the cmdlet argument and the instances the cmdlet acts against).
+          ResultRole should be the name of a property on the class specified in the Association attribute.
+          Some method names are recognized and handled in a special way. 
+          SourceRole attribute is equivalent to the sourceRole parameter of EnumerateAssociatedInstances method of Microsoft.Management.Infrastructure.CimSession class.
+          SourceRole attribute specifies the role of the cmdlet argument (in the association between the cmdlet argument and the instances the cmdlet acts against).
+          SourceRole should be the name of a property on the class specified in the Association attribute.
+          System may change relative parameter positions to guarantee that cmdlet parameters defined by GetCmdletParameters element are always
+          The class specified here has to be derived from Microsoft.PowerShell.Cmdletization.CmdletAdapter class.
+          Verb attribute is equivalent to the verbName parameter of System.Management.Automation.CmdletAttribute constructor.
+          Verb attribute specifies the verb of the cmdlet.
+          WMI infrastructure will compare this value against the contents of the [ClassVersion] qualifier of the WMI class
+          WMI's custom operation option named "MI_OPERATIONOPTIONS_PROVIDERVERSION".
+        - To allow the Get cmdlet to have different GetCmdletParameters than other cmdlets (for example to make all parameters optional for Get cmdlet, but make some parameters mandatory for other cmdlets)
+        - To change the verb of the cmdlet (for example to use &quot;Find&quot; where appropriate)
+        - To define aliases for the cmdlet
+        - To use obsolete attribute for the cmdlet
+        $PSPipelineItem'
+        $PSPipelineItem = $PSPipelineItem.Clone();
+        $PSPipelineItem["
+        $PSPipelineItem["_"] = $output;
+        $PSSequenceOutput = sequence 
+        // Arguments
+        // Module defining this command
+        // Optional custom code for this activity
+        /// </summary>
+        /// </summary>        
+        /// <param name="context">The NativeActivityContext for the currently running activity.</param>
+        /// <remarks>The infrastructure takes responsibility for closing and disposing the PowerShell instance returned.</remarks>
+        /// <returns>A populated instance of Sytem.Management.Automation.PowerShell</returns>
+        /// <summary>
+        /// Declares that this activity supports its own remoting.
+        /// Gets the display name of the command invoked by this activity.
+        /// Gets the fully qualified name of the command invoked by this activity.
+        /// Provides access to the {1} parameter.
+        /// Returns a configured instance of System.Management.Automation.PowerShell, pre-populated with the command to run.
+        [DefaultValue(null)]
+        [ParameterSpecificCategory]
+        [System.Management.Automation.PSDataCollection[PSObject]] $PSSequenceOutput = $null
+        {{
+        {3}
+        {7}
+        {9}
+        }}
+        </xsd:annotation>
+        </xsd:attribute>
+        </xsd:complexType>
+        </xsd:documentation>
+        </xsd:element>
+        </xsd:key>
+        </xsd:sequence>
+        </xsd:unique>
+        <xsd:annotation>
+        <xsd:attribute name="AllowGlobbing" type="xsd:boolean" use="optional">
+        <xsd:attribute name="CmdletParameterSet" type="cps:ParameterSetName" use="optional">
+        <xsd:attribute name="CmdletParameterSets" type="cps:NonEmptyListOfParameterSetNames" use="optional">
+        <xsd:attribute name="ErrorOnNoMatch" type="xsd:boolean" use="optional" />
+        <xsd:attribute name="ValueFromPipeline" type="xsd:boolean" use="optional" />
+        <xsd:attribute name="ValueFromPipelineByPropertyName" type="xsd:boolean" use="optional" />
+        <xsd:complexType>
+        <xsd:documentation xml:lang="en-us">
+        <xsd:documentation>
+        <xsd:element name="Class" type="cps:ClassMetadata" />
+        <xsd:element name="Enums" type="cps:EnumMetadata" minOccurs="0" />
+        <xsd:element name="ExcludeQuery" type="cps:WildcardablePropertyQuery">
+        <xsd:element name="MaxValueQuery" type="cps:PropertyQuery">
+        <xsd:element name="MinValueQuery" type="cps:PropertyQuery">
+        <xsd:element name="RegularQuery" type="cps:WildcardablePropertyQuery">
+        <xsd:key name="PropertyNameUnderQueryableProperties">
+        <xsd:key name="UniqueNamesOfEnumValues">
+        <xsd:key name="UniqueNamesOfPrivateDataElements">
+        <xsd:list itemType="cps:Alias" />
+        <xsd:list itemType="cps:ParameterSetName" />
+        <xsd:sequence>
+        <xsd:unique name="UniqueCmdletParameterAliasesUnderGetCmdletParametersElement_2">
+        <xsd:unique name="UniqueCmdletParameterAliasesUnderGetCmdletParametersElement_3">
+        <xsd:unique name="UniqueCmdletParameterNamesUnderGetCmdletParametersElement_2">
+        <xsd:unique name="UniqueCmdletParameterNamesUnderGetCmdletParametersElement_3">
+        <xsd:unique name="UniqueCmdletParameterNamesUnderMethodElement_1">
+        <xsd:unique name="UniqueCmdletParameterNamesUnderMethodElement_2">
+        1) cmdlet parameters defined through GetCmdletParameters elements
+        2) cmdlet parameters mapped to input parameters of the method defined by Method element
+        All defined components MUST be integers greater than or equal to 0.
+        Cmdlet element under InstanceCmdlets element defines a cmdlet that wraps an instance method.
+        Cmdlet element under StaticCmdlets element defines a cmdlet that wraps one or more static methods.
+        Cmdlet parameters of a cmdlet defined this way are a sum of 
+        Cmdlet parameters of a cmdlet defined this way are mapped to input parameters of methods defined by Method element
+        const string _moduleDefinition = @"
+        Each wrapped method corresponds to a parameter set of the cmdlet.
+        For example, if the major number is 6, the minor number is 2, the build number is 1, and the revision number is 3, then string representation of the version would be "6.2.1.3".
+        GetCmdlet element defines cmdlet metadata for the cmdlet that queries for object instances.
+        GetCmdlet element is typically used for one of the following items:
+        GetCmdletParameters element defines cmdlet parameters used to select object instances.
+        If GetCmdlet element is ommited, then the default verb (&quot;Get&quot;) and noun (based on &lt;DefaultNoun&gt; element) are going to be used.
+        PowerShellValue[Object] -Expression '
+        protected override ActivityImplementationContext GetPowerShell(NativeActivityContext context)
+        protected override bool SupportsCustomRemoting { get { return true; } }
+        public {2}()
+        public InArgument<{0}> {1} {{ get; set; }}
+        public override string PSCommandName {{ get {{ return "{4}"; }} }}
+        Represents a version number that consist of two to four components: major, minor, build, and revision.
+        String representation of a version is "major.minor[.build[.revision]]" (optional components are shown in square brackets).
+   - ' ' - unspecified in the docs, but apparently allowed (i.e. between NamespaceTypeName and AssemblyNameSpec in the TypeName production
+      <!-- ValidatePattern omitted - CDXML does not allow DOS attacks against PS client --> 
+      <!-- ValidateScript omitted - CDXML does not allow execution of arbitrary code in PS client --> 
+      </xsd:annotation>
+      </xsd:choice>
+      </xsd:documentation>
+      </xsd:element>
+      </xsd:extension>
+      </xsd:sequence>
+      </xsd:simpleType>
+      <xsd:annotation>
+      <xsd:choice maxOccurs="unbounded">
+      <xsd:documentation xml:lang="en-us">
+      <xsd:documentation>
+      <xsd:element name="AllowEmptyCollection" minOccurs="0" />
+      <xsd:element name="AllowEmptyString" minOccurs="0" />
+      <xsd:element name="AllowNull" minOccurs="0" />
+      <xsd:element name="AssociatedInstance">
+      <xsd:element name="CmdletAdapterPrivateData" minOccurs="0">
+      <xsd:element name="CmdletMetadata" type="cps:CommonCmdletMetadata" />
+      <xsd:element name="CmdletMetadata">
+      <xsd:element name="CmdletParameterMetadata" type="cps:CmdletParameterMetadataForGetCmdletFilteringParameter" minOccurs="0" />
+      <xsd:element name="CmdletParameterMetadata" type="cps:CmdletParameterMetadataForGetCmdletParameter" minOccurs="0" />
+      <xsd:element name="DefaultNoun" type="cps:Noun">
+      <xsd:element name="Enum" maxOccurs="unbounded">
+      <xsd:element name="ErrorCode" minOccurs="0">
+      <xsd:element name="GetCmdletParameters" type="cps:GetCmdletParameters" minOccurs="0">
+      <xsd:element name="InstanceCmdlets" minOccurs="0">
+      <xsd:element name="Method" type="cps:InstanceMethodMetadata">
+      <xsd:element name="Method" type="cps:StaticMethodMetadata" maxOccurs="unbounded">
+      <xsd:element name="Obsolete" type="cps:ObsoleteAttributeMetadata" minOccurs="0" />
+      <xsd:element name="QueryableAssociations" minOccurs="0">
+      <xsd:element name="QueryableProperties" minOccurs="0">
+      <xsd:element name="QueryOptions" minOccurs="0">
+      <xsd:element name="ReturnValue" minOccurs="0">
+      <xsd:element name="StaticCmdlets" minOccurs="0">
+      <xsd:element name="Type" type="cps:TypeMetadata" />
+      <xsd:element name="ValidateCount" minOccurs="0">
+      <xsd:element name="ValidateLength" minOccurs="0">
+      <xsd:element name="ValidateNotNull" minOccurs="0" />
+      <xsd:element name="ValidateNotNullOrEmpty" minOccurs="0" />
+      <xsd:element name="ValidateRange" minOccurs="0">
+      <xsd:element name="ValidateSet" minOccurs="0">
+      <xsd:element name="Version" type="cps:VersionString">
+      <xsd:enumeration value="High" />
+      <xsd:enumeration value="Low" />
+      <xsd:enumeration value="Medium" />
+      <xsd:enumeration value="None" />
+      <xsd:extension base="cps:CmdletParameterMetadata">
+      <xsd:extension base="cps:CmdletParameterMetadataForGetCmdletParameter">
+      <xsd:extension base="cps:CommonMethodMetadata">
+      <xsd:extension base="cps:CommonMethodParameterMetadata">
+      <xsd:extension base="cps:PropertyQuery">
+      <xsd:field xpath="@Aliases" />
+      <xsd:field xpath="@EnumName" />
+      <xsd:maxLength value="100" />
+      <xsd:maxLength value="1000" />
+      <xsd:maxLength value="200" />
+      <xsd:minLength value="1" />
+      <xsd:pattern value="&clrTypeRegex;" />
+      <xsd:pattern value="&csharpIdentifierRegex;" />
+      <xsd:pattern value="&csharpNamespaceRegex;" />
+      <xsd:pattern value="&powerShellAliasRegex;" />
+      <xsd:pattern value="&powerShellCmdletParameterRegex;" /> 
+      <xsd:pattern value="&powerShellNounRegex;" />
+      <xsd:pattern value="&powerShellParameterSetRegex;" /> 
+      <xsd:pattern value="&powerShellVerbRegex;" />
+      <xsd:pattern value="[12]?[0-9]{1,9}\.[12]?[0-9]{1,9}(\.[12]?[0-9]{1,9}(\.[12]?[0-9]{1,9})?)?" />
+      <xsd:selector xpath=".//cps:CmdletMetadata" />
+      <xsd:selector xpath=".//cps:Enums/cps:Enum" />
+      <xsd:sequence>
+      <xsd:simpleType>
+      A ".cdxml" file can be imported into a PowerShell session directly by Import-Module cmdlet,
+      a module manifest (a ".psd1" file) and then importing the ".psd1" file by Import-Module cmdlet.
+      A PowerShell CIM Module defines a set of cmdlets that interact with a CIM class.      
+      A PowerShell CIM Module needs to be saved in a file with ".cdxml" extension.
+      or by referring to the ".cdxml" file from NestedModules or RootModule entry of
+   - '-' - required for Culture property of an Assembly.  
+      This schema defines the format of PowerShell CIM Modules.
+    $
+    $PSItem = $PSPipelineItem['_']
+    $PSPipelineItem'
+    $PSPipelineItem = @{};
+    $PSPipelineItem["
+    $PSPipelineItem["_"] = $output;
+    $PSPipelineIteration = $PSPipelineIteration + 1
+    $PSSequenceOutput = sequence 
+    $PSSequenceOutput = Where-Object -InputObject $PSItem -FilterScript 
+   - '&amp;' - part of ReferenceTypeSpec production in BNF at http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx
+   - '&quot;' - unspecified in the docs, but used in the examples at http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx (i.e. Culture="")
+   - '*' - part of ReflectionDimension production in BNF at http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx
+   - ',' - part of ReflectionDimension and TypeName productions in BNF at http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx
+   - '.' - part of ReflectionDimension and NamespaceTypeName productions in BNF at http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx
+    /// </summary>
+    /// <summary>
+    /// Activity to invoke the {1} command in a Workflow.
+   - '[' and ']' - part of ArrayTypeSpec production in BNF at http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx
+    [System.CodeDom.Compiler.GeneratedCode("Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromName", "3.0")]
+    [System.Management.Automation.PSDataCollection[PSObject]] $PSSequenceOutput = $null
+   - '\' - an escape character specified at http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx
+   - '_' (ASCII 95) is the only character in \p{Pc} class out of the first 0..255 characters
+    {
+    {{
+    }
+    }}
+   - '+' - part of NestedTypeName production in BNF at http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx
+    </xsd:annotation>
+    </xsd:attribute>
+    </xsd:complexContent>
+    </xsd:complexType>
+    </xsd:documentation>
+    </xsd:key>
+    </xsd:restriction>
+    </xsd:sequence>
+    </xsd:unique>
+    <xsd:annotation>
+    <xsd:attribute name="Aliases" type="cps:NonEmptyListOfAliases" use="optional">
+    <xsd:attribute name="Association" type="cps:NonEmptyString" use="required">
+    <xsd:attribute name="ClassName" type="cps:NonEmptyString" use="required">
+    <xsd:attribute name="ClassVersion" type="cps:NonEmptyString" use="optional">
+    <xsd:attribute name="CmdletAdapter" type="cps:PowerShellTypeIdentifier" use="optional">
+    <xsd:attribute name="ConfirmImpact" type="cps:ConfirmImpact" use="optional">
+    <xsd:attribute name="DefaultCmdletParameterSet" type="cps:ParameterSetName" use="optional" />
+    <xsd:attribute name="DefaultValue" type="xsd:string" use="optional" />
+    <xsd:attribute name="ETSType" type="cps:NonEmptyString" use="optional">
+    <xsd:attribute name="HelpUri" type="xsd:anyURI" use="optional">
+    <xsd:attribute name="IsMandatory" type="xsd:boolean" use="optional" />
+    <xsd:attribute name="Message" type="cps:ObsoleteMessage" use="optional" />
+    <xsd:attribute name="MethodName" type="cps:NonEmptyString" use="required">
+    <xsd:attribute name="Noun" type="cps:Noun" use="optional">
+    <xsd:attribute name="OptionName" type="cps:NonEmptyString" use="required" />
+    <xsd:attribute name="ParameterName" type="cps:NonEmptyString" use="required" />
+    <xsd:attribute name="Position" type="xsd:nonNegativeInteger" use="optional">
+    <xsd:attribute name="PropertyName" type="cps:NonEmptyString" use="required" />
+    <xsd:attribute name="PSName" type="cps:CmdletOutputName" use="optional" />
+    <xsd:attribute name="PSName" type="cps:CmdletParameterName" use="optional">
+    <xsd:attribute name="PSType" type="cps:PowerShellTypeIdentifier" use="required">
+    <xsd:attribute name="ResultRole" type="cps:NonEmptyString" use="required">
+    <xsd:attribute name="SourceRole" type="cps:NonEmptyString" use="required">
+    <xsd:attribute name="Verb" type="cps:Verb" use="required">
+    <xsd:complexContent>
+    <xsd:complexType>
+    <xsd:documentation xml:lang="en-us">
+    <xsd:key name="UniqueNamesOfEnums">
+    <xsd:restriction base="xsd:string">
+    <xsd:restriction>
+    <xsd:sequence>
+    <xsd:unique name="UniqueCmdletAliases">
+   - '=' - part of AssemblyProperty production in BNF at http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx
+    >
+    elementFormDefault="qualified"
+    foreach($output in $PSSequenceOutput)
+    if($PSPipelineIteration -eq ($PSPipelineLength- 1))
+    if($PSPipelineIteration -eq 0)
+    local:{0}.{1} = "{2}"
+    mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces" 
+   - No characters in the first 0..255 characters belong to \p{Cf}, \p{Mn}, \p{Mc}
+    PowerShellValue[Object] -Expression '
+    public sealed class {2} : {6}
+    targetNamespace="http://schemas.microsoft.com/cmdlets-over-objects/2009/11"
+    x:Class="Microsoft.PowerShell.DynamicActivities.{0}"
+    xmlns:cps="http://schemas.microsoft.com/cmdlets-over-objects/2009/11"
+    xmlns:local="clr-namespace:Microsoft.PowerShell.DynamicActivities"
+    xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+    xmlns:ns{0}="clr-namespace:{1};assembly={2}"
+    xmlns:sad="clr-namespace:System.Activities.Debugger;assembly=System.Activities"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+   but those characters classes seem risky wrt code injection attacks, so they were
+   removed above.  
+  <!-- # CLASS #################################################### -->
+  <!-- # CMDLETS ################################################## -->
+  <!-- # COMMON PROPERTIES/PARAMETERS METADATA##################### -->
+  <!-- # ENUM ##################################################### -->
+  <!-- # METHODS ################################################## -->
+  <!-- # PROPERTIES METADATA ###################################### -->
+  <!-- # SIMPLE TYPES ############################################# -->
+  <!-- ############################################################ -->
+  <!ENTITY clrTypeRegex "[&csharpIdentifierOtherCharacterRegex;&clrTypeSpecialCharacterRegex;]{1,1000}">
+  <!ENTITY clrTypeSpecialCharacterRegex "\,\=\ \+\&amp;\*\[\]\.\\\-\&quot;">
+  <!ENTITY csharpIdentifierFirstCharacterRegex "&csharpIdentifierLetterCharacterRegex;_">
+  <!ENTITY csharpIdentifierLetterCharacterRegex "\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}">
+  <!ENTITY csharpIdentifierOtherCharacterRegex "&csharpIdentifierLetterCharacterRegex;\p{Nd}_">
+  <!ENTITY csharpIdentifierRegex "[&csharpIdentifierFirstCharacterRegex;][&csharpIdentifierOtherCharacterRegex;]{0,100}">
+  <!ENTITY csharpNamespaceRegex "(&csharpIdentifierRegex;)(\.&csharpIdentifierRegex;){0,10}">
+  <!ENTITY powerShellAliasCharacterRegex "&powerShellNounCharacterRegex;_-">
+  <!ENTITY powerShellAliasRegex "[&powerShellAliasCharacterRegex;]{1,100}">
+  <!ENTITY powerShellCmdletParameterCharacterRegex "&powerShellNounCharacterRegex;_">
+  <!ENTITY powerShellCmdletParameterRegex "[&powerShellCmdletParameterCharacterRegex;]{1,100}">
+  <!ENTITY powerShellNounCharacterRegex "&powerShellVerbCharacterRegex;\p{Nd}">
+  <!ENTITY powerShellNounRegex  "[&powerShellNounCharacterRegex;]{1,100}">
+  <!ENTITY powerShellParameterSetRegex "[^,;]{1,100}">
+  <!ENTITY powerShellVerbCharacterRegex "\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Lm}">
+  <!ENTITY powerShellVerbRegex  "[&powerShellVerbCharacterRegex;]{1,100}">
+  </xsd:annotation>
+  </xsd:complexType>
+  </xsd:element>
+  </xsd:simpleType>
+  <xsd:annotation>
+  <xsd:complexType name="Association">
+  <xsd:complexType name="ClassMetadata">
+  <xsd:complexType name="CmdletOutputMetadata">
+  <xsd:complexType name="CmdletParameterMetadata">
+  <xsd:complexType name="CmdletParameterMetadataForGetCmdletFilteringParameter">
+  <xsd:complexType name="CmdletParameterMetadataForGetCmdletParameter">
+  <xsd:complexType name="CmdletParameterMetadataForInstanceMethodParameter">
+  <xsd:complexType name="CmdletParameterMetadataForStaticMethodParameter">
+  <xsd:complexType name="CommonCmdletMetadata">
+  <xsd:complexType name="CommonMethodMetadata">
+  <xsd:complexType name="CommonMethodParameterMetadata">
+  <xsd:complexType name="EnumMetadata">
+  <xsd:complexType name="GetCmdletMetadata">
+  <xsd:complexType name="GetCmdletParameters">
+  <xsd:complexType name="InstanceCmdletMetadata">
+  <xsd:complexType name="InstanceMethodMetadata">
+  <xsd:complexType name="InstanceMethodParameterMetadata">
+  <xsd:complexType name="ObsoleteAttributeMetadata">
+  <xsd:complexType name="PropertyMetadata">
+  <xsd:complexType name="PropertyQuery">
+  <xsd:complexType name="QueryOption">
+  <xsd:complexType name="StaticCmdletMetadata">
+  <xsd:complexType name="StaticMethodMetadata">
+  <xsd:complexType name="StaticMethodParameterMetadata">
+  <xsd:complexType name="TypeMetadata">
+  <xsd:complexType name="WildcardablePropertyQuery">
+  <xsd:element name="PowerShellMetadata">
+  <xsd:simpleType name="Alias">
+  <xsd:simpleType name="CmdletOutputName">
+  <xsd:simpleType name="CmdletParameterName">
+  <xsd:simpleType name="ConfirmImpact">
+  <xsd:simpleType name="EnumTypeName">
+  <xsd:simpleType name="EnumValueName">
+  <xsd:simpleType name="NonEmptyListOfAliases">
+  <xsd:simpleType name="NonEmptyListOfParameterSetNames">
+  <xsd:simpleType name="NonEmptyString">
+  <xsd:simpleType name="Noun">
+  <xsd:simpleType name="ObsoleteMessage">
+  <xsd:simpleType name="ParameterSetName">
+  <xsd:simpleType name="PowerShellTypeIdentifier">
+  <xsd:simpleType name="Verb">
+  <xsd:simpleType name="VersionString">
+ - the C# spec allows \p{Pc}\p{Cf}\p{Mn}\{Mc} in csharpIdentifierOtherCharacterRegex, 
+ $ , 4 < D L T \ 
+ {0} line:{1} char:{2}
+ = $null
+ = $PSPipelineItem['
+ A workflow cannot use recursion.
+ AppendOutput = "True"
+ clrTypeRegex and clrTypeSpecialCharacterRegex are based on http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx
+ clrTypeSpecialCharacterRegex includes the following characters;
+ Command="
+ csharpIdentifierRegex based on C# Language Specification 3.0, section 2.4.2 Idenfifiers
+ -eq 'Continue') { $true } else { $false }
+ Exception="[__UnhandledException]" />
+ IsNot Nothing]">
+ MergeErrorToOutput = "True"
+ PSRemotingBehavior="{x:Null}" OtherVariableName="
+ Result="[{0}]"
+ The input parameter is required.
+ The variable '{0}' is read-only.
+ UseDefaultInput="true"
+ x:TypeArguments="{0}"
+ x:TypeArguments="{0}" Expression="{1}"
+ x:TypeArguments="x:Object" OtherVariableName="
+ x:TypeArguments="x:Object">
+!*!3!<!Q!Y!y!
+!1"9"d"v"
+!This program cannot be run in DOS mode.
+" Name="_" />
+" Name="__RuntimeException" />
+" Name="__UnhandledException" />
+" Result="[
+" Value="
+" Value="[
+"; } }
+"] = $output;
+">[""]</InArgument>
+">["__Microsoft.PowerShell.Activities.Throw"]</InArgument>
+">[__UnhandledException]</InArgument>
+################################################################### -->
+#[#x#
+#Blob
+#GUID
+#Q$W$
+#Strings
+$+$k$v$
+$1$2_Nested$3
+$B%d%
+$false
+$foreachIterator = $
+$input
+$null
+$PSPipelineIteration = 0
+$PSPipelineLength = @($PSPipelineVariableContext).Count
+$PSPipelineVariableContext = foreach($output in $PSSequenceOutput)
+$PSPipelineVariableContext = foreach($PSPipelineItem in $PSPipelineVariableContext)
+$PSSequenceOutput = 
+$switchCondition = ${0}; if(@($switchCondition).Count -gt 1) {{ throw '{1}' }}; $switchCondition
+$true
+% &*&4&J&T&^&y&
+&#xA;
+&#xD;
+&quot;
+&The throw statement requires a reason.
+&V'Z'
+())V)_)
+([Int64]({0}) * 10000)
+([Int64]({0}) * 10000000)
+(<Activity.*local:Activity_)(\d+)(\.[^>]*>)
+(<Activity.*x:Class="Microsoft.PowerShell.DynamicActivities.Activity_)(\d+)("[^>]*>)
+(<Activity.*x:Class="Microsoft.PowerShell.DynamicActivities.Activity_)(\d+)_Nested("[^>]*>)
+); trap { break }
+*&*c*
+*Cannot process more than one script block.
+*I+O+i+o+v+}+
+*Microsoft (R) Windows (R) Operating System
+, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+.Activities
+.Activities.dll
+.Activities>
+.cctor
+.cdxml
+.ctor
+.Data.Contains(&quot;__Microsoft.PowerShell.Activities.Throw&quot;)]">
+.Data]</InArgument>
+.InputObject>
+.NETFramework,Version=v4.5
+.NoEnumerate>
+.NoEnumerate>[System.Management.Automation.SwitchParameter.Present]</
+.text
+.ThrottleLimit>
+.Values>
+/// Script module contents for this activity`n/// </summary>
+/Microsoft.PowerShell.Activities;component/inlinescriptdesigner.xaml
+/Microsoft.PowerShell.Activities;component/pipelinedesigner.xaml
+:A pipeline activity must have at least one child activity.
+:AllowGlobbing
+:Association
+:Association, :SourceRole, :ResultRole
+:AssociationAssociatedInstance
+:ClassMetadata
+:ClassMetadataData
+:ClassMetadataInstanceCmdlets
+:CmdletAdapter, :ClassName, :ClassVersion
+:CmdletOutputMetadata
+:CmdletParameterMetadata
+:CmdletParameterMetadataForGetCmdletFilteringParameter
+:CmdletParameterMetadataForGetCmdletParameter
+:CmdletParameterMetadataForInstanceMethodParameter
+:CmdletParameterMetadataForStaticMethodParameter
+:CmdletParameterMetadataValidateCount
+:CmdletParameterMetadataValidateLength
+:CmdletParameterMetadataValidateRange
+:CommonCmdletMetadata
+:CommonMethodMetadata
+:CommonMethodMetadataReturnValue
+:CommonMethodParameterMetadata
+:ConfirmImpact
+:DefaultCmdletParameterSet
+:EnumMetadataEnum
+:EnumMetadataEnumValue
+:EnumName, :UnderlyingType, :BitwiseFlags
+:GetCmdletMetadata
+:GetCmdletParameters
+:InstanceCmdletMetadata
+:InstanceMethodMetadata
+:InstanceMethodParameterMetadata
+:IsMandatory, :Aliases, :PSName, :Position
+:IsMandatory, :Aliases, :PSName, :Position, :ValueFromPipeline, :ValueFromPipelineByPropertyName
+:IsMandatory, :Aliases, :PSName, :Position, :ValueFromPipeline, :ValueFromPipelineByPropertyName, :CmdletParameterSets
+:IsMandatory, :Aliases, :PSName, :Position, :ValueFromPipeline, :ValueFromPipelineByPropertyName, :CmdletParameterSets, :ErrorOnNoMatch
+:IsMandatory, :Aliases, :PSName, :Position, :ValueFromPipelineByPropertyName
+:ItemsChoiceType
+:Message
+:MethodName
+:MethodName, :CmdletParameterSet
+:Min, :Max
+:Name
+:Name, :Value
+:ObsoleteAttributeMetadata
+:OptionName
+:ParameterName, :DefaultValue
+:PropertyMetadata
+:PropertyName
+:PropertyQuery
+:PSName
+:PSType, :ETSType
+:QueryOption
+:StaticCmdletMetadata
+:StaticCmdletMetadataCmdletMetadata
+:StaticMethodMetadata
+:StaticMethodParameterMetadata
+:The following argument cannot be null or empty: Expression
+:TypeMetadata
+:Verb, :Noun, :Aliases, :ConfirmImpact, :HelpUri
+:Verb, :Noun, :Aliases, :ConfirmImpact, :HelpUri, :DefaultCmdletParameterSet
+:WildcardablePropertyQuery
+; ,($
+; if($null -eq $foreachIterator) { ,@() } else { ,@($foreachIterator) }
+;Ambiguous properties are found for the property name '{0}'.
+;Microsoft.PowerShell.Cmdletization.Xml.StaticMethodMetadata
+;The '{0}' activity is not supported in a workflow pipeline.
+;The following argument can not be null or empty: Expression
+?Loop labels are not supported in a Windows PowerShell Workflow.
+@.reloc
+@Microsoft.PowerShell.Cmdletization.Xml.WildcardablePropertyQuery
+[{0}, {1}]: {2}
+[CmdletBinding()]
+[Only constant expressions are supported as switch clauses in a Windows PowerShell Workflow.
+[System.Management.Automation.PSDataCollection[PSObject]] $PSPipelineVariableContext = @( @{} )
+[System.Management.Automation.PSDataCollection[PSObject]] $PSSequenceOutput = $null
+[True]
+\$input
+\Microsoft.PowerShell.Cmdletization.Xml.CmdletParameterMetadataForGetCmdletFilteringParameter
+]" />
+]" VariableToRetrieve="Other" />
+]</OutArgument>
+]The '{0}' command is handled by the built-in '{1}' keyword. Use the built-in keyword instead.
+]The computer name {0} is not valid. If you are trying to supply a Uri, use the Uri parameter.
+]VSTS.ActivityTests,PublicKey=0024000004800000940000000602000000240000525341310004000001000100b5fc90e7027f67871e773a8fde8938c81dd402ba65b9201d60593e96c492651e889cc13f1415ebb53fac1131ae0bd333c5ee6021672d9718ea31a8aebd0da0072f25d87dba6fc90ffd598ed4da35e44c398c454307e8e33b8426143daec9f596836f97c8f74750e5975c64e2189f45def46b2a2b1247adc3652bf5c308055da9
+^[a-zA-Z][a-zA-Z0-9-_]*$
+^'\d+:\d+:\S+'$
+^In a Windows PowerShell Workflow, the switch statement supports only the 'CaseSensitive' flag.
+__AggregatingTempVar
+__ExceptionToRethrow
+__Microsoft.PowerShell.Activities.Throw
+__PSUsingVariable_
+__RethrowException
+__ThrowException
+__UnhandledException
+_clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation)System.Activities.Presentation.Converters
+_Cmdlet_Activities
+_command
+_commandSpecified
+_compiledScriptForInProc
+_compiledScriptForOutProc
+_contentLoaded
+_CorDllMain
+_currentIndentLevel
+_expressionScriptBlock
+_Function_Activities
+_Nested
+_parseErrors
+_scriptWithoutUsing
+_usingVariables
+`.rsrc
+`[\d]+
+'{0}'
+{0} {1} {{ {2} }}
+{0}:{1}
+{0}:{1}:{2}
+{A variable scope prefix that is not valid was detected. The only valid scope prefix in the script workflow is "$WORKFLOW:".
+{Cannot redirect error stream for the delay activity. Please remove the stream redirection from this activity and try again.
+|~ v2
+|In a Windows PowerShell Workflow, the syntax for Invoke-Expression is: "Invoke-Expression -Language XAML -Command <string>".
+~{0} is not a valid parameter or variable name. Names must start with a letter, and contain only letters, digits, '-', and '_'.
++ r7.
++ ru'
++#rW.
++$+-+
+++rI.
++3rA.
+<!-- ##################################################################
+<!DOCTYPE schema [
+<,)0S
+<,)1c
+<,)1k
+<,)2s
+<,i0[
+<,I13
+<,i13
+<,I5{
+<.cctor>b__0
+</{0}.Condition>
+</{0}.Variables>
+</{0}>
+</Activity>
+</ActivityAction.Argument>
+</ActivityAction>
+</Assign.To>
+</Assign.Value>
+</Assign>
+</Catch>
+</If.Condition>
+</If.Else>
+</If.Then>
+</If>
+</InArgument>
+</InvokeMethod.TargetObject>
+</InvokeMethod>
+</Sequence>
+</Switch.Default>
+</Switch.Expression>
+</Switch>
+</Throw.Exception>
+</Throw>
+</TryCatch.Catches>
+</TryCatch.Finally>
+</TryCatch.Try>
+</TryCatch>
+</x:Members>
+</xsd:schema>
+<?xml version="1.0" encoding="utf-8"?>
+<{0} Result = "[{1}]"{2} >
+<{0} Result="[{1}]"{2}>
+<{0} UseDefaultInput="true" />
+<{0} UseDefaultInput="true" Result = "[{1}]"{2} />
+<{0} x:TypeArguments="{1}">
+<{0}.Condition>
+<{0}.Variables>
+<{0}>
+<>1__state
+<>2__current
+<>3__initialSessionState
+<>3__invoker
+<>7__wrap2
+<>7__wrap3
+<>7__wrap4
+<>7__wrap5
+<>7__wrap7
+<>9__13_0
+<>9__130_0
+<>9__130_1
+<>9__153_0
+<>9__16_0
+<>9__17_0
+<>9__32_0
+<>9__32_1
+<>9__69_0
+<>9__7_0
+<>9__7_1
+<>9__7_2
+<>9__9_0
+<>c__DisplayClass1_0
+<>c__DisplayClass198_0
+<>c__DisplayClass27_0
+<>c__DisplayClass27_1
+<>c__DisplayClass67_0
+<>c__DisplayClass88_0
+<>c__DisplayClass96_0
+<>l__initialThreadId
+<>m__Finally1
+<>m__Finally2
+<Activities>k__BackingField
+<Activity
+<Activity.*local:Activity_\d+\.[^>]*>
+<ActivityAction x:TypeArguments="
+<ActivityAction x:TypeArguments="x:Object">
+<ActivityAction.Argument>
+<activityType>5__2
+<Amended>k__BackingField
+<AnalyzeFunctionBody>b__16_0
+<AppendOutput>k__BackingField
+<Argument>k__BackingField
+<ArgumentAst>k__BackingField
+<ArgumentList>k__BackingField
+<Arguments>k__BackingField
+<assembly>5__7
+<Assign.To>
+<Assign.Value>
+<Assign>
+<Association>k__BackingField
+<AstContainsCommandCall>b__0
+<Authentication>k__BackingField
+<Body>k__BackingField
+<BuildSymbolTable>b__17_0
+<Catch x:TypeArguments="
+<CertificateCACheck>k__BackingField
+<CertificateCNCheck>k__BackingField
+<CertificateThumbprint>k__BackingField
+<CertRevocationCheck>k__BackingField
+<CimClass>k__BackingField
+<Class>k__BackingField
+<ClassName>k__BackingField
+<ClientOnly>k__BackingField
+<CmdletAttributeText>k__BackingField
+<CommandName>k__BackingField
+<CompileSingleWorkflow>b__9_0
+<CompileWorkflowsImpl>b__7_0
+<CompileWorkflowsImpl>b__7_1
+<CompileWorkflowsImpl>b__7_2
+<ContainVariablesWithWorkflowPrefix>b__153_0
+<Credential>k__BackingField
+<Culture>k__BackingField
+<DelegateInArgument Name="__UnhandledException" x:TypeArguments="
+<DelegateInArgument x:TypeArguments="
+<DelegateInArgument x:TypeArguments="x:Object" Name="
+<DetectType>b__0
+<DirectRead>k__BackingField
+<EncodePortInServicePrincipalName>k__BackingField
+<Encoding>k__BackingField
+<Expression>k__BackingField
+<ExpressionHasSideEffects>k__BackingField
+<Filter>k__BackingField
+<GenerateFromCommandInfo>b__13_0
+<GetInlineScriptActivityArguments>d__23
+<GetPowerShell>b__0
+<GetPowerShell>b__1
+<GetPowerShellValueExpression>b__69_0
+<GetRequiredAssembliesFromInitialSessionState>d__10
+<GetUsingExpressionAsts>b__32_0
+<GetUsingExpressionAsts>b__32_1
+<GetVariableDefinition>b__0
+<GetVariableDefinition>b__1
+<GetVariableExpressionAsts>b__130_0
+<GetVariableExpressionAsts>b__130_1
+<HttpPrefix>k__BackingField
+<If Condition="[
+<If Condition="[__RuntimeException.InnerException IsNot Nothing]">
+<If Condition="[__UnhandledException.Data.Contains(&quot;__Microsoft.PowerShell.Activities.Throw&quot;)]">
+<If Condition="[Not 
+<If.Condition>
+<If.Else>
+<If.Then>
+<Impersonation>k__BackingField
+<InArgument  x:TypeArguments="
+<InArgument x:TypeArguments="
+<InArgument x:TypeArguments="{0}">
+<Input>k__BackingField
+<InputObject>k__BackingField
+<InvokeMethod MethodName="
+<InvokeMethod.TargetObject>
+<IsAggregatingVariable>k__BackingField
+<IsDataAggregatingVariable>b__0
+<IsLiteral>k__BackingField
+<Key>k__BackingField
+<KeyOnly>k__BackingField
+<Label>k__BackingField
+<MaxEnvelopeSizeKB>k__BackingField
+<MergeErrorToOutput>k__BackingField
+<MethodName>k__BackingField
+<Module>
+<module>5__3
+<modulesToProcess>5__2
+<Name>k__BackingField
+<NameOfUnsupportedVariableFound>k__BackingField
+<Namespace>k__BackingField
+<NoEncryption>k__BackingField
+<OperationTimeoutSec>k__BackingField
+<OriginalValue>k__BackingField
+<OtherVariableName>k__BackingField
+<OutArgument  x:TypeArguments="
+<PacketIntegrity>k__BackingField
+<PacketPrivacy>k__BackingField
+<Parameters>k__BackingField
+<PassThru>k__BackingField
+<Path>k__BackingField
+<Port>k__BackingField
+<PrivateImplementationDetails>
+<Property>k__BackingField
+<PropertyName>k__BackingField
+<Protocol>k__BackingField
+<ProxyAuthentication>k__BackingField
+<ProxyCertificateThumbprint>k__BackingField
+<ProxyCredential>k__BackingField
+<ProxyType>k__BackingField
+<PSActionRetryCount>k__BackingField
+<PSActionRetryIntervalSec>k__BackingField
+<PSActionRunningTimeoutSec>k__BackingField
+<PSAllowRedirection>k__BackingField
+<PSApplicationName>k__BackingField
+<PSAuthentication>k__BackingField
+<PSBookmarkTimeoutSec>k__BackingField
+<PSCertificateThumbprint>k__BackingField
+<PSComputerName>k__BackingField
+<PSConfigurationName>k__BackingField
+<PSConnectionRetryCount>k__BackingField
+<PSConnectionRetryIntervalSec>k__BackingField
+<PSConnectionUri>k__BackingField
+<PSCredential>k__BackingField
+<PSDebug>k__BackingField
+<PSDisableSerialization>k__BackingField
+<PSError>k__BackingField
+<PSInformation>k__BackingField
+<PSPersist>k__BackingField
+<PSPort>k__BackingField
+<PSProgress>k__BackingField
+<PSRemotingBehavior>k__BackingField
+<PSRequiredModules>k__BackingField
+<PSSessionOption>k__BackingField
+<PSUseSsl>k__BackingField
+<PSVerbose>k__BackingField
+<PSWarning>k__BackingField
+<QualifierName>k__BackingField
+<Query>k__BackingField
+<QueryDialect>k__BackingField
+<Result>k__BackingField
+<ResultClassName>k__BackingField
+<Rethrow />
+<Sequence x:Key="
+<Sequence>
+<SessionOption>k__BackingField
+<Shallow>k__BackingField
+<ssae>5__9
+<Switch x:TypeArguments="
+<Switch.Default>
+<Switch.Expression>
+<ThrottleLimit>k__BackingField
+<Throw Exception="[
+<Throw Exception="[__RuntimeException.InnerException]" />
+<Throw Exception="[New Microsoft.PowerShell.Workflow.WorkflowReturnException()]" />
+<Throw.Exception>
+<Throw>
+<TryCatch.Catches>
+<TryCatch.Finally>
+<TryCatch.Finally><Sequence /></TryCatch.Finally>
+<TryCatch.Try>
+<TryCatch>
+<Type>k__BackingField
+<UICulture>k__BackingField
+<UseDefaultInput>k__BackingField
+<UseSsl>k__BackingField
+<Value>k__BackingField
+<Values>k__BackingField
+<Variable Name="{0}" x:TypeArguments="{1}" {2}/>
+<VariableName>k__BackingField
+<Variables>k__BackingField
+<VariableToRetrieve>k__BackingField
+<x:Members>
+<x:Property Name="{0}" Type="InArgument({1})" />
+<x:Property Name="{0}" Type="OutArgument({1})" />
+<x:Static Member="x:String.Empty" />
+<XamlDefinition>k__BackingField
+<xsd:schema 
+=Microsoft.PowerShell.Cmdletization.Xml.InstanceMethodMetadata
+>d:\os\public\amd64fre\internal\strongnamekeys\fake\windows.snk
+000004b0
+0Microsoft.PowerShell.Activities.PipelineDesigner
+1&clr-namespace:System;assembly=mscorlib
+10.0.10011.16384
+10.0.17763.1
+2System.Activities.Presentation.WorkflowViewElement
+3.0.0.0
+34AF0BFCF3E3BEEA9BB1D3BB98DC7DE1F7E1A23F
+3System.Resources.Tools.StronglyTypedResourceBuilder
+3The function or workflow '{0}' cannot be redefined.
+4.0.0.0
+4.0.30319.17929
+4Cannot supply both connection URI and computer name.
+4Microsoft.PowerShell.Activities.InlineScriptDesigner
+4The session state entry type '{0}' is not supported.
+5Cannot generate activity. The name '{0}' is reserved.
+5System.Activities.Presentation.WorkflowItemsPresenter
+6The Checkpoint-Workflow command accepts no parameters.
+7The variable '{0}' cannot be used in a script workflow.
+8Could not find type {0}. Load the type(s) and try again.
+8You can provide only one #requires statement per script.
+9Cannot redirect error stream for the New-Object activity.
+9Copyright (c) Microsoft Corporation. All rights reserved.
+9http://schemas.microsoft.com/winfx/2006/xaml/presentation
+9Pipeline activity works with at least one child activity.
+9The syntax of a {0} script block is '{0} { <commands> }'.
+A command name is required.
+AcceptsReturn
+ActionPreference
+Activity
+Activity_{0}
+ActivityAction`1
+activityAssembly
+activityBaseClass
+ActivityBuilder
+ActivityDelegate
+ActivityDesigner
+ActivityDoesNotContainResultProperty
+ActivityGenerator
+Activity-GenericTypes
+ActivityImplementationContext
+ActivityInstance
+activityInstance
+ActivityKind
+activityMap
+ActivityNameConflict
+ActivityNameConflict1
+ActivityNameNotFound
+ActivityNameNotFound1
+activityNamespace
+ActivityNotSupportedInPipeline
+ActivityParameterGroup
+ActivityPropertyReference
+ActivityResources
+ActivityResources.resources
+Activity-Specific Parameters
+activityType
+activityUsingVariables
+ActivityWithResult
+ActivityXamlServices
+actualVariableName
+AData sections are not supported in a Windows PowerShell Workflow.
+add_DataAdding
+AddAdditionalWorkflowParameters
+AddArgument
+AddChild
+AddCommand
+AddDelegate
+AddImplementationVariable
+addKey
+AddOrRemoveSpecialKey
+AddParameter
+AddParameters
+AddRange
+AddScript
+AddTryCatchForParallelEnd
+AddTryCatchForParallelStart
+AddUsingPrefixToWorkflowVariablesForFunctionCall
+AddValidationError
+AddVariable
+AddWorkflowCommonParameters
+AliasAttribute
+Aliases
+aliasesField
+AliasInfo
+allActivityVariables
+allowedCommands
+AllowedValue
+allowedVariables
+AllowEmptyCollection
+allowEmptyCollectionField
+AllowEmptyString
+allowEmptyStringField
+allowEnvironmentVariables
+AllowGlobbing
+allowGlobbingField
+allowGlobbingFieldSpecified
+AllowNull
+allowNullField
+allWorkflowVariables
+AlternateInvocationNotSupported
+AmbiguousCommand
+AmbiguousMatchException
+AmbiguousParameter
+AmbiguousParametersFound
+AmbiguousPropertiesFound
+Amended
+AnalyzeFunctionBody
+AnonymousType
+anyType
+anyURI
+AppDomain
+Append
+AppendLine
+AppendOutput
+AppendOutputTemplate
+Application
+ApplicationException
+argument
+Argument
+ArgumentDirection
+ArgumentList
+argumentResolution
+Arguments
+arguments
+argumentType
+argumentValue
+ArrayExpressionAst
+arrayExpressionAst
+arrayLiteralAst
+ArrayLiteralAst
+ArrayOfAssociation
+ArrayOfClassMetadataData
+ArrayOfEnumMetadataEnum
+ArrayOfInstanceMethodParameterMetadata
+ArrayOfPropertyMetadata
+ArrayOfQueryOption
+ArrayOfStaticCmdletMetadata
+ArrayOfStaticMethodParameterMetadata
+ArrayOfString
+AsJob
+AsPSObject
+assembliesToScan
+assembly
+Assembly Version
+AssemblyCompanyAttribute
+AssemblyConfigurationAttribute
+AssemblyCopyrightAttribute
+AssemblyDelaySignAttribute
+AssemblyDescriptionAttribute
+AssemblyFileVersionAttribute
+AssemblyInformationalVersionAttribute
+AssemblyKeyFileAttribute
+assemblyList
+AssemblyName
+AssemblyProductAttribute
+AssemblyTitleAttribute
+Assigning values to the Result argument is not supported. To store the output of a command, assign it to a variable. For example: $output = Get-Process.
+AssignmentNotSupported
+assignmentOperator
+AssignmentStatementAst
+assignmentStatementAst
+AssociatedInstance
+associatedInstanceField
+Association
+association1Field
+AssociationAssociatedInstance
+AssociationAssociatedInstanceSerializer
+AssociationSerializer
+AstContainsCommandCall
+AstToXamlConverter
+AstVisitAction
+aSystem.Activities.Presentation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+AttributeAst
+attributeAst
+AttributeBaseAst
+attributedExpressionAst
+AttributedExpressionAst
+AttributedExpressionNotSupported
+Authentication
+bareContent
+basename
+bConnot define pipeline. An iterative pipeline may not be nested within another iterative pipeline.
+Begin
+BeginNotSupported
+beginParameter
+BeginProcessNotSupported
+BehaviorCategoryAttribute
+bIn a Windows PowerShell Workflow, the syntax for New-Object is: "New-Object -TypeName <TypeName>".
+binaryExpressionAst
+BinaryExpressionAst
+BindCommand
+Binding
+BindingFlags
+BitwiseFlags
+bitwiseFlagsField
+bitwiseFlagsFieldSpecified
+blockStatementAst
+BlockStatementAst
+BMicrosoft.PowerShell.Activities.ActivityGenerator.GenerateFromName
+bodyElements
+bookmark
+BookmarkCallback
+BookmarkResumed
+Bottom=
+Break and Continue statements are not supported in a Windows PowerShell Workflow. Instead, use an 'if' statement to control loop execution.
+BreakContinueNotSupported
+BreakStatementAst
+breakStatementAst
+BThe generic type '{0}' cannot be resolved for the parameter '{1}'.
+BuildSymbolTable
+CacheMetadata
+CAdvanced parameter validation is not supported on nested workflows.
+CanDeserialize
+Cannot assign the output of the '{1}' activity. It does not contain the 'Result' property. If this is a workflow that calls another workflow, implement a Result property as a [ref] parameter.
+Cannot bind parameter because parameter '{0}' is specified more than once. To provide multiple values to parameters that can accept multiple values, use the array syntax. For example, "-parameter value1,value2,value3".
+Cannot call command. When used with the 'Sequence' parameter, the Foreach-Object cmdlet supports only the 'PipelineVariable', 'Begin', 'Sequence', and 'End' parameters.
+Cannot call command. When used with the 'Sequence' parameter, the Where-Object cmdlet supports only the 'PipelineVariable' and 'Sequence' parameters.
+Cannot call the '{0}' command. Other commands from this module have been packaged as workflow activities, but this command was specifically excluded. This is likely because the command requires an interactive Windows PowerShell session, or has behavior not suited for workflows. To run this command anyway, place it within an inline-script (InlineScript {{ {0} }}) where it will be invoked in isolation.
+Cannot create pipeline. The Foreach-Object cmdlet with the -Sequence parameter cannot be used as the first element of a pipeline.
+Cannot create pipeline. The Where-Object cmdlet with the -Sequence parameter cannot be used as the first element of a pipeline.
+Cannot define pipeline. Once a pipeline uses the Sequence parameter of the Foreach-Object or Where-Object cmdlets, all remaining commands must also be either the Foreach-Object or Where-Object cmdlet with the Sequence parameter.
+Cannot define variable. A variable with name '{0}' has already been defined. To reference a variable from the top-level scope of this workflow, use the syntax: '$WORKFLOW:{0}'.
+Cannot define variable. Scope names are only valid in a parallel or sequence block. Within a parallel or sequence block, the only valid scope name is 'workflow'.
+Cannot find the '{0}' command. If this command is defined as a workflow, ensure it is defined before the workflow that calls it. If it is a command intended to run directly within Windows PowerShell (or is not available on this system), place it in an InlineScript: 'InlineScript {{ {0} }}'
+Cannot generate activity. The command name '{0}' could not be found in the default runspace. Use the GenerateFromCommandInfo method to generate activities for non-default commands.
+Cannot have an empty BaseDirectory for importing localized data. Please specify a valid BaseDirectory and run the command again.
+Cannot redirect the error stream to the output stream. The target activity '{0}' does not contain the property 'MergeErrorToOutput'.
+Cannot start "{0}". Interactive console applications are not supported in a Windows PowerShell Workflow. To run the application, use the Start-Process cmdlet.
+Cannot store the results of this type of expression into a variable. Only the results of commands, pipelines, constant expressions, foreach statements, parallel and sequence statements can be stored in variables.
+CannotAssignStartSleepToVariable
+CannotFindParameter
+CannotLaunchFormat
+CannotMergeErrorToOutput
+CannotNestIterativePipeline
+CannotProcessMoreThanOneScriptBlock
+CannotRedirectErrorStreamForNewObject
+CannotRedirectErrorStreamForStartSleep
+CannotSpecifyBothCommandAndCommandName
+CannotSpecifyBothCommandAndCommandName1
+CannotSpecifyResultArgument
+CannotStoreResultsInUnsupportedElement
+CannotStoreResultsInVariable
+CannotSupplyUriAndComputername
+CannotUseDataCollectingVariable
+CannotUseWorkflowPrefixInInlineScript
+CanSerialize
+Case-insensitive switch statements are not supported in a Windows PowerShell Workflow. Supply the -CaseSensitive flag, and ensure that case clauses are written appropriately. To write a case-insensitive case statement, first convert the input to either uppercase or lowercase, and update the case clauses to match.
+Catch`1
+catchClauseAst
+CatchClauseAst
+Center=
+CertificateCACheck
+CertificateCNCheck
+CertificateThumbprint
+CertRevocationCheck
+CheckClass
+CheckIfExpressionHasUnsupportedVariableOrHasSideEffects
+CheckInterface
+CheckpointWorkflow
+Checkpoint-Workflow
+CheckpointWorkflowSyntax
+CheckReaderCount
+CheckRestrictedLanguage
+checkType
+CimClass
+CimCmdlets
+cimcmdlets.Activities
+CimCmdlets\Get-CimAssociatedInstance
+CimCmdlets\Get-CimClass
+CimCmdlets\Get-CimInstance
+CimCmdlets\Invoke-CimMethod
+CimCmdlets\New-CimInstance
+CimCmdlets\New-CimSession
+CimCmdlets\New-CimSessionOption
+CimCmdlets\Remove-CimInstance
+CimCmdlets\Set-CimInstance
+CimSession
+CimSessionOptions
+class
+Class
+classField
+ClassMetadata
+ClassMetadataData
+ClassMetadataDataSerializer
+ClassMetadataInstanceCmdlets
+ClassMetadataInstanceCmdletsSerializer
+ClassMetadataSerializer
+ClassName
+classNameField
+ClassVersion
+classVersionField
+Clear
+ClientOnly
+cmd.exe
+Cmdlet
+CmdletAdapter
+cmdletAdapterField
+CmdletAdapterPrivateData
+cmdletAdapterPrivateDataField
+cmdletField
+CmdletInfo
+CmdletInvocationException
+CmdletMetadata
+cmdletMetadataField
+CmdletOutputMetadata
+cmdletOutputMetadataField
+CmdletOutputMetadataSerializer
+CmdletParameterMetadata
+cmdletParameterMetadataField
+CmdletParameterMetadataForGetCmdletFilteringParameter
+CmdletParameterMetadataForGetCmdletFilteringParameterSerializer
+CmdletParameterMetadataForGetCmdletParameter
+CmdletParameterMetadataForGetCmdletParameterSerializer
+CmdletParameterMetadataForInstanceMethodParameter
+CmdletParameterMetadataForInstanceMethodParameterSerializer
+CmdletParameterMetadataForStaticMethodParameter
+CmdletParameterMetadataForStaticMethodParameterSerializer
+CmdletParameterMetadataSerializer
+CmdletParameterMetadataValidateCount
+CmdletParameterMetadataValidateCountSerializer
+CmdletParameterMetadataValidateLength
+CmdletParameterMetadataValidateLengthSerializer
+CmdletParameterMetadataValidateRange
+CmdletParameterMetadataValidateRangeSerializer
+CmdletParameterSet
+cmdletParameterSetField
+CmdletParameterSets
+cmdletParameterSetsField
+CodeActivity`1
+CodeActivityContext
+CodeAttributeDeclaration
+CodeAttributeDeclarationCollection
+CodeCompiler
+CodeDomProvider
+CodeExpression
+CodeGeneratorOptions
+CodeMemberField
+CodeNamespace
+CodeNamespaceCollection
+CodePrimitiveExpression
+CodeTypeDeclaration
+CodeTypeDeclarationCollection
+CodeTypeMember
+CodeTypeMemberCollection
+CodeTypeReference
+CodeTypeReferenceCollection
+Collapsed 
+CollapseWhitespace
+Collapsible
+CollectionBase
+Color$
+Combine
+command
+Command
+'Command' is mutually exclusive with 'CommandName'. Either specify  'CommandName' (optionally with 'Parameters'),  or 'Command'.
+CommandActivityExcluded
+CommandArgumentInfo
+CommandAst
+commandAst
+CommandBaseAst
+CommandCollection
+CommandElementAst
+commandExpressionAst
+CommandExpressionAst
+CommandHandledByKeyword
+commandInfo
+commandMetadata
+CommandMetadataTable
+CommandName
+commandName
+CommandNameRequired
+CommandNameRequired1
+CommandNotFound
+commandParameterAst
+CommandParameterAst
+CommandParameterCollection
+CommandTypes
+CommentHelpInfo
+Comments
+CommonCmdletMetadata
+CommonCmdletMetadataSerializer
+CommonMethodMetadata
+CommonMethodMetadataReturnValue
+CommonMethodMetadataReturnValueSerializer
+CommonMethodMetadataSerializer
+CommonMethodParameterMetadata
+CommonMethodParameterMetadataSerializer
+CommonParameterNotSupported
+CompanyName
+CompilationRelaxationsAttribute
+CompileAssemblyFromSource
+CompilerErrorCollection
+CompilerGeneratedAttribute
+CompilerParameters
+CompilerResults
+CompileSingleWorkflow
+CompileStrings
+CompileWorkflow
+CompileWorkflows
+CompileWorkflowsImpl
+completedInstance
+CompletionCallback
+Computer
+ComputerName
+ComputerNameNotValid
+ComputerNameNotValid1
+ComVisibleAttribute
+Concat
+ConcurrentDictionary`2
+condition
+ConditionsCannotHaveSideEffects
+ConditionsCannotInvokeActivities
+ConfirmImpact
+confirmImpactField
+confirmImpactFieldSpecified
+ConfirmImpactSerializer
+connectionId
+Connectivity
+ConnectivityCategoryAttribute
+ConnectivityGroup
+Consistency
+constantExpressionAst
+ConstructXmlReaderSettings
+ConstructXmlSerializer
+Contains
+ContainsKey
+ContainsLanguageElements
+ContainVariablesWithWorkflowPrefix
+ContentPropertyAttribute
+context
+ContinueStatementAst
+continueStatementAst
+conv_clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation
+ConvertExpressionAst
+convertExpressionAst
+ConvertTo
+ConvertToString
+Copyright (c) Microsoft Corporation.  All rights reserved.
+Copyright (c) Microsoft Corporation. All rights reserved.
+CopyTo
+Could not find a parameter named '{0}' for the '{1}' command. Windows PowerShell common parameters such as WhatIf and OutVariable are not supported.
+Could not find a parameter named '{0}'. Note that this activity has the same name as a Windows PowerShell cmdlet, but different parameters. Supported parameters are: {1}.
+Could not find a parameter named '{0}'. Workflow-common parameters such as PSComputerName are not supported in nested workflows that already have nested workflows.
+Could not find a parameter named 'ComputerName'. Remote connectivity in this command is handled by the 'PSComputerName' parameter.
+CouldNotFindParameterName
+CouldNotFindParameterNameNested
+CouldNotFindParameterNameShadowedActivity
+CouldNotFindWorkflowCommonParameterNameNested
+CouldNotLoadRequiredAssembly
+Create
+CreateBookmark
+CreateBuilderReader
+CreateBuilderWriter
+CreateCodeCompileUnit
+CreateDefault2
+CreateFunctionFromXaml
+CreateInvalidChoiceIdentifierValueException
+CreateInvalidEnumValueException
+CreateMismatchChoiceException
+CreateNestedWorkflow
+CreateProvider
+CreateReader
+CreateRunspace
+CreateUnknownConstantException
+CreateUnknownNodeException
+CreateUnknownTypeException
+CreateValidIdentifier
+CreateWriter
+Credential
+CSharpCodeProvider
+CThe output of the New-Object cmdlet must be assigned to a variable.
+Culture
+CultureInfo
+currentPipelineVariable
+customRemotingMapping
+CustomTrackingRecord
+CustomTypeDescriptor
+d2http://schemas.microsoft.com/expression/blend/2008
+DataAddingEventArgs
+DataSectionNotSupported
+dataStatementAst
+DataStatementAst
+DataType
+Debug
+DebuggableAttribute
+DebuggerHiddenAttribute
+DebuggerNonUserCodeAttribute
+DebuggerStepThroughAttribute
+DebuggingModes
+DebugPreference
+DebugRecord
+DebugSequencePoint
+default
+Default = "{0}" 
+DefaultCmdletParameterSet
+defaultCmdletParameterSetField
+DefaultNoun
+defaultNounField
+DefaultParameterSetName
+defaultValue
+DefaultValue
+DefaultValueAttribute
+defaultValueField
+DefineVariable
+definingModule
+definition
+defnEntry
+Delay
+dependencies
+DependencyGraphNode
+DependModuleImportFailed
+DesignerAttribute
+DesignerCategoryAttribute
+DetectType
+DirectRead
+disableSymbolGeneration
+diskpart
+diskpart.exe
+DisplayName
+displayName
+DMicrosoft.PowerShell.Cmdletization.Xml.StaticMethodParameterMetadata
+DockPanel_1
+dOnly simple variable references (i.e.: $x) and number constants are supported in a unary expression.
+Dot-sourcing (. <command>) and the invocation operator (& <command>) are not supported in a Windows PowerShell Workflow. Wrap this command invocation into an inlinescript { } instead.
+Double
+doUntilStatementAst
+DoUntilStatementAst
+DoWhile
+DoWhileStatementAst
+doWhileStatementAst
+dParameter 'Wait' cannot be used for Restart-Computer activity when the localhost is being restarted.
+DumpVariables
+DuplicateInputDefinedInPipeline
+DuplicateInputDefinedInPipeline1
+DuplicateParametersNotAllowed
+DuplicateResultDefinedInPipeline
+DuplicateResultDefinedInPipeline1
+Duration
+DynamicActivity
+DynamicActivityProperty
+DynamicParametersNotSupported
+edit.com
+EditorBrowsableAttribute
+EditorBrowsableState
+ElementAt
+elseClause
+EncodePortInServicePrincipalName
+EncodeStringArgument
+EncodeStringArgumentLiteral
+EncodeStringNonArgument
+Encoding
+endParameter
+EndsWith
+EnsureArrayIndex
+Enter
+EnterScope
+EnterStorage
+EntirePipelineMustUseForeachSequence
+enumMetadata
+EnumMetadataEnum
+EnumMetadataEnumSerializer
+EnumMetadataEnumValue
+EnumMetadataEnumValueSerializer
+EnumName
+enumNameField
+Enums
+enumsField
+EnumWriter_InvalidEnumName
+EnumWriter_InvalidEnumName1
+EnumWriter_InvalidValueName
+EnumWriter_InvalidValueName1
+EnvironmentVariableAssignmentNotSupported
+Equals
+ErrorAction
+ErrorActionPreference
+ErrorCode
+errorCodeField
+ErrorExpressionAst
+errorExpressionAst
+errorExtent
+errorId
+ErrorOnNoMatch
+errorOnNoMatchField
+errorOnNoMatchFieldSpecified
+errors
+ErrorStatementAst
+errorStatementAst
+errorText
+ErrorVariable
+ETSType
+eTSTypeField
+EventHandler`1
+ExceptionTypeNotFound
+ExcludeQuery
+ExcludeQuery@Microsoft.PowerShell.Cmdletization.Xml.WildcardablePropertyQuery
+executionContext
+ExitStatementAst
+exitStatementAst
+expandableStringExpressionAst
+ExpandableStringExpressionAst
+Expanded
+ExpandOrCollapsedStyle
+expression
+ExpressionHasUnsupportedVariableOrSideEffectsVisitor
+extent
+ExtractUsingVariable
+FaultCallback
+fCannot store results in the variable '{0}'. Results are already being collected in the variable '{1}'.
+FCould not find a parameter named '{0}'. Supported parameters are: {1}.
+FDynamic parameters are not supported in a Windows PowerShell Workflow.
+FieldInfo
+FileAccess
+FileDescription
+FileMode
+FileRedirectionAst
+fileRedirectionAst
+FileStream
+FileVersion
+Filter
+FindAll
+FinishIterativePipelineLoop
+FirstOrDefault
+FlagsAttribute
+FMicrosoft.PowerShell.Cmdletization.Xml.InstanceMethodParameterMetadata
+ForEach
+foreach($item in $PSPipelineVariableContext) { $item['_'] }
+ForeachCondition
+ForEachFlags
+Foreach-Object
+ForEachSequence
+ForEachStatementAst
+forEachStatementAst
+ForStatementAst
+forStatementAst
+fParameter '{0}' is defined as an InOutArgument or OutArgument and can accept only variable references.
+FromSeconds
+fromType
+FrootWorkflowName '{0}' is invalid. Make sure it exists in the context.
+Func`1
+Func`2
+function
+function {0}
+functionDefinition
+FunctionDefinitionAst
+functionDefinitionAst
+functionDefinitions
+FunctionInfo
+FunctionRedefinitionNotAllowed
+GenerateActivityCall
+GenerateActivityCallFromCommand
+GenerateAssemblyFromModuleInfo
+GenerateAssignment
+GenerateCodeFromCompileUnit
+GenerateCommandCall
+GeneratedCodeAttribute
+GenerateFromCommandInfo
+GenerateFromModuleInfo
+GenerateFromName
+GenerateIf
+GenerateInlineScript
+GenerateInlineScriptForFunctionCall
+GenerateInvokeExpression
+GenerateIterativePipeline
+GenerateIterativePipelineElementForForEach
+GenerateIterativePipelineElementForWhere
+GenerateLoop
+GenerateNativeCommandCallFromCommand
+GenerateNewObject
+GeneratePersist
+GeneratePipelineCall
+GeneratePipelineVariablePipeline
+GeneratePowerShellValue
+GenerateStartSleep
+GenerateSuspend
+GenerateSymbolicInformation
+GenerateUniqueVariableName
+GenerateWorkflowCallingWorkflowCall
+GenerateWriteOutputEnd
+GenerateWriteOutputStart
+GenerateXamlForThrowStatement
+genericArgumentTypes
+GenericCimCmdletActivity
+genericName
+genericParameter
+GenericParameterTypeNotFound
+genericPropertyType
+GenericPropertyTypeNotResolved
+genericTypeArray
+genericTypeMap
+GenericTypeNotFound
+genericTypes
+GenericTypesKey
+get_Activities
+get_Activity
+get_ActivityDoesNotContainResultProperty
+get_ActivityInstanceId
+get_ActivityNameConflict
+get_ActivityNameConflict1
+get_ActivityNameNotFound
+get_ActivityNameNotFound1
+get_ActivityNotSupportedInPipeline
+get_ActivityParameterGroup
+get_Aliases
+get_AllowEmptyCollection
+get_AllowEmptyString
+get_AllowGlobbing
+get_AllowGlobbingSpecified
+get_AllowNull
+get_AlternateInvocationNotSupported
+get_AmbiguousCommand
+get_AmbiguousParameter
+get_AmbiguousPropertiesFound
+get_Amended
+get_AppendOutput
+get_Argument
+get_ArgumentAst
+get_ArgumentList
+get_ArgumentName
+get_Arguments
+get_Assemblies
+get_Assembly
+get_AssignmentNotSupported
+get_AssociatedInstance
+get_Association
+get_Association1
+get_Ast
+get_AttributedExpressionNotSupported
+get_Attributes
+get_Authentication
+get_BaseObject
+get_BaseType
+get_BaseTypes
+get_BeginBlock
+get_BeginProcessNotSupported
+get_BindingException
+get_BindingExceptions
+get_BitwiseFlags
+get_BitwiseFlagsSpecified
+get_BlockKind
+get_Body
+get_BoundParameters
+get_BreakContinueNotSupported
+get_CanInduceIdle
+get_CannotAssignStartSleepToVariable
+get_CannotLaunchFormat
+get_CannotMergeErrorToOutput
+get_CannotNestIterativePipeline
+get_CannotProcessMoreThanOneScriptBlock
+get_CannotRedirectErrorStreamForNewObject
+get_CannotRedirectErrorStreamForStartSleep
+get_CannotSpecifyBothCommandAndCommandName
+get_CannotSpecifyBothCommandAndCommandName1
+get_CannotSpecifyResultArgument
+get_CannotStoreResultsInUnsupportedElement
+get_CannotStoreResultsInVariable
+get_CannotSupplyUriAndComputername
+get_CannotUseDataCollectingVariable
+get_CannotUseWorkflowPrefixInInlineScript
+get_CanUseDefaultRunspace
+get_CatchClauses
+get_Catches
+get_CatchTypes
+get_CertificateCACheck
+get_CertificateCNCheck
+get_CertificateThumbprint
+get_CertRevocationCheck
+get_Chars
+get_CheckpointWorkflowSyntax
+get_Child
+get_CimClass
+get_Class
+get_ClassName
+get_ClassVersion
+get_Clauses
+get_ClientOnly
+get_Cmdlet
+get_CmdletAdapter
+get_CmdletAdapterPrivateData
+get_CmdletAttributeText
+get_CmdletMetadata
+get_CmdletOutputMetadata
+get_CmdletParameterMetadata
+get_CmdletParameterSet
+get_CmdletParameterSets
+get_Command
+get_CommandActivityExcluded
+get_CommandElement
+get_CommandElements
+get_CommandHandledByKeyword
+get_CommandName
+get_CommandNameRequired
+get_CommandNameRequired1
+get_CommandNotFound
+get_Commands
+get_CommandType
+get_CommonParameterNotSupported
+get_CommonParameters
+get_CompiledAssembly
+get_ComputerName
+get_ComputerNameNotValid
+get_ComputerNameNotValid1
+get_Condition
+get_ConditionsCannotHaveSideEffects
+get_ConditionsCannotInvokeActivities
+get_ConfirmImpact
+get_ConfirmImpactSpecified
+get_ConnectionInfo
+get_ConnectivityGroup
+get_ConstantValue
+get_ContainsGenericParameters
+get_CouldNotFindParameterName
+get_CouldNotFindParameterNameNested
+get_CouldNotFindParameterNameShadowedActivity
+get_CouldNotLoadRequiredAssembly
+get_Count
+get_Credential
+get_Culture
+get_CurrentCulture
+get_CurrentDomain
+get_CurrentManagedThreadId
+get_CustomAttributes
+get_Data
+get_DataContext
+get_DataSectionNotSupported
+get_Debug
+get_Default
+get_DefaultCmdletParameterSet
+get_DefaultNoun
+get_DefaultRunspace
+get_DefaultValue
+get_Definition
+get_DependModuleImportFailed
+get_DirectRead
+get_DuplicateInputDefinedInPipeline
+get_DuplicateInputDefinedInPipeline1
+get_DuplicateParametersNotAllowed
+get_DuplicateResultDefinedInPipeline
+get_DuplicateResultDefinedInPipeline1
+get_DynamicParamBlock
+get_DynamicParametersNotSupported
+get_Elements
+get_ElseClause
+get_EncodePortInServicePrincipalName
+get_Encoding
+get_EndBlock
+get_EndColumnNumber
+get_EndLineNumber
+get_EndOffset
+get_EntirePipelineMustUseForeachSequence
+get_EnumName
+get_Enums
+get_EnumWriter_InvalidEnumName
+get_EnumWriter_InvalidEnumName1
+get_EnumWriter_InvalidValueName
+get_EnumWriter_InvalidValueName1
+get_EnvironmentVariableAssignmentNotSupported
+get_Error
+get_ErrorAction
+get_ErrorCode
+get_ErrorId
+get_ErrorOnNoMatch
+get_ErrorOnNoMatchSpecified
+get_ErrorRecord
+get_Errors
+get_ETSType
+get_Exception
+get_ExportedCmdlets
+get_ExportedFunctions
+get_Expression
+get_ExpressionHasSideEffects
+get_ExpressionScriptBlock
+get_Extent
+get_File
+get_FileName
+get_Filter
+get_Finally
+get_Flags
+get_FromStream
+get_FullName
+get_FunctionRedefinitionNotAllowed
+get_GenericParameterTypeNotFound
+get_GenericPropertyTypeNotResolved
+get_GetCmdlet
+get_GetCmdletParameters
+get_HasValue
+get_HelpUri
+get_HostCommandMetadata
+get_HttpPrefix
+get_Impersonation
+get_Implementation
+get_ImportLocalizedDataWithEmptyEmptyorNullBaseDirectory
+get_ImportLocalizedDataWithEmptyEmptyorNullBaseDirectory1
+get_InformationAction
+get_Initializer
+get_InlineScriptSyntax
+get_InlineXamlNotSupported
+get_InnerException
+get_Input
+get_InputAndOutputGroup
+get_InputObject
+get_InputRequired
+get_InputRequired1
+get_InstanceCmdlets
+get_InstanceId
+get_InvalidCmdletBindingAttribute
+get_InvalidForeachSequenceParameter
+get_InvalidForeachSequencePipelinePosition
+get_InvalidMemberName
+get_InvalidRootWorkflowName
+get_InvalidScopePrefixInWorkflow
+get_InvalidWhereSequenceParameter
+get_InvalidWhereSequencePipelinePosition
+get_InvariantCulture
+get_InvocationInfo
+get_InvocationOperator
+get_InvokeExpressionSyntax
+get_IsAbstract
+get_IsAggregatingVariable
+get_IsCatchAll
+get_IsDynamic
+get_IsEmptyElement
+get_IsGenericParameter
+get_IsGenericType
+get_IsLiteral
+get_IsMandatory
+get_IsMandatorySpecified
+get_IsOpen
+get_IsPrimitive
+get_IsRethrow
+get_IsVariable
+get_IsWorkflow
+get_Item
+get_Item1
+get_Item2
+get_ItemAdded
+get_Items
+get_ItemsElementName
+get_Iterator
+get_Key
+get_KeyOnly
+get_Keys
+get_Kind
+get_Label
+get_LanguageMode
+get_Left
+get_Length
+get_LocalAndRemoteNodesCannotBeTogetherForRestartComputerActivity
+get_LocalAndRemoteNodesCannotBeTogetherForRestartComputerActivity1
+get_LocalName
+get_Location
+get_LoopLabelNotSupported
+get_ManifestModule
+get_Max
+get_MaxEnvelopeSizeKB
+get_Member
+get_Members
+get_MergeErrorToOutput
+get_Message
+get_Method
+get_MethodInvocationNotSupported
+get_MethodName
+get_Min
+get_MissingValueForParameter
+get_Module
+get_ModuleBase
+get_ModuleName
+get_ModuleType
+get_MustSupplyVariableReferenceForInOutArgument
+get_MustUseXamlLanguage
+get_Name
+get_NamedArguments
+get_NameOfUnsupportedVariableFound
+get_Namespace
+get_Namespaces
+get_NamespaceURI
+get_NameTable
+get_NestedModules
+get_NestedWorkflows
+get_NestedXamlDefinition
+get_NewObjectCouldNotFindType
+get_NewObjectMustBeAssigned
+get_NewObjectSyntax
+get_NoChildPipeline
+get_NoChildPipeline1
+get_NodeType
+get_NoEncryption
+get_Noun
+get_NullArgumentExpression
+get_NullArgumentExpression1
+get_NullReturnedAfterExpressionEvaluation
+get_NullReturnedAfterExpressionEvaluation1
+get_Obsolete
+get_OnlyOneRequiresStatement
+get_OnlySimpleParameterDefaultsSupported
+get_OnlySimpleVariableReferencesSupportedInUnary
+get_OnlySupportErrorStreamRedirection
+get_OperationTimeoutSec
+get_Operator
+get_OperatorRequiresVariable
+get_OptionalCommonParameters
+get_OptionName
+get_OrdinalIgnoreCase
+get_OriginalValue
+get_OtherVariableName
+get_PacketIntegrity
+get_PacketPrivacy
+get_ParallelSequenceScriptBlockSyntax
+get_ParamBlock
+get_ParameterDefaults
+get_ParameterName
+get_Parameters
+get_ParameterType
+get_ParameterValidation
+get_ParameterValidationNotSupportedOnNestedWorkflows
+get_Parent
+get_ParseErrors
+get_PassThru
+get_Path
+get_Pipeline
+get_PipelineElements
+get_Port
+get_Position
+get_PositionalArguments
+get_PositionalParametersNotSupported
+get_PowerShellInstance
+get_PowerShellInstanceId
+get_ProcessBlock
+get_ProgressPositionMessage
+get_Properties
+get_Property
+get_PropertyDoesNotSupportPowerShellLanguage
+get_PropertyName
+get_PropertyType
+get_Protocol
+get_ProviderPath
+get_ProxyAuthentication
+get_ProxyCertificateThumbprint
+get_ProxyCredential
+get_ProxyType
+get_PSActionRetryCount
+get_PSActionRetryIntervalSec
+get_PSActionRunningTimeoutSec
+get_PSActivityEnvironment
+get_PSAllowRedirection
+get_PSApplicationName
+get_PSAuthentication
+get_PSBookmarkTimeoutSec
+get_PSCertificateThumbprint
+get_PSCommandName
+get_PSComputerName
+get_PSConfigurationName
+get_PSConnectionRetryCount
+get_PSConnectionRetryIntervalSec
+get_PSConnectionUri
+get_PSCredential
+get_PSDebug
+get_PSDefiningModule
+get_PSDisableSerialization
+get_PSError
+get_PSInformation
+get_PSName
+get_PSPersist
+get_PSPort
+get_PSProgress
+get_PSRemotingBehavior
+get_PSRequiredModules
+get_PSSessionOption
+get_PSType
+get_PSUseSsl
+get_PSVariable
+get_PSVerbose
+get_PSWarning
+get_QualifierName
+get_Query
+get_QueryableAssociations
+get_QueryableProperties
+get_QueryDialect
+get_QueryOptions
+get_Reader
+get_ReaderCount
+get_ReadMethods
+get_ReasonRequiredInThrowStatement
+get_RecursiveWorkflowNotSupported
+get_Redirections
+get_ReferencedAssemblies
+get_RemotingCapability
+get_RemotingHandledByPSComputerName
+get_RequiredAssemblies
+get_ResourceManager
+get_ResourceUri
+get_RestartComputerWithWaitNotAllowed
+get_RestartComputerWithWaitNotAllowed1
+get_Result
+get_ResultClassName
+get_ResultRole
+get_ReturnValue
+get_Right
+get_RunningTimeExceeded
+get_Runspace
+get_Runtime
+get_Schemas
+get_ScriptBlock
+get_ScriptBlockInvocationNotSupported
+get_ScriptRequirements
+get_SessionOption
+get_SessionStateEntryNotSupported
+get_SessionStateProxy
+get_Shallow
+get_SourceRole
+get_Splatted
+get_StartColumn
+get_StartColumnNumber
+get_StartLine
+get_StartLineNumber
+get_StartOffset
+get_StartScriptPosition
+get_StartSleepSyntax
+get_Statements
+get_StaticCmdlets
+get_StaticType
+get_Streams
+get_StringConstantType
+get_SubExpressionNotSupported
+get_SupportsCustomRemoting
+get_SuspendWorkflowSyntax
+get_SwitchCaseSensitive
+get_SwitchClauseMustBeOfSameType
+get_SwitchEnumerationNotSupported
+get_SwitchFlagNotSupported
+get_SwitchOnlySupportsConstantExpression
+get_Target
+get_Text
+get_ThrottleLimit
+get_ThrowStatementCannotInvokeActivities
+get_Token
+get_TokenKind
+get_ToStream
+get_TotalSeconds
+get_Tracer
+get_TrapNotSupported
+get_Traps
+get_Type
+get_TypedSerializers
+get_TypeFromDynamicAssembly
+get_TypeImplementingCmdlet
+get_TypeName
+get_Types
+get_UICulture
+get_UnboundedLocalRunspaceProvider
+get_UnderlyingType
+get_UpdatePreferenceVariable
+get_UseDefaultInput
+get_UserName
+get_UserPath
+get_UseSsl
+get_ValidateCount
+get_ValidateLength
+get_ValidateNotNull
+get_ValidateNotNullOrEmpty
+get_ValidateOnly
+get_ValidateRange
+get_ValidateSet
+get_Value
+get_ValueFromPipeline
+get_ValueFromPipelineByPropertyName
+get_ValueFromPipelineByPropertyNameSpecified
+get_ValueFromPipelineSpecified
+get_Values
+get_Variable
+get_VariableAlreadyDefined
+get_VariableName
+get_VariableNameReadOnly
+get_VariableNameReserved
+get_VariableNotSupportedInWorkflow
+get_VariablePath
+get_Variables
+get_VariableToRetrieve
+get_Verb
+get_Verbose
+get_Version
+get_WarningAction
+get_WhatIf
+get_WorkflowContext
+get_WorkflowsCalled
+get_WorkflowScopeOnlyValidInParallelOrSequenceBlock
+get_WriteMethods
+get_Writer
+get_XamlDefinition
+get_Xml_cmdletsOverObjectsXsd
+GetActivityArguments
+GetActivityMap
+GetActivityParameters
+GetActualPropertyType
+GetAndResolveParameters
+GetArgumentAndExtentForParameter
+GetAssemblies
+GetAvailableProperties
+GetCimAssociatedInstance
+Get-CimAssociatedInstance
+GetCimAssociatedInstanceCommand
+GetCimClass
+Get-CimClass
+GetCimClassCommand
+GetCimInstance
+Get-CimInstance
+GetCimInstanceCommand
+GetCmdlet
+getCmdletField
+GetCmdletMetadata
+GetCmdletMetadataSerializer
+GetCmdletParameters
+getCmdletParametersField
+GetCmdletParametersSerializer
+Get-Command
+GetCommandCommand
+GetCommandName
+GetCommentBlock
+GetConvertedTypeName
+GetCSharpCode
+GetData
+GetDirectoryName
+GetEnumNames
+GetEquivalentVBTextForLiteralValue
+GetExtension
+GetField
+GetFileNameWithoutExtension
+GetFriendlyName
+GetFullScript
+GetGenericArguments
+GetGenericTypeDefinition
+GetGenericTypeMap
+GetHashCode
+GetHelpContent
+GetIndentedLine
+GetInlineScriptActivityArguments
+GetInterfaces
+GetIsComputerNameSpecified
+Get-Location
+Get-Module
+GetModuleCommand
+GetModuleQualifier
+GetName
+GetNonGenericName
+GetPowerShell
+GetPowerShellValueExpression
+GetProperties
+GetPropertyType
+GetPSWorkflowData
+GetPSWorkflowData`1
+GetPureExpression
+GetReflectionAttributeType
+GetReflectionType
+GetRequiredAssembliesFromInitialSessionState
+GetRunInProc
+GetRunspace
+GetScopeFromIss
+GetScriptAsFunction
+GetSerializer
+GetString
+GetTraceSource
+GetType
+GetTypeFromHandle
+GetTypes
+GetUsingExpressionAsts
+GetVariableDefinition
+GetVariableExpressionAsts
+GetVariableToUse
+GetVirtualProperties
+GetWmiCommandCore
+GetWmiObject
+Get-WmiObject
+GetWorkflowParamBlock
+GetXsiType
+gHxQhO
+H}|Hd
+H< (!
+HandleErrorDataAdding
+HandlePSSequenceOutput
+hasCompleted
+hasControlFlowException
+HashSet`1
+HashtableAst
+hashtableAst
+HelpUri
+helpUriField
+HintText$
+hMicrosoft.PowerShell.Workflow.AstToWorkflowConverter+<GetRequiredAssembliesFromInitialSessionState>d__10
+HostParameterDefaults
+HostSettingCommandMetadata
+hostValues
+hTrap statements are not supported in a Windows PowerShell Workflow. Instead, use try, catch, or finally.
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:AllowedValue
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:AllowEmptyCollection, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:AllowEmptyString, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:AllowNull, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:ValidateNotNull, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:ValidateNotNullOrEmpty, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:ValidateCount, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:ValidateLength, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:ValidateRange, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:ValidateSet, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Obsolete
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:AssociatedInstance
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Association
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Class, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Enums
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Cmdlet
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:CmdletMetadata, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:GetCmdletParameters
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:CmdletMetadata, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Method
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:CmdletMetadata, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Method, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:GetCmdletParameters
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:CmdletParameterMetadata
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Data
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Enum
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:ErrorCode
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:GetCmdletParameters, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:GetCmdlet, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Cmdlet
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Obsolete
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Option
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Parameter
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:PowerShellMetadata
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Property
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:QueryableProperties, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:QueryableAssociations, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:QueryOptions
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:ReturnValue
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:ReturnValue, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Parameters
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Type
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Type, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:CmdletOutputMetadata
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Type, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:CmdletParameterMetadata
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Type, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:CmdletParameterMetadata, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:CmdletOutputMetadata
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Type, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:MaxValueQuery, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:RegularQuery, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:ExcludeQuery, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:MinValueQuery
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Value
+http://schemas.microsoft.com/cmdlets-over-objects/2009/11:Version, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:DefaultNoun, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:InstanceCmdlets, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:StaticCmdlets, http://schemas.microsoft.com/cmdlets-over-objects/2009/11:CmdletAdapterPrivateData
+http://www.w3.org/2001/XMLSchema
+HttpPrefix
+IAstToWorkflowConverter
+ICannot assign Start-Sleep to a variable. Start-Sleep generates no output.
+ICollection
+IComponentConnector
+ICustomAstVisitor
+id1_PowerShellMetadata
+id10_AssociationAssociatedInstance
+id100_OptionName
+id101_SourceRole
+id102_ResultRole
+id103_AssociatedInstance
+id104_PropertyName
+id105_MaxValueQuery
+id106_RegularQuery
+id107_ExcludeQuery
+id108_MinValueQuery
+id109_QueryableProperties
+id11_CmdletParameterMetadata
+id110_QueryableAssociations
+id111_QueryOptions
+id112_CmdletAdapter
+id113_ClassName
+id114_ClassVersion
+id115_Version
+id116_DefaultNoun
+id117_InstanceCmdlets
+id118_StaticCmdlets
+id119_CmdletAdapterPrivateData
+id12_Item
+id120_GetCmdlet
+id121_Class
+id122_Enums
+id13_Item
+id14_Item
+id15_Item
+id16_Item
+id17_ObsoleteAttributeMetadata
+id18_Item
+id19_Item
+id2_Item
+id20_QueryOption
+id21_GetCmdletMetadata
+id22_CommonCmdletMetadata
+id23_ConfirmImpact
+id24_StaticCmdletMetadata
+id25_Item
+id26_CommonMethodMetadata
+id27_StaticMethodMetadata
+id28_CommonMethodParameterMetadata
+id29_StaticMethodParameterMetadata
+id3_ClassMetadata
+id30_CmdletOutputMetadata
+id31_Item
+id32_Item
+id33_InstanceMethodMetadata
+id34_InstanceCmdletMetadata
+id35_PropertyQuery
+id36_WildcardablePropertyQuery
+id37_ItemsChoiceType
+id38_ClassMetadataData
+id39_EnumMetadataEnum
+id4_Item
+id40_EnumMetadataEnumValue
+id41_Name
+id42_Value
+id43_EnumName
+id44_UnderlyingType
+id45_BitwiseFlags
+id46_AllowGlobbing
+id47_IsMandatory
+id48_Aliases
+id49_PSName
+id5_ClassMetadataInstanceCmdlets
+id50_Position
+id51_ValueFromPipeline
+id52_Item
+id53_CmdletParameterSets
+id54_ErrorOnNoMatch
+id55_AllowEmptyCollection
+id56_AllowEmptyString
+id57_AllowNull
+id58_ValidateNotNull
+id59_ValidateNotNullOrEmpty
+id6_GetCmdletParameters
+id60_ValidateCount
+id61_ValidateLength
+id62_ValidateRange
+id63_ValidateSet
+id64_AllowedValue
+id65_Obsolete
+id66_Message
+id67_Min
+id68_Max
+id69_ArrayOfString
+id7_PropertyMetadata
+id70_ArrayOfPropertyMetadata
+id71_Property
+id72_ArrayOfAssociation
+id73_ArrayOfQueryOption
+id74_Option
+id75_Item
+id76_Parameter
+id77_Item
+id78_ArrayOfStaticCmdletMetadata
+id79_Cmdlet
+id8_TypeMetadata
+id80_ArrayOfClassMetadataData
+id81_Data
+id82_ArrayOfEnumMetadataEnum
+id83_Enum
+id84_CmdletMetadata
+id85_Method
+id86_MethodName
+id87_CmdletParameterSet
+id88_ReturnValue
+id89_Parameters
+id9_Association
+id90_ParameterName
+id91_DefaultValue
+id92_Type
+id93_ErrorCode
+id94_PSType
+id95_ETSType
+id96_Verb
+id97_Noun
+id98_HelpUri
+id99_DefaultCmdletParameterSet
+IDictionary
+IDictionary`2
+IDisposable
+IEnumerable
+IEnumerable`1
+IEnumerator
+IEnumerator`1
+IEqualityComparer
+IEqualityComparer`1
+if \(\$\(Microsoft.PowerShell.Core\\Get-Command Set-StrictMode[^\n]*\n
+ifClauses
+IfCondition
+IFormatProvider
+IfStatementAst
+ifStmtAst
+ignoreAmbiguousMatch
+ignoredParameters
+Impersonation
+ImpersonationType
+implementationContext
+ImportLocalizedDataWithEmptyEmptyorNullBaseDirectory
+ImportLocalizedDataWithEmptyEmptyorNullBaseDirectory1
+ImportWorkflowCommand
+In a Windows PowerShell Workflow, loop conditions that invoke activities are not supported. Conditions can use only variable references, and Windows PowerShell language elements that interact with those variables.
+In a Windows PowerShell Workflow, loop conditions that modify variables are not supported. To change a variable, place the modification statement in the loop body itself.
+In a Windows PowerShell Workflow, parameter defaults may only be simple value types (such as integers) and strings. In addition, the type of the default value must match the type of the parameter.
+In a Windows PowerShell Workflow, the CmdletBinding attribute only supports the following values: "DefaultParameterSetName, ConfirmImpact, HelpUri, PositionalBinding".
+In a Windows PowerShell Workflow, the syntax for Start-Sleep is: "Start-Sleep -Seconds <int>" or "Start-Sleep -Milliseconds <int>".
+In a Windows PowerShell Workflow, throw statements that invoke activities (other than New-Object) are not supported. Throw statements can use only strings, variable references, and Windows PowerShell language elements.
+InArgument`1
+IncludeInSchema
+incomingCallers
+incrementIterationCount
+IndexExpressionAst
+indexExpressionAst
+IndexOfAny
+InformationAction
+InformationPreference
+InformationRecord
+InformationVariable
+InitCallbacks
+InitializeArray
+InitializeComponent
+initialSessionState
+InitialSessionStateEntry
+InitialSessionStateEntryCollection`1
+InitIDs
+InlineScript
+inlineScript
+InlineScriptContext
+InlineScriptDesigner
+inlinescriptdesigner.baml
+InlineScriptMissingStatementBlock
+InlineScriptParameterNotSupported
+InlineScriptSyntax
+InlineScriptSyntaxTooFewParameters
+InlineXamlNotSupported
+innerException
+InOutArgument`1
+input
+Input
+input
+Input and Output
+InputAndOutputCategoryAttribute
+InputAndOutputGroup
+InputObject
+InputRequired
+InputRequired1
+InputStream
+inputValidationFailed
+Insert
+Insert Activities Here
+InstanceCmdletMetadata
+InstanceCmdletMetadataSerializer
+InstanceCmdlets
+instanceCmdletsField
+InstanceMethodMetadata
+InstanceMethodMetadataSerializer
+InstanceMethodParameterMetadata
+InstanceMethodParameterMetadataSerializer
+Int64
+integer
+InternalExecute
+InternalName
+InternalsVisibleToAttribute
+InvalidCmdletBindingAttribute
+InvalidForeachSequenceParameter
+InvalidForeachSequencePipelinePosition
+InvalidMemberName
+InvalidRootWorkflowName
+InvalidScopePrefixInWorkflow
+InvalidWhereSequenceParameter
+InvalidWhereSequencePipelinePosition
+invocationName
+Invoke
+InvokeCimMethod
+Invoke-CimMethod
+InvokeCimMethodCommand
+Invoke-Command
+InvokeCommandCommand
+Invoke-Expression
+InvokeExpressionSyntax
+InvokeExpressionSyntaxCommandMissing
+InvokeExpressionSyntaxCommandNotConstant
+InvokeExpressionSyntaxLanguageMissing
+InvokeExpressionSyntaxLanguageNotConstant
+InvokeExpressionSyntaxTooManyParameters
+InvokeMemberExpressionAst
+invokeMemberExpressionAst
+InvokeWmiMethod
+Invoke-WmiMethod
+IOException
+IOrderedEnumerable`1
+isAggregatingVariable
+IsArgumentSet
+IsAssignableFrom
+IsAssignableFromGenericType
+IsBlocked
+IsConstantVariable
+IScriptExtent
+IScriptPosition
+IsDataAggregatingVariable
+isExplicit
+isLiteral
+IsMandatory
+isMandatoryField
+isMandatoryFieldSpecified
+IsMatch
+IsNotSupportedCommonParameter
+IsNullable
+isNullable
+IsNullable
+IsNullOrEmpty
+IsNullOrWhiteSpace
+isParameter
+IsParameterAvailable
+IsPathRooted
+isReference
+IsReservedVariableName
+isRethrow
+IsStartElement
+IsSupportedSwitchExpressionType
+IsThrowStatementInParallelBlock
+isUntil
+IsValidIdentifier
+IsValidMemberName
+IsVariableFromUsingExpression
+isVisitingIterativePipeline
+isVisitingPipeline
+isWorkflow
+IsXmlnsAttribute
+Items
+ItemsChoiceType
+ItemsChoiceTypeSerializer
+ItemsElementName
+itemsElementNameField
+itemsField
+ItemsPanel
+IterativeCommands
+iterativePipelineElement
+iterativePipelineElements
+iterativePipelineVariables
+iterator
+IteratorStateMachineAttribute
+IThe result of Windows PowerShell expression evaluation is null or nothing
+ITypeName
+IValueSerializerContext
+jIn a Windows PowerShell Workflow, switch statements support only expressions that return a single element.
+JobCommandName
+JThe result of Windows PowerShell expression evaluation is null or nothing.
+KCannot create workflow. Inline XAML is not supported in this language mode.
+kcgH_
+KCould not load assembly '{0}' specified in the list of required assemblies.
+KeyCollection
+KeyedCollection`2
+KeyOnly
+KeyValuePair`2
+Kmscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Label
+LabeledStatementAst
+Language
+LanguagePrimitives
+lastIndexHint
+LastIndexOf
+Lazy`1
+LeaveScope
+LeaveStorage
+LegalCopyright
+LightBlue
+lIn a Windows PowerShell Workflow, the syntax for the InlineScript activity is "InlineScript { <commands> }".
+List`1
+Literal`1
+LoadComponent
+LoadFrom
+LoadWithPartialName
+local
+LocalAndRemoteNodesCannotBeTogetherForRestartComputerActivity
+LocalAndRemoteNodesCannotBeTogetherForRestartComputerActivity1
+localhost
+LocalVariableAlreadyExisting
+Location`1
+LookupCommand
+LoopLabelNotSupported
+LoopStatementAst
+lSystem.Resources.ResourceReader, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet
+LThe activity has exceeded the specified maximum running time of {0} seconds.
+LThe generic parameter type '{0}' for the parameter '{1}' cannot be resolved.
+LUnary operators '++' and '--' work only on variables in the script workflow.
+M3PKeyForThrowStatement
+MakeGenericType
+MaxEnvelopeSizeKB
+maxField
+MaxValue
+MaxValueQuery
+MaxValueQuery4Microsoft.PowerShell.Cmdletization.Xml.PropertyQuery
+mc;http://schemas.openxmlformats.org/markup-compatibility/2006
+Medium
+MemberAttributes
+memberDefaults
+MemberDescriptor
+memberExpressionAst
+MemberInfo
+MemberNameNotValid
+members
+MemberTemplate
+MergeErrorToOutput
+mergeErrorToOutput
+MergingRedirectionAst
+mergingRedirectionAst
+message
+Message
+messageField
+metadata
+Method
+Method invocation is not supported in a Windows PowerShell Workflow. To use .NET scripting, place your commands in an inline script: InlineScript { <commands> }.
+methodField
+MethodInvocationNotSupported
+MethodName
+methodNameField
+Microsoft (R) Windows (R) Operating System
+Microsoft Corporation
+Microsoft.CSharp
+Microsoft.Management.Infrastructure
+Microsoft.Management.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Microsoft.Management.Infrastructure.CimCmdlets
+Microsoft.Management.Infrastructure.Options
+Microsoft.PowerShell.Activities
+Microsoft.PowerShell.Activities.dll
+Microsoft.PowerShell.Activities.g.resources
+Microsoft.PowerShell.Activities.Internal
+Microsoft.PowerShell.Activities.pdb
+Microsoft.PowerShell.Cmdletization.GeneratedTypes
+Microsoft.PowerShell.Cmdletization.Xml
+Microsoft.PowerShell.Cmdletization.Xml.Association::
+Microsoft.PowerShell.Cmdletization.Xml.AssociationAssociatedInstance::
+Microsoft.PowerShell.Cmdletization.Xml.ClassMetadata::
+Microsoft.PowerShell.Cmdletization.Xml.ClassMetadataData::
+Microsoft.PowerShell.Cmdletization.Xml.ClassMetadataInstanceCmdlets::
+Microsoft.PowerShell.Cmdletization.Xml.CmdletOutputMetadata::
+Microsoft.PowerShell.Cmdletization.Xml.CmdletParameterMetadata::
+Microsoft.PowerShell.Cmdletization.Xml.CmdletParameterMetadataForGetCmdletFilteringParameter::
+Microsoft.PowerShell.Cmdletization.Xml.CmdletParameterMetadataForGetCmdletParameter::
+Microsoft.PowerShell.Cmdletization.Xml.CmdletParameterMetadataForInstanceMethodParameter::
+Microsoft.PowerShell.Cmdletization.Xml.CmdletParameterMetadataForStaticMethodParameter::
+Microsoft.PowerShell.Cmdletization.Xml.CmdletParameterMetadataValidateCount::
+Microsoft.PowerShell.Cmdletization.Xml.CmdletParameterMetadataValidateLength::
+Microsoft.PowerShell.Cmdletization.Xml.CmdletParameterMetadataValidateRange::
+Microsoft.PowerShell.Cmdletization.Xml.CommonCmdletMetadata::
+Microsoft.PowerShell.Cmdletization.Xml.CommonMethodMetadata::
+Microsoft.PowerShell.Cmdletization.Xml.CommonMethodMetadataReturnValue::
+Microsoft.PowerShell.Cmdletization.Xml.CommonMethodParameterMetadata::
+Microsoft.PowerShell.Cmdletization.Xml.ConfirmImpact
+Microsoft.PowerShell.Cmdletization.Xml.ConfirmImpact::
+Microsoft.PowerShell.Cmdletization.Xml.EnumMetadataEnum::
+Microsoft.PowerShell.Cmdletization.Xml.EnumMetadataEnumValue::
+Microsoft.PowerShell.Cmdletization.Xml.GetCmdletMetadata::
+Microsoft.PowerShell.Cmdletization.Xml.GetCmdletParameters::
+Microsoft.PowerShell.Cmdletization.Xml.InstanceCmdletMetadata::
+Microsoft.PowerShell.Cmdletization.Xml.InstanceMethodMetadata::
+Microsoft.PowerShell.Cmdletization.Xml.InstanceMethodParameterMetadata::
+Microsoft.PowerShell.Cmdletization.Xml.ItemsChoiceType
+Microsoft.PowerShell.Cmdletization.Xml.ItemsChoiceType.@ExcludeQuery
+Microsoft.PowerShell.Cmdletization.Xml.ItemsChoiceType.@MaxValueQuery
+Microsoft.PowerShell.Cmdletization.Xml.ItemsChoiceType.@MinValueQuery
+Microsoft.PowerShell.Cmdletization.Xml.ItemsChoiceType.@RegularQuery
+Microsoft.PowerShell.Cmdletization.Xml.ItemsChoiceType::
+Microsoft.PowerShell.Cmdletization.Xml.ObsoleteAttributeMetadata::
+Microsoft.PowerShell.Cmdletization.Xml.PowerShellMetadata:http://schemas.microsoft.com/cmdlets-over-objects/2009/11::False:
+Microsoft.PowerShell.Cmdletization.Xml.PropertyMetadata::
+Microsoft.PowerShell.Cmdletization.Xml.PropertyQuery
+Microsoft.PowerShell.Cmdletization.Xml.PropertyQuery::
+Microsoft.PowerShell.Cmdletization.Xml.QueryOption::
+Microsoft.PowerShell.Cmdletization.Xml.StaticCmdletMetadata::
+Microsoft.PowerShell.Cmdletization.Xml.StaticCmdletMetadataCmdletMetadata::
+Microsoft.PowerShell.Cmdletization.Xml.StaticMethodMetadata::
+Microsoft.PowerShell.Cmdletization.Xml.StaticMethodParameterMetadata::
+Microsoft.PowerShell.Cmdletization.Xml.TypeMetadata::
+Microsoft.PowerShell.Cmdletization.Xml.WildcardablePropertyQuery
+Microsoft.PowerShell.Cmdletization.Xml.WildcardablePropertyQuery::
+Microsoft.PowerShell.Commands
+Microsoft.PowerShell.Commands.Management, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Microsoft.PowerShell.Core.Activities
+Microsoft.PowerShell.Core.Activities.ForEachObject
+Microsoft.PowerShell.Core\\Export-ModuleMember[^\n]*\n
+Microsoft.PowerShell.Diagnostics.Activities
+Microsoft.PowerShell.DynamicActivities.
+Microsoft.PowerShell.Host
+Microsoft.PowerShell.Management.Activities
+Microsoft.PowerShell.Security.Activities
+Microsoft.PowerShell.Utility.Activities
+Microsoft.PowerShell.Workflow
+Microsoft.PowerShell.Workflow.ServiceCore
+Microsoft.VisualBasic.Activities
+Microsoft.WSMan.Management.Activities
+Milliseconds
+minField
+MinLines
+MinValueQuery
+MinValueQuery4Microsoft.PowerShell.Cmdletization.Xml.PropertyQuery
+MInvoke-Expression must use "-Language XAML" in a Windows PowerShell Workflow.
+MissingValueForParameter
+Mode 
+ModelItem.Activities
+ModelItem.Command
+moduleDefinitionText
+moduleToLoad
+moduleToProcess
+Monitor
+MoveNext
+MoveToContent
+MoveToElement
+MoveToNextAttribute
+mResult is defined in Pipeline variable and in the last child activity. Result should be defined at one place.
+MSBAML
+mscoree.dll
+mscorlib
+MustSupplyVariableReferenceForInOutArgument
+MustUseXamlLanguage
+MyInvocation
+NamedAttributeArgumentAst
+namedAttributeArgumentAst
+NamedBlockAst
+namedBlockAst
+NamedParameterNotFound
+nameField
+nameOfUnSupportedVariableFound
+Namespace
+namespace {0}
+Namespace9http://schemas.microsoft.com/cmdlets-over-objects/2009/11a
+Namespace9http://schemas.microsoft.com/cmdlets-over-objects/2009/11T
+Namespace9http://schemas.microsoft.com/cmdlets-over-objects/2009/11X
+namespaceCount
+namespaceDefinitions
+namespacePrefix
+namespaces
+NativeActivity
+NativeActivity`1
+NativeActivityContext
+NativeActivityMetadata
+needType
+nestedWorkflows
+netsh
+netsh.exe
+NeutralResourcesLanguageAttribute
+NewCimInstance
+New-CimInstance
+NewCimInstanceCommand
+NewCimSession
+New-CimSession
+NewCimSessionCommand
+NewCimSessionOption
+New-CimSessionOption
+NewCimSessionOptionCommand
+NewGuid
+New-Object
+New-Object -Type System.Management.Automation.PSDataCollection[PSObject]
+NewObjectCouldNotFindType
+NewObjectMustBeAssigned
+NewObjectSyntax
+NewObjectSyntaxMissingTypeName
+NewObjectSyntaxTooManyParameters
+NoChildPipeline
+NoChildPipeline1
+NoEncryption
+NoNewScope
+nonNegativeInteger
+-not (
+NotSupportedException
+nounField
+nslookup
+nslookup.exe
+NSystem.Xaml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Nullable`1
+NullArgumentExpression
+NullArgumentExpression1
+NullReturnedAfterExpressionEvaluation
+NullReturnedAfterExpressionEvaluation1
+NWindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+objectToSerialize
+Obsolete
+ObsoleteAttributeMetadata
+ObsoleteAttributeMetadataSerializer
+obsoleteField
+OfType
+onBodyComplete
+OnBodyComplete
+OnlyOneRequiresStatement
+OnlySimpleParameterDefaultsSupported
+OnlySimpleVariableReferencesSupportedInUnary
+OnlySupportErrorStreamRedirection
+op_Equality
+op_Implicit
+op_Inequality
+Opacity$
+OperationTimeoutSec
+OperatorRequiresVariable
+Option
+OptionName
+optionNameField
+OrderBy
+Orientation$
+OriginalFilename
+oThe parameter cannot be processed because the parameter name '{0}' is ambiguous. Possible matches include: {1}.
+Other
+OtherVariable
+OtherVariableName
+outgoingCalls
+outputAssemblyPath
+OutputStream
+outputType
+OutputTypeAttribute
+OverloadGroupAttribute
+p3jmW6
+PacketEncoding
+PacketIntegrity
+PacketPrivacy
+PADPADP
+PADPADP*
+Parallel
+ParallelForEach requires a non null Values collection
+ParallelSequenceScriptBlockSyntax
+paramBlock
+ParamBlockAst
+paramBlockAst
+Parameter
+ParameterAlreadyBound
+parameterAst
+ParameterBindingException
+ParameterBindingResult
+ParameterDefaults
+parameterName
+ParameterName
+parameterNameField
+parameters
+Parameters
+parametersField
+ParameterSpecificCategoryAttribute
+parametersToExclude
+parameterValidation
+ParameterValidationNotSupportedOnNestedWorkflows
+paramValue
+ParenExpressionAst
+parenExpressionAst
+parent
+ParentCommandName
+ParentJobId
+ParentJobInstanceId
+ParentJobName
+parentScope
+parentType
+ParseAndUpdatePipelineElements
+ParseException
+ParseInput
+parsingErrors
+PassThru
+PasswordAuthenticationMechanism
+Path$
+PathInfo
+PathIntrinsics
+persist
+pipelineAst
+PipelineAst
+PipelineBaseAst
+PipelineDesigner
+pipelinedesigner.baml
+PipelineEnabledActivity
+pipelineVariable
+PipelineVariable
+Points
+PopulateActivityStaticMap
+PopulatePotentialUsingVariableStaticSet
+Position
+Positional parameters are not supported in a Windows PowerShell Workflow. To invoke this command, use explicit parameter names with all values. For example: "Command -Parameter <value>".
+PositionalBinding
+PositionalParametersNotSupported
+positionField
+postPipelineElements
+powershell
+PowerShell activity ID={0}: Inline Script: '{1}'.
+PowerShell activity ID={0}: Invoking command '{1}'.
+PowerShell activity ID={0}: Setting parameter {1} to {2}.
+PowerShell activity ID={0}: Setting parameter {1} to '{2}'.
+PowerShell activity: Adding parameter '-{0} {1}'.
+PowerShell activity: executing InlineScript by using AddScript.
+PowerShell activity: executing InlineScript locally with ScriptBlock.
+PowerShell activity: executing InlineScript with ScriptBlock to powershell conversion.
+powershell.exe
+PowerShellInvocation_ErrorAdding
+PowerShellMetadata
+PowerShellMetadataSerializer
+PowerShellTraceSource
+PowerShellTraceSourceFactory
+PowerShellValue`1
+Predicate`1
+preference
+preferenceVariable
+PrepareSession
+prePipelineElements
+PresentationBuildTasks
+PresentationFramework
+ProcessAssembly
+ProcessCommandArgument
+ProcessCommandArgumentElement
+processedActivityLibraries
+ProcessInlineScriptAst
+ProcessNotSupported
+ProductName
+ProductVersion
+ProgressPositionMessage
+ProgressRecord
+property
+Property
+PropertyDescriptor
+PropertyDescriptorCollection
+PropertyDoesNotSupportPowerShellLanguage
+PropertyInfo
+PropertyMetadata
+PropertyMetadataSerializer
+PropertyName
+propertyNameField
+PropertyQuery
+propertyType
+protected override string ModuleDefinition { get { return _moduleDefinition; } }
+protected override string PSDefiningModule { get { return "
+Protocol
+ProtocolType
+ProxyAuthentication
+ProxyCertificateThumbprint
+ProxyCredential
+ProxyType
+PSActivity
+PSActivityArgumentInfo
+PSApplicationName
+PSArgumentException
+PSArgumentNullException
+PSAuthenticationLevel
+PSBookmarkTimeoutSec
+PSBoundParameters
+PSCmdlet
+PSCommand
+PSCommandPath
+PSComputerName
+PSConfigurationName
+PSCulture
+PSCurrentDirectory
+PSCustomObject
+PSDataCollection`1
+PSDataStreams
+PSDebug
+PSDefaultParameterValues
+PSElapsedTimeoutSec
+PSError
+PSGeneratedCIMActivity
+PSInformation
+PSInvalidCastException
+PSInvalidOperationException
+PSLanguageMode
+PSModuleInfo
+PSName
+pSNameField
+PSParseError
+PSParser
+PSPersistBookmarkPrefix
+PSPipelineIteration
+PSPipelineLength
+PSPipelineVariableContext
+PSPrivateMetadata
+PSProgress
+PSReference
+PSRemotingActivity
+PSRequiredModules
+PSRunningTimeoutSec
+PSSaved_
+PSScriptRoot
+PSSenderInfo
+PSSessionApplicationName
+PSSessionConfigurationName
+PSSessionOption
+PSSuspendBookmarkPrefix
+PSToken
+PSType
+pSTypeField
+PSUICulture
+PSVariableIntrinsics
+PSVerbose
+PSVersionTable
+PSWarning
+PSWorkflowCustomUpdateDebugVariablesTrackingRecord
+PSWorkflowHost
+PSWorkflowRoot
+PSWorkflowRuntimeVariable
+PSWorkflowUnsupportedVariable
+Q+bsk
+qInput is defined in Pipeline variable and in the first child activity. Input should be defined only at one place.
+QualifierName
+Query
+QueryableAssociations
+queryableAssociationsField
+QueryableProperties
+queryablePropertiesField
+QueryDialect
+QueryOption
+QueryOptions
+QueryOptionSerializer
+queryOptionsField
+rawPropertyType
+Read1_Object
+Read10_CmdletParameterMetadata
+Read11_Item
+Read12_Item
+Read13_WildcardablePropertyQuery
+Read14_PropertyQuery
+Read15_PropertyMetadata
+Read16_AssociationAssociatedInstance
+Read17_Association
+Read18_QueryOption
+Read19_GetCmdletParameters
+Read2_TypeMetadata
+Read20_ConfirmImpact
+Read21_CommonCmdletMetadata
+Read22_GetCmdletMetadata
+Read23_CmdletOutputMetadata
+Read24_Item
+Read25_Item
+Read26_CommonMethodParameterMetadata
+Read27_StaticMethodParameterMetadata
+Read28_StaticMethodMetadata
+Read29_CommonMethodMetadata
+Read3_ItemsChoiceType
+Read30_InstanceMethodMetadata
+Read31_InstanceCmdletMetadata
+Read32_ClassMetadataInstanceCmdlets
+Read33_Item
+Read34_StaticCmdletMetadata
+Read35_ClassMetadataData
+Read36_ClassMetadata
+Read37_EnumMetadataEnumValue
+Read38_EnumMetadataEnum
+Read39_PowerShellMetadata
+Read4_Item
+Read40_ClassMetadataInstanceCmdlets
+Read41_AssociationAssociatedInstance
+Read42_Item
+Read43_Item
+Read44_Item
+Read45_Item
+Read46_Item
+Read47_ClassMetadataData
+Read48_EnumMetadataEnum
+Read49_EnumMetadataEnumValue
+Read5_Item
+Read50_PowerShellMetadata
+Read51_ClassMetadata
+Read52_ClassMetadataInstanceCmdlets
+Read53_GetCmdletParameters
+Read54_PropertyMetadata
+Read55_TypeMetadata
+Read56_Association
+Read57_AssociationAssociatedInstance
+Read58_CmdletParameterMetadata
+Read59_Item
+Read6_Item
+Read60_Item
+Read61_Item
+Read62_Item
+Read63_Item
+Read64_ObsoleteAttributeMetadata
+Read65_Item
+Read66_Item
+Read67_QueryOption
+Read68_GetCmdletMetadata
+Read69_CommonCmdletMetadata
+Read7_ObsoleteAttributeMetadata
+Read70_ConfirmImpact
+Read71_StaticCmdletMetadata
+Read72_Item
+Read73_CommonMethodMetadata
+Read74_StaticMethodMetadata
+Read75_CommonMethodParameterMetadata
+Read76_StaticMethodParameterMetadata
+Read77_CmdletOutputMetadata
+Read78_Item
+Read79_Item
+Read8_Item
+Read80_InstanceMethodMetadata
+Read81_InstanceCmdletMetadata
+Read82_PropertyQuery
+Read83_WildcardablePropertyQuery
+Read84_ItemsChoiceType
+Read85_ClassMetadataData
+Read86_EnumMetadataEnum
+Read87_EnumMetadataEnumValue
+Read9_Item
+ReadAll
+ReadElementString
+ReadEndElement
+reader
+readMethods
+ReadNull
+ReadOnlyCollection`1
+ReadStartElement
+ReadString
+ReadTypedNull
+ReadTypedPrimitive
+ReasonRequiredInThrowStatement
+RecursiveWorkflowNotSupported
+RedirectionStream
+referenceAssemblies
+referencedAssemblies
+Regex
+RegexOptions
+RegularCommand
+RegularQuery
+RegularQuery@Microsoft.PowerShell.Cmdletization.Xml.WildcardablePropertyQuery
+ReleaseRunspace
+ReliabilityContractAttribute
+RemotingHandledByPSComputerName
+Remove
+remove_DataAdding
+RemoveAll
+RemoveAt
+RemoveCimInstance
+Remove-CimInstance
+RemoveCimInstanceCommand
+RemoveScriptBlockBraces
+RemoveUsingPrefix
+Replace
+ReportError
+RequiredArgumentAttribute
+requiredAssemblies
+requiredType
+ResolveActivityKindBasedOnCommandName
+ResolveActivityType
+ResolveCommand
+resolvedCommand
+resolvedCommands
+ResolveGenericParameterType
+ResolveGenericTypes
+ResolveReferencedAssembly
+ResolveTypeFromParameterValue
+ResolveTypeWithGenericParameters
+resourceCulture
+resourceMan
+Resources
+ResourceUri
+Restart-Computer activity cannot be run because both localhost and managed nodes are provided in the ComputerName parameter.  For this scenario please run Restart-Computer activity for managed nodes followed by another Restart-Computer activity for localhost.
+RestartComputerWithWaitNotAllowed
+RestartComputerWithWaitNotAllowed1
+Result
+result
+ResultClassName
+ResultRole
+resultRoleField
+resultValidationFailed
+resultVariable
+resultVariables
+ResumeBookmarkTimeout
+ReturnStatementAst
+returnStatementAst
+ReturnValue
+returnValueField
+rMicrosoft.PowerShell.Utility.Activities,PublicKey=0024000004800000940000000602000000240000525341310004000001000100b5fc90e7027f67871e773a8fde8938c81dd402ba65b9201d60593e96c492651e889cc13f1415ebb53fac1131ae0bd333c5ee6021672d9718ea31a8aebd0da0072f25d87dba6fc90ffd598ed4da35e44c398c454307e8e33b8426143daec9f596836f97c8f74750e5975c64e2189f45def46b2a2b1247adc3652bf5c308055da9
+rootWorkflowName
+RowDefinitions
+RunningTimeExceeded
+RunspaceConnectionInfo
+RunspaceFactory
+RunspaceMode
+RuntimeArgument
+RuntimeCompatibilityAttribute
+RuntimeException
+RuntimeFieldHandle
+RuntimeHelpers
+RuntimeTypeHandle
+s&clr-namespace:System;assembly=mscorlib
+SafelySetResumeBookmarkTimeout
+sapTclr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation
+sapvYclr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation
+Saved_
+ScheduleAction
+ScheduleActivity
+scope
+scopeEntry
+scopes
+scopeType
+script
+Script block invocation is not supported in a Windows PowerShell Workflow. To run a set of commands in a similar way as the script block invocation, place your commands in an inline script: InlineScript { <commands> }.
+scriptBlock
+ScriptBlock
+ScriptBlockAst
+scriptBlockAst
+scriptBlockExpressionAst
+ScriptBlockExpressionAst
+ScriptBlockInvocationNotSupported
+scriptBlockTokenCache
+scriptRoot
+scriptWorkflowAstRoot
+searchSessionState
+Seconds
+Select
+sender
+Sequence
+sequenceParameter
+SerializationInfo
+SessionOption
+SessionStateAssemblyEntry
+SessionStateCommandEntry
+SessionStateEntryNotSupported
+SessionStateWorkflowEntry
+set_Action
+set_Activities
+set_Aliases
+set_AllowEmptyCollection
+set_AllowEmptyString
+set_AllowGlobbing
+set_AllowGlobbingSpecified
+set_AllowNull
+set_Amended
+set_AppendOutput
+set_Argument
+set_ArgumentAst
+set_ArgumentList
+set_Arguments
+set_AssociatedInstance
+set_Association
+set_Association1
+set_Attributes
+set_Authentication
+set_BitwiseFlags
+set_BitwiseFlagsSpecified
+set_Body
+set_CertificateCACheck
+set_CertificateCNCheck
+set_CertificateThumbprint
+set_CertRevocationCheck
+set_CheckCharacters
+set_CimClass
+set_Class
+set_ClassName
+set_ClassVersion
+set_ClientOnly
+set_CloseInput
+set_Cmdlet
+set_CmdletAdapter
+set_CmdletAdapterPrivateData
+set_CmdletAttributeText
+set_CmdletMetadata
+set_CmdletOutputMetadata
+set_CmdletParameterMetadata
+set_CmdletParameterSet
+set_CmdletParameterSets
+set_Command
+set_CommandName
+set_Condition
+set_ConfirmImpact
+set_ConfirmImpactSpecified
+set_ConformanceLevel
+set_Credential
+set_Culture
+set_DebuggerHidden
+set_DefaultCmdletParameterSet
+set_DefaultNoun
+set_DefaultValue
+set_DirectRead
+set_DisplayName
+set_DisplayScriptPosition
+set_DtdProcessing
+set_EncodePortInServicePrincipalName
+set_Encoding
+set_EnumName
+set_Enums
+set_ErrorCode
+set_ErrorOnNoMatch
+set_ErrorOnNoMatchSpecified
+set_ETSType
+set_Expression
+set_ExpressionHasSideEffects
+set_Filter
+set_GenerateInMemory
+set_GetCmdlet
+set_GetCmdletParameters
+set_Handler
+set_HelpUri
+set_HttpPrefix
+set_IgnoreComments
+set_IgnoreProcessingInstructions
+set_IgnoreWhitespace
+set_Impersonation
+set_Implementation
+set_Indent
+set_InitExpression
+set_Input
+set_InputObject
+set_InstanceCmdlets
+set_IsAggregatingVariable
+set_IsEnum
+set_IsLiteral
+set_IsMandatory
+set_IsMandatorySpecified
+set_Item
+set_Items
+set_ItemsElementName
+set_Key
+set_KeyOnly
+set_Label
+set_Max
+set_MaxCharactersFromEntities
+set_MaxCharactersInDocument
+set_MaxEnvelopeSizeKB
+set_MergeErrorToOutput
+set_Message
+set_Method
+set_MethodName
+set_Min
+set_Name
+set_NameOfUnsupportedVariableFound
+set_Namespace
+set_NestedXamlDefinition
+set_NoEncryption
+set_Noun
+set_Obsolete
+set_OmitXmlDeclaration
+set_OperationTimeoutSec
+set_OptionName
+set_OriginalValue
+set_OtherVariableName
+set_OutputAssembly
+set_PacketIntegrity
+set_PacketPrivacy
+set_ParameterName
+set_Parameters
+set_PassThru
+set_Path
+set_Port
+set_Position
+set_PowerShellInstance
+set_Property
+set_PropertyName
+set_Protocol
+set_ProxyAuthentication
+set_ProxyCertificateThumbprint
+set_ProxyCredential
+set_ProxyType
+set_PSActionRetryCount
+set_PSActionRetryIntervalSec
+set_PSActionRunningTimeoutSec
+set_PSActivityEnvironment
+set_PSAllowRedirection
+set_PSApplicationName
+set_PSAuthentication
+set_PSBookmarkTimeoutSec
+set_PSCertificateThumbprint
+set_PSComputerName
+set_PSConfigurationName
+set_PSConnectionRetryCount
+set_PSConnectionRetryIntervalSec
+set_PSConnectionUri
+set_PSCredential
+set_PSDebug
+set_PSDisableSerialization
+set_PSError
+set_PSInformation
+set_PSName
+set_PSPersist
+set_PSPort
+set_PSProgress
+set_PSRemotingBehavior
+set_PSRequiredModules
+set_PSSessionOption
+set_PSType
+set_PSUseSsl
+set_PSVerbose
+set_PSWarning
+set_QualifierName
+set_Query
+set_QueryableAssociations
+set_QueryableProperties
+set_QueryDialect
+set_QueryOptions
+set_Result
+set_ResultClassName
+set_ResultRole
+set_ReturnValue
+set_Runspace
+set_Schemas
+set_SessionOption
+set_Shallow
+set_SourceProperty
+set_SourceRole
+set_StartColumnNumber
+set_StartLineNumber
+set_StaticCmdlets
+set_TargetProperty
+set_Then
+set_ThrottleLimit
+set_Try
+set_Type
+set_UICulture
+set_UnderlyingType
+set_UseDefaultInput
+set_UseSsl
+set_ValidateCount
+set_ValidateLength
+set_ValidateNotNull
+set_ValidateNotNullOrEmpty
+set_ValidateRange
+set_ValidateSet
+set_ValidationFlags
+set_ValidationType
+set_Value
+set_ValueFromPipeline
+set_ValueFromPipelineByPropertyName
+set_ValueFromPipelineByPropertyNameSpecified
+set_ValueFromPipelineSpecified
+set_Values
+set_VariableName
+set_Variables
+set_VariableToRetrieve
+set_Verb
+set_Version
+set_WorkflowContext
+set_XamlDefinition
+set_XmlResolver
+SetAvailableUsingVariables
+SetCimInstance
+Set-CimInstance
+SetCimInstanceCommand
+SetData
+SetDebugPreferenceArg
+SetErrorActionPreferenceArg
+SetHostValuesByProperty
+SetHostValuesByVariableName
+SetInformationActionPreferenceArg
+SetLocation
+SetPropertyReference
+SetPSWorkflowData
+SetSimpleActionPreferenceArg
+SetUpIterativePipelineLoop
+SetValue
+SetVariableArgumentValue
+SetVerbosePreferenceArg
+SetWarningActionPreferenceArg
+Shallow
+shouldRunLocally
+ShowExpanded
+ShrinkArray
+sleep
+SMicrosoft.PowerShell.Cmdletization.Xml.CmdletParameterMetadataForGetCmdletParameter
+sourceLanguageMode
+SourceRole
+sourceRoleField
+SpacerTemplate
+Split
+SPresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Stack`1
+StackTrace
+Start-Sleep
+StartSleepSyntax
+StartSleepSyntaxCouldNotParseSeconds
+StartSleepSyntaxSecondsMissing
+StartSleepSyntaxTooManyParameters
+StartsWith
+statementBlockAst
+StatementBlockAst
+staticActivityMap
+StaticBindingError
+StaticBindingResult
+StaticCmdletMetadata
+StaticCmdletMetadataCmdletMetadata
+StaticCmdletMetadataCmdletMetadataSerializer
+StaticCmdletMetadataSerializer
+StaticCmdlets
+staticCmdletsField
+StaticMethodMetadata
+StaticMethodMetadataSerializer
+StaticMethodParameterMetadata
+StaticMethodParameterMetadataSerializer
+StaticParameterBinder
+StaticPotentialUsingVariableSet
+staticProcessedActivityLibraries
+storageScopeVariable
+StorageVariable
+storeResults
+StreamingContext
+StringBuilder
+StringCollection
+StringComparer
+StringComparison
+StringConstantExpressionAst
+stringConstantExpressionAst
+StringFileInfo
+StringReader
+StringWriter
+Sub expression (i.e.: $($x)) should only be used as the parameter value in a Windows PowerShell Workflow. To use .NET scripting, place your commands in an inline script: InlineScript { <commands> }.
+subExpressionAst
+SubExpressionAst
+SubExpressionNotSupported
+Substring
+supportedCommonParameters
+supportsCustomRemoting
+SuspendWorkflow
+Suspend-Workflow
+SuspendWorkflowSyntax
+swdTclr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation
+Switch clauses must all be of the same type in a Windows PowerShell Workflow, or the condition expression must be strongly typed.
+SwitchCaseSensitive
+SwitchClauseMustBeOfSameType
+SwitchCondition
+SwitchEnumerationNotSupported
+SwitchFlagNotSupported
+SwitchFlags
+SwitchOnlySupportsConstantExpression
+SwitchParameter
+SwitchStatementAst
+switchStatementAst
+switchType
+syncroot
+Syncroot
+syntacticResolution
+System
+System.Activities
+System.Activities.ActivityDefaults, System.Activities, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Activities.Expressions
+System.Activities.Presentation
+System.Activities.Statements
+System.Activities.Tracking
+System.Activities.Validation
+System.Activities.XamlIntegration
+System.CodeDom
+System.CodeDom.Compiler
+System.Collections
+System.Collections.Concurrent
+System.Collections.Generic
+System.Collections.Generic.IEnumerable<System.String>.GetEnumerator
+System.Collections.Generic.IEnumerator<System.String>.Current
+System.Collections.Generic.IEnumerator<System.String>.get_Current
+System.Collections.IEnumerable.GetEnumerator
+System.Collections.IEnumerator.Current
+System.Collections.IEnumerator.get_Current
+System.Collections.IEnumerator.Reset
+System.Collections.ObjectModel
+System.Collections.Specialized
+System.ComponentModel
+System.Core
+System.Diagnostics
+System.dll
+System.Globalization
+System.IDisposable.Dispose
+System.IO
+System.Linq
+System.Management.Automation
+System.Management.Automation.Internal
+System.Management.Automation.Language
+System.Management.Automation.Language.ICustomAstVisitor.VisitArrayExpression
+System.Management.Automation.Language.ICustomAstVisitor.VisitArrayLiteral
+System.Management.Automation.Language.ICustomAstVisitor.VisitAssignmentStatement
+System.Management.Automation.Language.ICustomAstVisitor.VisitAttribute
+System.Management.Automation.Language.ICustomAstVisitor.VisitAttributedExpression
+System.Management.Automation.Language.ICustomAstVisitor.VisitBinaryExpression
+System.Management.Automation.Language.ICustomAstVisitor.VisitBlockStatement
+System.Management.Automation.Language.ICustomAstVisitor.VisitBreakStatement
+System.Management.Automation.Language.ICustomAstVisitor.VisitCatchClause
+System.Management.Automation.Language.ICustomAstVisitor.VisitCommand
+System.Management.Automation.Language.ICustomAstVisitor.VisitCommandExpression
+System.Management.Automation.Language.ICustomAstVisitor.VisitCommandParameter
+System.Management.Automation.Language.ICustomAstVisitor.VisitConstantExpression
+System.Management.Automation.Language.ICustomAstVisitor.VisitContinueStatement
+System.Management.Automation.Language.ICustomAstVisitor.VisitConvertExpression
+System.Management.Automation.Language.ICustomAstVisitor.VisitDataStatement
+System.Management.Automation.Language.ICustomAstVisitor.VisitDoUntilStatement
+System.Management.Automation.Language.ICustomAstVisitor.VisitDoWhileStatement
+System.Management.Automation.Language.ICustomAstVisitor.VisitErrorExpression
+System.Management.Automation.Language.ICustomAstVisitor.VisitErrorStatement
+System.Management.Automation.Language.ICustomAstVisitor.VisitExitStatement
+System.Management.Automation.Language.ICustomAstVisitor.VisitExpandableStringExpression
+System.Management.Automation.Language.ICustomAstVisitor.VisitFileRedirection
+System.Management.Automation.Language.ICustomAstVisitor.VisitForEachStatement
+System.Management.Automation.Language.ICustomAstVisitor.VisitForStatement
+System.Management.Automation.Language.ICustomAstVisitor.VisitFunctionDefinition
+System.Management.Automation.Language.ICustomAstVisitor.VisitHashtable
+System.Management.Automation.Language.ICustomAstVisitor.VisitIfStatement
+System.Management.Automation.Language.ICustomAstVisitor.VisitIndexExpression
+System.Management.Automation.Language.ICustomAstVisitor.VisitInvokeMemberExpression
+System.Management.Automation.Language.ICustomAstVisitor.VisitMemberExpression
+System.Management.Automation.Language.ICustomAstVisitor.VisitMergingRedirection
+System.Management.Automation.Language.ICustomAstVisitor.VisitNamedAttributeArgument
+System.Management.Automation.Language.ICustomAstVisitor.VisitNamedBlock
+System.Management.Automation.Language.ICustomAstVisitor.VisitParamBlock
+System.Management.Automation.Language.ICustomAstVisitor.VisitParameter
+System.Management.Automation.Language.ICustomAstVisitor.VisitParenExpression
+System.Management.Automation.Language.ICustomAstVisitor.VisitPipeline
+System.Management.Automation.Language.ICustomAstVisitor.VisitReturnStatement
+System.Management.Automation.Language.ICustomAstVisitor.VisitScriptBlock
+System.Management.Automation.Language.ICustomAstVisitor.VisitScriptBlockExpression
+System.Management.Automation.Language.ICustomAstVisitor.VisitStatementBlock
+System.Management.Automation.Language.ICustomAstVisitor.VisitStringConstantExpression
+System.Management.Automation.Language.ICustomAstVisitor.VisitSubExpression
+System.Management.Automation.Language.ICustomAstVisitor.VisitSwitchStatement
+System.Management.Automation.Language.ICustomAstVisitor.VisitThrowStatement
+System.Management.Automation.Language.ICustomAstVisitor.VisitTrap
+System.Management.Automation.Language.ICustomAstVisitor.VisitTryStatement
+System.Management.Automation.Language.ICustomAstVisitor.VisitTypeConstraint
+System.Management.Automation.Language.ICustomAstVisitor.VisitTypeExpression
+System.Management.Automation.Language.ICustomAstVisitor.VisitUnaryExpression
+System.Management.Automation.Language.ICustomAstVisitor.VisitUsingExpression
+System.Management.Automation.Language.ICustomAstVisitor.VisitVariableExpression
+System.Management.Automation.Language.ICustomAstVisitor.VisitWhileStatement
+System.Management.Automation.Remoting
+System.Management.Automation.RemotingBehavior, System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Management.Automation.Runspaces
+System.Management.Automation.Tracing
+System.Reflection
+System.Resources
+System.Runtime.CompilerServices
+System.Runtime.ConstrainedExecution
+System.Runtime.InteropServices
+System.Runtime.Serialization
+System.Runtime.Versioning
+System.Text
+System.Text.RegularExpressions
+System.Threading
+System.Windows
+System.Windows.Markup
+System.Windows.Markup.IComponentConnector.Connect
+System.Xaml
+System.Xml
+System.Xml.Schema
+System.Xml.Serialization
+target
+targetAst
+TargetFrameworkAttribute
+TargetType
+tAttributed expression (i.e.: [Parameter()]$x) should be used only when declaring parameters for the script workflow.
+templateCommand
+templateParameter
+templateParameterSetter
+TextBox_1
+TextReader
+TextWrapping
+TextWriter
+The '{0}' property does not support elements from the Windows PowerShell language such as parentheses and variables. To use this value, enclose it in a single-quoted string.
+The command name '{0}' is ambiguous and cannot be processed. To use this command, specify a module qualified name such as: 'Microsoft.PowerShell.Management\Get-Process'.
+The Restart-Computer activity cannot run because both localhost and remote computers are provided in the ComputerName parameter.  For this scenario, run the Restart-Computer activity for remote computers first, followed by another Restart-Computer activity for localhost.
+The result is defined in the Pipeline variable, and in the last child activity. The result should be defined in only one place.
+The scope prefix "$WORKFLOW:" cannot be used in an InlineScript activity. To reference a workflow variable in an InlineScript activity, use the prefix "$USING:" instead. Workflow variables cannot be modified from an InlineScript activity. To change a workflow variable, assign the output of the InlineScript activity to that variable.
+The Suspend-Workflow command accepts only one optional parameter, the syntax for Suspend-Workflow is: "Suspend-Workflow [-Label <string>]".
+The value for the parameter '{0}' is not specified. To invoke this command, use explicit parameter names with all values. For example: "Command -Parameter <value>".
+The value of the EnumName attribute does not translate to a valid C# identifier: {0}. Verify the EnumName attribute in Cmdlet Definition XML, and then try again.
+The value of the EnumName attribute doesn't translate to a valid C# identifier: {0}.    Verify the EnumName attribute in Cmdlet Definition XML and try again.
+The value of the Name attribute is not a valid C# identifier: {0}.  Verify the Name attribute in Cmdlet Definition XML and try again.
+The value of the Name attribute is not a valid C# identifier: {0}. Verify the Name attribute in Cmdlet Definition XML and try again.
+The variable with name '{0}' is defined to store results from a parallel or sequence block. Therefore, it cannot be reused inside such blocks.
+This is the collapsed view
+This type of assignment is not supported. Only variable names (i.e.: $variable) may be used as the target of an assignment statement.
+ThrottledParallelForEach`1
+ThrottleLimit
+throwError
+throwStatementAst
+ThrowStatementAst
+ThrowStatementCannotInvokeActivities
+timeout
+TimeSpan
+TMicrosoft.PowerShell.Activities.InlineScript+<GetInlineScriptActivityArguments>d__23
+ToArray
+toAssembly
+ToBoolean
+Tokenize
+TokenTraits
+ToList
+TopLevelElement
+topParent
+ToUpper
+Track
+Translation
+trap { break }
+TrapNotSupported
+TrapStatementAst
+trapStatementAst
+Triggers
+true.a
+TryAdd
+TryCatch
+TryGetValue
+TryParse
+TryRemove
+tryStatementAst
+TryStatementAst
+Tuple`2
+TwoWay=
+typeConstraintAst
+TypeConstraintAst
+typedSerializers
+TypeExpressionAst
+typeExpressionAst
+typeField
+TypeFromDynamicAssembly
+TypeMetadata
+TypeMetadataSerializer
+TypeName
+typeNames
+UICulture
+uInput is defined in the Pipeline activity and in the first child activity. Input should be defined in only one place.
+UInt32
+uMicrosoft.PowerShell.Management.Activities,PublicKey=0024000004800000940000000602000000240000525341310004000001000100b5fc90e7027f67871e773a8fde8938c81dd402ba65b9201d60593e96c492651e889cc13f1415ebb53fac1131ae0bd333c5ee6021672d9718ea31a8aebd0da0072f25d87dba6fc90ffd598ed4da35e44c398c454307e8e33b8426143daec9f596836f97c8f74750e5975c64e2189f45def46b2a2b1247adc3652bf5c308055da9
+UnaryExpressionAst
+unaryExpressionAst
+UnderlyingType
+underlyingTypeField
+UnindentLevel
+uniqueVariableDisambiguator
+unknown
+UnknownNode
+UOnly the merging redirection from the error stream to the output stream is supported.
+UpdateArgumentsFromPreferenceVariables
+UpdatePreferenceVariables
+UriKind
+UserName
+UseSsl
+using Microsoft.PowerShell.Activities;
+using System.Activities;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Management.Automation;
+using:
+UsingExpressionAst
+usingExpressionAst
+v4.0.30319
+Validate
+ValidateArgumentsAttribute
+ValidateAst
+ValidateCount
+validateCountField
+ValidateExpressionConstraints
+ValidateLength
+validateLengthField
+ValidateNotNull
+validateNotNullField
+ValidateNotNullOrEmpty
+validateNotNullOrEmptyField
+validateOnly
+ValidateParameters
+ValidateRange
+validateRangeField
+ValidateScriptBlock
+ValidateSet
+validateSetField
+ValidateVariableName
+Value
+value
+Value
+value__
+ValueCollection
+valueEnumerator
+valueField
+ValueFromPipeline
+ValueFromPipelineByPropertyName
+valueFromPipelineByPropertyNameField
+valueFromPipelineByPropertyNameFieldSpecified
+valueFromPipelineField
+valueFromPipelineFieldSpecified
+Values
+valueText
+VarFileInfo
+variable
+Variable`1
+VariableAlreadyDefined
+VariableDefined
+VariableDefinedInCurrentScope
+variableExpr
+VariableExpressionAst
+variableExpressionAst
+variableName
+VariableNameNotValid
+VariableNameReadOnly
+VariableNameReserved
+VariableNotSupportedInWorkflow
+VariablePrefix
+variables
+VariableScope
+VariableToken
+VariableToSet
+variableType
+VBegin, Process, and End statements are not supported in a Windows PowerShell Workflow.
+verbField
+Verbose
+VerbosePreference
+VerboseRecord
+Version
+versionField
+Vertical=
+Visit
+VisualBasicReference`1
+VisualBasicValue`1
+VMicrosoft.PowerShell.Cmdletization.Xml.CmdletParameterMetadataForStaticMethodParameter
+VS_VERSION_INFO
+WarningAction
+WarningPreference
+WarningRecord
+WarningVariable
+WCannot create workflow. It depends on the type, '{0}', which was generated dynamically.
+WhatIf
+WhatIfPreference
+where
+Where-Object
+WhereSequence
+While
+whileStatementAst
+whileType
+WildcardablePropertyQuery
+WildcardablePropertyQuerySerializer
+WIn a Windows PowerShell Workflow, assignment to environment variables is not supported.
+Windows PowerShell Workflow cannot continue running the activity because an error occurred while importing dependent module(s) '{0}' specified for activity '{1}'.  To fix this problem, make sure that the module exists on the computer. If it is not required, remove references to the module from the activity.
+WmiActivity
+workflow
+WORKFLOW:
+workflowAstRoot
+workflowAttributes
+WorkflowCommandName
+WorkflowDataContext
+WorkflowInfo
+workflowInfo
+WorkflowInfoComparer
+WorkflowInstanceId
+WorkflowReturnException
+WorkflowScopeOnlyValidInParallelOrSequenceBlock
+WorkflowTerminatedException
+WrapNonExceptionThrows
+WrapWithOverflow=
+Write1_Object
+Write10_CmdletParameterMetadata
+Write11_Item
+Write12_Item
+Write13_WildcardablePropertyQuery
+Write14_PropertyQuery
+Write15_PropertyMetadata
+Write16_AssociationAssociatedInstance
+Write17_Association
+Write18_QueryOption
+Write19_GetCmdletParameters
+Write2_TypeMetadata
+Write20_ConfirmImpact
+Write21_CommonCmdletMetadata
+Write22_GetCmdletMetadata
+Write23_CmdletOutputMetadata
+Write24_Item
+Write25_Item
+Write26_CommonMethodParameterMetadata
+Write27_StaticMethodParameterMetadata
+Write28_StaticMethodMetadata
+Write29_CommonMethodMetadata
+Write3_ItemsChoiceType
+Write30_InstanceMethodMetadata
+Write31_InstanceCmdletMetadata
+Write32_ClassMetadataInstanceCmdlets
+Write33_Item
+Write34_StaticCmdletMetadata
+Write35_ClassMetadataData
+Write36_ClassMetadata
+Write37_EnumMetadataEnumValue
+Write38_EnumMetadataEnum
+Write39_PowerShellMetadata
+Write4_Item
+Write40_ClassMetadataInstanceCmdlets
+Write41_AssociationAssociatedInstance
+Write42_Item
+Write43_Item
+Write44_Item
+Write45_Item
+Write46_Item
+Write47_ClassMetadataData
+Write48_EnumMetadataEnum
+Write49_EnumMetadataEnumValue
+Write5_Item
+Write50_PowerShellMetadata
+Write51_ClassMetadata
+Write52_ClassMetadataInstanceCmdlets
+Write53_GetCmdletParameters
+Write54_PropertyMetadata
+Write55_TypeMetadata
+Write56_Association
+Write57_AssociationAssociatedInstance
+Write58_CmdletParameterMetadata
+Write59_Item
+Write6_Item
+Write60_Item
+Write61_Item
+Write62_Item
+Write63_Item
+Write64_ObsoleteAttributeMetadata
+Write65_Item
+Write66_Item
+Write67_QueryOption
+Write68_GetCmdletMetadata
+Write69_CommonCmdletMetadata
+Write7_ObsoleteAttributeMetadata
+Write70_ConfirmImpact
+Write71_StaticCmdletMetadata
+Write72_Item
+Write73_CommonMethodMetadata
+Write74_StaticMethodMetadata
+Write75_CommonMethodParameterMetadata
+Write76_StaticMethodParameterMetadata
+Write77_CmdletOutputMetadata
+Write78_Item
+Write79_Item
+Write8_Item
+Write80_InstanceMethodMetadata
+Write81_InstanceCmdletMetadata
+Write82_PropertyQuery
+Write83_WildcardablePropertyQuery
+Write84_ItemsChoiceType
+Write85_ClassMetadataData
+Write86_EnumMetadataEnum
+Write87_EnumMetadataEnumValue
+Write9_Item
+WriteAttribute
+WriteElementString
+WriteEmptyTag
+WriteEndAttribute
+WriteEndElement
+WriteError
+WriteLine
+WriteMessage
+writeMethods
+WriteNullTagLiteral
+WriteOutput
+writeOutputFriendlyName
+writer
+WriteStartAttribute
+WriteStartDocument
+WriteStartElement
+WriteString
+WriteTypedPrimitive
+WriteValue
+WriteXsiType
+WSManConnectionInfo
+wTclr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation
+x,http://schemas.microsoft.com/winfx/2006/xaml
+X]i"3
+xamlFooter
+xamlHeader
+XamlReader
+XamlSchemaContext
+XamlWriter
+XamlXmlReader
+XamlXmlWriter
+Xk::V
+XMicrosoft.PowerShell.Cmdletization.Xml.CmdletParameterMetadataForInstanceMethodParameter
+Xml_cmdletsOverObjectsXsd
+XmlArrayItemAttribute
+XmlAttributeAttribute
+XmlChoiceIdentifierAttribute
+XmlConvert
+XmlElementAttribute
+XmlException
+XmlIgnoreAttribute
+XmlIncludeAttribute
+XmlNameTable
+XmlNodeType
+XmlQualifiedName
+xmlReader
+xmlReaderSettings
+XmlRootAttribute
+XmlSchema
+XmlSchemaSet
+XmlSchemaValidationFlags
+XmlSerializationReader
+XmlSerializationReader1
+XmlSerializationWriter
+XmlSerializationWriter1
+xmlSerializer
+XmlSerializer1
+XmlSerializerContract
+XmlSerializerImplementation
+XmlSerializerNamespaces
+XmlTextAttribute
+XmlTypeAttribute
+XmlWriterSettings
+XPresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+xVyVzV{W|X}X~X
+XZm"!
+Yclr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation#System.Activities.Presentation.View
+Yfa!1
+YN3E4
+Z#n7[Px
+zcqH_
+ZThe value of the variable '{0}' can only be changed using the Set-PSWorkflowData activity.

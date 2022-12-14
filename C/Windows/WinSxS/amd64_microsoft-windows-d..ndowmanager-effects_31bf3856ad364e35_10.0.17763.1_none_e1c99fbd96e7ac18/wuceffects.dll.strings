@@ -1,0 +1,1256 @@
+            minfloat diffuseAmount, minfloat3 lightColor)
+            minfloat specularShine, minfloat specularAmount, minfloat3 lightColor)
+            minfloat3 lightColor)
+            minfloat3 lightPosition, minfloat diffuseAmount,
+            minfloat3 lightPosition, minfloat specularShine, minfloat specularAmount,
+        (0.272 * intensity) * color.r
+        (0.349 * intensity) * color.r
+        (1 - 0.607 * intensity) * color.r
+        );
+        * diffuseAmount * lightColor, 1);
+        * diffuseAmount * spotLightColor, 1);
+        : ((f < 1) ? (0.5 * b / (1 - f)) : 1);
+        : 0;
+        : b >= f ? 1
+        : sum > 1.001 ? 1
+        ? ((f > 0) ? (c / f) : 0)
+        + (0.168 * intensity) * color.b);
+        + (0.189 * intensity) * color.b);
+        + (0.534 * intensity) * color.g
+        + (0.769 * intensity) * color.g
+        + (1 - 0.314 * intensity) * color.g
+        + (1 - 0.869 * intensity) * color.b);
+        + b.rgb * b.a * (1 - f.a));
+        + f.rgb * f.a * (1 - b.a)
+        color *= destSat;
+        color += sourceMaxVector;
+        color += sourceMidVector * ((sourceMid - sourceMin) / (sourceMax - sourceMin));
+        color = D2DBlendApplySourceLumToDest(color, destSat, D2DBlendGetLuminosity(lumSource));
+        color = D2DBlendGetLuminosity(lumFallback).xxx;
+        color,
+        color[i] = (b[i] >= 1.0) ? 1.0 : (color[i] > 0.0) ? color2[i] : 0.0;
+        D2DBlendColorDodgeComponent(uf.b, ub.b));
+        D2DBlendColorDodgeComponent(uf.g, ub.g),
+        D2DBlendColorDodgeComponent(uf.r, ub.r),
+        D2DBlendHardMixComponent(uf.b, ub.b));
+        D2DBlendHardMixComponent(uf.g, ub.g),
+        D2DBlendHardMixComponent(uf.r, ub.r),
+        D2DBlendSafeDivision(uf.b, ub.b));
+        D2DBlendSafeDivision(uf.g, ub.g),
+        D2DBlendSafeDivision(uf.r, ub.r),
+        D2DBlendVividLightComponent(uf.b, ub.b));
+        D2DBlendVividLightComponent(uf.g, ub.g),
+        D2DBlendVividLightComponent(uf.r, ub.r),
+        EncodeReflectanceModelAndTransparentNormal(reflectanceModel, normalHeight));
+        float nDotH = max(dot(surfaceNormal, halfVector), 0);
+        float3 halfVector = lightVector + eyeVector;
+        focus, cosConeAngle, lightColor,
+        halfVector = normalize(halfVector);
+        lerp(((9 - 18 * uf) * ub + 5.76 * uf - 1.88) * ub,
+        lerp(color0, color1, weights.x),
+        lerp(color2, color3, weights.x),
+        lerp(sourceLum + (((color - sourceLum.xxx) * factor2) / factor1),
+        lightVector, exponent, eyeVector) * amount * lightColor;
+        output = 0;
+        output = pow(nDotH, exponent);
+        pixelPosition, lightVector);
+        pixelPosition, lightVector, spotLightColor);
+        return b / f;
+        return b == 0 ? 0 : 1;
+        round(ub + (0.359375 - 0.001))), round(uf));
+        specularShine, specularAmount, lightColor, minfloat3(0,0,1));
+        specularShine, specularAmount, spotLightColor, minfloat3(0,0,1));
+        step(0, lumDifference));
+        step(factor1, factor2)),
+        ub + (sqrt(ub) - ub) * (2 * uf - 1),
+        weights.y
+    )
+    //
+    //  - if the lightVector is in the inner cone, we'll get full power (1)
+    //  - if the lightVector is in the outer cone, power will fade to 0
+    //  - outside of the outer cone, power will be 0
+    // (Math from D2D)
+    // 0 -> Fully desaturated
+    // 1 -> Original color
+    // 2 -> Maximum possible value, not necessarily fully saturated
+    // and https://www.w3.org/TR/SVG/filters.html#feColorMatrixValuesAttribute
+    // Bit 0: a bool to store if this pixel is a fully transparent
+    // Bit 1: Reflectance model. Blinn Phong (the default value) = 0, Physically Based Blinn Phong = 1
+    // calculating floor(1 - (max - source)), which will result in a unit vector with a value
+    // color is our output value:
+    // Compute attenuated light color from the position and exponent
+    // delay the wrapping until the sampling stage
+    // Does not need alpha unpremultiplication
+    // else                     return 1 - ((1 - dest) / source)
+    // else               return dest + (sqrt(dest) - dest) * (2 * source - g_vectorOneMin16);
+    // else             return 1 - 2 * (1 - source) * (1 - dest);
+    // Flip the Y axis, because the standard normal map tools assuming the Y
+    // if (dest < 0.5)  return 2 * source * dest;
+    // if (dest <= 9/64)   return ((9 * g_vectorOneMin16 - 18 * source) * dest + 5.76 * source - 1.88 * g_vectorOneMin16) * dest;
+    // if (source + dest <= 1)  return 0;
+    // if (source < 0.5)  return dest * (1 + (1 - dest) * (2 * source - 1))
+    // if (source == 1)         return 1;
+    // If the signedMod is negative, we must fix it up to wrap it into
+    // If we had a tie for max or min, we want to disambiguate. It doesn't matter which value we
+    // In D2D, if amount is
+    // in texture coordinate is pointing up, but our Y are pointing down.
+    // in the box from (0, 0) to (1, 1), and passing by (0.5, 0.5)
+    // instructions, so we do the following instead:
+    // is reduced much.
+    // lerp is used to simulate if/else conditions.
+    // Magic numbers for hashing the coordinates
+    // Math from https://www.w3.org/TR/filter-effects/#grayscaleEquivalent
+    // Math from https://www.w3.org/TR/filter-effects/#saturateEquivalent
+    // Math from https://www.w3.org/TR/filter-effects/#sepiaEquivalent
+    // note: it is ok if some colorU channels are zero because those failed quotients will not be chosen below
+    // O_A = F_A * (1 - B_A) + B_A
+    // O_PRGB = f(F_RGB, B_RGB) * F_A * B_A + F_RGB * F_A * (1 - B_A) + B_RGB * B_A * (1 - F_A) 
+    // of one for the source's max component.
+    // pick as the tie breaker, so we use saturate(sourceMaxVector.rgb - sourceMaxVector.gbr),
+    // positive space.
+    // Premultiply the RGB channels
+    // Probability Theory and Mathematical Statistics, August 1998.
+    // RGB to luminance factors from D2D
+    // Similar calculation for min:
+    // so the alpha channel is not opaque
+    // The theroy is from a paper On generating random numbers, with help of y= [(a+x)sin(bx)] mod 1",
+    // The weights will be always be between 0 and 0.5. If they are 0, we should
+    // Then cut off the light based on the spotlight cone:
+    // these two values into vectors, allowing for the comparisons for both to be done in parallel.
+    // This accomplishes the following without branching (14 instructions vs. 20):
+    // This accomplishes the following without branching:
+    // This builds two contiguous polynomials forming an 'S' shape
+    // This computes a specular component, meant to be blended atop a diffuse layer,
+    // This is just trying to do (sourceMax - sourceMin) > 0 && destSat > 0, but that takes too many
+    // This line of code is from https://www.shadertoy.com/view/4dS3Wd. It uses a very high frequency sin
+    // to produce a periodic change between pixels. And then take the fractal part as a random number.
+    // TODO: Do this up-front on the CPU (MSFT:3579391)
+    // use 0,0,1 for the eye vector since this function is used for Image Lighting
+    // Use a single componentwise comparison to select per-channel results.
+    // use the close pixel, so we put the close pixel in xy.
+    // Use this magic number to adjust the frequency of the white noise. When moving slowly, the artifact
+    // W.J.J. Rey, 22nd European Meeting of Statisticians and the 7th Vilnius Conference on
+    // We can calculate the mid-value vector and value once the min and max vector are known:
+    // We can just take the abs of the signedMod, as this mirrors around 0.
+    // We follow D2D's way of handling alpha = 0
+    // We need to calculate the min and max of the hueSource and satSource. To save instructions, pack
+    // We need to figure out which componenet contributed to the max value. We do this by
+    // which guarauntees only one component has a 1:
+    [unroll]
+    {
+    }
+    color = UnPremultiply(color);
+    color.rgb *= color.a;
+    color.rgb = (color.a == 0) ? float3(0, 0, 0) : (color.rgb / color.a);
+    color.rgb = (color.rgb < 0.5f) ? lowResult : highResult;
+    const float COORD_SCALING = 0.81f;
+    const minfloat3 vectorOneMin = minfloat3(1, 1, 1);
+    else
+    float a1 = -a2;
+    float a2 = 2 * c2;
+    float b1 = s;
+    float b2 = 4 - 3 * s;
+    float c2 = s - 1;
+    float cosDirection = saturate(dot(-lightVector, lightTargetVector));
+    float focus, float2 cosConeAngle,
+    float luminance = dot(color.rgb, minfloat3(0.2125f, 0.7154f, 0.0721f));
+    float result = lerp(lerp(sample00, sample10, factor.x), lerp(sample01, sample11, factor.x), factor.y);
+    float s = 1 - (3.0f / 4.0f) * contrast;
+    float sample00 = Hash(pixel00Coord);
+    float sample01 = Hash(pixel01Coord);
+    float sample10 = Hash(pixel10Coord);
+    float sample11 = Hash(pixel11Coord);
+    float sum = f + b;
+    float2 coord = inputCoord * COORD_SCALING * freq + offset;
+    float2 factor = coord - pixel00Coord;
+    float2 invTextureSize = GetInvTextureSizeFromSamplerDataExt(samplerDataExt);
+    float2 min = uvBounds.xy;
+    float2 pixel00Coord = floor(coord - 0.5f) + 0.5f;
+    float2 pixel01Coord = float2(pixel00Coord.x, pixel11Coord.y);
+    float2 pixel10Coord = float2(pixel11Coord.x, pixel00Coord.y);
+    float2 pixel11Coord = pixel00Coord + 1;
+    float2 signedMod = fmod(uv - uvBounds.xy, size * 2);
+    float2 signedWeights = uvTexture - uvClosePixel;
+    float2 size = uvBounds.zw - uvBounds.xy;
+    float2 textureSize = GetTextureSizeFromSamplerDataExt(samplerDataExt);
+    float2 uv,
+    float2 uvClosePixel = floor(uvTexture) + 0.5;
+    float2 uvFarPixel = uvClosePixel + sign(signedWeights);
+    float2 uvs,
+    float2 uvTexture = uv * textureSize;
+    float2 weights;
+    float2 wrapped = abs(signedMod);
+    float3 lightColor, out float3 pixelPosition,
+    float3 lightPosition, float3 lightTargetVector,
+    float3 lightVector;
+    float3 normal = normalize(normalHeight.xyz * 2 - 1);
+    float3 output;
+    float3 pixelPosition;
+    float3 spotLightColor;
+    float4 color0 = tex.Sample(textureSampler, float2(uvs.x, uvsWrapped.y));
+    float4 color0 = tex.Sample(textureSampler, float2(uvsWrapped.x, uvs.y));
+    float4 color0 = tex.Sample(textureSampler, uvsWrapped.xy);
+    float4 color1 = tex.Sample(textureSampler, float2(uvs.x, uvsWrapped.w));
+    float4 color1 = tex.Sample(textureSampler, float2(uvsWrapped.z, uvs.y));
+    float4 color1 = tex.Sample(textureSampler, uvsWrapped.zy);
+    float4 color2 = tex.Sample(textureSampler, uvsWrapped.xw);
+    float4 color3 = tex.Sample(textureSampler, uvsWrapped.zw);
+    float4 output;
+    float4 samplerData,
+    float4 samplerDataExt
+    float4 samplerDataExt,
+    float4 signedMod = fmod(uv - min.xyxy, size.xyxy);
+    float4 uvBounds = GetUVBoundsFromSamplerData(samplerData);
+    float4 uvs = float4(uvClosePixel, uvFarPixel) * invTextureSize.xyxy;
+    float4 uvsWrapped = CalcWrappedUV(uvs, samplerData, samplerDataExt, /*out*/ weights);
+    float4 wrapped = lerp(signedMod + size.xyxy, signedMod, step(0, signedMod));
+    for (int i = 0; i < 3; i++)
+    if ((sourceMax - sourceMin) * destSat > 0)
+    if (dot(surfaceNormal, lightVector) > 0)
+    if (f == 0)
+    int reflectanceModel,
+    lightVector = normalize(lightPosition - pixelPosition);
+    minfloat ambientAmount, minfloat diffuseAmount, minfloat specularShine, minfloat specularAmount,
+    minfloat c = f + 0.5 * (b - 1);
+    minfloat destLum = D2DBlendGetLuminosity(dest);
+    minfloat destSat = maxSD.y - minSD.y;
+    minfloat diffuseAmount, minfloat3 lightColor)
+    minfloat factor1 = destSat - destLum;
+    minfloat factor2 = 1 - sourceLum;
+    minfloat focus, minfloat2 cosConeAngle,
+    minfloat gray = dot(color.rgb, grayFactor);
+    minfloat lumDifference = sourceLum - destLum;
+    minfloat sourceMax = maxSD.x;
+    minfloat sourceMid = dot(sourceMidVector, hueSource);
+    minfloat sourceMin = minSD.x;
+    minfloat specularShine, minfloat specularAmount,
+    minfloat2 blue = minfloat2(hueSource.b, satSource.b);
+    minfloat2 green = minfloat2(hueSource.g, satSource.g);
+    minfloat2 maxSD = max(red, max(green, blue));
+    minfloat2 minSD = min(red, min(green, blue));
+    minfloat2 red = minfloat2(hueSource.r, satSource.r);
+    minfloat3 color = D2DBlendApplyHueSatLum(f.rgb, ub.rgb, ub.rgb, ub.rgb);
+    minfloat3 color = D2DBlendApplyHueSatLum(ub.rgb, ub.rgb, uf.rgb, ub.rgb);
+    minfloat3 color = D2DBlendApplyHueSatLum(ub.rgb, uf.rgb, ub.rgb, ub.rgb);
+    minfloat3 color = D2DBlendApplyHueSatLum(uf.rgb, uf.rgb, ub.rgb, ub.rgb);
+    minfloat3 color = D2DBlendGetLuminosity(uf) < D2DBlendGetLuminosity(ub) ? uf : ub;
+    minfloat3 color = D2DBlendGetLuminosity(uf) > D2DBlendGetLuminosity(ub) ? uf : ub;
+    minfloat3 color = dest + lumDifference.xxx;
+    minfloat3 color = lerp(2 * ub * uf, 2 * lerp(ub, 1, uf) - 1, round(uf));
+    minfloat3 color = lerp(2 * uf * ub, 2 * lerp(uf, 1, ub) - 1, round(ub));
+    minfloat3 color = lerp(min(ub, 2 * uf), max(ub, 2 * uf - 1), round(uf));
+    minfloat3 color = lerp(ub * (1 + (1 - ub) * (2 * uf - 1)),
+    minfloat3 color = max((1 - f.a) * b.rgb + f.rgb, (1 - b.a) * f.rgb + b.rgb);
+    minfloat3 color = minfloat3(
+    minfloat3 color = minfloat3(0, 0, 0);
+    minfloat3 color = saturate(UnPremultiply(b).rgb + 2 * UnPremultiply(f).rgb - 1);
+    minfloat3 color = uf + ub - 1;
+    minfloat3 color2 = color / uf;
+    minfloat3 highResult = color.rgb * (color.rgb * a2 + b2) + c2;
+    minfloat3 lightColor)
+    minfloat3 lightColor, minfloat3 eyeVector)
+    minfloat3 lightPosition, minfloat3 lightTargetVector,
+    minfloat3 lightVector)
+    minfloat3 lightVector, minfloat exponent, minfloat amount,
+    minfloat3 lightVector, minfloat exponent, minfloat3 eyeVector)
+    minfloat3 lowResult = color.rgb * (color.rgb * a1 + b1);
+    minfloat3 sourceMaxVector = floor(vectorOneMin - (sourceMax.xxx - hueSource));
+    minfloat3 sourceMidVector = vectorOneMin - sourceMaxVector - sourceMinVector;
+    minfloat3 sourceMinVector = floor(vectorOneMin - (hueSource - sourceMin.xxx));
+    minfloat3 ub = UnPremultiply(b).rgb;
+    minfloat3 uf = UnPremultiply(f).rgb;
+    minfloat4 result;
+    normal.y = -normal.y;
+    normalHeight = UnPremultiply(normalHeight);
+    out float2 weights
+    out float3 lightVector, out float3 spotLightColor)
+    out float3 pixelPosition, out float3 lightVector)
+    out float4 outputNormalTangentSpace)
+    output.a = max(output.r, max(output.g, output.b));
+    output.rgb *= output.a;
+    output.rgb = CalculateBlinnPhongLitPixelSpecularUnpremultiplied(surfaceNormal,
+    outputNormalTangentSpace = float4(GetSurfaceNormal(normalHeight),
+    pixelPosition = float3(pixelXY.xy, 0.0f);
+    PreparePointVectors(pixelXY, lightPosition,
+    PrepareSpotVectors(pixelXY, lightPosition, lightTargetVector,
+    result.a = color.a;
+    result.b = minfloat(
+    result.g = minfloat(
+    result.r = minfloat(
+    return (1 - dest.a) * src + (1 - src.a) * dest;
+    return (1 - dest.a) * src + dest;
+    return (1 - dest.a) * src + src.a * dest;
+    return (1 - dest.a) * src;
+    return (1 - src.a) * dest;
+    return (f < 0.5)
+    return (f < 1.0) ? (b / (1.0 - f)) : ceil(b);
+    return CalculateLitPixelSpecular(surfaceNormal, lightVector,
+    return clamp(uv, uvBounds.xy, uvBounds.zw);
+    return color.r * 0.3 + color.g * 0.59 + color.b * 0.11;
+    return color;
+    return D2DBlendBasicRgb(f, b, abs(UnPremultiply(f).rgb - UnPremultiply(b).rgb));
+    return D2DBlendBasicRgb(f, b, color);
+    return D2DBlendBasicRgb(f, b, saturate(color));
+    return D2DBlendBasicRgb(f, b, saturate(UnPremultiply(b).rgb - UnPremultiply(f).rgb));
+    return D2DBlendBasicRgb(f, b, saturate(UnPremultiply(f).rgb + UnPremultiply(b).rgb - 1));
+    return D2DBlendBasicRgb(f, b, saturate(UnPremultiply(f).rgb + UnPremultiply(b).rgb));
+    return D2DBlendBasicRgb(f, b, UnPremultiply(f).rgb * UnPremultiply(b).rgb);
+    return dest.a * src + (1 - src.a) * dest;
+    return dest.a * src;
+    return f + b - f * b;
+    return f.rgb * (1 - b.rgb) + b.rgb;
+    return f.rgb + b.rgb - 2 * f.rgb * b.rgb;
+    return float2(uvHorizontal.x, uvVertical.y);
+    return float4(ambientAmount, diffuseAmount, specularShine, specularAmount);
+    return float4(CalculateLitPixelDiffuse(surfaceNormal, lightVector)
+    return float4(result.xxx, 1);
+    return frac(1e4f * sin(17.0f * p.x + p.y * 0.1f) * (0.1f + abs(sin(p.y * 13.0f + p.x))));
+    return lerp(
+    return lerp(color0, color1, weights.x);
+    return lerp(color0, color1, weights.y);
+    return lerp(sourceLum + (((color - sourceLum.xxx) * sourceLum) / destLum),
+    return max(dot(surfaceNormal, lightVector), 0);
+    return min((1 - f.a) * b.rgb + f.rgb, (1 - b.a) * f.rgb + b.rgb);
+    return minfloat4(0, 0, 0, luminance);
+    return minfloat4(gray, gray, gray, color.a);
+    return minfloat4(lerp(gray.rrr, color.rgb, amount), color.a);
+    return mul(color, colorMatrix4x4) + colorOffset;
+    return normal;
+    return normalHeight.w * heightMapScale;
+    return output;
+    return Premultiply(color);
+    return Premultiply(D2DColorMatrixStraight(UnPremultiply(color), colorMatrix4x4, colorOffset));
+    return Premultiply(D2DSepiaStraight(UnPremultiply(color), intensity));
+    return reflectanceModel * 2 + (any(normalHeight) ? 1 : 0);
+    return result;
+    return saturate(func * f.a * b.a
+    return src + (1 - src.a) * dest;
+    return src + dest;
+    return src.a * dest;
+    return src;
+    return sum < 0.999 ? 0
+    return uv;
+    return uvBounds.zw - abs(wrapped - size);
+    return wrapped + min.xyxy; 
+    return WrapUV2(uv, samplerData);
+    return WrapUV4(uv.xyxy, samplerData).xy;
+    return WrapUV4(uvs, samplerData);
+    SamplerState textureSampler,
+    sourceMaxVector = saturate(sourceMaxVector - sourceMaxVector.gbr);
+    sourceMinVector = saturate(sourceMinVector - sourceMinVector.gbr);
+    spotLightColor *= pow(cosDirection, focus);
+    spotLightColor *= smoothstep(cosConeAngle.y, cosConeAngle.x, cosDirection);
+    spotLightColor = lightColor;
+    Texture2D tex,
+    weights = abs(signedWeights);
+  eb 0x%p 'p';g  -- terminate Process
+  eb 0x%p 't';g  -- terminate Thread
+  g                    -- Go (continue)
+ * pow(
+ : packoffset(c
+ : register(b0)
+ = D2DBlend
+ = D2DComposite
+ = D2DContrast(
+ = D2DDistantDiffuse(
+ = D2DDistantSpecular(
+ = D2DGrayscale(
+ = D2DLuminanceToAlpha(
+ = D2DPointDiffuse(
+ = D2DPointSpecular(
+ = D2DSaturation(
+ = D2DSpotDiffuse(
+ = D2DSpotSpecular(
+ = minfloat4(
+ = Premultiply(
+ = Premultiply(minfloat4(
+ = saturate(
+ = SceneLightingParameters(
+ = UnPremultiply(
+ = WhiteNoise(
+ A^A\_
+ A_A^_
+ A_A^A\
+ A_A^A\_^
+ A_A^A]A\^
+ A_A^A]A\_
+ A_A^A]A\_^]
+ H3E H3E
+ Microsoft Corporation. All rights reserved.
+ Operating System
+ or regular debugging.
+ Windows
+!This program cannot be run in DOS mode.
+"""""""
+#   define minp(type) MINP_PREFIX##type
+#   define minp(type) type
+#define COMMON_HLSL
+#define D2DLIGHTING_HLSL
+#define minfloat minp(float)
+#define minfloat2 minp(float2)
+#define minfloat2x2 minp(float2x2)
+#define minfloat3 minp(float3)
+#define minfloat3x2 minp(float3x2)
+#define minfloat3x3 minp(float3x3)
+#define minfloat4 minp(float4)
+#define minfloat4x4 minp(float4x4)
+#else
+#endif
+#if !defined(COMMON_HLSL)
+#if !defined(D2DLIGHTING_HLSL)
+#if defined(MINP_PREFIX)
+#include "
+#include "Common.hlsl"
+%hs!%p: 
+%hs(%d) tid(%x) %08X %ws
+%hs(%d)\%hs!%p: 
+(_^][
+(|$ H
+(|$`D
+(|$`H
+(|$`I
+(|$0D
+(caller: %p) 
+(D$ f
+(D$ H
+(D$0H
+(No kernel debugger is present.) Respond with:
+(t#H9Q
+(t$ H
+(t$0I
+(t$pL
+).rgb, 
+)|$ H
+)|$0D
+)D$ E
+)t$ H
+***   %s%ls%sSource: `%ls:%ld`
+*** Assertion failed: %ls%ls%ls
+.?AV<lambda_0b97abade9b035bef1cf7bbb0e50f948>@@
+.?AV<lambda_0ef6475bb3965f972a694a3b177e0743>@@
+.?AV<lambda_0fd6697a1659339dc4fa177a0fab516f>@@
+.?AV<lambda_46c5afac1b64089a812bf0c47a454861>@@
+.?AV<lambda_46c88fb8373f39537209e15b3d5e7ca8>@@
+.?AV<lambda_59478d51c11e25e12e8b1bf4be9db642>@@
+.?AV<lambda_7fa751fb77739eaab3acafacc02c3e5f>@@
+.?AV<lambda_819099e4b50ae250876b69b014c0688d>@@
+.?AV<lambda_b12e8ccb2431035666fc9db90ea289e2>@@
+.?AV<lambda_cfb036f52b3c958493c5716e5b8317e5>@@
+.?AV<lambda_d0322268a891124636e459191f544c4d>@@
+.?AV<lambda_d79e1d7083cbc135c9a0a8fdef31aca0>@@
+.?AV<lambda_f26b045cc302e0457096e26d54e65248>@@
+.?AVbad_alloc@std@@
+.?AVexception@std@@
+.?AVOriginatedException@Composition@UI@Windows@@
+.?AVout_of_range@std@@
+.?AVResultException@wil@@
+.?AVtype_info@@
+.00cfg
+.a = D2DBlendAlpha(
+.a));
+.b * 
+.CRT$XCA
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIC
+.CRT$XIZ
+.CRT$XLA
+.CRT$XLZ
+.CRT$XPA
+.CRT$XPZ
+.CRT$XTA
+.CRT$XTZ
+.data
+.data$brc
+.data$r$brc
+.edata
+.gfids
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.P6AXPEBXPEAX@Z
+.pdata
+.r * 
+.rdata
+.rdata$brc
+.rdata$r
+.rdata$T$brc
+.rdata$zzzdbg
+.rgb * 
+.rsrc$01
+.rsrc$02
+.rtc$IAA
+.rtc$IZZ
+.rtc$TAA
+.rtc$TZZ
+.text
+.text$di
+.text$mn
+.text$mn$00
+.text$x
+.text$yd
+.tls$
+.tls$ZZZ
+.x * 
+.xdata
+.xdata$x
+.xyz, 
+.y * 
+.z * 
+//-----------------------------------------------
+//     and 2 v coordinates, in z and w.
+// Alpha premultiplication and un-premultiplication
+// Blend functions, in order of reference webpage
+// Copyright (C) Microsoft. All rights reserved.
+// D2DCompositeBoundedSourceCopy not supported because we
+// don't have a notion of input bounds.
+// Generated file, do not edit.
+// Helpers
+// HLSL implementation of D2D blend functions.
+// HLSL implementation of D2D composite effect modes.
+// HLSL implementation of the D2D saturation effect.
+// If clamping is not the same in both directions
+// Macro for minimum-precision types (min10float, min16float)
+// Not being used until we add functionality for image lighting with normals.
+// Premultiplied-alpha version
+// returns 2 u coordinates, in x and z
+// See: http://msdn.microsoft.com/en-us/library/windows/desktop/hh706313.aspx
+// See: http://msdn.microsoft.com/en-us/library/windows/desktop/hh706320.aspx
+// should then be weighted by the output weights.
+// Straight-alpha version
+// The default normal is <0,0,1>.
+// These coordinates can be used to sample the texture. The texture samples
+// This function applies the provided luminosity value to the dest, replacing dest's luminosity.
+// This function generates a new RGB output, taking its hue, saturation, and luminosity from the three RGB inputs.
+// This is the default normal encoded in premultiplied RGBA8888 for use in SceneLighting.
+// TODO: Dissolve
+// We pass in destSat as an optimization, so we don't need to recalculate it:
+:deque<T> too long
+;\$Pr
+;|$Tr
+;Invalid animatable property mapping.
+?_Xbad_function_call@std@@YAXXZ
+?_Xlength_error@std@@YAXPEBD@Z
+?_Xout_of_range@std@@YAXPEBD@Z
+@.data
+@.reloc
+@.rsrc
+@8,1u
+@8~Tt?I
+@8I+@0H
+@A^_^
+@A_A^_
+@A_A^_^]
+@A_A^A\
+@A_A^A]A\_^]
+@SUVWATAUAVAWH
+@SVWH
+@USVWATAUAVAWH
+@USVWATAVAWH
+@USVWAVAWH
+@USVWAVH
+@USVWAWH
+@USWH
+@UVWH
+@UWAVH
+@WAVAWH
+[%hs(%hs)]
+[%hs]
+\$ UH
+\$ UVWATAUAVAWH
+\$ UVWAVAWH
+\$ VWAVH
+\$(H;
+__C_specific_handler
+__CxxFrameHandler3
+__std_terminate
+_CxxThrowException
+_initterm
+_initterm_e
+_o___std_exception_copy
+_o___std_exception_destroy
+_o___std_type_info_destroy_list
+_o___stdio_common_vsnprintf_s
+_o___stdio_common_vsprintf_s
+_o___stdio_common_vswprintf
+_o__cexit
+_o__configure_narrow_argv
+_o__create_locale
+_o__crt_atexit
+_o__errno
+_o__execute_onexit_table
+_o__initialize_narrow_environment
+_o__initialize_onexit_table
+_o__invalid_parameter_noinfo
+_o__invalid_parameter_noinfo_noreturn
+_o__itoa_s
+_o__ltoa_s
+_o__purecall
+_o__register_onexit_function
+_o__seh_filter_dll
+_o__wcsicmp_l
+_o_cos
+_o_powf
+_o_terminate
+`.rdata
+`A_A^_^]
+`A_A^A]A\_^]
+|$ AVH
+|$ UATAUAVAWH
+|$`L;
+|$8E3
+} H+}
+040904B0
+0A^_^
+0A^_^][
+0A_A^_
+0A_A^A]A\]
+0A_A^A]A\_^[
+1 - UnPremultiply(
+10.0.17763.1
+10.0.17763.1 (WinBuild.160101.0800)
+333333
+7.s:>j
+79|~X>
+8A^_^[
+8wJG>iR
+9/iL>
+9\$Pvh
+9]8vDH
+A graph source parameter with a border effect can only be used once.
+A graph source parameter with a transform can only be used once.
+A H+A
+A(H+A H
+A(I+A 
+A^_^[]
+A__^[]
+A_A^]
+A_A^_
+A_A^_^[]
+A_A^_^]
+A_A^A\
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[]
+A_A^A]_]
+A_A^A]A\]
+A_A^A]A\_
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A_A^A]A\_^][
+A8H+A0
+A8H+A0H
+A8L+A0I
+AffineTransform2D's source must be a source parameter.
+AlphaAmplitude
+AlphaDisable
+AlphaExponent
+AlphaMode
+AlphaOffset
+AlphaSlope
+AmbientAmount
+Angle
+Animatable property refers to an effect not in the graph.
+api-ms-win-core-com-l1-1-0.dll
+api-ms-win-core-debug-l1-1-0.dll
+api-ms-win-core-errorhandling-l1-1-0.dll
+api-ms-win-core-errorhandling-l1-1-2.dll
+api-ms-win-core-errorhandling-l1-1-3.dll
+api-ms-win-core-handle-l1-1-0.dll
+api-ms-win-core-heap-l1-1-0.dll
+api-ms-win-core-interlocked-l1-1-0.dll
+api-ms-win-core-kernel32-legacy-l1-1-0.dll
+api-ms-win-core-libraryloader-l1-2-0.dll
+api-ms-win-core-libraryloader-l1-2-1.dll
+api-ms-win-core-localization-l1-2-0.dll
+api-ms-win-core-processthreads-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-1.dll
+api-ms-win-core-profile-l1-1-0.dll
+api-ms-win-core-rtlsupport-l1-1-0.dll
+api-ms-win-core-synch-l1-1-0.dll
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-core-sysinfo-l1-1-0.dll
+api-ms-win-core-winrt-error-l1-1-0.dll
+api-ms-win-core-winrt-l1-1-0.dll
+api-ms-win-core-winrt-string-l1-1-0.dll
+api-ms-win-crt-math-l1-1-0.dll
+api-ms-win-crt-private-l1-1-0.dll
+api-ms-win-crt-runtime-l1-1-0.dll
+api-ms-win-crt-string-l1-1-0.dll
+ArithComp
+ATAVAWH
+AuthD
+AXH+APH
+Azimuth
+B H+B
+B8H+B0H
+bad allocation
+Blend
+BlueAmplitude
+BlueDisable
+BlueExponent
+BlueOffset
+BlueSlope
+BlurAmount
+Border
+BorderEffect's source must be a source parameter.
+BorderMode
+Break, Go (continue), terminate Process, or terminate Thread (bgpt)? 
+c_defaultNormalHeight
+c_defaultSurfaceNormal
+C09D$\
+C49D$`
+C49t$Tv9I
+C8H+C0H
+CallContext:[%hs] 
+cbuffer 
+CD$XI
+ChH+C`H
+CL$xH
+ClampInput
+ClampOutput
+CloseHandle
+CMILCOMBase::InternalAddRef
+Coefficients
+Color
+ColorBurn
+ColorDodge
+ColorMatrix
+ColorMatrix4x4
+ColorMatrixEffect
+ColorOffset
+COMMON.HLSL
+Common.hlsl
+CompanyName
+CompileEffectDescription
+Composite
+const 
+Contrast
+CoTaskMemFree
+CreateEffectDescription
+CreateEventW
+CreateMutexExW
+CreateSemaphoreExW
+CrossFade
+CT$(L
+CT$@L
+CT$0L
+CT$hL
+CT$pL
+CT$PL
+D$ E3
+D$ EFF
+D$ fD
+D$ I+D$
+D$@E3
+D$0D;L$H
+D$0E3
+D$0H;
+D$8H!t$8H
+D$HE3
+D$PIk
+D$XE3
+d2d1.dll
+D2DBlend.hlsl
+D2DBLEND.HLSL
+D2DBORDER.HLSL
+D2DColorMatrix.hlsl
+D2DCOLORMATRIX.HLSL
+D2DColorMatrixPremultiplied
+D2DColorMatrixStraight
+D2DComposite.hlsl
+D2DCOMPOSITE.HLSL
+D2DContrast.hlsl
+D2DCONTRAST.HLSL
+D2DLighting.hlsl
+D2DLIGHTING.HLSL
+D2DLuminanceToAlpha.hlsl
+D2DLUMINANCETOALPHA.HLSL
+D2DSATURATION.HLSL
+D2DSaturation.hlsl
+D2DSepia.hlsl
+D2DSEPIA.HLSL
+D2DSepiaPremultiplied
+D2DSepiaStraight
+D3DCompile
+d3dcompiler_47.dll
+D3DReflectLibrary
+D9 u-f
+D9K(t
+Darken
+DarkerColor
+DbgPrintEx
+DbgPrompt
+DebugBreak
+DeleteCriticalSection
+DeserializeEffectDescription
+DestinationAtop
+DestinationIn
+DestinationOut
+DestinationOver
+Difference
+DiffuseAmount
+DistantDiffuse
+DistantSpecular
+Division
+Duplicate effect name.
+Effect is too complex.
+EffectOptimization
+Elevation
+EnterCriticalSection
+Exception
+Exclusion
+export float2 BorderEffectClamp(float2 uv, float4 samplerData)
+export float2 BorderEffectCombine(float2 uvHorizontal, float2 uvVertical)
+export float2 BorderEffectMirror(float2 uv, float4 samplerData)
+export float2 BorderEffectWrap(float2 uv, float4 samplerData)
+export float2 BorderEffectWrapBilinear(float2 uv, float4 samplerData)
+export minfloat4 
+Exposure
+ExposureValue
+ExtendX
+ExtendY
+F8H+F0H
+f9,Au
+f9,Hu
+f9,Ku
+fA9,Qu
+FailFast
+fD9,Qu
+fD9t]
+FH+F@
+FhH+F`H
+FileDescription
+FileVersion
+FindResourceA
+FLightTarget
+float Hash(float2 p)
+float2 WrapUV2(float2 uv, float4 samplerData)
+float4 CalcWrappedUV(
+float4 SampleWrappedTexture(
+float4 SampleWrappedTextureUOnly(
+float4 SampleWrappedTextureVOnly(
+float4 SceneLightingParameters(minfloat4 normalHeight,
+float4 WhiteNoise(minfloat2 inputCoord, minfloat2 freq, minfloat2 offset)
+float4 WrapUV4(float4 uv, float4 samplerData)
+Flood
+Focus
+FormatMessageW
+FreeLibrary
+Frequency
+Function: 
+G8H+G0H
+Gains
+GammaXfer
+GaussianBlur
+GD$`3
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+GetLastError
+GetModuleFileNameA
+GetModuleHandleExW
+GetModuleHandleW
+GetProcAddress
+GetProcessHeap
+GetSystemTimeAsFileTime
+gfffffffD
+gfffffffH
+gfffffffH+
+gfffffffI+
+GreenAmplitude
+GreenDisable
+GreenExponent
+GreenOffset
+GreenSlope
+H SUVWAVH
+H WATAUAVAWH
+H;D$(t2H
+H;D$(u
+H;D$8u
+H;H r
+H;L$(u
+H+C`H
+H+K8I
+H+K8L
+H+KPI
+H9[8t
+H9_Hs<
+hA_A^A]A\_^][
+HardLight
+HardMix
+HeapAlloc
+HeapFree
+HeightMapInterpolationMode
+HeightMapKernelSize
+HeightMapScale
+HueRotation
+'i' is only supported with debug builds.
+i(I9t
+I;p M
+I@H+H8H
+InitializeConditionVariable
+InitializeCriticalSection
+InitializeCriticalSectionAndSpinCount
+InitializeSListHead
+inline float CalculateLitPixelDiffuse(minfloat3 surfaceNormal,
+inline float EncodeReflectanceModelAndTransparentNormal(int reflectanceModel, minfloat4 normalHeight)
+inline float GetSurfaceHeight(float4 normalHeight, float heightMapScale)
+inline float3 CalculateBlinnPhongLitPixelSpecularUnpremultiplied(minfloat3 surfaceNormal,
+inline float3 GetSurfaceNormal(float4 normalHeight)
+inline float4 CalculateLitPixelSpecular(minfloat3 surfaceNormal,
+inline minfloat D2DBlendAlpha(minfloat f, minfloat b)
+inline minfloat D2DBlendColorDodgeComponent(minfloat f, minfloat b)
+inline minfloat D2DBlendGetLuminosity(minfloat3 color)
+inline minfloat D2DBlendHardMixComponent(minfloat f, minfloat b)
+inline minfloat D2DBlendSafeDivision(minfloat f, minfloat b)
+inline minfloat D2DBlendVividLightComponent(minfloat f, minfloat b)
+inline minfloat3 D2DBlendApplyHueSatLum(minfloat3 hueSource, minfloat3 satSource, minfloat3 lumSource, minfloat3 lumFallback)
+inline minfloat3 D2DBlendApplySourceLumToDest(minfloat3 dest, minfloat destSat, minfloat sourceLum)
+inline minfloat3 D2DBlendBasicRgb(minfloat4 f, minfloat4 b, minfloat3 func)
+inline minfloat3 D2DBlendColorBurnRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendColorDodgeRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendColorRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendDarkenRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendDarkerColorRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendDifferenceRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendDivisionRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendExclusionRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendHardLightRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendHardMixRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendHueRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendLightenRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendLighterColorRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendLinearBurnRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendLinearDodgeRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendLinearLightRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendLuminosityRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendMultiplyRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendOverlayRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendPinLightRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendSaturationRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendScreenRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendSoftLightRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendSubtractRgb(minfloat4 f, minfloat4 b)
+inline minfloat3 D2DBlendVividLightRgb(minfloat4 f, minfloat4 b)
+inline minfloat4 D2DCompositeDestinationAtop(minfloat4 src, minfloat4 dest)
+inline minfloat4 D2DCompositeDestinationIn(minfloat4 src, minfloat4 dest)
+inline minfloat4 D2DCompositeDestinationOut(minfloat4 src, minfloat4 dest)
+inline minfloat4 D2DCompositeDestinationOver(minfloat4 src, minfloat4 dest)
+inline minfloat4 D2DCompositeMaskInvert(minfloat4 src, minfloat4 dest)
+inline minfloat4 D2DCompositePlus(minfloat4 src, minfloat4 dest)
+inline minfloat4 D2DCompositeSourceAtop(minfloat4 src, minfloat4 dest)
+inline minfloat4 D2DCompositeSourceCopy(minfloat4 src, minfloat4 dest)
+inline minfloat4 D2DCompositeSourceIn(minfloat4 src, minfloat4 dest)
+inline minfloat4 D2DCompositeSourceOut(minfloat4 src, minfloat4 dest)
+inline minfloat4 D2DCompositeSourceOver(minfloat4 src, minfloat4 dest)
+inline minfloat4 D2DCompositeXor(minfloat4 src, minfloat4 dest)
+inline minfloat4 D2DDistantDiffuse(float3 surfaceNormal, minfloat3 lightVector,
+inline minfloat4 D2DDistantSpecular(float3 surfaceNormal, minfloat3 lightVector,
+inline minfloat4 D2DGrayscale(minfloat4 color)
+inline minfloat4 D2DPointDiffuse(float3 surfaceNormal, minfloat3 pixelXY,
+inline minfloat4 D2DPointSpecular(float3 surfaceNormal, minfloat3 pixelXY,
+inline minfloat4 D2DSaturation(minfloat4 color, minfloat amount)
+inline minfloat4 D2DSepiaPremultiplied(minfloat4 color, minfloat intensity)
+inline minfloat4 D2DSepiaStraight(minfloat4 color, minfloat intensity)
+inline minfloat4 D2DSpotDiffuse(float3 surfaceNormal, minfloat3 pixelXY,
+inline minfloat4 D2DSpotSpecular(float3 surfaceNormal, minfloat3 pixelXY,
+inline void PreparePointVectors(float3 pixelXY, float3 lightPosition,
+inline void PrepareSpotVectors(float3 pixelXY,
+internal\sdk\inc\wil/resource.h
+InternalName
+InterpolationMode
+Invalid blur border mode.
+Invalid effect input.
+Invalid float value
+Invalid number of sources.
+invalid vector<T> subscript
+Invert
+IsDebuggerPresent
+IsProcessorFeaturePresent
+jIntensity
+K H+K
+K SVWH
+kernel32.dll
+kernelbase.dll
+KhH9Kpt
+L$ H;L$(t
+L$ SUVWH
+L$ SVWH
+L$ UVWATAUAVAWH
+l$ VWATAVAWH
+L$@E3
+L$@H;
+L$0fD
+L$0H;L$8t%
+L$0H3
+L$8E3
+L$HH3
+L$hH3
+L$HH3
+L$PfD
+L$PH+
+L$PH3
+L$XH3
+L$xH3
+L$XL+
+L+!I+
+L9{@u
+L9{0t#H
+L9o@t
+LeaveCriticalSection
+LegalCopyright
+lerp(
+lib_4_0_level_9_3_ps_only
+LightColor
+LightCosConeAngle
+Lighten
+LighterColor
+LightPosition
+LightTargetVector
+LightVector
+LimitingConeAngle
+LinearBurn
+LinearDodge
+LinearLight
+LinearXfer
+list<T> too long
+LoadLibraryW
+LoadResource
+Local\SM0:%d:%d:%hs
+LockResource
+LogHr
+LuminanceToAlpha
+Luminosity
+M H1E
+M_>|~
+M4H+A
+Malformed animatable property name.
+Malformed effect name.
+Malformed named input name.
+MaskInvert
+Matrix
+memcmp
+memcpy
+memmove
+memset
+Microsoft
+Microsoft Composition Effects
+Microsoft Corporation
+minfloat
+minfloat2
+minfloat3
+minfloat3x2
+minfloat4
+minfloat4 D2DColorMatrixPremultiplied(minfloat4 color, minfloat4x4 colorMatrix4x4, minfloat4 colorOffset)
+minfloat4 D2DColorMatrixStraight(minfloat4 color, minfloat4x4 colorMatrix4x4, minfloat4 colorOffset)
+minfloat4 D2DContrast(minfloat4 color, minfloat contrast)
+minfloat4 D2DLuminanceToAlpha(minfloat4 color)
+minfloat4 Premultiply(minfloat4 color)
+minfloat4 UnPremultiply(minfloat4 color)
+minfloat4x4
+Msg:[%ws] 
+msvcp_win.dll
+Multiple animatable properties animate the same value.
+Multiplier
+Multiply
+Multiply defined animatable property.
+N I+N
+No more than four graph source parameters are supported.
+No more than three graph source parameters with white noise effect are supported.
+Noise.hlsl
+NOISE.HLSL
+Non-finite floating-point value.
+Non-tree shaped effect graph.
+NormalXYZ_Light0Space
+NormalXYZ_Light1Space
+ntdll.dll
+ntelD
+NtQuerySystemInformation
+Null animatable property name.
+Null effect input.
+O H+O
+O8H+O0H
+O8T>[
+Offset
+OhH+O`H
+onecoreuap\windows\dwm\common\shared\milcom.cpp
+onecoreuap\windows\dwm\effects\compiler\buffer.h
+onecoreuap\windows\dwm\effects\compiler\effectgenerator.cpp
+onecoreuap\windows\dwm\effects\compiler\effectinstance.cpp
+onecoreuap\windows\dwm\effects\compiler\flattenedeffectgraph.cpp
+onecoreuap\windows\dwm\effects\compiler\graphicseffectgraphtraversal.cpp
+Opacity
+OpenSemaphoreW
+OriginalFilename
+Output_Normal_TangentSpace
+OutputDebugStringW
+Overlay
+p WAVAWH
+PA^_]
+pA^_^[]
+PA_A^_^]
+pA_A^A\_^[]
+pA_A^A]A\_^[
+pA_A^A]A\_^]
+PinLight
+PixelShader.hlsl
+PointDiffuse
+PointSpecular
+ProductName
+ProductVersion
+Property value out of bounds
+PSBody
+PSConstants
+QueryPerformanceCounter
+qwGrayscale
+RaiseException
+RaiseFailFastException
+RedAmplitude
+RedDisable
+RedExponent
+RedOffset
+RedSlope
+ReflectanceModel
+ReleaseMutex
+ReleaseSemaphore
+ResetEvent
+return 
+ReturnHr
+r'I9I
+RoGetActivationFactory
+RoOriginateError
+RoOriginateErrorW
+row_major 
+RSDS}F
+RtlCaptureContext
+RtlCaptureStackBackTrace
+RtlDllShutdownInProgress
+RtlLookupFunctionEntry
+RtlVirtualUnwind
+s WAVAWH
+S0H9S8t;
+sample
+Saturation
+SceneLighting
+SceneLightingEffect cannot be a source to GaussianBlurEffect.
+Screen
+Sepia
+SerializeEffectDescription
+SetEvent
+SetLastError
+SetUnhandledExceptionFilter
+Sharpness
+SizeofResource
+SleepConditionVariableCS
+SoftLight
+SourceAtop
+SourceCopy
+SourceIn
+SourceOut
+SourceOver
+Specified property cannot be animated.
+Specified property does not exist or cannot be animated.
+SpecularAmount
+SpecularExponent
+SpecularShine
+SpotDiffuse
+SpotSpecular
+sqrtf
+static const float3 c_defaultSurfaceNormal = float3(0.0f, 0.0f, 1.0f);
+static const minfloat3 grayFactor = minfloat3(0.2126, 0.7152, 0.0722);
+static const minfloat4 c_defaultNormalHeight = minfloat4(0.5f, 0.5f, 1.0f, 1.0f);
+std::exception: %hs
+strcmp
+String exceeds expected maximum length.
+string too long
+StringFileInfo
+Subtract
+SUVWATAUAVAWH
+SVWATAUAVAWH
+SVWAVH
+t"D8=
+T$ E3
+t$ UWATAVAWH
+t$ UWAUAVAWH
+T$@E3
+T$0H+
+T$8H!\$8
+t^@8=$
+t{HcL$ HcD$$H
+Temperature
+TempTint
+TerminateProcess
+TerminateProcessOnMemoryExhaustion
+TerminateThread
+TransformMatrix
+Translation
+Tried to AddRef an object which has previously been freed (refcount went to 0).
+U H9u8H
+u!I9W(t
+U@H9uXH
+UATAUAVAWH
+UAVAWH
+Unexpected effect input type.
+Unexpected effect property value.
+Unexpected property type.
+Unexpected variable scope.
+UnhandledExceptionFilter
+Unknown exception
+UnPremultiply(
+Unrecognized response.
+Unsupported alpha mode.
+Unsupported blend mode.
+Unsupported BorderEffect edge mode.
+Unsupported composite mode.
+Unsupported effect property type.
+Unsupported effect type.
+UVWATAUAVAWH
+UVWAVAWH
+UWATAVAWH
+UWAVH
+VarFileInfo
+VATAUAVAWH
+vector<T> too long
+VividLight
+VS_VERSION_INFO
+VWATAVAWH
+VWAVH
+WaitForSingleObject
+WaitForSingleObjectEx
+WakeAllConditionVariable
+WATAUAVAWH
+WATAVH
+WAVAWH
+Weight
+WerRegisterMemoryBlock
+WhiteNoise
+WhiteNoise_XY
+WilError_02
+Windows.Foundation.PropertyValue
+WindowsCreateString
+WindowsCreateStringReference
+WindowsDeleteString
+WindowsDuplicateString
+WindowsGetStringRawBuffer
+WindowsSubstringWithSpecifiedLength
+wjH9Q
+wuceffects
+wuceffects.dll
+wuceffects.pdb
+x ATAVAWH
+x AVH
+x UAVAWH
+x0I97
+XAlphaMask
+XForm
+XYZ_Light0Space
+XYZ_Light1Space
+yxxxxxxxA
+yxxxxxxxD
+yxxxxxxxH
+yxxxxxxxI

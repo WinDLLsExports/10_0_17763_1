@@ -1,0 +1,1737 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+        
+          
+           
+                  
+                                                                                                                                                         
+                                      (default: current directory)%c
+                                      (not valid with /d switch, not valid with /b switch)%c
+                                      [log] is the log generation number and if not specified %c
+                                      Can be specified for each database file.%c
+                                      if [path] not specified (default: directory%c
+                                      If a certain database is not in the list, it won't get recovered.%c
+                                      if the database file location changed.%c
+                                      integrity can still be maintained.%c
+                                      originally logged in log files)%c
+                                      the replay will go to the end of the existing logs.%c
+                                      To allow recovery in the original location for all other database, use /n*.%c
+                                      to stop when a certain log generation is recovered.%c
+                                    <filename> must be the name of a database).%c
+                                    being requested (eg. if using /mh, then%c
+                                    file dump to perform. Valid values are:%c
+                                    h - dump database header (default)%c
+                                    k - dump checkpoint file%c
+                                    l - dump log file or set of logs%c
+                                    m - dump meta-data%c
+                                    n - dump nodes%c
+                                    p - dump flush map file%c
+                                    s - dump space usage%c
+                                    specified file should match the dump type%c
+                                    t - for FTL trace file.%c
+                                 (default: <database>.integ.raw)%c
+                                 (default: TEMPREPAIR*.EDB)%c
+                               (default: log file path)%c
+                               (dump-nodes mode only)%c
+                               an optional bookmark (key plus optional data) is%c
+                               fixup of torn writes at the end of the log file%c
+                               if necessary (NOTE: requires read/write access%c
+                               logs.%c
+                               number)%c
+                               optional ending log generation (also as a hex%c
+                               specified page, then dump the leaf page where%c
+                               specified, seek to the bookmark starting at the%c
+                               the seek ended up%c
+                               the starting log generation (as a hex number) and%c
+                               to the log file)%c
+                              (default: <database>.integ.raw)%c
+                              (default: log file path)%c
+                             - dump the specified page from the database, or if%c
+                             - dumps a snapshot of a live database, replays%c
+                             - for dump of a set of log files only, specifies%c
+                             - location of system files (eg. checkpoint file)%c
+                              option must be used in conjunction with /t<db>%c
+                              redirected to a path with read/write permissions.%c
+                              so that the path to the temporary database is%c
+                             (default: log file path)%c
+                             (default: no pause)%c
+                             current directory)%c
+                            - location of system files (eg. checkpoint file)%c
+                             logs.%c
+                             replay logs.%c
+                            - verifies a snapshot of a live database. This%c
+                           - checksums a snapshot of a live database, replays%c
+                           - copies a snapshot of a live database, replays%c
+                           - location of system files (eg. checkpoint file)%c
+                     check, recovery is first run to properly complete%c
+                     contain the defragmented version of the database.%c
+                     database is in a "Dirty Shutdown" state it is strongly%c
+                     database operations for the previous shutdown.%c
+                     ignored.%c
+                     is in a "Dirty Shutdown" state it is strongly%c
+                     is preserved uncompacted, and the temporary database will%c
+                     mechanism. It only applies when verifying checksums%c
+                     of a database file.%c
+                     operations for the previous shutdown.%c
+                     overrides the /o option.%c
+                     recommended that before proceeding with an integrity-%c
+                     recommended that before proceeding with repair,%c
+                     recovery is first run to properly complete database%c
+                     repair is performed if corruption is detected. This option%c
+                  /16               - set 16k database page size (default: auto-detect)%c
+                  /16          - set 16k database page size (default: auto-detect)%c
+                  /16        - set 16k database page size (default: auto-detect)%c
+                  /16       - set 16k database page size (default: auto-detect)%c
+                  /16      - set 16k database page size (default: auto-detect)%c
+                  /16  - set 16k database page size (default: auto-detect)%c
+                  /2                - set 2k database page size (default: auto-detect)%c
+                  /2           - set 2k database page size (default: auto-detect)%c
+                  /2         - set 2k database page size (default: auto-detect)%c
+                  /2        - set 2k database page size (default: auto-detect)%c
+                  /2       - set 2k database page size (default: auto-detect)%c
+                  /2   - set 2k database page size (default: auto-detect)%c
+                  /32               - set 32k database page size (default: auto-detect)%c
+                  /32          - set 32k database page size (default: auto-detect)%c
+                  /32        - set 32k database page size (default: auto-detect)%c
+                  /32       - set 32k database page size (default: auto-detect)%c
+                  /32      - set 32k database page size (default: auto-detect)%c
+                  /32  - set 32k database page size (default: auto-detect)%c
+                  /4                - set 4k database page size (default: auto-detect)%c
+                  /4           - set 4k database page size (default: auto-detect)%c
+                  /4         - set 4k database page size (default: auto-detect)%c
+                  /4        - set 4k database page size (default: auto-detect)%c
+                  /4       - set 4k database page size (default: auto-detect)%c
+                  /4   - set 4k database page size (default: auto-detect)%c
+                  /8                - set 8k database page size (default: auto-detect)%c
+                  /8           - set 8k database page size (default: auto-detect)%c
+                  /8         - set 8k database page size (default: auto-detect)%c
+                  /8        - set 8k database page size (default: auto-detect)%c
+                  /8       - set 8k database page size (default: auto-detect)%c
+                  /8   - set 8k database page size (default: auto-detect)%c
+                  /a                - allow recovery to lose committed data if database%c
+                  /a         - dump all nodes including deleted ones%c
+                  /b<db>     - make backup copy under the specified name%c
+                  /c<file>   - dump the log file, in CSV format, to <file>%c
+                  /d[path]          - location of database files, or current directory%c
+                  /d<file> - destination file (default: copy source file to%c
+                  /e       - don't checksum database file%c
+                  /f<name>     - set prefix to use for name of report files%c
+                  /f<name>  - set prefix to use for name of report files%c
+                  /g           - run integrity check before repairing%c
+                  /i                - ignore mismatched/missing database attachments%c
+                  /i       - ignore IO read errors%c
+                  /l<path>          - location of log files%c
+                  /n<node>   - dump the specified node from the database%c
+                  /n<path1[:path2]> - new location of database file and optional old location%c
+                  /o                - suppress logo%c
+                  /o           - suppress logo%c
+                  /o         - suppress logo%c
+                  /o        - suppress logo%c
+                  /o       - suppress logo%c
+                  /o   - suppress logo%c
+                  /p         - preserve temporary database (ie. don't instate)%c
+                  /p<pgno> [/k<key> [/d<data>]]%c
+                  /p<x>    - add artificial 1 second pause once every x I/O's%c
+                  /r<start gen>[-<end gen>]%c
+                  /s<path>          - location of system files (eg. checkpoint file)%c
+                  /t                - on successful recovery, truncate log files%c
+                  /t   - trim unused database pages, using sparse files%c
+                  /t<db>       - set temp. database name%c
+                  /t<db>     - set temp. database name (default: TEMPDFRG*.EDB)%c
+                  /t<db>    - set temp. database name (default: TEMPINTEG*.EDB)%c
+                  /t<db>   - set temp. database name (default: TEMPCHKSUM*.EDB)%c
+                  /t<table>  - perform dump for specified table only%c
+                  /u[log]           - stop recovery when the Undo phase is reached with the option%c
+                  /u<#>        - set Engine Format Version parameter%c
+                  /u<#>      - set Engine Format Version parameter%c
+                  /v         - verbose output%c
+                  /v         - verbose%c
+                  /vss       - dumps a snapshot of the file, does not replay%c
+                  /vss     - checksums a snapshot of a live database, does not%c
+                  /vss     - copies a snapshot of the file, does not replay%c
+                  /vsspause  - pause after the snapshot completes.%c
+                  /vssrec <basename> <logpath>%c
+                  /vsssystempath <systempath>%c
+                  /x         - for dump of a single log file only, permits%c
+                  <filename>      - name of file to dump. The type of the%c
+                  2) If the file is not a database file, the options are%c
+                  2) The /g option pauses the utility for user input before%c
+                  3) The pause (/p) option is provided as a throttling%c
+                  checkpoint file, or log file (or set of log files).%c
+                  clean-shutdown state.%c
+               Repair:  %s /p <database name> [options]
+              le_cReOpens: %d
+             Checksum:  %s /k <file name> [options]
+             FTL file: %s%c
+             Recovery:  %s /r <logfile base name> [options]
+            />
+            Copy File:  %s /y <source file> [options]
+            Database: %s%c
+            File Dump:  %s /m[mode-modifier] <filename>
+            Integrity:  %s /g <database name> [options]
+            le_ftLastOpen: %ws %ws
+            le_ulChecksum: 0x%x
+            le_ulSchemaID: %d (0x%x)
+            level="asInvoker"
+            Log files: %s%c
+            uiAccess="false"
+           le_cRecoveries: %d
+           le_ftFirstOpen: %ws %ws
+           le_ftLastClose: %ws %ws
+           Table: %s%c
+          %*ls
+          %*s%s%c%c
+          |----|----|----|----|----|----|----|----|----|----|
+          0    10   20   30   40   50   60   70   80   90  100
+          le_cMaxWriteIOs: %d
+          Node: %d:%d:%d%c
+          NOTES:  1) If instating is disabled (ie. /p), the original database%c
+          NOTES:  1) Integrity-check does not run database recovery. If a%c
+          NOTES:  1) Repair does not run database recovery. If a database%c
+          NOTES:  1) This operation does not run database recovery.%c
+          Page: %d%c
+         0,         1,         2,         3,         4,         5,         6,         7,         8,        16,   Over-16
+         1,         2,         3,         4,         5,         6,         7,         8,        16,        32,   Over-32
+         Database: %s%c
+         le_tracelogstate: %ws (%d 0x%x)
+         le_ulFTLVersion*: %d.%02d.%02d (0x%x.0x%x.0x%x)
+         Lgpos: %06X,%04X,%04X%c
+         SYNTAX:  %s /d <database name> [options]%c
+         SYNTAX:  %s /g <database name> [options]%c
+         SYNTAX:  %s /k <file name> [options]%c
+         SYNTAX:  %s /m[mode-modifier] <filename> [options]%c
+         SYNTAX:  %s /p <database name> [options]%c
+         SYNTAX:  %s /r <3-character logfile base name> [options]%c
+         SYNTAX:  %s /y <source file> [options]%c
+         SYNTAX:  %s /z <database name>%c
+         System files: %s%c
+        <requestedExecutionLevel
+        Database: %s%c
+        Database: %s%c%c
+        File: %s%c
+        le_cWriteFailures: %I64d
+        OPTIONS:  zero or more of the following switches, separated by a space:%c
+        PageSize: %d
+        SPACE[%ws\%ws]  %ws Split Buffer Avail: %6d - %6d (%4d)
+        SPACE[%ws\%ws]  OE[  %5d]: %6d - %6d (%4d):  
+        Trace File: %s%c%c
+       0,     
+       0,     ,     ,     ,            
+       0KB,       4KB,       8KB,      16KB,      32KB,      64KB,     128KB,     256KB,     512KB,       1MB,  Over-1MB
+       30%,       40%,       50%,       60%,       70%,       80%,       90%,       93%,       95%,       97%,      100%
+       4KB,       8KB,      16KB,      32KB,      64KB,     128KB,     256KB,     512KB,       1MB,       2MB,  Over-2MB
+       le_ftPostProcessed: %ws %ws
+       Log files: %s%c
+      </requestedPrivileges>
+      <requestedPrivileges>
+      Checkpoint file: %s%c
+      Database %s will be forced to a clean-shutdown state.%c
+      Database: %s%c
+      Defragmentation:  %s /d <database name> [options]
+      Flush Map File: %s%c
+      le_cMaxWriteBuffers: %d
+      le_ulSchemaVersion*: %d.%02d.%02d (0x%x.0x%x.0x%x)
+      Lengths:%11.3f-%11.3f Extents:%I64d%c
+      Log file: %s%c
+      Log File: %s%c
+      Percentile:%-3u Length:%11.3f%c
+     le_cbLastKnownBuffer: %I64d
+     PARAMETERS:  [mode-modifier] - an optional letter designating the type of%c
+     PARAMETERS:  <database name> - filename of database to compact%c
+     PARAMETERS:  <database name> - filename of database to repair%c
+     PARAMETERS:  <database name> - filename of database to secure%c
+     PARAMETERS:  <database name> - filename of database to verify%c
+     PARAMETERS:  <file name> - file name to verify%c
+     PARAMETERS:  <source file> - name of file to copy%c
+     Source File: %.64ls
+    </security>
+    <security>
+    >
+    1-Page,   2-Pages,   3-Pages,   4-Pages,   8-Pages,  16-Pages,  32-Pages,  64-Pages,  96-Pages, 128-Pages,  Over-128
+    Average: %.3f MB%c
+    Beginning Verbose Recovery ---------------- 
+    DESCRIPTION:  Copies a database or log file.%c
+    DESCRIPTION:  Generates formatted output of various database file types.%c
+    DESCRIPTION:  Performs off-line compaction of a database.%c
+    DESCRIPTION:  Performs recovery, bringing all databases to a%c
+    DESCRIPTION:  Removes all deleted records from database.%c
+    DESCRIPTION:  Repairs a corrupted or damaged database.%c
+    DESCRIPTION:  Verifies integrity of a database.%c
+    DESCRIPTION:  Verifies the checksums of a database,%c
+    Enumerated %d Tables (
+    Histogram (MB,Extents):%c
+    Largest: %.3f MB%c
+    Log path: %s%c
+    Logfile base name: %s%c
+    manifestVersion="1.0"
+    Note: This database is over 20%% empty, an offline defragmentation can be used to shrink the file.
+    Pages %d (
+    Percentiles (%% Extents,MB):%c
+    Pgno Ranges (user min-max: %u - %u; DB End Contiguous Unused: %u - %u; Total: %u)
+    Smallest: %.3f MB%c
+    System files: %s%c
+    Total Size: %.3f MB%c
+    xmlns="urn:schemas-microsoft-com:asm.v1"
+   Count,  Ave
+   Count,  Min,  Ave,  Max,       Total
+   Database Directory: %s%c
+   Default Database Location: yes%c
+   New Database Location: %s
+   Space Saved: 0x%08I64x bytes (%I64d kB) (%2d %%)%c
+   Temp database size: %d%c
+   VSS Subsystem Init failed, 0x%x
+   VSS Subsystem Init failed, requires esevss.dll and OS support (Windows 2008 or higher).
+  </trustInfo>
+  <description>Extensible Storage Engine Utilities for Microsoft(R) Windows(R)</description>
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+  Cluster Size: %u bytes%c
+  defragmentation, the database will be rolled back to the state%c
+  Extent Statistics:%c
+  Extents (bytes):
+  Extents Enumerated: %ld%c
+  File Name: %s%c
+  File System: %s%c
+  It is recommended that you immediately perform a full backup%c
+  it was in at the time of that backup.%c%c
+  Logical Size: 0x%08I64x bytes (%I64d kB)%c
+  no 
+  NTFS Attribute List Size: 
+  of this database. If you restore a backup made before the%c
+  On-disk Size: 0x%08I64x bytes (%I64d kB)%c
+  repair, the database will be rolled back to the state%c
+  Temp. Database: %s%c
+  Volume Name: %s%c
+  You MUST delete the logfiles for this database%c%c
+ %d Available (%.1f%%) )
+ %d Data (%.1f%%),
+ %d Internal Trees,
+ %d Leaked (%.1f%%),
+ %d Long Value Trees, %d Secondary Indices )
+ %d Overhead (%.1f%%),
+ %d Used (%.1f%%), %d Available (%.1f%%) )
+ (header)
+ (open failed)
+ ->Product      = %hs;
+ ->ProductRev   = %hs;
+ ->SerialNum    = %hs;
+ ->Vendor       = %hs;
+ A^A]^
+ A^A]A\^]
+ A__^
+ A_A^^
+ A_A^_
+ A_A^_H
+ A_A^A\_^
+ A_A^A]A\_
+ A_A^A]A\_^]
+ A_A^A]A\_H
+ Checkpoint File: %s%c
+ DevIoCtrl( SMART_GET_VERSION ) --> %d / %d
+ DONE!
+ Error Interpriting time field %d
+ Explicitly setting a page size might bypass this failure.
+ FAILED!
+ H3E H3E
+ m_osdi.m_osdci = { ParamSavable=%d, Read/Write.CacheEnabled=%d/%d, Read/Write.RetentionPriority=%d/%d, S/B=%d - [ %d - %d, %d } }
+ m_osdi.m_osdcod = { Ver.Size=%d.%d, Max/OptimalTransfer=%I64u/%I64u };
+ m_osdi.m_osdspd = { Ver.Size=%d.%d, IncursSeekPenalty=%d };
+ m_osdi.m_osdtd = { Ver.Size=%d.%d, TrimEnabled=%d };
+ m_osdi.m_ossad = { Ver.Size=%d.%d, MaxTransferLength/PhysicalPages=%d/%d, AlignMsk=%d, Pio=%d, CommandQueueing=%d, Accel=%d, BusType.Maj.Minor=%d.%d.%d };
+ MBCS
+ Microsoft Corporation. All rights reserved.
+ Operating System
+ osgvip = { Ver.Rev = %d.%d, bIDEDeviceMap = %#x, fCapabilities = %#x }
+ possdd = { Ver.Size=%d.%d, ib[] = %d,%d,%d,%d, DevType.Mod = %d.%d, BusType = %d, CommandQueueing = %d };
+ RETAIL
+ Status (% complete)
+ System path: %s%c
+ There are %d overbooked pages.
+ Windows
+ yes 
+!This program cannot be run in DOS mode.
+#BadFileName#
+#default
+#leaked
+#legacy
+#spacehints
+$FlushFS
+%*.*f
+%*.*f%%
+%-*.*s
+%*.*s <%-*.*s>:  
+%*.*s <0x%0*I64x,%3i>:  
+%-*.*ws
+%*d%%
+%*d-%c
+%*d%ws
+%*d.%03d
+%*I64d
+%*I64u%ws
+%.*s%s
+%0*I64X
+%0.3f
+%8I64u,%5I64u
+%8I64u,%5I64u,%5I64u,%5I64u,%12I64u
+%c    FileOffset:%013I64d Offset:%013I64d Length:%013I64d Delta:%+013I64d
+%c%cThis may have happenned due to a corrupted database header.
+%c<<<<<  Press a key to continue  >>>>>%c%c
+%cJET_snpRecoveryControl - invalid callback data %c
+%cNote:%c
+%d bad checksums
+%d correctable checksums
+%d MB read
+%d MB/second
+%d milliseconds for the fastest read
+%d milliseconds for the slowest read
+%d milliseconds per read
+%d milliseconds used
+%d pages seen
+%d reads performed
+%d seconds taken
+%d uninitialized pages
+%d wrong page numbers
+%d.%d
+%d:%d
+%d:%d:%d
+%hs%hs
+%i (0x%08x)
+%I64d
+%I64i (0x%016I64x)
+%I64u
+%I64u (0x%0*I64x)
+%I64u.%03I64u
+%ld bytes%c
+%ld KB%c
+%ls (%d), %ls
+%s (2)
+%s loaded.
+%s unloaded
+%s%c%c
+%s:  pinst %s failed to do operation (ioctl=%d) with error %s (0x%x).
+%s:  pinst %s failed to query the allocated region from %#I64x with error %s (0x%x).
+%s:  pinst %s failed to set file size with error %s (0x%x) at offset %I64d.
+%u (0x%08x)
+%wc  
+%ws     
+%ws Objid(%d) leaked %d pages.
+%ws version %d.%02d.%04d.%04d (%ws)
+%ws%ws
+%ws%ws                     analyze LV trees.%c
+%ws%ws                     fields.%c
+%ws%ws                     for the object.%c
+%ws%ws                     which we collect stats.%c
+%ws%ws     /f#all        - Print out all fields for%c
+%ws%ws     /f#default    - Produces default output.%c
+%ws%ws     /f#legacy     - Print out the legacy set of%c
+%ws%ws     /f#lvs        - Print out all information to%c
+%ws%ws     /f#spacehints - Prints the spacehint settings%c
+%ws%ws  Independent fields:%c
+%ws%ws  Sets of fields:%c
+%ws%ws- Space info fields to print.%c
+%ws%ws%ws
+%ws/csv%ws- Print all fields CSV delimited.%c
+%ws/f<field[,field]>%c
+%ws[%I32u.%I32u.%I32u.%I32u]
+%wsBeginUndo : errDefault=%d, %d DBs
+%wsErrCond   : errDefault=%d
+%wsMissingLog: errDefault=%d, lGenNext=%d, %ws, %ws, %d DBs, szFile=%ws
+%wsOpenCheckp: errDefault=%d
+%wsOpenLog   : %ws: errDefault=%d, lGenNext=%d, %ws, %d DBs, szFile=%ws
+%wsSPACE USAGE OPTIONS:%c
+%wsStatus: Complete!
+%wsStatus: Got FAIL status!
+%x-%x
+( CioreqIOHeap() + 1 ) <= m_cioreqMax
+( State().m_cw & 0x00007fff ) != 0x00007fff
+( State().m_cw & 0xffff0000 ) != 0xffff0000
+(A^_][
+(A^A]A\[
+(A_A^_^][
+(Completion Info: ipage=%d, cpage=%d, dwTickDuration=%d)
+(Completion Info: ipage=%d, cpage=%d, dwTickDuration=%d, dwBytesTransferred=%d != cbRead=%d)
+(D$@L
+(D$PE3
+(D$PL
+(t$PA
+)D$ A
+)L$0H
+******************************** SPACE DUMP *******
+*********************************************************************************************************************************************************
+, NAF
+, Original Database Location: %s%c
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+.%c%c
+.\TEMPDFRG%d.EDB
+.\TEMPINTEG%d.EDB
+.00cfg
+.CRT$XCA
+.CRT$XCAA
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIY
+.CRT$XIZ
+.CRT$XLA
+.CRT$XLZ
+.data
+.data$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.gfids
+.giats
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.pdata
+.rdata
+.rdata$brc
+.rdata$T$brc
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.text
+.text$di
+.text$mn
+.text$mn$00
+.text$x
+.text$yd
+.tls$
+.tls$ZZZ
+.xdata
+::$ATTRIBUTE_LIST
+;D$`u
+;D$hu
+?terminate@@YAXXZ
+@,9\$hu
+@.data
+@.didat
+@.reloc
+@8H9E
+@A_A]A\_]
+@A_A]A\_^
+@A_A^_^]
+@A_A^A]_^
+@A_A^A]A\^][
+@A_A^A]A\_
+@d@uXH
+@SATAUAVH
+@SAVH
+@SAWH
+@SUVATAUAVAWH
+@SUVATAUAVH
+@SUVWATAUAVAWH
+@SUVWATAVAWH
+@SUVWAVAWH
+@SUVWAVH
+@SUWAVH
+@SVAVAWH
+@SVWAVH
+@SVWH
+@SWAUH
+@SWAVAWH
+@SWAVH
+@UATAUAVAWH
+@UAVAWH
+@UAWH
+@USATAUAWH
+@USVWATAUAVAWH
+@USVWATAUAVH
+@USVWATAUAWH
+@USVWATAVAWH
+@USWAVAWH
+@USWH
+@UVWH
+@VAUAVH
+@VAWH
+@VWATAUAVAWH
+@VWAVH
+[%d:%d:%d]
+[%d:%d]
+[%d]%d-%d (%d, Pool: %ws%ws), 
+[%ws %03x.%03x %04d/%02d/%02d-%02d:%02d:%02d.%d]  
+[%ws %03x.%03x %04d/%02d/%02d-%02d:%02d:%02d]  
+[%ws %03x.%03x %I64d]  
+\$ E3
+\$ Ic
+\$ UH
+\$ UVWATAUAVAWH
+\$ UVWATAUH
+\$ UVWAVAWH
+\$ UVWH
+\$ VH
+\$ VWAVH
+\$ WH
+\$(E3
+\$@E3
+\$@H;
+\$@u*
+\$0t"A
+\$8E3
+\$PE3
+\\.\PhysicalDrive%u
+\Debug\ESE.TXT
+__C_specific_handler
+__dllonexit
+__iob_func
+__set_app_type
+__setusermatherr
+__wgetmainargs
+_amsg_exit
+_cexit
+_commode
+_exit
+_fmode
+_getch
+_initterm
+_lock
+_onexit
+_purecall
+_snwscanf_s
+_unlock
+_vsnprintf
+_vsnwprintf
+_wcsicmp
+_wcsnicmp
+_wcsupr_s
+_wfullpath
+_wmakepath_s
+_wsplitpath_s
+_wtol
+_XcptFilter
+`.rdata
+`A]A\_^]
+`A^_[
+`A^_^][
+`A_A^A]A\_^]
+{h;{ls
+|$ ATAVAW
+|$ AVH
+|$ D9Y
+|$ E3
+|$ L9q
+|$ Lc
+|$ UAVAWH
+|$(E3
+|$@Xw
+|$`D3
+|$0u4
+|$8E3
+|$hE3
+|$hL;d$p
+|$xE3
+|$XE3
+|$XL9
+|D~\u
+<!-- Copyright (c) Microsoft Corporation -->
+</assembly>
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<<<<<  Press a key for more help  >>>>>
+<assembly
+<B\tlA
+<current directory>
+<empty>
+<not used>
+<null>
+<unprintable>
+=========================================================================================================================================================
+>\u#fA
+0 == cbData % OSMemoryPageCommitGranularity()
+0 == m_cbCommit
+0 == m_cbReserve
+0123456789
+0123456789abcdefMessageBoxW
+040904B0
+0A]_[
+0A]_^][
+0A_A^_
+0A_A^_^]
+0A_A^A\_^][
+0A_A^A]A\_^]
+0x%0*I64X bytes @ 0x%0*I64X
+0x%I64x highest dbtime (pgno 0x%x)
+10.0.17763.1
+10.0.17763.1 (WinBuild.160101.0800)
+89l$0t
+8A^A\][
+8A_A^_^][
+9/vDH
+9\$@t>H
+9\$@u
+9\$hu
+9\$Pt'M
+9|$Pt
+9|$pu
+'9s$t
+9t$@s
+9t$0u
+9w$t89w,u3
+9w$tvE
+9w,u@
+9x@vo
+9X0v@f
+9z@|h
+A]A\_^][
+A^_^[
+A^_^][
+A^A]A\]
+A^A]A\^][
+A^A]A\_^[]
+A_A\][
+A_A^]
+A_A^_
+A_A^_[
+A_A^_[]
+A_A^_^]
+A_A^_^][
+A_A^A\
+A_A^A\_^
+A_A^A\_^[]
+A_A^A\_^][
+A_A^A]A\]
+A_A^A]A\^]
+A_A^A]A\_
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A_A^A]A\_^][
+A9s$t6
+A9y@vtH
+AcquireSRWLockExclusive
+Add Ref Disk p=%p, PathId=%ws, Cref=%d
+Add Ref Volume p=%p, Path=%ws, CanonicalPath=%ws, Cref=%d
+Add[Fast] Ref Disk p=%p, PathId=%ws, Cref=%d
+AdjustTokenPrivileges
+advapi32.dll
+AeDebug
+AeRes
+AEs(%3d extents, %3d pages)  Extents: 
+AllocationlessInsertShouldSucceed
+AllocationlessInsertShouldSucceedPossDupEntry
+api-ms-win-appmodel-runtime-l1-1-0.dll
+api-ms-win-appmodel-state-l1-1-0.dll
+api-ms-win-core-console-l1-1-0.dll
+api-ms-win-core-datetime-l1-1-0.dll
+api-ms-win-core-debug-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-1.dll
+api-ms-win-core-errorhandling-l1-1-0.dll
+api-ms-win-core-errorhandling-l1-1-3.dll
+api-ms-win-core-file-l1-1-0.dll
+api-ms-win-core-file-l1-2-0.dll
+api-ms-win-core-file-l2-1-0.dll
+api-ms-win-core-handle-l1-1-0.dll
+api-ms-win-core-heap-l1-1-0.dll
+api-ms-win-core-heap-l2-1-0.dll
+api-ms-win-core-io-l1-1-0.dll
+api-ms-win-core-kernel32-legacy-l1-1-0.dll
+api-ms-win-core-libraryloader-l1-2-0.dll
+api-ms-win-core-localization-l1-1-0.dll
+api-ms-win-core-localization-l1-2-0.dll
+api-ms-win-core-localregistry-l1-1-0.dll
+api-ms-win-core-memory-l1-1-0.dll
+api-ms-win-core-privateprofile-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-1.dll
+api-ms-win-core-processtopology-obsolete-l1-1-0.dll
+api-ms-win-core-profile-l1-1-0.dll
+api-ms-win-core-psapi-l1-1-0.dll
+api-ms-win-core-synch-l1-1-0.dll
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-core-sysinfo-l1-1-0.dll
+api-ms-win-core-sysinfo-l1-2-0.dll
+api-ms-win-core-threadpool-l1-1-0.dll
+api-ms-win-core-threadpool-legacy-l1-1-0.dll
+api-ms-win-core-timezone-l1-1-0.dll
+api-ms-win-core-wow64-l1-1-0.dll
+api-ms-win-eventing-provider-l1-1-0.dll
+api-ms-win-security-base-l1-1-0.dll
+api-ms-win-security-lsalookup-l2-1-0.dll
+AssertFail
+AssertTrackTag%s%s
+AutoInc
+Avail%Tbl
+Avail(MB)
+Available
+AvailExts
+B9{ t
+backup database
+Beta Feature %d staging value %d (usbsmCurrent = %d).
+Bit-Field
+Bytes affected by read errors   = %#I64x (%I64d) (%I64d kB)
+Bytes affected by write errors  = %#I64x (%I64d) (%I64d kB)
+C`;{hv
+C0HcH
+cbRun
+cbRunT < ulMax
+cCorrLVs
+Checksum Status (% complete)
+CHECKSUM:%c
+CloseHandle
+CloseState
+CloseThreadpoolTimer
+cLVRefs
+cmsecIOElapsed
+CombinedIoRunShouldMatchInsertTargetFileId
+CombinedIoRunShouldMatchInsertTargetOffset
+CompanyName
+config
+ContigAvailExt
+COPY FILE:%c
+Copy Progress (% complete)
+CopyFileExW
+Copyright (C) Microsoft Corporation. All Rights Reserved.%c
+COSDisk::Flush[%8x] Res: %d Delta: +%8.3f +(%8.3f op) - %I64d - %ws
+COSFile::ErrIOGetAllocatedRange
+COSFile::ErrIOSetFileSize
+COSFile::ErrRename() %ws --> %ws
+COSFile::Flush Failed[%8x] err %d (error %d) - %ws
+Could not allocate a Kernel Semaphore
+cPartDelLVs
+cpi.pfnCompletion
+Created Disk p=%p, PathId=%ws
+Created Volume p=%p, Path=%ws, CanonicalPath=%ws
+CreateDirectoryW
+CreateEventW
+CreateFileMappingW
+CreateFileW
+CreateIoCompletionPort
+CreateMutexW
+CreateProcessW
+CreateSemaphoreExW
+CreateSemaphoreW
+CreateThread
+CreateThreadpoolTimer
+CryptReleaseContext
+CRYPTSP.dll
+csecHangTime
+cSepRtChk
+CSV Output Data File
+D$ E3
+D$ H;
+D$ I;
+D$ L;
+D$(E3
+D$(H9B
+D$(I9B
+D$@:Btt
+D$@fD98t
+D$@H;
+d$@I;
+D$@L+
+D$`E3
+D$0E3
+d$0E3
+D$0E3
+D$0H+
+D$0I+
+D$0L+
+D$8E3
+D$8Ic
+D$A:But
+D$B:Bvt
+D$bf;
+D$HE3
+D$hE3
+D$HE3
+d$HE3
+D$hf;
+D$Ht,
+D$jf;
+D$PE3
+D$pE3
+D$PE3
+d$PE3
+D$pf;
+D$pfA9
+D$PH+
+D$Pu*
+D$rfA;
+D$x9G0
+D$xA;
+D$xE3
+D$xuu
+D%OfDb
+D; t+
+D+~HD
+D+uXH
+D=Defragmentation, R=Recovery, G=inteGrity, K=checKsum,
+D9;t=H
+D9;tu
+D9{ t
+D9{ t#H
+D9}x}
+D9t$@t%E3
+D9T$0u
+D9-U*
+D9w$tG
+Data(MB)
+Data:DataSizes
+Data:FreeBytes
+Data:KeyComp
+Data:KeySizes
+Data:Nodes
+Data:Unreclaim
+database directory
+Database issue: database has %d pages overbooked.
+Database issue: objid(%d) has %d pages overbooked.
+database location
+Database root leaked %d pages.
+database/filename
+DbRoot
+DD$@3
+DebugBreak
+Debugger
+Defragmentation
+DEFRAGMENTATION/COMPACTION:%c
+Del Ref Disk p=%p, PathId=%ws, Cref=%d
+Del Ref Volume p=%p, Path=%ws, CanonicalPath=%ws, Cref=%d
+DelayLoadFailureHook
+DeleteCriticalSection
+Deleted Disk p=%p, PathId=%ws
+Deleted Volume p=%p, Path=%ws, CanonicalPath=%ws
+DeleteFileW
+DeleteTimerQueueEx
+Depth
+DESCRIPTION:  Database utilities for the Extensible Storage Engine for Microsoft(R) Windows(R).
+destination file
+Destination File: %.64ls
+DeviceIoControl
+Did not recognize the field: %ws
+DL$@D
+DL$@H
+drwtsn32
+DT$@A
+Dt$dH
+DuplicateHandle
+e A_A^]
+E9J@}
+eArchive
+eFTLClean
+eFTLCreated
+eFTLDirty
+eFTLPostProcessed
+Empty
+End Stats: g_cioreqInUse(High Water)=%d
+EnforceFail
+EnforceTag%s%s
+EnterCriticalSection
+ePA_A^A]A\]
+err = %d (%ws
+ErrFileCreate( %ws, 0x%x ) -> 0x%p{0x%p} )
+ErrFileOpen( %ws, 0x%x ) -> 0x%p{0x%p} )
+Error while retrieving file system information.%c
+Error: %s '%s' cannot be the same as %s.
+Error: %s specification '%s' is invalid.
+Error: Access to source database '%s' failed with Jet error %i.
+Error: Could not backup to '%s'.
+Error: Could not fetch the requested object.
+Error: Could not re-instate '%s'. It may be manually re-instated by manually copying '%s' to '%s' (this will overwrite the original copy of the file with the defragmented copy).
+Error: Destination file specification.'%s' is invalid.
+ERROR: page %d%s checksum failed
+ERROR: Processing FTL file header, %d
+Error: Source file specification.'%s' is invalid.
+ErrOSFileIIoControlReadOnly
+errSystem
+EseNoLo
+EseNoLo-S%d-E%d
+ESENT
+ESENT.dll
+esentutl.exe
+esentutl.pdb
+EseShadowCreateShadow
+EseShadowCreateSimpleShadow
+EseShadowInit
+EseShadowMountShadow
+EseShadowMountSimpleShadow
+EseShadowPurgeShadow
+EseShadowTerm
+ESEUTIL
+Eseutil Cmd End: time %02d:%02d, 
+esevss.dll
+EventRegister
+EventSetInformation
+EventUnregister
+EventWrite
+EventWriteTransfer
+Extensible Storage Engine Utilities for Microsoft(R) Windows(R)
+Extensible Storage Engine Utilities for Microsoft(R) Windows(R)%c
+F`@u,H
+F`3A`%
+f9<Cu
+f94Au
+f94Cu
+f94iu
+f9H\u
+fA9\F
+fA9<Pu
+fA94_u
+fA9TA
+fAdded
+Failed S.M.A.R.T. load: %hs 
+Failed to allocate %d bytes, failing command.
+FAILED: DevIoCtrl( IOCTL_DISK_GET_CACHE_INFORMATION ) -> %d / %d / %d in %I64u us 
+FAILED: DevIoCtrl( query prop \ %hs ) -> %d / %d / %d in %I64u us 
+FAILED: DevIoCtrl( query prop \ StorageDeviceProperty ) -> %d / %d / %d in %I64u us 
+FAILED: DevIoCtrl( SMART_GET_VERSION ) -> %d / %d / %d in %I64u us 
+FAILED: DevIoCtrl( SMART_RCV_DRIVE_DATA ) -> %d / %d / %d in %I64u us 
+FAILURE: CreateEventW: 
+FAILURE: CreateFile: 
+FAILURE: CreateIoCompletionPort: 
+FAILURE: CreateThread: 
+FAILURE: GetFileSize: 
+FAILURE: GetOverlappedResult (read) returned wrong number of bytes: 
+FAILURE: GetOverlappedResult (read): 
+FAILURE: GetOverlappedResult (write) returned wrong number of bytes: 
+FAILURE: GetOverlappedResult (write): 
+FAILURE: GetQueuedCompletionsStatus got the wrong number of bytes: 
+FAILURE: GetQueuedCompletionsStatus: 
+FAILURE: ReadFile: 
+FAILURE: SetEndOfFile: 
+FAILURE: SetEvent: 
+FAILURE: SetFilePointerEx: 
+FAILURE: VirtualAlloc: 
+FAILURE: WaitForSingleObjectEx: 
+FAILURE: WriteFile: 
+fB9\E
+fCurrent
+fD;.u
+fD9$Cu
+fD9\B
+fD9\H
+fD9|p
+fD9<Hu
+fD94Cu
+fD94Gu
+fD94Hu
+fD94Ku
+fD9DA
+fD9lX
+fD9tA
+fD9TB
+fD9tC
+fE9(M
+fE9(t7
+fE9,Au
+fE9,Iu
+fE94Au
+fE94DI
+fE98ttC
+fF9,Pu
+fF94Pu
+FFbError:%I32u
+FfbFailedWithSuccess
+File Copy
+FILE DUMP:%c
+File Information:%c
+File: %.64ls
+FILE_FLAG_NO_BUFFERING
+FILE_FLAG_RANDOM_ACCESS
+FILE_FLAG_WRITE_THROUGH
+FileDescription
+FileError
+FileTimeToSystemTime
+FileVersion
+FindClose
+FindFirstFileW
+FindNextFileW
+FirewallTag%s%s
+Flush map file: %s%c
+FlushFileBuffers
+ForDo   
+FORMAT STRING FAIL
+FormatMessageW
+ForRedo 
+ForUndo 
+FoundIoKeyAndObjectMismatchFileId
+FoundIoKeyAndObjectMismatchOffset
+FoundIoKeyShouldNotBeMax
+FreeLibrary
+FTL Trace File Header:
+Full S.M.A.R.T. Versions: %hs - %hs - %hs
+FullName
+FullName,Type,LV:Size,LV:Size(histo),LV:Comp,LV:Comp(histo),LV:Ratio(histo),LV:Seeks,LV:Seeks(histo),LV:ExtraSeeks,LV:ExtraSeeks(histo),LV:Bytes,LV:Bytes(histo),LV:ExtraBytes,LV:ExtraBytes(histo),Data:FreeBytes,Data:Nodes,Data:KeySizes,Data:DataSizes,Data:Unreclaim,VersndNode,cLVRefs,cCorrLVs,cSepRtChk,lidMax,LV:ChunkSize,OwnExt,GenAvailExt
+FWaitForAllReads. GetOverlappedResult failed with %d. Offset = 0x%x`%08x. dwBytesToRead = %d. dwBytesRead = %d.
+FWaitForAllReads. GetOverlappedResult had the wrong number of bytes! Offset = 0x%x`%08x. dwBytesToRead = %d. dwBytesRead = %d.
+FWaitForWrite. GetOverlappedResult had the wrong number of bytes! Offset = 0x%x`%08x. dwBytesToWrite = %d. dwBytesWritten = %d
+FWaitForWrite: GetOverlappedResult failed with %d. Offset = 0x%x`%08x. dwBytesToWrite = %d. dwBytesWritten = %d.
+FwdScans
+fwprintf
+fWrite
+GenAvailExt
+GetCompressedFileSizeW
+GetCurrentPackageFullName
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+GetDateFormatW
+GetDiskFreeSpaceExW
+GetDiskFreeSpaceW
+GetDriveTypeW
+GetExitCodeThread
+GetFileAttributesExW
+GetFileAttributesW
+GetFileInformationByHandle
+GetFileSize
+GetFileSizeEx
+GetLastError
+GetLocalTime
+GetModuleFileNameW
+GetModuleHandleW
+GetNativeSystemInfo
+GetNLSVersionEx
+GetOverlappedResult
+GetProcAddress
+GetProcessAffinityMask
+GetProcessHeap
+GetProcessMemoryInfo
+GetProfileStringW
+GetQueuedCompletionStatus
+GetStateFolder
+GetSystemInfo
+GetSystemTime
+GetSystemTimeAsFileTime
+GetSystemWindowsDirectoryW
+GetTickCount
+GetTimeFormatW
+GetVersionExW
+GetVolumeInformationW
+GetVolumeNameForVolumeMountPointW
+GetVolumePathNameW
+GetWindowsDirectoryW
+gfffD
+Global\{5E5C36C0-5E7C-471f-84D7-110FDC1AFD0D}
+GlobalMemoryStatusEx
+GPT:%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X
+H;BHt!H
+H;x8tT
+H;X8u
+H+~PH
+H+ChH
+H+CpH
+H+qHH
+H=UUU
+H8H9M
+H9~ t
+H9~ u
+H9~@u
+H9BHH
+H9D$(
+H9h0u
+H9K`u
+H9pHtC
+H9w u
+H9xHt-
+HA\^][
+HA^_^[
+hA_A^^[
+HA_A^A]A\_^
+Hc=qu
+HcA<H
+HcD$pA
+HcE L
+HcF D+
+HcR H
+HcW8;
+Heap A
+Heap A&B
+Heap B
+HeapAlloc
+HeapDestroy
+HeapFree
+HeapSetInformation
+HkCxdH
+Hp99uY
+Hung IO Patrol Dog found this %p IOREQ is lurking too long.  m_ioreqtype = %d, m_iomethod = %d, m_ciotime = %u, cmsecLow = %u
+HungIO
+HungIoEnforceAction
+I;FPv
+Ignoring errors previously encountered, and proceeding with the file copy. The destination file is likely CORRUPT!
+Image:              "%ws"
+Index
+InitializeCriticalSectionAndSpinCount
+Initializing VSS subsystem...%c%c
+Initiating CHECKSUM mode...%c
+Initiating COPY FILE mode...%c
+Initiating DEFRAGMENTATION mode...%c
+Initiating FILE DUMP mode...%c
+Initiating INTEGRITY mode...%c
+Initiating RECOVERY mode...%c
+Initiating REPAIR mode...%c
+Initiating SECURE mode...%c
+Int:FreeBytes
+Int:KeyComp
+Int:KeySizes
+Int:Nodes
+INTEGRITY:%c
+Internal
+Internal(MB)
+InternalName
+IO Patrol Dog has detected a DOUBLE DISK WHAMMY!!!
+IO Patrol Dog: cioActive = %d, cioHung = %d, LongestWallTime = %u msec, LongestCIoTime = %u ciotime (=%u msec)
+IO, IO-Completion, %I64X, IOR, %s, %d, %s, %d, %s, %d, 0x%x, OP, %s, 0x%016I64X, 0x%08X, Err=%d, Disp=%d, %d, 0x%x, TM, %I64u, %lu, for TID 0x%x, EngineFile=%d:0x%I64x, Fmf=0x%x
+IOREQ-Heap-Dequeue, %I64X:%016I64X, for TID 0x%x IOR, %d, %d, %d, 0x%x, from I/O Heap %hs, OP, %s, 0x%08X, 0x%x, %I64u, EngineFile=%d:0x%I64x, ql=%d
+IOREQ-Heap-Enqueue %I64X:%016I64X for TID 0x%x into I/O %hs (%s at %016I64X for %08X bytes), EngineFile=%d:0x%I64x ql=%d
+IORuns
+IORuns(histo)
+IsDebuggerPresent
+isprint
+IsProcessorFeaturePresent
+iswalpha
+iswascii
+IsWow64Process
+It$8H
+It$HH
+It$hH
+It$XH
+ix9idt
+JET_errSuccess, Operation was successful.
+JET_MissingLogContinueToRedo
+JET_MissingLogContinueToUndo
+JET_MissingLogContinueTryCurrentLog
+JET_MissingLogCreateNewLogStream
+JetBeginSessionW
+JetDBUtilitiesW
+JetEndSession
+JetGetDatabaseFileInfoW
+JetGetErrorInfoW
+JetGetLogFileInfoW
+JetGetSystemParameterW
+JetInit
+JetInit4W
+JetRestore2W
+JetSetSystemParameterA
+JetSetSystemParameterW
+JetTerm2
+JetTestHook
+JustFoundIoCouldntDelete
+JustFoundIoMismatchFileId
+JustFoundIoMismatchOffset
+K VWH
+K(9L$P
+kernel32.dll
+KERNEL32.DLL
+kernel32.dll
+kernelbase.dll
+KhH;K8|
+KtH9~
+L$ E3
+L$ H;
+L$ SUVWH
+L$ SVH
+L$ UH
+l$ VAVAWH
+l$ VWATAVAWH
+l$ VWAVH
+L$(E3
+l$(E3
+L$(I9H
+l$@E3
+L$@H3
+L$`H3
+l$0E3
+L$0ff
+L$0H3
+l$0L;
+L$0L+
+L$8H3
+L$HH3
+L$hH3
+l$PE3
+L$pH;
+L$pH+\$8H
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$Pud
+L$xE3
+L$XE3
+L$xE3
+L$XE3
+L$xff
+L$XH3
+L;sXt
+L9|$hu(H
+L9Bhu
+L9S`tn95
+L9sht
+L9sHtf
+LcA<E3
+LCMapStringW
+LeaveCriticalSection
+LegalCopyright
+lidMax
+LoadLibraryExA
+LoadLibraryExW
+LocalAlloc
+LocalFree
+logfile base name
+logfile path
+Long IO, %I64u msec, fReport = %d
+LookupPrivilegeValueW
+LV:Bytes
+LV:Bytes(histo)
+LV:ChunkSize
+LV:Comp
+LV:Comp(histo)
+LV:ExtraBytes
+LV:ExtraBytes(histo)
+LV:ExtraSeeks
+LV:ExtraSeeks(histo)
+LV:Ratio(histo)
+LV:Seeks
+LV:Seeks(histo)
+LV:Size
+LV:Size(histo)
+m_cAvail
+m_cCurrent
+m_cEntry
+m_cOAOWW
+m_cOAWX
+m_cOOW1
+m_cOOW2
+m_cOOWR
+m_cOOWS
+m_cOwner
+m_cQS
+m_cQuiesced
+m_cWait
+m_cWaitNeg
+m_dwPartitionCompleteKey
+m_fQ1
+m_fQ2
+m_fQR
+m_fQS
+m_fQW
+m_fSet
+m_groupCurrent
+m_groupQuiesced
+m_handle
+m_irksem
+m_pclsOwner
+m_pfnPartitionComplete
+m_sem
+m_sem1
+m_sem2
+m_semReader
+m_semS
+m_semW
+m_semWriter
+m_semX
+malloc
+MapViewOfFileEx
+MBR:%08X
+memcmp
+memcpy
+memset
+Meted Queue
+MH;}@r
+Microsoft
+Microsoft Corporation
+Microsoft.Windows.ESENT.TraceLogging
+minuser32.dll
+MODES OF OPERATION:
+Mounted shadow volumes located at:%c
+MoveFileExW
+Moving '%s' to '%s'...
+msvcrt.dll
+multi
+MultiIorp
+MultiIors
+MultiIoru
+N/A%c
+name,type,objidfdp,pgnofdp,priext,owned,available
+Name,Type,ObjidFDP,PriExt,PgnoFDP,Owned,Available,Internal,Data
+Name,Type,Owned(MB),O%OfDb,O%OfTable,Avail(MB),Avail%Tbl,AutoInc
+Name,Type,SH:IDensity,SH:ISize(KB),SH:grbit,SH:MDensity,SH:Growth,SH:MinExt(KB),SH:MaxExt(KB)
+Node%Tbl
+Note: Some small tables/indices were not printed (use /v option to see those smaller than %.1f%% of the database).
+Note:%c
+ntdll.dll
+NtQueryInformationProcess
+NtQuerySystemInformation
+NtQueryVolumeInformationFile
+Number of read errors           = %d
+Number of write errors          = %d
+O%OfDb
+O%OfTable
+o\$PH
+ObjidFDP
+oD$ f
+OeRes
+oL$0f
+onecore\ds\esent\published\inc\sync.hxx
+onecore\ds\esent\src\eseutil\dbspacedump.cxx
+onecore\ds\esent\src\eseutil\eseutil.cxx
+onecore\ds\esent\src\os\error.cxx
+onecore\ds\esent\src\os\library.cxx
+onecore\ds\esent\src\os\memory.cxx
+onecore\ds\esent\src\os\osdisk.cxx
+onecore\ds\esent\src\os\osfile.cxx
+onecore\ds\esent\src\os\osfs.cxx
+onecore\ds\esent\src\os\sqm.cxx
+onecore\ds\esent\src\os\string.cxx
+onecore\ds\esent\src\os\sysinfo.cxx
+onecore\ds\esent\src\os\task.cxx
+onecore\ds\esent\src\os\thread.cxx
+onecore\ds\esent\src\os\time.cxx
+onecore\ds\esent\src\os\trace.cxx
+onecore\ds\esent\src\sync\sync.cxx
+OpenProcessToken
+OpenState
+Operation completed successfully in %d.%d seconds.
+Operation completed successfully with %d (%s) after %d.%d seconds.
+Operation terminated unsuccessfully after %d.%d seconds.
+Operation terminated with error %d (%s) after %d.%d seconds.
+OriginalFilename
+OS CreateFileW( path, %#x, %#x, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL | FILE_FLAG_OVERLAPPED | %hs | %hs, NULL )
+OsDiskTruncateBasicDiskModel
+OsDiskTruncateDiskFirmwareRev
+OsTimeInitHung
+oT$@f
+Out of memory error during OS Layer pre-init.
+OutOfReservedIoreqs
+OutputDebugStringA
+Owned
+Owned(MB)
+OwnedExts
+OwnExt
+OwningTableName
+OwnPgnoMax
+OwnPgnoMin
+p WAVAWH
+p(9="5
+P=rePair, M=file duMp, Y=copY file
+p8H+q@u
+PA^_]
+PA^_^
+pA_A]_
+pA_A]A\[]
+pA_A]A\_^[]
+PA_A^_
+PA_A^A]A\_^]
+Patching
+Pause/throttle: %u ms per %u I/O's
+Performing soft recovery...
+PgnoAE
+PgnoFDP
+PgnoOE
+pioreqBaseMid->ibOffset != pioreqToAddMid->ibOffset
+Please contact PSS.
+PostQueuedCompletionStatus
+Pp9:t
+PriExt
+PriExtCpg
+PriExtType
+printf
+Process:            "%ws"
+ProductName
+ProductVersion
+psapi.dll
+PUTIL_THREAD_PROC( pfnPatrolDog )
+PUTIL_THREAD_PROC( TMDispatch )
+PV: %u.%u.%u.%u SV: %u.%u.%u.%u GLE: %u ERR: %d(%hs%hs:%u): %hs%hs(%u)
+QueryPerformanceCounter
+QueryPerformanceFrequency
+QueryWorkingSetEx
+QueueUserWorkItem
+R$fE;B*
+r}w{E
+RaiseFailFastException
+ReadFile
+ReadFile failed with %d. Offset = 0x%x`%08x. cbToRead = %d.
+ReadFileScatter
+Recovery has indicated that there is a lossy recovery option.  Run recovery with the /a argument.%wc
+Recovery has indicated that there might be a lossy recovery option.  Run recovery with the /a argument.%wc
+RECOVERY:%c
+RegCloseKey
+RegCreateKeyExW
+RegDeleteValueW
+RegOpenKeyExW
+RegQueryValueExW
+RegSetValueExW
+ReleaseMutex
+ReleaseSemaphore
+ReleaseSRWLockExclusive
+RemoveDirectoryW
+REPAIR:%c
+repair_off
+report file name prefix
+Reser%Tbl
+Reser(MB)
+Reserved
+ResolveDelayLoadedAPI
+ResolveDelayLoadsFromDll
+Restore
+Restoring to '%s' from '%s'...
+Restoring to <current directory> from '%s'...
+ResumeThread
+RHcN 
+RichPQA
+riwgE
+RSDS(
+RtlCaptureContext
+RtlLookupFunctionEntry
+RtlVirtualUnwind
+r-w+E3
+s AWH
+s WAVAWH
+Scanning
+scrub_off
+SeBackupPrivilege
+SectorSizeTooBig
+SECURE:%c
+Securing
+SeManageVolumePrivilege
+SetConsoleCtrlHandler
+SetEndOfFile
+SetEvent
+SetFileInformationByHandle
+SetFilePointerEx
+SetFileValidData
+SetHandleInformation
+SetLastError
+SetThreadErrorMode
+SetThreadpoolTimer
+SetThreadPriority
+SetThreadPriorityBoost
+SetUnhandledExceptionFilter
+SH:grbit
+SH:Growth
+SH:IDensity
+SH:ISize(KB)
+SH:MaxExt(KB)
+SH:MDensity
+SH:MinExt(KB)
+single
+SingleIorp
+SingleIors
+SingleIoru
+Sleep
+SleepConditionVariableSRW
+SleepEx
+SmallDurationLargerThan35MinTruncation
+SmallDurationNotSoSmallTruncation
+SmartData
+SmartDataStrConversionSawTruncatedChars
+Source database
+source database
+source file
+SpcReserve
+StorageAdapterProperty
+StorageDeviceCopyOffloadProperty
+StorageDeviceSeekPenaltyProperty
+StorageDeviceTrimProperty
+strchr
+strcspn
+StringFileInfo
+strrchr
+strstr
+strtoul
+SUATAVH
+SUATAWH
+SUVATH
+SUVWATAUAVAWH
+SUVWATAUH
+SUVWAUH
+SUVWAVAWH
+swprintf_s
+swscanf_s
+system path
+System\Setup
+SystemSetupInProgress
+SystemTimeToTzSpecificLocalTime
+szMessage
+t!fD;n
+t!fD;o
+T$ H;
+t$ UH
+t$ WATAUAVAWH
+t$ WAVAWH
+t$ WH
+t$(E3
+t$@E3
+t$@L9w
+T$`E3
+T$`uJ
+t$0E3
+T$8fA;
+T$8H+
+t$8Hc5
+T$BE3
+T$DD;=-
+t$DM;
+T$hE3
+T$L;T$x
+t$PH9l$pu!
+t$pM9u
+t$Pu5@
+T$XE3
+T$xI;
+t.D9I
+t:9}4t
+t}D95
+t+H;Q
+t<fD;n
+t>D9I
+t8H;Q
+t9M;t$
+Table Objid(%d) leaked %d pages.
+te95R
+TEMP%d.EDB
+TEMPCHKSUM%d.EDB
+Temporary database
+temporary database
+TEMPREPAIR%d.EDB
+TEMPSCRUB%d.EDB
+TEMPUPGD%d.EDB
+TerminateProcess
+The debugger could not be attached to process %d!  Win32 error %d%s%s
+The ESE engine did not return expected catalog data.
+The ESE engine did not return expected stat data size.
+ThereCanBeOnlyOne
+This is a FTL trace log.  Checksums are not maintained for such a file.%c
+This is a temporary database. Checksums are not maintained for such databases.%c
+tkD95u.
+TlsAlloc
+TlsFree
+TlsGetValue
+TlsSetValue
+tm9=!8
+tME9H
+toH9A
+Too many active threads/workers in this section, must quit to avoid consistency issues!
+Total bytes read                = %#I64x (%I64d) (%I64d MB)
+Total bytes written             = %#I64x (%I64d) (%I64d MB)
+tqD9A
+Trace File:         "%ws"%s
+Translation
+tu95j
+twD95F
+u HcA<H
+u&H9_P
+u*9Q<|%
+u,fA9w
+u`950
+UATAUAVI
+ujfA;
+umfA;
+un9=6
+Unable to start debugger automatically.
+Underflow of a metered section, left a group we didn't enter!!!
+UnhandledExceptionFilter
+UnhandledProcessIoErr=%d
+UNKNOWN
+Unknown 
+Unknown BTree enum: %d
+UNKNOWN!
+unknown, unknown
+UNKNOWN.PTH
+UnknownQ
+UnmapViewOfFile
+Unset(N/A)
+Upgrade
+Upgrading Record Format
+Usage Error: Config store spec not accepted, generally takes form of /config reg:HKLM\<RegPathToUse>.
+Usage Error: Duplicate %s specification.
+Usage Error: Invalid api version specification.
+Usage Error: Invalid argument '%s'. Options must be preceded by '-' or '/'.
+Usage Error: Invalid batch I/O size.
+Usage Error: Invalid database extension size.
+Usage Error: Invalid default restore location option.
+Usage Error: Invalid log generation range specification.
+Usage Error: Invalid maximum cache size specification.
+Usage Error: Invalid mode.
+Usage Error: Invalid node/lgpos specification.
+Usage Error: Invalid option '%s'.
+Usage Error: Invalid pause interval specification.
+Usage Error: Invalid stop recovery option.
+Usage Error: Missing %s specification.
+Usage Error: Mode selection must be preceded by '-' or '/'.
+Usage Error: No mode specified.
+Usage Error: Only one type of recovery allowed.
+Usage Error: Unable to allocate enough space for database names: %s kbytes.
+Usage: Dump <Object> <Address> [<Depth>|*]
+UseEngineDefault
+UsePersistedFormat
+user32.dll
+USVWATAUAVAWH
+utD95
+uu9=%8
+UVATAUAVAWH
+UVATAUAVH
+uvfA;
+UVWATAUAVAWH
+UVWAVAWH
+UWATAUAWH
+UWATI
+UWAVH
+VarFileInfo
+Version %s%c
+VersndNode
+VIP List
+VirtualAlloc
+VirtualFree
+VirtualProtect
+VirtualQueryEx
+Volume=%ws, eosDiskType = %d, fFixed = %d
+vprintf
+VS_VERSION_INFO
+VssIdToString
+vsspause
+vssrec
+vsssystempath
+VWATAUAWH
+VWATAVAWH
+VWATH
+VWAUAVAWH
+VWAVH
+VWAWH
+W +T$x
+w0fff
+WaitForSingleObject
+WaitForSingleObjectEx
+WaitForThreadpoolTimerCallbacks
+WakeAllConditionVariable
+WARNING: page %d%s checksum verification failed but the corruption ( bit %d ) can be corrected
+WARNING: Volume=%ws is not detected as fixed, MemoryMapping operations will all be forcibly COW'd
+Warning:%c
+WATAUAVAWH
+WAUAWH
+WAVAWH
+wcscat_s
+wcschr
+wcscpy_s
+wcspbrk
+wcsrchr
+wcstol
+Winsta0\Default
+wprintf
+write
+WriteError
+WriteFile
+WriteFile failed with %d. Offset = 0x%x`%08x. cbToWrite = %d. cbWritten = %d.
+WriteFileGather
+wszContext
+wszIssueSource
+x 9\$@u
+x AVH
+XA_A^A]A\_^[]
+xbLc^ 
+xonecore\ds\esent\src\os\norm.cxx
+xqHcKp
+xv9\$0u
+yx9ydt

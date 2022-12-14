@@ -1,0 +1,989 @@
+        <requestedExecutionLevel level="requireAdministrator" uiAccess="false" />
+      </requestedPrivileges>
+      <dpiAware>true</dpiAware>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+    />
+    </asmv3:windowsSettings>
+    </security>
+    <asmv3:windowsSettings xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">
+    <security>
+    name="VMImport"
+    processorArchitecture="x86"
+    version="5.1.0.0"
+  </asmv3:application>
+  </trustInfo>
+  <asmv3:application>
+  <assemblyIdentity
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v2">
+ $(,048
+ $(,048<@DHLPTX\
+ :.75
+ +>zz
+ 2014 Microsoft Corporation. All Rights Reserved.HyperV MDL2 AssetsRegularVersion 1.72HyperVMDL2AssetsSegoe is a trademark of the Microsoft group of companies.Microsoft Corporationhttp://www.microsoft.com/typography/fonts/You may use this font as permitted by the EULA for the product in which this font is included to display and print content. You may only (i) embed this font in content as permitted by the embedding restrictions included in this font; and (ii) temporarily download this font to a printer or other output device to help print content.NormaaliNorm
+ F had
+ http://www.microsoft.com/windows0
+ Hyper-V Exported Virtual Machine
+ Microsoft Corporation. All rights reserved.
+ name
+ Operating System
+ prepx
+ Windows
+!'!5!'!5!
+!5!5!
+!5!5!5!
+!5!5!5!53
+!5!5!5!535!
+!5!5!5!535;
+!54&#"
+!9K+&91,
+!Button_EditVirtualMachineSettings#
+!This program cannot be run in DOS mode.
+!YD-,KSXED
+!YY-,  EiD
+"&*.26
+"&54632
+"Microsoft Window
+"Resources/ImportVirtualMachine.ico
+#"'&'&'.
+#"&546
+#'+/37;?CGKOSW[_
+#'+/37;?CGKOSW[_cgkosw{
+#'+/37;?CWkq
+#128b44
+#-159
+#5!54>
+#5267
+#535#535#535#535#535#535#5!53
+#654.
+#Blob
+#GUID
+#Strings
+#Virtual machine shared successfully
+$]]]%/!
+$`2X`F
+$hmtx
+$Microsoft Ireland Operations Limited1
+$Microsoft Ireland Operations Limited1&0$
+$V\Wi
+$Virtual machine created successfully
+%0|BEz[5
+%025[z
+%E#!#!Y
+%F hadRX#e
+%F jadRX#
+%FRX#
+%FRX#Y 
+%Microsoft Windows Production PCA 2011
+%Microsoft Windows Production PCA 20110
+%VYX((XYU&
+&*^s'
+&`|0H
+&b1G3x
+&PXQX
+&SX#!
+&UYX((XXT&
+(Completing the virtual machine import...
+(JjA:Q
+(XYV%
+)Microsoft Root Certificate Authority 20100
+*!-, F
+*-,K 
+*.vmcx
+*2xWs
+*fpgm
+*Microsoft (R) Windows (R) Operating System
+,(Validation.Errors).CurrentItem.ErrorContent
+,19&+K9!
+,IWznd4JRX4bSUWhS3oyV6OF0Xe/RHd5ugcMGxWQqXA8=0Z
+,Label_VirtualMachineCreatedSuccessfullyTitle#
+,qyx22xyr+
+.1::J$
+.4Wxs
+.cctor
+.ctor
+.ImportVirtualMachineDialog.Views.OperationView
+.NETFramework,Version=v4.6
+.text
+.vmcx
+/)(3A-
+/ImportVirtualMachineDialog.Properties.Resources
+/VMImport;component/app.xaml
+/VMImport;component/importvirtualmachinewindow.xaml
+/VMImport;component/views/importvmformview.xaml
+/VMImport;component/views/newvmsuccessview.xaml
+/VMImport;component/views/operationview.xaml
+;:<9=8>7?6@5A4B3C2D1E0*Up
+;3L&+
+;OGG7[
+?00`y
+?88#3g
+@.reloc
+@eYY:-, F
+@VjJv
+@ZAo,
+[2clr-namespace:ImportVirtualMachineDialog.ViewModel$ImportVirtualMachineDialog.ViewModel
+\@ww/
+]3clr-namespace:ImportVirtualMachineDialog.Properties%ImportVirtualMachineDialog.Properties
+]7i_R
+^N$yr
+_^-,  EiD
+_~Yp7e7
+_cancelSource
+_Close
+_Connect
+_contentLoaded
+_CorExeMain
+_formattedFileSize
+_Import Virtual Machine
+_isDataLoaded
+_isIndeterminate
+_isRunning
+_name
+_Name
+_progressPercentage
+_server
+_taskDescription
+_tempDirectory
+_vhdDirectory
+_vhdFiles
+_virtualMachine
+_zipFileName
+`  E}i
+`.rsrc
+`VDMX
+{+g+6
+{0} ({1})
+|>z{{
+|hK,_
+}[^bPN
+}=VK|`;
++*bsp
++<2 c
++Button_ConnectToVirtualMachineAfterCreation#
++L29A"
+<!-- Copyright (c) Microsoft Corporation -->
+</assembly>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<<btnImportVM_Click>b__15_0>d
+<<btnVMConnect_Click>b__7_0>d
+<<Page_Loaded>b__14_0>d
+<>1__state
+<>4__this
+<>7__wrap1
+<>7__wrap2
+<>7__wrap4
+<>8__1
+<>9__3_0
+<>9__33_1
+<>c__DisplayClass13_0`1
+<>c__DisplayClass14_0`1
+<>c__DisplayClass17_0
+<>c__DisplayClass33_0
+<>c__DisplayClass7_0
+<>c__DisplayClass8_0
+<>c__DisplayClass9_0
+<>c__DisplayClass9_1
+<>t__builder
+<>u__1
+<>u__2
+<>u__3
+<>u__4
+<>u__5
+<archive>5__2
+<archive>5__6
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3">
+<btnImportVM_Click>b__15_0
+<btnVMConnect_Click>b__7_0
+<ConvertActionToFunction>b__0
+<CurrentOperation>k__BackingField
+<d:\os\public\x86fre\internal\strongnamekeys\fake\windows.snk
+<destinationFile>5__2
+<destinationStream>5__2
+<destinationStream>5__7
+<entry>5__6
+<ExtractAllVMFilesAsync>d__5
+<ExtractOneFileAsync>d__2
+<ExtractVhdFilesAsync>d__29
+<FixDisksForVirtualMachineAsync>d__10
+<GetImportVMNameAsync>d__4
+<GetNativeWindow>k__BackingField
+<GetTotalUncompressedSize>b__3_0
+<ImportPlannedSystemAsync>b__0
+<ImportPlannedSystemAsync>b__1
+<ImportPlannedSystemAsync>d__7
+<IsFilenameUniqueInAllFolders>b__0
+<IsFilenameUniqueInAllFolders>b__33_1
+<Iwwwa
+<LaunchFixupWizard>b__0
+<LaunchVMConnectionAsync>b__11_0
+<LoadAsync>d__27
+<Module>
+<Page_Loaded>b__14_0
+<PlannedVm>k__BackingField
+<PlannedVMViewModel>k__BackingField
+<RealizePlannedSystemAsync>b__0
+<RealizePlannedSystemAsync>b__1
+<RealizePlannedSystemAsync>d__9
+<RealizePvmAsync>d__30
+<relativeDirectory>5__5
+<RunVMTaskAsync>b__0
+<RunVMTaskAsync>d__15
+<SetVmPropertiesAsync>d__11
+<sourceStream>5__3
+<stagingFile>5__3
+<stagingStream>5__4
+<TryRunActionAsync>d__20
+<ValidatePlannedSystemAsync>b__0
+<ValidatePlannedSystemAsync>d__8
+<ValidatePvmAsync>d__28
+<vhdFiles>5__2
+<vhdRoot>5__3
+<VirtualMachine>k__BackingField
+<vmConfigRoot>5__4
+<vmTempRoot>5__2
+=IGw7
+>G30*
+>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0
+>http://www.microsoft.com/pki/certs/MicTimStaPCA_2010-07-01.crt0
+0,10q
+0,20,0,20q
+0,22,0,0q
+0,8,0,22q
+040904B0
+1(0&0
+1/0-0
+10,50,5,50q
+10.0.10011.16384
+10.0.17763.1
+10.0.17763.1 (WinBuild.160101.0800)
+100701213655Z
+100GB
+111019184142Z
+180703204550Z
+180823202701Z
+190726204550Z0p1
+191123202701Z0
+1http://www.microsoft.com/PKI/docs/CPS/default.htm0@
+1ImportVirtualMachineDialog.Views.ImportVMFormView
+1ImportVirtualMachineDialog.Views.NewVMSuccessView
+20180915040527.612Z0
+20180915065634Z
+20180916065634Z0w0=
+229879+4379540
+250701214655Z0|1
+261019185142Z0
+2CCC%
+2WuBBtW33WtBBuW2
+3!265%#
+3\WT+H
+3System.Resources.Tools.StronglyTypedResourceBuilder
+4&#!"
+4.0.0.0
+4654>
+5,5,5,15q
+5,8,8,8q
+50g]}
+5ImportVirtualMachineDialog.ImportVirtualMachineWindow
+6hhea
+'7!5!'%53
+7#u!2
+7676$32
+8The target file is not a valid exported virtual machine.
+8UfU`U
+9Copyright (c) Microsoft Corporation. All rights reserved.
+9http://schemas.microsoft.com/winfx/2006/xaml/presentation
+9Norm
+-A3()/
+Action
+action
+Action`1
+add_Click
+add_Closed
+add_Loaded
+add_PropertyChanged
+add_RealizeSucceeded
+add_StateChanged
+add_ValidateSucceeded
+add_WindowCloseRequested
+app.baml
+appendix
+AppendUnique
+Application
+archive
+ArgumentException
+AssemblyCompanyAttribute
+AssemblyCopyrightAttribute
+AssemblyDelaySignAttribute
+AssemblyFileVersionAttribute
+AssemblyKeyFileAttribute
+AssemblyProductAttribute
+AssignHandle
+AsyncStateMachineAttribute
+AsyncTaskMethodBuilder
+AsyncTaskMethodBuilder`1
+AsyncVoidMethodBuilder
+Avt,g
+aw+pq
+AwaitUnsafeOnCompleted
+B I"g
+BasedOn 
+BeginImportSystemDefinition
+BeginPut
+BeginRealizePlannedVirtualSystem
+beginTaskMethod
+BeginValidatePlannedVirtualSystem
+bf_/{n
+Bottom=
+BSX*i
+btnCancelTask
+btnCancelTask_Click
+btnCloseDialog
+btnCloseDialog_Click
+btnImportVM
+btnImportVM_Click
+btnOpenVMSettings
+btnOpenVMSettings_Click
+btnVMConnect
+btnVMConnect_Click
+BtW33WtBBuW22Wu
+Button
+Button_CancelRunningOperation
+Button_CancelRunningOperation#
+Button_CloseDialog
+Button_CloseDialog#
+Button_ConnectToVirtualMachineAfterCreation
+Button_EditVirtualMachineSettings
+Button_ImportVirtualMachine
+Button_ImportVirtualMachine#
+Button_ImportVirtualMachine.
+ButtonBase
+C_ancel
+CA1502:AvoidExcessiveComplexity
+CA1800:DoNotCastUnnecessarily
+CA1811:AvoidUncalledPrivateCode
+CA1823:AvoidUnusedPrivateFields
+CallerMemberNameAttribute
+Cancel
+CancellationToken
+cancellationToken
+CancellationTokenSource
+CanMinimize=
+CaptionStyle 
+CaretBrush
+cccd2
+Center=
+Chttp://www.microsoft.com/pkiops/crl/MicWinProPCA2011_2011-10-19.crl0a
+Cleaning up...
+CleanUp
+CleanupVhdFiles
+Close
+CLSCompliantAttribute
+cmap*H
+Color
+ColumnDefinitions
+Combine
+CommonButton 
+CommonUtilities
+CompanyName
+CompareExchange
+CompilationRelaxationsAttribute
+CompilerGeneratedAttribute
+Compressing files...
+ComVisibleAttribute
+configFolder
+ConfirmButton 
+ConfirmButton#
+connectionId
+ConstructVMConnectArguments
+ControlsGroup
+ControlsGroup#
+ConvertActionToFunction
+CopyToAsync
+Create
+CreateDirectory
+CreateStagingFile
+CS$<>8__locals1
+CultureInfo
+currentTask
+D C9<
+D"AgG
+d2http://schemas.microsoft.com/expression/blend/2008
+DateTimeOffset
+DebuggableAttribute
+DebuggerHiddenAttribute
+DebuggerNonUserCodeAttribute
+DebuggingModes
+Default VM Name
+definitionFilePath
+Delegate
+Delete
+DependencyObject
+DesignerProperties
+destinationFile
+DialogResult
+Dictionary`2
+DirectoryInfo
+Disk space required
+Dispose
+Edit _settings...
+EditorBrowsableAttribute
+EditorBrowsableState
+eDQFS
+Ehttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z
+Ehttp://crl.microsoft.com/pki/crl/products/MicTimStaPCA_2010-07-01.crl0Z
+Ehttp://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt0
+EndImportSystemDefinition
+EndPut
+EndRealizePlannedVirtualSystem
+endTaskMethod
+EndValidatePlannedVirtualSystem
+entry
+Enumerable
+Environment
+Equals
+Error
+Error cleaning up PVM!
+Error cleaning up VHD file
+Error_ConfigFileNotFound
+Error_ConfigFileNotFoundG
+Error_InvalidArgument
+ErrorTemplate
+EventHandler`1
+Exists
+ExplanationText 
+Exporting files...
+ExtractAllVMFilesAsync
+Extracting {0}...
+ExtractOneFileAsync
+ExtractVhdFilesAsync
+FileDescription
+filename
+FileNotFoundException
+FileStream
+FileVersion
+FImportVirtualMachineDialog.Views.OperationView+<<Page_Loaded>b__14_0>d
+FindUniqueDirectoryNameAppendix
+FixDisksForVirtualMachineAsync
+folder
+folders
+Format
+FormatDiskSize
+FormattedFileSize
+FormattedFileSize+
+Frame
+frameMain
+FrameworkElement
+FromSeconds
+Func`1
+Func`2
+G(clr-namespace:ImportVirtualMachineDialog
+g,(zH
+GeneratedCodeAttribute
+get_Args
+get_Assembly
+get_Button_CancelRunningOperation
+get_Button_CloseDialog
+get_Button_ConnectToVirtualMachineAfterCreation
+get_Button_EditVirtualMachineSettings
+get_Button_ImportVirtualMachine
+get_Cancelable
+get_Culture
+get_Current
+get_CurrentOperation
+get_DateTime
+get_DefaultVirtualHardDiskPath
+get_Description
+get_ElementName
+get_Entries
+get_Error_ConfigFileNotFound
+get_Error_InvalidArgument
+get_FormattedFileSize
+get_FullName
+get_GetNativeWindow
+get_Handle
+get_Id
+get_InstanceId
+get_IsCancellationRequested
+get_IsCompleted
+get_IsDataLoaded
+get_IsIndeterminate
+get_IsRunning
+get_IsVirtualMachineValid
+get_Label_FileSize
+get_Label_ShareVM
+get_Label_VirtualMachineCreatedSuccessfullyTitle
+get_Label_VirtualMachineSharedSuccessfullyTitle
+get_Label_VMName
+get_LastWriteTime
+get_Length
+get_LocalHost
+get_Message
+get_MessageBoxTitle_Error
+get_Name
+get_OrdinalIgnoreCase
+get_Path
+get_PercentComplete
+get_PersistentReservationsSupported
+get_PlannedVm
+get_PlannedVMViewModel
+get_ProgressPercentage
+get_ResourceManager
+get_Server
+get_Setting
+get_Task
+get_TaskDescription
+get_TaskDescription_CleaningUpFiles
+get_TaskDescription_CompressingFiles
+get_TaskDescription_ExtractingVhdFile
+get_TaskDescription_PerformingExport
+get_TaskDescription_RealizingVirtualMachine
+get_Token
+get_Value
+get_VirtualMachine
+get_WindowTitle
+GetAwaiter
+GetDefinitionFileSummaryInformation
+GetDirectoryName
+GetEntry
+GetEnumerator
+GetErrorDescription
+GetExtension
+GetFileName
+GetFiles
+GetFolderPath
+GetImportVMNameAsync
+GetInvalidFileNameChars
+GetIsInDesignMode
+GetResult
+GetString
+GetTempPath
+GetTotalUncompressedSize
+GetTypeFromHandle
+GetVhdsForVM
+GetVirtualizationServiceAsync
+GetVmSettingsDialog
+Glyph
+gridOperationComplete
+gridOperationInProgress
+HasError
+Hg44C
+'Hhead
+Hidden=
+HImportVirtualMachineDialog.ViewModel.PlannedVMViewModel+<LoadAsync>d__27
+HyperVAssemblyVersion
+HyperVAssets 
+HyperVAssets#
+HyperVObjectFactory
+i<@#f??f##f??f
+I0G1-0+
+IAsyncStateMachine
+IComponentConnector
+Icon$(
+IDAT<
+IDATx
+IDeleteable
+IDisposable
+IEnumerable`1
+IEnumerator
+IEnumerator`1
+IEpack://application:,,,/Resources/HypVMDL2.1.72.ttf#HyperV MDL2 Assets)
+IEqualityComparer`1
+IForm
+IIDAT
+Import Virtual Machine
+Import Virtual Machinep
+ImportFileUtilities
+ImportPlannedSystemAsync
+ImportUtilities
+ImportVirtualMachineDialog
+ImportVirtualMachineDialog.App
+ImportVirtualMachineDialog.Properties
+ImportVirtualMachineDialog.Properties.Resources
+ImportVirtualMachineDialog.Properties.Resources.resources
+ImportVirtualMachineDialog.ViewModel
+ImportVirtualMachineDialog.Views
+ImportVirtualMachineWindow
+importvirtualmachinewindow.baml
+ImportVMFormView
+InitializeComponent
+INotifyPropertyChanged
+Int32
+Interlocked
+InternalName
+InvalidOperationException
+Invoke
+IProgress`1
+IPutableAsync
+IsAnyVirtualHardDisk
+IsCancel
+IsDataLoaded
+IsDataLoaded+
+IServer
+ISettingsDialog
+IsFilenameUniqueInAllFolders
+iSHp6
+IsIndeterminate
+IsIndeterminate+$
+IsNullOrEmpty
+IsRunning
+ISummaryInformationPropertiesBase
+ISummaryInformationSnapshot
+isValid
+iVEhM
+IVirtualDiskSetting
+IVirtualizationManagementObject
+IVMComputerSystem
+IVMComputerSystemBase
+IVMComputerSystemSetting
+IVMPlannedComputerSystem
+IVMService
+IVMServiceSetting
+IVMTask
+IWin32Window
+JImportVirtualMachineDialog.ViewModel.ImportUtilities+<RunVMTaskAsync>d__15
+JImportVirtualMachineDialog.Views.ImportVMFormView+<TryRunActionAsync>d__20
+Justification#This is called via binding in xaml.
+KeyValuePair`2
+Label
+Label_FileSize
+Label_ShareVM
+Label_VirtualMachineCreatedSuccessfullyTitle
+Label_VirtualMachineSharedSuccessfullyTitle
+Label_VMName
+LaunchFixupWizard
+LaunchVMConnectionAsync
+lblTaskDescription
+Legal_Policy_Statement
+LegalCopyright
+List`1
+lneNavadnot
+lNormaleStandaardNormaln
+LoadAsync
+LoadComponent
+local(clr-namespace:ImportVirtualMachineDialog
+local.clr-namespace:ImportVirtualMachineDialog.Views
+lSystem.Resources.ResourceReader, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet
+Lv&&2
+LVMImport, Version=10.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+M0K0I
+MakeFileNameValid
+Maximum$
+mc;http://schemas.openxmlformats.org/markup-compatibility/2006
+MessageBox
+MessageBoxResult
+MessageBoxTitle_Error
+Microsoft
+Microsoft Corporation
+Microsoft Corporation1
+Microsoft Corporation1&0$
+Microsoft Corporation1.0,
+Microsoft Corporation1-0+
+Microsoft Corporation1200
+Microsoft Time-Stamp PCA 2010
+Microsoft Time-Stamp PCA 20100
+Microsoft Time-Stamp service
+Microsoft Time-Stamp service0
+Microsoft Windows0
+Microsoft.Design3CA1033:InterfaceMethodsShouldBeCallableByChildTypes
+Microsoft.Maintainability
+Microsoft.Performance
+Microsoft.Virtualization.Client
+Microsoft.Virtualization.Client.Common
+Microsoft.Virtualization.Client.Common.Types
+Microsoft.Virtualization.Client.Management
+Microsoft.Virtualization.Client.Wizards
+Microsoft.Virtualization.Client.Wizards.Framework
+Microsoft.Virtualization.Client.Wizards.VMShareWizard
+Minimum$
+MM31z
+Mode$
+MoveNext
+MSBAML
+mscoree.dll
+mscorlib
+MsvmError
+N0L0J
+Name$
+Name+
+Navigate
+NavigationUIVisibility$
+NeutralResourcesLanguageAttribute
+NewVMSuccessView
+ngArrunta
+NImportVirtualMachineDialog.ViewModel.ImportUtilities+<ExtractOneFileAsync>d__2
+NImportVirtualMachineDialog.ViewModel.PlannedVMViewModel+<RealizePvmAsync>d__30
+Normalob
+normalStandar
+NP97ee
+NSystem.Xaml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+NWindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+nY&)4
+'O.%Y=
+o\Gg<
+O0M0K
+ObjectLocator
+OImportVirtualMachineDialog.ViewModel.ImportUtilities+<GetImportVMNameAsync>d__4
+OImportVirtualMachineDialog.ViewModel.PlannedVMViewModel+<ValidatePvmAsync>d__28
+OImportVirtualMachineDialog.Views.ImportVMFormView+<<btnImportVM_Click>b__15_0>d
+OImportVirtualMachineDialog.Views.NewVMSuccessView+<<btnVMConnect_Click>b__7_0>d
+oK0D$"<
+OnCloseRequested
+OneWay=
+OnStartup
+OnValidateCompleted
+OnVirtualMachineRealized
+OnVirtualMachineValidateSucceeded
+OpenArchive
+OpenRead
+OpenWrite
+OperationCanceledException
+OperationView
+operationWatcher
+OriginalFilename
+originalName
+Padding$
+PADPADP
+PADPADPA*
+Page_Loaded
+Path 
+pbTaskProgress
+PImportVirtualMachineDialog.ViewModel.ImportUtilities+<SetVmPropertiesAsync>d__11
+PlannedVirtualMachineEventArgs
+PlannedVM
+Please supply an argument.
+pOS/2JZu
+PQ,)),QP
+PresentationBuildTasks
+PresentationCore
+PresentationFramework
+Process
+ProcessStartInfo
+ProductName
+ProductVersion
+progress
+ProgressBar
+ProgressPercentage
+ProgressPercentage+$
+Property
+PropertyChangedEventArgs
+PropertyChangedEventHandler
+propertyName
+Q:AjJ(
+QImportVirtualMachineDialog.ViewModel.ImportUtilities+<ExtractAllVMFilesAsync>d__5
+R!s4Z
+R)CAJ>X
+R.R@-
+R_i7]
+r~akow
+ReadOnlyCollection`1
+RealizePlannedSystemAsync
+RealizePvmAsync
+Redmond1
+Regular"
+RelativeSource
+Remove
+remove_PropertyChanged
+remove_RealizeSucceeded
+remove_StateChanged
+remove_ValidateSucceeded
+remove_WindowCloseRequested
+RemoveFromCache
+Report
+Reset
+ResizeMode$
+resourceCulture
+resourceMan
+Resources
+resources/hypvmdl2.1.72.ttf
+resources/importvirtualmachine.ico
+resx3clr-namespace:ImportVirtualMachineDialog.Properties
+RoutedEventArgs
+RoutedEventHandler
+RuntimeCompatibilityAttribute
+RuntimeTypeHandle
+RunVMTaskAsync
+S.clr-namespace:ImportVirtualMachineDialog.Views ImportVirtualMachineDialog.Views
+s6O9%
+SearchOption
+Segoe UI)
+Select
+Self+
+sender
+service
+set_ConfigurationDataRoot
+set_Culture
+set_DataContext
+set_FormattedFileSize
+set_GetNativeWindow
+set_Id
+set_IsDataLoaded
+set_IsIndeterminate
+set_IsRunning
+set_Name
+set_Path
+set_PlannedVm
+set_ProgressPercentage
+set_SnapshotDataRoot
+set_SwapFileDataRoot
+set_TaskDescription
+SetException
+SetLastWriteTime
+SetResult
+SetStateMachine
+SetVmPropertiesAsync
+Share Virtual Machine
+ShowDialog
+SImportVirtualMachineDialog.ViewModel.ImportUtilities+<ImportPlannedSystemAsync>d__7
+SImportVirtualMachineDialog.ViewModel.PlannedVMViewModel+<ExtractVhdFilesAsync>d__29
+SingleOrDefault
+SpecialFolder
+Split
+SPresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Start
+StartModeless
+StartsWith
+StartupEventArgs
+stateMachine
+STAThreadAttribute
+StringComparer
+StringComparison
+StringFileInfo
+success
+SuccessIconColor
+SuccessIconColor#
+SuppressMessageAttribute
+System.CodeDom.Compiler
+System.Collections
+System.Collections.Generic
+System.Collections.ObjectModel
+System.ComponentModel
+System.Core
+System.Diagnostics
+System.Diagnostics.CodeAnalysis
+System.Globalization
+System.IO
+System.IO.Compression
+System.IO.Compression.FileSystem
+System.Linq
+System.Reflection
+System.Resources
+System.Runtime.CompilerServices
+System.Runtime.InteropServices
+System.Runtime.Versioning
+System.Threading
+System.Threading.Tasks
+System.Windows
+System.Windows.Controls
+System.Windows.Controls.Primitives
+System.Windows.Forms
+System.Windows.Interop
+System.Windows.Markup
+System.Windows.Markup.IComponentConnector.Connect
+System.Xaml
+t:m9fo
+t-]A2
+target
+TargetFrameworkAttribute
+TargetType
+targetVhdLocation
+Task`1
+TaskAwaiter
+TaskAwaiter`1
+TaskDescription
+TaskDescription_CleaningUpFiles
+TaskDescription_CompressingFiles
+TaskDescription_ExtractingVhdFile
+TaskDescription_PerformingExport
+TaskDescription_RealizingVirtualMachine
+TaskDescription+
+TaskViewModel
+tbCheckMarkGlyph
+tbFileSize
+tbName
+Temporary Virtual Machine Files
+TestVMName
+TextBlock
+Thales TSS ESN:A240-4B82-130E1%0#
+ThrowIfCancellationRequested
+TimeSpan
+TImportVirtualMachineDialog.ViewModel.ImportUtilities+<RealizePlannedSystemAsync>d__9
+Title#
+TitleText 
+TitleText#
+TlP0X
+ToolTip
+TraceError
+Translation
+TResult
+Triggers
+TryGetValue
+TryRunActionAsync
+u]!vv
+U0S0Q
+Ud`3td
+UImportVirtualMachineDialog.ViewModel.ImportUtilities+<ValidatePlannedSystemAsync>d__8
+uKs/w
+UpdateProgressInterval
+UriKind
+uS..Su
+UUexx
+v_!s)x
+V4,811
+v4.0.30319
+ValidatePlannedSystemAsync
+ValidatePvmAsync
+value
+Value
+Value 
+ValueType
+VarFileInfo
+vhdDestinationDirectory
+viewModel
+viewmodel2clr-namespace:ImportVirtualMachineDialog.ViewModel
+views/importvmformview.baml
+views/newvmsuccessview.baml
+views/operationview.baml
+virtManException
+Virtual machine is not ready
+Virtual Machines
+VirtualizationManagementException
+VirtualMachineViewModel
+VisibilityConverter 
+vmconnect.exe
+vmDestinationDirectory
+VMImport
+VMImport.exe
+VMImport.g.resources
+VMImport.pdb
+vmName
+VMNameTitleText
+VMNameTitleText#
+VmState
+VMTrace
+VS_VERSION_INFO
+W[6E<
+w3aZN
+WaitForCompletion
+WaitForVMTask
+Washington1
+WindowInteropHelper
+WindowsBase
+WindowTitle
+wizard
+WizardForm
+Wrap=
+WrapNonExceptionThrows
+x)s!_v
+x,http://schemas.microsoft.com/winfx/2006/xaml
+x?f##f??f##f
+XPresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Y F jad
+Y09Tg
+Ygasp
+z.9Wv
+ZImportVirtualMachineDialog.ViewModel.ImportUtilities+<FixDisksForVirtualMachineAsync>d__10
+ZIndex$
+ZipArchive
+ZipArchiveEntry
+ZipFile
+ZWindowsFormsIntegration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35

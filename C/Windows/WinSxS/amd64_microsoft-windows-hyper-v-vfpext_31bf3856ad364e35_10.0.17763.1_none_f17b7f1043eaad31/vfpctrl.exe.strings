@@ -1,0 +1,2078 @@
+        
+            
+                { 
+                VfxConditionDestinationIp|VfxConditionDestinationIpRange|VfxConditionDestIpv4Range|
+                VfxConditionDestinationIpv6|VfxConditionDestIpv6Range|VfxConditionSourceIpv6|VfxConditionSrcIpv6Range|
+                VfxConditionGreKey|VfxConditionGreKeyRange
+                VfxConditionSourceIp|VfxConditionSourceIpRange|VfxConditionSrcIpv4Range|
+                VfxConditionSourcePort|VfxConditionDestinationPort|
+                VfxConditionSourcePortRange|VfxConditionDestinationPortRange|
+               encap_type - 1:IP-in-GRE 2:IP-in-IP 3:MAC-in-GRE (NVGRE) 4:VXLAN
+              decap flags - 256:Preserve Inner MAC; 512:Push VSID; 1024:Push TNI as metadata;
+              dynnat flags - 256:Source NAT (default); 512:Dest NAT; 2048:Enable TIME_WAIT Assassination; 4096:Use existing UDP port binding
+              encap flags - 1:NVGRE format (MAC-in-GRE); 2:IP-in-GRE (default); 4:IP-in-IP; 8: VXLAN; 16: Encrypted VXLAN (available only to mapencap, routeencap, and lbnat rules)
+              lbnat flags - 4096: MAC fixup 8192: Use PA MAC in case of encap 16384: Decrement TTL 32768:  MAC fixup use CA source MAC 65536: Modify destination IP 131072: Modify destination port 262144: Encap 524288: Create flow;
+              mapdecap flags - 256:Preserve Inner MAC; 512:Push VSID; 1024:Push TNI as metadata;
+              mapencap flags - 4096:MAC lookup; 8192:CA route; 16384:Use Mapping TNI; 32768:CA route with CA MAC
+              nat flags - 256:Source NAT (default is Dest NAT) 
+              nat flags - 256:Source NAT; 512:Dest NAT (default); 1024:IP-only NAT
+              paroute flags - 4096:Force cache pruning;
+              routeencap flags - 512:Use Mapping 1024:L3 Discovery (GW behind LB) 2048:L4 Discovery 4 (ILB behind LB) 4096: Fix Inner Mac 8192: Use PA MAC 16384: Decrement TTL 32768: Fix Inner MAC use CA source MAC
+              rule flags - 256:vnetfpredirect; 512:source preserved redirect
+              tunneled nat flags - 1:Block RFC1918; 2:NAT only RFC1918
+            { IP address=
+            { Src IP address=
+            <none>
+            1:arp guard; 2:arp limiter; 4:dhcp guard; 8:dhcp limiter
+            1024: set dscp flags to all zeros
+            128:ipv4 guard; 256:ipv6 guard; 2048: icmpv6 limiter; 4096: NDP guard; 8192:timestamp rx guard
+            16:block bcast; 32:block non-ip; 64:arp filter
+            16384:mac guard 32768: broadcast limiter
+            512: set dscp flags to all zeros
+            Burst size: %lu ms
+            Decap
+            Decrement Ttl
+            default: bypass dscp flags
+            Destination IP : 
+            Destination IP: 
+            Destination MAC : 
+            Destination MAC: 
+            Destination Multicast MAC : 
+            Destination ports : 
+            Destination Tag : 
+            DestinationPort Port: %u
+            Diagnostic Tunnel Id=%u %ws
+            Dropped packets : %llu
+            Encap Type: Ip-in-Gre
+            Encap Type: Ip-in-Ip
+            Encap Type: Mac-in-Ip (NVGRE)
+            Encap Type: VXLAN
+            GRE Key : 
+            match_condition_type for priority_based, priority_based_all_condition_opt, priority_based_auto_condition_opt : none
+            match_condition_type for priority_based_single_condition_opt, priority_based_multi_condition_opt :
+            match_condition_type for priority_based_single_condition_opt, priority_based_multi_condition_opt, lpm :
+            Metadata : 
+            Protocol=%d
+            Protocols : 
+            Queue depth: %lu packets
+            Retry Count=%d
+            Retry Count=%u
+            RTT=%llu
+            Source IP : 
+            Source IP: 
+            Source MAC : 
+            Source MAC: 
+            Source Multicast MAC : 
+            Source Port: %u
+            Source ports : 
+            Source Tag : 
+            Src Port=%d; Dest Port=%d
+            Tag IP : 
+            Tenant Id: %u
+            Tenant Id=%u %ws
+            Throttled packets : %llu
+            TNI : 
+            VfxConditionDestinationIp|VfxConditionDestinationIpRange|VfxConditionDestIpv4Range|
+            VfxConditionDestinationIpv6|VfxConditionDestIpv6Range|VfxConditionSourceIpv6|VfxConditionSrcIpv6Range|
+            VfxConditionGreKey|VfxConditionGreKeyRange
+            VfxConditionSourceIp|VfxConditionSourceIpRange|VfxConditionSrcIpv4Range|
+            VfxConditionSourcePort|VfxConditionDestinationPort|
+            VfxConditionSourcePortRange|VfxConditionDestinationPortRange|
+            VLAN ID : 
+            With Option=%ws
+          allow, block, mapipin, mapipout, mapmacin, mapmacout, pingresponse, caredirect: 
+          decap: [metadata type] [mss_del]/[rev_mss_del]
+          dynnat: [nat_id] [mss_del]/[rev_mss_del]
+          ipv4 address info: Src=
+          ipv4 address info: Src=%x; Dest=%x
+          ipv6 address info: Src=
+          lbnat: [[space]] [mss_del]/[rev_mss_del] [flags] [[diprange1] [[port1]] ..64*] 
+          mapdecap: [space] [mss_del]/[rev_mss_del] [local_cert_thumbprint] [remote_cert_subject_name] [metadata type]
+          mapencap: [space] [mss_del]/[rev_mss_del] [src_pa] [key] [flags] [local_cert_thumbprint] [remote_cert_subject_name]
+          mapin/mapout: [space] [mss_del]/[rev_mss_del] [[rewrite address]]
+          mapnat: [space] [mss_del]/[rev_mss_del] [[rewrite address]]
+          mark: [DSCP class] 
+          nat: [ip] [port] [mss_del]/[rev_mss_del]
+          paroute: [compartment_id] [vlan_id | *] [[cache_limit] [cache_entry_timeout] [ifindex] [flags]]
+          qos: [rate in Mbps] [queue depth] [queue burst size] 
+          routeencap: [mss_del]/[rev_mss_del] [flags] [[space]] [[src_pa1] [dest_pa1] [mac1] [key1] [local_cert_thumbprint1] [remote_cert_subject_name1] ..8*]] 
+          Src MAC=
+          transpose: [mss_del]/[rev_mss_del] [[hairpin_switch] [hairpin_port]] [[Metadata Type]:[Value]] [[TNI] [VlanId]] decap
+          transpose: [mss_del]/[rev_mss_del] [[hairpin_switch] [hairpin_port]] [[Metadata Type]:[Value]] [[TNI] [VlanId]] encap [src_mac] [dst_mac] [src_ip] [dst_ip] [encap_type] [key] [[partial rewrite type] [input byte start] [input byte end] [rewrite byte position] ..4*]]
+          transpose: [mss_del]/[rev_mss_del] [[hairpin_switch] [hairpin_port]] [[Metadata Type]:[Value]] [[TNI] [VlanId]] modify [src_mac] [dst_mac] [src_ip] [dst_ip] [src_port] [dst_port] [ttl_dec] [[partial rewrite type] [input byte start] [input byte end] [rewrite byte position] ..4*]]
+          tunnelednat: [mss_del]/[rev_mss_del] [l3nat|nonat] [src_mac] [dest_mac] [flags] [snatiprange1..64*]
+          tunnelednat: [mss_del]/[rev_mss_del] l4nat [baseport] [numports] [src_mac] [dest_mac] [flags] [snatip1..64*]
+          tunnelednat: [mss_del]/[rev_mss_del] mappedl4nat [baseport] [numports] [src_mac] [dest_mac] [flags] [snatiprange]
+         %llu: %llu: %llu: %llu: %lu: %lu: %lu: %lu: %lu: %ws
+         %llu: %llu: %lu: %llu: %llu: %lu: %lu: %lu: %lu
+         Bytes allowed: %llu
+         Bytes delayed due to insufficient tokens: %llu
+         Bytes delayed due to non-empty queue: %llu
+         Bytes dropped: %llu
+         Bytes received: %llu
+         Bytes resumed: %llu
+         Column 1: Time stamp (100-ns units)
+         Column 10: Queue action
+         Column 2: Elapsed uSecs since last token refreshed
+         Column 2: Prerefresh token count
+         Column 3: Proc number
+         Column 3: Tokens refreshed
+         Column 4: PreRefresh token count
+         Column 4: Queue rate (Mbps)
+         Column 5: Queue pkt length
+         Column 5: Tokens refreshed
+         Column 6: Proc number
+         Column 6: Queue byte length
+         Column 7: Bytes received
+         Column 7: Queue packet length
+         Column 8: Bytes resumed
+         Column 8: Packets received
+         Column 9: Packets resumed
+         Column 9: PortId
+         Direction: %ws
+         Elapsed time since last query: %llu ms
+         Packets allowed: %llu
+         Packets delayed due to insufficient tokens: %llu
+         Packets delayed due to non-empty queue: %llu
+         Packets dropped: %llu
+         Packets received: %llu
+         Packets resumed: %llu
+         Queue Type: Max cap
+         Queue Type: Qos rule
+         Queue Type: Unknown
+        Base Source Port: %u
+        Bit Map of 
+        Block RFC1918 IPs
+        CA routing enabled
+        CA routing with CA source MAC enabled, ttl not decremented
+        Cache pruning threshold: %d
+        Cache pruning timeout: %d seconds
+        class [0] - total entry
+        class [1] - half open flow
+        class [2] - total flow
+        class [3] - tcp flow
+        class [4] - udp flow
+        class [5] - other flow
+        Classifier Condition Type : 
+        Classifier Type : 
+        Client Algo %u: %u
+        Conditions:
+        Count of DIP Ranges: %d
+        Counter info : Counter ID: %u, Bytes: %llu, Packets: %llu, LastUpdate: %llu
+        Counter offloaded: FALSE
+        Counter offloaded: TRUE
+        Creating a flow pair
+        data:
+        Decrementing TTL
+        diagnostic tunnel Id - 0: none, nonzero: tunnel Id (e.g., GRE key)
+        DIP Range(s) : 
+        Dropped packets : %llu
+        Dropped Packets: %llu
+        Dropped unified flows : %llu
+        DSCP Class : %u
+        dscp rx flags:
+        dscp tx flags:
+        Encap Dest IP(s) : 
+        Encap Dest MAC : 
+        Encap Destination(s) : 
+        Encap Source IP : 
+        Encap Source MAC : 
+        Encap Type: Encrypted VXLAN
+        Encap Type: IP-in-GRE
+        Encap Type: IP-in-IP
+        Encap Type: NVGRE
+        Encap Type: VXLAN
+        Encap:
+        encap_tuples - [encap_type] [[src_mac] [dst_mac]]{0,1} [src_ip] [dest_ip] [tenant_id|gre_key] - max currently supported encaps is 2, ensure encap_tuples supercede the inner_tuples
+        Encapping packets
+        Fixing inner MAC
+        Fixing inner MAC use CA source MAC
+        Fixing MAC
+        Fixing MAC use CA source MAC
+        flags - 1:default allow; 2:hairpin; 4:clear TNI; 16:enable monitoring ping responder
+        flags - 1:force_defer
+        flags - 1:permanent; 2:non unique pa, 4: mac mapping
+        flags - 1:reuse udp port binding
+        flags - 1:Sample Flow Pairs 2:Sample Inbound Only 4:Sample Outbound Only
+        flags - 1:tcp syn 2: monitoring ping flag
+        flags - 1:terminating; 2:stateful; 4:non-syn only; 8:track tcp state; 16:syn-only; 32: skip hairpinning; 128:opt-condition; 4096:audit matches; mirror:16384; monitoring ping: 32768
+        flags - 16:virtualized; 32:intercept, 64:mac virtualized, 128:process non-ip, 256:process client DHCP, 512:DHCPV6 intercept, 1024:DHCPV4 intercept, 2048:ARP intercept, 4096:NDP intercept, 8192:RDP intercept 
+        Flags : %d 
+        flags:
+        FlagsEx : %lld 
+        Flow TTL: %d
+        Force cache pruning
+        Forward to Port: %s
+        Forward to Switch: %s
+        Friendly name : 
+        GRE key : %d
+        group_condition: [proto] [src_ip] [src_prt] [dest_ip] [dest_prt]
+        group_match_type: [priority_based|priority_based_single_condition_opt|priority_based_multi_condition_opt|priority_based_all_condition_opt|priority_based_auto_condition_opt|lpm] [match_condition_type..*5]
+        inner_tuples - [[src_mac] [dst_mac] [TNI] [VlanId]]{0,1} [proto] [src_ip] [src_prt] [dest_ip] [dest_prt]
+        ipv6 flag- Ipv6:1; Ipv4: 0
+        Local Cert Thumbprint: 
+        Mac lookups enabled
+        Map NAT Type: Dest NAT
+        Map NAT Type: Source NAT
+        Map space : 
+        match_condition_type for priority_based, priority_based_all_condition_opt, priority_based_auto_condition_opt : none
+        match_condition_type for priority_based_single_condition_opt, priority_based_multi_condition_opt :
+        match_condition_type for priority_based_single_condition_opt, priority_based_multi_condition_opt, lpm :
+        Matched packets : %llu
+        Meter info : %llu Bytes, %llu Packets
+        Modify:
+        Modifying destination IP
+        Modifying destination port
+        MSS delta: %d,%d
+        NAT info : 
+        NAT Only RFC1918 IPs
+        NAT pool : 
+        NAT Source IP(s) : 
+        NAT Type : %s
+        Number of rules in classifier : %d
+        Pending packets : %llu
+        Port rule Counter Id : 
+        Ports Used: %u Ports Free: %u
+        Preserve MAC
+        Priority : %d
+        protocol - ICMP:1; TCP:6; UDP:17 
+        protos - 6:TCP; 17:UDP; 47:GRE; 4:IP-in-IP; 1:ICMP; 41:IPv6-in-IP; 58:ICMPv6; 252:VXLAN; 251:Encrypted VXLAN (available only to mapdecap rules)
+        Push TNI as Metadata Type : 
+        Push TNI as VSID
+        Qos rate in Mbps : %llu
+        Rate: %llu
+        Rate: DISABLED
+        Remote Cert Subject Name: 
+        Rewrite Address: 
+        Route Type: L3 Discovery
+        Route Type: L4 Discovery
+        Route Type: Next Hop
+        Rule Data:
+        Server Algo %u: %u
+        Set Metadata Type: 
+        Set TNI: %u
+        Set VLAN: %u
+        Source Port Range Size: %u
+        Throttled Packets: %llu
+        Transposition:
+        Type : 
+        Type : %s
+        Using default compartment
+        Using interface constraint with interface index: %d
+        Using Mapping TNI
+        Using non-default compartment with ID: %d
+        Using source PA MAC
+        VLAN ID: %u
+        with option - 0: ping has no option, 1: ping has an option with the magic number stamp
+       Column 1: Time stamp (100-ns unit)
+       Column 10: New ramp up expiry time (Mbps)
+       Column 2: Reservation percentage
+       Column 3: Current reservation rate (Mbps)
+       Column 4: Current total rate (Mbps)
+       Column 5: Current line rate (Mbps)
+       Column 6: Current is under utilized?
+       Column 7: New allocated rate (Mbps)
+       Column 8: New under utilized rate (Mbps)
+       Column 9: New over utilized rate (Mbps)
+      %llu: %lu: %llu: %llu: %llu: %ws: %llu: %llu: %llu: %llu
+      [%s] count : %lu
+      [%s] created : %llu
+      [%s] limit : %lu
+      [%s] matched : %llu
+      [%s] maximum : %lu
+      [%s] total : %lu
+      Available Bandwidth: %lld
+      Bytes : %lld 
+      Cache entry count : %lu
+      Cache pruning active.
+      Cache pruning inactive.
+      CLASSIFIER INFO
+      Current Receive Info:
+      Current Transmit Info:
+      Customer address: 
+      Customer Bytes : %lld 
+      Customer MAC address: 
+      Customer Packets : %lld 
+      Default Queue Burst Size: %lu ms
+      Default Queue Depth: %lu packets
+      Default Queue Headroom: %hhu%%
+      Default Queue Min rate: %lu Mbps
+      Default Queue OverUtilized watermark: %hhu%%
+      Default Queue Rampup time: %lu ms
+      Default Queue UnderUtilized watermark: %hhu%%
+      Default Reservation: %llu
+      Direction : IN
+      Direction : OUT
+      Enforce intra-host limit: FALSE
+      Enforce intra-host limit: TRUE
+      Entry creation count : %llu
+      Entry deletion count : %llu
+      Entry timeout count : %llu
+      External IP : 
+      External max link speed: %llu Mbps
+      External min guarantee link speed percentage: %d
+      FLAG_FORCE_DEFER
+      Flags : 
+      Flow drop count : %llu
+      Flow match count : %llu
+      Flow pending count : %llu
+      Frag cache drop count : %llu
+      Frag cache match count : %llu
+      Frag cache no match count : %llu
+      Friendly name : 
+      Hash collision count : %llu
+      Idle time : %d
+      Idle time: %lu
+      Interface LUID: %I64u
+      Internal IP : 
+      Ip address : 
+      IP address: 
+      Link speed percentage: %d
+      MAC address: 
+      Match type : 
+      Max queue stats since last query:
+      Metadata key to String: %s
+      Metadata value to String: %s
+      Neighbor cache entries : 
+      Neighbor change notifications active.
+      Neighbor change notifications inactive.
+      Next Hop cache entries : 
+      Next Hop: 
+      No match count : %llu
+      Number of Reservation Queues: %lu
+      Packet events:
+      Packets : %lld 
+      Peak entry count : %lu
+      Pending drop count : %llu
+      Port range : %d-%d
+      Priority : %d
+      Provider address: 
+      Provider MAC address: 
+      Qos Enforcement Offloaded to Hardware
+      Receive Burst Size: %lu ms
+      Receive Limit: %lu
+      Receive Queue Depth: %lu packets
+      Reference : %d
+      Reservable Bandwidth: %llu Mbps
+      Reservation Headroom: %hhu%%
+      Reservation Min rate: %lu Mbps
+      Reservation Mode: Absolute
+      Reservation Mode: Weight
+      Reservation OverUtilized watermark: %hhu%%
+      Reservation Rampup time: %lu ms
+      Reservation UnderUtilized watermark: %hhu%%
+      Resume events:
+      Reuse limit : %d
+      Route change notifications active.
+      Route change notifications inactive.
+      RULE COUNTER
+      Rule drop count : %llu
+      Rule match count : %llu
+      Rule pending count : %llu
+      Rule unified flow drop count : %llu
+      Status : Awaiting Removal
+      Status : Fully Used
+      Status : Idle
+      Status : Partially Used
+      Status : Unknown
+      Syn : %lld 
+      TNI: %lu
+      Total Packets: %llu
+      Transmit Burst Size: %lu ms
+      Transmit Limit: %lu
+      Transmit Queue Depth: %lu packets
+      Transmit Reservation: %lu
+      Type : IPv4
+      Type : IPv6
+      Type: 
+      Usage bitmap : 
+    %2d/%2d/%4d %02d:%02d:%02d.%03d 
+    %u -> %u
+    /%s
+    Auto Condition Optimize by Default
+    Class %u:
+    CONFIG:
+    CURRENT INFO:
+    Default Ttl - %u
+    Delayed mapping event : %llu
+    Delayed NAT requests : %llu
+    DHCP Ack : %llu
+    DHCP Discover : %llu
+    DHCP Offer : %llu
+    DHCP Request : %llu
+    Direction - %s
+    Direction : %s 
+    Don't Auto Condition Optimize by Default
+    Don't Force Unified Flows
+    Dropped (Expired) Packets : %llu
+    Dropped ACL packets : %llu
+    Dropped ARP filter packets : %llu
+    Dropped ARP guard packets : %llu
+    Dropped ARP limiter packets : %llu
+    Dropped blocked packets : %llu
+    Dropped Broadcast Limiter packets : %llu
+    Dropped DHCP guard packets : %llu
+    Dropped DHCP limiter packets : %llu
+    Dropped forwarding packets : %llu
+    Dropped ICMPv6 limiter packets : %llu
+    Dropped invalid IP packets : %llu
+    Dropped invalid rule packets : %llu
+    Dropped IP broadcast packets : %llu
+    Dropped IPv4 spoofing packets : %llu
+    Dropped IPv6 spoofing packets : %llu
+    Dropped MAC spoofing packets : %llu
+    Dropped malformed packets : %llu
+    Dropped monitoring ping packets  : %llu
+    Dropped No Rule Match packets : %llu
+    Dropped other non-IP packets : %llu
+    Dropped pending packets : %llu
+    Dropped processing packets : %llu
+    Dropped resources packets : %llu
+    Dropped simulation packets : %llu
+    Enable Hardware Caps: %ws
+    Enable Hardware Reservations: %ws
+    Enable Software Reservations: %ws
+    EnableIcmpErrors - %s
+    EnableNvgreFlowid - %s
+    EncryptedVxlanSrcPortRange - %u-%u
+    ESP Unified Flows Disabled
+    ESP Unified Flows Enabled
+    Failed delayed NAT requests : %llu
+    Fast UF Locking Disabled
+    Fast UF Locking Enabled
+    FIN packets : %llu
+    Flags : 0x%x
+    Flags: 0x%02x
+    Force Unified Flows
+    Forward internal traffic to external network Disabled
+    Forward internal traffic to external network Enabled
+    Fragment Size - %u
+    Fragmentation size : %u
+    Friendly name : 
+    Friendly Name: %ws
+    GFT Copy Fin packets : %llu
+    GFT Copy packets : %llu
+    GFT Copy Reset packets : %llu
+    GFT Dropped Copy packets : %llu
+    GFT Dropped Exception packets : %llu
+    GFT Exception packets : %llu
+    GFT Exception UC Forward packets : %llu
+    GFT Exception UC Forward to External port packets : %llu
+    GFT Exception UF Offload Blocked packets : %llu
+    GFT Exception UF Offload Deferred packets : %llu
+    GFT Exception UF Offload Failed packets : %llu
+    GFT Exception UF Offload Pending packets : %llu
+    GFT Exception UF Offload RetryAwaiting packets : %llu
+    GFT Exception UF Offloaded ESP packets : %llu
+    GFT Exception UF Offloaded TCP packets : %llu
+    GFT Exception UF Offloaded UDP packets : %llu
+    GFT Exception UF packets  : %llu
+    GFT Failed Flow Entry offload (flow add failed) : %llu
+    GFT Failed Flow Entry offload (Profile failed) : %llu
+    GFT is enabled on the external NIC
+    GFT is NOT enabled on the external NIC
+    GFT is NOT supported by external NIC
+    GFT is supported by external NIC
+    GFT Total bytes : %llu
+    GFT Total Offloaded flows (Reason ConnEstablished) : %llu
+    GFT Total Offloaded flows (Reason Deferred) : %llu
+    GFT Total Offloaded flows (Reason Reconciliation) : %llu
+    GFT Total Offloaded flows (Reason Timer) : %llu
+    GFT Total Offloaded flows (RetryReason MeteringNotOffloaded) : %lu
+    GFT Total Offloaded flows (RetryReason OffloadFailed) : %lu
+    GFT Total Offloaded flows : %llu
+    GFT Total Offloads Blocked (Reason ConfigVxlanFailed) : %lu
+    GFT Total Offloads Blocked (Reason DnsTraffic) : %lu
+    GFT Total Offloads Blocked (Reason DoubleEncapEsp) : %lu
+    GFT Total Offloads Blocked (Reason Dtls) : %lu
+    GFT Total Offloads Blocked (Reason EncryptedVxlan) : %lu
+    GFT Total Offloads Blocked (Reason LocalDest) : %lu
+    GFT Total Offloads Blocked (Reason LocalSource) : %lu
+    GFT Total Offloads Blocked (Reason MissingActions) : %lu
+    GFT Total Offloads Blocked (Reason MultipleMetering) : %lu
+    GFT Total Offloads Blocked (Reason MultiTenancy) : %lu
+    GFT Total Offloads Blocked (Reason QoS) : %lu
+    GFT Total Offloads Blocked (Reason UdpUseVxlanDestPort) : %lu
+    GFT Total Offloads Blocked (Reason UnsupportedAction ) : %lu
+    GFT Total Offloads Blocked : %llu
+    GFT Total Offloads Retry (Reason MeteringNotOffloaded) : %lu
+    GFT Total Offloads Retry (Reason OffloadFailed) : %lu
+    GFT Total packets : %llu
+    Half Open Ttl - %u
+    Hyper-V Aperture disabled
+    Hyper-V Aperture enabled with batch size %u
+    ID: %d
+    IgnoreGlobalSettings - %s
+    Inner MAC Forwarding Disabled
+    Inner MAC Forwarding Enabled
+    Inner MAC VMQ Disabled
+    Inner MAC VMQ Enabled
+    Intercepted packets : %llu
+    Larval Lifetime Sec - %u
+    Last NAT request serving time : %llu
+    Lifetime KBytes - %llu
+    Lifetime Min - %llu
+    List All LAYER Active Ping Flows
+    List All LAYER Metadata Key
+    List All LAYER Metadata Key and Value
+    Mapping event : %llu
+    Mapping timeout : %u
+    Max GFT Offload flows - %u
+    Max Pending Entries - %u
+    Max Pending Packets - %u
+    Max Session Count - %u
+    Metadata key to String: %s
+    Metadata Size - %u
+    Metadata value to String: %s
+    Missed interceptions : %llu
+    Monitoring Ping Disabled
+    Monitoring Ping Enabled
+    NAT Port Binding : 
+    NO METADATA VALUE
+    Not Subsuming Flows
+    Num Client Algos - %u
+    Num Server Algos - %u
+    Number of current VFs: %d
+    Offload DTLS sessions - %u
+    Offload Support Disabled
+    Offload Support Enabled
+    ParseEncryptedVxlan - %s
+    ParseRdma - %s
+    ParseVxlan - %s
+    Pended Packets : %llu
+    Pending mapping timeout : %u
+    Pending packets : %llu
+    Pending Timeout - %u
+    Pool Flags : 
+    Preserve inner DSCP disabled
+    Preserve inner DSCP enabled
+    Priority : %d
+    QoS offload is NOT supported by external NIC
+    QoS offload is supported by external NIC
+    Queued DPC timeout - %d
+    RdmaDestPort - %u
+    Recv Keepalive Timeout Sec - %u
+    Reduce port MTU for encap Disabled
+    Reduce port MTU for encap Enabled
+    Remote IP - Dest Port : 
+    Reordered Fragment Support Disabled
+    Reordered Fragment Support Enabled
+    RST packets : %llu
+    RULE : 
+    Send Keepalive Interval Sec - %u
+    Served delayed NAT requests : %llu
+    Single DPC timeout - %d
+    Skip TNI validation for inner MAC forwarding Disabled
+    Skip TNI validation for inner MAC forwarding Enabled
+    SRIOV is NOT supported by external NIC
+    SRIOV is supported by external NIC
+    Subsuming Flows
+    SYN packets : %llu
+    SYN-ACK packets : %llu
+    TAG : 
+    TCP Connections Closed by FIN : %llu
+    TCP Connections Expired to Time Wait : %llu
+    TCP Connections Reset : %llu
+    TCP Connections Reset by SYN : %llu
+    TCP Connections Timed Out : %llu
+    TCP Connections Verified : %llu
+    TCP Half Open Timeouts : %llu
+    TCP State Tracking Disabled
+    TCP State Tracking Enabled
+    Throttled packets : %llu
+    TIME_WAIT Ttl - %u
+    Total bytes : %llu
+    Total Bytes: %llu
+    Total multicast packets forwarded : %llu
+    Total NAT request serving time : %llu
+    Total NAT requests : %llu
+    Total non-IP packets : %llu
+    Total outgoing hairpinned packet drops : %llu
+    Total outgoing mirrored packet drops : %llu
+    Total packets : %llu
+    Total packets hairpinned : %llu
+    Total packets that matched hairpin rule but skipped hairpinnig : %llu
+    Total packets that skipped hairpinnig because of failure in cloning packet: %llu
+    Total packets that skipped hairpinnig because of failure in mirroring packet: %llu
+    Total packets that skipped hairpinnig because of failure in transposing packet  : %llu
+    Total packets that skipped hairpinnig because of fragmentation : %llu
+    Total unicast packets forwarded : %llu
+    Transient Flow Timeouts : %llu
+    UDP Scaling - Maximum Flow Table Utilization Threshold - %u
+    UDP Scaling - Minimum Flow Table Utilization Threshold - %u
+    UDP Scaling - Minimum TTL - %u
+    Unified Flow Tables Disabled
+    Unified Flow Tables Enabled
+    Use Mapping : %ws
+    Use Rx Guard List : %ws
+    Use TNI from packet Disabled
+    Use TNI from packet Enabled
+    Use Tx Guard List : %ws
+    VFP allows GFT feature
+    VFP does NOT allow GFT feature
+    VFP is running as a filtering extension
+    VFP is running as a forwarding extension
+    VxlanDestPort - %u
+    VxlanSrcPortRange - %u-%u
+    VxlanSrcPortRange - 0-65535
+   QoS line rate calculation info
+ - %d
+  %d-%d (%d) ...
+  ======================== Global Commands ========================
+  ======================== Mapping Commands ========================
+  ======================== NAT Commands ========================
+  ======================== Port Commands ========================
+  ======================== QOS Commands ========================
+  ======================== Rule Commands ========================
+  ======================== Switch Commands ========================
+  Blocked : %s
+  BlockedOnRestore : %s
+  Customer IPv4 : 
+  Customer IPv6 : 
+  Direction - %s
+  DSCP CONFIG
+  DSCP Guards Configuration Failed : %s
+  DSCP MAPPINGS
+  DTLS Offload Enabled
+  Enabled : %s
+  Fake MAC address : 
+  Flags : %d
+  FLOW INFO
+  FRAGMENT CACHE INFO
+  GFT Current Offloaded flows : %d
+  GFT Direct Oid Allocations : %d
+  GFT Failed Reconciliation OID: %llu
+  GFT In Use : %s
+  GFT Offload Enabled
+  GFT Pending Flows Add : %d
+  GFT Pending Flows Add Completion : %d
+  GFT Pending Flows Deferred Add : %d
+  GFT Pending Flows Deferred Delete : %llu
+  GFT Pending Flows Delete : %d
+  GFT Pending Flows Delete All : %d
+  GFT Pending Flows Profile Creation : %d
+  GFT Pending Issued Reconciliation OID : %d
+  GFT Pending Reconciliation OID: %d
+  GFT Reference Count : %d
+  GFT Rule Counter Allocations : %d
+  GFT State : ClearingFlows
+  GFT State : Configured
+  GFT State : Configuring
+  GFT State : Deleting
+  GFT State : Not Configured
+  GftState : %d, 
+  GLOBAL PROTOCOL SETTINGS
+  GROUP : 
+  ignore global settings %u
+  Inner MAC VMQ Enabled
+  LAYER COUNTER
+  LAYER Metadata
+  LAYER TTL
+  MAC address : 
+  MAC Filter Set : %s
+  MAPPING : 
+  NAT POOL COUNTER
+  NAT RANGE : 
+  No Encapsulation Offloads Enabled
+  No VPort Mapping
+  NVGRE LSO Offload Enabled
+  NVGRE Receive Checksum Offload Enabled
+  NVGRE RSS Enabled
+  NVGRE Transmit Checksum Offload Enabled
+  NVGRE VMQ Enabled
+  penalty : %d(s)
+  Pending Packet Stats
+  PORT DTLS SETTINGS
+  PORT FLOW SETTINGS
+  PORT PARSER SETTINGS
+  Port: 
+  Processor DpcTimeout
+  Provider IP : 
+  Provider IPv6 : 
+  QoS Hardware Transmit Cap Offload Enabled
+  QoS Hardware Transmit Reservation Offload Enabled
+  QOS QUEUE: 
+  SPACE CONFIG
+  SPACE PACKET COUNTER
+  SPACE SPACE INDEX COUNTER
+  SR-IOV Enabled
+  SWITCH FORWARDING SETTINGS
+  SWITCH INFORMATION
+  SWITCH QOS CONFIG
+  threshold : %d
+  time span : %d(s)
+  TRANSMIT DSCP COUNTERS
+  Transmit Reservation: 
+  UNIFIED FLOW INFO
+  VMQ Enabled
+  VPort ID : %d
+  VXLAN Configuration Failed : %s
+  VXLAN LSO Offload Enabled
+  VXLAN Receive Checksum Offload Enabled
+  VXLAN RSS Enabled
+  VXLAN Transmit Checksum Offload Enabled
+  VXLAN VMQ Enabled
+ : %d
+ A^_]
+ A^_^
+ A__^
+ A_A^_
+ A_A^_^]
+ A_A^A]_^
+ A_A^A]A\_
+ AssignedIp:
+ Clear TNI 
+ Client Algo %u: %u
+ ClientMac:
+ Deactivate Reason:%u
+ Default Allow 
+ Dest UDP Port:%d
+ DnsIp:
+ enabling ICMP errors = %u
+ enabling nvgre flow id = %u
+ Encap Key: 0x%X
+ ENCAP:
+ Encap:%s
+ encrypted vxlan src port base = %u
+ encrypted vxlan src port range = %u
+ Eth:%s
+ Fake MAC=
+ Flags=%d
+ H3E H3E
+ Hairpin Layer
+ Help Syntax: vfpctrl.exe help [Option1] [Option2] ... [Option3]
+ Inner V6: %d
+ INNER:
+ IP:%s
+ ITEM LIST
+ LastInboundFlightRecv:%u NumRetransmits: %u
+ LifetimeSec:%llu, TTL: %llu, LifetimeBytes:%llu, IdleTimeout:%u, RecvKeepAliveTimeout:%u, SendKeepaliveInterval:%u
+ Local Cert Thumbprint:
+ Local Inner MAC: 
+ Local Outer IP: 
+ Local PA: 
+ MAC Learning is Disabled.
+ MAC Learning is Enabled.
+ MATCHES
+ Microsoft Corporation. All rights reserved.
+ MSSDelta:%u
+ NIC is Initialized.
+ NIC is Pending Deletion.
+ NIC is Pending Initialization.
+ NO MATCHES FOUND
+ No VFP objects to serialize
+ Num server algos = %u
+ Offloaded:False
+ Offloaded:True
+ Operating System
+ parsing encrypted vxlan = %u
+ parsing inbound vxlan outside src port range = %u
+ parsing rdma = %u
+ parsing vxlan = %u
+ Port : %d
+ Port is Initialized.
+ Port is Pending Deletion.
+ Port is Pending Initialization.
+ Protocol:%u CipherAlgo:%u CipherStrength:%u HashAlgo:%u HashStrength:%u ExchAlgo:%u ExchStrength:%u HeaderSize:%lu TrailerSize:%u MaxMesgSize:%lu NumBuffers:%lu BlockSize:%lu
+ rdma dest port = %u
+ RelayIp:
+ Remote Cert Subject Name: 
+ Remote DiscoveredPA: 
+ Remote Inner MAC: 
+ Remote Mapped PA: 
+ Remote Outer IP: 
+ RequestedIp:
+ Role: %s
+ SentBytes :%llu, RecvBytes:%llu, SentPackets:%llu, RecvPackets:%llu
+ Server Algo %u: %u
+ ServerIp:
+ Session ID: %d
+- set the unified flow settings of the port.
+ Set TNI: %u
+ Set VLAN ID: %u
+ Src UDP Port:%d
+ Src=>Dst:
+ State: %s
+ TenantID: 0x%X  
+ This is a Validation-only Port.
+ Timeout: %d
+ TNI:%u 
+ TransactionId: 0x%x
+ Transport:%s
+ Tunnel ID:%d
+ Update flows on address change 
+ Value: %llu
+ vxlan port = %u
+ vxlan src port base = %u
+ vxlan src port range = %u
+ Windows
+!This program cannot be run in DOS mode.
+%02X-%02X-%02X-%02X-%02X-%02X
+%3d  
+%d-%d
+%sDestination IP
+%sDestination Port
+%sGre Key
+%sSource IP
+%sSource Port
+%sunknown condition
+(Push TNI)
+(tgu(dfu(4eu(
+, DecTtl
+, Dest IP address=
+, DSCP: %u
+, GRE key=%d
+, GRE key=%d }
+, Local Cert Thumbprint=
+, MAC address=
+, Remote Cert Subject Name=
+,TunnelID:%d 
+.00cfg
+.CRT$XCA
+.CRT$XCAA
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIAC
+.CRT$XIC
+.CRT$XIZ
+.CRT$XPA
+.CRT$XPZ
+.CRT$XTA
+.CRT$XTZ
+.data
+.data$brc
+.gfids
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.pdata
+.rdata
+.rdata$brc
+.rdata$zzzdbg
+.rsrc$01
+.rsrc$02
+.rtc$IAA
+.rtc$IZZ
+.rtc$TAA
+.rtc$TZZ
+.text
+.text$mn
+.text$mn$00
+.text$x
+.xdata
+: %d-%d (%d)
+:%d => 
+:%d=>
+:%llu
+:TNI:0x%X
+; Dest MAC=
+; Dest=
+@.data
+@.reloc
+@.rsrc
+@8w!u
+@8w"t
+@8w$u
+@8w0H
+@8w2H
+@8w3H
+@A_A^_^]
+@A_A^A]A\_^]
+@sSE3
+@SVWH
+@USVWAVH
+@USWH
+\$ E3
+\$ UH
+\\.\VfpExt
+\\.\VmSwitch
+__C_specific_handler
+_c_exit
+_initterm
+_initterm_e
+_o___acrt_iob_func
+_o___p___argc
+_o___p___wargv
+_o___p__commode
+_o___stdio_common_vfwprintf
+_o__cexit
+_o__configthreadlocale
+_o__configure_wide_argv
+_o__crt_atexit
+_o__errno
+_o__exit
+_o__get_initial_wide_environment
+_o__initialize_onexit_table
+_o__initialize_wide_environment
+_o__invalid_parameter_noinfo
+_o__register_onexit_function
+_o__seh_filter_exe
+_o__set_app_type
+_o__set_fmode
+_o__set_new_mode
+_o__wcsicmp
+_o__wcsnicmp
+_o__wcstoi64
+_o__wcstoui64
+_o__wfopen_s
+_o__wtoi
+_o_exit
+_o_fclose
+_o_fgetws
+_o_fread
+_o_fseek
+_o_ftell
+_o_fwrite
+_o_terminate
+_o_wcscpy_s
+_o_wcstok_s
+_o_wcstol
+_o_wcstoul
+_register_thread_local_exe_atexit_callback
+`.rdata
+{(L9'u
+</M9g,u
+=========
+===========
+================
+==========================
+============================
+040904B0
+0A_A^_
+0A_A^_^]
+0A_A^A\
+0A_A^A]A\_
+10.0.17747.1000
+10.0.17747.1000 (WinBuild.160101.0800)
+8L$0u
+8Mqtu
+97t'H
+A^_^[]
+A^A]A\_]
+A_A^]
+A_A^A]A\]
+A_A^A]A\_
+A_A^A]A\_^]
+absolute
+add-dscp-mapping
+add-dscp-mapping - "[dscp class] [tc] [allow]".
+add-group
+add-group "[id] [name] [in|out|inv6|outv6] [priority] [[group_condition]] [[group_match_type]]" - add a new group.
+add-layer
+add-layer "[id] [name] [stateful|stateless] [priority] [flags]" - add a new layer.
+add-local-ipv4-addr
+add-local-ipv4-addr "[addr]{0,4}" - add a list of local IPv4 addresses.
+add-local-ipv6-addr
+add-local-ipv6-addr "[addr]{0,4}" - add a list of local IPv6 addresses.
+add-mac-rule
+add-mac-rule "[id] [name] [src_mac] [dest_mac] [TNI] [VlanId] [proto] [src_ip] [src_prt] [dest_ip] [dest_prt] [flag] [ttl] [pri] [type] [data]" - add a rule with MAC conditions
+add-mapping
+add-mapping "[pa] [ca] [pamac] [flag] [[camac] [tni]]" - add a mapping.
+add-metadata-rule
+add-metadata-rule "[id] [name] [metadata type:value] [src_mac] [dest_mac] [TNI] [VlanId] [proto] [src_ip] [src_prt] [dest_ip] [dest_prt] [flag] [ttl] [pri] [type] [data]" - add a rule with MAC conditions
+add-nat-pool
+add-nat-pool "[id] [name] [flag]" - add a NAT pool.
+add-queue
+add-queue "[id] [name] [EnforceIntraHostLimit] [tx limit] [tx reservation] [rx limit]  [tx queue depth] [rx queue depth] [tx burst size] [rx burst size]  [under-utilized] [over-utilized] [headroom] [rampup time] [min rate]" - add a user-configured QoS queue.
+ADDRESS INFO
+add-rule
+add-rule "[proto] [src_ip] [src_prt] [dest_ip] [dest_prt] [flag] [ttl] [pri] [type] [data]" - add a rule.
+add-rule-counter
+add-rule-counter - add an extended rule counter on the port.
+add-rule-ex
+add-rule-ex "[id] [name] [proto] [src_ip] [src_prt] [dest_ip] [dest_prt] [flag] [ttl] [pri] [type] [data]" - add a rule with ID and name.
+add-rule-ex2
+add-rule-ex2 "[id] [name] [proto] [src_ip] [src_prt] [dest_ip] [dest_prt] [flag] [ttl] [pri] [ruleflags] [rulecounterid] [type] [data]" - add a rule with extended flags and counters on port.
+add-rule-set
+add-rule-set "[rule description file name]" - add rules described in the file
+add-space
+add-space "[id] [name]" - add a map space.
+add-tag
+add-tag "[id] [name] [ipv4/ipv6] [ips]" - add a new tag.
+add-tag-rule
+add-tag-rule "[id] [name] [src_tag] [dest_tag] [proto] [src_ip] [src_prt] [dest_ip] [dest_prt] [flag] [ttl] [pri] [type] [data]" - add a rule with TAG conditions
+All pending packet
+Allow
+allow
+allow_with_counters
+ALLOWED
+api-ms-win-core-debug-l1-1-0.dll
+api-ms-win-core-errorhandling-l1-1-0.dll
+api-ms-win-core-heap-l1-1-0.dll
+api-ms-win-core-interlocked-l1-1-0.dll
+api-ms-win-core-libraryloader-l1-2-0.dll
+api-ms-win-core-localization-l1-2-0.dll
+api-ms-win-core-processthreads-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-1.dll
+api-ms-win-core-profile-l1-1-0.dll
+api-ms-win-core-string-l1-1-0.dll
+api-ms-win-core-synch-l1-1-0.dll
+api-ms-win-core-synch-l1-2-1.dll
+api-ms-win-core-sysinfo-l1-1-0.dll
+api-ms-win-crt-private-l1-1-0.dll
+api-ms-win-crt-runtime-l1-1-0.dll
+api-ms-win-crt-string-l1-1-0.dll
+ARP FILTER LIST
+ARP LIMITER CONFIG
+AuthD
+block
+block-port
+block-port - block traffic on the given enabled port.
+block-port-on-restore
+block-port-on-restore - block traffic on restore on the given enabled port.
+BlockReason: %d, 
+BlockRsn_ConfigVxlanFailed, 
+BlockRsn_DnsTraffic, 
+BlockRsn_DoubleEncapEsp, 
+BlockRsn_Dtls, 
+BlockRsn_EncVxlan, 
+BlockRsn_LocalDest, 
+BlockRsn_LocalSource, 
+BlockRsn_MissingActions, 
+BlockRsn_MultiMetering, 
+BlockRsn_MultiTenancy, 
+BlockRsn_None, 
+BlockRsn_Qos, 
+BlockRsn_UdpUseVxlanPort, 
+BlockRsn_UnsupAction, 
+BootP
+Bridge Reserved       
+BROADCAST LIMITER CONFIG
+Busy                  
+Bytes Received                               : %llu
+Bytes Sent                                   : %llu
+C8|9BG
+CA Redirect Flow
+caredirect
+clear-active-ping
+clear-active-ping - clear all the active ping flows.
+clear-dscp-mapping
+clear-dscp-mapping - clear all dscp class mappings
+clear-flow
+clear-flow - clear all the flows of a layer.
+Clearing all isolation allowed TNIs
+Clearing All Port Flow State
+Clearing Flow State
+Clearing Unified Flow State
+clear-matching-flows
+clear-matching-flows "[Post Flow Match] [Protocol] [Source IP] [Source Port] [Destination IP] [Destination Port] [Match TNI] [TNI] [Destination Mac] [Source Mac]" - delete flows matching specified conditions. Specify [0|1] for [Post Flow Match] to determine if match should be determined specifically by the flow type
+clear-port-allowed-tni-list
+clear-port-allowed-tni-list - clears the list of allowed TNIs for the port.
+clear-port-flow-state
+clear-port-flow-state - clear the unified flow state of a port as well as all layer flow states.
+clear-port-queue
+clear-port-queue - disassociate a port from a Qos queue.
+clear-port-unified-flow-state
+clear-port-unified-flow-state - clear the unified flow state of a port.
+clear-switch-allowed-tni-list
+clear-switch-allowed-tni-list - clears the list of allowed TNIs for the switch.
+ClientIp:
+Close_Wait
+close_wait
+closed
+Closed
+Command %s succeeded!
+CompanyName
+CreateEventA
+D$ :D$!t
+d$(E3
+D$(E3
+D$@fA+
+D$\Hk
+D$`E3
+D$08D$1
+d$1D8
+D$HD;
+D$HE3
+D$pf+
+D$XE3
+D$xfD
+D8#t[
+D8eotzL
+D8l$1u|
+decap
+Decline
+Delay
+delete-layer-metadata-key
+delete-layer-metadata-key "[key string]" - delete the metadata entry of a layer.
+deposit-nat-range
+deposit-nat-range "[ip] [prt_start] [prt_end] [reuse_cnt]" - deposit a NAT range.
+deregister-event
+deregister-event - deregister an event from a mapping space, or a nat pool - if neither is specified, deregister the intercept event.
+deregister-eventex
+deregister-eventex "[event type] [[queue type]]" - deregister the intercept irp from a specific interception queue type default, dhcpv6, mapping space, or a nat pool queue.        event type - 1:intercept; 2:nat pool; 3:mapping space        queue type - 1:default; 2:dhcpv6; 3:dhcpv4; 4:arp; 5:ndp;
+Dest NAT; 
+Dest:
+dest_nat
+destination IP
+destination port
+Dhcp Guard            
+DHCP LIMITER CONFIG
+DHCP LOG
+Diagnostic Tunnel Id
+disable ping responder on a layer
+Disabled
+disable-ping-responder
+disable-port
+disable-port - disable VFP on the given port.
+disable-port-pcw-counters
+disable-port-pcw-counters - disable PCW counters for the given port.
+disable-qos-queue-pcw-counters
+disable-qos-queue-pcw-counters - disable PCW counters for the given QoS queue.
+disable-trace-filtering
+disable-trace-filtering - Disable filtering for per-packet traces.
+Disconnected          
+Discover
+DMAC:
+DPt:%u
+DTLS pending packet
+DTLS SESSION : 
+dyn_dest_nat
+dyn_src_nat
+dynnat
+E08E8uK<
+E8f/t
+E9g<tCH
+Egress Packet Drops                          : %llu
+Egress Packet Drops: %s  : %u
+Egress VFP Drops                             : %llu
+enable ping responder on a layer
+Enabled
+enable-ping-responder
+enable-port
+enable-port - enable VFP on the given port.
+enable-port-pcw-counters
+enable-port-pcw-counters - enable PCW counters for the given port.
+enable-qos-queue-pcw-counters
+enable-qos-queue-pcw-counters - enable PCW counters for the given QoS Queue.
+enable-trace-filtering
+enable-trace-filtering - Enable filtering for per-packet traces.
+encap
+Encap Dest IP: 
+Encap Src IP: 
+Encap: %s  
+ENCAP:%s:
+Encrypted VXLAN
+ERROR
+ERROR %d: A layer discarded the tuples as invalid data
+ERROR %d: A layer discarded the tuples as invalid packet
+ERROR %d: A required resource is unavailable at a layer
+ERROR %d: A required resource is unusable or pending at a layer
+ERROR %d: Invalid tuple arguments
+ERROR %d: No rule matches or a blocking rule was matched at a layer
+Error (%d): %s
+Error code = %d
+Error querying NIC info: %s, error=%x
+ERROR: can't parse the information item. You may need to use the latest vfpctrl.
+ERROR: can't parse the rule
+ERROR: can't parse the tag
+ERROR: failed to execute %s
+ERROR: More than one commands provided
+ERROR: no command was provided
+ESP   
+Established
+Expiring, 
+Extended Rule Counters : 
+f9\$ru
+f9\$tu
+f9<Bu
+f9<Hu
+f9<Xu
+f9D$p
+f9k<t
+fA9^(
+fA9<Au
+fA97t
+fA9F(
+fA9F(u:
+fA9F*
+Failed DestList Update
+Failed Packet Filter  
+Failed PVLAN Setting  
+Failed Security Policy
+Failed to open %s
+Failed to print item list
+Failed to read data from %s
+Failed to set the flag! 
+Failed to write data to %s
+False
+FALSE
+false
+fD9$Au
+fD9,^u
+fD9,Au
+fD9,Fu
+fD9c:t
+fD9c8t
+fD9s8tSH
+fE9f*u
+fE9f*vcD
+fE9N(
+fE9n(
+fE9N(
+fE9N(u;
+fF9$xu
+FileDescription
+FileVersion
+Filtered              
+Filtered IsoUntagged  
+Filtered VLAN         
+Fin State: %s 
+Fin:%s, 
+FINAL TRANSPOSITION : 
+First NB Too Small    
+Flags:0x%X TTL:%u/%u Trans:%u/%u Sig:0x%llX/0x%llX 
+Flags=%d
+FLOW : 
+Flow Action:
+Flow ID:0x%X,
+Flow State: %s
+Flush and reset intercept queue! 
+force-add-group
+force-add-group "same as add-group" - forcibly add a new group.
+force-add-layer
+force-add-layer "same as add-layer" - forcibly add a new layer.
+force-add-rule
+force-add-rule "same as add-rule-ex" - add a rule and remove exsiting one with same ID.
+force-add-tag
+force-add-tag "[id] [name] [ipv4/ipv6] [ips]" - forcibly add a new tag.
+FormatMessageW
+Frag pending packet
+get-address-info
+get-address-info - get the port's address information.
+get-aperture-state
+get-aperture-state - queries if Hyper-V aperture is supported on the node.
+get-arp-filter
+get-arp-filter - get the allowed list of target IPv4 addresses in arp packets.
+get-arp-limiter-config
+get-arp-limiter-config - get the ARP limiter configurations.
+get-binding
+get-binding - get the binding type of VFP currently loaded.
+get-broadcast-limiter-config
+get-broadcast-limiter-config - get the Broadcast limiter configurations.
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThreadId
+get-dhcp-limiter-config
+get-dhcp-limiter-config - get the DHCP limiter configurations.
+get-dhcp-log
+get-dhcp-log - get the dhcp protocol log of the port.
+get-dscp-config
+get-dscp-mapping
+get-dscp-mapping - list dscp to tc mappings
+get-flow-stats
+get-flow-stats - get the flow stats of the layer.
+get-frag-cache-stats
+get-frag-cache-stats - get the fragmentation cache stats of the port.
+get-gft-port-state
+get-gft-port-state - get the port's GFT state.
+get-guard-config
+get-guard-config - get the VFP guard configurations.
+get-icmpv6-limiter-config
+get-icmpv6-limiter-config - get the icmpv6 limiter configurations.
+GetLastError
+get-layer-counter
+get-layer-counter - get the performance counter of a layer.
+get-layer-metadata-value
+get-layer-metadata-value "[key string] " - get the metadata value for a specific key in a layer.
+get-layer-ttl
+get-layer-ttl - get the ttl settings of a layer.
+get-local-ipv4-addr
+get-local-ipv4-addr - get the list of local IPv4 addresses.
+get-local-ipv6-addr
+get-local-ipv6-addr - get the list of local IPv6 addresses.
+GetModuleHandleW
+get-nat-pool-counter
+get-nat-pool-counter - get NAT pool performance counters.
+get-next-hop-addr
+get-next-hop-addr - get the next-hop MAC address.
+get-port-allowed-tni-list
+get-port-allowed-tni-list - get the list of allowed TNIs for the port.
+get-port-counter
+get-port-counter - get the performance counter of the port.
+get-port-dtls-settings
+get-port-dtls-settings - get the DTLS settings of the port.
+get-port-flow-settings
+get-port-flow-settings - get the unified flow settings of the port.
+get-port-flow-stats
+get-port-flow-stats - get the unified flow statistics of the port.
+get-port-parser-settings
+get-port-parser-settings - get the port parser settings.
+get-port-queue
+get-port-queue - list the queues that this port is associated with.
+get-port-state
+get-port-state - get the port state.
+get-port-tx-dscp-counter
+get-port-tx-dscp-counter - get packet and byte counters for each DSCP class on transmit for the port.
+GetProcessHeap
+get-processor-dpctimeout
+get-processor-dpctimeout - get processor dpctimeout- supported only on Azure and WIN2K12R2
+get-protocol-settings
+get-protocol-settings - get the encapsulation protocol settings.
+get-qos-config
+get-qos-config - retrieve QoS config of a switch.
+get-qos-line-info
+get-qos-line-info - retrieve QoS information for egress reservation.
+get-qos-reservation-info
+get-qos-reservation-info - get rate calculation events
+get-queue-info
+get-queue-info [queue_id] "all" | "stats" | "packet_events" | "resume_events" - shows max queue counters for this QoS queue.
+get-rule-classifier-info
+get-rule-classifier-info - get the classifier info for a rule.
+get-rule-counter
+get-rule-counter - get the performance counter of a rule.
+get-rule-info
+get-rule-info - get extended information of a rule.
+get-saverestore-settings
+get-saverestore-settings - get the save/restore settings.
+get-space-config
+get-space-config - get the map space configurations.
+get-space-index-counter
+get-space-index-counter [pa|ca] - space index performance counters.
+get-space-packet-counter
+get-space-packet-counter - get the map space packet counters.
+get-switch-allowed-tni-list
+get-switch-allowed-tni-list - gets the list of allowed TNIs for the switch.
+get-switch-forwarding-settings
+get-switch-forwarding-settings - get forwarding settings for a switch.
+get-switch-info
+get-switch-info - get information about a switch.
+GetSystemTimeAsFileTime
+get-tcp-log
+get-tcp-log - get the address log of the port.
+get-trace-filtering-state
+get-trace-filtering-state - get the state of per-packet trace filtering.
+get-version
+get-version - get the version of VFP currently loaded.
+get-vmswitch-port-counter
+get-vmswitch-port-counter - get vmswitch counters for the given port.
+GFT Counters Update Deferred, 
+GFT Offload And Counters Update Deferred, 
+GFT Offload Blocked, 
+GFT Offload Create Profile Failed, 
+GFT Offload Deferred, 
+GFT Offload Delete Deferred, 
+GFT Offload Pending Add, 
+GFT Offload Pending Delete All, 
+GFT Offload Pending Delete, 
+GFT Offload Pending Profile Creation, 
+GFT Offload Waiting Retry, 
+GFT Offloaded, 
+GFT pending packet
+GFT PORT STATE
+GftFlowState: %d, 
+GftPkts:%llu, GftBytes:%llu 
+gre key
+group
+group [group_id] - specify the target group.
+GUARD INFO
+H SVWH
+H!\$0L
+H!T$0H
+H)\$HH
+H9\$@
+H9|$0t
+HA_A^A]A\_^[]
+half open flow
+Half Open, 
+hash table
+HcS6H
+HcSdH
+HeapAlloc
+HeapFree
+Hyper-V Aperture is not supported
+Hyper-V Aperture is supported
+Hyper-V Switch Extension
+ICMP  
+ICMP:
+ICMP6 
+ICMP6:
+ICMPv6 LIMITER CONFIG
+Id : 
+Ignore
+Inactive
+Incoming
+Inform
+Ingress Packet Drops                         : %llu
+Ingress Packet Drops: %s : %u
+Ingress VFP Drops                            : %llu
+InitializeSListHead
+Initiator
+inject
+inject - inject a packet to a port.
+Injected ICMP         
+injectex
+injectex - inject a packet with metadata to a port.
+Insufficient Receive Buffers                 : %llu
+Insufficient RNDIS Operations                : %llu
+Insufficient Send Buffers                    : %llu
+intercept
+intercept - test intercept event.
+interceptex
+interceptex - test intercept event with packet metadata.
+interceptex2
+interceptex2 "[queue type]"/- test intercept event with specific queues and packet metadata.        queue type - 1:default; 2:dhcpv6; 3:dhcpv4; 4:arp; 5:ndp
+InternalName
+Interrupts Received                          : %llu
+interval tree
+Invalid Config        
+Invalid Data          
+Invalid Dest MAC      
+Invalid Packet        
+Invalid Source MAC    
+Invalid VLAN Format   
+IP-GRE
+IP-in-GRE
+IP-in-IP
+IP-IP
+IPsec                 
+IsDebuggerPresent
+ISOLATION ALLOWED TNIs
+ISOLATION ALLOWED TNIs ON PORT
+IsProcessorFeaturePresent
+L!D$(A
+L$ WH
+L$4E3
+L$8E3
+L$HE3
+L$HH3
+L$PE3
+L$xH3
+L3-Discovery 
+l3nat
+L4-Discovery 
+l4nat
+L9c t6H
+L9c0t*H
+L9d$ 
+L9't5H
+Larval
+layer
+LAYER : 
+layer [layer_id] - specify the target layer.
+LAYER PROCESSING 
+lb_dest_nat
+lb_src_nat
+lbnat
+LegalCopyright
+linked list
+list-active-ping
+list-active-ping - list all the active pings flow Ids.
+list-dtls-sessions
+list-dtls-sessions - list all the DTLS sessions of a port.
+list-flow
+list-flow - list all the flows of a layer.
+list-group
+list-group - list all the groups of a given layer.
+list-layer
+list-layer - list all the layers.
+list-layer-metadata-keys
+list-layer-metadata-keys - list all the metadata keys in a layer.
+list-layer-metadata-values
+list-layer-metadata-values - list all the metadata keys and values entry of a layer.
+list-mapping
+list-mapping - list all the mapping.
+list-nat-pool
+list-nat-pool - list all the NAT pools.
+list-nat-port-binding
+list-nat-port-binding - list all the nat port bindings of a nat pool.
+list-nat-range
+list-nat-range - list the NAT ranges.
+list-pa-discovery-route
+list-pa-discovery-route - list all the PA discovery route of a port.
+list-port-rule-counter
+list-port-rule-counter - list all extended rule counters of a port.
+list-queue
+list-queue [queue_id] - shows user-configured QoS queues & their configs.
+list-rule
+list-rule - list all the rules of a group.
+ListSize=%d
+list-space
+list-space - list all the map spaces.
+list-tag
+list-tag - list all the tags of a port.
+list-unified-flow
+list-unified-flow - list all the unified flows of a port.
+list-vmswitch-port
+list-vmswitch-port - list the active ports and NICs on all vmswitches in the system.
+Load Balancing ID
+LOCAL IPv4 ADDRESS LIST
+LOCAL IPv6 ADDRESS LIST
+Longest prefix match on 
+M H1E
+M9g4u
+MAC address         : %02X-%02X-%02X-%02X-%02X-%02X
+Mac Spoofing          
+MAC-in-GRE
+mac-mapping 
+Main, 
+map_nat
+mapdecap
+mapencap
+mapin
+mapipin
+mapipout
+mapmacin
+mapmacout
+mapnat
+mapout
+mappedl4nat
+mapping
+mapping [mapping_id] - specify the mapping id.
+Mapping pending packet
+Mapping request: Customer IP: 
+Mapping request: Customer MAC: 
+Mapping request: Provider IP: 
+MaskAddress
+match-tuple
+match-tuple "[proto] [src_ip] [src_prt] [dest_ip] [dest_prt] [in|out] [flag]" - find the flow or rule entry matched by a 5-tuple at a given layer in the specified direction.
+memcpy
+memset
+meter
+Microsoft
+Microsoft Corporation
+mirror 
+modify
+Modify
+Monitoring Ping Tcp Option Value%u;
+monitoring_ping_ack_packet
+monitoring_ping_packet 
+MTU                 : %u
+MTU Mismatch          
+multicast
+Multiple conditions is not allowed for the given match type.
+N/A                   
+NAT IP: 
+NAT pending packet
+NAT POOL : 
+NAT Port: %u 
+Native Forwarding Req 
+nat-pool
+nat-pool [nat_pool_id] - specify the target NAT pool.
+nat-range
+nat-range [nat_range_id] - specify the target NAT range.
+NDIS Lightweight Filter Driver
+NEXT HOP ADDR
+Next hop MAC address : 
+NIC Disabled          
+NIC Friendly name   : %s
+NIC name            : %s
+NIC name            : None
+no reuse udp port binding
+No VFP objects to serialize
+non_syn_only 
+nonat
+non-unique-pa 
+Not Accepted          
+NOT ALLOWED
+Not Present
+Not Ready             
+NotPresent
+ntdll.dll
+ntelD
+NTSTATUS : 0x%x
+Number of TNIs = %d
+NVGRE
+Offer
+OffloadReason: %d, 
+OffRsn_ConnEst, 
+OffRsn_Deferred, 
+OffRsn_None, 
+OffRsn_Recon, 
+OffRsn_Timer, 
+opt_condition 
+OriginalFilename
+other flow
+Outgoing
+outv6
+p AWH
+PA Discovered
+PA Undiscovered
+Packet direction: 
+Packet Injection
+Packet Interception
+Packet Processing
+packet_events
+Packets Received                             : %llu
+Packets Sent                                 : %llu
+padiscovery
+PADiscovery pending packet
+Paired, 
+paroute
+PARoute pending packet
+Penalty=%d
+Pending
+pending
+Pending Count: %llu
+Pending Link Change                          : %u
+Pending Routed Packets                       : %u
+Pending, 
+permanent 
+persist-host-state
+persist-host-state - Persist host state through vhdcache
+Ping Failed!
+Ping packet info:
+Ping Succeeded!
+ping-endpoint
+ping-endpoint "[proto] [ipv4|ipv6 flag] [src mac] [dest mac] [src ip] [dest ip] [src port] [dest port] [retrycount] [TNI] [with option] [diagnostic tunnel Id]" set the initiating ping info.
+pingresponse
+Pkts:%llu, Bytes:%llu 
+port "[port name]" - specify the target port.
+PORT COUNTER
+Port Friendly name    : %s
+Port name             : %s
+Port name: %wZ
+PORT STATE
+Port type             : Default
+Port type             : Emulated
+Port type             : External
+Port type             : Generic
+Port type             : Internal
+Port type             : Synthetic
+PortId                : %u
+Ports are blocked on restore
+Ports are NOT blocked on restore
+prepare-for-uninstall
+prepare-for-uninstall- Rundown state dependent on connectivity - service about to be uninstalled.
+priority_based
+priority_based_all_condition_opt
+priority_based_auto_condition_opt
+priority_based_multi_condition_opt
+priority_based_multi_condition_opt supports up to %d conditions.
+priority_based_single_condition_opt
+Priority-based match
+Priority-based match auto condition optimized
+Priority-based match optimized on 
+Priority-based match optimized on all conditions
+Probationary, 
+process-tuples
+process-tuples "encap [encap_tuples]{0,2} [inner_tuples] [in|out] [flags]" - simulates packet processing through VFP layers for the given tuples in the specified direction.
+ProductName
+ProductVersion
+profile
+Proto: %3d  
+ProviderFlowEntryId: 0x%zX, 
+QoS                   
+QOS pending packet
+QueryPerformanceCounter
+queue
+queue [queue_id] - specify the QoS queue id.
+Quota Exceeded                               : %llu
+RDMA:
+Reachable
+Read data from %s
+Receive Buffer Allocation Count              : %u
+Receive Buffer Allocation Size               : %u
+redirect
+Release
+remove_tenant_id 
+remove-all-group
+remove-all-group - remove all the groups of a given layer.
+remove-all-layer
+remove-all-layer - remove all the layers of a given port.
+remove-all-mapping
+remove-all-mapping - remove all the mappings of a given space.
+remove-all-nat-pool
+remove-all-nat-pool - remove all NAT pools.
+remove-all-rule
+remove-all-rule - remove all the rules of a given group.
+remove-all-space
+remove-all-space - remove all mapping spaces.
+remove-all-tag
+remove-all-tag - remove all the tag of a given port.
+remove-group
+remove-group - remove a group.
+remove-group-condition
+remove-group-condition - remove a group condition.
+remove-layer
+remove-layer - remove a layer.
+remove-local-ipv4-addr
+remove-local-ipv4-addr "[addr]{0,4}" - remove a list of local IPv4 addresses.
+remove-local-ipv6-addr
+remove-local-ipv6-addr "[addr]{0,4}" - remove a list of local IPv6 addresses.
+remove-mapping
+remove-mapping "[pa|ca|camac] [[ip] | [camac tni]]" - remove a mapping.
+remove-nat-pool
+remove-nat-pool - remove a NAT pool.
+remove-nat-range
+remove-nat-range "[ip] [port_start] [end_start]" - remove a NAT range.
+remove-queue
+remove-queue [queue_id] - remove a user-configured QoS queue.
+remove-rule
+remove-rule - remove a rule.
+remove-rule-counter
+remove-rule-counter - remove an extended rule counter on the port.
+remove-space
+remove-space - remove a mapping space.
+remove-tag
+remove-tag - remove a tag.
+remove-trace-filters
+remove-trace-filters - removes trace filters configured on the given port.
+Removing all layers prior to deserialization
+Removing layers after serialization failed
+Removing nat pools failed after serialization
+Removing port rule counters after serialization failed
+Removing spaces failed after serialization
+replace-layer-flow-address
+replace-layer-flow-address - replaces addresses in layer flows if it matches the provided address.
+replace-rule-set
+replace-rule-set "[rule description file name]" - replace rules described in the file
+replace-tag
+replace-tag "[id] [name] [ipv4/ipv6] [ips]" - replace ips of a tag
+Reply
+Request
+reset-nat-pool-counter
+reset-nat-pool-counter - reset NAT pool performance counters.
+Resetting counters. 
+Resources             
+Responder
+resume_events
+RetryRsn: %d, 
+RetryRsn_Metering, 
+RetryRsn_OffFail, 
+Reusable
+reuse udp port binding
+Ring Buffer Full Errors                      : %d
+routeencap
+Router Guard          
+RtlCaptureContext
+RtlCompareMemory
+RtlGetVersion
+RtlIpv4AddressToStringW
+RtlIpv4StringToAddressW
+RtlIpv6AddressToStringW
+RtlIpv6StringToAddressW
+RtlLookupFunctionEntry
+RtlTimeToTimeFields
+RtlVirtualUnwind
+rule [rule_id] - specify the target rule.
+rulecounter
+rulecounter [rulecounter_id] - specify the rule counter id.
+sample-flow
+sample-flow "[sample size] [flags]"- sample the flows of a layer.
+sample-unified-flow
+sample-unified-flow "[sample size] [reset counters] [flags]"- sample the unified flows of a port.
+Sampling layer flow state with sample size %u
+Sampling unified flow state with sample size %u
+save-serialization
+save-serialization "filename"- writes serialized config for port to specified file.
+Send Buffer Allocation Count                 : %u
+Send Buffer Allocation Size                  : %u
+Serialization of VFP objects failed
+Set layer metadata value: string size = %u and key is %s and string is: %s
+Set the ipv4 address info: CA=%x PA=%x 
+Set the ipv6 address info: CA=
+Set the space config: timeout=%d pending-timeout=%d paket-size=%d
+set-address-info
+set-address-info "[ca ipv4] [pa ipv4] [mac] [fake mac] [flags] [ca ipv6] [pa ipv6] " - set the port's address information.
+set-arp-filter
+set-arp-filter "[addr]{0,1024}" - set the allowed list of target IPv4 addresses in arp packets.
+set-arp-limiter-config
+set-arp-limiter-config "[timespan] [threshold] [penalty]" - set the ARP limiter configurations.
+set-broadcast-limiter-config
+set-broadcast-limiter-config "[timespan] [threshold] [penalty]" - set the Broadcast limiter configurations.
+set-dhcp-limiter-config
+set-dhcp-limiter-config "[timespan] [threshold] [penalty]" - set the DHCP limiter configurations.
+set-dscp-config
+set-dscp-config - "[use mapping] [rx guard] [tx guard]".
+set-dscp-mapping
+set-dscp-mapping - "[dscp class] [tc] [allow]".
+set-flow-limit
+set-flow-limit "[in|out] [flow class] [limit]" - set the flow limit.
+set-group-condition
+set-group-condition "[proto] [src_ip] [src_prt] [dest_ip] [dest_prt]" - set a group condition.
+set-group-option
+set-group-option "[priority_based|priority_based_single_condition_opt|priority_based_multi_condition_opt|priority_based_all_condition_opt|priority_based_auto_condition_opt|lpm] [match_condition_type..*5]" - set group options.
+set-guard-config
+set-guard-config [flags] - set the VFP guard configurations.
+set-icmpv6-limiter-config
+set-icmpv6-limiter-config "[timespan] [threshold] [penalty]" - set the Icmpv6 limiter configurations.
+SetLastError
+set-layer-metadata-value
+set-layer-metadata-value "[key string] [value string]" - set the metadata value for a specific key in a layer.
+set-layer-ttl
+set-layer-ttl "[half-open ttl] [time_wait ttl]" - set the ttl settings of a layer.
+set-next-hop-addr
+set-next-hop-addr - set the next-hop MAC address.
+set-port-allowed-tni-list
+set-port-allowed-tni-list "[TNI]{1,64}" - set a list of TNIs which will always be allowed during forwarding on a port.
+set-port-dtls-settings
+set-port-dtls-settings "[Larval Lifetime Sec] [Lifetime Min] [Lifetime KBytes] [Recv Keepalive Timeout Sec] [Send Keepalive Interval Sec] [Max Session Count] [Offloads Enabled] [NumClientAlgos] [ClientAlgo1 ClientAlgo2 ...] [NumServerAlgos] [ServerAlgo1 ServerAlgo2 ...]
+set-port-flow-limit
+set-port-flow-limit "[in|out] [flow class] [limit]" - set the unified flow limit of a port.
+set-port-flow-settings
+set-port-flow-settings "[Half Ttl] [Pending Timeout] [TIME_WAIT Ttl] [Default Ttl] [Fragment Size] [Max Pending Entries] [Max Pending Packets] [TCP tracking] [Enable Unified Flows] [Support Reordered Fragments] [Enable Offloads] [Force Unified Flows] [Enable Fast UF Locking][Subsume Layer Flows]  [Auto condition Enabled] [Monitoring Ping Enabled] [enable hyper-v aperture] [aperture batch size] [Enable ESP Unified Flows]"
+set-port-parser-settings
+set-port-parser-settings "[enable vxlan] [enable encrypted vxlan] [parse inbound vxlan outside src port range] [src vxlan port base] [src vxlan port range] [src encrypted vxlan port base] [src encrypted vxlan port range] [ignore global settings] [parse rdma] [rdma dest port] " - set the port parser settings.
+set-port-queue
+set-port-queue "queue_id"- associate a port with a Qos queue.
+set-processor-dpctimeout
+set-processor-dpctimeout"[single dpc timeout] [queued dpc timeout] " - supported only on Azure and WIN2K12R2
+set-protocol-settings
+set-protocol-settings "[dest vxlan port] [enable vxlan] [enable nvgre flowid] [enable ICMP errors] [enable encrypted vxlan] [parse inbound vxlan outside src port range] [src vxlan port base] [src vxlan port range] [src encrypted vxlan port base] [src encrypted vxlan port range] [enable rdma] [dest rdma port]" - set the encapsulation protocol settings.
+set-qos-config
+set-qos-config "[enable HW caps] [enable HW reservations] [enable SW reservations] [flags]" - configure QoS setting for a switch.
+set-qos-line-config
+set-qos-line-config "[reservation mode] [default reservation] [link speed percentage] [default queue depth] [default queue burst size]  [default queue under-utilized] [default queue over-utilized] [default queue headroom] [default queue rampup time] [default queue min rate]"- configure QoS setting for transmit reservation.
+set-queue-config
+set-queue-config "[EnforceIntraHostLimit] [tx limit] [tx reservation] [rx limit]  [tx queue depth] [rx queue depth] [tx burst size] [rx burst size]  [under-utilized] [over-utilized] [headroom] [rampup time] [min rate]"  - update a QoS queue.
+set-saverestore-settings
+set-saverestore-settings "[block on restore] [disable switch save restore] [suppress switch restore failures]" - set the save/restore settings.
+set-serialization
+set-serialization "filename"- applies serialized config from file to port.
+set-space-config
+set-space-config "[timeout] [pending timeout] [frag size]" - set the map space configurations.
+set-switch-allowed-tni-list
+set-switch-allowed-tni-list "[TNI]{1,64}" - set a list of TNIs which will always be allowed during forwarding on a switch.
+set-switch-forwarding-settings
+set-switch-forwarding-settings "[innerMacFwd] [reducePortMtuForEncap] [innerMacVmq] [forwardAllTrafficToExternalNetwork] [usePacketTNI] [skipTNIValidationForInnerMacForwarding]" - set forwarding settings for a switch.
+set-trace-filters
+set-trace-filters "[in|out|both] [src_mac] [dst_mac] [TNI] [VlanId] [proto] [src_ip] [src_port] [dst_ip] [dest_port]"- configures trace filters on the given port.
+SetUnhandledExceptionFilter
+skip_hairpinning 
+SMAC:
+source IP
+Source NAT; 
+source port
+Source:
+space
+SPACE : 
+space [space_id] - specify the map space.
+SPt:%u,
+src_nat
+SR-IOV Usage          : %u
+State: %s
+stateful
+stateful 
+stateless
+stats
+STATUS : 
+Storm Limit           
+StringFileInfo
+Subsumed, 
+Succeed
+switch
+switch "[switch name]" - specify the target switch.
+Switch Data Disabled  
+Switch Friendly name  : %s
+Switch name           : %s
+Switch restore failures are NOT suppressed
+Switch restore failures are SUPPRESSED
+Switch save restore is DISABLED
+Switch save restore is ENABLED
+Syn State: %s 
+SYN Verified, 
+Syn:%s, 
+syn_only 
+Syn_Sent
+syn_sent
+SYNVer, 
+t$ E3
+T$0E3
+t$0fE;
+t+@8w
+tag [tag_id] - specify the target tag.
+TCP   
+tcp flow
+TCP LOG
+TCPFlags:0x%02X, 
+TCPTracking, 
+TCPTrk, 
+TerminateProcess
+terminating 
+test-mapping-event
+test-mapping-event - test the mapping event.
+test-nat-event
+test-nat-event "[ip] [prt_start] [prt_end] [reuse_cnt]" - test the NAT event.
+test-nat-event-async
+test-nat-event-async "[ip] [prt_start] [prt_end] [reuse_cnt]" - test the NAT event.
+test-serialization
+test-serialization "[blockPort]"- verify serialization of VFP objects on a port.
+Threshold=%d
+Time Wait Required, 
+Time_Wait
+time_wait
+TimeSpan=%d
+TNI: %d
+TNI:%u 
+TNI:0x%X,
+total entry
+total flow
+Trace filtering is %ws
+Trace Source:
+tracking_tcp 
+Translation
+transpose
+transposition
+TRANSPOSITION : 
+Try to deposit NAT range [%s]: 
+Trying to set 
+Trying to set port parser settings 
+Trying to set processor dpc timeouts =%u; queued dpc timeout=%u;
+Trying to set save restore settings to BlockOnRestore=%u; DisableSwitchSaveRestore=%u; SuppressSwitchRestoreFailure=%u;
+Trying to set the layer ttl: half-open ttl = %u, time_wait ttl = %u
+Trying to set the limit: direction=%s class=%s, limit=%u
+Trying to set the port DTLS settings: larval lifetime sec = %u, lifetime min = %llu, lifetime KB = %llu, recv keepalive timeout = %u, send keepalive interval = %u, max session count = %u, offload dtls sessions = %u, num client algos = %u
+Trying to set the port flow settings: half-open ttl = %u, pending timeout = %u, time_wait ttl = %u, default ttl = %u, fragment size = %u, max pending entries = %u, max pending packets = %u, tcp tracking = %u, enable unified flows = %u, support reordered fragments = %u, offloads enabled = %u, force unified flows = %u, enable fast locking = %u, subsuming flows = %u, auto cond opt by default = %u, monitoring ping enabled = %u, max GFT offload flows = %u, UDP scaling - minimum flow table utilization threshold (in percentage) = %u, UDP scaling - maximum flow table utilization threshold (in percentage) = %u,UDP scaling - minimum TTL = %u, preserve inner dscp = %u, aperture = %u, aperture batch size = %u, enable ESP unified flows = %u
+Trying to set the switch forwarding settings: inner mac forwarding = %u, reduce port MTU for encap = %u, inner MAC VMQ = %u, forward all traffic to external network = %u, use TNI from packet = %u, skip TNI validation when inner mac forwarding = %u
+tunneled_dest_nat
+tunneled_src_nat
+tunnelednat
+TUPLES PROCESSING COMPLETE
+TUPLES PROCESSING INCOMPLETE 
+TWReq, 
+Type: %s  Flags: 0x%x TTL: %u/%u Ref: %u 
+u@D8uH
+u0HcH<H
+uD9D$0v2H
+UDP   
+udp flow
+Unauthorized MAC      
+Unauthorized VLAN     
+unblock-port
+unblock-port - unblock traffic on the given enabled port.
+unblock-port-on-restore
+unblock-port-on-restore - unblock traffic on restore on the given enabled port.
+UnhandledExceptionFilter
+unicast
+UNIFIED FLOW : 
+UNKNOWN
+Unknown
+unknown
+Unknown               
+unknown condition
+Unknown match
+unknown type
+UNRECOGNIZED Item
+Unreconciled, 
+Use existing udp port binding;
+USVWATAUAVAWH
+UVWATAUAVAWH
+UVWAVAWH
+UWATAUAV
+UWAVH
+VarFileInfo
+VfcAddObject
+VfcAddObjectSet
+VfcBlockPort
+VfcBlockPortOnRestore
+VfcClearLayerActivePings
+VfcDeleteLayerMetadataKey
+VfcDepositNatRange
+VfcDeregisterEvent
+VfcDeregisterEventEx
+VfcDeserializeObjectsGlobal
+VfcDeserializeObjectsOnPort
+VfcDeserializeObjectsOnSwitch
+VfcDisablePingResponder
+VfcDisablePort
+VfcEnablePingResponder
+VfcEnablePort
+VfcForceAddObjectSet
+VfcGetInformation
+VfcGetLayerMetadataValue
+VfcInitializeDescriptor
+VfcInjectPacket
+VfcInjectPacketEx
+VfcInterceptEventEx
+VfcInterceptEventEx2
+VfcInterceptEventEx3
+VfcListLayerActivePings
+VfcListLayerMetadataKeys
+VfcListLayerMetadataValues
+VfcListObject
+VfcMappingEvent
+VfcMatchTupleAtLayer
+VfcMonitoringPing
+VfcNatEvent
+VfcNatEventAsync
+VfcOpenDevice
+VfcPersistHostState
+VfcPrepareForUninstall
+VfcProcessTuples
+VfcReleaseList
+VfcRemoveAllObject
+VfcRemoveMapping
+VfcRemoveNatRange
+VfcRemoveObject
+VfcReplaceLayerFlowTableAddress
+VfcReplaceObjectSet
+VfcSampleFlowState
+VfcSerializeObjectsGlobal
+VfcSerializeObjectsOnPort
+VfcSerializeObjectsOnSwitch
+VfcSetGroupCondition
+VfcSetGroupOption
+VfcSetInformation
+VfcSetLayerMetadataValue
+VfcSetPortTraceFilters
+VfcSetTraceFilteringState
+VfcUnblockPort
+VfcUnblockPortOnRestore
+VfcWithdrawNatRange
+VFP Binding Type: %s
+VFP control and diagnostics utility
+VFP Not Present       
+VFP objects serialized successfully
+VFP Version %d.%d
+VFPAPI.dll
+vfpctrl.exe
+vfpctrl.pdb
+VfxConditionDestinationIp
+VfxConditionDestinationIpRange
+VfxConditionDestinationIpv6
+VfxConditionDestinationPort
+VfxConditionDestinationPortRange
+VfxConditionDestIpv4Range
+VfxConditionDestIpv6Range
+VfxConditionGreKey
+VfxConditionGreKeyRange
+VfxConditionSourceIp
+VfxConditionSourceIpRange
+VfxConditionSourceIpv6
+VfxConditionSourcePort
+VfxConditionSourcePortRange
+VfxConditionSrcIpv4Range
+VfxConditionSrcIpv6Range
+Virtual Subnet ID     
+VLAN ID:%u 
+VM ID               : %s
+VM name             : %s
+VMQ Usage             : %u
+VmsEnumeratePort
+VmsSendDeviceIoControl
+VNET ID
+VS_VERSION_INFO
+VSC State                                    : Halted
+VSC State                                    : Initializing
+VSC State                                    : Not Connected - No Response From VM
+VSC State                                    : Operational
+VSC State                                    : Unknown
+Vsp Paused                                   : %u
+VWAUAVAWH
+VWAVH
+VWAWH
+VXLAN
+WaitForMultipleObjects
+Waiting for mapping event ...
+Waiting for NAT event ...
+Waiting for NAT event [%s] ...
+WATAUAVAWH
+WAVAWH
+wcschr
+wcsrchr
+weight
+WideCharToMultiByte
+withdraw-nat-range
+withdraw-nat-range [idle_timeout] - withdraw an idle NAT range.
+WNV                   
+Wrote data to %s
+wZH9\$@tSL
+x ATAVAWH
+x AVH
+x UATAUAVAWH
+x UAVAWH
+Zombie

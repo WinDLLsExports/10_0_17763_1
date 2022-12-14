@@ -1,0 +1,183 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\storqosflt.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    HAL.dll
+    FLTMGR.SYS
+    ksecdd.sys
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C000F160 Import Address Table
+             1C000F5E8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         13A ExTryQueueWorkItem
+                         9E3 ZwClose
+                         3D5 KeAreAllApcsDisabled
+                         47F KeReleaseSpinLockFromDpcLevel
+                         ABB __C_specific_handler
+                         54F MmUnlockPages
+                         53B MmProbeAndLockPages
+                         4AE KeSetTimerEx
+                         26B IoAllocateMdl
+                         2BF IoFreeMdl
+                         3DA KeCancelTimer
+                         528 MmMapLockedPagesSpecifyCache
+                         841 RtlLengthSecurityDescriptor
+                         8A4 RtlSetOwnerSecurityDescriptor
+                         805 RtlInitializeSid
+                         8B5 RtlSubAuthoritySid
+                         8F7 SeAccessCheck
+                         8A1 RtlSetDaclSecurityDescriptor
+                         2DD IoGetFileObjectGenericMapping
+                         7FC RtlInitUnicodeString
+                         4C5 KeWaitForSingleObject
+                         65A ProbeForWrite
+                         842 RtlLengthSid
+                         840 RtlLengthRequiredSid
+                         719 RtlAddAccessAllowedAce
+                         7EC RtlGetVersion
+                         718 RtlAbsoluteToSelfRelativeSD
+                         94B SeReleaseSubjectContext
+                         513 MmGetSystemRoutineAddress
+                         3A9 IofCallDriver
+                         763 RtlCreateAcl
+                         39D IoWMIRegistrationControl
+                         41B KeInitializeEvent
+                         8A3 RtlSetGroupSecurityDescriptor
+                         76A RtlCreateSecurityDescriptor
+                         927 SeExports
+                         2C8 IoGetAttachedDeviceReference
+                         659 ProbeForRead
+                         910 SeCaptureSubjectContext
+                         A6F ZwQueryValueKey
+                         A31 ZwOpenKey
+                         493 KeRundownQueue
+                         31D IoQueueWorkItemEx
+                         497 KeSetActualBasePriorityThread
+                         5E8 ObReferenceObjectByHandle
+                         667 PsCreateSystemThread
+                         45A KeQueryMaximumProcessorCountEx
+                         420 KeInitializeQueue
+                         152 ExpInterlockedFlushSList
+                         487 KeRemoveQueue
+                         42C KeInsertQueue
+                         4AC KeSetTimer
+                         25E InitializeSListHead
+                         5FE PcwCloseInstance
+                         4C7 KfRaiseIrql
+                          D0 ExInitializeLookasideListEx
+                          C3 ExFreePoolWithTag
+                          9C ExAllocatePoolWithTag
+                         2C2 IoFreeWorkItem
+                         5FF PcwCreateInstance
+                         601 PcwUnregister
+                         B34 wcschr
+                         886 RtlRbRemoveNode
+                         441 KeLowerIrql
+                         47D KeReleaseSpinLock
+                          EC ExQueryDepthSList
+                         760 RtlCopyUnicodeString
+                         425 KeInitializeTimer
+                         423 KeInitializeSpinLock
+                         390 IoVolumeDeviceToDosName
+                         154 ExpInterlockedPushEntrySList
+                         5F8 ObfDereferenceObject
+                         885 RtlRbInsertNodeEx
+                         4BF KeTryToAcquireSpinLockAtDpcLevel
+                         153 ExpInterlockedPopEntrySList
+                         417 KeInitializeDpc
+                         7C4 RtlGUIDFromString
+                          AB ExDeleteLookasideListEx
+                         3C9 KeAcquireSpinLockRaiseToDpc
+                         600 PcwRegister
+                         277 IoBuildDeviceIoControlRequest
+                         26E IoAllocateWorkItem
+                         49C KeSetEvent
+                          9D ExAllocatePoolWithTagPriority
+                         44C KeQueryActiveProcessorCountEx
+
+    HAL.dll
+             1C000F140 Import Address Table
+             1C000F5C8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          53 KeQueryPerformanceCounter
+
+    FLTMGR.SYS
+             1C000F000 Import Address Table
+             1C000F488 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          20 FltCbdqRemoveNextIo
+                           B FltAllocateContext
+                          96 FltGetVolumeProperties
+                          41 FltDeleteInstanceContext
+                          62 FltFreeSecurityDescriptor
+                          2A FltCloseCommunicationPort
+                          1B FltCbdqDisable
+                          FA FltStartFiltering
+                          87 FltGetStreamHandleContext
+                          C5 FltQueryInformationFile
+                          44 FltDeleteStreamHandleContext
+                          32 FltCreateCommunicationPort
+                          16 FltBuildDefaultSecurityDescriptor
+                          29 FltCloseClientPort
+                          D0 FltRegisterFilter
+                         104 FltUnregisterFilter
+                          5F FltFreeGenericWorkItem
+                          E4 FltSendMessage
+                          11 FltAllocateGenericWorkItem
+                          1E FltCbdqInsertIo
+                          A9 FltLockUserBuffer
+                          D8 FltReleasePushLockEx
+                          1F FltCbdqRemoveIo
+                          1D FltCbdqInitialize
+                          2F FltCompletePendedPostOperation
+                          30 FltCompletePendedPreOperation
+                          CB FltQueueGenericWorkItem
+                          6A FltGetDiskDeviceObject
+                           2 FltAcquirePushLockExclusiveEx
+                          EE FltSetInstanceContext
+                          D6 FltReleaseFileNameInformation
+                          6D FltGetFileNameInformation
+                           4 FltAcquirePushLockSharedEx
+                          9A FltInitializePushLock
+                          CE FltReferenceContext
+                          F6 FltSetStreamHandleContext
+                          D3 FltReleaseContext
+                          92 FltGetVolumeGuidName
+                          74 FltGetInstanceContext
+
+    ksecdd.sys
+             1C000F150 Import Address Table
+             1C000F5D8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          16 BCryptGenRandom
+
+  Summary
+
+        1000 .data
+        2000 .idata
+        1000 .pdata
+        2000 .rdata
+        1000 .reloc
+        2000 .rsrc
+        A000 .text
+        1000 GFIDS
+        1000 INIT
+        5000 PAGE

@@ -1,0 +1,4310 @@
+--------------
+                     // Pass a script string to the JSObject to be evaluated and executed
+                     // through the eval method (this can be a semi-colon delimited complex expression)
+                     // Use the window.execScript method to execute a simple or complex VBScript expression
+                     alert (L_UnknownScriptingLanguage_ErrorMessage);
+                     break;
+                     szScripts += "eval (s_rgTasks["+i+"].Script);";
+                     szScripts += "window.execScript (s_rgTasks["+i+"].Script, '"+szLanguage+"');";
+                 case "JAVASCRIPT":
+                 case "JSCRIPT":
+                 case "VBS":
+                 case "VBSCRIPT":
+                 default:
+               szScripts += "MMCCtrl.TaskNotify(s_rgTasks["+i+"].Clsid,s_rgTasks["+i+"].CommandID,0);";
+               szScripts += "window.navigate(s_rgTasks["+i+"].ActionURL);";
+              // Found a duplicate
+              // MMC_TASK_ACTION_ID
+              // MMC_TASK_ACTION_LINK
+              // MMC_TASK_ACTION_SCRIPT
+              break;
+              bUnique = false;
+              return;
+             // Convert script language string to upper case
+             {
+             }
+             break;
+             switch (szLanguage)
+             var szLanguage = objTask.ScriptLanguage.toUpperCase();
+          // Note: No distinction made between GIF & Raster for the watermark
+          {
+          }
+          break;
+          case 0:
+          case 1:
+          case 2:
+          if (s_rgURLtoEOTUnique[i] == szURLtoEOT)
+          szFilterCode = "FILTER: mask(color=" + SysColorX.HEXthreedshadow + "); ";
+          szMouseOverCode   = "onmouseover='Image"+i+".src=s_rgTasks["+i+"].DisplayObject.MouseOverBitmap;' ";
+          szMouseOverCode  += "onmouseout ='Image"+i+".src=s_rgTasks["+i+"].DisplayObject.MouseOffBitmap;' ";
+          var gszWatermarkImage = objWatermark.MouseOverBitmap;
+         AddEOT(displayObject. URLtoEOT, displayObject.FontFamilyName);
+         break;
+         btnLV.style.display = "none";
+         btnLV.value = objListviewInfo.Text;
+         TaskpadNameDIV.insertAdjacentHTML("afterEnd", szWatermark);
+         var szWatermark = "<table style=' z-index:-1; position:absolute' width='100%' height='100%' cellspacing='0' cellpadding='10' border='0' frame='none' rules='none'><tr><td style='width:100%'><span></span></td><td valign='bottom' style='"+szWatermarkColor+" font-family:\"" + objWatermark.FontFamilyName + "\";font-weight:normal;font-size:300pt;'>" + objWatermark.SymbolString +"</td></tr></table>";
+         var szWatermarkColor = (screen.colorDepth <= 8) ? "color:threedlightshadow;" : "color:threedshadow;filter:alpha(opacity=15);";
+        <dpiAware xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">false</dpiAware>
+        <gdiScaling xmlns="http://schemas.microsoft.com/SMI/2017/WindowsSettings">true</gdiScaling>
+       {
+       }
+       break;
+       if( (displayObject.MouseOverBitmap != "") && (displayObject.MouseOverBitmap != displayObject.MouseOffBitmap))
+       if( (displayObjectType == CON_TASK_DISPLAY_TYPE_VANILLA_GIF) || (displayObjectType == CON_TASK_DISPLAY_TYPE_CHOCOLATE_GIF) )
+       szBtnHTML += "<span style='cursor:hand' width='100%' height='100%' onclick='javascript:Task"+i+"_Clicked();'> <IMG id='Image"+i+"'"+ szMouseOverCode +"style='" + szFilterCode +"WIDTH: 32px; HEIGHT: 32px' src='"+displayObject.MouseOffBitmap+"'></span>";
+       szCssText += "@font-face {font-family:'" + s_rgFontFamilyNameUnique[i] + "';font-style:normal; font-weight:normal; src:url('" + s_rgURLtoEOTUnique[i] + "');}";
+       var szFilterCode    = "";
+       var szMouseOverCode = "";
+      // 3 possibilities for action:  "ID:", "LINK:" and "SCRIPT:"
+      // in this case tempArray is not an array at all, but a single object per the DHTML object model
+      // Keep track of the watermark display object type
+      // Set the parameters for button-click handler (see taskNotify).
+      {
+      }
+      ++i;
+      break;
+      btnLV.param1 = objListviewInfo.Clsid;
+      btnLV.param2 = objListviewInfo.NotifyID;
+      btnLV.param3 = 0;
+      case 1: // MMC_TASK_DISPLAY_TYPE_SYMBOL
+      case 2: // MMC_TASK_DISPLAY_TYPE_VANILLA_GIF,      // (GIF) index 0 is transparent
+      case 3: // MMC_TASK_DISPLAY_TYPE_CHOCOLATE_GIF,    // (GIF) index 1 is transparent
+      case 4: // MMC_TASK_DISPLAY_TYPE_BITMAP            // non-transparent raster
+      else
+      eval("Image0.title=s_rgTasks[0].Help;"); // set the tooltip for the image      
+      for (i = 0; i < iLength; i++)
+      if(displayObject.DisplayObjectType == CON_TASK_DISPLAY_TYPE_SYMBOL)             // EOT-based symbol | font
+      if(objListviewInfo.HasButton)
+      ListViewTitle.innerText = objListviewInfo.Title + "";
+      objTask = MMCCtrl.GetNextTask();
+      s_rgTasks[i]= objTask; // this holds on to the task object.
+      strTaskHTML += "                         onclick='javascript:Task"+i+"_Clicked();'";
+      strTaskHTML += "                         tabIndex=\"0\">";
+      strTaskHTML += "                     </SPAN>";
+      strTaskHTML += "                     <BR />";
+      strTaskHTML += "                     <SPAN CLASS='Task' id='TaskID' onmouseover=\"javascript:window.event.srcElement.className='TaskHover';\" onmouseout=\"javascript:window.event.srcElement.className='Task';\"";
+      strTaskHTML += "                 </TD>";
+      strTaskHTML += "                 <TD VALIGN='TOP' width='32'height='32' style='border: 0 black solid; overflow:hidden'>";
+      strTaskHTML += "                 <TD>";
+      strTaskHTML += "             </TABLE>";
+      strTaskHTML += "             </TR>";
+      strTaskHTML += "             <TR>";
+      strTaskHTML += "         </SPAN>";
+      strTaskHTML += "         <SPAN CLASS='cInline'>";
+      strTaskHTML += "         <TABLE  BORDER='0' WIDTH='100%'>";
+      strTaskHTML += "";
+      strTaskHTML += GetTaskDisplayHTML(objTask, i);
+      strTaskHTML = "";
+      strTasksHTML +=  strTaskHTML;
+      switch (objTask.ActionType)
+      switch (watermarkObjectType)
+      szBtnHTML += "      <span id = 'Image"+i+"' style='cursor:hand' width='100%' height='100%' onclick='javascript:Task"+i+"_Clicked();' style='font-family:\"" + displayObject.FontFamilyName + "\";font-size:23pt;'>" + displayObject.SymbolString +"</span>";
+      szScripts += "                 window.alert(e.description);";
+      szScripts += "                 window.event.srcElement.className='Task';";
+      szScripts += "               ";
+      szScripts += "              {";
+      szScripts += "              } catch(e)";
+      szScripts += "              }";
+      szScripts += "              try";
+      szScripts += "           {";
+      szScripts += "           }";
+      szScripts += "           function Task"+i+"_Clicked()";
+      tempArray.innerText =s_rgTasks[0].Text; // set the title
+      tempArray.title     =s_rgTasks[0].Help; // set the tooltip
+      var displayObject = objTask.DisplayObject;
+      var watermarkObjectType = objWatermark.DisplayObjectType;
+    event.returnValue = false;
+   // 1. Add all EOTs to a list
+   // 1. determine whether the URL is unique
+   // 2. If we reached here, the URL is unique. Add it to the array.
+   // 2. Loop through each unique EOT & FontFamilyName
+   // Add the listpad title and button, if it exists
+   // add the taskpad title
+   // add the watermark, if it exists
+   // Build up the HTML for the button
+   // Compare with each existing entry in the array
+   // Get the length of the unique URL array
+   // prevent Escaping problems. Eg \ would need to be converted to \\ otherwise.
+   // set up the tasks - we do this here rather than expanding the variables in the strings above to
+   // there is NO difference between CON_TASK_DISPLAY_TYPE_VANILLA_GIF and CON_TASK_DISPLAY_TYPE_CHOCOLATE_GIF. The original intent was never implemented.
+   //alert(szCssText);
+   </asmv3:windowsSettings>
+   <asmv3:windowsSettings>
+   case CON_TASK_DISPLAY_TYPE_BITMAP:             // non-transparent raster image
+   case CON_TASK_DISPLAY_TYPE_CHOCOLATE_GIF:      // transparent
+   case CON_TASK_DISPLAY_TYPE_SYMBOL:             // EOT-based symbol | font
+   case CON_TASK_DISPLAY_TYPE_VANILLA_GIF:        // transparent
+   count = i; // the total number of tasks
+   document.vlinkColor = document.linkColor; // make sure that visited links don't look different
+   document.write(szCssText);
+   else
+   for (var i = 0; i < s_rgURLtoEOTUnique.length; i++)
+   for(i=0; i<count; i++)
+   if (objListviewInfo)
+   if (objWatermark != null)
+   if(count==1)
+   if(iLength > 0)
+   if(tempArray.length != count) // sanity check
+   PopulateTaskpad();
+   return szBtnHTML;
+   s_rgFontFamilyNameUnique[iLength] = szFontFamilyName;
+   s_rgURLtoEOTUnique[iLength]       = szURLtoEOT;
+   switch (displayObjectType)
+   szCssText = "<style" +">" + szCssText + "</style" +">";
+   szScripts = '<span style="display:none">h</span><SCRIPT DEFER>' + szScripts +'</SCRIPT' + '>'; // see Q185140. The SPAN is needed because it causes the page to be reparsed.
+   TaskpadDescription.innerHTML = MMCCtrl.GetDescriptiveText(szHash) + "<BR />";
+   TaskpadName.innerHTML        = "<NOBR>"+MMCCtrl.GetTitle(szHash)+"</NOBR>";
+   TaskpadNameDIV.insertAdjacentHTML("afterBegin", szScripts);
+   Tasks.innerHTML = strTasksHTML; // add the tasks to the HTML
+   tempArray= document.all.item("TaskID"); //get the collection of all tasks on the page.
+   var bIsLargeIconMode = true;
+   var count = 0;
+   var displayObject = objTask.DisplayObject;
+   var displayObjectType = displayObject.DisplayObjectType;
+   var i       = 0;
+   var i = 0;
+   var IconSize = (bIsLargeIconMode) ? 32 : 16;
+   var iLength = s_rgURLtoEOTUnique.length;
+   var objListviewInfo = MMCCtrl.GetListPadInfo(szHash);
+   var objTask     = MMCCtrl.GetFirstTask(szHash);
+   var objWatermark = MMCCtrl.GetBackground( szHash );
+   var strTaskHTML = "";
+   var strTasksHTML = "";
+   var szBtnHTML = "";
+   var szCssText = "";
+   var tempArray;
+   while (objTask != null)
+  alert("Error!");
+  btnLV.attachEvent("onclick", taskNotify);
+  eval("Image"+i+".title=s_rgTasks["+i+"].Help;"); // set the tooltip for the image
+  tempArray(i).innerText =s_rgTasks[i].Text; // set the title
+  tempArray(i).title     =s_rgTasks[i].Help; // set the tooltip
+ #%;/\
+ *          parameters as the event is hooked up using attachEvent.
+ *          parameters. So we use this dummy function to call real function
+ *          task objects using the array s_rgTasks.
+ *          This is just a dummy function. We cannot do attachEvent with
+ *          with those properties.
+ *    Nothing
+ * PopulateTaskpad
+ * PURPOSE: Adds all tasks in the taskpad to the HTML. Also holds on to the
+ * PURPOSE: Calls MMCCtrl's tasknotify. Uses expando properties instead of
+ * RETURNS:
+ * taskNotify
+ *+-------------------------------------------------------------------------*/
+ 9CTt!H
+ A^_^
+ A__^
+ A_A^_
+ A_A^_H
+ A_A^A\
+ A_A^A]
+ A_A^A]A\_
+ A_A^A]A\_^]
+ EnableWW
+ EnableWW`
+ H3E H3E
+ i:x^
+ Microsoft Corporation. All rights reserved.
+ Operating System
+ t)H;
+ Windows
+!#:PPQ5Pa
+!.GZq|b
+!.Q6.6
+!\$ L
+!|$ L
+!+:Poqxa
+!AJti
+!t$ L
+!This program cannot be run in DOS mode.
+"%s" 
+"''Vl
+##H)((Sw
+#\'G7
+#32770
+#bPN?M
+#O?LX
+#XXXb
+$$0`::
+$*1 4=6)DO:&>H8
+$;S(|
+$dExpandWW
+$IH+O
+'%$"!!!!!!!!
+%d.%d
+%d.%d%x
+%d.%d.%d.%d
+%G:G7
+%ProcessedWWW
+%s\%s
+%s\mui\%04x\%s
+%SystemRoot%\Help
+%SystemRoot%\System32
+%SystemRoot%\system32\mmc.exe "%1" %*
+%SystemRoot%\system32\mmc.exe /a "%1" %*
+%UKQv7
+%WinDir%
+%WINDIR%\help\mmc.chm
+%WinDir%\System
+&[SJ~
+&bccd
+&ccce
+&D9#u
+&ddde
+&febi
+&H;\$Xt.H
+&KKK:
+&ul`}
+(''(''''''''
+(_^][
+(D$0L
+(H;]@u
+(H;]Pu
+(p9ColumnsW
+(t$@H
+(t$@L
+(t$`I
+(t$pI
+(UZZ 
+(wGetParentWWW
+)t$@H
+)t$@L
+*ApplicationW 
+*C_<@
+*LNq&*
+*ukSH
+,![B~
+,,,0;;
+.?AU_Application@@
+.?AU_Container_base@std@@
+.?AUColumn@@
+.?AUColumns@@
+.?AUDocument@@
+.?AUFrame@@
+.?AUFrameState2@@
+.?AUIAccessible@@
+.?AUIAccPropServer@@
+.?AUIAdviseSink@@
+.?AUIAxWinAmbientDispatch@@
+.?AUIAxWinHostWindow@@
+.?AUIClassFactory@@
+.?AUIClassInfo@DirectUI@@
+.?AUIConnectionPointContainer@@
+.?AUIConsoleTree@@
+.?AUIDispatch@@
+.?AUIDocHostUIHandler@@
+.?AUIDocHostUIHandlerDispatch@@
+.?AUIDropSource@@
+.?AUIDropTarget@@
+.?AUIElementBehavior@@
+.?AUIElementBehaviorFactory@@
+.?AUIEnumConnectionPoints@@
+.?AUIEnumConnections@@
+.?AUIEnumString@@
+.?AUIEnumUnknown@@
+.?AUIEnumVARIANT@@
+.?AUIExternalConnection@@
+.?AUIMMCListView@@
+.?AUIObjectSafety@@
+.?AUIObjectWithSite@@
+.?AUIOleClientSite@@
+.?AUIOleContainer@@
+.?AUIOleControlSite@@
+.?AUIOleInPlaceFrame@@
+.?AUIOleInPlaceSite@@
+.?AUIOleInPlaceSiteEx@@
+.?AUIOleInPlaceSiteWindowless@@
+.?AUIOleInPlaceUIWindow@@
+.?AUIOleWindow@@
+.?AUIParseDisplayName@@
+.?AUIProvideClassInfo@@
+.?AUIProvideClassInfo2@@
+.?AUIServiceProvider@@
+.?AUIStringTablePrivate@@
+.?AUIStringTablePrivate2@@
+.?AUISupportErrorInfo@@
+.?AUITaskPadHost@@
+.?AUIUnknown@@
+.?AUIWebSink@@
+.?AUNode@@
+.?AUNodes@@
+.?AUView@@
+.?AUViews@@
+.?AV?$_CEventSource@VCActionsPaneObserver@@@@
+.?AV?$_CEventSource@VCAMCDocumentObserver@@@@
+.?AV?$_CEventSource@VCAMCViewObserver@@@@
+.?AV?$_CEventSource@VCAMCViewToolbarsObserver@@@@
+.?AV?$_CEventSource@VCListViewActivationObserver@@@@
+.?AV?$_CEventSource@VCListViewObserver@@@@
+.?AV?$_CEventSource@VCOCXHostActivationObserver@@@@
+.?AV?$_CEventSource@VCTreeViewObserver@@@@
+.?AV?$_CEventSource@VCVerbObserver@@@@
+.?AV?$_CEventSource1@VCActionsPaneObserver@@@@
+.?AV?$_CEventSource1@VCAMCDocumentObserver@@@@
+.?AV?$_CEventSource1@VCAMCViewObserver@@@@
+.?AV?$_CEventSource1@VCAMCViewToolbarsObserver@@@@
+.?AV?$_CEventSource1@VCListViewActivationObserver@@@@
+.?AV?$_CEventSource1@VCListViewObserver@@@@
+.?AV?$_CEventSource1@VCOCXHostActivationObserver@@@@
+.?AV?$_CEventSource1@VCTreeViewObserver@@@@
+.?AV?$_CEventSource1@VCVerbObserver@@@@
+.?AV?$_CEventSource2@VCVoid@@@@
+.?AV?$_CEventSource3@VCVoid@@@@
+.?AV?$_CEventSource4@VCVoid@@@@
+.?AV?$_CEventSource5@VCVoid@@@@
+.?AV?$_ICPLocator@$1?DIID_AppEvents@@3U_GUID@@B@ATL@@
+.?AV?$_List_nod@VCColumnInfo@@V?$allocator@VCColumnInfo@@@std@@@std@@
+.?AV?$_List_ptr@VCColumnInfo@@V?$allocator@VCColumnInfo@@@std@@@std@@
+.?AV?$_List_val@VCColumnInfo@@V?$allocator@VCColumnInfo@@@std@@@std@@
+.?AV?$_Tmap_traits@VCSnapInReferencePtr@@VCStringTable@@U?$less@VCSnapInReferencePtr@@@std@@V?$allocator@U?$pair@$$CBVCSnapInReferencePtr@@VCStringTable@@@std@@@4@$0A@@std@@
+.?AV?$_Tree@V?$_Tmap_traits@VCSnapInReferencePtr@@VCStringTable@@U?$less@VCSnapInReferencePtr@@@std@@V?$allocator@U?$pair@$$CBVCSnapInReferencePtr@@VCStringTable@@@std@@@4@$0A@@std@@@std@@
+.?AV?$_Tree_nod@V?$_Tmap_traits@VCSnapInReferencePtr@@VCStringTable@@U?$less@VCSnapInReferencePtr@@@std@@V?$allocator@U?$pair@$$CBVCSnapInReferencePtr@@VCStringTable@@@std@@@4@$0A@@std@@@std@@
+.?AV?$_Tree_ptr@V?$_Tmap_traits@VCSnapInReferencePtr@@VCStringTable@@U?$less@VCSnapInReferencePtr@@@std@@V?$allocator@U?$pair@$$CBVCSnapInReferencePtr@@VCStringTable@@@std@@@4@$0A@@std@@@std@@
+.?AV?$_Tree_val@V?$_Tmap_traits@VCSnapInReferencePtr@@VCStringTable@@U?$less@VCSnapInReferencePtr@@@std@@V?$allocator@U?$pair@$$CBVCSnapInReferencePtr@@VCStringTable@@@std@@@4@$0A@@std@@@std@@
+.?AV?$CAxWindowImplT@VCMMCAxWindow@@V?$CAxWindowT2@VCWindow@ATL@@@@@@
+.?AV?$CAxWindowT@VCWindow@ATL@@@ATL@@
+.?AV?$CAxWindowT2@VCWindow@ATL@@@@
+.?AV?$CComCoClass@VCAxHostWindow@ATL@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCMMCApplication@@$1?CLSID_Application@@3U_GUID@@B@ATL@@
+.?AV?$CComContainedObject@VCAxHostWindow@ATL@@@ATL@@
+.?AV?$CComEnum@UIEnumConnectionPoints@@$1?IID_IEnumConnectionPoints@@3U_GUID@@BPEAUIConnectionPoint@@V?$_CopyInterface@UIConnectionPoint@@@ATL@@VCComMultiThreadModel@6@@ATL@@
+.?AV?$CComEnum@UIEnumConnections@@$1?IID_IEnumConnections@@3U_GUID@@BUtagCONNECTDATA@@V?$_Copy@UtagCONNECTDATA@@@ATL@@VCComMultiThreadModel@6@@ATL@@
+.?AV?$CComEnum@UIEnumUnknown@@$1?IID_IEnumUnknown@@3U_GUID@@BPEAUIUnknown@@V?$_CopyInterface@UIUnknown@@@ATL@@VCComMultiThreadModel@6@@ATL@@
+.?AV?$CComEnumImpl@UIEnumConnectionPoints@@$1?IID_IEnumConnectionPoints@@3U_GUID@@BPEAUIConnectionPoint@@V?$_CopyInterface@UIConnectionPoint@@@ATL@@V?$CComEnum@UIEnumConnectionPoints@@$1?IID_IEnumConnectionPoints@@3U_GUID@@BPEAUIConnectionPoint@@V?$_CopyInterface@UIConnectionPoint@@@ATL@@VCComMultiThreadModel@6@@6@@ATL@@
+.?AV?$CComEnumImpl@UIEnumConnections@@$1?IID_IEnumConnections@@3U_GUID@@BUtagCONNECTDATA@@V?$_Copy@UtagCONNECTDATA@@@ATL@@V?$CComEnum@UIEnumConnections@@$1?IID_IEnumConnections@@3U_GUID@@BUtagCONNECTDATA@@V?$_Copy@UtagCONNECTDATA@@@ATL@@VCComMultiThreadModel@6@@6@@ATL@@
+.?AV?$CComEnumImpl@UIEnumUnknown@@$1?IID_IEnumUnknown@@3U_GUID@@BPEAUIUnknown@@V?$_CopyInterface@UIUnknown@@@ATL@@V?$CComEnum@UIEnumUnknown@@$1?IID_IEnumUnknown@@3U_GUID@@BPEAUIUnknown@@V?$_CopyInterface@UIUnknown@@@ATL@@VCComMultiThreadModel@6@@6@@ATL@@
+.?AV?$CComObject@V?$CComEnum@UIEnumConnectionPoints@@$1?IID_IEnumConnectionPoints@@3U_GUID@@BPEAUIConnectionPoint@@V?$_CopyInterface@UIConnectionPoint@@@ATL@@VCComMultiThreadModel@6@@ATL@@@ATL@@
+.?AV?$CComObject@V?$CComEnum@UIEnumConnections@@$1?IID_IEnumConnections@@3U_GUID@@BUtagCONNECTDATA@@V?$_Copy@UtagCONNECTDATA@@@ATL@@VCComMultiThreadModel@6@@ATL@@@ATL@@
+.?AV?$CComObject@V?$CComEnum@UIEnumUnknown@@$1?IID_IEnumUnknown@@3U_GUID@@BPEAUIUnknown@@V?$_CopyInterface@UIUnknown@@@ATL@@VCComMultiThreadModel@6@@ATL@@@ATL@@
+.?AV?$CComObject@V?$CMMCEnumerator@VCAMCDoc@@VCAMCViewPosition@@@@@ATL@@
+.?AV?$CComObject@V?$CMMCEnumerator@VCCCListViewCtrl@@H@@@ATL@@
+.?AV?$CComObject@V?$CMMCEnumerator@VCNodes@@H@@@ATL@@
+.?AV?$CComObject@V?$CMMCNewEnumImpl@V_CMMCViews@@VCAMCViewPosition@@VCAMCDoc@@@@@ATL@@
+.?AV?$CComObject@V?$CMMCNewEnumImpl@VCColumnsBase@@HVCCCListViewCtrl@@@@@ATL@@
+.?AV?$CComObject@V?$CMMCNewEnumImpl@VCNodes@@HV1@@@@ATL@@
+.?AV?$CComObject@VCAxFrameWindow@ATL@@@ATL@@
+.?AV?$CComObject@VCAxUIWindow@ATL@@@ATL@@
+.?AV?$CComObject@VCCCListViewCtrl@@@ATL@@
+.?AV?$CComObject@VCColumn@@@ATL@@
+.?AV?$CComObject@VCDocHostUIHandlerDispatch@@@ATL@@
+.?AV?$CComObject@VCElementBehaviorFactory@@@ATL@@
+.?AV?$CComObject@VCMasterStringTable@@@ATL@@
+.?AV?$CComObject@VCMDIMenuDecorationAccessible@@@ATL@@
+.?AV?$CComObject@VCMMCApplication@@@ATL@@
+.?AV?$CComObject@VCMMCApplicationFrame@@@ATL@@
+.?AV?$CComObject@VCMMCDocument@@@ATL@@
+.?AV?$CComObject@VCMMCDropSource@@@ATL@@
+.?AV?$CComObject@VCMMCDropTarget@@@ATL@@
+.?AV?$CComObject@VCMMCResultNode@@@ATL@@
+.?AV?$CComObject@VCMMCToolBarAccServer@@@ATL@@
+.?AV?$CComObject@VCMMCView@@@ATL@@
+.?AV?$CComObject@VCMMCViewBehavior@@@ATL@@
+.?AV?$CComObject@VCMMCViewFrame@@@ATL@@
+.?AV?$CComObject@VCOCXCtrlWrapper@@@ATL@@
+.?AV?$CComObject@VCStringEnumerator@@@ATL@@
+.?AV?$CComObject@VCTabAccessible@@@ATL@@
+.?AV?$CComObject@VCTaskPadHost@@@ATL@@
+.?AV?$CComObject@VCWebEventSink@@@ATL@@
+.?AV?$CComObjectNoLock@VCComClassFactory@ATL@@@ATL@@
+.?AV?$CComObjectNoLock@VCMMCAxHostWindow@@@ATL@@
+.?AV?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL@@
+.?AV?$CComObjectRootEx@VCComSingleThreadModel@ATL@@@ATL@@
+.?AV?$CComPolyObject@VCAxHostWindow@ATL@@@ATL@@
+.?AV?$CDockManager@VCDockSite@@@@
+.?AV?$CEventDispatcher@U_AppEvents@@@@
+.?AV?$CEventProxy@UAppEvents@@@@
+.?AV?$CEventSource@VCActionsPaneObserver@@VCVoid@@V2@V2@V2@@@
+.?AV?$CEventSource@VCAMCDocumentObserver@@VCVoid@@V2@V2@V2@@@
+.?AV?$CEventSource@VCAMCViewObserver@@VCVoid@@V2@V2@V2@@@
+.?AV?$CEventSource@VCAMCViewToolbarsObserver@@VCVoid@@V2@V2@V2@@@
+.?AV?$CEventSource@VCListViewActivationObserver@@VCVoid@@V2@V2@V2@@@
+.?AV?$CEventSource@VCListViewObserver@@VCVoid@@V2@V2@V2@@@
+.?AV?$CEventSource@VCOCXHostActivationObserver@@VCVoid@@V2@V2@V2@@@
+.?AV?$CEventSource@VCTreeViewObserver@@VCVoid@@V2@V2@V2@@@
+.?AV?$CEventSource@VCVerbObserver@@VCVoid@@V2@V2@V2@@@
+.?AV?$CIdentifierPool@K@@
+.?AV?$ClassInfo@VActClipper@@VElement@DirectUI@@V?$StandardCreator@VActClipper@@@3@@DirectUI@@
+.?AV?$ClassInfo@VActExpando@@VElement@DirectUI@@V?$StandardCreator@VActExpando@@@3@@DirectUI@@
+.?AV?$ClassInfo@VTaskButton@@VButton@DirectUI@@V?$StandardCreator@VTaskButton@@@3@@DirectUI@@
+.?AV?$CList@PEAVCActionPaneTask@@PEAV1@@@
+.?AV?$CMMCEnumerator@VCAMCDoc@@VCAMCViewPosition@@@@
+.?AV?$CMMCEnumerator@VCCCListViewCtrl@@H@@
+.?AV?$CMMCEnumerator@VCNodes@@H@@
+.?AV?$CMMCIDispatchImpl@U_Application@@$1?CLSID_Application@@3U_GUID@@B$1?LIBID_MMC20@@3U3@B@@
+.?AV?$CMMCIDispatchImpl@UColumn@@$1?GUID_NULL@@3U_GUID@@B$1?LIBID_MMC20@@3U3@B@@
+.?AV?$CMMCIDispatchImpl@UColumns@@$1?GUID_NULL@@3U_GUID@@B$1?LIBID_MMC20@@3U3@B@@
+.?AV?$CMMCIDispatchImpl@UDocument@@$1?GUID_NULL@@3U_GUID@@B$1?LIBID_MMC20@@3U3@B@@
+.?AV?$CMMCIDispatchImpl@UFrame@@$1?GUID_NULL@@3U_GUID@@B$1?LIBID_MMC20@@3U3@B@@
+.?AV?$CMMCIDispatchImpl@UIAccessible@@$1?GUID_NULL@@3U_GUID@@B$1?LIBID_Accessibility@@3U3@B@@
+.?AV?$CMMCIDispatchImpl@UNode@@$1?GUID_NULL@@3U_GUID@@B$1?LIBID_MMC20@@3U3@B@@
+.?AV?$CMMCIDispatchImpl@UNodes@@$1?GUID_NULL@@3U_GUID@@B$1?LIBID_MMC20@@3U3@B@@
+.?AV?$CMMCIDispatchImpl@UView@@$1?GUID_NULL@@3U_GUID@@B$1?LIBID_MMC20@@3U3@B@@
+.?AV?$CMMCIDispatchImpl@UViews@@$1?GUID_NULL@@3U_GUID@@B$1?LIBID_MMC20@@3U3@B@@
+.?AV?$CMMCNewEnumImpl@V_CMMCViews@@VCAMCViewPosition@@VCAMCDoc@@@@
+.?AV?$CMMCNewEnumImpl@VCColumnsBase@@HVCCCListViewCtrl@@@@
+.?AV?$CMMCNewEnumImpl@VCNodes@@HV1@@@
+.?AV?$CRefCountedObject@VCAMCViewToolbars@@@@
+.?AV?$CScriptEvent@UAppEvents@@@@
+.?AV?$CTiedComObject@VCAMCDoc@@@@
+.?AV?$CTiedComObject@VCAMCView@@@@
+.?AV?$CTiedComObject@VCCCListViewCtrl@@@@
+.?AV?$CTiedComObject@VCFolderTabView@@@@
+.?AV?$CTiedComObject@VCMainFrame@@@@
+.?AV?$CTiedComObject@VCMDIMenuDecoration@@@@
+.?AV?$CTiedComObject@VCMMCToolBarCtrlEx@@@@
+.?AV?$CTiedComObject@VCMMCViewDropTarget@@@@
+.?AV?$CTiedComObject@VCNodes@@@@
+.?AV?$CTypedHashTable@VResultItemIndexCache@@VResultItemIndexRecord@@_JVCLKRLinearHashTable@LKRhash@@@LKRhash@@
+.?AV?$CTypedPtrList@VCPtrList@@PEAVCString@@@@
+.?AV?$CWindowImpl@VCAxFrameWindow@ATL@@VCWindow@2@V?$CWinTraits@$0FGAAAAAA@$0A@@2@@ATL@@
+.?AV?$CWindowImpl@VCAxHostWindow@ATL@@VCWindow@2@V?$CWinTraits@$0FGAAAAAA@$0A@@2@@ATL@@
+.?AV?$CWindowImpl@VCAxUIWindow@ATL@@VCWindow@2@V?$CWinTraits@$0FGAAAAAA@$0A@@2@@ATL@@
+.?AV?$CWindowImplBaseT@V?$CAxWindowT2@VCWindow@ATL@@@@V?$CWinTraits@$0FGAAAAAA@$0A@@ATL@@@ATL@@
+.?AV?$CWindowImplBaseT@VCWindow@ATL@@V?$CWinTraits@$0FGAAAAAA@$0A@@2@@ATL@@
+.?AV?$CWindowImplRoot@V?$CAxWindowT2@VCWindow@ATL@@@@@ATL@@
+.?AV?$CWindowImplRoot@VCWindow@ATL@@@ATL@@
+.?AV?$EventSource@VCTreeObserver@@@@
+.?AV?$EventSourceImpl@VCTreeObserver@@@@
+.?AV?$IConnectionPointContainerImpl@VCMMCApplication@@@ATL@@
+.?AV?$IConnectionPointImpl@VCMMCApplication@@$1?DIID_AppEvents@@3U_GUID@@BVCComDynamicUnkArray@ATL@@@ATL@@
+.?AV?$IDispatchImpl@U_Application@@$1?_GUID_a3afb9cc_b653_4741_86ab_f0470ec1384c@@3U__s_GUID@@B$1?LIBID_MMC20@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UColumn@@$1?_GUID_fd1c5f63_2b16_4d06_9ab3_f45350b940ab@@3U__s_GUID@@B$1?LIBID_MMC20@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UColumns@@$1?_GUID_383d4d97_fc44_478b_b139_6323dc48611c@@3U__s_GUID@@B$1?LIBID_MMC20@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UDocument@@$1?_GUID_225120d6_1e0f_40a3_93fe_1079e6a8017b@@3U__s_GUID@@B$1?LIBID_MMC20@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UFrame@@$1?_GUID_e5e2d970_5bb3_4306_8804_b0968a31c8e6@@3U__s_GUID@@B$1?LIBID_MMC20@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIAccessible@@$1?_GUID_618736e0_3c3d_11cf_810c_00aa00389b71@@3U__s_GUID@@B$1?LIBID_Accessibility@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIAxWinAmbientDispatch@@$1?IID_IAxWinAmbientDispatch@@3U_GUID@@B$1?LIBID_ATLLib@@3U3@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIWebSink@@$1?IID_IWebSink@@3U_GUID@@B$1?LIBID_MMCInternalWebOcx@@3U3@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UNode@@$1?_GUID_f81ed800_7839_4447_945d_8e15da59ca55@@3U__s_GUID@@B$1?LIBID_MMC20@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UNodes@@$1?_GUID_313b01df_b22f_4d42_b1b8_483cdcf51d35@@3U__s_GUID@@B$1?LIBID_MMC20@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UView@@$1?_GUID_6efc2da2_b38c_457e_9abb_ed2d189b8c38@@3U__s_GUID@@B$1?LIBID_MMC20@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UViews@@$1?_GUID_d6b8c29d_a1ff_4d72_aab0_e381e9b9338d@@3U__s_GUID@@B$1?LIBID_MMC20@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IMMCSupportErrorInfoImpl@$1?_GUID_225120d6_1e0f_40a3_93fe_1079e6a8017b@@3U__s_GUID@@B$1?GUID_NULL@@3U_GUID@@B@@
+.?AV?$IMMCSupportErrorInfoImpl@$1?_GUID_313b01df_b22f_4d42_b1b8_483cdcf51d35@@3U__s_GUID@@B$1?GUID_NULL@@3U_GUID@@B@@
+.?AV?$IMMCSupportErrorInfoImpl@$1?_GUID_383d4d97_fc44_478b_b139_6323dc48611c@@3U__s_GUID@@B$1?GUID_NULL@@3U_GUID@@B@@
+.?AV?$IMMCSupportErrorInfoImpl@$1?_GUID_618736e0_3c3d_11cf_810c_00aa00389b71@@3U__s_GUID@@B$1?GUID_NULL@@3U_GUID@@B@@
+.?AV?$IMMCSupportErrorInfoImpl@$1?_GUID_6efc2da2_b38c_457e_9abb_ed2d189b8c38@@3U__s_GUID@@B$1?GUID_NULL@@3U_GUID@@B@@
+.?AV?$IMMCSupportErrorInfoImpl@$1?_GUID_a3afb9cc_b653_4741_86ab_f0470ec1384c@@3U__s_GUID@@B$1?CLSID_Application@@3U_GUID@@B@@
+.?AV?$IMMCSupportErrorInfoImpl@$1?_GUID_d6b8c29d_a1ff_4d72_aab0_e381e9b9338d@@3U__s_GUID@@B$1?GUID_NULL@@3U_GUID@@B@@
+.?AV?$IMMCSupportErrorInfoImpl@$1?_GUID_e5e2d970_5bb3_4306_8804_b0968a31c8e6@@3U__s_GUID@@B$1?GUID_NULL@@3U_GUID@@B@@
+.?AV?$IMMCSupportErrorInfoImpl@$1?_GUID_f81ed800_7839_4447_945d_8e15da59ca55@@3U__s_GUID@@B$1?GUID_NULL@@3U_GUID@@B@@
+.?AV?$IMMCSupportErrorInfoImpl@$1?_GUID_fd1c5f63_2b16_4d06_9ab3_f45350b940ab@@3U__s_GUID@@B$1?GUID_NULL@@3U_GUID@@B@@
+.?AV?$IMMCSupportErrorInfoImpl@$1?IID_IEnumVARIANT@@3U_GUID@@B$1?GUID_NULL@@3U2@B@@
+.?AV?$IObjectSafetyImpl@VCElementBehaviorFactory@@$00@ATL@@
+.?AV?$IObjectWithSiteImpl@VCAxHostWindow@ATL@@@ATL@@
+.?AV?$IProvideClassInfo2Impl@$1?CLSID_Application@@3U_GUID@@B$1?DIID_AppEvents@@3U2@B$1?LIBID_MMC20@@3U2@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$ISupportErrorInfoImpl@$1?_GUID_225120d6_1e0f_40a3_93fe_1079e6a8017b@@3U__s_GUID@@B@ATL@@
+.?AV?$ISupportErrorInfoImpl@$1?_GUID_313b01df_b22f_4d42_b1b8_483cdcf51d35@@3U__s_GUID@@B@ATL@@
+.?AV?$ISupportErrorInfoImpl@$1?_GUID_383d4d97_fc44_478b_b139_6323dc48611c@@3U__s_GUID@@B@ATL@@
+.?AV?$ISupportErrorInfoImpl@$1?_GUID_618736e0_3c3d_11cf_810c_00aa00389b71@@3U__s_GUID@@B@ATL@@
+.?AV?$ISupportErrorInfoImpl@$1?_GUID_6efc2da2_b38c_457e_9abb_ed2d189b8c38@@3U__s_GUID@@B@ATL@@
+.?AV?$ISupportErrorInfoImpl@$1?_GUID_a3afb9cc_b653_4741_86ab_f0470ec1384c@@3U__s_GUID@@B@ATL@@
+.?AV?$ISupportErrorInfoImpl@$1?_GUID_d6b8c29d_a1ff_4d72_aab0_e381e9b9338d@@3U__s_GUID@@B@ATL@@
+.?AV?$ISupportErrorInfoImpl@$1?_GUID_e5e2d970_5bb3_4306_8804_b0968a31c8e6@@3U__s_GUID@@B@ATL@@
+.?AV?$ISupportErrorInfoImpl@$1?_GUID_f81ed800_7839_4447_945d_8e15da59ca55@@3U__s_GUID@@B@ATL@@
+.?AV?$ISupportErrorInfoImpl@$1?_GUID_fd1c5f63_2b16_4d06_9ab3_f45350b940ab@@3U__s_GUID@@B@ATL@@
+.?AV?$ISupportErrorInfoImpl@$1?IID_IEnumVARIANT@@3U_GUID@@B@ATL@@
+.?AV?$list@VCColumnInfo@@V?$allocator@VCColumnInfo@@@std@@@std@@
+.?AV?$map@VCSnapInReferencePtr@@VCStringTable@@U?$less@VCSnapInReferencePtr@@@std@@V?$allocator@U?$pair@$$CBVCSnapInReferencePtr@@VCStringTable@@@std@@@4@@std@@
+.?AV?$TSnapinInterfaceWrapper@UIExtendTaskPad@@$05@@
+.?AV?$TSnapinInterfaceWrapper@UIResultDataCompare@@$00@@
+.?AV?$TSnapinInterfaceWrapper@UIResultDataCompareEx@@$00@@
+.?AV?$TSnapinInterfaceWrapper@UISnapInFactory@@$00@@
+.?AV?$XMLListCollectionImp@V?$list@VCColumnInfo@@V?$allocator@VCColumnInfo@@@std@@@std@@@@
+.?AV?$XMLListCollectionWrap@V?$list@VCDynamicPathEntry@@V?$allocator@VCDynamicPathEntry@@@std@@@std@@@@
+.?AV?$XMLListCollectionWrap@V?$list@VCEntry@@V?$allocator@VCEntry@@@std@@@std@@@@
+.?AV?$XMLMapCollection@V?$map@VCSnapInReferencePtr@@VCStringTable@@U?$less@VCSnapInReferencePtr@@@std@@V?$allocator@U?$pair@$$CBVCSnapInReferencePtr@@VCStringTable@@@std@@@4@@std@@@@
+.?AV_CMMCViews@@
+.?AV_com_error@@
+.?AVActClipper@@
+.?AVActExpando@@
+.?AVbad_alloc@std@@
+.?AVButton@DirectUI@@
+.?AVCAccel@@
+.?AVCActionPane@@
+.?AVCActionPaneSection@@
+.?AVCActionPaneTask@@
+.?AVCActionPaneZone@@
+.?AVCActionsPaneView@@
+.?AVCAddFavDialog@@
+.?AVCAddFavGroupDialog@@
+.?AVCAMCApp@@
+.?AVCAMCDoc@@
+.?AVCAMCDocManager@@
+.?AVCAMCDocumentObserver@@
+.?AVCAMCHeaderCtrl@@
+.?AVCAMCListView@@
+.?AVCAMCMultiDocTemplate@@
+.?AVCAMCNavigator@@
+.?AVCAMCProgressCtrl@@
+.?AVCAMCStatusBar@@
+.?AVCAMCTreeView@@
+.?AVCAMCView@@
+.?AVCAMCViewObserver@@
+.?AVCAMCViewToolbars@@
+.?AVCAMCViewToolbarsMgr@@
+.?AVCAMCViewToolbarsObserver@@
+.?AVCAMCWebViewCtrl@@
+.?AVCArchitecturePicker@@
+.?AVCAxFrameWindow@ATL@@
+.?AVCAxHostWindow@ATL@@
+.?AVCAxUIWindow@ATL@@
+.?AVCBitmap@@
+.?AVCBookmark@@
+.?AVCBrush@@
+.?AVCButton@@
+.?AVCCCListViewCtrl@@
+.?AVCChildFrame@@
+.?AVCClientDC@@
+.?AVCCmdTarget@@
+.?AVCCmdUI@@
+.?AVCColumn@@
+.?AVCColumnInfo@@
+.?AVCColumnInfoList@@
+.?AVCColumnsBase@@
+.?AVCComClassFactory@ATL@@
+.?AVCCommandLineInfo@@
+.?AVCCommonDialog@@
+.?AVCComObjectObserver@@
+.?AVCComObjectRootBase@ATL@@
+.?AVCCOMSnapInReference@@
+.?AVCConsoleDialog@@
+.?AVCConsoleDocument@@
+.?AVCConsoleEventDispatcher@@
+.?AVCConsoleFilePersistor@@
+.?AVCConsoleFrame@@
+.?AVCConsolePropPage@@
+.?AVCConsolePropSheet@@
+.?AVCConsoleStatusBar@@
+.?AVCConsoleTree@@
+.?AVCConsoleView@@
+.?AVCCriticalSection@@
+.?AVCCtrlView@@
+.?AVCDC@@
+.?AVCDeferredLayout@CAMCView@@
+.?AVCDeferredRenameListItem@@
+.?AVCDeferredResultPaneActivation@@
+.?AVCDescriptionCtrl@@
+.?AVCDialog@@
+.?AVCDirectUIRender@@
+.?AVCDiskCleanupPage@@
+.?AVCDocHostUIHandlerDispatch@@
+.?AVCDockSite@@
+.?AVCDockWindow@@
+.?AVCDocManager@@
+.?AVCDocTemplate@@
+.?AVCDocument@@
+.?AVCDynamicPathEntry@@
+.?AVCEdit@@
+.?AVCElementBehaviorFactory@@
+.?AVCEntry@@
+.?AVCEventDispatcherBase@@
+.?AVCEventSourceBase@@
+.?AVCFavFolderDialog@@
+.?AVCFavObject@@
+.?AVCFavorites@@
+.?AVCFavoriteXMLList@@
+.?AVCFavTreeCtrl@@
+.?AVCFileDialog@@
+.?AVCFileDialogEx@@
+.?AVCFocusHandler@@
+.?AVCFocusSubclasser@@
+.?AVCFolderTabMetrics@@
+.?AVCFolderTabView@@
+.?AVCFont@@
+.?AVCFontLinker@@
+.?AVCFrameState@@
+.?AVCFrameSubclasser@@
+.?AVCFrameSubclasser@CToolbarTracker@@
+.?AVCFrameWnd@@
+.?AVCFxSnapInReference@@
+.?AVCGdiObject@@
+.?AVCHalftoneClientDC@@
+.?AVCHeaderCtrl@@
+.?AVCIdleTask@@
+.?AVCImageList@@
+.?AVCImageList@WTL@@
+.?AVCKeyboardNavDelay@CAMCTreeView@@
+.?AVCKeyboardNavDelayTimer@@
+.?AVClassInfoBase@DirectUI@@
+.?AVCListCtrl@@
+.?AVCListFontLinker@@
+.?AVCListView@@
+.?AVCListViewActivationObserver@@
+.?AVCListViewObserver@@
+.?AVCLKRhashAllocator@@
+.?AVCLKRhashDefaultAllocator@@
+.?AVCLKRLinearHashTable@LKRhash@@
+.?AVCMainFrame@@
+.?AVCMasterStringTable@@
+.?AVCMDIChildWnd@@
+.?AVCMDIClientWnd@@
+.?AVCMDIFrameWnd@@
+.?AVCMDIMenuDecoration@@
+.?AVCMDIMenuDecorationAccessible@@
+.?AVCMemento@@
+.?AVCMenu@@
+.?AVCMenuBar@@
+.?AVCMenuButtonsMgr@@
+.?AVCMenuButtonsMgrImpl@@
+.?AVCMessageMap@ATL@@
+.?AVCMMCApplication@@
+.?AVCMMCApplicationFrame@@
+.?AVCMMCAxHostWindow@@
+.?AVCMMCAxWindow@@
+.?AVCMMCCommandLineInfo@@
+.?AVCMMCDocument@@
+.?AVCMMCDropSource@@
+.?AVCMMCDropTarget@@
+.?AVCMMCResultNode@@
+.?AVCMMCToolBar@@
+.?AVCMMCToolBarAccServer@@
+.?AVCMMCToolBarCtrlEx@@
+.?AVCMMCToolbarIntf@@
+.?AVCMMCView@@
+.?AVCMMCViewBehavior@@
+.?AVCMMCViewDropTarget@@
+.?AVCMMCViewFrame@@
+.?AVCMultiDocTemplate@@
+.?AVCNodes@@
+.?AVCObject@@
+.?AVCObserverBase@@
+.?AVCOCXCtrlWrapper@@
+.?AVCOCXHostActivationObserver@@
+.?AVCOCXHostView@@
+.?AVCOrganizeFavDialog@@
+.?AVCPen@@
+.?AVCProgressCtrl@@
+.?AVCPropertyPage@@
+.?AVCPropertySheet@@
+.?AVCPtrList@@
+.?AVCRebarDockWindow@@
+.?AVCRebarWnd@@
+.?AVCResultItem@@
+.?AVCResultViewType@@
+.?AVCRgn@@
+.?AVCSafeCriticalSection@UICoreLib@@
+.?AVCSaveFileDialog@@
+.?AVCSerialObject@@
+.?AVCSmartIcon@@
+.?AVCSnapInReference@@
+.?AVCSnapInReferencePtr@@
+.?AVCStandardToolbar@@
+.?AVCStatBar@@
+.?AVCStatic@@
+.?AVCStdVerbButtons@@
+.?AVCStr@@
+.?AVCStringEnumerator@@
+.?AVCStringTable@@
+.?AVCStringTableString@@
+.?AVCStringTableStringBase@@
+.?AVCSubclasser@@
+.?AVCSyncObject@@
+.?AVCSysColorImageList@@
+.?AVCTabAccessible@@
+.?AVCTaskPadHost@@
+.?AVCTiedComObjectRoot@@
+.?AVCTiedObject@@
+.?AVCToolBarCtrl@@
+.?AVCToolBarCtrlBase@@
+.?AVCToolBarCtrlEx@@
+.?AVCToolbarNotify@@
+.?AVCToolbarTracker@@
+.?AVCToolbarTrackerAuxWnd@@
+.?AVCToolCmdUIEx@@
+.?AVCTrackingSubclasserBase@@
+.?AVCTreeCtrl@@
+.?AVCTreeFontLinker@@
+.?AVCTreeObserver@@
+.?AVCTreeObserverTreeImpl@@
+.?AVCTreeSource@@
+.?AVCTreeView@@
+.?AVCTreeViewMap@@
+.?AVCTreeViewObserver@@
+.?AVCVerbObserver@@
+.?AVCView@@
+.?AVCViewSettings@@
+.?AVCViewSubclasser@@
+.?AVCViewTemplateList@@
+.?AVCViewTracker@@
+.?AVCWebEventSink@@
+.?AVCWinApp@@
+.?AVCWindow@ATL@@
+.?AVCWinThread@@
+.?AVCWnd@@
+.?AVCXML_IStream@@
+.?AVCXMLBinaryValue@@
+.?AVCXMLEnumeration@@
+.?AVCXMLIcon@@
+.?AVCXMLImageList@@
+.?AVCXMLObject@@
+.?AVCXMLPersistableIcon@@
+.?AVCXMLValueExtension@@
+.?AVCXMLWindowPlacement@@
+.?AVElement@DirectUI@@
+.?AVexception@@
+.?AVIExtendTaskPadWrapper@@
+.?AVIResultDataCompareExWrapper@@
+.?AVIResultDataCompareWrapper@@
+.?AVISnapInFactoryWrapper@@
+.?AVItemHandle@@
+.?AVIUnknownWrapper@@
+.?AVlength_error@std@@
+.?AVlogic_error@std@@
+.?AVout_of_range@std@@
+.?AVpool_exhausted@?$CIdentifierPool@K@@
+.?AVReferenceToStringTableMap@@
+.?AVResultItemIndexCache@@
+.?AVSC@mmcerror@@
+.?AVSnapinInterfaceWrapper@@
+.?AVTaskButton@@
+.?AVXMLListCollectionBase@@
+.?AVXMLMapCollectionBase@@
+.?AVXMLPoint@@
+.?AVXMLRect@@
+.00cfg
+.bss$00
+.bss$dk00
+.bss$pr00
+.bss$zz
+.CAMCApp
+.CRT$XCA
+.CRT$XCAA
+.CRT$XCL
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIY
+.CRT$XIZ
+.CRT$XLA
+.CRT$XLZ
+.data
+.data$00
+.data$00$brc
+.data$dk00
+.data$dk00$brc
+.data$r$brc
+.data$zz
+.data$zz$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.FrameNewWindowWW
+.gfids
+.giats
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.pdata
+.PEAVCException@@
+.PEAVCMemoryException@@
+.PEAVCUserException@@
+.rdata
+.rdata$00
+.rdata$00$brc
+.rdata$brc
+.rdata$r
+.rdata$T$brc
+.rdata$zz
+.rdata$zz$brc
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.text
+.text$di
+.text$lp00mmc.exe!30_clientonly
+.text$mn
+.text$mn$00
+.text$np
+.text$x
+.text$yd
+.text$zy
+.text$zz
+.tls$
+.tls$ZZZ
+.xdata
+.xdata$x
+/*+-------------------------------------------------------------------------*
+// constants
+// global variables
+// need to collect the list of unique EOT URLs and create a <STYLE> @font-face{} </STYLE> rule here
+// Prevent text from being selected and messing up the UI.
+// Taskpad button display types
+/~TitleChangeW
+/v.&f5
+-:''#
+:%%%%% A
+:/hKy
+:@}g^
+-:'432+*)'"
+:fScopeNodeObjectWL
+:UUWZWWW;
+:V//;ly
+;]@uA
+;D$`~
+;retvalWW
+;uXuR
+;y,t?H
+??0?$CEventLock@UAppEvents@@@@QEAA@XZ
+??0Button@DirectUI@@QEAA@XZ
+??0ClassInfoBase@DirectUI@@QEAA@XZ
+??0CritSecLock@DirectUI@@QEAA@PEAU_RTL_CRITICAL_SECTION@@@Z
+??0Element@DirectUI@@QEAA@XZ
+??0exception@@QEAA@AEBQEBD@Z
+??0exception@@QEAA@AEBQEBDH@Z
+??0exception@@QEAA@AEBV0@@Z
+??0exception@@QEAA@XZ
+??0SC@mmcerror@@QEAA@AEBV01@@Z
+??0SC@mmcerror@@QEAA@J@Z
+??1?$CEventLock@UAppEvents@@@@QEAA@XZ
+??1Button@DirectUI@@UEAA@XZ
+??1ClassInfoBase@DirectUI@@UEAA@XZ
+??1CritSecLock@DirectUI@@QEAA@XZ
+??1Element@DirectUI@@UEAA@XZ
+??1exception@@UEAA@XZ
+??1SC@mmcerror@@QEAA@XZ
+??1type_info@@UEAA@XZ
+??4SC@mmcerror@@QEAAAEAV01@AEBV01@@Z
+??4SC@mmcerror@@QEAAAEAV01@J@Z
+??7SC@mmcerror@@QEBAHXZ
+??8SC@mmcerror@@QEBA_NAEBV01@@Z
+??8SC@mmcerror@@QEBA_NJ@Z
+??9SC@mmcerror@@QEBA_NJ@Z
+??BSC@mmcerror@@QEBA_NXZ
+?_SelfLayoutDoLayout@Element@DirectUI@@MEAAXHH@Z
+?_SelfLayoutUpdateDesiredSize@Element@DirectUI@@MEAA?AUtagSIZE@@HHPEAVSurface@2@@Z
+?_UpdateDesiredSize@Element@DirectUI@@QEAA?AUtagSIZE@@HHPEAVSurface@2@@Z
+?_UpdateLayoutPosition@Element@DirectUI@@QEAAXHH@Z
+?_UpdateLayoutSize@Element@DirectUI@@QEAAXHH@Z
+?3C0;
+?AccDefActionProp@Element@DirectUI@@SAPEBUPropertyInfo@2@XZ
+?AccessibleProp@Element@DirectUI@@SAPEBUPropertyInfo@2@XZ
+?AccNameProp@Element@DirectUI@@SAPEBUPropertyInfo@2@XZ
+?AccRoleProp@Element@DirectUI@@SAPEBUPropertyInfo@2@XZ
+?AccStateProp@Element@DirectUI@@SAPEBUPropertyInfo@2@XZ
+?ActivateTooltip@Element@DirectUI@@MEAAXPEAV12@K@Z
+?Add@Element@DirectUI@@QEAAJPEAV12@@Z
+?Add@Element@DirectUI@@UEAAJPEAPEAV12@I@Z
+?AddBehavior@Element@DirectUI@@UEAAJPEAUIDuiBehavior@@@Z
+?AddChild@ClassInfoBase@DirectUI@@UEAAXXZ
+?AddItem@BookKeeping@@SAJAEAVItemHandle@@@Z
+?AddRef@ClassInfoBase@DirectUI@@UEAAXXZ
+?AddRef@CMMCStrongReferences@@SAKXZ
+?AddSnapin@BookKeeping@@SAJPEBGAEAH@Z
+?AddSnapinInterface@BookKeeping@@SA_NPEAUIUnknown@@PEBGAEAH@Z
+?AssertPIZeroRef@ClassInfoBase@DirectUI@@UEBAXXZ
+?ClassExist@ClassInfoBase@DirectUI@@SA_NPEAPEAUIClassInfo@2@PEBQEBUPropertyInfo@2@IPEAU32@PEAUHINSTANCE__@@PEBG_N@Z
+?Clear@SC@mmcerror@@QEAAXXZ
+?Click@Button@DirectUI@@SA?AVUID@@XZ
+?ContentProp@Element@DirectUI@@SAPEBUPropertyInfo@2@XZ
+?Create@DUIXmlParser@DirectUI@@SAJPEAPEAV12@P6APEAVValue@2@PEBGPEAX@Z2P6AX11H2@Z2@Z
+?Create@HWNDElement@DirectUI@@SAJPEAUHWND__@@_NIPEAVElement@2@PEAKPEAPEAV42@@Z
+?Create@NativeHWNDHost@DirectUI@@SAJPEBGPEAUHWND__@@PEAUHICON__@@HHHHHHIPEAPEAV12@@Z
+?CreateBool@Value@DirectUI@@SAPEAV12@_N@Z
+?CreateColor@Value@DirectUI@@SAPEAV12@K@Z
+?CreateElement@DUIXmlParser@DirectUI@@QEAAJPEBGPEAVElement@2@1PEAKPEAPEAV32@@Z
+?CreateGraphic@Value@DirectUI@@SAPEAV12@PEAUHICON__@@_N11@Z
+?CreateInt@Value@DirectUI@@SAPEAV12@HW4DynamicScaleValue@@@Z
+?CreateString@Value@DirectUI@@SAPEAV12@PEBGPEAUHINSTANCE__@@@Z
+?DefaultAction@Button@DirectUI@@UEAAJXZ
+?DefaultAction@Element@DirectUI@@UEAAJXZ
+?Destroy@DUIXmlParser@DirectUI@@QEAAXXZ
+?Destroy@Element@DirectUI@@QEAAJ_N@Z
+?Destroy@NativeHWNDHost@DirectUI@@QEAAXXZ
+?DestroyAll@Element@DirectUI@@QEAAJ_N@Z
+?EnabledProp@Element@DirectUI@@SAPEBUPropertyInfo@2@XZ
+?EndDefer@Element@DirectUI@@QEAAXK@Z
+?EnsureVisible@Element@DirectUI@@QEAA_NXZ
+?EnsureVisible@Element@DirectUI@@UEAA_NHHHH@Z
+?EnumPropertyInfo@ClassInfoBase@DirectUI@@UEAAPEBUPropertyInfo@2@I@Z
+?ExtentProp@Element@DirectUI@@SAPEBUPropertyInfo@2@XZ
+?FatalError@SC@mmcerror@@QEBAXXZ
+?ffffff
+?FindAllSnapinUIThreads@BookKeeping@@SAJPEAPEAKPEAK@Z
+?FindDescendent@Element@DirectUI@@QEAAPEAV12@G@Z
+?FindItem@BookKeeping@@SAPEAVItemHandle@@PEAX@Z
+?FlushWorkingSet@HWNDElement@DirectUI@@QEAAXXZ
+?ForegroundProp@Element@DirectUI@@SAPEBUPropertyInfo@2@XZ
+?FromLastError@SC@mmcerror@@QEAAAEAV12@XZ
+?FromMMC@SC@mmcerror@@QEAAAEAV12@J@Z
+?FromWin32@SC@mmcerror@@QEAAAEAV12@J@Z
+?GetAccessibleImpl@Element@DirectUI@@UEAAJPEAPEAUIAccessible@@@Z
+?GetAdjacent@Element@DirectUI@@UEAAPEAV12@PEAV12@HPEBUNavReference@2@K@Z
+?GetBool@Value@DirectUI@@QEAA_NXZ
+?GetByClassIndex@ClassInfoBase@DirectUI@@UEAAPEBUPropertyInfo@2@I@Z
+?GetChildren@ClassInfoBase@DirectUI@@UEBAHXZ
+?GetChildren@Element@DirectUI@@QEAAPEAV?$DynamicArray@PEAVElement@DirectUI@@$0A@@2@PEAPEAVValue@2@@Z
+?GetClassInfoPtr@Button@DirectUI@@SAPEAUIClassInfo@2@XZ
+?GetClassInfoPtr@Element@DirectUI@@SAPEAUIClassInfo@2@XZ
+?GetContentSize@Element@DirectUI@@UEAA?AUtagSIZE@@HHPEAVSurface@2@@Z
+?GetContentStringAsDisplayed@Element@DirectUI@@UEAAPEBGPEAPEAVValue@2@@Z
+?GetDesiredSize@Element@DirectUI@@QEAAPEBUtagSIZE@@XZ
+?GetDisplayNode@Element@DirectUI@@QEAAPEAUHGADGET__@@XZ
+?GetElementProviderImpl@Element@DirectUI@@UEAAJPEAVInvokeHelper@2@PEAPEAVElementProvider@2@@Z
+?GetErrorMessage@SC@mmcerror@@QEBAXIPEAG@Z
+?GetFactoryLock@Element@DirectUI@@SAPEAU_RTL_CRITICAL_SECTION@@XZ
+?GetGlobalIndex@ClassInfoBase@DirectUI@@UEBAIXZ
+?GetHelpFile@SC@mmcerror@@SAPEBGXZ
+?GetHelpID@SC@mmcerror@@QEAAKXZ
+?GetHWND@NativeHWNDHost@DirectUI@@QEAAPEAUHWND__@@XZ
+?GetHWnd@SC@mmcerror@@SAPEAUHWND__@@XZ
+?GetID@Element@DirectUI@@QEAAGXZ
+?GetImmediateChild@Element@DirectUI@@QEAAPEAV12@PEAV12@@Z
+?GetImmersiveFocusRectOffsets@Element@DirectUI@@UEAAXPEAUtagRECT@@@Z
+?GetKeyFocused@Element@DirectUI@@UEAA_NXZ
+?GetModule@ClassInfoBase@DirectUI@@UEBAPEAUHINSTANCE__@@XZ
+?GetName@ClassInfoBase@DirectUI@@UEBAPEBGXZ
+?GetParent@Element@DirectUI@@QEAAPEAV12@XZ
+?GetPICount@ClassInfoBase@DirectUI@@UEBAIXZ
+?GetSelected@Element@DirectUI@@QEAA_NXZ
+?GetSnapinName@BookKeeping@@SAPEBGH@Z
+?GetUIAElementProvider@Element@DirectUI@@UEAAJAEBU_GUID@@PEAPEAX@Z
+?GetUiaFocusDelegate@Element@DirectUI@@UEAAPEAV12@XZ
+?GetValue@Element@DirectUI@@QEAAPEAVValue@2@P6APEBUPropertyInfo@2@XZHPEAUUpdateCache@2@@Z
+?HandleUiaDestroyListener@Element@DirectUI@@UEAAXXZ
+?HandleUiaEventListener@Element@DirectUI@@UEAAXPEAUEvent@2@@Z
+?HandleUiaPropertyChangingListener@Element@DirectUI@@UEAAXPEBUPropertyInfo@2@@Z
+?HandleUiaPropertyListener@Element@DirectUI@@UEAAXPEBUPropertyInfo@2@HPEAVValue@2@1@Z
+?HeightProp@Element@DirectUI@@SAPEBUPropertyInfo@2@XZ
+?Host@NativeHWNDHost@DirectUI@@QEAAXPEAVElement@2@@Z
+?hplJ
+?Initialize@Button@DirectUI@@QEAAJIPEAVElement@2@PEAK@Z
+?Initialize@ClassInfoBase@DirectUI@@QEAAJPEAUHINSTANCE__@@PEBG_NPEBQEBUPropertyInfo@2@I@Z
+?Initialize@Element@DirectUI@@QEAAJIPEAV12@PEAK@Z
+?Insert@Element@DirectUI@@UEAAJPEAPEAV12@II@Z
+?InterfaceMethodActivationContextException@BookKeeping@@SAXHPEBG0KPEAU_EXCEPTION_POINTERS@@@Z
+?InterfaceMethodException@BookKeeping@@SAXHPEBG0KPEAU_EXCEPTION_POINTERS@@@Z
+?InvalidInterface@BookKeeping@@SAXHPEBG0@Z
+?IsContentProtected@Element@DirectUI@@UEAA_NXZ
+?IsError@SC@mmcerror@@QEBA_NXZ
+?IsGlobal@ClassInfoBase@DirectUI@@UEBA_NXZ
+?IsRTLReading@Element@DirectUI@@UEAA_NXZ
+?IsSubclassOf@ClassInfoBase@DirectUI@@UEBA_NPEAUIClassInfo@2@@Z
+?IsValidProperty@ClassInfoBase@DirectUI@@UEBA_NPEBUPropertyInfo@2@@Z
+?LastRefReleased@CMMCStrongReferences@@SA_NXZ
+?LayoutPosProp@Element@DirectUI@@SAPEBUPropertyInfo@2@XZ
+?LKResult2HRESULT@BookKeeping@@SAJ_J@Z
+?MessageCallback@Element@DirectUI@@UEAAIPEAUtagGMSG@@@Z
+?MMCErrorBox@@YAHII@Z
+?MMCErrorBox@@YAHPEBGI@Z
+?MMCErrorBox@@YAHPEBGVSC@mmcerror@@I@Z
+?MMCErrorBox@@YAHVSC@mmcerror@@I@Z
+?MMCNullInterface@BookKeeping@@SAXHPEBG0@Z
+?MouseWithinProp@Element@DirectUI@@SAPEBUPropertyInfo@2@XZ
+?OnDestroy@Element@DirectUI@@UEAAXXZ
+?OnEvent@Element@DirectUI@@UEAAXPEAUEvent@2@@Z
+?OnGroupChanged@Element@DirectUI@@UEAAXH_N@Z
+?OnHosted@Element@DirectUI@@MEAAXPEAV12@@Z
+?OnInput@Button@DirectUI@@UEAAXPEAUInputEvent@2@@Z
+?OnInput@Element@DirectUI@@UEAAXPEAUInputEvent@2@@Z
+?OnKeyFocusMoved@Element@DirectUI@@UEAAXPEAV12@0@Z
+?OnLostDialogFocus@Button@DirectUI@@UEAA_NPEAUIDialogElement@2@@Z
+?OnMouseFocusMoved@Element@DirectUI@@UEAAXPEAV12@0@Z
+?OnPropertyChanged@Button@DirectUI@@UEAAXPEBUPropertyInfo@2@HPEAVValue@2@1@Z
+?OnPropertyChanged@Element@DirectUI@@UEAAXPEAUPropertyInfo@2@HPEAVValue@2@1@Z
+?OnPropertyChanged@Element@DirectUI@@UEAAXPEBUPropertyInfo@2@HPEAVValue@2@1@Z
+?OnPropertyChanging@Element@DirectUI@@UEAA_NPEAUPropertyInfo@2@HPEAVValue@2@1@Z
+?OnPropertyChanging@Element@DirectUI@@UEAA_NPEBUPropertyInfo@2@HPEAVValue@2@1@Z
+?OnReceivedDialogFocus@Button@DirectUI@@UEAA_NPEAUIDialogElement@2@@Z
+?OnUnHosted@Element@DirectUI@@MEAAXPEAV12@@Z
+?Paint@Element@DirectUI@@UEAAXPEAUHDC__@@PEBUtagRECT@@1PEAU4@2@Z
+?QueryInterface@Element@DirectUI@@UEAAJAEBU_GUID@@PEAPEAX@Z
+?Register@Button@DirectUI@@SAJXZ
+?Register@ClassInfoBase@DirectUI@@QEAAJXZ
+?Register@Element@DirectUI@@SAJXZ
+?Release@ClassInfoBase@DirectUI@@UEAAHXZ
+?Release@CMMCStrongReferences@@SAKXZ
+?Release@Value@DirectUI@@QEAAXXZ
+?ReleaseSnapinInterface@BookKeeping@@SAJPEAUIUnknown@@H@Z
+?Remove@Element@DirectUI@@UEAAJPEAPEAV12@I@Z
+?RemoveBehavior@Element@DirectUI@@UEAAJPEAUIDuiBehavior@@@Z
+?RemoveChild@ClassInfoBase@DirectUI@@UEAAXXZ
+?RemoveItem@BookKeeping@@SAJPEAX@Z
+?RemoveLocalValue@Element@DirectUI@@QEAAJP6APEBUPropertyInfo@2@XZ@Z
+?RemoveTooltip@Element@DirectUI@@MEAAXPEAV12@@Z
+?ScEmitOrPostpone@CEventBuffer@@QEAA?AVSC@mmcerror@@PEAUIDispatch@@JPEAVCComVariant@ATL@@H@Z
+?ScFromMMC@@YA?AVSC@mmcerror@@J@Z
+?ScSetConsoleEventDispatcher@CConsoleEventDispatcherProvider@@SA?AVSC@mmcerror@@PEAVCConsoleEventDispatcher@@@Z
+?SelectedProp@Element@DirectUI@@SAPEBUPropertyInfo@2@XZ
+?SetFunctionName@SC@mmcerror@@QEAAXPEBG@Z
+?SetHeight@Element@DirectUI@@QEAAJH@Z
+?SetHWnd@SC@mmcerror@@SAXPEAUHWND__@@@Z
+?SetKeyFocus@Element@DirectUI@@UEAAXXZ
+?SetMainThreadID@SC@mmcerror@@SAXK@Z
+?SetSelected@Element@DirectUI@@QEAAJ_N@Z
+?SetValue@Element@DirectUI@@QEAAJP6APEBUPropertyInfo@2@XZHPEAVValue@2@@Z
+?SetValue@Element@DirectUI@@QEAAJPEBUPropertyInfo@2@HPEAVValue@2@@Z
+?SetVisible@Element@DirectUI@@QEAAJ_N@Z
+?SetXMLFromResource@DUIXmlParser@DirectUI@@QEAAJIPEAUHINSTANCE__@@0@Z
+?ShowWindow@NativeHWNDHost@DirectUI@@QEAAXH@Z
+?StartDefer@Element@DirectUI@@QEAAXPEAK@Z
+?terminate@@YAXXZ
+?Throw@SC@mmcerror@@QEAAXJ@Z
+?Throw@SC@mmcerror@@QEAAXXZ
+?ToHr@SC@mmcerror@@QEBAJXZ
+?TraceAndClear@SC@mmcerror@@QEAAXXZ
+?TraceError@@YAXPEBGAEBVSC@mmcerror@@@Z
+?TraceSnapinError@@YAXPEBGAEBVSC@mmcerror@@@Z
+?UpdateTooltip@Element@DirectUI@@MEAAXPEAV12@@Z
+?VisibleProp@Element@DirectUI@@SAPEBUPropertyInfo@2@XZ
+?what@exception@@UEBAPEBDXZ
+@%%SystemRoot%%\system32\mmcbase.dll,-%d
+@(LcK
+@)NK\cz$
+@.data
+@.didat
+@.reloc
+@@H9X
+@=GRj
+@8}ou
+@8=/W
+@85XE
+@8h tvH
+@8h u
+@8h(tvH
+@8h(u
+@8h)t
+@8h)u
+@8h0tvH
+@8h0u
+@8hXtvH
+@8hXu
+@8i u
+@8i u!H
+@8i(u
+@8i(u!H
+@8i)t
+@8i)u*H
+@8i0u
+@8i0u!H
+@8iXu
+@8iXu!H
+@8j(u
+@8j)u
+@8jIuBH
+@8k)t
+@8k)u
+@8oIt
+@8t$PtsH
+@8w`t
+@8x!t
+@8y!u
+@A^_]
+@A^_^
+@A^A]_^]
+@A_A\]
+@A_A^]
+@A_A^^
+@A_A^_
+@A_A^_^]
+@A_A^A\
+@A_A^A\_]
+@A_A^A\_^
+@A_A^A\_^[]
+@A_A^A\H
+@A_A^A]
+@A_A^A]A\_
+@A_A^A]A\_^[
+@A_A^A]A\_^]
+@GpSHELL32.dll
+@PropertyValueWWW
+@Qm6t
+@SUVWATAVAWH
+@SUVWAUAVAWH
+@SUVWAVAWH
+@SUVWAVH
+@SUVWH
+@SUWH
+@SVAVH
+@SVWATAUAVAWH
+@SVWATAVAWH
+@SVWAVAWH
+@SVWAVH
+@SVWH
+@SWAVH
+@UATAUAVAWH
+@UATAWH
+@UAVAWH
+@USVWATAUAVAWH
+@USVWATAVAWH
+@USVWAUAVAWH
+@USVWAVAWH
+@USVWAVH
+@USVWAWH
+@USVWH
+@USWATAUAVAWH
+@USWH
+@UVWATAUAVAWH
+@UVWAUAVH
+@UVWAVAWH
+@UVWH
+@UWAVH
+@VAVH
+@VWATAWH
+@VWAVH
+@WATAUAVAWH
+@WAVH
+[IsScopeNodeW
+[k!r9
+[zqeo@
+\$ A;
+\$ E3
+\$ H;
+\$ H;^8usH
+\$ UH
+\$ UVWATAUAVAWH
+\$ UVWH
+\$ VWAVH
+\$ WH
+\$$E3
+\$@tWH
+\$\+\$T
+\$`@2
+\$4E3
+\$hH;
+\$PL;]
+\$XH;
+\%"##
+\InprocServer32
+];yrd
+]_DocumentModeWWWd
+]0D8cIt
+]CommandW
+]hH;} s
+]hH93u.H
+]IsWW
+]Qoqyx
+]xH;]p
+]XH;} s
+^ H;^(
+^ H;^(t?
+^ H;^(t1L9;u&
+^ H;^(tIH
+^!yd~a
+^$;qGI
+^\676QQsrxxwx
+^^^:bbbbvvv
+^`H;^h
+^`H;^ht
+^hH;^p
+^XH;^`tuA
+^XH;^`tzA
+_@H;_HttH
+__argc
+__C_specific_handler
+__CxxFrameHandler3
+__dllonexit
+__RTDynamicCast
+__set_app_type
+__setusermatherr
+__wargv
+__wgetmainargs
+_`H;_h
+_|yyy|||
+_4#=@
+_amsg_exit
+_AppEvents InterfaceWW!
+_AppEventsWW
+_Application Interface
+_callnewh
+_cexit
+_commode
+_CxxThrowException
+_EventConnector InterfaceW9
+_EventConnectorW
+_exit
+_fmode
+_initterm
+_ListViewModeWWW,
+_lock
+_ltow
+_mbslen
+_mbsnbcnt
+_NodesWWW
+_onexit
+_otdNEB
+_purecall
+_ultow
+_unlock
+_ViewOptions
+_vsnwprintf
+_wcmdln
+_wcsicmp
+_wcsnicmp
+_wtoi
+_XcptFilter
+` AUAVAWH
+` UAVAWH
+`.rdata
+`062!dm~
+`A^_^
+`A^_^[]
+`A^A\_^]
+`A_A^_^[
+`A_A^_^]
+`A_A^A\^]
+`A_A^A\_^[]
+`A_A^A\_^][
+`A_A^A]A\_^[
+`A_A^A]A\_^]
+`OIndexOrPathWL
+{ AWH
+{ UAVAWH
+{{{v{{{
+{{yxyxxvP..Psy
+{46eb5926-582e-4017-9fdf-e8998daa0950}
+{Left@
+{wxxx
+|$ @8=L
+|$ ATAVAWH
+|$ AVH
+|$ E3
+|$ M;
+|$ UAVAWH
+|$ UH
+|$(A^
+|$(E3
+|$`9y|
+|$0E3
+|$0fD
+|$0Hc
+|$42A
+|$HfD
+|$p9o
+|$PA;
+|$pI;
+|$XH!|$P
+|/D9K
+|?Zj{1
+~ H;~(t
+~(H;~(u
+~\Q55n5#5^
+~]#\~]WqqZWO
+~]65Q\srQQsrxxxxxx
+~~~dvvv=
+~0Mcn
+~xx{Z
++"www
++\$$Lc
++pp/5
++S?Mz
++x H;
+<!-- Copyright (c) Microsoft Corporation -->
+</actclipper>
+</actexpando>
+</asmv3:application>
+</assembly>
+</button>
+</dependency>
+</dependentAssembly>
+</duixml>
+</element>
+</hwndelement>
+</if>
+</requestedPrivileges>
+</scrollviewer>
+</security>
+</style>
+</stylesheets>
+</taskbutton>
+</trustInfo>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0"?>
+<'+UJ
+<<<<<<<<-
+<actclipper alpha="255" animation="alpha | sizev | s | fast"/>
+<actclipper alpha="255"/>
+<actclipper layout="borderlayout()">
+<actexpando animation="rectanglev | s | fast"/>
+<actexpando resid="section" sheet="sectionss" layout="borderlayout()" padding="rect(0rp,0rp,0rp,5rp)">
+<asmv3:application>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1"  xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0">
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+<assemblyIdentity
+<button background="gradient(gradientactivecaption,activecaption,1)" foreground="captiontext" font="CaptionFont" padding="rect(5rp,0rp,1rp,0rp)" borderthickness="rect(0rp,1rp,0rp,0rp)" bordercolor="gradientactivecaption" cursor="hand"/>
+<button id="atom(header)" active="mouse" layoutpos="top" layout="borderlayout()">
+<CCHScrollBar layoutpos="ninebottom" accessible="true"/>
+<CCVScrollBar layoutpos="nineright" accessible="true"/>
+<dependency>
+<dependentAssembly>
+<description>Microsoft Management Console</description>
+<duixml>
+<DUMMY/>
+<element animation="rectanglev | s | fast"/>
+<element background="buttonface" foreground="buttontext" padding="rect(5rp,0rp,5rp,0rp)"/>
+<element background="window" margin="rect(5rp,0rp,5rp,0rp)" padding="rect(5rp,0rp,5rp,0rp)"/>
+<element background="window"/>
+<element borderthickness="rect(1rp,0rp,1rp,1rp)" bordercolor="buttonface"/>
+<element content="5"/>
+<element contentalign="middleleft | endellipsis" font="CaptionFont"/>
+<element contentalign="middleleft | endellipsis"/>
+<element font="MenuFont" background="window" foreground="buttontext" contentalign="wrapleft" padding="rect(5rp,5rp,5rp,5rp)"/>
+<element font="MenuFont" contentalign="middleleft | endellipsis" padding="rect(8rp,0rp,4rp,0rp)"/>
+<element fontstyle="underline"/>
+<element height="24rp" font="12pt;Normal;None;Marlett" content="6" contentalign="middleright"/>
+<element id="atom(arrow)" layoutpos="right"/>
+<element id="atom(bullet)" layoutpos="none"/>
+<element id="atom(checkmark)" layoutpos="none"/>
+<element id="atom(description)" layoutpos="client"/>
+<element id="atom(header)" layoutpos="top" layout="borderlayout()">
+<element id="atom(icon)" layoutpos="left"/>
+<element id="atom(norgie)" layoutpos="right"/>
+<element id="atom(sectionlist)" layout="verticalflowlayout(0,3,3)"/>
+<element id="atom(separator)" layoutpos="left"></element>
+<element id="atom(sepbar)" layout="flowlayout(0,0,3)">
+<element id="atom(tasklist)" layout="verticalflowlayout(0,3,3)"/>
+<element id="atom(title)" layoutpos="client"/>
+<element layout="borderlayout()">
+<element padding="rect(1rp,0rp,0rp,0rp)" borderthickness="rect(0rp,1rp,0rp,0rp)" bordercolor="buttonface"/>
+<element padding="rect(5rp,5rp,5rp,5rp)"/>
+<element resid="descsection" sheet="sectiontaskss" layout="borderlayout()">
+<element resid="region" sheet="regionss" id="atom(region)" layout="borderlayout()">
+<element resid="sepsection" sheet="sectiontaskss" id="atom(sepsection)" layout="borderlayout()">
+<element width="16rp" height="24rp" contentalign="middleleft" font="12pt;Normal;None;Marlett" content="a"/>
+<element width="16rp" height="24rp" contentalign="middleleft" font="12pt;Normal;None;Marlett" content="h"/>
+<element width="16rp" height="24rp" contentalign="middleleft"/>
+<element width="16rp" height="24rp" contentalign="middleright" font="12pt;Normal;None;Marlett" content="4"/>
+<hwndelement resid="ActionsPaneView" layout="borderlayout()">
+<if class="ScrollViewer">
+<if id="atom(arrow)">
+<if id="atom(bullet)">
+<if id="atom(checkmark)">
+<if id="atom(description)">
+<if id="atom(header)">
+<if id="atom(icon)">
+<if id="atom(norgie)">
+<if id="atom(region)">
+<if id="atom(sectionlist)">
+<if id="atom(separator)">
+<if id="atom(sepbar)">
+<if id="atom(tasklist)">
+<if id="atom(title)">
+<if mousefocused="true">
+<if selected="true">
+<None>
+<requestedExecutionLevel
+<requestedPrivileges>
+<scrollviewer sheet="taskpane" layoutpos="client" xscrollable="false" width="225rp">
+<security>
+<style resid="regionss">
+<style resid="sectionss">
+<style resid="sectiontaskss">
+<style resid="taskpane">
+<stylesheets>
+<taskbutton background="window" foreground="buttontext" padding="rect(5rp,0rp,1rp,0rp)" cursor="hand"/>
+<taskbutton resid="sectiontask" active="mouse" sheet="sectiontaskss" layout="borderlayout()">
+<trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+<viewer layoutpos="nineclient"/>
+=;w2_
+=?CAMCDoc
+=1=22131=21=211=2/11=/ :UWWWWT
+=YFI8^gR
+>)%Df
+>atlthunk.dll
+>D9GJ
+>IsolationAware function called after IsolationAwareCleanup
+>JStatusBarTextWWWL
+>R{Ft
+>RestoreW@
+>T9N4
+0';ViewOption_DefaultWW
+0=\DocumentMode_UserWWWd
+-000000000000-
+040904B0
+0A^_[
+0A^_]
+0A^_^
+0A^_^[]
+0A^_^H
+0A^A]_
+0A_A^_
+0A_A^_^[
+0A_A^_^]
+0A_A^A\
+0A_A^A\_]
+0A_A^A\_^
+0A_A^A]_^
+0A_A^A]A\_
+0A_A^A]A\_^[
+0A_A^A]A\_^]
+0A_A^A]A\_H
+0b.2u
+0IuListMode_DetailW,
+0sOM;
+0vCountWWWL
+0x%02.2x
+0x%04.4x
+1<CK$
+10.0.17763.1
+10.0.17763.1 (WinBuild.160101.0800)
+16=m&E
+1Ycjt
+2kP+_
+2l>VE
+2N>ON
+2zOBXg
+305.1i
+3ezMfH
+3p`/v
+3p|HM
+4_uYd\
+4GPWZWWW:
+4K`%F
+5>x#!
+52aa7b28-4ccb-498a-a53b-e65dc0bf4b94.htm
+57Q]]sr 55.5
+5Ly[?
+5y9Y9
+6E8~It
+6wwwqswqswsq6
+-77777777
+7fOnSelectionChangeWWW
+7MenuItemPathL
+7-s8C
+8###T*
+8.uFH
+8\$@t~H
+8\$`t
+8`X'Z
+864&k
+-888888877777-
+8A^_^[
+8A_A^A\_^[
+8B<Node
+8DocumentMode_AuthorWd
+8FdDocumentModed
+8FHtMA
+8IhAppEventsWWW
+8KQu\E
+9\$Tu
+9] tGH
+9](t0L
+9{|vS
+93uYH
+9CPo ,
+9D$(~ 
+9D$(t
+9D$pt
+9KkbRi
+9MMC20WWW
+9P_r2
+9S@s%
+9t$PH
+9x<u1
+9x<u8@
+9YysP
+9zHide 
+A!~0H
+A!~0I
+A%_`~
+A]A\]
+A^_^[
+A^_^[]
+A^_^][
+A^A\]
+A^A\_^]
+A^A]]
+A^A]_^]
+A^A]A\_]
+A_A\]
+A_A\_^]
+A_A]A\_]
+A_A]A\_^[]
+A_A^]
+A_A^_
+A_A^_^[
+A_A^_^[]
+A_A^_^]
+A_A^A\
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[
+A_A^A\_^[]
+A_A^A]
+A_A^A]_]
+A_A^A]_^[]
+A_A^A]A\]
+A_A^A]A\_
+A_A^A]A\_[]
+A_A^A]A\_^[
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A6MpC
+a7mmm3mmmmlmmm3mllllml3lllllll
+A8j)t
+A8j)u
+A8v(u
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/CActionPane
+AbsoluteMax
+AbsoluteMin
+Accesses a context menu item by index or by nameWW0
+AccessibleObjectFromWindow
+AcquireSRWLockExclusive
+ActClipper
+ActExpando
+Actions
+ActionsPaneView
+ActionsPaneVisible
+ActionsPaneWidth
+ActivateActCtx
+ActiveScopeNodeW
+AddAtomW
+AddRegionItems
+Adds a snapin given its CLSID or ProgIDWWWE
+AdjustWindowRectEx
+Ahqcj
+AMCCustomTab
+api-ms-win-core-registry-l1-1-0.dll
+AppendMenuW
+AppendToSystemMenu
+AppEvents InterfaceWWW
+AppEventsDHTMLConnectorW 
+apphelp.dll
+ApphelpCheckShellObject
+ApplicationTitle
+aqyG 
+Assign(null)
+ATAUAWH
+ATAVAWH
+ATL:%p
+AtlAxWin
+AtlAxWinEx
+AtlThunk_AllocateData
+AtlThunk_DataToCode
+AtlThunk_FreeData
+AtlThunk_InitData
+Attach
+AUAVAWH
+Author
+AXWIN
+AXWIN Frame Window
+AXWIN UI Window
+AZE-M
+B.........(.((.(
+BackL
+bad allocation
+BcnA=
+BeforeNavigateWW
+BeginDeferWindowPos
+BeginPaint
+bG=333333333323323332333323 GTWWWWWW
+Binary
+BinaryData
+BinaryRefIndex
+BinaryStorage
+BitBlt
+BjjjjjjjhBh.....hhhh
+-BJmv
+Bookmark
+BookMark
+Boolean
+Bottom
+BringWindowToTop
+bstrText
+bullet
+bViewMementoW
+C H+G u
+c#,;2AJP
+C(H+G(H
+c/U'sq%
+c:XB(U
+C;a:D
+C`2G`$
+C`2G`H
+CActionPane::AddSectionItem
+CActionPane::ClearSection
+CActionPane::CreateSection
+CActionPane::Initialize
+CActionPane::Render
+CActionPaneSection
+CActionPaneSection::AddSectionZone
+CActionPaneSection::Initialize
+CActionPaneSection::Render
+CActionPaneSection::UpdateExpandedProperty
+CActionPaneTask
+CActionPaneTask::GetTaskRect
+CActionPaneTask::Initialize
+CActionPaneTask::Render
+CActionPaneZone
+CActionPaneZone::AddRegionTask
+CActionPaneZone::AddSepBar
+CActionPaneZone::AddZoneTask
+CActionPaneZone::Initialize
+CActionPaneZone::RemoveTask
+CActionPaneZone::Render
+CActionPaneZone::UpdateBuiltinActions
+CActionPaneZone::UpdateMMCAction
+CActionPaneZone::UpdateVerbs
+CActionsPaneView
+CActionsPaneView::ActionPaneEventProc
+CActionsPaneView::ActionPaneMouseFocusProc
+CActionsPaneView::AddActionsPaneItem
+CActionsPaneView::AddLegacySectionItems
+CActionsPaneView::DisplayContextHelp
+CActionsPaneView::ExecuteMMCAction
+CActionsPaneView::GetIcon
+CActionsPaneView::GetImageIndex
+CActionsPaneView::GetOrCreateZone
+CActionsPaneView::ModifyActionsPaneItem
+CActionsPaneView::OnActionPaneButtonClick
+CActionsPaneView::OnActionPaneTaskMouseFocus
+CActionsPaneView::OnActionsPaneContextChanged
+CActionsPaneView::OnActionsPaneContextDescriptionChanged
+CActionsPaneView::OnActionsPaneItemRemoved
+CActionsPaneView::OnActionsPaneItemsAdded
+CActionsPaneView::OnActionsPaneItemsCleared
+CActionsPaneView::OnActionsPaneItemsModified
+CActionsPaneView::OnActionsPaneRenderingSuspensionStateChanged
+CActionsPaneView::OnActionsPaneStandardVerbStatesChanged
+CActionsPaneView::OnActionsPaneZoneTitleChanged
+CActionsPaneView::OnCreate
+CActionsPaneView::ScExecuteMMCBuiltInAction
+CActionsPaneView::ScOnResultSelectionChange
+CActionsPaneView::ScOnScopeNodeSelectionChanged
+CActionsPaneView::ScOnSelectedListViewItemRenamed
+CActionsPaneView::SetObservedAmcView
+CActionsPaneView::ShowContextMenu
+CAddFavDialog::OnInitDialog
+CallNextHookEx
+CallWindowProcW
+CAMCApp::DumpConsoleFile
+CAMCApp::ExitInstance
+CAMCApp::InitInstance
+CAMCApp::OnCloseDocument
+CAMCApp::OnIdle
+CAMCApp::RegisterShellFileTypes
+CAMCApp::ScCheckMMCPrerequisites
+CAMCApp::ScGet_Application
+CAMCApp::ScHelp
+CAMCApp::ScInitializeHelpControl
+CAMCApp::ScOnCloseView
+CAMCApp::ScOnContextMenuExecuted
+CAMCApp::ScOnListViewItemUpdated
+CAMCApp::ScOnNewDocument
+CAMCApp::ScOnNewView
+CAMCApp::ScOnQuitApp
+CAMCApp::ScOnResultSelectionChange
+CAMCApp::ScOnSnapinAdded
+CAMCApp::ScOnSnapinRemoved
+CAMCApp::ScOnToolbarButtonClicked
+CAMCApp::ScOnViewChange
+CAMCApp::ScProcessAuthorModeRestrictions
+CAMCApp::ScRegister_Application
+CAMCApp::ScUninitializeHelpControl
+CAMCDoc::CAMCDoc
+CAMCDoc::CreateNewView
+CAMCDoc::InitNodeManager
+CAMCDoc::LoadStringTable
+CAMCDoc::OnCloseDocument
+CAMCDoc::OnOpenDocument
+CAMCDoc::OnSaveDocument
+CAMCDoc::Persist
+CAMCDoc::PersistFrame
+CAMCDoc::PersistViews
+CAMCDoc::ScAdd
+CAMCDoc::ScClose
+CAMCDoc::ScCreateAndLoadView
+CAMCDoc::ScCreateProperties
+CAMCDoc::ScEnumNext
+CAMCDoc::ScEnumReset
+CAMCDoc::ScEnumSkip
+CAMCDoc::Scget_ActiveView
+CAMCDoc::Scget_Application
+CAMCDoc::Scget_Count
+CAMCDoc::Scget_IsSaved
+CAMCDoc::Scget_Location
+CAMCDoc::Scget_Mode
+CAMCDoc::Scget_Name
+CAMCDoc::Scget_RootNode
+CAMCDoc::Scget_ScopeNamespace
+CAMCDoc::Scget_SnapIns
+CAMCDoc::Scget_Views
+CAMCDoc::ScGetCustomIcon
+CAMCDoc::ScGetMMCDocument
+CAMCDoc::ScGetMuiPath
+CAMCDoc::ScGetViewSettingsPersistorStream
+CAMCDoc::ScItem
+CAMCDoc::ScOnOpenDocument
+CAMCDoc::ScOnSnapinAdded
+CAMCDoc::ScOnSnapinRemoved
+CAMCDoc::Scput_Mode
+CAMCDoc::Scput_Name
+CAMCDoc::ScSave
+CAMCDoc::ScSaveAs
+CAMCDoc::ScSetHelpCollectionInvalid
+CAMCDoc::SetCustomIcon
+CAMCDoc::SetCustomTitle
+CAMCListView::OnActivateView
+CAMCListView::OnBeginDrag
+CAMCListView::OnColumnPersistedDataChanged
+CAMCListView::OnCreate
+CAMCListView::ScDropOnTarget
+CAMCListView::ScGetColumnInfoList
+CAMCListView::ScGetDropTarget
+CAMCListView::ScModifyColumns
+CAMCListView::ScOnColumnsAttributeChanged
+CAMCListView::ScResetColumnStatusData
+CAMCListView::ScRestoreColumnsFromPersistedData
+CAMCListView::ScRestoreDefaultColumnSettings
+CAMCListView::ScSaveColumnInfoList
+CAMCMultiDocTemplate::CloseAllDocuments
+CAMCMultiDocTemplate::OpenDocumentFile
+CAMCStatusBar
+CAMCTreeView
+CAMCTreeView::DeleteScopeTree
+CAMCTreeView::InsertNode
+CAMCTreeView::OnActivateView
+CAMCTreeView::OnBeginDrag
+CAMCTreeView::OnCreate
+CAMCTreeView::OnDeSelectNode
+CAMCTreeView::OnItemExpanded
+CAMCTreeView::OnSelectNode
+CAMCTreeView::OnSysChar
+CAMCTreeView::ScDropOnTarget
+CAMCTreeView::ScGetTreeItemIconInfo
+CAMCTreeView::ScRemoveTempSelection
+CAMCTreeView::ScRenameScopeNode
+CAMCTreeView::ScRenameTreeItem
+CAMCTreeView::ScSelectNode
+CAMCTreeView::ScSetTempSelection
+CAMCTreeView:CKeyboardNavDelay::ScStartTimer
+CAMCView
+CAMCView::CDeferredLayout
+CAMCView::CDeferredLayout::CDeferredLayout
+CAMCView::CloseView
+CAMCView::CreateFavoriteObserver
+CAMCView::CreateView
+CAMCView::DeferRecalcLayout
+CAMCView::DeSelectResultPane
+CAMCView::DispatchListCtrlNotificationMsg
+CAMCView::DisplayStatusBarText
+CAMCView::GetListViewStyle
+CAMCView::GetResultSelectionContextMenu
+CAMCView::GetSelectedDisplayName
+CAMCView::IsOwningSnapInSuppressingActionsPane
+CAMCView::JiggleListViewFocus
+CAMCView::LayoutResultFolderTabView
+CAMCView::LayoutResultView
+CAMCView::OnActionsPaneContextChanged
+CAMCView::OnActionsPaneContextDescriptionChanged
+CAMCView::OnActionsPaneItemRemoved
+CAMCView::OnActionsPaneItemsAdded
+CAMCView::OnActionsPaneItemsCleared
+CAMCView::OnActionsPaneItemsModified
+CAMCView::OnActionsPaneRenderingSuspensionStateChanged
+CAMCView::OnActionsPaneStandardVerbStatesChanged
+CAMCView::OnActionsPaneZoneTitleChanged
+CAMCView::OnAddToFavorites
+CAMCView::OnAppCommand
+CAMCView::OnChangedResultTab
+CAMCView::OnConnectToCIC
+CAMCView::OnContextMenuForTreeItem
+CAMCView::OnCreate
+CAMCView::OnEmptyAddToCArray
+CAMCView::OnFavoritesMenu
+CAMCView::OnGetIconInfoForSelectedNode
+CAMCView::OnInitialUpdate
+CAMCView::OnListContextMenu
+CAMCView::OnListItemChanged
+CAMCView::OnMenuSelect
+CAMCView::OnNotify
+CAMCView::OnProcessMultiSelectionChanges
+CAMCView::OnSnapinAbout
+CAMCView::OnUpdatePasteBtn
+CAMCView::OnUpdatePasteVerbForView
+CAMCView::OnUpdateSelectionForDelete
+CAMCView::OnVerbAccelKey
+CAMCView::OnViewModeChange
+CAMCView::OnVirtualListItemsStateChanged
+CAMCView::Persist
+CAMCView::PrivateChangeListViewMode
+CAMCView::RenameItem
+CAMCView::ScAddDefaultColumns
+CAMCView::ScAddFolderTabs
+CAMCView::ScAddFolderTabs - failed to select requested folder
+CAMCView::ScAddViewExtension
+CAMCView::ScApplyViewExtension
+CAMCView::ScAttachListViewAsResultPane
+CAMCView::ScAttachOCXAsResultPane
+CAMCView::ScAttachWebViewAsResultPane
+CAMCView::ScAutoArrangeIcons
+CAMCView::ScBack
+CAMCView::ScClose
+CAMCView::ScColumnInfoListChanged
+CAMCView::ScCompleteInitialization
+CAMCView::ScConsoleVerb
+CAMCView::ScContextHelp
+CAMCView::ScCopyScopeNode
+CAMCView::ScCopySelection
+CAMCView::ScCreateExportListFile
+CAMCView::ScCreateTaskpadHost
+CAMCView::ScCreateToolbarObjects
+CAMCView::ScCut
+CAMCView::ScDeferSettingFocusToResultPane
+CAMCView::ScDeletePersistedColumnData
+CAMCView::ScDeleteScopeNode
+CAMCView::ScDeleteSelection
+CAMCView::ScDeselect
+CAMCView::ScDisplayPropertySheet
+CAMCView::ScDisplaySelectionPropertySheet
+CAMCView::ScDocumentLoadCompleted
+CAMCView::ScEditSelectedListItem
+CAMCView::ScEnforceMinimumMainFrameSize
+CAMCView::ScExecuteActionsPaneScopeItemVerb
+CAMCView::ScExecuteMenuItem
+CAMCView::ScExecuteResultItemVerb
+CAMCView::ScExecuteScopeItemVerb
+CAMCView::ScExecuteScopeNodeMenuItem
+CAMCView::ScExecuteSelectionMenuItem
+CAMCView::ScExecuteShellCommand
+CAMCView::ScExpandNode
+CAMCView::ScExportList
+CAMCView::ScExportListWorker
+CAMCView::ScFindResultItemForScopeNode
+CAMCView::ScForward
+CAMCView::Scget_ActiveScopeNode
+CAMCView::Scget_Bottom
+CAMCView::Scget_CellContents
+CAMCView::Scget_Columns
+CAMCView::Scget_ContextMenu
+CAMCView::Scget_ControlObject
+CAMCView::Scget_Document
+CAMCView::Scget_Left
+CAMCView::Scget_ListItems
+CAMCView::Scget_ListViewMode
+CAMCView::Scget_Memento
+CAMCView::Scget_Right
+CAMCView::Scget_ScopeTreeVisible
+CAMCView::Scget_SelectedItems
+CAMCView::Scget_SelectionContextMenu
+CAMCView::Scget_Top
+CAMCView::ScGetExportListFile
+CAMCView::ScGetFocusedItem
+CAMCView::ScGetFrame
+CAMCView::ScGetFrameCoord
+CAMCView::ScGetHNodeFromPNode
+CAMCView::ScGetMMCView
+CAMCView::ScGetNodetype
+CAMCView::ScGetOptionalScopeNodeParameter
+CAMCView::ScGetPersistedColumnInfoList
+CAMCView::ScGetProperty
+CAMCView::ScGetRectCoord
+CAMCView::ScGetSelectedLVItem
+CAMCView::ScGetStatusBar
+CAMCView::ScInitDefListView
+CAMCView::ScInitializeMemento
+CAMCView::ScIs
+CAMCView::ScIsSelected
+CAMCView::ScLineUpIcons
+CAMCView::ScListViewSelectionActivate
+CAMCView::ScMaximize
+CAMCView::ScMinimize
+CAMCView::ScMouseActivate
+CAMCView::ScNotifySelect
+CAMCView::ScOnConnectToTPLV
+CAMCView::ScOnDeactivateAMCViewToolbars
+CAMCView::ScOnItemDeselected
+CAMCView::ScOnItemSelected
+CAMCView::ScOnLeftOrRightMouseClickInListView
+CAMCView::ScOnListViewActivated
+CAMCView::ScOnListViewItemUpdated
+CAMCView::ScOnMinimize
+CAMCView::ScOnOCXHostActivated
+CAMCView::ScOnRefresh
+CAMCView::ScOnRename
+CAMCView::ScOnSelectNode
+CAMCView::ScOnSize
+CAMCView::ScOnTreeViewActivated
+CAMCView::ScOrganizeFavorites
+CAMCView::ScPaste
+CAMCView::ScPostMultiSelectionChangesMessage
+CAMCView::ScPreTranslateMessage
+CAMCView::ScProcessConsoleVerb
+CAMCView::Scput_ActiveScopeNode
+CAMCView::Scput_Bottom
+CAMCView::Scput_Left
+CAMCView::Scput_ListViewMode
+CAMCView::Scput_Right
+CAMCView::Scput_ScopeTreeVisible
+CAMCView::Scput_StatusBarText
+CAMCView::Scput_Top
+CAMCView::ScRefreshScopeNode
+CAMCView::ScRefreshSelection
+CAMCView::ScRenameListPadItem
+CAMCView::ScRenameScopeNode
+CAMCView::ScRenameSelectedItem
+CAMCView::ScRestore
+CAMCView::ScSelect
+CAMCView::ScSelectAll
+CAMCView::ScSelectNode
+CAMCView::ScSendContextHelpNotification
+CAMCView::ScSetFocusToPane
+CAMCView::ScSetFocusToResultPane
+CAMCView::ScSetFrameCoord
+CAMCView::ScSetRectCoord
+CAMCView::ScSetViewExtensionFrame
+CAMCView::ScShowActionPane
+CAMCView::ScShowScopePane
+CAMCView::ScShowSnapinHelpTopic
+CAMCView::ScSnapinScopeObject
+CAMCView::ScSnapinSelectionObject
+CAMCView::ScSpecialResultpaneSelectionActivate
+CAMCView::ScToggleActionPane
+CAMCView::ScToggleScopePane
+CAMCView::ScToggleStatusBar
+CAMCView::ScTreeViewSelectionActivate
+CAMCView::ScUpdateMMCMenus
+CAMCView::ScUpdateStandardbarMMCButtons
+CAMCView::ScUpdateWindowMenu
+CAMCView::ScUpdateWindowTitle
+CAMCView::ScUpOneLevel
+CAMCView::ScViewMemento
+CAMCView::ScWriteExportListData
+CAMCView::SetResultPane
+CAMCView::ShowResultPane
+CAMCView::ShowWebContextMenu
+CAMCView::UpdateSnapInHelpMenus
+CAMCView::Write2File
+CAMCViewToolbars::ScAddBitmap
+CAMCViewToolbars::ScAddButtons
+CAMCViewToolbars::ScAttach
+CAMCViewToolbars::ScButtonClickedNotify
+CAMCViewToolbars::ScCreateToolBar
+CAMCViewToolbars::ScDelete
+CAMCViewToolbars::ScDeleteButton
+CAMCViewToolbars::ScDeleteButtonFromToolbar
+CAMCViewToolbars::ScDetach
+CAMCViewToolbars::ScDisableToolbars
+CAMCViewToolbars::ScGetButtonState
+CAMCViewToolbars::ScGetButtonStateInToolbar
+CAMCViewToolbars::ScGetToolTip
+CAMCViewToolbars::ScInit
+CAMCViewToolbars::ScInsertButton
+CAMCViewToolbars::ScInsertButtonToDataStr
+CAMCViewToolbars::ScInsertButtonToToolbar
+CAMCViewToolbars::ScOnActivateView
+CAMCViewToolbars::ScOnDeactivateView
+CAMCViewToolbars::ScOnViewDestroyed
+CAMCViewToolbars::ScSetButtonState
+CAMCViewToolbars::ScSetButtonStateInToolbar
+CAMCViewToolbars::ScShow
+CAMCViewToolbars::ScValidateButton
+CAMCWebViewCtrl
+CAMCWebViewCtrl::Back
+CAMCWebViewCtrl::Forward
+CAMCWebViewCtrl::OnCreate
+CAMCWebViewCtrl::Refresh
+CAMCWebViewCtrl::ScCreateWebBrowser
+CAMCWebViewCtrl::ScNavigate
+CAMCWebViewCtrl::SetBrowserControlForSystemDefault
+CAMCWebViewCtrl::Stop
+CancelWW
+CArchitecturePicker::FormatMessage
+Causes a node to be expandedWW
+CBookmark::Load
+CBookmark::Persist
+cc4F'
+CCCListViewCtrl::Create
+CCCListViewCtrl::DeleteAllItems
+CCCListViewCtrl::DeleteItem
+CCCListViewCtrl::FindItemByLParam
+CCCListViewCtrl::FindItemIndex
+CCCListViewCtrl::GetColumn
+CCCListViewCtrl::GetColumnInfoList
+CCCListViewCtrl::GetLParam
+CCCListViewCtrl::GetNextItem
+CCCListViewCtrl::InsertItem
+CCCListViewCtrl::ModifyColumns
+CCCListViewCtrl::RedrawItem
+CCCListViewCtrl::RenameItem
+CCCListViewCtrl::Reset
+CCCListViewCtrl::RestoreColumnSettings
+CCCListViewCtrl::ScAllocResultItem
+CCCListViewCtrl::ScAttachToListPad
+CCCListViewCtrl::ScDeselect
+CCCListViewCtrl::ScEnumNext
+CCCListViewCtrl::ScEnumReset
+CCCListViewCtrl::ScEnumSkip
+CCCListViewCtrl::ScFreeResultItem
+CCCListViewCtrl::Scget_Columns
+CCCListViewCtrl::Scget_Count
+CCCListViewCtrl::Scget_DisplayPosition
+CCCListViewCtrl::Scget_Hidden
+CCCListViewCtrl::Scget_ListItems
+CCCListViewCtrl::Scget_SelectedItems
+CCCListViewCtrl::Scget_Width
+CCCListViewCtrl::ScGetAMCView
+CCCListViewCtrl::ScGetColumnData
+CCCListViewCtrl::ScGetItemIndexFromHRESULTITEM
+CCCListViewCtrl::ScGetNodesEnum
+CCCListViewCtrl::ScGetScopeNodeForItem
+CCCListViewCtrl::ScInitialize
+CCCListViewCtrl::ScIsSelected
+CCCListViewCtrl::ScIsSortColumn
+CCCListViewCtrl::ScItem
+CCCListViewCtrl::ScName
+CCCListViewCtrl::Scput_DisplayPosition
+CCCListViewCtrl::Scput_Hidden
+CCCListViewCtrl::Scput_Width
+CCCListViewCtrl::ScRedrawHeader
+CCCListViewCtrl::ScSelect
+CCCListViewCtrl::ScSelectAll
+CCCListViewCtrl::ScSetAsSortColumn
+CCCListViewCtrl::ScSetColumnData
+CCCListViewCtrl::ScSetImageLists
+CCCListViewCtrl::ScValidateItem
+CCCListViewCtrl::SetColumnSortIcon
+CCCListViewCtrl::SetImageStrip
+CCCListViewCtrl::SetItem
+CCCListViewCtrl::SetItemCount
+CCCListViewCtrl::SetLoadMode
+CCCListViewCtrl::Sort
+CCCListViewCtrl::UpdateItem
+CChildFrame
+CChildFrame::OnCreate
+CChildFrame::OnGetObject
+CChildFrame::OnMDIActivate
+CChildFrame::OnSize
+CChildFrame::OnUpdateFrameMenu
+CChildFrame::OnUpdateFrameTitle
+CColumn::ScOnListViewColumnDeleted 
+CColumn::ScOnListViewColumnInserted 
+CConsoleFilePersistor::ScCompressUserStateFile
+CConsoleFilePersistor::ScGetUserData
+CConsoleFilePersistor::ScGetUserDataFolder
+CConsoleFilePersistor::ScGetUserDataPath
+CConsoleFilePersistor::ScLoadConsole
+CConsoleFilePersistor::ScLoadXMLDocumentFromFile
+CConsoleFilePersistor::ScOpenDocAsStructuredStorage
+CConsoleFilePersistor::ScSaveConsole
+CConsoleFilePersistor::ScUncompressUserStateFile
+CConsolePropPage
+CConsolePropPage::OnChangeIcon
+CConsolePropSheet
+CConsolePropSheet::CommonConstruct
+CDeferredPageBreak::ScDoRenameAsIdleTask
+CDeferredPageBreak::ScGetTaskID
+CDeferredRenameListItem
+CDeferredRenameListItem::ScDoWork
+CDeferredResultPaneActivation
+CDeferredResultPaneActivation::ScDoWork
+CDeferredResultPaneActivation::ScGetTaskID
+CDirectUIRender
+CDirectUIRender::~CDirectUIRender
+CDirectUIRender::AddSectionDescription
+CDirectUIRender::Create
+CDirectUIRender::CreateAndAddRegion
+CDirectUIRender::CreateAndAddSection
+CDirectUIRender::CreateAndAddSepBar
+CDirectUIRender::CreateAndAddTask
+CDirectUIRender::GetElementRect
+CDirectUIRender::Initialize
+CDirectUIRender::IsSectionExpanded
+CDirectUIRender::LoadParser
+CDirectUIRender::MakeAccessible
+CDirectUIRender::RemoveAllElements
+CDirectUIRender::SetLocalValue
+CDiskCleanupPage
+CDiskCleanupPage::OnDeleteTemporaryFiles
+CDiskCleanupPage::ScRecalculateUsedSpace
+CDocHostUIHandlerDispatch::FilterDataObject
+CDocHostUIHandlerDispatch::GetExternal
+CDocHostUIHandlerDispatch::GetHostInfo
+CDocHostUIHandlerDispatch::GetOptionKeyPath
+CDocHostUIHandlerDispatch::ScFalse
+CDocHostUIHandlerDispatch::ScInitialize
+CDocHostUIHandlerDispatch::ShowContextMenu
+CDocHostUIHandlerDispatch::TranslateUrl
+CDockWindow
+cdp9bjcdjZ
+CDynamicPathEntry::Persist
+CDynamicPathEntry::ScInitialize
+CElementBehaviorFactory::FindBehavior
+CellContentsL
+Center
+CEventDispatcherBase::ScHaveSinksRegisteredForInterface
+CEventDispatcherBase::ScInvokeOnConnections
+CEventSource::ScFireEvent - no parameters
+CEventSource::ScFireEvent - one parameter
+CEventSource::ScFireEvent - three parameters
+CEventSource::ScFireEvent - two parameters
+CFavFolderDialog::OnInitDialog
+CFavorites::AddToFavorites
+CFavorites::GetItemName
+CFavorites::GetItemPath
+CFavorites::Persist
+CFavoriteXMLList::OnNewElement
+CFavoriteXMLList::PersistItself
+CFavTreeCtrl::Initialize
+CFileDialogEx
+CFolderTabView
+CFolderTabView::OnGetObject
+CFolderTabView::ScaccDoDefaultAction
+CFolderTabView::ScaccHitTest
+CFolderTabView::ScaccLocation
+CFolderTabView::ScaccNavigate
+CFolderTabView::ScaccSelect
+CFolderTabView::ScFireAccessibilityEvent
+CFolderTabView::Scget_accChild
+CFolderTabView::Scget_accChildCount
+CFolderTabView::Scget_accDefaultAction
+CFolderTabView::Scget_accDescription
+CFolderTabView::Scget_accFocus
+CFolderTabView::Scget_accHelp
+CFolderTabView::Scget_accHelpTopic
+CFolderTabView::Scget_accKeyboardShortcut
+CFolderTabView::Scget_accName
+CFolderTabView::Scget_accParent
+CFolderTabView::Scget_accRole
+CFolderTabView::Scget_accSelection
+CFolderTabView::Scget_accState
+CFolderTabView::Scget_accValue
+CFolderTabView::Scput_accName
+CFolderTabView::Scput_accValue
+CFolderTabView::ScValidateChildID
+CFontLinker::OnCustomDraw_ItemPrePaint
+ChangeClipboardChain
+CharLowerW
+CharNextW
+CharUpperW
+checkmark
+ChildWindowFromPointEx
+ChildWWW(
+CHistoryList::ExecuteCurrent
+CHistoryList::ScAddEntry
+CHistoryList::ScAddModifiedEntry
+CHistoryList::ScChangeViewMode
+CHistoryList::ScDoPageBreak
+CHistoryList::ScGetCurrentResultViewType
+CHistoryList::ScOnPageBreak
+CHistoryList::UpdateWebBar
+CIdentifierPool::ScInvertRangeList
+CIdentifierPool<T>::ScGenerate
+CIdleTaskQueue::ScGetTaskCount
+CIdleTaskQueue::ScPerformNextTask
+CIdleTaskQueue::ScPushTask
+CKeyboardNavDelayTimer::ScStartTimer
+CKeyboardNavDelayTimer::ScStopTimer
+ClientToScreen
+CLKRhashDefaultAllocator
+CloseHandle
+Closes the document.WW
+Closes the view window!
+CloseThemeData
+CloseWWW
+CLSID
+CLSID\{ADB880A6-D8FF-11CF-9377-00AA003B7A11}\InprocServer32
+CLSIDFromProgID
+CLSIDFromString
+CMainFrame
+CMainFrame::AddMainFrameBars
+CMainFrame::OnCreate
+CMainFrame::OnDestroy
+CMainFrame::OnMenuSelect
+CMainFrame::OnShowSnapinHelpTopic
+CMainFrame::PreCreateWindow
+CMainFrame::ScCreateNewView
+CMainFrame::ScGetActiveConsoleView
+CMainFrame::ScGetActiveStatusBar
+CMainFrame::ScGetFrame
+CMainFrame::ScGetPosition
+CMainFrame::ScMaximize
+CMainFrame::ScMinimize
+CMainFrame::ScOnHelpTopics
+CMainFrame::ScRestore
+CMainFrame::ScSetPosition
+CMainFrame::ScShowMMCMenus
+CMainFrame::ScUpdateAllScopes
+CMasterStringTable::Persist
+CMasterStringTable::ScGenerateIDPool
+CMasterStringTable::ScPurgeUnusedStrings
+CMDIMenuDecoration::OnGetObject
+CMDIMenuDecoration::ScaccHitTest
+CMDIMenuDecoration::ScaccLocation
+CMDIMenuDecoration::Scget_accChild
+CMDIMenuDecoration::Scget_accName
+CMDIMenuDecoration::Scget_accParent
+CMDIMenuDecoration::Scget_accRole
+CMDIMenuDecoration::Scget_accState
+CMDIMenuDecoration::ScValidateChildID
+CMenuBar::AddString
+CMenuBar::IsStandardMenuAllowed
+CMenuBar::OnHotItemChange
+CMenuBar::PopupMenu
+CMenuBar::ScGetPropValue
+CMenuBar::ScInsertAccPropIDs
+CMenuBar::ScShowMMCMenus
+CMenuButtonsMgrImpl::ScAddMenuButton
+CMenuButtonsMgrImpl::ScAddMenuButtonsToMainMenu
+CMenuButtonsMgrImpl::ScAttachMenuButton
+CMenuButtonsMgrImpl::ScDetachMenuButton
+CMenuButtonsMgrImpl::ScDisableMenuButtons
+CMenuButtonsMgrImpl::ScInit
+CMenuButtonsMgrImpl::ScModifyMenuButton
+CMenuButtonsMgrImpl::ScModifyMenuButtonState
+CMenuButtonsMgrImpl::ScNotifyMenuClick
+CMenuButtonsMgrImpl::ScToggleMenuButton
+CMMCApplication::get_Document
+CMMCApplication::get_Frame
+CMMCApplication::get_UserControl
+CMMCApplication::get_VersionMajor
+CMMCApplication::get_VersionMinor
+CMMCApplication::get_Visible
+CMMCApplication::Help
+CMMCApplication::Hide
+CMMCApplication::InternalFinalConstructRelease
+CMMCApplication::Load
+CMMCApplication::put_UserControl
+CMMCApplication::Quit
+CMMCApplication::ScOnDisconnectObjects
+CMMCApplication::Show
+CMMCApplicationFrame::GetCoordinate
+CMMCApplicationFrame::Maximize
+CMMCApplicationFrame::Minimize
+CMMCApplicationFrame::PutCoordinate
+CMMCApplicationFrame::Restore
+CMMCAxHostWindow::Invoke
+CMMCAxHostWindow::OnPosRectChange
+CMMCAxHostWindow::QueryService
+CMMCAxWindow::SetFocus
+CMMCDropSource::QueryContinueDrag
+CMMCDropSource::ScDoDragDrop
+CMMCDropTarget::DragEnter
+CMMCDropTarget::DragOver
+CMMCDropTarget::ScAddMenuString
+CMMCDropTarget::ScDisplayDropMenu
+CMMCDropTarget::ScDropOnTarget
+CMMCDropTarget::ScRemoveDropTargetHiliting
+CMMCEnumerator::Clone
+CMMCEnumerator::Next
+CMMCEnumerator::Reset
+CMMCEnumerator::Skip
+CMMCIDispatchImpl<_ComInterface>::ScOnDisconnectObjects
+CMMCProtocolRegistrar::ScRegister
+CMMCProtocolRegistrar::ScUnregister
+CMMCResultNode::~CMMCResultNode
+CMMCResultNode::CMMCResultNode
+CMMCResultNode::get_Bookmark
+CMMCResultNode::get_Name
+CMMCResultNode::get_Nodetype
+CMMCResultNode::get_Property
+CMMCResultNode::IsScopeNode
+CMMCResultNode::ScGetAMCView
+CMMCToolBar::OnButtonClicked
+CMMCToolBar::OnToolTipText
+CMMCToolBar::ScHideButton
+CMMCToolBar::ScInit
+CMMCToolBar::ScOnActivateAMCViewToolbars
+CMMCToolBar::WM_UpdateToolbarSize
+CMMCToolBarCtrlEx::EndTracking2
+CMMCToolBarCtrlEx::OnCreate
+CMMCToolBarCtrlEx::ScGetPropValue
+CMMCToolBarCtrlEx::ScInitAccessibility
+CMMCToolBarCtrlEx::ScInsertAccPropIDs
+CMMCToolBarCtrlEx::ScRestoreAccFocus
+CMMCViewBehavior::Init
+CMMCViewBehavior::ScDetach
+CMMCViewBehavior::ScNotify
+CMMCViewBehavior::ScUpdateMMCView
+CMMCViewDropTarget::ScCreateTarget
+CMMCViewDropTarget::ScRegister
+cmSdWXY5GEG
+CMTNode::ScGetComponentStreamName
+CNodeInitObject::GetDefaultColumnInfoList
+CNodes::get_Count
+CNodes::IsTiedToThisList
+CNodes::Item
+CNodes::ScAdvancePosition
+CNodes::ScEnumNext
+CNodes::ScEnumReset
+CNodes::ScEnumSkip
+CNodes::ScGetDisplayName
+CNodes::ScGetListCtrl
+CNodes::ScGetNode
+CNodes::ScOnListViewIndexesReset
+CNodes::ScOnlistViewItemDeleted
+CNodes::ScOnListViewItemInserted
+CNodes::ScUnadviseNodeObj
+CObserverBase::UnadviseObserver
+CoCreateGuid
+CoCreateInstance
+COCXCtrlWrapper::ScGetData
+COCXCtrlWrapper::ScHideWindow
+COCXCtrlWrapper::ScInitialize
+COCXHostView
+COCXHostView::GetIUnknown
+COCXHostView::OnActivateView
+COCXHostView::OnSetFocus
+COCXHostView::PreTranslateMessage
+COCXHostView::ScCreateAxWindow
+COCXHostView::ScSetControl
+COCXHostView::ScSetControl1
+COCXHostView::ScSetControl2
+COCXHostView::SetAmbientFont
+CoDisconnectObject
+CoFreeUnusedLibraries
+CoGetClassObject
+CoGetMalloc
+CoInternetGetSession
+Column
+Column InterfaceWW
+ColumnData
+Columns InterfaceW
+ColumnSettings
+ColumnSortOrderWl
+comctl32.dll
+Comctl32.dll
+Comdlg32.dll
+CompanyName
+Compare
+CompareStringW
+Connector class to enable access from DHTML page to the events of current MMC instance
+Connects to application events and starts forwarding themW
+CONSOLE_FILE_ICON_LARGE
+CONSOLE_FILE_ICON_LARGE48x
+CONSOLE_FILE_ICON_SMALL
+ConsoleFileID
+ConsoleVersion
+Contents
+ContextMenu InterfaceW
+ContextMenuW
+ControlObjectWWW
+ControlW
+Copies the data object of the active scope node to the clipboardWW8
+Copies the data object of the selection to the clipboardWW 
+CopyIcon
+CopyImage
+CopyRect
+CopyScopeNodeWWWL
+CopySelectionWWWL
+CorBindToRuntimeEx
+CoRegisterClassObject
+CoRevokeClassObject
+COrganizeFavDialog::OnInitDialog
+CoTaskMemAlloc
+CoTaskMemFree
+CPersistor::AddElement
+CPersistor::AddTextElement
+CPersistor::BecomeAChildOf
+CPersistor::CheckCurrentElement
+CPersistor::GetElement
+CPersistor::GetName
+CPersistor::GetTextElement
+CPersistor::HasElement
+CPersistor::Persist
+CPersistor::PersistAttribute
+CPersistor::PersistContents
+CPersistor::PersistString
+CPersistor::SetName
+CreateAcceleratorTableW
+CreateActCtxW
+CreateCompatibleBitmap
+CreateCompatibleDC
+CreatedInUserMode
+CreateDirectoryW
+CreateFileW
+CreateFontIndirectW
+CreateILockBytesOnHGlobal
+CreateInstance
+CreatePolygonRgn
+CreatePopupMenu
+CreateProcessW
+CreatePropertiesT
+Creates a new view rooted at a particular node2
+CreateSnapIn
+CreateSolidBrush
+CreateStreamOnHGlobal
+CreateUpDownControl
+CreateWindowExW
+CResultViewType::ScInitialize
+CResultViewType::ScReset
+CSaveFileDialog::OnInitDialog
+CStandardToolbar::~CStandardToolbar
+CStandardToolbar::ScAddToolbarButtons
+CStandardToolbar::ScAMCViewToolbarsBeingDestroyed
+CStandardToolbar::ScEnableAndShowButton
+CStandardToolbar::ScInitializeStdToolbar
+CStandardToolbar::ScNotifyToolBarClick
+CStandardToolbar::ScShow
+CStandardToolbar::ScUpdateStdbarVerb
+CStandardToolbar::ScUpdateStdbarVerbs
+CStatBar
+CStringEnumerator::Next
+CStringTable::ScCollectInUseIDs
+CT$0H
+CTiedComObject::ScGetTiedObject
+CTiedComObjectCreator::ScCreateAndConnect
+CTiedObject::ScAddToList
+CTreeViewMap::ScGetHNode
+CTreeViewMap::ScGetHTreeItem
+CTreeViewMap::ScOnItemAdded
+CTreeViewMap::ScOnItemDeleted
+Custom
+Custom Data
+CustomTitle
+CViewDropTarget::~CViewDropTarget
+CViewSettings::ScInitialize
+CViewSettings::ScSetResultViewType
+CViewSettings::ScSetTaskpadID
+CViewTracker
+CViewTracker::CViewTracker
+CWebEventSink::ScInitialize
+CXML_IStream::Persist
+CXML_IStream::ScGetIStream
+CXML_IStream::ScInitialize
+CXML_IStream::ScSeekBeginning
+CXMLBinary::Attach
+CXMLBinary::ScAlloc
+CXMLBinary::ScFree
+CXMLBinary::ScLockData
+CXMLBinary::ScRealloc
+CXMLBinary::ScUnlockData()
+CXMLBinaryLock::~CXMLBinaryLock
+CXMLBinaryLock::ScLockWorker
+CXMLDocument::CommitBinaryStorage
+CXMLDocument::CreateBinaryStorage
+CXMLDocument::createElement
+CXMLDocument::get_root
+CXMLDocument::LocateBinaryStorage
+CXMLDocument::ScCoCreate
+CXMLDocument::ScLoad
+CXMLDocument::ScSave
+CXMLDocument::ScSaveToFile
+CXMLElement::addChild
+CXMLElement::get_children
+CXMLElement::get_tagName
+CXMLElement::get_text
+CXMLElement::get_type
+CXMLElement::getAttribute
+CXMLElement::getChildrenByName
+CXMLElement::getNextSibling
+CXMLElement::GetTextIndent
+CXMLElement::put_text
+CXMLElement::removeChild
+CXMLElement::replaceChild
+CXMLElement::setAttribute
+CXMLElementCollection::get_count
+CXMLElementCollection::item
+CXMLEnumeration::ScReadFromBSTR
+CXMLEnumeration::ScWriteToBSTR
+CXMLIcon::Persist
+CXMLImageList::Persist
+CXMLObject::ScLoadFromDocument
+CXMLObject::ScLoadFromString
+CXMLObject::ScSaveToDocument
+CXMLObject::ScSaveToString
+CXMLPersistableIcon::Persist
+CXMLValue::ScReadFromBSTR
+CXMLValue::ScWriteToBSTR
+CZaH(U
+D$ D;
+D$ D95Kk
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+D$ H;G8u
+D$ I+
+D$$9C
+D$$I;
+D$(E3
+D$,9C
+D$:fD
+d$@E3
+D$@fD
+D$@H;
+D$@H9D$P
+D$`E3
+D$`H;
+D$`I;
+D$0E3
+D$0H!t$0E3
+D$0H;GPu
+D$0Hc
+D$0I#
+D$4fD
+D$4H;Y
+D$4H9
+D$8A9X
+D$8E3
+D$H+D$@D
+D$HE3
+D$hE3
+D$HE3
+d$HE3
+D$HE3
+D$lAi
+D$PE3
+D$PH;
+D$pH;
+D$PH;
+d$XD;d$\
+d$XD9d$\
+D$XE3
+D$XH;
+D$XL;
+D/kU3%
+D;|$psh
+D;Ctr
+D;u8}F
+D\$XH;
+d{|}||y
+D+IhA
+D+L$@H
+D8%1d
+D8`It
+D8`IuZL
+D8{!t
+D8{)t
+D8{1t
+D8{It
+D8{Iu
+D8{Yt
+D8A)t
+D8A)u
+D8aIH
+D8aIt
+D8aIu.H
+D8bIu
+D8-hl
+D8m@t
+D8O:u|H
+D8x!L
+D8x!t
+D8x!u
+D8x!uEL
+D8x)L
+D8x)t
+D8x)tPL
+D8x)trE3
+D8x)u
+D8x1t
+D8x1u
+D8xIt
+D8xIu
+D8xYL
+D8xYt
+D8xYu
+D8Y t@L;H
+D8y!t
+D8y!u
+D8Y(t@L;H
+D8y)t
+D8y)u
+D8y)u/H
+D8Y0t@L;H
+D8y1t
+D8y1u
+D8YHt@L;H
+D8yIt
+D8yIu*H
+D8YPt@L;H
+D8YXt@L;H
+D8yYt
+D8yYu
+D8z u
+D8z!u
+D8z(u
+D8z)u
+D8z0u
+D8z1u
+D8zHu
+D8zIu
+D8zXu
+D8zYu
+D9{ uQH
+D9}HvDL
+D952K
+D956W
+D9c<A
+D9Ctv
+D9d$`
+D9e`H
+D9e`tfA
+D9e`u
+D9e`u@
+D9e<u
+D9HXt
+D9khH
+D9ktv
+D9oXtvH
+D9x<E
+D9x<u
+D9Y@s
+dbb^cbbbbUM
+ddeexec
+DDPWWWWW:
+DeactivateActCtx
+DecodePointer
+Default List Export optionsWWW
+Default view optionsWW"
+DefaultColumn0Width
+DefaultColumn1Width
+DeferWindowPos
+DefWindowProcW
+DelayLoadFailureHook
+DeleteAtom
+DeleteCriticalSection
+DeleteDC
+DeleteFileW
+DeleteMenu
+DeleteObject
+Deletes the selected items*
+Deletes the specified scope nodeWW
+DeleteScopeNodeWL
+DeleteSelectionWL
+description
+Description
+DescriptionBarVisible
+descsection
+DeselectL
+Deselects a node in the viewWW/
+DestroyAcceleratorTable
+DestroyIcon
+DestroyMenu
+DestroyWindow
+dFys '
+DisableActionPane
+DisableAnimations
+DisableScopePane
+DisableStdToolbars
+Disconnects from applicationWWV
+DISPATCH_CALL::ScOnContextMenuExecuted
+DISPATCH_CALL::ScOnDocumentClose
+DISPATCH_CALL::ScOnDocumentOpen
+DISPATCH_CALL::ScOnListUpdated
+DISPATCH_CALL::ScOnNewView
+DISPATCH_CALL::ScOnQuit
+DISPATCH_CALL::ScOnSelectionChange
+DISPATCH_CALL::ScOnSnapInAdded
+DISPATCH_CALL::ScOnSnapInRemoved
+DISPATCH_CALL::ScOnToolbarButtonClicked
+DISPATCH_CALL::ScOnViewChange
+DISPATCH_CALL::ScOnViewClose
+DisplayNameW
+DisplayPositionW
+Displays Help for the consoleW
+Displays the property for a given scope nodeWW/
+Displays the property for the current selectionWWW@
+DisplayScopeNodePropertySheetWWWL
+DisplaySelectionPropertySheetWWWL
+dnvUw
+Document
+Document Interface
+Document Mode enumerationW
+Document opens in Author ModeW'
+Document opens in Full-Access User ModeWWW@
+Document opens in Limited-Access User Mode with multiple windowsWW=
+Document opens in Limited-Access User Mode with single windowW
+DocumentMode_User_MDIWWWd
+DocumentMode_User_SDIWWW
+DoDragDrop
+DoubleWord
+DownloadBeginWWW
+DownloadComplete
+DragLeave
+DrawEdge
+DrawFocusRect
+DrawFrameControl
+DrawIconEx
+DrawTextW
+DrawThemeBackground
+DRootNode(
+dtWindowActivateWW
+DUI70.dll
+dump:
+DUser.dll
+DUWWWc
+DynamicPath
+e A_A^A\^]
+E H9O8t!H
+E$`&O
+E,9E(w'H
+E;/u.I
+e@A_A^A]A\]
+e`A_A^]
+e0A_A^A]A\]
+E0f{g
+E8^Iu0E3
+E8aIt
+E8aIu
+E8x!t
+E8x)t
+E8x)u]M
+E8xYt
+E8y!tiI
+E8y!u
+E8y)t
+E8y)u
+E8y)u$I
+E8y)umI
+E8yYu
+E8z!t
+E8z!u
+E8z)t
+E8z)u
+E8z1t
+E8z1u
+E8zIt
+E8zIu
+E8zYt
+E8zYu
+EBt\?
+EditFlags
+Empty
+Enable or not enable all the extensions for this snapin.WW
+Enable/Disable this extensionW
+EnableAllExtensionsW
+EnableAnimations
+EnabledW
+EnableMenuItem
+EnableWindow
+EncodePointer
+EndDeferWindowPos
+EndPaint
+Ends the MMC applicationWW
+EnterCriticalSection
+EnumChildWindows
+Enumerations
+EnumTasks
+EnumThreadWindows
+en-US
+eoD;e
+epA_A^]
+Escape
+et"=Ebu
+EtwGetTraceEnableFlags
+EtwGetTraceEnableLevel
+EtwGetTraceLoggerHandle
+EtwRegisterTraceGuidsW
+EtwTraceMessage
+EtwUnregisterTraceGuids
+EVHf3.2
+EViewOption_NoToolBarsWWW
+ewD(4
+Executes a context menu item on the selection. The parameter is the language-independent or language-dependent path of the menu itemWW
+Executes a context menu item on the specified scope node. The parameter is the language-independent or language-dependent path  of the menu itemWWn
+Executes a shell command with the specified parameters in the specified directory with the correct window size
+Executes the context menu item4
+ExecuteSelectionMenuItem
+ExecuteShellCommandW
+ExecuteW
+EXH;E@t
+EXH;EPt
+ExpandEnvironmentStringsA
+ExpandEnvironmentStringsW
+Explorer
+Export List
+ExportListOptions_DefaultWWW
+ExportListOptions_TabDelimitedWW
+ExportListOptions_UnicodeWWW
+ExportListOptionsWWW
+exportoptionsWWW
+Exports List to tab-delimited formatWW
+Exports List to unicodeWWW$
+Exports only selected filesWWW
+Exports the list (if one exists) to the specified file=
+Extension InterfaceWWW%
+Extensions InterfaceWW
+ExtensionsWW
+ExtensionWWW
+ExtractIconW
+ExtTextOutW
+F  t"
+F H+F
+F L+F
+f;SaveAsWW
+f@8=]J
+f9,_u
+f9,Au
+f9,Bu
+f9,Cu
+f9,Zu
+f9<^u
+f9<Bu
+f9<Zu
+f94Au
+f94Cu
+f9D$0v/H
+f9H\u
+f9l$`@
+fA9,Au
+fA9,Cu
+fA9<@u
+fA9<Cu
+fA94@u
+fA94Bu
+fA94Qu
+fA9D$
+false
+Favorite
+Favorites
+FavoritesStream
+fB9,@u
+fB9<@u
+fB94Bu
+fC9,Qu
+fC9<Qu
+fC94Au
+fD9!t
+fD9$Au
+fD9$Fu
+fD9,_u
+fD9,Au
+fD9,pu
+fD9<^u
+fD9<Cu
+fD98t
+fD9jl
+fD9kl
+fdm-Y
+fE9$_u
+fF9$Bu
+fF9$vu
+fF9,{u
+fF9,Bu
+fF9,Cu
+fF94Bu
+fffffff
+fHelp 
+file offline
+FileDescription
+Filename
+FileVersion
+FillRect
+FillRgn
+Filtered
+FindActCtxSectionStringW
+FindClose
+FindFirstFileW
+FindNextFileW
+FindResourceW
+FindWindowExW
+FixAndReplaceHMenu
+Flag_ResultView
+Flag_TaskPadID
+Flag_ViewMode
+Flags
+Flist<T> too long
+FlushInstructionCache
+Format
+FormatMessageW
+FormatStrings
+ForwardWL
+found as directory
+Frame InterfaceWWW
+FrameBeforeNavigateW
+FrameData
+FrameNavigateCompleteWWW
+FrameState
+FrameWWW@
+FreeLibrary
+FriendlyTypeName
+function AddEOT(szURLtoEOT, szFontFamilyName)
+function document.onselectstart()
+function GetTaskDisplayHTML(objTask, i)
+function OnLoad()
+function PopulateTaskpad()
+function taskNotify()
+FyMaximize@
+G/hGr
+G@H;GHt
+G@H9D$Ht
+g+%+))))),/
+GDI32.dll
+GetBackground
+GetCapture
+GetChild
+GetClassInfoExW
+GetClassInfoW
+GetClassNameW
+GetClientRect
+GetCommandLineW
+GetComObjectEventSource
+GetCORVersion
+GetCurrentDirectoryW
+GetCurrentFileVersionAsString
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThreadId
+GetCursorPos
+GetDC
+GetDescriptiveText
+GetDesktopWindow
+GetDeviceCaps
+GetDlgCtrlID
+GetDlgItem
+GetDoubleClickTime
+GetEventBuffer
+GetFileAttributesW
+GetFileMUIPath
+GetFileSize
+GetFileTime
+GetFocus
+GetForegroundWindow
+GetFullPathNameW
+GetGadgetRect
+GetHGlobalFromStream
+GetHTreeItemFromHNode
+GetIconInfo
+GetKeyState
+GetLastError
+GetLayout
+GetListPadInfo
+GetLongPathNameW
+GetMenu
+GetMenuItemCount
+GetMenuItemID
+GetMenuItemInfoW
+GetMenuState
+GetMenuStringW
+GetMessagePos
+GetMessageTime
+GetModuleFileNameW
+GetModuleHandleA
+GetModuleHandleExW
+GetModuleHandleW
+GetMonitorInfoW
+GetNextDlgTabItem
+GetObjectW
+GetOpenFileNameW
+GetParent
+GetProcAddress
+GetProcessHeap
+GetRequestedRuntimeVersionForCLSID
+GetRootW
+Gets the active scope node, ie the one that owns the viewW/
+Gets the installed MMC's major version numberW-
+Gets the installed MMC's minor version numberW
+Gets the location of the current documentWM
+Gets the root of the namespace
+Gets the set of all items in the listWT
+Gets the set of selected result itemsW%
+GetSaveFileNameW
+GetStartupInfoW
+GetStockObject
+GetStringModule
+GetSubMenu
+GetSysColor
+GetSysColorBrush
+GetSystemDirectoryW
+GetSystemInfo
+GetSystemMenu
+GetSystemMetrics
+GetSystemTimeAsFileTime
+GetSystemWow64DirectoryW
+GetTaskAndSectionFromDUITask
+GetTextExtentPoint32W
+GetTextMetricsW
+GetThreadPreferredUILanguages
+GetTickCount
+GetTitle
+GetVersionExW
+GetWindow
+GetWindowLongPtrW
+GetWindowLongW
+GetWindowPlacement
+GetWindowRect
+GetWindowTextLengthW
+GetWindowTextW
+GetWindowThreadProcessId
+gfffffffH
+GlobalAlloc
+GlobalFree
+GlobalLock
+GlobalReAlloc
+GlobalUnlock
+gQ*+)//)/)/,,,/
+GradientFill
+GrayStringW
+Group
+GX9] s
+GX9]0s
+H UATAUAVAWH
+H UVWATAUAVAWH
+H UWATAVAWH
+H VWAVH
+H!\$H!\$<!\$0!\$4!\$D!\$@H
+H!\$XL
+H!}8H
+H!}HH
+H!D$`H
+H!l$`I
+H!t$ A
+H!u_3
+H!uHH
+H!x 9=
+H"J H'
+H)7R@
+H;\$`
+H;\$8tOH
+H;\$8tXH
+H;]@u
+H;]`u
+H;]8tc
+H;]8tL
+H;]Pu
+H;^(trL
+H;_(tQ
+H;_ht
+H;{ r
+H;{ s
+H;8u$A
+H;C@t
+H;E`H
+H;F(u
+H;F@u6
+H;G uWH
+H;G(t
+H;G@t
+H;G@u
+H;l$P
+H_^][
+H{BottomWW@
+H+A H
+H+E/H
+H+E'u
+H9;tvH
+H9\$@u
+H9\$0u
+H9\$p
+H9\$x
+H9\$Xu
+H9]Xt
+H9A r
+H9A v
+H9APu
+H9C(u
+H9D$Pt
+H9D$XumA
+H9h t
+H9l$@t:H
+H9N(H
+H9N@u
+H9Q r!H
+H9t$8t#H
+H9t$Pt
+H9uHu
+H9Y@u,I
+HA_A\_^
+hA_A^_^][
+hA_A^A]A\_^
+Hc{ A
+HcA<H
+HcD$HH
+HcO8H
+HcW8H
+HeadersW
+HeapAlloc
+HeapCreate
+HeapDestroy
+HeapFree
+HelpDocInvalid
+hH;]@u
+hH;]Pu
+hhctrl.ocx
+HhSl L
+HiddenWWl
+Hides the application - sets Visible to falseW 
+HI-o 
+hjjjl
+HMTIH
+hNWidthWWW
+http://go.microsoft.com/fwlink/?LinkId=34401
+HUYIu3
+hXmh4DZ_~/F*
+I!s H
+I$''''''
+I;^8tH
+I;_8t
+I;Eht
+I}}I\1
+I7-----UU--X
+I9>t>D
+I98u)E8zIt
+I9GHu*A
+iColumnWW
+Icon Bits
+ID Pool
+ID$@H
+IDATx
+IDATyjY
+IdentifierPool
+IExtendTaskPad
+if (szHash != "")  // not sure why this is needed.
+ih%.g
+ikDtl
+Image
+ImageList_Add
+ImageList_AddMasked
+ImageList_Create
+ImageList_Destroy
+ImageList_GetIcon
+ImageList_GetImageCount
+ImageList_Read
+ImageList_ReadEx
+ImageList_Remove
+ImageList_ReplaceIcon
+ImageList_SetBkColor
+ImageList_Write
+ImageList_WriteEx
+InCommandStateChangeWW
+Index
+IndexWWW
+InflateRect
+InitCommonControlsEx
+InitializeCriticalSection
+InitProcessPriv
+InitThread
+INQQ7
+InsertMenuW
+InsideModalLoop
+Integer
+InterlockedPopEntrySList
+InterlockedPushEntrySList
+InternalName
+invalid map/set<T> iterator
+Invalid parameter passed to C runtime function.
+invalid string position
+InvalidateRect
+InvalidateRgn
+IQQQ7
+IResultDataCompare
+IResultDataCompareEx
+IsAppThemed
+IsChild
+IsIconic
+IsMenu
+ISnapInFactory
+IsRectEmpty
+IsSavedW
+IsSelectedWWL
+IsSortColumnL
+IsThemeActive
+IsWindow
+IsWindowEnabled
+IsWindowVisible
+IsWow64Process
+iswspace
+IsZoomed
+IToolbar::AddBitmap, Number of bitmaps is less than number mentioned
+IToolbar::DeleteButton, Snapin called IToolbar::DeleteButton, but the toolbar button is not found. Most likely the button index is wrong (snapin should have called InsertButton with that index)
+IUnknown
+IView
+IWebSink
+IWebSink interface
+j1==m
+jHs}i
+jp+B[
+jrrlrjrjljljljb
+JSw[Y
+jyrrrrryrryruG
+K#oIg
+K@;H8rN;H<wIL
+K{W4b
+kbsHc
+Kernel32.dll
+KERNEL32.dll
+kernel32.dll
+KillTimer
+KLu,H
+KPH;KX
+KValueWWW`
+L!t$`H
+l$ E3
+L$ E3
+l$ E3
+L$ E3
+l$ H;
+L$ Lc
+L$ Mc
+L$ SH
+L$ SUVWH
+L$ USVH
+l$ VWAWH
+L$ WH
+l$(E3
+l$(Hc
+L$(I+J
+L$@9Y
+L$@E3
+L$@H;O8t
+L$@H3
+L$@Lc
+l$`;k|
+L$`A9Q
+L$`D+
+l$`E3
+L$`H3
+L$`I9Q
+L$`M;
+L$<;L$`r
+L$<E3
+L$0E3
+L$0H;
+L$0H3
+L$8A+
+L$8D+
+L$8E3
+L$8H3
+L$HA+
+L$HE3
+L$hE3
+L$HH3
+L$hH3
+L$HH3
+L$hH3
+l$hI;
+L$PE3
+L$pH;
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$PL#
+L$PtEI
+l$xD;
+L$XE3
+L$XH;
+L$XH3
+L$XL+
+L;Ght
+L;GPt
+L_U]w^
+l+6't
+L+AhI;
+L9:t$H
+L9?u&H
+L9^Pt
+L9c u
+L9fHv
+L9kPt
+L9s s
+L9t$`u
+L9u(t/H
+language="*"
+LanguageIndependentPathW
+Large
+Large48x
+Lc@\I
+LcA<E3
+LcD$$
+LcD$$A
+LcD$$E3
+LcD$|
+LcD$|E3
+LcD$DA
+LcGtH
+lcvector<T> too long
+LeaveCriticalSection
+LegalCopyright
+level="highestAvailable"
+lExportListWW
+List Export Option enumeration
+List Save Location
+List View displaying detailed view"
+List View displaying filtered view
+List View displaying simple list viewW"
+List View Mode enumeration
+List View with large icons%
+List View with small icons
+ListItemsWWWL
+ListMode_FilteredWWW
+ListMode_Large_Icons,
+ListMode_ListWWW,
+ListMode_Small_Icons,
+ListStyle
+ListView
+ListView_Filtered
+ListView_LexicalSort
+ListView_MultiSelect
+ListView_NoScopeItems
+ListView_OwnerDrawList
+ListView_UseFontLinking
+ListViewMode,
+LKLHH
+lnbey
+LNr}l
+Load 
+LoadAcceleratorsW
+LoadCursorW
+LoadIconW
+LoadImageW
+LoadLibraryExA
+LoadLibraryExW
+LoadLibraryW
+LoadMenuW
+Loads the document from the specified file.WWW
+LoadStandardOverlays
+LoadStringW
+LocalFree
+LocalServer32
+Location
+LogicalReadOnly
+LOL3}m
+LresultFromObject
+lstrcmpiW
+lstrcmpW
+lstrcpyW
+lstrlenW
+LVS_ALIGNLEFT
+LVS_AUTOARRANGE
+LVS_EDITLABELS
+LVS_NOCOLUMNHEADER
+LVS_NOLABELWRAP
+LVS_NOSCROLL
+LVS_NOSORTHEADER
+LVS_OWNERDATA
+LVS_OWNERDRAWFIXED
+LVS_SHAREIMAGELISTS
+LVS_SHOWSELALWAYS
+LVS_SINGLESEL
+LVS_SORTASCENDING
+LVS_SORTDESCENDING
+M/NavigateComplete
+M];>>qA
+M9&u+H
+M9f`u.I
+M9Q tMM9Q(tGM9Q0tAM9Q8t;
+malloc
+map/set<T> too long
+MapWindowPoints
+Maximizes the frameWWW
+MaxPosition
+mC#iU
+Mc)E3
+MConnectToWWW
+memcmp
+memcpy
+memcpy_s
+MementoWL
+memmove_s
+memset
+MenuItem
+MenuItem Interfaced
+MessageBeep
+MessageBoxW
+MFC42u.dll
+mGDirectoryWWW
+MgE9}
+MHu&E
+Microsoft
+Microsoft Corporation
+Microsoft Management Console
+Microsoft Management Console 2.0WW
+Microsoft\MMC
+Minimize@
+Minimizes the frameWWW%
+MinPosition
+Misc_NoListViews
+MiscOptions
+--mmc
+MMC Application Class
+MMC Internal Web Browser event sink 1.0 Type LibraryWW
+mmc.exe
+mmc.pdb
+--mmc:pagebreak.
+MMC_ConsoleFile
+MMC_PickIconDlg
+MMC20.Application
+MMC20.Application.1
+mmcbase.DLL
+MMCChildFrm
+MMCCtrl.TaskNotify(srcElement.param1, srcElement.param2, srcElement.param3);
+MMCCustomStream
+MMCDataWindow
+MMCInternalWebOcxWWW
+MMCMainFrame
+MMCOCXViewWindow
+MMCUpdateRegistry
+mmcview
+MMCViewWindow
+mmmmmmGm
+mnmnmnn
+mnnmnmnmmmmmmmmmmmnnm8
+ModifyMenuW
+MonitorFromPoint
+mooooonooooonnononnmn
+MoveWindow
+mpnnnrr6ODUoWqqW:
+mqsrss6
+mrooooopooooooooooop6
+MSCFile
+MSCFile\shell\Author
+MSCFile\shell\Author\command
+MSCFile\shell\open
+MSCFile\shell\Open
+MSCFile\shell\Open\command
+MSCFile\shell\RunAs
+MSCFile\shell\RunAs\command
+mscoree.dll
+msctls_statusbar32
+msimg32.dll
+ms-its:
+msvcrt.dll
+MUIVerb
+N@8t$PtGH
+name="Microsoft.Windows.Common-Controls"
+name="Microsoft.Windows.MMC"
+Navigates to the next view
+Navigates to the previous view
+nCq=0:
+NewNameWL
+NewNodes
+NewWindowWWW
+Next(
+NextAvailable
+nj}2dx
+nl:$M
+NMM)JIH,EA=$?51
+Node Interface$
+NodeID
+Nodes InterfaceWWW%
+NodetypeL
+norgie
+NormalPosition
+NoSnapinButtons
+NoSnapinMenus
+NoStatusBar
+NoStdButtons
+NoStdMenus
+not found
+NoTaskpadTabs
+NotifyWinEvent
+NPLcC\
+NPLcC\E3
+NQNSY
+ntdll.dll
+Null hItem ptr
+Null hNode ptr
+number
+nxsqxp
+o\$PH
+o8ad_
+Occurs before the document is destroyedWWW
+Occurs when a context menu item is executedWWW'
+Occurs when a snapin is addedW!
+Occurs when a toolbar button is clickedWWW.
+Occurs when a view is addedWWW!
+Occurs when application is closedW
+Occurs when document is opened'
+Occurs when one or more list items are updated
+Occurs when the result item selection for a view is changedWWW+
+Occurs when the snapin is removedW
+Occurs when the view is changed, for instance by a scope node selection change;
+Occurs when the view is destroyedWN
+OCX_CacheControl
+oD$ f
+OffsetRect
+oFlagsWWW
+oL$0f
+ole32.dll
+OLEACC.dll
+OLEAUT32.dll
+OLEChannelWnd
+OleInitialize
+OleLockRunning
+OleRun
+OleUninitialize
+OnContextMenuExecuted
+OnContextMenuExecutedWWW
+OnDocumentClose
+OnDocumentCloseW
+OnDocumentOpen
+OnDocumentOpenWW
+OnListUpdated
+OnListUpdatedWWW
+OnNewView
+OnNewViewWWW
+OnQuit
+OnQuitWW
+OnSelectionChange
+OnSnapInAdded
+OnSnapInAddedWWW
+OnSnapInRemoved
+OnToolbarButtonClicked
+OnToolbarButtonClickedWW
+OnViewChange
+OnViewClose
+OnViewCloseW
+OpenThemeData
+operator>> (IStorage& stg, CMasterStringTable& mst)
+Options
+OriginalFilename
+oT$@f
+OutputDebugStringA
+OutputDebugStringW
+oxxxwQ
+oz=z2
+p AWH
+p WAVAWH
+P+///////////////1
+PA^_]
+pA^_^
+PA^_^
+PA^_^][
+pA__^[]
+PA_A]A\
+PA_A^_
+pA_A^_^]
+PA_A^_^]
+pA_A^A\_^[]
+pA_A^A\_^][
+PA_A^A\_^][
+PA_A^A]_^][
+PA_A^A]A\_^[
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+ParametersWW
+ParentSnapin
+ParentWW(
+PatBlt
+PathFindFileNameW
+PeekMessageW
+PlIh}
+Pn6QX>
+Point
+pool exhausted
+PostData
+PostMessageW
+PreventViewCustomization
+PrivateExtractIconsW
+processorArchitecture="amd64"
+ProductName
+ProductVersion
+ProgIDFromCLSID
+ProgramMode
+ProgressMaxW
+Properties InterfaceWW
+PropertiesWW
+Property
+Property Interface(
+PropertyChangeWW
+PropertyName
+PROPID_ACC_DEFAULTACTION
+PROPID_ACC_DESCRIPTION
+PROPID_ACC_FOCUS
+PROPID_ACC_HELP
+PROPID_ACC_HELPTOPIC
+PROPID_ACC_KEYBOARDSHORTCUT
+PROPID_ACC_NAME
+PROPID_ACC_NAV_DOWN
+PROPID_ACC_NAV_FIRSTCHILD
+PROPID_ACC_NAV_LASTCHILD
+PROPID_ACC_NAV_LEFT
+PROPID_ACC_NAV_NEXT
+PROPID_ACC_NAV_PREV
+PROPID_ACC_NAV_RIGHT
+PROPID_ACC_NAV_UP
+PROPID_ACC_PARENT
+PROPID_ACC_ROLE
+PROPID_ACC_ROLEMAP
+PROPID_ACC_SELECTION
+PROPID_ACC_STATE
+PROPID_ACC_STATEMAP
+PROPID_ACC_VALUE
+PROPID_ACC_VALUEMAP
+psorpsosopoo6
+PtInRect
+PtInRegion
+PtVisible
+publicKeyToken="6595b64144ccf1df"
+q@I9v@u?H
+Q\Q5Q]sxxxxxxsxyy
+qbu]#
+Qkkbal
+qqqqO
+qtkR2M
+QueryActCtxW
+QueryPerformanceCounter
+qyxxx8
+qyyyqw
+r{[#f
+R}n5K
+rAddW
+RaiseException
+RDisconnectWW
+ReadFile
+Ready
+realloc
+ReBarWindow32
+Rectangle
+RectVisible
+RedrawWindow
+Referrer
+Refreshes the selected itemsWW
+Refreshes the specified scope node
+RefreshScopeNodeL
+RefreshSelectionL
+RegCloseKey
+RegCreateKeyExW
+region
+RegisterClassExW
+RegisterDragDrop
+RegisterWindowMessageW
+RegOpenKeyExA
+RegOpenKeyExW
+RegQueryValueExA
+RegQueryValueExW
+RegServer
+RegSetValueExW
+Release
+ReleaseActCtx
+ReleaseCapture
+ReleaseDC
+ReleaseSRWLockExclusive
+RELOAD.JS
+RELOAD2.JS
+RELOAD3.JS
+Removes a property identified by Name from the properties collection.W0
+Removes a snapin from the list of snapins and hence from the console.W5
+RemoveWW
+Renames a node in this view to the specified nameW
+Renames a scope node to the specified name1
+RenameScopeNodeW
+Report
+ResolveDelayLoadedAPI
+Restores the frame to its normal sizeW.
+RestrictAuthorMode
+ResultView
+Returns a memento for the current view. A memento is the programmatic equivalent of a favorite settingc
+Returns a new, empty properties collection/
+Returns a persistable bookmark for the nodeWWWI
+Returns ScopeTreeVisible propertyW
+Returns the automation interface supplied by the OCX in the result pane.WW.
+Returns the automation interface supplied by the snapin for the specified scope nodeWW7
+Returns the automation interface supplied by the snapinWWW"
+Returns the child of a scope nodeW&
+Returns the collection of all views (MDI children)
+Returns the console root nodeW
+Returns the contents of a given cellWW6
+Returns the context menu for a node in this viewWW"
+Returns the coordinate of the bottom of the frameW.
+Returns the coordinate of the left of the frameWWW,
+Returns the coordinate of the right of the frameWW-
+Returns the coordinate of the top of the frame+
+Returns the currently active viewW(
+Returns the data corresponding to a specified clipboard format+
+Returns the display name of the menu item, which includes accelerators. Eg '&Properties  ALT+ENTER' WW
+Returns the display name of the nodeWW>
+returns the display position of the column in the set of columnsWW=
+Returns the document objectWWW+
+Returns the frame subobjectWWW
+Returns the frameW
+Returns the language independent path of the menu item starting from the root. Eg _VIEW->_LARGEWWW
+Returns the language-independent name of the menu item. If there is no language independent name, returns the display name without accelerators.WWg
+Returns the list of extension snapinsW'
+Returns the list view mode, if a list view is being displayedW:
+Returns the mode of the documentWW
+Returns the name of the current documentWW%
+Returns the name of the snapin
+Returns the next node in the namespace
+Returns the nodetype GUID identifier for the nodeW9
+Returns the parent application for the documentWWW
+Returns the parent document of the viewWWW$
+Returns the parent of a scope node!
+Returns the path of the menu item starting from the root. Does not include accelerators. Eg View->LargeWWW_
+Returns the properties collection for the snapinWW'
+Returns the property identified by Name.WWE
+Returns the scope namespaceWWW*
+Returns the set of all snap-ins that have been loadedW!
+Returns the set of columns in the list$
+Returns the snapin CLSID in string formWWW8
+Returns the snapin vendor name
+Returns the snapin version
+Returns the UserControl propertyWW
+Returns the visible propertyWW,
+Returns the width of a columnW
+Returns true if column is hiddenWW!
+Returns whether a node is selected in this viewWWW,
+Returns whether it's the same view'
+Returns whether the file was saved. If not, it is dirty and needs to be savedW 
+Returns whether the menu item is enabled or disabledWW0
+Returns whether the node is a scope (tree) or result (list or leaf) item.W1
+Returns whether this column is the sort column&
+RevokeDragDrop
+Right
+RightWWWL
+RootNode
+rqr rqr
+rqrFrqr
+rRenameSelectedItemWWx
+rrsxxxxxxx
+RSDS+ye
+RtlCaptureContext
+RtlLookupFunctionEntry
+RtlVirtualUnwind
+rxxxxQ
+RZ&W-
+s WAVAWH
+s(;>tjH
+S? h4 
+S@H9E
+s`RY7w
+S|;SH
+S|LanguageIndependentNameW
+S3dxg@
+s9~&Z
+Saves the document using the specified nameWWW
+Saves the document.WWW+
+ScCreateConnection
+ScCreateDumpSnapins
+ScDecodeBinary
+ScDetermineArchitecture
+ScEncodeBinary
+ScGeneratePageBreakURL
+ScGetConsoleFileChecksum
+ScGetFileProperties
+ScGetIconSize
+ScMapMethodToID
+ScMapViewOptions
+ScopeNamespace InterfaceWW"
+ScopeNamespaceWW(
+ScopeNodeContextMenuL
+ScopeNodeWWW
+ScopePaneVisible
+ScopePaneWidth
+-ScopeTreeVisible 
+ScReadDataFromFile
+ScreenToClient
+ScSaveList
+ScSaveXMLDocumentToString
+ScUnlock
+section
+sectionlist
+sectiontask
+Segment
+SelectAllWWWL
+SelectedNode
+SelectionContextMenuL
+SelectionObjectWL
+SelectionWWWL
+SelectObject
+Selects a node in the result paneW
+Selects all items in the result paneWW!
+SelectWWL
+SendMessageTimeoutW
+SendMessageW
+sepsection
+SetActiveWindow
+SetCapture
+SetClipboardViewer
+SetCriticalSectionSpinCount
+SetCurrentDirectoryW
+SetCursor
+SetFocus
+SetForegroundWindow
+SetGadgetStyle
+SetInterface
+SetLastError
+SetLayout
+SetMenu
+SetMenuDefaultItem
+SetMenuItemInfoW
+SetParent
+SetProcessInformation
+SetRect
+SetRectEmpty
+Sets ScopeTreeVisible property
+Sets the active scope node, ie changes the viewWWW
+Sets the coordinate of the bottom of the frame/
+Sets the coordinate of the left of the frameWW0
+Sets the coordinate of the right of the frameW
+Sets the coordinate of the top of the frameWWW1
+Sets the display position of the column in the set of columnsW 
+Sets the Hidden status for columnW
+Sets the list view mode, if a list view is being displayedH
+Sets the mode of the documentW
+Sets the name of the current documentW)
+Sets the status bar textWWf
+Sets the UserControl propertyW-
+Sets the view to the specified memento, which contains information about the view to be re-created.WWW
+Sets the width of a column@
+SetTimer
+Settings
+SetUnhandledExceptionFilter
+SetWindowLongPtrW
+SetWindowLongW
+SetWindowPlacement
+SetWindowPos
+SetWindowsHookExW
+SetWindowTextW
+SetWindowTheme
+SExecuteScopeNodeMenuItemL
+SGetNextW
+sH;s|r
+sHD9=t
+ShellAboutW
+ShellExecuteExW
+ShellMenu
+SHGetFolderPathW
+SHGetMalloc
+SHGetPathFromIDListW
+SHGetSpecialFolderLocation
+SHGetSpecialFolderPathW
+SHLWAPI.dll
+Short
+Show 
+ShowCommand
+ShowIncompatibleFileMessage
+ShowResultsContextMenu
+Shows the application - sets Visible to trueWW-
+ShowScopeContextMenu
+ShowStatusBar
+ShowWindow
+Single
+SizeableRebar
+Sleep
+SleepConditionVariableSRW
+Small
+SmallIcon
+Snapin failed on NCLBK_RESTORE_VIEW
+SnapIn InterfaceWW
+SnapinCLSIDW
+SnapinInterfaceWrapper::Assign
+SnapinInterfaceWrapper::Attach
+SnapinNameOrCLSIDWWW
+SnapIns InterfaceW
+SnapinScopeObjectWWW
+SnapInsW4
+SnapInWW4
+Software\Microsoft\Internet Explorer
+Software\Microsoft\MMC\SnapIns
+Software\Microsoft\MMC\UseNewUI
+Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+Software\Policies\Microsoft\MMC
+SortOrder_AscendingWl
+SortOrder_Descending
+SortOrderWWW
+Sorts on this columnWW.
+SourceChecksum
+SourceIndex
+StartMenuAdminTools
+StatusTextChange
+stdole2.tlbWWW
+StgOpenStorageOnILockBytes
+Stream
+String
+String Table
+string too long
+StringFileInfo
+StringFromCLSID
+StringFromGUID2
+Strings
+StringTable
+StringTables
+StrToID
+SuppressActionsPane
+SUVWH
+SVWATAUAVAWH
+SVWATAVAWH
+SVWAVAWH
+SVWAVH
+SW_FORCEMINIMIZE
+SW_HIDE
+SW_MINIMIZE
+SW_RESTORE
+SW_SHOW
+SW_SHOWDEFAULT
+SW_SHOWMAXIMIZED
+SW_SHOWMINIMIZED
+SW_SHOWMINNOACTIVE
+SW_SHOWNA
+SW_SHOWNOACTIVATE
+SW_SHOWNORMAL
+SwitchToThread
+swscanf
+sxwsxxs
+SysListView32
+SystemParametersInfoW
+SysTreeView32
+szHash = szHash.substr(1);
+szPropertyWW
+t!I9H
+T""0{z
+t$ AVH
+t$ AWH
+t$ D8y!H
+t$ D8y)H
+t$ D8yYH
+T$ E3
+t$ E3
+T$ E3
+t$ E3
+T$ E3
+t$ E3
+T$ E3
+t$ E3
+T$ E3
+t$ H;
+T$ H;
+T$ H;Q8t5H
+T$ I;S
+T$ u+
+t$ UWATAVAWH
+t$ UWAVH
+t$ WATAUAVAWH
+t$ WAVAWH
+t$ WH
+t$(E3
+T$(E3
+T$(uK
+T$@H9YXu
+T$`H;
+T$`I;
+T$`L;
+T$0A+
+t$0D;
+T$0D+
+t$0E3
+T$0E3
+t$0E3
+T$8H+
+T$8u!L
+T$DA+
+t$HE3
+t$HuB
+t$JfD
+t$p@8w
+T$pH+
+T$PH9s u
+T$XE3
+t$xfD
+t%fD9u
+t*fA9(t$H
+t*H9Q
+t.D8x)L
+t/L9t
+t@L;H
+t\fE9!tVL
+t|fD; tv
+t<McL
+t6LcC
+TabbedTextOutW
+tafD9>t[H
+taI9v
+TargetFrameNameW
+TaskButton
+tasklist
+TaskNotify
+Temporary View without persistence capabilityW
+TerminateProcess
+tExportListOptions_SelectedItemsOnlyW 
+TextOutW
+tgD9x
+TheSameWL
+tIL;H
+Title
+title
+tkI;?u'A
+tl@8{!t7H
+tMD93uHD
+tn2*m
+toH+y E3
+ToolbarWindow32
+TopW@
+TrackerCallback
+TrackPopupMenuEx
+TranslateAcceleratorW
+Translation
+TRoot(
+TryEnterCriticalSection
+tSaveChangesW
+tSetAsSortColumnW
+TSnapinInterfaceWrapper::Assign (IUnknown*)
+TSnapinInterfaceWrapper::Assign(IUnknown wrapper)
+TSnapinInterfaceWrapper::Attach (IUnknown*)
+tuSUVWATAVAWH
+TUUUUUU
+tV8YHtQH
+TViewsWWWL
+type="win32"
+TYPELIB
+u H9x
+u HcA<H
+u#H9X
+u$L97t
+u%A8j
+u%A8j)t
+u%E8zIt
+u)A8j
+u)A8j)t
+u*9Q<|%
+u.D9=w
+u.H;q
+u/H;Q
+u@9+u
+u@E9<
+u^L9s
+u}2dx
+u<H;y
+u=;7u
+u0D95
+U0H9V@tWH
+u8fD90t(
+u'9=rF
+u99]@t
+u9A9v
+u-9E0t(
+UATAUAVAWH
+UATAUH
+UATAVH
+UATAWH
+UAUAVH
+UAVAWH
+uC@8u
+udL9s
+u-E8z!t
+u-E8z)t
+u-E8z1t
+u-E8zYt
+uFH9s
+uFH9X
+uFL9s
+UhI9Upu>
+uiAccess="false"
+UIFILE
+uiH!M
+ul!D$ L
+un!E0!E 
+uND9=
+UnhandledExceptionFilter
+UnhookWindowsHookEx
+Uninit Help control failed
+UnInitProcessPriv
+UnInitThread
+UnionRect
+Unknown
+Unknown Error
+Unknown interface
+Unknown method
+Unknown Snapin
+Unknown Standard bar button ID
+UnsignedInteger
+uOD;#u
+UpdateWindow
+uProgress
+uR@857I
+urlmon.dll
+UrT}l`D
+USER32.dll
+UserControlW 
+UserMDI
+UserSDI
+UsignedLong
+USVWATAUAVAWH
+USVWATAUAWH
+USVWATAVAWH
+USVWAVAWH
+USVWAVH
+USWATAUAVAWH
+UV/r3_
+UVATAVAWH
+uvD8}
+UVWATAUAVAWH
+UVWATAVH
+UVWATAWH
+UVWAUAVH
+UVWAVAWH
+UWATAUAVH
+UWATAUAWH
+UWATAVAWH
+UWAUAVAWH
+UWAUH
+UWAVH
+UWAWH
+uwD9,
+uWD9+u
+UxTheme.dll
+UySnapinSelectionObjectWWW
+v!!!.Gor]ma
+V!>re,
+V_Application 
+V0W(a
+v4.0.30319
+Value
+var CON_TASK_DISPLAY_TYPE_BITMAP = 4;               // non-transparent raster image
+var CON_TASK_DISPLAY_TYPE_CHOCOLATE_GIF = 3;        // (GIF) index 1 is transparent
+var CON_TASK_DISPLAY_TYPE_SYMBOL = 1;               // EOT-based symbol | font
+var CON_TASK_DISPLAY_TYPE_VANILLA_GIF = 2;          // (GIF) index 0 is transparent
+var s_rgFontFamilyNameUnique = new Array();
+var s_rgTasks          = new Array();
+var s_rgURLtoEOTUnique = new Array();
+var srcElement = window.event.srcElement;
+var szHash = location.hash;
+var szScripts          = "";
+VarFileInfo
+VAVAWH
+vb'vb'v
+VendorWW4
+Version
+version="5.1.0.0"
+version="6.0.0.0"
+VersionMajor 
+VersionMinor
+VersionW
+VHvV=
+View Interface
+View Options enumerationWW
+View with a Scope Tree pane hidden
+View with Action Pane hiddenWW
+View with Tool Bars hidden-
+ViewData
+ViewMemento
+ViewMode
+ViewOption_ActionPaneHiddenWX
+ViewOption_NotPersistableWWW
+ViewOption_ScopeTreeHiddenWW
+ViewOptions
+ViewOptionsW
+Views
+Views InterfaceWWW
+ViewSettingData
+ViewSettings
+VirtualAlloc
+VirtualFree
+VirtualProtect
+VirtualQuery
+VisibleWL
+VisualAttributes
+vModeL
+vOyRfT
+VS_VERSION_INFO
+VWATAUAVAWH
+VWATAVAWH
+VWATH
+VWAUAVAWH
+VWAVH
+VWAWH
+vyyyxxx
+W u$H
+w.)t>$U
+w@9_t
+W@H;U
+W+obo
+W5"25
+W9yy9y9
+wActiveViewWW
+WakeAllConditionVariable
+WATAUAVAWH
+WAUAVH
+WAVAWH
+wcschr
+wcscmp
+wcscpy_s
+wcsncmp
+wcsrchr
+wcsstr
+wcstol
+wcstoul
+WebBrowser
+WideString
+Width
+WINDOW
+WindowMoveWW
+WindowPlacement
+WindowResize4
+WindowStateW@
+WM_ATLGETCONTROL
+WM_ATLGETHOST
+wn>Jj
+WPF_ASYNCWINDOWPLACEMENT
+WPF_RESTORETOMAXIMIZED
+WPF_SETMINPOSITION
+WPH+W@H
+wqOnSnapInRemovedW
+wqqq^xxx
+WriteFile
+WRtZl
+wsprintfW
+wwvwvww
+WWW_WWW;
+wwwwvwwwwwwww
+wwwwwwww(
+wwwwwwwww
+wwwwwwwwwwwwwwwwww
+wwwwwwwwxwxx
+wwwxwwxwx
+wyyyyy
+x ATAVAWH
+x AUAVAWH
+x AVH
+x AVM
+x AWH
+x UATAUAVAWH
+x UATAVH
+x@9-_
+x]__qxyyyyyyy}
+x|H9t$PtuH
+X=3_rGu
+x>H!]
+XA_A^_^[]
+xA_A^_^][
+XA_A^A\_^[
+xA_NewEnum
+xCD;6t
+XH;]@u
+XH;]Pu
+XMLListCollectionBase::Persist
+XMLMapCollectionBase::Persist
+XMLPoint::Persist
+XMLRect::Persist
+xwvwgwwwwwwwwwwwwwxp
+xwwwwwwwgvwwgwgwgwxp
+xxxxw
+xxxxxw
+xxxxy
+xxxxyx{{x
+xy5y9yy
+xyy|xQ
+xyyywu
+Y;f-K
+y`H97u,H
+Y9yyywx
+YD8Y u
+YD8Y(u
+YD8Y0u
+YD8YHu
+YD8YPu
+YD8YXu
+yJKp[
+YNewOwnerNode
+ysYyyy
+yxxxyxyyy|
+yy|w{xQ
+yy9Yp
+yyqxyy
+yyxxx
+yyy9Yyyyy9
+yyyxy
+yyYyp
+yyyyyx
+yyyyyy
+yyyyyyy
+Z_ExportListOptionsWW
+zItem
+ZnFkHD
+zpCancelW
+zYb!t
+ZZZTkkk

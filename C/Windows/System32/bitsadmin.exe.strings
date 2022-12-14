@@ -1,0 +1,1475 @@
+                   Must be followed by a proxy list and a proxy bypass list.
+                   Must be followed by a script URL.
+                   NULL or "" may be used for an empty proxy bypass list.
+                  Must be followed by a proxy list and a proxy bypass list.
+                  NULL or "" may be used for an empty proxy bypass list.
+                level="asInvoker"
+                uiAccess="false"
+               first parameter.
+            />
+            <requestedExecutionLevel
+          remote_url local_name
+         0,0,0  - Redirects will be automatically allowed.
+         0,0,1  - Remote name in the IBackgroundCopyFile interface will be updated if a redirect occurs.
+         0,1,0  - BITS will fail the job if a redirect occurs.
+        </requestedPrivileges>
+        <requestedPrivileges>
+        1 - The helper token is used when accessing the local filesystem.
+        2 - The helper token is used when accessing the network.
+        3 - The helper token is used when accessing both the local filesystem and the network.
+        Allow the job's data to be downloaded from a peer : Set the least significant bit
+        Allow the job's data to be served to peers        : Set the 2nd bit from right
+        Enable peercaching client             : Set the least significant bit
+        Enable peercaching server             : Set the 2nd bit from right
+       0:100,2000:100,5000:eof
+       certificate                                    : Set the 4th bit from right
+      <file-index> starts from 0          
+      authenticated: 
+      available:     
+      bitsadmin /setaclflags MyJob OGD
+      bitsadmin /setaclflags MyJob OGDS
+      bitsadmin /setproxysettings MyJob AUTODETECT
+      bitsadmin /setproxysettings MyJob NO_PROXY
+      bitsadmin /setproxysettings MyJob OVERRIDE proxy1,proxy2,proxy3 NULL 
+      bitsadmin /setproxysettings MyJob OVERRIDE proxy1:80 "<local>" 
+      bitsadmin /setproxysettings MyJob PRECONFIG
+      FOREGROUND 
+      HIGH
+      LOW
+      NORMAL
+     Allow redirection from HTTPS to HTTP             : Set the 12th bit from right
+     Enable CRL Check                                 : Set the least significant bit
+     Ignore invalid certificate authority in server
+     Ignore invalid common name in server certificate : Set the 2nd bit from right
+     Ignore invalid date in  server certificate       : Set the 3rd bit from right
+     Ignore invalid usage of certificate              : Set the 5th bit from right
+     Redirection policy                               : Controlled by the 9th-11th bits from right
+    /DYNAMIC configures the job with BITS_JOB_PROPERTY_DYNAMIC_CONTENT, which relaxes the server-side requirements.
+    [type] may be /DOWNLOAD or /UPLOAD; default is download
+    [type] may be /DOWNLOAD, /UPLOAD, or /UPLOAD-REPLY; default is download
+    </security>
+    <file-index> starts from 0 
+    <security>
+    All files whose URL begins with <old_prefix> are changed to use <new_prefix>
+    AUTODETECT   - Turn on autodetection of proxy.
+    AUTODETECT  - Force autodetection of proxy.
+    AUTOSCRIPT   - Specify a script to be executed during proxy auto discovery.
+    basic
+    bitsadmin /SetNotifyCmdLine MyJob c:\callback.exe "c:\callback.exe parm1 parm2" 
+    bitsadmin /SetNotifyCmdLine MyJob c:\winnt\system32\notepad.exe  NULL
+    bitsadmin /SetNotifyCmdLine MyJob NULL NULL
+    bitsadmin /util /setieproxy localsystem AUTODETECT
+    bitsadmin /util /setieproxy localsystem MANUAL_PROXY proxy1:80 "<local>"
+    bitsadmin /util /setieproxy localsystem MANUAL_PROXY pxy1,pxy2,pxy3 NULL
+    bitsadmin /util /setieproxy networkservice AUTOSCRIPT http://server/get.asp
+    bitsadmin /util /setieproxy networkservice NO_PROXY
+    bitsadmin /util /setieproxy networkservice NO_PROXY /CONN "XYZ Dialup"
+    bytes from peers: 
+    digest
+    For more help on this option, please refer to the MSDN help page for SetNotifyFlags/GETNOTIFYINTERFACE <job>             Determines if notify interface is registered
+    IMPORTANT: if parameters are non-NULL, then the program name should be the
+    LOCALSERVICE
+    LOCALSYSTEM
+    MANUAL_PROXY - Use an explicit proxy list and bypass list. 
+    Multiple URL/file pairs may be specified.
+    name="Microsoft.Windows.BITS.BITSAdmin"
+    negotiate
+    NETWORKSERVICE
+    NO_PROXY     - Specify direct connection (no proxy server).
+    NO_PROXY    - Do not use a proxy server.
+    ntlm
+    OVERRIDE    - Use an explicit proxy list and bypass list. 
+    passport
+    PRECONFIG   - Use the owner's default Internet settings.
+    processorArchitecture="amd64"
+    Report the flags for the computer's peercaching behavior.
+    Reports a job's helper token usage flags.
+    Reports statistics about the amount of data downloaded from peers and origin servers for a specific file within a job.
+    Reports the content-validation state of the given file within the job.
+    Reports the flags for the job's peercaching behavior.
+    Reports the temporary filename of the given file within the job.
+    Sets a program to execute for notification, and optionally parameters.
+    Sets the content-validation state of the given file within the job.
+    Sets the flags for the computer's peercaching behavior.
+    Sets the flags for the job's peercaching behavior.
+    Sets the helper token usage flags for a job. Possible values are:
+    The program name and parameters can be NULL.
+    The value is an unsigned integer with the following interpretation for the bits in the binary representation.
+    Transfers one of more files.
+    type="win32"
+    Unlike most commands, <job name> may only be a name and not a GUID.
+    version="5.1.0.0"
+   account choices:
+   at offset 2000, and the remainder of the URL starting at offset 5000.
+   be used (usually the LAN connection). To get a list of possible connection
+   by spaces.  A line beginning with '#' is treated as a comment.
+   connection name indicates the network connection for which the new proxy
+   connection name indicates the network connection for which the new proxy 
+   connection names, use /CONN /?.
+   Displays the version of BITS currently active on the system.
+   Each line of <textfile> lists a file's remote name and local name, separated
+   Enables/Disables the BITS Client Analytic channel
+   For example,
+   instructs BITS to read 100 bytes starting at offset zero, 100 bytes starting
+   Like /ADDFILE, but BITS will read only selected byte ranges of the URL.
+   names, use /CONN /?.
+   Once the file set is read into memory, the contents are added to the job.
+   Priority usage choices:
+   range_list is a comma-delimited series of offset and length pairs.
+   Reports the HTTP security flags for URL redirection and checks performed on the server certificate during the transfer.
+   Sets the HTTP security flags for URL redirection and checks performed on the server certificate during the transfer.
+   settings should be applied. If not specified, the default connection 
+   settings should be applied. If not specified, the default connection will 
+   The switch /VERBOSE prints additional information useful for 
+   The value is an unsigned integer with the following interpretation for the bits in the binary representation.
+   troubleshooting purposes.
+   usage choices:
+   will be used (usually the LAN connection). To get a list of possible 
+  <connection name> is specified.
+  <scheme> may be BASIC, DIGEST, NTLM, NEGOTIATE, or PASSPORT. 
+  <store_location> may be 
+  <target> may be either SERVER or PROXY
+  account. Settings refer to the default network connection, unless 
+  Adds credentials to a job.
+  At all other times BITS is allowed to determine the optimal network 
+  bandwidth utilization for the system.
+  D - DACL        S - SACL  
+  Examples:
+  Maximum network bandwidth utilization allowed is 
+  O - OWNER       G - GROUP 
+  Removes credentials from a job.
+  Retrieves the Internet proxy settings for the <account> system
+  Sets a client authentication certificate to a job.
+  Sets the Internet proxy settings for the <account> system account.
+  Settings are applied to the default network connection, unless 
+  This limit is enforced during the time range: 
+ % of the system volume's size
+ %-40s 
+ ---> 
+ A^_^
+ A^A\_
+ A_A^_
+ A_A^A\
+ A_A^A\_^
+ ACL FLAGS: 
+ An exception occured
+ An exception occured while listing jobs
+ At all other times the network bandwidth utilization is limited to 
+ bytes.
+ BYTES: 
+ cache record(s).
+ canceled.
+ contains no local file name 
+ day(s).
+ DISPLAY: '
+ Enable CRL Check                                           :
+ Enable download from peers      :
+ Enable serving to peers         :
+ ERROR COUNT: 
+ file(s) read from 
+ file(s).
+ file.
+ files to the job.
+ files.
+ FILES: 
+ H3E H3E
+ has no closing quote
+ Ignore invalid certificate authority in server certificate :
+ Ignore invalid common name in server certificate           :
+ Ignore invalid date in  server certificate                 :
+ Ignore invalid usage of certificate                        :
+ is higher than the window's level of 
+' is not a valid credential target.  It must be 'proxy' or 'server'.
+' is not a valid range.
+ job(s).
+ jobs canceled.
+ jobs named "
+ Kbps.
+ kilobits/sec.
+ local file access     :
+ Microsoft Corporation. All rights reserved.
+ MODIFICATION TIME: 
+ network server access :
+ NO PROGRESS TIMEOUT: 
+ NOTIFICATION FLAGS: 
+ Operating System
+ out of 
+ OWNER: 
+ peer(s).
+ PROXY BYPASS LIST: 
+ PROXY LIST: 
+ ranges of 
+ Redirection from HTTPS to HTTP allowed                     :
+ second refresh)
+ seconds.
+ set to AUTODETECT.
+ set to NO_PROXY.
+ STATE: 
+ to cert hash blob.
+ to job.
+ to Unicode.
+ TYPE: 
+ URL redirection policy                                     :
+ was deleted.
+ were set.
+ Windows
+!This program cannot be run in DOS mode.
+#L\T%x
+% of the volume.
+%.2f B/S
+%.2f GB/S
+%.2f KB/S
+%.2f MB/S
+%-40s 
+%-9s 
+%CSIDL_SYSTEM%\bitsigd.dll
+%CSIDL_SYSTEM%\bitsperf.dll
+%CSIDL_SYSTEM%\bitsprx2.dll
+%CSIDL_SYSTEM%\bitsprx3.dll
+%CSIDL_SYSTEM%\bitsprx4.dll
+%CSIDL_SYSTEM%\bitsprx5.dll
+%CSIDL_SYSTEM%\qmgr.dll
+%CSIDL_SYSTEM%\qmgrprxy.dll
+%CSIDL_SYSTEM%\xpob2res.dll
+%d.%d.%d.%-4d 
+%I64u
+%I64u days
+%I64u Hours
+%I64u Minutes
+%I64u Seconds
+%I64u:%3c
+%I64u:%I64u
+(_^][
+(C) Copyright Microsoft Corp.
+(connection = 
+(D$pf
+(null)
+(t$ H
+(unknown)
+)t$ v
+, bytes from origin: 
+, length 
+, local name: 
+.?AVAbortException@@
+.?AVJobErrorException@@
+.?AVtype_info@@
+.00cfg
+.CRT$XCA
+.CRT$XCAA
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIAC
+.CRT$XIC
+.CRT$XIZ
+.CRT$XPA
+.CRT$XPZ
+.CRT$XTA
+.CRT$XTZ
+.data
+.data$brc
+.data$r$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.gfids
+.giats
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.pdata
+.rdata
+.rdata$brc
+.rdata$r
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.rtc$IAA
+.rtc$IZZ
+.rtc$TAA
+.rtc$TZZ
+.text
+.text$di
+.text$mn
+.text$mn$00
+.text$x
+.text$yd
+.xdata
+.xdata$x
+/?              Prints this help 
+/ACLFLAGS
+/ADDFILE
+/ADDFILE <job> <remote_url> <local_name> Adds a file to the job
+/ADDFILESET
+/ADDFILESET <job> <textfile>             Adds multiple files to the job
+/ADDFILEWITHRANGES
+/ADDFILEWITHRANGES  <job> <remote_url> <local_name range_list>
+/ALLUSERS
+/CACHE
+/CACHE /?       Prints the list of cache management commands 
+/CACHE /CLEAR                        Purges the local cache.
+/CACHE /DELETE recordid              Deletes a cache entry.
+/CACHE /DELETEURL url                Deletes all cache entries for the given URL.
+/CACHE /GETEXPIRATIONTIME            Retrieves the cache expiration time.
+/CACHE /GETLIMIT                     Retrieves the cache limit.
+/CACHE /INFO recordid [/VERBOSE]     Dumps a specific cache entry.
+/CACHE /LIST [/VERBOSE]              Lists all cache entries.
+/CACHE /SETEXPIRATIONTIME  -1        Sets the cache expiration time to the default.
+/CACHE /SETEXPIRATIONTIME  secs      Sets the cache expiration time.
+/CACHE /SETLIMIT -1                  Sets the cache size limit to the default.
+/CACHE /SETLIMIT percent             Sets the cache size limit.
+/CANCEL
+/CANCEL <job>                        Cancels the job
+/CLEAR
+/COMPLETE
+/COMPLETE <job>                      Completes the job
+/CONN
+/CREATE
+/CREATE [type] <job name>               Creates a job
+/DELETE
+/DELETEURL
+/DISCOVER
+/DOWNLOAD
+/DYNAMIC
+/ENABLEANALYTICCHANNEL
+/GETACLFLAGS
+/GETACLFLAGS <job>                   Retrieves the ACL propagation flags
+/GETBYTESTOTAL
+/GETBYTESTOTAL <job>                 Retrieves the size of the job
+/GETBYTESTRANSFERRED
+/GETBYTESTRANSFERRED <job>           Retrieves the number of bytes transferred
+/GETCLIENTCERTIFICATE
+/GETCLIENTCERTIFICATE <job>                       Gets the job's Client Certificate Information
+/GETCOMPLETIONTIME
+/GETCOMPLETIONTIME <job>             Retrieves the job completion time
+/GETCONFIGURATIONFLAGS
+/GETCREATIONTIME
+/GETCREATIONTIME <job>               Retrieves the job creation time
+/GETCUSTOMHEADERS
+/GETCUSTOMHEADERS <job>                           Gets the Custom HTTP Headers
+/GETDESCRIPTION
+/GETDESCRIPTION <job>                Retrieves the job description
+/GETDISPLAYNAME
+/GETDISPLAYNAME <job>                Retrieves the job display name
+/GETERROR
+/GETERROR <job>                      Retrieves detailed error information
+/GETERRORCOUNT
+/GETERRORCOUNT <job>                  Retrieves an error count for the job
+/GETEXPIRATIONTIME
+/GETFILESTOTAL
+/GETFILESTOTAL <job>                 Retrieves the number of files in the job
+/GETFILESTRANSFERRED
+/GETFILESTRANSFERRED <job>           Retrieves the number of files transferred
+/GETHELPERTOKENFLAGS
+/GETHELPERTOKENFLAGS <job> 
+/GETHELPERTOKENSID
+/GETHELPERTOKENSID <job>       Reports the user account SID of a job's helper token, if one is set
+/GETHTTPMETHOD
+/GETHTTPMETHOD <job>                           Gets the HTTP verb to use.
+/GETIEPROXY
+/GETIEPROXY must be followed by a system account name
+/GETLIMIT
+/GETMAXDOWNLOADTIME
+/GETMAXDOWNLOADTIME <job>             Retrieves the download timeout in seconds
+/GETMINRETRYDELAY
+/GETMINRETRYDELAY <job>               Retrieves the retry delay in seconds
+/GETMODIFICATIONTIME
+/GETMODIFICATIONTIME <job>           Retrieves the job modification time
+/GETNOPROGRESSTIMEOUT
+/GETNOPROGRESSTIMEOUT <job>           Retrieves the no progress timeout in seconds
+/GETNOTIFYCMDLINE
+/GETNOTIFYCMDLINE <job>              Returns the job's notification command line
+/GETNOTIFYFLAGS
+/GETNOTIFYFLAGS <job>                 Retrieves the notify flags
+/GETNOTIFYINTERFACE
+/GETOWNER
+/GETOWNER <job>                      Retrieves the job owner
+/GETPEERCACHINGFLAGS
+/GETPEERCACHINGFLAGS  <job>               
+/GETPEERSTATS
+/GETPEERSTATS <job> <file-index> 
+/GETPRIORITY
+/GETPRIORITY    <job>                Retrieves the job priority
+/GETPROXYBYPASSLIST
+/GETPROXYBYPASSLIST <job>            Retrieves the proxy bypass list
+/GETPROXYLIST
+/GETPROXYLIST <job>                  Retrieves the proxy list
+/GETPROXYUSAGE
+/GETPROXYUSAGE <job>                 Retrieves the proxy usage setting
+/GETREPLYDATA
+/GETREPLYDATA     <job>        Dumps the server's reply data in hex format
+/GETREPLYFILENAME
+/GETREPLYFILENAME <job>        Gets the path of the file containing the server reply
+/GETREPLYPROGRESS
+/GETREPLYPROGRESS <job>        Gets the size and progress of the server reply
+/GETSECURITYFLAGS
+/GETSECURITYFLAGS <job>   
+/GETSTATE
+/GETSTATE <job>                      Retrieves the job state
+/GETTEMPORARYNAME
+/GETTEMPORARYNAME  <job>  <file-index>  
+/GETTYPE
+/GETTYPE <job>                       Retrieves the job type
+/GETVALIDATIONSTATE
+/GETVALIDATIONSTATE  <job>  <file-index>  
+/HELP
+/HELP           Prints this help 
+/INFO
+/INFO <job> [/VERBOSE]                   Displays information about the job
+/LIST
+/LIST    [/ALLUSERS] [/VERBOSE]     List the jobs
+/LISTFILES
+/LISTFILES <job>                     Lists the files in the job
+/MONITOR
+/MONITOR [/ALLUSERS] [/REFRESH sec] Monitors the copy manager
+/MONITOR will only work with the console.
+/NOWRAP
+/NOWRAP                        Don't wrap output around console
+/PEERCACHING
+/PEERCACHING /?   Prints the list of commands to manage Peercaching
+/PEERCACHING /GETCONFIGURATIONFLAGS  
+/PEERCACHING /SETCONFIGURATIONFLAGS  <value>
+/PEERS
+/PEERS /?       Prints the list of peer management commands
+/PEERS /CLEAR                            Clears the peer list.
+/PEERS /DISCOVER                         Discovers peers again.
+/PEERS /LIST                             Lists all peers.
+/PRIORITY
+/RAWRETURN
+/RAWRETURN                     Return data more suitable for parsing
+/RAWRETURN should not be used with this command.
+/REFRESH
+/REFRESH is missing the refresh rate.
+/REMOVECLIENTCERTIFICATE
+/REMOVECLIENTCERTIFICATE <job>                Removes the Client Certificate Information from the job
+/REMOVECREDENTIALS
+/REMOVECREDENTIALS <job> <target> <scheme> 
+/REPAIRSERVICE
+/REPLACEREMOTEPREFIX
+/REPLACEREMOTEPREFIX <job> <old_prefix> <new_prefix>
+/RESET
+/RESET   [/ALLUSERS]                Deletes all jobs in the manager
+/RESUME
+/RESUME <job>                        Resumes the job
+/SETACLFLAGS
+/SETACLFLAGS <job> <ACL_flags>       Sets the ACL propagation flags for the job
+/SETCLIENTCERTIFICATEBYID
+/SETCLIENTCERTIFICATEBYID <job> <store_location> <store_name> <hexa-decimal_cert_id>
+/SETCLIENTCERTIFICATEBYNAME
+/SETCLIENTCERTIFICATEBYNAME <job> <store_location> <store_name> <subject_name>
+/SETCONFIGURATIONFLAGS
+/SETCREDENTIALS
+/SETCREDENTIALS <job> <target> <scheme> <username> <password>
+/SETCUSTOMHEADERS
+/SETCUSTOMHEADERS <job> <header1> <header2> <...> Sets the Custom HTTP Headers
+/SETDESCRIPTION
+/SETDESCRIPTION <job> <description>  Sets the job description
+/SETDISPLAYNAME
+/SETDISPLAYNAME <job> <display_name> Sets the job display name
+/SETEXPIRATIONTIME
+/SETHELPERTOKEN
+/SETHELPERTOKEN <job>          Sets the current command prompt's primary token as a job's helper token
+/SETHELPERTOKENFLAGS
+/SETHELPERTOKENFLAGS <job> <flags> 
+/SETHTTPMETHOD
+/SETHTTPMETHOD <job> <HTTPMethod>              Sets the HTTP verb to use.
+/SETIEPROXY
+/SETIEPROXY must be followed by a system account name and a proxy usage name
+/SETLIMIT
+/SETMAXDOWNLOADTIME
+/SETMAXDOWNLOADTIME <job> <timeout>   Sets the download timeout in seconds
+/SETMINRETRYDELAY
+/SETMINRETRYDELAY <job> <retry_delay> Sets the retry delay in seconds
+/SETNOPROGRESSTIMEOUT
+/SETNOPROGRESSTIMEOUT <job> <timeout> Sets the no progress timeout in seconds
+/SETNOTIFYCMDLINE
+/SETNOTIFYCMDLINE <job> <program_name> [program_parameters] 
+/SETNOTIFYFLAGS
+/SETNOTIFYFLAGS <job> <notify_flags>  Sets the notify flags
+/SETPEERCACHINGFLAGS
+/SETPEERCACHINGFLAGS  <job> <value>   
+/SETPRIORITY
+/SETPRIORITY    <job> <priority>     Sets the job priority
+/SETPROXYSETTINGS
+/SETPROXYSETTINGS <job> <usage>      Sets the proxy usage
+/SetProxySettings must be followed by a job name or guid, then a proxy usage name
+/SETREPLYFILENAME
+/SETREPLYFILENAME <job> <path> Sets the path of the file containing the server reply
+/SETSECURITYFLAGS
+/SETSECURITYFLAGS <job> <value>   
+/SETVALIDATIONSTATE
+/SETVALIDATIONSTATE  <job>  <file-index> <true|false>
+/SUSPEND
+/SUSPEND <job>                       Suspends the job
+/TAKEOWNERSHIP
+/TAKEOWNERSHIP <job>                 Take ownership of the job
+/TRANSFER
+/TRANSFER <job name> [type] [/PRIORITY priority] [/ACLFLAGS flags] [/DYNAMIC] 
+/UPLOAD
+/UPLOAD-REPLY
+/UTIL
+/UTIL /?        Prints the list of utilities commands 
+/UTIL /ENABLEANALYTICCHANNEL TRUE/FALSE
+/UTIL /GETIEPROXY <account> [/CONN <connection name>]
+/UTIL /REPAIRSERVICE might help diagnose or fix the issue
+/UTIL /SETIEPROXY <account> <usage> [/CONN <connection name>]     
+/UTIL /VERSION [/VERBOSE]
+/VERBOSE
+/VERSION
+/WRAP
+/WRAP                          Wrap output around console (default)
+: contains no local file name 
+: contains no remote file name 
+: extra characters after the local file name 
+:00 to 
+:00. 
+;\$<sbH
+?ffffff
+@.data
+@.didat
+@.reloc
+@A^_^
+@A^_^[]
+@A_A^A]A\_^]
+@SVWH
+@USVWATAUAVAWH
+@USVWATAVAWH
+@USVWAVH
+@USWH
+@UVWATAVH
+@UVWH
+\$ E3
+\$ UH
+\$ UVWATAUAVAWH
+\$@E3
+\$HE3
+\$PE3
+\$XE3
+\bitsigd.dll
+\bitsperf.dll
+\bitsprx2.dll
+\bitsprx3.dll
+\bitsprx4.dll
+\bitsprx5.dll
+\qmgr.dll
+\qmgr.dll.mui
+\qmgrprxy.dll
+\VarFileInfo\Translation
+\xpob2res.dll
+__C_specific_handler
+__CxxFrameHandler3
+__doserrno
+__std_terminate
+_c_exit
+_CxxThrowException
+_finite
+_initterm
+_initterm_e
+_o___p___argc
+_o___p___wargv
+_o___p__commode
+_o___stdio_common_vswprintf
+_o___stdio_common_vswscanf
+_o__cexit
+_o__configthreadlocale
+_o__configure_wide_argv
+_o__crt_atexit
+_o__exit
+_o__get_initial_wide_environment
+_o__initialize_onexit_table
+_o__initialize_wide_environment
+_o__register_onexit_function
+_o__seh_filter_exe
+_o__set_app_type
+_o__set_fmode
+_o__set_new_mode
+_o__stricmp
+_o__wcsicmp
+_o__wfopen
+_o__wsetlocale
+_o_exit
+_o_feof
+_o_floor
+_o_free
+_o_getc
+_o_iswxdigit
+_o_malloc
+_o_terminate
+_o_ungetc
+_o_wcstok
+_o_wcstol
+_o_wcstoul
+_register_thread_local_exe_atexit_callback
+`.rdata
+`A^_^
+`A^A]_[]
+`A_A^A]A\_^[
+|$ AVH
+|$ E3
+|$@H9|$0
+|$0euEf
+|$2ou=f
+|$4fu5H
+<!-- Copyright (c) Microsoft Corporation -->
+</assembly>
+</trustInfo>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+<assemblyIdentity
+<description>BITS administration utility</description>
+<empty>
+<none>
+<trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+0123456789abcdef
+040904B0
+0A^_]
+0A^_^[]
+0A^A\_^]
+0A_A^_
+0A_A^_^]
+0A_A^A]A\_^]
+0x%8.8x
+1(CURRENT_USER), 2(LOCAL_MACHINE), 3(CURRENT_SERVICE),
+333333
+4(SERVICES), 5(USERS), 6(CURRENT_USER_GROUP_POLICY),
+7(LOCAL_MACHINE_GROUP_POLICY) or 8(LOCAL_MACHINE_ENTERPRISE). 
+7.8.17763.1
+7.8.17763.1 (WinBuild.160101.0800)
+8A_A^A]A\_^[]
+8w]tVA
+9/uSH
+9_Tth
+9_Tv%A
+9_Tv=A
+9t$8uOH
+A^A]A\_]
+A_A\]
+A_A^]
+A_A^_
+A_A^_^]
+A_A^A\_]
+A_A^A\_^
+A_A^A]A\]
+A_A^A]A\_
+A_A^A]A\_^]
+a9]@t\I
+ACKNOWLEDGED
+ACL Flags set to '
+Added 
+administrator privileges.
+AllocateAndInitializeSid
+An error occured setting Max download time.
+api-ms-win-core-delayload-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-1.dll
+api-ms-win-core-heap-l2-1-0.dll
+api-ms-win-core-kernel32-legacy-l1-1-2.dll
+api-ms-win-core-processthreads-l1-1-0.dll
+api-ms-win-core-registry-l1-1-0.dll
+api-ms-win-core-rtlsupport-l1-1-0.dll
+api-ms-win-core-version-l1-1-0.dll
+api-ms-win-crt-math-l1-1-0.dll
+api-ms-win-crt-private-l1-1-0.dll
+api-ms-win-crt-runtime-l1-1-0.dll
+api-ms-win-crt-string-l1-1-0.dll
+api-ms-win-downlevel-kernel32-l1-1-0.dll
+api-ms-win-downlevel-ole32-l1-1-1.dll
+api-ms-win-security-base-l1-1-0.dll
+api-ms-win-security-lsalookup-l1-1-0.dll
+api-ms-win-security-sddl-l1-1-0.dll
+api-ms-win-service-management-l1-1-0.dll
+api-ms-win-service-management-l2-1-0.dll
+Attempting to instantiate BITS main interface, IBackgroundCopyManager...
+AuthD
+Auto discovery script URL: 
+AUTODETECT
+AUTODETECT 
+AUTOSCRIPT
+AUTOSCRIPT 
+AUTOSCRIPT must be followed by a script URL.
+basic
+BITS administration utility
+BITS administration utility.
+BITS secondary service DLL path: 
+BITS will fail the job if a redirect occurs.
+BITSADMIN version 3.0
+bitsadmin.exe
+bitsadmin.pdb
+Cache expiration time set to 
+Cache limit not set as the max content size group policy is enabled.
+Cache limit set to 
+Cache management commands:
+CANCELLED
+Certificate Hash : 
+Certificate Store Location : CERT_STORE_LOCATION_CURRENT_SERVICE
+Certificate Store Location : CERT_STORE_LOCATION_CURRENT_USER
+Certificate Store Location : CERT_STORE_LOCATION_LOCAL_MACHINE
+Certificate Store Location : CERT_STORE_LOCATION_LOCAL_MACHINE_ENTERPRISE
+Certificate Store Location : CERT_STORE_LOCATION_SERVICES
+Certificate Store Location : CERT_STORE_LOCATION_USERS
+Certificate Store Location : CERT_SYSTEM_STORE_CURRENT_USER_GROUP_POLICY
+Certificate Store Location : CERT_SYSTEM_STORE_LOCAL_MACHINE_GROUP_POLICY
+Certificate Store Name : 
+Certificate Subject Name : 
+Checking BITS main COM interfaces... 
+CLIENT CERTIFICATE INFORMATION:
+Client Certificate set to 
+CloseHandle
+CloseServiceHandle
+CLSIDFromString
+CoCreateInstance
+Code:
+CoInitializeEx
+Commands that take a <job> parameter will accept either a job name or a job ID
+CompanyName
+CompareStringA
+CompareStringW
+COMPLETED
+COMPLETION TIME: 
+CONNECTING
+ConvertSidToStringSidW
+CopySid
+CoTaskMemAlloc
+CoTaskMemFree
+CoUninitialize
+CQ;7t
+Created job 
+CREATION TIME: 
+CSIDL_ADMINTOOLS
+CSIDL_ALTSTARTUP
+CSIDL_APPDATA
+CSIDL_BITBUCKET
+CSIDL_COMMON_ADMINTOOLS
+CSIDL_COMMON_ALTSTARTUP
+CSIDL_COMMON_APPDATA
+CSIDL_COMMON_DESKTOPDIRECTORY
+CSIDL_COMMON_DOCUMENTS
+CSIDL_COMMON_FAVORITES
+CSIDL_COMMON_PROGRAMS
+CSIDL_COMMON_STARTMENU
+CSIDL_COMMON_STARTUP
+CSIDL_COMMON_TEMPLATES
+CSIDL_CONTROLS
+CSIDL_COOKIES
+CSIDL_DESKTOP
+CSIDL_DESKTOPDIRECTORY
+CSIDL_DRIVES
+CSIDL_FAVORITES
+CSIDL_FONTS
+CSIDL_HISTORY
+CSIDL_INTERNET
+CSIDL_INTERNET_CACHE
+CSIDL_LOCAL_APPDATA
+CSIDL_MYPICTURES
+CSIDL_NETHOOD
+CSIDL_NETWORK
+CSIDL_PERSONAL
+CSIDL_PRINTERS
+CSIDL_PRINTHOOD
+CSIDL_PROFILE
+CSIDL_PROGRAM_FILES
+CSIDL_PROGRAM_FILES_COMMON
+CSIDL_PROGRAMS
+CSIDL_RECENT
+CSIDL_SENDTO
+CSIDL_STARTMENU
+CSIDL_STARTUP
+CSIDL_SYSTEM
+CSIDL_TEMPLATES
+CSIDL_WINDOWS
+Current Internet proxy settings for account 
+CUSTOM HEADERS: 
+Custom HTTP Request Headers set to:
+D$ E3
+d$ E3
+D$ E3
+D$ fH
+D$(E3
+D$@H+
+D$0E3
+D$8E3
+D$8Hk
+D$PE3
+D$pE3
+D;t$8
+D;wTr
+D8<(u
+D8<.u
+D8=>/
+D8d$0
+D8d$1
+D8d$2t
+data length is 
+default
+DefaultConnectionSettings
+DelayLoadFailureHook
+Description set to 
+DESCRIPTION: 
+digest
+DisablePeerCachingClient
+DisablePeerCachingServer
+DispatchMessageW
+Display name set to 
+DISPLAY: '
+DOWNLOAD
+DuplicateHandle
+EnableBITSMaxBandwidth
+EnablePeercaching
+EnterCriticalSection
+en-US
+ERROR
+ERROR - BITS configuration errors were found!! Error code 
+Error checking version.
+ERROR CODE:    
+ERROR CONTEXT: 
+Error converting argument to unicode strings.
+Error converting arguments to unicode strings.
+error converting line 
+ERROR FILE:    
+Error Loading procedure EvtGetChannelConfigProperty
+Error Loading procedure EvtOpenChannelConfig
+Error Loading procedure EvtSaveChannelConfig
+Error Loading procedure EvtSetChannelConfigProperty
+error near line 
+Error saving Microsoft-Windows-Bits-Client/Analytic channel config property
+Error setting Microsoft-Windows-Bits-Client/Analytic channel config property
+Error: unexpected format for entry
+EvtGetChannelConfigProperty
+EvtOpenChannelConfig
+EvtSaveChannelConfig
+EvtSetChannelConfigProperty
+ExpandEnvironmentStringsW
+ext-ms-win-ntuser-synch-l1-1-0.dll
+ext-ms-win-rtcore-ntuser-window-ext-l1-1-0.dll
+ext-ms-win-shell32-shellfolders-l1-1-0.dll
+f+D$Lf
+Failed to convert 
+Failed to convert Certificate Hash Blob to Hex string.
+Failed to find BITS service
+Failed to get the status of the BITS service
+Failed to initialize COM. Error: %0X
+Failed to instantiate BITS IBackgroundCopyManager interface. The command 
+Failed to open the service controller to check for the BITS service
+Failed to query for BITS IBackgroundCopyJob2 interface (only available on BITS 1.5 and later versions)
+Failed to query for BITS IBackgroundCopyJob3 interface (only available on BITS 2.0 and later versions)
+Failed to query for BITS IBackgroundCopyJob4 interface (only available on BITS 3.0 and later versions)
+Failed to query for BITS IBackgroundCopyJobHttpOptions interface (only available on BITS 2.5 and later versions)
+FALSE
+false
+fC9\e
+fD9#H
+fD9$Fu
+fD9(u
+fD9<Bu
+fD9<Gu
+fD97tUH
+fD9d]
+fE9$Nu
+fE9&u
+fE9't
+FILE MODIFICATION TIME: 
+file path
+FILE SIZE: 
+File version for 
+File version for BITS binaries: 
+FileDescription
+file's validation state is 
+FileTimeToLocalFileTime
+FileTimeToSystemTime
+FileVersion
+FillConsoleOutputAttribute
+FillConsoleOutputCharacterW
+FOREGROUND
+FormatMessageW
+Found 
+Found pending DELETE operation:  
+Found pending RENAME operation:  
+FreeLibrary
+GetConsoleMode
+GetConsoleOutputCP
+GetConsoleScreenBufferInfo
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+GetDateFormatW
+GetFileAttributesW
+GetFileType
+GetFileVersionInfoExW
+GetFileVersionInfoSizeExW
+GetLastError
+GetLengthSid
+GetModuleHandleW
+GetNumberOfConsoleInputEvents
+GetProcAddress
+GetSidSubAuthority
+GetSidSubAuthorityCount
+GetStdHandle
+GetSystemDirectoryW
+GetSystemTimeAsFileTime
+GetThreadLocale
+GetTimeFormatW
+GetTokenInformation
+Group policy controls peer caching which is: Disabled.
+Group policy controls peer caching which is: Enabled.
+Group policy daytime end: 
+Group policy daytime end: Undefined.
+Group policy daytime limit: 
+Group policy daytime limit: Undefined.
+Group policy daytime start: 
+Group policy daytime start: Undefined.
+Group policy limit bandwidth: Disabled.
+Group policy limit bandwidth: Enabled.
+Group policy limit bandwidth: Undefined.
+Group policy max bandwidth from seconds: 
+Group policy max bandwidth from seconds: Undefined.
+Group policy max bandwidth served: 
+Group policy max bandwidth served: Undefined.
+Group policy max bandwidth to seconds: 
+Group policy max bandwidth to seconds: Undefined.
+Group policy max download time: 
+Group policy max download time: Undefined.
+Group policy max files per job: 
+Group policy max files per job: Undefined.
+Group policy max jobs per machine: 
+Group policy max jobs per machine: Undefined.
+Group policy max jobs per user: 
+Group policy max jobs per user: Undefined.
+Group policy max ranges per file: 
+Group policy max ranges per file: Undefined.
+Group policy night time limit: 
+Group policy night time limit: Undefined.
+Group policy prevent from acting as server: Disabled.
+Group policy prevent from acting as server: Enabled.
+Group policy prevent from acting as server: Undefined.
+Group policy prevent peer caching client: Disabled.
+Group policy prevent peer caching client: Enabled.
+Group policy prevent peer caching client: Undefined.
+Group policy retrieval of files from peer cache: Disabled.
+Group policy retrieval of files from peer cache: Enabled.
+Group policy retrieval of files from peer cache: Undefined.
+Group policy serving of files as peer cache: Disabled.
+Group policy serving of files as peer cache: Enabled.
+Group policy serving of files as peer cache: Undefined.
+Group policy undefined for peer caching.
+GUID inside braces.  BITSADMIN reports an error if a name is ambiguous.
+GUID: 
+H SVWH
+H!\$89Y
+H!]0H
+H!]8H
+H!}HH
+H!uHH
+H;SXu#3
+H9|$X
+HcU H
+HcUxH
+HeapSetInformation
+helper-token usage flags
+HkD$8DL
+HTTP method set to: 
+HTTP method: 
+HTTP security flags
+ImpersonateLoggedOnUser
+ImpersonateSelf
+InitializeCriticalSection
+InitializeSListHead
+integrity level of 
+Internal error converting guid to string.
+InternalName
+Internet proxy settings for account 
+Internet proxy usage must be one of NO_PROXY, AUTODETECT, MANUAL_PROXY, or AUTOSCRIPT
+Invalid ACL propagation flag.
+Invalid argument.
+Invalid argument: invalid name for system account.
+Invalid argument: the script URL specified for AUTOSCRIPT cannot have an empty value.
+Invalid command
+Invalid connection name value specified with /CONN - 
+invalid file index
+Invalid file index
+Invalid file index: -
+Invalid number of arguments.
+Invalid number.
+Invalid priority.
+Invalid record id
+Is BITS secondary service DLL active: 
+Is BITS's job inactivity timeout policy active? 
+Is BITS's maximum network bandwidth utilization policy active? 
+is not a valid credential scheme.
+IsDebuggerPresent
+IsProcessorFeaturePresent
+It also supports UNC paths and file:// paths as URLS
+It is recognized by the /CREATE and /GET* commands.
+It must be one of the following:
+Job canceled.
+Job completed.
+JOB FILES: 
+Job resumed.
+Job suspended.
+JobInactivityTimeout
+KillTimer
+L$ SUVWH
+l$ VWAVH
+L$@H3
+L$`H3
+L$0H3
+L$8H3
+L$hE3
+L$HH3
+L$pH3
+L$PH3
+L9d$hu
+L9d$ptKH
+L9d$xt0H
+langId
+LAST ACCESS TIME: 
+LeaveCriticalSection
+LegalCopyright
+line 
+Listed 
+LoadLibraryExW
+LocalAlloc
+LocalFree
+localservice
+localsystem
+LogonUserExExW
+LookupAccountSidLocalW
+M H1E
+MANUAL_PROXY
+MANUAL_PROXY 
+MANUAL_PROXY must be followed by a proxy list and a proxy bypass list
+Max cache size: 
+Max content age: 
+Max download time is set to: 
+Max download time set to 
+MaxBandwidthServed
+MaxBandwidthValidFrom
+MaxBandwidthValidFromSeconds
+MaxBandwidthValidTo
+MaxBandwidthValidToSeconds
+MaxDownloadTime
+MaxFilesPerJob
+MaxJobsPerMachine
+MaxJobsPerUser
+MaxRangesPerFile
+MaxTransferRateOffSchedule
+MaxTransferRateOnSchedule
+MEDIUM
+memcpy
+memset
+Microsoft
+Microsoft Corporation
+Microsoft-Windows-Bits-Client/Analytic
+Microsoft-Windows-Bits-Client/Analytic Channel already Disabled
+Microsoft-Windows-Bits-Client/Analytic Channel already Enabled
+Microsoft-Windows-Bits-Client/Analytic Channel Disabled
+Microsoft-Windows-Bits-Client/Analytic Channel Enabled
+Minimum retry delay set to 
+MONITORING BACKGROUND COPY MANAGER(
+MsgWaitForMultipleObjectsEx
+MultiByteToWideChar
+must be TRUE or FALSE.
+negotiate
+networkservice
+No Client Certificate is set on the job
+No file matches the specified prefix.
+no matching credential was found.
+No matching records.
+No progress timeout set to 
+NO_PROXY
+NORMAL
+Not installed
+Note that BITS currently supports HTTP/HTTPS downloads and uploads.
+Note that the /SETIEPROXY and /ENABLEANALYTICCHANNEL commands require
+notification command line set to '
+NOTIFICATION COMMAND LINE: 
+Notification flags set to 
+NOTIFY INTERFACE: 
+ntelD
+o\$PH
+oD$ f
+offset 
+oL$0f
+Only one file is permitted for uploads.
+OP97t
+OpenMutexA
+OpenSCManagerW
+OpenServiceW
+OpenThreadToken
+ORIGIN URL: 
+OriginalFilename
+oT$@f
+out of memory
+Out of memory while allocating 
+OVERRIDE
+OVERRIDE must be followed by a proxy list and a proxy bypass list
+owner elevated ?           
+owner MIC integrity level: 
+PA^_^[]
+pA_A]_^]
+PA_A^A\_^[]
+PA_A^A]A\_^]
+passport
+PeekMessageW
+Peer list management commands:
+Peercaching client is not enabled.
+Peercaching configuration flags:
+Peercaching flags
+Peercaching management commands:
+Peercaching server is not enabled.
+Pending file operations: None
+PendingFileRenameOperations
+PostThreadMessageW
+PRECONFIG
+Priority set to 
+PRIORITY: 
+ProductName
+ProductVersion
+progress: 
+PROTECTED_PROCESS
+proxy
+Proxy auto discovery script set to 
+Proxy bypass list set to 
+Proxy bypass: 
+Proxy list set to 
+Proxy list set to        
+Proxy list:   
+proxy usage must be one of OVERRIDE, NO_PROXY, or PRECONFIG
+Proxy usage set to 
+Proxy usage set to       
+PROXY USAGE: 
+Proxy usage:  
+ProxySettingsPerUser
+QueryPerformanceCounter
+QueryServiceStatusEx
+QUEUED
+QueueUserAPC
+Ranges:
+RANGES: 
+ReadConsoleInputW
+Record 
+Records were deleted successfully.
+Redirects will be automatically allowed.
+Redirects will update the remote name in the IBackgroundCopyFile interface.
+RegCloseKey
+RegCreateKeyExA
+RegCreateKeyExW
+RegEnumValueA
+REGISTERED
+RegOpenKeyExA
+RegOpenKeyExW
+RegQueryInfoKeyW
+RegQueryValueExA
+RegQueryValueExW
+RegSetValueExA
+ReleaseMutex
+remote name: 
+Removed the Client Certificate from the job
+reply file name set to 
+REPLY FILE: 
+ResolveDelayLoadedAPI
+RETRY DELAY: 
+RevertToSelf
+Rich;
+RtlCaptureContext
+RtlLookupFunctionEntry
+RtlVirtualUnwind
+SavedLegacySettings
+server
+ServiceDLL
+ServicesActive
+SetConsoleCtrlHandler
+SetConsoleCursorPosition
+SetConsoleMode
+SetConsoleTextAttribute
+SetLastError
+SetThreadUILanguage
+SetTimer
+SetUnhandledExceptionFilter
+s-fD9q
+SHGetFolderPathW
+Sleep
+SleepEx
+SOFTWARE\Microsoft\Windows\CurrentVersion\BITS
+Software\Microsoft\windows\CurrentVersion\Internet Settings\Connections
+Software\Policies\Microsoft\Windows\BITS
+SOFTWARE\Policies\Microsoft\Windows\BITS
+SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\Internet Settings
+SspiCli.dll
+StringFileInfo
+StringFromGUID2
+SUCCESS - IBackgroundCopyJob is correctly registered.
+SUCCESS - IBackgroundCopyJob2 is correctly registered.
+SUCCESS - IBackgroundCopyJob3 is correctly registered.
+SUCCESS - IBackgroundCopyJob4 is correctly registered.
+SUCCESS - IBackgroundCopyJobHttpOptions is correctly registered.
+SUCCESS - IBackgroundCopyManager is correctly registered and can be instantiated.
+SUCCESS - no BITS configuration errors were found!!
+Success.
+SUSPENDED
+SVWATAUAVAWH
+SYSTEM
+System\CurrentControlSet\Control\Session Manager
+t$ E3
+t$ WAVAWH
+t$ WH
+t$(E3
+T$@D+I
+t$HHc
+taL9e`t[I
+TerminateProcess
+The /RAWRETURN option strips new line characters and formatting.
+The BITS service will be started if not already running.
+The current user currently has the following network connection names registered (other than the default connection): 
+The following commands are available:
+The following options are valid for UPLOAD-REPLY jobs only:
+The following options can be placed before the command:
+The following options control peercaching of a particular job:
+The following UTIL commands are available:
+The job has no files.
+The job has only 
+The job specified is a download.
+The local cache was purged.
+the notification command line is '
+The reply filename was not found.
+The temporary filename is '
+The update was successful, but one or more flags are overridden by Group Policy.
+there is no helper token now.
+There's a policy in effect that disables the storage of proxy settings per user.
+This command is no longer applicable on any supported version of the operating system.
+This command only works on upload jobs. 
+This job is read-only to the current CMD window because the job's mandatory 
+Time is expressed in the system's local time zone.
+TIME REMAINING: 
+to eof
+token set to 
+token set to the current user
+Took ownership of 
+Transfer canceled.
+Transfer complete.
+TRANSFER RATE: 
+TRANSFERRED
+TRANSFERRING
+TRANSIENT_ERROR
+TranslateMessage
+Translation
+TYPE: 
+u*f9W
+u0HcH<H
+UATAUAVAWH
+UATAWH
+UAVAWH
+Unable get setup console information
+Unable set console mode
+Unable to add credentials
+Unable to add file
+Unable to add file to job
+Unable to add files to job
+Unable to add files to job.
+Unable to cancel 
+Unable to cancel job
+unable to check security of the current thread
+Unable to clear
+Unable to complete job
+Unable to complete transfer.
+Unable to connect to BITS
+Unable to create group
+Unable to create job
+unable to create user token, error 
+Unable to delete record
+Unable to delete record.
+Unable to delete records
+Unable to discover
+Unable to enable dynamic-content downloading
+Unable to enum files in job
+Unable to enum jobs
+Unable to enum records
+unable to enumerate the job's files
+Unable to find job named "
+Unable to get access time
+Unable to get bytes transferred in job
+Unable to get cache
+Unable to get cache size
+Unable to get callback command line
+Unable to get Client Certificate information from the job
+Unable to get console handle
+Unable to get console input mode
+Unable to get current flags.
+Unable to get current row number
+Unable to get Custom HTTP Request Headers
+Unable to get display name
+Unable to get error
+Unable to get error code
+Unable to get error file
+Unable to get error file name
+Unable to get error URL
+Unable to get file modification time
+Unable to get file progress
+Unable to get file ranges
+unable to get file ranges
+Unable to get file size
+Unable to get file URL
+Unable to get guid to job
+unable to get IClientSecurity interface
+Unable to get Internet proxy settings
+Unable to get job completion time
+Unable to get job creation time
+Unable to get job displayname
+Unable to get job error
+Unable to get job modification time
+Unable to get job owner
+Unable to get job priority
+Unable to get job progress
+Unable to get job state
+Unable to get job type
+Unable to get local file name
+Unable to get max download time
+Unable to get Maximum Content Age
+Unable to get Microsoft-Windows-Bits-Client/Analytic channel config property
+Unable to get minimum retry delay
+Unable to get no progress timeout
+Unable to get notify flags
+Unable to get notify interface
+Unable to get number of files in job
+Unable to get numeber of transferred files in job
+Unable to get peer-cache record
+Unable to get proxy bypass list
+Unable to get proxy list
+Unable to get proxy usage
+Unable to get record ID
+Unable to get record remote Name
+Unable to get record remote name
+Unable to get reply data
+Unable to get reply file name
+Unable to get reply progress
+Unable to get setting
+Unable to get stats
+unable to get the file count
+Unable to get the file's temporary filename
+Unable to get the file's validation state
+Unable to get the HTTP Method that was set.
+Unable to get the HTTP security flags
+Unable to get the IBackgroundCopyFile3 interface.  BITS version 3.0 is required.
+Unable to get the IBackgroundCopyFile4 interface.  BITS version 3.5 is required.
+Unable to get the IBackgroundCopyJob2 interface. Version 1.5 is required
+Unable to get the IBackgroundCopyJob3 interface. Version 2.0 is required
+Unable to get the IBackgroundCopyJob4 interface. Version 3.0 is required
+Unable to get the IBackgroundCopyJob5 interface. Version 5.0 is required
+Unable to get the IBackgroundCopyJobHttpOptions interface. Version 2.5 is required
+Unable to get the IBackgroundCopyJobHttpOptions2 interface.
+Unable to get the IBitsTokenOptions interface. Version 4 is required
+Unable to get the SID
+Unable to get the token usage flags
+unable to get thread token
+unable to get token information
+Unable to get total bytes in job
+unable to impersonate user token, error 
+Unable to initialize COM
+Unable to load wevtapi.dll
+unable to locate the file in the job
+unable to locate the file in the job.
+Unable to lookup job
+Unable to move to line
+Unable to open interface
+Unable to open peer list
+Unable to purge cache
+Unable to read console input
+Unable to read job state
+unable to read the range list.  Use BITSADMIN /? for help with the format.
+Unable to remove credentials
+Unable to remove the Client Certificate from the job
+Unable to replace the files.
+Unable to resume job
+Unable to retrieve ACL flags
+Unable to retrieve information
+Unable to set
+Unable to set ACL flags
+Unable to set cache expiration time
+Unable to set cache limit
+Unable to set Client Certificate by ID
+Unable to set Client Certificate by Name
+Unable to set console input mode
+Unable to set Custom HTTP Request Headers
+Unable to set description
+Unable to set display name
+Unable to set flags
+unable to set impersonation level
+Unable to set Internet proxy settings
+Unable to set job priority
+Unable to set new max download time
+Unable to set new minimum retry delay
+Unable to set new no progress timeout
+Unable to set notification flags
+Unable to set notification interface
+Unable to set proxy settings
+Unable to set reply file name
+Unable to set the file's validation state
+Unable to set the helper token
+Unable to set the HTTP Method
+Unable to set the HTTP security flags
+Unable to set the notification command line
+Unable to set the token usage flags
+Unable to suspend job
+Unable to take ownership
+Unable to write to the output file
+UNAVAILABLE
+UnhandledExceptionFilter
+UNKNOWN
+Unknown
+unknown
+Unknown Certificate Store Location
+Unknown option '
+UNREGISTERED
+UNTRUSTED
+UPLOAD
+UPLOAD-REPLY
+USAGE: BITSADMIN [/RAWRETURN] [/WRAP | /NOWRAP] command
+usage: sethelpertoken <jobid> or sethelpertoken <jobid> <username@domain> <password>
+Use the job identifier instead of the job name.
+UseSystemMaximum
+USVWATAUAVAWH
+USVWAVH
+USWAUAVH
+UVWATAUAVAWH
+UVWAUAWH
+UVWAVAWH
+UWATAUAVH
+UWATAVAWH
+UWAVH
+UWAWH
+VALIDATED: 
+VarFileInfo
+VerQueryValueW
+version
+Version of BITS installed on the system:  
+VS_VERSION_INFO
+VWATAVAWH
+VWAVH
+WaitForSingleObject
+warning: quoted string in line 
+WATAUAVAWH
+WATAVH
+WAVAWH
+wcschr
+wcsstr
+weH+W@
+wevtapi.dll
+WideCharToMultiByte
+WininetProxyRegistryMutex
+WORKING
+WriteConsoleW
+WriteFile
+x ATAVAWH
+x AVH
+x AWH
+x UAVAWH
+x<fA;
+XA_A^A]A\_^[]
+YES. Timeout value is 
+yRD8y`

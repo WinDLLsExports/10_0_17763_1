@@ -1,0 +1,3978 @@
+        
+                    <atom:email><xsl:value-of select="$_AfterCloseParen" /></atom:email>
+                    <atom:email><xsl:value-of select="$_BeforeOpenParen" /></atom:email>
+                  <!-- Email after parens -->
+                  <!-- Email before parens -->
+                  </xsl:otherwise>
+                  </xsl:when>
+                  <xsl:otherwise>
+                  <xsl:when test="contains($_BeforeOpenParen, '@')">
+                  <xsl:with-param name="value" select="*|text()" />
+                </xsl:call-template>
+                </xsl:choose>
+                <atom:email><xsl:value-of select="$_WithinParens" /></atom:email>
+                <atom:name><xsl:value-of select="$_WithinParens" /></atom:name>
+                <atom:name><xsl:value-of select="$value" /></atom:name>
+                <atom:name><xsl:value-of select="concat($_BeforeOpenParen, $_AfterCloseParen)" /></atom:name>
+                <xsl:call-template name="_NormalizeXhtmlNamespacePrefix">
+                <xsl:choose>
+                <xsl:for-each select="@*"><xsl:copy /></xsl:for-each>
+                <xsl:with-param name="baseUrl" select="$baseContentUrl" />
+                <xsl:with-param name="baseUrl" select="$baseItemUrl" />
+                <xsl:with-param name="baseUrl" select="$downloadUrl" />
+                <xsl:with-param name="relUrl" select="@href" />
+                <xsl:with-param name="relUrl" select="@xml:base" />
+                <xsl:with-param name="type" select="@type" />
+                <xsl:with-param name="Url" select="." />
+                <xsl:with-param name="value" select="." />
+                <xsl:with-param name="xmlBase" select="@xml:base" />
+              <!-- Email within parens -->
+              <!-- Map to Atom 1.0 -->
+              <!-- Name within parens -->
+              <!-- Simple check for some possible weird cases -->
+              </xsl:call-template>
+              </xsl:element>
+              </xsl:otherwise>
+              </xsl:when>
+              <xsl:attribute name="element"><xsl:value-of select="$_ValidatedGroupElem"/></xsl:attribute>
+              <xsl:attribute name="element"><xsl:value-of select="$_ValidatedSortElem"/></xsl:attribute>
+              <xsl:attribute name="label"><xsl:value-of select="$_ValidatedGroupLabel"/></xsl:attribute>
+              <xsl:attribute name="label"><xsl:value-of select="$_ValidatedSortLabel"/></xsl:attribute>
+              <xsl:call-template name="_CombineUrls">
+              <xsl:call-template name="_CompleteUrl">
+              <xsl:call-template name="_OutputAtomSummary">
+              <xsl:call-template name="_OutputAtomUpdated"><xsl:with-param name="value" select="." /></xsl:call-template>
+              <xsl:call-template name="_OutputDescription">
+              <xsl:call-template name="_OutputLink"><xsl:with-param name="value" select="$linkUrl" /></xsl:call-template>
+              <xsl:element name="{concat('x:', local-name(.))}" namespace="{namespace-uri(.)}">
+              <xsl:element name="{local-name(.)}" namespace="{$_NSxhtml}">
+              <xsl:otherwise>
+              <xsl:value-of select="@href" />
+              <xsl:when test="contains($_BeforeOpenParen, ')') or contains($_AfterCloseParen, '(') or contains($_WithinParens, '(')">
+              <xsl:when test="contains($_WithinParens, '@')">
+              <xsl:with-param name="baseUrl" select="$baseContentUrl" />
+              <xsl:with-param name="baseUrl" select="$baseItemUrl" />
+              <xsl:with-param name="baseUrl" select="$downloadUrl" />
+              <xsl:with-param name="baseUrl1" select="$baseChannelUrl" />
+              <xsl:with-param name="baseUrl1" select="$baseItemUrl" />
+              <xsl:with-param name="baseUrl2" select="$mainLink/@xml:base" />
+              <xsl:with-param name="baseUrl2" select="@xml:base" />
+              <xsl:with-param name="baseUrl2" select="atom:logo/@xml:base" />
+              <xsl:with-param name="default" select="'html'" />
+              <xsl:with-param name="email" select="atom:email" />
+              <xsl:with-param name="email" select="atom03:email" />
+              <xsl:with-param name="isPermaLink" select="@isPermaLink" />
+              <xsl:with-param name="name" select="atom:name" />
+              <xsl:with-param name="name" select="atom03:name" />
+              <xsl:with-param name="relUrl" select="../description/@xml:base" />
+              <xsl:with-param name="relUrl" select="@xml:base" />
+              <xsl:with-param name="tagName" select="'data-type'" />
+              <xsl:with-param name="tagName" select="'default'" />
+              <xsl:with-param name="tagName" select="'isPermaLink'" />
+              <xsl:with-param name="tagName" select="'ns'" />
+              <xsl:with-param name="type" select="../description/@cf:type" />
+              <xsl:with-param name="type" select="@cf:type" />
+              <xsl:with-param name="type" select="@type" />
+              <xsl:with-param name="Url" select="$mainLink/@href" />
+              <xsl:with-param name="Url" select="." />
+              <xsl:with-param name="Url" select="atom:logo" />
+              <xsl:with-param name="value" select="$isPermaLink" />
+              <xsl:with-param name="value" select="$linkUrl" />
+              <xsl:with-param name="value" select="*|text()" />
+              <xsl:with-param name="value" select="." />
+              <xsl:with-param name="value" select="@data-type" />
+              <xsl:with-param name="value" select="@default" />
+              <xsl:with-param name="value" select="@ns" />
+            <!-- If there is no link we'll use permalink guid instead -->
+            <!-- non-xhtml element in default namespace: fix namespace and process children -->
+            <!-- NOTE: We don't understand content so we just won't touch it -->
+            <!-- xhtml element in non-default namespace: fix namespace and process children -->
+            </xsl:call-template>
+            </xsl:choose>
+            </xsl:if>
+            </xsl:otherwise>
+            </xsl:variable>
+            </xsl:when>
+            <atom:email><xsl:value-of select="$value" /></atom:email>
+            <atom:name><xsl:value-of select="$value" /></atom:name>
+            <day><xsl:value-of select="$_stringDay" /></day>
+            <hour><xsl:value-of select="$_numberHour" /></hour>
+            <xsl:call-template name="_CombineUrls">
+            <xsl:call-template name="_CompleteUrl">
+            <xsl:call-template name="_CompleteUrlTwoBase">
+            <xsl:call-template name="_ConvertAtomAuthorToAuthor">
+            <xsl:call-template name="_GetRSS2TypeValue">
+            <xsl:call-template name="_NormalizeXhtmlNamespacePrefix">
+            <xsl:call-template name="_OutputAtomPublished"><xsl:with-param name="value" select="." /></xsl:call-template>
+            <xsl:call-template name="_OutputAtomUpdated"><xsl:with-param name="value" select="." /></xsl:call-template>
+            <xsl:call-template name="_OutputBoolAttribute">
+            <xsl:call-template name="_OutputDescription">
+            <xsl:call-template name="_OutputExtension">
+            <xsl:call-template name="_OutputGuid">
+            <xsl:call-template name="_OutputLastBuildDate"><xsl:with-param name="value" select="." /></xsl:call-template>
+            <xsl:call-template name="_OutputPubDate"><xsl:with-param name="value" select="." /></xsl:call-template>
+            <xsl:call-template name="_OutputTextAttribute">
+            <xsl:choose>
+            <xsl:copy-of select="." />
+            <xsl:for-each select="@*"><xsl:copy /></xsl:for-each>
+            <xsl:if test="not(../atom:updated)">
+            <xsl:if test="not(../link)">
+            <xsl:if test="string($_ValidatedGroupElem)">
+            <xsl:if test="string($_ValidatedGroupLabel)">
+            <xsl:if test="string($_ValidatedSortElem)">
+            <xsl:if test="string($_ValidatedSortLabel)">
+            <xsl:otherwise>
+            <xsl:otherwise>false</xsl:otherwise>
+            <xsl:otherwise>true</xsl:otherwise>
+            <xsl:value-of select="$_validatedValue" />
+            <xsl:value-of select="$value" />
+            <xsl:value-of select="msfeednorm:CleanHtmlToPlainText(string($value))" />
+            <xsl:value-of select="msfeednorm:CleanHtmlToSafeHtml(string($baseUrl), string($value))" />
+            <xsl:value-of select="msfeednorm:CleanXhtmlToPlainText($normXhtml)" />
+            <xsl:value-of select="msfeednorm:CleanXhtmlToSafeXhtml(string($baseUrl), $normXhtml)" />
+            <xsl:value-of select="msfeednorm:HtmlEscape(string($value))" />
+            <xsl:variable name="_AfterCloseParen" select="substring-after($value, ')')" />
+            <xsl:variable name="_BeforeOpenParen" select="substring-before($value, '(')" />
+            <xsl:variable name="_WithinParens" select="substring-after(substring-before($value, ')'), '(')" />
+            <xsl:variable name="baseContentUrl">
+            <xsl:variable name="linkUrl">
+            <xsl:when test="../atom:author">false</xsl:when>
+            <xsl:when test="../atom:updated">true</xsl:when>
+            <xsl:when test="@rel = 'entry-content'">
+            <xsl:when test="namespace-uri(.) = $_NSxhtml">
+            <xsl:when test="not(../atom:content[(@src = '' or not(@src)) and (@type = '' or not(@type) or @type = 'text' or @type = 'html' or @type = 'xhtml')])">
+            <xsl:when test="not(../atom03:content[@type = '' or not(@type) or @type = 'text/plain' or @type = 'text/html' or @type = 'application/xhtml+xml'])">
+            <xsl:with-param name="baseUrl" select="$baseChannelUrl" />
+            <xsl:with-param name="baseUrl" select="$baseDescUrl" />
+            <xsl:with-param name="baseUrl" select="$baseItemUrl" />
+            <xsl:with-param name="baseUrl" select="$baseSummUrl" />
+            <xsl:with-param name="baseUrl" select="$downloadUrl" />
+            <xsl:with-param name="baseUrl1" select="$baseChannelItemUrl" />
+            <xsl:with-param name="baseUrl1" select="$baseChannelUrl" />
+            <xsl:with-param name="baseUrl1" select="$baseItemUrl" />
+            <xsl:with-param name="baseUrl2" select="$mainLink/@xml:base" />
+            <xsl:with-param name="baseUrl2" select="@xml:base" />
+            <xsl:with-param name="convertToAtom" select="'true'" />
+            <xsl:with-param name="default" select="'text'" />
+            <xsl:with-param name="description" select="." />
+            <xsl:with-param name="descriptionBaseUrl" select="$baseDescUrl" />
+            <xsl:with-param name="descriptionBaseUrl" select="$downloadUrl" />
+            <xsl:with-param name="descriptionType" select="'html'" />
+            <xsl:with-param name="downloadUrl" select="$downloadUrl" />
+            <xsl:with-param name="email" select="atom:email" />
+            <xsl:with-param name="email" select="atom03:email" />
+            <xsl:with-param name="link" select="$channelLinkUrl" />
+            <xsl:with-param name="name" select="atom:name" />
+            <xsl:with-param name="name" select="atom03:name" />
+            <xsl:with-param name="nameSpace" select="namespace-uri($value)" />
+            <xsl:with-param name="rootNode" select="." />
+            <xsl:with-param name="summary" select="../description" />
+            <xsl:with-param name="summary" select="../rss:description" />
+            <xsl:with-param name="summaryBaseUrl" select="$baseSummUrl" />
+            <xsl:with-param name="summaryBaseUrl" select="$downloadUrl" />
+            <xsl:with-param name="summaryType" select="$summType" />
+            <xsl:with-param name="summaryType" select="'html'" />
+            <xsl:with-param name="summaryXmlBase" select="../description/@xml:base" />
+            <xsl:with-param name="tagName" select="name($value)" />
+            <xsl:with-param name="title" select="atom:title" />
+            <xsl:with-param name="titleType" select="atom:title/@type" />
+            <xsl:with-param name="type" select="$type" />
+            <xsl:with-param name="type" select="@cf:type" />
+            <xsl:with-param name="type" select="@type" />
+            <xsl:with-param name="type" select="'html'" />
+            <xsl:with-param name="updateFrequency" select="string(../sy:updateFrequency)" />
+            <xsl:with-param name="updatePeriod" select="string(.)" />
+            <xsl:with-param name="uri" select="atom:uri" />
+            <xsl:with-param name="url" select="$logoImageUrl" />
+            <xsl:with-param name="Url" select="$mainLink/@href" />
+            <xsl:with-param name="Url" select="." />
+            <xsl:with-param name="Url" select="@href" />
+            <xsl:with-param name="Url" select="@url" />
+            <xsl:with-param name="Url" select="link" />
+            <xsl:with-param name="Url" select="url" />
+            <xsl:with-param name="value" select="$value" />
+            <xsl:with-param name="value" select="$value/*" />
+            <xsl:with-param name="value" select="." />
+            <xsl:with-param name="xmlBase" select="@xml:base" />
+          <!-- Combine base URL with the main link -->
+          <!-- html->html: drop unsafe html -->
+          <!-- html->text: drop all html and unescape -->
+          <!-- Name and email -->
+          <!-- No email -->
+          <!-- Only email -->
+          <!-- text->html: escape -->
+          <!-- text->text: just copy -->
+          <!-- xhtml->html: drop unsafe html -->
+          <!-- xhtml->text: drop all html and unescape -->
+          </cf:group>
+          </cf:sort>
+          </xsl:call-template>
+          </xsl:choose>
+          </xsl:copy>
+          </xsl:element>
+          </xsl:for-each>
+          </xsl:if>
+          </xsl:if> 
+          </xsl:otherwise>
+          </xsl:variable>
+          </xsl:when>
+          <atom:email><xsl:value-of select="$_validatedEmail" /></atom:email>
+          <atom:name><xsl:value-of select="$_validatedName" /></atom:name>
+          <atom:uri><xsl:value-of select="$_validatedUri" /></atom:uri>
+          <cf:group>
+          <cf:sort>
+          <xsl:attribute name="cf:type" namespace="{$_NScf}">text</xsl:attribute>
+          <xsl:call-template name="_BuildCfReferenceList"><xsl:with-param name="value" select="." /></xsl:call-template>
+          <xsl:call-template name="_BuildCfReferenceList"><xsl:with-param name="value" select="rss:channel" /></xsl:call-template>
+          <xsl:call-template name="_CompleteUrl">
+          <xsl:call-template name="_CompleteUrlTwoBase">
+          <xsl:call-template name="_ConvertAtomAuthorToAuthor">
+          <xsl:call-template name="_ConvertUpdatesToTtl">
+          <xsl:call-template name="_GetFeedBaseUrl">
+          <xsl:call-template name="_GetRSS2TypeValue">
+          <xsl:call-template name="_NormalizeXhtmlNamespacePrefix">
+          <xsl:call-template name="_OutputAtomAuthor">
+          <xsl:call-template name="_OutputAtomContributor">
+          <xsl:call-template name="_OutputAtomPublished"><xsl:with-param name="value" select="." /></xsl:call-template>
+          <xsl:call-template name="_OutputAtomSummary">
+          <xsl:call-template name="_OutputAtomUpdated"><xsl:with-param name="value" select="." /></xsl:call-template>
+          <xsl:call-template name="_OutputAtomUpdated"><xsl:with-param name="value" select="." /><xsl:with-param name="type" select="@type" /></xsl:call-template>
+          <xsl:call-template name="_OutputAuthor">
+          <xsl:call-template name="_OutputCfListinfo"><xsl:with-param name="value" select="." /></xsl:call-template>
+          <xsl:call-template name="_OutputCfTreatAs"><xsl:with-param name="value" select="." /></xsl:call-template>
+          <xsl:call-template name="_OutputCopyright"><xsl:with-param name="value" select="." /></xsl:call-template>
+          <xsl:call-template name="_OutputDescription">
+          <xsl:call-template name="_OutputDescriptionAndSummary">
+          <xsl:call-template name="_OutputExtension"><xsl:with-param name="value" select="." /></xsl:call-template>
+          <xsl:call-template name="_OutputImage">
+          <xsl:call-template name="_OutputLanguage"><xsl:with-param name="value" select="." /></xsl:call-template>
+          <xsl:call-template name="_OutputLastBuildDate"><xsl:with-param name="value" select="." /></xsl:call-template>
+          <xsl:call-template name="_OutputLastBuildDate"><xsl:with-param name="value" select="." /><xsl:with-param name="type" select="@type" /></xsl:call-template>
+          <xsl:call-template name="_OutputLink"><xsl:with-param name="value" select="$channelLinkUrl" /></xsl:call-template>
+          <xsl:call-template name="_OutputManagingEditor">
+          <xsl:call-template name="_OutputManagingEditor"><xsl:with-param name="value" select="$manEditor" /></xsl:call-template>
+          <xsl:call-template name="_OutputMonExpiration"><xsl:with-param name="value" select="." /><xsl:with-param name="type" select="@type" /></xsl:call-template>
+          <xsl:call-template name="_OutputPubDate"><xsl:with-param name="value" select="." /></xsl:call-template>
+          <xsl:call-template name="_OutputPubDate"><xsl:with-param name="value" select="." /></xsl:call-template>    
+          <xsl:call-template name="_OutputSlashComments"><xsl:with-param name="value" select="." /></xsl:call-template>
+          <xsl:call-template name="_OutputTextElement">
+          <xsl:call-template name="_OutputWebMaster"><xsl:with-param name="value" select="." /></xsl:call-template>
+          <xsl:call-template name="_OutputWfwCommentRSS"><xsl:with-param name="value" select="$commentRssUrl" /></xsl:call-template>
+          <xsl:choose>
+          <xsl:copy />
+          <xsl:copy>
+          <xsl:copy-of select="$value" />
+          <xsl:element name="cf:guid" namespace="{$_NScf}">
+          <xsl:element name="guid">
+          <xsl:for-each select="$subnodesToCopy">
+          <xsl:if test="$_numberHour >= 0 and $_numberHour &lt;= 23">
+          <xsl:if test="$_stringDay = 'Monday' or $_stringDay = 'Tuesday' or $_stringDay = 'Wednesday' or $_stringDay = 'Thursday' or $_stringDay = 'Friday' or $_stringDay = 'Saturday' or $_stringDay = 'Sunday'">
+          <xsl:if test="@type = '' or not(@type) or @type = 'text/plain' or @type = 'text/html' or @type = 'application/xhtml+xml'">
+          <xsl:if test="not(../atom:published)">
+          <xsl:if test="not(../atom:updated) and not(../dcterms:modified)">
+          <xsl:if test="not(../atom:updated)">
+          <xsl:if test="not(../atom03:issued)">
+          <xsl:if test="not(../atom03:modified)">
+          <xsl:if test="not(../dc:date) and not(../dcterms:available) and not(../dcterms:modified) and not(../dcterms:issued)">
+          <xsl:if test="not(../dc:date)">
+          <xsl:if test="not(../dcterms:modified)">
+          <xsl:if test="not(../pubDate) and not(../lastBuildDate)">
+          <xsl:if test="not(../pubDate)">
+          <xsl:otherwise>
+          <xsl:value-of select="msfeednorm:NormalizeDateToInetDate(normalize-space($value))"/>
+          <xsl:value-of select="msfeednorm:NormalizeDateToIso8601(normalize-space($value))"/>
+          <xsl:value-of select="msfeednorm:ValidateUrl(normalize-space($value))" />
+          <xsl:value-of select="string($value)" />
+          <xsl:variable name="_numberHour" select="number(.)" />
+          <xsl:variable name="_stringDay" select="string(.)" />
+          <xsl:variable name="baseContentUrl">
+          <xsl:variable name="baseDescUrl">
+          <xsl:variable name="baseSummUrl">
+          <xsl:variable name="channelLinkUrl">
+          <xsl:variable name="commentRssUrl">
+          <xsl:variable name="logoImageUrl">
+          <xsl:variable name="manEditor">
+          <xsl:variable name="summType">
+          <xsl:variable name="type">
+          <xsl:when test="$toTypeN = 'html' or $toTypeN = 'text/html'">
+          <xsl:when test="(@src = '' or not(@src)) and (@type = '' or not(@type) or @type = 'text' or @type = 'html' or @type = 'xhtml')">
+          <xsl:when test="contains($value, '(') and contains($value, ')')">
+          <xsl:when test="contains($value, '@') = false">
+          <xsl:when test="normalize-space(@isPermaLink) = 'true' or not(string(@isPermaLink))">
+          <xsl:when test="not(string($toTypeN)) or $toTypeN = 'text' or $toTypeN = 'text/plain'">
+          <xsl:with-param name="baseChannelUrl" select="$baseChannelUrl" />
+          <xsl:with-param name="baseUrl" select="$baseChannelUrl" />
+          <xsl:with-param name="baseUrl" select="$downloadUrl" />
+          <xsl:with-param name="channelGuid" select="'true'" />
+          <xsl:with-param name="convertToAtom" select="$convertToAtom" />
+          <xsl:with-param name="description" select="description" />
+          <xsl:with-param name="domain" select="@domain" />
+          <xsl:with-param name="domain" select="@scheme" />
+          <xsl:with-param name="email" select="atom:email" />
+          <xsl:with-param name="email" select="atom03:email" />
+          <xsl:with-param name="height" select="height" />
+          <xsl:with-param name="href" select="$atomLinkUrl" />
+          <xsl:with-param name="href" select="@href" />
+          <xsl:with-param name="hreflang" select="@hreflang" />
+          <xsl:with-param name="isPermaLink" select="'false'" />
+          <xsl:with-param name="length" select="@length" />
+          <xsl:with-param name="link" select="$imageLink" />
+          <xsl:with-param name="link" select="link" />
+          <xsl:with-param name="name" select="atom:name" />
+          <xsl:with-param name="name" select="atom03:name" />
+          <xsl:with-param name="name" select="name" />
+          <xsl:with-param name="nameSpace" select="$_NScf" />
+          <xsl:with-param name="references" select="$cfReferences" />
+          <xsl:with-param name="references" select="$references" />
+          <xsl:with-param name="rel" select="@rel" />
+          <xsl:with-param name="relUrl" select="$rootNode/@xml:base" />
+          <xsl:with-param name="relUrl" select="@xml:base" />
+          <xsl:with-param name="tagName" select="'cf:uri'" />
+          <xsl:with-param name="tagName" select="'cf:version'" />
+          <xsl:with-param name="tagName" select="'description'" />
+          <xsl:with-param name="tagName" select="'domain'" />
+          <xsl:with-param name="tagName" select="'height'" />
+          <xsl:with-param name="tagName" select="'hreflang'" />
+          <xsl:with-param name="tagName" select="'length'" />
+          <xsl:with-param name="tagName" select="'link'" />
+          <xsl:with-param name="tagName" select="'rel'" />
+          <xsl:with-param name="tagName" select="'title'" />
+          <xsl:with-param name="tagName" select="'type'" />
+          <xsl:with-param name="tagName" select="'url'" />
+          <xsl:with-param name="tagName" select="'width'" />
+          <xsl:with-param name="title" select="@title" />
+          <xsl:with-param name="title" select="title" />
+          <xsl:with-param name="type" select="$titleType" />
+          <xsl:with-param name="type" select="$type" />
+          <xsl:with-param name="type" select="@type" />
+          <xsl:with-param name="uri" select="@cf:uri" />
+          <xsl:with-param name="uri" select="@uri" />
+          <xsl:with-param name="uri" select="@url" />
+          <xsl:with-param name="uri" select="atom:uri" />
+          <xsl:with-param name="uri" select="atom03:url" />
+          <xsl:with-param name="url" select="$enclosureUrl" />
+          <xsl:with-param name="url" select="$imageUrl" />
+          <xsl:with-param name="url" select="$srcUrl" />
+          <xsl:with-param name="Url" select="rss:link" />
+          <xsl:with-param name="Url" select="rss:url" />
+          <xsl:with-param name="value" select="$description" />
+          <xsl:with-param name="value" select="$domain" />
+          <xsl:with-param name="value" select="$height" />
+          <xsl:with-param name="value" select="$hreflang" />
+          <xsl:with-param name="value" select="$length" />
+          <xsl:with-param name="value" select="$link" />
+          <xsl:with-param name="value" select="$rel" />
+          <xsl:with-param name="value" select="$title" />
+          <xsl:with-param name="value" select="$type" />
+          <xsl:with-param name="value" select="$uri" />
+          <xsl:with-param name="value" select="$url" />
+          <xsl:with-param name="value" select="$version" />
+          <xsl:with-param name="value" select="$width" />
+          <xsl:with-param name="value" select="$xmlBase" />
+          <xsl:with-param name="value" select="." />
+          <xsl:with-param name="value" select="@term" />
+          <xsl:with-param name="version" select="@cf:version" />
+          <xsl:with-param name="version" select="@version" />
+          <xsl:with-param name="width" select="width" />
+          <xsl:with-param name="xmlBase" select="@xml:base" />
+        <!-- Build a list of referenced nodes from cf:sort and cf:group -->
+        <!-- Combine base URL with the main link -->
+        <!-- Do nothing here for items -->
+        <!-- Figure out the base URL value; xml:base overrides the download URL -->
+        <!-- First one gets converted to managing Editor -->
+        <!-- Map to Atom 1.0 -->
+        <!-- Output link -->
+        <!-- Process channel elements -->
+        <!-- Process feed elements -->
+        <!-- Process items -->
+        <!-- Special handling for item level atom:link with rel=entry-content: complete relative URL -->
+        <!-- Try to find the main link - one that has an href pointing to html and with type alternate -->
+        <!-- We also make a full copy of every atom:author -->
+        <!-- We also make a full copy of the atom:author -->
+        <!-- We also make a full copy of the atom:link -->
+        <!-- xhtml is default namespace: just copy and process children -->
+        </xsl:apply-templates>
+        </xsl:call-template>
+        </xsl:choose>
+        </xsl:for-each>
+        </xsl:if>
+        </xsl:if>  
+        </xsl:otherwise>
+        </xsl:variable>
+        </xsl:when>
+        <link><xsl:value-of select="$_validatedLink" /></link>
+        <name><xsl:value-of select="$_validatedName" /></name>
+        <url><xsl:value-of select="$_validatedUrl" /></url>
+        <xsl:apply-templates select="*" mode="channel">
+        <xsl:apply-templates select="atom:entry">
+        <xsl:apply-templates select="atom03:entry">
+        <xsl:apply-templates select="channel" />
+        <xsl:apply-templates select="rss:channel" />
+        <xsl:apply-templates select="rss:image" />
+        <xsl:apply-templates select="rss:item">
+        <xsl:apply-templates select="rss:textinput" />
+        <xsl:attribute name="{name(.)}"><xsl:value-of select="normalize-space(.)"/></xsl:attribute>
+        <xsl:attribute name="href"><xsl:value-of select="$_validatedHref" /></xsl:attribute>
+        <xsl:attribute name="url"><xsl:value-of select="$_validatedUrl"/></xsl:attribute>
+        <xsl:call-template name="_CombineUrls">
+        <xsl:call-template name="_CompleteUrl">
+        <xsl:call-template name="_ConvertAuthorToAtomAuthor"><xsl:with-param name="value" select="$_validatedValue" /></xsl:call-template>
+        <xsl:call-template name="_OutputAtomAuthor">
+        <xsl:call-template name="_OutputAtomContributor">
+        <xsl:call-template name="_OutputAtomLink">
+        <xsl:call-template name="_OutputAtomPublished"><xsl:with-param name="value" select="." /></xsl:call-template>
+        <xsl:call-template name="_OutputAtomUpdated"><xsl:with-param name="value" select="." /></xsl:call-template>
+        <xsl:call-template name="_OutputAuthor">
+        <xsl:call-template name="_OutputAuthor"><xsl:with-param name="value" select="$author" /></xsl:call-template>
+        <xsl:call-template name="_OutputCategory">
+        <xsl:call-template name="_OutputCategory"><xsl:with-param name="value" select="." /></xsl:call-template>
+        <xsl:call-template name="_OutputCloud"><xsl:with-param name="value" select="." /></xsl:call-template>
+        <xsl:call-template name="_OutputComments"><xsl:with-param name="value" select="$commentUrl" /></xsl:call-template>
+        <xsl:call-template name="_OutputCopyright">
+        <xsl:call-template name="_OutputDocs"><xsl:with-param name="value" select="." /></xsl:call-template>
+        <xsl:call-template name="_OutputEnclosure">
+        <xsl:call-template name="_OutputExtension">
+        <xsl:call-template name="_OutputExtension"><xsl:with-param name="value" select="." /></xsl:call-template>
+        <xsl:call-template name="_OutputGenerator">
+        <xsl:call-template name="_OutputGuid">
+        <xsl:call-template name="_OutputImage">
+        <xsl:call-template name="_OutputLanguage"><xsl:with-param name="value" select="." /></xsl:call-template>
+        <xsl:call-template name="_OutputLanguage"><xsl:with-param name="value" select="@xml:lang" /></xsl:call-template>
+        <xsl:call-template name="_OutputLastBuildDate"><xsl:with-param name="value" select="." /></xsl:call-template>
+        <xsl:call-template name="_OutputLink"><xsl:with-param name="value" select="$itemLinkUrl" /></xsl:call-template>
+        <xsl:call-template name="_OutputLink"><xsl:with-param name="value" select="$linkUrl" /></xsl:call-template>
+        <xsl:call-template name="_OutputManagingEditor">
+        <xsl:call-template name="_OutputMimeTypeAttribute">
+        <xsl:call-template name="_OutputPositiveNumberAttribute">
+        <xsl:call-template name="_OutputPositiveNumberElement">
+        <xsl:call-template name="_OutputPubDate"><xsl:with-param name="value" select="." /></xsl:call-template>
+        <xsl:call-template name="_OutputRating"><xsl:with-param name="value" select="." /></xsl:call-template>
+        <xsl:call-template name="_OutputSkipDays"><xsl:with-param name="value" select="." /></xsl:call-template>
+        <xsl:call-template name="_OutputSkipHours"><xsl:with-param name="value" select="." /></xsl:call-template>
+        <xsl:call-template name="_OutputSource">
+        <xsl:call-template name="_OutputTextAttribute">
+        <xsl:call-template name="_OutputTextDescription">
+        <xsl:call-template name="_OutputTextDescription"><xsl:with-param name="value" select="." /></xsl:call-template>
+        <xsl:call-template name="_OutputTextElement">
+        <xsl:call-template name="_OutputTextInput">
+        <xsl:call-template name="_OutputTitle">
+        <xsl:call-template name="_OutputTitle"><xsl:with-param name="value" select="." /></xsl:call-template>
+        <xsl:call-template name="_OutputTtl"><xsl:with-param name="value" select="." /></xsl:call-template>
+        <xsl:call-template name="_OutputUriAttribute">
+        <xsl:call-template name="_OutputUrlAttribute">
+        <xsl:call-template name="_OutputUrlElement">
+        <xsl:call-template name="_OutputWebMaster"><xsl:with-param name="value" select="." /></xsl:call-template>
+        <xsl:call-template name="_OutputXmlBase">
+        <xsl:call-template name="_OutputXmlBase"><xsl:with-param name="value" select="@xml:base" /></xsl:call-template>
+        <xsl:call-template name="_OutputXmlLang"><xsl:with-param name="value" select="@xml:lang" /></xsl:call-template>
+        <xsl:choose>
+        <xsl:copy />
+        <xsl:for-each select="$value/day">
+        <xsl:for-each select="$value/hour">
+        <xsl:if test="$isFirst = 'true' and not(../atom:updated)">
+        <xsl:if test="$isFirst = 'true' and not(../dc:date) and not(../dcterms:available) and not(../dcterms:modified)">
+        <xsl:if test="$isFirst = 'true' and not(../dc:date) and not(../dcterms:modified)">
+        <xsl:if test="$isFirst = 'true' and not(../description and ../*[namespace-uri(.) = $_NScontent and local-name(.) = 'encoded'])">
+        <xsl:if test="$isFirst = 'true' and not(../pubDate) and not(../dcterms:modified) and not(../atom:updated)">
+        <xsl:if test="$isFirst = 'true'">
+        <xsl:if test="$isFirst= 'true'">
+        <xsl:if test="$mainLink">
+        <xsl:if test="$outputTypeAttribute = 'true'">
+        <xsl:if test="$updatedExists = 'false'">
+        <xsl:if test="(@src = '' or not(@src)) and (@type = '' or not(@type) or @type = 'text' or @type = 'html' or @type = 'xhtml')">
+        <xsl:if test="../sy:updateFrequency">
+        <xsl:if test="@type = '' or not(@type) or @type = 'text/plain' or @type = 'text/html' or @type = 'application/xhtml+xml'">
+        <xsl:if test="atom:logo">
+        <xsl:if test="boolean($subnodesToCopy)">
+        <xsl:if test="not(../*[namespace-uri(.) = $_NScontent and local-name(.) = 'encoded'])">
+        <xsl:if test="not(../atom:published)">
+        <xsl:if test="not(../atom:updated) and not(../atom03:modified)">
+        <xsl:if test="not(../atom:updated) and not(../dcterms:modified)">
+        <xsl:if test="not(../atom:updated)">
+        <xsl:if test="not(../content:encoded)">
+        <xsl:if test="not(../lastBuildDate)">
+        <xsl:if test="string($_validatedEmail)">
+        <xsl:if test="string($_ValidatedGroupElem) or string($_ValidatedGroupLabel)">
+        <xsl:if test="string($_validatedName)">
+        <xsl:if test="string($_ValidatedSortElem) or string($_ValidatedSortLabel)">
+        <xsl:if test="string($_validatedUri)">
+        <xsl:otherwise>
+        <xsl:otherwise>'<xsl:value-of select="@ns"/>':<xsl:value-of select="@label" />;</xsl:otherwise>
+        <xsl:otherwise>-1</xsl:otherwise>
+        <xsl:value-of select="$_updatePeriodNum div $_updateFrequencyNum" />
+        <xsl:value-of select="$_validatedValue" />
+        <xsl:value-of select="msfeednorm:CombineUrls(string($baseUrl), string($relUrl))"/>
+        <xsl:value-of select="string($downloadUrl)" />
+        <xsl:value-of select="string($relUrl)"/>
+        <xsl:variable name="_ValidatedGroupElem" select="normalize-space(@element)" />
+        <xsl:variable name="_ValidatedGroupLabel" select="normalize-space(@label)" />
+        <xsl:variable name="_ValidatedSortElem" select="normalize-space(@element)" />
+        <xsl:variable name="_ValidatedSortLabel" select="normalize-space(@label)" />
+        <xsl:variable name="_validatedUri" select="msfeednorm:NormalizeUri(normalize-space($uri))" />
+        <xsl:variable name="atomLinkUrl">
+        <xsl:variable name="author">
+        <xsl:variable name="baseChannelUrl">
+        <xsl:variable name="cfReferences">
+        <xsl:variable name="channelLinkUrl">
+        <xsl:variable name="commentUrl">
+        <xsl:variable name="convertToAtom">
+        <xsl:variable name="enclosureUrl">
+        <xsl:variable name="imageLink">
+        <xsl:variable name="imageUrl">
+        <xsl:variable name="itemLinkUrl">
+        <xsl:variable name="linkUrl">
+        <xsl:variable name="mainLink" select="atom:link[(@rel = 'alternate' or @rel = '' or not(@rel)) and (@type = 'text/html' or @type = '' or not(@type))]" />
+        <xsl:variable name="mainLink" select="atom03:link[(@rel = 'alternate' or @rel = '' or not(@rel)) and (@type = 'text/html' or @type = '' or not(@type))]" />
+        <xsl:variable name="normXhtml">
+        <xsl:variable name="srcUrl">
+        <xsl:variable name="type">
+        <xsl:variable name="updatedExists">
+        <xsl:when test="$channelGuid = 'false'">
+        <xsl:when test="$outFormat = 'inetDate'">
+        <xsl:when test="$outFormat = 'iso8601'">
+        <xsl:when test="$updatePeriod = 'daily'">1440</xsl:when>
+        <xsl:when test="$updatePeriod = 'hourly'">60</xsl:when>
+        <xsl:when test="$updatePeriod = 'monthly'">40320</xsl:when>
+        <xsl:when test="$updatePeriod = 'weekly'">10080</xsl:when>
+        <xsl:when test="$updatePeriod = 'yearly'">483840</xsl:when>
+        <xsl:when test="@element">'<xsl:value-of select="@ns"/>':<xsl:value-of select="@element" />;</xsl:when>
+        <xsl:when test="namespace-uri(.) = $_NSxhtml and not(contains(name(.), ':'))">
+        <xsl:when test="normalize-space($isPermaLink) = 'true' or not(string($isPermaLink))">
+        <xsl:when test="self::text() or self::comment() or self::processing-instruction()">
+        <xsl:when test="string($references) and contains($references, $nodeRefName)">
+        <xsl:with-param name="baseItemUrl" select="$baseChannelItemUrl" />
+        <xsl:with-param name="baseUrl" select="$baseUrl" />
+        <xsl:with-param name="baseUrl" select="$baseUrl1" />
+        <xsl:with-param name="baseUrl" select="$summaryBaseUrl" />
+        <xsl:with-param name="description" select="rss:description" />
+        <xsl:with-param name="downloadUrl" select="$downloadUrl" />
+        <xsl:with-param name="fromType" select="$type" />
+        <xsl:with-param name="fromType" select="'text'" />
+        <xsl:with-param name="isPermaLink" select="'false'" />
+        <xsl:with-param name="link" select="$imageLink" />
+        <xsl:with-param name="link" select="$linkUrl" />
+        <xsl:with-param name="name" select="rss:name" />
+        <xsl:with-param name="references" select="$references" />
+        <xsl:with-param name="relUrl" select="$baseUrl2" />
+        <xsl:with-param name="rootNode" select="." />
+        <xsl:with-param name="subnodesToCopy" select="*[namespace-uri(.) != $_NSrss and namespace-uri(.) != '']" />
+        <xsl:with-param name="title" select="rss:title" />
+        <xsl:with-param name="toType" select="$type" />
+        <xsl:with-param name="toType" select="'html'" />
+        <xsl:with-param name="toType" select="'text'" />
+        <xsl:with-param name="type" select="$summaryType" />
+        <xsl:with-param name="url" select="$imageUrl" />
+        <xsl:with-param name="value" select="$summary" />
+        <xsl:with-param name="value" select="$value" />
+        <xsl:with-param name="value" select="." />
+        <xsl:with-param name="xmlBase" select="$summaryXmlBase" />
+      <!-- atom:summary will be preserved unless both content:encoded and description are present -->
+      <!-- content:encoded takes precedence over the description -->
+      <!-- Copy all namespaces -->
+      <!-- Copy extension nodes -->
+      <!-- description will be used if there is no content:encoded -->
+      <!-- Ensure version is 2.0 -->
+      <!-- First pair of updateFrequency and updatePeriod gets converted to ttl; all sy:* nodes are preserved as extensions -->
+      <!-- Handle content: printable goes into description; non-printable is preserved -->
+      <!-- Handle summary: printable goes into description or atom:summary; non-printable is discarded -->
+      <!-- Item's base URL stacks onto channel's base URL -->
+      <!-- Note that any unknown type value will yield empty output -->
+      <!-- Note that unknown value for a type will yield empty output -->
+      <!-- Output link -->
+      <!-- Process channel -->
+      <!-- Process item elements -->
+      <!-- Process items -->
+      <!-- Try to find the main link - one that has an href pointing to html and with type alternate -->
+      </atom:author>
+      </atom:link>
+      </channel>
+      </enclosure>
+      </image>
+      </skipDays>
+      </skipHours>
+      </textInput>
+      </ttl>
+      </xsl:apply-templates>
+      </xsl:call-template>
+      </xsl:choose>
+      </xsl:element>
+      </xsl:for-each>
+      </xsl:if>
+      </xsl:otherwise>
+      </xsl:variable>
+      </xsl:when>
+      <atom:author>
+      <atom:link>
+      <channel>
+      <enclosure>
+      <image>
+      <skipDays>
+      <skipHours>
+      <textInput>
+      <ttl>
+      <xsl:apply-templates select="* | @*" mode="item">
+      <xsl:apply-templates select="*" mode="item">
+      <xsl:attribute name="{$tagName}" namespace="{$nameSpace}"><xsl:value-of select="$_validatedValue" /></xsl:attribute>
+      <xsl:attribute name="version">2.0</xsl:attribute>
+      <xsl:call-template name="_BuildCfReferenceList"><xsl:with-param name="value" select="." /></xsl:call-template>
+      <xsl:call-template name="_CleanByType">
+      <xsl:call-template name="_CombineUrls">
+      <xsl:call-template name="_GetFeedBaseUrl">
+      <xsl:call-template name="_IsFirstChildOfItsKind"><xsl:with-param name="value" select="." /></xsl:call-template>
+      <xsl:call-template name="_NormalizeAtomTextTypeAttr"><xsl:with-param name="value" select="$type" /></xsl:call-template>
+      <xsl:call-template name="_OutputAtomSummary">
+      <xsl:call-template name="_OutputGuid">
+      <xsl:call-template name="_OutputImage">
+      <xsl:call-template name="_OutputLanguage"><xsl:with-param name="value" select="@xml:lang" /></xsl:call-template>
+      <xsl:call-template name="_OutputTextInput">
+      <xsl:call-template name="_OutputXmlBase"><xsl:with-param name="value" select="$xmlBase" /></xsl:call-template>
+      <xsl:call-template name="_OutputXmlBase"><xsl:with-param name="value" select="@xml:base" /></xsl:call-template>
+      <xsl:call-template name="_OutputXmlLang"><xsl:with-param name="value" select="@xml:lang" /></xsl:call-template>
+      <xsl:call-template name="_ValidateBool"><xsl:with-param name="value" select="$value" /></xsl:call-template>
+      <xsl:choose>
+      <xsl:copy />
+      <xsl:element name="{$tagName}" namespace="{$_NSatom1}">
+      <xsl:element name="{$tagName}" namespace="{$nameSpace}">
+      <xsl:element name="{$tagName}" namespace="{$nameSpace}"><xsl:value-of select="$_validatedValue" /></xsl:element>
+      <xsl:element name="{$tagName}"><xsl:value-of select="$_validatedValue" /></xsl:element>
+      <xsl:element name="category">
+      <xsl:element name="generator">
+      <xsl:element name="source">
+      <xsl:for-each select="$value/@*">
+      <xsl:for-each select="$value/cf:group">
+      <xsl:for-each select="$value/cf:sort">
+      <xsl:for-each select="namespace::*">
+      <xsl:for-each select="namespace::*"><xsl:copy /></xsl:for-each>
+      <xsl:if test="$convertToAtom = 'true'">
+      <xsl:if test="$mainLink">
+      <xsl:otherwise>
+      <xsl:otherwise><xsl:value-of select="string($name)" /></xsl:otherwise>
+      <xsl:otherwise>invalid</xsl:otherwise>
+      <xsl:value-of select="'false'" />
+      <xsl:value-of select="msfeednorm:CombineUrls(string($baseUrl), string($Url))"/>
+      <xsl:value-of select="'true'" />
+      <xsl:variable name="baseChannelItemUrl">
+      <xsl:variable name="imageLink">
+      <xsl:variable name="imageUrl">
+      <xsl:variable name="linkUrl">
+      <xsl:variable name="mainLink" select="atom:link[(@rel = 'alternate' or @rel = '' or not(@rel)) and (@type = 'text/html' or @type = '' or not(@type))]" />
+      <xsl:variable name="mainLink" select="atom03:link[(@rel = 'alternate' or @rel = '' or not(@rel)) and (@type = 'text/html' or @type = '' or not(@type))]" />
+      <xsl:variable name="nodeRefName">'<xsl:value-of select="namespace-uri($value)"/>':<xsl:value-of select="local-name($value)"/>;</xsl:variable>
+      <xsl:when test="$fromTypeN = 'html' or $fromTypeN = 'text/html'">
+      <xsl:when test="$fromTypeN = 'xhtml' or $fromTypeN = 'application/xhtml+xml'">
+      <xsl:when test="$value = 'application/xhtml+xml' or $value = 'xhtml'"><xsl:attribute name="type">html</xsl:attribute></xsl:when>
+      <xsl:when test="$value = 'text/html' or $value = 'html'"><xsl:attribute name="type">html</xsl:attribute></xsl:when>
+      <xsl:when test="$value = 'text/plain' or $value = 'text'"><xsl:attribute name="type">text</xsl:attribute></xsl:when>
+      <xsl:when test="(namespace-uri(.) = '' and local-name(.) = 'author') or (namespace-uri(.) = $_NSdc and local-name(.) = 'creator')">
+      <xsl:when test="namespace-uri(.) != ''">
+      <xsl:when test="namespace-uri(.) != $_NSatom03 and namespace-uri(.) != ''">
+      <xsl:when test="namespace-uri(.) != $_NSatom1 and namespace-uri(.) != ''">
+      <xsl:when test="namespace-uri(.) != $_NSrss and namespace-uri(.) != ''">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'category'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'cloud' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'comments' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'copyright' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'description' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'docs' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'enclosure'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'generator' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'guid' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'image' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'item'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'language' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'lastBuildDate' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'link' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'managingEditor' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'pubDate' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'rating' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'skipDays' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'skipHours' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'source' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'textInput' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'title' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'ttl' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = '' and local-name(.) = 'webMaster' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSatom03 and local-name(.) = 'author'">
+      <xsl:when test="namespace-uri(.) = $_NSatom03 and local-name(.) = 'content' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSatom03 and local-name(.) = 'contributor'">
+      <xsl:when test="namespace-uri(.) = $_NSatom03 and local-name(.) = 'copyright' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSatom03 and local-name(.) = 'entry'">
+      <xsl:when test="namespace-uri(.) = $_NSatom03 and local-name(.) = 'generator' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSatom03 and local-name(.) = 'id' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSatom03 and local-name(.) = 'issued' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSatom03 and local-name(.) = 'link' and @rel = 'enclosure' and (@href or @length or @type)">
+      <xsl:when test="namespace-uri(.) = $_NSatom03 and local-name(.) = 'modified' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSatom03 and local-name(.) = 'summary' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSatom03 and local-name(.) = 'tagline' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSatom03 and local-name(.) = 'title' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSatom1 and local-name(.) = 'author'">
+      <xsl:when test="namespace-uri(.) = $_NSatom1 and local-name(.) = 'category' and (@term or @scheme)">
+      <xsl:when test="namespace-uri(.) = $_NSatom1 and local-name(.) = 'content' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSatom1 and local-name(.) = 'contributor'">
+      <xsl:when test="namespace-uri(.) = $_NSatom1 and local-name(.) = 'entry'">
+      <xsl:when test="namespace-uri(.) = $_NSatom1 and local-name(.) = 'generator' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSatom1 and local-name(.) = 'id' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSatom1 and local-name(.) = 'link' and @rel = 'enclosure' and (@href or @length or @type)">
+      <xsl:when test="namespace-uri(.) = $_NSatom1 and local-name(.) = 'link'">
+      <xsl:when test="namespace-uri(.) = $_NSatom1 and local-name(.) = 'published' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSatom1 and local-name(.) = 'published'">
+      <xsl:when test="namespace-uri(.) = $_NSatom1 and local-name(.) = 'rights' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSatom1 and local-name(.) = 'subtitle' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSatom1 and local-name(.) = 'summary' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSatom1 and local-name(.) = 'summary'">
+      <xsl:when test="namespace-uri(.) = $_NSatom1 and local-name(.) = 'title' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSatom1 and local-name(.) = 'updated' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSatom1 and local-name(.) = 'updated'">
+      <xsl:when test="namespace-uri(.) = $_NScf and local-name(.) = 'listinfo'">
+      <xsl:when test="namespace-uri(.) = $_NScf and local-name(.) = 'treatAs'">
+      <xsl:when test="namespace-uri(.) = $_NScontent and local-name(.) = 'encoded'">
+      <xsl:when test="namespace-uri(.) = $_NSdc and local-name(.) = 'creator'">
+      <xsl:when test="namespace-uri(.) = $_NSdc and local-name(.) = 'date'">
+      <xsl:when test="namespace-uri(.) = $_NSdc and local-name(.) = 'language'">
+      <xsl:when test="namespace-uri(.) = $_NSdc and local-name(.) = 'publisher'">
+      <xsl:when test="namespace-uri(.) = $_NSdc and local-name(.) = 'rights'">
+      <xsl:when test="namespace-uri(.) = $_NSdc and local-name(.) = 'subject'">
+      <xsl:when test="namespace-uri(.) = $_NSdcterms and local-name(.) = 'available'">
+      <xsl:when test="namespace-uri(.) = $_NSdcterms and local-name(.) = 'issued'">
+      <xsl:when test="namespace-uri(.) = $_NSdcterms and local-name(.) = 'modified'">
+      <xsl:when test="namespace-uri(.) = $_NSmon and local-name(.) = 'expiration'">
+      <xsl:when test="namespace-uri(.) = $_NSrss and local-name(.) = 'description' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSrss and local-name(.) = 'link' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSrss and local-name(.) = 'title' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSslash and local-name(.) = 'comments'">
+      <xsl:when test="namespace-uri(.) = $_NSsy and local-name(.) = 'updatePeriod' and $isFirst = 'true'">
+      <xsl:when test="namespace-uri(.) = $_NSwfw and (local-name(.) = 'commentRss' or local-name(.) = 'commentRSS')">
+      <xsl:when test="normalize-space($type) = 'html'">html</xsl:when>
+      <xsl:when test="normalize-space($type) = 'text'">text</xsl:when>
+      <xsl:when test="normalize-space($value) = 'false'">false</xsl:when>
+      <xsl:when test="normalize-space($value) = 'true'">true</xsl:when>
+      <xsl:when test="not(string($fromTypeN)) or $fromTypeN = 'text' or $fromTypeN = 'text/plain'">
+      <xsl:when test="not(string($type)) or normalize-space($type) = ''"><xsl:value-of select="$default" /></xsl:when>
+      <xsl:when test="not(string($value)) or normalize-space($value) = ''"><xsl:attribute name="type">text</xsl:attribute></xsl:when>
+      <xsl:when test="string($baseUrl)">
+      <xsl:when test="string($email)"><xsl:value-of select="string($email)" /></xsl:when>
+      <xsl:when test="string($name) and string($email)"><xsl:value-of select="concat($email, ' (', $name, ')')" /></xsl:when>
+      <xsl:when test="string($rootNode/@xml:base)">
+      <xsl:with-param name="baseChannelUrl" select="$baseChannelUrl" />
+      <xsl:with-param name="baseUrl" select="$combinedBase" />
+      <xsl:with-param name="baseUrl" select="$descriptionBaseUrl" />
+      <xsl:with-param name="convertToAtom" select="$convertToAtom" />
+      <xsl:with-param name="email" select="$email" />
+      <xsl:with-param name="name" select="$name" />
+      <xsl:with-param name="nameSpace" select="$_NSatom1" />
+      <xsl:with-param name="nameSpace" select="$_NScf" />
+      <xsl:with-param name="nameSpace" select="$_NSmon" />
+      <xsl:with-param name="nameSpace" select="$_NSslash" />
+      <xsl:with-param name="nameSpace" select="$_NSwfw" />
+      <xsl:with-param name="outFormat" select="'iso8601'" />
+      <xsl:with-param name="outputTypeAttribute" select="'true'" />
+      <xsl:with-param name="references" select="$cfReferences" />
+      <xsl:with-param name="tagName" select="'atom:author'" />
+      <xsl:with-param name="tagName" select="'atom:contributor'" />
+      <xsl:with-param name="tagName" select="'atom:published'" />
+      <xsl:with-param name="tagName" select="'atom:updated'" />
+      <xsl:with-param name="tagName" select="'author'" />
+      <xsl:with-param name="tagName" select="'cf:treatAs'" />
+      <xsl:with-param name="tagName" select="'comments'" />
+      <xsl:with-param name="tagName" select="'copyright'" />
+      <xsl:with-param name="tagName" select="'description'" />
+      <xsl:with-param name="tagName" select="'docs'" />
+      <xsl:with-param name="tagName" select="'language'" />
+      <xsl:with-param name="tagName" select="'lastBuildDate'" />
+      <xsl:with-param name="tagName" select="'link'" />
+      <xsl:with-param name="tagName" select="'managingEditor'" />
+      <xsl:with-param name="tagName" select="'mon:expiration'" />
+      <xsl:with-param name="tagName" select="'pubDate'" />
+      <xsl:with-param name="tagName" select="'rating'" />
+      <xsl:with-param name="tagName" select="'slash:comments'" />
+      <xsl:with-param name="tagName" select="'title'" />
+      <xsl:with-param name="tagName" select="'ttl'" />
+      <xsl:with-param name="tagName" select="'webMaster'" />
+      <xsl:with-param name="tagName" select="'wfw:commentRss'" />
+      <xsl:with-param name="tagName" select="'xml:base'" />
+      <xsl:with-param name="tagName" select="'xml:lang'" />
+      <xsl:with-param name="type" select="$descriptionType" />
+      <xsl:with-param name="type" select="$type" />
+      <xsl:with-param name="uri" select="$uri" />
+      <xsl:with-param name="Url" select="$Url" />
+      <xsl:with-param name="value" select="$description" />
+      <xsl:with-param name="value" select="$value" />
+    <!-- Build a list of referenced nodes from cf:sort and cf:group -->
+    <!-- Copy all namespaces -->
+    <!-- Description is always html -->
+    <!-- Figure out the base URL value; xml:base overrides the download URL -->
+    <!-- No need to check if first, because XML doesn't allow duplicate attributes -->
+    <!-- Process channel elements -->
+    <!-- Process items -->
+    <!-- We always output this element and clean any attribute it has into text -->
+    <!-- We format the node references as "'namespace-uri':local-name;" -->
+    </atom:summary>
+    </cf:listinfo>
+    </cloud>
+    </description>
+    </item>
+    </rss>
+    </xsl:apply-templates>
+    </xsl:call-template>
+    </xsl:choose>
+    </xsl:for-each>
+    </xsl:if>
+    </xsl:otherwise>
+    </xsl:variable>
+    </xsl:when>
+    <atom:summary>
+    <cf:listinfo>
+    <cloud>
+    <description cf:type="html">
+    <item>
+    <rss version="2.0">
+    <rss>
+    <xsl:apply-templates select="*" mode="channel" />
+    <xsl:apply-templates select="*" mode="channel">
+    <xsl:apply-templates select="item">
+    <xsl:call-template name="_CompleteUrl">
+    <xsl:call-template name="_OutputAtomAuthorOrContributor">
+    <xsl:call-template name="_OutputAuthorOrEditor">
+    <xsl:call-template name="_OutputDateElement">
+    <xsl:call-template name="_OutputDescription">
+    <xsl:call-template name="_OutputPositiveNumberElement">
+    <xsl:call-template name="_OutputTextAttribute">
+    <xsl:call-template name="_OutputTextElement">
+    <xsl:call-template name="_OutputUrlAttribute">
+    <xsl:call-template name="_OutputUrlElement">
+    <xsl:call-template name="_OutputXmlBase"><xsl:with-param name="value" select="@xml:base" /></xsl:call-template>
+    <xsl:call-template name="_OutputXmlLang"><xsl:with-param name="value" select="@xml:lang" /></xsl:call-template>
+    <xsl:choose>
+    <xsl:for-each select="$value">
+    <xsl:for-each select="$value/cf:listinfo/cf:group">
+    <xsl:for-each select="$value/cf:listinfo/cf:sort">
+    <xsl:for-each select="namespace::*">
+    <xsl:if test="$_updateFrequencyNum > 0 and $_updatePeriodNum > 0">
+    <xsl:if test="$value/day[string(.) = 'Monday' or string(.) = 'Tuesday' or string(.) = 'Wednesday' or string(.) = 'Thursday' or string(.) = 'Friday' or string(.) = 'Saturday' or string(.) = 'Sunday']">
+    <xsl:if test="$value/hour[number(.)>=0 and number(.)&lt;=23]">
+    <xsl:if test="(string($_validatedValue) != 'NaN') and ($_validatedValue >= 0)">
+    <xsl:if test="namespace-uri($value) != $_NScfi">
+    <xsl:if test="namespace-uri(.) = $_NSrdf and local-name(.) = 'about'">
+    <xsl:if test="not(language)">
+    <xsl:if test="position() = 1">
+    <xsl:if test="string($_validatedHref)">
+    <xsl:if test="string($_validatedName) and string($_validatedLink)">
+    <xsl:if test="string($_validatedName) or string($_validatedEmail)">
+    <xsl:if test="string($_validatedUrl)">
+    <xsl:if test="string($_validatedValue)">
+    <xsl:if test="string($summary)">
+    <xsl:if test="string($Url)">
+    <xsl:if test="string($value)">
+    <xsl:otherwise>
+    <xsl:param name="baseChannelUrl" />
+    <xsl:param name="baseItemUrl" />
+    <xsl:param name="baseUrl" />
+    <xsl:param name="baseUrl1" />
+    <xsl:param name="baseUrl2" />
+    <xsl:param name="channelGuid" select="'false'" />
+    <xsl:param name="convertToAtom" select="'false'" />
+    <xsl:param name="default" />
+    <xsl:param name="description" />
+    <xsl:param name="descriptionBaseUrl" />
+    <xsl:param name="descriptionType" />
+    <xsl:param name="domain" />
+    <xsl:param name="downloadUrl" />
+    <xsl:param name="email" />
+    <xsl:param name="fromType" />
+    <xsl:param name="height" />
+    <xsl:param name="href" />
+    <xsl:param name="hreflang" />
+    <xsl:param name="isPermaLink" />
+    <xsl:param name="length" />
+    <xsl:param name="link" />
+    <xsl:param name="name" />
+    <xsl:param name="nameSpace" select="''" />
+    <xsl:param name="outFormat" select="'inetDate'" />
+    <xsl:param name="outputTypeAttribute" select="'false'" />
+    <xsl:param name="references" />
+    <xsl:param name="rel" />
+    <xsl:param name="relUrl" />
+    <xsl:param name="rootNode" />
+    <xsl:param name="subnodesToCopy" />
+    <xsl:param name="summary" />
+    <xsl:param name="summaryBaseUrl" />
+    <xsl:param name="summaryType" />
+    <xsl:param name="summaryXmlBase" />
+    <xsl:param name="tagName" />
+    <xsl:param name="title" />
+    <xsl:param name="titleType" select="'text'" />
+    <xsl:param name="toType" />
+    <xsl:param name="type" />
+    <xsl:param name="type" select="'text'" />
+    <xsl:param name="updateFrequency" />
+    <xsl:param name="updatePeriod" />
+    <xsl:param name="uri" />
+    <xsl:param name="url" />
+    <xsl:param name="Url" />
+    <xsl:param name="value" />
+    <xsl:param name="version" />
+    <xsl:param name="width" />
+    <xsl:param name="xmlBase" />
+    <xsl:variable name="_updateFrequencyNum" select="number($updateFrequency)"/>
+    <xsl:variable name="_updatePeriodNum" select="number($_updatePeriodTmp)" />
+    <xsl:variable name="_updatePeriodTmp">
+    <xsl:variable name="_validatedEmail" select="normalize-space($email)" />
+    <xsl:variable name="_validatedHref" select="msfeednorm:ValidateUrl(normalize-space($href))" />
+    <xsl:variable name="_validatedLink" select="msfeednorm:ValidateUrl(normalize-space($link))" />
+    <xsl:variable name="_validatedName" select="normalize-space($name)" />
+    <xsl:variable name="_validatedUrl" select="msfeednorm:ValidateUrl(normalize-space($url))" />
+    <xsl:variable name="_validatedValue" select="msfeednorm:NormalizeUri(normalize-space($value))" />
+    <xsl:variable name="_validatedValue" select="msfeednorm:ValidateUrl(normalize-space($value))" />
+    <xsl:variable name="_validatedValue" select="normalize-space($value)" />
+    <xsl:variable name="_validatedValue" select="number($value)" />
+    <xsl:variable name="_validatedValue">
+    <xsl:variable name="baseChannelUrl">
+    <xsl:variable name="cfReferences">
+    <xsl:variable name="combinedBase">
+    <xsl:variable name="fromTypeN" select="normalize-space($fromType)" />
+    <xsl:variable name="isFirst">
+    <xsl:variable name="toTypeN" select="normalize-space($toType)" />
+    <xsl:when test="$_currentId = $_firstId">
+    >
+    exclude-result-prefixes="msfeednorm"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005" 
+    xmlns:msfeednorm="urn:microsoft:feed-normalization"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  <!-- NOTE: Assumes that value has been properly scrubbed and only needs to be parsed -->
+  </xsl:choose>
+  </xsl:template>
+  <xsl:choose>
+  <xsl:import href="res://msfeeds.dll/SharedNormalizer.xsl" />
+  <xsl:output method="xml" encoding="utf-8" />
+  <xsl:param name="downloadUrl" />
+  <xsl:param name="value" />
+  <xsl:template match="*" mode="channel">
+  <xsl:template match="*" mode="item">
+  <xsl:template match="/atom:feed">
+  <xsl:template match="/atom03:feed">
+  <xsl:template match="/rdf:RDF">
+  <xsl:template match="/rss">
+  <xsl:template match="@*" mode="item">
+  <xsl:template match="atom:entry">
+  <xsl:template match="atom03:entry">
+  <xsl:template match="channel">
+  <xsl:template match="item">
+  <xsl:template match="rss:channel">
+  <xsl:template match="rss:image">
+  <xsl:template match="rss:item">
+  <xsl:template match="rss:textinput">
+  <xsl:template name="_BuildCfReferenceList">
+  <xsl:template name="_CleanByType">
+  <xsl:template name="_CombineUrls">
+  <xsl:template name="_CompleteUrl">
+  <xsl:template name="_CompleteUrlTwoBase">
+  <xsl:template name="_ConvertAtomAuthorToAuthor">
+  <xsl:template name="_ConvertAuthorToAtomAuthor">
+  <xsl:template name="_ConvertUpdatesToTtl">
+  <xsl:template name="_GetFeedBaseUrl">
+  <xsl:template name="_GetRSS2TypeValue">
+  <xsl:template name="_NormalizeAtomTextTypeAttr">
+  <xsl:template name="_NormalizeXhtmlNamespacePrefix">
+  <xsl:template name="_OutputAtomAuthor">
+  <xsl:template name="_OutputAtomAuthorOrContributor">
+  <xsl:template name="_OutputAtomContributor">
+  <xsl:template name="_OutputAtomLink">
+  <xsl:template name="_OutputAtomPublished">
+  <xsl:template name="_OutputAtomSummary">
+  <xsl:template name="_OutputAtomUpdated">
+  <xsl:template name="_OutputAuthor">
+  <xsl:template name="_OutputAuthorOrEditor">
+  <xsl:template name="_OutputBoolAttribute">
+  <xsl:template name="_OutputCategory">
+  <xsl:template name="_OutputCfListinfo">
+  <xsl:template name="_OutputCfTreatAs">
+  <xsl:template name="_OutputCloud">
+  <xsl:template name="_OutputComments">
+  <xsl:template name="_OutputCopyright">
+  <xsl:template name="_OutputDateElement">
+  <xsl:template name="_OutputDescription">
+  <xsl:template name="_OutputDescriptionAndSummary">
+  <xsl:template name="_OutputDocs">
+  <xsl:template name="_OutputEnclosure">
+  <xsl:template name="_OutputExtension">
+  <xsl:template name="_OutputGenerator">
+  <xsl:template name="_OutputGuid">
+  <xsl:template name="_OutputImage">
+  <xsl:template name="_OutputLanguage">
+  <xsl:template name="_OutputLastBuildDate">
+  <xsl:template name="_OutputLink">
+  <xsl:template name="_OutputManagingEditor">
+  <xsl:template name="_OutputMimeTypeAttribute">
+  <xsl:template name="_OutputMonExpiration">
+  <xsl:template name="_OutputPositiveNumberAttribute">
+  <xsl:template name="_OutputPositiveNumberElement">
+  <xsl:template name="_OutputPubDate">
+  <xsl:template name="_OutputRating">
+  <xsl:template name="_OutputSkipDays">
+  <xsl:template name="_OutputSkipHours">
+  <xsl:template name="_OutputSlashComments">
+  <xsl:template name="_OutputSource">
+  <xsl:template name="_OutputTextAttribute">
+  <xsl:template name="_OutputTextDescription">
+  <xsl:template name="_OutputTextElement">
+  <xsl:template name="_OutputTextInput">
+  <xsl:template name="_OutputTitle">
+  <xsl:template name="_OutputTtl">
+  <xsl:template name="_OutputUriAttribute">
+  <xsl:template name="_OutputUrlAttribute">
+  <xsl:template name="_OutputUrlElement">
+  <xsl:template name="_OutputWebMaster">
+  <xsl:template name="_OutputWfwCommentRSS">
+  <xsl:template name="_OutputXmlBase">
+  <xsl:template name="_OutputXmlLang">
+  <xsl:template name="_ValidateBool">
+  <xsl:variable name="_currentId" select="generate-id($value)"/>
+  <xsl:variable name="_firstId" select="generate-id($value/../*[namespace-uri(.) = $_nameSpace and local-name(.) = $_localName])"/>
+  <xsl:variable name="_localName" select="local-name($value)" />
+  <xsl:variable name="_nameSpace" select="namespace-uri($value)" />
+  exclude-result-prefixes="content rdf rss dc dcterms sy msfeednorm"
+  exclude-result-prefixes="dcterms msfeednorm"
+  exclude-result-prefixes="sy atom03 msfeednorm"
+  exclude-result-prefixes="sy msfeednorm"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:atom03="http://purl.org/atom/ns#"
+  xmlns:cf="http://www.microsoft.com/schemas/rss/core/2005"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:msfeednorm="urn:microsoft:feed-normalization"
+  xmlns:msfeednorm="urn:microsoft:feed-normalization" 
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rss="http://purl.org/rss/1.0/"
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`ABCDEFGHIJKLMNOPQRSTUVWXYZ{|}~
+ #D$t
+ _^[]
+ AND 
+ ASC 
+ DESC 
+ DescriptionW
+ FROM SystemIndex..SCOPE() 
+ Microsoft Corporation. All rights reserved.
+ OR (
+ ORDER BY 
+ ORDER BY System.Search.Rank DESC
+ SCOPE='%s' 
+ SCOPE='%s://{%s}/' 
+ SVW3
+ WHERE 
+!/CopyrightWWW
+!\$<3
+!This program cannot be run in DOS mode.
+!x-sys-default-locale
+"}U2:
+"FDE_UNSUPPORTED_MSXMLWWW 
+#document-fragment
+#GetFeedW
+$!< uD
+$SVWh
+%#04lx
+%%%02x
+%.*s%s%s=%s%.*s
+-%04d%02d%02d%02d%02d%02d
+%04lu/%02lu/%02lu %02lu:%02lu:%02lu
+%hs!%p: 
+%hs(%d) tid(%x) %08X %ws
+%hs(%d)\%hs!%p: 
+%ProgramFiles%\Internet Explorer\ie9props.propdesc
+%s&clocalename=%s
+%s:%s
+%s\%s
+%s_%s
+%s{%s}/
+%s{%s}/%s
+%s{%s}/%s?0%ld
+&;5H9
+&0d0l0
+&6FolderAddedW
+&amp;
+&clientkey=
+&lastDownload
+&mac=
+&OCID=
+&pc=%s
+&pc=EPSPC
+&pc=UE00
+&pc=UE04
+&pc=UE15
+&pc=WCUG
+&quot;
+("%s" = '%s')
+(_^[]
+(caller: %p) 
+(CONTAINS(
+(DownloadStatusWW
+(System.EndDate < '%s')
+) i3%
+) RANK BY COERCION(ABSOLUTE,1)
+)_^[]
+)`CancelAsyncDownloadWx
+)0>0g0
+)Comments
+)FXIF_NONEWWW
+)itemUrlW
+**** Schedule Cache ******
+**** Task Info ******
+*.feed-ms
+*[local-name(.)='feed' and namespace-uri(.)='http://purl.org/atom/ns#']/@version[number(.)=0.3]
+*[local-name(.)='feed' and namespace-uri(.)='http://www.w3.org/2005/Atom']
+*[local-name(.)='RDF' and namespace-uri(.)='http://www.w3.org/1999/02/22-rdf-syntax-ns#']/*[local-name(.)='channel' and namespace-uri(.)='http://purl.org/rss/1.0/']
+*[local-name(.)='rss' and namespace-uri(.)='']/@version[number(.)=0.91]
+*[local-name(.)='rss' and namespace-uri(.)='']/@version[number(.)=0.92]
+*[local-name(.)='rss' and namespace-uri(.)='']/@version[number(.)=2.0]
+*0K0v0
+*DefaultIntervalW
+*GetWatcherWW
+,0:0^0
+,0P0g0
+,FDE_INVALID_AUTH
+.00cfg
+.0f0m0y0
+.CRT$XCA
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIZ
+.CRT$XLA
+.CRT$XLZ
+.data
+.data$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.edata
+.feed-ms
+.gfids
+.giats
+.idata
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.'NormalizeWWW
+.rdata
+.rdata$brc
+.rdata$sxdata
+.rdata$T$brc
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.stls
+.text
+.text$di
+.text$mn
+.text$mn$00
+.text$yd
+.tls$
+.tls$ZZZ
+.xdata$x
+//xsl:import[@href='res://msfeeds.dll/SharedNormalizer.xsl']
+/050t0
+/060J0^0g0m0
+/0I0|0
+/LocalEnclosurePathWW
+/rss/channel
+/rss/channel/*[local-name() = 'expiration' and namespace-uri() = 'http://www.microsoft.com/schemas/rss/monitoring/2007']
+/rss/channel/*[local-name() = 'X-UA-Compatible' and namespace-uri() = 'http://www.microsoft.com/schemas/rss/monitoring/2007']
+/rss/channel/cf:noMoreUpdates
+: :$:(:,:0:4:8:<:@:D:H:L:P:T:X:\:`:d:h:l:p:t:x:|:
+: :$:(:,:0:4:8:<:@:D:H:L:P:T:X:\:`:d:h:p:|:
+: :&:*:1:7:?:C:H:M:R:W:\:a:f:k:p:
+: :r:
+: ;*;X;b;
+:!:):F:
+:!:':[::;`;
+:!:J:l:
+:!;&;,;~;
+:!;D;I;Z;
+:";[;w;
+:%:0:m:
+:%;<;S;
+:%;E;
+:%;Q;
+:&;0;Z;d;
+:(;1;
+:(;l;
+:*;0;F;r;
+:,:G:V:
+:,;l;
+::$DATA
+:::H:
+::;~;
+::;E;y;
+:':6:?:
+:^:z:
+:<:S:o:
+:>:G:w:
+:>;R;x;
+:0;J;
+:1:A:K:Z:o:y:
+:1:Q:~:
+:1;C;T;p;
+:2:S:r:
+:3:F:Y:";4;l;u;
+:4;};
+:5:|:
+:5:U:
+:6:V:|;
+:6;A;g;
+:7;i;
+:9:\:
+:B:V:o:
+:B;u;
+:e:k:r:
+:e:m:s:
+:E:X:a:
+:F:}:
+:G:`:
+:G:R:
+:J:j:
+:O:T:{:
+:o:Y;d;~;
+:t:z:
+:T;^;c;p;
+:V:]:
+:V:b:
+:Z;f;
+; ;$;(;,;0;4;8;<;@;D;H;L;P;T;X;\;`;d;h;l;p;t;x;|;
+; ;&;f<r<
+; ;Q;\;
+; <G<
+;!;K;
+;";&;*;:;g;
+;#;1;;;Q;[;y;
+;$;,;4;<;@;D;H;L;P;T;X;\;`;d;h;l;p;t;
+;$;7;G;Z;
+;%;/;:;?;J;O;Z;_;j;o;z;
+;%;H;
+;%;L>k>
+;%;T;
+;%<E<d<
+;&;F;L;s;
+;&;I;
+;)<8<S<^<
+;)<n<
+;*;U;
+;*<V<
+;,;b;i;o;
+;,;W;
+;.;I;T;y;
+;.<8<i<s<
+;.<V<
+;/;};
+;/;N;_;t;
+;:;@;Q;};
+;;<_<
+;-;4;H;\;
+;?<R<`<
+;\;q;
+;\<b<
+;_psF
+;`;w;
+;<<l<
+;-<4<;<A<M<Y<
+;'=.=5=H=z=
+;=;c;
+;>;i;
+;><G<j<
+;0;S;
+;0<a<
+;1;H;q;%<I<[<
+;2<}<
+;5;c;
+;5;W;};
+;6;c;
+;6<=<w<h=o=
+;7;W;
+;9<w<}<
+;A;/<a<
+;A<_<
+;C\tD
+;D$hr[3
+;D;q;{;
+;F;f;
+;L$l|j
+;l<&=
+;Q<Z<y<
+;S<e<
+;u@sH
+? ?$?(?,?0?4?8?<?@?D?H?L?P?T?X?\?`?d?h?l?p?t?x?|?
+? ?M?S?s?y?
+?!?{?
+?"?J?p?
+?#?2?I?T?g?
+?$?/?
+?$?0?I?
+?$?B?j?
+?%?2?@?J?T?^?h?u?
+?&?D?n?
+?)?_?
+?)?2?<?q?
+?)?l?
+?)?Z?c?
+?*?G?
+?,?5?q?{?
+?:?@?K?f?
+?:?\?z?
+?:?c?
+?'?-?T?f?
+?'?J?s?
+?@?G?S?j?}?
+?>?M?\?k?
+?>?Q?l?
+?0%ld
+?0?9?o?v?
+?1?7?K?
+?3???U?
+?4?X?b?q?
+?5?S?f?
+?6?|?
+?6?l?
+?6?R?
+?7?D?
+?7?Z?u?
+?9?A?u?|?
+?9?U?
+?A?S?q?
+?B?_?
+?FEM_FOLDEREVENTSX
+?H?}?
+?I?x?}?
+?M?X?y?
+?R?e?
+?V?{?
+?V?b?
+?Y?^?w?
+@.didat
+@.reloc
+@@h|J
+@IEHomepageChanged
+@Qm6t
+@SVWj6
+[%hs(%hs)]
+[%hs]
+[)Pyk5I
+[_9*O
+\$$PW
+\$\#\$X
+\\?\UNC\
+\\?\Volume
+\StringFileInfo\%04X%04X\%s
+\StringFileInfo\04090000\%s
+\StringFileInfo\040904B0\%s
+\StringFileInfo\040904E4\%s
+\t"f;
+\UNC\
+\VarFileInfo\Translation
+]_^[]
+]existsWW
+]FeedFolderWatcherWWW
+^{xn1
+^f92u
+^Vj Vj
+_^[Y]
+__dllonexit
+__feedview__
+_amsg_exit
+_EUPP_
+_except_handler4_common
+_ftol2_sse
+_initterm
+_itow_s
+_lock
+_onexit
+_u>B;
+_uEB;
+_ultow_s
+_unlock
+_vsnprintf
+_vsnwprintf
+_vsnwprintf_s
+_wcsicmp
+_wcsnicmp
+_wtoi
+_XcptFilter
+`.data
+`f9>u6
+`hItemsWWW
+{00000000-0000-0000-0000-000000000000}
+{0633EE93-D776-472f-A0FF-E1416B8B2E3A}
+{2562B2EF-500D-49FC-A350-5BC0D4C56EE3}
+{461B4783-36F5-45B9-883E-35BA5ED4A823}
+{5312EE61-79E3-4A24-BFE1-132B85B23C3A}
+{5588ACFD-6436-411B-A5CE-666AE6A92D3D}
+{5588ACFD-6436-411B-A5CE-666AE6A92D3D}\WebSlices
+{64AF4D11-6492-4C25-B014-B6C6CEE3B0C5}
+{8C3078A0-9AAB-4371-85D1-656CA8E46EE8}
+{count
+{ie:maxwidth
+{ie:rowheight
+{ie:sectionheight
+{inputEncoding
+{language
+{outputEncoding
+{referrer:source
+{searchTerms
+{startIndex
+{startPage
+{SUB_CLCID}
+{SUB_CLSID}
+{SUB_OLCID}
+{SUB_OS}
+{SUB_OVER}
+{SUB_PRD}
+{SUB_PVER}
+{SUB_RFC1766}
+|$(Hug
+|$,uL
+|ma[_
+|RootFolderWW
+}</STYLE>
+}FEEDS_DOWNLOAD_ERROR 
+}linkUrlW
+~$9~,t
+~,9~0t
+~<9~4t
+~09~ t
+~49~8t
+~89~$t
+~t.d:c"q?m*s/f<l>g|p
+~TitleWWW
++feedUrlW
++statusWW
+< <$<(<,<0<4<8<<<@<D<H<L<P<T<X<\<`<d<h<l<p<t<x<|<
+<!-- 
+<!-- atom:author -->
+<!-- atom:contributor -->
+<!-- atom:link -->
+<!-- atom:published -->
+<!-- atom:summary -->
+<!-- atom:updated -->
+<!-- author -->
+<!-- Build a list of nodes that are referenced from the cf:sort or cf:group -->
+<!-- category -->
+<!-- cf:listinfo -->
+<!-- cf:treatAs -->
+<!-- Channel processing -->
+<!-- Check for URL and combine it with base (complete the URL) -->
+<!-- cloud -->
+<!-- Combine base and relative URLs -->
+<!-- comments -->
+<!-- Complete URL in order: baseUrl1 + baseUrl2 + Url -->
+<!-- Convert Atom author strings to RSS 2.0 format with email and name -->
+<!-- Convert author strings to Atom format (very simple implementation) -->
+<!-- Convert updateFrequency and updatePeriod to ttl -->
+<!-- copyright -->
+<!-- description and summary (if it exists) -->
+<!-- docs -->
+<!-- Download URL is inserted from the normalization code -->
+<!-- enclosure -->
+<!-- Ensure XHTML is the default namespace; needs to run prior to sanitization; exact preserving of namespace prefixes
+<!-- Entry point -->
+<!-- Figure out the base URL for the feed -->
+<!-- Figure out the type for RSS 2.0 text fields -->
+<!-- Find if current node is a first one of its kind; returns strings 'true' when first or 'false' when not -->
+<!-- generator -->
+<!-- guid -->
+<!-- image -->
+<!-- Image processing -->
+<!-- IMPORTANT: This shared XSL gets imported using our code by copying all the xsl:stylesheet's children, 
+<!-- Invoke sanitization and/or transformation based on the from and to types -->
+<!-- Item processing -->
+<!-- language -->
+<!-- lastBuildDate -->
+<!-- link -->
+<!-- managingEditor -->
+<!-- Map type values to Atom 1.0 type -->
+<!-- mon:expiration -->
+<!-- Note that our sanitization code can parse but cannot output XHTML, so xhtml gets converted to html -->
+<!-- Output atom:author or atom:contributor (have identical handling) -->
+<!-- Output attribute with bool value -->
+<!-- Output attribute with mime-type value -->
+<!-- Output attribute with non-negative number value -->
+<!-- Output attribute with plain text value -->
+<!-- Output attribute with URL value -->
+<!-- Output element with a non-negative number value -->
+<!-- Output element with inet date value -->
+<!-- Output element with plain text value -->
+<!-- Output element with URL value -->
+<!-- Output RSS 2.0 author or managingEditor element and convert into atom:author -->
+<!-- output the extension nodes -->
+<!-- Output XML UTF-8 -->
+<!-- plain-text description -->
+<!-- pubDate -->
+<!-- rating -->
+<!-- rich-text description -->
+<!-- Shared templates -->
+<!-- skipDays -->
+<!-- skipHours -->
+<!-- slash:comments -->
+<!-- source -->
+<!-- Text Input processing -->
+<!-- textInput -->
+<!-- title -->
+<!-- ttl -->
+<!-- Validate bool -->
+<!-- webMaster -->
+<!-- wfw:commentRss -->
+<!-- xml:base -->
+<!-- xml:lang -->
+<!<+<5<?<I<S<]<g<{<&=d=h=l=p=t=x=|=
+<!=3=E=k=s=
+<!=x=
+<!DOCTYPE
+<$=j=p=
+<%<;<Q<g<}<
+<%<-<g<
+<%=C=Y=k=
+<&<><h<n<
+<&=9=S=
+<(<L<p<
+<(<N<m<
+<)<6<D<N<Y<_<e<k<q<w<}<
+<)=b=
+<*=/=A=z=
+<,<Z<l<}<
+<.<5<H<W<{<
+<.<D>`>
+<.<S<g<
+<.=3=<=R=k=
+<.=i=
+</<\<
+</=`=
+</=F=l=
+</xsl:stylesheet>
+</xsl:stylesheet><?xml version="1.0" ?>
+</xsl:template>
+<:<F<M<m<
+<:<t<
+<:<V<
+<;=y=
+<?<w<
+<?<X<]<m<
+<?=K=X=_=e=l=s=z=
+<?xml version="1.0" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
+<@<i<
+<+<E<
+<'<-<
+<<<<<<
+<-<Q<u<
+<=<e<
+<=<U<x<
+<'=m=
+<0<<<@<H<L<T<X<`<d<l<p<x<|<
+<0<F<Y<y<
+<0<q<
+<0=\=
+<0=P={=
+<0k0u0
+<0Z0a0k0
+<1<d<
+<1<H<q<
+<1=P=
+<1>c>
+<2<:<Q<l<
+<2=V=|=
+<5=]=t=z=
+<6j\Xf;D<
+<7<[<
+<B<|<
+<B<I<P<V<j<
+<BASE HREF="
+<C<v<
+<d<o<
+<D=k=
+<D=n=
+<F<f<
+<F=M=
+<H=Y=_=
+<I<s<
+<J<V<p<
+<L<u<
+<M=U=~=
+<N<t<
+<P<q<
+<request/>
+<STYLE>
+<SVW3
+<T<n<
+<W=q=
+<X<^<
+<xsl:stylesheet version="1.0"
+<xsl:stylesheet version="1.0" 
+<xsl:template name="_IsFirstChildOfItsKind">
+<xsl:variable name="_NSatom03" select="'http://purl.org/atom/ns#'" />
+<xsl:variable name="_NSatom1" select="'http://www.w3.org/2005/Atom'" />
+<xsl:variable name="_NScf" select="'http://www.microsoft.com/schemas/rss/core/2005'" />
+<xsl:variable name="_NScfi" select="'http://www.microsoft.com/schemas/rss/core/2005/internal'" />
+<xsl:variable name="_NScontent" select="'http://purl.org/rss/1.0/modules/content/'" />
+<xsl:variable name="_NSdc" select="'http://purl.org/dc/elements/1.1/'" />
+<xsl:variable name="_NSdcterms" select="'http://purl.org/dc/terms/'" />
+<xsl:variable name="_NSmon" select="'http://www.microsoft.com/schemas/rss/monitoring/2007'" />
+<xsl:variable name="_NSrdf" select="'http://www.w3.org/1999/02/22-rdf-syntax-ns#'" />
+<xsl:variable name="_NSrss" select="'http://purl.org/rss/1.0/'" />
+<xsl:variable name="_NSslash" select="'http://purl.org/rss/1.0/modules/slash/'" />
+<xsl:variable name="_NSsy" select="'http://purl.org/rss/1.0/modules/syndication/'" />
+<xsl:variable name="_NSwfw" select="'http://wellformedweb.org/CommentAPI/'" />
+<xsl:variable name="_NSxhtml" select="'http://www.w3.org/1999/xhtml'" />
+<zf;D9
+= =$=(=,=0=4=8=<=@=D=H=L=P=T=X=\=`=d=h=l=p=t=x=|=
+= =*=7=E=O=Y=c=m=w=
+= >D>b>
+= >I>p>
+=!=/=V=e=t=
+=!=D=w=
+=!=K=o>
+=!>3>>>I>O>Z>a>|>
+="=1=}=
+=">6>k>
+=">s>
+=">Y>
+=$=M=d=
+=$>]>
+=$>7>H>S>
+=%=.=y=
+=%=V=`=
+=%>|>
+=&>l>
+=(=1=@=I=R=[=j=
+=(>l>
+=(>O>
+=(>V>d>
+=*>d>j>
+=*>I>o>
+=/=E=~=
+=/=V=m=
+=/>5><>V>u>
+=:>_>
+=;>r>
+=?=z=
+=\=`=h=p=
+=]=u=
+=+>f>m>
+=<=B=r=|=
+=<=F=
+=<>t>
+='=G=~=
+='=G=a=j=
+=->P>]>e>L?a?j?
+=->T>|>
+=0>b>g>v>
+=1=g=
+=1=Q=
+=1=X=f=
+=2=8=<=G=b=y=
+=2><>J>`>i>
+=6>=>P>
+=9={=
+=9>a>r>
+=d=m=
+=j=v=
+=m=w=
+=Q=u=
+=W=y=
+> >$>(>,>0>4>8><>@>D>H>L>P>T>X>\>`>d>h>l>p>t>x>|>
+> >)>1>p>
+>!>+>5>?>I>S>]>g>q>{>
+>!>4>|>
+>">G>
+>#?x?
+>#>7>
+>$?2?
+>$>->4>;>B>I>P>W>^>e>l>s>z>
+>%>,>Z>a>h>o>
+>%>Y>b>
+>&>_>g>x>
+>*>8>K>[>`>
+>*>B>
+>*>d>
+>,?\?
+>,?G?Y?w?~?
+>,>m>
+>.?J?l?
+>/?_?
+>:>]>
+>;?K?_?h?
+>?>F>Z>m>
+>-?l?
+>'?U?v?
+>_?p?
+>+?a?
+>=>^>g>
+>=>a>~>
+>=>D>l>q>z>
+>'>/>l>
+>>?F?_?i?
+>->\>
+>>> entry %d >>>
+>->N>
+>0?I?
+>0R0x0
+>1?U?
+>1>J>c>y>
+>1>U>d>
+>2?L?
+>3?:?\?k?{?
+>3?;?`?
+>5>b>
+>5>X>
+>6?O?]?
+>6><>[>}>
+>7?p?
+>8>\>
+>A?]?}?
+>A?g?l?q?
+>b?w?
+>C?~?
+>C>t>_?
+>H?S?
+>H>Z>r>}>
+>I>n>
+>i>t>
+>J?|?
+>J>p>w>
+>N>Z>
+>O>v>
+>S>o>
+>U?u?
+>Y?|?
+>yMove
+0 0$0(0,0004080<0@0D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+0 0$0(0,0004080<0@0D0H0L0P0T0X0`0d0h0l0p0x0|0
+0 0Z0?1F1X1_1
+0 1`1
+0!0O0z0
+0!1(1]1
+0!141U1
+0"1e1
+0#1)1[1q1
+0$0\0
+0$1[1|1
+0%0_0
+0(0]0u0
+0)070R0W0l0r0x0
+0)101Y1j1
+0,0v0
+0,1:1B1h1
+0,1[1
+0,1<1L1\1l1|1
+0,151
+0,GFSS_INTERVALx
+0/1T1Y1_1n1
+0;192
+0@0]0
+0@1S1b1
+0\0y0
+0_0s0
+0+0?0P0V0
+0+0E0g0
+0<0g0
+0=1W1o1
+0>0\0o0
+0>0l0
+0>1p1
+0>1X1c1v1
+000R0e0{0
+0'0h0q0
+0-0S0}0
+010:0@0a0i0p0v0|0
+010=0n0
+021:1N1}1
+031Y1m1
+04080<0D0
+040904B0
+040d0
+050n0s0
+051o1i2
+058FDS_NONE
+060g0
+070q0
+090Y0
+0B0~0
+0D0P0}0
+0D0Z0
+0dCFXSO_DESCENDINGW
+0E0d0
+0E0e0
+-0E0h0
+0G0N0Z0k0
+0H0Y0
+0I&FBSS_DISABLEDWWW
+0L1R1
+0M0u0
+0P0z0
+0scopeWWW
+0vCountWWW,
+0Y0_0y0
+1 1$1(1,1014181<1@1D1H1L1P1T1X1\1`1d1h1l1p1t1x1|1
+1 1$1(1,1014181<1@1D1L1T1X1\1`1d1h1l1p1t1x1|1
+1 121@1`1
+1 2'2e2m2/343=3S3]3
+1 2F2L2
+1!1L1
+1!2!3
+1!2.2;2D2c2
+1!232
+1#1>1j1
+1%1R1v1
+1%2.2f2
+1&2O2
+1)1@1h1
+1*1/1H1O1q1
+1*1K1
+1*212=2N2m2
+1.3.6.1.4.1.311.13.1
+1.3.6.1.4.1.311.76.12.1
+1/171J1V1^1
+1/1i1
+1/262
+1/282a2
+1;1c1
+1?2`2
+1{1q2
+1+131J1
+1<2J2
+1=1a1
+1>1c1r1
+1>2J2k2x2
+101A1c1
+101K1T1[1
+101n1u1
+102E2u2
+11.00.17763.1
+11.00.17763.1 (WinBuild.160101.0800)
+1'1V1b1
+121[1
+121{1
+121R1
+1-2E2\2
+132l2t2
+14181<1@1D1H1L1P1T1X1\1`1d1h1l1p1t1x1|1
+141K1
+141l1
+152V2s2
+171h1v1
+191h1
+1A1_1
+1A2r2{2
+1E1`1n1
+1E1L1S1t1
+1f;2u
+1F1y1
+1FDS_DOWNLOADINGW
+1G1r1
+1J1i1
+1k2|2
+1K2k2
+1L1j1x1
+1M1p1
+1M1T1[1b1v1
+1o1 2
+1O1o1
+1PPPQ
+1Q2 383W3
+1U1^1
+1X1y1
+1X2_2r2
+1Y1x1
+2 2$2(2,2024282<2@2D2H2L2P2T2X2\2`2d2h2l2p2t2x2|2
+2 2&2:2_2
+2 2@2}2
+2 2<2@2\2`2|2
+2 262c2
+2!2&2W2k2p2
+2!2E3]3
+2"2W2
+2%2p2
+2&2T2X2\2`2d2h2l2p2t2x2|2
+2(242@2L2X2d2p2|2
+2)2;2K2R2
+2)2N2}2
+2)3k3
+2)3l3
+2,2N2l2
+2,3o3
+2.242Z2
+2.373=3B3
+2/3}3
+2:2|2
+2:2V2
+2:4o4
+2?2L2`2y2
+2?2m2
+2\3q3
+2+2Y2
+2+3j3#4:4A4P4p4|4
+2<2r2y2
+20272>2S2l2~2
+203y3
+2-2|2
+2-262<2D2J2R3[3\5j5y5
+2'2K2e2
+2'3q3
+243=3`3
+243y3
+252B2O2g2~2
+262U2
+263@3F3
+272d2
+272K2e2r2
+273^3
+28itemIdWW
+292D2m2{2
+2a2g2u2
+2B2l2
+2B3J3V3
+2f;0u
+2F2h2
+2F2j2p2
+2g3n3t3|3
+2h3s3
+2H3u3
+2I2y2
+2L2x2
+2O2q3
+2O3V3}3
+2r|Bj 5
+2V2]2
+2Y3p3
+3 3$3(3,3034383<3@3D3H3L3P3T3X3\3`3d3h3l3p3t3x3|3
+3 3<3@3\3`3|3
+3 3l3
+3!3D3
+3!4N4
+3!4U4
+3!4V4e4
+3"4)4`4g4n4
+3"444H4q657
+3#3L3
+3#4j4
+3%3:3`3p3
+3%3;3
+3%3B3V3e3
+3%3c3
+3%3H3
+3&4/4=4D4V4\4r4
+3(3-3^3
+3*3h3
+3*4M4p4
+3.3:3J3g3
+3.3B3S3g3|3
+3.4h4
+3/3i3
+3:4b4
+3?3a3{3
+3?3R3`3
+3?3V3[3
+3@3b3
+3@4J4Y4c4
+3^3g3
+3_^[]
+3+373
+3+454
+3+4C4b4
+3+4D4
+3<3I3c3x3
+3<3m3x3
+3=3n3~3
+303B3Q3
+303U3c3
+313=3\3{3
+324b4
+333k3
+334]4
+3-3e3
+3-3Q3
+353c3o3|3
+363I3
+373[3
+393S3
+3D3[3q3
+3F3k3
+3FXIF_CF_EXTENSIONSWW
+3H3L3P3T3X3\3`3d3h3l3p3t3
+3j@Xf
+3j\Xf9
+3L4i4
+3l4z4
+3l5#6F6o6
+3O3s3
+3O3u3
+3R3{3
+3S3m3
+3S3u3
+4 4$4(4,4044484<4@4D4H4L4P4T4X4\4`4d4h4l4p4t4x4|4
+4 4@4\4`4
+4 5+5}5
+4!5^5z5
+4"434M4`4s4
+4#4*41484b4
+4#4.4t4
+4$4b4
+4$5G5
+4%4,434p4w4}4
+4%4,464f4
+4%5m5
+4(4A4Q4a4y4
+4)4S4
+4)585W5
+4*4=4m4
+4,555J5
+4.5L5
+4/5u5
+4:4@4E4Z4`4f4
+4:4W4]4
+4;4n4J5m5
+4?4K4
+4[4i4L5U5
+4]4e4
+4<4O4}4
+4<4Y4y4
+4<5_5
+4<5f5
+4<5O5
+4=4T4_4|4
+4=4U4x4
+4=5E5K5c5z5
+4>5k5t5
+414G4i4
+414x4
+415<5K5
+434\4
+434^4c4
+434I4O4}4
+434m4s4
+434V4z4
+435L5U5q5
+444N4e4n4
+4'4M4h4
+4'4O4
+4'4p4
+4'5\5
+454b4
+4'5H5
+4-5X5
+474s4
+495a5
+495c5
+495q5
+4B4r4
+4c5B6q6b7
+4f4m4t4{4
+4f4y4
+4m5.6P6
+4O4c4t4
+4R5_5
+4S5f5
+4SVW3
+4SVWj.
+4V4z4
+4W5s5
+5 5$5(5,5054585<5@5D5H5L5P5T5X5\5`5d5h5l5p5t5x5|5
+5 5Y5
+5 6%646g6
+5 636S6`6
+5"5:5U5o5
+5"6]6
+5#5:5c5
+5%5-595B5G5M5W5a5q5
+5%6N6
+5&5*5.52565:5>5B5F5J5N5R5V5Z5^5b5r5
+5&5?5b5|5
+5&6/6
+5&686l6
+5&6t6
+5(535L5W5b5i5}5
+5(5v5
+5)545D5M5Z5e5u5~5
+5)6_6
+5;5d5|5
+5@6G6
+5[5}5
+5[5d5
+5\6c6}6
+5+515>5D5Q5W5d5j5w5}5
+5+5H5w5
+5>5t5
+5>6e6t6
+505;5[5
+505G5Q5[5
+506P6
+50E0L0U0`0i0t0
+525a5
+536k6p6
+546U6w6
+5'515>5
+5-53595
+555=5R5W5p5
+5-5U5j5
+5'6Q6y6
+585e5
+595B5\5
+595k5v5
+596i6
+5a5}5
+5B5K5p5
+5B5N5Y5
+5B6_6
+5C5p5
+5E5_5
+5FeedWatcherW
+5K6v6
+5O6u6
+5R5g5
+5R6]6}6
+5V5}5
+5W5k5
+5W5t5
+5X6r6w6
+5Z5w5
+6 6$6(6,6064686<6@6D6H6L6P6T6d6h6l6p6t6x6
+6 6$6(6,6064686<6@6D6H6L6P6T6X6\6`6d6h6l6p6t6x6|6
+6"7M7
+6#6N6
+6$7o7x8
+6%6.6M6d6i6z6
+6%616<6A6F6L6V6`6p6y6
+6%7[7l7
+6%777i7
+6(696`6
+6(7V7
+6)7k7
+6)7v7
+6*6=6B6S6e6j6z6
+6.757>7V7
+6.787
+6/6H6
+6/7O7o7
+6/7v7
+6:6q6
+6;6_6
+6;6E6U6|6
+6;7m7
+6+6H6y6
+6+7<7M7Y7
+6<6a6p6
+6<7Y7y7
+606Q6k6w6
+60797l7
+616r6
+617V7
+626W6^6r6
+646C6m6
+64797
+6-6M6
+676N6T6o6
+6-7E7h7
+6-7S7
+686?6O6V6f6m6y6
+686U6
+696f6
+6a6}6
+6C6N6p6
+6E8s8
+6FeedUrlChangedWW
+6G7V7
+6H7s7
+6j6u6
+6J7Q7X7_7f7w7
+6K6R6
+6K6V6_6
+6L6j6w6
+6M7T7Z7k7|7
+6O6n6
+6R7h7
+6R7W7q7{7
+6S6Z6a6
+6V6d6
+6X8]8h8*93999_9
+6Y7l7
+7 7$7(7,7074787<7@7D7H7L7P7T7X7\7`7d7h7l7p7t7x7|7
+7!7(787?7O7V7b7k7q7
+7!7c7
+7!8^8
+7"787=7C7J7c7
+7"7l7
+7#7*7=7D7S7Z7i7p7
+7#70767=7N7U7w7~7
+7$7(70747<7@7H7L7T7X7`7d7l7p7x7|7
+7&7A7U7}7
+7(7K7v7
+7)8_8
+7)8G8Q8`8v8
+7*7`7
+7*7=7
+7*8C8h8
+7,8[8
+7:7|7
+7;7I7_7g7
+7?7~7
+7@7W7u7
+7+838s8
+7=8T8`8
+70797\7
+7185898=8A8E8I8t8
+727X7
+728R8
+737~7
+737V7
+737Y7Z8
+738F8i8
+748;8L8V8
+757X7
+767S7`7
+767u7
+768q8
+7-767Y7
+777>7K7p7
+7-7P7|7
+788J8v8
+7'8j8
+797j7}7
+798X8
+7a7}7
+7b8~8
+7C7l7
+7F7M7Y7q7
+7F8U8
+7G8`8h8
+7H8u8
+7J7V7c7o7{7
+7L8[8
+7M7f7o7u7|7
+7O7V7j7
+7oldPathW
+7T8i8v8
+7U7z7
+8 8$8(8,8084888<8@8D8H8L8P8T8X8\8`8d8h8l8p8t8x8|8
+8 8$8,80888<8D8H8P8T8\8`8h8l8t8x8
+8 9&9B9
+8 9L9
+8!8:8G8M8S8r8}8
+8!8e8y8
+8!9y9
+8"8)8/858
+8"8@8
+8"8H8r8
+8#9+9[9
+8$9a9
+8%909U9c9
+8&8:8F8K:
+8&888?8Q8X8j8q8
+8(8R8W8`8e8n8s8|8
+8)8B8_8{8
+8)8F8s8
+8)90979e9l9s9
+8)9H9
+8*8T8
+8*9U9
+8*9v9
+8,8:8l8r8
+8,8I8
+8,8m8v8
+8,8P8^8w8
+8,9X9
+8.8\8u8
+8.9A9L9
+8;9U9
+8?8h8
+8?9w9
+8\qFeedsManager
+8_^[]
+8_^[3
+8{HIFeedsEnumWW,
+8<8T8g8
+8>8I8T8v8
+808D8y8
+818a8
+818a8i8|8
+818U8d8
+819=9e9
+828;8t8
+828Y8
+838W8d8
+839=9
+83999I9O9
+858`8s8
+858X8
+868L8_8
+879Z9
+8'808L8U8
+8-8F8b8
+8'9i9x9
+8'9L9q9
+8A8L8o8
+8a8s8y8
+8B9d9
+8C8^8c8s8
+8C8H8
+8D9h9
+8E9T9
+8f;>u
+8F8R8
+8F9f9x9
+8F9h9
+8g;n;u;
+8G8f8
+8IOFEEDS_BACKGROUNDSYNC_STATUSW
+8J8q8
+8L8S8
+8N8z8
+8O8g8
+8p8~8
+8s8&9-9
+8VWj6
+8Y9x9
+8Z8b8
+8ZfIFeedFolderEventsWWW
+9 :+:T:w:
+9 9$9(9,9094989<9@9D9H9L9P9T9X9\9`9d9h9l9p9t9x9|9
+9!:A:
+9!:b:
+9!:U:Z:e:
+9!9=9G9u9
+9":J:\:f:
+9"969;9J9P9\9d9~9
+9#:i:
+9#9^9g9
+9%9,949<9M9S9v9
+9&989?9Q9X9|9
+9(:K:_:
+9*9>9H9d9p9|9
+9*9A9
+9,9K9
+9,9m9
+9,9T9
+9.999?9E9P9V9\9g9m9
+9.9Q9g9
+9/9U9
+9::A:|:
+9::J:^:n:~:
+9::w:
+9':_:
+9':=:O:o:
+9':0:N:]:
+9:9_9l9
+9':V:
+9;:V:z:
+9@9|9
+9@9g9
+9\$$t
+9\$,|
+9^Ht 
+9_9f9z9
+9_TuS
+9~(s2Wj
+9~,tL
+9>:F:N:u:
+9>9D9k9
+909<9~9
+91tM@
+93:A:
+939k9t9
+949K9z9
+959):.:>:\:l:q:
+959X9
+969>9H9d9
+97:T:
+97t=j
+98:[:{:
+98vti}
+9-9:9
+9-9;9N9
+999l9
+9'9G9
+9A$u4
+9A:J:j:s:y:
+9C<t-
+9E9x9
+9F9K9S9{9
+9KTt+
+9L:k:
+9L9i9
+9M:Y:e:
+9Q:]:
+9S;f;
+9T$pvK+D$hR
+9T$t|S
+9T:z:
+9U9a9z9
+9U9v9
+9w<t^
+9w<u@9w
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
+about:blank
+about:home
+about:newsfeed
+about:Start
+about:Tabs
+about:tabs
+AcceptLanguage
+Accept-Language
+Access Denied
+AcquireSRWLockExclusive
+Adds the downloaded enclosure file to the RSS platform.WWW/
+ADVAPI32.dll
+aFDE_AUTH_FAILEDW 
+AllowDocumentFunction
+AllowTelemetry
+AllowTelemetry_PolicyManager
+alternate
+api-ms-win-core-com-l1-1-0.dll
+api-ms-win-core-shlwapi-legacy-l1-1-0.dll
+api-ms-win-core-winrt-l1-1-0.dll
+api-ms-win-core-winrt-string-l1-1-0.dll
+api-ms-win-downlevel-version-l1-1-0.dll
+APIPath: %s
+Application=Windows
+AsyncDownloadWWW
+AsyncSyncAll
+atom:link
+atom:updated
+ATOM03NORMALIZER.XSL
+Atom03Normalizer.xsl
+Atom1Normalizer.xsl
+ATOM1NORMALIZER.XSL
+Auth Denied
+Auth Failed
+authhost.exe
+author
+AuthorWW
+AVRES000
+az-Cyrl-AZ
+az-Latn-AZ
+B+RenameWW
+Background Download Disabled
+BackgroundSync
+BackgroundSyncStatus
+BackgroundSyncWW
+BackgroundTaskScheduler
+be-BY
+binary/octet-stream
+bing.
+bing.com
+BitsJobs
+BitsQueue
+blastPopulateDate
+bookmark
+browser_broker.exe
+bw0t"
+C\+C`
+CallContext:[%hs] 
+Canceled
+Cancels asynchronous download of the enclosure.WWW7
+Cancels asynchronous download of the feed.*
+category
+CertAddCertificateContextToStore
+CertCloseStore
+CertCreateCertificateContext
+CertDeleteCertificateFromStore
+CertEnumCertificatesInStore
+CertFindCertificateInStore
+CertFreeCertificateChain
+CertFreeCertificateContext
+CertGetCertificateChain
+CertGetCertificateContextProperty
+CertGetEnhancedKeyUsage
+CertGetIntendedKeyUsage
+CertGetNameStringW
+CertOpenStore
+CertVerifyCertificateChainPolicy
+cf:treatAs
+cfi:downloadstatus
+cfi:downloadurl
+cfi:effectiveId
+cfi:id
+cfi:lastdownloaderror
+cfi:lastdownloadtime
+cfi:path
+cfi:read
+CharNextW
+charset
+Checks if a feed exists.WW
+Checks if a feed folder exists.WWW!
+Checks if a subfolder exists.W"
+Checks to see whether the current folder is the root folder.WW8
+ChrCmpIW
+class
+CleanHtmlToPlainText
+CleanHtmlToSafeHtml
+CleanXhtmlToPlainText
+CleanXhtmlToSafeXhtml
+ClearCredentials
+Clears the username and password used to authenticate the feed.WWW&
+CloseHandle
+CloseServiceHandle
+CLSIDFromString
+CoCreateGuid
+CoCreateInstance
+CodeIntegrity.Telemetry
+CoInitializeEx
+CoInternetCombineIUri
+CoInternetCombineUrl
+CoInternetCombineUrlEx
+CoInternetCreateSecurityManager
+CoInternetIsFeatureEnabled
+CombineUrls
+comments
+CommitUrlCacheEntryW
+Common feed format output templates
+CompanyName
+Compare Time: 
+CompareFileTime
+CompareStringW
+ConfigureTelemetryOptInChangeNotification
+ConfigureTelemetryOptInSettingsUx
+content
+Content-Type
+Content-Type: text/xml; charset=utf-8
+Control Panel\International\Calendars\TwoDigitYearMax
+Controls the behavior of background synchronization engine.WWW%
+Conversion and utility/helper templates
+Converts a feed to the normalized form.WWW9
+ConvertSidToStringSidW
+Cookie
+copyright
+CoSetProxyBlanket
+CoTaskMemAlloc
+CoTaskMemFree
+CoUninitialize
+Count
+CoWaitForMultipleHandles
+CreateAsyncBindCtx
+CreateDirectoryW
+CreateEventExW
+CreateEventW
+CreateFeedWW
+CreateFileMappingW
+CreateFileW
+CreateIUriBuilder
+CreateMutexExW
+CreateMutexW
+Creates a new feed, and subscribes to it.W&
+Creates a new subfolder in the folder.
+CreateSemaphoreExW
+CreateSubfolderW
+CreateThread
+CreateUri
+CreateUriWithFragment
+CreateUrlCacheContainerW
+CreateUrlCacheEntryW
+CreateURLMonikerEx
+CredDeleteW
+CredEnumerateW
+CredFree
+CredReadW
+CredWriteW
+CRYPT32.dll
+CryptAcquireContextW
+CryptBinaryToStringA
+CryptCreateHash
+CryptDeriveKey
+CryptDestroyHash
+CryptDestroyKey
+CryptEncrypt
+CryptGenRandom
+CryptGetHashParam
+CryptGetKeyParam
+CryptHashCertificate
+CryptHashCertificate2
+CryptHashData
+CryptImportPublicKeyInfo
+CryptProtectData
+CryptReleaseContext
+CryptSetHashParam
+CryptSetKeyParam
+CryptStringToBinaryA
+CryptStringToBinaryW
+CryptUnprotectData
+CryptVerifySignatureW
+Current
+Current Time: 
+CurrentVersion
+D$ Ph
+D$ Pj
+D$ Pj Z
+D$ PQ
+D$ SV
+D$$+D$(
+D$$Ph
+D$$QPQ
+D$$WP
+D$&9D$
+D$(j@Yf;
+D$(Ph
+D$(Pj
+D$(tF
+D$,t1j
+D$@!\$@Q
+D$@SV3
+D$|PV
+D$0Pj
+D$4Ph
+D$8P3
+D$8vT2
+D$dFXf
+D$DPW
+D$dRRh
+D$H!\$HQ
+D$HPQ
+D$hQP
+D$hSV
+D$LPQQ
+D$LQP
+D$tXf
+D$XPQ
+D88Ph
+D9(Xf
+D98Xf
+D9HXf
+daily
+DCIScanner
+DebugBreak
+DefaultInterval
+DelayLoadFailureHook
+DeleteCriticalSection
+DeleteFeedWW
+DeleteFileW
+DeleteFolderd
+Deletes a feed folder.;
+Deletes a feed.WWW
+Deletes the enclosure file or cancels any pending or in-progress downloads.WWW7
+Deletes the feed item.6
+Deletes the feed.W
+Deletes this folder and all of its contents.WW)
+DeleteUrlCacheEntryW
+description
+Determines if the feed is a list.WG
+Determines if the URL is in the system subscription store.
+Device-Manufacturer
+Device-Model
+Device-Touch-Type
+dFXSO_NONEWWWL
+DisableDeviceDelete
+DisableDiagnosticDataViewer
+DisableTelemetryOptInChangeNotification
+DisableTelemetryOptInSettingsUx
+DisableThreadLibraryCalls
+DispatchMessageW
+DllCanUnloadNow
+DllGetClassObject
+Download
+Download Blocked
+Downloaded
+DownloadEnclosuresAutomaticallyW
+downloadFilePath
+Downloads content for the feed asynchronously.*
+Downloads content for the feed.WWW.
+Downloads the enclosure asynchronously.WWW/
+DownloadThreadCount
+downloadUrl
+DownloadUrlW
+DuplicateHandle
+Dw=]:s
+Dw=|:s
+Dw=a.p
+Dw=c:s
+Dw=y:s
+E(;G(t
+E(SV3
+E(SVW
+edisp
+EffectiveIdW
+email
+enclosure
+EnclosureDownloadMimeType
+EnclosureDownloadUrl
+enclosureFilenameWWW4
+EnclosureLocalFilename
+enclosureUrl
+endtime
+EnterCriticalSection
+entry
+entry-content
+entry-summary
+entry-title
+enumVarW
+en-US
+Error
+ErrorWWW
+EUPP_
+euppid
+EuppProtectionEvent
+EUPPSYNCLOCK
+eventID
+EventRegister
+EventSetInformation
+EventUnregister
+EventWriteEx
+EventWriteTransfer
+Exception
+ExistsFolder
+ExistsSubfolderW
+EXPLORER.EXE
+Exposes event handlers for feed events.WWW
+Exposes event handlers for System Feed List folder events.'
+Exposes methods to access the System Feed List.WWW:
+Extension
+F$;F(s.
+F$S9F
+f;2ulj\Z
+f;D$.ug
+f;W.u
+F\9^X
+f9\78t
+f9^`u
+f9~bu
+f98_u#j
+f98ush
+Failed
+FailFast
+FAKEVIRTUALSURFACETESTAPP.EXE
+false
+FBSA_DISABLEd
+FBSA_ENABLEWd
+FBSS_ENABLED
+FDE_ACCESS_DENIEDWWW 
+FDE_CANCELED 
+FDE_DOWNLOAD_BLOCKED 
+FDE_DOWNLOAD_FAILEDW 
+FDE_DOWNLOAD_SIZE_LIMIT_EXCEEDED 
+FDE_INVALID_FEED_FORMATW 
+FDE_NONE 
+FDE_NORMALIZATION_FAILED 
+FDE_PERSISTENCE_FAILEDWW 
+FDE_UNSUPPORTED_AUTH 
+FDE_UNSUPPORTED_DTDW 
+fDownloaded
+fDownloaded: %u
+FDS_DOWNLOAD_FAILEDW
+FDS_PENDINGW
+Feed Arbitration Lock Event [ Process : 0x%08x ]
+Feed Arbitration Shared Memory [ User : %s ]
+Feed Arbitration Shared Memory Mutex [ User : %s ]
+Feed Arbitration Unlock Event [ Process : 0x%08x ]
+Feed Arbitration Unlock Event [ Write Request : %s ]
+Feed Arbitration Validity Mutex [ Write Request : %s ]
+Feed Eventing Shared Memory %s
+Feed Eventing Shared Memory Mutex %s
+FeedAddedWWW
+FeedDataCache
+'FeedDownloadingW 
+feedGuid
+FeedItemCountChanged
+FeedMinInterval
+FeedMovedFromWWW
+FeedMovedToW
+FeedMovedWWW
+feedName
+feedPath
+feedplat
+feedplat:
+FeedRenamedW
+Feeds Cache
+Feeds Schedules Rebuild Required
+Feeds Store Mutex %s
+FEEDS_DOWNLOAD_STATUSWWW
+FEEDS_EVENTS_SCOPEWW
+FEEDS_SYNC_SETTINGWWx
+FEEDS_XML_FILTER_FLAGSWW
+FEEDS_XML_INCLUDE_FLAGSW
+FEEDS_XML_SORT_ORDERL
+FEEDS_XML_SORT_PROPERTYW
+FeedsStore.feedsdb-ms
+FeedsWWW
+feedurl
+feedXmlOutWW
+FEM_FEEDEVENTSWW
+FES_ALLW
+FES_SELF_AND_CHILDREN_ONLYWWX
+FES_SELF_ONLYWWW
+fFXSP_PUBDATE
+file:
+file:%s
+file:///%s
+FileDescription
+FILETIME_remainder
+FileTimeToLocalFileTime
+FileTimeToSystemTime
+FileVersion
+FindClose
+FindCloseUrlCache
+FindFirstFileW
+FindFirstUrlCacheContainerW
+FindFirstUrlCacheEntryW
+FindNextFileW
+FindNextUrlCacheContainerW
+FindNextUrlCacheEntryW
+FindResourceExW
+FirstLogonAnim.exe
+FlushFileBuffers
+FlushViewOfFile
+FolderItemCountChangedWW
+FolderMovedFromW
+FolderMovedToWWW
+folderNameWW
+folderPathWW
+FolderRenamedWWW
+forcesync
+FORM=IEMAD1
+FORM=IEMAD2
+FORM=IEMAE1
+FORM=IEMAE2
+FORM=IEMDS1
+FORM=IEMDS2
+FORM=IEMSD1
+FORM=IEMSD2
+FORM=IEMSE1
+FORM=IEMSE2
+FORM=IEMSS1
+FORM=IEMSS2
+FORM=IENAD1
+FORM=IENAD2
+FORM=IENAE1
+FORM=IENAE2
+FORM=IENDS1
+FORM=IENDS2
+FORM=IENSD1
+FORM=IENSD2
+FORM=IENSE1
+FORM=IENSE2
+FORM=IENSS1
+FORM=IENSS2
+FORM=IESR02
+FORM=IESR3A
+FORM=IESR3N
+FORM=IESR3S
+FORM=IESR4A
+FORM=IESR4N
+FORM=IESR4S
+FORM=IESS02
+FORM=IESS3A
+FORM=IESS3N
+FORM=IESS3S
+FORM=IESS4A
+FORM=IESS4N
+FORM=IESS4S
+FormatMessageW
+FreeLibrary
+fss: %u
+FSS_DEFAULTWx
+FSS_MANUALWWx
+FSS_SUGGESTEDWWW
+ftLastDownloadTime
+ftLastDownloadTime: 
+ftLastDownloadTime: %d/%d/%d %d:%d:%d:%d
+ftp://
+FXFF_ALL
+FXFF_UNREADW
+FXSO_ASCENDINGWWL
+FXSP_DOWNLOADTIMEWWWL
+G ;G$}
+Generic output templates
+GetCurrentDirectoryW
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThreadId
+GetDiskFreeSpaceExW
+GetFileAttributesW
+GetFileSize
+GetFileSizeEx
+GetFileTime
+GetFileVersionInfoExW
+GetFileVersionInfoSizeExW
+GetFolderWWW
+GetFullPathNameW
+GetItemByEffectiveId
+GetItemW
+GetLastError
+GetLocalTime
+GetModuleFileNameA
+GetModuleFileNameW
+GetModuleHandleExW
+GetModuleHandleW
+GetProcAddress
+GetProcessHeap
+GetProductInfo
+GetStringTypeExA
+GetSystemDefaultLCID
+GetSystemDefaultLocaleName
+GetSystemInfo
+GetSystemTime
+GetSystemTimeAsFileTime
+GetTempPathW
+GetTickCount
+GetTimeZoneInformation
+GetTokenInformation
+GetTraceEnableFlags
+GetTraceEnableLevel
+GetTraceLoggerHandle
+GetUrlCacheEntryInfoW
+GetUserDefaultLCID
+GetUserDefaultLocaleName
+GetUserPreferredUILanguages
+GetVersionExA
+GetVersionExW
+GlobalAlloc
+GlobalFree
+GlobalLock
+GlobalUnlock
+guidFeed: 
+guidFeed: %s
+gY?&%:E
+HashData
+hashvalue
+HeapAlloc
+HeapFree
+HIFeedsManagerWWW
+HistoryJournalCertificate
+HKCU\
+homePage
+homepageChangeReason
+hourly
+hslice
+HtmlEscape
+http://
+http://go.microsoft.com/fwlink/?LinkId=392206
+http://go.microsoft.com/fwlink/?LinkId=625115
+http://go.microsoft.com/fwlink/?LinkId=625119
+http://hao.360.cn/?src=lm&ls=n55dfe5b796
+http://hao.qq.com/?unc=Af31022
+http://purl.org/rss/1.0/modules/syndication/
+http://www.baidu.com/favicon.ico
+http://www.microsoft.com/schemas/rss/core/2005/internal
+http://www.microsoft.com/schemas/rss/monitoring/2007
+http://www.w3.org/1999/xhtml
+http://www.w3.org/2005/Atom
+http://www.yandex.com.tr/favicon.ico
+http://www.yandex.com/favicon.ico
+HttpOpenRequestW
+HttpQueryInfoW
+https://
+https://api.bing.com/qsml.aspx?query={searchTerms}&market={language}&maxwidth={ie:maxWidth}&rowheight={ie:rowHeight}&sectionHeight={ie:sectionHeight}&FORM=IENTSS
+https://api.bing.com/qsml.aspx?query={searchTerms}&market={language}&maxwidth={ie:maxWidth}&rowheight={ie:rowHeight}&sectionHeight={ie:sectionHeight}&FORM=IESS02
+https://go.microsoft.com/fwlink/?LinkID=403856&language={language}&scale={scalelevel}&contrast={contrast}
+https://ieonline.microsoft.com/EUPP/v1/service?action=downloadcert&appid=Microsoft_IE_EUPP
+https://ieonline.microsoft.com/EUPP/v1/service?action=needfirstrun&appid=Microsoft_IE_EUPP
+https://ieonline.microsoft.com/EUPP/v1/service?action=setfirstruncomplete&appid=Microsoft_IE_EUPP
+https://ieonline.microsoft.com/EUPP/v1/service?action=signvalue&appid=Microsoft_IE_EUPP
+https://ieonlinews.microsoft.com/
+https://suggest.yandex.by/suggest-ff.cgi?srv=ie11&part={searchTerms}&clid=2233627
+https://suggest.yandex.com.tr/suggest-ff.cgi?srv=ie11&uil=tr&part={searchTerms}&clid=2233630
+https://suggest.yandex.kz/suggest-ff.cgi?srv=ie11&part={searchTerms}&clid=2233627
+https://suggest.yandex.ru/suggest-ff.cgi?srv=ie11&part={searchTerms}&clid=2233627
+https://suggest.yandex.ua/suggest-ff.cgi?srv=ie11&part={searchTerms}&clid=2233627
+https://www.baidu.com/s?tn=80035161_2_dg&wd={searchTerms}
+https://www.bing.com/favicon.ico
+https://www.bing.com/search?q={searchTerms}&src=IE-SearchBox&FORM=IENTSR
+https://www.bing.com/search?q={searchTerms}&src=IE-SearchBox&FORM=IENTTR
+https://www.bing.com/search?q={searchTerms}&src=IE-SearchBox&FORM=IESR02
+https://www.haosou.com/s?src=win10&ie=utf-8&q={searchTerms}
+https://www.sogou.com/tx?hdq=sogou-wsse-6abba5d8ab1f4f32&query={searchTerms}
+https://yandex.by/search/?text={searchTerms}&clid=2233627
+https://yandex.com.tr/search/?text={searchTerms}&clid=2233630
+https://yandex.kz/search/?text={searchTerms}&clid=2233627
+https://yandex.ru/search/?text={searchTerms}&clid=2233627
+https://yandex.ua/search/?text={searchTerms}&clid=2233627
+HttpSendRequestW
+hy-AM
+i8GetSubfolder
+IAj\X
+IE 11.0
+IE Enhanced User Preference Protection
+IE_EUPP
+IE=%u
+IE-Address
+IE-ContextMenu
+IEFRAME.dll
+IEGetProtectedModeCookie
+iehistory
+iehistory://
+ierss
+ierss://
+iertutil.dll
+IE-SearchBox
+IESetProtectedModeCookie
+IEUTLAUNCH.EXE
+IEXPLORE.EXE
+iFDS_DOWNLOADEDWW
+IFeed2WW@
+IFeedEnclosureWW
+IFeedEventsW
+IFeedFolderW
+IFeedItem2WWl
+IFeedItemWWW
+IFeedWWW
+If-Modified-Since
+If-None-Match
+-IFolderDeletedWWW
+Ij/j\
+image/url
+ImageWWW
+In Progress
+includeFlags
+indexWWW,
+InitializeCriticalSection
+InitializeCriticalSectionAndSpinCount
+InitOnceExecuteOnce
+internal\sdk\inc\wil\resource.h
+InternalName
+Internet Explorer
+Internet-Browser-License-LicensedPartnerID
+InternetCanonicalizeUrlW
+InternetCloseHandle
+InternetConnectW
+InternetCrackUrlW
+InternetOpenW
+InternetQueryOptionW
+InternetReadFile
+InternetTimeFromSystemTimeW
+Invalid Feed Format
+is not important because sanitization will drop all the unknown elements anyway -->
+isalnum
+IsDBCSLeadByte
+IsDBCSLeadByteEx
+IsDebuggerPresent
+IsListWW
+IsReadWW
+IsRootWW
+IsSubscribed
+iswalpha
+IsWow64Process
+Item Data
+item[@id='%d' and string(.)='%s']
+item[string(.)='%s']
+ItemCountLimitWW,
+ItemCounts
+ItemData
+ItemData/item
+itemEffectiveIdW@
+iwz$m
+j _9M
+j Y;u
+j Yf;
+j._f9z
+j.Zf;
+j.Zf9
+j:Xf9B
+j:Zf9V
+j;Yf;
+j;Zf9U
+j@Xf;
+j@Yf;
+j\j/Z
+j\Xf;
+j\Xf;F`u
+j\Xf;FLu
+j\Yf;
+j\Yf;LC
+j\Zf;
+j\Zf;Tp
+j\Zf9
+j}Xf;
+j~Zf;
+j0Zf;
+j2XPQ
+jshost.exe
+jX_f;
+jx_f;
+K,99u
+K0U0q0
+ka-GE
+KERNEL32.dll
+kernelbase.dll
+Kernel-ProductInfo
+kFEEDS_EVENTS_MASKWWWX
+KfeedXmlInWWW
+kk-KZ
+KT_^[
+ky-KG
+L$ Aj
+L$ QP
+L$$;L$
+L$$;L$ 
+L$$_^[3
+L$$9L$
+L$$9L$ 
+L$$Z;L$
+L$(PQ
+L$,+L$0
+L$\_^[3
+L$_QQQ
+L$<_^[3
+L$<Qj 
+L$8QP
+L$aQQQ
+L$jQRj
+L$L_^[3
+L$lQRj
+L$PYj
+L$t_^[3
+L$TQj
+L$TRj
+L$ZQRj
+Language
+language
+Last Run Time: 
+lastBuildDate
+LastBuildDateWWW
+LastDownloadErrorWWW
+LastDownloadTime
+Last-Modified
+LastRunTime
+LastWriteTimeWWW
+lastWriteWWW
+LCMapStringW
+LeaveCriticalSection
+LegalCopyright
+length
+LengthWW
+LimitEnhancedDiagnosticDataWindowsAnalytics
+LOADER42.EXE
+LoadLibraryExW
+LoadLibraryW
+LoadResource
+LoadStringW
+LOCAL
+Local\Feeds Store Mutex LoRIE
+Local\IEHistJournalFm_24c20119-753b-4f33-887d-f2381810562d_
+Local\IEHistJournalGlobal_3bf1c317-e96b-46f6-ba88-50c001d497aa
+Local\IEHistJournalMx_1699bb90-bebe-4437-b6e8-a6b7123fa38e_
+Local\MsFeeds_IEORC_d8863854-886e-4a8e-b2e5-e580ab17661c
+Local\SM0:%d:%d:%hs
+LocalAlloc
+LocaleNameToLCID
+LocalFree
+LocalIdW
+LocalPathWWW
+LocalReAlloc
+LockResource
+LogHr
+LogTraffic
+lstrcmpiA
+lstrlenA
+lstrlenW
+LUnreadItemCountW
+M QRSP
+M,UD~
+M,UDX
+MachineGuid
+malloc
+Manufacturer
+Manufacturer/Model
+MapViewOfFile
+MarkAllItemsRead
+-mask
+MaxFeedSize
+Maximum number of items to keep, excess items will be deletedW_
+MaxItemCharacterCount
+MaxItemCount
+memcmp
+memcpy
+memcpy_s
+memmove
+memset
+Merges feed XML into an existing feed.5
+Microsoft
+Microsoft Corporation
+Microsoft Enhanced RSA and AES Cryptographic Provider
+Microsoft Feeds Manager
+Microsoft FeedsWWW'
+Microsoft.Feeds.InteropWWW
+Microsoft.IE.FeedItemLocalId
+Microsoft.IE.SelectionCount
+Microsoft.IE.TargetUrl
+Microsoft.IE.TargetUrlHostName
+Microsoft.IE.TargetUrlPath
+Microsoft.IE.Title
+Microsoft.IE.VisitCount
+Microsoft.Windows.App.Browser
+Microsoft_RssPlatform_%s
+Microsoft_RssPlatform_*
+microsoftedge.exe
+microsoftedgebchost.exe
+microsoftedgecp.exe
+microsoftedgedevtools.exe
+microsoftedgesh.exe
+MIE-Address
+MIE-ContextMenu
+MIE-SearchBox
+MIME\Database\Content Type\
+MIME\Database\Content Type\%s
+mimeType
+MinScheduleInterval
+Missing
+MLANG.dll
+Model
+Modified Feed: 
+Modified Time: 
+Modifiedl
+mon:descriptionStyles
+mon:expiration
+mon:X-UA-Compatible
+monthly
+MoveFileExW
+Moves the feed folder to a new location.WW0
+Moves the feed to a new location.W(
+msfeeds
+msfeeds.dll
+msfeeds.pdb
+msfeeds.txt
+MsfeedsCreateInstance
+msfeedssync.exe
+MSFEEDSSYNC.EXE
+Msg:[%ws] 
+MsgWaitForMultipleObjects
+MSHTMPAD.EXE
+MSIEHistoryJournal
+msIso.dll
+msn.cn
+msn.com
+MSOOBE.EXE
+msvcrt.dll
+MultiByteToWideChar
+N$QSP
+N,PPP
+N<_^]
+Namespaces commonly used in RSS feeds 
+nDownloadMimeType
+NetApiBufferFree
+NetGetJoinInformation
+NETPLWIZ.EXE
+netutils.dll
+newParentPathWWW
+newPrimaryHomepage
+Next Download Time: 
+Next Scheduled Time: 
+Next To Sync Feed: 
+Next To Sync Time: 
+NextToSync
+NfilterFlagsW
+non-touch
+-Norm
+Normalization Failed
+NormalizeDateToInetDate
+NormalizeDateToIso8601
+NormalizeUri
+Not Downloaded
+Not Exist
+NOTFOUND
+ntdll.dll
+NtQueryLicenseValue
+NtQuerySecurityPolicy
+o:$~%
+Occurs when a feed event error occurs.
+Occurs when a feed folder event error occurs.W+
+Occurs when a feed has finished or failed downloading.-
+Occurs when a feed is added to the folder..
+Occurs when a feed is deleted from the folder.
+Occurs when a feed is deleted.
+Occurs when a feed is moved from this folder.W+
+Occurs when a feed is moved to this folder.WWW&
+Occurs when a feed is moved.WWH
+Occurs when a feed is renamed.)
+Occurs when a feed starts to download.6
+Occurs when a folder or subfolder is added.WWW-
+Occurs when a folder or subfolder is moved from this folder.WW:
+Occurs when a folder or subfolder is moved to this folder.?
+Occurs when a folder or subfolder is removed.W-
+Occurs when a folder or subfolder is renamed.W<
+Occurs when the aggregated item count of a feed folder changes.WWW*
+Occurs when the item count of a feed changed.W:
+Occurs when the URL of a feed is changed.W-
+oeY<9
+OFBSA_RUNNOWW
+oFeedDeletedW
+OgminutesW
+oldHomepage
+ole32.dll
+OLEAUT32.dll
+OleSelfRegister
+onecore\base\telemetry\permission\product\telemetrypermission.cpp
+onecoreuap\inetcore\lib\tracelogging\legacydll.cpp
+OpenEventW
+OpenFileMappingW
+OpenMutexW
+OpenProcess
+OpenProcessToken
+OpenSCManagerW
+OpenSemaphoreW
+OpenServiceW
+OptInLevel
+OriginalFilename
+OutputDebugStringW
+p0t0x0|0
+ParentWW
+Password@
+PathFileExistsW
+PathFindExtensionW
+PathFindFileNameW
+PathIsNetworkPathW
+PathIsPrefixW
+PathIsURLW
+PathRemoveExtensionW
+PeekMessageW
+PEnclosureWWW
+Persistance Failed
+pHVVhP
+pickerhost.exe
+Pj+hL`
+policymanager.dll
+PolicyManager_FreeGetPolicyData
+PolicyManager_GetPolicy
+position:fixed
+PPj P
+PPPPPh0
+PPPPu5hB
+PQhLU
+PQj/QQ
+PQj0QQ
+PQQQj
+PQQQQV
+PQRj+
+PQVRj
+product
+ProductName
+ProductVersion
+ProhibitDTD
+property
+PROPSYS.dll
+PropVariantClear
+PropVariantCopy
+PSCreateMemoryPropertyStore
+PSGetPropertyKeyFromName
+PShha
+PSRegisterPropertySchema
+PSSh0
+PSSQS
+pubDate
+PubDateW
+publiccertificate
+published
+PVVVh`
+PWh0L
+PWRQVh
+PWWWWW
+Q$:P0s
+q_MergeWWW
+q8juZ
+QFXFF_READWWW
+QPQQQ
+QQPVQS
+QQQQhB
+QQQQQQP
+QQQQQQQQQQQQQQQj
+QQQQSPQh
+QQSV3
+QQSVf
+QQSVj
+QQSVj,j@
+QQSVW
+QQSVW3
+QQSVWh
+QQSVWhD
+QQSVWj@Xf
+QQSVWQ
+QQVPj
+QQVRj
+QQVWj
+QRPh$
+QRPhd
+QRPhD
+QRQjdZ
+QRQjeZ
+QRQjgZ
+QRQjiZ
+QRQjjZ
+QRQjkZ
+QRQjmZ
+QRQjnZ
+QRQjoZ
+QRQjpZ
+QRQjqZ
+QRQjrZ
+QRQjsZ
+QRQjwZ
+QRQjyZ
+QRRRRR
+QSSSj
+QSVW3
+QSVWh
+QSVWj
+QSVWj Y
+QSVWj$Y
+QSVWj:X3
+QSVWj@
+QSVWR
+QueryPerformanceCounter
+QueryPerformanceFrequency
+QueryServiceConfigW
+QueueUserWorkItem
+QVRjfZ
+QVRjhZ
+QVRjlZ
+QVRjtZ
+QVWh\^
+QWVjxZ
+r<Sj@
+R9ZhtM
+RactionWW
+RaiseException
+RaiseFailFastException
+rand_s
+RANK BY COERCION(Absolute, %u)) 
+ReadFile
+RegCloseKey
+RegCreateKeyExW
+RegEnumKeyExW
+RegGetValueW
+RegisterTraceGuidsW
+RegisterWaitForSingleObject
+RegOpenKeyExA
+RegOpenKeyExW
+RegQueryInfoKeyW
+RegQueryValueExA
+RegSetValueExW
+ReleaseMutex
+ReleaseSemaphore
+ReleaseSRWLockExclusive
+RemoveDirectoryW
+RemoveFileWW
+Renames the feed.W
+Renames the folder.WWW)
+Reserved.PlatformSigned
+ResetEvent
+ResolveDelayLoadedAPI
+RESTOREOPTIN.EXE
+Retrieves a feed by its name.W
+Retrieves a feed by its URL.WW
+Retrieves a feed from its path.WWW
+Retrieves a folder from its path.W
+Retrieves a phrase or sentence that describes the feed.WWW*
+Retrieves a subfolder by its name.,
+Retrieves a VARIANT_BOOL value that determines whether enclosures are downloaded automatically.WWWZ
+Retrieves an enumerator for items from the feed.WW.
+Retrieves the appropriate interface for events.WWW-
+Retrieves the assigned identifier (ID) of the feed item.WW+
+Retrieves the author from the feed item.WWF
+Retrieves the background sync status.W0
+Retrieves the collection of feeds in this folder.W6
+Retrieves the collection of subfolders in this folder.)
+Retrieves the copyright from the feed.=
+Retrieves the count of items in this feed.2
+Retrieves the count of unread feed items.W*
+Retrieves the current download status of the enclosure.WWW3
+Retrieves the current download status of the feed..
+Retrieves the date and time of the last download for this item.WWWC
+Retrieves the date and time of the last modification for this item.WWW)
+Retrieves the date and time of the last successful download for the feed.WL
+Retrieves the default update interval for feeds.WW+
+Retrieves the description from the feed item.W0
+Retrieves the display name of the feed.WWW
+Retrieves the effective ID for this item.W%
+Retrieves the file system path where enclosures for the feed are downloaded.WW0
+Retrieves the final Multipurpose Internet Mail Extensions (MIME) type for the downloaded enclosure.WWWK
+Retrieves the guid associated with this feed.W(
+Retrieves the guid from the feed item.-
+Retrieves the home page URL from the feed.&
+Retrieves the IFeedEnclosure object associated with the the feed item.+
+Retrieves the image URL from the feed.,
+Retrieves the item that contains the effective ID.;
+Retrieves the language code from the feed.&
+Retrieves the last build date from the feed.WW4
+Retrieves the last download error of the enclosure.WWW>
+Retrieves the last download error of the feed.&
+Retrieves the last time the feed changed.W
+Retrieves the length value from the enclosure.'
+Retrieves the local system path where the enclosure is stored.0
+Retrieves the maximum number of items retained for feeds.W3
+Retrieves the most recent download time for all feed items.WWWA
+Retrieves the Multipurpose Internet Mail Extensions (MIME) type from the enclosure.WWW.
+Retrieves the name of the current folder.W
+Retrieves the number of objects in this collection.WWW
+Retrieves the parent feed item of the enclosure.WW:
+Retrieves the parent feed of the feed item.WWW
+Retrieves the parent folder of the feed.WW)
+Retrieves the parent of the current feed folder.WW<
+Retrieves the password used to authenticate the feed, if present.W=
+Retrieves the path for the current feed.WW!
+Retrieves the path of the current folder.W(
+Retrieves the publication date and time of the feed.WW/
+Retrieves the publication date of the feed item.WW:
+Retrieves the read status of the feed item.WWW&
+Retrieves the root subscription folder.WWW:
+Retrieves the time to live (TTL) from the feed.WWW*
+Retrieves the title from the feed item.WWW%
+Retrieves the title from the feed.7
+Retrieves the total (aggregated) number of items.W/
+Retrieves the total (aggregated) number of unread items.WW1
+Retrieves the update interval for the feed.WWW&
+Retrieves the update setting for the feed.%
+Retrieves the URL from the enclosure.WS
+Retrieves the URL from the feed item.W&
+Retrieves the URL of the comments page from the feed item.(
+Retrieves the URL of the feed.
+Retrieves the URL that was used to download the enclosure.c
+Retrieves the URL that was used to download the feed.W!
+Retrieves the URL that was used to download this item.?
+Retrieves the username used to authenticate the feed, if present.WA
+ReturnHr
+Returns a IFeedItem object by identifier (ID)."
+Returns an object by index.WWW1
+Returns the Extensible Markup Language (XML) for the feed.'
+Returns the Extensible Markup Language (XML) fragment for the feed item.WW'
+RoGetActivationFactory
+ro-MD
+ROOT\CIMV2
+RPCRT4.dll
+RpcServerInqCallAttributesW
+RQQRQj
+RQQRQRRRj
+RSS Eventing Connection Database Mutex %08x
+RSS Eventing Event Event %08x
+rss/channel
+RSS1NORMALIZER.XSL
+Rss1Normalizer.xsl
+RSS2NORMALIZER.XSL
+Rss2Normalizer.xsl
+RssPlatformCred
+RtlAreLongPathsEnabled
+RtlDllShutdownInProgress
+ru-RU
+rVj~_f;|V
+s%j!+
+s(_^[
+S,9d$
+S,9d$,t
+s<^[]
+Sanitization and validation templates
+Save Last Run Time: 
+Save Next To Sync: 
+Schedule
+scheme
+sD9s\tX9s8|S
+sD9sHt
+sDj~Zf
+SELECT 
+SELECT Manufacturer, Model FROM Win32_ComputerSystem
+SELECT TOP %u 
+SelectionLanguage
+SelectionNamespaces
+SendMessageTimeoutW
+ServicesActive
+sessionID
+Set-Cookie
+SetCredentialsWW@
+SetEndOfFile
+SetEvent
+SetFileAttributesW
+SetFilePointer
+SetFileTime
+'SetFileW
+SetLastError
+Sets a VARIANT_BOOL value that determines whether enclosures are downloaded automatically.2
+Sets the default update interval for feeds.WWW-
+Sets the IFeedItem::IsRead property to VARIANT_TRUE for all feed items.WWW)
+Sets the read status of the feed item.8
+Sets the update interval for the feed.I
+Sets the update setting for the feed.W+
+Sets the URL of the feed.W-
+Sets the username and password used to authenticate the feed.W?
+SetUnhandledExceptionFilter
+SFDE_BACKGROUND_DOWNLOAD_DISABLED 
+SHA256
+SharedNormalizer.xsl
+SHAREDNORMALIZER.XSL
+SHCreateDirectoryExW
+SHCreateStreamOnFileEx
+SHCreateStreamOnFileW
+shell:%s
+SHELL32.dll
+shell32-license-UseBingAsDefaultSearchProvider
+ShellExecuteW
+SHGetFolderPathW
+SHGetInstanceExplorer
+SHGetValueW
+SHLWAPI.dll
+shortcut icon
+SHRegGetValueW
+SHStrDupW
+signvalue
+Size Limit Exceeded
+SizeofResource
+skipDays
+skipHours
+slc.dll
+Sleep
+SleepConditionVariableSRW
+SLGetWindowsInformation
+SLGetWindowsInformationDWORD
+-Slice
+so all of the above namespace declarations must be present in each other XSL where this is imported into. -->
+SOFTWARE\Microsoft\Cryptography
+Software\Microsoft\Feeds
+Software\Microsoft\Internet Explorer\Feeds
+Software\Microsoft\Internet Explorer\International
+Software\Microsoft\Internet Explorer\SearchScopes
+Software\Microsoft\Windows Search
+Software\Microsoft\Windows\CurrentVersion\Policies\DataCollection
+Software\Microsoft\Windows\CurrentVersion\Policies\DataCollection\Users
+Software\Policies\Microsoft\Windows\DataCollection
+sortOrderWWW
+sortProperty
+source
+sprintf_s
+srand
+SSPVRQSh
+SSShPM
+SSSSh
+SSSSh@
+SSSShB
+SSWSSP
+Starts the background synchronization engine.W'
+status
+stdole2.tlbWWW
+StgCreateStorageEx
+StgOpenStorageEx
+StrChrW
+StrCmpIW
+StrCmpNA
+StrCmpNIA
+StrCmpNIW
+StrCmpNW
+StrCmpW
+StringFileInfo
+StringFromGUID2
+strnlen
+StrRChrW
+StrStrIW
+StrStrNIW
+StrStrW
+StrToInt64ExW
+StrToIntA
+StrToIntExW
+StrTrimW
+style
+subscribedWW
+SuggestedSites.dat
+summary
+SVRQhL`
+SVWh 
+SVWh@
+SVWh\s
+SVWh<
+SVWhPs
+SVWhT
+SVWj@3
+SVWj@Y
+SVWj\3
+SVWjH
+SVWjLY
+SVWP3
+SVWPh
+SVWPh<J
+SVWPj
+SVWQQQQj
+SVWu:
+SVWuM
+SWRVQj
+sx9Ctt
+sy:updateFrequency
+sy:updatePeriod
+SyncSetting
+SyncSettingW
+SyncStatus
+SYSPREP.EXE
+System
+System.AcquisitionID
+System.Author
+System.Category
+System.Contact.WebPage
+System.ContentStatus
+System.ContentType
+System.DateCreated
+System.DateModified
+System.Document.PageCount
+System.Document.WordCount
+System.FileName
+System.History.SelectionCount
+System.History.TargetUrlHostName
+System.History.VisitCount
+System.ItemFolderNameDisplay
+System.ItemFolderPathDisplay
+System.ItemNameDisplay
+System.ItemPathDisplay
+System.ItemUrl
+System.Link.DateVisited
+System.Link.FeedItemLocalId
+System.Link.TargetParsingPath
+System.Link.TargetUrl
+System.Link.TargetUrlHostName
+System.Link.TargetUrlPath
+System.Media.UserWebUrl
+System.OriginalFileName
+System.RecordedTV.ChannelNumber
+System.RecordedTV.ProgramDescription
+System.Search.Rank
+System.SourceItem
+System.Subject
+System.Title
+System_Feed_Scheduler_Mutex
+SystemIndex
+SystemTimeToFileTime
+SystemTimeToTzSpecificLocalTime
+t!hHt
+t#j0j
+T$$RQ
+T$,;T$
+t$< u
+T$<PRj
+t$<WP
+T$0j 
+T$0RQQRQRRRRRRQQ
+t$4PQ
+t$pVQ
+t&93r
+t&hlc
+t&j _S
+t&j\Zf;
+t(j\Yf;H
+t(SWj
+t/VSWP
+T:feedXmlW
+t:PQPV
+t@Vj 
+t[!99x
+t_VPW
+t+j.Yf;
+t<hHm
+t<QQV
+t2h4r
+t3<(u
+t5j [9]
+t7SPV
+t7Wh@T
+tBVj@
+tBWWj
+tDj:Xf9B
+TE.EXE
+Te.ProcessHost.exe
+TelemetryPermission-AllowDisable
+TelemetryPermission-DefaultLevel
+TerminateProcess
+text/html
+TFDE_NOT_EXISTWWW 
+tg-Cyrl-TJ
+thh(r
+thumbprint
+tHVVj
+TITLE
+title
+tj!\$
+t'j}Xf;
+tk-TM
+TL%0%I
+tojAZ;
+TotalItemCountWW
+TotalUnreadItemCount
+touch
+TouchType
+tPVSP
+TraceEvent
+TraceMessage
+trademark
+TranslateMessage
+Translation
+tr-TR
+Trust
+TSVWQ
+t'SWj
+tt:;u
+tWf;}
+TYPELIB
+tZf97u
+u%f;}
+u)j0Xj1Zf;E
+u/9t$(uV#
+u;QPSP
+u^j.Zf9
+u~9Ctt
+u+9{4v
+u9SPQP
+udShX
+uFPPh
+u'hPl
+uiInterval
+uiInterval: %u
+uiLastErrorInterval
+uiLastErrorInterval: %u
+u'Interval
+UItemCountWWW@
+uiTTL
+uiTTL: %u
+uk-UA
+uLj}W
+uLjtY
+uMf9G
+uMj\_f9:uE
+UNDEFINED
+UnhandledExceptionFilter
+UnmapViewOfFile
+UnreadCount
+UnregisterTraceGuids
+UnregisterWaitEx
+Unsupported Auth
+Unsupported DTD
+Unsupported MSXML
+updated
+UrlApplySchemeW
+UrlCanonicalizeW
+UrlCreateFromPathW
+URLDownloadToCacheFileW
+UrlEscapeW
+urlmon.dll
+UrlUnescapeW
+urn:microsoft:feed-normalization
+USER32.dll
+USERACCOUNTBROKER.EXE
+User-Agent
+userInputID
+Username@
+UTCReplace_AppSessionGuid
+UTF-8
+UuidCreateSequential
+UuidEqual
+uV9Ctt
+uz-Cyrl-UZ
+uz-Latn-UZ
+v&=tM
+v[FeedDownloadCompletedWWW
+v+f9W
+ValidateUrl
+VarFileInfo
+vcard
+VerifyVersionInfoW
+VerQueryValueW
+VerSetConditionMask
+version="1.0" encoding="UTF-8"
+vFEEDS_BACKGROUNDSYNC_ACTIONWd
+VPhxe
+VQh`F
+VQPWV
+VS_VERSION_INFO
+VVj4W
+VVSPVh
+VW8XM
+VWj,j
+VWj@Xf
+VWPi3 
+w!hXI
+w$Sh8k
+W95\A
+WaitForMultipleObjects
+WaitForSingleObject
+WaitForSingleObjectEx
+WakeAllConditionVariable
+wcschr
+wcsncmp
+wcsncpy_s
+wcsnlen
+wcstok_s
+weekly
+WExistsFeedWW
+WideCharToMultiByte
+WilError_02
+WimageUrl
+Windows.Devices.Input.TouchCapabilities
+WindowsCreateString
+WindowsDeleteString
+Windows-RSS-Platform/%s (%s; Windows NT %d.%d)
+WININET.dll
+WitemCountTypeWWW
+Wj@Xf
+wj\[f;
+wkscli.dll
+woVRQ
+WriteFile
+WS disabled
+WS not installed
+WS not running
+WS PKEYs not registered
+WS scopes not configured
+WSearch
+WShDM
+WWAHOST.EXE
+WWj0Pj
+wYQWh
+x#VhPc
+x$jHXf;E
+x%jHXf;E
+x&j@Xf;E
+x&QhD
+x*j@Xf;E
+x:hxr
+x[Qh\
+x+VVVj
+x<90v
+x=f;]
+x=SubfoldersWW
+x3h W
+x5SSh
+xA_NewEnum
+xa9~<t\
+xCj\j
+xDeleteWW
+xDWh0
+xeh'g
+Xf;D$
+Xf;D$ u
+Xf;D$(
+Xf;D$(u!
+Xf;D$0u
+Xf9D$@
+Xf9D$0u]
+xFSSj4
+XLastItemDownloadTime@
+xmlns:cf='http://www.microsoft.com/schemas/rss/core/2005' xmlns:cfi='http://www.microsoft.com/schemas/rss/core/2005/internal' xmlns:atom='http://www.w3.org/2005/Atom'
+xmlns:xsl='http://www.w3.org/1999/XSL/Transform'
+xNVhp
+xOj\W
+XPath
+xSj,j@
+xT8\$-tNQQ
+X-UA-Compatible
+Y VW9
+y(j}Xf9
+Y__^[
+y79s0t2
+Yandex
+yearly
+Yf9>u
+yGetFeedByUrl
+yJhXI
+Z)4U1m
+Z^itemGuid
+ZF^!W-JM
+zFXSP_NONEWWW
+zh-cn
+zh-CN
+zItem

@@ -1,0 +1,395 @@
+                  | <string> [<CommandParameters>] } ]
+       To write a string that runs a Windows PowerShell command, use the format:
+    "Text" (text strings) or "XML" (serialized CLIXML format).
+    # To use the -EncodedCommand parameter:
+    $bytes = [System.Text.Encoding]::Unicode.GetBytes($command)
+    $command = 'dir "c:\program files" '
+    $encodedCommand = [Convert]::ToBase64String($bytes)
+    [-Command { - | <script-block> [-args <arg-array>]
+    [-File <filePath> <args>] [-ExecutionPolicy <ExecutionPolicy>]
+    [-File fileName [arguments...]] [-ExecutionPolicy <ExecutionPolicy>]
+    [-InputFormat {Text | XML}] [-OutputFormat {Text | XML}] 
+    [-NoLogo] [-NoExit] [-NoProfile] [-NonInteractive] [-STA]
+    [-NoLogo] [-NoExit] [-Sta] [-NoProfile] [-NonInteractive]
+    [-OutputFormat {Text | XML}] [-InputFormat {Text | XML}]
+    [-WindowStyle <style>] [-EncodedCommand <Base64EncodedCommand>] 
+    Accepts a base-64-encoded string version of a command. Use this parameter 
+    are "Text" (text strings) or "XML" (serialized CLIXML format).
+    block only when running PowerShell.exe in Windows PowerShell. The results
+    causes the command to be executed.
+    Describes the format of data sent to Windows PowerShell. Valid values are
+    Determines how output from Windows PowerShell is formatted. Valid values
+    Does not exit after running startup commands.
+    Does not present an interactive prompt to the user.
+    Does not use the user profile.
+    Execute a script file.
+    Executes the specified commands (and any parameters) as though they were
+    file, use Export-Console in Windows PowerShell.
+    Hides the copyright banner at startup.
+    If the value of Command is "-", the command text is read from standard
+    If the value of Command is a script block, the script block must be enclosed
+    If the value of Command is a string, Command must be the last parameter
+    in braces ({}). You can specify a script block only when running PowerShell.exe
+    in the command , because any characters typed after the command are 
+    in Windows PowerShell. The results of the script block are returned to the
+    input.
+    interpreted as the command arguments.
+    Loads the specified Windows PowerShell console file. To create a console
+    marks or curly braces.
+    NoExit is specified. The value of Command can be "-", a string. or a
+    not live objects.
+    of the script are returned to the parent shell as deserialized XML objects,
+    parent shell as deserialized XML objects, not live objects.
+    PowerShell -Command "& {Get-EventLog -LogName security}"
+    PowerShell -Command {Get-EventLog -LogName security}
+    PowerShell -PSConsoleFile SqlSnapIn.Psc1
+    PowerShell -PSConsoleFile SqlSnapin.Psc1
+    PowerShell -version 1.0 -NoLogo -InputFormat text -OutputFormat XML
+    PowerShell, prepend the command parameters with a hyphen (-), not a forward
+    powershell.exe -encodedCommand $encodedCommand
+    script block.
+    Script blocks must be enclosed in braces ({}). You can specify a script
+    Sets the default execution policy for the session.
+    Sets the window style to Normal, Minimized, Maximized or Hidden.
+    Shows this message. If you are typing a PowerShell.exe command in Windows
+    slash (/). You can use either a hyphen or forward slash in Cmd.exe.
+    Start the shell using a single-threaded apartment.
+    Starts the specified version of Windows PowerShell.
+    to submit commands to Windows PowerShell that require complex quotation 
+    To write a string that runs a Windows PowerShell command, use the format:
+    typed at the Windows PowerShell command prompt, and then exits, unless 
+    Uses a single-threaded apartment for the execution thread.
+    where the quotation marks indicate a string and the invoke operator (&)
+  : {3} ({4}) 
+ Transcription cannot be started.
+ Window cannot be wider than {0}.
+!This program cannot be run in DOS mode.
+!Window cannot be taller than {0}.
+!Window height must be at least 1.
+"& {<command>}"
+"{0}" cannot be null or empty.
+"{0}" cannot be null.
+'"{0}" should have at least one element.
+#Blob
+#GUID
+#Strings
+#Window width cannot be less than 1.
+%The field "{0}" is a zero rank array.
+&Transcript started, output file is {0}
+&Transcript stopped, output file is {0}
+(default choices are {0})
+(default is "{0}")
+(default is "{0}"): 
+(Type !? for Help.)
+)Processing -WindowStyle '{0}' failed: {1}
+)This host does not support transcription.
+**********************
+*Entering debug mode. Use h or ? for help. 
+.File {0} already exists and {1} was specified.
+.text
+.The current provider ({0}) cannot open a file.
+.Window cannot be wider than the screen buffer.
+/The console host is not currently transcribing.
+/Window cannot be taller than the screen buffer.
+@.reloc
+[?] Help 
+\'-' was specified with the -Command parameter; no other arguments to -Command are permitted.
+\Transcription has not been started. Use the start-transcript command to start transcription.
+]Windows PowerShell is in NonInteractive mode. Read and Prompt functionality is not available.
+^Transcription has already been started. Use the stop-transcript command to stop transcription.
+_Cannot process command because a command is already specified with -Command or -EncodedCommand.
+_CorDllMain
+`.rsrc
+`Cannot read key options. To read options either IncludeKeyDown,IncludeKeyUp or both must be set.
+{0} activities not shown...
+{0} activity not shown...
+{0}: 
+{0}: {1}
+{0}:{1,-3} {2}
+{0}{1} remaining. 
+{Cannot process the command because -EncodedArguments requires a value. Specify a value for the -EncodedArguments parameter.
+{The Win32 internal error "{0}" 0x{1:X} occurred when flushing the console input buffer. Contact Microsoft Support Services.
+|The Win32 internal error "{0}" 0x{1:X} occurred when setting console output buffer size. Contact Microsoft Support Services.
+|The Win32 internal error "{0}" 0x{1:X} occurred when setting console window information. Contact Microsoft Support Services.
+}The Win32 internal error "{0}" 0x{1:X} occurred when getting largest console window size. Contact Microsoft Support Services.
+~Cannot process the operation because the supplied coordinate is not valid. Specify a coordinate within the buffer area of {0}.
++{0} should be greater than or equal to {1}.
+<Module>
+040904b0
+2Window title cannot be longer than {0} characters.
+4The "{0}" collection must have at least one element.
+5"{0}" cannot be recognized as a valid Prompt command.
+6.1.7600.16385
+6Cannot recognize "{1}" as a {0} due to a format error.
+9Cannot recognize "{1}" as a {0} due to an overflow error.
+AddBreakHandlerExceptionMessage
+Administrator
+An error has occurred that was not properly handled. Additional information is shown below. The Windows PowerShell process will exit.
+-An error occurred stopping transcription: {0}
+ArgsAlreadySpecified
+ArgumentFileDoesNotExist
+AttachToParentConsoleExceptionTemplater
+BadArgsValue
+BadCommandValue
+BadFormatParameterValue
+C"{0}" must be a valid index into "{1}" or -1 for no default choice.
+C"{0}" must be a valid index into "{1}". "{2}" is not a valid index.
+Cannot process the command because arguments to -Command or -EncodedCommand have already been specified with -EncodedArguments.
+Cannot process the command because the -InputFormat parameter requires an argument. Specify a valid format argument for this parameter.  Valid formats are:
+Cannot process the command because the value specified with -EncodedArguments is not properly encoded. The value must be Base64 encoded.
+Cannot process the command because the value specified with -EncodedCommand is not properly encoded. The value must be Base64 encoded.
+Cannot process the command because -WindowStyle requires an argument that is one of Normal, Hidden, Minimized or Maximized. Specify one of these argument values and try again.
+Cannot set the console color because the value specified is invalid. Specify a valid color as defined by the System.ConsoleColor type.
+Cannot use the specified Window X (column) position because it extends past the width of the screen buffer. Specify another X position, starting with 0 as the left most column of the buffer.
+Cannot use the specified Window Y (row) position because it extends past the height of the screen buffer. Specify another Y position, starting with 0 as the top most row of the buffer.
+CannotReadFile
+CannotStartTranscription
+Choice[{0}]: 
+ChoiceMessage
+-Command
+CommandAlreadySpecified
+CommandFailed
+CommandLineParameterParserStrings.en.resources
+CommandNotExecuted
+CompanyName
+ConsoleControlStrings.en.resources
+ConsoleHostIsSingleton
+ConsoleHostRawUserInterfaceStrings.en.resources
+ConsoleHostStrings.en.resources
+ConsoleHostUserInterfaceSecurityResources.en.resources
+ConsoleHostUserInterfaceStrings.en.resources
+CoordinateOutOfBufferErrorTemplate
+Copyright (C) 2009 Microsoft Corporation. All rights reserved.
+Copyright (c) Microsoft Corporation. All rights reserved.
+Ctrl-Break typed; exiting
+DEBUG: {0}
+DebugFormatString
+DebuggerSourceCodeFormat
+DefaultChoiceForMultipleChoices
+DefaultChoicePrompt/
+DefaultChoicesForMultipleChoicesE
+DefaultHelp
+DefaultPrompt
+Description
+DetachFromConsoleExceptionTemplate
+EmptyChoicesErrorTemplate`
+-EncodedCommand
+End time: {0:yyyyMMddHHmmss}
+EnteringDebugger
+Error executing '{0}': {1}
+ErrorStoppingTranscript"
+EXAMPLES
+-ExecutionPolicy
+ExitOnCtrlBreakMessage
+-File
+FileDescription
+FileVersion
+FillConsoleOutputAttributeExceptionTemplate
+FillConsoleOutputCharacterExceptionTemplate
+FlushConsoleInputBufferExceptionTemplate
+FThe shell cannot be started. A failure occurred during initialization:
+GCannot process CursorSize because the cursor size specified is invalid.
+GetActiveScreenBufferHandleExceptionTemplate
+GetConsoleCursorInfoExceptionTemplate
+GetConsoleScreenBufferInfoExceptionTemplate
+GetInputModeExceptionTemplate
+GetLargestConsoleWindowSizeExceptionTemplate
+GetModeExceptionTemplate
+GetNumberOfConsoleInputEventsExceptionTemplate
+HCannot display the prompt for "{0}" because type "{1}" cannot be loaded.
+-Help, -?, /?
+Hit {0}
+HitBreakpoint
+Host Windows PowerShell snap-in
+HostDoesNotSupportTranscriptQ
+HostMshSnapInResources.en.resources
+HostNotTranscribing
+iCommand '{0}' was not executed as the session in which it was intended to run was either closed or broken
+InitialCommandNotExecuted
+InitScriptFailed
+InputExitCurrentLoopOutOfSyncError
+-InputFormat
+InternalName
+InvalidBufferSizeError
+InvalidChoiceHotKeyError
+InvalidConsoleColorError
+InvalidCursorSizeError
+InvalidDefaultChoiceErrorTemplate
+InvalidDefaultChoiceForMultipleSelection
+InvalidFileArgument
+InvalidFileArgumentExtension
+InvalidReadKeyOptionsError
+InvalidRegionErrorTemplate
+InvalidWindowStyleArgument
+InvalidXWindowPositionError
+InvalidYWindowPositionError
+InvisibleNodesMessagePlural
+InvisibleNodesMessageSingular
+j'-' was specified as the argument to -Command but standard input has not been redirected for this process.
+JCannot display prompt because too many nested prompts are already running.
+KExecution of initialization script has failed. The shell cannot be started.
+LegalCopyright
+Li0iP
+lSystem.Resources.ResourceReader, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet
+Machine
+ManagedEntranceStrings.en.resources
+Microsoft (R) Windows (R) Operating System
+Microsoft Corporation
+Microsoft.PowerShell.ConsoleHost.resources
+Microsoft.PowerShell.ConsoleHost.resources.dll
+MissingArgsValue
+MissingCommandParameter
+MissingExecutionPolicyParameter
+MissingFileArgument
+MissingInputFormatParameter
+MissingOutputFormatParameter
+MissingWindowStyleArgument
+mscoree.dll
+MultipleFilesNotSupported|
+NestedPromptEntryError
+No help is available for {0}.
+-NoExit
+-NoLogo
+-NonInteractive
+-NoProfile
+nThe Win32 internal error "{0}" 0x{1:X} occurred when getting console mode. Contact Microsoft Support Services.
+nThe Win32 internal error "{0}" 0x{1:X} occurred when setting console mode. Contact Microsoft Support Services.
+NullErrorTemplate
+NullOrEmptyErrorTemplate
+o**********************
+OAn instance of the ConsoleHost class has already been created for this process.
+oFile {0} is read-only. Cannot write to this file. "Start-Transcript -Force" will clear the read-only attribute.
+OriginalFilename
+-OutputFormat
+PADPADP
+PADPADP)#
+PADPADPH
+PADPADPo
+Password for user {0}: 
+PCannot set the buffer size because the size specified is too large or too small.
+PeekConsoleInputExceptionTemplate
+PowerShell[.exe] [-PSConsoleFile <file> | -Version <version>]
+PowerShell[.exe] -Help | -? | /?
+PProcessing -File '{0}' failed: {1} Specify a valid path for the -File parameter.
+Processing -File '{0}' failed because the file does not have a '.ps1' extension. Specify a valid PowerShell script file name, and then try again.
+ProductName
+ProductVersion
+ProgressNodeStrings.en.resources
+PromptCanceledError
+PromptEmptyDescriptionsErrorTemplate
+PromptFieldPromptInputSeparatorTemplate
+PromptForChoiceHelp
+PromptForCredential_Password
+PromptForCredential_User
+PromptHelp
+PromptNoHelpAvailableErrorTemplate
+PromptParseFormatErrorTemplate
+PromptParseOverflowErrorTemplate
+PromptTypeLoadErrorTemplate
+PromptUnrecognizedCommandErrorTemplate
+-PSConsoleFile
+pThe Win32 internal error "{0}" 0x{1:X} occurred when adding a break handler. Contact Microsoft Support Services.
+pThe Win32 internal error "{0}" 0x{1:X} occurred when detaching from console. Contact Microsoft Support Services.
+qCannot process the execution policy because of a missing policy name. A policy name must follow -ExecutionPolicy.
+qThe Win32 internal error "{0}" 0x{1:X} occurred when setting cursor position. Contact Microsoft Support Services.
+RankZeroArrayErrorTemplate
+ReadConsoleExceptionTemplate
+ReadConsoleInputExceptionTemplate
+ReadConsoleOutputExceptionTemplate
+ReadFailsOnNonInteractiveFlag
+ReadWriteFileNotFileSystemProvider
+RemoveBreakHandlerExceptionTemplate
+rThe Win32 internal error "{0}" 0x{1:X} occurred when removing a break handler. Contact Microsoft Support Services.
+RWindows PowerShell 
+ScrollConsoleScreenBufferExceptionTemplate
+SecondsRemaining8
+SetConsoleCursorInfoExceptionTemplate
+SetConsoleCursorPositionExceptionTemplate
+SetConsoleScreenBufferSizeExceptionTemplate
+SetConsoleTextAttributeExceptionTemplate
+SetConsoleWindowInfoExceptionTemplate
+SetConsoleWindowTitleExceptionTemplate
+SetModeExceptionTemplate
+ShellBanner
+ShellCannotBeStarted
+ShellHelpT
+Start time: {0:yyyyMMddHHmmss}
+StdinNotRedirected
+StringFileInfo
+The argument '{0}' to the -File parameter does not exist. Provide the path to an existing '.ps1' file as an argument to the -File parameter.
+The command cannot be run because no argument has been supplied for the OutputFormat parameter. Specify one of the following formats for this parameter.
+The command cannot be run because the File parameter requires a file path. Supply a path for the File parameter and then try the command again.
+The prompt was canceled.
+The Win32 internal error "{0}" 0x{1:X} occurred when filling the console output buffer with attribute. Contact Microsoft Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred when filling the console output buffer with character. Contact Microsoft Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred when getting console output buffer information. Contact Microsoft Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred when getting number of events in console input buffer. Contact Microsoft Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred when reading characters from console input buffer. Contact Microsoft Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred when reading input records from console input buffer. Contact Microsoft Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred when retrieving handle for active console output buffer. Contact Microsoft Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred when setting attributes of characters for console output buffer. Contact Microsoft Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred when writing console output buffer at current cursor position. Contact Microsoft Support Services.
+This Windows PowerShell snap-in contains cmdlets (such as Start-Transcript and Stop-Transcript) that are provided for use with the Windows PowerShell console host.
+TooManyNestedPromptsError
+TooManyParametersToCommand
+TranscriptEpilogue
+TranscriptFileExistsNoClobber
+TranscriptFileReadOnly
+TranscriptionInProgress
+TranscriptionNotInProgress
+TranscriptionStarted
+TranscriptionStopped
+TranscriptPrologue
+TranscriptStrings.en.resources
+Translation
+tThe Win32 internal error "{0}" 0x{1:X} occurred when getting cursor information. Contact Microsoft Support Services.
+tThe Win32 internal error "{0}" 0x{1:X} occurred when setting cursor information. Contact Microsoft Support Services.
+UA nested prompt cannot be entered until the host is running at least one prompt loop.
+UCannot process the hot key because a question mark ("?") cannot be used as a hot key.
+Unable to read from file '{0}'.
+UnhandledExceptionShutdownMessage
+UnknownParameter
+Unrecognized parameter: '{0}'3,
+User: {
+Username  : {1}\{2} 
+uThe Win32 internal error "{0}" 0x{1:X} occurred when attaching to parent console. Contact Microsoft Support Services.
+VarFileInfo
+VCannot process input loop. ExitCurrentLoop was called when no InputLoops were running.
+Vendor
+VERBOSE: {0}
+VerboseFormatString
+-Version
+VS_VERSION_INFO
+vThe Win32 internal error "{0}" 0x{1:X} occurred when peeking console input buffer. Contact Microsoft Support Services.
+vThe Win32 internal error "{0}" 0x{1:X} occurred when setting console window title. Contact Microsoft Support Services.
+WARNING: {0}W
+WarningFormatString
+Window size is too narrow.
+Window size is too short.
+Window title cannot be empty.
+WindowHeightLargerThanBufferError
+WindowHeightTooLargeErrorTemplate
+WindowHeightTooSmallError
+Windows PowerShell Transcript End
+Windows PowerShell Transcript Start
+-WindowStyle
+WindowTitleElevatedPrefix
+WindowTitleTemplate
+WindowTitleTooLongErrorTemplate
+WindowTitleTooShortError
+WindowTooNarrowError
+WindowTooShortError
+WindowWidthLargerThanBufferError
+WindowWidthTooLargeErrorTemplate
+WindowWidthTooSmallError
+WriteConsoleExceptionTemplate
+WriteConsoleOutputExceptionTemplate
+wThe Win32 internal error "{0}" 0x{1:X} occurred when reading console output buffer. Contact Microsoft Support Services.
+wThe Win32 internal error "{0}" 0x{1:X} occurred when writing console output buffer. Contact Microsoft Support Services.
+xCannot perform operation because the path resolved to more than one file. This command cannot operate on multiple files.
+xCannot process the command because of an incorrect parameter value. "{0}" is not a valid format.  Valid formats are:
+XRbj_W
+yThe Win32 internal error "{0}" 0x{1:X} occurred when retrieving input console handle. Contact Microsoft Support Services.
+yThe Win32 internal error "{0}" 0x{1:X} occurred when scrolling console output buffer. Contact Microsoft Support Services.
+ZCannot process the command because of a missing parameter. A command must follow -Command.
+ZCommand '{0}' could not be executed because some Windows PowerShell snap-ins did not load.

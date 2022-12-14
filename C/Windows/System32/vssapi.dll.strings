@@ -1,0 +1,5310 @@
+                        CUSTOM
+                        REPLACE_AT_REBOOT
+                        REPLACE_AT_REBOOT_IF_CANNOT_REPLACE
+                        RESTORE_IF_CAN_BE_REPLACED
+                        RESTORE_STOP_START_SERVICE">
+                        RESTORE_TO_ALTERNATE_LOCATION
+                        STOP_RESTART_SERVICE
+                       dt:values="yes no" default="no">
+                   dt:values="yes no" required="yes" >
+                  default="full">
+                  default="original" >
+                  dt:values = "yes no" default="no" >
+                  dt:values= "none all failed" default="all" >
+                  dt:values= "yes no" default="no" >
+                  dt:values="always never ifReplaceFails" default="never">
+                  dt:values="database filegroup">
+                  dt:values="FCFS FCPH FCPH3 MAC Scsi" required="yes" >
+                  dt:values="full differential incremental log copy other"
+                  dt:values="original alternate directed originalLocation"
+                  dt:values="yes no"  default="no" >
+                  dt:values="yes no" default="no" >
+                  dt:values="yes no" default="no">
+                 dt:values="yes no" default="no" >
+               dt:values="none all partial">
+               dt:values="TRANSACTION_DB NONTRANSACTIONAL_DB OTHER"
+               dt:values="yes no" default="no">
+               dt:values="yes no" default="yes">
+              dt:values="Scsi Atapi Ata 1394 Ssa Fibre Usb RAID iScsi Sas Sata"
+              required="yes" >
+             dt:values="RESTORE_IF_NONE_THERE
+             order="many">
+             required="yes"
+           default="OTHER">
+           dt:values="USER_DATA BOOTABLE_SYSTEM_STATE SYSTEM_SERVICE OTHER"
+        </description>
+        <description>
+        can be used if the snapshot is not exposed.
+        in case that this object stands for a remote snapshot
+        Is the original volume for the snapshot dynamic or basic
+        It is needed to match LUNs at import time.
+        length of the extent in sectors
+        Longhorn Server.
+        machine.  Note that this is only used during snapshot creation
+        object stands for a remote virtual snapshot
+        or not.
+        Relevant only if that this object stands for a remote snapshot
+        starting offset of the extent in sectors
+        This attributes determines how far a writer should roll forward restored data
+        This attributes determines whether restore of this component should be authoritative
+        This GUID is written on all source LUNs at creation time.
+        This is the device name of the source device on the originating
+        This is the internal device name for the snapshotted volume.  This
+        xmlns:dt="urn:schemas-microsoft-com:datatypes">
+        xmlns="urn:schemas-microsoft-com:xml-data"
+       (as expressed by RESTORE_TARGET elements created by the writer) or
+       </description>
+       <description>
+       32 bits of the GUID are 0.
+       address stored in the interconnectAddress attribute
+       ALTERNATE_LOCATION_MAPPING elements in the metadata), new location
+       and indicates whether the files for the component should be restored
+       are intact; failed indicates that the original files were partially
+       backup by the writer.  The attribute is set by the writer either
+       backup).  In these cases a failed restore occurs if some of the data
+       backup.  It might for example, include the total size of the
+       be replaced in the orgiginal backup location.  Fails if any of
+       both the targetPath and targetFilespec are not specified then the
+       by the requestor.  If this attribute is not specified then
+       by the requestor.  If this is not specified then the target filename
+       can only occur in the situation of a restore of a file where only
+       cannot be completely undone.
+       commands.  The actual synchronization in this case is the
+       completely replaced at reboot, so if one component file is busy, all files
+       component will follow (i.e., ull restore followed by log restores
+       copy.  The only option is to use a previous full backup to restore
+       CUSTOM: restore process cannot be expressed using this specification
+       data to be restored to a clean system
+       defined by the STORAGE_DEVICE_ID_DESCRIPTOR structure.  This contains
+       description of why the PostSnapshotFailureMsg failed.
+       description of why the PrepareForBackup failed.
+       description of why the preRestore failed.
+       Disk signature or GUID.  If a signature than all but the lower
+       during the PrepareBackup or PostSnapshot event.
+       element created by the writer.
+       event.  It is a text message indicating why the restore failed.
+       events).  Yes indicates that the files were restored successfully;
+       file to be restored.
+       Flag indicating whether the device can support mulitple outstanding
+       for the component (i.e., between the PreRestore and PostRestore
+       however files may be restored in place in they are not busy.  All files
+       If only a subdirectory is exposed, this is the path to that
+       in case of a partial failure.
+       in that component must be replaced at reboot.       
+       In the case of an incremental or differential backup, this identifies
+       Indicates whether the requestor is capable of backing up and restoring
+       Indication of whether component is database or file group
+       instance of the writer at restore time.  
+       interconnect address type.  Describes type of the interconnect
+       is assumed to be the same as the original file name.  Note that if
+       is the byte offset to start reading data and cb is the length
+       is the byte offset to start wrting data and cb is the length of
+       is to be restored using a DIRECTED_TARGET element.
+       location where it was backed up from.  This essentially allows
+       location.
+       location.  Typically writerRestore will indicate that the writer
+       Major version number of the writer.
+       may not overlap and must be monotonically increasing.
+       Minor version number of the writer.
+       MoveFileEx to replace the files at reboot.
+       must be monotonically increasing and must not overlap.  If the
+       no indicates that the files were not restored and the original files
+       not complete and therefore cannot be used to create a consistent
+       not possible, and the restoration of a component has failed, but
+       of a file is backed up and restored (e.g., as part of a differential
+       of the component.  The writer is responsible for identifying what
+       of the data to be backed up.  Both are 64 bit integers.  The ranges
+       of the data to be read (each is a 64 bit integer).  The ranges
+       Only entire files can be backed up or restored.
+       Optional product revision information
+       Optional serial number of the device
+       Optional string identifying the product
+       Optional string identifying the vendor
+       or none of the files.  However, there are situations where this is
+       or not.
+       original file is overwritten.
+       overwritten and are therefore corrupt.  Note that the failed status
+       part of the data is restored (DIRECTED_RESTORE) or where only part
+       PARTIAL_FILE or DIRECTED_RESTORE elements.
+       portions of files.  If no, then the writer should never generate
+       PreRestore and indicates whether additional restores of the
+       PreRestore and indicates whether the component is being restored
+       rangelist is not specified then the entire file should be backed up.
+       REPLACE_AT_REBOOT: Restore files to a temporary location.  Use
+       REPLACE_AT_REBOOT_IF_CANNOT_REPLACE:  Similiar to REPLACE_AT_REBOOT
+       requestor prior to the PrepareBackup event.
+       requestor prior to the PreRestore event.
+       requestore is required to either restore all the files of a component
+       responsibility of the port driver.
+       Restart service.  Fails if any of the files are open after the
+       RESTORE_IF_CAN_BE_REPLACED: Restore data if all of the files can
+       RESTORE_IF_NONE_THERE: i.e., can restore data if it is not at the
+       RESTORE_STOP_START_SERVICE: Restore files to original location,
+       RESTORE_TO_ALTERNATIVE_LOCATION: Restore files to an alternate
+       SCSI-2 device type
+       SCSI-2 device type modifier (if any) - this may be 0
+       service is stopped.
+       set by the requestor prior to the PrepareBackup event.
+       should be partially restored (as expressed by the DIRECTED_TARGET
+       specified). Restore files to original backup location.
+       STOP_RESTART_SERVICE: stop service (service attribute must be
+       subdirectory.
+       that some, but no all of the files of a component were restored.  The
+       the backup from which differences are compouted.  This attribute is
+       the byte offset in the file to be backed up and length is the length
+       the data to be written (each is a 64 bit integer).  The ranges
+       the data.  Note that the "failed" indication can be used to indicate
+       the files are open.  If an alternate location is provided, files
+       the original copy of the file no long exists and the copy on tape is
+       the PostSnapshotFailureMsg operation failed for some reason.  It gives a textual
+       the PrepareForBackup operation failed for some reason.  It gives a textual
+       the preRestore operation failed for some reason.  It gives a textual
+       the targetPath is assumed to be the same as the original path.
+       the vendor id, EUI-64 id, FC-PH name, and vendor specific data.
+       then restart the specified service.
+       This attirbute is set by the writer during the PostSnapshotFailureMsg event if
+       This attirbute is set by the writer during the PrepareForBackup event if
+       This attirbute is set by the writer during the PreRestore event if
+       This attribute allows writer to set basic HRESULT error code on the component
+       This attribute allows writer to set event-independent, per-component error message
+       This attribute allows writer to set extended error code information on the component
+       This attribute is set by the requestor after restoring files
+       this describes the actual snapshot attributes (as defined in
+       This enumerated attribute is set by the writer during PreRestore
+       This indicates that the purpose of the restore is to repair one or more files
+       This is a private string passed between the requestor and the writer
+       This is a private string passsed between to requestor and the writer
+       This is a string of the form (offset:cb ...) where each offset
+       this is a user description of the snapshot
+       This is an attribute that allows a writers component to be restored by a specific
+       This is metadata used by the writer for restoring the partial
+       this is private metadata about the snapshot set
+       This is the Application Server machine (i.e. where the writers were notified)
+       this is the context used to create the snapshot
+       This is the exposed name of the snapshot volume
+       This is the id of the mapped local snapshot in case that this 
+       This is the machine where the original volume was snapshotted
+       This is the name of the file that is to be written
+       This is the name of the volume that maps to the original share 
+       this is the original count of snapshots in the snapshot set
+       This is the original name of the volume.
+       This is the path of the original share from the volume root. 
+       This is the provider that surfaced the snapshot
+       This is the target location of the file that is to be written
+       This is the unique id of the snapshotted volume
+       this is the unique identifier for the snapshot
+       this is the unique identifier for the snapshot set
+       this is when the snapshot set was created.
+       This range list has the form (offset:length ...) where offset is
+       This string attribute contains the identifier assigned to the
+       This string attribute is set by the writer during the PostRestore
+       This yes/no attribute is set by the request prior to calling
+       This yes/no attribute is set by the requestor prior to calling
+       to be restored is written to the file but not all.  In this case,
+       to control the backup of the component.  It should be set by the
+       to control the restore of a component.  It should be set by the
+       to their original location, alternate location (as expressed by
+       Type of bus that the LUN is attached to
+       UUENCODED binary for the device identification page as
+       VSS_VOLUME_SNAPSHOT_ATTRIBUTES)
+       will be placed there if they cannot be restored to their original
+       will participate in the restore process
+       within a component must be either completely replaced in place or
+       World Wide name or other interconnect address of the device
+      </description>
+      <description>
+      A named group of files.  Used to group sets of files into a group
+      ALTERNATE_LOCATION_MAPPING.  After the files are restored, the writer
+      backup and restore of specific databases.
+      databases are identified
+      Description of the nature of the data manager.  Currently only
+      different ports.
+      disk.  Options are always, never, and ifReplaceFails.  The latter means
+      distinguish user data and system state.
+      does it backup entire volumes
+      Does the backup application select individual components or
+      Files that should always be excluded from the backup
+      Files to include and exclude from the backup
+      Files to include in the backup, essentially files to backup if you want
+      Friendly name used to describe the service or application.
+      How the data associated with the writer is used.  For now we
+      Identification of a service/application backing up data
+      Indication of whether the component was backed up successfully
+      Information used by Backup application to backup/restore data
+      Is backup saving the bootable state of the system.
+      is invoked.
+      List of databases of interest.  This is used to allow selective
+      Location of a set of database files.  Filespec can include wildcards
+      Location of a set of database log files.  Filespec can include
+      Location of a set of files in a FILE_GROUP.  Filespec can include
+      Metadata to be passed from PreRestore to PostRestore.
+      Metadata to be passed on restore
+      Must be specified if method="STOP_RESTART_SERVICE" or method="RESTORE_STOP_START_SERVICE".
+      or more of the files cannot be replaced, then the files will be
+      or not.  This should be set during the BackupComplete notification
+      Port through which the interconnect address is referred to.  Note
+      restored to an alternate location (must be specified via
+      that are backed up together
+      that the files will be restored to their original location.  If one
+      that the same device may have different interconnect addresses through
+      This attribute allows a requestor to rename a component at restore time.
+      to backup this application/service
+      Type of backup being performed.
+      Whether writer should be invoked after files are restored to
+      wildcards.
+      wildcards.  Indication of whether database log files are truncated.
+     </description>
+     <description>
+     Description of actions that the user should perform to restore the files.
+     exposed failure: 0x%08lx
+     exposed state: %d
+     InstanceId for Writer %s is
+     Mapping from a location that was backed up to a location to restore to.
+     Should a reboot be performed after restoring the data for this
+     The format of this string has yet to be determined.
+     writer
+     wszWriterInstanceName = %s
+    </AttributeType>
+    </description>
+    <attribute type="extentLength" />
+    <attribute type="lunID" />
+    <attribute type="sourceDevice" />
+    <attribute type="startingOffset" />
+    <AttributeType name="authRestore" dt:type="enumeration"
+    <AttributeType name="extentLength" dt:type="ui8" required="yes">
+    <AttributeType name="isDynamicVolume" dt:type="enumeration"
+    <AttributeType name="lunID" dt:type="uuid" required="no" >
+    <AttributeType name="restoreName" dt:type="string" required = "no">
+    <AttributeType name="rollForwardPoint" dt:type="string" required = "no">
+    <AttributeType name="rollForwardType" dt:type="enumeration" required = "no"
+    <AttributeType name="sourceDevice" dt:type="string" required="yes" >
+    <AttributeType name="startingOffset" dt:type="ui8" required="yes">
+    <description>
+    <element type="DESTINATION_LUN" minOccurs="1" maxOccurs="1" />
+    <element type="DISK_EXTENT" minOccurs="1" maxOccurs="*" />
+    <element type="SOURCE_LUN" minOccurs="1" maxOccurs="1" />
+    A dependency from one component to another component in another writer.
+    A particular disk extent on a LUN
+    Actual mapping of source lun to a destination lun
+    enough of the location and name of the lun to transport it. TBD
+    Id of writer that this component is dependent on.
+    Logical path of component that this component is dependent on.
+    Name of component that this component is dependent on.
+    WriterId             = 
+    WriterName           = %s
+    xmlns:dt="urn:schemas-microsoft-com:datatypes">
+   </AttributeType>
+   </description>
+   <attribute type= "logicalPath" />
+   <attribute type="additionalRestores" />
+   <attribute type="alternatePath" />
+   <attribute type="ApplicationErrorCode" />
+   <attribute type="authRestore" />
+   <attribute type="backupOptions" />
+   <attribute type="backupSchema" />
+   <attribute type="backupStamp" />
+   <attribute type="backupSucceeded" />
+   <attribute type="backupType" />
+   <attribute type="bootableSystemStateBackup" />
+   <attribute type="busType" />
+   <attribute type="caption" />
+   <attribute type="commandQueueing" />
+   <attribute type="componentFlags" />
+   <attribute type="componentName" />
+   <attribute type="componentType" />
+   <attribute type="context" />
+   <attribute type="dataSource" />
+   <attribute type="description" />
+   <attribute type="deviceIdentification" />
+   <attribute type="deviceName" />
+   <attribute type="deviceType" />
+   <attribute type="deviceTypeModifier" />
+   <attribute type="diskSignature" />
+   <attribute type="ErrorCode" />
+   <attribute type="exposedName" />
+   <attribute type="exposedPath" />
+   <attribute type="FailureMsg" />
+   <attribute type="filespec" />
+   <attribute type="filespecBackupType" />
+   <attribute type="filesRestored" />
+   <attribute type="friendlyName" />
+   <attribute type="icon" />
+   <attribute type="instanceId" />
+   <attribute type="instanceId" required="yes" />
+   <attribute type="instanceName" />
+   <attribute type="interconnectAddress" />
+   <attribute type="interconnectAddressType" />
+   <attribute type="isDynamicVolume" />
+   <attribute type="logicalPath" />
+   <attribute type="majorVersion" />
+   <attribute type="mappedPathFromRoot" />
+   <attribute type="mappedSnapshotId" />
+   <attribute type="mappedVolumeName" />
+   <attribute type="metadata" />
+   <attribute type="minorVersion" />
+   <attribute type="notifyOnBackupComplete" />
+   <attribute type="originalCount" />
+   <attribute type="originalVolumeName" />
+   <attribute type="originatingMachine" />
+   <attribute type="partialFileSupport" />
+   <attribute type="path" />
+   <attribute type="port" />
+   <attribute type="postRestoreFailureMsg" />
+   <attribute type="PostSnapshotFailureMsg" />
+   <attribute type="prepareForBackupFailureMsg" />
+   <attribute type="preRestoreFailureMsg" />
+   <attribute type="previousBackupStamp" />
+   <attribute type="productId" />
+   <attribute type="productRevision" />
+   <attribute type="providerId" />
+   <attribute type="ranges" />
+   <attribute type="recursive" />
+   <attribute type="repair" />
+   <attribute type="restoreInstanceId" />
+   <attribute type="restoreMetadata" />
+   <attribute type="restoreName" />
+   <attribute type="restoreOptions" />
+   <attribute type="restoreTarget" />
+   <attribute type="restoreType" />
+   <attribute type="rollForwardPoint" />
+   <attribute type="rollForwardType" />
+   <attribute type="selectable" />
+   <attribute type="selectableForRestore" />
+   <attribute type="selectComponents" />
+   <attribute type="selectedForRestore" />
+   <attribute type="serialNumber" />
+   <attribute type="serviceMachine" />
+   <attribute type="snapshotAttributes" />
+   <attribute type="snapshotId" />
+   <attribute type="snapshotSetId" />
+   <attribute type="sourceRanges" />
+   <attribute type="targetFilespec" />
+   <attribute type="targetPath" />
+   <attribute type="targetRanges" />
+   <attribute type="timestamp" />
+   <attribute type="usage" />
+   <attribute type="vendorId" />
+   <attribute type="version" />
+   <attribute type="writerId" />
+   <AttributeType name="additionalRestores" dt:type="enumeration"
+   <AttributeType name="ApplicationErrorCode" dt:type="number" required="no">
+   <AttributeType name="backupOptions" dt:type="string" required="no">
+   <AttributeType name="backupStamp" dt:type="string" required="no">
+   <AttributeType name="backupSucceeded" dt:type="enumeration"
+   <AttributeType name="backupType" dt:type="enumeration"
+   <AttributeType name="bootableSystemStateBackup" dt:type="enumeration"
+   <AttributeType name="busType" dt:type="enumeration"
+   <AttributeType name="commandQueueing" dt:type="enumeration"
+   <AttributeType name="componentType" dt:type="enumeration"
+   <AttributeType name="context" dt:type="ui4" required="yes">
+   <AttributeType name="dataSource" dt:type="enumeration"
+   <AttributeType name="description" dt:type="string" required="no">
+   <AttributeType name="deviceIdentification" dt:type="string" required="yes" >
+   <AttributeType name="deviceName" dt:type="string" required="no" >
+   <AttributeType name="deviceType" dt:type="ui1" required="yes" >
+   <AttributeType name="deviceTypeModifier" dt:type="ui1" required="yes">
+   <AttributeType name="diskSignature" dt:type="uuid" required="yes">
+   <AttributeType name="ErrorCode" dt:type="number" required="no">
+   <AttributeType name="exposedName" dt:type="string" required="no" >
+   <AttributeType name="exposedPath" dt:type="string" required="no">
+   <AttributeType name="FailureMsg" dt:type="string" required="no">
+   <AttributeType name="filesRestored" dt:type="enumeration"
+   <AttributeType name="friendlyName" dt:type="string" required="yes">
+   <AttributeType name="interconnectAddress" dt:type="string" required="yes">
+   <AttributeType name="interconnectAddressType" dt:type="enumeration"
+   <AttributeType name="majorVersion" dt:type="number" default="1">
+   <AttributeType name="mappedPathFromRoot" dt:type="string" required ="no">
+   <AttributeType name="mappedSnapshotId" dt:type="uuid" required="no">
+   <AttributeType name="mappedVolumeName" dt:type="string" required ="no">
+   <AttributeType name="metadata" dt:type="string" required="no">
+   <AttributeType name="metadata" dt:type="string" required="yes">
+   <AttributeType name="minorVersion" dt:type="number" default="0">
+   <AttributeType name="originalCount" dt:type="ui4" required="yes">
+   <AttributeType name="originalVolumeName" dt:type="string" required ="yes">
+   <AttributeType name="originatingMachine" dt:type="string" required="yes" >
+   <AttributeType name="partialFileSupport" dt:type="enumeration"
+   <AttributeType name="port" dt:type="string" required="no">
+   <AttributeType name="postRestoreFailureMsg" dt:type="string" required="no">
+   <AttributeType name="PostSnapshotFailureMsg" dt:type="string" required="no">
+   <AttributeType name="prepareForBackupFailureMsg" dt:type="string" required="no">
+   <AttributeType name="preRestoreFailureMsg" dt:type="string" required="no">
+   <AttributeType name="previousBackupStamp" dt:type="string" required="no">
+   <AttributeType name="productId" dt:type="string" required="no" >
+   <AttributeType name="productRevision" dt:type="string" required="no" >
+   <AttributeType name="providerId" dt:type="uuid" required="yes">
+   <AttributeType name="ranges" dt:type="string" required="no">
+   <AttributeType name="repair" dt:type="enumeration"
+   <AttributeType name="restoreInstanceId" dt:type="uuid" required = "no">
+   <AttributeType name="restoreOptions" dt:type="string" required = "no">
+   <AttributeType name="restoreTarget" dt:type="enumeration"
+   <AttributeType name="restoreType" dt:type="enumeration"
+   <AttributeType name="selectComponents" dt:type="enumeration"
+   <AttributeType name="selectedForRestore" dt:type="enumeration"
+   <AttributeType name="serialNumber" dt:type="string" required="no" >
+   <AttributeType name="service" dt:type="string" required="no">
+   <AttributeType name="serviceMachine" dt:type="string" required="yes" >
+   <AttributeType name="snapshotAttributes" dt:type="ui4" required="yes">
+   <AttributeType name="snapshotId" dt:type="uuid" required="yes" >
+   <AttributeType name="snapshotSetId" dt:type="uuid" required="no">
+   <AttributeType name="snapshotSetId" dt:type="uuid" required="yes">
+   <AttributeType name="sourceRanges" dt:type="string" required ="yes">
+   <AttributeType name="targetFilespec" dt:type="string" required="no">
+   <AttributeType name="targetPath" dt:type="string" required="no">
+   <AttributeType name="targetRanges" dt:type="string" required="yes">
+   <AttributeType name="timestamp" dt:type="ui8" required="yes">
+   <AttributeType name="usage" dt:type="enumeration"
+   <AttributeType name="vendorId" dt:type="string" required="no" >
+   <AttributeType name="writerRestore" dt:type="enumeration"
+   <description>
+   <element type= "SNAPSHOT_SET_DESCRIPTION" minOccurs="0" maxOccurs="*" />
+   <element type= "WRITER_COMPONENTS" />
+   <element type="ALTERNATE_LOCATION_MAPPING" minOccurs="0" maxOccurs="*" />
+   <element type="BACKUP_LOCATIONS" minOccurs="0" />
+   <element type="BACKUP_METADATA" minOccurs="0" maxOccurs="1" />
+   <element type="COMPONENT" />
+   <element type="DATABASE" minOccurs="0"/>
+   <element type="DATABASE_FILES" minOccurs="1" />
+   <element type="DATABASE_LOGFILES" />
+   <element type="DEPENDENCY" minOccurs="0" />
+   <element type="DIFFERENCED_FILE" minOccurs="0" maxOccurs="*" />
+   <element type="DIRECTED_TARGET" minOccurs="0" maxOccurs="*" />
+   <element type="EXCLUDE_FILES" minOccurs="0" />
+   <element type="EXCLUDE_FILES_FROM_SNAPSHOT" minOccurs="0" />   
+   <element type="FILE_GROUP" minOccurs="0" />
+   <element type="FILE_LIST" />
+   <element type="IDENTIFICATION" />
+   <element type="INCLUDE_FILES" minOccurs="0" />
+   <element type="INTERCONNECT_DESCRIPTION" minOccurs="0" maxOccurs="*"/>
+   <element type="LUN_INFORMATION" />
+   <element type="LUN_MAPPING" minOccurs="0" maxOccurs="*"/>
+   <element type="PARTIAL_FILE" minOccurs="0" maxOccurs="*" />
+   <element type="RESTORE_METADATA" minOccurs="0" maxOccurs="1" />
+   <element type="RESTORE_METHOD" minOccurs="0" />
+   <element type="RESTORE_SUBCOMPONENT" minOccurs="0" maxOccurs="*" />
+   <element type="RESTORE_TARGET" minOccurs="0" maxOccurs="*" />
+   <element type="SNAPSHOT_DESCRIPTION" minOccurs="0" maxOccurs="*" />
+   Alternate path in which to find the file.  Files in a file group may
+   An interconnect address including the address type
+   application should capture the restore metadata and pass it to the
+   as separators to form a logical namespace hierarchy
+   backup and restore.
+   be restored.
+   both during backup and restore.  This id is used to map writers at backup
+   component may be selectively backed up.
+   Components that are backed up and restored that are associated with a
+   Components that are backed up or restored.
+   Contains extra flags that describe the component being backed up.   
+   database or file group was successfully backed up or not.
+   Default metadata element for backup.  Content is a binary hex string.
+   Default metadata element for passing information from the writer's
+   DIRECTED_TARGET elements within a component.
+   elements within a component.
+   File specification.  Can include wildcard characters ? and *
+   has no meaning during restore.
+   have been copied to an alternative location by the writer.  Backup should
+   how files should be reorganized upon restore.  There may be multiple
+   Icon associated with database or file group
+   If no, then the component is always backed up if any other components of
+   is intended to support partial restoration of files or potentially
+   is just a simple default mechanism.
+   Is path specified recursive or limited to the directory that is specified.
+   Is this component selectable for backup or is it always backed up.
+   Is this component selectable for restore
+   location but should restore the files to their original location
+   Logical path for a database or file group.  This logical name uses backslash
+   logical path.
+   mapping from a the original location of the file to the location where
+   Name used to identify a database or file group.  May be qualified by a
+   Note that the writer can store whatever he wants in the component.  This
+   of the restoreTarget attribute of the COMPONENT is "directed".  It
+   opaque to the requestor.
+   Path to a file.  The path can include environment variables or
+   pick up the files from the alternative location instead of the original
+   PostRestore event.  It indicates that only a portion of the file
+   PreRestore event to the writer's PostRestore event.  The data is
+   PreRestore event.  It allows a subcomponent of a backed up component to
+   Restore metadata exists for this database or file group.  Backup
+   restoreTarget attribute of the COMPONENT is "new".  It supplies a
+   should be backed up.  There may be multiple PARTIAL_FILE elements
+   specific writer instance
+   Textual Description of database or file group
+   the application/service are backed up.  If yes, then the
+   the file should be restored.  There may be multiple RESTORE_TARGET
+   The information for the lun on the originating volume
+   The information for the lun on the snapshotted volume
+   the volume information for the snapshotted volumes
+   This describes a snapshot, including the snapshot set id as well as
+   This element in a COMPONENT is added by the requestore prior to the
+   This element in a COMPONENT is supplied by the writer during the
+   This element in a COMPONENT should be should be supplied if the value
+   This element in a COMPONENT should be supplied if the value of the
+   This is the description of a snapshotted volume
+   time to writers at restore time.
+   Type of restore being performed.
+   Unique generated by the writer that identifies the instance of a writer
+   Unique id generated by the writer that identifies the instance of a writer
+   Unique id identifying the instance of a writer during backup.  It
+   Unique id to identify the writer.  Note that this identifies the
+   Used to communicate between the writer and the backup application during
+   values extracted from registry keys.
+   Version of a specific document
+   within a single COMPONENT.
+   writer class rather than a specific instance of the writer.
+   writer on restore.
+   Writer should be notified when backup is complete whether this
+  </AttributeType>
+  </description>
+  <attribute type="method" />
+  <attribute type="onComponentName" />
+  <attribute type="onLogicalPath" />
+  <attribute type="onWriterId" />
+  <attribute type="rebootRequired" />
+  <attribute type="service" />
+  <attribute type="userProcedure" />
+  <attribute type="writerRestore" />
+  <AttributeType name="method" dt:type="enumeration"
+  <AttributeType name="onComponentName" dt:type="string" required="yes">
+  <AttributeType name="onLogicalPath" dt:type="string" required="no">
+  <AttributeType name="onWriterId" dt:type="uuid" required="yes">
+  <AttributeType name="rebootRequired" dt:type="enumeration"
+  <AttributeType name="userProcedure" dt:type="uri" required="no">
+  <description>
+  <element type="ALTERNATE_LOCATION_MAPPING" minOccurs="0" maxOccurs="*" />
+  Error Code = 0x%08lx. Error description = %s
+  How restore should be performed.  Includes specification of how files
+  should be restored as well as special steps that should occur in order
+  to complete the restore.
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNO
+ A^_^
+ A__]
+ A_A^_
+ A_A^A\
+ A_A^A\H
+ A_A^A]A\_^]
+- Code: %8ls%08lu- Call: %8ls%08lu- PID:  %08lu- TID:  %08lu- CMD:  %-*ls- User: %-*ls
+- ERROR: Call %S not succeeded. 
+ H3E H3E
+ Input buffer size: %ld, Output buffer size: %ld
+ Microsoft Corporation. All rights reserved.
+ NULL or empty parameter
+ OpenService (shSCManager, '%s', SERVICE_QUERY_STATUS)
+ Operating System
+ Output buffer: size received = %ld
+ Volume Shadow Copy Requestor/Writer Services API DLL
+ Windows
+!( m_dwRestoreFlags & ASR_ROF_SKIP_DISK_RECREATION ) || ( ( wcslen( m_wszSystemVolumeName ) > ::wcslen(L"\\\\?\\") ) && ( _wcsnicmp( m_wszSystemVolumeName, L"\\\\?\\", wcslen(L"\\\\?\\" ) ) == 0 ) )
+!*ppTransferList
+!\$(E3
+!\$@!\$DH!\$HM
+!\$pH
+!\$XH
+!|$@M
+!}HH!}
+!api-ms-win-devices-config-l1-1-1.dll
+!pSifDisk->AssignedTo
+!pSifDisk->IsCritical
+!t$@H
+!t$D!t$@!t$HM
+!This program cannot be run in DOS mode.
+%#010x
+%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x
+%d.%d
+%d/%02d/%02d-%02d:%02d:%02d
+%hs!%p: 
+%hs(%d) tid(%x) %08X %ws
+%hs(%d)\%hs!%p: 
+%I64d
+%PROCESSOR_ARCHITECTURE%
+%s element was not found
+%s event failed at one writer. hr = 0x%08lx
+%s%s%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x.xml
+%s, 0x%08lx
+%s, 0x%08lx, %s
+%s\%s
+%s\Device\Harddisk%d\Partition%d
+%s\Device\Harddisk%d\Partition%d\
+%s\Vss\Writers\%s\
+%ws\*
+&D8gdt{H
+((HRESULT)0x80042319L) (SetCurrentFailure)
+((HRESULT)0x800423F0L) (SetCurrentFailure)
+((HRESULT)0x800423F1L) (SetCurrentFailure)
+((HRESULT)0x800423F2L) (SetCurrentFailure)
+((HRESULT)0x800423F3L) (SetCurrentFailure)
+((HRESULT)0x800423F4L) (SetCurrentFailure)
+((HRESULT)0x800423F5L) (SetCurrentFailure)
+(_^][
+(caller: %p) 
+(D$@f
+(D$0f
+(D$Pf
+(DWORD) VSS_E_ASRERROR_DISK_RECREATION_FAILED
+(DWORD) VSS_E_ASRERROR_FIXED_PHYSICAL_DISK_AVAILABLE_AFTER_DISK_EXCLUSION
+(DWORD) VSS_E_ASRERROR_NO_PHYSICAL_DISK_AVAILABLE
+(DWORD)VSS_E_ASRERROR_CRITICAL_DISK_CANNOT_BE_EXCLUDED
+(Enter)
+(Leave)
+(NULL)
+(null)
+)D$@H
+)D$`H
+)D$pH
+)D$PL
+)L$@L
+)L$0L
+)L$PH
+)L$PL
+*       VALUE = '%s'
+*    ATTRIBUTE = %s [ns:%s, local:%s]
+* ELEMENT = %s [ns:%s, local:%s], level = %d
+* END = %s
+*** Constructing object %p
+*** Destructing object %p
+*** Warning ***: Writer %s with ID {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}attempts to reset the previous sequence with Snapshot Set ID {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}. Current state = %d
+**** Subscribe succeeded for [%p]
+**** Unsubscribe succeeded for [%p] (%u subscriptions removed)
+*.xml
+*ppwszAttributeData
+*ppwszVolumeGuidNameOut
+*pwszBootVolumeName
+*pwszSystemVolumeName
+.?AV_com_error@@
+.?AVbad_alloc@std@@
+.?AVexception@@
+.?AVlength_error@std@@
+.?AVlogic_error@std@@
+.?AVout_of_range@std@@
+.?AVResultException@wil@@
+.00cfg
+.bss$00
+.bss$01
+.bss$07
+.bss$dk00
+.bss$pr00
+.bss$zz
+.CRT$XCA
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIZ
+.data
+.data$00
+.data$00$brc
+.data$01$brc
+.data$dk00
+.data$dk00$brc
+.data$dk01$brc
+.data$dk06
+.data$r$brc
+.data$zz
+.data$zz$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.edata
+.gfids
+.giats
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.ipv6-literal.net
+.pdata
+.rdata
+.rdata$00
+.rdata$01
+.rdata$06
+.rdata$brc
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zz
+.rdata$zz$brc
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.text
+.text$di
+.text$lp01vssapi.dll!20_pri7
+.text$lp07vssapi.dll!35_hybridboot
+.text$mn
+.text$mn$00
+.text$np
+.text$x
+.text$yd
+.text$zs
+.text$zy
+.text$zz
+.xdata
+.xdata$x
+::CoCreateGuid( &guidBcdkBkp )
+::CopyFileEx( wszGlobalPathOfBcdToRestore, wszGlobalPathOfBcdTemp, NULL, NULL, NULL, 0 )
+::CreateVssExamineWriterMetadata
+::DWordAdd((cElements/8), 1, &cbNeeded)
+::DWordAdd(cbDriveLayoutEx, sizeof(DRIVE_LAYOUT_INFORMATION_EX), &cbDriveLayoutEx)
+::DWordMult(cbDriveLayoutEx, sizeof(PARTITION_INFORMATION_EX), &cbDriveLayoutEx)
+::DWordMult(sizeof(ASR_PTN_INFO), cEntriesInPartitionTable, &cbAsrPartitionInfoTable)
+::DWordSub( cPartition, 1, &cbDriveLayoutEx)
+::GetLastError()
+::NtQueryVolumeInformationFile( hDisk, &IoStatusBlock, &DeviceInfo,sizeof(DeviceInfo), FileFsDeviceInformation)
+::ReadFile( hDisk, pBuffer, ulBytesPerSector, &cbRead, NULL )
+::RegLoadKey(HKEY_LOCAL_MACHINE, wszOfflineHive, pwszOfflineHiveFilePaths)
+::RegLoadKey(HKEY_LOCAL_MACHINE, wszOfflineHive, pwszOfflineSystemHiveFilePath)
+::RegSetValueEx( hkeyOfflineRestoreSession, ASR_REG_RESTORED_VOLUME, 0, REG_MULTI_SZ, pbMultiStr, cbMultiStr )
+::RevertToSelf()
+::RtlGetSetBootStatusData( hBootStatusData, FALSE, RtlBsdItemBootShutdown, &fLastShutdownGood, sizeof(fLastShutdownGood),NULL)
+::RtlGetSetBootStatusData( hBootStatusData, FALSE, RtlBsdPowerTransition, &bsdPowerTransition, sizeof(bsdPowerTransition),NULL)
+::RtlGetSetBootStatusData( hBootStatusData, TRUE, RtlBsdPowerTransition, &bsdPowerTransition, sizeof(bsdPowerTransition),NULL)
+::SetFilePointerEx( hDisk, liOffset, NULL, FILE_BEGIN )
+::SetFilePointerEx( hVolume, liPositionToSeekTo, NULL, FILE_BEGIN )
+::StringCchCat( ARRAY_COUNT_PARAM(wszGlobalPathOfBcdTemp), wszBcdTemp )
+::StringCchCat(ARRAY_COUNT_PARAM(wszGlobalPathOfBcdToRestore), BCD_STORE_FILEPATH)
+::StringCchCat(ARRAY_COUNT_PARAM(wszVolumeRootPath), L"\\")
+::StringCchCat(pwszNewString, cchNewString, pwszCurString)
+::StringCchCopy( ARRAY_COUNT_PARAM(FormatVolInfo.wszFsName), pVolume->szFsName)
+::StringCchCopy( ARRAY_COUNT_PARAM(FormatVolInfo.wszLabel), pVolume->szLabel)
+::StringCchCopy( ARRAY_COUNT_PARAM(FormatVolInfo.wszVolumePath), pVolume->szGuid )
+::StringCchCopy( ARRAY_COUNT_PARAM(wszGlobalPathOfBcdTemp), wszGlobalPathOfBcdToRestore )
+::StringCchCopy( ARRAY_COUNT_PARAM(wszGlobalPathOfBcdToRestore), m_wszSystemVolumeName )
+::StringCchCopy( ARRAY_COUNT_PARAM(wszNtSystemPartition), m_wszSystemVolumeName )
+::StringCchCopy( pwszListCurrentStart, cFreeBuffer, pCurrentVol->szGuid )
+::StringCchCopy(ARRAY_COUNT_PARAM(CreateDiskInputBuffer.NewPackName), m_PackInfo.Name)
+::StringCchCopy(ARRAY_COUNT_PARAM(wszVolumeRootPath), pVolume->szGuid)
+::StringCchCopy(pNewDisk->DevicePath, cchDevicePath, pDiDetail->DevicePath)
+::StringCchCopyN( pwszVolume, cchVolume, pSysInfo->SystemPartition.Buffer, (pSysInfo->SystemPartition.Length)/sizeof(WCHAR) )
+::StringCchPrintf( ARRAY_COUNT_PARAM(wszAsrInstanceString), L"%d/%02d/%02d-%02d:%02d:%02d", SystemTime.wYear, SystemTime.wMonth, SystemTime.wDay, SystemTime.wHour, SystemTime.wMinute, SystemTime.wSecond )
+::StringCchPrintf( ARRAY_COUNT_PARAM(wszDefaultCCSKeyName), L"ControlSet%03d", dwDefaultCCSId )
+::StringCchPrintf( wszDevicePath, ARRAYSIZE(wszDevicePath), L"%s\\Device\\Harddisk%d\\Partition%d\\", L"\\\\?\\GLOBALROOT", dwDeviceNumber, pCurPtnEx->PartitionNumber )
+::StringCchPrintf(ARRAY_COUNT_PARAM(wszDeviceNumber), L"%d", pStorageDeviceNumber->DeviceNumber)
+::StringCchPrintf(ARRAY_COUNT_PARAM(wszErrorCodeString), L"0x%x", dwError)
+::StringCchPrintf(ARRAY_COUNT_PARAM(wszWin32VolumeName), L"\\\\?\\GLOBALROOT\\Arcname\\%s", pwszArcNameStart)
+::StringCchPrintf(wszDevicePath, ARRAYSIZE(wszDevicePath), L"\\\\?\\GLOBALROOT%s", pwszDeviceName )
+::UuidCreate( &guidOfflineHive ) == RPC_S_OK
+::WaitForSingleObject(cancelEvent, INFINITE) 
+::WaitForSingleObject(m_hReadyEvent, INFINITE) 
+::WaitForSingleObject(semaphore, INFINITE)
+::WaitForSingleObject(semaphore, INFINITE) [0x%08lx]
+::WriteFile( hDisk, pBuffer, ulBytesPerSector, &cbWritten, NULL )
+::WriteFile( hVolume, pbSectorBuffer, pDiskGeometry->BytesPerSector, &dwBytesReturned, NULL )
+;\$8r
+;\$Dr
+;ADw?A
+;ppSystemDiskOut
+??0CVssJetWriter@@QEAA@XZ
+??0CVssWriter@@QEAA@XZ
+??0exception@@QEAA@AEBQEBD@Z
+??0exception@@QEAA@AEBQEBDH@Z
+??0exception@@QEAA@AEBV0@@Z
+??0exception@@QEAA@XZ
+??1CVssJetWriter@@UEAA@XZ
+??1CVssWriter@@UEAA@XZ
+??1exception@@UEAA@XZ
+??1type_info@@UEAA@XZ
+?{u<H
+?{uFD
+?=u;H
+?AreComponentsSelected@CVssJetWriter@@IEBA_NXZ
+?AreComponentsSelected@CVssWriter@@IEBA_NXZ
+?CreateVssBackupComponents@@YAJPEAPEAVIVssBackupComponents@@@Z
+?CreateVssExamineWriterMetadata@@YAJPEAGPEAPEAVIVssExamineWriterMetadata@@@Z
+?D8wit
+?GetBackupType@CVssJetWriter@@IEBA?AW4_VSS_BACKUP_TYPE@@XZ
+?GetBackupType@CVssWriter@@IEBA?AW4_VSS_BACKUP_TYPE@@XZ
+?GetContext@CVssJetWriter@@IEBAJXZ
+?GetContext@CVssWriter@@IEBAJXZ
+?GetCurrentLevel@CVssJetWriter@@IEBA?AW4_VSS_APPLICATION_LEVEL@@XZ
+?GetCurrentLevel@CVssWriter@@IEBA?AW4_VSS_APPLICATION_LEVEL@@XZ
+?GetCurrentSnapshotSetId@CVssJetWriter@@IEBA?AU_GUID@@XZ
+?GetCurrentSnapshotSetId@CVssWriter@@IEBA?AU_GUID@@XZ
+?GetCurrentVolumeArray@CVssJetWriter@@IEBAPEAPEBGXZ
+?GetCurrentVolumeArray@CVssWriter@@IEBAPEAPEBGXZ
+?GetCurrentVolumeCount@CVssJetWriter@@IEBAIXZ
+?GetCurrentVolumeCount@CVssWriter@@IEBAIXZ
+?GetRestoreType@CVssJetWriter@@IEBA?AW4_VSS_RESTORE_TYPE@@XZ
+?GetRestoreType@CVssWriter@@IEBA?AW4_VSS_RESTORE_TYPE@@XZ
+?GetSnapshotDeviceName@CVssJetWriter@@IEBAJPEBGPEAPEBG@Z
+?GetSnapshotDeviceName@CVssWriter@@IEBAJPEBGPEAPEBG@Z
+?Initialize@CVssJetWriter@@QEAAJU_GUID@@PEBG_N211K@Z
+?Initialize@CVssWriter@@QEAAJU_GUID@@PEBGW4VSS_USAGE_TYPE@@W4VSS_SOURCE_TYPE@@W4_VSS_APPLICATION_LEVEL@@KW4VSS_ALTERNATE_WRITER_STATE@@_N1@Z
+?InstallAlternateWriter@CVssWriter@@QEAAJU_GUID@@0@Z
+?IsBootableSystemStateBackedUp@CVssJetWriter@@IEBA_NXZ
+?IsBootableSystemStateBackedUp@CVssWriter@@IEBA_NXZ
+?IsPartialFileSupportEnabled@CVssJetWriter@@IEBA_NXZ
+?IsPartialFileSupportEnabled@CVssWriter@@IEBA_NXZ
+?IsPathAffected@CVssJetWriter@@IEBA_NPEBG@Z
+?IsPathAffected@CVssWriter@@IEBA_NPEBG@Z
+?OnAbortBegin@CVssJetWriter@@UEAAXXZ
+?OnAbortEnd@CVssJetWriter@@UEAAXXZ
+?OnBackOffIOOnVolume@CVssWriter@@UEAA_NPEAGU_GUID@@1@Z
+?OnBackupComplete@CVssWriter@@UEAA_NPEAVIVssWriterComponents@@@Z
+?OnBackupCompleteBegin@CVssJetWriter@@UEAA_NPEAVIVssWriterComponents@@@Z
+?OnBackupCompleteEnd@CVssJetWriter@@UEAA_NPEAVIVssWriterComponents@@_N@Z
+?OnBackupShutdown@CVssWriter@@UEAA_NU_GUID@@@Z
+?OnContinueIOOnVolume@CVssWriter@@UEAA_NPEAGU_GUID@@1@Z
+?OnFreezeBegin@CVssJetWriter@@UEAA_NXZ
+?OnFreezeEnd@CVssJetWriter@@UEAA_N_N@Z
+?OnIdentify@CVssJetWriter@@UEAA_NPEAVIVssCreateWriterMetadata@@@Z
+?OnIdentify@CVssWriter@@UEAA_NPEAVIVssCreateWriterMetadata@@@Z
+?OnPostRestore@CVssWriter@@UEAA_NPEAVIVssWriterComponents@@@Z
+?OnPostRestoreBegin@CVssJetWriter@@UEAA_NPEAVIVssWriterComponents@@@Z
+?OnPostRestoreEnd@CVssJetWriter@@UEAA_NPEAVIVssWriterComponents@@_N@Z
+?OnPostSnapshot@CVssJetWriter@@UEAA_NPEAVIVssWriterComponents@@@Z
+?OnPostSnapshot@CVssWriter@@UEAA_NPEAVIVssWriterComponents@@@Z
+?OnPrepareBackup@CVssWriter@@UEAA_NPEAVIVssWriterComponents@@@Z
+?OnPrepareBackupBegin@CVssJetWriter@@UEAA_NPEAVIVssWriterComponents@@@Z
+?OnPrepareBackupEnd@CVssJetWriter@@UEAA_NPEAVIVssWriterComponents@@_N@Z
+?OnPrepareSnapshotBegin@CVssJetWriter@@UEAA_NXZ
+?OnPrepareSnapshotEnd@CVssJetWriter@@UEAA_N_N@Z
+?OnPreRestore@CVssWriter@@UEAA_NPEAVIVssWriterComponents@@@Z
+?OnPreRestoreBegin@CVssJetWriter@@UEAA_NPEAVIVssWriterComponents@@@Z
+?OnPreRestoreEnd@CVssJetWriter@@UEAA_NPEAVIVssWriterComponents@@_N@Z
+?OnThawBegin@CVssJetWriter@@UEAA_NXZ
+?OnThawEnd@CVssJetWriter@@UEAA_N_N@Z
+?OnVSSApplicationStartup@CVssWriter@@UEAA_NXZ
+?OnVSSShutdown@CVssWriter@@UEAA_NXZ
+?SetWriterFailure@CVssJetWriter@@IEAAJJ@Z
+?SetWriterFailure@CVssWriter@@IEAAJJ@Z
+?Subscribe@CVssWriter@@QEAAJK@Z
+?terminate@@YAXXZ
+?Uninitialize@CVssJetWriter@@QEAAXXZ
+?Unsubscribe@CVssWriter@@QEAAJXZ
+?what@exception@@UEBAPEBDXZ
+@.data
+@.didat
+@.reloc
+@8{du
+@8{et
+@8hhtvH
+@8hhu
+@8ihu
+@8ihu$H
+@8q(t
+@8t$@
+@8uct$H
+@8y(t
+@A^^]
+@A^_^
+@A^_^[]
+@A_A^_
+@A_A^_^]
+@A_A^A\_^
+@A_A^A\_^[]
+@A_A^A\_^][
+@A_A^A]A\_
+@A_A^A]A\_^]
+@SUVWATAUAVAWH
+@SUVWATAVAWH
+@SUVWAVAWH
+@SUVWAVH
+@SUVWH
+@SUWATAUAVAWH
+@SVWATAUAVAW
+@SVWATAUAVAWH
+@SVWH
+@UATAUAVAWH
+@USVATAVH
+@USVWATAUAVAWH
+@USVWATAUAVH
+@USVWATAVAWH
+@USVWAUAVAWH
+@USVWAVH
+@UVWATAUAVAWH
+@v#Hc
+@VWAVH
+@WATAUAVAW
+[%hs(%hs)]
+[%hs]
+\$ A;
+\$ E3
+\$ UH
+\$ UVWATAUAVAWH
+\$ UVWAVAWH
+\$ UVWH
+\$ WH
+\$(E3
+\$(H;X
+\$@9_
+\$@tOH
+\$`H9] u7
+\$0E3
+\$0L9
+\$8E3
+\$dA9^
+\$h@8
+\$hM;
+\$XIc
+\??\Volume{
+\\%s\%s\
+\\.\MountPointManager
+\\.\PhysicalDrive%lu
+\\?\GLOBALROOT
+\\?\GLOBALROOT%s
+\\?\GLOBALROOT\Arcname\%s
+\\?\GLOBALROOT\arcname\multi(0)disk(0)rdisk(0)
+\\?\UNC\
+\^F&{
+\Arcname
+\Arcname\
+\config\
+\Device\DfsClient
+\Device\VolMgrControl
+\efi\microsoft\Boot\BCD
+\REGISTRY\MACHINE
+\REGISTRY\MACHINE\SOFTWARE\Classes
+\REGISTRY\MACHINE\SYSTEM\CurrentControlSet\Hardware Profiles\Current
+\REGISTRY\USER
+\Vss\Writers
+\Vss\Writers\Application
+\Vss\Writers\Application\
+\Vss\Writers\System
+\Vss\Writers\System\
+] H9s
+]0D8cit
+]P;}H
+]pDisk
+^(H;^0t
+__C_specific_handler
+__CxxFrameHandler3
+__dllonexit
+_amsg_exit
+_AsrPerformPreRestore((WCHAR *)pwszMetadata, pdwIncludeDisks, cIncludeDisks, pdwExcludeDisks, cExcludeDisks, dwRestoreFlags, wszSystemVolumeName, wszBootVolumeName )
+_beginthreadex
+_beginthreadex failed. errno = 0x%08lx
+_callnewh
+_CxxThrowException
+_errno
+_GetExtensionProcAddress<PDRIVERSTOREOFFLINEADDDRIVERPACKAGE> ( ASR_OFFLINE_DRIVER_INJECTION_EXTENSION_NAME, &hDrvStoreDll, &pfnDriverStoreOfflineAddDriverPackage )
+_hD;[ht
+_initterm
+_JoinLists( &pVirtualDiskList, m_pDiskListHead )
+_lock
+_MarkActiveBitOnSystemPartitionHelper( pSifSystemDisk, dwSifSystemPartIndex, pPhySystemDisk->DeviceNumber )
+_onexit
+_ParseRestoreOption( &pdwIncludeDisks, &cIncludeDisks, &pdwExcludeDisks, &cExcludeDisks, &cIncludeAllCritical, &dwRestoreFlags, &wszSystemVolumeName, &wszBootVolumeName )
+_purecall
+_RecoverBcdStore()
+_resetstkoflw
+_RestoreDisks( pAsrLdm, pdwIncludeDisks, cIncludeDisks, pdwExcludeDisks, cExcludeDisks )
+_RestoreEspVolumeInformation(pAsrSys)
+_RestoreVolumeInformation( pVolume, pfnFveEraseDrive, pfnFveOpenVolume, pfnFveCloseVolume )
+_TransferNodesFromList( &m_pDiskListHead, &AsrSystem::_IsVirtual, &pVirtualDiskList )
+_TransferNodesFromList( &pPhysicalDiskList, &AsrSystem::_IsVirtual, &pVirtualDiskList )
+_unlock
+_vsnprintf
+_vsnprintf_s
+_vsnwprintf
+_wcsdup
+_wcsicmp
+_wcsnicmp
+_wtoi
+_wtoi64
+_XcptFilter
+` UAVAWH
+`.rdata
+`A^_^][
+`A_A\_^]
+`A_A^_^[
+`A_A^_^]
+`A_A^A\_^[]
+`A_A^A\_^][
+`A_A^A]A\_^]
+`K+D"`u
+{%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+{00000000-0000-0000-0000-00000000-0000}
+|$ AVH
+|$ E3
+|$ UATAUAVAWH
+|$ UAVAWH
+|$(E3
+|$@8\$Cu08\$Dt
+|$@E3
+|$0E3
+|$0H;
+|$2:u
+|$8E3
+|$hA8_I
+|$HE3
+|$PD8~dtpL
+|$WH;
+|$XE3
+~fD9)u
+</AttributeType>
+</description>
+</ElementType>
+</root>
+</Schema>
+<attribute type="filespec"  />
+<attribute type="lastModifyLSN" />
+<attribute type="lastModifyTimeHigh" />
+<attribute type="lastModifyTimeLow" />
+<attribute type="path" />
+<attribute type="recursive" />
+<AttributeType name="alternatePath" dt:type="string" required="no">
+<AttributeType name="backupSchema" dt:type="number" default="0">
+<AttributeType name="backupSchema" dt:type="number" required="no">
+<AttributeType name="caption" dt:type="string" required="no">
+<AttributeType name="componentFlags" dt:type="number" default="0">
+<AttributeType name="componentName" dt:type="string" required="yes">
+<AttributeType name="filespec" dt:type="string" required="yes">
+<AttributeType name="filespecBackupType" dt:type="number" default="0">
+<AttributeType name="icon" dt:type="string" required="no">
+<AttributeType name="instanceId" dt:type="uuid" required="no">
+<AttributeType name="instanceName" dt:type="string" required="no">
+<AttributeType name="lastModifyLSN" dt:type="string" required="no" >
+<AttributeType name="lastModifyTimeHigh" dt:type="number" default="0" >
+<AttributeType name="lastModifyTimeLow" dt:type="number" default="0" >
+<AttributeType name="logicalPath" dt:type="string" required="no">
+<AttributeType name="notifyOnBackupComplete" dt:type="enumeration"
+<AttributeType name="path" dt:type="string" required="yes">
+<AttributeType name="recursive" dt:type="enumeration"
+<AttributeType name="restoreMetadata" dt:type="enumeration"
+<AttributeType name="selectable" dt:type="enumeration"
+<AttributeType name="selectableForRestore" dt:type="enumeration"
+<AttributeType name="version" dt:type="enumeration" dt:values="1.0 1.1 1.2 1.3" required="yes">
+<AttributeType name="writerId" dt:type="uuid" required="yes">
+<description>
+<ElementType name="ALTERNATE_LOCATION_MAPPING" content="empty" model="closed">
+<ElementType name="BACKUP_COMPONENTS" content="eltOnly" model="closed" order="many">
+<ElementType name="BACKUP_LOCATIONS" content="eltOnly" model="closed" order="many">
+<ElementType name="BACKUP_METADATA" content="empty" model="closed">
+<ElementType name="COMPONENT" content="eltOnly" model="open" order="many">
+<ElementType name="DATABASE" content="eltOnly" model="closed" order="many">
+<ElementType name="DATABASE_FILES" content="empty" model="closed">
+<ElementType name="DATABASE_LOGFILES" content="empty" model="closed">
+<ElementType name="DEPENDENCY" content="empty" model="closed">
+<ElementType name="DESTINATION_LUN" content="eltOnly" model="closed">
+<ElementType name="DIFFERENCED_FILE" content="empty" model="closed">
+<ElementType name="DIRECTED_TARGET" content="empty" model="closed">
+<ElementType name="DISK_EXTENT" content="empty" model="closed">
+<ElementType name="EXCLUDE_FILES" content="empty">
+<ElementType name="EXCLUDE_FILES_FROM_SNAPSHOT" content="empty">
+<ElementType name="FILE_GROUP" content="eltOnly" model="closed" order="many">
+<ElementType name="FILE_LIST" content="empty" model="closed">
+<ElementType name="IDENTIFICATION" content="empty" model="closed">
+<ElementType name="INCLUDE_FILES" content="empty">
+<ElementType name="INTERCONNECT_DESCRIPTION" content="empty" model="closed">
+<ElementType name="LUN_INFORMATION" content="eltOnly" model="closed">
+<ElementType name="LUN_MAPPING" content="eltOnly" model="closed">
+<ElementType name="PARTIAL_FILE" content="empty" model="closed">
+<ElementType name="RESTORE_METADATA" content="empty" model="closed">
+<ElementType name="RESTORE_METHOD" content="eltOnly" model="open" order="many">
+<ElementType name="RESTORE_SUBCOMPONENT" content="empty" model="closed">
+<ElementType name="RESTORE_TARGET" content="empty" model="closed">
+<ElementType name="SNAPSHOT_DESCRIPTION" content="eltOnly" model="closed">
+<ElementType name="SNAPSHOT_SET_DESCRIPTION" content="eltOnly" model="closed">
+<ElementType name="SOURCE_LUN" content="eltOnly" model="closed">
+<ElementType name="WRITER_COMPONENTS" content="eltOnly" model="closed"
+<ElementType name="WRITER_METADATA" content="eltOnly" model="open" order="one">
+<F\teH
+<root>
+<Schema name="VssComponentMetadata"
+<Schema name="VssWriterMetadataInfo"
+>fE;/
+040904B0
+0A\_^
+0A^_]
+0A^_^
+0A^A\_^]
+0A_A^_
+0A_A^_^]
+0A_A^A\
+0A_A^A\_^
+0A_A^A]_^
+0A_A^A]A\_
+0A_A^A]A\_^]
+0A9,$u*H
+0x%08lx
+0x%08lx, %s
+10.0.17763.1
+10.0.17763.1 (WinBuild.160101.0800)
+2333333
+3rd Party
+4CfE;
+7H9^8t.9^Tu)9^Pt$
+8\$@H
+8\$@L
+8\$@t
+8A^_^[
+8Q)tUA
+8XAtT
+8YWs_]0Q6
+9)t5A
+9.tVA
+9\$`t
+9\$`t5H
+9\$`u
+9\$`u+
+9\$0t
+9\$0u
+9\$4u:H
+9\$8v@L
+9\$ht)H
+9\$ht-H
+9\$pt
+9\$pt5H9_8uu9_Lu;H
+9\$PtDH
+9\$pu
+9\$Pu;H
+9\$Xu
+9\$Xu"H
+9\$Xu$H
+9]@vFH
+9]Pu<A
+9]pvy
+9]pvz
+9]XvIL
+9_hu59X
+9_Lt[A
+9_TtHH
+9{0u%
+9|$h@
+9|$PtDH
+9}hv<A
+9Chv4H
+9E(t,H
+9F@t9
+9h@t:H
+9o0~,H
+9t$`tQH
+9t$0tM
+9t$hu/
+9t$Pt@D
+9W@v Hc
+9YPt:
+a component was torn
+A critical piece of information is missing.  Possibly, the backup document was created with an earlier version of the infrastructure.
+A required in parameter is NULL.
+A required parameter is NULL
+A required parameter is NULL.
+A writer that isn't selected for restore is active!
+A;4$H
+A;FTu
+A;mPs}H
+A;N r
+A]A\]
+A^_^[]
+A^_^][
+A^A\^[]
+A^A\_
+A^A]A\_]
+A^A]A\_^
+A^A]A\_^[]
+A_A]]
+A_A]_^]
+A_A]A\_]
+A_A]A\_^
+A_A]A\_^[]
+A_A^]
+A_A^_
+A_A^_^[
+A_A^_^[]
+A_A^_^]
+A_A^A\
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[]
+A_A^A\_^][
+A_A^A]
+A_A^A]_]
+A_A^A]_^
+A_A^A]_^[]
+A_A^A]A\]
+A_A^A]A\^
+A_A^A]A\_
+A_A^A]A\_][
+A_A^A]A\_^[
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A_A^A]A\_^][
+A8F u
+A8v4t)A8v5
+A9^hujH
+A9_Xt+H
+A94$v:
+A96v5
+A9nhv-
+A9v v(
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
+Abort skipped in state %d
+Aborted
+Aborting
+Aborting due to timeout
+about to enter context callback
+Access denied
+AcquireSemaphore
+AcquireSRWLockExclusive
+ActiveWriterStateTimeout
+ActivityError
+ActivityStoppedAutomatically
+AddAccessAllowedAceEx
+AddAccessDeniedAceEx
+AddAce
+AddComponent called on Express Writer with component flags %08x
+AddComponent called on Express Writer with notify on backup complete request
+AddExpressWriter failed
+AddExpressWriters failed with 0x%08x
+AddExpressWriters for Application subdirectory failed with 0x%08x
+AddExpressWriters for System subdirectory failed with 0x%08x
+AddFilesToFileGroup called on Express Writer metadata with %08x
+AddFilesToFileGroup called on Express Writer with alternate location
+Adding context: '%s' (%d)
+Adding context: '%s' = '%s' (%d)
+Adding SID %s ...
+Adding VSS_VOLSNAP_ATTR_AUTORECOVER to internal context
+additionalRestores
+ADMIN privileges are not set
+advapi32.dll
+AllocateAndInitializeSid
+allocation of BSTR failed
+allowed
+Already created Express Writer, waiting for save
+Already loaded Express Writer, waiting for save
+alternate
+alternate writer not supported
+ALTERNATE_LOCATION_MAPPING
+alternatePath
+AlternateWriterState  = %s
+always
+amd64
+An empty string is not a valid number
+An invalid combination of arguments was specified
+An older writer session state is being removed. 
+api-ms-win-core-com-l1-1-0.dll
+api-ms-win-core-debug-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-1.dll
+api-ms-win-core-errorhandling-l1-1-0.dll
+api-ms-win-core-file-l1-1-0.dll
+api-ms-win-core-file-l1-2-0.dll
+api-ms-win-core-file-l2-1-0.dll
+api-ms-win-core-handle-l1-1-0.dll
+api-ms-win-core-heap-l1-1-0.dll
+api-ms-win-core-heap-l2-1-0.dll
+api-ms-win-core-heap-obsolete-l1-1-0.dll
+api-ms-win-core-io-l1-1-0.dll
+api-ms-win-core-kernel32-legacy-l1-1-1.dll
+api-ms-win-core-libraryloader-l1-2-0.dll
+api-ms-win-core-localization-l1-2-0.dll
+API-MS-Win-Core-LocalRegistry-L1-1-0.dll
+api-ms-win-core-memory-l1-1-0.dll
+api-ms-win-core-processenvironment-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-0.dll
+api-ms-win-core-profile-l1-1-0.dll
+api-ms-win-core-registry-l1-1-0.dll
+api-ms-win-core-rtlsupport-l1-1-0.dll
+api-ms-win-core-string-l1-1-0.dll
+api-ms-win-core-string-l2-1-0.dll
+api-ms-win-core-string-obsolete-l1-1-0.dll
+api-ms-win-core-synch-l1-1-0.dll
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-core-sysinfo-l1-1-0.dll
+api-ms-win-core-util-l1-1-0.dll
+api-ms-win-eventing-provider-l1-1-0.dll
+api-ms-win-eventlog-legacy-l1-1-0.dll
+api-ms-win-security-base-l1-1-0.dll
+api-ms-win-security-lsalookup-l1-1-0.dll
+api-ms-win-security-sddl-l1-1-0.dll
+api-ms-win-service-management-l1-1-0.dll
+api-ms-win-service-winsvc-l1-1-0.dll
+AppLevel              = %s
+Application
+Application %s has registered to block volumes.
+Application %s has successfully blocked volume %s from revert using value %s.
+ApplicationErrorCode
+appwszVolumeGuidOut
+Arithmetic overflow.  wAlignmentOffset = %hu was larger than m_wAlignmentBytes = %hu
+Arithmetic overflow. m_dwOutputCurrentOffset = %lu or dwSize = %lu too large.
+Arithmetic overflow. m_wAlignmentBytes = %hu too large
+Asr component not found
+ASR Writer
+Asr writer not found
+AsrFmt::_ExtractFixedVolumesFromXml
+AsrFmt::_ExtractMediaFromXml
+AsrFmt::_ExtractRemovableMediaFromXml
+AsrFmt::_ExtractVolumeFromXml
+AsrFmt::_IsVolumeOnIncludedDisks
+AsrFmt::_RestoreEspVolumeInformation
+AsrFmt::_RestoreVolumeInformation
+AsrFmt::InitializeForRestore
+AsrFmt::PerformPreRestore
+AsrGetSystemVolumeDevPath
+AsrGetSystemVolumeDevPath(wszDevicePath, ARRAYSIZE(wszDevicePath) )
+AsrGetSystemVolumeGlobalRootPath
+AsrGetSystemVolumeGlobalRootPath( wszSysVolPath, ARRAYSIZE(wszSysVolPath) )
+AsrLdm
+AsrLdm::CheckPackIntactByDisk
+AsrLdm::InitializeForRestore
+AsrLdm::InitializeFromXMLDoc
+AsrLdm::InitializePhysicalPackListForRestore
+AsrLdm::IsSifDiskDynamic
+AsrLdm::OfflineAllPacks
+AsrLdm::OfflineAllPacks( hVdsDriver, &guidRestoredPackId )
+AsrLdm::OnlinePack
+AsrLdm::OnlinePack( hVdsDriver, &guidRestoredPackId)
+AsrLdm::PerformPostRestore
+AsrLdm::PerformPreRestore
+AsrLdm::PropagateDiskNotIntactByPack
+AsrpAdjustDiskSizes
+AsrpAdjustDiskSizeToUsedPartitionSize
+AsrpAdjustDiskSizeToUsedPartitionSize( pSifDisk, &bDiskResized )
+AsrpAssignBootDisk
+AsrpAssignBySignature
+AsrpAssignDiskToAnyRDisk
+AsrpAssignDiskToRdisk
+AsrpAssignPartitions
+AsrpAssignPartitionsForDisk
+AsrpAssignPartitionsForDisk( pSifDisk )
+AsrpAssignSifDisksToPhysicalDisks
+AsrpAssignSifDisksToPhysicalDisks( pSifDiskList, pPhysicalDiskList, pbCriticalDiskNoARC )
+AsrpAssignSystemDisk
+AsrpAssignVolumeGuids
+AsrpAssignVolumeGuids( pAssignTo, hDisk, pSifDisk )
+AsrpBasicDiskAssignmentPass
+AsrpCheckDiskIntact
+AsrpCheckDiskIntact( pAsrLdm, pPhysicalSifDiskList)
+AsrpClearAllBootSectors
+AsrpClearAllBootSectors( hDisk, pAssignTo->pDriveLayoutEx, pAssignTo->pDiskGeometry->BytesPerSector, pAssignTo->DeviceNumber)
+AsrpClearBootSector
+AsrpClearBootSectorsCriticalVolumeOnly
+AsrpClearBootSectorsCriticalVolumeOnly(pSifDisk, pAssignTo->DeviceNumber)
+AsrpClearVolumeBootSector
+AsrpClearVolumeBootSector( wszDevicePath )
+AsrpClearVolumeBootSector(wszPartitionDevicePath)
+AsrpConvertRawDisks
+AsrpDisksAssignment
+AsrpDisksAssignment(pPhysicalSifDiskList, pPhysicalDiskList, pAsrLdm )
+AsrpEraseBitlockedVolume
+AsrpExcludeEmptyBasicSifDisks
+AsrpFindLastUsedPartition
+AsrpFindLastUsedPartition(pSifDisk, &pLastUsedPartition )
+AsrpGetDiskLayout
+AsrpGetMorePartitionInfo
+AsrpGetMorePartitionInfo( pStorageDeviceNumber->DeviceNumber, pDriveLayoutEx, &pPartitionTable )
+AsrpMarkExclusionDisksForRestore
+AsrpPerformDisksAssignment
+AsrpRecreateDisks
+AsrpRecreateSifDisk
+AsrRegAddLastInstanceGuid
+AsrRegAddLastInstanceGuid( hkeyOfflineAsrRestoreSession )
+AsrRegClearExitCode
+AsrRegDeleteLastAliveStamp
+AsrRegGetBool
+AsrRegGetDword
+AsrRegIncrRestoreInstanceCount
+AsrRegpGetDefaultCurrentControlSet
+AsrRegpGetDefaultCurrentControlSet(hkeyOfflineSystemHive, &hkeyOfflineDefaultCCS)
+AsrRegpOpenHandle(ASR_KEY_PATH, FALSE, &hkeyOpenKey)
+AsrRegpOpenHandle(BOOT_REGPATH_SYSTEM_START_OPTION, FALSE, &hkeyOpenKey)
+AsrRegpOpenHandle(wszOfflineHive, TRUE, &hkeyOfflineSystemHive)
+AsrRegpQueryValueSz(hkeyOpenKey, BOOT_REGVALUE_SYSTEM_START_OPTION, &pwszSystemStartOption)
+AsrRegpQueryValueSz(hkeyOpenKey, wszExtensionName, &wszExtensionValue)
+AsrRegSetExitCode
+AsrRegSetRestoreInstanceCount
+AsrRegSetRestoreMapForDeviceNumber
+AsrRegUpdateOfflineSoftwareHive
+AsrRegUpdateReformattedVolume
+AsrRegUpdateReformattedVolume( hkeyOfflineAsrRestoreSession, pVolList )
+AsrRegUpdateRestoreSession
+AsrSystem::_ClearSystemBootBits
+AsrSystem::_ExtractAsrVhdFromXml
+AsrSystem::_ExtractDiskBusesFromXml
+AsrSystem::_ExtractDisksFromXml
+AsrSystem::_ExtractGptDiskFromXml
+AsrSystem::_ExtractGptPartitionFromXml
+AsrSystem::_ExtractMbrDiskFromXml
+AsrSystem::_ExtractMbrPartitionFromXml
+AsrSystem::_ExtractSystemFromXml
+AsrSystem::_ExtractVersionFromXml
+AsrSystem::_ExtractVhdFileInfoFromXml
+AsrSystem::_ExtractVirtualDiskFromXml
+AsrSystem::_IsSupportedVersion
+AsrSystem::_JoinLists
+AsrSystem::_MarkActiveBitOnSystemPartitionHelper
+AsrSystem::_RecoverBcdStore
+AsrSystem::_RestoreDisks
+AsrSystem::_TransferNodesFromList
+AsrSystem::_UpdateRestoredRegistryMap
+AsrSystem::ExtractAllVolumeNames
+AsrSystem::ExtractVolumeSymbolicNameXmlNode
+AsrSystem::GetBootVolumeName
+AsrSystem::GetRestoredOfflinedHivePath
+AsrSystem::GetSifDiskAssignTo
+AsrSystem::GetSifDiskBySifDevNum
+AsrSystem::InitializeForRestore
+AsrSystem::MarkActiveBitOnSystemPartition
+AsrSystem::PerformPostRestore
+AsrSystem::PerformPreRestore
+AsrSystem::RestoreVolumeGuids
+AsrSystem::RestoreVolumeGuids( pwszDeviceName, m_pmwszVolumeNames )
+AsrSystem::SetBootAndSystemVolumeName
+AsrVersion
+AsrVhd
+AsrVhd::GetDeviceDependencyInformation
+AsrVhd::TraceVirtualDiskInfo
+Atapi
+ATAVAWH
+Attempt to create a duplicate component.
+Attempt to start snapshot sequence with a duplicate snapshot set id: {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+Attribute '%s' not found
+AUAVAWH
+authRestore
+AutoExtend
+Automatic
+auto-recovery masked
+B(H;B0u|H
+B8<6u
+BackEnd
+backup
+Backup Operator privileges are not set
+Backup privileges are not set
+backup schema: %#x
+BACKUP_COMPONENTS
+BACKUP_LOCATIONS
+BACKUP_LOCATIONS element was not found
+BACKUP_LOCATIONS element was not found.
+BACKUP_METADATA
+BackupComplete
+BackupComplete called with no components selected.
+BackupCompleteFailed
+BackupCompleteSucceeded
+BackupComponents object is NULL
+BackupComponents object is NULL.
+BackupLocations element is missing
+backupOptions
+backupSchema
+BackupSchema
+backupStamp
+backupSucceeded
+backupType
+bad allocation
+Bad Device type modifier.
+Bad Device type.
+bad event flags
+Bad FilesToExclude list.
+Bad FilesToInclude list.
+Bad state %d
+Bad state. %s. Provider ID = {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+bad_alloc STL exception caught: hr: 0x%x
+base\stor\vss\inc\ichannel.hxx
+base\stor\vss\inc\vs_cmxml.hxx
+base\stor\vss\inc\vs_str.hxx
+base\stor\vss\inc\vs_types.hxx
+base\stor\vss\inc\vs_xmllite.hxx
+base\stor\vss\inc\vswrtimp.h
+base\stor\vss\inc\worker.hxx
+base\stor\vss\modules\backupext\vsxml\async.cxx
+base\stor\vss\modules\backupext\vsxml\helper.cxx
+base\stor\vss\modules\backupext\vsxml\snapshot.cxx
+base\stor\vss\modules\backupext\vsxml\vs_cmxml.cxx
+base\stor\vss\modules\backupext\vsxml\vs_schema.cxx
+base\stor\vss\modules\backupext\vsxml\vs_wmxml.cxx
+base\stor\vss\modules\backupext\vsxml\vs_xml.cxx
+base\stor\vss\modules\backupext\vsxml\vs_xwmxml.cxx
+base\stor\vss\modules\filter\filter.cxx
+base\stor\vss\modules\jetwriter\ijetwriter.cpp
+base\stor\vss\modules\registry\registry.cxx
+base\stor\vss\modules\remotevss\util\share\sharemgt.cxx
+base\stor\vss\modules\sec\security.cxx
+base\stor\vss\modules\trace\fntracer.cpp
+base\stor\vss\modules\vssapi\jetwriter.cpp
+base\stor\vss\modules\vssapi\modulekeeper.cxx
+base\stor\vss\modules\vssapi\vssapi.cpp
+base\stor\vss\modules\vssapi\vswriter.cpp
+base\stor\vss\modules\vswriter\asrwriterrest.cpp
+base\stor\vss\modules\vswriter\vswrtimp.cpp
+base\stor\vss\modules\vswriter\vsxwimp.cpp
+base\stor\vss\modules\xmllite\xmllite.cxx
+base\stor\vss\modules\xmlrw\xmlrw.cpp
+bcd.dll
+BcdImportStoreWithFlags
+BcdSetSystemStoreDevice
+be000cbe-11fe-4426-9c58-531aa6355fc4
+BlockSize
+bmpPhysicalDisksToExclude.Initialize(dwPhysicalDeviceNumber+1)
+bmpPhysicalDisksToExclude.Set(dwSystemDiskDeviceNumber)
+BOOTABLE_SYSTEM_STATE
+BootableSystemState
+bootableSystemStateBackup
+BootFlag
+BootIsSystemStartFromFixedDisk
+BootStat.dat
+BootSysDirectory
+BootVolumeName
+BootWinDirectory
+BUEASYNC
+BUECXMLC
+BUEHELPC
+BUESNAPC
+BUEWXMLC
+BUEXMLC
+BUEXWXML
+BuildComponentDocumentFromString
+BuildDocumentFromString
+BuildExpressWriterDocumentFromString
+BuildWriterDocumentFromString
+BusKey
+busType
+BusType
+byCopy
+BytesPerSector
+C H;H
+C H9H
+C8<4te
+caching component data finished in CheckTornComponents
+caching component data in CheckTornComponents
+Call to CoSetProxyBlanket failed.  hr = 0x%08lx
+callContext
+CallContext:[%hs] 
+Called CVssWriterImpl::Initialize() with:
+Caller has insufficient privileges for creating express writer
+Calling Initialize during safe mode
+Calling Initialize during setup
+Can only be called during backup.
+Can only be called during restore
+Can only be called during restore.
+Can only be called from the coordinator
+Can only call this function from the writer
+Can only call this function from the writer.
+Cannot alloc output
+Cannot alloc path
+Cannot allocate ANSI string
+Cannot allocate BSTR.
+Cannot allocate CVssExamineWriterMetadata
+Cannot allocate CVssExamineWriterMetadataLite
+Cannot allocate CVssWMComponent due to allocation failure.
+Cannot allocate instance id include array
+Cannot allocate instance Id string or instance name string
+Cannot allocate lun information.
+Cannot allocate lun mapping.
+Cannot allocate share name
+Cannot allocate share scope name
+Cannot allocate snapshot description.
+Cannot allocate snapshot set description.
+Cannot allocate string
+Cannot allocate writer class array
+Cannot allocate writer class id array
+Cannot allocate writer instance name
+Cannot allocate writer name
+Cannot be called during restore
+Cannot be called during restore.
+Cannot call AddToSnapshotSet at this point
+Cannot call DoSnapshotSet at this point.
+Cannot call this function in the requestor.
+Cannot call this in Safe Mode
+Cannot call this in WinPE
+Cannot create CInternalWriterMetadata because of allocation failure
+Cannot create CVssAlternateLocationMapping due to allocation failure.
+Cannot create CVssComponent due to allocation failure
+Cannot create CVssCreateWriterMetadata due to allocation failure.
+Cannot create CVssExamineWriterMetadata due to allocation failure.
+Cannot create CVssWMDependency due to allocation failure.
+Cannot create CVssWMFiledesc due to allocation failure.
+Cannot create CVssWriterComponents due to allocation failure.
+Cannot create timer args due to allocation failure
+Cannot delete well known writer
+Cannot delete, waiting for save
+Cannot determine whether machine is DC
+Cannot find %d COMPONENT.
+Cannot find %s element
+Cannot find %s element.
+Cannot find ALTERNATE_LOCATION_MAPPING element
+Cannot find DIFFERENCED_FILE element.
+Cannot find DIRECTED_TARGET element.
+Cannot find element %s.
+Cannot find PARTIAL_FILE element.
+Cannot find RESTORE_METHOD element
+Cannot find RESTORE_SUBCOMPONENT element.
+Cannot find the %d disk extent.
+Cannot find the %d interconnect address.
+Cannot find the %d lun mapping.
+Cannot find the %d snaphot description.
+Cannot find the %d snapshot description.
+Cannot find the %s.
+Cannot find the snaphot description for snapshot{%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}.
+Cannot get WRITER_COMPONENTS document.  hr = 0x%08lx
+Cannot realloc path
+cannot restore a component to a different writer class id
+Cannot revert DiskID. %s. Provider ID = {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+Cannot save XML document as string. hr = 0x%08lx
+Cannot use this method for backup
+Cannot use this method for restore
+Cannot use this method if no writers are involved
+Can't allocate CVssWriterComponents object
+Can't allocate snapshot set description.
+Can't allocate writer class array
+Can't allocate writer instance array
+Can't call BackupComplete without first gathering writer metadata.
+Can't call this function twice on the same instance
+Can't call this function while PrepareForBackup is in progress
+Can't create CVssWMFiledesc due to allocation failure.
+Can't save if not created or loaded beforehand
+Can't set backup complete on session id (%#x){%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+caption
+CAutoSid::CreateBasicSid
+CAutoSid::CreateFromString
+CComBSTR::Append
+CComObject<CVssAsrAPIRestore>::CreateInstance( &pVssAsrApi )
+CD$0fD
+Cd9Fdu
+CEventSubscription
+CEventSystem
+Cf;)t
+Channel not open
+CharNextW
+CharPrevW
+CheckAllCritical
+CheckDiskWritable
+CheckFilesOnVolume
+checking whether component %s is torn
+CheckTokenMembership
+CHH+E
+cIncludes = %u, cExcludes = %u, cComponents = %u
+CInternalWriterData::AddRestoreComponent
+CInternalWriterData::CComponentIdentifier::CComponentIdentifier
+CInternalWriterData::FindRestoreComponent
+CInternalWriterData::RemoveRestoreComponent
+CInternalWriterData::SetComponents
+CL$0H
+Class or instance IDs are not valid GUIDs
+Cleared VSS_VOLSNAP_ATTR_TXF_RECOVERY from internal context due to VSS_VOLSNAP_ATTR_NO_AUTORECOVERY presence
+ClearPublisherFilter
+Cloned node has no children
+CloseHandle
+CloseServiceHandle
+CLSID
+CLSIDFromString
+CLSIDFromString failed
+ClusterSize
+CM_Get_Parent
+CoCreateGuid
+CoCreateGuid failed with 0x%08x
+CoCreateInstance
+CoCreateInstance(CLSID_VSSCoordinator)
+CoCreateInstance-GIT
+CoDisconnectContext
+CoDisconnectContext timed out after %d seconds, but writer unsubscribe will continue
+CoDisconnectObject
+COfflineDriverInjection::_GetExtensionProcAddress
+COfflineDriverInjection::EnumerateAndInjectFromDriverStore
+COfflineDriverInjection::InitializeOfflineDriverInject
+COfflineDriverInjection::InjectDriverPackageInOfflineOS
+COfflineDriverInjection::InjectDriversInOfflineOS
+COfflineDriverInjection::MountAndSetWinDirPathForOfflineOSVolume
+CoGetClassObject
+CoImpersonateClient
+CoInitializeEx
+CoInitializeEx failed 0x%08lx
+colliding instance names
+COM Call %S failed [0x%08lx]
+COM error caught: hr: 0x%x
+commandQueueing
+CompanyName
+COMPONENT
+Component %d was not found
+Component %s already exists
+component %s is found
+component %s is selected for backup
+Component %s::%s was not created
+Component %s\%s was not found
+component already selected for restore!
+Component not found!
+Component path= %s ComponentFlag = %u
+Component was not found
+Component was not found. %s\%s
+componentFlags
+ComponentIndex cache has %u elements
+ComponentIndex cache is releasd due to insufficient memory
+ComponentIndex cache is released after finding a torn component
+ComponentIndex cache is released at the end of CheckTornComponents
+componentName
+Components document is not writeable
+componentType
+ComponentTypes
+Context
+CONTEXT
+Context
+context
+Continuing CoDisconnectContext wait for %d seconds
+ControlSet%03d
+ConvertMappedNetworkDrivesToUNC failed with hr = 0x%08lx. Error is ignored
+ConvertSidToStringSidW
+ConvertStringSecurityDescriptorToSecurityDescriptorW
+ConvertStringSecurityDescriptorToSecurityDescriptorW() failed with %d
+ConvertStringSidToSid(%s)
+ConvertStringSidToSidW
+Coordinator
+CopyFileExW
+CopySid
+CoRevertToSelf
+CoSetProxyBlanket
+CoTaskMemAlloc
+CoTaskMemAlloc for uLogicalPrefixPathSize
+CoTaskMemFree
+CoTaskMemRealloc
+Could no map drive %s. WNetGetUniversalName returned %lu
+could not allocate space for metadata
+Could not extend the output buffer
+Could not get node interface
+Could not open the object '%s'. [0x%08lx]
+Could not recreate directory, file in place (%08x)
+Couldn't allocate instance id string
+Couldn't allocate memory for ids or name
+Couldn't allocate memory for Max Writer Instances
+Couldn't allocate memory for Max Writer Instances + 1
+couldn't allocate space for instance id
+Couldn't call BackupComplete without OnThaw as a previous state [%d]
+Couldn't create CVssWMFiledesc due to allocation failure.
+Couldn't find %d WRITER_COMPONENT.
+Couldn't properly begin sequence
+CoUninitialize
+CoWaitForMultipleHandles
+CPH+B
+CPH+E
+CreateDirectoryW
+CreateDirectoryW() failed with %d
+CreateDisks( hVdsDriver, pAsrSys, &guidNewPackId )
+CreateEvent(NULL, FALSE, FALSE, NULL)
+CreateEvent(NULL, TRUE, FALSE, NULL)
+CreateEventW
+CreateFile
+CreateFile for "%s" failed with %d
+CreateFile("75DFB225-E2E4-4d39-9AC9-FFAFF65DDF06.xml")
+CreateFile(%s) failed
+CreateFile(%s))
+CreateFilePath failed with 0x%08x
+CreateFileW
+CreateMutexExW
+CreateMutexW
+CreateSemaphore(NULL, 1, 1,NULL)
+CreateSemaphoreExW
+CreateStreamOnHGlobal
+CreateStreamOnHGlobal(m_ptrBuffer.GetHGLOBAL(), FALSE, &pStream)
+CreateThread
+CreateThread failed with error %d
+CreateThread(...)
+CreateVolumes(hVdsDriver, &guidNewPackId)
+CreateVssBackupComponents
+CreateVssBackupComponentsInternal
+CreateVssExamineWriterMetadata
+CreateVssExamineWriterMetadata failed with 0x%08x
+CreateVssExamineWriterMetadataInternal
+CreateVssExpressWriterInternal
+CreateVssSnapshotSetDescription
+CreateWellKnownSid
+CreateWellKnownSid(type, NULL, NULL, &dwSid)
+CreateWellKnownSid(type, NULL, pSid, [%ld])
+CreateWellKnownSidType
+CreateWriter
+CreateWriterEx
+CreateXmlReader
+CreateXmlReader( __uuidof(IXmlReader), (LPVOID*) &m_pReader, NULL)
+CreateXmlReaderInputWithEncodingName
+CreateXmlReaderInputWithEncodingName(pStream, NULL, L"UTF-16", FALSE, NULL, &pReaderInput)
+Current
+Current context: '%s'
+Current level %d
+Current sequence was aborted. Current writer state (%d) does not match the state expected for the state transition (%d)
+currentContextId
+currentContextMessage
+currentContextName
+CurrentContexts
+CUSTOM
+CVssAsrAPIRestore::_AsrPerformPreRestore
+CVssAsrAPIRestore::_ParseRestoreOption
+CVssAsrAPIRestore::CreateObject
+CVssAsrAPIRestore::PostRestore
+CVssAsrAPIRestore::PreRestore
+CVssAsrAPIRestore::SetRestoreOptions
+CVssAsrWriterRestore::InitializeForRestore
+CVssAsrWriterRestore::PostRestore
+CVssAsrWriterRestore::PreRestore
+CVssAsrWriterRestore::SetRestoreOptions
+CVssAsyncBackup::~CVssAsyncBackup
+CVssAsyncBackup::Cancel
+CVssAsyncBackup::CreateInstanceAndStartJob
+CVssAsyncBackup::CVssAsyncBackup
+CVssAsyncBackup::OnFinish
+CVssAsyncBackup::OnInit
+CVssAsyncBackup::OnRun
+CVssAsyncBackup::OnTerminate
+CVssAsyncBackup::PrepareJob failed.  hr = 0x%08lx.
+CVssAsyncBackup::QueryStatus
+CVssAsyncBackup::Wait
+CVssAutoCoString::Append
+CVssAutoCoString::Reallocate
+CVssBackupComponents
+CVssBackupComponents already initialized
+CVssBackupComponents::~CVssBackupComponents
+CVssBackupComponents::AbortBackup
+CVssBackupComponents::AddAlternativeLocationMapping
+CVssBackupComponents::AddComponent
+CVssBackupComponents::AddComponent called at the wrong time
+CVssBackupComponents::AddExpressWriter
+CVssBackupComponents::AddExpressWriters
+CVssBackupComponents::AddNewTarget
+CVssBackupComponents::AddRestoreSubcomponent
+CVssBackupComponents::AddSnapshotToRecoverySet
+CVssBackupComponents::AddToSnapshotSet
+CVssBackupComponents::AddWriterClass
+CVssBackupComponents::AddWriterData
+CVssBackupComponents::AddWriterDataWithSid
+CVssBackupComponents::BackupComplete
+CVssBackupComponents::BasicInit
+CVssBackupComponents::BreakSnapshotSet
+CVssBackupComponents::BreakSnapshotSetEx
+CVssBackupComponents::CacheAutoRecoveryInfo
+CVssBackupComponents::CalculateComponentPath
+CVssBackupComponents::CheckForDeletingWriter
+CVssBackupComponents::CoordGetBackupState
+CVssBackupComponents::CoordGetContent
+CVssBackupComponents::CoordGetRestoreState
+CVssBackupComponents::CoordGetWriterContent
+CVssBackupComponents::CoordSetContent
+CVssBackupComponents::CVssBackupComponents
+CVssBackupComponents::DeleteSnapshots
+CVssBackupComponents::DisableWriterClasses
+CVssBackupComponents::DisableWriterInstances
+CVssBackupComponents::DisconnectWriterCallback
+CVssBackupComponents::DoGetContent
+CVssBackupComponents::DoSnapshotSet
+CVssBackupComponents::EnableWriterClasses
+CVssBackupComponents::EnableWritersForRestore
+CVssBackupComponents::ExposeCurrentState
+CVssBackupComponents::ExposeSnapshot
+CVssBackupComponents::ExposeWriterMetadata
+CVssBackupComponents::FastRecovery
+CVssBackupComponents::FindAndValidateWriterData
+CVssBackupComponents::FindAndValidateWriterDataWithSid
+CVssBackupComponents::FindComponent
+CVssBackupComponents::FreeWriterComponents
+CVssBackupComponents::FreeWriterMetadata
+CVssBackupComponents::FreeWriterStatus
+CVssBackupComponents::GatherWriterMetadata
+CVssBackupComponents::GatherWriterStatus
+CVssBackupComponents::GetBackupState
+CVssBackupComponents::GetCallbackInterface
+CVssBackupComponents::GetContent
+CVssBackupComponents::GetCoordinatorInterface
+CVssBackupComponents::GetRestoreState
+CVssBackupComponents::GetRootAndLogicalPrefixPaths
+CVssBackupComponents::GetSessionId
+CVssBackupComponents::GetSnapshotProperties
+CVssBackupComponents::GetSoftwareProviderInterface
+CVssBackupComponents::GetWriterComponents
+CVssBackupComponents::GetWriterComponentsCount
+CVssBackupComponents::GetWriterContent
+CVssBackupComponents::GetWriterMetadata
+CVssBackupComponents::GetWriterMetadataCount
+CVssBackupComponents::GetWriterMetadataEx
+CVssBackupComponents::GetWriterStatus
+CVssBackupComponents::GetWriterStatusCount
+CVssBackupComponents::GetWriterStatusEx
+CVssBackupComponents::ImportSnapshots
+CVssBackupComponents::InitializeForBackup
+CVssBackupComponents::InitializeForRestore
+CVssBackupComponents::InternalBackupComplete
+CVssBackupComponents::InternalGatherWriterMetadata
+CVssBackupComponents::InternalGatherWriterMetadata1
+CVssBackupComponents::InternalGatherWriterStatus
+CVssBackupComponents::InternalGatherWriterStatus1
+CVssBackupComponents::InternalPostRestore
+CVssBackupComponents::InternalPostRestore1
+CVssBackupComponents::InternalPrepareForBackup
+CVssBackupComponents::InternalPrepareForBackup1
+CVssBackupComponents::InternalPreRestore
+CVssBackupComponents::InternalPreRestore1
+CVssBackupComponents::IsVolumeSupported
+CVssBackupComponents::IsWriterClassDisabled
+CVssBackupComponents::IsWriterInstanceDisabled
+CVssBackupComponents::LoadComponentsDocument
+CVssBackupComponents::LogWriterMetadataAsTelemetry
+CVssBackupComponents::LogWritersMetadataAsTelemetry
+CVssBackupComponents::PositionOnWriterComponents
+CVssBackupComponents::PostBackupComplete
+CVssBackupComponents::PostDoSnapshotSet
+CVssBackupComponents::PostGatherWriterMetadata
+CVssBackupComponents::PostGatherWriterStatus
+CVssBackupComponents::PostPostRestore
+CVssBackupComponents::PostPrepareForBackup
+CVssBackupComponents::PostPreRestore
+CVssBackupComponents::PostRestore
+CVssBackupComponents::PreFastRecovery
+CVssBackupComponents::PrepareForBackup
+CVssBackupComponents::PreRestore
+CVssBackupComponents::ProcessAutoRecoverComponent
+CVssBackupComponents::ProcessBCD
+CVssBackupComponents::Query
+CVssBackupComponents::QueryRevertStatus
+CVssBackupComponents::RebuildComponentData
+CVssBackupComponents::RebuildComponentDataBackup
+CVssBackupComponents::RebuildComponentDataRestore
+CVssBackupComponents::RecoverSet
+CVssBackupComponents::RevertToSnapshot
+CVssBackupComponents::SaveAsXML
+CVssBackupComponents::SetAdditionalRestores
+CVssBackupComponents::SetAuthoritativeRestore
+CVssBackupComponents::SetBackupOptions
+CVssBackupComponents::SetBackupState
+CVssBackupComponents::SetBackupSucceeded
+CVssBackupComponents::SetContent
+CVssBackupComponents::SetContext
+CVssBackupComponents::SetContextInternal
+CVssBackupComponents::SetFileRestoreStatus
+CVssBackupComponents::SetPreviousBackupStamp
+CVssBackupComponents::SetRangesFilePath
+CVssBackupComponents::SetRestoreName
+CVssBackupComponents::SetRestoreOptions
+CVssBackupComponents::SetRestoreState
+CVssBackupComponents::SetRollForward
+CVssBackupComponents::SetSelectedForRestoreEx
+CVssBackupComponents::SetSnapshotSetDescription
+CVssBackupComponents::SetupWriter
+CVssBackupComponents::StartCoordKeeperThread
+CVssBackupComponents::StartSnapshotSet
+CVssBackupComponents::TrimWriters
+CVssBackupComponents::UnexposeSnapshot
+CVssBackupComponents::ValidateInitialized
+CVssComponent::AddDifferencedFiles
+CVssComponent::AddDifferencedFilesByLastModifyLSN
+CVssComponent::AddDifferencedFilesByLastModifyTime
+CVssComponent::AddDirectedTarget
+CVssComponent::AddPartialFile
+CVssComponent::GetAdditionalRestores
+CVssComponent::GetAlternateLocationMapping
+CVssComponent::GetAlternateLocationMappingCount
+CVssComponent::GetAuthoritativeRestore
+CVssComponent::GetBackupMetadata
+CVssComponent::GetBackupOptions
+CVssComponent::GetBackupStamp
+CVssComponent::GetBackupSucceeded
+CVssComponent::GetComponentName
+CVssComponent::GetComponentType
+CVssComponent::GetDifferencedFile
+CVssComponent::GetDifferencedFilesCount
+CVssComponent::GetDirectedTarget
+CVssComponent::GetDirectedTargetCount
+CVssComponent::GetFailure
+CVssComponent::GetFailure could not find "%s" attribute.
+CVssComponent::GetFailure(%d,%d,%s,%d)
+CVssComponent::GetFiledescElement
+CVssComponent::GetFileRestoreStatus
+CVssComponent::GetLogicalPath
+CVssComponent::GetMetadata
+CVssComponent::GetNewTarget
+CVssComponent::GetNewTargetCount
+CVssComponent::GetPartialFile
+CVssComponent::GetPartialFileCount
+CVssComponent::GetPostRestoreFailureMsg
+CVssComponent::GetPostSnapshotFailureMsg
+CVssComponent::GetPrepareForBackupFailureMsg
+CVssComponent::GetPreRestoreFailureMsg
+CVssComponent::GetPreviousBackupStamp
+CVssComponent::GetRestoreMetadata
+CVssComponent::GetRestoreName
+CVssComponent::GetRestoreOptions
+CVssComponent::GetRestoreSubcomponent
+CVssComponent::GetRestoreSubcomponentCount
+CVssComponent::GetRestoreTarget
+CVssComponent::GetRollForward
+CVssComponent::IsSelectedForRestore
+CVssComponent::QueryInterface
+CVssComponent::SetBackupMetadata
+CVssComponent::SetBackupStamp
+CVssComponent::SetFailure
+CVssComponent::SetFailure(%d,%d,%s,%d)
+CVssComponent::SetMetadata
+CVssComponent::SetPostRestoreFailureMsg
+CVssComponent::SetPostSnapshotFailureMsg
+CVssComponent::SetPrepareForBackupFailureMsg
+CVssComponent::SetPreRestoreFailureMsg
+CVssComponent::SetRestoreMetadata
+CVssComponent::SetRestoreTarget
+CVssCreateExpressWriterMetadata::AddComponent
+CVssCreateExpressWriterMetadata::AddComponentDependency
+CVssCreateExpressWriterMetadata::AddExcludeFiles
+CVssCreateExpressWriterMetadata::AddFilesToFileGroup
+CVssCreateExpressWriterMetadata::CreateInstance failed
+CVssCreateExpressWriterMetadata::Initialize
+CVssCreateExpressWriterMetadata::Initialize call failed
+CVssCreateExpressWriterMetadata::SaveAsXML
+CVssCreateExpressWriterMetadata::SetBackupSchema
+CVssCreateExpressWriterMetadata::SetRestoreMethod
+CVssCreateWriterMetadata::AddAlternateLocationMapping
+CVssCreateWriterMetadata::AddComponent
+CVssCreateWriterMetadata::AddComponentDependency
+CVssCreateWriterMetadata::AddDatabaseFiles
+CVssCreateWriterMetadata::AddDatabaseLogFiles
+CVssCreateWriterMetadata::AddExcludeFiles
+CVssCreateWriterMetadata::AddExcludeFilesFromSnapshot
+CVssCreateWriterMetadata::AddFilesToFileGroup
+CVssCreateWriterMetadata::AddIncludeFiles
+CVssCreateWriterMetadata::ConvertMappedDrive
+CVssCreateWriterMetadata::ConvertMappedNetworkDrivesToUNC
+CVssCreateWriterMetadata::CreateComponentFiles
+CVssCreateWriterMetadata::GetDocument
+CVssCreateWriterMetadata::Initialize
+CVssCreateWriterMetadata::Initialize failed. hr = 0x%08lx
+CVssCreateWriterMetadata::QueryInterface
+CVssCreateWriterMetadata::SaveAsXML
+CVssCreateWriterMetadata::SetBackupSchema
+CVssCreateWriterMetadata::SetRestoreMethod
+CVssDiag::FlushQueue
+CVssDiag::Initialize
+CVssDiag::RecordGenericEvent
+CVssDiag::RecordWriterEvent
+CVssExamineWriterMetadata failed. 0x%08lx
+CVssExamineWriterMetadata::GetAlternateLocationMapping
+CVssExamineWriterMetadata::GetBackupSchema
+CVssExamineWriterMetadata::GetComponent
+CVssExamineWriterMetadata::GetDocument
+CVssExamineWriterMetadata::GetExcludeFile
+CVssExamineWriterMetadata::GetExcludeFromSnapshotCount
+CVssExamineWriterMetadata::GetExcludeFromSnapshotFile
+CVssExamineWriterMetadata::GetFileCounts
+CVssExamineWriterMetadata::GetFileType
+CVssExamineWriterMetadata::GetIdentity
+CVssExamineWriterMetadata::GetIdentityEx
+CVssExamineWriterMetadata::GetIncludeFile
+CVssExamineWriterMetadata::GetRestoreMethod
+CVssExamineWriterMetadata::GetVersion
+CVssExamineWriterMetadata::Initialize
+CVssExamineWriterMetadata::LoadDocument
+CVssExamineWriterMetadata::LoadFromXML
+CVssExamineWriterMetadata::QueryInterface
+CVssExamineWriterMetadata::SaveAsXML
+CVssExamineWriterMetadataLite::GetAlternateLocationMapping
+CVssExamineWriterMetadataLite::GetBackupSchema
+CVssExamineWriterMetadataLite::GetComponent
+CVssExamineWriterMetadataLite::GetDocument
+CVssExamineWriterMetadataLite::GetExcludeFile
+CVssExamineWriterMetadataLite::GetExcludeFromSnapshotCount
+CVssExamineWriterMetadataLite::GetExcludeFromSnapshotFile
+CVssExamineWriterMetadataLite::GetFileCounts
+CVssExamineWriterMetadataLite::GetFileType
+CVssExamineWriterMetadataLite::GetIdentity
+CVssExamineWriterMetadataLite::GetIdentityEx
+CVssExamineWriterMetadataLite::GetIncludeFile
+CVssExamineWriterMetadataLite::GetRestoreMethod
+CVssExamineWriterMetadataLite::GetVersion
+CVssExamineWriterMetadataLite::Initialize
+CVssExamineWriterMetadataLite::LoadDocument
+CVssExamineWriterMetadataLite::LoadFromXML
+CVssExamineWriterMetadataLite::QueryInterface
+CVssExamineWriterMetadataLite::SaveAsXML
+CVssExpressWriter::~CVssExpressWriter
+CVssExpressWriter::Cleanup
+CVssExpressWriter::CreateFilePath
+CVssExpressWriter::CreateMetadata
+CVssExpressWriter::CVssExpressWriter
+CVssExpressWriter::GetWriterIdentity
+CVssExpressWriter::LoadMetadata
+CVssExpressWriter::RecreateDirectories
+CVssExpressWriter::RecreateDirectory
+CVssExpressWriter::Register
+CVssExpressWriter::SaveData
+CVssExpressWriter::Unregister
+CVssExpressWriter::ValidWriterIdentity
+CVssExpressWriter::WriterExists
+CVssFunctionTracer
+CVssFunctionTracer::GetCurrentContexts
+CVssFunctionTracer::LogError
+CVssFunctionTracer::LogVssStartupAttempt
+CVssFunctionTracer::ReThrow
+CVssFunctionTracer::SafeLogEvent
+CVssFunctionTracer::TranslateWriterReturnCode
+CVssFunctionTracer::UpdateLocalIsTracingEnabledFlag
+CVssID::Initialize
+CVssIJetWriter::Initialize
+CvssIJetWriter::Initialize failed
+CvssIJetWriter::Initialize failed [0x%08lx]
+CVssIJetWriter::OnAbort
+CVssIJetWriter::OnBackupComplete
+CVssIJetWriter::OnFreeze
+CVssIJetWriter::OnIdentify
+CVssIJetWriter::OnPostRestore
+CVssIJetWriter::OnPostSnapshot
+CVssIJetWriter::OnPrepareBackup
+CVssIJetWriter::OnPrepareSnapshot
+CVssIJetWriter::OnPreRestore
+CVssIJetWriter::OnThaw
+CVssIJetWriter::ProcessJetInstance
+CVssIJetWriter::ProcessJetInstance - %s adding checkpoint file for instance '%s', database '%s', checkpoint file '%s\%s'
+CVssIJetWriter::ProcessJetInstance - %s adding component '%s\%s' for jet instance '%s' database '%s' with display name '%s'
+CVssIJetWriter::ProcessJetInstance - %s adding database files for instance '%s', database '%s', database file '%s\%s'
+CVssIJetWriter::ProcessJetInstance - %s adding log file for instance '%s', database '%s', log file '%s\%s'
+CVssIJetWriter::ProcessJetInstance - %s calling JetGetSystemParameter() for base name '%s' (from ESE) to form LogFileName '%s' and CheckpointFileName '%s'
+CVssIJetWriter::ProcessJetInstance - %s calling JetGetSystemParameter() with instance Log file path '%s' (from ESE) or '%s' full name
+CVssIJetWriter::ProcessJetInstance - %s calling JetGetSystemParameter() with JET_paramSystemPath / checkpoint file path '%s' (from ESE) or '%s' full name
+CVssIJetWriter::Uninitialize
+CVssIOCTLChannel::ApplyAlignment
+CVssIOCTLChannel::Call
+CVssIOCTLChannel::Open
+CVssIOCTLChannel::Unpack
+CVssJetWriter::AreComponentsSelected
+CVssJetWriter::GetBackupType
+CVssJetWriter::GetContext
+CVssJetWriter::GetCurrentLevel
+CVssJetWriter::GetCurrentSnapshotSetId
+CVssJetWriter::GetCurrentVolumeArray
+CVssJetWriter::GetCurrentVolumeCount
+CVssJetWriter::GetRestoreType
+CVssJetWriter::GetSnapshotDeviceName
+CVssJetWriter::Initialize
+CVssJetWriter::InitializeThreadFunc
+CVssJetWriter::IsBootableSystemStateBackedUp
+CVssJetWriter::IsPartialFileSupportEnabled
+CVssJetWriter::IsPathAffected
+CVssJetWriter::OnAbortBegin
+CVssJetWriter::OnAbortEnd
+CVssJetWriter::OnBackupCompleteBegin
+CVssJetWriter::OnBackupCompleteEnd
+CVssJetWriter::OnFreezeBegin
+CVssJetWriter::OnFreezeEnd
+CVssJetWriter::OnIdentify
+CVssJetWriter::OnPostRestoreBegin
+CVssJetWriter::OnPostRestoreEnd
+CVssJetWriter::OnPostSnapshot
+CVssJetWriter::OnPrepareBackupBegin
+CVssJetWriter::OnPrepareBackupEnd
+CVssJetWriter::OnPrepareSnapshotBegin
+CVssJetWriter::OnPrepareSnapshotEnd
+CVssJetWriter::OnPreRestoreBegin
+CVssJetWriter::OnPreRestoreEnd
+CVssJetWriter::OnThawBegin
+CVssJetWriter::OnThawEnd
+CVssJetWriter::SetWriterFailure
+CVssLunInformation::AddInterconnectAddress
+CVssLunInformation::GetDiskSignature
+CVssLunInformation::GetInterconnectAddress
+CVssLunInformation::GetInterconnectAddressCount
+CVssLunInformation::GetLunBasicType
+CVssLunInformation::GetStorageDeviceIdDescriptor
+CVssLunInformation::SetDiskSignature
+CVssLunInformation::SetLunBasicType
+CVssLunInformation::SetStorageDeviceIdDescriptor
+CVssLunMapping::AddDiskExtent
+CVssLunMapping::GetDestinationLun
+CVssLunMapping::GetDiskExtent
+CVssLunMapping::GetDiskExtentCount
+CVssLunMapping::GetLunId
+CVssLunMapping::GetLunInformation
+CVssLunMapping::GetSourceDevice
+CVssLunMapping::GetSourceLun
+CVssLunMapping::SetLunId
+CVssLunMapping::SetSourceDevice
+CVssMachineInformation::IsDCwithAD
+CVssMachineInformation::IsDCwithADinDSRM
+CVssMachineInformation::IsDomainController
+CVssMachineInformation::IsDuringDsrmSafeMode
+CVssMachineInformation::IsDuringSafeMode
+CVssMachineInformation::IsDuringSetup
+CVssMachineInformation::IsDuringWinPE
+CVssMetadataHelper::ConvertToBackupType
+CVssMetadataHelper::ConvertToBoolean
+CVssMetadataHelper::ConvertToComponentType
+CVssMetadataHelper::ConvertToFileRestoreStatus
+CVssMetadataHelper::ConvertToInterconnectAddressType
+CVssMetadataHelper::ConvertToRestoreMethod
+CVssMetadataHelper::ConvertToRestoreTarget
+CVssMetadataHelper::ConvertToRestoreType
+CVssMetadataHelper::ConvertToRollforwardType
+CVssMetadataHelper::ConvertToSourceType
+CVssMetadataHelper::ConvertToStorageBusType
+CVssMetadataHelper::ConvertToUsageType
+CVssMetadataHelper::ConvertToVSS_ID
+CVssMetadataHelper::ConvertToWriterRestore
+CVssMetadataHelper::get_ansi_stringValue
+CVssMetadataHelper::get_byteArrayValue
+CVssMetadataHelper::get_dwordValue
+CVssMetadataHelper::GetBooleanAttributeValue
+CVssMetadataHelper::GetByteArrayAttributeValue
+CVssMetadataHelper::GetElementCount
+CVssMetadataHelper::GetStringAttributeValue
+CVssMetadataHelper::GetVSS_IDAttributeValue
+CVssMetadataHelper::MissingAttribute
+CVssMetadataHelper::MissingElement
+CVssMetadataHelper::WszFromBackupType
+CVssMetadataHelper::WszFromBusType
+CVssMetadataHelper::WszFromComponentType
+CVssMetadataHelper::WszFromFileRestoreStatus
+CVssMetadataHelper::WszFromInterconnectAddressType
+CVssMetadataHelper::WszFromRestoreMethod
+CVssMetadataHelper::WszFromRestoreTarget
+CVssMetadataHelper::WszFromRestoreType
+CVssMetadataHelper::WszFromRollforwardType
+CVssMetadataHelper::WszFromSourceType
+CVssMetadataHelper::WszFromUsageType
+CVssMetadataHelper::WszFromWriterRestore
+CVssMetadataHelperLite::get_ansi_stringValue
+CVssMetadataHelperLite::get_dwordValue
+CVssMetadataHelperLite::GetBooleanAttributeValue
+CVssMetadataHelperLite::GetElementCount
+CVssMetadataHelperLite::GetStringAttributeValue
+CVssMetadataHelperLite::GetVSS_IDAttributeValue
+CVssModuleKeeper::~CVssModuleKeeper
+CVssModuleKeeper::CVssModuleKeeper
+CVssNULLWriterComponents::GetComponent
+CVssNULLWriterComponents::GetComponentCount
+CVssNULLWriterComponents::GetWriterInfo
+CVssNULLWriterComponents::IsChanged
+CVssNULLWriterComponents::SaveAsXML
+CVssRegistryKey::Close
+CVssRegistryKey::Create
+CVssRegistryKey::GetValue
+CVssRegistryKey::Open
+CVssRegistryKey::SetBinaryValue
+CVssRegistryKey::SetValue
+CVssRegistryKeyIterator::Attach
+CVssRegistryValueIterator::Attach
+CVssRegistryValueIterator::GetCurrentValueContent
+CVssRegistryValueIterator::GetCurrentValueName
+CVssRegistryValueIterator::GetCurrentValueNameLen
+CVssRegistryValueIterator::GetCurrentValueType
+CVssRegistryValueIterator::ReadCurrentValueDetails
+CVssRequestorActivity
+CVssResource::LoadStringW
+CVssSafeComPtr<struct IVssAsync>::GetInterface
+CVssSafeComPtr<struct IVssAsync>::Initialize
+CVssSafeComPtr<struct IVssAsync>::Reset
+CVssSafeComPtr<struct IVssCoordinatorEx2>::GetInterface
+CVssSafeComPtr<struct IVssCoordinatorEx2>::Initialize
+CVssSafeComPtr<struct IVssCoordinatorEx2>::Reset
+CVssSafeCriticalSection::Init
+CVssSidCollection::AddSid
+CVssSidCollection::AddSidToRegistry
+CVssSidCollection::AddUser
+CVssSidCollection::AddWellKnownSid
+CVssSidCollection::ExpandForVerification
+CVssSidCollection::Initialize
+CVssSidCollection::IsProcessValidWriter
+CVssSidCollection::IsSidAllowedToFire
+CVssSnapshotDescription::AddLunMapping
+CVssSnapshotDescription::GetAttributes
+CVssSnapshotDescription::GetDeviceName
+CVssSnapshotDescription::GetExposure
+CVssSnapshotDescription::GetLunCount
+CVssSnapshotDescription::GetLunMapping
+CVssSnapshotDescription::GetMappedOrigin
+CVssSnapshotDescription::GetMappedOriginPath
+CVssSnapshotDescription::GetMappedSnapshotId
+CVssSnapshotDescription::GetOrigin
+CVssSnapshotDescription::GetProviderId
+CVssSnapshotDescription::GetServiceMachine
+CVssSnapshotDescription::GetSnapshotId
+CVssSnapshotDescription::GetTimestamp
+CVssSnapshotDescription::IsDynamicVolume
+CVssSnapshotDescription::SetAttributes
+CVssSnapshotDescription::SetDeviceName
+CVssSnapshotDescription::SetExposure
+CVssSnapshotDescription::SetIsDynamicVolume
+CVssSnapshotDescription::SetMappedOrigin
+CVssSnapshotDescription::SetMappedOriginPath
+CVssSnapshotDescription::SetMappedSnapshotId
+CVssSnapshotDescription::SetOrigin
+CVssSnapshotDescription::SetProviderId
+CVssSnapshotDescription::SetServiceMachine
+CVssSnapshotDescription::SetTimestamp
+CVssSnapshotSetDescription::AddSnapshotDescription
+CVssSnapshotSetDescription::DeleteSnapshotDescription
+CVssSnapshotSetDescription::FindSnapshotDescription
+CVssSnapshotSetDescription::FindSnapshotHelper
+CVssSnapshotSetDescription::GetContext
+CVssSnapshotSetDescription::GetDescription
+CVssSnapshotSetDescription::GetMetadata
+CVssSnapshotSetDescription::GetOriginalSnapshotCount
+CVssSnapshotSetDescription::GetSnapshotCount
+CVssSnapshotSetDescription::GetSnapshotDescription
+CVssSnapshotSetDescription::GetSnapshotSetId
+CVssSnapshotSetDescription::GetToplevelNode
+CVssSnapshotSetDescription::LoadFromXML
+CVssSnapshotSetDescription::SaveAsXML
+CVssSnapshotSetDescription::SetDescription
+CVssSnapshotSetDescription::SetMetadata
+CVssSnapshotSetDescription::SetOriginalSnapshotCount
+CVssUNCPath::GetScopeName
+CVssUNCPath::GetShareName
+CVssUNCPath::IsUNCPrefixInternal
+CVssUNCPath::SetUNCPath
+CVssWMComponent::FreeComponentInfo
+CVssWMComponent::GetComponentFile
+CVssWMComponent::GetComponentInfo
+CVssWMComponent::GetDatabaseFile
+CVssWMComponent::GetDatabaseLogFile
+CVssWMComponent::GetDependency
+CVssWMComponent::GetFile
+CVssWMComponentLite::FreeComponentInfo
+CVssWMComponentLite::GetComponentFile
+CVssWMComponentLite::GetComponentInfo
+CVssWMComponentLite::GetDatabaseFile
+CVssWMComponentLite::GetDatabaseLogFile
+CVssWMComponentLite::GetDependency
+CVssWMComponentLite::GetFile
+CVssWMDependency::GetComponentName
+CVssWMDependency::GetLogicalPath
+CVssWMDependency::GetWriterId
+CVssWMDependencyLite::GetComponentName
+CVssWMDependencyLite::GetLogicalPath
+CVssWMDependencyLite::GetWriterId
+CVssWMFiledesc::GetAlternateLocation
+CVssWMFiledesc::GetBackupTypeMask
+CVssWMFiledesc::GetFilespec
+CVssWMFiledesc::GetFilespecLite
+CVssWMFiledesc::GetPath
+CVssWMFiledesc::GetRecursive
+CVssWMFiledescLite::GetAlternateLocation
+CVssWMFiledescLite::GetBackupTypeMask
+CVssWMFiledescLite::GetFilespec
+CVssWMFiledescLite::GetPath
+CVssWMFiledescLite::GetRecursive
+CVssWorkerThread::FinalReleaseWorkerThreadObject
+CVssWorkerThread::PrepareJob
+CVssWorkerThread::StartJob
+CVssWorkerThread::Terminate
+CVssWorkerThread::ThreadFunction
+CVssWriterComponents::GetComponent
+CVssWriterComponents::GetComponentCount
+CVssWriterComponents::GetWriterInfo
+CVssWriterComponents::Initialize
+CVssWriterComponents::IsChanged
+CVssWriterComponents::SaveAsXML
+CVssWriterImpl::~CVssWriterImpl
+CVssWriterImpl::AbortInternal
+CVssWriterImpl::BackupCompleteInternal
+CVssWriterImpl::BackupShutdownInternal
+CVssWriterImpl::BeginSequence
+CVssWriterImpl::CalculateComponentPath
+CVssWriterImpl::CheckTornComponent
+CVssWriterImpl::CheckTornComponents
+CVssWriterImpl::CheckTornFile
+CVssWriterImpl::CheckWriterIntegrity
+CVssWriterImpl::CreateBasicWriterMetadata
+CVssWriterImpl::CreateWriter
+CVssWriterImpl::CVssWriterImpl
+CVssWriterImpl::DisconnectContext
+CVssWriterImpl::DoAbort
+CVssWriterImpl::EnterState
+CVssWriterImpl::FreezeInternal
+CVssWriterImpl::GetBackupSchemaFromWriterComponents
+CVssWriterImpl::GetCallback
+CVssWriterImpl::GetContext
+CVssWriterImpl::GetSessionId
+CVssWriterImpl::GetSnapshotDeviceName
+CVssWriterImpl::Initialize
+CVssWriterImpl::InitializeDelayedPostSnapshotCache
+CVssWriterImpl::InternalGetWriterComponents
+CVssWriterImpl::InternalGetWriterComponentsCached
+CVssWriterImpl::IsPathAffected
+CVssWriterImpl::LeaveState
+CVssWriterImpl::Lock
+CVssWriterImpl::LogWriterEventRejectedEvent
+CVssWriterImpl::PostRestoreInternal
+CVssWriterImpl::PostSnapshotInternal
+CVssWriterImpl::PrepareForBackupInternal
+CVssWriterImpl::PrepareForSnapshotInternal
+CVssWriterImpl::PreRestoreInternal
+CVssWriterImpl::ProcessObjectList
+CVssWriterImpl::RequestWriterInfoInternal
+CVssWriterImpl::ResetSequence
+CVssWriterImpl::SaveChangedComponents
+CVssWriterImpl::SetupEvent
+CVssWriterImpl::SetWriterFailure
+CVssWriterImpl::SetWriterFailureEx
+CVssWriterImpl::StartTimerThreadInternal
+CVssWriterImpl::Subscribe
+CVssWriterImpl::SubscribeInternal
+CVssWriterImpl::TerminateTimerThread
+CVssWriterImpl::ThawInternal
+CVssWriterImpl::TimerFunc
+CVssWriterImpl::Unlock
+CVssWriterImpl::Unsubscribe
+CVssWriterImpl::UnsubscribeInternal
+CVssWriterPublisherFilter::PrepareToFire
+CVssWriterPublisherFilter::SetupGenericSids
+CVssWriterPublisherFilter::SetupIdArrays
+CVssWriterState::AgeStates
+CVssWriterState::CreateNewState
+CVssWriterState::FinishBackupComplete
+CVssWriterState::GetStateForSession
+CVssWriterState::Initialize
+CVssWriterState::LogStateAging
+CVssWriterState::MarkStateCompleted
+CVssWriterState::SetBackupCompleteStatus
+CVssWriterState::SetNoResponseFailure
+CVssWriterState::UpdateSessionIdOnBeginSequence
+CVssWriterState::UpdateThreadIdForSession
+CVssXMLLiteDocument::FindAttribute
+CVssXMLLiteDocument::FindElement
+CVssXMLLiteDocument::LoadFromXML
+CVssXMLLiteDocument::Next
+CVssXMLLiteDocument::Parse
+CVssXMLLiteDocument::ResetToDocument
+CVssXMLLiteElement::Trace
+CVssXmlRwDocument::CVssXmlRwDocument
+CVssXmlRwDocument::GetAttributeValue
+CVssXmlRwDocument::InitializeFromString
+CVssXmlRwDocument::SelectAttribute
+CVssXmlRwDocument::SelectAttributeIfExists
+CVssXmlRwDocument::SelectElement
+CVssXmlRwDocument::SelectElementIfExists
+CXMLDocument::CreateNode
+CXMLDocument::FindAttribute
+CXMLDocument::FindElement
+CXMLDocument::FindElementOneOf
+CXMLDocument::Initialize
+CXMLDocument::IsNodeMatch
+CXMLDocument::LoadFromXML
+CXMLDocument::Next
+CXMLDocument::ResetToDocument
+CXMLDocument::ResetToParent
+CXMLNode::InsertChild
+CXMLNode::InsertNode
+CXMLNode::RemoveChild
+CXMLNode::SaveAsXML
+CXMLNode::SetAttribute
+D!8D!{h
+D!ytH
+D"PH+
+D"XH+
+D$ "(
+D$ $,
+D$ )*
+D$ [!
+D$ [$
+D$ ~ 
+D$ ~*
+D$ 2 
+D$ 2"
+D$ 4&
+D$ A,
+D$ E!
+D$ E#
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+D$ fD
+D$ L%
+D$ L+
+D$ o#
+D$ q"
+D$ qJ
+D$ S*
+D$("(
+D$($,
+D$()*
+D$([!
+D$([$
+D$(~ 
+D$(~*
+D$(<B
+D$(2 
+D$(2"
+D$(4&
+D$(A,
+D$(E!
+D$(E3
+D$(H;
+D$(L%
+D$(L+
+D$(M+
+D$(o#
+D$(q"
+D$(S*
+D$@;D$L
+D$@9D$L
+D$@9Z
+D$@D;
+D$@E3
+D$@f9
+D$@H+
+D$@M+
+D$\D;
+D$`! 
+D$`" 
+D$`"+
+D$`%$
+D$`,+
+D$`;*
+D$`>*
+D$`3*
+D$`4+
+D$`8*
+D$`A*
+D$`C9D
+D$`E+
+D$`E3
+D$`F*
+D$`fH
+D$`G*
+D$`G+
+D$`H+
+D$`I$
+D$`L+
+D$`M+
+D$`R$
+D$`u,
+D$0]H
+D$0B;D
+D$0B9\
+D$0E3
+d$0E3
+D$0E3
+D$0f90t
+D$0fD
+D$0fD98t
+D$0H;
+D$0L;
+D$4A;D$
+D$4A;D$d
+D$4A;D$P
+D$4A9\$
+D$4A9\$d
+D$4D;@
+D$8-(
+D$8A(
+D$8b%
+D$8e%
+D$8E3
+D$8fD
+D$8H!\$0
+D$8H!t$8H
+D$8k%
+D$8r%
+D$A8\$Cu.8\$Dt
+d$BA;
+D$h!&
+D$h"&
+D$h#&
+D$H,)
+D$h@8
+D$h[ 
+D$h|!
+D$h}$
+D$HE3
+D$hh$
+D$HH;
+D$hH+
+D$hK 
+D$hl 
+D$HM&
+D$hP 
+D$hU 
+D$hw!
+D$hZ 
+D$PD8
+D$pE3
+D$PE3
+D$pE3
+D$Pf9
+D$PHi
+D$X]'
+D$X|(
+D$X~(
+D$Xc'
+D$XD8
+D$xE3
+D$xf9(t[H
+D$xfC
+D$xH!\$xH
+D$XH+
+D$Xi'
+D$xI;F
+D$Xl'
+D$Xr(
+D$xt=
+D$Xy(
+D/PH+
+D/XH+
+D:(A;OICI;FA;;;BO)(A;OICI;FA;;;LS)(A;OICI;FA;;;NS)(A;ID;FA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;CIIOID;GA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;ID;FA;;;SY)(A;OICIIOID;GA;;;SY)(A;ID;FA;;;BA)(A;OICIIOID;GA;;;BA)(A;ID;0x1200a9;;;BU)(A;OICIIOID;GXGR;;;BU)(A;OICIIOID;GA;;;CO)
+D;`@u,H;
+D;|$D
+D;C@r
+D;e8skH
+D;G@r
+D;l$\
+D;t$8
+D;u@r
+D;u0r
+D;'urI
+D8`iH
+D8`it
+D8`iu
+D8{it
+D8}ct$H
+D8~etpL
+D8aiu
+D8bit
+D8cit
+D8ect$H
+D8ekt$H
+D8est'H
+D8get{H
+D8sdueD8seu_L
+D8uct
+D8uct$H
+D8ukt(H
+D8wdt
+D8wet2L
+D8wiu&H
+D8xiu
+D8y(t
+D8Yht@L;H
+D8yit
+D8yiu
+D8yytmH
+D8zhu
+D8ziu
+D9#umH
+D9@@t
+D9{(u^L
+D9|$`tML
+D9|$P
+D9|$Pt
+D9|$Pt@D
+D9|$PtDL
+D9|$ptSL
+D9}oL
+D9~(uZH
+D95AV
+D97u!H;
+D9ALu
+D9C(t
+D9C@v2H
+D9d$`
+D9d$8
+D9D$DvGA
+D9d$p
+D9d$P
+D9d$Pt@D
+D9d$PtDL
+D9d$ptSL
+D9d$X}
+D9d/0
+D9G@v
+D9I@t
+D9k t
+D9l$`
+D9l$`tML
+D9l$8taL
+D9l$pt;D
+D9l$ptSL
+D9npv9H
+D9qL|
+D9t$@
+D9t$@w
+D9t$`
+D9t$h|
+D9t$P
+D9t$Pt@D
+D9t$PtDL
+D9T$xt
+D9t/0
+D9w@v=Hc
+database
+DATABASE
+DATABASE_FILES
+DATABASE_LOGFILES
+dataSource
+DebugBreak
+DebugTrace failed due to out of memory condition
+DecodePointer
+default="byCopy">
+DelayLoadFailureHook
+Delete
+DeleteCriticalSection
+DeleteFile for "%s" failed with %d
+DeleteFile(%s)
+DeleteFileW
+denied
+DEPENDENCY
+DeregisterEventSource
+Describes how backup should be performed on a specific filespec.
+Describes the writer capabilities and how different types of backup are performed.
+description
+DESTINATION_LUN
+device name
+deviceIdentification
+DeviceIoControl
+DeviceIoControl( hDisk, IOCTL_DISK_GET_DISK_ATTRIBUTES, NULL, 0, &DiskAttributes, sizeof(DiskAttributes), &dwBytesReturned, NULL)
+DeviceIoControl( hDisk, IOCTL_STORAGE_PERSISTENT_RESERVE_IN, &Param, Param.Size, pList, ulLen, &cbReturned, NULL)
+DeviceIoControl( hVolume, FSCTL_DISMOUNT_VOLUME, NULL, 0, NULL, 0, &dwBytesReturned, NULL )
+DeviceIoControl( hVolume, IOCTL_VOLUME_IS_DYNAMIC, NULL, 0, &fDynamic, sizeof(fDynamic), &dwBytesReturned, NULL )
+DeviceIoControl(hDisk, IOCTL_STORAGE_PERSISTENT_RESERVE_IN, &Param, Param.Size, pList, sizeof(PRI_RESERVATION_LIST), &cbReturned, NULL)
+deviceName
+DeviceNumber
+DeviceNumber{%d}
+DevicePath
+DevicePathToWin32Path(DD_VOLMGR_CONTROL_DEVICE_NAME, ARRAY_COUNT_PARAM(wszVolMgmtCtlPath))
+deviceType
+deviceTypeModifier
+Diagnose enabled for (%s)
+did not find expected component %s\%s under section for writer with instance {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+Didn't find a running writer that matched the selected component.
+Didn't find a running writer with a matching instance id.
+Didn't find writer with instance id. %s
+DIFFERENCED_FILE
+differential
+directed
+DIRECTED_TARGET
+DisableAutoRecovery
+Disabled
+DisableWriterClasses
+DisableWriterInstances
+DISK_EXTENT
+DiskBuildDevicePartitionPath
+DiskBuildDevicePartitionPath( dwDeviceNumber, pCurPtnEx->PartitionNumber, FALSE, ARRAY_COUNT_PARAM(wszDevicePath) )
+DiskBuildDevicePartitionPath( pCurSifDisk->AssignedTo->DeviceNumber, dwPhyPartNumber, TRUE, ARRAY_COUNT_PARAM(FormatVolInfo.wszVolumePath) )
+DiskBuildDevicePartitionPath( pPhysicalDisk->DeviceNumber, pDriveLayoutEx_Physical->PartitionEntry[dwIndex].PartitionNumber, FALSE, ARRAY_COUNT_PARAM(wszDeviceName) )
+DiskBuildDevicePartitionPath(dwDeviceNumber, dwPhysicalPartitionNum, TRUE, ARRAY_COUNT_PARAM(wszPartitionDevicePath))
+DiskBuildDevicePartitionPath(dwPhySysDiskNumber, dwPhySystemPartNumber, FALSE, ARRAY_COUNT_PARAM(wszNtSystemPartition))
+DiskBuildDevicePartitionPath(dwPhySysDiskNumber, dwPhySystemPartNumber, TRUE, ARRAY_COUNT_PARAM(wszGlobalPathOfBcdToRestore))
+DiskBuses
+DiskForceDriversSync
+DiskGetDriveLayout
+DiskGetDriveLayout( dwPhySystemDiskNumber, &pPhySystemDiskDriveLayout, &cbPhySystemDiskDriveLayout)
+DiskGetDriveLayout( pCurSifDisk->AssignedTo->DeviceNumber, &pPhyDriveLayoutEx, &cbDrivelayout )
+DiskGetDriveLayout( pPhyDisk->DeviceNumber, &pPhyDriveLayoutEx, &cbDriveLayout)
+DiskGetDriveLayout( pSifDisk->AssignedTo->DeviceNumber, &pPhyDrivelayoutEx, &cbDrivelayout )
+DiskId
+DiskListFreeExcludedDisks
+DiskListFreeNonFixedMedia(&pPhysicalDiskList)
+DiskListInitialize
+DiskListMarkOfflineDisks
+DiskListMarkOfflineDisks( pPhysicalDiskList )
+DiskListPopulateLayoutInfo
+DiskOpen
+Disks
+DiskSetDriveLayout
+DiskSetDriveLayout( dwPhySystemDiskNumber, pPhySystemDiskDriveLayout, cbPhySystemDiskDriveLayout )
+DiskSetDriveLayout(pSifDisk->AssignedTo->DeviceNumber, pPhyDrivelayoutEx, cbDrivelayout)
+diskSignature
+DiskSize
+DiskTraceDriveLayout
+DllCanUnloadNow
+DllGetClassObject
+Document contains no components
+DoDiskIoctlCall( hVolume, IOCTL_DISK_GET_DRIVE_GEOMETRY, NULL, 0, (void **)&pDiskGeometry, &cbDiskGeometry)
+Don't support SetUNCPath more than once
+DoSnapshotSet
+DoSnapshotSetFailed
+DoSnapshotSetSucceeded
+DosPath
+DoStorageIoctlCall(hDisk, IOCTL_STORAGE_GET_DEVICE_NUMBER, NULL, 0, (void **)&pStorageDeviceNumber)
+DoVdsIoctlCall(hVdsDriver, IOCTL_VOLMGR_ENUM_DISKS, &DiskInfoInBuffer, sizeof(DiskInfoInBuffer), (void **)&pDiskInfoOutBuffer)
+DoVdsIoctlCall(hVdsDriver, IOCTL_VOLMGR_ENUM_PACKS, NULL, 0, (void **)&pOutBuffer)
+DoVdsIoctlCall(hVdsDriver, IOCTL_VOLMGR_ENUM_VOLUMES, &VolInfoInBuffer, sizeof(VolInfoInBuffer), (void **)&pVolInfoOutBuffer)
+DoVdsIoctlCall(hVdsDriver, IOCTL_VOLMGR_EXPORT_PACK, &ExportPackInBuffer, sizeof(ExportPackInBuffer), NULL)
+DoVdsIoctlCall(hVdsDriver, IOCTL_VOLMGR_IMPORT_PACK, &ImportPackInBuffer, sizeof(ImportPackInBuffer), NULL)
+DoVdsIoctlCall(hVdsDriver, IOCTL_VOLMGR_QUERY_PACK_INFO, &PackInBuffer, sizeof(PackInBuffer), (void **)&pPackOutBuffer)
+DoVdsIoctlCall(hVdsDriver, IOCTL_VOLMGR_QUERY_PACK_INFO, &QueryPackInBuffer, sizeof(QueryPackInBuffer), (void **)&pQueryPackOutBuffer)
+DoVdsIoctlCall(hVdsDriver, IOCTL_VOLMGR_QUERY_VOLUME_INFO, &VolInfoInBuffer, sizeof(VolInfoInBuffer), (void **)&pVolInfoOutBuffer)
+DoVolumeIoctlCall(hBootVolume, IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS, NULL, 0, (void **)&pBootVolExtents, NULL)
+DoVolumeIoctlCall(hSystemVolume, IOCTL_VOLUME_GET_VOLUME_DISK_EXTENTS, NULL, 0, (void **)&pSystemVolExtents, NULL)
+DSREPAIR
+DSROLE.dll
+DsRoleFreeMemory
+DsRoleGetPrimaryDomainInformation
+DsRoleGetPrimaryDomainInformation succeeded but DSROLE_PRIMARY_DOMAIN_INFO_BASIC buffer is NULL
+dt:values="byCopy import other"
+DuplicateToken
+DuplicateToken(hToken, SecurityImpersonation, hDuplicateToken)
+DuplicateToken(hToken, SecurityImpersonation, m_hInitializeToken)
+dwByteCount > 0
+dwError
+dwIoctlLastError
+dwLastError
+dwRestoreFlags < ASR_ROF_INVALID
+dwSetFileErrorCode
+DynDisk
+DynDisk::Initialize
+DynDisk::InitializeFromXMLDoc
+DynDisk::PutRestoredDiskInfo
+DynDisk::TraceQueryDiskInfoBuffer
+DynExtent
+DynExtent::Initialize
+DynExtent::InitializeFromXMLDoc
+DynExtent::IsExtentIntact
+DynMember
+DynMember::Initialize
+DynMember::InitializeFromXMLDoc
+DynMember::IsMemberIntact
+DynPack
+DynPack::AreAllSifDisksAssigned
+DynPack::CheckPackDiskIntact
+DynPack::ClearBootSectorForCriticalVolumes
+DynPack::CreateDisks
+DynPack::CreateVolumes
+DynPack::GetPackId
+DynPack::GetRestoredPackId
+DynPack::InitializeFromXMLDoc
+DynPack::InitializePhysicalPackForRestore
+DynPack::IsDiskInPack
+DynPack::IsPackIntact
+DynPack::PerformPostRestore
+DynPack::PerformPreRestore
+DynPack::RestoreBootVolumePartitionId
+DynPack::SetVolumeGuids
+DynPlex
+DynPlex::Initialize
+DynPlex::InitializeFromXMLDoc
+DynPlex::IsPlexIntact
+DynVolume
+DynVolume::ClearCriticalVolumeBootSector
+DynVolume::CreateVolume
+DynVolume::InitializeFromXMLDoc
+DynVolume::InitializePhysicalVolForRestore
+DynVolume::IsVolumeIntact
+DynVolume::PackVolmgmtCreateVolumeBuffer
+DynVolume::SetVolumeGuidName
+E(=csm
+E(A9F@t
+E;}Pt5H
+E;<$r
+E;wdr
+E@9EHsU
+E@HcU
+E\$XL
+E_FAIL
+E_OUTOFMEMORY
+e0A_A^A]A\]
+E0H!](H
+E8=csm
+E8>ty
+E89E0r
+E8xit6H
+E8zit
+E8ziu
+E94$vPA
+E9g(tZL
+EH=csm
+Eh=csm
+Element '%s' not found
+empty document
+Empty snapshot set scenario failed to ResetSequence
+empty volume count
+EnablePrivilege
+EnableRemoteSnapshots
+EncodePointer
+Encountering a non-fixed volume (%s) - %ud
+ENTER
+EnterCriticalSection
+Entering operation Abort
+Entering operation PrepareForBackup
+Entering operation RequestWriterInfo(bWriterMetadata == false)
+Entering operation RequestWriterInfo(bWriterMetadata == true)
+ePA_A^A]A\]
+EPt%I
+EqualDomainSid
+EqualSid
+EraseBitlockedDrive
+EraseBitlockedDrive( wszVolumeName, pfnFveEraseDrive, pfnOpenVolume, pfnCloseVolume )
+Error calling Query(). [0x%08lx]
+Error caught. Re-throwing ... hr = 0x%08lx
+Error creating the CVssAsync instance. hr = 0x%08lx
+Error initializing critical section
+Error loading operating system
+Error loading VSS.DLL [0x%08lx]
+Error loading VSS.DLL resource with ID = 0x%08lx [0x%08lx]
+Error on closing key with name %s. lRes == 0x%08lx
+Error on DeregisterEventSource 0x%08lx
+Error on initializing the Id 0x%08lx
+Error on RegisterEventSourceW 0x%08lx
+Error on ReportEventW 0x%08lx
+Error querying for IMultiInterfaceEventControl interface.  hr = 0x%08lx
+Error querying for IVssWriterCallback interface.  hr = 0x%08lx
+Error querying for the IDispatch interface.  hr = 0x%08x
+Error querying from IXMLDOMNode to IXMLDOMElement. hr = 0x%08lx
+Error querying IXMLDOMElement from the IXMLDOMNode. hr = 0x%08lx
+Error querying IXMLDOMElement to the node. 0x%08lx
+Error querying IXMLDOMNode to IXMLDOMElement. 0x%08lx
+Error querying the IDispatch interface.  hr = 0x%08lx
+Error querying the IVssAsync interface. hr = 0x%08lx
+Error starting the job. hr = 0x%08lx
+Error: getting a NULL interface
+Error: the buffer is too small to fit %s (%d < %d)
+Error: the object name %s does terminate with a backslash
+ERROR_ALREADY_ASSIGNED
+ERROR_BAD_DEVICE
+ERROR_BAD_ENVIRONMENT
+ERROR_BAD_FORMAT
+ERROR_DATATYPE_MISMATCH
+ERROR_DEVICE_NOT_CONNECTED
+ERROR_DISK_FULL detected in function %s
+ERROR_DISK_FULL detected in function %s - %s
+ERROR_DISK_FULL detected. %s
+ERROR_FILE_NOT_FOUND
+ERROR_INSUFFICIENT_BUFFER
+ERROR_INSUFFICIENT_BUFFER expected error . [0x%08lx]
+ERROR_INVALID_DATA
+ERROR_INVALID_NAME
+ERROR_INVALID_PARAMETER
+ERROR_IO_DEVICE
+ERROR_NO_MATCH
+ERROR_NO_MORE_ITEMS
+ERROR_NOT_FOUND
+ERROR_OLD_WIN_VERSION
+ERROR_READ_FAULT
+ERROR_TIMEOUT
+ERROR_UNSUPPORTED_TYPE
+ERROR_WRITE_FAULT
+ErrorCode
+ESENT ERROR {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x} %s: %ld
+ESENT.dll
+EtwGetTraceEnableFlags
+EtwGetTraceEnableLevel
+EtwGetTraceLoggerHandle
+EtwRegisterTraceGuidsW
+EtwTraceMessage
+EtwUnregisterTraceGuids
+Event name: %s
+Event System is not present. Writer support is disabled.
+EventActivityIdControl
+EventClassID == 
+EventRegister
+EventSetInformation
+EventSystem.EventClassCollection
+EventSystem.EventSubscription
+EventUnregister
+EventWriteTransfer
+Ex=csm
+EX=csm
+Exception
+Exception caught!
+EXCLUDE_FILES
+EXCLUDE_FILES_FROM_SNAPSHOT
+ExcludeDisk
+exFAT
+Expand mapped drive letter of share failed
+ExpandEnvironmentStringsW
+ExpandForVerification()
+ExpandMappedSharePathToUNC
+Expected REG_DWORD type for registry key %s value name %s. The present value has been ignored
+explicitely
+expose current state called after FreeWriterStatus
+exposedName
+exposedPath
+ExpressWriter
+extentLength
+ExtraParam1
+ExtraParam2
+ExtraParam3
+F(H+A
+f;C&u)f;C0u#f;C:u
+f;C^u
+f;CDu
+f;G^t
+f;o:u
+f;o0u
+f;oDu
+F0H+A
+F8H+A
+f9,^u
+f9,Au
+f9,Ju
+f9,Nu
+f9,Pu
+f9,Yu
+f9,Zu
+f9<Au
+f9<Cu
+f9<Fu
+f94Au
+f94Bu
+f94Hu
+f94Ku
+f94Xu
+f9D$ u
+f9D$0u
+f9QXt
+fA9,@u
+fA9,Bu
+fA9\E
+fA9\G
+fA9\O
+fA9<Cu
+fA94@u
+fA94Hu
+fA9LD
+fA9LE
+Fail to find Product Options registry key
+Fail to find safeboot registry key
+FAILED
+failed
+Failed AddWriterData
+FAILED as insufficient privileges to call shim
+FAILED as invalid parameters
+Failed calling setAttribute on filesRestored with %s
+Failed creating CVssCreateWriterMetadata
+FAILED creating CVssIJetWriter object due to allocation failure.
+FAILED during internal initialisation of CVssIJetWriter object
+Failed FindNextFile with %d
+Failed to allocate BSTR.
+Failed to allocate byte array.
+Failed to create and initialize coordinator proxy
+Failed to create CVssWriterImpl.  hr = 0x%08lx
+Failed to create VSS_COMPONENTINFO
+Failed to initialize WRITER_COMPONENTS document.  hr = 0x%08lx
+failed to load the following XML document
+FailFast
+Failure to create event object due to error %d.
+Failure to create mutex object due to error %d.
+Failure to create thread due to error %d.
+Failure to use DsRoleGetPrimaryDomainInformation for DC
+failureCount
+failureId
+FailureMsg
+failureType
+FallbackError
+FALSE
+FAT32
+fB9\E
+fB9<Cu
+fB94Gu
+fC9,Ju
+fC9<Ju
+fC9<Qu
+FCPH3
+fD;;u
+fD;0t
+fD;8u~H
+fD;g&
+fD;g:
+fD;g0
+fD;gD
+fD9 t
+fD9!t
+fD9$^u
+fD9$_u
+fD9$~u
+fD9$Au
+fD9$Bu
+fD9$Fu
+fD9$Ku
+fD9$Vu
+fD9$Wu
+fD9)t
+fD9,Au
+fD9,Cu
+fD9,ju
+fD9.A
+fD9\A
+fD9|A
+fD9<^u
+fD9<_u
+fD9<Au
+fD9<Bu
+fD9<Cu
+fD9<Fu
+fD9<Gu
+fD9<Nu
+fD9<Yu
+fD91t
+fD94~u
+fD94Au
+fD94Bu
+fD94Gu
+fD94Nu
+fD94Yu
+fD94zu
+fD98u
+fD9d$4
+fD9dG
+fD9t$@t
+fE;<$u
+fE9$^u
+fE9$_u
+fE9$Fu
+fE9$Gu
+fE9$Hu
+fE9,$
+fE9,~t
+fE9,~u
+fE9,l
+fE9,N
+fE9,Xu
+fE9<^u
+fE9<pu
+fE94_u
+fE94Au
+fF9$@u
+fF9$vu
+fF9$zu
+fF9<Au
+fG9$Gu
+fG94Au
+fG94Du
+Fibre
+FILE_GROUP
+FILE_LIST
+FileAlias
+FileBackedVirtual
+FileDescription
+filegroup
+fileName
+FileName
+fileName
+FileName
+fileName
+FileName
+fileName
+FileName
+filespec
+filespecBackupType
+filesRestored
+FileSystemType
+FileVersion
+Filling in ComponentFlags Cache info in ProcessAutoRecoverComponent for writer with instance id: {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}.
+FindClose
+FindFirstFile(%s)
+FindFirstFile(%s) returned no results
+FindFirstFileW
+FindNextFileW
+FindPhysicalPartition
+FindPhysicalPartition( &pSystemDisk->pDriveLayoutEx->PartitionEntry[dwSifSystemPartitionIndex], pSystemDisk->AssignedTo, &dwPhySystemPartNumber )
+FindPhysicalPartition( pPartionInfoEx, pSifDisk->AssignedTo, &dwPhysicalPartitionNum )
+FindResourceExW
+Finished Filling in ComponentFlags cache info in ProcessAutoRecoverComponent with %d elements
+FireSubscription
+Firing subscriber SID (%s) for method (%s)
+FirmwareType
+First QueryInterface failed
+First StringCchCat failed
+FixedVolumes
+Flags
+FLTRC
+fmifs.dll
+ForceRemove
+FormatEx2
+FormatInitialise
+FormatInitialise()
+FormatMessageW
+FormatRoutineEx2 != NULL
+FormatVolume
+Found component flag in ProcessAutoRecoverComponent dwComponentFlag = %d elements
+FreeLibrary
+FreeResource
+FreeSid
+FreezeTimeout         = %d (ms)
+fResult
+friendlyName
+FrontEnd
+fSfSfUfh
+FsName
+FSSSHRMC
+function
+Function
+FunctionName
+FveApi.dll
+FveCloseVolume
+FveEraseDrive
+FveOpenVolumeW
+G H9X
+G.fD;
+g_dwFormatTlsIndex != TLS_OUT_OF_INDEXES
+g_hIfsDll
+Gather writer metadata is not complete
+GatheringWriterMetadata
+GatheringWriterStatus
+GatherWriterMetadata
+GatherWriterStatus
+GatherWriterStatusAsync was not called or is not complete.
+GetAce
+GetAclInformation
+GetBackupSchema
+GetBootPartition
+GetBootVolumeGuidName(&pwszBootVolGuidName)
+GetClientTokenOwner
+GetClientTokenUser
+GetCommandLineW
+GetComponent
+GetComponentInfo
+GetComputerNameExW
+GetCurrentAccessToken
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+GetDatabaseFile
+GetDatabaseLogFile
+GetDriveLayoutExSize( cEntriesInPartitionTable, &dwCurDriveLayoutExSize )
+GetDriveLayoutExSize( cPartitions, &cbDriveLayoutEx )
+GetDriveLayoutExSize( pAssignTo->pDriveLayoutEx->PartitionCount, &cbDriveLayoutEx )
+GetDriveLayoutExSize( pSifDisk->pDriveLayoutEx->PartitionCount, &cbNewDriveLayoutEx )
+GetDriveTypeByHandle
+GetDriveTypeW
+GetElementCount
+GetFile
+GetFileAttributesW
+GetFileAttributesW() failed with %d
+GetFileCounts
+GetFileSytemName( pCurSifDisk->PartitionInfoTable[iSifPartition].FileSystemType, ARRAY_COUNT_PARAM(FormatVolInfo.wszFsName))
+GetFileSytemType( wszFsName, &pPartitionTable[dwIndex].FileSystemType )
+GetFullPathNameW
+GetIdentity
+GetIdentity failed with 0x%08x
+GetInterfaceFromGlobal({%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}, %lu)
+GetLastError
+GetLastError( )
+GetLastError()
+GetLengthSid
+GetLogicalDrives
+GetModuleFileNameA
+GetModuleFileNameW
+GetModuleHandleExW
+GetModuleHandleW
+GetMultiStringFromVolumeList
+GetMultiStringFromVolumeList( pVolList, &cbMultiStr, &pbMultiStr )
+GetNameInfoW
+GetPartitionInfo
+GetPartitionInfo( pVolume->szGuid, &PartInfo )
+GetPath
+GetProcAddress
+GetProcessHeap
+GetProviderMgmtInterface
+GetProviderMgmtInterfaceInternal
+GetQualifiedName
+GetRdisk0DeviceNumber
+GetRdisk0DeviceNumber(&dwRDisk0DevNumber)
+GetRestoreOptionDataValuePair
+GetRootAndLogicalPrefixPathsInternal
+GetSidSubAuthorityCount
+GetSifDiskBySifDevNum( pVirtualDiskInfo->m_dwDeviceNumber, &pDiskInfo )
+GetSnapshot({%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x},%p)
+GetSnapshotDeviceName must only be called from OnPostSnapshot
+GetStateForCurrentEvent called from unknown thread
+GetStorageDependencyInformation
+GetSystemInfo
+GetSystemPlex
+GetSystemPlex( m_pDiskListHead, TRUE, &pSystemDisk, &dwSifSystemPartitionIndex )
+GetSystemPlex( pSifDiskList, TRUE, &pSifSystemDisk, &dwSifSystemParIndex )
+GetSystemPlex(m_pDiskListHead, TRUE, &pSifSystemDisk, &dwSifSystemPartIndex)
+GetSystemTime
+GetSystemTimeAsFileTime
+GetSystemWindowsDirectoryW
+GetTickCount
+GetTickCount64
+GetTokenInformation
+GetValue
+GetVersionExW
+GetVolumeInformationW
+GetVolumeName
+GetVolumeNameForVolumeMountPoint
+GetVolumeNameForVolumeMountPoint fails for exclude file path %s
+GetVolumeNameForVolumeMountPoint is now failing on the volume, winerror 0x%08lx. 
+GetVolumeNameForVolumeMountPoint is now failing on the volume, winerror 0x%08lx. Autorecovery bit will NOT be set, Deleting writer will NOT do its work even if it should.
+GetVolumeNameForVolumeMountPoint(%s,...) failed with error code 0x%08lx
+GetVolumeNameForVolumeMountPointW
+GetVolumePathName
+GetVolumePathName fail on DfsTarget: %s, winerror 0x%08lx.
+GetVolumePathName fails for exclude file path %s
+GetVolumePathName is fail on the path %s, winerror 0x%08lx.
+GetVolumePathName is now failing on the volume, winerror 0x%08lx. Autorecovery bit will NOT be set, Deleting writer will NOT do its work even if it should.
+GetVolumePathNamesForVolumeNameW
+GetVolumePathNameW
+GetVSS_IDAttributeValue
+GetWindowsDirectory failed
+GetWindowsDirectoryW
+GetWindowsDirectoryW failed with %d
+GetWindowsDirectoryW failed with %d.
+GetWriterComponentsCount
+GetWriterMetadata
+GetWriterMetadataCount
+GJH!}
+GlobalAlloc
+GlobalFree
+GlobalInterfaceTable
+GlobalLock
+GlobalUnlock
+GptAttributes
+GptDisk
+GptGuid
+GptName
+GptPartition
+H UATAUAVAWH
+H USVWAVAWH
+H USVWAVH
+H USVWH
+H!\$ 
+H!\$ I
+H!\$0
+H!\$0A
+H!\$0H
+H!\$8H
+H!\$8L
+H!\$xH
+H!]0I
+H!]8L
+H!|$ E
+H!|$`H
+H!|$`L
+H!|$0
+H!|$hH
+H!|$HH!|$@H
+H!}XH!}PH!}
+H!t$pL
+H!X !X
+H;8u$A
+H;E(t
+h_^][
+H+E/H
+H+E?H
+H+E7u
+H+EPu
+H+E'u
+H+EXH
+H9\$0t
+H9\$8t
+H9](u9
+H9]0u9
+H9]8tYA
+H9]8u<A
+H9^8u%
+H9_(u3A
+H9_0u0A
+H9_8t 9_Tu
+H9_8tS
+H9_8uxH;
+H9_xt
+H9{Hs<
+H95,n
+H9Q r H
+H9T$0u<A
+H9t$XH
+H9t$Xt
+hA_A^_^][
+HA_A^A]A\_^][
+hA_A^A]A\_^][
+HasPartitions
+HasPrivilege
+hBootStatusData
+hBootVolume
+HcL$ HcD$$H
+HComponentsPerType
+hDevice != INVALID_HANDLE_VALUE
+hdevInfo
+hDisk
+HeapAlloc
+HeapDestroy
+HeapFree
+hError
+hh8]I
+hK+D"hH
+HKEY_CLASSES_ROOT
+HKEY_CURRENT_CONFIG
+HKEY_CURRENT_USER
+HKEY_DYN_DATA
+HKEY_LOCAL_MACHINE
+HKEY_PERFORMANCE_DATA
+HKEY_USERS
+hkeyOfflineRestoreSession
+hkeyOfflineSoftwareHive
+hkeyRestoreSession
+hMountMgr
+hMountMgrOut != NULL
+hPhyDisk
+HrApplication
+HrCoordInit
+hresult
+HResult
+hresult
+HResult
+hresult
+HResult
+hresult
+HResult
+HRESULT 0x%08lx rethrown by %s
+HRESULT exception caught: hr: 0x%x
+hrFve
+HrWriterFailure
+hSystemKey
+hSystemPartition
+hSystemVolume
+hThread
+hVdsDriver != INVALID_HANDLE_VALUE
+hVolume
+hVolume != INVALID_HANDLE_VALUE
+I+Flu
+I+FtH
+I9^8t<A
+I9_pt
+I9Ypu
+IDENTIFICATION
+IdInstance
+IdWriter
+IEnumEventObject::Next
+IEventObjectCollection::get_NewEnum
+IEventSubscription::get_OwnerSID
+IEventSubscription::get_SubscriptionID
+IEventSubscription::put_EventClassID
+IEventSubscription::put_InterfaceID
+IEventSubscription::put_PerUser
+IEventSubscription::put_SubscriberInterface
+IEventSubscription::put_SubscriptionName
+IEventSubscription::PutSubscriberProperty
+IEventSystem::Remove
+IEventSystem::Store
+ifReplaceFails
+iH9_8t*
+IL$`H
+IL$pH
+IL$PH
+IL$XH
+IL$xH
+implicitely
+import
+Improper account attempted to call function
+Improper entry into state
+improper state transition
+IMultiInterfaceEventControl::GetSubscriptions
+IMultiInterfaceEventControl::put_FireInParallel
+IMultiInterfaceEventControl::SetMultiInterfacePublisherFilter
+INBOX
+INCCXMLH
+INCICHLH
+INCLUDE_FILES
+IncludeDisk
+Incorrect flags
+incremental
+INCSTRH
+INCTYPEH
+INCWORKH
+INCWRMPH
+INCXLTH
+InetPtonW
+INFO: %s [hr = 0x%08lx]
+Initialization failed
+Initialization function was not called
+InitializeAcl
+InitializeCriticalSection
+InitializeCriticalSectionAndSpinCount
+InitializeCriticalSectionAndSpinCount(&m_cs, 0x80000400)
+Initialized
+InitializeForBackup
+InitializeSecurityDescriptor
+InitOnceBeginInitialize
+InitOnceComplete
+InjectDrivers
+Input destination volume is given, but empty string
+Input path does not start with a drive letter
+Input path is not a drive letter
+Input path is not a locally mapped share
+Input snapshot ID is GUID_NULL
+Instance id and instance name was not discovered in Identify pass{%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x} %s
+Instance id was not discovered in Identify pass{%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+InstanceCount
+instanceId
+InstanceId for Writer %s is {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+InstanceId for Writer %s is{%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+InstanceName
+instanceName
+InstanceName
+Insufficient storage. %s. Provider ID = {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+INTERCONNECT_DESCRIPTION
+interconnectAddress
+interconnectAddressType
+InterleaveLength
+Internal BackupComplete failed. 0x%08lx
+Internal error in adding deleting writer to trimmed writer array: iWriterD %d iWriterS %d cWriterInstances %d m_cWriterInstances %d
+Internal error in writer trimming algorithm: iWriterD %d iWriterS %d cWriterInstances %d m_cWriterInstances %d
+Internal GatherWriterMetadata failed. 0x%08lx
+Internal GatherWriterStatus failed. 0x%08lx
+Internal PrepareBackup failed. 0x%08lx
+internal tracing buffer - out of memory
+internal\sdk\inc\wil\resource.h
+internal\sdk\inc\wil\result.h
+Internally transferred WRITER_COMPONENTS document is invalid
+Internally transferred WRITER_METADATA document is invalid
+InternalName
+Invalid account called function
+Invalid app level %d
+invalid argument
+Invalid argument detected. %s. Provider ID = {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+Invalid backupType %d
+Invalid bus type %d
+Invalid component type
+Invalid context 0x%08lx
+Invalid data source type
+Invalid device when calling a provider routine: %s
+Invalid element type
+invalid hThread
+Invalid input parameters.
+Invalid interconnect address type %d
+invalid map/set<T> iterator
+Invalid method type %d
+Invalid name for key under WritersBlockingRevert
+Invalid operation on transportable snapshots with legacy writer involved
+Invalid parameter passed to C runtime function.
+Invalid parameter specified
+Invalid partition table
+Invalid pwszMappedPath=%s
+Invalid restore type %d
+Invalid restoreTarget %d
+Invalid rollforward type %d
+Invalid SID passed to AddSid
+invalid source typ
+Invalid state %d for call to BackupComplete.
+Invalid state %d for call to PostRestore.
+Invalid state %d for call to PreRestore.
+Invalid state %d to request BACKUP_COMPONENTS content
+invalid string position
+Invalid type for value under ApplicationsBlockingRevert
+Invalid uLogicalPrefixPathSize length
+invalid usage type
+Invalid usage type
+Invalid user name argument
+Invalid writer selection
+Invalid Writer state
+Invalid writerRestore type %d
+IOCTL %lx failed on device %s - 0x%08lx. Error code = 0x%08lx
+IOCTL %lx succeeded on device %s - 0x%08lx. 
+IOCTL sent: %lx on device %s
+IOCTL Unpack overflow
+IOThrottlingOnly      = %s
+IsBasicDiskEmpty
+IsBasicDiskEmpty( pSifDisk, &bEmpty )
+IsBasicDiskEmpty(pSifDisk, &fDiskEmpty)
+IsBoot
+IsCritical
+iScsi
+IsCurrentBoot
+IsCurrentSystem
+IsDebuggerPresent
+isDynamicVolume
+IsDynamicVolume
+IsDynamicVolume( pVolume->szGuid, &fDynamicVolume )
+IsDynamicVolume( wszPartitionDevicePath, &fDynamicVolume )
+IsExcluded
+IsInGroup
+IsMissing
+IsOnline
+IsPathAffected called with path %s
+IsPathAffected: Compare m_ppwszVolumeArray[%d]=%s wszVolumeRoot=%s
+IsShared
+IsSystem
+IsValidSid
+IsVolumeIntact
+IsVolumeSnapshotted
+IsVolumeSnapshottedInternal
+iswdigit
+IUnknown::QueryInterface
+IVssAsync::QueryStatus
+IVssAsync::QueryStatus failed. 0x%08lx
+IVssAsync::Wait
+IVssAsync::Wait failed. 0x%08lx
+IVssBackupComponents::SetContextInternal
+IVssComponent::GetComponent
+IVssComponent::GetComponentName
+IVssComponent::GetLogicalPath
+IVssComponent::GetRestoreTarget
+IVssCoordinatorEx2
+IVssExamineWriterMetadata::GetComponent
+IVssExamineWriterMetadata::GetFileCounts
+IVssExamineWriterMetadata::GetIdentityEx
+IVssExamineWriterMetadata::GetRestoreMethod
+IVssExamineWriterMetadata::QueryInterface
+IVssExamineWriterMetadata::QueryInterface(IID_IVssExamineWriterMetadataEx)
+IVssExamineWriterMetadataEx::GetExcludeFromSnapshotCount
+IVssExamineWriterMetadataEx::GetExcludeFromSnapshotFile
+IVssExpressWriter
+IVssProviderNotifications::OnLoad
+IVssSnapshotProvider::SetContext
+IVssWMComponent::GetComponentInfo
+IVssWriter::BackupComplete(%s)
+IVssWriter::InternalBackupComplete1
+IVssWriter::InternalPostRestore
+IVssWriter::PrepareForBackup (%s)
+IVssWriter::PreRestore
+IVssWriter::RequestWriterInfo, GatherWriterMetadata
+IVssWriter::RequestWriterInfo, Request Writer Status
+IVssWriterCallback::GetBackupState failed.  hr = 0x%08lx
+IVssWriterCallback::GetContent
+IVssWriterCallback::GetRestoreState failed.  hr = 0x%08lx
+IVssWriterCallback::SetContent failed.  hr = 0x%08lx
+iWriter %d > # of writers(%d)
+IXMLDOMDocument::get_parseError
+IXMLDOMNamedNodeMap::getNamedItem
+IXMLDOMNode::createNode
+IXMLDOMNode::get_attributes
+IXMLDOMNode::get_firstChild
+IXMLDOMNode::get_nextSibling
+IXMLDOMNode::get_nodeName
+IXMLDOMNode::get_NodeName
+IXMLDOMNode::get_NodeType
+IXMLDOMNode::get_nodeType
+IXMLDOMNode::get_parentNode
+IXMLDOMNode::get_text
+IXMLDOMNode::get_xml
+IXMLDOMNode::insertBefore
+IXMLDOMNode::loadXML
+IXMLDOMNode::removeChild
+IXMLDOMNode::replaceChild
+IXMLDOMNode::SafeQI
+IXMLDOMNode::setAttribute
+IXMLDOMNode:cloneNode
+IXMLDOMParseError::get_errorCode
+IXMLDOMParseError::get_line
+IXMLDOMParseError::get_linepos
+IXMLDOMParseError::get_reason
+IXMLDOMParseError::get_srcText
+Jet Writer
+JetFreeBuffer
+JetGetInstanceInfo
+JetGetInstanceInfoW
+JetGetSystemParameter(JET_paramBaseName)
+JetGetSystemParameter(JET_paramLegacyFileNames)
+JetGetSystemParameter(JET_paramLogFilePath)
+JetGetSystemParameter(JET_paramSystemPath)
+JetGetSystemParameterW
+JetOSSnapshotAbort
+JetOSSnapshotFreezeW
+JetOSSnapshotPrepare
+JetOSSnapshotThaw
+JTWIJTWC
+K D8s0t`I
+K SVWH
+K VWATAUAWH
+K WATAUAVAWH
+K(f;H
+K,9Mg
+K8@8y(t
+kernelbase.dll
+Key %s already exists
+Key value element %s does not match the volume name and is not a mount point.
+KHf;H
+L$ E3
+l$ E3
+L$ E3
+l$ E3
+L$ E3
+l$ E3
+L$ E3
+L$ SH
+L$ SUVWATAUAVAWH
+L$ SUVWAVH
+L$ SUVWH
+L$ SVWATAUAVAWH
+L$ SVWH
+L$ SWH
+L$ USVWATAUAVAWH
+L$ USVWATAVAWH
+L$ USVWAVAWH
+L$ USVWAVH
+L$ UVWATAUAVAWH
+l$ VWATAVAWH
+l$ VWAUAVAWH
+l$ VWAVH
+L$ VWAVH
+l$ VWAVH
+L$ WH
+L$"fA
+l$(E3
+L$(H3
+L$@E3
+L$@H3
+L$@I+
+L$`E3
+L$`H3
+L$0E3
+L$0fD
+L$0H;
+L$0H3
+l$88\$ttGA
+L$8A;N
+L$8E3
+L$8H3
+L$B8\$@u&H
+L$D8\$@u H
+L$dA;N
+L$h@8
+l$HD;
+L$HE3
+L$Hf9
+L$hH3
+L$HH3
+L$hH3
+l$PA9\$P
+l$PD;
+L$pE;L$
+L$PE3
+L$pE3
+L$PE3
+L$PH3
+l$Pt.H
+l$T8L$P
+l$XE2
+L$XE3
+L$XfA
+L$XH+
+L$XH3
+L$xH3
+L$XH3
+L9{@u
+L9{0t#H
+L9|$xtRH
+L9d$@
+L9d$8
+L9d$H
+L9MguPA
+L9ypumH
+Label
+LanManNt
+LastAliveStamp
+LastInstance
+lastModifyLSN
+lastModifyTimeHigh
+lastModifyTimeLow
+LcA<E3
+LCMapStringA
+lDeleteValueResult
+LeaveCriticalSection
+LegalCopyright
+Length
+Level                 = %d
+level %d node %s
+lIj6A
+LineNumber
+lineNumber
+LineNumber
+lineNumber
+LineNumber
+lineNumber
+LineNumber
+Load of Backup components document failed
+Load of snapshot set description document failed
+LoadLibraryExW
+LoadResource
+LoadStringW
+LoadVssSnapshotSetDescription
+Local\SM0:%d:%d:%hs
+LocalAlloc
+LocalFree
+LocalServer32
+Lock called when it wasn't initialized
+LockResource
+LogEvent
+LogHr
+logicalPath
+LogPath
+LookupAccountName fails for %s, winerror %d. This key value in VssAccessControl is ignored.
+LookupAccountName fails to give SID size for %s, fReturn %d, winerror %d, dwSid %d, dwDomain %d. This key value is ignored.
+LookupAccountName fails unexpectedly for %s, winerror %d. Account ignored.
+LookupAccountNameLocalW
+LookupAccountSid fails unexpectedly, winerror %d.
+LookupAccountSid returned with winerror %d, bRes %s.
+LookupAccountSidLocalW
+lResult
+lstrcmpiW
+lstrcpynW
+LUN_INFORMATION
+LUN_MAPPING
+lunID
+M(H!]0L
+m_pAsrFmt
+m_pAsrFmt != NULL
+m_pAsrFmt->InitializeForRestore((WCHAR *) pwszXmlBuffer)
+m_pAsrFmt->PerformPreRestore(m_pAsrSys)
+m_pAsrLdm
+m_pAsrLdm != NULL
+m_pAsrLdm->InitializeForRestore((WCHAR *) pwszXmlBuffer)
+m_pAsrLdm->InitializePhysicalPackListForRestore()
+m_pAsrLdm->PerformPostRestore(m_pAsrSys)
+m_pAsrLdm->PerformPreRestore(m_pAsrSys)
+m_pAsrSys
+m_pAsrSys != NULL
+m_pAsrSys->GetRestoredOfflinedHivePath( L"SOFTWARE", &pwszOfflineSoftwareHiveFilePath )
+m_pAsrSys->InitializeForRestore((WCHAR *) pwszXmlBuffer, dwRestoreFlags)
+m_pAsrSys->MarkActiveBitOnSystemPartition()
+m_pAsrSys->PerformPostRestore()
+m_pAsrSys->PerformPreRestore( m_pAsrLdm, pdwIncludeDisks, cIncludeDisks, pdwExcludeDisks, cExcludeDisks )
+m_pAsrSys->SetBootAndSystemVolumeName( wszSystemVolumeName, wszBootVolumeName )
+m_pPackList
+m_pPackList[0].PerformPostRestore(hkeyOfflineDefaultCCS)
+m_pReader->GetLocalName(localName.GetBufferAddr(), localName.GetLengthAddr())
+m_pReader->GetLocalName(XML_STR_PARAM(localName))
+m_pReader->GetNamespaceUri(namespaceUri.GetBufferAddr(), namespaceUri.GetLengthAddr())
+m_pReader->GetNamespaceUri(XML_STR_PARAM(namespaceUri))
+m_pReader->GetQualifiedName(qualifiedName.GetBufferAddr(), qualifiedName.GetLengthAddr())
+m_pReader->GetQualifiedName(XML_STR_PARAM(qualifiedName))
+m_pReader->GetValue(attributeValue.GetBufferAddr(), attributeValue.GetLengthAddr())
+m_pReader->GetValue(XML_STR_PARAM(attributeValue))
+m_pReader->MoveToNextAttribute()
+m_pReader->Read(&xmlNodeType)
+m_pReader->SetInput(pReaderInput)
+m_SDBoth.Allow(...)
+m_SDBoth.Deny(...)
+m_SDBoth.Initialize() failed
+m_SDRequestors.Allow(...)
+m_SDRequestors.Deny(...)
+m_SDRequestors.Initialize() failed
+m_SDWriters.Allow(...)
+m_SDWriters.Deny(...)
+m_SDWriters.Initialize() failed
+m_SystemInfo.BootWinDirectory
+m{}3E
+M9}hI
+M9}htnL
+M9}htoL
+M9}htrL
+M9~(t;I
+M9>uoL
+M9>uZL
+M9ghI
+M9ghtoL
+M9ohI
+M9ohtJL
+MachineName
+majorVersion
+MajorVersion
+malloc
+map/set<T> too long
+MapExcludedDisks
+MapExcludedDisks(pPhysicalDiskList, pSifDiskList)
+MapExcludedDisks(pSifDiskList, pPhysicalDiskList)
+mappedPathFromRoot
+mappedSnapshotId
+mappedVolumeName
+MarkDisksToExcludeFromBitmap
+MarkDisksToExcludeFromBitmap(pPhysicalDiskList, &bmpPhysicalDisksToExclude)
+MarkUnaccessableDisksAsExcluded
+MarkUnaccessableDisksAsExcluded( pPhysicalDiskList )
+MaxPartition
+MbrDisk
+MbrPartition
+MbrSignature
+MDULKPRC
+Media
+MediaType
+memcmp
+memcpy
+memcpy_s
+memmove
+memmove_s
+Memory allocation error
+Memory allocation error while adding to map
+Memory allocation failed.
+memset
+message
+metadata
+Metadata supplied by writer {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x} is invalid.
+method
+method not implemented in client SKU
+Method not implemented on client SKU
+Microsoft
+Microsoft Corporation
+Microsoft.Windows.Storage.VSSTraceLogProvider
+MICROSOFT\WINDOWS NT\CurrentVersion\ASR\RestoreSession
+Microsoft\Windows\CurrentVersion\Reliability
+minorVersion
+MinorVersion
+Missing operating system
+missing roll-forward point
+Missing root element
+module
+Module
+module
+MoveToElement
+MoveToFirstAttribute
+MPR.dll
+Msg:[%ws] 
+msvcrt.dll
+MSXML30
+MtMgrCreateMountPoint
+MtMgrDeletePoint
+MtMgrGetMountPoints
+MtMgrGetSymbolicNames
+MtMgrOpen
+multi(0)disk(0)rdisk(
+MultiByteToWideChar
+multiple writer with no restore plan
+Must be called by writer
+Must be called by writer.
+Must be called during backup.
+Must be called during restore.
+Must call InitializeForRestore for Resync operation
+MX_E_ENCODING - unrecognized encoding
+MX_E_ENCODINGSIGNATURE - unrecognized input signature
+MX_E_ENCODINGSWITCH - unable to switch the encoding
+MX_E_INPUTEND - unexpected end of input
+Name: %s\%s, SID:%s
+NC_E_DECLAREDPREFIX - declared prefix
+NC_E_EMPTYURI - non default namespace with empty uri
+NC_E_NAMECOLON - colon in name
+NC_E_QNAMECHARACTER - illegal qualified name character
+NC_E_QNAMECOLON - multiple colons in qualified name
+NC_E_UNDECLAREDPREFIX - undeclared prefix
+NC_E_XMLNSPREFIXRESERVED 'xmlns' prefix is reserved for use by XML
+NC_E_XMLNSURIRESERVED xmlns namespace URI (http://www.w3.org/2000/xmlns/) is reserved and must not be used
+NC_E_XMLPREFIXRESERVED 'xml' prefix is reserved and must have the http://www.w3.org/XML/1998/namespace URI
+NC_E_XMLURIRESERVED xml namespace URI (http://www.w3.org/XML/1998/namespace) must be assigned only to prefix 'xml'
+NetApiBufferFree
+NetLocalGroupGetMembers
+NetLocalGroupGetMembers() failed for "%s" with %d
+NetLocalGroupGetMemebers(%s)
+netutils.dll
+never
+No address given for the ppAsync
+No alternate writer
+No local volumes in the snapshot set - this is expected only in case of a remote snapshots set
+no matching volume found
+No writer name provided
+NONTRANSACTIONAL_DB
+NonTransactionDb
+Non-unicode file found (%s)
+NoRemove
+NormalizeUNCPath
+NormalizeUNCPath for DFS RootPath
+NormalizeUNCPath for non-DFS RootPath
+not a valid sid
+not called from coordinator
+Not called from the coordinator
+Not DSREPAIR
+notifyOnBackupComplete
+NP6:+
+NtClose
+NtCreateFile
+ntdll.dll
+NtFsControlFile
+NtOpenDirectoryObject
+NtOpenKey
+NtOpenSymbolicLinkObject
+NtQueryDirectoryObject
+NtQueryInformationFile
+NtQuerySymbolicLinkObject
+NtQuerySystemInformation
+NtQuerySystemInformation( SystemSystemPartitionInformation, pSysInfo, cbRequiredSize, &cbRequiredSize)
+NtQueryValueKey
+NtQueryVolumeInformationFile
+ntStatus
+NULL argument.
+NULL document
+NULL document.
+NULL input argument
+NULL node
+NULL out parameter
+Null output parameter
+NULL output parameter
+NULL output parameter.
+Null output parameter.
+NULL Output parameter.
+NULL output paramter.
+NULL output pointer
+NULL output pointer.
+NULL required input parameter
+NULL required input parameter.
+NULL Required input parameter.
+NULL required output parameter.
+NULL SourceObjectId
+NULL string input parameter
+NULL writer name
+NumBusType
+NumCylinders
+NumDisks
+NumDynDisks
+NumDynVols
+NumExtents
+NumFiles
+NumGptDisks
+NumMbrDisks
+NumMembers
+NumPacks
+NumPartitions
+NumPlexes
+NumRemMedia
+NumSymbolicNames
+NumVolumeNames
+O@E;N
+o\$PH
+oD$ f
+OfflineDriverInjectionExtension
+Offset
+oh@8}Iu
+oL$0f
+Old extended failure hr
+Old extended failure message
+Old failure
+Old operation
+Old snapshot set
+Old state
+OLEAUT32.dll
+Omitted VSS_VOLSNAP_ATTR_AUTORECOVER for internal context due to VSS_VOLSNAP_ATTR_NO_AUTORECOVERY presence
+OnAbort failed. hr = 0x%08lx
+onComponentName
+onLogicalPath
+Only Volume snapshot service can set snapshot set description.
+onWriterId
+Opening a handle to %s (access = 0x%08lx, share = 0x%08lx)
+OpenProcessToken
+OpenSCManager(NULL,NULL,SC_MANAGER_CONNECT)
+OpenSCManagerW
+OpenSemaphoreW
+OpenServiceW
+OpenThreadToken
+OpenThreadToken succeeded
+OpenThreadToken( GetCurrentThread(), TOKEN_IMPERSONATE | TOKEN_DUPLICATE | TOKEN_QUERY, TRUE, hToken)
+OptionValue
+original
+originalCount
+OriginalFilename
+originalLocation
+originalVolumeName
+originatingContextId
+originatingContextMessage
+originatingContextName
+originatingMachine
+OSVersion
+oT$@f
+OTHER
+other
+Other
+out of memory
+Out of memory detected in function %s
+Out of memory detected in function %s - %s
+Out of memory detected. %s.
+Out of memory detected. %s. Provider ID = {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+Out of memory error adding writer state to the list
+Out of memory error creating writer state object
+Output buffer overflow. Reading bad arguments. dwSize = %lu
+Output buffer overflow. Trying to read non-existent arguments. m_pbOutputBuffer = %p, m_dwOutputCurrentOffset = %lu, dwSize = %lu, m_dwOutputCurrentOffset = %lu
+Output parameter is NULL
+Output parameter is NULL.
+Output ppwszScopeName is NULL
+Output ppwszShareName is NULL
+OutputDebugStringA
+OutputDebugStringW
+p AWH
+p WAVAWH
+PA^_^
+pA_A]A\_^[]
+pA_A^A\_^
+PA_A^A\_^[]
+PA_A^A]A\_^[
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PackId
+PackName
+Parameters %ld, %ld, %ld, 0x%08lx, {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+Parameters %s
+partial
+PARTIAL_FILE
+partialFileSupport
+PartitionFlag
+PartitionID
+PartitionIndex
+PartitionLength
+PartitionOffset
+PartitionTableSize
+PartitionType
+pAsrExPartInfo
+pAsrLdm
+pAsrLdm->CheckPackIntactByDisk( pSifDiskList, pCurSifDisk, pCurPhyDisk, &fBothBasic, &fIntact )
+pAsrLdm->IsSifDiskDynamic( pSifDisk, &bDynamicDisk )
+pAsrLdm->PropagateDiskNotIntactByPack ( pSifDiskList, pCurSifDisk )
+pAsrLdm->PropagateDiskNotIntactByPack( pSifDiskList, pCurSifDisk )
+pAsrSys
+pAsrSys->GetSifDiskBySifDevNum( pCurrentSifDynDisk->GetDeviceNumber(), &pSifDisk )
+pAsrSystem
+pAsrSystem->GetRestoredOfflinedHivePath(L"System", &pwszOfflineSystemHiveFilePath)
+pAssignedTo->pDriveLayoutEx
+passing impersonation token to Coord Keeper Thread
+path %s in not on any snapshot
+pbAreDisksResized
+pbBitmap
+pbCriticalDiskNoARC
+pbDirInfo
+pbIoBuffer
+pbIsDiskResized
+pbIsDynamic
+pbIsMetadateStore parameter is NULL
+pbMultiStr
+pbSectorBuffer
+pbTempBufferVolNames
+pBuffer
+pcbDriveLayoutEx
+pcbVolumeInputBuffer
+pcExcludeDisks
+pcIncludeAllCritical
+pcIncludeDisks
+pCreatePointInput
+pCreateVolInputBuffer
+pCreateVolumeInputBuffer
+pCurPack->IsDiskInPack( pPhyDisk->DeviceNumber, &fInPack )
+pCurPack->IsDiskInPack( pSifDisk->DeviceNumber, &fInPack )
+pCurrentDisk
+pCurSifExtent->IsExtentIntact( pSifDiskList, pCurPhyExtent, &fExtentIntact )
+pCurSifMember->IsMemberIntact( pSifDiskList, pCurPhyMember, &fMemberIntact )
+pCurSifPack->AreAllSifDisksAssigned( pAsrSystem, &fAssigned )
+pCurSifPack->ClearBootSectorForCriticalVolumes(hVdsDriver, &guidRestoredPackId)
+pCurSifPack->GetRestoredPackId(&guidRestoredPackId)
+pCurSifPack->SetVolumeGuids( hVdsDriver )
+pCurSifPlex->IsPlexIntact( pSifDiskList, pCurPhyPlex, &fPlexIntact )
+pCurSifVolume->IsVolumeIntact( pSifDiskList, pCurPhyVolume, &fVolIntact )
+pDeletePointInput
+pDiDetail
+pDisk->Style == PARTITION_STYLE_MBR || pDisk->Style == PARTITION_STYLE_GPT
+pDiskList
+pDriveLayout
+pDriveLayoutEx
+pdwDeviceNumber
+pdwDeviceNumberOut
+pdwExcludeArray
+pdwIncludeArray
+pdwMajorVersion
+pdwMinorVersion
+pdwOutRestoreInstanceCount
+pdwPartitionNum
+pdwPartitionTableIndex
+pdwRdiskNumberOut
+pdwRestoreFlags
+pdwSifBusType
+pDynDiskList
+pDynDiskList[ulDiskIndex].Initialize(hVdsDriver, pInPackId, &pDiskInfoOutBuffer->DiskIds[ulDiskIndex])
+pDynExtentList
+pDynMember
+pDynMemberList
+pDynPhyVol
+pDynPlexList
+pDynPlexList[ulPlexIndex].Initialize(hVdsDriver, pPackId, pNextPlexLayout)
+pDynVolList
+pDynVolList[ulVolumeIndex].InitializePhysicalVolForRestore(hVdsDriver, pInPackId, &pVolInfoOutBuffer->VolumeIds[ulVolumeIndex])
+Percentage
+pExcludeDisksBmp
+pExtentLayout
+pExtentList
+pfAssigned
+pfBasicDisks
+pfConverted
+pfCriticalDiskNoARC
+pfDiskEmpty
+pfDynamicVolume
+pfExtentIntact
+pfHasPRKeys
+pfInPack
+pfIntact
+pfIsIntactOut
+pfIsOnIncludedDisksOut
+pfIsSystemDiskFixed
+pfMemberIntact
+pFnLocal != NULL
+pFormatContext
+pfOutValue
+pfPackIntact
+pfPlexIntact
+pFsType
+pfVolIntact
+pguidPackId
+pguidRestoredPackId
+pguidToConvert && pwszGuidStringOut
+phase
+phDefaultCCSKey
+phOutDiskHandle
+PI+E u
+pInPackId
+pIoctlOutputBuffer
+Platform
+pList
+pListCur
+pMemberLayout
+pmwszAllVolumeNames
+pmwszSymbolicNames
+pmwszVolumeNames
+pNewDisk
+pNewDisk->DevicePath
+pNewPackId
+pNextRemMedia
+pNextVolume
+pOrigVolGuid
+PostGatherWriterStatus failed with hr = 0x%08lx
+PostPrepareForBackup failed with hr = 0x%08lx
+PostRestore
+PostRestoreExitCode
+PostRestoreFailed
+postRestoreFailureMsg
+PostRestoreSucceeded
+PostSnapshotFailureMsg
+pPackId
+pPackIdNotToOffline
+pPackList
+pPartInfo
+pPartInfo->PartitionStyle == PARTITION_STYLE_MBR
+pPartitionTable
+ppbMultiStr
+ppCurrentDisk
+ppDependencyInfo
+ppDiskList
+ppDiskListA
+ppdwExcludeDisks
+ppdwIncludeDisks
+pPhyDisk
+pPhyDiskExtent
+pPhyMember
+pPhyPack
+pPhyPack->CheckPackDiskIntact( pSifDiskList, pfIntact )
+pPhyPack->GetPackId( &guidPackId )
+pPhyPlex
+pPhysicalDisk
+pPhysicalDiskList
+ppLastUsedPartition
+pPlexLayout
+pPlexList
+ppMountPointsOut
+ppmwszOutSymbolicNames
+ppOutDriveLayout
+ppOutQueryPointOutput
+ppPartitionTable
+ppRemMedia
+ppSifDisk
+ppTransferList
+ppVirtualDiskInfo
+ppVolume
+ppVssAsrRestore
+ppwszArcPathOut
+ppwszDataStringOut
+ppwszEndOfPairOut
+ppwszHivePathnameOut
+ppwszNtPath
+ppwszOutVolumeName
+ppwszValueStringOut
+ppwszVolumeGuidNameOut
+pQueryDiskInfoBuffer
+pQueryPointInput
+pQueryPointOutput
+pQueryVolumeInfoBuffer
+pRemMedia
+PrepareForBackup
+PrepareForBackupFailed
+prepareForBackupFailureMsg
+PrepareForBackupSucceeded
+PreRestore
+PreRestoreExitCode
+PreRestoreFailed
+preRestoreFailureMsg
+PreRestoreSucceeded
+previous IOCTL hasn't yet completed
+previousBackupStamp
+PrimaryPackId
+PrivilegeCheck
+Product type is LanManNt - It is a DC
+Product type is not LanManNt - It is not a DC
+productId
+ProductName
+productRevision
+ProductType
+ProductVersion
+Provider veto detected. %s. Provider ID = {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+providerId
+Providers
+pSifBootDisk
+pSifDisk
+pSifDisk != NULL
+pSifDisk->AssignedTo
+pSifDisk->IsIntact
+pSifDisk->Style==PARTITION_STYLE_MBR || pSifDisk->Style==PARTITION_STYLE_GPT
+pSifDiskList
+pSifDynDisks
+pSifDynVol->ClearCriticalVolumeBootSector( hVdsDriver, pguidRestoredPackId )
+pSifDynVol->SetVolumeGuidName( hVdsDriver, &m_RestoredPackId )
+pSifPack->GetPackId( &guidPackId )
+pSifPack->IsDiskInPack( pCurSifDisk->DeviceNumber, &fInPack )
+pSifPack->IsPackIntact( pSifDiskList, pPhyPack, pfIntact )
+pSifPartInfo
+pSifPartInfo->PartitionStyle == PARTITION_STYLE_GPT
+pSifPartInfo->PartitionStyle == PARTITION_STYLE_MBR
+pSifSystemDisk
+pSifSystemDisk->pDriveLayoutEx
+pSifSystemDisk->pDriveLayoutEx->PartitionCount > dwSifSystemPartIndex
+pSifSystemDisk->pDriveLayoutEx->PartitionStyle == PARTITION_STYLE_MBR || pSifSystemDisk->pDriveLayoutEx->PartitionStyle == PARTITION_STYLE_GPT
+pSifSystemDisk->pDriveLayoutEx->PartitionStyle == pPhySystemDiskDriveLayout->PartitionStyle
+pStateInfo
+pSysInfo
+pSystemDisk->AssignedTo
+pSystemDisk->pDriveLayoutEx
+pSystemDisk->pDriveLayoutEx->PartitionStyle == PARTITION_STYLE_GPT
+pTempDiskInfo
+pTempDiskInfo->PartitionInfoTable
+pTempDiskInfo->pDiskGeometry
+pTempDiskInfo->pDriveLayoutEx
+pTempDiskInfo->pPartition0Ex
+PublicLength
+PublicOffset
+puiDriveTypeOut
+pulAssignedToPhyDisk
+pulPartitionIndex
+PutBootCodeOnDisk
+pValue
+pVhdFileInfo
+pVhdInfo
+pVirtualDiskInfo
+pVolGuid
+pVolId
+pVolList
+pVolume
+pVolumeLayout
+pVolumeList
+pwszArcPath
+pwszBackupDoc
+pwszBootStatusPathname
+pwszBootVolumeName
+pwszDataString
+pwszDeviceName
+pwszDevicePath
+pwszDevicePathOut
+pwszDosPath
+pwszFormattedName
+pwszFsName
+pwszFullArcPath
+pwszGuid
+pwszHiveFilename
+pwszLabel
+pwszLabelName
+pwszlpcszArcName
+pwszMultiVolumeList
+pwszNameToDelete
+pwszNametoGetMtPointsOn
+pwszNameToQuery
+pwszNewString
+pwszNTName
+pwszNtPath
+pwszOfflineHiveFilePaths
+pwszOptionString
+pwszOriginalUNCPath=%s bNormalizeToFQDN=%d
+pwszRestoreOptions
+pwszSymbolicName
+pwszSystemVolumeName
+pwszUNCPath is NULL
+pwszValueName
+pwszValueString
+pwszVersionString
+pwszVolume
+pwszVolumeGuidName
+pwszVolumeName
+pwszVolumePath
+pwszVolumeRootPath
+pwszXmlBuffer
+pwszXmlDoc
+pXmlDoc
+Q9}Hu3H
+qsort
+QueryInterface(IVssProviderNotifications)
+QueryPerformanceCounter
+QueryRevertStatus(%s)
+QueryServiceStatus
+QueryServiceStatus (shSCService, &sSStat)
+QueryStatus
+QueryStatus OUT param
+Quick
+QuickFormat
+RaiseException
+RaiseFailFastException
+ran out of memory
+ran out of memory allocating snapshot set id!
+ranges
+RANK: new alt path is %s
+RANK: new path is %s
+RDPATH=
+ReadFile
+ReadFile(%s) failed
+ReadReservationKeys
+realloc
+Reboot
+rebootRequired
+Received Event: Abort
+Received Event: Freeze
+Received Event: OnBackupComplete
+Received Event: OnBackupShutdown
+Received Event: PostRestore
+Received Event: PostSnapshot - Parameters:
+Received Event: PrepareForSnapshot
+Received Event: PreRestore
+Received Event: Thaw
+RecreateDirectories returned 0x%08x - directories could not be recreated
+recursive
+Reference count on CVssCreateExpressWriterMetadata is %lu
+RegCloseKey
+RegCreateKeyEx( hkeyOfflineSoftwareHive, ASR_REG_PATH_OFFLINE_SOFTWARE_RESTORE_SESSION, 0, NULL, NULL, KEY_ALL_ACCESS, NULL, &hkeyOfflineAsrRestoreSession, &dwDisposition)
+RegCreateKeyExW
+RegCreateKeyExW(%ld,%s,...)
+RegCreateKeyExW(%ld,%s,...,[%lu])
+RegDeleteKeyExW
+RegDeleteKeyW
+RegDeleteValueW
+RegEnumKeyExW
+RegEnumValue(%p,%lu,%p,%lu ...)
+RegEnumValueW
+RegisterEventSource failed, %#x
+RegisterEventSourceW
+RegisterInterfaceInGlobal({%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}, %lu)
+REGISTRY
+Registry Writer did not respond, severe error
+Registry writer failed to respond, severe error
+RegLoadKeyW
+RegOpenKeyExW
+RegOpenKeyExW(%ld,%s,...)
+RegOpenKeyExW(%ld,%s\%s,...) = ERROR_FILE_NOT_FOUND
+RegQueryInfoKeyW
+RegQueryInfoKeyW(%p, ...)
+RegQueryValueExW
+RegQueryValueExW(0x%08lx(%s),%s,0,[%lx],0,[%lu])
+REGREGSC
+RegSetValueExW
+RegSetValueExW(0x%08lx,%s,0,REG_BINARY,%p.%lu)
+RegSetValueExW(0x%08lx,%s,0,REG_DWORD,%ld)
+RegUnLoadKeyW
+RelativeFilePath
+ReleaseMutex
+ReleaseSemaphore
+ReleaseSRWLockExclusive
+RemovableMedia
+Removing aborted state {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+Removing completed state {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+Removing zombie state {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+repair
+REPLACE_AT_REBOOT
+REPLACE_AT_REBOOT_IF_CANNOT_REPLACE
+ReportEvent failed, %#x
+ReportEventW
+Requested usage type is not supported
+Requestor
+Requestor inputs snapID: {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}Destination: %s
+Required input parameter is NULL.
+Required input paramter is NULL.
+Required input string parameter is NULL.
+ResetEvent
+ResetEvent failed with error %d
+ResetEvent(cancelEvent)
+ResolveDelayLoadedAPI
+ResolveDfsTargets
+restore
+Restore Operator privileges are not set
+Restore target must be Directed.
+RESTORE_IF_CAN_BE_REPLACED
+RESTORE_IF_NONE_THERE
+RESTORE_METADATA
+RESTORE_METHOD
+RESTORE_METHOD element is not defined.
+RESTORE_STOP_START_SERVICE
+RESTORE_SUBCOMPONENT
+RESTORE_TARGET
+RESTORE_TO_ALTERNATE_LOCATION
+RestoreBootVolumePartitionId( pAsrSys )
+RestoredVolumes
+restoreInstanceId
+restoreMetadata
+RestoreMethod
+restoreName
+restoreOptions
+restoreTarget
+restoreType
+ResumeThread
+ResumeThread failed. Error: 0x%08lx. State: %d
+ResumeThread(%p) = -1, GetLastError() == 0x%08lx, m_eThreadState == %d
+Rethrow
+rethrowing
+re-throwing %#x
+Re-throwing after cleanup
+Rethrowing after restoring user privilege
+Rethrowing exception
+RETURN
+ReturnHr
+Returning *pHrResult: 0x%08x
+Returning BOOL: %s
+Returning context %ld (%s)
+Returning dc = %s, ad = %s, dsrm = %s
+Returning HRESULT: 0x%08lx
+ReverseDnsLookup
+RevertToSelf
+RevertToSnapshot({%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x},%s
+RevokeInterfaceFromGlobal(%lu) [%0x08lx]
+rgVhdFileInfo
+RH9|$hu:3
+rollForwardPoint
+rollForwardType
+RPCRT4.dll
+RpcStringFreeW
+RtlAdjustPrivilege
+RtlCaptureContext
+RtlDllShutdownInProgress
+RtlFormatCurrentUserKeyPath
+RtlFreeUnicodeString
+RtlGetSetBootStatusData
+RtlInitUnicodeString
+RtlIpv4StringToAddressW
+RtlIpv6StringToAddressW
+RtlLookupFunctionEntry
+RtlNtStatusToDosError
+RtlUnlockBootStatusData
+RtlVirtualUnwind
+rzH=`
+s_FormatVolumeThread
+s_pwszWindowsDirectoryPathForOfflineOS
+SafeBoot option 0x%08lx
+SafeBoot option 0x%08lx, %s
+SafeStrConvertGuidString(&guidAsrInstanceGuid, ARRAY_COUNT_PARAM(wszAsrInstanceString))
+SafeStrConvertGuidString(&guidBcdkBkp, ARRAY_COUNT_PARAM(wszBcdTemp))
+SafeStrConvertGuidString(&guidCreatedPack, ARRAY_COUNT_PARAM(wszGuidString))
+SafeStrConvertGuidString(&guidOfflineHive, ARRAY_COUNT_PARAM(wszOfflineHive))
+SafeStrConvertGuidString(&m_PackId, ARRAY_COUNT_PARAM(wszGuidString))
+SafeStrConvertGuidString(&pCreateDiskOutputBuffer->DiskId, ARRAY_COUNT_PARAM(wszGuidString))
+SafeStrConvertGuidString(&pCreateVolumeInputBuffer->PackId, ARRAY_COUNT_PARAM(wszGuidString))
+SafeStrConvertGuidString(&pCreateVolumeInputBuffer->VolumeId, ARRAY_COUNT_PARAM(wszGuidString))
+SafeStrConvertGuidString(&pCurrentSifDynDisk->m_DiskId, ARRAY_COUNT_PARAM(wszGuidString))
+SafeStrConvertGuidString(&pDriveLayoutEx->Gpt.DiskId, ARRAY_COUNT_PARAM(wszGuidString))
+SafeStrConvertGuidString(&pNextExtentLayout->DiskId, ARRAY_COUNT_PARAM(wszGuidString))
+SafeStrConvertGuidString(&pPartitionInfo->Gpt.PartitionId, ARRAY_COUNT_PARAM(wszGuidString))
+SafeStrConvertGuidString(&pQueryDiskInfoBuffer->GptDiskId, ARRAY_COUNT_PARAM(wszGuidString))
+SafeStrConvertGuidString(pOrigVolGuid, ARRAY_COUNT_PARAM(wszGuidString))
+SafeStrConvertGuidString(pVolGuid, ARRAY_COUNT_PARAM(wszGuidString))
+SafeStrConvertGuidToStringWithBraces(&m_RestoredPackId, ARRAY_COUNT_PARAM(wszGuidString))
+SafeStrExtractVersionNumber
+SafeStrJoinN
+samcli.dll
+SaveAsXML call on IVssCreateWriterMetadataEx failed with 0x%08x
+Saving WRITER_COMPONENTS document as XML failed.  hr = 0x%08lx
+Second QueryInterface failed
+Second StringCchCat failed
+SECSECRC
+SectorsPerTrack
+Select
+selectable
+selectableForRestore
+selectComponents
+selectedForRestore
+Selecting attribute %s
+Selecting element %s on level %d
+Sequence
+Sequence for snapshot set {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x} was aborted.
+serialNumber
+Server name %s normalization failed
+service
+serviceMachine
+Services\VolMgrx
+SessionId
+Set m_pSidAdmin
+SetBackupSchema called on Express Writer metadata with %08x
+SetErrorMode
+SetEvent
+SetEvent failed with error %d
+SetEvent(cancelEvent
+SetEvent(cancelEvent)
+SetEvent(m_hReadyEvent) failed with %u
+SetEvent(m_hTerminateEvent) failed with %u
+SetFilePointer
+SetFilePointerEx
+SetGroup
+SetInput
+SetLastError
+SetLastShutdownGood
+SetMBRPartitionInfo
+SetMBRPartitionInfo( pVolume->szGuid, &PartInfo )
+SetOwner
+SetRestoreMethod called on Express Writer with incorrect writer restore
+SetRestoreMethod called on Express Writer with method %d
+SetSecurityDescriptorDacl
+SetSecurityDescriptorGroup
+SetSecurityDescriptorOwner
+SetThreadToken
+SetThreadToken(NULL, hToken)
+SetThreadToken(NULL, hToken) failed: %#x
+Setting impersonation token
+Setting the %s failure status, hr=%#x
+SetUnhandledExceptionFilter
+setupapi.app.log
+setupapi.dev.log
+SETUPAPI.dll
+setupapi.ev1
+setupapi.ev2
+setupapi.ev3
+setupapi.offline.log
+SetupDiDestroyDeviceInfoList
+SetupDiEnumDeviceInterfaces
+SetupDiGetClassDevsW
+SetupDiGetDeviceInterfaceDetailW
+SetupEnumPublishedInfW
+SetupGetInfDriverStoreLocationW
+SetupOverride
+SetupPublisherFilter
+SetVolumeGuidName(hVdsDriver, pNewPackId)
+SetVolumeMountPointW
+ShouldBlockRevert
+ShouldBlockRevertInternal
+SID didn't match initialization sid
+SID for instance id and instance name does not match{%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x} %s
+SID for instance id does not match{%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+sid is invalid
+SizeofResource
+SkipDiskRecreation
+skipping torn check for the final %d filespecs for performance reasons.  Only the first %d filespecs were checked
+skipping torn-component checking due to registry key
+SkipRecreateVHD
+Sleep
+Snapshot id not found. %s. Provider ID = {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+Snapshot set creation is already in progress. %s. Provider ID = {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+SNAPSHOT_DESCRIPTION
+SNAPSHOT_SET_DESCRIPTION
+snapshotAttributes
+SnapshotDevicesList   = <%s>
+snapshotId
+SnapshotSetCreated
+SnapshotSetId
+snapshotSetId
+SnapshotSetId
+SnapshotSetID         = %s
+SnapshotSetID         = <%s>
+SnapshotSetID = %s
+SnapshotTornComponents
+SOFTWARE
+Software Provider
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\ASR
+SOFTWARE\MICROSOFT\WINDOWS NT\CurrentVersion\ASR\BackupSession
+SOFTWARE\MICROSOFT\WINDOWS NT\CurrentVersion\ASR\RestoreSession
+SOFTWARE\MICROSOFT\WINDOWS NT\CurrentVersion\ASR\RestoreSession\RestorationMap
+Software\Microsoft\Windows\CurrentVersion\Setup
+Source
+SOURCE_LUN
+sourceDevice
+sourceRanges
+SourceType            = %s
+Spaces
+spUnk->QueryInterface( riid, (VOID**)ppVssAsrRestore )
+Start-from index %u is specified (none zero), but instance-id is %p and bCreateIfNotThere is %u
+Starting Timer Thread
+startingOffset
+State
+StateFlags
+STATIC
+StaticTrace failed due to out of memory condition
+Status
+STOP_RESTART_SERVICE
+String %s is not a valid number
+string too long
+StringCchCatW(m_pwsz, cchNewLength + 1, pwsz)
+StringCchCopy
+StringCchCopy( pwszFsName, cchFsName, L"CDFS" )
+StringCchCopy( pwszFsName, cchFsName, L"exFAT" )
+StringCchCopy( pwszFsName, cchFsName, L"FAT" )
+StringCchCopy( pwszFsName, cchFsName, L"FAT32" )
+StringCchCopy( pwszFsName, cchFsName, L"NTFS" )
+StringCchCopy( pwszFsName, cchFsName, L"ReFS" )
+StringCchCopy( pwszFsName, cchFsName, L"UDF" )
+StringCchCopy(%s, %d, %s) failed
+StringCchCopyN
+StringCchCopyN( wszTraceBuffer, ARRAYSIZE(wszTraceBuffer), pwszStart, CHAR_PER_LINE )
+StringCchPrintf
+StringCchPrintf( pwszVolume, cchVolume, L"\\\\?\\GLOBALROOT%s", wszDevicePath )
+StringCchPrintf(%p, %d, %s, %s) failed
+StringCchPrintfW failed to create file name with 0x%08x
+StringCchPrintfW failed with %d
+StringCchPrintfW to create directory failed with 0x%08x
+StringCchPrintfW to create file name failed with 0x%08x
+StringCchPrintfW to create mask failed with 0x%08x
+StringCchVPrintfW()
+StringFileInfo
+StringFromCLSID
+SubscribeCallback
+Subscriber with SID (%s) for method (%s) was not fired.
+Subscriber with SID (%s) is not allowed to fire
+SubscriptionID == 
+Succeeded
+SUVWATAUAVAWH
+SUVWATAVAWH
+SVWATAUAVAWH
+SVWAVAWH
+SVWAVH
+swscanf
+symbolic link
+SYMBOLICLINK
+SymbolicName
+System
+SYSTEM\ControlSet001\Control\MiniNT
+SYSTEM\CurrentControlSet\Control
+SYSTEM\CurrentControlSet\Control\MiniNT
+SYSTEM\CurrentControlSet\Control\ProductOptions
+SYSTEM\CurrentControlSet\Control\Safeboot\Option
+SYSTEM\CurrentControlSet\Services\VSS
+SYSTEM\CurrentControlSet\Services\VSS\Diag
+SYSTEM\CurrentControlSet\Services\VSS\Settings
+SYSTEM\CurrentControlSet\Services\VSS\Settings\ApplicationsBlockingRevert
+SYSTEM\CurrentControlSet\Services\VSS\Settings\WritersBlockingRevert
+SYSTEM\CurrentControlSet\Services\VSS\VssAccessControl
+SYSTEM\Setup
+SYSTEM_SERVICE
+SystemRM
+SystemService
+SystemSetupInProgress
+SystemStartOptions
+SystemVolumeName
+szFunctionName
+t"D8=
+t$ AVH
+t$ AWH
+t$ D8aiI
+t$ E3
+T$ E3
+t$ E3
+T$ E3
+t$ E3
+T$ E3
+t$ E3
+t$ UWATAUAWH
+t$ UWATAVAWH
+t$ UWAVH
+t$ WATAUAVAWH
+t$ WATAVH
+t$ WAVAWH
+t$ WH
+t$(E3
+t$@A8
+t$@fD
+T$`C9T
+T$`E3
+T$`H!|$`H
+t$09>
+T$0D9m8v6H
+T$0E;
+t$0E3
+T$0H!D$ E3
+t$0L9{@u
+t$4A9w
+t$4fA;
+T$8E3
+T$HA9}
+t$hE3
+T$HE3
+t$hE3
+t$HfD
+T$hH!|$hH
+T$HH;
+t$pA9t$
+t$PE2
+t$PH9_ uAD
+t$x@2
+T$xE3
+t$xE3
+T$XHi
+T$XLi
+t.9\$pH
+t.D9e
+t^@8=E
+t>fE;&u
+t3D95Pg
+t6HcK
+t7HcK
+t8HcK
+t9HcK
+Target level if found = %d
+Target level if not found = %d
+targetFilespec
+targetPath
+targetRanges
+TCPAu2
+tDfA;
+tempDiskInfo
+tempDiskInfo->PartitionInfoTable
+tempDiskInfo->pDiskGeometry
+tempDiskInfo->pDriveLayoutEx
+tempDiskInfo->pPartition0Ex
+TerminateProcess
+The %s attribute is missing.
+The %s element is missing.
+The ASR object is not created
+The calling thread is not the same thread that originally serviced the event; setting failure state, hr=%#x
+The client process is not running under an administrator account or does not have backup privilege enabled
+The client process is not running under an administrator account or does not have restore privilege enabled
+The component was previously selected for restore under a different instance
+The Coordinator Thread failed to start. No WaitForSingleObject in this case.
+The input path has local drive in it - nothing to convert
+The LSN that indicates the point of the last backup.
+The object '%s'. was opened under the device handle 0x%08lx
+The post-restore event is not serialized
+The post-restore event will be serialized
+The pre-restore event is not serialized
+The pre-restore event will be serialized
+The provider doesn't exist in the set
+The server does not support transportable shadows
+The SNAPSHOT_SET_DESCRIPTION element is missing. In this case it is possible that the BCD is not that of a transportable snapshot.
+The string %s is not a valid backup type.
+The string %s is not a valid component type
+The string %s is not a valid file restore status.
+The string %s is not a valid interconnect address type.
+The string %s is not a valid restore method.
+The string %s is not a valid restore type
+The string %s is not a valid restoreTarget.
+The string %s is not a valid rollforward type.
+The string %s is not a valid source type.
+The string %s is not a valid storage bus type.
+The string %s is not a valid usage type
+The time that indicates the point of the last backup.
+The writer has already called the Subscribe function.
+the writer is shutting down
+The writer used these elements to indicate differenced files.
+Third StringCchCat failed
+This Domain Controller has the Active Directory service stopped or is running in Directory Service Restore Mode
+This Domain Controller has the Active Directory service stopped.
+this function can only be called by an admin
+threadId
+THROW
+Time spent: %02ld:%02ld:%02ld-%04ld; total: %#x; HRESULT: %#x
+Timeout error calling a provider routine: %s.
+timestamp
+tKH9{
+TlsAlloc
+TlsGetValue
+TlsSetValue
+tm9_TuhI
+tnH9>t#H
+tOfD9'uIH;
+tolower
+Too many substitution strings, %d
+TornComponentsBlockRevert
+TornComponentsMax
+TotalComponents
+towlower
+towupper
+TRACE
+TRACE_BINARY
+TraceBackupDocument
+TraceCreateVolumeInputBuffer
+TraceInternalWithFormat failed due to out of memory condition
+TracePhysicalDiskInfo
+TraceQueryVolumeInfoBuffer
+TraceVmVolumeLayout
+Tracing started or updated. PID=%d, CommandLine=[%s], UserName=[%s]. SQN=[%d -> %d]
+TRACING_STARTED
+TracksPerCylinder
+TRANSACTION_DB
+TransactionDb
+Translation
+TRCTRCC
+Two writers with identical instance ids. %s
+tX9\$ptR
+TYPELIB
+u 9PDu
+u HcA<H
+u!f9tC
+u#f;o&u
+u<9_LuHH
+u6fD9d$2u.A
+U8H!]
+UATAUAVAWH
+UATAUH
+UAUAWH
+UAVAWH
+u-E8zit
+uE9\$0
+uHA8_
+ulBytesPerSector != 0
+uNA8_
+Unable to allocate writer property array
+Unable to find root element
+Unable to find WRITER_COMPONENTS element
+Unable to generate writer ID string; out of resources
+Unable to load the writer components document
+Unable to translate server name in IP address format to host name. Please make sure your DNS servers have IPv4 and IPv6 reverse lookup zones (ip6.arpa and ip.arpa) configured.
+UNC Path has no scope name component in it
+UNC Path has no share name component in it
+UNC Path has no share scope name component in it
+UNC path not initialized
+UNC Path starts with invalid prefix
+unchanged
+UNDEFINED
+Unexpected call to PrepareForBackup in state %d.
+Unexpected call to SetContext in state %d.
+Unexpected call to StartSnapshotSet in state %d.
+Unexpected COM exception caught: hr: 0x%x
+Unexpected error
+Unexpected error calling a provider routine: %s  [hr = 0x%08lx] 
+Unexpected error calling a provider routine: %s  [hr = 0x%08lx] Provider ID = {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+Unexpected error in routine %s - %s. hr = 0x%08lx
+Unexpected error in routine %s.  hr = 0x%08lx
+Unexpected error in routine %s. hr = 0x%08lx
+Unexpected error. Final buffer size = %lu, original size was %lu
+Unexpected error: attempting to read a value of the wrong type
+Unexpected error: current value type changed in the meantime %lu %lu
+Unexpected error: dwIndex out of scope %lu %lu
+Unexpected error: noninitialized iterator
+Unexpected error: unexpected DWORD size [%ld, %ld]
+unexpected NULL pointer
+Unexpected size %lu for a DWORD value 0x%08lx(%s),%s
+Unexpected STL exception caught: %s
+Unexpected type %lu for a string value 0x%08lx(%s),%s
+UnhandledExceptionFilter
+Unknown
+UNKNOWN_EVENT[0x%08lx] %s
+Unrecognized safe mode option %ud
+UnsubscribeCallback
+Unsupported usage type provided
+UpdateExcludedSifDisksAsIncluded
+UpdateExcludedSifDisksAsIncluded(pPhysicalDiskList, pSifDiskList, pdwRestoreOptIncludeDisks, cRestoreOptIncludeDisks)
+UpgradeInProgress
+Usage
+usage
+Usage
+UsageType             = %s
+User %s specified under VssAccessControl key doesn't exist. This key value is ignored.
+USER_DATA
+UserData
+userProcedure
+Using well known writer ID is forbidden
+USVWATAUAVAWH
+USVWATAUAWH
+USVWATAVAWH
+USVWAVAWH
+USVWAVH
+uTA8_
+UTF-16
+UuidCreate
+UuidFromStringW
+UuidToStringW
+UVAVH
+uVD9|$PuOH
+UVWATAUAVAWH
+UVWATAVH
+UVWATAWH
+UVWAUAWH
+UVWAVAWH
+UWATAUAVH
+UWATAUAWH
+UWATAVAWH
+UWAUAVAWH
+UWAVH
+UWAWH
+uyfA9
+v9|$Xt2A
+Value %s identified as volume name or mount point, but does not match the queried volume.
+Value %s is neither yes nor no.
+Value %s is not a valid guid.
+VarFileInfo
+VATAUAVAWH
+vector<T> too long
+vendorId
+version
+Version
+VhdFileInfo
+VirtDisk.dll
+Virtual
+VirtualAlloc
+VirtualDisk
+VirtualProtect
+VirtualQuery
+Volume %s was not found in the list of snapshot volumes
+Volume (%s) not supported for snapshots 0x%08lx
+Volume not supported by provider. %s. Provider ID = {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+Volume not supported. %s. Provider ID = {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+Volume reported for this component is invalid. We assume that component is not torn.
+VolumeGuid
+VolumeLength
+VolumeMountPoint
+VolumeName
+VolumeNamesList       = %s
+VS_VERSION_INFO
+VSS information: Service starting at request of process '%s'. [0x%08x]
+VSS_BackupComponents_OpResult
+VSS_E_ASRERROR_CRITICAL_DISKS_TOO_SMALL
+VSS_E_ASRERROR_DATADISK_RDISK0
+VSS_E_ASRERROR_NO_ARCPATH
+VSS_E_ASRERROR_RDISK_FOR_SYSTEM_DISK_NOT_FOUND
+VSS_E_ASRERROR_RDISK0_TOOSMALL
+VSS_E_INVALID_XML_DOCUMENT
+VSS_E_SNAPSHOT_SET_IN_PROGRESS detected in function %s
+VSS_IN_ABORT (Enter)
+VSS_IN_ABORT (Leave)
+VSS_IN_BACKUPCOMPLETE (Enter)
+VSS_IN_BACKUPCOMPLETE (Leave)
+VSS_IN_BACKUPSHUTDOWN (Enter)
+VSS_IN_BACKUPSHUTDOWN (Leave)
+VSS_IN_BKGND_FREEZE_THREAD (Enter)
+VSS_IN_BKGND_FREEZE_THREAD (Leave)
+VSS_IN_DOSNAPSHOT (Enter)
+VSS_IN_DOSNAPSHOT (Leave)
+VSS_IN_FREEZE (Enter)
+VSS_IN_FREEZE (Leave)
+VSS_IN_FREEZE_BACK (Enter)
+VSS_IN_FREEZE_BACK (Leave)
+VSS_IN_FREEZE_DTC (Enter)
+VSS_IN_FREEZE_DTC (Leave)
+VSS_IN_FREEZE_FRONT (Enter)
+VSS_IN_FREEZE_FRONT (Leave)
+VSS_IN_FREEZE_KTM (Enter)
+VSS_IN_FREEZE_KTM (Leave)
+VSS_IN_FREEZE_RM (Enter)
+VSS_IN_FREEZE_RM (Leave)
+VSS_IN_FREEZE_SYSTEM (Enter)
+VSS_IN_FREEZE_SYSTEM (Leave)
+VSS_IN_GETSTATE (Enter)
+VSS_IN_GETSTATE (Leave)
+VSS_IN_IDENTIFY (Enter)
+VSS_IN_IDENTIFY (Leave)
+VSS_IN_IOCTL_FLUSH_AND_HOLD (Enter)
+VSS_IN_IOCTL_FLUSH_AND_HOLD (Leave)
+VSS_IN_IOCTL_NOTIFY_FLUSH_COMPLETE (Enter)
+VSS_IN_IOCTL_NOTIFY_FLUSH_COMPLETE (Leave)
+VSS_IN_IOCTL_RELEASE (Enter)
+VSS_IN_IOCTL_RELEASE (Leave)
+VSS_IN_OPEN_VOLUME_HANDLE (Enter)
+VSS_IN_OPEN_VOLUME_HANDLE (Leave)
+VSS_IN_POSTRESTORE (Enter)
+VSS_IN_POSTRESTORE (Leave)
+VSS_IN_POSTSNAPSHOT (Enter)
+VSS_IN_POSTSNAPSHOT (Leave)
+VSS_IN_PREPAREBACKUP (Enter)
+VSS_IN_PREPAREBACKUP (Leave)
+VSS_IN_PREPARESNAPSHOT (Enter)
+VSS_IN_PREPARESNAPSHOT (Leave)
+VSS_IN_PRERESTORE (Enter)
+VSS_IN_PRERESTORE (Leave)
+VSS_IN_PROVIDER_ABORTSNAPSHOTS (Enter)
+VSS_IN_PROVIDER_ABORTSNAPSHOTS (Leave)
+VSS_IN_PROVIDER_BEGINPREPARE (Enter)
+VSS_IN_PROVIDER_BEGINPREPARE (Leave)
+VSS_IN_PROVIDER_COMMIT (Enter)
+VSS_IN_PROVIDER_COMMIT (Leave)
+VSS_IN_PROVIDER_ENDPREPARE (Enter)
+VSS_IN_PROVIDER_ENDPREPARE (Leave)
+VSS_IN_PROVIDER_POSTCOMMIT (Enter)
+VSS_IN_PROVIDER_POSTCOMMIT (Leave)
+VSS_IN_PROVIDER_POSTFINALCOMMIT (Enter)
+VSS_IN_PROVIDER_POSTFINALCOMMIT (Leave)
+VSS_IN_PROVIDER_POSTSNAPSHOT (Enter)
+VSS_IN_PROVIDER_POSTSNAPSHOT (Leave)
+VSS_IN_PROVIDER_PRECOMMIT (Enter)
+VSS_IN_PROVIDER_PRECOMMIT (Leave)
+VSS_IN_PROVIDER_PREFINALCOMMIT (Enter)
+VSS_IN_PROVIDER_PREFINALCOMMIT (Leave)
+VSS_IN_THAW (Enter)
+VSS_IN_THAW (Leave)
+VSS_IN_THAW_DTC (Enter)
+VSS_IN_THAW_DTC (Leave)
+VSS_IN_THAW_KTM (Enter)
+VSS_IN_THAW_KTM (Leave)
+VSS_S_OK (SetCurrentFailure)
+VSS_WS_FAILED_AT_BACKUP_COMPLETE (SetCurrentState)
+VSS_WS_FAILED_AT_BACKUPSHUTDOWN (SetCurrentState)
+VSS_WS_FAILED_AT_FREEZE (SetCurrentState)
+VSS_WS_FAILED_AT_IDENTIFY (SetCurrentState)
+VSS_WS_FAILED_AT_POST_RESTORE (SetCurrentState)
+VSS_WS_FAILED_AT_POST_SNAPSHOT (SetCurrentState)
+VSS_WS_FAILED_AT_PRE_RESTORE (SetCurrentState)
+VSS_WS_FAILED_AT_PREPARE_BACKUP (SetCurrentState)
+VSS_WS_FAILED_AT_PREPARE_SNAPSHOT (SetCurrentState)
+VSS_WS_FAILED_AT_THAW (SetCurrentState)
+VSS_WS_STABLE (SetCurrentState)
+VSS_WS_UNKNOWN (SetCurrentState)
+VSS_WS_WAITING_FOR_BACKUP_COMPLETE (SetCurrentState)
+VSS_WS_WAITING_FOR_FREEZE (SetCurrentState)
+VSS_WS_WAITING_FOR_POST_SNAPSHOT (SetCurrentState)
+VSS_WS_WAITING_FOR_THAW (SetCurrentState)
+VSSAPI.DLL
+vssapi.dll
+VSSAPI.DLL
+vssapi.pdb
+VssAPI: DllMain got unexpected reason code (%d), lpReserved: %sNULL
+VssAPI::IsVolumeSnapshotted
+VssAPI::VssFreeSnapshotProperties
+VSSAPICP
+VssapiPublisher
+VSSCHEMA
+VssCoordinator::InitializeRecoverSet
+VSSEvent
+VssFreeSnapshotProperties
+VssFreeSnapshotPropertiesInternal
+VssLoadString
+VssModuleKeeper
+VssReallocString
+VssSafeDuplicateStr
+vsstrace.dll
+VssTrace.DLL
+VWATAUAVH
+VWATAUAWH
+VWATAVAWH
+VWATH
+VWAUAVAWH
+VWAVH
+Wait failed due to reason %d.
+Wait in timer thread failed due to reason %d.
+wait returned for coordinator thread: %#x, wait<%d> error<%#x>
+WaitForSingleObject
+WaitForSingleObject failed with error %d
+WaitForSingleObject failed. Error: 0x%08lx. State: %d
+WaitForSingleObject(%p,INFINITE) == WAIT_FAILED, GetLastError() == 0x%08lx, m_eThreadState == %d
+WaitForSingleObject(cancelEvent, INFINITE)
+WaitForSingleObject(cancelEvent, INFINITE) 
+WaitForSingleObject(m_hTerminateEvent, INFINITE) failed with %u
+WaitForSingleObjectEx
+waiting INFINITE for coordinator thread: %#x
+warning:  component %s is not found
+WARNING: %s [hr = 0x%08lx]
+WATAUAVAWH
+WAVAWH
+WC_E_CDSECT - incorrect CDATA section syntax
+WC_E_CDSECTEND - no ']]>' in element content
+WC_E_COMMENT - incorrect comment syntax
+WC_E_CONDSECT - incorrect conditional section syntax
+WC_E_DECLATTLIST - incorrect ATTLIST declaration syntax
+WC_E_DECLDOCTYPE - incorrect DOCTYPE declaration syntax
+WC_E_DECLELEMENT - incorrect ELEMENT declaration syntax
+WC_E_DECLENTITY - incorrect ENTITY declaration syntax
+WC_E_DECLNOTATION - incorrect NOTATION declaration syntax
+WC_E_DIGIT - decimal digit expected
+WC_E_ELEMENTMATCH - wfc: element type match
+WC_E_ENCNAME - incorrect encoding name syntax
+WC_E_ENTITYCONTENT - entity content not well formed
+WC_E_EQUAL - equal expected
+WC_E_GREATERTHAN - '>' expected
+WC_E_HEXDIGIT - hexadecimal digit expected
+WC_E_LEADINGXML - leading "xml"
+WC_E_LEFTBRACKET - '[' expected
+WC_E_LEFTPAREN - '(' expected
+WC_E_LESSTHAN - wfc: no '<' in attribute value
+WC_E_MOREDATA - not all chunks of value have been read
+WC_E_NAME - name expected
+WC_E_NAMECHARACTER - illegal name character
+WC_E_NDATA - NDATA expected
+WC_E_NOEXTERNALENTITYREF - wfc: no external entity references
+WC_E_NORECURSION - wfc: no recursion
+WC_E_PARSEDENTITY - wfc: parsed entity
+WC_E_PESBETWEENDECLS - wfc: pes between declarations
+WC_E_PESINTERNALSUBSET - wfc: pes in internal subset
+WC_E_PI - incorrect processing instruction syntax
+WC_E_PUBLIC - PUBLIC expected
+WC_E_PUBLICID - incorrect public identifier syntax
+WC_E_QUESTIONMARK - '?' expected
+WC_E_QUOTE - quote expected
+WC_E_ROOTELEMENT - one root element 
+WC_E_SEMICOLON - semicolon expected
+WC_E_SYNTAX - incorrect document syntax
+WC_E_SYSTEM - SYSTEM expected
+WC_E_SYSTEMID - incorrect system identifier syntax
+WC_E_TEXTDECL - incorrect text declaration syntax
+WC_E_TEXTXMLDECL - text/xmldecl not at the beginning of input
+WC_E_UNDECLAREDENTITY - wfc: undeclared entity 
+WC_E_UNIQUEATTRIBUTE - wfc: unique attribute spec
+WC_E_WHITESPACE - whitespace expected
+WC_E_XMLCHARACTER - illegal xml character
+WC_E_XMLDECL - incorrect xml declaration syntax
+wcscat_s
+wcschr
+wcscmp
+wcsncmp
+wcspbrk
+wcsrchr
+wcsstr
+wcstok
+wcstoul
+WideCharToMultiByte
+wilActivity
+WilError_02
+wilResult
+WNetGetUniversalNameW
+WriteFile
+WriteFile for "%s" failed with %d
+WriteFile(%s)
+Writer
+Writer %s (%s) has dropped the session status for snapshot set %s
+Writer %s exposing state<%d> failure<%#x>
+Writer ID cannot be GUID_NULL
+Writer identity could not be extracted
+Writer infrastructure is in unstable condition due to an unhandled exception.
+Writer is inactive during setup or safe mode
+Writer is not privileged
+Writer is now in Delayed Post Snapshot mode
+Writer rejected the backup complete
+Writer rejected the backup shutdown
+Writer rejected the freeze
+Writer rejected the post Snapshot
+Writer rejected the postrestore
+Writer rejected the prepare snapshot
+Writer rejected the preparebackup
+Writer rejected the prerestore
+Writer rejected the thaw
+Writer sequence no longer in operation, retry
+Writer state is not a beginning state at the start of snapshot sequence. Previous sequence must have been interupted
+Writer with this ID or of this type cannot be created
+WRITER_COMPONENTS
+WRITER_COMPONENTS element didn't contain any components
+WRITER_COMPONENTS element was not found.
+WRITER_METADATA
+WriterExists failed with 0x%08x
+WriterExists returned 0x%08x - writer already exists
+WriterExists returned 0x%08x - writer does not exists
+WriterHasRestorePlan
+writerId
+WriterId
+WriterId              = {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+WriterId             = {%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+WriterInstanceId
+WriterInstanceName
+WriterMetadata
+WriterName
+WriterName            = %s
+WriterName           = %s
+WriterRestore
+writerRestore
+WriterRestore
+Writer's OnBackupComplete method threw an exception.
+Writer's OnBackupShutdown  method threw an exception.
+Writer's OnFreeze Method threw and exception
+Writer's OnIdentify method returned false.
+Writer's OnIdentify method threw and exception.
+Writer's OnPostRestore method threw an exception
+Writer's OnPostSnapshot method threw an exception
+Writer's OnPrepareBackup method threw an exception
+Writer's OnPrepareSnapshot method threw an execption
+Writer's OnPreRestore method threw an exception
+Writer's OnThaw method threw an exception
+WriterSid: %s was %s %s to fire
+WriterSid: %s, TokenOwnerSid: %s
+WRTASRWC
+WRTWRTIC
+WRTXWIMP
+WS2_32.dll
+WSHJTWRC
+WSHVWRTC
+wszBootVolumeName
+wszDevicepath
+wszLocalInfName
+wszMountPoint
+wszSystemVolumeName
+wszVolumeName
+wszWriterInstanceName = %s
+wszWriterQualifiedName = %s
+wszXMLDocument parameter is NULL
+x ATAVAWH
+x AVH
+x UATAUAVAWH
+x UAVAWH
+X_^][
+xA_A^_^[]
+XI+E(H
+XML data from writer is not valid:{%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+XML document is too long
+XML doesn't match parameters to ExposeWriterMetadata
+XML parse fails, error code 0x%08lx, line %d char %d, reason: %s
+XML parse fails, Problem text: %s
+XML passed to CreateVssExamineWriterMetadata was invalid
+XML size is %ld
+XmlLite.dll
+XMLLTC
+xmlns
+XMLRWC
+x-schema:#VssComponentMetadata
+x-schema:#VssWriterMetadataInfo
+y Bt%
+Y(H;_0t H
+YD8Yhu
+You cannot initialize the writer twice
+You must initialize the writer before other operations

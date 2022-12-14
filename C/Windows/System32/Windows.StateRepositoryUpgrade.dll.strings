@@ -1,0 +1,967 @@
+                                     Callstack: %p %p %p %p %p %p %p %p %p %p %p %p
+ A^_]
+ A^_^
+ A^_^[]
+ A_A^_
+ A_A^_^]
+ A_A^A\
+ A_A^A\_^[]
+ A_A^A]
+ A_A^A]A\_
+ H3E H3E
+ Microsoft Corporation. All rights reserved.
+ Operating System
+ UPDATE Package SET Flags=Flags|0x400 WHERE _PackageID IN (SELECT _PackageID FROM Package AS p WHERE (CASE WHEN p.SourceBundle=0 THEN p.PackageType&0x21!=0 ELSE p.PackageType&8!=0 END) AND _PackageID IN (SELECT Package FROM PackageUser WHERE _WorkId=?1 AND DeploymentState!=6));
+ UPDATE Package SET Flags=Flags|0x400 WHERE _PackageID IN (SELECT toSetFlags._PackageID FROM PACKAGE AS toSetFlags INNER JOIN (SELECT p._PackageID, p.SourceBundle, MAX(Version) AS MaxVersion FROM Package AS p WHERE p.PackageType&0x21!=0 AND p._WorkId=0 AND NOT EXISTS (SELECT 1 FROM PackageUser AS pu WHERE p._PackageID=pu.Package AND pu.DeploymentState=6 AND pu._WorkId=0 AND p._WorkId=0 LIMIT 1) AND (p.PackageFamily NOT IN (SELECT PackageFamily FROM Package WHERE Flags&0x400!=0 GROUP BY PackageFamily)) GROUP BY PackageFamily) highestVersion ON CASE WHEN toSetFlags.SourceBundle=0 THEN highestVersion._PackageID=toSetFlags._PackageID ELSE toSetFlags.SourceBundle=highestVersion.SourceBundle AND toSetFlags.PackageType=8 END)
+ Windows
+!}HE3
+!D$`!D$xL
+!MachineDatabase_PagesCheckpointed
+!This program cannot be run in DOS mode.
+#Deleted
+#Found
+$0< u;3
+$DeploymentDatabase_PagesCheckpointed
+%02u%02u%02u %02u%02u%02u.%03u [Error 0x%08X] P%x T%x: %s
+%02u%02u%02u %02u%02u%02u.%03u [Profile %ums] P%x T%x: %s
+%02u%02u%02u %02u%02u%02u.%03u [Trace] P%x T%x: %s
+%AppRepository%
+%AppRepository%\Downlevel\StateRepository-Machine.srd
+%AppRepository%\StateRepository-Deployment.srd
+%AppRepository%\StateRepository-Machine.srd
+%hs!%p: 
+%hs(%d) tid(%x) %08X %ws
+%hs(%d)\%hs!%p: 
+%USERPROFILE%
+&L9't
+(_^][
+(caller: %p) 
+.00cfg
+.CRT$XCA
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIZ
+.data
+.data$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.edata
+.gfids
+.giats
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.pdata
+.rdata
+.rdata$brc
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.text
+.text$di
+.text$mn
+.text$mn$00
+.text$x
+.text$yd
+.xdata
+:]N2Y
+:97t6A
+@.data
+@.didat
+@.reloc
+@8}@u
+@8=qY
+@8=-Y
+@A^_]
+@A^_^][
+@A^A\_
+@A_A^A]A\_^]
+@SUVWAVH
+@SVWH
+@USVATAVH
+@USVWATAUAVAWH
+@USWH
+[ UVWH
+[%hs(%hs)]
+[%hs]
+[checkstatements] #%u Database %p: Statement %p: %s SQL %s
+[post-sqlite3_exec] #%u Database %p: Try %u (%llums) {%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X} TID:%u : SQL %s
+[post-sqlite3_finalize] #%u Database %p: Statement %p: --
+[post-sqlite3_prepare] #%u Database %p: Statement -------- --: Try %u (%llums) : SQL %s
+[post-sqlite3_prepare] #%u Database %p: Statement %p %s: Try %u (%llums) : SQL %s
+[post-sqlite3_reset] #%u Database %p: Statement %p: %s
+[post-sqlite3_step] #%u Database %p: Statement %p %s: Tries %u
+[pre-sqlite3_exec] #%u Database %p {%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X} TID:%u : SQL %s
+[pre-sqlite3_finalize] #%u Database %p: Statement %p: %s
+[pre-sqlite3_prepare] #%u Database %p : SQL %s
+[pre-sqlite3_reset] #%u Database %p: Statement %p: %s
+[pre-sqlite3_step] #%u Database %p: Statement %p %s
+[pre-StatementCache.Get] #%u StatementCache %p: Cache Size/Hits/Misses %u/%llu/%llu
+[sqlite3_close] #%u Database %p: %s
+[sqlite3_exec] #%u Database %p: Try %u (%llums) {%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X}%s%s TID:%u %s : SQL %s
+[sqlite3_finalize] #%u Database %p: Statement %p: --: %s
+[sqlite3_prepare] #%u Database %p: Try %u (%llums) %s : SQL %s
+[sqlite3_prepare] #%u Database %p: Try %u (%llums)%s%s %s : SQL %s
+[sqlite3_reset] #%u Database %p: Statement %p: %s: %s
+[sqlite3_step] #%u Database %p: Statement %p %s: Try %u (%llums)%s%s %s : SQL %s
+[StatementCache.Add] #%u Database %p: StatementCache %p: Statement %p: Cache Size/Hits/Misses %u/%llu/%llu: SQL %s
+[StatementCache.Get(Hit)] #%u Database %p: StatementCache %p: Statement %p: Cache Size/Hits/Misses %u/%llu/%llu: SQL %s
+[StatementCache.Get(Miss)] #%u StatementCache %p: Cache Size/Hits/Misses %u/%llu/%llu: SQL %s
+\$ E3
+\$ UH
+\$ UVWATAUAVAWH
+\$ UVWAVAW
+\$ UVWAVAWH
+\$ VWAVH
+\$8E3
+\$PE3
+__C_specific_handler
+__dllonexit
+_amsg_exit
+_callnewh
+_initterm
+_lock
+_onexit
+_purecall
+_unlock
+_vsnprintf
+_vsnwprintf
+_XcptFilter
+`.rdata
+`A_A^A]A\_^]
+{ AVH
+{8uOH
+|$ AVH
+|$ D+
+}0H+}(H
+~0uUH
+<Error 0x%X converting the user's SID to a string>
+<Error 0x%X getting the user's SID from the process' token>
+<Error 0x%X in GetApplicationUserModelIdFromToken>
+<Error 0x%X in GetPackageFullName>
+<Error 0x%X in NtQueryInformationProcess>
+<Error 0x%X in OpenProcessToken>
+<Error 0x%X in QueryFullProcessImageNameW>
+<Error allocating memory>
+<no-error-message>
+<None>
+<null>
+<Unknown>
+0123456789abcdefghjkmnpqrstvwxyz
+040904B0
+0A^_]
+0A^_^
+0A_A^_
+0A_A^A\_]
+0A_A^A]A\_
+10.0.17763.1
+10.0.17763.1 (WinBuild.160101.0800)
+7H!]0H
+A^A\^[]
+A^A]A\_]
+A^A]A\_^[]
+A_A\]
+A_A^]
+A_A^_
+A_A^_^]
+A_A^A\_]
+A_A^A\_^
+A_A^A]_]
+A_A^A]A\]
+A_A^A]A\_
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A8_8t
+A8<.u
+AccessControlFlags
+AcquireSRWLockExclusive
+AcquireSRWLockShared
+Action
+ActivityError
+ActivityFailure
+ActivityIntermediateStop
+ActivityStoppedAutomatically
+AddExtensionProgId
+api-ms-win-appmodel-runtime-internal-l1-1-1.dll
+api-ms-win-appmodel-runtime-internal-l1-1-4.dll
+api-ms-win-appmodel-runtime-l1-1-1.dll
+api-ms-win-core-debug-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-1.dll
+api-ms-win-core-errorhandling-l1-1-0.dll
+api-ms-win-core-file-l1-1-0.dll
+api-ms-win-core-file-l1-2-0.dll
+api-ms-win-core-handle-l1-1-0.dll
+api-ms-win-core-heap-l1-1-0.dll
+api-ms-win-core-heap-l2-1-0.dll
+api-ms-win-core-libraryloader-l1-2-0.dll
+api-ms-win-core-localization-l1-2-0.dll
+api-ms-win-core-path-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-1.dll
+api-ms-win-core-profile-l1-1-0.dll
+api-ms-win-core-psapi-l1-1-0.dll
+api-ms-win-core-realtime-l1-1-0.dll
+api-ms-win-core-registry-l1-1-0.dll
+api-ms-win-core-rtlsupport-l1-1-0.dll
+api-ms-win-core-string-l1-1-0.dll
+api-ms-win-core-synch-l1-1-0.dll
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-core-sysinfo-l1-1-0.dll
+api-ms-win-core-threadpool-l1-2-0.dll
+api-ms-win-core-windowserrorreporting-l1-1-1.dll
+api-ms-win-core-winrt-l1-1-0.dll
+api-ms-win-core-winrt-string-l1-1-0.dll
+api-ms-win-eventing-provider-l1-1-0.dll
+api-ms-win-security-base-l1-1-0.dll
+api-ms-win-security-lsalookup-l1-1-0.dll
+api-ms-win-security-lsalookup-l2-1-0.dll
+api-ms-win-security-sddl-l1-1-0.dll
+ApplicationUserModelId
+AppModelPackageRepository
+AppUriHandler::AddExtensionProgId
+AppXdbszz9cysstkgdz6xk17sywkqb7gjj0v
+appxdeploymentclient.dll
+AppXqj98qxeaynz6dv4459ayz6bnqxbyaqcs
+AppxRoot
+ATAVAWH
+Bcrypt.dll
+BCryptCloseAlgorithmProvider
+BCryptCreateHash
+BCryptDestroyHash
+BCryptFinishHash
+BCryptGetProperty
+BCryptHashData
+BCryptOpenAlgorithmProvider
+BEGIN -> COMMIT;
+BEGIN -> ROLLBACK;
+BEGIN DEFERRED /*%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X*/;
+BEGIN EXCLUSIVE /*%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X*/;
+BEGIN IMMEDIATE /*%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X*/;
+BusyCount
+BusyDelayBetweenRetries
+BusyMaxTimeout
+BusyTimeout
+C @8}Wu
+C9fD9?u-
+callContext
+CallContext:[%hs] 
+CallingContext
+cannot start a transaction within a transaction
+ChannelName
+Checkpoint
+CheckpointInterval
+CheckpointMaxClockDelta
+Clear
+ClientId
+CloseHandle
+CloseThreadpoolTimer
+CommandLine
+Commit
+COMMIT /*%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X*/;
+CompanyName
+CompareStringOrdinal
+Context
+context.RecordPatchIsApplied
+ConvertSidToStringSidW
+CopySid
+Count
+Cpu:%d%s Io:%d%s Mem:%d%s
+CreatedSchemaVersion
+CreateFileW
+CreateMutexExW
+CreateSemaphoreExW
+CreateThreadpoolTimer
+CreateWellKnownSid
+CRIMH
+currentContextId
+currentContextMessage
+currentContextName
+D!t$$H
+D$ E3
+D$ fD
+D$(E3
+D$@E3
+D$@fD
+D$`E3
+D$0E3
+D$0H;
+D$8E3
+D$H0u
+D$HE3
+D$HL+
+D$PE3
+D$PH;
+D$pLcI
+D$T9p
+D$x0u
+D9K(t
+D9l$\v
+D9yL|
+DAL.Initialize
+DatabaseCorruptionFirstDetectedUptime
+DatabaseCorruptionFirstDetectedWhen
+DatabaseCorruptionLastReported
+DatabasePtr
+DatabaseStatisticsUpdateInterval
+DatabaseStatisticsUpdateMaxClockDelta
+DebugBreak
+DelayLoadFailureHook
+DeleteCriticalSection
+Deleted
+Deployment
+Deployment.Extensions.FixProgId
+Deployment.Extensions.PopulateACID
+Deployment.Extensions.PopulateProtocolAndFTA
+Deployment.OptionalPackage.FixDependencyType
+Deployment.Package.PopulateMostRecentlyStaged
+DeploymentDatabase
+DeploymentDatabase_Pages
+DeploymentDatabase_PagesCheckpointed
+DeploymentDatabaseAutoCheckpoint
+DeploymentDatabaseCheckpointThreshold
+DeploymentDatabaseFileChunkSize
+DeploymentDatabaseJournalSizeLimit
+DeploymentDatabaseOptions
+DeploymentDatabasePageSize
+DeploymentDisposition
+Disposition
+DownlevelMachineDatabase
+DownlevelMachineDatabaseAutoCheckpoint
+DownlevelMachineDatabaseCheckpointThreshold
+DownlevelMachineDatabaseFileChunkSize
+DownlevelMachineDatabaseJournalSizeLimit
+DownlevelMachineDatabaseOptions
+DownlevelMachineDatabasePageSize
+E(=csm
+E8=csm
+E9V0u
+EH=csm
+Eh=csm
+ElapsedTime
+ElapsedTimeMSec
+EnterCriticalSection
+Entity
+en-US
+Error
+Error 0x%X in BeginTransaction recording StateRepository migration patches
+Error 0x%X opening the Machine partition to record StateRepository migration patches
+ErrorCode
+ErrorCount
+EventActivityIdControl
+EventData
+EventRegister
+EventSetInformation
+EventUnregister
+EventWriteTransfer
+EX=csm
+Ex=csm
+Exception
+ExecutableName
+ExpandedSQL
+ExpandedSQL=%hs
+Extensions
+F0D8#ukD8c
+f9,Au
+f9<Au
+f9<Cu
+f94Au
+fA9<Bu
+fA9Z*v$A
+FailFast
+FailFastBusySnapshot.StatementInProgress: #%u Index=%u Database=%p Statement=%p SQL=%s
+FailFastBusySnapshot: Statements Total=%u Busy=%u Database=%p FirstBusySQL=%hs
+Failure
+failureCount
+failureId
+failureType
+FallbackError
+fD9!t
+fD9$Au
+fD9$Bu
+fD9$Xu
+fD9,Qu
+fD9<_u
+fD9<Au
+fD9<Bu
+fD90t
+fD90t,
+fD94Au
+fD9d]
+fE94Gu
+fF9<Cu
+Field
+FileDescription
+Filename
+fileName
+Filename
+fileName
+Filename
+fileName
+Filename
+fileName
+Filename
+fileName
+Filename
+fileName
+Filename
+FileTypeAssociation::AddExtensionProgId
+FileVersion
+FirstBusySQL
+FirstReportedUptime
+FirstReportedWhen
+FixAppUriHandlerProgId
+FixCount
+FixFileTypeAssociationProgId
+FixProtocolProgId
+FormatMessageW
+Found
+FoundSchemaVersion
+FreeLibrary
+Function
+function
+GCChangelogsInterval
+GetAddress PopulateProtocolAndFTA
+GetApplicationUserModelIdFromToken
+GetChanges() called but !db.IsOpen()
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+GetFileAttributesW
+GetLastError
+GetLastInsertRowID() called but !db.IsOpen()
+GetLengthSid
+GetLocalTime
+GetModuleFileNameA
+GetModuleHandleExW
+GetModuleHandleW
+GetPackageFullNameFromToken
+GetPersistedRegistryLocationW
+GetProcAddress
+GetProcessHeap
+GetSystemTimeAsFileTime
+GetTempPathW
+GetTickCount
+GetTokenInformation
+h UAVAWH
+H UWATAVAWH
+H!\$p
+H!^(H!^0H!^8H!^@3
+H!|$ E3
+H!|$0H
+H;{8r
+H;K@H
+H;K`H
+H+T$P
+H+T$PA
+H9_Hs<
+H9ugtO
+H9y8v6H
+hA_A^A]A\_^[]
+HashDigestLength
+HcD$ H
+HeapAlloc
+HeapFree
+hresult
+HResult
+hresult
+Index
+InitializeCriticalSectionEx
+InitOnceBeginInitialize
+InitOnceComplete
+INSERT INTO MigratorPatch (_Revision, _WorkId, PatchId, HResult, StateRepositoryVersion, "When", _Dictionary) VALUES(?,?,?,?,?,?,?);
+internal\onecoreadmin\inc\appmodel\common\progid.hpp
+internal\onecorebase\inc\appmodel\common\fileinuse.hpp
+internal\onecorebase\inc\appmodel\staterepository\dal/Database.hpp
+internal\onecorebase\inc\appmodel\staterepository\dal/Repository.hpp
+internal\sdk\inc\wil/result.h
+internal\sdk\inc\wil/tokenhelpers.h
+internal\sdk\inc\wil\Resource.h
+internal\sdk\inc\wil\staging.h
+InternalName
+IsDebuggerPresent
+IsInAutoCommitMode() called but !db.IsOpen()
+Issue
+kernelbase.dll
+L$ SUVWH
+L$ SVWH
+L$ UVWATAUAVAWH
+L$ UWAVH
+l$ WH
+L$ WH
+L$(E3
+L$@E3
+L$@I+
+l$\fD
+L$`E3
+L$`H3
+L$0E3
+L$0H3
+L$8E3
+L$8H3
+L$hH3
+L$PD9
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$XH3
+l$XL!|$`
+L$XL+
+L;d$X
+L9#t&H
+L9{@u
+L9{0t#H
+L9o@t
+LastKnownStatus
+LcA<E3
+Lct$$H
+LeaveCriticalSection
+LegalCopyright
+lineNumber
+LineNumber
+lineNumber
+Load appxdeploymentclient.dll
+LoadLibraryExW
+Local AppData
+Local\SM0:%d:%d:%hs
+LocalFree
+LogHr
+LookupAccountSidW
+LsaLookupClose
+LsaLookupFreeMemory
+LsaLookupGetDomainInfo
+LsaLookupOpenLocalPolicy
+M0H!]0H
+Machine
+MachineDatabase
+MachineDatabase_Pages
+MachineDatabase_PagesCheckpointed
+MachineDatabaseAutoCheckpoint
+MachineDatabaseCheckpointThreshold
+MachineDatabaseFileChunkSize
+MachineDatabaseJournalSizeLimit
+MachineDatabaseOptions
+MachineDatabasePageSize
+MachineDisposition
+MaintenanceInterval
+MaintenanceMaxClockDelta
+malloc
+memcmp
+memcpy
+memcpy_s
+memmove
+memmove_s
+memset
+message
+Message
+message
+Method
+MgH!ugH
+Microsoft
+Microsoft Corporation
+Microsoft.Windows.StateRepository.Core
+Microsoft.Windows.StateRepository.Service
+Microsoft.Windows.StateRepository.Upgrade
+Microsoft-Windows-StateRepository
+Microsoft-Windows-StateRepository/Debug
+Microsoft-Windows-StateRepository/Diagnostic
+Microsoft-Windows-StateRepository/Operational
+Microsoft-Windows-StateRepository/Restricted
+MigratorErrors
+module
+Module
+module
+ms:Measures
+ms:Telemetry
+Msg:[%ws] 
+msvcrt.dll
+MultiByteToWideChar
+n I;^
+ntdll.dll
+NtQueryInformationFile
+NtQueryInformationProcess
+NtQueryInformationThread
+NtQueryWnfStateData
+NtUpdateWnfStateData
+o\$PH
+ObjectLength
+oD$ f
+oL$0f
+onecore\base\appmodel\common\base32encoding.cpp
+onecore\base\appmodel\common\bytebuffer.cpp
+onecore\base\appmodel\common\cryptoprovider.cpp
+onecore\base\appmodel\common\registrykey.cpp
+onecore\base\appmodel\common\sidhelper.cpp
+onecore\base\appmodel\common\stateseparation.cpp
+onecore\base\appmodel\common\stringbuilder.cpp
+onecore\base\appmodel\common\userprofile.cpp
+onecore\base\appmodel\common\widestring.cpp
+onecore\base\appmodel\StateRepository\Common\Inc\ResourcePriority.hpp
+onecore\base\appmodel\staterepository\common\inc\Security.hpp
+onecore\base\appmodel\staterepository\dataaccesslayer\blob.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\database.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\databasecachesingleton.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-appurihandler.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-dependency-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-filetypeassociation.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-migrator-deployment-fixprogidinfo.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-migratorpatch.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-package-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-packageuser-custom.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\entity-protocol.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\globals.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\logging.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\repository.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\statement.cpp
+onecore\base\appmodel\StateRepository\DataAccessLayer\Statement.hpp
+onecore\base\appmodel\staterepository\dataaccesslayer\statementcache.cpp
+onecore\base\appmodel\StateRepository\DataAccessLayer\StatementCache.hpp
+onecore\base\appmodel\staterepository\dataaccesslayer\statementexecution.cpp
+onecore\base\appmodel\staterepository\dataaccesslayer\text.cpp
+onecore\base\appmodel\StateRepository\DataAccessLayer\Utf16String.hpp
+onecore\base\appmodel\staterepository\upgrade\inc\Context.hpp
+onecore\base\appmodel\staterepository\upgrade\lib\migrate.cpp
+onecore\base\appmodel\staterepository\upgrade\lib\migrator-deployment.extensions.fixprogid.cpp
+onecore\base\appmodel\staterepository\upgrade\lib\migrator-deployment.extensions.populateprotocolandfta.cpp
+onecore\base\appmodel\staterepository\upgrade\lib\migrator-deployment.optionalpackage.fixdependencytype.cpp
+onecore\base\appmodel\staterepository\upgrade\lib\migrator-deployment.package.populatemostrecentlystaged.cpp
+onecore\base\appmodel\staterepository\upgrade\lib\migrator-tdr.tdl.import.cpp
+OpenProcess
+OpenProcess() failed on %u of %u for %hs
+OpenProcessToken
+OpenSemaphoreW
+OpenThreadToken
+Options
+OriginalFilename
+originatingContextId
+originatingContextMessage
+originatingContextName
+oT$@f
+OutputDebugStringW
+p AWH
+p WAVAWH
+pA_A^A]A\_^]
+PackageFamilyName
+PackageFullName
+PackageRepositoryRoot
+Partition
+PathCchCombine
+Phase
+Policy.Aggressive.ConnectionMaxAge
+Policy.Aggressive.ConnectionMaxCount
+Policy.Aggressive.ConnectionMinCount
+Policy.Aggressive.GCInterval
+Policy.Aggressive.StatementMaxAge
+Policy.Aggressive.StatementMaxCount
+Policy.Aggressive.StatementMinCount
+Policy.Normal.ConnectionMaxAge
+Policy.Normal.ConnectionMaxCount
+Policy.Normal.ConnectionMinCount
+Policy.Normal.GCInterval
+Policy.Normal.StatementMaxAge
+Policy.Normal.StatementMaxCount
+Policy.Normal.StatementMinCount
+PopulateProtocolAndFTA
+PreviousDeploymentVersion
+PreviousMachineVersion
+Priorities
+ProcessCount
+ProcessId
+ProcessIdToSessionId
+ProcessIndex
+ProcessingSQL
+ProductName
+ProductVersion
+ProfileImagePath
+Protocol::AddExtensionProgId
+PRVAX
+QueryFullProcessImageNameW
+QueryPerformanceCounter
+QueryUnbiasedInterruptTime
+R$fA;Z*
+RaiseException
+RaiseFailFastException
+realloc
+RecordPatchIsApplied.BeginTransaction
+RecordPatchIsApplied.Open
+RegCloseKey
+RegCreateKeyExW
+RegDeleteTreeW
+RegOpenKeyExW
+RegQueryValueExW
+RegSetValueExW
+ReleaseMutex
+ReleaseSemaphore
+ReleaseSRWLockExclusive
+ReleaseSRWLockShared
+RepairGhostMinimumAgeForDeletion
+Required configuration data not found: %ws
+ResolveDelayLoadedAPI
+ReturnHr
+Revision
+rMfD9?w
+RoGetActivationFactory
+ROLLBACK /*%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X*/;
+RtlAcquireSRWLockExclusive
+RtlAcquireSRWLockShared
+RtlAllocateHeap
+RtlCaptureContext
+RtlCaptureStackBackTrace
+RtlCompareUnicodeString
+RtlConvertSidToUnicodeString
+RtlDeleteCriticalSection
+RtlDetermineDosPathNameType_U
+RtlDllShutdownInProgress
+RtlEnterCriticalSection
+RtlExpandEnvironmentStrings
+RtlFreeHeap
+RtlFreeUnicodeString
+RtlGetDeviceFamilyInfoEnum
+RtlInitializeCriticalSection
+RtlInitializeGenericTableAvl
+RtlInitUnicodeString
+RtlInsertElementGenericTableAvl
+RtlIsStateSeparationEnabled
+RtlLeaveCriticalSection
+RtlLookupElementGenericTableAvl
+RtlLookupFunctionEntry
+RtlNtStatusToDosErrorNoTeb
+RtlReleaseSRWLockExclusive
+RtlReleaseSRWLockShared
+RtlSubscribeWnfStateChangeNotification
+RtlUnsubscribeWnfNotificationWaitForCompletion
+RtlVirtualUnwind
+s WATAUAVAWH
+SchemaVersion
+SELECT _Revision, _WorkId, FileType, ContentType, Extension, "Index", ProgID, _Dictionary FROM FileTypeAssociation WHERE _FileTypeAssociationID=? AND (_WorkId=0 OR _WorkId=?) ORDER BY _WorkId DESC;
+SELECT _Revision, _WorkId, FileType, ContentType, Extension, "Index", ProgID, _Dictionary FROM FileTypeAssociation WHERE _FileTypeAssociationID=? AND _WorkId=0;
+SELECT _Revision, _WorkId, HostName, Extension, ProgID, AppUriHandlerGroup, _Dictionary FROM AppUriHandler WHERE _AppUriHandlerID=? AND (_WorkId=0 OR _WorkId=?) ORDER BY _WorkId DESC;
+SELECT _Revision, _WorkId, HostName, Extension, ProgID, AppUriHandlerGroup, _Dictionary FROM AppUriHandler WHERE _AppUriHandlerID=? AND _WorkId=0;
+SELECT _Revision, _WorkId, ProtocolName, ReturnResults, Extension, "Index", ProgID, _Dictionary FROM Protocol WHERE _ProtocolID=? AND (_WorkId=0 OR _WorkId=?) ORDER BY _WorkId DESC;
+SELECT _Revision, _WorkId, ProtocolName, ReturnResults, Extension, "Index", ProgID, _Dictionary FROM Protocol WHERE _ProtocolID=? AND _WorkId=0;
+SELECT auh._AppUriHandlerID, auh.HostName, pkg.PackageFullName, pf.PackageFamilyName, a.PackageRelativeApplicationId, ae.Executable, a.Executable, a.StartPage, ae.StartPage, ae.Entrypoint, a.Entrypoint, a.ApplicationUserModelId FROM ApplicationExtension AS ae INNER JOIN AppUriHandler AS auh ON auh.Extension=ae._ApplicationExtensionID INNER JOIN Application AS a ON a._ApplicationID=ae.Application INNER JOIN Package AS pkg ON pkg._PackageID=a.Package INNER JOIN PackageFamily AS pf ON pf._PackageFamilyID=pkg.PackageFamily WHERE ae.category='windows.appUriHandler';
+SELECT EXISTS(SELECT 1 FROM AppUriHandler WHERE _AppUriHandlerID=? AND (_WorkId=0 OR _WorkId=?) LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM AppUriHandler WHERE _AppUriHandlerID=? AND _WorkId=0 LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM FileTypeAssociation WHERE _FileTypeAssociationID=? AND (_WorkId=0 OR _WorkId=?) LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM FileTypeAssociation WHERE _FileTypeAssociationID=? AND _WorkId=0 LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM Protocol WHERE _ProtocolID=? AND (_WorkId=0 OR _WorkId=?) LIMIT 1);
+SELECT EXISTS(SELECT 1 FROM Protocol WHERE _ProtocolID=? AND _WorkId=0 LIMIT 1);
+SELECT fta._FileTypeAssociationID, fta.FileType, pkg.PackageFullName, pf.PackageFamilyName, a.PackageRelativeApplicationId, ae.Executable, a.Executable, a.StartPage, ae.StartPage, ae.Entrypoint, a.Entrypoint, a.ApplicationUserModelId FROM ApplicationExtension AS ae INNER JOIN FileTypeAssociation AS fta ON fta.Extension=ae._ApplicationExtensionID INNER JOIN Application AS a ON a._ApplicationID=ae.Application INNER JOIN Package AS pkg ON pkg._PackageID=a.Package INNER JOIN PackageFamily AS pf ON pf._PackageFamilyID=pkg.PackageFamily WHERE ae.category='windows.fileTypeAssociation';
+SELECT p._ProtocolID, p.ProtocolName, pkg.PackageFullName, pf.PackageFamilyName, a.PackageRelativeApplicationId, ae.Executable, a.Executable, a.StartPage, ae.StartPage, ae.Entrypoint, a.Entrypoint, a.ApplicationUserModelId FROM ApplicationExtension AS ae INNER JOIN Protocol AS p ON p.Extension=ae._ApplicationExtensionID INNER JOIN Application AS a ON a._ApplicationID=ae.Application INNER JOIN Package AS pkg ON pkg._PackageID=a.Package INNER JOIN PackageFamily AS pf ON pf._PackageFamilyID=pkg.PackageFamily WHERE ae.category='windows.protocol';
+ServiceIdleTimeout
+SessionId
+SetLastError
+SetProtocolProperty
+SetThreadpoolTimer
+SetThreadToken
+SetUnhandledExceptionFilter
+SHA256
+Sleep
+Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppModel\PackageRepository
+Software\Microsoft\Windows NT\CurrentVersion\ProfileList
+SOFTWARE\Microsoft\Windows\CurrentVersion\AppModel\StateRepository
+Software\Microsoft\Windows\CurrentVersion\AppModel\StateRepositoryStatus
+SOFTWARE\Microsoft\Windows\CurrentVersion\Appx
+Software\Microsoft\Windows\CurrentVersion\Appx
+Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
+sqlite3_bind_blob
+sqlite3_bind_int
+sqlite3_bind_int64
+sqlite3_bind_text16
+sqlite3_changes
+sqlite3_clear_bindings
+sqlite3_close
+sqlite3_column_blob
+sqlite3_column_bytes
+sqlite3_column_int
+sqlite3_column_int64
+sqlite3_column_text16
+sqlite3_config
+sqlite3_db_filename
+sqlite3_db_handle
+sqlite3_errcode
+sqlite3_errmsg
+sqlite3_exec
+sqlite3_expanded_sql
+sqlite3_finalize
+sqlite3_free
+sqlite3_get_autocommit
+sqlite3_last_insert_rowid
+sqlite3_log
+sqlite3_next_stmt
+sqlite3_prepare_v2
+sqlite3_reset
+sqlite3_shutdown
+sqlite3_snprintf
+sqlite3_sql
+sqlite3_step
+sqlite3_stmt_busy
+sqlite3_vfs_unregister
+SR.PackageUser.PackageIdentity
+StatementCount
+StatementPtr
+StateRepository.Core.dll
+StateRepository.FailFastBusySnapshot
+StateRepository.FailFastBusySnapshot.BusyCount
+StateRepository.FailFastBusySnapshot.DatabasePtr
+StateRepository.FailFastBusySnapshot.FirstBusySQL
+StateRepository.FailFastBusySnapshot.Statement#%u.ExpandedSQL
+StateRepository.FailFastBusySnapshot.Statement#%u.Ptr
+StateRepository.FailFastBusySnapshot.Statement#%u.SQL
+StateRepository.FailFastBusySnapshot.StatementCount
+StateRepository.FailFastBusySnapshot.StatementInProgress
+StateRepository.log
+StateRepository.Task.DataAccessLayer
+StateRepository.Task.Migrate
+StateRepository.Task.WinRTAPI
+StateRepository_DataAccessLayer_DatabaseCache_Add
+StateRepository_DataAccessLayer_DatabaseCache_Get
+STATEREPOSITORY_KEYWORD
+StateRepository_Migrate
+STATEREPOSITORY_PERF_KEYWORD
+StateRepositoryStatus
+strcmp
+StringFileInfo
+Subkey
+SUVWATAUAVAWH
+t"D8=
+t#E9V0t
+t$ D+
+t$ E3
+t$ UWATAVAWH
+t$ UWAUAVAWH
+t$ UWAVH
+t$ WH
+T$$D!t$ H
+T$0E3
+T$0H!|$0H
+T$8H!\$8
+T$PE3
+T$PL;
+t^@8=
+TASK0
+TDR.TDL.Import
+TEMP 
+TEMP$
+TEMP(
+TEMP,
+TEMP`
+TEMP|
+TEMP<
+TEMP0
+TEMP4
+TEMP8
+TEMPD
+TEMPH
+TEMPh
+TEMPH
+TEMPP
+TEMPX
+TerminateProcess
+threadId
+ThreadId
+threadId
+ThreadId
+threadId
+ThreadId
+threadId
+ThreadId
+threadId
+TimeoutMSec
+tK91u
+TransactionCallerId
+Translation
+TTBL r
+u HcA<H
+UATAUAVAWH
+UATAWH
+UAVAWH
+unH9A
+UnhandledExceptionFilter
+uonecore\base\appmodel\staterepository\upgrade\lib\migrator-sr.packageuser.packageidentity.cpp
+UPDATE AppUriHandler SET _Revision=?, _WorkId=?, HostName=?, Extension=?, ProgID=?, AppUriHandlerGroup=?, _Dictionary=? WHERE _AppUriHandlerID=? AND _Revision=? AND (_WorkId=0 OR _WorkId=?);
+UPDATE AppUriHandler SET _Revision=?, _WorkId=?, HostName=?, Extension=?, ProgID=?, AppUriHandlerGroup=?, _Dictionary=? WHERE _AppUriHandlerID=? AND _Revision=? AND _WorkId=0;
+UPDATE Dependency SET DependencyType=? WHERE _DependencyID IN(SELECT d._DependencyID FROM Dependency AS d INNER JOIN PackageFamily AS pf ON pf.Name=d.Name INNER JOIN Package AS p ON p.PackageFamily=pf._PackageFamilyID WHERE p.PackageType=?);
+UPDATE FileTypeAssociation SET _Revision=?, _WorkId=?, FileType=?, ContentType=?, Extension=?, "Index"=?, ProgID=?, _Dictionary=? WHERE _FileTypeAssociationID=? AND _Revision=? AND (_WorkId=0 OR _WorkId=?);
+UPDATE FileTypeAssociation SET _Revision=?, _WorkId=?, FileType=?, ContentType=?, Extension=?, "Index"=?, ProgID=?, _Dictionary=? WHERE _FileTypeAssociationID=? AND _Revision=? AND _WorkId=0;
+UPDATE Package SET Flags=Flags&~0x400 WHERE (PackageType & 0x29!=0) AND _PackageID IN (SELECT _PackageID FROM PACKAGE WHERE PackageFamily IN (SELECT PackageFamily FROM Package WHERE (PackageType & 0x29!=0) AND _PackageID IN (SELECT Package FROM PackageUser WHERE _WorkId=?1 AND DeploymentState!=6)) AND _WorkId=0);
+UPDATE PackageUser SET PackageIdentity=(SELECT _PackageIdentityID FROM PackageIdentity AS pi INNER JOIN Package AS p ON p.PackageFullName=pi.PackageFullName WHERE p._PackageID=PackageUser.Package);
+UPDATE Protocol SET _Revision=?, _WorkId=?, ProtocolName=?, ReturnResults=?, Extension=?, "Index"=?, ProgID=?, _Dictionary=? WHERE _ProtocolID=? AND _Revision=? AND (_WorkId=0 OR _WorkId=?);
+UPDATE Protocol SET _Revision=?, _WorkId=?, ProtocolName=?, ReturnResults=?, Extension=?, "Index"=?, ProgID=?, _Dictionary=? WHERE _ProtocolID=? AND _Revision=? AND _WorkId=0;
+UserDomain
+UserName
+UserSid
+UserSID
+UserSid
+UserSID
+USVWATAUAVAWH
+USVWATAUAVH
+USVWATAVAWH
+USVWAVH
+UVWATAUAVAWH
+UVWAVAWH
+UWATAUAVH
+UWATAVAWH
+UWAUAVAWH
+UWAVH
+UWAWH
+VarFileInfo
+VS_VERSION_INFO
+VWATAVAWH
+VWAVH
+WaitForRequestsInUseTimeout
+WaitForSingleObject
+WaitForSingleObjectEx
+WaitForThreadpoolTimerCallbacks
+WATAUAVAWH
+WATAVH
+WAVAWH
+wcschr
+WerRegisterCustomMetadata
+WEVT$
+WEVT_TEMPLATE
+wilActivity
+WilError_02
+wilResult
+WilStaging_02
+win:Critical
+win:Error
+win:Informational
+win:Verbose
+win:Warning
+Windows StateRepository Upgrade
+windows.appUriHandler
+windows.fileTypeAssociation
+Windows.FullTrustApplication
+Windows.Internal.Tiles.MigrationHelper
+Windows.PartialTrustApplication
+windows.protocol
+Windows.StateRepository.dll
+Windows.StateRepositoryUpgrade.dll
+Windows.StateRepositoryUpgrade.pdb
+WindowsCreateStringReference
+WorkId
+WriteFile
+x ATAVAWH
+x AUAVAWH
+x AVH
+x UATAUAVAWH
+x UAVAWH
+XA_A^A]A\_^][
+xUHcN
+yis^9

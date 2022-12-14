@@ -1,0 +1,197 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\ipnat.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    WMILIB.SYS
+    cng.sys
+    NETIO.SYS
+    NDIS.SYS
+    fwpkclnt.sys
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C003F120 Import Address Table
+             1C003F5D0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         8B1 RtlSplay
+                         3A2 IoWMIWriteEvent
+                         49C KeSetEvent
+                         334 IoReleaseCancelSpinLock
+                         260 IoAcquireCancelSpinLock
+                         743 RtlClearAllBits
+                         7A2 RtlFindClearBits
+                         89D RtlSetBits
+                         747 RtlClearBits
+                         26E IoAllocateWorkItem
+                         31C IoQueueWorkItem
+                         2C2 IoFreeWorkItem
+                         35E IoSetIoCompletion
+                         5E8 ObReferenceObjectByHandle
+                          BB ExEventObjectType
+                         3DF KeClearEvent
+                         5F8 ObfDereferenceObject
+                         461 KeQueryTimeIncrement
+                         417 KeInitializeDpc
+                         425 KeInitializeTimer
+                         4AE KeSetTimerEx
+                         402 KeFlushQueuedDpcs
+                         3DA KeCancelTimer
+                         42E KeInsertQueueDpc
+                         441 KeLowerIrql
+                         4C7 KfRaiseIrql
+                         3C7 KeAcquireSpinLockAtDpcLevel
+                         776 RtlDelete
+                          9D ExAllocatePoolWithTagPriority
+                          AC ExDeleteNPagedLookasideList
+                          D1 ExInitializeNPagedLookasideList
+                          EC ExQueryDepthSList
+                         5E3 ObOpenObjectByPointer
+                         293 IoCreateDevice
+                         2B0 IoDeviceObjectType
+                         A9F ZwSetSecurityObject
+                         8A1 RtlSetDaclSecurityDescriptor
+                         309 IoIsWdmVersionAvailable
+                         842 RtlLengthSid
+                         719 RtlAddAccessAllowedAce
+                         718 RtlAbsoluteToSelfRelativeSD
+                         B34 wcschr
+                         AEA _wcsnicmp
+                         76A RtlCreateSecurityDescriptor
+                         927 SeExports
+                         841 RtlLengthSecurityDescriptor
+                         ACF _snwprintf
+                         90F SeCaptureSecurityDescriptor
+                         7E4 RtlGetSaclSecurityDescriptor
+                         7E1 RtlGetOwnerSecurityDescriptor
+                         7D8 RtlGetGroupSecurityDescriptor
+                         7D1 RtlGetDaclSecurityDescriptor
+                         7C3 RtlFreeUnicodeString
+                         9F1 ZwCreateKey
+                         AA6 ZwSetValueKey
+                          AB ExDeleteLookasideListEx
+                         45A KeQueryMaximumProcessorCountEx
+                          D0 ExInitializeLookasideListEx
+                         44C KeQueryActiveProcessorCountEx
+                         528 MmMapLockedPagesSpecifyCache
+                         25E InitializeSListHead
+                         40A KeGetCurrentProcessorNumberEx
+                         154 ExpInterlockedPushEntrySList
+                         153 ExpInterlockedPopEntrySList
+                         2AA IoDeleteDevice
+                         4C5 KeWaitForSingleObject
+                         9E3 ZwClose
+                         8CE RtlUnicodeStringToInteger
+                         A6F ZwQueryValueKey
+                         A31 ZwOpenKey
+                         41B KeInitializeEvent
+                         2AC IoDeleteSymbolicLink
+                         29E IoCreateSymbolicLink
+                         7EC RtlGetVersion
+                         760 RtlCopyUnicodeString
+                          75 EtwUnregister
+                          7B EtwWriteTransfer
+                          70 EtwRegister
+                         39D IoWMIRegistrationControl
+                         513 MmGetSystemRoutineAddress
+                         7FC RtlInitUnicodeString
+                         7DF RtlGetNtProductType
+                         559 MmUserProbeAddress
+                          CA ExGetPreviousMode
+                         3AA IofCompleteRequest
+                         674 PsGetCurrentProcessId
+                         ABB __C_specific_handler
+                         423 KeInitializeSpinLock
+                          9C ExAllocatePoolWithTag
+                          C3 ExFreePoolWithTag
+                         47D KeReleaseSpinLock
+                         47F KeReleaseSpinLockFromDpcLevel
+                         3C9 KeAcquireSpinLockRaiseToDpc
+
+    WMILIB.SYS
+             1C003F060 Import Address Table
+             1C003F510 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           2 WmiCompleteRequest
+                           4 WmiSystemControl
+
+    cng.sys
+             1C003F078 Import Address Table
+             1C003F528 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          3A SystemPrng
+
+    NETIO.SYS
+             1C003F018 Import Address Table
+             1C003F4C8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         161 NmrClientDetachProviderComplete
+                         160 NmrClientAttachProvider
+                         167 NmrWaitForClientDeregisterComplete
+                         165 NmrRegisterClient
+                         162 NmrDeregisterClient
+                         155 NetioRetreatNetBufferList
+                          DA NetioAdvanceNetBufferList
+                          E7 NetioAllocateMdl
+
+    NDIS.SYS
+             1C003F000 Import Address Table
+             1C003F4B0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           A NdisAdvanceNetBufferDataStart
+                         1D3 NdisRetreatNetBufferDataStart
+
+    fwpkclnt.sys
+             1C003F088 Import Address Table
+             1C003F538 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          DA FwpsQueryPacketInjectionState0
+                          77 FwpmTransactionCommit0
+                          C5 FwpsInjectionHandleDestroy0
+                          C0 FwpsInjectNetworkSendAsync0
+                          2D FwpmEngineOpen0
+                           9 FwpiCalloutUnregisterAndDeleteByKey0
+                           7 FwpiCalloutRegisterAndAddWithoutDevice0
+                          C4 FwpsInjectionHandleCreate0
+                          76 FwpmTransactionBegin0
+                          33 FwpmFilterDeleteByKey0
+                          75 FwpmTransactionAbort0
+                          B7 FwpsFreeCloneNetBufferList0
+                          30 FwpmFilterAdd0
+                          2A FwpmEngineClose0
+                          BF FwpsInjectNetworkReceiveAsync0
+                          B9 FwpsFreeNetBufferList0
+                          9F FwpsAllocateCloneNetBufferList0
+                          DB FwpsReassembleForwardFragmentGroup0
+
+  Summary
+
+        E000 .data
+        2000 .idata
+        1000 .pdata
+        2000 .rdata
+        2000 .reloc
+        1000 .rsrc
+       2D000 .text
+        1000 GFIDS
+        1000 INIT
+        3000 PAGE

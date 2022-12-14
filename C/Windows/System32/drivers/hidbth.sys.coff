@@ -1,0 +1,131 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\hidbth.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    HIDCLASS.SYS
+    WppRecorder.sys
+    ksecdd.sys
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C0018080 Import Address Table
+             1C0018368 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         A31 ZwOpenKey
+                          9C ExAllocatePoolWithTag
+                         A6F ZwQueryValueKey
+                         9E3 ZwClose
+                          C2 ExFreePool
+                         49C KeSetEvent
+                         4AC KeSetTimer
+                         3DF KeClearEvent
+                         277 IoBuildDeviceIoControlRequest
+                         AE4 _vsnwprintf
+                         30E IoOpenDeviceRegistryKey
+                         AA6 ZwSetValueKey
+                         74C RtlCompareMemory
+                         2D5 IoGetDeviceObjectPointer
+                         331 IoRegisterPlugPlayNotification
+                         5F8 ObfDereferenceObject
+                         2D6 IoGetDeviceProperty
+                         4CD KseQueryDeviceFlags
+                         385 IoUnregisterPlugPlayNotification
+                         3DA KeCancelTimer
+                         335 IoReleaseRemoveLockAndWaitEx
+                         607 PoCallDriver
+                         513 MmGetSystemRoutineAddress
+                         39D IoWMIRegistrationControl
+                          7B EtwWriteTransfer
+                          70 EtwRegister
+                          75 EtwUnregister
+                          73 EtwSetInformation
+                         423 KeInitializeSpinLock
+                         26E IoAllocateWorkItem
+                         425 KeInitializeTimer
+                         417 KeInitializeDpc
+                         268 IoAllocateErrorLogEntry
+                         3A4 IoWriteErrorLogEntry
+                         31D IoQueueWorkItemEx
+                         528 MmMapLockedPagesSpecifyCache
+                         2BF IoFreeMdl
+                         26B IoAllocateMdl
+                         4F9 MmBuildMdlForNonPagedPool
+                         2C2 IoFreeWorkItem
+                         3AA IofCompleteRequest
+                         34B IoReuseIrp
+                         336 IoReleaseRemoveLockEx
+                         48D KeResetEvent
+                         47D KeReleaseSpinLock
+                         3C9 KeAcquireSpinLockRaiseToDpc
+                         2BE IoFreeIrp
+                         4C5 KeWaitForSingleObject
+                         334 IoReleaseCancelSpinLock
+                          C3 ExFreePoolWithTag
+                         2D3 IoGetDeviceInterfaces
+                         B21 strnlen
+                         8C9 RtlUTF8ToUnicodeN
+                         8D5 RtlUnicodeToUTF8N
+                         3A9 IofCallDriver
+                         269 IoAllocateIrp
+                         41B KeInitializeEvent
+                         31C IoQueueWorkItem
+                         261 IoAcquireRemoveLockEx
+                         2FA IoInitializeRemoveLockEx
+                         7FC RtlInitUnicodeString
+
+    HIDCLASS.SYS
+             1C0018000 Import Address Table
+             1C00182E8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           3 HidRegisterMinidriver
+                           2 HidNotifyPresence
+
+    WppRecorder.sys
+             1C0018018 Import Address Table
+             1C0018300 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           4 WppAutoLogTrace
+                          10 imp_WppRecorderReplay
+                           2 WppAutoLogStart
+                           3 WppAutoLogStop
+
+    ksecdd.sys
+             1C0018040 Import Address Table
+             1C0018328 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          1F BCryptOpenAlgorithmProvider
+                          14 BCryptFinishHash
+                           4 BCryptCloseAlgorithmProvider
+                           A BCryptDestroyHash
+                          1B BCryptHashData
+                          1A BCryptGetProperty
+                           5 BCryptCreateHash
+
+  Summary
+
+        1000 .data
+        1000 .idata
+        1000 .pdata
+        A000 .rdata
+        1000 .reloc
+        2000 .rsrc
+        B000 .text
+        1000 GFIDS
+        1000 INIT
+        4000 PAGE

@@ -1,0 +1,3350 @@
+        
+            
+                    
+                                + Data.AttenAndRange.y * DistToLight
+                                + Data.AttenAndRange.z * DistToLight * DistToLight,
+                                1.0);
+                              * atten
+                              * pow(max(dot(TransformedNormal, HalfVector), 0), SpecularPower)
+                              * spot
+                              * step(DistToLight, Data.AttenAndRange.w);
+                            + Data.AttenAndRange.y * DistToLight
+                            + Data.AttenAndRange.z * DistToLight * DistToLight,
+                            1.0);
+                          * atten
+                          * max(dot(TransformedNormal, VecToLight), 0)
+                          * spot
+                          * step(DistToLight, Data.AttenAndRange.w);
+                    - sampleToOriginCrossOriginNorm * sampleToOriginCrossOriginNorm);
+                    // ellipse defining the end of the gradient. When rendering this region
+                    // Ensure that the gradient space does not wrap around,
+                    // Given an infinite precicision machine, we'd never get to this case since
+                    // interpolating with the last stop at the center point.
+                    // This negative region appears when the gradient origin is outside the
+                    // This value for u picks the first texel in the texture.
+                    // we choose the last texel color.
+                    // we do not have an infinite precision machine, so we may still get here.
+                    // we should have skipped the quadratic equation up top. Nevertheless,
+                    u = 1.0f - GradInfoParams.flHalfTexelSizeNormalized;
+                    u = 1.0f;
+                    u = GradInfoParams.flHalfTexelSizeNormalized;
+                //
+                // against integer overflow, so we need to do the check manually.
+                // Refrast & probably hw implement wrapping/clamping logic by first casting
+                // the float to an integer and then doing integer math.  They are not robust
+                {
+                }
+                else                                                         
+                if (u < 0.0)
+                if (u > MAX_RELIABLE_WRAP_VALUE)
+            // ellipse defining the end of the gradient. When rendering this region
+            // This complex region appears when the gradient origin is outside the
+            // we choose the last texel color.
+            {
+            }
+            }   
+            4.0f * (  GradInfoParams.gradientSpanNormalized * GradInfoParams.gradientSpanNormalized * A
+            else
+            if (u < GradInfoParams.flHalfTexelSizeNormalized)
+            u = (2 * A * GradInfoParams.gradientSpanNormalized) / (sqrt(determinant) - B);
+            u = 1.0f - GradInfoParams.flHalfTexelSizeNormalized;
+        );
+        // AttenAndRange.w is the light's range
+        // CosHalfPhiAndCosDiff.x = cos(Phi/2)
+        // CosHalfPhiAndCosDiff.y = cos(Theta/2) - cos(Phi/2)
+        // Get distance (in unit circle) from sample point to the gradient origin:
+        // in WorldView space, the camera is at <0> so just invert the position
+        // normalize L
+        // see brushspan.cpp for an explanation of why the determinant is calculated this way.
+        // the max is to ensure that the attenuation only diminishes the light
+        {
+        }
+        else
+        firstTexelRegionRadiusSquared)
+        float A = dot(sampleToOrigin, sampleToOrigin);
+        float atten = 1.0 / max(Data.AttenAndRange.x
+        float B = 2.0f * dot(GradInfoParams.ptGradOrigin, sampleToOrigin);
+        float determinant = 
+        float DistToLight = length(VecToLight);
+        float rho = max(dot(Data.Direction, VecToLight), 0);
+        float sampleToOriginCrossOriginNorm = dot(sampleToOrigin, ptGradOriginPerp);
+        float spot = saturate((rho - Data.CosHalfPhiAndCosDiff.x) / Data.CosHalfPhiAndCosDiff.y);
+        float2 ptGradOriginPerp = {GradInfoParams.ptGradOrigin.y, -GradInfoParams.ptGradOrigin.x};
+        float2 sampleToOrigin = samplePos - GradInfoParams.ptGradOrigin;
+        float3 HalfVector = normalize(normalize(-TransformedPosition.xyz) + Data.Direction);
+        float3 HalfVector = normalize(normalize(-TransformedPosition.xyz) + VecToLight);
+        I
+        if (0.0f > determinant)
+        Output.Diffuse.rgb += Data.Color.rgb
+        Output.Diffuse.rgb += Data.Color.rgb * pow(max(dot(HalfVector, TransformedNormal), 0), SpecularPower);
+        PixelShader  = compile ps_2_0 PixelShaderImpl();
+        sampleGradientTexCoord = GradInfoParams.flHalfTexelSizeNormalized;
+        u = GradInfoParams.flHalfTexelSizeNormalized;
+        VecToLight /= DistToLight;
+        VertexShader = compile vs_2_0 VertexShaderImpl();
+    #define MAX_RELIABLE_WRAP_VALUE 32768
+    )
+    ) : COLOR
+    //
+    //       an instruction (slt) that returns 0 or 1 and multiplies that times the output color
+    //       textures. The card needs to interpolate different 1/w values.
+    // AttenAndRange.w is the light's range
+    // CosHalfPhiAndCosDiff.x = cos(Phi/2)
+    // CosHalfPhiAndCosDiff.y = cos(Theta/2) - cos(Phi/2)
+    // Ensure that the gradient space does not wrap around,
+    // Get distance (in unit circle) from sample point to the gradient origin:
+    // high risk of overflowing.
+    // Initialize the output alpha because the specular
+    // interpolating with the last stop at the center point.
+    // lighting functions ignore it.
+    // normalize L
+    // NOTE: Dividing the output position by w here will completely break
+    // Note: This does not actually generate a branch. The compiler translates this into
+    // optimizes away what's not used.
+    // Right now, only COLOR0 or NORMAL is used in a pass. The compiler
+    // Simple radial gradient
+    // supported since that's what refrast has.
+    // the max is to ensure that the attenuation only diminishes the light
+    // There are overflow issues in refrast and hw implementation of clamping.
+    // Therefore we need to clamp ourselves in areas of the shader that have a
+    // These will be optimized away when not in use
+    // We will go with 32768 as the maximum number of wraps that's support in 
+    {
+    }
+    }    
+    BlendColor = Diffuse;
+    CalcAmbientLighting_VS_ConstData Data,
+    color *= sampleGradientColor;
+    color *= tex1D(TextureSampler, u);
+    curPixelColor *= BlendColor;
+    curPixelColor *= data.alpha.a;
+    curPixelColor *= data.diffuse;
+    curPixelColor *= sampledColor.a;
+    curPixelColor *= sampledColor;
+    curPixelColor.a *= data.alpha.a;
+    curPixelColor.a *= Diffuse.a;
+    else
+    float    SpecularPower;
+    float atten = 1.0 / max(Data.AttenAndRange.x
+    float DistToLight = length(VecToLight);
+    float distToOriginSqr = uc_dx*uc_dx + uc_dy*uc_dy;
+    float firstTexelRegionRadiusSquared = GradInfoParams.flHalfTexelSizeNormalized * GradInfoParams.flHalfTexelSizeNormalized;
+    float rho = max(dot(Data.Direction, VecToLight), 0);
+    float sampleGradientTexCoord = sqrt(distToOriginSqr);
+    float spot = saturate((rho - Data.CosHalfPhiAndCosDiff.x) / Data.CosHalfPhiAndCosDiff.y);
+    float u;
+    float uc_dx = samplePos.x;
+    float uc_dy = samplePos.y;
+    float2 inputUV,
+    float2 samplePos,
+    float2 sampleToFirstTexelRegionCenter = samplePos - GradInfoParams.ptFirstTexelRegionCenter;
+    float2 UV_0     : TEXCOORD0,
+    float2 UV_1     : TEXCOORD1
+    float3 Normal   : NORMAL,
+    float3 VecToLight = Data.Position - TransformedPosition;
+    float4 BlendColor,
+    float4 curColor = Diffuse;
+    float4 Diffuse  : COLOR0
+    float4 Diffuse  : COLOR0,
+    float4 Diffuse  : COLOR0;
+    float4 Diffuse,
+    float4 Position : POSITION,
+    float4 Position : POSITION;
+    float4 sampledColor = tex2D(TextureSampler, uv);
+    float4 sampleGradientColor;
+    float4 WorldPos2D,
+    float4x4 View, WorldView, WorldViewProj, WorldViewAdjTrans;
+    for (int i = 0; i < 
+    if (dot(Data.Direction, TransformedNormal) > 0)
+    if (dot(sampleToFirstTexelRegionCenter, sampleToFirstTexelRegionCenter) <
+    if (dot(VecToLight, TransformedNormal) > 0)
+    if (sampleGradientTexCoord < GradInfoParams.flHalfTexelSizeNormalized)
+    in    CalcDiffuseDirectionalLighting_VS_ConstData Data,
+    in    CalcDiffusePointLighting_VS_ConstData Data,
+    in    CalcDiffuseSpotLighting_VS_ConstData Data,
+    in    CalcSpecularDirectionalLighting_VS_ConstData Data,
+    in    CalcSpecularPointLighting_VS_ConstData Data,
+    in    CalcSpecularSpotLighting_VS_ConstData Data,
+    in    float    SpecularPower,
+    in    float2  uv,
+    in    float3   TransformedNormal,
+    in    float4   TransformedPosition,
+    in    float4x4 mat4x4WorldViewAdjTransTransform,
+    in    float4x4 mat4x4WorldViewProjTransform,
+    in    float4x4 mat4x4WorldViewTransform,
+    in    GetSpecularPower_VS_ConstData Data,
+    in    sampler TextureSampler,
+    in  Get3DTransforms_VS_ConstData Data,
+    inout float2 outputUV
+    inout float3   Normal,
+    inout float3 TransformedNormal
+    inout float4   Position,
+    inout float4  curPixelColor
+    inout float4 BlendColor
+    inout float4 color
+    inout float4 curPixelColor
+    inout VertexShaderOutput Output
+    mat4x4WorldViewAdjTransTransform = Data.mat4x4WorldViewAdjTransTransform;
+    mat4x4WorldViewProjTransform     = Data.mat4x4WorldViewProjTransform;
+    mat4x4WorldViewTransform         = Data.mat4x4WorldViewTransform;
+    MultiplyAlpha_NonPremultiplied_PS_ConstData data,
+    MultiplyAlpha_PS_ConstData data,
+    MultiplyAlphaMask_Transform_InputUV_VS_ConstData data,
+    MultiplyConstant_PS_ConstData data,
+    MultiplyRadialGradientCentered_PS_ConstData GradInfoParams,
+    MultiplyRadialGradientNonCentered_PS_ConstData GradInfoParams,
+    MultiplyTexture_Transform_InputUV_VS_ConstData data,
+    Normal          = normalize(mul(Normal, (float3x3)mat4x4WorldViewAdjTransTransform));
+    out   float SpecularPower,
+    out float4x4 mat4x4WorldViewAdjTransTransform
+    out float4x4 mat4x4WorldViewProjTransform,
+    out float4x4 mat4x4WorldViewTransform,
+    Output.Diffuse = Data.Color;
+    Output.Diffuse = float4(1.0, 1.0, 1.0, 1.0);
+    Output.Diffuse.a = 0.0;
+    Output.Diffuse.rgb += Data.Color.rgb
+    Output.Diffuse.rgb += Data.Color.rgb * max(dot(TransformedNormal, Data.Direction), 0);
+    Output.Diffuse.rgb = min(Output.Diffuse.rgb, 1.0);
+    Output.Position = mul(Position, mat4x4WorldViewProjTransform);
+    Output.Position = mul(WorldPos2D, Data.mat4x4WorldToProjection);
+    outputUV = inputUV;
+    outputUV.x = inputUV.x*data.mat3x2TextureTransform[0][0] + inputUV.y*data.mat3x2TextureTransform[1][0] + data.mat3x2TextureTransform[2][0];
+    outputUV.y = inputUV.x*data.mat3x2TextureTransform[0][1] + inputUV.y*data.mat3x2TextureTransform[1][1] + data.mat3x2TextureTransform[2][1];
+    pass P0
+    Position        /= Position.w;
+    Position        = mul(Position, mat4x4WorldViewTransform);
+    return curColor;
+    return Output;
+    sampleGradientColor = tex1D(TextureSampler, sampleGradientTexCoord);
+    sampler TextureSampler,
+    SpecularPower = Data.SpecularPower.x;
+    Transform2D_VS_ConstData Data,
+    TransformedNormal *= -1.0;
+    VecToLight /= DistToLight;
+    VertexShaderOutput Output = (VertexShaderOutput)0;
+   float2 uv,
+   inout float4 curPixelColor
+   sampler TextureSampler,
+  !!!"""##$$$%%%&&&'''((())))***+++,,,,---....////000011122223333344445555666677777888899999:::::;;;;;<<<<<=====>>>>>?????@@@@@AAAAABBBBBBCCCCCCDDDDDEEEEEEFFFFFFGGGGGGHHHHHHIIIIIIJJJJJJKKKKKKKLLLLLLMMMMMMMNNNNNNOOOOOOOPPPPPPPQQQQQQQRRRRRRRSSSSSSSTTTTTTTTUUUUUUUVVVVVVVWWWWWWWWXXXXXXXXYYYYYYYZZZZZZZZ[[[[[[[[\\\\\\\\\]]]]]]]]^^^^^^^^_________````````aaaaaaaaabbbbbbbbbccccccccdddddddddeeeeeeeeeefffffffffggggggggghhhhhhhhhhiiiiiiiiijjjjjjjjjjkkkkkkkkkklllllllllmmmmmmmmmmnnnnnnnnnnnooooooooooppppppppppqqqqqqqqqqqrrrrrrrrrrssssssssssstttttttttttuuuuuuuuuuuvvvvvvvvvvvwwwwwwwwwwwxxxxxxxxxxxyyyyyyyyyyyyzzzzzzzzzzz{{{{{{{{{{{{|||||||||||}}}}}}}}}}}}~~~~~~~~~~~~
+  eb 0x%p 'p';g  -- terminate Process
+  eb 0x%p 't';g  -- terminate Thread
+  g                    -- Go (continue)
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefgh
+ .NET Framework
+ {BU)
+ 9Y4u"
+ A^^[
+ A^_^
+ A^_^][
+ A^A\_
+ A^A\_^]
+ A^A]_
+ A_A]A\
+ A_A^_
+ A_A^_^]
+ A_A^_H
+ A_A^A\
+ A_A^A\_]
+ A_A^A\_^
+ A_A^A\H
+ A_A^A]
+ A_A^A]_]
+ A_A^A]A\_
+ A_A^A]A\_^]
+ D;I|
+ HcyPH
+ Microsoft Corporation.  All rights reserved.
+ Microsoft Operations Puerto Rico1
+ or regular debugging.
+ wpfgfx_v0400.dl
+!\$ L
+!\$(M
+!|$(H
+!|$|!|$x!|$t!|$p
+!|$XE3
+!}l!}h!}d!}`D
+!D$0D
+!H;o0t$
+!l$8E3
+!q$E3
+!t$`!t$hH
+!This program cannot be run in DOS mode.
+!wp!wl!wh!wd
+"Microsoft Time Source Master Clock0
+#2B9r5B
+$;%L0r
+$?< s
+$`2X`F
+$A+|$
+$A9D$
+$Microsoft Root Certificate Authority
+$Microsoft Root Certificate Authority0
+$tXA+
+'$X{g
+&wztqA
+'( tNULL
+(]W%#
+(_^][
+(|$ @
+(|$ D
+(|$ H
+(|$ I
+(|$@D
+(|$@E
+(|$@H
+(|$@I
+(|$`D
+(|$`H
+(|$`I
+(|$`L
+(|$0D
+(|$0H
+(|$0I
+(|$PD
+(|$pD
+(|$PD
+(|$pE
+(|$PE
+(|$pH
+(|$PH
+(|$PI
+(|$pI
+(|$PI
+(|$pI
+(|$PI
+(|$pI
+(|$PI
+(|$pI
+(|$PI
+(|$pL
+(A_A^A]A\_^][
+(D$ f
+(D$ H
+(D$ M
+(D$@A
+(D$@D
+(D$@f
+(D$@H
+(D$`A
+(D$`H
+(D$0A
+(D$0D
+(D$0H
+(D$PA
+(D$pA
+(D$pf
+(L$ A
+(l$ D
+(L$ D
+(l$ D
+(L$ D
+(l$ D
+(L$ H
+(l$ L
+(l$@L
+(L$0D
+(l$0D
+(L$0D
+(L$0H
+(l$PD
+(m_pvReferencedSystemBits == 0)
+(No kernel debugger is present.) Respond with:
+(prcSource->Width() == prcDest->Width()) && (prcSource->Height() == prcDest->Height())
+(t$ @
+(T$ A
+(t$ H
+(T$ H
+(t$ H
+(T$ H
+(t$ H
+(T$ H
+(t$ H
+(t$ L
+(t$@D
+(t$@H
+(t$@I
+(t$@L
+(t$`H
+(t$`L
+(t$0@
+(t$0D
+(t$0H
+(t$0L
+(t$PD
+(t$pD
+(t$PH
+(t$pH
+(t$PH
+(t$pI
+(t$pL
+(t$PL
+(t$pL
+(t$PL
+(t$pL
+(t$PL
+(t$pL
+(t$PL
+(t$pL
+(t$PL
+(t$pL
+(t$PL
+)\$`D
+)\$`H
+)\$PD
+)`'v4$
+)|$ A
+)|$ H
+)|$ H;
+)|$ Hc
+)|$ I
+)|$ L+
+)|$ M
+)|$`M
+)|$0H
+)|$pD
+)|$Pf
+)|$pH
+)|$PH
+)|$pH
+)<$E;
+)<$z-u+
+)D$ D
+)D$ H
+)D$@D
+)d$@D
+)D$@D
+)d$@H
+)D$@H
+)D$@L
+)D$`D
+)D$`H
+)d$`M
+)d$0D
+)D$0E
+)D$pA
+)d$PD
+)D$PD
+)d$PD
+)L$ A
+)l$ D
+)L$@A
+)l$@D
+)L$@I
+)l$@L
+)L$`A
+)L$0A
+)L$0D
+)L$0H
+)L$P8Y@t
+)L$pA
+)L$PA
+)l$PD
+)l$pD
+)l$PD
+)L$Pf
+)L$pH
+)l$pL
+)L$Pt
+)M'@8y@t
+)Microsoft Root Certificate Authority 20100
+)Microsoft Root Certificate Authority 20110
+)t$ @8
+)t$ H
+)t$ I
+)t$ L
+)t$@3
+)t$@D
+)t$@H
+)t$@L
+)t$`D
+)T$`H
+)t$`L
+)t$03
+)t$0A+
+)t$0D
+)t$0D3
+)t$0E3
+)t$0H
+)t$0I
+)t$pD
+)t$pH
+)t$PH
+)t$pH
+***  
+***   %s%ls%sSource: `%ls:%ld`
+***   Investigate the stack capture to determine the source of the HRESULT.
+*** Assertion failed: %ls%ls%ls
+*?*kXIc
+,|$hD
+,A]p2A
+,D$`Hc
+,D$hLc
+,v]k=qo
+.?AU?$ListNodeT@VCStateThreadItem@@@@
+.?AU_LIST_ENTRY@@
+.?AU_WMPOCXEvents@@
+.?AUHANDLE_TABLE@@
+.?AUIAVSurfaceRenderer@@
+.?AUID2D1SimplifiedGeometrySink@@
+.?AUID3D10Blob@@
+.?AUIDirect3DDeviceManager9@@
+.?AUIDispatch@@
+.?AUIDrawingContext@@
+.?AUIGeometryGenerator@@
+.?AUIGeometrySink@@
+.?AUIHwPrimaryColorSource@@
+.?AUIManagedStream@@
+.?AUIMediaDeviceConsumer@@
+.?AUIMediaSeeking@@
+.?AUIMFActivate@@
+.?AUIMFAsyncCallback@@
+.?AUIMFAttributes@@
+.?AUIMFClockStateSink@@
+.?AUIMFGetService@@
+.?AUIMFMediaBuffer@@
+.?AUIMFRateSupport@@
+.?AUIMFTopologyServiceLookupClient@@
+.?AUIMFVideoDeviceID@@
+.?AUIMFVideoDisplayControl@@
+.?AUIMFVideoPresenter@@
+.?AUIMilBatchDevice@@
+.?AUIMILCacheableResource@@
+.?AUIMILCoreFactory@@
+.?AUIMILDynamicResource@@
+.?AUIMILEffectList@@
+.?AUIMILEventProxy@@
+.?AUIMILMedia@@
+.?AUIMILMesh3D@@
+.?AUIMILRefCount@@
+.?AUIMILRenderTarget@@
+.?AUIMILRenderTargetBitmap@@
+.?AUIMILRenderTargetHWND@@
+.?AUIMILResourceCache@@
+.?AUIMILShader@@
+.?AUIMILShaderDiffuse@@
+.?AUIMILShaderEmissive@@
+.?AUIMILShaderSpecular@@
+.?AUIMILSurfaceRendererProvider@@
+.?AUIOleClientSite@@
+.?AUIRenderTargetHWNDInternal@@
+.?AUISequentialStream@@
+.?AUIServiceProvider@@
+.?AUIStream@@
+.?AUIUnknown@@
+.?AUIWGXBitmap@@
+.?AUIWGXBitmapLock@@
+.?AUIWGXBitmapSource@@
+.?AUIWICBitmap@@
+.?AUIWICBitmapLock@@
+.?AUIWICBitmapSource@@
+.?AUIWMPEvents@@
+.?AUIWMPGraphCreation@@
+.?AUIWMPRemoteMediaServices@@
+.?AUListNode@@
+.?AUOpSpecificData@@
+.?AURenderClock@@
+.?AV?$_Ref_count@Vbuffer_xm@dxlayer@@@std@@
+.?AV?$CBaseSurfaceRenderTarget@UCHwRenderTargetLayerData@@@@
+.?AV?$CBaseSurfaceRenderTarget@UCSwRenderTargetLayerData@@@@
+.?AV?$CClipStack@UPageInPixels@CoordinateSpace@@@@
+.?AV?$CHw3DGeometryRenderer@K@@
+.?AV?$CHw3DGeometryRenderer@V?$vector3_t@$00@dxlayer@@@@
+.?AV?$CHwTVertexBuffer@UCD3DVertexXYZDUV8@@@@
+.?AV?$CHwTVertexBuffer@VCD3DVertexXYZDUV2@@@@
+.?AV?$CMFAttributesImpl@UIMFActivate@@VMFLockWrapper@@@@
+.?AV?$CResampleSpan@TGpCC@@@@
+.?AV?$DynArray@PEAUIMILCacheableResource@@$0A@@@
+.?AV?$DynArrayIA@PEAUIMILCacheableResource@@$01$0A@@@
+.?AV?$DynArrayImpl@$0A@@@
+.?AV?$ILineSink@UPointXYA@@@@
+.?AV?$ITriangleSink@UPointXYA@@@@
+.?AV?$LineWaffler@UPointXYA@@@@
+.?AV?$LocalMILObject@VCEffectList@@@@
+.?AV?$LocalMILObject@VCImmediateBrushRealizer@@@@
+.?AV?$LocalMILObject@VCMILBrushBitmap@@@@
+.?AV?$LocalMILObject@VCMILBrushLinearGradient@@@@
+.?AV?$LocalMILObject@VCMILBrushRadialGradient@@@@
+.?AV?$LocalMILObject@VCMILBrushSolid@@@@
+.?AV?$RealComObject@VEvrPresenter@@VNoDllRefCount@@@@
+.?AV?$RealComObject@VMFActivate@@VNoDllRefCount@@@@
+.?AV?$TMemBlockBase@VCBezier@@@@
+.?AV?$TMemBlockBase@VCChain@CScanner@@@@
+.?AV?$TMemBlockBase@VCLineSegmentIntersection@RobustIntersections@@@@
+.?AV?$TMemBlockBase@VCPreFigure@COutline@@@@
+.?AV?$TMemBlockBase@VCVertex@CScanner@@@@
+.?AV?$TMemBlockBase@VCVertexRef@CTessellator@@@@
+.?AV?$TMilSlaveValue@NUMILCMD_DOUBLERESOURCE@@$0DB@@@
+.?AV?$TMilSlaveValue@U_D3DCOLORVALUE@@UMILCMD_COLORRESOURCE@@$0DC@@@
+.?AV?$TMilSlaveValue@U_MilMatrix3x2D@@UMILCMD_MATRIXRESOURCE@@$0DG@@@
+.?AV?$TMilSlaveValue@UMilPoint2D@@UMILCMD_POINTRESOURCE@@$0DD@@@
+.?AV?$TMilSlaveValue@UMilPoint3F@@UMILCMD_POINT3DRESOURCE@@$0DH@@@
+.?AV?$TMilSlaveValue@UMilPoint3F@@UMILCMD_VECTOR3DRESOURCE@@$0DI@@@
+.?AV?$TMilSlaveValue@UMilPointAndSizeD@@UMILCMD_RECTRESOURCE@@$0DE@@@
+.?AV?$TMilSlaveValue@UMilQuaternionF@@UMILCMD_QUATERNIONRESOURCE@@$0DJ@@@
+.?AV?$TMilSlaveValue@UMilSizeD@@UMILCMD_SIZERESOURCE@@$0DF@@@
+.?AV?$TriangleWaffler@UPointXYA@@@@
+.?AV?$WmpStateEngineProxyItem@VCWmpStateEngine@@H@@
+.?AV?$WmpStateEngineProxyItem@VCWmpStateEngine@@W4Enum@RenderState@@@@
+.?AV_Generic_error_category@std@@
+.?AV_Iostream_error_category@std@@
+.?AV_Ref_count_base@std@@
+.?AV_System_error_category@std@@
+.?AVAVSurfaceRenderer@EvrPresenter@@
+.?AVbad_cast@std@@
+.?AVbuffer@dxlayer@@
+.?AVbuffer_xm@dxlayer@@
+.?AVBuilder@?$CHwTVertexBuffer@UCD3DVertexXYZDUV8@@@@
+.?AVBuilder@?$CHwTVertexBuffer@VCD3DVertexXYZDUV2@@@@
+.?AVBuilder@CHwVertexBuffer@@
+.?AVCAnimationPath@@
+.?AVCAnimationSegment@@
+.?AVCArea@@
+.?AVCAssembleContext@@
+.?AVCAssemblePass1@@
+.?AVCAssemblePass2@@
+.?AVCAssertEntry@@
+.?AVCAxisAlignedStripClipper@@
+.?AVCBaseClipStack@@
+.?AVCBaseGlyphRunPainter@@
+.?AVCBaseRenderTarget@@
+.?AVCBaseWGXBitmap@@
+.?AVCBilinearSpan@@
+.?AVCBilinearSpan_MMX@@
+.?AVCBoolean@@
+.?AVCBooleanClassifier@CBoolean@@
+.?AVCBoundsTask@@
+.?AVCBrushIntermediateCache@@
+.?AVCBrushRealizer@@
+.?AVCBrushResourceRealizer@@
+.?AVCChainList@CScanner@@
+.?AVCChainPool@CScanner@@
+.?AVCClassifier@CScanner@@
+.?AVCClientMemoryBitmap@@
+.?AVCCoder86@@
+.?AVCColorSource@@
+.?AVCColorSourceCreator@@
+.?AVCColorSourceCreator_scRGB@@
+.?AVCColorSourceCreator_sRGB@@
+.?AVCCompactFigure@@
+.?AVCCompactShape@@
+.?AVCComposition@@
+.?AVCCompoundShapeNoRef@@
+.?AVCConnectionContext@@
+.?AVCConstantAlphaSpan@@
+.?AVCConstantAlphaSpan_scRGB@@
+.?AVCConstantColorBrushSpan@@
+.?AVCCrossThreadComposition@@
+.?AVCCubicSegment@@
+.?AVCCurvePool@CScanner@@
+.?AVCD3DDeviceLevel1@@
+.?AVCD3DDeviceManager@@
+.?AVCD3DGlyphBankTemporarySurface@@
+.?AVCD3DGlyphRunPainter@@
+.?AVCD3DGlyphTank@@
+.?AVCD3DLockableTexture@@
+.?AVCD3DRenderState@@
+.?AVCD3DResource@@
+.?AVCD3DResourceManager@@
+.?AVCD3DSurface@@
+.?AVCD3DSwapChain@@
+.?AVCD3DSwapChainWithSwDC@@
+.?AVCD3DTexture@@
+.?AVCD3DTextureSurface@@
+.?AVCD3DVertexBuffer@@
+.?AVCD3DVertexBufferDUV2@@
+.?AVCD3DVertexBufferDUV6@@
+.?AVCD3DVertexBufferXYZNDSUV4@@
+.?AVCD3DVidMemOnlyTexture@@
+.?AVCDasher@@
+.?AVCDesktopHWNDRenderTarget@@
+.?AVCDesktopRenderTarget@@
+.?AVCDeviceBitmap@@
+.?AVCDrawingContext@@
+.?AVCDummyRenderTarget@@
+.?AVCDummyRenderTargetInstance@@
+.?AVCDummySource@@
+.?AVCDXVAManagerWrapper@@
+.?AVCEffectList@@
+.?AVCEventProxy@@
+.?AVCEvrFilterWrapper@@
+.?AVCFigureBase@@
+.?AVCFigureData@@
+.?AVCFigureTask@@
+.?AVCFillTessellator@@
+.?AVCFlatteningSink@@
+.?AVCFocalGradientBrushSpan@@
+.?AVCGeneralFillTessellator@@
+.?AVCGenericClipStack@@
+.?AVCGlyphRunGeometrySink@@
+.?AVCGlyphRunRealization@@
+.?AVCGlyphRunResource@@
+.?AVCGlyphRunStorage@@
+.?AVCGradientBrushSpan@@
+.?AVCHitTest@@
+.?AVCHitTestSink@@
+.?AVCHw3DSoftwareSurface@@
+.?AVCHwBitBltDeviceBitmapColorSource@@
+.?AVCHwBitmapBrush@@
+.?AVCHwBitmapCache@@
+.?AVCHwBitmapColorSource@@
+.?AVCHwBoxColorSource@@
+.?AVCHwBrush@@
+.?AVCHwBrushPoolManager@@
+.?AVCHwCacheablePoolBrush@@
+.?AVCHwColorComponentSource@@
+.?AVCHwColorSource@@
+.?AVCHwConstantAlphaColorSource@@
+.?AVCHwConstantAlphaScalableColorSource@@
+.?AVCHwConstantColorSource@@
+.?AVCHwConstantMilColorFColorSource@@
+.?AVCHwD3DBufferSpaceLocator@@
+.?AVCHwD3DIndexBuffer@@
+.?AVCHwD3DVertexBuffer@@
+.?AVCHwDestinationTexture@@
+.?AVCHwDestinationTexturePool@@
+.?AVCHwDeviceBitmapColorSource@@
+.?AVCHwDiffuseShader@@
+.?AVCHwDisplayRenderTarget@@
+.?AVCHwEmissiveShader@@
+.?AVCHwFFPipeline@@
+.?AVCHwFFPipelineBuilder@@
+.?AVCHwFFShader@@
+.?AVCHwHWNDRenderTarget@@
+.?AVCHwLightingColorSource@@
+.?AVCHwLinearGradientBrush@@
+.?AVCHwLinearGradientBrushPoolManager@@
+.?AVCHwLinearGradientColorSource@@
+.?AVCHWMFMediaBuffer@@
+.?AVCHwPipeline@@
+.?AVCHwPipelineBuilder@@
+.?AVCHwPipelineShader@@
+.?AVCHwPixelShaderEffect@@
+.?AVCHwRadialGradientBrush@@
+.?AVCHwRadialGradientBrushPoolManager@@
+.?AVCHwRadialGradientColorSource@@
+.?AVCHwRasterizer@@
+.?AVCHwRenderStateManager@@
+.?AVCHwShader@@
+.?AVCHwShaderCache@@
+.?AVCHwShaderPipeline@@
+.?AVCHwShaderPipelineBuilder@@
+.?AVCHwSoftwareFallback@@
+.?AVCHwSolidBrush@@
+.?AVCHwSolidColorTextureSource@@
+.?AVCHwSpecularShader@@
+.?AVCHwSurfaceRenderTarget@@
+.?AVCHwSurfaceRenderTargetSharedData@@
+.?AVCHwTexturedColorSource@@
+.?AVCHwTexturedColorSourceBrush@@
+.?AVCHwTextureRenderTarget@@
+.?AVCHwVertexBuffer@@
+.?AVCIdentitySpan@@
+.?AVCImmediateBrushRealizer@@
+.?AVCIncreasingFunction@@
+.?AVCIntermediateRTCreator@@
+.?AVCInteropDeviceBitmap@@
+.?AVCIntersectionPool@CScanner@@
+.?AVCLine@@
+.?AVCLinearGradientBrushSpan@@
+.?AVCLinearGradientBrushSpan_MMX@@
+.?AVCLineFigure@@
+.?AVCLineSegment@@
+.?AVCManagedStreamWrapper@@
+.?AVCMaskAlphaSpan@@
+.?AVCMaskAlphaSpan_scRGB@@
+.?AVCMediaControl@@
+.?AVCMediaEventProxy@@
+.?AVCMetaBitmapRenderTarget@@
+.?AVCMetaRenderTarget@@
+.?AVCMFMediaBuffer@@
+.?AVCMilAffineTransform3DDuce@@
+.?AVCMilAmbientLightDuce@@
+.?AVCMilAxisAngleRotation3DDuce@@
+.?AVCMilBitmapCacheBrushDuce@@
+.?AVCMilBitmapCacheDuce@@
+.?AVCMilBlurEffectDuce@@
+.?AVCMILBrush@@
+.?AVCMILBrushBitmap@@
+.?AVCMilBrushDuce@@
+.?AVCMILBrushGradient@@
+.?AVCMILBrushLinearGradient@@
+.?AVCMILBrushRadialGradient@@
+.?AVCMILBrushShaderEffect@@
+.?AVCMILBrushSolid@@
+.?AVCMILBrushWithCache@@
+.?AVCMILCacheableResource@@
+.?AVCMILCacheableResourceDummy@@
+.?AVCMilCacheModeDuce@@
+.?AVCMilCameraDuce@@
+.?AVCMilChannel@@
+.?AVCMilClientChannelTable@@
+.?AVCMILCOMBase@@
+.?AVCMilCombinedGeometryDuce@@
+.?AVCMilConnection@@
+.?AVCMilCyclicResourceListEntry@@
+.?AVCMilD3DImageDuce@@
+.?AVCMilDashStyleDuce@@
+.?AVCMILDeviceContext@@
+.?AVCMilDiffuseMaterialDuce@@
+.?AVCMilDirectionalLightDuce@@
+.?AVCMilDrawingBrushDuce@@
+.?AVCMilDrawingDuce@@
+.?AVCMilDrawingGroupDuce@@
+.?AVCMilDrawingImageDuce@@
+.?AVCMilDropShadowEffectDuce@@
+.?AVCMilEffectDuce@@
+.?AVCMilEllipseGeometryDuce@@
+.?AVCMilEmissiveMaterialDuce@@
+.?AVCMILFactory@@
+.?AVCMilGeometry3DDuce@@
+.?AVCMilGeometryDrawingDuce@@
+.?AVCMilGeometryDuce@@
+.?AVCMilGeometryGroupDuce@@
+.?AVCMilGeometryModel3DDuce@@
+.?AVCMilGlyphRunDrawingDuce@@
+.?AVCMilGradientBrushDuce@@
+.?AVCMilGuidelineSetDuce@@
+.?AVCMILHandleTable@@
+.?AVCMilImageBrushDuce@@
+.?AVCMilImageDrawingDuce@@
+.?AVCMilImageSource@@
+.?AVCMilImplicitInputBrushDuce@@
+.?AVCMILLight@@
+.?AVCMILLightAmbient@@
+.?AVCMILLightDirectional@@
+.?AVCMilLightDuce@@
+.?AVCMILLightPoint@@
+.?AVCMILLightSpot@@
+.?AVCMilLinearGradientBrushDuce@@
+.?AVCMilLineGeometryDuce@@
+.?AVCMilMaterialDuce@@
+.?AVCMilMaterialGroupDuce@@
+.?AVCMilMatrixCameraDuce@@
+.?AVCMilMatrixTransform3DDuce@@
+.?AVCMilMatrixTransformDuce@@
+.?AVCMILMesh3D@@
+.?AVCMilMeshGeometry3DDuce@@
+.?AVCMilModel3DDuce@@
+.?AVCMilModel3DGroupDuce@@
+.?AVCMILObject@@
+.?AVCMilOrthographicCameraDuce@@
+.?AVCMilPathGeometryDuce@@
+.?AVCMilPenDuce@@
+.?AVCMilPerspectiveCameraDuce@@
+.?AVCMilPixelShaderDuce@@
+.?AVCMilPointLightDuce@@
+.?AVCMILPoolResource@@
+.?AVCMilProjectionCameraDuce@@
+.?AVCMilQuaternionRotation3DDuce@@
+.?AVCMilRadialGradientBrushDuce@@
+.?AVCMilRectangleGeometryDuce@@
+.?AVCMILRefCountBase@@
+.?AVCMILResourceCache@@
+.?AVCMILResourceIndex@@
+.?AVCMilRotateTransform3DDuce@@
+.?AVCMilRotateTransformDuce@@
+.?AVCMilRotation3DDuce@@
+.?AVCMilScaleTransform3DDuce@@
+.?AVCMilScaleTransformDuce@@
+.?AVCMilServerChannel@@
+.?AVCMilServerChannelTable@@
+.?AVCMILShader@@
+.?AVCMILShaderBrush@@
+.?AVCMILShaderDiffuse@@
+.?AVCMilShaderEffectDuce@@
+.?AVCMILShaderEmissive@@
+.?AVCMILShaderSpecular@@
+.?AVCMilSkewTransformDuce@@
+.?AVCMilSlaveBitmap@@
+.?AVCMilSlaveDoubleBufferedBitmap@@
+.?AVCMilSlaveHandleTable@@
+.?AVCMilSlaveRenderData@@
+.?AVCMilSlaveResource@@
+.?AVCMilSlaveVideo@@
+.?AVCMilSolidColorBrushDuce@@
+.?AVCMilSpecularMaterialDuce@@
+.?AVCMilSpotLightDuce@@
+.?AVCMilTileBrushDuce@@
+.?AVCMilTransform3DDuce@@
+.?AVCMilTransform3DGroupDuce@@
+.?AVCMilTransformDuce@@
+.?AVCMilTransformGroupDuce@@
+.?AVCMilTranslateTransform3DDuce@@
+.?AVCMilTranslateTransformDuce@@
+.?AVCMilVideoDrawingDuce@@
+.?AVCMilViewport3DVisual@@
+.?AVCMilVisual@@
+.?AVCMilVisual3D@@
+.?AVCMilVisualBrushDuce@@
+.?AVCMilVisualCache@@
+.?AVCMilVisualCacheSet@@
+.?AVCModelRenderWalker@@
+.?AVCNearestNeighborSpan@@
+.?AVCObjectUniqueness@@
+.?AVCOutline@@
+.?AVCOutputSpan@@
+.?AVCOwnedOSD@@
+.?AVCParallelogram@@
+.?AVCParallelogramFigure@@
+.?AVCPartitionThread@@
+.?AVCPen@@
+.?AVCPenInterface@@
+.?AVCPopulationSinkAdapter@@
+.?AVCPreComputeContext@@
+.?AVCPreFigurePool@COutline@@
+.?AVCPrerender3DContext@@
+.?AVCPrerenderWalker@@
+.?AVCPSTrans@@
+.?AVCRadialGradientBrushSpan@@
+.?AVCRail@@
+.?AVCRealFunction@@
+.?AVCRectangle@@
+.?AVCRectangleFigure@@
+.?AVCRectClipper@@
+.?AVCRectFillTessellator@@
+.?AVCRegionFillTessellator@@
+.?AVCRelation@@
+.?AVCRender3DContext@@
+.?AVCRenderTarget@@
+.?AVCRenderTargetManager@@
+.?AVCReusableBitmapLock@@
+.?AVCSameThreadComposition@@
+.?AVCScanner@@
+.?AVCScanPipeline@@
+.?AVCScanPipelineRendering@@
+.?AVCSegment@@
+.?AVCShaderEffectBrushSpan@@
+.?AVCShape@@
+.?AVCShapeBase@@
+.?AVCShapeFlattener@@
+.?AVCShapeWideningSink@@
+.?AVCSimplePen@@
+.?AVCSlaveEtwEventResource@@
+.?AVCSlaveGenericRenderTarget@@
+.?AVCSlaveHWndRenderTarget@@
+.?AVCSnappingTask@@
+.?AVCSpanClipper@@
+.?AVCSpanSink@@
+.?AVCSpecialCaseFillTessellator@@
+.?AVCSquaredSpeedDerivative@CAnimationSegment@@
+.?AVCStateThread@@
+.?AVCStateThreadItem@@
+.?AVCStripClipper@@
+.?AVCStrokeBoundsSink@@
+.?AVCSwBitmapCache@@
+.?AVCSwBitmapColorSource@@
+.?AVCSwDoubleBufferedBitmap@@
+.?AVCSWGlyphRunPainter@@
+.?AVCSwIntermediateRTCreator@@
+.?AVCSWMFMediaBuffer@@
+.?AVCSwPresenter32bppGDI@@
+.?AVCSwPresenterBase@@
+.?AVCSwRenderTargetBitmap@@
+.?AVCSwRenderTargetGetBounds@@
+.?AVCSwRenderTargetHWND@@
+.?AVCSwRenderTargetSurface@@
+.?AVCSystemMemoryBitmap@@
+.?AVCTessellator@@
+.?AVCUnoptimizedBilinearSpan@@
+.?AVCVertexPool@CScanner@@
+.?AVCVertexRefPool@CTessellator@@
+.?AVCVisualCacheManager@@
+.?AVCWGXBitmap@@
+.?AVCWGXBitmapLock@@
+.?AVCWGXBitmapLockUnaligned@@
+.?AVCWGXWrapperBitmap@@
+.?AVCWGXWrapperBitmapLock@@
+.?AVCWGXWrapperBitmapSource@@
+.?AVCWICWrapperBitmap@@
+.?AVCWICWrapperBitmapLock@@
+.?AVCWICWrapperBitmapSource@@
+.?AVCWideningSink@@
+.?AVCWmpClientSite@@
+.?AVCWmpEventHandler@@
+.?AVCWmpPlayer@@
+.?AVCWmpStateEngine@@
+.?AVCWriteProtectedBitmap@@
+.?AVDummySurfaceRenderer@@
+.?AVdxerror@dxlayer@@
+.?AVdxlayer_exception@dxlayer@@
+.?AVerror_category@std@@
+.?AVEventItem@CMediaEventProxy@@
+.?AVEvrPresenter@@
+.?AVexception@std@@
+.?AVHeapBase@WPF@@
+.?AVhresult@dxlayer@@
+.?AVIAdapterStatusListener@@
+.?AVIFigureBuilder@@
+.?AVIFigureData@@
+.?AVIGraphIteratorSink@@
+.?AVIGraphNode@@
+.?AVIMILPoolManager@@
+.?AVIModelIteratorSink@@
+.?AVIPopulationSink@@
+.?AVIRenderTargetInternal@@
+.?AVMediaDeviceConsumer@@
+.?AVMediaInstance@@
+.?AVMFActivate@@
+.?AVPartition@@
+.?AVPathFigureData@@
+.?AVPathGeometryData@@
+.?AVPresenterInvoker@TimerWrapper@@
+.?AVProcessHeapImpl@WPF@@
+.?AVRDPSTrans@@
+.?AVTimerWrapper@@
+.?AVtype_info@@
+.?AVUpdateState@@
+.?AVwinerror@dxlayer@@
+.?AVWmp11ClientSite@@
+.@|z,u*
+.A@z u
+.A@z!u
+.A8z.u,
+.A8z/u-
+.D9s,u$9s(s
+.pdata
+.rsrc
+.text
+.tq[m
+// Copyright (c) Microsoft Corporation.  All rights reserved.
+// End of Dynamic Shader Code
+// Fragment Pixel Shader fragments...
+// Fragment Vertex Shader functions...
+// Main Pixel Shader
+// Main Vertex Shader
+// Pixel Fragment Data...
+// Pixel Shader Constant Data
+// Samplers...
+// Technique
+// Vertex Fragment Data...
+// Vertex Shader Constant Data
+/=aJcY
+/2v.I
+/D$0r
+/D$4s
+/D$8sM
+/D$Pv
+/D$Tv
+/L$(v
+/L$<s@
+/L$8v
+/L$Hv
+/L$Xr
+/m8w>
+/t$hr
+/t$Xr
+:oo.S
+:xCQyzC%
+; ++i)
+;\$Hu=
+;\$P}BH
+;^ swL
+;~Ls7
+;G0s]H;
+;G0sOH
+;i|v+
+;iDv)H
+;k v*
+;l$ v
+;nTv+
+;olwdH
+;Q0sZH
+;Q8s"H
+;Qpr!
+;wHvlH
+?,utH
+??_U@YAPEAX_K@Z
+??_V@YAXPEAX@Z
+??0exception@std@@QEAA@AEBV01@@Z
+??0exception@std@@QEAA@XZ
+??1exception@std@@UEAA@XZ
+?_Syserror_map@std@@YAPEBDH@Z
+?_type_info_dtor_internal_method@type_info@@QEAAXXZ
+?_Winerror_map@std@@YAPEBDH@Z
+?_Xbad_alloc@std@@YAXXZ
+?_Xlength_error@std@@YAXPEBD@Z
+?_Xout_of_range@std@@YAXPEBD@Z
+?333?
+?333?333?
+?H!|$0
+?http://crl.microsoft.com/pki/crl/products/microsoftrootcert.crl0T
+?t:D;
+?terminate@@YAXXZ
+?tFD;
+?tGE;
+?tz;t$Xtn
+?what@exception@std@@UEBAPEBDXZ
+@$;B<}
+@$A9@,
+@(;B@~
+@,;BD
+@.data
+@.didat
+@.reloc
+@:{`t
+@:sau
+@0H!\$8H!\$0H
+@8{TuZH
+@8|$0
+@8}gt
+@8}Ot A
+@8}Wt
+@8=g3
+@89t(H
+@8l$8
+@8l$8t
+@8r0u(
+@8s(t$@
+@8s(u
+@8t$@t
+@8t$At
+@8t$P
+@8t$Pu
+@8uOtDD
+@8uOtSD
+@8uOu
+@8wxu
+@A^_]
+@A^_^
+@A^_^][
+@A^A\]
+@A^A\_
+@A^A\_^]
+@A^A]_^]
+@A^A]A\_^
+@A_A^]
+@A_A^_
+@A_A^_^]
+@A_A^A\
+@A_A^A\_]
+@A_A^A\_^
+@A_A^A\_^][
+@A_A^A]
+@A_A^A]A\_^]
+@JfD;
+@Qm6t
+[ UVWH
+[#D35
+\$ E3
+\$ UH
+\$ USVWAVH
+\$ UVWATAUAVAWH
+\$ UVWAVAWH
+\$ UVWH
+\$ VWAVH
+\$(+D$(H
+\$(E#
+\$(E3
+\$(HcT$
+\$,z"u 
+\$\D9
+\$`9|$H
+\$`Hc
+\$0_]
+\$0A;
+\$0E3
+\$8;]
+\$dD+d$XD+\$\Lc
+\$hD9
+\$LA;l$
+\$X;]P
+\$X~e
+\$XE3
+\$XHcT$8Mc
+\L$PH
+]^v*X
+]y)-g
+^ }<]I
+__C_specific_handler
+__clean_type_info_names_internal
+__CppXcptFilter
+__crt_debugger_hook
+__crtCapturePreviousContext
+__crtTerminateProcess
+__crtUnhandledException
+__CxxFrameHandler3
+__dllonexit
+__RTDynamicCast
+_amsg_exit
+_calloc_crt
+_ConstantTable
+_copysign
+_CxxThrowException
+_FInf
+_finite
+_initterm
+_initterm_e
+_isnan
+_lock
+_malloc_crt
+_onexit
+_PS_ConstData
+_purecall
+_Sampler
+_unlock
+_VS_ConstData
+_vsnwprintf
+_wtoi
+` AUAVAWH
+` UAVAWH
+`.rdata
+`A^_^[]
+`A_A^_^]
+`A_A^A]A\_^]
+`Ge`@N
+{ ATAVAWH
+{ AVH
+{S?YN {
+|$ A;
+|$ AVH
+|$ E3
+|$ Hc
+|$ UATAUAVAWH
+|$ UATAVH
+|$ UAVAWH
+|$ UH
+|$$Ic
+|$(A^
+|$(E3
+|$(uGH
+|$@;S
+|$@A_A^A]A\
+|$@H;
+|$`I;
+|$0A_A^
+|$0A+
+|$0Hc
+|$8A_A]A\
+|$8A_A^A\
+|$8E3
+|$AE3
+|$d9q
+|$DE3
+|$H;} 
+|$HE3
+|$PA+
+|$pL!t$hL!t$`A
+|$T9t$\I
+|$tI;
+|$Tt~H
+|0A9^
+|5f*o
+|hK,_
+}"D9A
+}`L9|$`
+}2D;A
+}BD;I
+}gI9~@u!3
+}p |$
+}Pt6H
+}wD;eg
+}wD9{
+~8E9n
+~9|$@t.H
+~A9nTt
++:D+z
++5-UR
++A|A;
++L$ +
++s ;k
+<1v&<2t
+<2tl<:tLA
+<http://www.microsoft.com/pki/certs/MicrosoftTimeStampPCA.crt0
+<NULL>
+=]mE=H
+=oB`*sBr wB
+>,w.Hc
+>http://www.microsoft.com/pki/certs/MicCodSigPCA_08-31-2010.crt0
+>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0
+>http://www.microsoft.com/pki/certs/MicTimStaPCA_2010-07-01.crt0
+0!Q H
+0123456789
+040904B0
+070403125309Z
+0A^_]
+0A^_^
+0A^_^][
+0A^_^H
+0A^A\_
+0A^A\_^]
+0A^A]]
+0A__^
+0A_A]A\
+0A_A^_
+0A_A^_^]
+0A_A^A\
+0A_A^A\_]
+0A_A^A\_^
+0A_A^A\_^][
+0A_A^A]
+0A_A^A]_]
+0A_A^A]_^
+0A_A^A]_^[]
+0A_A^A]A\]
+0A_A^A]A\_
+0A_A^A]A\_^]
+0O)/;GY
+1(0&0
+1/0-0
+100701213655Z
+100831221932Z
+110708205909Z
+160907175851Z
+171002230052Z
+180712200848Z
+180712201119Z
+180807090715Z0#
+180907175851Z0
+190102230052Z0
+190726200848Z0t1
+190726201119Z0t1
+1A 9i@
+1http://www.microsoft.com/PKI/docs/CPS/default.htm0@
+1Jv1=+r
+200831222932Z0y1
+20180807074604Z
+20180807090717.775Z0
+20180808074604Z0w0=
+210403130309Z0w1
+229803+4379500
+230012+4379650
+250701214655Z0|1
+260708210909Z0~1
+2tAQ*5
+333?333?
+333?333?333?333?
+333?333?333?333?333?
+3A E3
+3http://www.microsoft.com/pkiops/docs/primarycps.htm0@
+4.7.3190.0
+4.7.3190.0 built by: NET472REL1LAST_C
+5|si6
+6\2l_M(C
+6+0@YHF
+8\$0t"L
+8^8tkH
+8_(u.H
+8_^[]
+8A^_^[
+8A_A^A\_^[
+8A_A^A]A\_^][
+8FqtK8FptF8GqtA8Gpt<L
+8http://www.microsoft.com/pki/certs/MicrosoftRootCert.crt0
+8Uwt#H
+8Uwt&H
+9!0f6
+9{Lv H
+9|$ u
+9|$ v
+9}0u0
+9~LvZH
+99Adu
+9A|u8
+9Al~<
+9B8u+H
+9D$PH
+9GDuV
+9i v8H
+9i$v'D
+9i@v2H
+9ipv$H
+9j,u5
+9L$@u
+9n(vHH
+9nPv]
+9nXv+H
+9q wmH
+9q(v:
+9q(vS
+9qxvPI
+9t$@t
+9t$\H
+9t$hv
+9w v/A;
+9w`v2H
+9wPv3H
+9X0v5L
+9XtuPH
+9Y@v;H
+9Y\u5H
+9YdtMA
+9yLv H
+9YPvKH!X
+9Yt~^
+9YTu5H
+9YXvB9Y v=L
+A 8Xtt
+A D;@(
+a s(D
+A tTD
+A(trH
+A,A;@
+A;^ s&
+A;^Pr
+A;A<w
+A;B s
+A;GLr
+A;I4r
+A;nPr
+A;oLr
+A;Q8w
+A@L9P
+A@Y!A
+A^_^[]
+A^_^][
+A^A\]
+A^A]]
+A^A]_
+A^A]_^]
+A^A]A\_^
+A^A]A\_^][
+A_A\]
+A_A\_
+A_A]_
+A_A]A\_^[]
+A_A^]
+A_A^_
+A_A^_][
+A_A^_^[
+A_A^_^[]
+A_A^_^]
+A_A^_^][
+A_A^A\
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[]
+A_A^A\_^][
+A_A^A]
+A_A^A]_]
+A_A^A]_^
+A_A^A]_^[]
+A_A^A]A\]
+A_A^A]A\_
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A_A^A]A\_^][
+A`    
+A+~p+
+A+B A
+A0A;@
+A0H9y(
+A14p,C
+A1F E
+A1F H
+A33[Aff
+A4A;@
+A8[)u
+a8CzD:C
+A8G`t(E
+A8G`t+E
+A8I9@8
+A8v@H
+A9@(u
+A9~xvuA
+A9GTs
+A9N<D
+A9nPv@I
+A9oLvAI
+A9p(u;L
+A9q ~^H
+A9q A
+Abort
+AbortingActivation
+AcquireSRWLockExclusive
+AddAnnotation
+AddAttachedHighlight
+AddAttachedMH
+AddAttachedSN
+AddDllDirectory
+AdHocProfile1End
+AdHocProfile1Start
+AdHocProfile2End
+AdHocProfile2Start
+ADVAPI32.dll
+advapi32.dll
+Ah9Al
+Ah9Ap~4H
+aH9s(uOH
+AHD8x
+AllocateLocallyUniqueId
+AllocationSize
+alpha
+AnnotationInkChanged
+AnnotationTextChanged
+AOC1&0$
+AOC1'0%
+Ap+Q(A
+ApH9<
+api-ms-win-eventing-provider-l1-1-0.dll
+AppDomainManagerCctor
+AppId
+ApplicationActivatorCreateInstanceEnd
+ApplicationActivatorCreateInstanceStart
+ApplicationIdle
+AppProxyCtor
+AppProxyRunEnd
+AppProxyRunStart
+ArrangeAbort
+ArrangeElementBegin
+ArrangeElementEnd
+AssemblyID
+AssemblyName
+AssertAppRequirementsEnd
+AssertAppRequirementsStart
+atan2f
+ATAUAWD
+ATAVAWH
+AttemptDownload
+AttenAndRange
+audio
+Avalon EVR
+ayl)u
+B$9A$
+B$9A$u%
+B(9A(u
+B(9B(
+B(A;F
+B(A9@(r
+B(t8:
+B,9B,u
+B,A;@,u
+B`D8L
+B<9BD
+B09A0u
+B0H!t$0H
+B13;z
+B48A4u
+B9, u
+Background
+BaD8L
+batch processing error
+BatchSize
+BbD8L
+BcD8L
+BeginLayerEnd
+BeginLayerStart
+BH@8r|t H
+Bhttp://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt0
+BindProgress
+BitBlt
+Bitmap
+BitmapCopy
+BitmapEnd
+BitmapStart
+bottom
+BQHA9AL
+Break, Go (continue), terminate Process, or terminate Thread (bgpt)? 
+BreakOnUnexpectedErrors
+BS49S8D
+Bytes
+C 9D$,
+C(tQ:
+C)D8C(u
+C,D;A
+C@L9p
+C\9{lt
+C09C,
+C0D8X
+C0D9XxA
+C0D9Xxt
+C0-J<
+C49C(
+CalcAmbientLighting
+CalcDiffuseDirectionalLighting
+CalcDiffusePointLighting
+CalcDiffuseSpotLighting
+CalcSpecularDirectionalLighting
+CalcSpecularPointLighting
+CalcSpecularSpotLighting
+CD3DDeviceLevel1::SetRenderTarget
+CDesktopRenderTarget::ScrollBlt
+ceilf
+CGlyphRunRealization::EnsureValidAlphaMap
+Ch9kdu
+CHAN\
+ChannelHandle
+ChannelPtr
+Chttp://crl.microsoft.com/pki/crl/products/MicrosoftTimeStampPCA.crl0X
+Chttp://www.microsoft.com/pkiops/crl/MicCodSigPCA2011_2011-07-08.crl0a
+CHwBitmapColorSource::GetSysMemUpdateSurfaceSource
+CInteropDeviceBitmap::Present D3D failure
+Cl9kdu
+ClassFactoryCreateInstance
+ClassicETW
+ClearHighlight
+ClickOnceActivationEnd
+ClickOnceActivationStart
+ClientToScreen
+Clip_and_Opacity
+ClippedBitmapEnd
+ClippedBitmapStart
+CloseHandle
+CmdFlags
+CmdId
+CMilBlurEffectDuce::ApplyEffect
+CMILCOMBase::InternalAddRef
+CMilVisualCache::IsOfType
+CMilVisualCacheSet::IsOfType
+CoCreateInstance
+CoInitialize
+Color
+CombineRgn
+Comments
+CompanyName
+ContextID
+ContextIdle
+CosHalfPhiAndCosDiff
+CoTaskMemAlloc
+CoTaskMemFree
+Could not create display set.
+CoUninitialize
+Count
+Cp9Gp
+CreateChannel
+CreateCompatibleBitmap
+CreateCompatibleDC
+CreateDIBSection
+CreateEventW
+CreateFileMappingW
+CreateHighlight
+CreateICW
+CreateOrAddOnChnl
+CreatePalette
+CreateRectRgn
+CreateRectRgnIndirect
+CreateStickyNote
+CreateThread
+CreateWpfGfxResource
+CSwPresenter32bppGDI::ScrollBlt
+CSwRenderTargetGetBounds::CreateRenderTargetBitmap
+CSwRenderTargetGetBounds::ReadEnabledDisplays
+CTD;C(
+curColor
+currentPosition
+CxD+Cp
+D!|$0L
+D!|$t
+D!}HI
+D!t$ M
+D!t$(H
+D!t$0L
+D!t$h3
+D#l$hH
+D$ +D$ A;@
+D$ D+
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+D$ H;
+D$ H;C
+D$ L+
+D$ M;
+D$(!t$ E3
+D$(A:
+D$(A;
+d$(D!|$ 
+D$(D9|$ u
+D$(E;
+d$(E3
+D$(E3
+D$(fD
+D$(H;
+D$(H;C u
+D$(H9uXL
+D$(L!|$ L
+D$(L;
+D$,9i
+D$@+D$@A
+D$@+D$8
+D$@3A E3
+D$@A#
+D$@A9
+d$@D9|$PD
+d$@E+
+D$@E3
+D$@H;
+D$@Hi
+D$`A+
+D$`D+
+D$`E3
+D$`fA
+D$`fE
+D$`H!t$@H
+D$`H;
+D$`L!v(
+D$09GX
+D$0A#
+d$0A+
+D$0A9
+D$0D3
+D$0E;
+D$0E2
+D$0E3
+d$0E3
+D$0E3
+D$0L!t$@H
+D$8A;
+D$8A9
+D$8E3
+D$8E9
+D$8fD;
+D$8H;
+D$8UV_
+D$9E3
+D$CI;
+D$cI;
+D$d+F
+D$dE3
+D$H_PS
+D$H_VS
+d$hA;^
+D$HE;
+D$HE;t$
+D$hE3
+D$HE3
+D$HfA#
+D$hH!\$HH
+D$hH!\$PH
+D$p+D$pf
+D$p9D$0
+D$pA#
+D$PA9Fp
+D$pE3
+D$PE3
+D$pE3
+D$PE3
+D$pE3
+D$PH9
+D$PHc
+D$pHcD$p
+D$PL#
+D$PL;
+D$PL+
+d$pM+
+d$TE;f
+D$XD;
+d$XD;g
+D$xE+
+D$xE3
+D$XE3
+D$xH;
+D)A0H9Y(t
+D:J`t
+D:Jat
+D:Jbt
+D;[,r
+D;[,s
+D;{tu
+D;C0}
+D;C0r
+D;C0s
+D;E,wQ
+D;Eos
+D;F|w
+D;G4w'H
+D;gP|
+D;H0s-H
+D;J`r
+D;K0r
+D;K0s
+D;KPr
+D;S,}%E
+D;S,r
+D;S,s
+D;t$D
+D;u@|
+D;v@r
+D;v@s
+D;wLr
+D;Ydu
+D+A,D
+D+K,I
+D+Y|E;
+D=xz#
+D0$E3
+d3d9.dll
+D3D9GetSWInfo
+D3DCompile
+D3DCOMPILER_47.dll
+D8[(u
+D8[)u
+d8_)u
+D8}yt0H
+D8=8r
+D8=Cp
+D8B`u
+D8e0t4H
+D8q8u
+D8R`s
+D8Ras
+D8Rbs
+D8Rcs
+D8t$0t7L9v
+D9@(s
+D9@`H
+D9@8u
+D9@pt
+D9|$@
+D9|$Pt
+D9ADv
+D9B$u3
+D9Bxt
+D9D$@t
+D9d$`L
+D9e(t
+D9e(vz
+D9e4t
+D9f`w
+D9ftr
+D9I`vhH
+D9K,D
+D9l$h
+D9l$huVA
+D9m@~xH
+D9m@t-H
+D9o v=H
+D9P(r
+D9Q,u
+D9Q<A
+D9R(v
+D9s(u
+D9t$D
+D9t$P
+D9t$Pt
+D9wls
+D9x wtA
+D9X(v
+D9x,u
+D9xTu
+D9Z(r
+Data_PS.
+Data_VS.
+DataBind
+DbgBreakPoint
+DbgPrintEx
+DbgPrompt
+DD8B`u
+DDBLD223A
+DebugBreak
+DecodePointer
+DeleteAnnotation
+DeleteCriticalSection
+DeleteDC
+DeleteInkNote
+DeleteObject
+DeleteTextNote
+DeserializeAnnotation
+DetermineApplicationTrustEnd
+DetermineApplicationTrustStart
+deviceTransform
+Diffuse
+diffuse
+Direct
+Direct3DCreate9
+Direct3DCreate9Ex
+Direction
+DisableGpuThrottling
+DisableHWAcceleration
+DisableInstrumentationBreaking
+DisableThreadLibraryCalls
+DispatcherPriority
+DispatchMessageW
+DISPLAY
+DisplayDevicesAvailabilityChanged
+DL$0H
+DllGetClassObject
+DocObjHostCreated
+DocObjHostRunApplicationEnd
+DocObjHostRunApplicationStart
+DownloadApplicationEnd
+DownloadApplicationStart
+DownloadDeplManifestEnd
+DownloadDeplManifestStart
+DownloadProgressUpdate
+DrawBitmap
+DrawEscape
+dt+`C
+DWMAPI.dll
+DwmAttachMilContent
+DwmDetachMilContent
+DWMDraw_
+DWMDraw_Clear
+DwmFlush
+DwmGetCompositionTimingInfo
+DwmGetGraphicsStreamClient
+DwmIsCompositionEnabled
+dwrite.dll
+DWriteCreateFactory
+dxva2.dll
+DXVA2CreateDirect3DDeviceManager9
+DynArray<class CGlyphRunRealization *,0>::At
+E!<$L!8
+E!C0I
+E#8E+t
+E%BRo(B
+E;A0r
+E;gLr
+E;QPr
+e_.,>
+e>2U0>
+E0C1)0'
+E0H!|$0H
+E9~xv~L
+E9Q r
+E9QPv
+Effect
+Eg : 
+eH!t$`H
+Ehttp://crl.microsoft.com/pki/crl/products/MicCodSigPCA_08-31-2010.crl0Z
+Ehttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z
+Ehttp://crl.microsoft.com/pki/crl/products/MicTimStaPCA_2010-07-01.crl0Z
+Ehttp://www.microsoft.com/pkiops/certs/MicCodSigPCA2011_2011-07-08.crt0
+ElementName
+EnableDebugControl
+EncodePointer
+End of HSC: m_actualState
+End of HSC: m_currentInternalState
+End of HSC: m_pendingInternalState
+End of HSC: m_targetInternalState
+End of HSC: m_targetState
+EndLayerEnd
+EndLayerStart
+EnterCriticalSection
+EnteringMessageLoop
+EnumDisplayDevicesW
+EnumDisplayMonitors
+EnumDisplaySettingsW
+EP9XPu
+EPD!t$(L
+EPM!4$L!7
+EqualRect
+etUx{
+EventData
+EventRegister
+EventUnregister
+EventWrite
+evr.dll
+Exception
+ExitCode
+ExitProcess
+f!HHH
+f$E^zf<c$
+F(;F`
+F(9FT
+f:\dd\wpf\src\graphics\common\shared\dynarray.h
+f:\dd\wpf\src\graphics\common\shared\milcom.cpp
+f:\dd\wpf\src\graphics\core\hw\d3ddevice.cpp
+f:\dd\wpf\src\graphics\core\hw\hwbitmapcolorsource.cpp
+f:\dd\wpf\src\graphics\core\meta\desktoprt.cpp
+f:\dd\wpf\src\graphics\core\resources\blureffect.cpp
+f:\dd\wpf\src\graphics\core\resources\glyphrunslave.cpp
+f:\dd\wpf\src\graphics\core\sw\boundsrt.cpp
+f:\dd\wpf\src\graphics\core\sw\swpresentgdi.cpp
+f:\dd\wpf\src\graphics\core\uce\visualcache.cpp
+f:\dd\wpf\src\graphics\core\uce\visualcacheset.cpp
+f:\dd\wpf\src\graphics\shared\util\utillib\debugbreak.cpp
+F`D9xLt/H
+F|+Ft9
+F0+F(
+F4+F,9F<
+F8+F09F@
+F8H!}8I;
+f92t!I
+f94Au
+fA;z*
+fA9(t
+fA9(txM
+fA9,Fu
+fA9z*v,A
+FaA8F`t&E
+false
+fD;QJu
+fD9$Xu
+fD9$xu
+fD9l$N
+fD9z*vV
+FdA9Fl
+fE;HJu
+ffffff
+FH9Fh
+FHA8v|t#I
+FhA9Fp
+FileDescription
+FileVersion
+FindClose
+FindFirstFileW
+FindResourceW
+FireAutomationEventsBegin
+FireAutomationEventsEnd
+FireLayoutUpdatedBegin
+FireLayoutUpdatedEnd
+FireSizeChangedBegin
+FireSizeChangedEnd
+FirstTimeActivation
+FirstVisiblePage
+Flavor=Retail
+flHalfTexelSizeNormalized
+FlipNormal
+float 
+float  
+float2 
+float3 
+float4
+float4 
+float4x2 
+float4x4 
+floor
+floorf
+fmodf
+FP@t!H
+FP+FT;
+FpD9`X
+FPuf3
+FreeLibrary
+Function: 
+FX+F\;
+Fx+Fp9
+G$9G,
+G(9G@uNE3
+G(9G0
+G(H9G8t>H
+G(L9G u
+G,9B,u
+G@H9h
+G\;G0
+g_samAccumColor
+g_samShdColor
+g_samSrcColor
+G09Xx
+g8_)u
+GA@A9IDD
+GA4D9A8
+Ga8G`t$D
+Ga8G`t*D
+Ga8G`t'D
+GaA8G`
+GaA8G`t+
+GD9G,tNf
+GDI32.dll
+Gdi32.dll
+GdiEntry13
+GDIProcessHandleQuota
+generic
+GeometryEnd
+GeometryStart
+Get3DTransforms
+GetAnnotationById
+GetAnnotationByLoc
+GetAnnotations
+GetClientRect
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+GetDC
+GetDesktopWindow
+GetDeviceCaps
+GetDIBits
+GetDownloadPageEnd
+GetDownloadPageStart
+GetDpiForMonitor
+GetGuiResources
+GetLastError
+GetModuleFileNameW
+GetModuleHandleW
+GetMonitorInfoW
+GetNextPerfElementId
+GetParent
+GetProcAddress
+GetProcessHeap
+GetRandomRgn
+GetRefCountOnChannel was called on a resource that is not anymore on this channel
+GetRegionData
+GetRgnBox
+GetSpecularPower
+GetSystemDirectoryW
+GetSystemInfo
+GetSystemPaletteEntries
+GetSystemTimeAsFileTime
+GetTickCount
+GetTraceEnableFlags
+GetTraceEnableLevel
+GetTraceLoggerHandle
+GetVersionExW
+GetWindowDC
+GetWindowLongW
+GhA9Fht!L
+GIDA9QH
+GK,9K0D
+GK0D9S4
+GlA9Gh
+GlobalUnlock
+GlyphRunEnd
+GlyphRunStart
+GP;G$
+GP+GT;
+GpA9Fpr
+GPH9GH
+GQ09A4
+gradientSpanNormalized
+GT;G(
+GtA9Ftr
+GUID_Data1
+GX;G,
+GX+G\;
+h VWATAVAWH
+h VWAUAVAWH
+h VWAVH
+H WATAUAVAWH
+H WAVAWH
+H!:H9
+H!\$@E
+H!\$8H
+H!\$pH
+H!\$PH
+H!\$PL
+H!\$X9Y
+H!|$ H
+H!|$ L
+H!|$(H
+H!|$(I
+H!|$@I
+H!|$0H
+H!|$HD
+H!|$PH
+H!|$xI
+H!=:F
+H!2H!p
+H!D$`f
+H!D$PH
+H!EPH
+H!l$ 
+H!l$@
+H!l$hL
+H!l$PM
+H!n@!n0
+H!p L
+H!Q H
+H!Q@!QHA
+H!t$ L
+H!t$@
+H!t$`
+H!t$`@8uH
+H!t$`L
+H!t$h
+H!t$P
+H!t$PH
+H!t$PL
+H!u@H
+H!u0H!u
+H!W0H
+H!WXH!W`
+H!x L
+H!Y(H
+h#j"e
+H;|80
+H;~@tAH
+H;~`t>H
+H;~0tAH
+H;~htHH
+H;AHu
+H;D$8td
+H;l$@
+h;nPr
+H;Qpt;H
+h;VLw4
+H;W(L
+H@A9p,
+H+BHH
+H+D$`Hi
+H+L$8Hi
+H0F0D
+H3E H3E
+H9\$0
+H9^Xu%H!\$hH
+H9~XuLH
+H9=WV
+H97u#H
+H9A t
+H9A u
+H9A0u
+H9Apt
+H9B0u!I
+H9D$`|
+H9D$8
+H9H u
+H9iHu5
+H9nHtU3
+H9o@u
+H9Q t
+H9q(t}D
+H9qXuKH
+H9w(uOH
+H9wXu
+H9x@tB
+H9Y t0
+H9Yhu
+hA_A^_^[]
+hA_A^_^][
+hA_A^A\^[]
+hA_A^A]A\_^[]
+hA_A^A]A\_^][
+HA_A^A]A\_^][
+HardwareInformation.MemorySize
+Hc|$$H
+Hc} H
+HcD$ H
+HcD$ M
+HcD$@
+HcD$`L
+HcD$`M
+HcEPL
+HcH<H
+HcL$(I
+Hcl90M
+HcODH+
+HcT$ Lc
+HcT$XMc
+HeapAlloc
+HeapFree
+HeapReAlloc
+height
+Height
+height
+Height
+height
+Height
+HResult
+http://microsoft.com0
+HwndSource_SetLayoutSize
+HwndSource_WM_SIZE
+'i' is only supported with debug builds.
+I!7D;
+I!Q H
+I!s A
+I!vpA
+I.?>*:R>
+I?O8v?
+I@H9A
+i^<io
+I+~(H
+I+F(H
+I0G0E
+I9.uLH
+I9@ u0L
+I9>u(H
+I96tY
+I96uhH!p
+I9y t(I
+IBHSRunEnd
+IBHSRunStart
+IcG8H
+IHlinkTargetNavigateEnd
+IHlinkTargetNavigateStart
+Ihttp://crl.microsoft.com/pki/crl/products/MicRooCerAut2011_2011_03_22.crl0^
+Il0{!
+IMAGE
+ImageEnd
+ImageStart
+Inactive
+Information
+InitAppProxyEnd
+InitAppProxyStart
+InitDocHostEnd
+InitDocHostStart
+InitializeCriticalSectionAndSpinCount
+InitializeSListHead
+Input
+InstalledDisplayDrivers
+InterlockedFlushSList
+InterlockedPushEntrySList
+intermediate rendering error
+IntermediateRenderTargetReason
+InternalName
+InteropDeviceBitmap_AddDirtyRect
+InteropDeviceBitmap_Create
+InteropDeviceBitmap_Detach
+InteropDeviceBitmap_GetAsSoftwareBitmap
+IntersectRect
+Invalid dirty region
+invalid string position
+Invalidated
+InvalidateRect
+InvokingBrowser
+iostream
+iostream stream error
+IPersistFileLoad
+IPersistMonikerLoadEnd
+IPersistMonikerLoadStart
+IsDebuggerPresent
+IsProcessorFeaturePresent
+IsRectEmpty
+IsWindow
+IsWow64Process
+It$PL
+IWICColorContext_GetExifColorSpace_Proxy
+IWICColorContext_GetProfileBytes_Proxy
+IWICColorContext_GetType_Proxy
+J tFM
+J4=THJ$
+jBl@1
+jIm?%
+K t`L
+K WAVAWH
+K,HcA
+K|+Kt
+K0+KPH
+k8_)u
+KERNEL32.DLL
+kernel32.dll
+KERNEL32.dll
+KeywordAnimation
+KeywordAnnotation
+KeywordDispatcher
+KeywordGeneral
+KeywordGraphics
+KeywordHeapMeter
+KeywordHosting
+KeywordInput
+KeywordLayout
+KeywordPerf
+KeywordText
+KeywordXamlBaml
+KeywordXPS
+Kh+KPH
+kIx:T
+L!|$ H
+L!|$0H
+L!d$ I
+L!d$(E3
+L!l$ L
+L!t$ H
+L!t$H3
+L!t$pE3
+L!u0H
+L!uHH
+L!uHL!u
+L!uXH
+L$ E3
+l$ E3
+L$ E3
+L$ I+
+L$ L#
+L$ SH
+L$ SUVWH
+L$ t&L
+L$ UAVAWH
+L$ UH
+L$ USVWAVH
+L$ UVWATAUAVAWH
+L$ UVWAVAWH
+L$ UVWH
+l$ VH
+L$ VH
+l$ VWATAUAVAW
+l$ VWATAUAVAWD
+l$ VWATAVAWH
+l$ VWAVH
+L$ VWAVH
+l$ VWAVH
+l$ VWAWH
+L$$D;
+L$(D!
+L$(D+L$ 
+L$(E3
+l$(E3
+L$(H3
+L$(HcD$0H+
+l$,A;
+L$@E3
+l$@E3
+L$@E3
+L$@H!t$XH!t$@
+L$@H3
+L$@Hi
+L$`H3
+L$`Hi
+L$<D+
+l$<Hc
+L$09S
+L$0A#
+L$0D#
+L$0E3
+l$0E3
+L$0E3
+L$0H;
+L$0H3
+L$4D;
+l$4D+
+L$8H;
+L$8H3
+l$8I+
+L$D+L$<
+L$HE;
+L$hE3
+l$Hf;
+L$HfD;
+L$HH3
+L$hH3
+L$HH3
+l$HHc
+L$lE3
+l$PA_A^A]A\_^
+L$pE2
+L$pH!\$HH!\$@I
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$QL+
+L$XA;
+L$XH3
+L$xH3
+L&*H$_Z
+L;Axs
+L;d$P
+L=GXc=
+L0J0H
+L9;uFL
+L9|$`t
+L9|$0
+L9B0t
+L9H u
+L9Jpu/
+LA 9F 
+LastVisiblePage
+LaunchingRestrictedProcess
+LayerEvent
+LayoutManager
+LayoutSourceMap
+LcA<E3
+LcD9(Lct9,I
+LcEHM
+Lcl$PE+
+Lcl$PH
+LeaveCriticalSection
+Legal_Policy_Statement
+Legal_policy_statement
+LegalCopyright
+LEVL\
+LineNumber
+LinePosition
+LoadAnnotations
+Loaded
+LoadingResourceDLLEnd
+LoadingResourceDLLStart
+LoadLibraryExA
+LoadLibraryExW
+LoadLibraryW
+LoadResource
+Location
+LockResource
+loopCounter
+LoopDurationMS
+LParam
+Lq A;
+Lt]Z?d
+M@9?A
+m_eWindowLayerType == MilWindowLayerType::NotLayered
+m_pIDWriteGlyphRunAnalysis != 0
+m`](}'fi
+M0F9|1@t
+M0K0I
+M9>u)
+ManipulationEventRaised
+ManipulationReportFrame
+MapViewOfFile
+mat3x2TextureTransform
+mat4x4WorldToProjection
+mat4x4WorldViewAdjTransTransform
+mat4x4WorldViewProjTransform
+mat4x4WorldViewTransform
+MaxMultisampleType
+MB).QBB
+-mCh]oC,
+MeasureAbort
+MeasureElementBegin
+MeasureElementEnd
+memcmp
+memcpy
+memmove
+memset
+MergingMenusEnd
+MergingMenusStart
+Message
+MeterTag
+MFCreateDXSurfaceBuffer
+MFCreateVideoSampleFromSurface
+Mg9L8
+mgA8v8
+Microsoft
+Microsoft (R) HLSL Shader Compiler 9.24.950.2656
+Microsoft Code Signing PCA
+Microsoft Code Signing PCA 2011
+Microsoft Code Signing PCA 20110
+Microsoft Code Signing PCA0
+Microsoft Corporation
+Microsoft Corporation0
+Microsoft Corporation1
+Microsoft Corporation1!0
+Microsoft Corporation1#0!
+Microsoft Corporation1&0$
+Microsoft Corporation1(0&
+Microsoft Corporation1200
+Microsoft Time-Stamp PCA
+Microsoft Time-Stamp PCA 2010
+Microsoft Time-Stamp PCA 20100
+Microsoft Time-Stamp PCA0
+Microsoft Time-Stamp Service
+Microsoft Time-Stamp Service0
+microsoft1-0+
+Microsoft-Windows-WPF/Default
+MIL FAILURE: Unexpected HRESULT 0x%08x in caller: %s
+MIL3DCalcProjected2DBounds
+MILAddRef
+MilChannel_AppendCommandData
+MilChannel_BeginCommand
+MilChannel_CloseBatch
+MilChannel_CommitChannel
+MilChannel_EndCommand
+MilChannel_GetMarshalType
+MilChannel_SetNotificationWindow
+MilChannel_SetReceiveBroadcastMessages
+MilComposition_PeekNextMessage
+MilComposition_SyncFlush
+MilComposition_WaitForNextMessage
+MilCompositionEngine_DeinitializePartitionManager
+MilCompositionEngine_EnterCompositionEngineLock
+MilCompositionEngine_ExitCompositionEngineLock
+MilCompositionEngine_GetComposedEventId
+MilCompositionEngine_InitializePartitionManager
+MilCompositionEngine_UpdateSchedulerSettings
+MilConnection_CreateChannel
+MilConnection_DestroyChannel
+MilContent_AttachToHwnd
+MilContent_DetachFromHwnd
+MILCreateEventProxy
+MILCreateFactory
+MILCreateStreamFromStreamDescriptor
+MILFactoryCreateBitmapRenderTarget
+MILFactoryCreateMediaPlayer
+MILFactoryCreateSWRenderTargetForBitmap
+MilGlyphRun_GetGlyphOutline
+MilGlyphRun_ReleasePathGeometryData
+MilInstrumentationBreak
+MILIStreamWrite
+MILLoadResource
+MILMediaCanPause
+MILMediaClose
+MILMediaGetBufferingProgress
+MILMediaGetDownloadProgress
+MILMediaGetMediaLength
+MILMediaGetNaturalHeight
+MILMediaGetNaturalWidth
+MILMediaGetPosition
+MILMediaHasAudio
+MILMediaHasVideo
+MILMediaIsBuffering
+MILMediaNeedUIFrameUpdate
+MILMediaOpen
+MILMediaProcessExitHandler
+MILMediaSetBalance
+MILMediaSetIsScrubbingEnabled
+MILMediaSetPosition
+MILMediaSetRate
+MILMediaSetVolume
+MILMediaShutdown
+MILMediaStop
+MilPlayer_Create
+MilPlayer_Process
+MILQueryInterface
+MILRelease
+MILRenderTargetBitmapClear
+MILRenderTargetBitmapGetBitmap
+MilResource_CreateCWICWrapperBitmap
+MilResource_CreateOrAddRefOnChannel
+MilResource_DuplicateHandle
+MilResource_GetRefCountOnChannel
+MilResource_ReleaseOnChannel
+MilResource_SendCommand
+MilResource_SendCommandBitmapSource
+MilResource_SendCommandMedia
+MILSwDoubleBufferedBitmapAddDirtyRect
+MILSwDoubleBufferedBitmapCreate
+MILSwDoubleBufferedBitmapGetBackBuffer
+MILSwDoubleBufferedBitmapProtectBackBuffer
+MilUnexpectedError
+MILUpdateSystemParametersInfo
+MilUtility_ArcToBezier
+MilUtility_CopyPixelBuffer
+MilUtility_GeometryGetArea
+MilUtility_GetPointAtLengthFraction
+MilUtility_GetTileBrushMapping
+MilUtility_PathGeometryBounds
+MilUtility_PathGeometryCombine
+MilUtility_PathGeometryFlatten
+MilUtility_PathGeometryHitTest
+MilUtility_PathGeometryHitTestPathGeometry
+MilUtility_PathGeometryOutline
+MilUtility_PathGeometryWiden
+MilUtility_PolygonBounds
+MilUtility_PolygonHitTest
+MilVersionCheck
+MilVisualTarget_AttachToHwnd
+MilVisualTarget_DetachFromHwnd
+MonitorFromWindow
+MsgWaitForMultipleObjects
+MSVCP120_CLR0400.dll
+MSVCR120_CLR0400.dll
+MulDiv
+MultiplyAlpha
+MultiplyAlpha_NonPremultiplied
+MultiplyAlphaMask_NoTransformFromUV
+MultiplyAlphaMask_Transform_InputUV
+MultiplyByInputDiffuse
+MultiplyByInputDiffuse_NonPremultipliedInput
+MultiplyConstant
+MultiplyRadialGradientCentered
+MultiplyRadialGradientNonCentered
+MultiplyTexture_NoTransformFromUV
+MultiplyTexture_Transform_InputUV
+N +N@
+n < Count
+N@D+T$`M
+N=|)H
+N0L0J
+n0M9}
+N4+N,A
+Navigation
+NavigationAsyncWorkItem
+NavigationContentRendered
+NavigationEnd
+NavigationLaunchBrowser
+NavigationMode
+NavigationPageFunctionReturn
+NavigationStart
+NavigationWebResponseReceived
+nCipher DSE ESN:D236-37DA-97611%0#
+nCipher NTS ESN:2665-4C3F-C5DE1+0)
+nD$,fD
+nD$4fD
+NeedsRePresentOnWake
+nextafterf
+nHH9m
+nI fA
+nL$(f
+NoDialogs
+NoHardwareAvailable
+Normal
+ntdll.dll
+NtQuerySystemInformation
+NullFunction
+o\$PH
+O0M0K
+oD$ f
+oD9f,t
+oDi[?
+ofD9|$`
+offset
+OffsetRect
+OffsetRgn
+oIoX]i*
+oK0D$"<
+oL$0f
+ole32.dll
+OLEAUT32.dll
+OleCmdExecEnd
+OleCmdExecStart
+OleCmdQueryStatusEnd
+OleCmdQueryStatusStart
+OnStopBinding
+opacity
+Opacity
+OpacityMask
+OpacityMask_Brush_Realization
+OPCO$
+Operation
+OriginalFilename
+oT$@f
+OutOfVideoMemory
+Output
+Output.
+OutputDebugStringW
+OXHt,N4
+p AWH
+p H9i t
+p UWATAVAWH
+p WATAUAVAWH
+p WATAWH
+p WAUAVH
+p WAVAWH
+P(A9@,t
+P;u(r
+pA^_]
+PA^_^
+pA^_^
+PA^_^
+pA^_^[]
+PA^_^][
+PA^A\_^]
+PA^A]_^]
+PA_A]_^]
+PA_A^]
+pA_A^_^]
+PA_A^_^]
+pA_A^_^]
+PA_A^A\_^[]
+PA_A^A\_^][
+pA_A^A\_^][
+PA_A^A]_^[]
+pA_A^A]A\_^[
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PageNumber
+ParentResourcePtr
+ParsingMarkupVersionEnd
+ParsingMarkupVersionStart
+pause
+pD3DSurface->ID3DSurface() != 0
+pD9L9
+PeekMessageW
+PenThreadPoolThreadAcquisition
+PerfElementID
+PerfEltId
+Performance_HighImpact
+Performance_LowImpact
+Performance_MedImpact
+Performance_NoImpact
+PixelShaderConstantData Data_PS;
+PixelShaderImpl
+PixelShaderImpl(
+Please check for proper Direct3D 9 installation.
+Pointer
+Position
+PostMessageW
+PostShutdown
+presentation error
+PresentationResults
+Priority
+PrivateBuild
+ProcessHeapPtr
+ProductName
+ProductVersion
+ProgressPageShown
+PropVariantClear
+PropVariantCopy
+ps_2_0
+ps_2_a
+ps_3_0
+ps_4_0_level_9_1
+ps_4_0_level_9_3
+ptFirstTexelRegionCenter
+ptGradOrigin
+Q D;@
+Q>U0j
+Q0H!\$pE
+Q0I9Q@
+qauds
+QEX82q'
+QPCCurrentTime
+QPCExpectedPresentTime
+QPCFrequency
+QPCLastPresentationTime
+qsort
+QueryDepthSList
+QueryPerformanceCounter
+QueryPerformanceFrequency
+r&D;I
+r:xcf.
+r~akow
+R0P0N
+r7D9v
+RaiseException
+rcI9>t
+ReadingAppManifestEnd
+ReadingAppManifestStart
+ReadingDeplManifestEnd
+ReadingDeplManifestStart
+ReadyStateChanged
+RealizePalette
+Reason
+RectangleEnd
+RectangleStart
+RectInRegion
+Redmond1
+RegCloseKey
+RegisterTraceGuidsW
+RegisterWindowMessageW
+RegOpenKeyExW
+RegQueryValueExW
+ReleaseDC
+ReleaseOnChannel
+ReleaseOnChannel was called on a resource that is not anymore on this channel
+ReleaseSRWLockExclusive
+RemoveAttachedHighlight
+RemoveAttachedMH
+RemoveAttachedSN
+Render
+RenderDelay
+RenderOptions_ForceSoftwareRenderingModeForProcess
+RenderOptions_IsSoftwareRenderingForcedForProcess
+RequiredVideoDriverDate
+ResetEvent
+ResizeFailed
+ResourceHandle
+ResourcePtr
+ResourceType
+ResponseID
+Result
+ReturnCode
+rF8]@
+RfD9|$`
+RGB9Rast.dll
+RGB9Rast_2.dll
+right
+RootBrowserWindowSetupEnd
+RootBrowserWindowSetupStart
+RtlCaptureStackBackTrace
+RtlClearBits
+RtlFindClearBitsAndSet
+RtlInitializeBitMap
+RtlInterlockedFlushSList
+RtlSetBits
+RtlVerifyVersionInfo
+s WATAUAVAWH
+s WAVAWH
+s$fD;{*sUD8=s4
+S0Q0O
+sampler 
+sampleStart
+ScreenToClient
+SelectObject
+SelectPalette
+SerializeAnnotation
+SetClip
+SetDpiAwarenessForDisplayModeText
+SetEvent
+SetLastError
+SetLayeredWindowAttributes
+SetLayout
+SetMilPerfInstrumentationFlags
+SetRect
+SetRectRgn
+SetThreadPriority
+SH9SLu
+ShaderEffect_Input
+shadowColor
+shcore.dll
+SizeofResource
+Sleep
+SleepEx
+Software\Microsoft\Avalon.Graphics
+Software\Microsoft\Avalon.Graphics\MultiAdapterSupport
+Software\Microsoft\Windows NT\CurrentVersion\Windows
+Software\Microsoft\Windows NT\CurrentVersion\WinSAT
+Software_Only_Effects
+source
+SpecularPower
+sqrtf
+sRO`y)
+Start
+Start of HSC: m_actualState
+Start of HSC: m_currentInternalState
+Start of HSC: m_pendingInternalState
+Start of HSC: m_targetInternalState
+Start of HSC: m_targetState
+StartingCLREnd
+StartingCLRStart
+State
+Streams
+string too long
+StringFileInfo
+struct 
+struct PixelShaderConstantData
+struct VertexShaderConstantData
+struct VertexShaderOutput
+StylusEventQueued
+surfaceSize.DoesContain(*prcSource) && surfaceSize.DoesContain(*prcDest)
+SUVWATAUAVAWH
+SUVWATAUAVH
+SUVWATAVAWH
+SUVWAVAWH
+SUVWAVH
+SUVWH
+SUWAVAWH
+SVAVH
+SVWATAUAVAWH
+SVWATAVAWH
+SVWAVAWH
+SVWAVH
+system
+SystemIdle
+SystemParametersInfoW
+SystemTimeToFileTime
+t"fA9
+t$ @:
+T$ @2
+T$ A;
+T$ A8Z
+T$ D+
+t$ E3
+T$ E3
+t$ E3
+T$ E3
+t$ E3
+T$ E3
+t$ E3
+T$ E3
+t$ E9w
+T$ Hc
+t$ UWATAVAWH
+t$ UWAVH
+t$ W3
+t$ WATAUAVAWH
+t$ WAVAWH
+t$ WE3
+t$ WH
+t$(D9O
+t$(E#
+t$(E3
+T$(E3
+t$(E3
+T$(E3
+t$@A;
+T$@E3
+T$@Lc
+t$`A#
+t$`D8
+t$`E;~xr
+t$`E3
+T$`E3
+T$0E3
+t$0Ic
+t$895
+T$8A;
+T$8E3
+t$8f;
+t$8HcD$@H+
+t$fE9
+t$HA_A^A]A\_
+T$HE3
+t$HH!\$@H!\$8H!\$0H
+t$HH!|$@H!|$8H!|$0H
+T$hHk
+T$PD!t$XD!t$\H
+T$PE3
+T$pE3
+T$PE3
+T$PH!t$HH
+t$PH;
+T$pHc
+T$RL+
+T$TA+
+t$XE3
+t$XL9u@t5I
+T$Xtz
+t%D)A8H
+t);Qps$H
+t*A9nPs]H
+t*D9~pr
+t*H9}8t$H9u8t
+t/!\$@H
+t:fD9;u
+t];D$P
+t+Hc_HH
+t>H9V
+t0;-l
+t2;D$Pw}
+T2?u$F?<vZ?
+t29QDvLL
+t38^4u.H
+T5fgr|
+t6D9ADvQL
+t8;D$P
+t8fD9
+tb9}0u
+tC9D$P
+tcH9{p
+tdH95
+tdHc_@H
+technique T0
+TEMP 
+TEMP$
+TEMP(
+TEMP,
+TEMP@
+TEMP`
+TEMP|
+TEMP4
+TEMP8
+TEMPD
+TEMPd
+TEMPL
+TEMPl
+TEMPP
+TEMPT
+TerminateProcess
+TerminateThread
+TEXCOORD
+tfH!|$XM
+Thales TSS ESN:96FF-4BC5-A7DC1%0#
+The bitmap bits moved. We cannot handle this well because we reference them
+The render thread failed unexpectedly.
+This break is due to an unexpected HRESULT in the caller, not this method.
+TickTime
+tiD8=:p
+TileBrush
+timeBeginPeriod
+timeEndPeriod
+Total
+TouchDownReported
+TouchMoveReported
+TouchUpReported
+tQ<"v.<.v
+TraceEvent
+TraceMessage
+Transform2D
+Transform3D
+TranslateMessage
+Translation
+Tried to AddRef an object which has previously been freed (refcount went to 0).
+TryEnterCriticalSection
+TTBL P
+tTE9}
+tvD)X
+tVI9~@uPA
+tWHcB
+TypeAndName
+u#A9_
+u*H;W
+u}9_\ux9_`us3
+u=L9Apu7L9AhA
+U0S0Q
+U4;U0
+U4;U0s"
+U4;U0s#
+u6!D$0D
+uAD9A|t8
+UATAUAVAWH
+UATAWH
+UAUAVH
+UAVAWH
+uCD9=
+UD;U@
+UD;U@s
+UD;U@s"
+uHeight
+UIActivationEnd
+UIActivationStart
+ujE9A@E
+ulAllocPtr
+ulNewAllocPtr
+ulOldAllocPtr
+Unexpected HRESULT in MilInstrumentation* caller
+UnexpectedPrimitiveFallback
+UnexpectedSoftwareFallback
+UnexptectedSWFallbackReason
+unknown error
+UnmapViewOfFile
+Unrecognized response.
+UnregisterTraceGuids
+uO@8n
+UpdateAnnotationWithSNC
+UpdateBrowserCommandsEnd
+UpdateBrowserCommandsStart
+UpdateLayeredWindow
+UpdateLayeredWindowIndirect
+UpdateSNCWithAnnotation
+UpdateVisualState
+UriOrObject
+USER32.dll
+user32.dll
+UseReferenceRasterizer
+USERProcessHandleQuota
+USVATAVAWH
+USVWATAUAVAWH
+USVWATAUAWH
+USVWATAVAWH
+USVWAUAVAWH
+USVWAVAWH
+USVWAVH
+USVWH
+uUI9~0u I9~(t
+UUUUUU
+UUUUUUU
+UVWATAUAVAWH
+UVWATAVH
+UVWAUAVH
+UVWAUAWH
+UVWAVAWH
+UWATAVAWH
+UWAUAVAWH
+UWAVH
+uWidth
+v#D9B
+v(I94$u'3
+v)+K0L
+v)D9I
+VarFileInfo
+vector<T> too long
+Verbose
+VerSetConditionMask
+VersionActivateEnd
+VersionActivateStart
+VersionAttach
+VertexShaderConstantData Data_VS;
+VertexShaderImpl
+VertexShaderImpl(
+VertexShaderOutput
+VerticalOffset
+VideoMemoryBandwidth
+VideoMemorySize
+VirtualAlloc
+VirtualFree
+VirtualProtect
+VirtualQuery
+VisualCacheAlloc
+VisualCacheUpdate
+VMAP,
+VMAP\
+VMAP4
+VMAPl
+vs_2_0
+vs_2_a
+vs_3_0
+vs_4_0_level_9_1
+vs_4_0_level_9_3
+VS_VERSION_INFO
+VUUUA
+VWATAUAVH
+VWATAVAWH
+VWAUAVAWH
+VWAVH
+VWAWH
+vy;)r
+W(H9W t!H
+w`;s`u
+WaitForMultipleObjects
+WaitForSingleObject
+WARNING: MILCore: Direct3D 9 is not installed or load failed.
+WARNING: MILCore: Unable to locate Direct3DCreate9.
+Washington1
+WATAUAVAWH
+WATAVH
+WAUAVH
+WAUAWH
+WAVAWH
+WClientAnimRenderHandler
+WClientAppCtor
+WClientAppRun
+WClientArrange
+WClientCompileScene
+WClientCreateIRT
+WClientCreateVisual
+WClientDesktopRTCreate
+WClientDRXAlphaFlatten
+WClientDRXCommitPage
+WClientDRXConvertFont
+WClientDRXConvertImage
+WClientDRXEndDoc
+WClientDRXEndPage
+WClientDRXEnsureOM
+WClientDRXFind
+WClientDRXFlushPage
+WClientDRXGetDevMode
+WClientDRXGetPage
+WClientDRXGetPrintCap
+WClientDRXGetStream
+WClientDRXGetVisual
+WClientDRXInstantiated
+WClientDRXInvalidateView
+WClientDRXLayout
+WClientDRXLineDown
+WClientDRXLoadPrimitive
+WClientDRXOpenPackage
+WClientDRXPageDown
+WClientDRXPageJump
+WClientDRXPageLoaded
+WClientDRXPageVisible
+WClientDRXPTProvider
+WClientDRXRaster
+WClientDRXReadStream
+WClientDRXReleaseWriter
+WClientDRXSavePage
+WClientDRXSaveXps
+WClientDRXSerialization
+WClientDRXSerializeTree
+WClientDRXStartDoc
+WClientDRXStartPage
+WClientDRXStyleCreated
+WClientDRXTreeFlatten
+WClientDRXZoom
+WClientFontCache
+WClientInputMessage
+WClientInterlockedRender
+WClientLayout
+WClientMeasure
+WClientMediaRender
+WClientOnRender
+WClientParseBaml
+WClientParseFefCrInst
+WClientParseInstVisTree
+WClientParseRdrCrInFTyp
+WClientParseRdrCrInst
+WClientParseXaml
+WClientParseXamlBamlInfo
+WClientParseXml
+WClientPostRender
+WClientPotentialIRTResource
+WClientPrecomputeScene
+WClientPropParentCheck
+WClientQPCFrequency
+WClientRenderHandler
+WClientResourceBamlAssembly
+WClientResourceCacheMiss
+WClientResourceCacheNull
+WClientResourceCacheValue
+WClientResourceFind
+WClientResourceStock
+WClientScheduleRender
+WClientString
+WClientTimeManagerTick
+WClientUceCheckDeviceState
+WClientUceNotifyPresent
+WClientUcePrecompute
+WClientUcePresent
+WClientUceProcessQueue
+WClientUceRender
+WClientUceResponse
+WClientUICommitChannel
+WClientUIContextAbort
+WClientUIContextDispatch
+WClientUIContextIdle
+WClientUIContextPost
+WClientUIContextPromote
+WClientUIResponse
+wcscmp
+weights
+WerRegisterMemoryBlock
+WEVT_TEMPLATE
+WEVTt
+WgxConnection_Create
+WgxConnection_Disconnect
+WgxConnection_SameThreadPresent
+WgxConnection_ShouldForceSoftwareForGraphicsStreamClient
+WICCreateImagingFactory_Proxy
+width
+Width
+width
+win:Info
+win:Informational
+win:Start
+win:Stop
+win:Verbose
+WindowFromDC
+WindowsCodecs.dll
+WinMainEnd
+WinMainStart
+WINMM.dll
+WorldView
+WorldViewAdjTrans
+WorldViewProj
+Wow64DisableWow64FsRedirection
+Wow64RevertWow64FsRedirection
+WParam
+WPFElementID
+wpfgfx_v0400-%d
+wpfgfx_v0400.dll
+wpfgfx_v0400.pdb
+WpfHost
+WpfHostUm
+Wq!Wx
+WqVNHE
+Wx+D$`I
+x ATAUAVAWD
+x ATAUAWH
+x ATAVAWD
+x ATAVAWH
+x AUAVAWH
+x AVAW
+x AVH
+x AVHc
+x AVL
+x AWH
+x D;[,}
+x UATAUAVAWH
+x UATAVH
+x UAVAWH
+X UVWATAUAVAWH
+X UVWAVAWH
+X UVWH
+X(A9@,t
+x@D9S
+X_^][
+x_^][
+X0D9=
+X8E;l$
+XA_A^_^[]
+XA_A^_^][
+XA_A^A]A\_^[]
+xA_A^A]A\_^[]
+XA_A^A]A\_^[]
+xA_A^A]A\_^[]
+xA_A^A]A\_^][
+XA_A^A]A\_^][
+xA_A^A]A\_^][
+XappLauncherAppExit
+XappLauncherAppNavigated
+XappLauncherAppStartup
+xHD9f
+Xqa{Mh2
+XT$pH
+xzD9o
+Y(H!:H
+y@t4H
+YD$0A
+YD$PA
+YD$PH
+YD$xH
+Yl;]$
+YwEt&A
+yXB~-\B
+z"u f
+z#u!f
+z$u"H
+z%u#f
+z.9Wv
+z|uzH
+z=u;H
+zbu`H
+zEuCf
+zHuFf
+zLuJH
+zMuKI
+zPuNf
+z'u%E3
+zUuSfD

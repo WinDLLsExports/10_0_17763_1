@@ -1,0 +1,162 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\WinSxS\amd64_microsoft-hyper-v-drivers-hypervisor_31bf3856ad364e35_10.0.17763.1_none_21173d46bdaeb3b3\hvservice.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    winhvr.sys
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C0007000 Import Address Table
+             1C0007420 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         A6C ZwQuerySystemInformation
+                         3AF KdDeregisterPowerHandler
+                         32B IoRegisterDriverReinitialization
+                         7FC RtlInitUnicodeString
+                         2FA IoInitializeRemoveLockEx
+                         B1E strncmp
+                         A2F ZwOpenFile
+                         3BA KdRegisterPowerHandler
+                         29E IoCreateSymbolicLink
+                         9E3 ZwClose
+                         3D9 KeBugCheckEx
+                         3F2 KeEnterCriticalRegion
+                         239 HviIsAnyHypervisorPresent
+                         234 HviGetHypervisorFeatures
+                         513 MmGetSystemRoutineAddress
+                         A6F ZwQueryValueKey
+                         A31 ZwOpenKey
+                         43D KeLeaveCriticalRegion
+                         241 HvlQueryActiveHypervisorProcessorCount
+                         3AA IofCompleteRequest
+                         261 IoAcquireRemoveLockEx
+                         32A IoRegisterDeviceInterface
+                         336 IoReleaseRemoveLockEx
+                         335 IoReleaseRemoveLockAndWaitEx
+                         352 IoSetDeviceInterfaceState
+                         2AD IoDetachDevice
+                         7C3 RtlFreeUnicodeString
+                         2AA IoDeleteDevice
+                         2BB IoForwardIrpSynchronously
+                         64A PoSetPowerState
+                         273 IoAttachDeviceToDeviceStack
+                         293 IoCreateDevice
+                         3A9 IofCallDriver
+                         607 PoCallDriver
+                         643 PoRequestPowerIrp
+                         653 PoStartNextPowerIrp
+                         ABB __C_specific_handler
+                         4F9 MmBuildMdlForNonPagedPool
+                         5F8 ObfDereferenceObject
+                         26B IoAllocateMdl
+                          88 ExAcquirePushLockExclusiveEx
+                         4B2 KeStackAttachProcess
+                         2BF IoFreeMdl
+                         5FA ObfReferenceObject
+                         673 PsGetCurrentProcess
+                          9C ExAllocatePoolWithTag
+                          C3 ExFreePoolWithTag
+                         552 MmUnmapLockedPages
+                         528 MmMapLockedPagesSpecifyCache
+                         4C0 KeUnstackDetachProcess
+                         10E ExReleasePushLockEx
+                         42E KeInsertQueueDpc
+                         3E9 KeDelayExecutionThread
+                         417 KeInitializeDpc
+                          73 EtwSetInformation
+                         9BB WmiQueryTraceInformation
+                         427 KeInitializeTimerEx
+                         108 ExReleaseFastMutex
+                         4AE KeSetTimerEx
+                          F1 ExQueueWorkItem
+                          DD ExInterlockedInsertTailList
+                         146 ExWaitForRundownProtectionRelease
+                          F8 ExReInitializeRundownProtection
+                         423 KeInitializeSpinLock
+                          D5 ExInitializeRundownProtection
+                          71 EtwRegisterClassicProvider
+                          7B EtwWriteTransfer
+                         244 HvlQueryHypervisorProcessorNodeNumber
+                          8C ExAcquireRundownProtection
+                          75 EtwUnregister
+                          83 ExAcquireFastMutex
+                          76 EtwWrite
+                          E0 ExInterlockedRemoveHeadList
+                          70 EtwRegister
+                         41B KeInitializeEvent
+                          72 EtwSendTraceBuffer
+                         115 ExReleaseRundownProtection
+                         9F1 ZwCreateKey
+                         7D1 RtlGetDaclSecurityDescriptor
+                         7D8 RtlGetGroupSecurityDescriptor
+                         7E1 RtlGetOwnerSecurityDescriptor
+                         7E4 RtlGetSaclSecurityDescriptor
+                         90F SeCaptureSecurityDescriptor
+                         ACF _snwprintf
+                         841 RtlLengthSecurityDescriptor
+                         927 SeExports
+                         76A RtlCreateSecurityDescriptor
+                         AEA _wcsnicmp
+                         B34 wcschr
+                         718 RtlAbsoluteToSelfRelativeSD
+                         719 RtlAddAccessAllowedAce
+                         842 RtlLengthSid
+                         309 IoIsWdmVersionAvailable
+                         8A1 RtlSetDaclSecurityDescriptor
+                         A9F ZwSetSecurityObject
+                         2B0 IoDeviceObjectType
+                         5E3 ObOpenObjectByPointer
+                         AA6 ZwSetValueKey
+
+    winhvr.sys
+             1C0007318 Import Address Table
+             1C0007738 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          78 WinHvSetEventLogGranularSources
+                          20 WinHvDeleteEventLogBuffer
+                          8E WinHvUnmapEventLogBuffer
+                          79 WinHvSetEventLogGroupSources
+                          1A WinHvCreateEventLogBuffer
+                          6B WinHvReleaseEventLogBuffer
+                          52 WinHvMapEventLogBuffer
+                          25 WinHvDepositMemory
+                          2D WinHvFinalizeEventLogBufferGroup
+                          2F WinHvFlushEventLogBuffer
+                          59 WinHvMapStatsPage
+                          90 WinHvUnmapStatsPage
+                          93 WinHvUpdateHvProcessorFeatures
+                          16 WinHvConfigureProfiler
+                          43 WinHvGetPartitionProperty
+                          47 WinHvGetSystemInformation
+                          6F WinHvReportPresentHypervisor
+                          77 WinHvSetEventLogCompletedNotificationRoutine
+                          96 WinHvWithdrawMemory
+                          42 WinHvGetPartitionId
+                          7A WinHvSetHvDebugProperty
+                          4A WinHvInitializeEventLogBufferGroup
+
+  Summary
+
+        1000 .data
+        2000 .idata
+        1000 .pdata
+        2000 .rdata
+        1000 .reloc
+        9000 .rsrc
+        2000 .text
+        1000 GFIDS
+        1000 INIT
+        1000 INITCONS
+        4000 PAGE

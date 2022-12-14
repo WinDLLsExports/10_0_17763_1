@@ -1,0 +1,170 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\ibbus.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    HAL.dll
+    NETIO.SYS
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             14007D050 Import Address Table
+             14008C100 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         41D KeInitializeEvent
+                         4C5 KeWaitForSingleObject
+                         3AC IofCallDriver
+                         3AD IofCompleteRequest
+                         265 IoAcquireRemoveLockEx
+                         339 IoReleaseRemoveLockEx
+                         3A0 IoWMIRegistrationControl
+                         733 RtlCharToInteger
+                         757 RtlCopyUnicodeString
+                         49C KeSetEvent
+                         3EC KeDelayExecutionThread
+                         277 IoAttachDeviceToDeviceStack
+                         27D IoBuildSynchronousFsdRequest
+                         296 IoCreateDevice
+                         2A1 IoCreateSymbolicLink
+                         2AD IoDeleteDevice
+                         2AF IoDeleteSymbolicLink
+                         2B0 IoDetachDevice
+                         2CB IoGetAttachedDeviceReference
+                         2FD IoInitializeRemoveLockEx
+                         338 IoReleaseRemoveLockAndWaitEx
+                         272 IoAllocateWorkItem
+                         2C5 IoFreeWorkItem
+                         31F IoQueueWorkItem
+                         32D IoRegisterDeviceInterface
+                         355 IoSetDeviceInterfaceState
+                         301 IoInvalidateDeviceState
+                         641 PoSetPowerState
+                         5F5 ObfReferenceObject
+                         5F3 ObfDereferenceObject
+                         B27 wcscmp
+                         B0C strcpy_s
+                         48D KeResetEvent
+                         3E2 KeClearEvent
+                         743 RtlCompareMemory
+                         8C9 RtlUnicodeToMultiByteN
+                         71F RtlAnsiCharToUnicodeChar
+                         B12 strncpy_s
+                         425 KeInitializeSpinLock
+                         3CA KeAcquireSpinLockAtDpcLevel
+                         3CC KeAcquireSpinLockRaiseToDpc
+                         47D KeReleaseSpinLock
+                         47F KeReleaseSpinLockFromDpcLevel
+                         26C IoAllocateErrorLogEntry
+                         3A7 IoWriteErrorLogEntry
+                          9C ExAllocatePoolWithTag
+                          C3 ExFreePoolWithTag
+                         4A4 KeSetPriorityThread
+                         44D KeQueryActiveProcessorCountEx
+                         65E PsCreateSystemThread
+                         706 PsTerminateSystemThread
+                         5E3 ObReferenceObjectByHandle
+                         9D5 ZwClose
+                         2A5 IoCsqInitialize
+                         2AA IoCsqRemoveNextIrp
+                         AAD __C_specific_handler
+                         443 KeLowerIrql
+                         4C7 KfRaiseIrql
+                         419 KeInitializeDpc
+                         430 KeInsertQueueDpc
+                         4A1 KeSetImportanceDpc
+                         7B5 RtlFreeAnsiString
+                         40C KeGetCurrentProcessorNumberEx
+                         411 KeGetProcessorNumberFromIndex
+                         427 KeInitializeTimer
+                         3DD KeCancelTimer
+                         4AC KeSetTimer
+                         3C3 KeAcquireInStackQueuedSpinLock
+                         475 KeReleaseInStackQueuedSpinLock
+                         3C4 KeAcquireInStackQueuedSpinLockAtDpcLevel
+                         477 KeReleaseInStackQueuedSpinLockFromDpcLevel
+                         450 KeQueryDpcWatchdogInformation
+                         462 KeQueryTimeIncrement
+                          EC ExQueryDepthSList
+                         153 ExpInterlockedPopEntrySList
+                         154 ExpInterlockedPushEntrySList
+                          D1 ExInitializeNPagedLookasideList
+                          AC ExDeleteNPagedLookasideList
+                         337 IoReleaseCancelSpinLock
+                         87B RtlRandomEx
+                          83 ExAcquireFastMutex
+                         108 ExReleaseFastMutex
+                         650 ProbeForRead
+                         2A7 IoCsqInsertIrp
+                         2BC IoFileObjectType
+                          BB ExEventObjectType
+                         651 ProbeForWrite
+                         2A8 IoCsqInsertIrpEx
+                         2A6 IoCsqInitializeEx
+                         404 KeFlushQueuedDpcs
+                         3F4 KeEnterCriticalRegion
+                         43F KeLeaveCriticalRegion
+                          D4 ExInitializeResourceLite
+                          8B ExAcquireResourceSharedLite
+                          8A ExAcquireResourceExclusiveLite
+                         114 ExReleaseResourceLite
+                          AE ExDeleteResourceLite
+                         7FA RtlInitializeGenericTableAvl
+                         800 RtlInsertElementGenericTableAvl
+                         771 RtlDeleteElementGenericTableAvl
+                         840 RtlLookupElementGenericTableAvl
+                         786 RtlEnumerateGenericTableAvl
+                         7CB RtlGetElementGenericTableAvl
+                         825 RtlIsGenericTableEmptyAvl
+                         ABB _purecall
+                         7BA RtlFreeUnicodeString
+                         725 RtlAppendUnicodeToString
+                         724 RtlAppendUnicodeStringToString
+                         8C2 RtlUnicodeStringToAnsiString
+                         513 MmGetSystemRoutineAddress
+                         872 RtlQueryRegistryValues
+                         7F3 RtlInitUnicodeString
+                         4AB KeSetTargetProcessorDpcEx
+                         B16 strstr
+
+    HAL.dll
+             14007D000 Import Address Table
+             14008C0B0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          53 KeQueryPerformanceCounter
+
+    NETIO.SYS
+             14007D010 Import Address Table
+             14008C0C0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          44 GetBestRoute2
+                         16D NotifyUnicastIpAddressChange
+                          5C GetUnicastIpAddressTable
+                          53 GetIpNetEntry2
+                         197 ResolveIpNetEntry2
+                           3 CancelMibChangeNotify2
+                          2F FreeMibTable
+
+  Summary
+
+        3000 .data
+        4000 .pdata
+        6000 .rdata
+        1000 .reloc
+        1000 .rsrc
+       7C000 .text
+        2000 INIT
+        1000 PAGE
+        1000 PAGED

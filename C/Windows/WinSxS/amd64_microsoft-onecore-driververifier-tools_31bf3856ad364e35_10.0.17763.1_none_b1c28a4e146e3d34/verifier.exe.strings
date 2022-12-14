@@ -1,0 +1,1478 @@
+                                  across reboots.
+                                  clears the previously faulted stack list.
+                                  clears the stack exclusion list.
+                                  identify when a fault was injected.
+                                  This is the default value.
+                                  'what if' mode.
+                            Driver Verifier persists until unusual shutdown
+                            happens. Its abbrevation, 'rous', can be used.
+                            if the system failed to start.
+                            persistent across reboots. This is the default
+                            streaming drivers.
+                            value.
+                            verifier extension.
+                          (an executable) that will be injected with faults. By
+                          600/10000 or 6%.
+                          allocation can be injected with faults.
+                          allocations. This delay allows the drivers to load
+                          and the system to stabilize before the test begins.
+                          be injected with faults. By default, any pool
+                          default, any pool allocation can be injected with
+                          fail a given allocation. The value represents the
+                          fail the allocation. The default value 600, means
+                          faults.
+                          number of chances in 10,000 that Driver Verifier will
+                          The default value is 8 minutes.
+                          which Driver Verifier does not intentionally fail any
+                   1 - Special pool
+                   2 - Force IRQL checking
+                   3 - Randomized low resources simulation
+                   4 - Pool tracking
+                   5 - I/O verification
+                   6 - Deadlock detection
+                   8 - DMA checking
+                   9 - Security checks
+                  10 - Force pending I/O requests (*)
+                  11 - IRP logging (*)
+                  12 - Miscellaneous checks
+                  14 - Invariant MDL checking for stack (*)
+                  15 - Invariant MDL checking for driver (*)
+                  16 - Power framework delay fuzzing
+                  17 - Port/miniport interface checking
+                  18 - DDI compliance checking
+                  19 - Systematic low resources simulation
+                  20 - DDI compliance checking (additional)
+                  22 - NDIS/WIFI verification (**)
+                  24 - Kernel synchronization delay fuzzing
+                  25 - VM switch verification
+                  26 - Code integrity checks
+                  34 - WDF Verification
+                /driver ... [/logging | /livedump]
+                [delay_minutes]]]]
+          0x00000001 (bit  0) - Special pool
+          0x00000002 (bit  1) - Force IRQL checking
+          0x00000004 (bit  2) - Randomized low resources simulation
+          0x00000008 (bit  3) - Pool tracking
+          0x00000010 (bit  4) - I/O verification
+          0x00000020 (bit  5) - Deadlock detection
+          0x00000080 (bit  7) - DMA checking
+          0x00000100 (bit  8) - Security checks
+          0x00000200 (bit  9) - Force pending I/O requests (*)
+          0x00000400 (bit 10) - IRP logging (*)
+          0x00000800 (bit 11) - Miscellaneous checks
+          0x00002000 (bit 13) - Invariant MDL checking for stack (*)
+          0x00004000 (bit 14) - Invariant MDL checking for driver (*)
+          0x00008000 (bit 15) - Power framework delay fuzzing
+          0x00010000 (bit 16) - Port/miniport interface checking
+          0x00020000 (bit 17) - DDI compliance checking
+          0x00040000 (bit 18) - Systematic low resources simulation
+          0x00080000 (bit 19) - DDI compliance checking (additional)
+          0x00200000 (bit 21) - NDIS/WIFI verification (**)
+          0x00800000 (bit 23) - Kernel synchronization delay fuzzing
+          0x01000000 (bit 24) - VM switch verification
+          0x02000000 (bit 25) - Code integrity checks
+          Applications    Specifies a space separated list of image file names
+          audio             Enabled verifier extension for audio drivers.
+          be automatically enabled. Flags marked with (**) support disabling
+          classes are marked with (*) require I/O Verification (5) that will
+          default <id>    Sets rule ID to its default state.
+          DelayMinutes    Specifies the number of minutes after booting during
+          disable <id>    Disables specified rule ID.
+          disableboottime         Disables fault injections across reboots.
+          disableruntime          Dynamically disables fault injections.
+          enableboottime          Enables fault injections across reboots.
+          enabled. Flags marked with (**) support disabling of individual
+          enableruntime           Dynamically enables fault injections.
+          Enables live memory dump collection for violated rules detected by
+          Enables logging for violated rules detected by the selected verifier
+          excludestack <stack_id> Excludes the stack from fault injection.
+          extensions.
+          getstackid <counter>    Retrieves the indicated injected stack id.
+          incrementcounter        Increments the test pass counter used to
+          ks                Enabled verifier extension for kernel mode
+          ndis              Enabled verifier extension for networking drivers.
+          of individual rules.
+          oneboot           Enables Driver Verifier only for the next boot.
+          persistent        Ensures that Driver Verifier settings are
+          Pool Tags:      Specifies a space separated list of the pool tags to
+          Probability     Specifies the probability that Driver Verifier will
+          query           Shows current status of controllable rules.
+          querystatistics         Shows the current fault injection statistics.
+          recordboottime          Enables fault injections in 'what if' mode
+          recordruntime           Dynamically enables fault injections in
+          reset           Resets all rules to their default state.
+          resetboottime           Disables fault injections across reboots and
+          resetonbootfail   Disables Driver Verifier for subsequent reboots
+          resetonunusualshutdown
+          resetruntime            Dynamically disables fault injections and
+          rules.
+          rules.all         Enables all validation rules for the selected
+          rules.default     Enables default validation rules for the selected
+          Standard Driver Verifier options can be specified using '/standard'.
+          the selected verifier extensions.
+          These flags are intended for specific scenario testing. Flags marked
+          These rule classes are intended for specific scenario testing. Rule
+          WDF verification is included in /standard but is not shown here.
+          wdm               Enabled verifier extension for WDM drivers.
+          with (*) require I/O Verification (bit 4) that will be automatically
+        /livedump
+        /logging
+        [/logging | /livedump]
+        Additional Flags:
+        Additional Rule Classes:
+        are selected for verification. Wildcard values (e.g. n*.sys) are not
+        available and leading 0's can be omitted.
+        boot.
+        Changes Driver Verifier settings without rebooting the computer.
+        Clears Driver Verifier flags and driver settings. This option requires
+        Contiguous Memory Bytes:       %1!8d!
+        control parameters for the Randomized low resources simulation.
+        Controls the Systematic low resources simulation parameters.
+        Controls the verifier extension settings. The following verifier
+        Creates a log file with the specified name and periodically writes the
+        Current Pool Allocations:  ( %1!8d! / %2!8d! )
+        Current Pool Bytes:        ( %1!8d! / %2!8d! )
+        Display runtime Driver Verifier statistics and settings.
+        Displays a summary of the options and drivers that are currently
+        Displays this help message.
+        each class id with space character. Following rule classes IDs are
+        Enable the Randomized low resources simulation feature and optionally
+        enabled, or options and drivers that will be verified after the
+        Execute Page Mapping Count:    %1!10d!
+        Execute Page Protection Count: %1!10d!
+        Execute Pool Type Count:       %1!10d!
+        Execute-Write Section Count:   %1!10d!
+        extension types are supported:
+        Flags are applied to all drivers being checked by Driver Verifier. The
+        from verification. This parameter is applicable only if all drivers
+        IAT in Executable Section Count: %1!10d!
+        if Code Integrity checks are enabled.
+        is controlled by the '/interval' parameter. The default value is 30
+        limited to 32 bit bitmap expression, this can include more than 32
+        Makes the Driver Verifier settings persist through upgrade. Driver
+        next boot. The display does not include drivers and options added
+        next system reboot.
+        only statistics for verified drivers. Statistics could be extracted
+        Peak Contiguous Memory Bytes:  %1!8d!
+        Peak Pool Allocations:     ( %1!8d! / %2!8d! )
+        Peak Pool Bytes:           ( %1!8d! / %2!8d! )
+        prefix), octal ("0o" prefix) or binary ("0b" prefix) format.
+        provided options values must be either in decimal, hexadecimal ("0x"
+        reboot to take effect.
+        runtime statistics to this file. The interval between log file updates
+        seconds. Use CTRL+C to close the log and return.
+        Section Alignment Failures:    %1!10d!
+        Specifies one or more drivers (image names) that will be excluded
+        Specifies one or more drivers (image names) that will be verified.
+        Specifies one or more options that should be enabled for verification.
+        Specifies rules level control (advanced).
+        Specifies standard Driver Verifier flags.
+        Specifies that all installed drivers will be verified after the next
+        Specifies the Driver Verifier boot mode. This option requires system
+        Standard Flags:
+        Standard Rule Classes:
+        Starts the verification for the specified driver or drivers.
+        Stops the verification for the specified driver or drivers.
+        supported.
+        system reboot to take effect.
+        The following extension options are supported:
+        This option suppresses Code Integrity violation breaks and collects
+        This parameter is larger set of '/flags' above. While '/flags' is
+        using /volatile.
+        verification class. Multiple classes can be expressed by separating
+        verification classes. Each positive decimal integer represents a
+        Verifier will be active during system upgrade.
+        via /log option or kernel debugger. This parameter is applicable only
+        Volatile settings take effect immediately and are in effect until the
+        Wildcard values (e.g. n*.sys) are not supported.
+      Code Integrity Statistics:
+      Pool Allocation Statistics: ( NonPaged / Paged )
+    %1
+    %1: %2
+    %1: %2!d!
+    %1: %2!I64d!
+    /? or /help
+    /all
+    /bootmode
+    /domain {wdm | ndis | ks | audio} [rules.all | rules.default] /driver ...
+    /driver <name> [<name> ...]
+    /driver.exclude <name> [<name> ...]
+    /faults [probability [pool_tags [applications [delay_minutes]]]]
+    /faultssystematic [<options> ...]
+    /flags <options> [<options> ...]
+    /log <file_name> [/interval <seconds>]
+    /log.code_integrity
+    /persistthroughupgrade
+    /query
+    /querysettings
+    /reset
+    /ruleclasses or /rc [<ruleclass_1> <ruleclass_2> ... <ruleclass_k>]
+    /rules {query | reset | default <id> | disable <id>}
+    /standard
+    /volatile
+    /volatile /adddriver <name> [<name> ...]
+    /volatile /removedriver <name> [<name> ...]
+    [%1] 0x%2!08x! Additional debug information.
+    [%1] 0x%2!08x! Code integrity checks.
+    [%1] 0x%2!08x! DDI compliance checking (additional).
+    [%1] 0x%2!08x! DDI compliance checking.
+    [%1] 0x%2!08x! Deadlock detection.
+    [%1] 0x%2!08x! DMA checking.
+    [%1] 0x%2!08x! Driver logging.
+    [%1] 0x%2!08x! Enhanced I/O checking.
+    [%1] 0x%2!08x! Extended Verifier flags (internal).
+    [%1] 0x%2!08x! Force IRQL checking.
+    [%1] 0x%2!08x! Force pending I/O requests.
+    [%1] 0x%2!08x! I/O verification.
+    [%1] 0x%2!08x! Invariant MDL checking for driver.
+    [%1] 0x%2!08x! Invariant MDL checking for stack.
+    [%1] 0x%2!08x! IRP logging.
+    [%1] 0x%2!08x! Kernel synchronization delay fuzzing.
+    [%1] 0x%2!08x! Miscellaneous checks.
+    [%1] 0x%2!08x! NDIS/WIFI verification.
+    [%1] 0x%2!08x! Pool tracking.
+    [%1] 0x%2!08x! Port/miniport interface checking.
+    [%1] 0x%2!08x! Power framework delay fuzzing.
+    [%1] 0x%2!08x! Randomized low resources simulation.
+    [%1] 0x%2!08x! Security checks.
+    [%1] 0x%2!08x! Special pool.
+    [%1] 0x%2!08x! Systematic low resources simulation.
+    [%1] 0x%2!08x! VM switch verification.
+    [X] Indicates flag is enabled.
+    Acquire Spin Locks:                     %1!10d!
+    All Drivers
+    All other rules are using default settings
+    All rules are explicitly disabled.
+    All rules are using default settings
+    Disabled: %1 (%2)
+    MODULE: %1 (load: %2!d! / unload: %3!d!)
+    None
+    Options: %1
+    Pool Allocations Attempted:             %1!10d!
+    Pool Allocations Failed Deliberately:   %1!10d!
+    Pool Allocations Failed:                %1!10d!
+    Pool Allocations Not Tracked:           %1!10d!
+    Pool Allocations Succeeded SpecialPool: %1!10d!
+    Pool Allocations Succeeded:             %1!10d!
+    Pool Allocations With No Tag:           %1!10d!
+    Raise IRQLs:                            %1!10d!
+    Synchronize Executions:                 %1!10d!
+    The requested operation is successful. Changes will not be effective until the system is rebooted.
+    Trims:                                  %1!10d!
+    verifier /bootmode {persistent | resetonbootfail | oneboot | resetonunusualshutdown}
+    verifier /domain {wdm | ndis | ks | audio} [rules.all | rules.default ]
+    verifier /faults [probability [pool_tags [applications [delay_minutes]]]]
+    verifier /faultssystematic [<options> ...]
+    verifier /flags <options> [<options> ...] /all
+    verifier /flags <options> [<options> ...] /driver <name> [<name> ...]
+    verifier /livedump
+    verifier /log <file_name> [/interval <seconds>]
+    verifier /logging
+    verifier /persistthroughupgrade
+    verifier /query
+    verifier /querysettings
+    verifier /reset
+    verifier /rules {query | reset | default <id> | disable <id>}
+    verifier /standard /all
+    verifier /standard /driver <name> [<name> ...]
+    verifier /volatile /adddriver <name> [<name> ...]
+    verifier /volatile /faults [probability [pool_tags [applications
+    verifier /volatile /flags <options> [<options> ...]
+    verifier /volatile /removedriver <name> [<name> ...]
+    verifier {/? | /help}
+    verifier {/ruleclasses | /rc} <options> [<ruleclass_1> <ruleclass_2> ...] /all
+    Verifier settings will persist and be active through system upgrade.
+  Added Drivers:
+  Additional Flags:
+  Advanced Options:
+  Boot Mode:
+  Driver Verification List
+  Excluded Drivers:
+  Extensions:
+  Internal Flags:
+  Randomized Low Resources Simulation Parameters:
+  Removed Drivers:
+  Rules:
+  Standard Flags:
+  Verified Drivers:
+  Verifier Statistics Summary
+  Volatile Flags:
+ A^_^
+ A_A^_
+ A_A^A\
+ A_A^A\_^
+ A_A^A]A\_
+ A_A^A]A\_^]
+ Failed to get information from Metadata for file : %ls 
+ H3E H3E
+ Microsoft Corporation. All rights reserved.
+ Operating System
+ Windows
+!\$(H
+!This program cannot be run in DOS mode.
+%%Systemroot%%\%s
+%%Systemroot%%\system32\drivers\%s
+%02d/%02d/%04d %02d:%02d:%02d.%03d
+%ls\Autofail
+%s\%s
+%s\%s.mui
+%s\%s\%s.mui
+(_^][
+)D$pH
+.\%s.mui
+.\%s\%s.mui
+.00cfg
+.CRT$XCA
+.CRT$XCAA
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIY
+.CRT$XIZ
+.data
+.data$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.gfids
+.giats
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.pdata
+.rdata
+.rdata$brc
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.text
+.text$mn
+.text$mn$00
+.text$x
+.xdata
+;@s+A
+?terminate@@YAXXZ
+@.data
+@.didat
+@.reloc
+@A^_^
+@A^A]A\
+@A_A^A\_^][
+@SUVWATAVAWH
+@USVWATAVAWH
+[CM_Get_Device_ID_List_SizeW  BufferSize]
+[DeviceClassGuid]
+[DeviceInstanceId]
+[ServiceName]
+\$ E3
+\$ UH
+\$ UVWATAUAVAWH
+\$`H9^
+\$0E3
+\\.\\VerifierExt\Autofail
+\Autofail
+\Driver\
+\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\
+\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\VerifierCounter
+\Registry\Machine\System\CurrentControlSet\Control\Session Manager\Memory Management
+\StringFileInfo\%04x%04x\CompanyName
+\StringFileInfo\%04x%04x\FileVersion
+\SystemRoot\
+\VarFileInfo\Translation
+]L9t$HtqeH
+__C_specific_handler
+__set_app_type
+__setusermatherr
+__wgetmainargs
+_amsg_exit
+_cexit
+_commode
+_exit
+_fmode
+_initterm
+_ltow_s
+_ultow_s
+_vsnwprintf
+_wcsicmp
+_wcsnicmp
+_wfullpath
+_wsetlocale
+_XcptFilter
+`.rdata
+`A_A^A]A\_^]
+|$ %uIL
+|$ UATAUAVAWH
+|$ UAVAWH
+|$ UH
+|$(E3
+|$8u,L
+|$hE3
+<wQeH
+040904B0
+0A_A^]
+0A_A^_
+0A_A^_^]
+0A_A^A\
+0A_A^A]A\_
+0x%I64x
+0x20002
+0x20003
+0x20004
+0x20005
+0x20006
+0x20007
+0x20008
+0x20009
+0x2000A
+0x2000B
+0x2000C
+0x2000D
+0x2000E
+0x2000F
+0x20010
+0x20011
+0x20015
+0x20016
+0x20019
+0x2001A
+0x2001B
+0x2001C
+0x2001E
+0x2001F
+0x20022
+0x20023
+0x20024
+0x21001
+0x21002
+0x40003
+0x40007
+0x4000A
+0x4100B
+0x43006
+0x71001
+0x71003
+0x71004
+0x71005
+0x71006
+0x71007
+0x71008
+0x71009
+0x7100A
+0x72001
+0x81001
+0x81002
+0x81003
+0x81004
+0x81005
+0x81006
+0x81007
+0x81008
+0x81009
+0x8100A
+0x8100B
+0x8100C
+0x82001
+0x82001 0x82002 0x82003 0x82004 0x82005
+0x82002
+0x82003
+0x82004
+0x82005
+0x91001
+0x91002
+0x9100E
+0x92003
+0x9200D
+0x9200F
+0x92010
+0x92011
+0x92012
+0x93004
+0x93005
+0x93006
+0x93101
+0x94007
+0x94008
+0x94009
+0x9400B
+0x9400C
+10.0.17763.1
+10.0.17763.1 (WinBuild.160101.0800)
+4FL;d$`r
+9t$`u
+9t$lu
+9t$Pw
+A_A^]
+A_A^A\_
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[]
+A_A^A]_]
+A_A^A]A\]
+A_A^A]A\_^]
+activationfilterlist
+ADAPTER
+adddriver
+AdjustTokenPrivileges
+af-ZA
+am-ET
+An unsupported command line parameter was specified.
+api-ms-win-core-apiquery-l1-1-0.dll
+api-ms-win-core-console-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-1.dll
+api-ms-win-core-errorhandling-l1-1-0.dll
+api-ms-win-core-file-l1-1-0.dll
+api-ms-win-core-handle-l1-1-0.dll
+api-ms-win-core-heap-l2-1-0.dll
+api-ms-win-core-io-l1-1-0.dll
+api-ms-win-core-libraryloader-l1-2-0.dll
+api-ms-win-core-localization-l1-2-0.dll
+api-ms-win-core-localization-obsolete-l1-2-0.dll
+api-ms-win-core-memory-l1-1-0.dll
+api-ms-win-core-processenvironment-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-0.dll
+api-ms-win-core-profile-l1-1-0.dll
+api-ms-win-core-registry-l1-1-0.dll
+api-ms-win-core-rtlsupport-l1-1-0.dll
+api-ms-win-core-string-l1-1-0.dll
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-core-sysinfo-l1-1-0.dll
+api-ms-win-core-version-l1-1-0.dll
+api-ms-win-core-version-l1-1-1.dll
+api-ms-win-devices-config-l1-1-1.dll
+api-ms-win-eventing-provider-l1-1-0.dll
+api-ms-win-security-base-l1-1-0.dll
+api-ms-win-security-lsalookup-ansi-l2-1-0.dll
+api-ms-win-security-sddl-l1-1-0.dll
+ApiSetQueryApiSetPresence
+APMSUPPORT
+Applications
+appverifierflags
+appverifierreset
+ar-AE
+ar-BH
+ar-DZ
+ar-EG
+ar-IQ
+ar-JO
+ar-KW
+ar-LB
+ar-LY
+ar-MA
+arn-CL
+ar-OM
+ar-QA
+ar-SA
+ar-SY
+ar-TN
+ar-YE
+as-IN
+audio
+az-Cyrl
+az-Cyrl-AZ
+az-Latn
+az-Latn-AZ
+ba-RU
+BasicDisplay.sys
+BasicRender.sys
+BATTERY
+be-BY
+bg-BG
+bin-NG
+BIOMETRIC
+BLUETOOTH
+bn-BD
+bn-IN
+bo-CN
+boot_limit
+bootmode
+br-FR
+bs-BA-Cyrl
+bs-BA-Latn
+bs-Cyrl
+bs-Cyrl-BA
+bsearch
+bs-Latn
+bs-Latn-BA
+Buffer for Driver Version too small.
+C$H;A$t
+ca-ES
+ca-ES-valencia
+Cannot convert GUID to string.
+Cannot convert GUID to string. GUID Length:
+Cannot extract a driver name from the file path.
+Cannot extract a driver name from this image path:
+Cannot find .sys in the file path.
+Cannot find \ in the file path.
+Cannot get a device ID list; CR status : 
+Cannot get an image path for this service:
+Cannot get size of the device ID list; CR status: 
+Cannot get the driver name: CRStatus 
+chr-Cher
+chr-Cher-US
+ClassPnP.sys
+CloseHandle
+CM_Get_Device_ID_List_SizeW
+CM_Get_Device_ID_ListW
+CM_Get_DevNode_PropertyW
+CM_Locate_DevNodeW
+CM_MapCrToWin32Err
+co-FR
+CompanyName
+COMPUTER
+ConvertStringSecurityDescriptorToSecurityDescriptorW
+Copyright (c) Microsoft Corporation. All rights reserved.
+Core Driver Verifier Rule
+Could not add to verified driver list; too many drivers on stack.
+CreateFileMappingW
+CreateFileW
+CriticalRegions
+cs-CZ
+CX9CT
+cy-GB
+D$ E3
+D$ fD96t'L9v
+D$ fE
+D$ I;
+D$"f;
+D$(E3
+D$(H9y
+D$@E3
+D$@L+
+D$0E3
+d$0E3
+D$0E3
+D$0H9A
+D$8E3
+D$HE3
+D$hE3
+D$P!1L
+D$PeH
+D9?t]A
+da-DK
+DbgPrint
+de-AT
+de-CH
+DECODER
+de-DE
+default
+Delay Minutes
+delayfreesize
+DelayFreeSizeMB
+DelayLoadFailureHook
+de-LI
+de-LU
+DeviceInstanceId
+DeviceInstanceId: 
+DeviceIoControl
+disable
+Disable IRQL Traces
+Disable Pool Traces
+disableboottime
+disableruntime
+DISKDRIVE
+DISPLAY
+domain
+DOT4PRINT
+driver
+Driver Name: 
+Driver Version: 
+driver.add
+driver.any
+driver.exclude
+driver.select.any
+DriverName
+DriverVerifier
+DriverVerifierExts
+DriverVersion
+dsb-DE
+dump_
+duration
+dv-MV
+DXGKrnl.sys
+DXGMMS1.sys
+DXGMS2.sys
+dz-BT
+EHSTORAGESILO
+EhStorClass.sys
+el-GR
+en-029
+enableboottime
+enableruntime
+en-AU
+en-BZ
+en-CA
+en-GB
+en-HK
+en-ID
+en-IE
+en-IN
+en-JM
+en-MY
+en-NZ
+en-PH
+en-SG
+en-TT
+en-US
+en-ZA
+en-ZW
+Error removing TiP settings, status: 
+es-419
+es-AR
+es-BO
+es-CL
+es-CO
+es-CR
+es-CU
+es-DO
+es-EC
+es-ES
+es-ES_tradnl
+es-GT
+es-HN
+es-MX
+es-NI
+es-PA
+es-PE
+es-PR
+es-PY
+es-SV
+es-US
+es-UY
+es-VE
+et-EE
+eu-ES
+EventRegister
+EventSetInformation
+EventUnregister
+EventWriteTransfer
+excludestack
+ExemptedStacks
+ExpandEnvironmentStringsW
+EXTENSION
+ext-ms-win-shell-shell32-l1-2-0
+ext-ms-win-shell-shell32-l1-2-0.dll
+ext-ms-win-shell-shell32-l1-2-1
+ext-ms-win-shell-shell32-l1-2-2
+f9,Au
+f9,Zu
+f9{(tI3
+f9<Hu
+f99t=3
+f9H\u
+f9o(tI3
+f9t$ t
+fA9<Hu
+fA94Iu
+fA99t
+Failed to obtain the global memory status.
+Failed to obtain the list of currently loaded kernel modules.
+Failed to query verifier registry settings.
+Failed to query volatile verifier settings.
+Failed to set volatile verifier settings.
+Failed to start the verification for '%1' driver.
+Failed to stop the verification for '%1' driver.
+FailureMode
+fa-IR
+faults
+faultssystematic
+fD9!u
+fD9$Au
+fD9$Fu
+fD9$Gu
+fD9$xu
+fD9,Fu
+fD9,pu
+fD9<Bu
+fD9<Ku
+fD9<Qu
+fD94pu
+fD97t#L9w
+fD98u
+fD9d]
+fD9f(t
+fD9f(tN
+fD9f@t*
+fD9fPt*
+fD9fxt)
+fD9L$ upL
+fE9$@u
+fE9$Fu
+fE90t
+fF9$Nu
+fF9<Bu
+ff-Latn
+ff-Latn-SN
+ff-NG
+fi-FI
+FileDescription
+FileVersion
+fil-PH
+FindResourceExW
+FIRMWARE
+Flags
+flags
+fo-FO
+FormatMessageW
+FpD9 tQD
+fr-029
+fr-BE
+fr-CA
+fr-CD
+fr-CH
+fr-CI
+fr-CM
+FreeLibrary
+fr-FR
+fr-HT
+fr-LU
+fr-MA
+fr-MC
+fr-ML
+fr-RE
+fr-SN
+FtD9 t!D
+fy-NL
+G`9F`u`
+G<9F<
+G89F8
+ga-IE
+gd-GB
+GetConsoleMode
+GetConsoleOutputCP
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThreadId
+GetFileAttributesW
+GetFileType
+GetFileVersionInfoSizeW
+GetFileVersionInfoW
+GetLastError
+GetLocaleInfoW
+GetModuleFileNameW
+GetModuleHandleW
+GetProcAddress
+getstackid
+GetStdHandle
+GetSystemDefaultUILanguage
+GetSystemDirectoryW
+GetSystemTimeAsFileTime
+GetTickCount
+GetUserDefaultUILanguage
+GetVersionExW
+Gh@t4I
+Gh9FhuE
+Gl9Flu*
+gl-ES
+GlobalFlag
+GlobalMemoryStatusEx
+gn-PY
+gsw-FR
+Gt$ D
+gu-IN
+H UAVAWH
+H!\$`
+H;S r
+H9{0t
+H9{Xu
+H9o t
+H9o0t
+HA_A^A]A\_^[]
+ha-Latn
+ha-Latn-NG
+haw-US
+HcA<H
+HeapSetInformation
+he-IL
+HIDCLASS
+hi-IN
+HOLOGRAPHIC
+hr-BA
+hr-HR
+hsb-DE
+hu-HU
+hy-AM
+ibb-NG
+id-ID
+ig-NG
+ii-CN
+IMAGE
+ImagePath
+incrementcounter
+INFINIBAND
+INFRARED
+InjectionCount
+InternalName
+interval
+IrqlApcLte
+IrqlDispatch
+IrqlExAllocatePool
+IrqlExApcLte1
+IrqlExApcLte2
+IrqlExApcLte3
+IrqlExPassive
+IrqlIoApcLte
+IrqlIoDispatch
+IrqlIoPassive1
+IrqlIoPassive2
+IrqlIoPassive3
+IrqlIoPassive4
+IrqlIoPassive5
+IrqlIoRtlZwPassive
+IrqlKeApcLte1
+IrqlKeApcLte2
+IrqlKeDispatchLte
+IrqlKeReleaseSpinLock
+IrqlKeSetEvent
+IrqlMmApcLte
+IrqlMmDispatch
+IrqlNtifsApcPassive
+IrqlObPassive
+IrqlPsPassive
+IrqlRtlPassive
+IrqlZwPassive
+is restarted or the settings are changed again.
+is-IS
+it-CH
+it-IT
+iu-CA-Latn
+iu-Cans
+iu-Cans-CA
+iu-Latn
+iu-Latn-CA
+ja-JP
+ka-GE
+kernel32.dll
+KEYBOARD
+kk-KZ
+kl-GL
+km-KH
+kn-IN
+kok-IN
+ko-KR
+kr-NG
+ks.sys
+ks-Arab
+KsCallbackReturn
+ks-Deva-IN
+KsDeviceMutex
+KsFilterMutex
+KsInvalidStreamPointer
+KsIrqlDDIs
+KsIrqlDeviceCallbacks
+KsIrqlFilterCallbacks
+KsIrqlPinCallbacks
+KsProcessingMutex
+KsStreamPointerClone
+KsStreamPointerLock
+KsStreamPointerUnlock
+ksthunk.sys
+KsTimedDeviceCallbacks
+KsTimedFilterCallbacks
+KsTimedPinCallbacks
+KsTimedPinSetDeviceState
+KsTimedProcessingMutex
+ku-Arab
+ku-Arab-IQ
+ky-KG
+L$ L+
+L$ SUVWH
+l$ VWATAVAWH
+l$ VWAVH
+L$(fD
+L$0!t$4M
+L$0L+
+L$8H3
+L$HH3
+l$PeH
+L9d$8t
+L9l$X
+L9sXu
+L9t$8
+L9t$8t
+L9t$Ht
+la-001
+LastStackIndex
+launchcount
+lb-LU
+LcA<E3
+LegalCopyright
+livedump
+LoadLibraryExW
+LoadResource
+Locale
+LocalFree
+Log Only Code Integrity Statistics
+log.code_integrity
+logging
+lo-LA
+LookupPrivilegeValueA
+lt-LT
+lv-LV
+M0fD9e
+malloc
+MapViewOfFile
+MEDIA
+MEDIUM_CHANGER
+memcmp
+memcpy
+memcpy_s
+memmove
+MEMORY
+memset
+Microsoft
+Microsoft Corporation
+mi-NZ
+mk-MK
+ml-IN
+mn-Cyrl
+mni-IN
+mn-MN
+mn-Mong
+mn-Mong-CN
+mn-Mong-MN
+MODEM
+ModuleName
+moh-CA
+MONITOR
+MOUSE
+mr-IN
+ms-BN
+ms-MY
+msvcrt.dll
+mt-MT
+MultiByteToWideChar
+MULTIFUNCTION
+MULTIPORTSERIAL
+my-MM
+nb-NO
+ndis.sys
+NdisFilterTimedDataReceive
+NdisFilterTimedDataSend
+NdisFilterTimedPauseComplete
+NdisOidComplete
+NdisOidDoubleComplete
+NdisOidDoubleRequest
+NdisTimedDataHang
+NdisTimedDataSend
+NdisTimedOidComplete
+ne-IN
+ne-NP
+NetAdapterCx.sys
+netadaptercx.sys
+NETCLIENT
+NETDRIVER
+NETSERVICE
+NETTRANS
+nl-BE
+nl-NL
+nn-NO
+No applicable devices were found on this system.  Exiting.
+No drivers are currently verified.
+No settings were changed.
+NonInjectedCount
+nonMSFT
+nso-ZA
+NtAdjustPrivilegesToken
+NtClose
+NtDelayExecution
+ntdll.dll
+NtOpenProcessToken
+NtQueryInformationToken
+NtQuerySystemInformation
+NtSetSystemInformation
+O:BAG:DUD:PAI(A;CI;CCDCSWRC;;;WD)(A;CI;KA;;;BA)
+o\$PH
+ObjectName
+oc-FR
+oD$ f
+Oh@D9~
+OhD9~
+oL$0f
+om-ET
+Oneboot
+onecheck
+OpenProcessToken
+OriginalFilename
+or-IN
+oT$@f
+Other DV settings already in effect.  TiP will not be activated.
+pa-Arab
+pa-Arab-PK
+PageHeapFlags
+pageheapflags
+pa-IN
+pap-029
+PARAMETERS:
+partmgr.sys
+PcAddAdapterDevice
+PcAllocateAndMapPages
+PcAllocatedPages
+PcIrqlDDIs
+PcIrqlIport
+PCMCIA
+PcPoRequestPowerIrp
+PcPropertyRequest
+PcRegisterAdapterPower
+PcTimedWaveRtStreamSetState
+PcUnmapAllocatedPages
+perf_control
+Persistent
+persistthroughupgrade
+pl-PL
+PNPPRINTERS
+PnpRemove
+Pool Tags
+portcls.sys
+PORTS
+PRINTER
+Probability
+processlist
+PROCESSOR
+ProductName
+ProductVersion
+prs-AF
+ps-AF
+pt-BR
+pt-PT
+qps-Latn-x-sh
+qps-ploc
+qps-ploca
+qps-plocm
+quc-Latn
+quc-Latn-GT
+query
+QueryPerformanceCounter
+querysettings
+querystatistics
+QueuedSpinLockRelease
+quz-BO
+quz-EC
+quz-PE
+random
+RandomSelection
+rc.rand
+recordboottime
+recordruntime
+RegCloseKey
+RegCreateKeyExW
+RegDeleteValueW
+RegOpenKeyExW
+RegQueryValueExW
+RegSetKeySecurity
+RegSetValueExW
+removedriver
+RequestedPowerIrp
+reset
+resetboottime
+Resetonbootfail
+ResetOnUnusualShutdown
+resetruntime
+ResolveDelayLoadedAPI
+Richf
+rm-CH
+ro-MD
+ro-RO
+RtlAllocateHeap
+RtlAppendUnicodeToString
+RtlCaptureContext
+RtlCheckRegistryKey
+RtlCompareUnicodeString
+RtlCopyUnicodeString
+RtlCreateRegistryKey
+RtlCreateUnicodeString
+RtlDeleteRegistryValue
+RtlEqualUnicodeString
+RtlFreeHeap
+RtlFreeUnicodeString
+RtlGetPersistedStateLocation
+RtlInitializeBitMap
+RtlInitUnicodeString
+RtlLookupFunctionEntry
+RtlNtStatusToDosError
+RtlQueryRegistryValuesEx
+RtlRandomEx
+RtlSetAllBits
+RtlSetBit
+RtlStringFromGUID
+RtlSystemTimeToLocalTime
+RtlTestBit
+RtlTimeToTimeFields
+RtlUnicodeStringToInteger
+RtlVirtualUnwind
+RtlWriteRegistryValue
+Rule 0x%1!08x! already disabled.
+Rule 0x%1!08x! already using default setting.
+Rule 0x%1!08x! disabled.
+Rule 0x%1!08x! set to use default setting.
+Rule code 0x%1!08x! not mapped to existing rule.
+ruleclasses
+rules
+rules.additional
+rules.all
+rules.default
+ru-MD
+Run "verifier /?" for command line assistance.
+Run "verifier /reset" to clean the registry settings.
+runas
+ru-RU
+rw-RW
+s WAVAWH
+sah-RU
+sa-IN
+SCSIADAPTER
+sd-Arab
+sd-Arab-PK
+sd-Deva-IN
+SearchPathW
+SECURITYACCELERATOR
+se-FI
+selectrandomfilter
+selectrandomprocess
+se-NO
+SENSOR
+ServiceName
+se-SE
+SeSecurityPrivilege
+SetLastError
+SetStdHandle
+SetThreadUILanguage
+SetUnhandledExceptionFilter
+ShellExecuteExW
+SIDESHOW
+si-LK
+sk-SK
+Sleep
+sl-SI
+sma-NO
+sma-SE
+smj-NO
+smj-SE
+smn-FI
+sms-FI
+Software\Microsoft\Active Setup\Installed Components\{89820200-ECBD-11CF-8B85-00AA005B4383}
+Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\VerifierCounter
+so-SO
+SOUND
+SpinlockRelease
+sq-AL
+sr-BA-Cyrl
+sr-BA-Latn
+sr-Cyrl
+sr-Cyrl-BA
+sr-Cyrl-CS
+sr-Cyrl-ME
+sr-Cyrl-RS
+sr-Latn
+sr-Latn-BA
+sr-Latn-CS
+sr-Latn-ME
+sr-Latn-RS
+sr-SP-Cyrl
+sr-SP-Latn
+StackHash
+standard
+storport.sys
+StringFileInfo
+st-ZA
+SuppressedRules
+sv-FI
+sv-SE
+sw-KE
+swprintf_s
+syD9y
+SYNTAX:
+syr-SY
+SYSTEM
+System\CurrentControlSet\Services\VerifierExt\Extensions
+system32
+T$ fD
+t$ UWAUAVAWH
+t$ UWAVH
+t$ UWAWH
+t$ WATAVAWE3
+t$ WH
+t$(H9_
+t$0t!H
+t$2fD
+ta-IN
+ta-LK
+TargetNtPath
+te-IN
+TerminateProcess
+TestPassCount
+tg-Cyrl
+tg-Cyrl-TJ
+The current operation requires admin privilege.
+The current system environment supports only command line interface.
+The maximum number of 10 selected Core Driver Verifier rules has been reached.
+The new settings are in effect until the system
+The number of discovered drivers exeeds the TiP maximum.
+The specified command line parameter '/%1' does not support option '%2'.
+The specified command line parameter '/%1' doesn't follow required format.
+The specified command line parameter '/%1' is unexpected.
+The specified command line parameter '/%1' option '%2' doesn't follow required format.
+The specified command line parameter '/%1' option values are not valid.
+The specified flags 0x%1!08x! are not supported in volatile mode.
+The specified flags 0x%1!08x! are not supported.
+The system reboot is required for the changes to take effect.
+The verifier registry settings contain invalid values.
+There are no remaining drivers to verify. Reduce the number of excluded drivers.
+th-TH
+ti-ER
+ti-ET
+Time Stamp: %1
+timeout_x
+TiP not activated. Verifier settings unchanged.
+tip_appv
+tip_off
+tip_on
+tJfA;
+tk-TM
+tn-BW
+tn-ZA
+Translation
+tr-TR
+ts-ZA
+tt-RU
+tzm-Arab-MA
+tzm-Latn
+tzm-Latn-DZ
+tzm-Tfng
+tzm-Tfng-MA
+u HcA<H
+u&D9g
+u*9Q<|%
+u;f9t$ t
+uaH9X
+UATAUAVAWH
+uD8EXt L
+ug-CN
+uk-UA
+UnhandledExceptionFilter
+UNKNOWN
+UnmapViewOfFile
+ur-IN
+ur-PK
+Use Low Frequency Trim
+USVWATAUAVAWH
+UVWATAUAVAWH
+UVWAVAWH
+UWATAVAWH
+UWAVH
+uz-Cyrl
+uz-Cyrl-UZ
+uz-Latn
+uz-Latn-UZ
+VarFileInfo
+VDEST
+Verifier Configuration Editor
+Verifier Flags: 0x%1!08x!
+Verifier Volatile Flags: 0x%1!08x!
+verifier.exe
+verifier.pdb
+VerifierActivationFilter
+VerifierFaultApplications
+VerifierFaultBootMinutes
+VerifierFaultProbability
+VerifierFaultTags
+VerifierFlags
+verifiergui.exe
+VerifierOptions
+VerifierRandomTargets
+VerifierSettingState
+VerifyDriverLevel
+VerifyDrivers
+VerifyDriversSuppress
+VerQueryValueW
+ve-ZA
+vi-VN
+volatile
+VOLUME
+VOLUMESNAPSHOT
+Vrf_TiP_DriverData
+Vrf_TiP_Off
+Vrf_TiP_On_Failure
+Vrf_TiP_On_Success
+Vrf_User_Reset_Config
+VrfPersistThroughUpgrade
+VrfPrintHelpMessage
+VrfSetup
+VS_VERSION_INFO
+VWATAVAWH
+VWAVH
+WATAUAVAWH
+WAVAWH
+WCEUSBS
+wCH9{Hu
+WcosFileStateSeparation
+WcosRegistryStateSeparation
+wcscat_s
+wcschr
+wcscpy_s
+wcsncat_s
+wcsncmp
+wcsnlen
+wcsrchr
+wcsstr
+wcstok_s
+WdiWifi.sys
+wdiwifi.sys
+wEL9sHu
+WideCharToMultiByte
+win32k
+win32k.sys
+win32kbase.sys
+win32kfull.sys
+WindowsDriverVerifierUi
+WlanAssert
+WlanAssociation
+WlanConnectionRoaming
+WlanDisassociation
+WlanTimedAssociation
+WlanTimedConnectionRoaming
+WlanTimedConnectRequest
+WlanTimedLinkQuality
+WlanTimedScan
+wo-SN
+WriteConsoleW
+WriteFile
+x ;t$ H
+x ATAUAVH
+x ATAVAWH
+x AVH
+x AWH
+x UATAUAVAWH
+x UAVAWH
+XDV TiP tag on the target machine is the same or previous. Verifier settings unchanged.
+XdvExtensionOption
+XdvPersistDisabledRule
+XdvRuleSuppress
+XdvTipPerformanceControl
+XdvTipTag
+XdvTipTag: 
+XdvVerifierOptions
+xh-ZA
+xKfD9g
+yi-001
+yo-NG
+zh-CHS
+zh-CHT
+zh-CN
+zh-Hans
+zh-Hant
+zh-HK
+zh-MO
+zh-SG
+zh-TW
+zu-ZA

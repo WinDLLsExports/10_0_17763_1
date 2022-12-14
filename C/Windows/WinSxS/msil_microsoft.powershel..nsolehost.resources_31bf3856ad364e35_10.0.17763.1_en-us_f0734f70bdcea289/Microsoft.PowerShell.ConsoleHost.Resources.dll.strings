@@ -1,0 +1,429 @@
+                  | <string> [<CommandParameters>] } ]
+       To write a string that runs a Windows PowerShell command, use the format:
+    "Text" (text strings) or "XML" (serialized CLIXML format).
+    # To use the -EncodedCommand parameter:
+    $bytes = [System.Text.Encoding]::Unicode.GetBytes($command)
+    $command = 'dir "c:\program files" '
+    $encodedCommand = [Convert]::ToBase64String($bytes)
+    [-Command { - | <script-block> [-args <arg-array>]
+    [-ConfigurationName <string>]
+    [-File <filePath> <args>] [-ExecutionPolicy <ExecutionPolicy>]
+    [-File fileName [arguments...]] [-ExecutionPolicy <ExecutionPolicy>]
+    [-InputFormat {Text | XML}] [-OutputFormat {Text | XML}]
+    [-NoLogo] [-NoExit] [-NoProfile] [-NonInteractive] [-STA]
+    [-NoLogo] [-NoExit] [-Sta] [-Mta] [-NoProfile] [-NonInteractive]
+    [-OutputFormat {Text | XML}] [-InputFormat {Text | XML}]
+    [-WindowStyle <style>] [-EncodedCommand <Base64EncodedCommand>]
+    Accepts a base-64-encoded string version of a command. Use this parameter 
+    are "Text" (text strings) or "XML" (serialized CLIXML format).
+    as the script file path followed by the script parameters.
+    block only when running PowerShell.exe in Windows PowerShell. The results
+    causes the command to be executed.
+    causes the command to be run.
+    current session. Enter the script file path and any parameters. 
+    default Windows PowerShell remoting endpoints or a custom endpoint having
+    Describes the format of data sent to Windows PowerShell. Valid values are
+    Determines how output from Windows PowerShell is formatted. Valid values
+    Does not exit after running startup commands.
+    Does not load the Windows PowerShell profile.
+    Does not present an interactive prompt to the user.
+    Does not use the user profile.
+    Enter a version number with the parameter, such as "-version 2.0".
+    Executes the specified commands (and any parameters) as though they were
+    File must be the last parameter in the command, because all characters 
+    file, use Export-Console in Windows PowerShell.
+    functions and variables that the script creates are available in the 
+    Hides the copyright banner at startup.
+    If the value of Command is "-", the command text is read from standard
+    If the value of Command is a script block, the script block must be enclosed
+    If the value of Command is a string, Command must be the last parameter
+    in braces ({}). You can specify a script block only when running PowerShell.exe
+    in the $env:PSExecutionPolicyPreference environment variable. 
+    in the command , because any characters typed after the command are 
+    in Windows PowerShell. The results of the script block are returned to the
+    input.
+    interpreted as the command arguments.
+    Loads the specified Windows PowerShell console file. To create a console
+    marks or curly braces.
+    NoExit is specified. The value of Command can be "-", a string. or a
+    not live objects.
+    of the script are returned to the parent shell as deserialized XML objects,
+    parent shell as deserialized XML objects, not live objects.
+    PowerShell -Command "& {Get-EventLog -LogName security}"
+    PowerShell -Command {Get-EventLog -LogName security}
+    PowerShell -ConfigurationName AdminRoles
+    PowerShell -PSConsoleFile SqlSnapIn.Psc1
+    PowerShell -PSConsoleFile SqlSnapin.Psc1
+    PowerShell -version 1.0 -NoLogo -InputFormat text -OutputFormat XML
+    PowerShell -version 2.0 -NoLogo -InputFormat text -OutputFormat XML
+    PowerShell, prepend the command parameters with a hyphen (-), not a forward
+    powershell.exe -encodedCommand $encodedCommand
+    Runs the specified script in the local scope ("dot-sourced"), so that the 
+    script block.
+    Script blocks must be enclosed in braces ({}). You can specify a script
+    Sets the default execution policy for the current session and saves it 
+    Sets the window style to Normal, Minimized, Maximized or Hidden.
+    Shows this message. If you are typing a PowerShell.exe command in Windows
+    Single-threaded apartment (STA) is the default.
+    slash (/). You can use either a hyphen or forward slash in Cmd.exe.
+    specific user role capabilities.
+    Specifies a configuration endpoint in which Windows PowerShell is run.
+    Start the shell using a multithreaded apartment.
+    Starts the shell using a single-threaded apartment.
+    Starts the specified version of Windows PowerShell.
+    Starts the specified version of Windows PowerShell. 
+    that is set in the registry.
+    This can be any endpoint registered on the local machine including the
+    This parameter does not change the Windows PowerShell execution policy 
+    to submit commands to Windows PowerShell that require complex quotation 
+    To write a string that runs a Windows PowerShell command, use the format:
+    typed after the File parameter name are interpreted 
+    typed at the Windows PowerShell command prompt, and then exits, unless 
+    Uses a single-threaded apartment for the execution thread.
+    where the quotation marks indicate a string and the invoke operator (&)
+  : {3} ({4}) 
+ Host Windows PowerShell Snap-In.
+ Transcription cannot be started.
+ Window cannot be wider than {0}.
+!This program cannot be run in DOS mode.
+!Window cannot be taller than {0}.
+!Window height must be at least 1.
+"& {<command>}"
+"{0}" cannot be null or empty.
+"{0}" cannot be null.
+'"{0}" should have at least one element.
+#Blob
+#GUID
+#Strings
+#Window width cannot be less than 1.
+%PowerShell[.exe] [-PSConsoleFile <file> | -Version <version>]
+%The field "{0}" is a zero rank array.
+&Transcript started, output file is {0}
+&Transcript stopped, output file is {0}
+(default choices are {0})
+(default is "{0}")
+(default is "{0}"): 
+(Type !? for Help.)
+)This host does not support transcription.
+**********************
+*An error occurred while running '{0}': {1}
+*Entering debug mode. Use h or ? for help. 
+*Processing -WindowStyle '{0}' failed: {1}.
+.File {0} already exists and {1} was specified.
+.text
+.The current provider ({0}) cannot open a file.
+.Window cannot be wider than the screen buffer.
+/Window cannot be taller than the screen buffer.
+@.reloc
+[?] Help 
+\'-' was specified with the -Command parameter; no other arguments to -Command are permitted.
+]Windows PowerShell is in NonInteractive mode. Read and Prompt functionality is not available.
+_Cannot process command because a command is already specified with -Command or -EncodedCommand.
+_CorDllMain
+`.rsrc
+{0} activities not shown...
+{0} activity not shown...
+{0}: 
+{0}: {1}
+{0}:{1,-3} {2}
+{0}{1} remaining. 
+{Cannot process the command because -EncodedArguments requires a value. Specify a value for the -EncodedArguments parameter.
+|The Win32 internal error "{0}" 0x{1:X} occurred while getting the console mode. Contact Microsoft Customer Support Services.
+|The Win32 internal error "{0}" 0x{1:X} occurred while setting the console mode. Contact Microsoft Customer Support Services.
+~Cannot process the operation because the supplied coordinate is not valid. Specify a coordinate within the buffer area of {0}.
+~The Win32 internal error "{0}" 0x{1:X} occurred while detaching from the console. Contact Microsoft Customer Support Services.
+~The Win32 internal error "{0}" 0x{1:X} occurred while getting cursor information. Contact Microsoft Customer Support Services.
++{0} should be greater than or equal to {1}.
+<Module>
+040904b0
+0Loading personal and system profiles took {0}ms.
+10.0.17763.1
+2Window title cannot be longer than {0} characters.
+4The "{0}" collection must have at least one element.
+5"{0}" cannot be recognized as a valid Prompt command.
+6Cannot recognize "{1}" as a {0} due to a format error.
+9Cannot recognize "{1}" as a {0} due to an overflow error.
+aCannot process the command because -STA and -MTA are both specified. Specify either -STA or -MTA.
+AddBreakHandlerExceptionMessage
+Administrator
+An error has occurred that was not properly handled. Additional information is shown below. The Windows PowerShell process will exit.
+-An error occurred stopping transcription: {0}
+ArgsAlreadySpecified
+ArgumentFileDoesNotExist
+AttachToParentConsoleExceptionTemplater
+BadArgsValue
+BadCommandValue
+BadFormatParameterValue
+C"{0}" must be a valid index into "{1}" or -1 for no default choice.
+C"{0}" must be a valid index into "{1}". "{2}" is not a valid index.
+Cannot process the command because arguments to -Command or -EncodedCommand have already been specified with -EncodedArguments.
+Cannot process the command because -Configuration requires an argument that is a remote endpoint configuration name. Specify this argument and try again.
+Cannot process the command because the -InputFormat parameter requires an argument. Specify a valid format argument for this parameter.  Valid formats are:
+Cannot process the command because the value specified with -EncodedArguments is not properly encoded. The value must be Base64 encoded.
+Cannot process the command because the value specified with -EncodedCommand is not properly encoded. The value must be Base64 encoded.
+Cannot process the command because -WindowStyle requires an argument that is normal, hidden, minimized or maximized. Specify one of these argument values and try again.
+Cannot set the console color because the value specified is not valid. Specify a valid color as defined by the System.ConsoleColor type.
+Cannot use the specified Window X (column) position because it extends past the width of the screen buffer. Specify another X position, starting with 0 as the left most column of the buffer.
+Cannot use the specified Window Y (row) position because it extends past the height of the screen buffer. Specify another Y position, starting with 0 as the top-most row of the buffer.
+CannotLoadPSReadline
+CannotReadFile
+CannotStartTranscription
+Choice[{0}]: 
+ChoiceMessage
+cMore than one server mode parameter was specified. Server mode parameters must be used exclusively.
+-Command
+CommandAlreadySpecified
+CommandFailedH
+CommandLineParameterParserStrings.en.resources
+CommandNotExecutedt
+CompanyName
+-ConfigurationName
+ConflictingServerModeParameters
+ConsoleControlStrings.en.resources
+ConsoleHostIsSingleton
+ConsoleHostRawUserInterfaceStrings.en.resources
+ConsoleHostStrings.en.resources
+ConsoleHostUserInterfaceSecurityResources.en.resources
+ConsoleHostUserInterfaceStrings.en.resources
+CoordinateOutOfBufferErrorTemplate
+Copyright (c) Microsoft Corporation. All rights reserved.
+Copyright (C) Microsoft Corporation. All rights reserved.
+dCommand '{0}' was not run as the session in which it was intended to run was either closed or broken
+DEBUG: {0}
+DebugFormatString
+DebuggerSourceCodeFormat
+DefaultChoiceForMultipleChoices
+DefaultChoicePrompt/
+DefaultChoicesForMultipleChoicesE
+DefaultHelp
+DefaultPrompt
+Description
+DetachFromConsoleExceptionTemplate
+EmptyChoicesErrorTemplate`
+-EncodedCommand
+End time: {0:yyyyMMddHHmmss}
+EnteringDebugger
+ErrorStoppingTranscript"
+EXAMPLES
+-ExecutionPolicy
+FCannot load PSReadline module.  Console is running without PSReadline.
+-File
+FileDescription
+FileVersion
+FillConsoleOutputAttributeExceptionTemplate
+FillConsoleOutputCharacterExceptionTemplate
+FlushConsoleInputBufferExceptionTemplate
+FThe shell cannot be started. A failure occurred during initialization:
+GetActiveScreenBufferHandleExceptionTemplate
+GetConsoleCursorInfoExceptionTemplate
+GetConsoleFontInfoExceptionTemplate
+GetConsoleScreenBufferInfoExceptionTemplate
+GetInputModeExceptionTemplate
+GetLargestConsoleWindowSizeExceptionTemplate
+GetModeExceptionTemplate
+GetNumberOfConsoleInputEventsExceptionTemplate
+HCannot display the prompt for "{0}" because type "{1}" cannot be loaded.
+-Help, -?, /?
+Hit {0}
+HitBreakpoint
+HostDoesNotSupportTranscriptQ
+HostMshSnapInResources.en.resources
+ICannot process CursorSize because the cursor size specified is not valid.
+iCannot read key options. To read options, set one or both of the following: IncludeKeyDown, IncludeKeyUp.
+InitialCommandNotExecuted
+InitScriptFailed
+InputExitCurrentLoopOutOfSyncError
+-InputFormat
+InternalName
+InvalidBufferSizeError
+InvalidChoiceHotKeyError
+InvalidConsoleColorError
+InvalidCursorSizeError
+InvalidDefaultChoiceErrorTemplate
+InvalidDefaultChoiceForMultipleSelection
+InvalidFileArgument
+InvalidFileArgumentExtension
+InvalidReadKeyOptionsError
+InvalidRegionErrorTemplate
+InvalidWindowStyleArgument
+InvalidXWindowPositionError
+InvalidYWindowPositionError
+InvisibleNodesMessagePlural
+InvisibleNodesMessageSingular
+j'-' was specified as the argument to -Command but standard input has not been redirected for this process.
+JCannot display prompt because too many nested prompts are already running.
+KExecution of initialization script has failed. The shell cannot be started.
+LegalCopyright
+Li0iP
+lSystem.Resources.ResourceReader, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet
+Machine
+ManagedEntranceStrings.en.resources
+Microsoft (R) Windows (R) Operating System
+Microsoft Corporation
+Microsoft.PowerShell.ConsoleHost.resources
+Microsoft.PowerShell.ConsoleHost.resources.dll
+MissingArgsValue
+MissingCommandParameter
+MissingConfigurationNameArgument
+MissingExecutionPolicyParameter
+MissingFileArgument
+MissingInputFormatParameter
+MissingOutputFormatParameter
+MissingWindowStyleArgument
+mscoree.dll
+MtaStaMutuallyExclusive
+MultipleFilesNotSupported|
+NestedPromptEntryError
+No help is available for {0}.
+-NoExit
+-NoLogo
+-NonInteractive
+-NoProfile
+NullErrorTemplate
+NullOrEmptyErrorTemplate
+NWindows PowerShell 
+o**********************
+OAn instance of the ConsoleHost class has already been created for this process.
+oFile {0} is read-only. Cannot write to this file. "Start-Transcript -Force" will clear the read-only attribute.
+OriginalFilename
+-OutputFormat
+PADPADP
+PADPADP)#
+PADPADPH
+PADPADPo
+Password for user {0}: 
+PCannot set the buffer size because the size specified is too large or too small.
+PeekConsoleInputExceptionTemplate
+PowerShell[.exe] [-PSConsoleFile <file> | -Version <version>]
+PowerShell[.exe] -Help | -? | /?
+PProcessing -File '{0}' failed: {1} Specify a valid path for the -File parameter.
+Processing -File '{0}' failed because the file does not have a '.ps1' extension. Specify a valid Windows PowerShell script file name, and then try again.
+ProductName
+ProductVersion
+ProgressNodeStrings.en.resources
+PromptCanceledError
+PromptEmptyDescriptionsErrorTemplate
+PromptFieldPromptInputSeparatorTemplate
+PromptForChoiceHelp
+PromptForCredential_Password
+PromptForCredential_User
+PromptHelp
+PromptNoHelpAvailableErrorTemplate
+PromptParseFormatErrorTemplate
+PromptParseOverflowErrorTemplate
+PromptTypeLoadErrorTemplate
+PromptUnrecognizedCommandErrorTemplate
+-PSConsoleFile
+pThe Win32 internal error "{0}" 0x{1:X} occurred when adding a break handler. Contact Microsoft Support Services.
+qCannot process the execution policy because of a missing policy name. A policy name must follow -ExecutionPolicy.
+RankZeroArrayErrorTemplate
+ReadConsoleExceptionTemplate
+ReadConsoleInputExceptionTemplate
+ReadConsoleOutputExceptionTemplate
+ReadFailsOnNonInteractiveFlag
+ReadWriteFileNotFileSystemProvider
+RemoveBreakHandlerExceptionTemplate
+ScrollConsoleScreenBufferExceptionTemplate
+SecondsRemaining8
+SendKeyPressInputExceptionTemplate
+SessionDoesNotSupportDebugger
+SetConsoleCursorInfoExceptionTemplate
+SetConsoleCursorPositionExceptionTemplate
+SetConsoleFontInfoExceptionTemplate
+SetConsoleScreenBufferSizeExceptionTemplate
+SetConsoleTextAttributeExceptionTemplate
+SetConsoleWindowInfoExceptionTemplate
+SetConsoleWindowTitleExceptionTemplate
+SetModeExceptionTemplate
+ShellBanner
+ShellCannotBeStarted
+ShellHelpP
+SlowProfileLoadingMessage
+Start time: {0:yyyyMMddHHmmss}
+StdinNotRedirected
+StringFileInfo
+The argument '{0}' to the -File parameter does not exist. Provide the path to an existing '.ps1' file as an argument to the -File parameter.
+The command cannot be run because no argument has been supplied for the OutputFormat parameter. Specify one of the following formats for this parameter.
+The command cannot be run because the File parameter requires a file path. Supply a path for the File parameter and then try the command again.
+The current session does not support debugging; execution will continue.
+The prompt was canceled.
+The Win32 internal error "{0}" 0x{1:X} occurred while attaching to parent console. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while filling the console output buffer with attributes. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while filling the console output buffer with characters. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while flushing the console input buffer. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while getting console font information. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while getting console output buffer information. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while getting input about the console handle. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while getting the largest console window size. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while getting the number of events in the console input buffer. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while reading characters from the console input buffer. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while reading input records from the console input buffer. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while reading the contents of the console input buffer. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while retrieving the handle for the active console output buffer. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while scrolling the console output buffer. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while setting character attributes for the console output buffer. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while setting console font information. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while setting the console output buffer size. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while setting the console window information. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while setting the console window title. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while trying to remove a break handler. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while trying to set the cursor position. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while writing to the console output buffer at the current cursor position. Contact Microsoft Customer Support Services.
+The Win32 internal error "{0}" 0x{1:X} occurred while writing to the console output buffer. Contact Microsoft Customer Support Services.
+This Windows PowerShell snap-in contains cmdlets (such as Start-Transcript and Stop-Transcript) that are provided for use with the Windows PowerShell console host.
+TooManyNestedPromptsError
+TooManyParametersToCommand
+TranscriptEpilogue
+TranscriptFileExistsNoClobber
+TranscriptFileReadOnly
+TranscriptionStarted
+TranscriptionStopped
+TranscriptPrologue
+TranscriptStrings.en.resources
+Translation
+UA nested prompt cannot be entered until the host is running at least one prompt loop.
+UCannot process the hot key because a question mark ("?") cannot be used as a hot key.
+UCommand '{0}' could not be run because some Windows PowerShell Snap-Ins did not load.
+Unable to read from file '{0}'.
+UnhandledExceptionShutdownMessage
+UnknownParameter
+Unrecognized parameter: '{0}'.
+User: 
+Username  : {1}\{2} 
+v4.0.30319
+VarFileInfo
+VCannot process input loop. ExitCurrentLoop was called when no InputLoops were running.
+Vendor
+VERBOSE: {0}
+VerboseFormatString
+-Version
+VS_VERSION_INFO
+WARNING: {0}W
+WarningFormatString
+Win32 internal error "{0}" 0x{1:X} occurred while reading the console output buffer. Contact Microsoft Customer Support Services.
+Window size is too narrow.
+Window size is too short.
+Window title cannot be empty.
+WindowHeightLargerThanBufferError
+WindowHeightTooLargeErrorTemplate
+WindowHeightTooSmallError
+Windows PowerShell transcript end
+Windows PowerShell transcript start
+-WindowStyle
+WindowTitleElevatedPrefix
+WindowTitleTemplate
+WindowTitleTooLongErrorTemplate
+WindowTitleTooShortError
+WindowTooNarrowError
+WindowTooShortError
+WindowWidthLargerThanBufferError
+WindowWidthTooLargeErrorTemplate
+WindowWidthTooSmallError
+WriteConsoleExceptionTemplate
+WriteConsoleOutputExceptionTemplate
+xCannot perform operation because the path resolved to more than one file. This command cannot operate on multiple files.
+XRbj_W
+yCannot process the command because of an incorrect parameter value. "{0}" is not a valid format.  Valid formats are:
+yWin32 internal error "{0}" 0x{1:X} occurred while setting cursor information.Contact Microsoft Customer Support Services.
+ZCannot process the command because of a missing parameter. A command must follow -Command.
+zThe Win32 internal error "{0}" 0x{1:X} occurred while sending keyboard input. Contact Microsoft Customer Support Services.

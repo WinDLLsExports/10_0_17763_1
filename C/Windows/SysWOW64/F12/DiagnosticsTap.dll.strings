@@ -1,0 +1,1028 @@
+                        external.sendMessage("OnMessage", this.name, data);
+                        privatePorts[e.portName].internalData.eventManager.__fireEvent("message", { data: e.data });
+                        return 1;
+                        throw new Error("Cannot postMessage on an unconnected port.");
+                        throw new Error("Diagnostics message received for unknown port.");
+                    }
+                    } else {
+                    break;
+                    breakFlags = parseInt(e.breakFlags, 10);
+                    diagnosticsEventManager.__fireEvent("breakpointhit", {});
+                    diagnosticsEventManager.__fireEvent("connect", privatePort.port);
+                    diagnosticsEventManager.__fireEvent("detach", {});
+                    diagnosticsEventManager.__fireEvent("scripterror", e);
+                    hwnd = e.hwnd;
+                    if (_internalData.isConnected) {
+                    if (privatePorts.hasOwnProperty(e.portName)) {
+                    if (this.__eventListeners[eventName][i] === callback) {
+                    isAttached = false;
+                    privatePort.internalData.isConnected = true;
+                    privatePorts = {};
+                    this.__eventListeners[eventName].splice(i, 1);
+                    throw new Error("You must use a port created by ScriptedHost.Diagnostics.createPort");
+                    var privatePort = createPortInternal(e.portName);
+                // A synchronous message will be sent back which will update the value of hwnd above.
+                // GetBreakFlags triggers a synchronous message back to us of commandId "OnGetBreakFlagsResult" which sets breakFlags above.
+                // sendMessage requires at least one after the message ID string, however we don't use any for GetBreakFlags
+                ///     The port to connect to the remote side.
+                ///     The portName that will identify the port
+                /// </param>
+                /// </signature>
+                /// <param name='port' type='Object' optional='false'>
+                /// <param name='portName' type='String' optional='false'>
+                /// <returns type="Object">The port object which can be connected, postMessage'd and listened on (using the "message event").</returns>
+                /// <signature>
+                /// <summary> Connects a port to the remote target - on the remote side, a "connect" event will be fired with the other end of the port.</summary>
+                /// <summary> Creates a port to be used to talk to script running in the diagnostics engine in the remote target.</summary>
+                }
+                },
+                addEventListener: _internalData.eventManager.addEventListener.bind(_internalData.eventManager),
+                case "OnBreakpointHit":
+                case "OnConnect":
+                case "OnDetach":
+                case "OnGetBreakFlagsResult":
+                case "OnHWND":
+                case "OnMessage":
+                case "OnRemoteScriptError":
+                eventManager: new EventHelper()
+                external.sendMessage("GetBreakFlags", "empty");
+                external.sendMessage("GetHWND", "empty");
+                external.sendMessage("OnConnect", port.name);
+                external.sendMessage("TakeMemorySnapshot", portName, uid, "" + startPartId);
+                for (var i = 0; i < this.__eventListeners[eventName].length; i++) {
+                if (!privatePorts.hasOwnProperty(port.name)) {
+                if (this.__eventListeners[eventName][i] === listener) {
+                isConnected: false,
+                name: portName,
+                postMessage: function (data) {
+                privatePorts[port.name].internalData.isConnected = true;
+                removeEventListener: _internalData.eventManager.removeEventListener.bind(_internalData.eventManager)
+                return breakFlags; 
+                return createPortInternal(portName).port;
+                return hwnd;
+                return this.__eventListeners[eventName].length;
+                this.__eventListeners[eventName][i](params);
+                throw new Error("A port with that name already exists.");
+                val ThreadingModel = s 'Apartment'
+                val ThreadingModel = s 'Both'
+            // diagOM supports ES5
+            // Only create one port of a given name.
+            ///     connecting the incoming events from VS to the actual script objects
+            ///     Creates a port and its private data for storage to use later when 
+            ///     The portName that will identify the port
+            ///     they correspond to.
+            /// </param>
+            /// </signature>
+            /// </summary>
+            /// <param name='portName' type='String' optional='false'>
+            /// <returns type="Object">An object containing the internal data and the public port to return to callers.</returns>
+            /// <signature>
+            /// <summary> 
+            {
+            }
+            } else {
+            },
+            };
+            addEventListener: diagnosticsEventManager.addEventListener.bind(diagnosticsEventManager),
+            connect: function ScriptedHost$Diagnostics$connect(port) {
+            createPort: function ScriptedHost$Diagnostics$createPort(portName) {
+            engineSupportsES5: true,
+            for (var i = 0; i < this.__eventListeners[eventName].length; i++) {
+            ForceRemove Programmable
+            getBreakFlags: function () {
+            getHWND: function () {
+            if (listener) {
+            if (privatePorts.hasOwnProperty(portName)) {
+            InprocServer32 = s '%MODULE%'
+            privatePorts[portName] = privatePort;
+            removeEventListener: diagnosticsEventManager.removeEventListener.bind(diagnosticsEventManager),
+            return privatePort;
+            switch (e.commandId) {
+            takeMemorySnapshot: function (portName, uid, startPartId) {
+            this.__eventListeners[eventName] = [];
+            TypeLib = s '{8C0C62FB-37F1-11E3-8259-6C3BE516EAD0}'
+            var _internalData = {
+            var _port = {
+            var privatePort = { internalData: _internalData, port: _port };
+            Version = s '1.0'
+        // Public Diagnostics API:
+        // Track existing ports with private access
+        ///     and provides a fire event helper function that is used internally to mimic real events.
+        ///     It stores a set of attached event listeners that are the callbacks for events,
+        ///     This object is used as a base class for objects that require event listener functions
+        /// </summary> 
+        /// <summary>
+        {
+        }
+        });
+        };
+        external.addEventListener("message", function (e) {
+        ForceRemove {8C0C62FD-37F1-11E3-8259-6C3BE516EAD0} = s 'TapObject Class'
+        ForceRemove {8C0C6304-37F1-11E3-8259-6C3BE516EAD0} = s 'MessageDispatch Class'
+        ForceRemove {CA7C1262-EA3B-4508-B120-DF9BCDEF3E60} = s 'LocalDebuggeeScriptHostFactory2 Class'
+        if (!this.__eventListeners[eventName]) {
+        if (this.__eventListeners[eventName]) {
+        return 0;
+        return diagnostics;
+        this.__eventListeners = [];
+        this.__eventListeners = {};
+        this.__eventListeners[eventName].push(listener);
+        var breakFlags = 0;
+        var createPortInternal = function ScriptedHost$createPortInternal(portName) {
+        var diagnostics = {
+        var diagnosticsEventManager = new EventHelper();
+        var hwnd = 0;
+        var isAttached = true;
+        var privatePorts = {};
+    // Disable the usage of ActiveX
+    // Hacks to get console working without code changes
+    {
+    }
+    }();
+    };
+    ActiveXObject = null;
+    EventHelper.prototype.__fireEvent = function (eventName, params) {
+    EventHelper.prototype.addEventListener = function (eventName, listener) {
+    EventHelper.prototype.isEventListenerAttached = function (eventName, listener) {
+    EventHelper.prototype.removeAllEventListeners = function () {
+    EventHelper.prototype.removeEventListener = function (eventName, listener) {
+    function EventHelper() {
+    mainBrowser = browser;
+    NoRemove CLSID
+    toolUI = function () {
+ #%lu
+ Microsoft Corporation. All rights reserved.
+!aeJ@
+!This program cannot be run in DOS mode.
+"9_4t"
+"DiagnosticsTapLibWWW
+"IActiveScriptErrorWW
+%0\0_1e1k1
+%ProcessIdWWW
+(function () {
+)_^[]
+."plCharacterPositionW
+.?AV?$_Ref_count@E@std@@
+.?AV_Ref_count_base@std@@
+.?AV<lambda_6e895be48cbc1d1bc3210ae5ed3d15e2>@@
+.?AV<lambda_ea7eab20e2b470d7486fb5b54d604fa1>@@
+.?AV<lambda_fa1fa2b29d0d3513a456cdc357d69e5a>@@
+.?AVbad_alloc@std@@
+.?AVbad_array_new_length@std@@
+.?AVCAccessAce@CDacl@ATL@@
+.?AVCAce@CAcl@ATL@@
+.?AVCAcl@ATL@@
+.?AVCAtlException@ATL@@
+.?AVCDacl@ATL@@
+.?AVCSecurityDesc@ATL@@
+.?AVCSid@ATL@@
+.?AVEventHelper@@
+.?AVexception@std@@
+.?AVlength_error@std@@
+.?AVtype_info@@
+.00cfg
+.CRT$XCA
+.CRT$XCL
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIC
+.CRT$XIZ
+.CRT$XPA
+.CRT$XPZ
+.CRT$XTA
+.CRT$XTZ
+.data
+.data$brc
+.data$r$brc
+.edata
+.gfids
+.giats
+.idata
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.rdata
+.rdata$brc
+.rdata$r$brc
+.rdata$sxdata
+.rdata$zzzdbg
+.rsrc$01
+.rsrc$02
+.rtc$IAA
+.rtc$IZZ
+.rtc$TAA
+.rtc$TZZ
+.text
+.text$di
+.text$mn
+.text$x
+.text$yd
+.xdata$x
+// Scoping function
+:!:':9:?:J:O:_:d:t:y:
+:":=:H:M:`:v:{:
+:$:]:
+:$:4:@:H:h:
+:$:D:L:T:\:d:p:
+:&:y:
+:);:;^;d;7<s<
+:.:G:
+:/:>:
+:/;Y;
+:+:T:
+:0:@:L:l:t:
+:0:9:U:^:x:
+:3;|;
+:4;=;q;z;
+:6:y:
+:F;x;
+:g:n:
+:H:R:
+; ;,;L;T;\;d;p;x;
+;!<1<H<P<W<^<r<
+;$;,;4;<;H;h;t;|;
+;$;-;
+;%;*;:;?;X;^;e;z;
+;&<J<N<R<V<Z<^<b<f<j<n<r<v<z<
+;(;0;L;\;d;|;
+;(<M<
+;*;_;h;
+;*;0;R;j;p;
+;,;o;
+;.;G;T;Z;f;
+;;;H;M;
+;';V;z;
+;><y<W=
+;0;@;D;T;X;\;d;|;
+;0;`;m;
+;0uE9E
+;0uk9E
+;0um9E
+;7;Z;
+;8;O;
+;9;V;
+;B;k;
+;data
+;F|u/
+;F|u/SW
+;Fpt@
+;Q<o<|<
+;w$t,
+;w(t7
+?$?0?P?X?d?
+?(?.?5?<?C?J?Q?^?
+?(?0?8?@?H?T?t?|?
+?(?8?J?S?k?
+?(?S?h?p?v?
+?*?9?P?s?~?
+?-?V?
+?'?V?w?
+?@?H?P?\?|?
+?_Xbad_function_call@std@@YAXXZ
+?_Xlength_error@std@@YAXPBD@Z
+?=u/W
+?0?F?U?
+?K?]?
+?P?\?r?
+@.reloc
+@.rsrc
+@Qm6t
+\Implemented Categories
+\Required Categories
+\u%04x
+^d9;t
+^spSucceededWW*
+__CxxFrameHandler3
+__std_terminate
+__std_type_info_compare
+_CxxThrowException
+_D+_@V
+_except_handler4_common
+_finite
+_initterm
+_initterm_e
+_isnan
+_o___std_exception_copy
+_o___std_exception_destroy
+_o___std_type_info_destroy_list
+_o___stdio_common_vswprintf
+_o___stdio_common_vswprintf_s
+_o__callnewh
+_o__cexit
+_o__configure_narrow_argv
+_o__crt_atexit
+_o__errno
+_o__execute_onexit_table
+_o__fpclass
+_o__initialize_narrow_environment
+_o__initialize_onexit_table
+_o__invalid_parameter_noinfo
+_o__invalid_parameter_noinfo_noreturn
+_o__itow_s
+_o__purecall
+_o__recalloc
+_o__register_onexit_function
+_o__seh_filter_dll
+_o__ui64tow_s
+_o__wfopen_s
+_o_calloc
+_o_fclose
+_o_fgetws
+_o_free
+_o_malloc
+_o_terminate
+_o_wcscat_s
+_o_wcscpy_s
+_o_wcsncat_s
+_o_wcsncpy_s
+_o_wcstol
+_o_wmemcpy_s
+`.data
+{1b7cd997-e5ff-4932-a7a6-2a9e636da385}
+{DB78C36C-0C1D-4D30-B722-2D4C252523F1}
+{loadScriptInProc
+|$ f9D$Ht
+|$ PWV
+})();
+~4listener
+< <'<=<s<
+< =<=
+<#=P=u=
+<$<,<0<8<<<D<L<T<\<p<t<
+<$<,<4<<<D<L<T<\<d<l<t<|<
+<$<,<4<<<D<L<X<x<
+<$<0<P<X<`<h<t<
+<%=2=N=
+<&<<<
+<,<H<T<b<j<~<
+<;=K=b=j=~=7>v>
+<^=|=
+<'</<Z<k<s<{<@=F=
+<-=<=
+<>=N=
+<1<Y<
+<3=V=
+<5=b=z=
+<6<`<
+<6<R<~<
+<8<s<
+<H=v=
+<K=u=
+<Type Name Not Found>
+<X<g<D=
+<Z<n<
+= =0=<=\=h=
+= ><>
+=">J>d>
+=#>b>p>
+=$=,=8=@=`=|=
+=$>Q>
+=(=0=m=
+=/===R=_=
+=;>f>
+='=k=
+=>?D?e?
+=>>X>n>
+=4=8=P=`=p=
+=6=Q=l=
+=C>`>
+=C>z>7?a?g?v?
+=h=q=
+=H=X=d=l=
+=L9o<
+> >$>4>8>H>L>T>X>\>`>d>h>t>x>
+> >'>6>a>z>
+>"?>?f?
+>">(>.>4>:>@>F>L>R>X>^>d>j>p>
+>">'>@>E>R>
+>#>*><>l>
+>$>>>R>
+>,>8>X>`>l>t>
+>.?R?}?
+>-?6?`?
+>+>B>K>R>q>
+><>L>X>`>
+>=?i?
+>>>h>
+>4><>D>L>X>x>
+>A?d?
+>J>t>
+>K>[>r>y>
+->portName
+0 0$0(0,0004080<0@0D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+0 0(040<0T0d0
+0 0,0L0X0x0
+0 101<1D1d1
+0 1g1
+0!111t1
+0!1J1a1|1
+0$0D0L0X0`0x0
+0(181D1d1p1
+0)03090[0x0
+0,111T1z1
+0:0H0
+0'0x0
+010;0s0
+011S1d1
+040904B0
+060Q0l0
+060T0
+0C1f1
+'0J0i0
+0L0f0
+0Qhl)
+1 1$1(1,1014181<1@1D1H1L1P1T1X1\1`1d1h1l1p1t1x1|1
+1 1$1(14181<1H1
+1 1)121D1L1
+1!1(1<1l1
+1!2V2z2
+1"2]2
+1(1=1e1
+1(1q1z1
+1,1@1H1P1X1`1l1t1
+1,141<1H1h1p1x1
+1<1c1i1p1}1
+1<1d1
+11.00.17763.1
+11.00.17763.1 (WinBuild.160101.0800)
+1'2E2
+1'2S2c2
+131@1
+141w1
+141Z1|1
+182A2K2
+1K1h1r1x1
+1O1s1
+1p1v1}1
+2 2$2(2,2024282<2@2D2H2L2P2T2X2\2`2d2h2l2p2t2x2|2
+2 2$2@2D2`2d2
+2 3V3{3
+2$2*2/2>2G2P2U2f2j2
+2$20282X2t2
+2$212d2r2
+2(242<2\2x2
+2)2?2N2X2
+2)252X2r2
+2*2L2]2
+2<2_2
+202@2d2l2t2|2
+20282@2`2
+212Y2
+2'2j2
+2-363~3
+282v2
+2d3w3
+2x3n4
+3 3$3(3,3034383<3@3D3H3L3P3T3X3\3`3d3h3l3p3t3x3|3
+3 3(30383<3D3X3`3t3|3
+3 3T3^3d3
+3 3T3d3p3x3
+3"30363<3B3H3N3U3\3c3j3q3x3
+3#3B3
+3#3R3X3
+3$3.3q3y3
+3(343<3\3x3
+3*4M4p4
+3.3N3T3]3d3r3x3
+3?4r4
+3@3H3P3\3d3|3
+3[3u3
+3+4J4`4k4
+323M3h3
+34383<3X3p3
+343I3
+3O3j3
+4 4$4(4,4044484<4@4D4H4L4P4T4X4\4`4d4h4l4p4t4x4|4
+4 4&4M4
+4 4(4\4l4x4
+4"4=4X4
+4(4`4
+4.4<4B4H4N4T4Z4a4h4o4v4}4
+4<4D4L4T4\4d4l4t4|4
+414?4
+444<4H4h4t4
+454J4[4
+475D5d5
+4D4n4
+4L4U4
+4S4Z4c4l4u4
+4S5i5
+4T4]4c4m4
+5 5$5(5,5054585<5@5D5H5L5P5T5X5\5`5d5h5l5p5t5x5|5
+5 5@5L5l5t5
+5!6S6a6z6
+5$545<5D5L5T5\5l5t5|5
+5(5`5|5
+5,6O6
+5.5K5m5
+5/575>5L5S5X5m5v5
+5\5u5
+5+5Z5q5
+5>5c5
+525~5
+5'6W6k6
+576\6m6
+585w5
+595t5~5
+5C5S5h5t5
+5D5T5`5h5
+5G5r5
+5Genu
+5ineI
+6 6$6(6,6064686<6@6D6H6L6P6T6X6\6`6d6h6l6p6t6x6|6
+6 6(6\6l6x6
+6 6<6T6
+6 7p7
+6"6[6
+6"6Q6l6
+6#606f6u6
+6$767D7
+6&6<6F6o6x6
+6&6T6
+6&767\7j7
+6*6:6B6I6Q6i6}6
+6,646<6D6P6p6|6
+6/7;7L7x7
+6/7g7p7
+6:6X6o6
+6?6s6
+6<6h6|6
+617z7
+627W7o7
+637y7
+677U7_7
+6C7M7
+6D6|6
+6O7y7
+7 7(707<7D7d7
+7 7@7L7p7x7
+7!767=7C7U7_7
+7"8)8O8t8{8
+7(7H7T7t7|7
+7)70787A7K7g7n7
+7,7G7r7
+7.7;7`7
+7.8O8z8
+7/7c7
+7@8^8|8
+7=7w7
+70\0i0
+707<7\7h7p7
+738A8q8{8
+7'7B7[7
+788G8x8
+7EduplicatedWriteHandleWWW
+7G8j8
+7H7{7
+7J8P8
+8 8$8(8,808<8H8`8
+8 8@8L8T8t8
+8 8T8d8p8x8
+8$8:8D8`8
+8$8?8Z8u8
+8,9s9
+8.8a8
+8:8^8}8
+8:8`8
+8[8j8s8
+8[JDebugEngineSiteW
+8_:e:h;W<i<x<
+8+9S9
+8<8g8
+808L8\8h8
+818J8
+819Y9|9
+829I9
+879M9T9g9p9v9
+8'9=9
+8D8p8
+8h8w8
+8mzIScriptEventProvider
+9 9(9\9l9x9
+9 9,9P9\9h9t9
+9#:e:}:
+9#:G:N:a:p:u:
+9#949H9u9
+9#9S9
+9$9,949<9D9L9T9\9d9l9x9
+9%9Z9n9
+9(9G9R9y9
+9,:s:
+9,949L9T9h9p9x9
+9,9G9e9
+9.:X:
+9.9M9
+9;9^9
+9;9e9v9
+9?9O9Y9s9y9
+9@9h9
+9<:@:H:P:h:
+90:;:I:
+90ti9w
+959U9t9
+989R9i9
+9f;:u
+9s0tx
+A script error has occurred in the remote side JavaScript:
+AddAce
+advapi32.dll
+ADVAPI32.dll
+api-ms-win-core-com-l1-1-0.dll
+API-MS-Win-Core-LocalRegistry-L1-1-0.dll
+api-ms-win-crt-math-l1-1-0.dll
+api-ms-win-crt-private-l1-1-0.dll
+api-ms-win-crt-runtime-l1-1-0.dll
+api-ms-win-crt-string-l1-1-0.dll
+APPID
+AppID
+ATL$__a
+ATL$__m
+ATL$__z
+ATL:%p
+atlthunk.dll
+AtlThunk_AllocateData
+AtlThunk_DataToCode
+AtlThunk_FreeData
+AtlThunk_InitData
+attach
+attachedCountWWW
+bad allocation
+bad array new length
+break
+breakFlags
+bShx9
+C(Ph@Q
+C4Wj@
+CallWindowProcW
+CharNextW
+Cl91t
+closed
+CloseHandle
+CLSID
+CLSID\
+CoCreateInstance
+CoInternetCombineUrlEx
+column
+commandId
+CompanyName
+CompareStringOrdinal
+Component Categories
+connect
+connectW
+CopySid
+CoTaskMemAlloc
+CoTaskMemFree
+CoTaskMemRealloc
+CreateEventW
+CreatePipe
+createPortWWL
+CreateThread
+CreateUri
+CreateWindowExW
+Cw48?
+D$ PVVV
+D$,WP
+D$<PV
+dbgsh://%d/%s
+debug
+DebugMessagePortx
+DecodePointer
+DefWindowProcW
+Delete
+DeleteCriticalSection
+detach
+DiagnosticsTap.dll
+DiagnosticsTap.pdb
+DispatchMessageW
+DllCanUnloadNow
+DllGetClassObject
+DllInstall
+DllRegisterServer
+DllUnregisterServer
+dOnConnectWWW
+dsh://%d/%s
+duplicatedReadHandle
+DuplicateHandle
+EaddEventListener
+edgehtml.dll
+elementAttributesSize
+elementTextChildrenSize
+EncodePointer
+engineId
+EnterCriticalSection
+events
+external
+F12 Debugger Script Engine
+F12 Developer Tools Diagnostics TAP
+F12\F12Tab.dll
+F12\F12Tab2.dll
+F12DSEDEBUGENABLED
+false
+File: %s
+FileDescription
+FileType
+FileVersion
+FindAtomW
+FindClose
+FindFirstFileW
+FindResourceExW
+FindResourceW
+FlushInstructionCache
+ForceRemove
+FreeLibrary
+functionName
+G,PVQh 
+G7PVh
+GetAclInformation
+GetBreakFlags
+GetBreakFlagsWWW
+GetClassInfoExW
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThreadId
+GetEnvironmentVariableW
+GetHWND
+GetLastError
+GetLengthSid
+GetMessageW
+GetModuleFileNameW
+GetModuleHandleExW
+GetModuleHandleW
+GetProcAddress
+GetProcessHeap
+GetSecurityDescriptorControl
+GetSecurityDescriptorDacl
+GetSecurityDescriptorGroup
+GetSecurityDescriptorLength
+GetSecurityDescriptorOwner
+GetSecurityDescriptorSacl
+GetSidLengthRequired
+GetSidSubAuthority
+GetSourceLineTextWWW
+GetSourcePositionWWW
+GetSystemTimeAsFileTime
+GetThreadLocale
+GetTokenInformation
+GetUserDefaultLCID
+GetWindowLongW
+Hardware
+hCreateDebuggerScriptHostAtWebApp
+HeapAlloc
+HeapDestroy
+HeapFree
+HeapReAlloc
+HeapSize
+HKEY_CLASSES_ROOT
+HKEY_CURRENT_CONFIG
+HKEY_CURRENT_USER
+HKEY_DYN_DATA
+HKEY_LOCAL_MACHINE
+HKEY_PERFORMANCE_DATA
+HKEY_USERS
+I9w8u
+IDebugMessagePortWWWx
+IDiagnosticsMessageHandler interfaceWW0
+-IDiagnosticsMessageHandlerWW
+iertutil.dll
+ILocalDebuggeeScriptHostFactory2
+ILocalDebuggeeScriptHostFactory2 interface$
+IMessageDispatch
+indices
+Infinity
+-Infinity
+InitializeAcl
+InitializeCriticalSection
+InitializeSecurityDescriptor
+InitializeSid
+InitializeSListHead
+InitializeWithExistingPipeWWX
+Interface
+InterlockedPopEntrySList
+InterlockedPushEntrySList
+InternalName
+internalProperties
+Internet Explorer
+isAttachedWW
+IsDebuggerPresent
+isGetter
+isNew
+IsProcessorFeaturePresent
+isRoot
+isSetter
+isSiteClosed
+IsValidSid
+IsWindow
+ITapObjectWW
+j Z_^
+j%Yf;
+j{Xf;
+j{Xf9
+j=Xf9
+j0Xf9
+j0Yf;
+JS_DEBUG_DSH
+jShh9
+jsonData
+j'Xf;
+K 99t
+K(91t
+K(99t
+K891t
+KERNEL32.dll
+L$ QVVV
+L$<QVP
+L$HQPR
+LeaveCriticalSection
+LegalCopyright
+length
+Line: %u
+list<T> too long
+LoadCursorW
+LoadLibraryExA
+LoadLibraryExW
+LoadResource
+LocalDebuggeeScriptHostFactory2WX
+LockResource
+lstrcmpiW
+MakeAbsoluteSD
+MakeSelfRelativeSD
+map/set<T> too long
+memcmp
+memcpy
+memmove
+memset
+message
+Message: %s
+MessageDispatchW
+method addEventListener - Add an event listener.WW6
+method isEventListenerAttached - Determine if an event listener is attached to a specific event.WWE
+method removeAllEventListeners - Remove all attached event listeners.W
+method removeEventListener - Remove an event listener.`
+Microsoft Corporation
+Module
+Module_Raw
+msvcp_win.dll
+MultiByteToWideChar
+N499t
+namex
+NDP9NHt
+NInitializeWW
+NoRemove
+NpFileNameWWW
+nspdwSourceContext
+numberValue
+O,P9O0t
+Object
+objectId
+oJ3]1"
+OLEAUT32.dll
+OnBreakpointHit
+OnConnect
+OnDetach
+OnDetachX
+OnExecuteScriptW
+OnGetBreakFlagsResult
+OnHWND
+OnMessage
+OnMessageWWW
+OnRemoteScriptError
+OpenAndReadFileFromModuleResources '%s' failed
+OpenProcess
+OpenProcessToken
+OriginalFilename
+OutputDebugStringW
+partId
+PathGetCharTypeW
+pbstrSourceLineW,
+PeekMessageW
+pEngineSiteToRemoveW
+pexcepinfoWW
+portName
+postMessageW
+PostMessageW
+PostQuitMessage
+PostThreadMessageW
+ppWebApp 
+PQjeZ
+PQSVW
+ProductName
+ProductVersion
+properties
+prototype
+pScriptErrord
+PSSSV
+pToolWindowW
+pulLineNumberWWW
+Q$9PPt
+QQQQQQQPQQQ
+QQQWV
+QQSVW
+QQSVWj
+QueryPerformanceCounter
+RaiseException
+ReadFile
+readHandleWW
+RegCloseKey
+RegCreateKeyExW
+RegDeleteKeyExW
+RegDeleteKeyW
+RegDeleteValueW
+RegEnumKeyExW
+RegisterClassExW
+RegisterWindowMessageW
+REGISTRY
+RegOpenKeyExW
+RegQueryInfoKeyW
+RegSetValueExW
+relationships
+RemoteDiagnostics.js
+remotescripterror
+RemoveEngineSite
+removeEventListenerW
+RIDebugEngineSite
+RShp9
+rt, ccs=
+rtremoveAllEventListenersW
+S{OnScriptErrorWWW
+sBj%V
+scopes
+scriptFileNameWW
+SECURITY
+SendMessageW
+SetEvent
+SetLastError
+SetSecurityDescriptorDacl
+SetThreadLocale
+SetUnhandledExceptionFilter
+SetWindowLongW
+sfs+/v/+/v++/v9+/v8
+SHLWAPI.dll
+sizeIsApproximate
+SizeofResource
+Software
+SSSSSSSPSSSV
+stdole2.tlbWWW
+StringFileInfo
+StringFromGUID2
+stringValue
+SYSTEM
+t$8hH(
+t$h@A
+t*h$4
+t.;:u
+t2pScriptW
+t6h$)
+TakeMemorySnapshot
+TapObjectWWWd
+targetProcessIdW
+TerminateProcess
+teventNameWWW
+tFh4)
+tIDiagnosticsScriptEngineSite,
+tnj'[f;
+toolUI
+TpszDataW
+TranslateMessage
+Translation
+tRemoteGetExceptionInfoWW
+TypeLib
+TYPELIB
+u*j}Xf9
+u@h$)
+u[f9C
+u_SSSSSSS
+u7Sh`9
+uiWriteHandleWWWX
+ulDataCountW
+ULONG_PTRWWWd
+UnhandledExceptionFilter
+UNKNOWN
+Unknown exception
+UNKNOWN relationshipinfo
+Unknown remote file
+UnregisterClassA
+urlmon.dll
+USER32.dll
+UTF-16LE
+UTF-8
+value
+VarFileInfo
+vector<T> too long
+VirtualAlloc
+VirtualFree
+VS_VERSION_INFO
+VVSh X
+WaitForSingleObject
+winrt
+wisEventListenerAttachedW
+WM_F12_SITE_COMMAND
+WriteFile
+writeHandleWd
+X[_^]
+Xf9D$Xt
+XpFlagsOutWWW,
+Y__^[
+ZShX9

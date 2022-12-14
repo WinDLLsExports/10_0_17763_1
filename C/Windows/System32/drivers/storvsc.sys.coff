@@ -1,0 +1,113 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\storvsc.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    vmbkmcl.sys
+    storport.sys
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C0008000 Import Address Table
+             1C0008278 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         26E IoAllocateWorkItem
+                         AE4 _vsnwprintf
+                         4C3 KeWaitForMultipleObjects
+                         5F8 ObfDereferenceObject
+                         667 PsCreateSystemThread
+                         7FC RtlInitUnicodeString
+                         277 IoBuildDeviceIoControlRequest
+                         40E KeGetProcessorIndexFromNumber
+                          7B EtwWriteTransfer
+                          6C EtwActivityIdControl
+                         49C KeSetEvent
+                         5E8 ObReferenceObjectByHandle
+                         7EC RtlGetVersion
+                          75 EtwUnregister
+                         513 MmGetSystemRoutineAddress
+                         2C2 IoFreeWorkItem
+                          70 EtwRegister
+                         3A9 IofCallDriver
+                         39D IoWMIRegistrationControl
+                         41B KeInitializeEvent
+                         31C IoQueueWorkItem
+                         4C5 KeWaitForSingleObject
+                         9E3 ZwClose
+                         70F PsTerminateSystemThread
+                          83 ExAcquireFastMutex
+                         87B RtlQueryRegistryValues
+                         30E IoOpenDeviceRegistryKey
+                          C3 ExFreePoolWithTag
+                         B0C qsort
+                         45A KeQueryMaximumProcessorCountEx
+                         108 ExReleaseFastMutex
+                          9C ExAllocatePoolWithTag
+
+    vmbkmcl.sys
+             1C0008140 Import Address Table
+             1C00083B8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           2 VmbChannelAllocate
+                           A VmbChannelGetInterfaceInstance
+                          35 VmbChannelSizeofPacket
+                          1C VmbChannelInitSetPrimaryChannel
+                          1D VmbChannelInitSetProcessPacketCallbacks
+                          3C VmbClientChannelInitSetTargetProcessorIndex
+                          1F VmbChannelInitSetStateChangeCallbacks
+                          2E VmbChannelSetAllowableDpcCpuUsage
+                           3 VmbChannelCleanup
+                          32 VmbChannelSetPointer
+                          48 VmbPacketSetCompletionRoutine
+                          45 VmbPacketSendWithExternalMdl
+                          2D VmbChannelSendSynchronousRequest
+                           8 VmbChannelEnable
+                          10 VmbChannelGetPointer
+                          23 VmbChannelPacketDeferToPassive
+                          39 VmbClientChannelInitSetRingBufferPageCount
+                          43 VmbPacketInitialize
+                          41 VmbPacketGetChannel
+                          44 VmbPacketSend
+                           7 VmbChannelDisable
+                          22 VmbChannelPacketComplete
+                          1B VmbChannelInitSetMaximumPacketSize
+                          42 VmbPacketGetPointer
+                          14 VmbChannelGetTargetProcessorIndex
+                          49 VmbPacketSetPointer
+
+    storport.sys
+             1C0008108 Import Address Table
+             1C0008380 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           A StorPortExtendedFunction
+                          15 StorPortInitialize
+                          16 StorPortLogError
+                          2F StorPortStallExecution
+                          10 StorPortGetPhysicalAddress
+                          18 StorPortNotification
+
+  Summary
+
+        1000 .data
+        1000 .idata
+        1000 .pdata
+        2000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        3000 .text
+        1000 GFIDS
+        1000 INIT
+        2000 PAGE

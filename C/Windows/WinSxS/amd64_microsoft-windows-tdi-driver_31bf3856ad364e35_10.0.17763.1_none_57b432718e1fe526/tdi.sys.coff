@@ -1,0 +1,156 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\WinSxS\amd64_microsoft-windows-tdi-driver_31bf3856ad364e35_10.0.17763.1_none_57b432718e1fe526\tdi.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    NDIS.SYS
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C0009020 Import Address Table
+             1C00091E8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         3A4 IoWriteErrorLogEntry
+                         8F3 RtlxAnsiStringToUnicodeSize
+                          F1 ExQueueWorkItem
+                         423 KeInitializeSpinLock
+                         425 KeInitializeTimer
+                         47D KeReleaseSpinLock
+                         49C KeSetEvent
+                          9C ExAllocatePoolWithTag
+                         7F9 RtlInitString
+                         461 KeQueryTimeIncrement
+                         4C5 KeWaitForSingleObject
+                         268 IoAllocateErrorLogEntry
+                         ABB __C_specific_handler
+                         278 IoBuildPartialMdl
+                         529 MmMapLockedPagesWithReservedMapping
+                         4F0 MmAllocateMappingAddress
+                         3C7 KeAcquireSpinLockAtDpcLevel
+                         553 MmUnmapReservedMapping
+                         417 KeInitializeDpc
+                         509 MmFreeMappingAddress
+                         552 MmUnmapLockedPages
+                         300 IoIs32bitProcess
+                         528 MmMapLockedPagesSpecifyCache
+                         570 NtCreateFile
+                         74F RtlCompareUnicodeString
+                         72D RtlAppendUnicodeStringToString
+                         72E RtlAppendUnicodeToString
+                         AE7 _wcsicmp
+                         73E RtlCheckRegistryKey
+                         7FC RtlInitUnicodeString
+                         760 RtlCopyUnicodeString
+                         A6F ZwQueryValueKey
+                          C3 ExFreePoolWithTag
+                         41B KeInitializeEvent
+                         AEA _wcsnicmp
+                          59 DbgPrint
+                         9E3 ZwClose
+                         A31 ZwOpenKey
+                         3C9 KeAcquireSpinLockRaiseToDpc
+                         72A RtlAnsiStringToUnicodeString
+                         47F KeReleaseSpinLockFromDpcLevel
+                         4AC KeSetTimer
+
+    NDIS.SYS
+             1C0009000 Import Address Table
+             1C00091C8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         1D6 NdisReturnPackets
+                          77 NdisDeregisterTdiCallBack
+                         1CA NdisRegisterTdiCallBack
+
+  Section contains the following exports for TDI.SYS
+
+    00000000 characteristics
+    E9708B47 time date stamp
+        0.00 version
+           1 ordinal base
+          57 number of functions
+          57 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00001AC0 CTEAllocateString
+          2    1 00001B20 CTEBlock
+          3    2 00001B70 CTEBlockWithTracker
+          4    3 00001BB0 CTEInitEvent
+          5    4 00001C00 CTEInitString
+          6    5 00001C90 CTEInitTimer
+          7    6 00001CE0 CTEInitialize
+          8    7 00001CF0 CTEInsertBlockTracker
+          9    8 0000A010 CTELogEvent
+         10    9 00001D70 CTERemoveBlockTracker
+         11    A 00001DD0 CTEScheduleCriticalEvent
+         12    B 00001E60 CTEScheduleDelayedEvent
+         13    C 00001E60 CTEScheduleEvent
+         14    D 00001EF0 CTESignal
+         15    E 00001F20 CTEStartTimer
+         16    F 00001F70 CTESystemUpTime
+         17   10 00002060 DllInitialize
+         18   11 00002180 DllUnload
+         19   12 000021E0 TdiBuildNetbiosAddress
+         20   13 00002210 TdiBuildNetbiosAddressEa
+         21   14 00001010 TdiCopyBufferToMdl
+         22   15 000022B0 TdiCopyBufferToMdlWithReservedMappingAtDpcLevel
+         23   16 00002430 TdiCopyMdlChainToMdlChain
+         24   17 000026F0 TdiCopyMdlToBuffer
+         25   18 00002920 TdiDefaultChainedRcvDatagramHandler
+         26   19 00002920 TdiDefaultChainedRcvExpeditedHandler
+         27   1A 00002920 TdiDefaultChainedReceiveHandler
+         28   1B 00002930 TdiDefaultConnectHandler
+         29   1C 000021D0 TdiDefaultDisconnectHandler
+         30   1D 000021D0 TdiDefaultErrorHandler
+         31   1E 00002920 TdiDefaultRcvDatagramHandler
+         32   1F 00002920 TdiDefaultRcvExpeditedHandler
+         33   20 00002920 TdiDefaultReceiveHandler
+         34   21 000021D0 TdiDefaultSendPossibleHandler
+         35   22 00002C20 TdiDeregisterAddressChangeHandler
+         36   23 00002C40 TdiDeregisterDeviceObject
+         37   24 00002C60 TdiDeregisterNetAddress
+         38   25 00002C20 TdiDeregisterNotificationHandler
+         39   26 00002C20 TdiDeregisterPnPHandlers
+         40   27 00002C80 TdiDeregisterProvider
+         41   28 00002CA0 TdiEnumerateAddresses
+         42   29 00003220 TdiGet9FTriageBlock
+         43   2A 00001180 TdiInitialize
+         44   2B 00003950 TdiIsIPTransportSupported
+         45   2C 000010E0 TdiMapUserRequest
+         46   2D          TdiMatchPdoWithChainedReceiveContext (forwarded to NDIS.NdisMatchPdoWithPacket)
+         47   2E 00002940 TdiOpenNetbiosAddress
+         48   2F 00003E90 TdiPnPPowerComplete
+         49   30 00003FC0 TdiPnPPowerRequest
+         50   31 00004280 TdiProviderReady
+         51   32 000042A0 TdiRegisterAddressChangeHandler
+         52   33 000042F0 TdiRegisterDeviceObject
+         53   34 00004410 TdiRegisterNetAddress
+         54   35 00004600 TdiRegisterNotificationHandler
+         55   36 00004650 TdiRegisterPnPHandlers
+         56   37 00004860 TdiRegisterProvider
+         57   38 00002AC0 TdiReturnChainedReceives
+
+  Summary
+
+        1000 .data
+        1000 .edata
+        1000 .idata
+        1000 .pdata
+        1000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        5000 .text
+        1000 GFIDS
+        1000 INIT
+        1000 PAGE

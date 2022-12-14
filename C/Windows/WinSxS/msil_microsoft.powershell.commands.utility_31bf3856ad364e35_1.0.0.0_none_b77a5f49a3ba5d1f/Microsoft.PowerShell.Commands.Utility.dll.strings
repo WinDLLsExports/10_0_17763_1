@@ -1,0 +1,5940 @@
+        
+            
+                            @clientSideParameters `
+                            -Arg ('{0}', $PSBoundParameters, $positionalArguments) `
+                            -HideComputerName `
+                            -Script {{ param($name, $boundParams, $unboundParams) & $name @boundParams @unboundParams }} `
+                            -Session (Get-PSImplicitRemotingSession -CommandName '{0}') `
+                         }}
+                    & $oldCleanUpScript $args
+                    {0} -ConfigurationName '{1}' `
+                    {2} `
+                    {3} `
+                    {4} `
+                    {5} `
+                    -ApplicationName '{1}' {2} {3} 
+                    -SessionOption (Get-PSImplicitRemotingSessionOption) `
+                $moduleInfo = $event.MessageData
+                $null = $positionalArguments.Add( $PSBoundParameters[$parameterName] )
+                $null = $PSBoundParameters.Remove($parameterName)
+                $sourceIdentifier = [system.management.automation.wildcardpattern]::Escape($eventSubscriber.SourceIdentifier)
+                & $previousScript $args
+                & $removePSSessionCommand -Session $PSSession -ErrorAction SilentlyContinue
+                & $script:NewPSSession `
+                & $script:WriteWarning -Message '{5}'
+                {{
+                }}
+                -ErrorAction SilentlyContinue )
+                Get-ChildItem -LiteralPath $path
+                if ($oldCleanUpScript)
+                Import-Module -Name $name -Alias * -Function * -Prefix $prefix -DisableNameChecking:$disableNameChecking -PassThru -ArgumentList @($session)
+                -InstanceId {0} `
+                param($name, $session, $prefix, $disableNameChecking)
+                param($path)
+                Remove-Item -LiteralPath $moduleInfo.ModuleBase -Recurse -Force -ErrorAction SilentlyContinue
+                Remove-Module -ModuleInfo $moduleInfo -Force -ErrorAction SilentlyContinue
+                Unregister-Event -SourceIdentifier $sourceIdentifier -Force -ErrorAction SilentlyContinue
+            $( 
+            $clientSideParameters = Get-PSImplicitRemotingClientSideParameters $PSBoundParameters ${8}
+            $moduleName = Get-PSImplicitRemotingModuleName 
+            $newImplicitRemotingHash = [string]($script:PSSession.ApplicationPrivateData.{6}.{7})
+            $oldCleanUpScript = $script:MyModule.OnRemove
+            $positionalArguments = & $script:NewObject collections.arraylist
+            $positionalArguments.AddRange($args)
+            $removePSSessionCommand = $script:RemovePSSession
+            $script:MyModule.OnRemove = {{ 
+            $script:PSSession.Name = '{0}' -f $moduleName
+            $scriptCmd = {{ & $script:InvokeCommand `
+            $sourceIdentifier = [system.management.automation.wildcardpattern]::Escape($eventSubscriber.SourceIdentifier)
+            $steppablePipeline = $scriptCmd.GetSteppablePipeline($myInvocation.CommandOrigin)
+            $steppablePipeline.Begin($myInvocation.ExpectingInput, $ExecutionContext)
+            (& $script:GetPSSession `
+            )
+            {
+            {{
+            }
+            }}
+            }}.GetNewClosure()
+            -CreatedByModule $true `
+            foreach ($parameterName in $PSBoundParameters.BoundPositionally)
+            if ($newImplicitRemotingHash -ne $savedImplicitRemotingHash)
+            if ($previousScript -ne $null)
+            if ('Closed' -eq $eventArgs.RunspaceStateInfo.State)
+            -PSSession ( {2} )
+            throw
+            Unregister-Event -SourceIdentifier $sourceIdentifier -Force -ErrorAction SilentlyContinue
+        $clientSideParameters,
+        $clientSideParameters.Add($parameterName, $PSBoundParameters[$parameterName])
+        $commandName
+        $message)
+        $null = $PSBoundParameters.Remove($parameterName)
+        $parameterName)
+        $proxyForCmdlet)
+        $PSBoundParameters,
+        $PSSession, 
+        $script:PSSession = $PSSession
+        [AllowNull()]
+        [bool] $createdByModule = $false)
+        [hashtable]
+        [Management.Automation.Runspaces.PSSession] 
+        [Parameter(Mandatory = $false, Position = 1)]
+        [Parameter(Mandatory = $true, Position = 0)]
+        [Parameter(Mandatory = $true, Position = 1)]
+        [Parameter(Mandatory = $true, Position = 2)]
+        [string]
+        [string] 
+        {{
+        }}
+        }} catch {{
+        if ($createdByModule -and ($script:PSSession -ne $null))
+        if ($savedImplicitRemotingHash -ne '')
+        ImplicitRemoting = $true
+        Modify-PSImplicitRemotingParameters $clientSideParameters $PSBoundParameters 'ErrorAction'
+        Modify-PSImplicitRemotingParameters $clientSideParameters $PSBoundParameters 'ErrorVariable'
+        Modify-PSImplicitRemotingParameters $clientSideParameters $PSBoundParameters 'OutBuffer'
+        Modify-PSImplicitRemotingParameters $clientSideParameters $PSBoundParameters 'OutVariable'
+        Modify-PSImplicitRemotingParameters $clientSideParameters $PSBoundParameters 'WarningAction'
+        Modify-PSImplicitRemotingParameters $clientSideParameters $PSBoundParameters 'WarningVariable'
+        return $({0})
+        return $PSSessionOptionOverride
+        Set-PSImplicitRemotingSession `
+        throw '{3}'
+        try {{
+        Write-PSImplicitRemotingMessage ('{1}' -f $commandName)
+    # .ForwardHelpCategory {5}
+    # .ForwardHelpTargetName {1}
+    # .RemoteHelpRunspace PSSession
+    $clientSideParameters = @{}
+    $savedImplicitRemotingHash = '{4}'
+    )
+    [System.Management.Automation.Remoting.PSSessionOption] $PSSessionOptionOverride
+    [System.Management.Automation.Runspaces.PSSession] $PSSessionOverride,
+    {
+    {{
+    {1}
+    {3})
+    }
+    }}
+    <# {0} #>    
+    Begin {{
+    Description = '{1}'
+    else
+    End {{ {7} }}
+    End Class
+    FormatsToProcess = @('{3}')
+    GUID = '{0}'
+    if ($proxyForCmdlet)
+    if ($PSBoundParameters.ContainsKey($parameterName))
+    if ($PSSession -ne $null)
+    if ($PSSessionOptionOverride -ne $null)
+    if (($script:PSSession -eq $null) -or ($script:PSSession.Runspace.RunspaceStateInfo.State -ne 'Opened'))
+    Modify-PSImplicitRemotingParameters $clientSideParameters $PSBoundParameters 'AsJob'
+    ModuleToProcess = @('{2}')
+    ModuleVersion = '1.0'
+    param(
+    PrivateData = @{{
+    Process {{ {6} }}
+    public class {0}
+    public Class {0}
+    return $clientSideParameters
+    return [Management.Automation.Runspaces.PSSession]$script:PSSession
+    try { & $script:WriteHost -Object $message -ErrorAction SilentlyContinue } catch { }
+   {0}: 
+ # {0}
+ # {1}
+ # {2}
+ # {3}
+ align = "
+ Missing mandatory entry for {0}.
+ width = "
+!Object is not of recognized type.
+!The file {0} can not be read: {1}
+!The generated type is not public.
+!This program cannot be run in DOS mode.
+"{0}","{1}","{2}","{3}"
+"Courier New"
+"Data file '{0}' can not be found. 
+"Illegal EnumerableExpansion value.
+"Input object "{0}" is not numeric.
+"Invalid type {0} for property {1}.
+"Utility Windows PowerShell snap-in
+##############################################################################
+#< CLIXML
+#Blob
+#GUID
+#Strings
+#The file '{0}' can not be read: {1}
+#TYPE
+#Type
+#TYPE {0}
+$$method0x60000d3-1
+$Failed to evaluate Expression "{0}".
+$format_out_ImplementationCommandBase
+$script:ExportModuleMember = $executionContext.InvokeCommand.GetCommand('Export-ModuleMember', [System.Management.Automation.CommandTypes]::Cmdlet)
+$script:GetPSSession = $executionContext.InvokeCommand.GetCommand('Get-PSSession', [System.Management.Automation.CommandTypes]::Cmdlet)
+$script:ImportCliXml = $executionContext.InvokeCommand.GetCommand('Import-CliXml', [System.Management.Automation.CommandTypes]::Cmdlet)
+$script:InvokeCommand = $executionContext.InvokeCommand.GetCommand('Invoke-Command', [System.Management.Automation.CommandTypes]::Cmdlet)
+$script:JoinPath = $executionContext.InvokeCommand.GetCommand('Join-Path', [System.Management.Automation.CommandTypes]::Cmdlet)
+$script:MyModule = $MyInvocation.MyCommand.ScriptBlock.Module
+$script:NewObject = $executionContext.InvokeCommand.GetCommand('New-Object', [System.Management.Automation.CommandTypes]::Cmdlet)
+$script:NewPSSession = $executionContext.InvokeCommand.GetCommand('New-PSSession', [System.Management.Automation.CommandTypes]::Cmdlet)
+$script:NewPSSessionOption = $executionContext.InvokeCommand.GetCommand('New-PSSessionOption', [System.Management.Automation.CommandTypes]::Cmdlet)
+$script:PSSession = $null
+$script:RemovePSSession = $executionContext.InvokeCommand.GetCommand('Remove-PSSession', [System.Management.Automation.CommandTypes]::Cmdlet)
+$script:SetAlias = $executionContext.InvokeCommand.GetCommand('Set-Alias', [System.Management.Automation.CommandTypes]::Cmdlet)
+$script:SetItem = $executionContext.InvokeCommand.GetCommand('Set-Item', [System.Management.Automation.CommandTypes]::Cmdlet)
+$script:WriteHost = $executionContext.InvokeCommand.GetCommand('Write-Host', [System.Management.Automation.CommandTypes]::Cmdlet)
+$script:WriteWarning = $executionContext.InvokeCommand.GetCommand('Write-Warning', [System.Management.Automation.CommandTypes]::Cmdlet)
+$The IEnumerable contains no objects.
+%$&$'$($.-/-0-213254;:LKMKNKOKPKRQSQTQUQVQWQXQYKZK[K\K]K^K_^`Kdcfeih
+%Could not resolve remote alias '{0}'.
+%Creating implicit remoting module ...
+%There is no breakpoint with ID '{0}'.
+%Windows PowerShell Credential Request
+-%Y;:%f
+& $script:ExportModuleMember -Alias {0}
+& $script:ExportModuleMember -Function {0}
+& $script:ImportCliXml -Path $(
+& $script:JoinPath -Path $PSScriptRoot -ChildPath ApplicationArguments.xml
+& $script:NewPSSessionOption 
+& $script:SetAlias -Name '{0}' -Value '{1}' -Force -Scope script
+& $script:SetItem 'function:script:{0}' `
+($)++-,4-<.K2Q6X7Y8Z9[;\<^=_>cCfFgGhIlKoNpOrPtQuU
+(Failed to interpret format string "{0}".
+(Generating a proxy command for '{0}' ...
+)<SPACE> next page; <CR> next line; Q quit
+)MshResolvedExpressionParameterAssociation)MshResolvedExpressionParameterAssociation
+*.r0L
+*Data format not supported in Out-GridView.
+*Duplicated key "{0}" conflicts with "{1}".
+*Failed to create object with class Id {0}.
+*Microsoft (R) Windows (R) Operating System
+*The following object supports IEnumerable:
+*Vr Q
+*Vrg,
+,*r}1
+,4ra,
+,invoked with the following command line: {0}
+,Key "{0}" cannot have an empty string value.
+,'r+)
+.;'}l|
+.cctor
+.ctor
+.Debugging is not supported on remote sessions.
+.File listener with name '{0}' cannot be found.
+.format.ps1xml
+.Microsoft.PowerShell.Commands.MemberDefinition
+.ps1xml
+.psd1
+.psm1
+.text
+.The IEnumerable contains the following object:
+.Trw#
+/Cannot add type. There were compilation errors.
+/Data line '{0}' is not in 'name=value' format. 
+/Illegal key type {0}. The key must be a string.
+/target:winexe
+:A parameter declaration in data file '{0}' is not allowed.
+:Cannot create temporary file for implicit remoting module.
+:Null parameter. Expecting one of the following types: {0}.
+;Cmdlet parameters View and Property are mutually exclusive.
+;The generated type defines no public methods or properties.
+?Event subscription with source identifier '{0}' does not exist.
+?Getting formatting & output information from remote session ...
+?Minimum ({0}) cannot be greater than or equal to Maximum ({1}).
+?Out-GridView cannot interpret the output from a remote session.
+@.reloc
+@A property is an empty script block and does not provide a name.
+@Cannot add type. The assembly name {0} matches both {1} and {2}.
+@Implicit remoting event (session id: {0}; event handler id: {1})
+@The member referenced by this alias should not be null or empty.
+[The following error occurred while Windows PowerShell was opening the data file '{0}':
+\Cannot add a member with type "{0}". Specify a different type for the MemberTypes parameter.
+\Cannot find PowerShell data file '{0}' in directory '{1}' or any parent culture directories.
+\httpproxy
+\System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+\System.TimeSpan, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+^[-._:\\\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Lm}]{1,100}$
+^Optional parameter that can be used to specify a session this proxy module should work against
+__AllParameterSets
+_accessMode
+_action
+_activity
+_addedFirstLine
+_asString
+_baseDirectory
+_bindingVariable
+_breakpoints
+_caseSensitive
+_category
+_cmdlet
+_column
+_command
+_commandsAllowed
+_comparer
+_completed
+_CorDllMain
+_cssuri
+_cultureInfo
+_definition
+_delimiter
+_depth
+_deserializer
+_differenceObject
+_displayCells
+_displayCellsDefault
+_displayCellsPSHost
+_disposed
+_encoding
+_errorContext
+_errorId
+_errorRecord
+_excludeDifferent
+_fileName
+_filepath
+_filter
+_firstLineLen
+_followingLinesLen
+_force
+_fragment
+_frameInfoStack
+_header
+_includeEqual
+_includescriptblock
+_inputobject
+_inputObject
+_isStopping
+_lastObject
+_lastObjectAsString
+_level
+_line
+_maxDepth
+_message
+_mshParameterList
+_namespace
+_noclobber
+_noGlobbing
+_notypeinformation
+_noTypeInformation
+_object
+_onType
+_originatingParameter
+_passThru
+_path
+_paths
+_postContent
+_preContent
+_property
+_propertyNames
+_rawUserInterface
+_reason
+_recommendedAction
+_recordException
+_referenceObject
+_remove
+_replace
+_resolvedExpression
+_retVal
+_script
+_serializer
+_stringData
+_syncWindow
+_tagConfiguration
+_tagName
+_tagTypeName
+_tagView
+_tagViewDefinitions
+_tagViewSelectedBy
+_targetName
+_targetObject
+_targetType
+_terminatingErrorContext
+_trace
+_tracer
+_type
+_typeDefinition
+_typeDefinitions
+_typeInfoDataBase
+_typename
+_uiculture
+_useBaseObject
+_useculture
+_value
+_variable
+_visibility
+_wildcardPatterns
+_writeErrorStream
+_writer
+`.rsrc
+{0,2}
+{0,2} 
+{0:dd}
+{0:ddd}
+{0:ddd} {0:MMM} 
+{0:dddd}
+{0:hh:mm:ss tt}
+{0:HH:mm:ss}
+{0:HH:mm}
+{0:HH}
+{0:hh}
+{0:HH}:{0:mm}:{0:ss} {0:yyyy}
+{0:MM/dd/yy}
+{0:mm}
+{0:MM}
+{0:MMM}
+{0:MMMM}
+{0:ss}
+{0:tt}
+{0:yy}
+{0:yyyy}
+{0:zz}
+{0} cmdlet needs the following commands in the remote session: Get-Command, Get-FormatData, Select-Object.  The following commands are used, but optional: Get-Help, Measure-Object.  Please make sure the remote session includes the required commands and try again.
+{0} matches found
+{0}({1}) : {2}
+{0}, 
+{0}:{1}
+{0}{1}
+{0}{1}:{2}:{3}
+|Directory '{0}' already exists.  Use -Force parameter if you want to overwrite the directory and files within the directory.
+~Cannot import the alias because path '{0}' referred to a '{1}' provider path. Change the Path parameter to a file system path.
++"The Write-Error cmdlet reported an error."
++;r}1
++1r++
++Event with identifier '{0}' does not exist.
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+</body></html>
+</colgroup>
+</head><body>
+</Objects>
+</table>
+</td>
+</td></tr>
+</th>
+</title>
+</tr>
+<?xml version="1.0"?>
+<>1__state
+<>2__current
+<>4__this
+<>c__DisplayClass2`1
+<>c__DisplayClass6`2
+<colgroup>
+<GetEnumerator>d__0
+<head>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<i>5__1
+<link rel="stylesheet" type="text/css" href="
+<machine,OS>
+<Module>
+<null>
+<Objects>
+<PrivateImplementationDetails>{3BD7B47C-588A-4217-80BE-3EE52156DF03}
+<ProcessRecord>b__0
+<ProcessRecord>b__1
+<ProcessRecord>b__2
+<ProcessRecord>b__3
+<ProcessRecord>b__4
+<RehydrateDictionary>b__4
+<RehydrateList>b__0
+<table>
+<title>
+<tr><td>
+<tr><td><hr></td></tr>
+<Unexpected lineOutput type {0}; LineOutput expects type {1}.
+<WriteMatches>b__0
+=Cannot add type. One or more required assemblies are missing.
+=Cmdlet parameters AutoSize and Column are mutually exclusive.
+000004b0
+033ecb2bc07a4d43b5ef94ed5a35d280
+091C9E762E33499eBE318901B6EFB733
+0A Begin block in data file '{0}' is not allowed.
+0e59526e2dd441aa91e7fc952caf4a36
+0Member "{1}" not found for the given {2} object.
+1(r}1
+1)r?q
+1.0.0.0
+-1r}1
+2{2} has one or more exceptions that are not valid.
+22e7ef3c896449d4a6f2dedea05dd737
+27c87ef9bbda4f709f6b4002fa4af63c
+29ED81BA914544d4BC430F027EE053E9
+2A Process block in data file '{0}' is not allowed.
+2Action must be specified for non-forwarded events.
+2Data item '{1}' in line '{0}' is already defined. 
+2Event with source identifier '{0}' does not exist.
+3Getting command information from remote session ...
+-3r?q
+3The IEnumerable contains the following {0} objects:
+4Cannot add type. The type name '{0}' already exists.
+4ec4f0187cb04f4cb6973460dfe252df
+-4r?q
+5197dd85ca6f4cce9ae9e6fd6ded9d76
+59bf79de63354a7b9e4d1697940ff188
+5Cannot convert {0} to one of the following types {1}.
+5Cannot have an empty formatting string for key "{0}".
+5Key "{0}" has illegal type {1}; expected type is {2}.
+5There are no matching result found for the given {2}.
+6.1.7600.16385
+6Cannot add type. The "{0}" extension is not supported.
+6Cannot process Color because {0} is not a valid color.
+6No object has been specified to the get-member cmdlet.
+6Property "{0}" cannot be found in any object(s) input.
+6The command is not supported on this Operating System.
+7"Sort-Object" - "{0}" cannot be found in "InputObject".
+7572aa4155ec4558817a615acf7dd92e
+78b102e894f742aca8c1d6737b6ff86a
+7Cannot add type. The assembly '{0}' could not be found.
+7Key "{0}" has illegal type {1}; expected types are {2}.
+830bdcb24c1642258724e441512233a4
+8Cannot evaluate error because a string is not specified.
+8Event subscription with identifier '{0}' does not exist.
+8Illegal value "{0}" for key "{1}"; legal values are {2}.
+919820b7eadb48be8e202c5afa5c2716
+93565e84730645c79d4af091123eecbc
+9Copyright (c) Microsoft Corporation. All rights reserved.
+9e210fe47d09416682b841769c78b8a3
+9Key "{0}" cannot have wildcard characters in value "{1}".
+a27f094f0eec4d64845801a4c06a32ae
+ABCDEF
+Accessibility
+Accessibility, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+AccessViolationException
+AcquireReaderLock
+AcquireWriterLock
+Action
+ACTION_MANDATORY_FOR_LOCAL
+ActionMandatoryForLocal
+ActionPreference
+Activator
+activeAssociationList
+ActiveFormattingShape
+ActiveLen
+ActiveOutputContext
+Activity
+activity
+Activity
+activityId
+ActivityParameterHelpMessage
+actualObject
+actualPrompt
+actualSource
+actualType
+Ad:\w7rtm.public.amd64fre\internal\strongnamekeys\fake\windows.snk
+Adapter
+Add to group {0}: {1}
+Add Variable
+add_PrintPage
+add_PSEventReceived
+add_StateChanged
+AddAddressesToMailMessage
+AddAppliesToType
+AddArgumentsToCommandProcessor
+AddColumn
+AddColumns
+AddColumnsAndItem
+AddColumnsAndItemEnd
+addColumnsMethod
+AddColumnsToWindow
+AddCommand
+AddDays
+AddDeserializationPrefix
+addedNoteProperties
+AddEpilogue
+AddExtraProperties
+AddHeteroViewColumnsAndItem
+AddHeteroViewItem
+AddHours
+AddIndentationLevel
+AddItem
+AddLine
+AddListenerToSources
+AddMember
+AddMember.resources
+AddMember0Class that has add-member command implementation
+AddMemberCommand
+AddMinutes
+AddMonths
+AddNamedParameter
+AddNamespace
+AddNameSpaceTable
+AddParameter
+AddPrefixToCommandName
+AddPrologue
+AddRange
+addRecordMethod
+AddRemoteCommandMetadata
+AddRemoteTypeDefinition
+AddRemoveSet
+AddRemoveSet/
+address
+AddSeconds
+AddToBuffer
+AddTraceListenersToSources
+AddTypeCommand
+AddTypeStrings
+AddTypeStrings.resources
+AddVariableAction
+AddVariableTarget
+AddYears
+Adjust
+adjust
+Adjust
+AdjustT
+ADODB
+ADODB, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Alias
+alias
+Alias
+Alias File
+alias found = {0}
+alias2resolvedCommandName
+AliasAlreadyExists
+AliasAttribute
+AliasCommands
+AliasCommandStrings
+AliasCommandStrings.resources
+Aliases
+AliasInfo
+aliasName
+AliasNotFound
+AliasReferenceShouldNotBeNullOrEmpty
+aliasValue
+aligment
+AligmentEntryDefinition
+AligmentEntryKey
+alignment
+AlignmentEntryKey
+AlignmentIllegalValue
+allMatches
+AllMatches
+allowClobber
+AllowClobber
+AllowedTypes
+allowedTypes
+AllowEmptyCollectionAttribute
+AllowEmptyStringAttribute
+AllowNullAttribute
+-AllowRedirection
+alreadyDisposed
+AlreadyExistingProperty
+AlreadyExistingUserSpecifiedPropertyExpand
+AlreadyExistingUserSpecifiedPropertyNoExpand
+alreadyFailing
+'Ambiguous key {0};{1} and {2} conflict.
+AMBIGUOUS_ASSEMBLY_NAME
+AmbiguousAssemblyName
+AmbiguousKeyError
+An applicable view has been found
+AnalyzeNumber
+AnalyzeObjectProperties
+AnalyzeString
+AnalyzeValue
+ANo session has been associated with this implicit remoting module
+ApartmentState
+append
+Append
+AppendFormat
+AppendLine
+appendPath
+AppendPath
+applicableTypes
+-ApplicationArguments $(
+ApplicationArguments.xml
+ApplicationException
+AppliesTo
+appliesTo
+AppliesToType
+ApplyFailed
+ApplyFormatting
+ApplyTo
+aProxy creation has been skipped for '{0}' command, because its name didn't match Name  parameter.
+ArchitectureSensitiveAttribute
+argument
+ArgumentException
+ArgumentList
+ArgumentNullException
+ArgumentOutOfRangeException
+arguments
+ArgumentTransformationAttribute
+Array
+array
+arrayIndex
+ArrayList
+ascending
+AscendingEntryKey
+ascendingFlag
+ascendingOrder
+ascendingOverrides
+ASCII
+ascii
+ASCII
+ascii
+Ascii
+ASCIIEncoding
+asFormat
+ashashtable
+AsHashTable
+AsJob
+AspNetMMCExt
+AspNetMMCExt, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+AsPSObject
+AsSecureString
+Assembly
+Assembly Version
+ASSEMBLY_LOAD_ERRORS
+ASSEMBLY_NOT_FOUND
+AssemblyCompanyAttribute
+AssemblyConfigurationAttribute
+AssemblyCopyrightAttribute
+AssemblyDelaySignAttribute
+AssemblyDescriptionAttribute
+AssemblyFileVersionAttribute
+AssemblyInformationalVersionAttribute
+AssemblyKeyFileAttribute
+AssemblyLoadErrors
+AssemblyLoadErrorsB
+AssemblyName
+assemblyName
+assemblyNames
+AssemblyNotFound
+AssemblyProductAttribute
+AssemblyTitleAttribute
+AssemblyVersionAttribute
+AssignColumnWidths
+AssociationManager
+asstring
+AsString
+AsString$
+AsString?
+assumeMeasureObjectIsAvailable
+AsyncCallback
+aTrace output can only be written to a single file. The path '{0}' resolved to more than one file.
+Attachment
+AttachmentCollection
+attachments
+Attachments
+-Authentication {0}
+AuthenticationException
+AuthenticationMechanism
+AuthenticationMechanismParameterTemplate
+AuthorizationManager
+AutomationEngine
+AutomationNull
+AutoResetEvent
+autosize
+AutoSize
+autosizeInfo
+AutosizeInfo
+Average
+average
+b2e2775d33d544c794d0081f27021b5c
+b761477330ce4fb2a665999879324d73
+b8d9e369024a43a580b9e0c9279e3354
+BackgroundColor
+Base Class for all variable commands.
+Base class for implicit remoting commmands
+Base class for sort like command implementation
+Base class for update-typedata and update-formatdata
+BaseCsvWritingCommand
+BaseDirectory
+BaseGetMembers
+baseType
+bCannot add type. The OutputType parameter requires that the OutputAssembly parameter be specified.
+BCreating a new session for implicit remoting of "{{0}}" command...
+BeginBlockNotAllowedInDataFile
+BeginInvoke
+BeginProcessing
+BExecuting {0} command in remote session didn't return any results.
+bgColor
+bigendianunicode
+BigEndianUnicode
+Binder
+BindingFlags
+BindingVariable
+BodyAsHtml
+bodyashtml
+Boolean
+BooleanEntryDefinition
+Breakpoint
+breakpoint
+BreakpointIdNotFound
+BreakpointN
+BreakpointT
+BreakpointType
+Brush
+Brushes
+BThe argument for the FileName parameter should not contain a path.
+bThe following error occurred while Windows PowerShell was loading the '{0}' script data file:
+buffer
+BuildErrorRecord
+BuildMshobject
+BuildName
+BuildOutOfRangeErrorRecord
+BuildPowerShellForGetCommand
+BuildPowerShellForGetFormatData
+BuildPropertyNames
+BWARNING: {0} columns do not fit into the display and were removed.
+by {0} cmdlet
+ByIdentifier;
+BySource
+BySource[
+BySourcec
+cache
+cachedWrite
+cacheFrontEnd
+CalculateColumnWidths
+callback
+callBack
+CallConstructor
+callingCmdlet
+CallStackFrame
+-CancelTimeOut {0} 
+Cannot add a member with the name "{0}" because a member with that name already exists. If you want to overwrite the member anyway, use the Force parameter to overwrite it.
+Cannot export the aliases because path '{0}' contains wildcard characters that resolved to multiple paths. Aliases can be exported to only one file. Change the value of the Path parameter to a path that resolves to a single file.
+Cannot export the aliases because path '{0}' referred to a '{1}' provider path. Change the Path parameter to a file system path.
+Cannot force the member with name "{0}" and type "{1}" to be added because a member with that name and type already exists and the existing member is not an instance extension.
+Cannot import alias because line number {1} in the file '{0}' contains an option that is not recognized for aliases. Update the file to contain valid options.
+Cannot import alias because path '{0}' contains wildcard characters that resolve to multiple paths. Aliases can be imported from only one file. Change the value of the Path parameter to a path that resolves to a single file.
+Cannot import an alias because line number {1} in the file '{0}' is not a properly formatted CSV line for aliases. Change the line so that it contains four values separated by commas. If the value contains a comma, then the value must be quoted.
+Cannot load COM type {0}.
+Cannot open file "{0}".
+-Cannot open file {0} to export the alias. {1}
+-Cannot open file {0} to import the alias. {1}
+Cannot rename multiple results.
+CannotAddMemberType
+CannotAddMemberTypeB
+cannotBeNull
+CannotCreateAbstractClass
+CannotFindAppropriateCtor
+CannotFindPsd1File
+CannotFindPsd1File2
+CannotLoadComObjectType
+CannotLoadComObjectTypeM
+CannotNewNonRuntimeType
+CannotNewTypeBuilderTypedReferenceArgIteratorRuntimeArgumentHandle
+CannotRemoveTypeDataMember
+CannotSpecifyAutosizeAndColumnsError
+CannotSpecifyViewAndPropertyError
+CannotSpecifyViewAndPropertyError?
+capacity
+Capacity
+caseSensitive
+CaseSensitive
+category
+Category
+CategoryActivity
+CategoryReason
+CategoryTargetName
+CategoryTargetType
+CatenateStringArray
+CatenateTypeArray
+CCannot add type. Input files must all have the same file extension.
+center
+CenterAlign
+-CertificateThumbprint '{0}'
+CertificateThumbprintParameterTemplate
+cf522b78d86c486691226b40aa69e95c
+cf58f450baa848ef8eb3504008be6978
+ChangeType
+character
+Character
+characters
+Characters
+Check
+CheckForSevereException
+CheckIfStopping
+CheckStopProcessing
+chosenListItems
+CircularBuffer`1
+class 
+Class that has add-member command implementation
+Class that has compare-object command implementation
+Class that has ConvertFrom-StringData command implementation
+Class that has ConvertTo-Html command implementation
+Class that has Export-PSSession command implementation
+Class that has get-random command implementation
+Class that has get-unique command implementation
+Class that has group base implementation
+Class that has Import-PSSession command implementation
+Class that has Measure-Command command implementation
+Class that has measure-object command implementation
+Class that has New-Timespan command implementation
+Class that has select-object command implementation
+Class that has Set-Date command implementation
+Class that has Set-PSBreakpoint command implementation
+Class that has sort-object command implementation
+Class that has Start-Sleep command implementation
+Class that has tee-object command implementation
+Class that has update-FormatData command implementation
+Class that has update-typeData command implementation
+Class that has write-debug command implementation
+Class that has Write-Error command implementation
+Class that has Write-output command implementation
+Class that has write-verbose command implementation
+Class that has write-warning command implementation
+class to deserialize property bags into formatting objects
+classDisplay
+classid
+classId
+ClassId2e4f51ef21dd47e99d3c952918aff9cd
+classIdLength
+classidProperty
+ClassInfoDisplay
+CleanUp
+Clear
+Clear Variable
+ClearStoredState
+ClearValue
+ClearVariableAction
+ClearVariableCommand
+ClearVariableTarget
+ClearVariableTarget)
+Clixml
+Clone
+Close
+closeTag
+clsid
+CLSID
+clsid
+cmdlet
+Cmdlet
+cmdlet Invoke-Expression
+CmdletAttribute
+CmdletBinding
+CmdletInfo
+CmdletProviderContext
+Code generator for implicit remoting module
+CodeDomProvider
+codeDomProvider
+collectedContext
+collectedPostContext
+collectedPreContext
+Collection`1
+CollectionBase
+CollectionEntry`1
+CollectionsUtil
+CollectPost
+CollectPre
+cols = {0}
+Column
+column
+columnHeaderDefinitionList
+columnInfo
+ColumnInfo
+ColumnNumber
+columns
+Columns
+columnValue
+columnWidth
+ColumnWidthManager
+columnWidths
+Combine
+ComCreateInfo
+COMException
+ComInteropLoaded
+ComInteropLoadedh
+Command
+command
+Command
+commandArgs
+CommandBreakpoint
+CommandDiscovery
+CommandEntry
+commandEntryList
+CommandInfo
+CommandInvocationIntrinsics
+commandLineParameters
+CommandMetadata
+commandMetadata
+CommandName
+commandName
+commandNameParameter
+commandNamePatterns
+commandNames
+CommandNotFoundException
+CommandOrigin
+CommandParameterDefinition
+CommandParameterInternal
+commandParameterList
+commandParameterSpecified
+CommandProcessor
+CommandProcessorBase
+CommandProxyTemplate
+Commands available in the newly opened remote session are different than when the implicit remoting module was created.  Consider recreating the module using Export-PSSession cmdlet.
+CommandSearcher
+commandSet
+commandSetA
+commandSetT
+CommandSkipListFromServer
+commandSkipListFromServer
+commandsSkippedBecauseOfShadowing
+CommandsToSkip
+CommandT
+CommandType
+commandType
+CommandType
+CommandTypes
+CommandWrapper
+commandWrapper
+CommandWrapper
+Comments
+commonParameterNames
+comObject
+ComObject
+CompanyName
+Compare
+CompareObject
+CompareObject4Class that has compare-object command implementation
+CompareObjectCommand
+Comparer
+comparer
+Comparison`1
+CompilationErrorFormat
+CompilationRelaxationsAttribute
+CompileAssemblyFromFile
+CompileAssemblyFromSource
+COMPILER_ERRORS
+CompilerError
+CompilerErrorCollection
+CompilerErrors
+CompilerGeneratedAttribute
+compilerParameters
+CompilerParameters
+compilerResults
+CompilerResults
+CompilerVersion
+Completed
+Completed.
+complexBody
+ComplexControlBody
+ComplexControlEntryDefinition
+ComplexControlGenerator
+ComplexControlItemDefinition
+ComplexOutputContext
+ComplexSpecificParameters
+complexSpecificParameters
+ComplexViewEntry
+ComplexViewGenerator
+ComplexViewHeaderInfo
+ComplexViewObjectBrowser
+ComplexWriter
+CompoundPropertyToken
+ComputeDefaultAlignment
+ComputeDefaultValue
+ComputeGroupTransition
+ComputeLeftIndentation
+ComputePromptLines
+ComputeRightIndentation
+ComputerName
+-ComputerName '{0}' `
+ComputerNameNoteProperty
+ComputerNameParameterTemplate
+ComputeWideViewBestItemsPerRowFit
+ComVisibleAttribute
+Concat
+conditionToken
+Configuration
+ConfigureTraceSource
+ConfirmImpact
+ConformanceLevel
+-connectionUri '{0}'
+Consistency
+console
+ConsoleApplication
+ConsoleColor
+ConsoleColorCmdlet
+consoleColorEnumType
+ConsoleLineOutput
+ConsoleLineOutput_PagingPrompt
+ConsoleLineOutputOutOfSequencePacket
+ConstructGridHeader
+ConstructorCalledThrowException
+ConstructorInfo
+ConstructorInvokeDotNet
+ConstructorInvokedThrowException
+constructors
+ConstructSearchPatternsFromName
+ContainerType
+Contains
+ContainsKey
+ContainsWildcardCharacters
+Content
+content
+Context
+context
+contextCreation
+ContextEntry
+contextManager
+ContextPrefix
+ContextState
+contextState
+ContextTracker
+contextTracker
+control
+Control Panel\International
+ControlBase
+ControlBody
+ControlDefinition
+controlDefinitionList
+ControlInfoData
+ControlReference
+controlType
+Convert
+ConvertedCulture
+Converter`2
+ConvertFrom
+ConvertFromCsvCommand
+ConvertFromStringData
+ConvertFrom-StringData
+ConvertFromStringData.resources
+ConvertFromStringData<Class that has ConvertFrom-StringData command implementation
+ConvertFromStringDataCommand
+ConvertHTMLExpressionParameterDefinition
+ConvertHTMLParameterDefinitionKeys
+ConvertPropertyNamesCSV
+ConvertPSObjectToCSV
+ConvertTo
+ConvertToCsvCommand
+ConvertToDouble
+ConvertToErrorRecord
+ConvertToHtml
+ConvertToHtml4Class that has ConvertTo-HTML command implementation
+ConvertToHtmlCommand
+ConvertToInt
+ConvertToString
+ConvertToXmlCommand
+CopyContext
+Copyright (c) Microsoft Corporation. All rights reserved.
+CopyTo
+CoreOnly
+Count
+count
+Count
+CountChar
+CountLine
+CountRemoteObjects
+CountWord
+CppCodeProvider
+CppCodeProvider, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+CProperty cannot be processed because property "{0}" already exists.
+Create
+Create a new group: {0}
+CreateAuxPropertyHT
+CreateCaseInsensitiveHashtable
+CreateComObject
+CreateComparer
+CreateDirectory
+CreateFileStream
+CreateFont
+CreateFromExpressionToken
+CreateGenericMeasureInfo
+CreateHashtable
+CreateHashtableFromSingleType
+createInfo
+CreateInstance
+CreateInstanceError
+CreateMemoryStream
+CreateModule
+CreateNewRunspaceMessageTemplate
+CreateOrderMatrix
+CreateOutputContext
+CreatePSListModifier
+CreateScriptBlock
+CreateScriptBlockFromString
+CreateStalePSObject
+createstruct
+CreateTemporaryModuleDirectory
+CreateTerminatingErrorContext
+CreateTextMeasureInfo
+CreateWildcardsFromStrings
+CreateXmlReader
+Credential
+credential
+-Credential ( $host.UI.PromptForCredential( '{0}', '{1}', '{2}', '{3}' ) )
+CredentialAttribute
+CredentialParameterTemplate
+CredentialRequestBody
+CredentialRequestBodyD
+CredentialRequestTitle
+CredentialRequestTitlee
+CRVsPackageLib
+CRVsPackageLib, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.CrystalReports.Design
+CrystalDecisions.CrystalReports.Design, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.CrystalReports.Engine
+CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.Data.AdoDotNetInterop
+CrystalDecisions.Data.AdoDotNetInterop, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.Enterprise.Desktop.Report
+CrystalDecisions.Enterprise.Desktop.Report, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.Enterprise.Framework
+CrystalDecisions.Enterprise.Framework, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.Enterprise.InfoStore
+CrystalDecisions.Enterprise.InfoStore, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.Enterprise.PluginManager
+CrystalDecisions.Enterprise.PluginManager, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.Enterprise.Viewing.ReportSource
+CrystalDecisions.Enterprise.Viewing.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.KeyCode
+CrystalDecisions.KeyCode, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.ReportAppServer.ClientDoc
+CrystalDecisions.ReportAppServer.ClientDoc, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.ReportAppServer.CommLayer
+CrystalDecisions.ReportAppServer.CommLayer, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.ReportAppServer.CommonControls
+CrystalDecisions.ReportAppServer.CommonControls, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.ReportAppServer.CommonObjectModel
+CrystalDecisions.ReportAppServer.CommonObjectModel, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.ReportAppServer.Controllers
+CrystalDecisions.ReportAppServer.Controllers, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.ReportAppServer.CubeDefModel
+CrystalDecisions.ReportAppServer.CubeDefModel, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.ReportAppServer.DataDefModel
+CrystalDecisions.ReportAppServer.DataDefModel, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.ReportAppServer.DataSetConversion
+CrystalDecisions.ReportAppServer.DataSetConversion, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.ReportAppServer.ObjectFactory
+CrystalDecisions.ReportAppServer.ObjectFactory, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.ReportAppServer.ReportDefModel
+CrystalDecisions.ReportAppServer.ReportDefModel, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.ReportAppServer.XmlSerialize
+CrystalDecisions.ReportAppServer.XmlSerialize, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.ReportSource
+CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.Shared
+CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.VSDesigner
+CrystalDecisions.VSDesigner, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.Web
+CrystalDecisions.Web, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CrystalDecisions.Windows.Forms
+CrystalDecisions.Windows.Forms, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304
+CS$<>9__CachedAnonymousMethodDelegate1
+CS$<>9__CachedAnonymousMethodDelegate5
+CS$<>9__CachedAnonymousMethodDelegate6
+CS$<>9__CachedAnonymousMethodDelegate7
+CS$<>9__CachedAnonymousMethodDelegate8
+cscompmgd
+cscompmgd, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+CSharp
+CSharpCodeProvider
+CSharpVersion3
+CSSUri
+CssUri
+cssuriSpecified
+CSVDelimiter
+CSVHelper
+CSVTypePrefix
+CText to describe the activity for which progress is being reported.
+CtorAccessDenied
+ctxManager
+Culture
+culture
+Culture
+-Culture '{0}' 
+CultureInfo
+cultureInfo
+current
+CurrentCount
+currentCount
+currentDepth
+currentEntry
+currentFormattingState
+currentGroupingKeyPropertyValue
+CurrentGroupingKeyPropertyValue
+currentLevel
+currentObjectCount
+currentOperation
+CurrentOperation
+CurrentRunspace_StateChanged
+CurrentTableHeaderInfo
+CurrentTableWidth
+CurrentUser
+CurrentWideHeaderInfo
+Custom
+CustomInternalSerializer
+CustomInternalSerializer class
+CustomMarshalers
+CustomMarshalers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+CustomSerialization
+CustomSerialization class
+CustomSerializationStrings
+dao, Version=10.0.4504.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Data member {0} cannot be null.
+dataBase
+dataBaseInfo
+DataBaseInfo
+DataItemAlreadyDefined
+DataNotQualifiedForGridView
+date = {0:D}
+Date/Time : {0:F}
+Datee
+DateN
+dateSpecified
+DateT
+DateTime
+dateTime
+DayOfWeek
+daySpecified
+dd1290a5950b4b27aa76d9f06199c3b3
+de7e8b96fbd84db5a43aa82eb34580ec
+Debug
+DebuggableAttribute
+Debugger
+debugger
+Debugger.resources
+DebuggerHiddenAttribute
+DebuggerListener
+DebuggingModes
+DebugRecord
+default
+Default
+Default Depth is {0}
+defaultAssemblies
+defaultCommandEntry
+defaultDefinition
+defaultEntry
+defaultEntryDefinition
+defaultIfNull
+DefaultKeyPropertySet
+defaultListener
+DefaultMemberAttribute
+DefaultParameter&
+DefaultParameter(
+DefaultParameterE
+DefaultParameterSet
+DefaultParameterSetName
+DefaultPrintFontName
+DefaultPrintFontSize
+DefaultScalarTypes
+defaultScalarTypesHash
+DefaultSettingsSection
+defaultSettingsSection
+DefaultT
+DefaultTraceListener
+Definition
+definition
+Definition
+DelayedInternalInitialize
+delimiter
+Delimiter
+Delimiter"
+Delimiter&
+Delimiter,
+Delimiter0
+deliverynotification
+DeliveryNotificationOption
+DeliveryNotificationOptions
+depth
+Depth
+depth
+DepthEntryKey
+DepthOfOneRequired
+Dequeue
+derived
+DerivesFromGenericType
+descending
+Descending
+DescendingEntryKey
+DescendingOrder
+description
+Description
+description = {0}
+DescriptionResource
+Deserialize
+DeserializeBoolMemberVariable
+deserializedCommandInfo
+deserializedList
+deserializedObject
+deserializedParameterMetadata
+DeserializeIntMemberVariable
+DeserializeMandatoryMemberObject
+DeserializeMemberObject
+DeserializeMemberVariable
+DeserializeObject
+Deserializer
+deserializer
+DeserializeStringMemberVariable
+DeserializeStringMemberVariableRaw
+designForTestability_SkipFailFast
+destinationType
+deviceColumns
+deviceRows
+dictionary
+Dictionary`2
+DictionaryEntry
+DictionaryKey
+DictionaryKeyAmbiguous
+DictionaryKeyDuplicate
+DictionaryKeyIllegal
+DictionaryKeyIllegalValue1
+DictionaryKeyIllegalValue2
+DictionaryKeyMandatoryEntry
+DictionaryKeyMissingValue
+DictionaryKeyNonString
+DictionaryKeyNonStringError
+DictionaryKeyNonStringError)
+DictionaryKeyNull
+DictionaryKeyNullError
+DictionaryKeyNullErrorZ
+DictionaryKeyUnknownType
+DictionaryValue
+differenceEntry
+differenceEntryBacklog
+DifferenceObject
+directive
+Directory
+directory
+DirectoryInfo
+Disable
+DisableBreakpoint
+disabled
+disableLineWrittenEvent
+DisableNameChecking
+disableNameChecking
+DisablePSBreakpointCommand
+DisplayCells
+displayCells
+DisplayCellsPSHost
+DisplayCondition
+DisplayContextTracker
+DisplayDataQuery
+DisplayDirectory
+DisplayEnumeration
+DisplayEnumerationInner
+DisplayError
+DisplayErrorStrings
+DisplayFormatErrorString
+DisplayHint
+displayHint
+DisplayHint
+DisplayHintType
+displayLabel
+DisplayLeaf
+displayLineNumber
+displayName
+DisplayName
+displayNames
+DisplayObject
+displayPath
+displaypath
+displayPostContext
+DisplayPostContext
+displayPreContext
+DisplayPreContext
+DisplayRawObject
+DisplayResourceManagerCache
+displayResourceManagerCache
+displayTracker
+Dispose
+disposed
+disposing
+DllImportAttribute
+Document
+document
+DoGrouping
+doMatch
+DoneAsStream
+doneProcessing
+DoPlayBackCall
+DoPrint
+DotNetAdapter
+dotNetStaticAdapter
+Double
+Drain
+DrainCache
+DrainFailedResultList
+DrawString
+DriveNotFoundException
+dThe value supplied is not valid, or the property is read-only. Change the value, and then try again.
+Duplicated property skipped: {0}
+duplicateKey
+DuplicateKeyError
+DuplicateKeyErroro
+DuplicatePowerShellStreams
+DWARNING: column "{0}" does not fit into the display and was removed.
+e3b7a39c089845d388b2e84c5d38f5dd
+eatTrailingBlanks
+ECannot read file "{0}"  because it does not have the extension "{1}".
+EffectiveParameterSet
+effectiveParameterSet
+elementTag
+ellipsis
+EmitAllInRange
+EmitDifferenceOnly
+EmitMatch
+EmitQueue
+emitQueue
+EmitReferenceOnly
+Empty
+Empty string is not allowed.
+EmptyCSSUri
+EmptyFormatStringValueError
+EmptyPrefix
+EmptyScriptBlockAndNoName
+EmptyScriptBlockAndNoNameE
+EmptyTypes
+Enable
+EnableBreakpoint
+EnableGroupCaching
+EnablePSBreakpointCommand
+encoding
+Encoding
+EncodingConversion
+End Namespace
+endIndex
+EndInvoke
+endofPipeline
+endOfRecord
+EndProcessing
+endSpecified
+EndsWith
+EngineEvent
+EngineIntrinsics
+engineIntrinsics
+EngineParser
+Enqueue
+EnsureEntry
+EnsureValue1AndValue2AreNotBothNull
+EnsureValue1HasBeenSpecified
+EnsureValue1IsNotNull
+EnsureValue2HasNotBeenSpecified
+EnsureValue2IsNotNull
+enter
+Enter
+Enter your credentials for {0}.
+Entry
+entry
+entryKey
+enumerable
+EnumerableExpansion
+EnumerableExpansionConversion
+enumerateCollection
+enumerationLimit
+Enumerator
+EnumOnly
+EnvDTE
+EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+EnvDTE80
+EnvDTE80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+EnvDTE90
+EnvDTE90, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Environment
+Equals
+-Erq%
+Error
+error
+ErrorAction
+ErrorBase
+ErrorCannotCreateTemporaryFile
+ErrorCategory
+ErrorCategoryInfo
+ErrorCommandSkippedBecauseOfShadowing
+errorContext
+ErrorCouldntResolveAlias
+ErrorDetails
+ErrorDirectoryExists
+ErrorFormattingType
+ErrorFromRemoteCommand
+errorId
+ErrorId
+errorId
+ErrorLoadingAssembly
+ErrorLoadingDataFile
+ErrorLoadingOutGridViewWindowType
+ErrorLoadingOutGridViewWindowType,
+ErrorLoadingType
+ErrorMalformedDataFromRemoteCommand
+ErrorManager
+errorManager
+ErrorNoCommandsImportedBecauseOfSkipping
+ErrorNoResultsFromRemoteEnd
+ErrorNoRunspaceForThisModule
+ErrorOpeningFile
+ErrorRecord
+errorRecord
+errorRecordList
+ErrorRecordT
+ErrorRequiredRemoteCommandNotFound
+errors
+ErrorSkippedNonRequestedCommand
+ErrorSkippedNonRequestedTypeDefinition
+ErrorSkippedUnsafe
+ErrorSkippedUnsafeAliasName
+ErrorSkippedUnsafeCommandName
+ErrorSkippedUnsafeParameterName
+ErrorSkippedUnsafeParameterSetName
+ErrorString
+errorStringInFormattedOutput
+ErrorVariable
+EscapeAndAppendString
+EscapeBlockComment
+EscapeFunctionNameForRemoteHelp
+EscapeSingleQuotedString
+Evaluate
+EvaluateDisplayCondition
+EvaluateSortingExpression
+Event
+Event '{0}'
+Event subscription '{0}'
+eventArguments
+EventArguments
+eventArrived
+EventHandler`1
+eventId
+eventIdentifier
+EventIdentifier
+EventIdentifierNotFound
+EventIdentifierNotFound4
+EventingStrings
+EventingStrings.resources
+EventName
+eventName
+EventResource
+EventResourcea
+EventSourceIdentifier
+EventSubscriber
+eventSubscriber
+EventSubscription
+EventSubscriptionn
+EventSubscriptionNotFound
+EventSubscriptionSourceNotFound
+EventViewer
+EventViewer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+EventViewer.resources
+EventViewer.resources, Version=6.0.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35
+EventWaitHandle
+exception
+Exception
+exclude
+Exclude
+excludeArray
+ExcludeDifferent
+ExcludeFilters
+ExcludeProperty
+excludes
+excludeStrings
+exclusionFilter
+execContext
+execContext = {0} nameOfCommand = {1} typeOfCommand = {2}
+Execute
+ExecuteBufferPlayBack
+ExecuteFormatControl
+ExecuteFormatControlBody
+ExecuteFormatTokenList
+ExecutionContext
+existingCommands
+ExistingCommands
+existingKey
+ExistingNullProperty
+Exists
+Exit-PSSession
+Expand
+expand
+ExpandAll
+ExpandDefaultPropertySet
+ExpandExpressions
+expandMshParameterList
+ExpandParameters
+ExpandProperty
+ExpandPropertyNotFound
+ExpandTableParameters
+expansion
+expansionString
+expectedCount
+expectedFormattingState
+Export
+ExportAliasCommand
+ExportAliasesTemplate
+ExportAliasFileOpenFailed
+ExportAliasFormat
+ExportAliasHeaderDate
+ExportAliasHeaderDate/
+ExportAliasHeaderMachine
+ExportAliasHeaderMachineB
+ExportAliasHeaderTitle
+ExportAliasHeaderTitleQ
+ExportAliasHeaderUser
+ExportAliasHeaderUser]
+ExportAliasPathResolvedToMultiplep
+ExportAliasToFileSystemOnly
+ExportClixmlCommand
+ExportCsvCommand
+ExportCsvHelper
+Exported by : {0}
+ExportFormatDataCommand
+ExportFunctionsTemplate
+ExportPSSessionCommand
+ExportPSSessionCommand6Class that has Export-PSSession command implementation
+exportScriptBlock
+Expression
+expression
+Expression
+expression
+ExpressionColumnInfo
+ExpressionEmptyString1
+ExpressionEmptyString2
+ExpressionEntryDefinition
+ExpressionEntryKey
+ExpressionEvaluation
+expressionFactory
+ExpressionGlobbing1
+ExpressionGlobbing2
+expressionResult
+expressionSet
+expressionSet>
+ExpressionToken
+expressionValue
+ExtendedTypeDefinition
+ExtendedTypeSystemException
+Extensibility
+Extensibility, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+EXTENSION_NOT_SUPPORTED
+ExternalException
+FailFast
+fallbackRawConsoleColumnNumber
+fallbackRawConsoleRowNumber
+fba029a113a5458d932a2ed4871fadf2
+FData returned by the remote {0} command is not in the expected format.
+fed.formatEntryInfo
+fgColor
+FieldControlBody
+FieldDescription
+FieldFormattingDirective
+fieldFormattingDirective
+FieldPropertyToken
+File-
+File '{0}' does not exist.
+FileAccess
+FileAttributes
+FileDescription
+FileDoesNotExist
+FileDoesNotExist'
+FileErrorReport
+FileExtensionNotSupported
+FileInfo
+FileinfoToStringAttribute
+FileListener
+FileListenerNotFound
+FileListenerPathResolutionFailed
+fileListeners
+fileListenersOnly
+FileMode
+fileName
+Filename
+filename
+FileName
+FileName: {0}
+FileNameParameterCannotHavePath
+FileNotExist
+FileNotFoundException
+FileNotFoundr
+FileOpenError
+FileOpenFailure
+FilePath
+Filepath
+filePath
+filepath
+FilePath
+filepath
+filePaths
+FileReadError
+FileReadErrorL
+files
+FileShare
+FileStream
+fileStreams
+FileStreams
+FileSystem
+FileSystemInfo
+FileVersion
+Filter
+filter
+FilterActiveAssociationList
+FilterContextWarning
+FilterContextWarningo
+FilteredWriteObject
+FilterSelector`1
+Finalize
+FINDING VIEW  TYPE: {0}
+FINDING VIEW {0} TYPE: {1}
+FINDING VIEW NAME: {0}  TYPE: {1}
+FindInObjectGroups
+FindPartialMatch
+first
+First
+firstCall
+firstcall
+firstEntry
+firstIndex
+firstLine
+FirstLineIndentation
+firstLineLen
+firstobjectcall
+firstObjectInGroup
+firstOrLastSpecified
+Flags
+Flush
+FlushTrackerQueue
+FOD_ClassIdInvalid
+FOD_ClassIdInvalid|
+FOD_InvalidClassid
+FOD_InvalidClassidProperty
+FOD_InvalidPropertyType
+FOD_NullDataMember
+followingLinesLen
+force
+Force
+forceFormattingAlsoOnOutOfBand
+forceNewLine
+forceWrite
+ForceWrite
+ForegroundColor
+Format
+format
+Format
+Format view binding
+format-*
+format_out_CommandWrapper
+format_out_FrontEndCommandBase
+format_out_ImplementationCommandBase
+format_out_OutCommandInner
+format_out_OutGridViewCommand
+format_out_OutputManagerInner
+FormatAndOut.format-xxx
+FormatAndOut.format-xxx.resources
+FormatAndOut.MshParameter
+FormatAndOut.MshParameter.resources
+FormatAndOut.out-gridview
+FormatAndOut.out-gridview.resources
+FormatAndOut.out-xxx
+FormatAndOut.out-xxx.resources
+FormatAppendPathException
+FormatCannotSpecifyAutosizeAndColumns
+FormatCannotSpecifyViewAndProperty
+format-complex
+FormatConfigurationEntry
+FormatContext
+FormatContextCreationCallback
+FormatControlDefinitionHolder
+formatControlDefinitionHolder
+FormatCustomCommand
+FormatData
+formatData
+format-default
+FormatDefaultCommand
+FormatEndCallback
+FormatEndData
+FormatEntry
+formatEntryData
+FormatEntryData
+formatEntryInfo
+FormatEntryInfo
+formatEntryInfo
+FormatEnumerationLimit
+FormatErrorManager
+FormatErrorPolicy
+formatErrorPolicy
+FormatErrorString
+formatErrorStringInFormattedOutput
+FormatException
+FormatField
+FormatGroupByParameterDefinition
+formatInfoData
+FormatInfoData
+FormatInfoDataClassFactory
+FormatInfoDataListDeserializer`1
+FormatLine
+format-list
+FormatListCommand
+FormatListParameterDefinition
+FormatMessagesContextManager
+FormatNewLine
+FormatObjectDeserializer
+formatObjectDeserializer
+FormatObjectDeserializer
+FormatObjectDeserializerDeserializeInvalidClassId
+FormatObjectDeserializerInvalidClassid
+FormatObjectDeserializerInvalidClassidProperty
+FormatObjectDeserializerInvalidPropertyType
+FormatObjectDeserializerIsFormatInfoDataInvalidClassId
+FormatObjectDeserializerNullDataMember
+FormatObjectParameterDefinition
+FormatOutputContext
+FormatParameterDefinitionBase
+FormatParameterDefinitionKeys
+formatParameters
+FormatPrependPathException
+FormatPropertyField
+formatPropertyField
+formatPropertyFieldList
+formatPs1xmlFileName
+formatResourceBase
+FormatResourceString
+FormatShape
+FormatStartCallback
+FormatStartData
+formatStartData
+formatString
+FormatStringDefinition
+FormatStringEmpty
+FormatStringEntryKey
+FormatTable
+format-table
+FormatTableCommand
+FormatTableParameterDefinition
+FormattedObjectsCache
+FormatTextField
+Formatting
+FormattingCommandLineParameters
+FormattingContext
+FormattingError
+formattingError
+FormattingError
+formattingErrorList
+formattingHint
+FormattingHint
+FormattingState
+FormatToken
+formatTokenList
+FormatTypeName
+formatTypeNameParameter
+formatTypeNamePatterns
+formatTypeNamesSpecified
+FormatValue
+formatValueList
+FormatViewBinding
+formatViewBindingTracer
+FormatViewDefinition
+FormatViewManager
+FormatViewNotFound
+format-wide
+FormatWideCommand
+FormatWideParameterDefinition
+FormatXMLHelper
+FormatXmlUpateException
+FormatXMLWriter
+FormatXxxString
+foundMatch
+Fragment
+frameInfo
+FrameInfo
+frameInfo
+frameInfoDefinition
+FrameInfoDefinition
+FrameToken
+FreeFormatEntry
+FromAssemblyName
+FromMember
+FromMember"
+FromMember>
+FromMemberNotSupported
+FromMilliseconds
+FromPath
+FromPath5
+FromSource
+FromSource 
+FromSource>
+FrontEndCommandBase
+frontEndQueue
+fTrace output can only be written to the file system. The path '{0}' referred to a '{1}' provider path.
+fullName
+function Get-PSImplicitRemotingClientSideParameters
+function Get-PSImplicitRemotingModuleName {{ $myInvocation.MyCommand.ScriptBlock.File }}
+function Get-PSImplicitRemotingSession
+function Get-PSImplicitRemotingSessionOption
+function Modify-PSImplicitRemotingParameters
+function Set-PSImplicitRemotingSession
+function Write-PSImplicitRemotingMessage
+GenerateAliases
+GenerateAllowRedirectionParameter
+GenerateArrayString
+GenerateAuthenticationMechanismParameter
+GenerateCertificateThumbprintParameter
+GenerateCommandProxy
+GenerateComplexViewEntryFromDataBaseInfo
+GenerateComplexViewEntryFromProperties
+GenerateConnectionStringForNewRunspace
+GenerateCredentialParameter
+generated on {0}
+generatedFiles
+generatedTypes
+GenerateErrorRecord
+GenerateEvent
+GenerateExportDeclaration
+GenerateFormatEntries
+GenerateFormatEntryDisplay
+GenerateFormatFile
+GenerateFormatPropertyField
+GenerateGroupEndData
+GenerateGroupStartData
+GenerateHeader
+GenerateHeaderInfo
+GenerateHelperFunctions
+GenerateHelperFunctionsClientSideParameters
+GenerateHelperFunctionsGetImplicitRunspace
+GenerateHelperFunctionsGetSessionOption
+GenerateHelperFunctionsSetImplicitRunspace
+GenerateHelperFunctionsWriteMessage
+GenerateLines
+GenerateListViewEntryFromDataBaseInfo
+GenerateListViewEntryFromProperties
+GenerateManifest
+GenerateModuleHeader
+GenerateMultiLineRowField
+GenerateNewPSSessionOption
+GenerateNewRunspaceExpression
+GenerateOutOfBandData
+GenerateOutOfBandObjectAsToString
+GeneratePayload
+GenerateProxyCredentialParameter
+GenerateProxyModule
+GenerateRow
+GenerateRowField
+GenerateSectionSeparator
+GenerateStartData
+GenerateTableHeaderInfoFromDataBaseInfo
+GenerateTableHeaderInfoFromProperties
+GenerateTableRow
+GenerateTableRowEntryFromDataBaseInfo
+GenerateTableRowEntryFromFromProperties
+GenerateTopComment
+GenerateTypeSource
+GenerateView
+GenerateWideViewEntryFromDataBaseInfo
+GenerateWideViewEntryFromProperties
+Generator
+generator
+GenericMeasure
+GenericMeasure#
+GenericMeasureG
+GenericMeasureInfo
+GenericMeasurePropertyNotFound
+GenericParameterSet
+get_Action
+get_ActiveFormattingShape
+get_ActiveLen
+get_ActiveOutputContext
+get_Activity
+get_Add
+get_Adjust
+get_Aliases
+get_AllMatches
+get_AllowClobber
+get_AllowedTypes
+get_Append
+get_AppendPath
+get_ApplicationArguments
+get_ApplicationPrivateData
+get_AppName
+get_ArgumentList
+get_As
+get_ASCII
+get_AsHashTable
+get_AsSecureString
+get_Assembly
+get_AssemblyName
+get_AsString
+get_Attachments
+get_Attributes
+get_AuthenticationMechanism
+get_AuthorizationManager
+get_AutoSize
+get_Average
+get_BackgroundColor
+get_BaseDirectory
+get_BaseObject
+get_BaseType
+get_Bcc
+get_BestMatch
+get_BigEndianUnicode
+get_BindingVariable
+get_Black
+get_Body
+get_BodyAsHtml
+get_Breakpoint
+get_BufferSize
+get_CallingToken
+get_CancelTimeout
+get_Capacity
+get_CaseSensitive
+get_Category
+get_CategoryActivity
+get_CategoryInfo
+get_CategoryReason
+get_CategoryTargetName
+get_CategoryTargetType
+get_Cc
+get_CC
+get_CertificateThumbprint
+get_Character
+get_Characters
+get_Chars
+get_ClassId2e4f51ef21dd47e99d3c952918aff9cd
+get_CodeDomProvider
+get_Column
+get_ColumnNumber
+get_Columns
+get_Command
+get_CommandDiscovery
+get_CommandInfo
+get_CommandName
+get_CommandOrigin
+get_CommandRuntime
+get_CommandSkipListFromServer
+get_CommandType
+get_ComObject
+get_Comparer
+get_CompiledAssembly
+get_CompilerParameters
+get_Completed
+get_ComputerName
+get_ConfigurationName
+get_ConnectionInfo
+get_ConnectionUri
+get_Content
+get_Context
+get_Control
+get_ConvertedCulture
+get_Count
+get_Credential
+get_CssUri
+get_Culture
+get_Current
+get_CurrentCount
+get_CurrentCulture
+get_CurrentCultureIgnoreCase
+get_CurrentGroupingKeyPropertyValue
+get_CurrentOperation
+get_CurrentPipelineStopping
+get_CurrentRunspace
+get_CurrentTableHeaderInfo
+get_CurrentThread
+get_CurrentUICulture
+get_CurrentWideHeaderInfo
+get_Data
+get_Database
+get_Date
+get_Day
+get_DayOfWeek
+get_DayOfYear
+get_Days
+get_Debug
+get_Debugger
+get_DebuggerListener
+get_Default
+get_DefaultParameterSetName
+get_Definition
+get_Delimiter
+get_DeliveryNotificationOption
+get_Depth
+get_Descending
+get_DescendingOrder
+get_Description
+get_DescriptionResource
+get_DifferenceObject
+get_DisableNameChecking
+get_DisplayCells
+get_DisplayError
+get_DisplayErrorStrings
+get_DisplayFormatErrorString
+get_DisplayHint
+get_DisplayPostContext
+get_DisplayPreContext
+get_EffectiveParameterSet
+get_Elapsed
+get_EmitQueue
+get_Encoding
+get_End
+get_EndOfStream
+get_Engine
+get_EngineHostInterface
+get_EngineSessionState
+get_EOF
+get_Error
+get_ErrorCode
+get_ErrorDetails
+get_ErrorId
+get_ErrorManager
+get_ErrorRecord
+get_Errors
+get_ErrorString
+get_ErrorText
+get_EventArguments
+get_EventIdentifier
+get_EventName
+get_Events
+get_Exception
+get_Exclude
+get_ExcludeDifferent
+get_ExcludeFilters
+get_ExcludeProperty
+get_ExistingCommands
+get_Exists
+get_Expand
+get_ExpandProperty
+get_ExpectingInput
+get_Expression
+get_ExternalHost
+get_File
+get_FileListener
+get_Filename
+get_FileName
+get_FilePath
+get_FileStreams
+get_FileSystem
+get_First
+get_FirstLineIndentation
+get_Force
+get_ForceWrite
+get_ForegroundColor
+get_Format
+get_FormatContext
+get_FormatDBManager
+get_FormatErrorString
+get_Formats
+get_Formattable
+get_FormatTypeName
+get_FormatViewDefinition
+get_Forward
+get_Fragment
+get_From
+get_FullName
+get_Generator
+get_Graphics
+get_Group
+get_GroupBy
+get_GroupingKeyDisplayName
+get_GroupValue
+get_HasValue
+get_HasWildCardCharacters
+get_Head
+get_Header
+get_Height
+get_HideHeaders
+get_HideTableHeaders
+get_Host
+get_Hour
+get_Hours
+get_Id
+get_IdleTimeout
+get_IgnoreCase
+get_IgnoreWarnings
+get_IgnoreWhiteSpace
+get_ImmediateBaseObject
+get_Include
+get_IncludeEqual
+get_IncludeFilters
+get_IncludeScriptBlock
+get_Index
+get_InitialSessionState
+get_InnerCommand
+get_InnerException
+get_InnerXml
+get_InputObject
+get_InputObjects
+get_InstanceId
+get_InstanceMembers
+get_Internal
+get_InternalBaseDotNetAdapter
+get_InternalHost
+get_InvariantCulture
+get_InvokeCommand
+get_IsArray
+get_IsEmpty
+get_IsExistingProperty
+get_IsFull
+get_IsGenericType
+get_IsInstance
+get_IsMeasuringGeneric
+get_IsOpen
+get_IsPresent
+get_IsPublic
+get_IsReadOnly
+get_IsSpecial
+get_IsStopping
+get_IsUnqualified
+get_IsValueType
+get_Item
+get_Key
+get_KeyName
+get_Keys
+get_Language
+get_LanguageMode
+get_Last
+get_Left
+get_LeftIndentation
+get_Lenght
+get_Length
+get_Level
+get_Line
+get_LineNumber
+get_LineOutput
+get_Lines
+get_List
+get_ListenerOption
+get_ListenerOptionsInternal
+get_Listeners
+get_Location
+get_LookupPath
+get_MachineName
+get_Mandatory
+get_MarginBounds
+get_Matches
+get_MaxCapacity
+get_MaxDepth
+get_Maximum
+get_MaximumConnectionRedirectionCount
+get_MaximumReceivedDataSizePerCommand
+get_MaximumReceivedObjectSize
+get_MemberDefinition
+get_Members
+get_MemberType
+get_Message
+get_MessageData
+get_Methods
+get_Millisecond
+get_Milliseconds
+get_Minimum
+get_Minute
+get_Minutes
+get_Mode
+get_Module
+get_ModuleGuid
+get_Month
+get_MshDefaultSerializationDepth
+get_MshParameterList
+get_MultilineTables
+get_MyCommand
+get_MyInvocation
+get_Name
+get_NameInternal
+get_Namespace
+get_NamespaceSpecificString
+get_NameTable
+get_NeedToPrompt
+get_NewLine
+get_NextLevel
+get_NoClobber
+get_Node
+get_NoElement
+get_NoEncryption
+get_NoMachineProfile
+get_NoNewline
+get_NotePropertyCount
+get_NotMatch
+get_NoTypeInformation
+get_Now
+get_Object
+get_OnRemove
+get_OnType
+get_OpenTimeout
+get_OperationTimeout
+get_Option
+get_Options
+get_OptionsInternal
+get_OrderMatrix
+get_OrdinalIgnoreCase
+get_OriginalString
+get_OriginatingParameter
+get_OutputAssembly
+get_OutputModule
+get_OutputType
+get_Paging
+get_Parameters
+get_ParameterSetName
+get_ParameterSets
+get_ParameterType
+get_Parent
+get_ParentContext
+get_ParentId
+get_PassThru
+get_Path
+get_Pattern
+get_PercentComplete
+get_Port
+get_Position
+get_PostContent
+get_PostContext
+get_PreConfiguredTraceSource
+get_PreContent
+get_PreContext
+get_Prefix
+get_PrependPath
+get_PrinterSettings
+get_Priority
+get_Prompt
+get_Properties
+get_Property
+get_PropertyValue
+get_ProviderNames
+get_ProviderPath
+get_ProxyAccessType
+get_ProxyAuthentication
+get_ProxyCredential
+get_PSHost
+get_PSHostListener
+get_PSSnapIn
+get_PSStandardMembers
+get_PSVariable
+get_Quiet
+get_RawUI
+get_ReceivedEvents
+get_RecommendedAction
+get_ReferencedAssemblies
+get_ReferencedPropertyNames
+get_ReferenceObject
+get_RemoteRunspacePoolInternal
+get_Remove
+get_RemoveFileListener
+get_RemoveListener
+get_Replace
+get_RequiresBuffering
+get_ResolvedExpression
+get_Result
+get_RightIndentation
+get_RowNumber
+get_Runspace
+get_RunspaceConfiguration
+get_RunspacePool
+get_RunspaceStateInfo
+get_Scope
+get_Script
+get_Second
+get_SecondaryNames
+get_Seconds
+get_SecondsRemaining
+get_SecondValue
+get_Sender
+get_Separator
+get_SerializedRemoteException
+get_Session
+get_SessionState
+get_SetSeed
+get_ShapeInfoOnFormatContext
+get_ShouldProcessOutOfBand
+get_ShouldSerialize
+get_ShowError
+get_ShowErrorsAsMessages
+get_ShowErrorsInFormattedOutput
+get_SimpleMatch
+get_Skip
+get_SkipCACheck
+get_SkipCNCheck
+get_SkipRevocationCheck
+get_SmtpServer
+get_SourceId
+get_SourceIdentifier
+get_Start
+get_State
+get_Statements
+get_Static
+get_Status
+get_Stream
+get_Streams
+get_Strict
+get_StringData
+get_Subject
+get_Subscribers
+get_SubscriptionId
+get_Success
+get_Sum
+get_SupportedCommand
+get_SupportEvent
+get_SyncRoot
+get_SyncWindow
+get_TargetObject
+get_TerminatingErrorContext
+get_Timeout
+get_Title
+get_To
+get_Top
+get_ToStringFromDeserialization
+get_TotalSeconds
+get_TraceCatalog
+get_Tracer
+get_Type
+get_TypeDefinition
+get_TypeName
+get_TypeNameOfValue
+get_TypeNames
+get_Types
+get_TypeTable
+get_UFormat
+get_UI
+get_UICulture
+get_Unicode
+get_Unique
+get_UseCompression
+get_UseCulture
+get_UseDefaultWSManPort
+get_UserName
+get_UseSsl
+get_UseUTF16
+get_UsingNamespace
+get_UTF7
+get_UTF8
+get_Value
+get_Value2
+get_ValueOnly
+get_Values
+get_Variable
+get_Vendor
+get_VendorResource
+get_Verbose
+get_View
+get_ViewGenerator
+get_Visibility
+get_WaitHandle
+get_Warning
+get_Width
+get_WindowSize
+get_Word
+get_Words
+get_Wrap
+get_WrappedAnyCmdlet
+get_WrappedCommandType
+get_WriteErrorStream
+get_Writer
+get_Xml
+get_XPath
+get_Year
+GetActiveCommandEntry
+GetActiveComplexControlEntryDefinition
+GetActiveListControlEntryDefinition
+GetActiveTableRowDefinition
+GetActiveWideControlEntryDefinition
+GetAlias
+GetAliasAtScope
+GetAliasCommand
+GetAliasesFromFile
+GetAliasLine
+GetAliasProperty
+GetAliasTable
+GetAliasTableAtScope
+GetAllApplicableTypes
+GetApplicationArguments
+GetAtScope
+GetBreakpoint
+GetBreakpoints
+GetBytes
+GetCallStack
+getChildItemScript
+GetCodeMethod
+GetCodeProperty
+Get-Command
+GetCommandLineParameters
+GetCommandLineProperties
+GetCommandTypePriority
+GetConnectionString
+GetConstructor
+GetConstructors
+GetCultureCommand
+GetCultureInfo
+GetCurrentlyRunningPipeline
+GetDateCommand
+GetDecl
+GetDefaultKeyPropertySet
+GetDefaultPropertySet
+GetDepthOfSerialization
+GetDirectoryName
+GetDisplayNameExpression
+GetElementType
+GetEncodingFromEnum
+GetEnd
+GetEntry
+GetEnumerable
+GetEnumerableExpansionFromType
+GetEnumerator
+GetErrorCommandSkippedBecauseOfShadowing
+GetErrorCouldntResolvedAlias
+GetErrorDetails
+GetErrorDirectoryExists
+GetErrorFromRemoteCommand
+GetErrorMalformedDataFromRemoteCommand
+GetErrorNoCommandsImportedBecauseOfSkipping
+GetErrorNoResultsFromRemoteEnd
+GetErrorSkippedNonRequestedCommand
+GetErrorSkippedNonRequestedTypeDefinition
+GetErrorSkippedUnsafeCommandName
+GetErrorSkippedUnsafeNameInMetadata
+GetErrorString
+GetEventCommand
+GetEventSubscriberCommand
+GetExecutionContextFromTLS
+GetExpansionState
+GetExpressionDisplayValue
+GetExtension
+GetFileModeFromOpenMode
+GetFileName
+GetFileNameWithoutExtension
+GetFilePath
+Get-FormatData
+GetFormatDataCommand
+GetFormatXxxString
+GetGenericTypeDefinition
+GetHashCode
+GetHeadSplitLength
+GetHeight
+Get-Help
+GetHostCommand
+GetKnownContainerTypeInfo
+GetLastException
+getLastExceptionMethod
+GetLastVisibleColumn
+GetLastWin32Error
+GetListOfCommandNames
+GetMatchingTraceSource
+GetMatchingVariables
+GetMember
+GetMember.resources
+GetMemberCollection
+GetMemberCommand
+GetMembers
+GetMemberSet
+GetMethod
+GetMethodTemplate
+GetNamespaceTemplate
+GetNetworkCredential
+GetNewClosure
+GetNewTraceSource
+GetNodeText
+GetNoteProperty
+GetObjectDisplayName
+GetOutOfBandView
+GetParamBlock
+GetParameters
+GetParameterType
+GetPersonalModulePath
+GetProcess
+GetProperties
+GetProperty
+GetPropertyCollection
+GetPropertyNamesFromView
+GetPropertySet
+GetPropertyValue
+GetPSBreakpointCommand
+GetPSCallStackCommand
+GetRandomCommand
+GetRandomCommand0Class that has get-random command implementation
+GetRandomCommandStrings
+GetRandomCommandStrings.resources
+GetRandomDouble
+GetRandomFileName
+GetRemoteCommandMetadata
+GetRemoteFormatData
+GetRemoteProtocolVersion
+GetResolvedProviderPathFromPSPath
+GetResolvedPSPathFromPSPath
+GetResourceString
+GetScript
+GetScriptMethod
+GetScriptProperty
+GetSerializationDepth
+GetSerializationMethod
+GetShapeFromPropertyCount
+GetShapeFromType
+GetSourceObject
+GetSourceObjectEventName
+GetSpecificPropertiesToSerialize
+GetSplitLengthInternalHelper
+GetStringFromPSObject
+GetStringSerializationSource
+GetTailSplitLength
+GetTempPath
+GetTextTokenString
+GetToStringValueForProperty
+GetTracer
+GetTraceSourceCommand
+GetType
+GetTypeFromHandle
+GetTypeFromProgID
+GetTypeInfoDataBase
+GetTypes
+GetTypeSerializationInfo
+GetTypeString
+GetUICultureCommand
+GetUnderlyingType
+GetUnique
+GetUnique0Class that has get-unique command implementation
+GetUniqueCommand
+GetUnresolvedProviderPathFromPSPath
+GetUsingSet
+GetUsingTemplate
+GetValue
+GetValueException
+GetValueOrDefault
+GetValues
+GetValueType
+GetVariable
+GetVariableCommand
+GetVariableItem
+GetVariableTable
+GetVariableTableAtScope
+GetVariableValue
+GetViewByShapeAndType
+GetWindowClosedStatus
+getWindowClosedStatusMethod
+global:FormatEnumerationLimit
+globalContextTracker
+gProxy creation has been skipped for '{0}' command, because PowerShell couldn't verify its name as safe.
+graphicalHostAssembly
+GraphicalHostAssemblyIsNotFound
+GraphicalHostAssemblyIsNotFoundz
+Graphics
+GridHeader
+gridHeader
+GridView
+group
+Group
+GroupBy
+groupBy
+groupByParameter
+GroupEnd
+GroupEndCallback
+GroupEndData
+GroupInfo
+GroupInfoNoElement
+GroupingEntry
+groupingEntry
+groupingExpression
+GroupingInfoManager
+groupingKeyDisplayName
+GroupingKeyDisplayName
+groupingKeyExpression
+groupingManager
+GroupObjectCommand
+GroupObjectCommand(Class that has group base implementation
+GroupObjectExpressionParameterDefinition
+GroupObjectSingleProperty
+GroupObjectWithHashTable
+GroupOutputContext
+groupQueue
+groups
+GroupStart
+GroupStartCallback
+GroupStartData
+GroupStartDataIndentedAutoGeneratedLabel
+GroupTransition
+groupValue
+GroupValue
+HaltCommandException
+HandleCompilerErrors
+HandleComplexTypePSObject
+HandleDifferenceObjectOnly
+HandleKnownContainerTypes
+HandlePrimitiveKnownType
+HandlePrimitiveKnownTypePSObject
+HandlePSObjectAsString
+HandleReferenceObjectOnly
+HasBeenSpecified
+hashEntries
+HashTable
+Hashtable
+HashtableEntryDefinition
+hasProcessedPreEntries
+header
+Header
+HeaderInfo
+headerInfo
+HeaderTemplate
+helper
+HelperFunctionsGetImplicitRunspaceTemplate
+HelperFunctionsGetSessionOptionTemplate
+HelperFunctionsModifyParameters
+HelperFunctionsSetImplicitRunspaceTemplate
+HelperFunctionsWriteMessage
+HelpMessage[Specifies how many levels of contained objects should be included in the XML representation5
+HelpMessageBaseName
+HelpMessageGSpecifies not to include the Type information in the XML representation
+HelpMessageResourceId
+HeteroTypeHeader
+hideHeader
+HideHeaders
+hideHeaders
+HideTableHeaders
+HostCmdlets
+HostCmdlets+trace switch for *-host and related cmdlets
+hostConsole
+hostConsole = {0}, paging = {1}
+HostException
+hostListener
+HostNameValue
+HostStrings
+HostStrings.resources
+hours
+Hours
+hourSpecified
+HTML TABLE
+HtmlEncode
+HttpUtility
+HybridDictionary
+IACore
+IACore, Version=1.7.6223.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+IALoader
+IALoader, Version=1.7.6223.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+IAsyncResult
+ICannot add type. Specify only the Language or CodeDomProvider parameters.
+ICloneable
+ICollection
+ICollection`1
+ICommandRuntime
+IComparable
+IComparer
+IComparer`1
+IContextTracker
+ICredentialsByHost
+IDictionary
+IDictionary`2
+IDictionaryEnumerator
+IDisposable
+-IdleTimeOut {0} 
+IEExecRemote
+IEExecRemote, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+IEHost
+IEHost, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+IEnum_Header
+IEnum_ManyObjects
+IEnum_NoObjects
+IEnum_OneObject
+IEnumerable
+IEnumerable`1
+IEnumerator
+IEnumerator`1
+IEqualityComparer
+IEqualityComparer`1
+if ($PSSessionOverride) {{ Set-PSImplicitRemotingSession $PSSessionOverride }}
+IFormatProvider
+IGetting command information from remote session ... {0} commands received
+IgnoreCase
+ignoreCase
+IgnoreCase
+ignoreWarnings
+IgnoreWarnings
+IgnoreWhiteSpace
+ignoreWhiteSpace
+IIEHost
+IIEHost, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+IList
+IList`1
+Illegal key {0}
+IllegalAlignmentValueError
+IllegalEnumerableExpansionValue
+IllegalKeyError
+IllegalTypeMultiError
+IllegalTypeSingleError
+immediateBaseObjectIsEmpty
+implementation
+ImplementationCommandBase
+Implicit remoting for {0}
+Implicit remoting module
+ImplicitRemoting
+ImplicitRemotingCodeGenerator
+ImplicitRemotingCodeGenerator+Code generator for implicit remoting module
+ImplicitRemotingCommandBase
+ImplicitRemotingCommandBase*Base class for implicit remoting commmands
+ImplicitRemotingCommandsToSkipKey
+ImplicitRemotingHashKey
+ImplicitRemotingKey
+ImplicitRemotingStrings
+ImplicitRemotingStrings.resources
+Import
+import 
+Import Alias
+import System.Runtime.InteropServices;
+import System;
+ImportAliasAction
+ImportAliasCommand
+ImportAliasFileFormatError
+ImportAliasFileInvalidFormat
+ImportAliasFileOpenFailed
+ImportAliasFromFileSystemOnly
+ImportAliasOptionsError
+ImportAliasPathResolvedToMultiple
+ImportAliasTarget
+ImportClixmlCommand
+ImportCsvCommand
+ImportCsvHelper
+ImportCsvString
+ImportExportCSVHelper
+ImportLocalizedData
+ImportLocalizedData!The import-localizeddata commands
+ImportLocalizedData.resources
+importModuleScript
+ImportPSSessionCommand
+ImportPSSessionCommand6Class that has Import-PSSession command implementation
+Imports 
+Imports System
+Imports System.Runtime.InteropServices
+ImportXmlHelper
+Include
+include
+IncludeEqual
+IncludeFilters
+IncludeScriptBlock
+includeStrings
+IncorrectVariableName
+IncrementDataPoint
+indentationManager
+IndentationManager
+IndentationStackFrame
+indentationStep
+index
+Index
+index
+Index
+IndexColumnInfo
+IndexColumnName
+indexCount
+IndexOf
+IndexOfAny
+indexOfCurrentObject
+IndexParameterD
+IndexPropertyName
+indexSpecified
+IndexValue
+InformationalRecord
+InitComparer
+Initialize
+InitializeArray
+InitializeAutoSize
+InitializeCommandsHardWired
+InitializeFormatErrorManager
+InitializeGroupBy
+InitializeHelper
+InitializeResolvedNameMshParameters
+InitialSessionState
+InitialSessionStateEntry
+InitialSessionStateEntryCollection`1
+InitialState
+InnerCommand
+innerException
+InnerFormatShapeCommand
+InnerFormatShapeCommandBase
+inObj
+input
+inputData
+InputFileOpenModeConversion
+InputObject
+inputObject
+InputObject
+inputobject
+InputObjectCall
+InputObjectCallback
+InputObjectPropertyName
+InputObjects
+inputObjects
+inputParameters
+inputRecordNumber
+InputStream
+inputStream
+inputString
+Insert
+InsideGroup
+Install
+InstantiateLineOutputInterface
+inStr
+Int32
+Int64
+InternalCommand
+InternalDispose
+InternalHost
+InternalHostUserInterface
+InternalInitialize
+InternalName
+INVALID_EVENT_IDENTIFIER
+INVALID_OUTPUT_ASSEMBLY
+INVALID_SOURCE_IDENTIFIER
+INVALID_SUBSCRIPTION_IDENTIFIER
+InvalidCastException
+InvalidColorErrorTemplate
+InvalidColorErrorTemplateResource
+InvalidComObjectException
+InvalidDataException
+InvalidDataLine
+InvalidDataLine4
+InvalidOperation
+InvalidOperationException
+Invalidpath
+InvalidValue
+invocationContext
+InvocationInfo
+invocationInfo
+Invoke
+InvokeExpressionCommand
+InvokeUsingCmdlet
+IOException
+ipdmctrl
+ipdmctrl, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+IsAssignableFrom
+isBgColorSet
+IsClass
+IsCommandNameAllowedForImport
+IsCommandNameMatchingParameters
+IsCommandSkippedByServerDeclaration
+IsControl
+isDeserialized
+isDisposing
+IsDynamic
+IsEmpty
+IsExistingProperty
+isExistingProperty
+isFgColorSet
+isfirstcallforObject
+IsFormatInfoData
+IsFull
+IsInfinity
+IsInputFromRemoting
+IsInstanceOfType
+IsInt
+IsKeyMatch
+IsMatch
+IsMeasuringGeneric
+IsNewLine
+IsNull
+IsNullOrEmpty
+IsObjectApplicable
+isOpen
+IsOpen
+isOrderEntryKeyDefined
+isProcessingError
+IsPropertyLessObject
+IsProxyForCmdlet
+IsReadOnly
+IsSafeCommandMetadata
+IsSafeNameOrIdentifier
+IsSafeParameterName
+IsSafeTypeConstraint
+IsSafeTypeDefinition
+isScriptBlock
+IsShadowingExistingCommands
+isStopped
+isStopping
+isTable
+isTHWritten
+IsTrue
+IsTypeInList
+IsTypeNameMatchingParameters
+IsValueNull
+IsVisible
+IsWhiteSpace
+IsWindowClosed
+IsWindowStarted
+IsWpf35Available
+IsWriteErrorStream
+ISymWrapper
+ISymWrapper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+iSystem.Collections.Hashtable, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+itemDefinition
+itemDefinitionList
+ItemNotFoundException
+itemRehydrator
+items
+January 1, 1970
+JCannot open the file because the current provider ({0}) cannot open files.
+JCannot set output assembly. The path {0} did not resolve to a single file.
+JExecuting {0} command in remote session reported the following error: {1}.
+JScript
+JScriptCodeProvider
+jThis command cannot be executed because AsString parameter works together with AsHashtable parameter only.
+KCannot set breakpoint on file '{0}'; only *.ps1 and *.psm1 files are valid.
+KConstructor not found. Cannot find an appropriate constructor for type {0}.
+kernel32.dll
+Key {0} has no value.
+Key cannot be null.
+KeyCollection
+KeyInfo
+keyName
+KeyName
+keyName
+KeyValuePair`2
+KnownTypes
+label
+LabelEntryDefinition
+LabelEntryKey
+labelTextToken
+language
+Language
+LANGUAGE_AND_PROVIDER
+LANGUAGE_NOT_SUPPORTED
+LanguageAndProviderSpecified
+LanguagePrimitives
+languageSpecified
+lastEmptySpot
+lastTimeProgressWasWritten
+LastWriteTime
+LayoutKind
+LeftAlign
+LeftIndentation
+leftIndentation
+leftMarginIndent
+LegalCopyright
+legalValues
+Lenght
+Length
+length
+LengthInBufferCells
+Level
+level
+Library
+Line 
+line = {0}
+Line cannot be less than 1.
+lineBreakChars
+LineBreakpoint
+LineK
+LineLessThanOne
+LineLessThanOneC
+LineNumber
+lineNumber
+lineOutput
+LineOutput
+LineOutput should not be null.
+Lines
+lines
+lineStr
+linesWritten
+LineT
+LineWrittenEvent
+List Param of Regional Setting has more than 1 character
+List`1
+listBody
+ListControl
+ListControlBody
+ListControlEntryDefinition
+ListControlItemDefinition
+listener
+listenerNames
+ListenerOption
+ListenerOptionsInternal
+listModifier
+listOfCommandMetadata
+listOfFormatData
+listOfStrings
+listOfTypeDefinitions
+ListOutputContext
+Listtag
+ListViewEntry
+ListViewField
+listViewFieldList
+ListViewGenerator
+ListViewHeaderInfo
+ListWriter
+listWriter
+liveObject
+liveObjectPropertyName
+livePSObject
+LMicrosoft.Management.UI.Internal.OutGridViewWindow type could not be loaded.
+loadAssembly
+LoadAssemblyFromPathOrName
+LoadAssemblyHelper
+LoadFrom
+LoadOutGridViewWindowType
+LoadXml
+LOCAL
+local
+local:
+LocalizedData
+LocalMachine
+LocalPipeline
+LogCommandHealthEvent
+LogicalContextTracker
+logicalTracker
+LogMshExpressionFailedResult
+LogStringFormatError
+LookupCommandProcessor
+lookupScope
+lSystem.Resources.ResourceReader, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet
+Machine : {0}
+machine = {0}
+Mail cannot be sent because no SMTP server was specified. You must specify an SMTP server using the SmtpServer parameter or the $PSEmailServer variable.
+MailAddress
+MailAddressCollection
+MailMessage
+MailPriority
+mainControl
+ManagementListInvocationException
+Mandatory
+mandatory
+Mandatory
+manifestFile
+ManifestTemplate
+ManualResetEvent
+Marshal
+MarshalByRefObject
+MaskDeserializationPrefix
+MasterStreamOpen
+Match
+match
+MatchAndRemove
+MatchCollection
+matchedProperties
+MatchEntry
+Matches
+matches
+MatchesAllowedTypes
+MatchesAnyWildcardPattern
+MatchFormat
+matchInfo
+MatchInfo
+MatchInfoContext
+matchingAliases
+matchingEntry
+matchingSources
+matchingVariable
+matchOptions
+matchPattern
+MatchPrefix
+matchResult
+MatchStringStrings
+MatchStringStrings.resources
+MaxCapacity
+maxDepth
+MaxDepth
+maxDepthAllowable
+Maximum
+maximum
+-MaximumReceivedDataSizePerCommand {0} 
+-MaximumReceivedObjectSize {0} 
+-MaximumRedirection {0} 
+maxRecursionDepth
+maxTreeDepth
+maxWidth
+Measure
+measureAverage
+measureCharacters
+MeasureCommandCommand
+MeasureCommandCommand5Class that has Measure-Command command implementation
+MeasureInfo
+measureLines
+measureMax
+measureMin
+MeasureObject
+Measure-Object
+MeasureObject4Class that has measure-object command implementation
+MeasureObjectCommand
+MeasureObjectDictionary`1
+MeasureObjectStrings
+MeasureObjectStrings.resources
+MeasureString
+measureSum
+measureWords
+meetsIncludeExcludeCriteria
+Member
+MemberAccessException
+MemberAlreadyExists
+MemberComparer
+MemberDefinition
+MemberDoesntExist
+MemberInfo
+memberName
+MemberNotFound
+MemberType
+memberType
+MemberTypes
+MemberwiseClone
+MemoryStream
+message
+Message
+messageData
+MessageData
+messageId
+method
+MethodAccessException
+MethodBase
+MethodDefinitionNotPublic
+MethodException
+MethodInfo
+MFCMIFC80
+MFCMIFC80, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft
+Microsoft (R) Windows (R) Operating System
+Microsoft .NET Framework 3.5 Service Pack 1 was installed while one or more Windows PowerShell sessions were running. To use the {0} cmdlet, close all Windows PowerShell windows, and then open a new Windows PowerShell window.
+Microsoft Corporation
+Microsoft Windows PowerShell Utility Commands
+-Microsoft Windows PowerShell Utility Commands
+Microsoft.AnalysisServices
+Microsoft.AnalysisServices, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.AnalysisServices.AdomdClient
+Microsoft.AnalysisServices.AdomdClient, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.AnalysisServices.DeploymentEngine
+Microsoft.AnalysisServices.DeploymentEngine, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.Build.Conversion
+Microsoft.Build.Conversion, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Build.Conversion.v3.5
+Microsoft.Build.Conversion.v3.5, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Build.Engine
+Microsoft.Build.Engine, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Build.Framework
+Microsoft.Build.Framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Build.Tasks
+Microsoft.Build.Tasks, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Build.Tasks.v3.5
+Microsoft.Build.Tasks.v3.5, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Build.Utilities
+Microsoft.Build.Utilities, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Build.Utilities.v3.5
+Microsoft.Build.Utilities.v3.5, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Build.VisualJSharp
+Microsoft.Build.VisualJSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.CompactFramework.Build.Tasks
+Microsoft.CompactFramework.Build.Tasks, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.CompactFramework.Design
+Microsoft.CompactFramework.Design, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.CompactFramework.Design.Model
+Microsoft.CompactFramework.Design.Model, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.CompactFramework.Design.PocketPC
+Microsoft.CompactFramework.Design.PocketPC, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.CompactFramework.Design.PocketPC2004
+Microsoft.CompactFramework.Design.PocketPC2004, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.CompactFramework.Design.PocketPCV1
+Microsoft.CompactFramework.Design.PocketPCV1, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.CompactFramework.Design.SmartPhone
+Microsoft.CompactFramework.Design.SmartPhone, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.CompactFramework.Design.SmartPhone2004
+Microsoft.CompactFramework.Design.SmartPhone2004, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.CompactFramework.Design.WindowsCE
+Microsoft.CompactFramework.Design.WindowsCE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.CSharp
+Microsoft.DataWarehouse.Interfaces
+Microsoft.DataWarehouse.Interfaces, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.ExceptionMessageBox
+Microsoft.ExceptionMessageBox, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.GroupPolicy.GpmgmtLib
+Microsoft.GroupPolicy.GpmgmtLib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Microsoft.GroupPolicy.GPOAdminGrid
+Microsoft.GroupPolicy.GPOAdminGrid, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Microsoft.GroupPolicy.Interop
+Microsoft.GroupPolicy.Interop, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Microsoft.GroupPolicy.Private.GpmgmtpLib
+Microsoft.GroupPolicy.Private.GpmgmtpLib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Microsoft.GroupPolicy.Reporting
+Microsoft.GroupPolicy.Reporting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Microsoft.GroupPolicy.Reporting.resources
+Microsoft.GroupPolicy.Reporting.resources, Version=2.0.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35
+Microsoft.Ink
+Microsoft.Ink, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Microsoft.Ink.resources
+Microsoft.Ink.resources, Version=6.0.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35
+Microsoft.Internal.VisualStudio.Shell.Interop.9.0
+Microsoft.Internal.VisualStudio.Shell.Interop.9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Interop.Security.AzRoles
+Microsoft.Interop.Security.AzRoles, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Microsoft.JScript
+Microsoft.JScript, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Management.UI.Internal.OutGridViewWindow
+Microsoft.ManagementConsole
+Microsoft.ManagementConsole, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Microsoft.ManagementConsole.resources
+Microsoft.ManagementConsole.resources, Version=3.0.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35
+Microsoft.mshtml
+Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.MSXML
+Microsoft.MSXML, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.NetEnterpriseServers.ExceptionMessageBox
+Microsoft.NetEnterpriseServers.ExceptionMessageBox, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.Office.InfoPath
+Microsoft.Office.InfoPath, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.InfoPath.Client.Internal.Host
+Microsoft.Office.InfoPath.Client.Internal.Host, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.InfoPath.Client.Internal.Host.Interop
+Microsoft.Office.InfoPath.Client.Internal.Host.Interop, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.InfoPath.FormControl
+Microsoft.Office.InfoPath.FormControl, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.InfoPath.Permission
+Microsoft.Office.InfoPath.Permission, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.InfoPath.Vsta
+Microsoft.Office.InfoPath.Vsta, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.Interop.Access
+Microsoft.Office.Interop.Access, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.Interop.Access.Dao
+Microsoft.Office.Interop.Access.Dao, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.Interop.Excel
+Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.Interop.Graph
+Microsoft.Office.Interop.Graph, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.Interop.InfoPath
+Microsoft.Office.Interop.InfoPath, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.Interop.InfoPath.SemiTrust
+Microsoft.Office.Interop.InfoPath.SemiTrust, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.Interop.InfoPath.Xml
+Microsoft.Office.Interop.InfoPath.Xml, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.Interop.OneNote
+Microsoft.Office.Interop.OneNote, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.Interop.Outlook
+Microsoft.Office.Interop.Outlook, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.Interop.OutlookViewCtl
+Microsoft.Office.Interop.OutlookViewCtl, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.Interop.PowerPoint
+Microsoft.Office.Interop.PowerPoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.Interop.Publisher
+Microsoft.Office.Interop.Publisher, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.Interop.SmartTag
+Microsoft.Office.Interop.SmartTag, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.Interop.Word
+Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Office.Tools.Common
+Microsoft.Office.Tools.Common, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Office.Tools.Common2007
+Microsoft.Office.Tools.Common2007, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Office.Tools.Excel
+Microsoft.Office.Tools.Excel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Office.Tools.Outlook
+Microsoft.Office.Tools.Outlook, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Office.Tools.Word
+Microsoft.Office.Tools.Word, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.PowerShell
+Microsoft.PowerShell.Commands
+Microsoft.PowerShell.Commands.AddType.AutoGeneratedTypes
+Microsoft.PowerShell.Commands.Internal.Format
+Microsoft.PowerShell.Commands.Management
+Microsoft.PowerShell.Commands.Management, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Microsoft.PowerShell.Commands.Management.resources
+Microsoft.PowerShell.Commands.Management.resources, Version=1.0.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35
+'Microsoft.PowerShell.Commands.MatchInfo[System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Microsoft.PowerShell.Commands.Utility
+Microsoft.PowerShell.Commands.Utility, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Microsoft.PowerShell.Commands.Utility.dll
+Microsoft.PowerShell.Commands.Utility.pdb
+Microsoft.PowerShell.Commands.Utility.resources
+Microsoft.PowerShell.Commands.Utility.resources, Version=1.0.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35
+Microsoft.PowerShell.ConsoleHost
+Microsoft.PowerShell.ConsoleHost, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Microsoft.PowerShell.ConsoleHost.resources
+Microsoft.PowerShell.ConsoleHost.resources, Version=1.0.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35
+Microsoft.PowerShell.Editor
+Microsoft.PowerShell.Editor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Microsoft.PowerShell.Editor.resources
+Microsoft.PowerShell.Editor.resources, Version=1.0.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35
+Microsoft.PowerShell.GPowerShell
+Microsoft.PowerShell.GPowerShell, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Microsoft.PowerShell.GPowerShell.resources
+Microsoft.PowerShell.GPowerShell.resources, Version=1.0.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35
+Microsoft.PowerShell.GraphicalHost
+Microsoft.PowerShell.GraphicalHost, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Microsoft.PowerShell.GraphicalHost.resources
+Microsoft.PowerShell.GraphicalHost.resources, Version=1.0.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35
+Microsoft.PowerShell.Security
+Microsoft.PowerShell.Security, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Microsoft.PowerShell.Security.resources
+Microsoft.PowerShell.Security.resources, Version=1.0.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35
+Microsoft.PowerShell.Utility
+Microsoft.ReportViewer.Common
+Microsoft.ReportViewer.Common, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.ReportViewer.Design
+Microsoft.ReportViewer.Design, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.ReportViewer.ProcessingObjectModel
+Microsoft.ReportViewer.ProcessingObjectModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.ReportViewer.WebDesign
+Microsoft.ReportViewer.WebDesign, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.ReportViewer.WebForms
+Microsoft.ReportViewer.WebForms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.ReportViewer.WinForms
+Microsoft.ReportViewer.WinForms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.SqlServer.BatchParser
+Microsoft.SqlServer.BatchParser, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.SqlServer.ConnectionInfo
+Microsoft.SqlServer.ConnectionInfo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.SqlServer.CustomControls
+Microsoft.SqlServer.CustomControls, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.SqlServer.GridControl
+Microsoft.SqlServer.GridControl, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.SqlServer.Instapi
+Microsoft.SqlServer.Instapi, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.SqlServer.MgdSqlDumper
+Microsoft.SqlServer.MgdSqlDumper, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.SqlServer.RegSvrEnum
+Microsoft.SqlServer.RegSvrEnum, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.SqlServer.Replication
+Microsoft.SqlServer.Replication, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.SqlServer.Replication.BusinessLogicSupport
+Microsoft.SqlServer.Replication.BusinessLogicSupport, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.SqlServer.Rmo
+Microsoft.SqlServer.Rmo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.SqlServer.ServiceBrokerEnum
+Microsoft.SqlServer.ServiceBrokerEnum, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.SqlServer.Setup
+Microsoft.SqlServer.Setup, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.SqlServer.Smo
+Microsoft.SqlServer.Smo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.SqlServer.SmoEnum
+Microsoft.SqlServer.SmoEnum, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.SqlServer.SqlEnum
+Microsoft.SqlServer.SqlEnum, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.SqlServer.SqlTDiagM
+Microsoft.SqlServer.SqlTDiagM, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.SqlServer.SString
+Microsoft.SqlServer.SString, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.SqlServer.WizardFrameworkLite
+Microsoft.SqlServer.WizardFrameworkLite, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.SqlServer.WmiEnum
+Microsoft.SqlServer.WmiEnum, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+Microsoft.StdFormat
+Microsoft.StdFormat, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Tpm
+Microsoft.Tpm, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Microsoft.Tpm.resources
+Microsoft.Tpm.resources, Version=6.0.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35
+Microsoft.Transactions.Bridge
+Microsoft.Transactions.Bridge, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Transactions.Bridge.Dtc
+Microsoft.Transactions.Bridge.Dtc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Vbe.Interop
+Microsoft.Vbe.Interop, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.Vbe.Interop.Forms
+Microsoft.Vbe.Interop.Forms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Microsoft.VisualBasic
+Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualBasic.Compatibility
+Microsoft.VisualBasic.Compatibility, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualBasic.Compatibility.Data
+Microsoft.VisualBasic.Compatibility.Data, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualBasic.Vsa
+Microsoft.VisualBasic.Vsa, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualC
+Microsoft.VisualC, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualC.ApplicationVerifier
+Microsoft.VisualC.ApplicationVerifier, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualC.STLCLR
+Microsoft.VisualC.STLCLR, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualC.VSCodeParser
+Microsoft.VisualC.VSCodeParser, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualC.VSCodeProvider
+Microsoft.VisualC.VSCodeProvider, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio
+Microsoft.VisualStudio, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.CommandBars
+Microsoft.VisualStudio.CommandBars, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.CommonIDE
+Microsoft.VisualStudio.CommonIDE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Configuration
+Microsoft.VisualStudio.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Debugger.Interop
+Microsoft.VisualStudio.Debugger.Interop, Version=8.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Debugger.InteropA
+Microsoft.VisualStudio.Debugger.InteropA, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.DebuggerVisualizers
+Microsoft.VisualStudio.DebuggerVisualizers, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Design
+Microsoft.VisualStudio.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Designer.Interfaces
+Microsoft.VisualStudio.Designer.Interfaces, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.DeviceConnectivity.Interop
+Microsoft.VisualStudio.DeviceConnectivity.Interop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Diagnostics.ServiceModelSink
+Microsoft.VisualStudio.Diagnostics.ServiceModelSink, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Editors
+Microsoft.VisualStudio.Editors, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.EnterpriseTools
+Microsoft.VisualStudio.EnterpriseTools, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.EnterpriseTools.ClassDesigner
+Microsoft.VisualStudio.EnterpriseTools.ClassDesigner, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.EnterpriseTools.Shell
+Microsoft.VisualStudio.EnterpriseTools.Shell, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.EnterpriseTools.TypeSystem
+Microsoft.VisualStudio.EnterpriseTools.TypeSystem, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.HostingProcess.Utilities
+Microsoft.VisualStudio.HostingProcess.Utilities, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.HostingProcess.Utilities.Sync
+Microsoft.VisualStudio.HostingProcess.Utilities.Sync, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.ManagedInterfaces
+Microsoft.VisualStudio.ManagedInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Modeling
+Microsoft.VisualStudio.Modeling, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Modeling.ArtifactMapper
+Microsoft.VisualStudio.Modeling.ArtifactMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Modeling.ArtifactMapper.VSHost
+Microsoft.VisualStudio.Modeling.ArtifactMapper.VSHost, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Modeling.Diagrams
+Microsoft.VisualStudio.Modeling.Diagrams, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Modeling.Diagrams.GraphObject
+Microsoft.VisualStudio.Modeling.Diagrams.GraphObject, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.OfficeTools.Build.Tasks
+Microsoft.VisualStudio.OfficeTools.Build.Tasks, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.OfficeTools.Controls.ContainerControl
+Microsoft.VisualStudio.OfficeTools.Controls.ContainerControl, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.OfficeTools.Controls.ManagedWrapper
+Microsoft.VisualStudio.OfficeTools.Controls.ManagedWrapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.OfficeTools.Designer
+Microsoft.VisualStudio.OfficeTools.Designer, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.OLE.Interop
+Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Package.LanguageService
+Microsoft.VisualStudio.Package.LanguageService, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.ProjectAggregator
+Microsoft.VisualStudio.ProjectAggregator, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Publish
+Microsoft.VisualStudio.Publish, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.QualityTools.Resource
+Microsoft.VisualStudio.QualityTools.Resource, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.QualityTools.UnitTestFramework
+Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Shell
+Microsoft.VisualStudio.Shell, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Shell.9.0
+Microsoft.VisualStudio.Shell.9.0, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Shell.Design
+Microsoft.VisualStudio.Shell.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Shell.Interop
+Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Shell.Interop.8.0
+Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Shell.Interop.9.0
+Microsoft.VisualStudio.Shell.Interop.9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.TeamSystem.PerformanceWizard
+Microsoft.VisualStudio.TeamSystem.PerformanceWizard, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.TemplateWizardInterface
+Microsoft.VisualStudio.TemplateWizardInterface, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.TextManager.Interop
+Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.TextManager.Interop.8.0
+Microsoft.VisualStudio.TextManager.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.TextManager.Interop.9.0
+Microsoft.VisualStudio.TextManager.Interop.9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Applications.Adapter
+Microsoft.VisualStudio.Tools.Applications.Adapter, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Applications.Adapter.v9.0
+Microsoft.VisualStudio.Tools.Applications.Adapter.v9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Applications.AddInAdapter
+Microsoft.VisualStudio.Tools.Applications.AddInAdapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Applications.AddInBase
+Microsoft.VisualStudio.Tools.Applications.AddInBase, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Applications.AddInManager
+Microsoft.VisualStudio.Tools.Applications.AddInManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Applications.Blueprints
+Microsoft.VisualStudio.Tools.Applications.Blueprints, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Applications.Common
+Microsoft.VisualStudio.Tools.Applications.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Applications.ComRPCChannel
+Microsoft.VisualStudio.Tools.Applications.ComRPCChannel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Applications.Contract
+Microsoft.VisualStudio.Tools.Applications.Contract, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Applications.Contract.v9.0
+Microsoft.VisualStudio.Tools.Applications.Contract.v9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Applications.DesignTime
+Microsoft.VisualStudio.Tools.Applications.DesignTime, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Applications.HostAdapter
+Microsoft.VisualStudio.Tools.Applications.HostAdapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Applications.Hosting
+Microsoft.VisualStudio.Tools.Applications.Hosting, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Applications.Hosting.v9.0
+Microsoft.VisualStudio.Tools.Applications.Hosting.v9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Applications.InteropAdapter
+Microsoft.VisualStudio.Tools.Applications.InteropAdapter, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Applications.Runtime
+Microsoft.VisualStudio.Tools.Applications.Runtime, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Applications.ServerDocument
+Microsoft.VisualStudio.Tools.Applications.ServerDocument, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office
+Microsoft.VisualStudio.Tools.Office, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office.AddInAdapter
+Microsoft.VisualStudio.Tools.Office.AddInAdapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office.AddInHostAdapter
+Microsoft.VisualStudio.Tools.Office.AddInHostAdapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office.AppInfoDocument
+Microsoft.VisualStudio.Tools.Office.AppInfoDocument, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office.Common
+Microsoft.VisualStudio.Tools.Office.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office.Contract
+Microsoft.VisualStudio.Tools.Office.Contract, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office.Controls.ContainerControl
+Microsoft.VisualStudio.Tools.Office.Controls.ContainerControl, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office.Excel
+Microsoft.VisualStudio.Tools.Office.Excel, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office.Excel.Adapter
+Microsoft.VisualStudio.Tools.Office.Excel.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office.Excel.AddInAdapter
+Microsoft.VisualStudio.Tools.Office.Excel.AddInAdapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office.Excel.AddInProxy
+Microsoft.VisualStudio.Tools.Office.Excel.AddInProxy, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office.Excel.Contract
+Microsoft.VisualStudio.Tools.Office.Excel.Contract, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office.Outlook
+Microsoft.VisualStudio.Tools.Office.Outlook, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office.Outlook.Adapter
+Microsoft.VisualStudio.Tools.Office.Outlook.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office.Runtime
+Microsoft.VisualStudio.Tools.Office.Runtime, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office.Word
+Microsoft.VisualStudio.Tools.Office.Word, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office.Word.Adapter
+Microsoft.VisualStudio.Tools.Office.Word.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office.Word.AddInAdapter
+Microsoft.VisualStudio.Tools.Office.Word.AddInAdapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office.Word.AddInProxy
+Microsoft.VisualStudio.Tools.Office.Word.AddInProxy, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Tools.Office.Word.Contract
+Microsoft.VisualStudio.Tools.Office.Word.Contract, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.VCCodeModel
+Microsoft.VisualStudio.VCCodeModel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.VCProject
+Microsoft.VisualStudio.VCProject, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.VCProjectEngine
+Microsoft.VisualStudio.VCProjectEngine, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.VirtualTreeGrid
+Microsoft.VisualStudio.VirtualTreeGrid, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.VSContentInstaller
+Microsoft.VisualStudio.VSContentInstaller, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.VSHelp
+Microsoft.VisualStudio.VSHelp, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.VSHelp80
+Microsoft.VisualStudio.VSHelp80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Windows.Forms
+Microsoft.VisualStudio.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.WizardFramework
+Microsoft.VisualStudio.WizardFramework, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VisualStudio.Zip
+Microsoft.VisualStudio.Zip, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Vsa
+Microsoft.Vsa, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Vsa.Vb.CodeDOMProcessor
+Microsoft.Vsa.Vb.CodeDOMProcessor, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.VSDesigner
+Microsoft.VSDesigner, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Win32
+Microsoft_VsaVb
+Microsoft_VsaVb, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+MIGUIControls
+MIGUIControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+MIGUIControls.resources
+MIGUIControls.resources, Version=1.0.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35
+milliseconds
+Milliseconds
+MillisecondsT
+milliSecondsToSleep
+MinFieldWidth
+MinGreaterThanOrEqualMax
+Minimum
+minimum
+minimumColumnWidth
+minimumScreenColumns
+MinLabelWidth
+minute
+Minute
+Minutes
+minutes
+minuteSpecified
+MissingInputObjectParameter
+MissingInputObjectParameter/
+MissingKeyMandatoryEntryError
+MissingKeyValueError
+MissingMethodException
+MissingPropertyParameter
+mMailMessage
+MMCEx
+MMCEx, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+MMCEx.resources
+MMCEx.resources, Version=3.0.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35
+MMCFxCommon
+MMCFxCommon, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+MMCFxCommon.resources
+MMCFxCommon.resources, Version=3.0.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35
+Module
+ModuleCmdletBase
+moduleGuid
+ModuleGuid
+ModuleHeaderCommand
+ModuleHeaderCommandLine
+ModuleHeaderDate
+ModuleHeaderRunspaceOverrideParameter
+ModuleHeaderTitle
+moduleInfo
+ModuleIntrinsics
+moduleName
+ModuleName
+moduleRootDirectory
+Monitor
+month
+Month
+monthSpecified
+MoveNext
+MSClusterLib
+MSClusterLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91
+mscomctl
+mscomctl, Version=10.0.4504.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+mscorcfg
+mscorcfg, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+mscoree.dll
+mscorlib
+mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+MSDATASRC
+MSDATASRC, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+msddslmp
+msddslmp, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+msddsp
+msddsp, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+MshCommandRuntime
+MshDefaultSerializationDepth
+mshDefaultSerializationDepth
+MshExEmptyStringError
+MshExEmptyStringHashError
+MshExGlobbingHashError
+MshExGlobbingStringError
+MshExpression
+mshExpressionError
+MshExpressionError
+MshExpressionFactory
+mshExpressionFactory
+MshExpressionFilter
+MshExpressionResult
+MshLog
+MshMemberMatchOptions
+mshObj
+mshObject
+MshParameter
+mshParameterList
+MshParameterList
+MshParameterString
+mshParams
+MshResolvedExpressionParameterAssociation
+mSmtpClient
+mSystem.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+MulticastDelegate
+multiLine
+'Multiple properties cannot be expanded.
+MULTIPLE_EXTENSION_NOT_SUPPORTED
+MultipleExtensionsNotSupported
+MutlipleExpandProperties
+MyInvocation
+MyParameterSet
+Name: {0}
+Name: {0} Value: {1}
+name2commandMetadata
+NameAttribute
+NameEntryDefinition
+NameEntryKey
+NameEquals
+NameInternal
+nameIsFormalParameter
+nameOfCommand
+names
+NameS
+Namespace
+namespace {0}
+Namespace {0}
+namespacetable
+NameTable
+nameType
+napcrypt
+napcrypt, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+naphlpr
+naphlpr, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+napinit
+napinit, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+napinit.resources
+napinit.resources, Version=6.0.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35
+napsnap
+napsnap, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+napsnap.resources
+napsnap.resources, Version=6.0.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35
+NativeMethods
+NCannot find type [{0}]: make sure the assembly containing this type is loaded.
+NeedsPreprocessing
+NeedToPrompt
+Net3Dot5Required
+netSetName
+NetworkCredential
+NeutralResourcesLanguageAttribute
+New Alias
+New Variable
+NewAliasAction
+NewAliasCommand
+NewAliasTarget
+NewArgumentException
+NewArgumentNullException
+NewCommandBreakpoint
+NewError
+NewEventCommand
+NewGuid
+NewInvalidOperationException
+NewLineBreakpoint
+newLineChar
+NewLineToken
+newnames
+NewNotSupportedException
+new-object cmdlet
+NewObjectCommand
+NewObjectDisposedException
+NewObjectStrings
+NewObjectStrings.resources
+NewRunspaceTemplate
+NewScriptBlock
+NewStatementBreakpoint
+NewTimeSpanCommand
+NewTimeSpanCommand2Class that has New-Timespan command implementation
+newtype
+NewVariable
+NewVariableAction
+NewVariableAction4
+NewVariableAtScope
+NewVariableBreakpoint
+NewVariableCommand
+NewVariableTarget
+NewVariableTargetB
+NextDouble
+NextLevel
+NextLine
+NextPage
+No applicable view has been found
+No available Lines; suppress prompting
+No command proxies have been created, because all of the requested remote commands would shadow existing local commands.  Use the AllowClobber parameter if you want to shadow existing local commands.
+NoAliasFound
+NoClobber
+noclobber
+NoCOMClassIdentified
+-NoCompression 
+NoElement
+noElement
+-NoEncryption 
+NoException
+NoExceptionT
+noGlobbing
+-NoMachineProfile 
+NoMatchFound
+NoNewline
+NonExistingProperty
+nonNumericError
+NonNumericInputObject
+NonNumericProperty$
+NonscalarTypeHeader
+NoObjectInGetMember
+NoObjectSpecified
+NoPublicCtorMatch
+normalizedKey
+NoStringToEvalulateError8
+notAppendNewline
+NotCalledFromAScriptFile
+NotePropertyCount
+notePropertyCount
+notificationCallBack
+Notify
+NotifyEvent
+NotImplementedException
+NotMatch
+notMatch
+notMatched
+notSpecified
+NotSupported
+NotSupportedException
+NoTypeInformation
+notypeinformation
+Nullable`1
+nullOk
+NullParameterTypeError
+NullReferenceException
+numberObjects
+numberOfProcessedListItems
+numberOfTextColumns
+NumberStyles
+numValue
+Object
+object
+Object
+Object[
+ObjectCmdletBase
+ObjectCommandComparer
+ObjectCommandPropertyValue
+objectCount
+objectCreated
+ObjectEvent
+ObjectEventRegistrationBase
+objects
+Objects
+objectToEcho
+objValue
+office
+office, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+offset
+One of the expanded values is null
+OnlyContainsWhitespace
+OnType
+OnWrite
+OnWriteLine
+op_Equality
+op_Implicit
+op_Inequality
+op_LessThan
+op_Subtraction
+OpenFile
+OpenMode
+openMode
+OpenSubKey
+openTag
+-OpenTimeOut {0} 
+operand
+operandString
+-OperationTimeOut {0} 
+Option
+optionalDefinitionList
+optionalEntryList
+options
+OptionsInternal
+optionsSet
+optionsSet-
+optionsSet"
+optionsSpecified
+OrderByProperty
+orderByProperty
+OrderByProperty
+OrderByProperty/Util class for sort like command implementation
+OrderByPropertyComparer
+OrderByPropertyEntry
+OrderByPropertyEntryEvaluationHelper
+orderEntryKey
+OrderMatrix
+orderMatrix
+OrderObjectBase
+OrderObjectBase/Base class for sort like command implementation
+orderValues
+OriginalColumnInfo
+OriginalFilename
+originalNonscalarType
+originalParameterWasHashTable
+originalScalarType
+OriginalType
+OriginalTypePropertyName
+OriginatingParameter
+OutAttribute
+OutBuffer
+OutCommandInner
+Out-Default
+OutDefaultCommand
+OuterCmdlet
+OuterCmdletCall
+OuterCmdletCallback
+OuterFormatShapeCommandBase
+OuterFormatTableAndListBase
+OuterFormatTableBase
+out-file
+OutFile_Action
+OutFile_Action+
+OutFile_FileOpenFailure
+OutFile_FileOpenFailure;
+OutFileCommand
+Out-GridView cmdlet
+Out-GridView requires .NET Framework 3.5 Service Pack 1. If you are running Windows Server 2008 R2, you must use Server Manager to install or configure ".NET Framework 3.5.1". For other Windows operating systems, please install .NET Framework 3.5.1 from: http://go.microsoft.com/fwlink/?LinkId=124150. After .NET Framework 3.5.1 is installed, close all Windows PowerShell windows, and then open a new Windows PowerShell window to use the Out-GridView cmdlet.
+OutGridViewCommand
+OutGridViewMethodAddColumnsName
+OutGridViewMethodAddItemName
+OutGridViewMethodGetLastExceptionName
+OutGridViewMethodGetWindowClosedStatusName
+OutGridViewMethodStartWindowName
+OutGridViewWindowClassName
+OutHostCommand
+out-lineoutput
+Out-Lineoutput Implementation
+OutLineOutput_InvalidLineOutputParameterType
+OutLineOutput_InvalidLineOutputParameterTypeT
+OutLineOutput_NullLineOutputParameter
+OutLineOutput_OutOfSequencePacket
+OutLineOutputCommand
+OutLineOutputInvalidLineOutputParameterType
+OutLineOutputNullLineOutputParameter
+OutNullCommand
+outOfBand
+OutOfBandFormatViewManager
+OutOfRangeWidthValueError
+OutPrinterCommand
+OutPrinterDisplayStrings
+OutPrinterDisplayStrings.resources
+Output
+output
+Output to File
+outputAssembly
+OutputAssembly
+OutputAssemblyDidNotResolve
+OutputAssemblyType
+OutputContext
+OutputError
+OutputGroupQueue
+OutputManagerInner
+OutputModule
+outputType
+OutputType
+OUTPUTTYPE_REQUIRES_ASSEMBLY
+OutputTypeAttribute
+OutputTypeRequiresOutputAssembly
+outputTypeSpecified
+OutStringCommand
+OutVariable
+OutWindowProxy
+OutXxxString
+package {0}
+PacketInfoData
+PADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADD
+PadLeft
+PADPADP
+PADPADP!|
+PADPADP)
+PADPADP:
+PADPADP^QP
+PADPADP0
+PADPADP3
+PADPADP-a
+PADPADPE
+PADPADPK
+PADPADPs
+PADPADPy"
+PageFooterEntry
+pageFooterEntry
+PageG
+PageHeaderEntry
+pageHeaderEntry
+PageT
+Paging
+paging
+paging is needed
+param
+param(
+ParamArrayAttribute
+paramDef
+Parameter
+parameter
+ParameterAttribute
+ParameterBinderController
+ParameterDeclarationNotAllowedInDataFile
+ParameterFlags
+ParameterInfo
+ParameterizedThreadStart
+parameterList
+ParameterMetadata
+ParameterModifier
+parameterName
+parameterName = {0} parameterValue = {1}
+ParameterProcessor
+parameters
+Parameters
+parameterSet
+ParameterSet
+ParameterSet2ResourceString
+ParameterSetMetadata
+ParameterSetName
+parametersetname
+ParameterSetName
+parameterValue
+parentCmd
+parentCmdlet
+parentContext
+ParentContext
+parentContextInStack
+ParentId
+parentId
+Parse
+ParseCsv
+ParseNextRecord
+Parser
+ParseScriptBlock
+ParseTreeNode
+passThru
+PassThru
+PathInfo
+PathIntrinsics
+Patho
+paths
+pathSet
+PathUtils
+pathWithError
+pattern
+Pattern
+patternsToMatch
+payload
+PayloadCallback
+pd_PrintPage
+PeekNextChar
+PEnter the http proxy credentials that are used for the following connection: {0}
+PercentComplete
+percentComplete
+PerfectMatch
+pipeline
+Pipeline
+PipelineProcessor
+PipelineStoppedException
+PipelineWriter
+pktInfo
+playback
+playbackCall
+Policy.1.0.Microsoft.Ink
+Policy.1.0.Microsoft.Ink, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Policy.1.0.Microsoft.Interop.Security.AzRoles
+Policy.1.0.Microsoft.Interop.Security.AzRoles, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+policy.1.0.System.Web.Extensions
+policy.1.0.System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+policy.1.0.System.Web.Extensions.Design
+policy.1.0.System.Web.Extensions.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Policy.1.2.Microsoft.Interop.Security.AzRoles
+Policy.1.2.Microsoft.Interop.Security.AzRoles, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Policy.1.7.Microsoft.Ink
+Policy.1.7.Microsoft.Ink, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Policy.11.0.Microsoft.Office.Interop.Access
+Policy.11.0.Microsoft.Office.Interop.Access, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Policy.11.0.Microsoft.Office.Interop.Excel
+Policy.11.0.Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Policy.11.0.Microsoft.Office.Interop.Graph
+Policy.11.0.Microsoft.Office.Interop.Graph, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Policy.11.0.Microsoft.Office.Interop.InfoPath
+Policy.11.0.Microsoft.Office.Interop.InfoPath, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Policy.11.0.Microsoft.Office.Interop.InfoPath.Xml
+Policy.11.0.Microsoft.Office.Interop.InfoPath.Xml, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Policy.11.0.Microsoft.Office.Interop.Outlook
+Policy.11.0.Microsoft.Office.Interop.Outlook, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Policy.11.0.Microsoft.Office.Interop.OutlookViewCtl
+Policy.11.0.Microsoft.Office.Interop.OutlookViewCtl, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Policy.11.0.Microsoft.Office.Interop.PowerPoint
+Policy.11.0.Microsoft.Office.Interop.PowerPoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Policy.11.0.Microsoft.Office.Interop.Publisher
+Policy.11.0.Microsoft.Office.Interop.Publisher, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Policy.11.0.Microsoft.Office.Interop.SmartTag
+Policy.11.0.Microsoft.Office.Interop.SmartTag, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Policy.11.0.Microsoft.Office.Interop.Word
+Policy.11.0.Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Policy.11.0.Microsoft.Vbe.Interop
+Policy.11.0.Microsoft.Vbe.Interop, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+Policy.11.0.office
+Policy.11.0.office, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c
+PopGroup
+-Port {0} 
+Position
+Positiond
+PostContent
+postContext
+PostContext
+postLength
+postStartIndex
+powershell
+PowerShell
+powerShell
+powershell
+powershell_ise
+PowerShellStopper
+preConfigure
+preConfigured
+preconfiguredSources
+PreContent
+preContext
+PreContext
+prefix
+Prefix
+PrefixError
+preLength
+PrepareForRemoteObjects
+PrepareViewForRemoteObjects
+Prepend
+PrependPath
+prependPath
+prependString
+PreprocessingState
+PresentationBuildTasks
+PresentationBuildTasks, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+PresentationCFFRasterizer
+PresentationCFFRasterizer, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+PresentationCore
+PresentationCore, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+PresentationFramework
+PresentationFramework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+PresentationFramework.Aero
+PresentationFramework.Aero, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+PresentationFramework.Classic
+PresentationFramework.Classic, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+PresentationFramework.Luna
+PresentationFramework.Luna, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+PresentationFramework.Royale
+PresentationFramework.Royale, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+PresentationUI
+PresentationUI, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+preStartIndex
+previousScript
+primitive
+Print
+PrintDocument
+Printer
+PrinterLineOutput
+printerName
+PrinterName
+PrinterSettings
+printFont
+printFontName
+printFontSize
+printingInitalized
+PrintObject
+PrintPageEventArgs
+PrintPageEventHandler
+Priority
+priority
+private
+Process
+ProcessActiveAssociationList
+ProcessAmbiguousKey
+ProcessBlockNotAllowedInDataFile
+ProcessBreakpoint
+ProcessCachedGroup
+ProcessCachedGroupNotification
+ProcessCachedGroupOnTable
+ProcessCachedGroupOnWide
+ProcessCoreOutOfBand
+ProcessDuplicateHashTableKey
+processed
+ProcessEmptyStringError
+ProcessExpandParameter
+ProcessExpressionParameter
+ProcessFile
+ProcessFormatEnd
+ProcessFormatStart
+ProcessGlobbingCharactersError
+ProcessGroupByParameter
+ProcessGroupEnd
+ProcessGroupStart
+ProcessIllegalHashTableKeyValue
+ProcessIllegalKey
+ProcessIllegalValue
+ProcessingFile
+processingGroup
+ProcessInputObject
+ProcessMissingKeyValue
+ProcessMissingMandatoryKey
+ProcessNonStringHashTableKey
+ProcessNullHashTableKey
+ProcessNullLineOutput
+ProcessObject
+ProcessOutOfBand
+ProcessOutOfBandObjectInsideDocumentSequence
+ProcessOutOfBandObjectOutsideDocumentSequence
+ProcessOutOfBandPayload
+ProcessParameter
+ProcessParameters
+ProcessPayload
+ProcessPendingActions
+ProcessRecord
+ProcessUnknownInvalidClassId
+ProcessUnknownParameterType
+ProcessUnknownViewName
+ProcessWrongTypeLineOutput
+ProcessXmlDocument
+ProcessXmlFromFile
+ProductName
+ProductVersion
+PROFILE_DATA
+Progress
+ProgressActivity
+ProgressRecord
+ProgressRecordType
+ProgressStatusCompleted
+ProgressStatusGetCommandProgress
+ProgressStatusGetCommandStart
+ProgressStatusGetFormatDataProgress
+ProgressStatusGetFormatDataStart
+ProgressStatusProxyGeneration
+Prompt
+prompt
+PromptHandler
+PromptResponse
+promptString
+PromptUser
+Properties
+properties
+Property
+property
+Property "{0}" cannot be found.
+Property "{0}" is not numeric.
+-Property '{0}' cannot be found on this object
+Property missing: {0}
+propertyCollection
+propertyCollector
+propertyComparers
+PropertyEvaluationExpand
+propertyLabels
+propertyLabelsDisplayLength
+propertyMshParameterList
+propertyName
+propertyNames
+PropertyNotFound
+PropertyNotFoundD
+propertyNotFoundMsg
+propertyNotFoundMsgs
+PropertyTokenBase
+PropertyValue
+propertyValue
+props
+propVal
+propValues
+ProtocolVersionWin7RC
+Provider
+providerId
+ProviderInfo
+ProviderInvocationException
+ProviderNames
+ProviderNotFoundException
+providerSpecified
+Proxy creation has been skipped for '{0}' command, because PowerShell couldn't verify safety of a name of one of parameter aliases: '{1}'.
+Proxy creation has been skipped for '{0}' command, because PowerShell couldn't verify safety of a name of one of parameter sets: '{1}'.
+Proxy creation has been skipped for '{0}' command, because PowerShell couldn't verify safety of a name of one of parameters: '{1}'.
+Proxy creation has been skipped for the following command: '{0}', because it would shadow an existing local command.  Use the AllowClobber parameter if you want to shadow existing local commands.
+ProxyAccessType
+-ProxyAccessType {0} 
+-ProxyAuthentication {0} 
+ProxyCommand
+-ProxyCredential ( $host.UI.PromptForCredential( '{0}', '{1}', '{2}', '{3}' ) ) 
+ProxyCredentialParameterTemplate
+ProxyCredentialRequestBody
+ProxyModuleDescription
+ProxyRunspaceNameTemplate
+ps1xml
+PSAliasProperty
+PSArgumentException
+PSArgumentNullException
+PSArgumentOutOfRangeException
+PSBreakpoint
+PSBreakpoint:BreakpointIdNotFound
+PSBreakpointCommandBase
+PSCallStack
+PSCmdlet
+PSCodeMethod
+PSCodeProperty
+PSControl
+PSCredential
+PSCustomObject
+PSDataCollection`1
+PSDataStreams
+PSDriveInfo
+PSEmailServer
+PSEventArgs
+PSEventArgsCollection
+PSEventManager
+PSEventReceivedEventHandler
+PSEventSubscriber
+PSHost
+PSHostListener
+PSHostRawUserInterface
+PSHostTraceListener
+PSHostUserInterface
+PSInvalidOperationException
+PSLanguageMode
+PSListModifier
+PSLocalEventManager
+psm1fileName
+PSMemberInfo
+PSMemberInfoCollection`1
+PSMemberInfoIntegratingCollection`1
+PSMemberInfoInternalCollection`1
+PSMemberSet
+PSMemberTypes
+PSMemberViewTypes
+PSMethod
+PSMethodInfo
+PSModuleInfo
+PSNoteProperty
+PSNotSupportedException
+psObj
+PSObject
+PSObjectDisposedException
+PSObjectHasNotes
+PSObjectHelper
+PSObjectIsEnum
+PSObjectIsOfExactType
+PSObjectTag
+PSObjectTypeName
+PSPath
+PsPath
+PSPath
+PSPrimitiveDictionary
+PSPropertyInfo
+PSPropertySet
+PSReference
+PSScriptMethod
+PSScriptProperty
+PSSenderInfo
+PSSession
+PSSnapIn
+PSSnapin
+PSSnapInInfo
+PSSnapins
+PSSnapInTypeAndFormatErrors
+PSSQMAPI
+PSTraceSource
+PSTraceSourceOptions
+PSUtilityPSSnapIn
+PSVariable
+PSVariableIntrinsics
+PThe option "Context" is invalid when searching results piped from Select-String.
+pThis command cannot be executed because '{0}' is empty or blank. Please specify CSSUri and then run the command.
+PushGroup
+qExtended type definition has been skipped for '{0}' type, because its name didn't match FormatTypeName parameter.
+QThis Windows PowerShell snap-in contains utility Cmdlets used to manipulate data.
+queue
+Queue
+Queue`1
+Quiet
+quiet
+Random
+RandomListItem
+RandomListItemParameterSet
+RandomListItemParameterSetT
+RandomNumber
+RandomNumberParameterSet
+RandomNumberParameterSetc
+RandomNumberParameterSetF
+RandomNumberParameterSetT
+rawMshParameterList
+RawTextFormatEntry
+rawUserInterface
+ReachFramework
+ReachFramework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+ReadAll
+ReadAllText
+ReadChar
+ReaderWriterLock
+ReadHostCommand
+ReadKey
+ReadKeyOptions
+ReadLine
+ReadLineAsSecureString
+ReadList
+ReadListHelper
+ReadObject
+readOnlyFileInfo
+ReadOnlyPSMemberInfoCollection`1
+ReadTillNextDelimiter
+ReadToEnd
+ReadTypeInformation
+Reason
+receivedEvent
+receivedEventLock
+ReceivedEvents_PSEventReceived
+RecommendedAction
+Rectangle
+ReferencedAssemblies
+referencedAssemblies
+referenceEntries
+referenceEntryBacklog
+ReferenceEquals
+referenceList
+ReferenceObject
+referenceObjectIndex
+Regcode
+Regcode, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Regex
+RegexOptions
+regexPattern
+Register
+RegisterCommandDefault
+RegisterEngineEventCommand
+RegisterModuleCleanUp
+RegisterObjectEventCommand
+Registry
+RegistryKey
+RehydrateCommandMetadata
+RehydrateDictionary
+RehydrateList
+RehydrateParameterMetadata
+RehydrateParameterType
+RelativePath
+ReleaseReaderLock
+ReleaseWriterLock
+ReliabilityContractAttribute
+remoteCommandInfo
+RemoteDebuggerNotSupported
+RemoteDebuggerNotSupported`
+RemoteException
+RemoteRunspace
+remoteRunspaceInfo
+RemoteRunspacePoolInternal
+remoteTypeDefinition
+RemotingConstants
+RemotingDecoder
+RemotingNotSupported
+Remove
+Remove Variable
+remove_PSEventReceived
+removeAllListenersSet
+removeAllListenersSet.
+RemoveAt
+RemoveBreakpoint
+RemoveDuplicates
+RemoveEventCommand
+RemoveFileListener
+removeFileListeners
+removeFileListenersSet
+removeFileListenersSet:
+RemoveListener
+removeListeners
+RemoveListenersByName
+RemovePSBreakpointCommand
+RemoveStackFrame
+RemoveVariable
+RemoveVariableAction
+RemoveVariableActionX
+RemoveVariableAtScope
+RemoveVariableCommand
+RemoveVariableTarget
+RemoveVariableTargeti
+RenamingMultipleResults
+Replace
+ReplaceSet-
+ReportCannotSpecifyViewAndProperty
+ReportFileOpenFailure
+ReportSkippedCommands
+ReportWrongExtension
+ReportWrongProviderType
+RequiresBuffering
+Reset
+ResetTracer
+ResetTracing
+ResolveControlReference
+resolvedCommandName
+ResolvedCommandName
+ResolvedExpression
+resolvedNameMshParameters
+ResolveFilePath
+ResolveFilePaths
+ResolveNames
+ResolveRootedFilePath
+resourceId
+resourceIdAndErrorId
+ResourceManagerCache
+ResourceManagerCacheHelper
+ResourcesBaseName
+ResourcesFileName
+RestartPowerShell
+RestrictedLanguageModeChecker
+result
+result = {0}
+resultErrorManager
+RetrieveFormattingHint
+retVal
+right
+RightAlign
+rightIndentation
+RightIndentation
+rightIndentation
+RootElementTag
+rowItemDefinitionList
+RowNumber
+RunExpression
+RunInstallerAttribute
+Runspace
+RunspaceConfiguration
+RunspaceConfigurationEntryCollection`1
+RunspaceConnectionInfo
+RunspaceGeneratorMap
+runspaceGeneratorMapLock
+RunspaceIdNoteProperty
+RunspacePool
+RunspaceState
+runspaceStateChangedScript
+RunspaceStateEventArgs
+RunspaceStateInfo
+RuntimeCompatibilityAttribute
+runtimeException
+RuntimeException
+runtimeException
+RuntimeFieldHandle
+RuntimeHelpers
+RuntimeTypeHandle
+SafeCreateInstance
+SafeGetCSharpVersion3Compiler
+SafeToString
+ScalarTypeColumnInfo
+ScalarTypeHeader
+ScanEventQueue
+scope
+Scope
+ScopedItemLookupPath
+ScopedItemOptions
+screenColumns
+screenColumnWidth
+ScreenInfo
+script
+Script
+ScriptBlock
+ScriptT
+scriptText
+SearchPath
+SearchResolutionOptions
+SearchXMLPrefixNullError
+second
+Second
+secondaryNames
+SecondaryNames
+secondEntry
+Seconds
+seconds
+Seconds
+SecondsH
+secondSpecified
+SecondsRemaining
+secondsRemaining
+SecondsT
+SecondValue
+SectionSeparator
+SecureString
+SecurityAction
+SecurityException
+SecurityPermissionAttribute
+SeekOrigin
+Select
+Selected.
+SelectNodes
+SelectObject
+Select-Object
+SelectObject3Class that has select-object command implementation
+SelectObjectCommand
+SelectObjectException
+SelectObjectExpressionParameterDefinition
+SelectObjectQueue
+selectObjectQueue
+SelectObjectStrings
+SelectObjectStrings.resources
+selector
+SelectStringCommand
+SelectStringCommand)trace switch for the select-string cmdlet
+SelectViewGeneratorFromProperties
+SelectViewGeneratorFromViewDefinition
+SelectXmlCommand
+SelectXMLCommand
+SelectXmlInfo
+SendCommentOutOfBand
+Sender
+sender
+SendMailMessage
+SendMailMessageStrings
+SendMailMessageStrings.resources
+SendMessageCommand
+separator
+Separator
+separatorCharacterCount
+separatorWidth
+SerializableAttribute
+serialization
+Serialization
+SerializationInfo
+SerializationMethod
+Serialize
+SerializeAsStream
+SerializeAsString
+SerializeProperties
+Serializer
+ServerRemoteHost
+Session
+-Session for implicit remoting module at {{0}}
+SessionState
+SessionStateCategory
+SessionStateEntryVisibility
+SessionStateException
+SessionStateFormatEntry
+SessionStateInternal
+SessionStateScope
+SessionStateTypeEntry
+SessionStateUtilities
+Set Alias
+Set Variable
+set_Action
+set_Activity
+set_Add
+set_Adjust
+set_AllMatches
+set_AllowClobber
+set_Append
+set_AppendPath
+set_ArgumentList
+set_As
+set_AsHashTable
+set_AsSecureString
+set_AssemblyName
+set_AsString
+set_Attachments
+set_Attributes
+set_AutoSize
+set_Average
+set_BackgroundColor
+set_BaseDirectory
+set_Bcc
+set_BindingVariable
+set_Body
+set_BodyAsHtml
+set_BodyEncoding
+set_Breakpoint
+set_CaseSensitive
+set_Category
+set_CategoryActivity
+set_CategoryReason
+set_CategoryTargetName
+set_CategoryTargetType
+set_Cc
+set_Character
+set_Characters
+set_CloseOutput
+set_CodeDomProvider
+set_Column
+set_Command
+set_CommandName
+set_CommandType
+set_ComObject
+set_CompilerOptions
+set_CompilerParameters
+set_Completed
+set_ConformanceLevel
+set_Content
+set_Context
+set_Count
+set_Credential
+set_Credentials
+set_CssUri
+set_Culture
+set_CultureInfo
+set_CurrentOperation
+set_Date
+set_Day
+set_Days
+set_Debugger
+set_DebuggerListener
+set_DebugPreference
+set_Definition
+set_Delimiter
+set_DeliveryNotificationOption
+set_DeliveryNotificationOptions
+set_Depth
+set_Descending
+set_DescendingOrder
+set_Description
+set_DifferenceObject
+set_DisableNameChecking
+set_DisplayError
+set_DisplayHint
+set_DisplayPostContext
+set_DisplayPreContext
+set_EnableSsl
+set_Encoding
+set_End
+set_ErrorDetails
+set_ErrorId
+set_ErrorRecord
+set_EventArguments
+set_EventIdentifier
+set_EventName
+set_Exception
+set_Exclude
+set_ExcludeDifferent
+set_ExcludeFilters
+set_ExcludeProperty
+set_Expand
+set_ExpandProperty
+set_Expression
+set_ExternalErrorOutput
+set_ExternalSuccessOutput
+set_FileListener
+set_FileName
+set_FilePath
+set_First
+set_Force
+set_ForceWrite
+set_ForegroundColor
+set_Format
+set_Formatting
+set_FormatTypeName
+set_Fragment
+set_From
+set_GenerateExecutable
+set_GenerateInMemory
+set_Generator
+set_GroupBy
+set_HasMorePages
+set_Head
+set_Header
+set_HideTableHeaders
+set_Hour
+set_Hours
+set_Id
+set_IgnoreCase
+set_IgnoreWarnings
+set_IgnoreWhiteSpace
+set_Include
+set_IncludeDebugInformation
+set_IncludeEqual
+set_IncludeFilters
+set_IncludeScriptBlock
+set_Indent
+set_Index
+set_InputObject
+set_IsBodyHtml
+set_IsGetCommandMetadataSpecialPipeline
+set_Item
+set_Language
+set_LanguageMode
+set_Last
+set_Line
+set_LineNumber
+set_LineOutput
+set_Lines
+set_List
+set_ListenerOption
+set_ListenerOptionsInternal
+set_Matches
+set_Maximum
+set_MemberDefinition
+set_MemberType
+set_MergeUnclaimedPreviousErrorResults
+set_Message
+set_MessageData
+set_Milliseconds
+set_Minimum
+set_Minute
+set_Minutes
+set_Mode
+set_Module
+set_Month
+set_Name
+set_NameInternal
+set_Namespace
+set_NoClobber
+set_Node
+set_NoElement
+set_NoNewline
+set_NotMatch
+set_NoTypeInformation
+set_Object
+set_OmitXmlDeclaration
+set_OnRemove
+set_OnType
+set_Option
+set_Options
+set_OptionsInternal
+set_OutputAssembly
+set_OutputModule
+set_OutputType
+set_Paging
+set_ParameterType
+set_ParentActivityId
+set_ParentId
+set_PassThru
+set_Path
+set_Pattern
+set_PercentComplete
+set_Position
+set_PostContent
+set_PostContext
+set_PreContent
+set_PreContext
+set_Prefix
+set_PrependPath
+set_PreserveInvocationInfoOnce
+set_PrinterName
+set_Priority
+set_Prompt
+set_Property
+set_PSHost
+set_PSHostListener
+set_Quiet
+set_Reason
+set_RecommendedAction
+set_RecordType
+set_ReferencedAssemblies
+set_ReferenceObject
+set_Remove
+set_RemoveFileListener
+set_RemoveListener
+set_Replace
+set_Runspace
+set_Scope
+set_Script
+set_Second
+set_Seconds
+set_SecondsRemaining
+set_SecondValue
+set_Sender
+set_Separator
+set_Session
+set_SetSeed
+set_ShowError
+set_ShowErrorsAsMessages
+set_ShowErrorsInFormattedOutput
+set_SimpleMatch
+set_Skip
+set_SmtpServer
+set_SourceId
+set_SourceIdentifier
+set_Start
+set_Static
+set_Status
+set_Stream
+set_Strict
+set_StringData
+set_Subject
+set_SubjectEncoding
+set_SubscriptionId
+set_Sum
+set_SupportedCommand
+set_SyncWindow
+set_TargetName
+set_TargetObject
+set_TargetType
+set_Timeout
+set_Title
+set_To
+set_TraceOutputOptions
+set_TreatWarningsAsErrors
+set_Type
+set_TypeDefinition
+set_TypeName
+set_UFormat
+set_UICulture
+set_Unique
+set_UseCulture
+set_UseDefaultCredentials
+set_UseSsl
+set_UsingNamespace
+set_Value
+set_ValueOnly
+set_Variable
+set_Version
+set_View
+set_Visibility
+set_Width
+set_Word
+set_Words
+set_Wrap
+set_WriteErrorStream
+set_Xml
+set_XPath
+set_Year
+set-alias -Name:"{0}" -Value:"{1}" -Description:"{2}" -Option:"{3}"
+SetAliasAction
+SetAliasCommand
+SetAliasItem
+SetAliasItemAtScope
+SetAliasTarget
+SetAliasTemplate
+SetApartmentState
+SetCommandLineParameters
+SetDateCommand
+SetDateCommand.Class that has Set-Date command implementation
+SetDelimiter
+SetEntries
+SetFlags
+SetInvalidBackgroundColor
+SetInvalidForegroundColor
+SetInvocationInfo
+SetLength
+SetLocalTime
+SetOptions
+SetParameterType
+SetProperty
+SetPSBreakpoint
+SetPSBreakpoint:FileDoesNotExist
+SetPSBreakpoint:LineLessThanOne
+SetPSBreakpoint:RemoteDebuggerNotSupported
+SetPSBreakpoint:WrongExtension
+SetPSBreakpoint6Class that has Set-PSBreakpoint command implementation
+SetPSBreakpointCommand
+SetPSCustomObject
+SetPublicKeyToken
+setSeed
+SetSeed
+SetTraceListenerOptions
+SetTracer
+SetTraceSourceCommand
+SetUpActiveProperties
+SetupActiveProperties
+SetUpActiveProperty
+SetValueException
+SetVariable
+set-variable
+SetVariableAction
+SetVariableActiont
+SetVariableAtScope
+SetVariableCommand
+SetVariableTarget
+Severity
+shape
+ShapeInfo
+shapeInfo
+ShapeInfoOnFormatContext
+shapeParameters
+ShapeSpecificParameters
+shortName
+shouldProcess
+ShouldProcess
+ShouldProcessOutOfBand
+ShouldShowComputerNameProperty
+ShowComputerNameNoteProperty
+ShowError
+showErrorsAsMessages
+showErrorsInFormattedOutput
+ShowWindow
+ShutDown
+SideIndicator
+sideIndicator
+SideIndicator
+SideIndicatorDifference
+SideIndicatorMatch
+SideIndicatorPropertyName
+SideIndicatorReference
+SimpleFormat
+SimpleMatch
+simpleMatch
+SizeF
+-SkipCACheck 
+-SkipCNCheck 
+-SkipRevocationCheck 
+Sleep
+sList
+SmartToString
+SMDiagnostics
+SMDiagnostics, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+SmtpClient
+SmtpException
+SmtpFailedRecipientsException
+smtpserver
+SmtpServer
+soapsudscode
+soapsudscode, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5
+SortedDictionary`2
+SortObject
+SortObject1Class that has sort-object command implementation
+SortObjectCommand
+SortObjectExpressionParameterDefinition
+SortObjectParameterDefinitionKeys
+SortObjectStrings
+SortObjectStrings.resources
+source
+source: {0}, prop {1} , depth {2}
+SOURCE_CODE_ERROR
+sourceCache
+sourceCode
+sourceId
+SourceId
+sourceIdentifier
+SourceIdentifier
+SourceIdentifierNotFound
+sourceNames
+sourceObject
+sourceValue
+Split
+SplitLines
+SplitLinesAccumulator
+stack
+Stack
+Stack`1
+StackFrame
+StackOverflowException
+STAComCreateThreadProc
+staleObject
+staleObjectPropertyName
+StaleObjectPropertyName
+Start
+start
+startCol
+startColumn
+StartData
+StartGroup
+startGroup
+startIndex
+startNew
+StartSleepCommand
+StartSleepCommand1Class that has Start-Sleep command implementation
+startSpecified
+StartsWith
+startTime
+StartWindow
+startWindowMethod
+State
+state
+StateChanged
+StatementListNode
+Static
+staticParameter
+Statistics
+statistics
+status
+Status
+statusDescription
+StatusParameterHelpMessage
+StatusParameterHelpMessageE
+stdole
+stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+StepCommand
+StopAsync
+stopping
+Stopping
+StopProcessing
+stopWatch
+Stopwatch
+storedTraceSourceState
+Stream
+stream
+Stream
+streamedObjectCount
+StreamingContext
+StreamingDequeue
+StreamingTextWriter
+StreamReader
+StreamWriter
+strict
+Strict
+String
+stringBuffer
+StringBuilder
+StringCollection
+StringComparer
+StringComparison
+StringData
+StringEnumerator
+StringFileInfo
+StringFormat
+StringFormatError
+stringId
+stringLen
+StringManipulationHelper
+stringsBaseName
+StringsBaseName
+StringUtil
+StringValuesBuffer
+StructLayoutAttribute
+strValue
+subject
+Subject
+SubPipelineManager
+SubscribeEvent
+subscriptionId
+SubscriptionId
+Substring
+Subtract
+success
+SupportedCommand
+SupportsShouldProcess
+SuppressFinalize
+suppressHeader
+SwitchParameter
+SynchronousExecute
+syncObject
+syncRoot
+SyncWindow
+sysglobl
+sysglobl, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System
+System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.__ComObject
+System.AddIn
+System.AddIn, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.AddIn.Contract
+System.AddIn.Contract, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Boolean
+System.Byte
+System.Char
+System.CodeDom.Compiler
+System.Collections
+System.Collections.Generic
+System.Collections.Generic.IEnumerator<T>.Current
+System.Collections.Generic.IEnumerator<T>.get_Current
+System.Collections.IEnumerable.GetEnumerator
+System.Collections.IEnumerator.Current
+System.Collections.IEnumerator.get_Current
+System.Collections.IEnumerator.Reset
+System.Collections.ObjectModel
+System.Collections.Specialized
+System.ComponentModel
+System.Configuration
+System.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Configuration.Install
+System.Configuration.Install, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Core
+System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Core.dll
+System.Data
+System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Data.DataSetExtensions
+System.Data.DataSetExtensions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Data.Linq
+System.Data.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Data.OracleClient
+System.Data.OracleClient, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Data.SqlXml
+System.Data.SqlXml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Decimal
+System.Deployment
+System.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Design
+System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Diagnostics
+System.DirectoryServices
+System.DirectoryServices, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.DirectoryServices.AccountManagement
+System.DirectoryServices.AccountManagement, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.DirectoryServices.Protocols
+System.DirectoryServices.Protocols, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.dll
+System.Double
+System.Drawing
+System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Drawing.Design
+System.Drawing.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Drawing.Printing
+System.EnterpriseServices
+System.EnterpriseServices, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Globalization
+System.IdentityModel
+System.IdentityModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.IdentityModel.Selectors
+System.IdentityModel.Selectors, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.IDisposable.Dispose
+System.Int16
+System.Int32
+System.Int64
+System.IntPtr
+System.IO
+System.IO.Log
+System.IO.Log, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Management
+System.Management, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Management.Automation
+System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Management.Automation.AliasInfo, System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Management.Automation.Breakpoint, System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Management.Automation.CallStackFrame, System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Management.Automation.Host
+System.Management.Automation.Host.PSHost, System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Management.Automation.Internal
+System.Management.Automation.Internal.Host
+System.Management.Automation.PSEventArgs, System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Management.Automation.PSEventSubscriber, System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Management.Automation.Remoting
+System.Management.Automation.resources
+System.Management.Automation.resources, Version=1.0.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35
+System.Management.Automation.Runspaces
+System.Management.Automation.Runspaces.Internal
+System.Management.Instrumentation
+System.Management.Instrumentation, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Messaging
+System.Messaging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Net
+System.Net, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Net.Mail
+System.Printing
+System.Printing, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Reflection
+System.Resources
+System.Runtime.CompilerServices
+System.Runtime.ConstrainedExecution
+System.Runtime.InteropServices
+System.Runtime.Remoting
+System.Runtime.Remoting, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Runtime.Serialization
+System.Runtime.Serialization, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Runtime.Serialization.Formatters.Soap
+System.Runtime.Serialization.Formatters.Soap, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.SByte
+System.Security
+System.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Security.Authentication
+System.Security.Permissions
+System.Security.Permissions.SecurityPermissionAttribute, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Security.Permissions.SecurityPermissionFlag, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Security.SecureString
+System.ServiceModel
+System.ServiceModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.ServiceModel.Install
+System.ServiceModel.Install, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.ServiceModel.WasHosting
+System.ServiceModel.WasHosting, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.ServiceModel.Web
+System.ServiceModel.Web, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.ServiceProcess
+System.ServiceProcess, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Single
+System.Speech
+System.Speech, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.String
+System.Text
+System.Text.RegularExpressions
+System.Threading
+System.Transactions
+System.Transactions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.UInt16
+System.UInt32
+System.UInt64
+System.Web
+System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Web.Extensions
+System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Web.Extensions.Design
+System.Web.Extensions.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Web.Mobile
+System.Web.Mobile, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Web.RegularExpressions
+System.Web.RegularExpressions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Web.Services
+System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Windows.Forms
+System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Windows.Presentation
+System.Windows.Presentation, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Workflow.Activities
+System.Workflow.Activities, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Workflow.ComponentModel
+System.Workflow.ComponentModel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Workflow.Runtime
+System.Workflow.Runtime, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.WorkflowServices
+System.WorkflowServices, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Xml
+System.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Xml.Linq
+System.Xml.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+SystemException
+SystemTime
+systime
+TabExpansionString
+Table
+tableBody
+TableColumnHeaderDefinition
+TableColumnInfo
+tableColumnInfoList
+TableControl
+TableControlBody
+TableFormattingHint
+TableHeaderDefinition
+TableHeaderInfo
+TableOutputContext
+TableOutputContextBase
+TableRowDefinition
+TableRowEntry
+TableRowItemDefinition
+TableSpecificParameters
+tableView
+TableView
+TableViewGenerator
+tableWidth
+TableWriter
+tableWriter
+target
+TargetInvocationException
+TargetName
+targetObject
+TargetObject
+TargetType
+TaskScheduler
+TaskScheduler, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+TaskScheduler.resources
+TaskScheduler.resources, Version=6.0.0.0, Culture=en, PublicKeyToken=31bf3856ad364e35
+TCannot add type. The -MemberDefinition parameter is not supported for this language.
+TeeObject
+TeeObject0Class that has tee-object command implementation
+TeeObjectCommand
+TerminatingErrorContext
+terminatingErrorContext
+TerminatingErrorContext
+textColumns
+TextCountUtilities
+textEncoding
+TextEncodingType
+TextMeasure
+TextMeasureInfo
+TextMeasurePropertyNotFound
+TextParameterSet
+TextReader
+TextToken
+TextWriter
+TextWriterLineOutput
+TextWriterTraceListener
+TGetting formatting & output information from remote session ... {0} objects received
+The *-alias commands
+The FileName parameter was not specified.  The FileName parameter is required when Import-LocalizedData is not called from a script file.
+The import-localizeddata commands
+The object of type "{0}" is not valid or not in the correct sequence. This is likely caused by a user-specified "{1}" command which is conflicting with the default formatting.
+The object written to the pipeline is an instance of the type "{0}" from the component's primary interop assembly. If this type exposes different members than the IDispatch members, scripts written to work with this object might not work if the primary interop assembly is not installed.
+The objects grouped by this property cannot be expanded since there is a duplication of the key. Please give a valid property and try again.
+The SecondValue parameter is not necessary for a member of type "{0}" and should not be specified. Do not specify the SecondValue parameter when adding members of this type.
+The SecondValue parameter should not be null for a member of type "{0}". Specify a non-null value for the SecondValue parameter when adding members of this type.
+The Value and SecondValue parameters should not both be null for a member of type "{0}". Specify a non-null value for one of the two parameters.
+The Value parameter should not be null for a member of type "{0}". Specify a non-null value for the Value parameter when adding members of this type.
+there is a valid raw interface
+This command cannot be executed because the file path '{0}' is not valid. Please provide a valid file path and then run the command.
+This command cannot be executed because the prefix value in the Namespace parameter is null. Provide a proper prefix and then run the command again.
+This PSSnapIn contains utility cmdlets used to manipulate data.
+thisObject
+Thread
+ThrowFileOpenError
+ThrowIfNotVisible
+ThrowMinGreaterThanOrEqualMax
+ThrowParameterBindingException
+ThrowTerminatingError
+THtag
+Time0
+Timeout
+timeoutInSeconds
+TimeSpan
+Title
+title
+tmp_{0}_{1}
+ToArray
+ToInt32
+Token
+TopCommentTemplate
+ToString
+ToStringColumnInfo
+ToStringValue
+ToStringValuePropertyName
+totalRecordCount
+ToUpper
+Trace
+trace switch for *-host and related cmdlets
+trace switch for the select-string cmdlet
+TraceCommandBase
+TraceCommandCommand
+TraceCommandStrings
+TraceCommandStrings.resources
+TraceConstructor
+TraceDispose
+TraceException
+TraceFileOnly
+TraceFileOnly0
+TraceListener
+TraceListenerCollection
+TraceListenerCommandBase
+TraceMethod
+TraceOptions
+traceOptions
+traceOptionsSpecified
+TracePipelineWriter
+TraceProperty
+Tracer
+tracer
+TraceScope
+TraceSingleFileOnly
+TraceSource
+TraceSourceAttribute
+TraceSourceNotFound
+TrackEOF
+TrackLine
+TrackMatch
+Transform
+Translation
+TraversalInfo
+TreatAsLeafNode
+TreatAsScalarType
+TrimToFit
+TRtag
+TruncateAtNewLine
+TryConvertTo
+TryGetValue
+TryParse
+TryPathGet
+TThis command cannot find a matching alias because alias with {0} '{1}' do not exist.
+TurnOnTracing
+TWriter_ColumnsRemovedWarning
+TWriter_OneColumnRemovedWarning
+TYou must specify the InputObject parameter when the Property parameter is specified.
+TYou must specify the Property parameter when the InputObject parameter is specified.
+TYPE_ALREADY_EXISTS
+TypeAlreadyExists
+TypeAttribute
+typeCache
+TypeColumnName
+TypeConfigurationEntry
+TypeData
+typeDefinition
+TypeDefinition
+TypeDefinitionNotPublic
+typeDefinitions
+TypeGroupDefinition
+typeGroupDefinitionList
+typeGroupSection
+TypeGroupsSection
+typeInfoDataBase
+TypeInfoDataBase
+typeInfoDatabase
+TypeInfoDataBaseManager
+TypeK
+TypeLoadException
+TypeMatch
+TypeMatchItem
+typename
+typeName
+TypeName
+typeName
+TypeName
+TypeNameColumnInfo
+typeNames
+typeNamespace
+TypeNotFound
+typeOfCommand
+TypeOrGroupReference
+TypeReference
+typeReferenceList
+types
+typesAlreadyDisplayed
+TypesAppendPathException
+TypeSerializationInfo
+TypesPrependPathException
+TypesXmlUpdateException
+TypeT
+TypeTable
+UFormat
+uFormat
+UFormat
+UFormatDateString
+UIAutomationClient
+UIAutomationClient, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+UIAutomationClientsideProviders
+UIAutomationClientsideProviders, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+UIAutomationProvider
+UIAutomationProvider, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+UIAutomationTypes
+UIAutomationTypes, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+UICulture
+-UICulture '{0}' 
+UnauthorizedAccessException
+Unescape
+unexpandedParameterList
+Unicode
+unicode
+Unicode
+UnicodeEncoding
+Unique
+unique
+Unique
+UniqueByTypeK
+UniquePSObjectHelper
+uniques
+UniversalResourceName
+Unknown
+Unknown class Id {0}.
+UnknownParameterTypeError
+UnknownViewNameError
+Unregister
+unregisterEventCleanUpScript
+UnregisterEventCommand
+Unsubscribe
+UnsubscribeEvent
+Update
+Update FormatData
+Update TypeData
+UpdateData
+UpdateData_WrongExtension
+UpdateData_WrongProviderError
+UpdateData_WrongProviderErrorG
+UpdateData4Base class for update-typedata and update-formatdata
+UpdateDataBase
+UpdateDataStrings
+UpdateDataStrings.resources
+UpdateFormatDataAction
+UpdateFormatDataCommand
+UpdateFormatDataCommand7Class that has update-FormatData command implementation
+UpdateGroupingKeyValue
+UpdateListCommand
+UpdateListStrings
+UpdateListStrings.resources
+UpdateObjectCount
+UpdateQueue
+UpdateTarget
+UpdateTypeDataAction
+UpdateTypeDataCommand
+UpdateTypeDataCommand5Class that has update-typeData command implementation
+UseCulture
+UseCultureT
+user = {0}
+UseSsl
+usessl
+-useSSL
+useToStringFallback
+-UseUTF16 
+Using
+using 
+using System.Runtime.InteropServices;
+using System;
+UsingNamespace
+usingNamespace
+usingNamespaceSet
+UTF32
+utf32
+UTF8Encoding
+Util class for sort like command implementation
+UtilityCommon
+UtilityCommonStrings
+UtilityCommonStrings.resources
+UtilityMshSnapInResources,Description
+UtilityMshSnapInResources,Vendor
+UtilityMshSnapInResources.resources
+v2.0.50727
+ValidateCountAttribute
+ValidateCurrentFormattingState
+ValidateNotNullAttribute
+ValidateNotNullOrEmptyAttribute
+ValidatePropertyNames
+ValidateRangeAttribute
+ValidateSetAttribute
+value
+Value
+value
+'Value "{0}" for key "{1}" should be >0.
+value__
+value1
+Value1AndValue2AreNotBothNull
+Value1Prompt
+Value1ShouldNotBeNull
+value2
+Value2ShouldNotBeNull
+Value2ShouldNotBeSpecified
+ValueCollection
+ValueColumnName
+ValueFromPipeline
+ValueFromPipelineByPropertyName
+ValueFromRemainingArguments
+valueIsFormalParameter
+valueList
+ValueOnly
+valueOnly
+valueRehydrator
+values
+Values
+ValueType
+VarFileInfo
+Variable
+variable
+Variable
+Variable+
+VariableAccessMode
+VariableAlreadyExists
+VariableBreakpoint
+VariableCommandBase
+VariableCommands
+VariableCommands%Base Class for all variable commands.
+VariableCommandStrings
+VariableCommandStrings.resources
+VariableNotFound
+VariableT
+varNames
+varValue
+VBCodeProvider
+Vendor
+VendorResource
+Vendorw
+Verbose
+VerboseRecord
+Verify
+VerifyAndNormalizeParameter
+VerifyDataNotNull
+VerifyFont
+VerifyHashTable
+VerifyRange
+Version
+View name {0} cannot be found.
+ViewDefinition
+viewDefinitionList
+ViewDefinitions
+ViewDefinitionsSection
+viewDefinitionsSection
+ViewGenerator
+viewGenerator
+viewManager
+viewName
+ViewSelectedBy
+viewType
+Visibility
+VisualBasic
+vjscor
+vjscor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+VJSharpCodeProvider
+VJSharpCodeProvider, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+vjsjbc
+vjsjbc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+vjslib
+vjslib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+vjslibcw
+vjslibcw, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+VJSSupUILib
+VJSSupUILib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+vjsvwaux
+vjsvwaux, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+vjswfc
+vjswfc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+VjsWfcBrowserStubLib
+VjsWfcBrowserStubLib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+vjswfccw
+vjswfccw, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+vjswfchtml
+vjswfchtml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+VS_VERSION_INFO
+VSLangProj
+VSLangProj, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+VSLangProj2
+VSLangProj2, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+VSLangProj80
+VSLangProj80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+VSTOPersist.Interop
+VSTOPersist.Interop, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+VSTOStorageWrapper.Interop
+VSTOStorageWrapper.Interop, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+VsWebSite.Interop
+VsWebSite.Interop, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+WaitEventCommand
+WaitHandle
+waitHandle
+WaitOne
+WarnFilterContext
+Warning
+WarningAction
+WarningMismatchedImplicitRemotingHash
+WarningRecord
+WarningVariable
+wasFiltered
+WebDev.WebHost
+WebDev.WebHost, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+wideBody
+WideControl
+WideControlBody
+WideControlEntryDefinition
+WideFormattingHint
+WideOutputContext
+WideSpecificParameters
+WideViewEntry
+WideViewGenerator
+WideViewHeaderInfo
+width
+Width
+WidthEntryDefinition
+WidthEntryKey
+WidthOutOfRange
+-Wildcard characters are not allowed in "{0}".
+WildcardOptions
+WildcardPattern
+wildcardPatternsStrings
+Win32Exception
+Window
+windowProxy
+WindowProxy
+WindowsApplication
+WindowsBase
+WindowsBase, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+WindowsErrorReporting
+WindowsFormsIntegration
+WindowsFormsIntegration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+WithException0
+WithExceptionT
+Words
+words
+WpfNotAvailable
+WrapIndex
+WrapNonExceptionThrows
+Write
+WriteAliasCommandBase
+WriteAlreadyExistingPropertyError
+WriteAttribute
+WriteAttributeString
+writeCall
+WriteCallback
+WriteColumns
+WriteCsvLine
+WriteDebug
+WriteDebugCommand
+WriteDebugCommand1Class that has write-debug command implementation
+WriteDebugLine
+WriteDictionary
+WriteElementString
+writeEnclosingMemberSetElementTag
+WriteEndElement
+WriteEnumerable
+WriteError
+writeError
+Write-Error
+WriteErrorCommand
+WriteErrorCommand1Class that has Write-Error command implementation
+WriteErrorException
+writeErrorIfMatchNotFound
+WriteErrorLine
+WriteErrorRecords
+WriteErrorStream
+writeErrorStream
+WriteErrorStrings
+WriteErrorStrings.resources
+WriteFormatStartData
+WriteFormattedResourceString
+WriteHeader
+WriteHostCommand
+WriteInternalErrorMessage
+WriteLine
+writeLineCall
+WriteLineCallback
+WriteLineHelper
+writeLineHelper
+WriteLineHelper
+WriteLineInternal
+WriteListEntry
+WriteMatches
+WriteMemberInfoCollection
+WriteNonTerminatingError
+WriteNull
+WriteObject
+WriteObjectCall
+WriteObjectCallback
+WriteObjectString
+WriteOneObject
+WriteOnePrimitiveKnownType
+WriteOrThrowErrorCommand
+WriteOutputCommand
+WriteOutputCommand2Class that has Write-output command implementation
+WritePayloadObject
+WritePrimitiveTypePSObjectWithNotes
+WriteProgress
+write-progress cmdlet
+WriteProgressCommand
+WriteProgressResourceStrings
+WriteProgressResourceStrings.resources
+WriteProgressResourceStringsT
+WriteProperties
+WriteProperty
+WritePropertyName
+WritePropertyNotFoundError
+WritePropertyValue
+WritePropertyWithNullValue
+WritePSObjectProperties
+writer
+Writer
+writer
+writeScritBlock
+WriteSingleLineHelper
+WriteStartDocument
+WriteStartElement
+WriteStartOfPSObject
+WriteString
+WriteStringBuffer
+WriteTableHeader
+WriteTableRow
+writeTNH
+WriteToPS1XML
+WriteToScreen
+WriteToXML
+WriteVerbose
+WriteVerboseCommand
+WriteVerboseCommand3Class that has write-verbose command implementation
+WriteWarning
+WriteWarningCommand
+WriteWarningCommand3Class that has write-warning command implementation
+WrittenObject
+WrongExtension
+WrongMemberCount
+wsmanConnectionInfo
+WSManConnectionInfo
+XCannot open file because the current provider is "{0}" and this command requires a file.
+xList
+xmldoc
+XmlDocument
+XmlException
+XmlNamespaceManager
+XmlNameTable
+XmlNode
+XmlNodeList
+XmlReader
+XmlTextWriter
+XmlWriter
+XmlWriterSettings
+XPath
+xpath
+XText to describe the current state of the activity for which progress is being reported.
+xThis command cannot be executed because AsHashTable parameter without AsString parameter works only for single property.
+yearSpecified
+yThe Value parameter is required for a member of type "{0}". Specify the Value parameter when adding members of this type.
+yTo use the {0} cmdlet, install the Windows PowerShell Integrated Scripting Environment feature from Server Manager. ({1})
+ZCannot add type. The 'CSharpVersion3' language requires version 3.5 of the .NET Framework.
+zeroBasedIndex
+zOnly one member type should be specified. The member types specified are: "{0}". Add the member with only one member type.
+ZSystem.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089

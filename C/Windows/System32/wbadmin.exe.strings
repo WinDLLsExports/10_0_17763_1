@@ -1,0 +1,1573 @@
+                                 uiAccess="false"/>
+                    name="WBAdminRunHighest"
+                    type=""/> 
+           exit 80105 
+        $RSVault = Get-AzureRmRecoveryServicesVault -Name $AzureBackupVaultName -ErrorAction SilentlyContinue | Where-object{ $_.ResourceGroupName -like $AzureBackupVaultResourceGroupName }
+        $VaultCredentialFileName = Get-AzureRmRecoveryServicesVaultSettingsFile -Vault $RSVault -Backup -Path $vaultCredFilePath 
+        {
+        }
+        </requestedPrivileges>
+        <requestedExecutionLevel level="asInvoker"
+        exit 80104 
+        if ($RSVault -eq $null)
+       </security>
+      <requestedPrivileges>
+      processorArchitecture="amd64"
+    $AzureRMSelectedSubscription = $AzureRM | Where {$_.Id -like $SubscriptionId}
+    $policy = New-OBPolicy 
+    $provider = Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.RecoveryServices"
+    $ResourceGroup = Get-AzureRMResourceGroup -Name $AzureBackupVaultResourceGroupName -ErrorAction SilentlyContinue 
+    $RSVault = Get-AzureRmRecoveryServicesVault -ResourceGroupName $AzureBackupVaultResourceGroupName -Name $AzureBackupVaultName -ErrorAction SilentlyContinue
+    $temp = New-AzureRMResourceGroup -Name $AzureBackupVaultResourceGroupName -Location $AzureRegion -ErrorAction SilentlyContinue
+    $Vault = New-AzureRmRecoveryServicesVault -ResourceGroupName $AzureBackupVaultResourceGroupName -Name $AzureBackupVaultName -Location  $AzureRegion -ErrorAction SilentlyContinue
+    {
+    { 
+    }
+    <assemblyIdentity version="1.0.0.0" 
+    <security>
+    Add-OBSystemState -Policy $policy 
+    exit 80100 
+    exit 80102 
+    exit 80103 
+    exit 80106 
+    exit 80107 
+    exit 80108 
+    if (!$ResourceGroup)
+    if( $AzureBackupVaultResourceGroupName.Trim().Length -gt 0) 
+    Install-Module -Name $ModuleName -AllowClobber -MinimumVersion $ModuleMinimumVersion -Confirm:$false -Force 
+    Install-PackageProvider -Name $PackageName -MinimumVersion $PackageMinimumVersion -Force 
+    Select-AzureRMSubscription -SubscriptionId $AzureRMSelectedSubscription.Id  
+    Set-AzureRmRecoveryServicesBackupProperties -Vault $Vault -BackupStorageRedundancy $storageRedundancy -ErrorAction SilentlyContinue
+  <!-- Identify the application security requirements. -->
+  </trustInfo>
+  <description>The manifest for the Windows Block Level Backup Command line interface </description> 
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+ %ws %ws
+ %ws %ws %ws_%02d
+ A^_^
+ A^_^[]
+ A^A\_
+ A^A\_^[
+ A^A]_
+ A^A]A\
+ A__^
+ A_A\_^]
+ A_A^]
+ A_A^_
+ A_A^_^]
+ A_A^A\
+ A_A^A\_^
+ A_A^A]_^][
+ A_A^A]A\_
+ A_A^A]A\_^]
+ BLB Backup
+ H3E H3E
+ Microsoft Corporation. All rights reserved.
+ Operating System
+ Rich
+ Windows
+!!(SUCCEEDED(hr)) == !!(NT_SUCCESS(ntStatus))
+!\$(L
+!\$0!
+!\$03
+!|$ 3
+!|$xI
+!6base\stor\blb\engine\helper\blbbackupsethelper.cpp
+!BlbutilIsEspVolume(dwVolumeFlagsInBackupSet)
+!D$ 3
+!D$TH
+!D9sht
+!data.m_userCredentials.m_bScheduledBackup
+!fRet
+!m_pSecurityDescriptor
+!MEDIA_LOADABLE_TYPE(eMediaTypeInTemplate)
+!t$`E
+!t$0H
+!This program cannot be run in DOS mode.
+'$#=G
+$(cAllBackupSets == 0) || (rgAllBackupSets != NULL)
+$AzureBackupVaultName = "%ws"
+$AzureBackupVaultResourceGroupName = "%ws"
+$AzureLocation = Get-AzureRmLocation | where-object{$_.DisplayName -like $AzureRegion}
+$AzureRegion = "%ws"
+$AzureRM = (Get-AzureRmContext).Subscription 
+$AzureRM = Add-AzureRMAccount 
+$AzureRMContextJsonFile = "%ws"
+$AzureRMSelectedSubscription = $AzureRM[0] 
+$DownLoadAURL = '%ws'
+$Error.clear() 
+$L9l$8t
+$Module = Get-Module -Name $ModuleName -ListAvailable -ErrorAction SilentlyContinue 
+$ModuleMinimumVersion = '%ws' 
+$ModuleName = '%ws' 
+$msonlineBackupPSmodulepath = "%ws"
+$package = Get-PackageProvider -Name $PackageName -ListAvailable 
+$PackageMinimumVersion = '%ws' 
+$PackageName = '%ws' 
+$PlainPassPhrase = "%ws"
+$policy = Get-OBSystemStatePolicy 
+$provider = Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.RecoveryServices"
+$ResourceGroup = Get-AzureRMResourceGroup -Name $AzureBackupVaultResourceGroupName -ErrorAction SilentlyContinue 
+$retentionpolicy = New-OBRetentionPolicy -RetentionDays %d 
+$RSVault = Get-AzureRmRecoveryServicesVault -Name $AzureBackupVaultName -ErrorAction SilentlyContinue | Where-object{ $_.ResourceGroupName -like $AzureBackupVaultResourceGroupName }
+$sched = New-OBSchedule -DaysofWeek %ws -TimesofDay %ws 
+$secPassPhrase = ConvertTo-SecureString -String $PlainPassPhrase -AsPlainText -Force
+$storageRedundancy = "%ws"
+$SubscriptionId =  "%ws"
+$updateExisting = %d 
+$VaultCredentialFilePath = $VaultCredentialFileName.FilePath 
+$vaultCredFilePath = "%ws"
+$WC = New-Object System.Net.WebClient
+$WC.DownloadFile($DownLoadAURL, '%ws') 
+%%%%%u
+%.2u/%.2u/%.4u-%.2u:%.2u
+%.2u:%.2u
+%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x
+%02d-%02d-%04d-%02d-%02d-%02d
+%02d-%02d-%04d_%02d-%02d-%02d
+%s %s
+%s%s%s
+%s%s%s%s%s%s%s%s%s%s%s
+%s(%s)
+%s.%d.%s
+%s.0.%s
+%s<%s>
+%SystemRoot%\Logs
+%ws-%ws.log
+%ws%ws\%ws\%ws
+%ws\%ws
+%ws\%ws-%ws.log
+%ws\%ws, 
+(_^][
+(A_A^A]A\_^][
+(D$0H
+(GMT %c%02d:%02d) %ws
+(iElement+nElements) <= m_nSize
+(none)
+(NULL
+(prgComponentOut != NULL)
+(prgVolume != NULL)
+(t$ H
+(t$`H
+)D$0H;
+)D$0H+
+)RDISK(
+)t$`H
+.00cfg
+.CRT$XCA
+.CRT$XCAA
+.CRT$XCL
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIY
+.CRT$XIZ
+.data
+.data$brc
+.gfids
+.giats
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.pdata
+.rdata
+.rdata$brc
+.rdata$zzzdbg
+.rsrc$01
+.rsrc$02
+.text
+.text$di
+.text$mn
+.text$mn$00
+.text$x
+.text$yd
+.xdata
+;\$0s
+;}@sCH
+;}@uAH
+;D$ v
+;D9|$<
+;t$pr
+;uHsCH
+;uHuAH
+?terminate@@YAXXZ
+@.data
+@.reloc
+@.rsrc
+@8|$t
+@8|$tt
+@8|$tu
+@8}gt\H
+@8}htPA
+@8}PuP@8}`tJA
+@8}Xt^H
+@8~ u:H
+@8~@t
+@8s u%H
+@8s u{H
+@8s%u
+@8s(tRD
+@8u0tQH
+@8w u^H
+@A]A\_^]
+@A^_]
+@A^_^
+@A^A\_
+@A^A]^][
+@A__^
+@A_A]A\
+@A_A]A\_^][
+@A_A^^
+@A_A^_
+@A_A^A\
+@A_A^A\_]
+@A_A^A\_^
+@A_A^A\_^[]
+@A_A^A\_^][
+@A_A^A]
+@A_A^A]A\_^]
+@H9G@v@3
+@SUVWATAUAVH
+@SUVWATAVAWH
+@SUVWATAVH
+@SUVWAUAVAWH
+@SUVWAVH
+@SVWATAVH
+@SVWH
+@USVWATAUAVAWH
+@USVWATAVAWH
+@USVWAUAVAWH
+@USVWAVAWH
+@USVWAWH
+@USVWH
+@USWATAUAVAWH
+@USWH
+\$ E3
+\$ UH
+\$ UVW
+\$ UVWATAUAVAWH
+\$ UVWAVAWH
+\$ UVWH
+\$@E3
+\$`D8}
+\$0E3
+\$1H9
+\$pE3
+\$xL;
+\\?\GLOBALROOT
+\\?\GLOBALROOT\Arcname\
+\\?\UNC\
+\\?\Volume%ws\
+\\?\Volume{
+\UNC\
+]8L9e@t
+_@A;u0s(D
+__atl_condVal
+__C_specific_handler
+__CxxFrameHandler3
+__dllonexit
+__set_app_type
+__setusermatherr
+__wgetmainargs
+_amsg_exit
+_BkpAzureScript.ps1
+_callnewh
+_cexit
+_commode
+_exit
+_fmode
+_initterm
+_lock
+_onexit
+_purecall
+_unlock
+_vsnprintf
+_vsnwprintf
+_wcsicmp
+_wcsnicmp
+_wcsnicmp(wszSourcePath, wszOriginalVolume, wcslen(wszOriginalVolume)) == 0
+_wcsupr
+_wsetlocale
+_wtoi
+_wtol
+_XcptFilter
+` AUAVAWH
+` UAUAVH
+` UAUAWH
+` UAVAWH
+`.rdata
+`A_A^_^]
+`A_A^A\_^[]
+`A_A^A]_^[]
+`A_A^A]A\_^]
+{ AVH
+{%.8x-%.4x-%.4x-%.2x%.2x-%.2x%.2x%.2x%.2x%.2x%.2x}
+{%08x-%04x-%04x-%02x%02x-%02x%02x%02x%02x%02x%02x}
+{@9{pv
+|$ ATAUAWH
+|$ AVH
+|$ UATAUAVAWH
+|$ UAUAVH
+|$ UAVAWH
+|$(E3
+|$@E3
+|$@H;
+|$`L+
+|$0{H
+|$0L9
+|$8@8wUu
+|$8v-H
+|$hD8}
+|$PL;
+|$xH9}
+|$XHi
+|}base\stor\blb\blbevents\publisher\blbpublisher.cpp
+}@L;7t8H
+}@L;'tbM
+}gD;mo
+~ L;~(r
+<!-- Copyright (c) Microsoft Corporation -->
+</assembly>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0"> 
+0,JE|
+040904B0
+0A]_^][
+0A^_^
+0A^A\_
+0A^A]_
+0A__^
+0A__^[]
+0A_A\_
+0A_A]_
+0A_A]A\_]
+0A_A^_
+0A_A^_^]
+0A_A^A\_^
+0A_A^A\_^[]
+0A_A^A]_^
+0A_A^A]_^[]
+0A_A^A]A\_
+0A_A^A]A\_^]
+0x%08x
+10.0.17763.1
+10.0.17763.1 (WinBuild.160101.0800)
+2.8.5.201
+2Pbase\stor\blb\util\networkutils.cpp
+5.5.0
+6`R=1
+7@8w u%H
+8\$`u
+8\$et
+8\$fD
+8\$pu
+8\$quFL
+8_ uB9
+8_ unH
+8_^[]
+8A^A\_^][
+8A_A^A]A\_^[]
+8A_A^A]A\_^][
+8L$`u
+8L$bu
+9*vFH
+9*vkH
+9\$ @
+9\$0v4H
+9\$pu
+9\$pvnH
+9\$Xt4H
+9]0v"L
+9^@v0
+9_,v5H
+9_@vKE
+9{Dv?H
+9|$pvHL
+9oDvgH
+9s$v+3
+9s@vy
+9uDv~H
+9w8v1
+A!4$H
+A;^,v
+A;|$0
+A;H,r
+A;ODs
+A;u0r
+A;u0t+D
+A^_^[
+A^_^][
+A^A\_
+A^A\_^[]
+A^A\_^]
+A^A]]
+A^A]A\_]
+A^A]A\_^
+A^A]A\_^][
+A_A]]
+A_A]A\
+A_A]A\_]
+A_A^]
+A_A^_
+A_A^_^[]
+A_A^_^]
+A_A^A\
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[]
+A_A^A]
+A_A^A]_]
+A_A^A]_^
+A_A^A]_^[]
+A_A^A]A\]
+A_A^A]A\_
+A_A^A]A\_[]
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A8v u%I
+A8v ujI
+A9ODv@H
+A9P,v0M
+A9PXv
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
+Active Directory
+AD;GDu&
+AD;GDu&A;
+AddAce
+AddTarget
+ADIFM
+ADVAPI32.dll
+AllCritical
+AllowAppRecFromPartialBackup
+allowDeleteOldBackups
+alternatelocation
+Application
+ApplicationBase
+ApplicationRestore
+ApplicationRestore_Error
+ATAVAWH
+AuthSysvol
+AutoReboot
+Azure
+AzureRM
+BACKUP
+Backup
+Backup_Error
+BackupTarget
+base\stor\blb\clinew\backup.cpp
+base\stor\blb\clinew\blbcli.cpp
+base\stor\blb\clinew\bmrrecover.cpp
+base\stor\blb\clinew\cmdline.cpp
+base\stor\blb\clinew\commands.cpp
+base\stor\blb\clinew\delete.cpp
+base\stor\blb\clinew\filespecs.cpp
+base\stor\blb\clinew\list.cpp
+base\stor\blb\clinew\media.cpp
+base\stor\blb\clinew\recover.cpp
+base\stor\blb\clinew\sourcetarget.cpp
+base\stor\blb\clinew\template.cpp
+base\stor\blb\clinew\utility.cpp
+base\stor\blb\engine\helper\blbhelper.cpp
+base\stor\blb\inc\errorutils.h
+base\stor\blb\util\apputils.cpp
+base\stor\blb\util\backupsetutils.cpp
+base\stor\blb\util\blbtrace.cpp
+base\stor\blb\util\blbutility.cpp
+base\stor\blb\util\fileutils.cpp
+base\stor\blb\util\securityutils.cpp
+base\stor\blb\util\stringutils.cpp
+base\stor\blb\util\systemutils.cpp
+base\stor\blb\util\volumeutils.cpp
+bFound
+bin\Modules\MSOnlineBackup
+bIsReparsePoint == FALSE
+bIsWinRE
+BLB_OT_BACKUP != opType && BLB_OT_RESTORE_COMPONENT != opType && BLB_OT_RESTORE_FILE != opType
+blblog
+blbres.dll
+C%D8}
+C0D8i"t
+c0D9c,v"H
+calloc
+CATALOG
+cbSize > 0
+cComponent > 0
+cDepIndex < BLB_MAX_DEPENDENT_APPS
+cDisk > 0
+CheckTokenMembership
+CL9L$P
+CloseHandle
+CloseServiceHandle
+CLSIDFromString
+Cluster
+cMedia == 1
+cNumRestoredVolume >= 1
+CoCreateInstance
+CoInitializeEx
+CoInitializeSecurity
+Command Line Interface for Microsoft
+CompanyName
+CompareFileTime
+CompareStringW
+ControlTraceW
+ConvertStringSecurityDescriptorToSecurityDescriptorW
+CopySid
+CoTaskMemAlloc
+CoTaskMemFree
+CoTaskMemRealloc
+CoUninitialize
+cprgFileSpecs
+CreateCopy
+CreateDirectoryW
+CreateFileW
+CreateProcessW
+CreateWellKnownSid
+credui.dll
+CredUICmdLinePromptForCredentialsW
+CSVFS
+cTarget > 0
+cTargetInTemplate == 1
+cTime > 0
+cVolume
+cVolume != 0
+cVolume || cComponent
+cVolume == 1
+cVolume > 0
+cVolumeInBackup > 0
+D!6M!4$I
+D!t$PI
+D$ E3
+D$ I;
+D$(!\$ 
+D$(!t$ 
+D$(9L$ u
+D$(D!|$ 
+D$(D!t$ 
+D$(E3
+D$(H;
+D$(L#
+D$@!D$@H
+D$@E3
+D$@H9D$0u
+D$@I;
+D$`D8`#
+D$`E3
+D$`Hk
+D$`tC
+D$0E3
+D$0fA
+D$0H;
+D$4;D$<s?L
+D$49D$<
+D$8!\$(D
+D$88G
+D$8H;
+D$8H+
+D$8M9
+D$hA9L$0
+D$HE3
+D$HH9FP~!L
+D$pE3
+D$PE3
+D$pE3
+D$PH+W8I
+D$pL9 u
+D$X;D$H
+D$X9D$H
+D$xE3
+D$XH9G@wpA
+D:AR(A;OICI;FA;;;BA)(A;OICI;FA;;;BO)(A;OICI;FA;;;CO)
+D;{Xr
+D;{xr
+D;|$`r
+D;|$0
+D;|$Ht @8p#
+D;d$pr
+D;v8r
+D;vPr
+D;vXE
+D8{ u!H
+D8{ u%H
+D8{(u
+D8c(t
+D8d$0taL
+D8d$pt?
+D8e@u
+D8ewt
+D8g u%H
+D8g u-H
+D8MoE
+D8n(ueD8n
+D9{xvwI
+D9|$`vQH
+D9}`uJH
+D9bhu
+D9ePL
+D9ePtPD8d
+D9f8vyH
+D9g$vpH
+D9L$@u1
+D9L$`u1
+D9L$Hu-
+D9L$Pu-
+D9sht
+D9sXvwI
+data.m_bRecreateDisks
+data.m_cwszAlternateTarget <= 1
+data.m_cwszAlternateTarget == 0 || data.m_cwszAlternateTarget == 1
+data.m_cwszAlternateTarget == data.m_cwszItem
+data.m_userCredentials.m_bScheduledBackup
+data.m_userCredentials.m_wszUserName
+data.m_wszBackupTarget != NULL
+data.m_wszTarget != NULL
+daysofWeek
+DELETE
+DeleteFileW
+DeleteOldest
+DeviceIoControl
+DISABLE
+DISKS
+DSREPAIR
+dwBytesRead <= BLB_MAX_INPUT_CHARS
+dwError != ERROR_SERVICE_ALREADY_RUNNING
+dwError != ERROR_SUCCESS
+dwFlags & FORMAT_MESSAGE_ALLOCATE_BUFFER
+dwNum < 100
+dwStartIndex < ARRAY_LEN(g_Commands)
+E;gDr
+E;PXr
+e@D8d
+eBlbCliResource >= BLB_RESOURCE_STRING_MIN && eBlbCliResource <= BLB_RESOURCE_STRING_MAX
+eBootLocation != BLB_BOOT_LOCATION_UNKNOWN
+else 
+ENABLE
+EnableTrace
+en-US
+EPH!uPI
+eResult == eContinue
+EventEnabled
+eventInfo->rgVolumeName[i]
+EventRegister
+EventUnregister
+EventWrite
+Exclude
+ExcludeDisks
+ExcludeSystemFiles
+ExpandEnvironmentStringsW
+EXt=H
+F(@t29
+f;t$@t+f;t$Du
+f9,_u
+f9,Au
+f9,Cu
+f9,Fu
+f9,Gu
+f9,Ku
+f9,Ou
+f9,Pu
+f9,Qu
+f9,Su
+f9,su
+f9,Vu
+f9,wu
+f9,Wu
+f9|$ u
+f9<Au
+f9<Bu
+f9<pu
+f9<Xu
+f94Cu
+f94Ju
+f94Ku
+f9H\u
+fA9,Bu
+fA9,Gu
+fA9,Iu
+fA9,Su
+fA9,Tu
+fA9,Vu
+fA9<@u
+fA9<Au
+fA9<Fu
+fA9<Gu
+fA9<Qu
+fA9<Ru
+fA94Au
+fA94Tu
+fA9LE
+fA9Lm
+fA9lU
+fA9TM
+FAILED(hr)
+FALSE
+false
+fB94Su
+fD9$Au
+fD9$Fu
+fD9$Gu
+fD9$Hu
+fD9$Ou
+fD9$Pu
+fD9$Qu
+fD9$wu
+fD9$Xu
+fD9$Yu
+fD9,_u
+fD9,Au
+fD9,Cu
+fD9,Gu
+fD9,Ju
+fD9,Nu
+fD9,Ou
+fD9<Au
+fD9<Bu
+fD9<Fu
+fD9<Ju
+fD9<Ou
+fD9<Vu
+fD9<wu
+fD9<xu
+fD94Au
+fD94Cu
+fD94Fu
+fD94Gu
+fD94Ou
+fD94Yu
+fD9d]
+fD9DE
+fD9DU
+fD9lE
+fD9t$(u
+fD9tH
+fD9tM
+fE9$Fu
+fE9$Gu
+fE9,Du
+fE9,Fu
+fE9,Nu
+fE9,Tu
+fE9,vu
+fE9,Vu
+fE9,Wu
+fE9<Du
+fE9<Fu
+fE9<vu
+fE94@u
+fE94|u
+fE94Au
+fE94Hu
+fE9D]
+fF9,pu
+fG9$Gu
+fG9,wu
+fG9<Fu
+fG94Cu
+-File
+FileDescription
+FileRestore
+FileRestore_Error
+FileTimeToLocalFileTime
+FileTimeToSystemTime
+FileVersion
+FindFirstVolumeW
+FindNextVolumeW
+FindVolumeClose
+FINISHED_RECOVER_FILES(pStatus->m_eState)
+FlushConsoleInputBuffer
+FlushFileBuffers
+force
+FormatMessageW
+FreeLibrary
+Friday
+g_wszFormattedErrorMessage == NULL
+GeoRedundant
+GetAclInformation
+GetComputerNameExW
+GetConsoleCP
+GetConsoleMode
+GetConsoleOutputCP
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThreadId
+GetDateFormatW
+GetDiskFreeSpaceExW
+GetDriveTypeW
+GetEnvironmentVariableW
+GetExitCodeProcess
+GetFileAttributesW
+GetFileInformationByHandleEx
+GetFileType
+GetLastError
+GetLengthSid
+GetLocalTime
+GetModuleHandleW
+GetProcessHeap
+GetSecurityDescriptorControl
+GetSecurityDescriptorDacl
+GetSecurityDescriptorGroup
+GetSecurityDescriptorOwner
+GetSecurityDescriptorSacl
+GetSidLengthRequired
+GetSidSubAuthority
+GetStdHandle
+GetSystemDirectoryW
+GetSystemTime
+GetSystemTimeAsFileTime
+GetTempPathW
+GetTickCount
+GetTickCount64
+GetTimeFormatW
+GetTimeZoneInformation
+GetTraceEnableFlags
+GetTraceEnableLevel
+GetTraceLoggerHandle
+GetVersionExW
+GetVolumeNameForVolumeMountPointW
+GetVolumePathNameW
+gfffA
+Gh@t>H
+guidBackupSetId != GUID_NULL
+guidTemplateId != GUID_NULL
+guidWinRePartition != GUID_NULL
+H SWH
+h VWATAVAWH
+H WATAUAVAWH
+H!\$ E3
+H!\$ L
+H!\$@3
+H!\$@H
+H!\$`E
+H!\$0L
+H!\$8A
+H!\$pH
+H!\$XH
+H!] 3
+H!]`!]H9_DuCH
+H!|$(H
+H!D$8E3
+H!D$HH
+H!l$8E3
+H!t$`H
+H!t$hI
+H!t$P
+H!uHE3
+H;D$(u
+H;D$0u
+H;y v
+H9]pu
+H9]Pu
+H9_0u
+H9_8t
+H9_Hu
+H9_Hu.
+H9_Pt
+H9_Pu
+H93u0H;
+H9q u
+H9sPu1H9spu+H9s`u%H9
+H9uPu
+H9w(H
+H9y t
+HA_A\_^][
+HA_A^A]A\_^[]
+HcA<H
+HeapAlloc
+HeapDestroy
+HeapFree
+HeapReAlloc
+HeapSetInformation
+HeapSize
+HH':'mm
+https://go.microsoft.com/fwLink/?LinkID=288905&clcid=0x409
+HyperV
+HyperVWriterId
+I!4$A!7H9sPuKH9spuEH
+I9v0u
+IBpStatus->m_dwWarnings != BLB_RW_NO_WARNING
+iCurrentFile <= status.m_cRestoreFiles
+iCurrentVolume <= status.m_cVolumeStatus
+iElement < m_nSize
+if (!$ResourceGroup)
+if ($Error.Count -ne 0) 
+if ($Module -eq $null -or $Module.Version -lt $ModuleMinimumVersion) 
+if ($package -eq $null -or $package.Version -lt $PackageMinimumVersion) 
+if ($policy -eq $null)
+if ($RSVault -eq $null)
+if ($RSVault -ne $null)
+if ($true -eq [Microsoft.Internal.CloudBackup.Client.Common.CBClientCommon]::GetMachineRegistrationStatus($false)) 
+if( $AzureBackupVaultResourceGroupName.Trim().Length -gt 0) 
+if( $SubscriptionId.Trim().Length -gt 0) 
+if($AzureLocation -eq $null) 
+if($AzureRMSelectedSubscription -eq $null )
+if($Error.Count -ne 0) 
+if($policy -ne $null -and $updateExisting -eq 0) 
+ImpersonateLoggedOnUser
+Import-AzureRmContext -Path $AzureRMContextJsonFile 
+Import-Module  $msonlineBackupPSmodulepath 
+Import-Module '%ws'
+Include
+InitializeAcl
+InitializeSecurityDescriptor
+InitializeSid
+Install
+InstallPath
+InternalName
+Invalid online schedule day passed.
+IsCommandHidden(pCommand)
+iSpec == cSpecsLocal
+iStatusComponent < previousStatus.m_cComponentStatus
+iStatusFile < status.m_cRestoreFiles
+iStatusVolume < status.m_cVolumeStatus
+IsValid()
+IsValidSecurityDescriptor
+IsValidSecurityDescriptor((PSECURITY_DESCRIPTOR)sd.GetPSECURITY_DESCRIPTOR())
+IsValidSid
+iTargetDiskName < cTargetDiskName
+iTargetDiskName == (cTargetDiskName - 1)
+Items
+ITEMS
+ItemType
+iUpdatedTarget < cUpdatedTargets
+iUpdatedTarget == (cUpdatedTargets - 1)
+iVolume < cVolume
+iVolumeInBackup == cVolumeInBackup
+iVolumeWithExclusions == cVolumeWithExclusions
+iwszVolume == 0
+k VWAVH
+K0L9!t
+KeepVersions
+KERNEL32.dll
+KHL9!t
+kOs#N
+KXL9!t
+L!}@E3
+L!d$hE3
+L!d$p3
+L!d$PH
+L!eXH
+L!t$XM
+L$ E3
+L$ SUVWAUH
+L$ SUVWH
+L$ SVWAVH
+L$ SVWH
+L$ UVWATAUAVAWH
+L$ UVWATAWH
+l$ VH
+l$ VWATAVAWH
+l$ VWAUAVAWH
+l$ VWAVH
+L$ WH
+l$@E3
+L$@H3
+L$`A;
+L$`E3
+L$`H3
+l$`K9L
+L$0H3
+L$8A;
+L$8D!l$@L
+L$8H3
+l$8I;
+L$HE3
+L$hH3
+L$HH3
+L$hL!t$hA
+L$PE3
+L$pH3
+L$PH3
+l$XE3
+L$XH3
+l$xL9;I
+l$xr&H
+L;L$Ht
+L9}`t
+L9}Ht
+L9}Xt
+L9d$xt
+L9mxu
+L9uhu
+L9upu
+LanmanNt
+LcA<E3
+LegalCopyright
+lMessage != 0
+lMessageId != 0
+LoadLibraryExW
+LoadStringW
+LocalAlloc
+LocalFree
+LogonUserExExW
+m_bValid
+m_hConsoleInput != INVALID_HANDLE_VALUE
+m_hConsoleInput == INVALID_HANDLE_VALUE
+m_hConsoleOutput != INVALID_HANDLE_VALUE
+m_hConsoleOutput == INVALID_HANDLE_VALUE
+m_nElements == 0
+m_nElements > 0
+m_p == 0
+m_pBackupSet
+m_pFree != 0
+m_sidnameuse == SidTypeInvalid
+m_strAccountName.IsEmpty()
+m_strDomain.IsEmpty()
+m_strSid.IsEmpty()
+M0H9sHtjH
+M8;u0r
+Machine
+MakeAbsoluteSD
+malloc
+MARSAgentInstaller.exe
+MEDIA_LOADABLE_TYPE(eMediaType)
+memcmp
+memcpy
+memcpy_s
+memmove_s
+memset
+MHA;^(s!I
+Microsoft
+Microsoft Corporation
+Microsoft_Azure_Recovery_Services_Agent_%ws
+Monday
+MoveFileExW
+msvcrt.dll
+MultiByteToWideChar
+nAclLength > 0
+newTemplate.m_cVolumeId > 0
+nH!l$8D
+nIndex < nCount
+nIndex == nCount -1
+nLength-(size_t)( (ptrdiff_t)&(((ACCESS_ALLOWED_ACE *)0)->SidStart) ) >= m_sid.GetLength()
+nMax > 0
+nNewMax <= 0xffffffffffffffffui64/sizeof( E )
+nNewMax >= m_nMaxSize
+NoInheritAcl
+non-auth
+NonRecurseExclude
+NonRecurseInclude
+noRollForward
+not a
+NoTargetSnapshot
+NotRestoreAcl
+NoVerify
+nRefs != 0
+nRefs > 0
+nSubAuthorityCount
+ntdll.dll
+NtQueryInformationFile
+NtQuerySystemInformation
+NtQueryVolumeInformationFile
+NuGet
+O:BAG:BAD:P(A;CIOI;GA;;;BA)(A;CIOI;GA;;;SY)(A;CIOI;GA;;;BO)
+o`9*t
+obengine
+ole32.dll
+OLEAUT32.dll
+onlineRetention
+OnlineSSBRMContext.json
+OpenSCManagerW
+OpenServiceW
+OriginalFilename
+Output
+Overwrite
+p AWH
+p WATAUAVAWH
+p WAVAWH
+p;s$r
+PA^_^
+PA_A\_^]
+PA_A^A]_^[]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+pAppRestoreInfo
+passphrase
+passphraseLoc
+Password
+pAsync
+pAsync != NULL
+pBackupSet
+pBackupSet != NULL
+pbAppBackup
+pbBackupDidNotStart
+pbClient
+pbErrorsFound != NULL
+pbExternalApplication != NULL
+pbFound != NULL
+pbInPlaceRecoverySupported != NULL
+pbIsDFSRWriter
+pbIsDsrmMode
+pbIsFRSWriter
+pbIsHyperv != NULL
+pBootOffDisk
+pBootOffDisk && pRdPathTagFound
+pbOverwriteOldVhds
+pbsBackupToDelete != NULL
+pbSnapshotIdPresent
+pbsSSBToDelete != NULL
+pbSystemState
+pbVolumeBackup
+pbWinPE
+pcBackupSet
+pcBackupSetsToDelete != NULL
+pcBackupsFound != NULL
+pcComponents != NULL
+pcComponentSpecs
+pcDisplayedComponents
+pcFileSpecs
+pCli != NULL
+pCommand != NULL
+pComponent
+pComponent != NULL
+pcSpecs != NULL
+pcSSBBackupSets != NULL
+pcSSBFound != NULL
+pcTarget != NULL
+pcTargetName
+pcTargetName != NULL
+pcUpdatedTargets
+pcVolume != NULL
+pcVolumeDisplayName
+pDetailedHr
+pDisk
+pDisk != NULL
+pDisk->m_bVolumeInformationUnavailable == FALSE
+pDiskInTarget->m_cVolumeId == 1
+peBootLocation
+PeekConsoleInputW
+pEndStatus != NULL
+pEngine
+pEngine != NULL
+pEngine && pCli
+pguid
+pguidId != NULL
+pguidVolumeGuidId && *pguidVolumeGuidId != GUID_NULL
+pguidVolumeId != GUID_NULL
+phService
+phToken
+phTraceSession
+piBackupSet
+pIsBMRCompatible != NULL
+pIsVolumeOnDiskContainingCriticalVolume != NULL
+pIsVolumeOnDynamicDisk != NULL
+pLastBackupSet
+pMountDevId->UniqueIdLength < dwBufSize
+powershell.exe
+ppAppRestoreInfo
+ppbValue != NULL && wszValueName != NULL && lpType != NULL && lpSize != NULL
+ppComponent != NULL
+ppDisk
+ppDisk != NULL
+ppEngine != NULL
+ppProperties
+ppsUniqueId
+ppVolumeInfo
+pResult
+pResult != NULL
+prgBackupSet
+prgComponentSpecs
+prgpBackupSetsToDelete != NULL
+prgpSSBBackupSets != NULL
+prgSpecs != NULL
+prgTarget != NULL
+prgUpdateTargets
+prgVolume != NULL
+prgwszArrayOut
+prgwszTargetName
+prgwszTargetName != NULL
+prgwszVolumeDisplayName
+ProductName
+ProductType
+ProductVersion
+prompts.m_msgConfirmAbort != 0
+pStatus
+pStatus != NULL
+pstSystemTime != NULL
+pSysInfo->SystemPartition.Length % sizeof(WCHAR) == 0
+pTarget != NULL
+Pu=Hc
+pVolume != NULL
+pVolumeId
+pVolumeStatus != NULL
+pwriterId != NULL
+pwszBaseString != NULL
+pwszDevicePath
+pwszDisplayName
+pwszDisplayName != NULL
+pwszDomainPart
+pwszFailureLogName
+pwszFriendlyName != NULL
+pwszGuidVolumeId
+pwszLocalTime
+pwszLogFile
+pwszLogsDirectory
+pwszMessage
+pwszNoBracesGuid
+pwszOriginalLocation
+pwszParent != NULL
+pwszPassword
+pwszRecoveryTypesAllowed != NULL
+pwszSessionName
+pwszSize != NULL
+pwszSlashTerminatedPath != NULL
+pwszSnapshotId
+pwszSystemDevicePath
+pwszTargetLogFileName
+pwszTargetTypeString
+pwszTargetVolumeName != NULL
+pwszTracingDirectory
+pwszUserName
+pwszUserPart
+pwszVolumeName != NULL
+pwszVolumePath
+QueryPerformanceCounter
+QueryServiceStatus
+Quiet
+r%L9c0L
+r+8\$0H
+RaiseException
+RDPATH=
+ReadConsoleW
+ReadFile
+RECOVERY
+RecoveryTarget
+RecreateDisks
+recreatepath
+Recursive
+RegCloseKey
+region
+RegisterTraceGuidsW
+Registry
+RegOpenKeyExW
+RegQueryValueExW
+RemoveDirectoryW
+RemoveTarget
+resourceGroup
+RESTORE
+RestoreAllVolumes
+RevertToSelf
+rgComponentIn != NULL
+rgDisk != NULL
+rgpBackupSetsToDelete != NULL
+rgpSSBBackupSetsToDelete != NULL
+rgSelectedComponentsInBackupset != NULL
+rgStr != NULL
+rgStr1 != NULL
+rgStr2 != NULL
+rgTarget != NULL
+rgTime
+rgTime != NULL
+rgVolume
+rgVolume != NULL
+rgVolume != NULL || rgComponent != NULL
+rgVolumeInBackup[iVolumeInBackup]
+rgVolumeInfo
+rgwszAlternateTargetVolume[iwszVolume]
+rgwszItems != NULL
+RPCRT4.dll
+RpcStringFreeW
+rSid.IsValid()
+RtlCaptureContext
+RtlCheckPortableOperatingSystem
+RtlLookupFunctionEntry
+RtlNtStatusToDosError
+RtlVirtualUnwind
+RunOnce
+S_OK != hr
+saDesiredAccess
+SAFEBOOT_OPTION
+saSecurityAttributes
+Saturday
+Save-AzureRmContext -Path "%ws" -Force 
+Schedule
+sdk\inc\atlmfc\atlbase.h
+sdk\inc\atlmfc\atlcoll.h
+sdk\inc\atlmfc\atlexcept.h
+sdk\inc\atlmfc\atlsecurity.inl
+sdk\inc\atlmfc\atlsimpstr.h
+Select-AzureRMSubscription -SubscriptionId $AzureRMSelectedSubscription.Id  
+ServerNt
+SetConsoleMode
+SetFileInformationByHandle
+SetFileSecurityW
+SetLastError
+Set-OBMachineSetting -EncryptionPassPhrase $secPassPhrase
+Set-OBMachineSetting -NoProxy 
+Set-OBMachineSetting -NoThrottle 
+Set-OBRetentionPolicy -Policy $policy -RetentionPolicy $retentionpolicy
+Set-OBSchedule -Policy $policy -Schedule $sched
+Set-OBSystemStatePolicy -Policy $policy -Confirm:$false 
+SetSecurityDescriptorDacl
+SetSecurityDescriptorGroup
+SetSecurityDescriptorOwner
+SetThreadUILanguage
+SetUnhandledExceptionFilter
+SETUPAPI.dll
+SetupDiDestroyDeviceInfoList
+SetupDiEnumDeviceInterfaces
+SetupDiGetClassDevsW
+SetupDiGetDeviceInterfaceDetailW
+ShowSummary
+skipBadClusterCheck
+Sleep
+SOFTWARE\Microsoft\PowerShell\1
+SOFTWARE\Microsoft\PowerShell\1\PowerShellEngine
+SOFTWARE\Microsoft\Windows Azure Backup
+SOFTWARE\Microsoft\Windows Azure Backup\Setup
+spp.dll
+START
+Started
+Start-OBRegistration -VaultCredentials $VaultCredentialFilePath -Confirm:$false 
+StartServiceW
+StartTraceW
+STATUS
+status == RPC_S_OK
+status.m_pSystemState
+storageRedundancy
+StringFileInfo
+subscriptionId
+SUCCEEDED(pStatus->m_hrResult)
+Sunday
+Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday
+SUVAUAVH
+SUVWATAUAVAWH
+SUVWATAUAWH
+SUVWATAWH
+SYSRECOVERY
+SYSTEM\ControlSet001\Control\MiniNT
+SYSTEM\CurrentControlSet\Control
+System\CurrentControlSet\Control\ProductOptions
+SYSTEM\CurrentControlSet\Services\wbengine
+SystemBootDevice
+SystemStartOptions
+SystemState
+SYSTEMSTATEBACKUP
+SYSTEMSTATERECOVERY
+SystemStateRestore
+SystemStateRestore_Error
+SystemTimeToFileTime
+SystemTimeToTzSpecificLocalTime
+SYSVOL
+szItem != 0
+t!D8a
+t"D8a
+T$ 9X@
+t$ ATAUAWH
+t$ AWH
+t$ UWATAUAVH
+t$ UWATAUAWH
+t$ UWATAVAWH
+t$ WATAUAVAWH
+t$ WATAVH
+t$ WATAWH
+t$ WAUAVH
+t$ WAVAWH
+t$ WH
+t$(E3
+T$(fA
+T$@E3
+t$@fH
+T$@H;
+T$8E3
+T$hE3
+t$PE3
+T$PE3
+t$PH!
+t$PH;
+t$xE3
+t%D8a
+t)D8a
+t[D8a
+t\I9M
+t+D8A
+tdL;'t_H
+TempFile.tmp
+Template 
+TemplateId
+TerminateProcess
+Thursday
+TraceMessage
+Translation
+tTD8a
+Tuesday
+u HcA<H
+u!H9_
+u*9Q<|%
+u/D9w
+u:H9_0t
+u@u_H
+u=8G u8H
+u=D9sX}
+u>9o8|$2
+u28_)t
+u38\$ct-H
+u38D$pt-H
+u3D8ePt-H
+uAH9_
+UATAUAVAWH
+UAVAWH
+uCD9}
+u'H9_
+u-H9G
+ulNumLogs >= 2
+UnhandledExceptionFilter
+UnregisterTraceGuids
+uOH9spuIH9s`uCH9
+USER32.dll
+userCredentials.m_wszPassword != NULL
+userCredentials.m_wszUserName != NULL
+USVWATAUAVAWH
+USVWATAVAWH
+USVWATAVH
+USVWAVH
+uUD9l$0
+UuidFromStringW
+UuidToStringW
+UVWATAUAVAWH
+UVWATAUH
+UVWATAVH
+UVWATAWH
+UVWAVAWH
+UWATAUAWH
+UWATAVAWH
+UWATH
+UWAUAVAWH
+UWAUH
+UWAVH
+UWAWH
+uX;EP
+uXL9}`t
+v"bnVolumeCount != 0
+VarFileInfo
+vault
+VAVAWH
+Verbose
+Version
+VERSIONS
+vH!|$8H
+VIRTUALMACHINES
+volStat.m_eState == BLB_BS_COMPLETED
+Volume
+VOLUME_HAS_SYSTEMSTATE(pVolumeStatus->m_dwVolumeFlags)
+VS_VERSION_INFO
+vssCopy
+vssFull
+vsstrace.dll
+VWATAUAVH
+VWATAVAWH
+VWATH
+VWAUAVAWH
+VWAVH
+VWAWH
+WaitForSingleObject
+WATAUAVAWH
+WATAVH
+WAUAVH
+WAUAWH
+WAVAWH
+WBADMIN.EXE
+wbadmin.pdb
+WBEngine
+Wbengine(PID:%ld,TID:%ld) Assertion Failed: %s(%d): %s
+wcschr
+wcscmp
+wcscspn
+wcslen(pwszLogFile) < (MAX_PATH - 7)
+wcslen(wszArcNameStart) >= ( BLB_ARRAYSIZE( c_wszRdPath ) -1 )
+wcsncmp
+wcsrchr
+wcsstr
+Wednesday
+WideCharToMultiByte
+WindowsBackup
+WindowsImageBackup
+WindowsServerBackup
+wprintf
+WriteConsoleW
+WriteFile
+wsbappres.dll
+WSBAzureBackupRG
+WSBAzureBackupVault%ws
+wsz != NULL
+wszAppend
+wszAppId != NULL
+wszAppIdentifier != NULL
+wszComponentLogicalPath
+wszComponentName
+wszComponentName != NULL
+wszComponentName1
+wszComponentName2
+wszCurrentTargetName != NULL
+wszCurrentTargetNameToSet
+wszDefaultTargetLabel != NULL
+wszDir
+wszDiskId
+wszDisplayName
+wszDisplayStr != NULL
+wszExistingVolume
+wszFailureLogName
+wszFilePath
+wszFileSystem
+wszGuid
+wszGuid != NULL
+wszItemLocal
+wszKeyValue != NULL && wszSubKeyPath != NULL && wszSubKeyName != NULL && lpType != NULL
+wszLocal == NULL
+wszMachineName
+wszName != NULL
+wszNetworkShare
+wszNoun
+wszOption != NULL
+wszOriginalVolume
+wszOutputFile != NULL
+wszOutputFile == NULL
+wszPassword
+wszPath
+wszPath != NULL
+wszPossibleInputs!=NULL
+wszRecoveryTypesAllowedLocal != NULL
+wszSnapshotId != NULL
+wszSource
+wszSourcePath
+wszStr
+wszStringToAppend != NULL
+wszSuccessLogName
+wszTargeDiskId
+wszTarget
+wszTargetAccessPath
+wszTargetAccessPath != NULL
+wszTargetDeviceName != NULL
+wszTargetDiskId != NULL
+wszTargetGiven
+wszTargetGiven != NULL
+wszTargetName
+wszTargetName != NULL
+wszTargetNameIn != NULL
+wszUserName
+wszValueName
+wszVerb
+wszVolumeName
+wszVolumeName != NULL
+x ATAUAVH
+x ATAVAWH
+x AUAVAWH
+x AVH
+x UATAUAVAWH
+X UVWATAUAVAWH
+x^H!|$0E3
+x~D8o u!H
+x+9uw
+XA_A^A]A\_^[]
+xA_A^A]A\_^[]
+XA_A^A]A\_^[]
+xA_A^A]A\_^[]
+XA_A^A]A\_^[]
+xgu;D
+xLu+H
+yyyy'_'MM'_'dd
+ZL6U.

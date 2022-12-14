@@ -1,0 +1,2240 @@
+                
+                                            <xs:attribute name="DesiredState" type="DesiredStateString" use="required" />
+                                        </xs:extension>
+                                        <xs:extension base="SyncProviderString">
+                                        <xs:extension base="xs:anyURI">
+                                        <xs:extension base="xs:boolean">
+                                        <xs:extension base="xs:nonNegativeInteger">
+                                        <xs:extension base="xs:string">
+                                    </xs:simpleContent>
+                                    <xs:attribute name="DesiredState" type="ServiceStateString" use="required"  />
+                                    <xs:attribute name="DesiredState" type="Windows8AppStateString" use="required" />
+                                    <xs:attribute name="PackageFamilyName" type="xs:string" use="required" />
+                                    <xs:attribute name="ServiceName" type="xs:string" use="required" />
+                                    <xs:simpleContent>
+                                </xs:complexType>
+                                <xs:complexType>
+                              No pattern is used to enforce this though for now.
+                              Non-resolved names will be wrapped in curly braces {}. 
+                            </xs:element>
+                            <xs:element maxOccurs="unbounded" name="Windows8App">
+                            <xs:element name="ContactITDescription" maxOccurs="1" minOccurs="1">
+                            <xs:element name="ContactITUrl" maxOccurs="1" minOccurs="1">
+                            <xs:element name="DontSyncWindows8AppSettings" maxOccurs="1" minOccurs="1">
+                            <xs:element name="FirstUseNotificationEnabled" maxOccurs="1" minOccurs="1">
+                            <xs:element name="MaxPackageSizeInBytes" maxOccurs="1" minOccurs="1">
+                            <xs:element name="ServiceTask">
+                            <xs:element name="SettingsImportNotifyDelayInSeconds" maxOccurs="1" minOccurs="1">
+                            <xs:element name="SettingsImportNotifyEnabled" maxOccurs="1" minOccurs="1">
+                            <xs:element name="SettingsStoragePath" maxOccurs="1" minOccurs="1">
+                            <xs:element name="SettingsTemplateCatalogPath" maxOccurs="1" minOccurs="0">
+                            <xs:element name="SyncEnabled" maxOccurs="1" minOccurs="1">
+                            <xs:element name="SyncMethod" maxOccurs="1" minOccurs="1">
+                            <xs:element name="SyncOverMeteredNetwork" maxOccurs="1" minOccurs="1">
+                            <xs:element name="SyncOverMeteredNetworkWhenRoaming" maxOccurs="1" minOccurs="1">
+                            <xs:element name="SyncProviderPingEnabled" maxOccurs="1" minOccurs="1">
+                            <xs:element name="SyncTimeoutInMilliseconds" maxOccurs="1" minOccurs="1">
+                            <xs:element name="SyncUnlistedWindows8Apps" maxOccurs="1" minOccurs="1">
+                            <xs:element name="TrayIconEnabled" maxOccurs="1" minOccurs="1">
+                            <xs:element name="VdiCollectionName" maxOccurs="1" minOccurs="1">
+                            <xs:element name="WaitForSyncOnApplicationStart" maxOccurs="1" minOccurs="1">
+                            <xs:element name="WaitForSyncOnLogon" maxOccurs="1" minOccurs="1">
+                            <xs:element name="WaitForSyncTimeoutInMilliseconds" maxOccurs="1" minOccurs="1">
+                            or a hexadecimal representation.
+                          <xs:element ref="tns:RuleOverrideReference"/>
+                          <xs:element ref="tns:RuleSeverityOverrideReference"/>
+                        </xs:choice>
+                        </xs:sequence>
+                        <xs:choice minOccurs="0" maxOccurs="unbounded">
+                        <xs:sequence>
+                      </xs:sequence>
+                      <xs:sequence>
+                      Additional namespaces and associated prefixes used in the XPath
+                      expression above
+                      potentially namespace prefixed XPath expression
+                    </xs:complexType>
+                    </xs:documentation>
+                    <xs:complexType>
+                    <xs:documentation>
+                    -->
+                    Absolute path to the file. Explicit UNC names
+                    Absolute path to the folder. Explicit UNC names
+                    among other things.
+                    are not supported.
+                    Currently used by Software Updates and Driver Catalog for defining content
+                  </xs:annotation>
+                  </xs:element>
+                  <xs:annotation>
+                  <xs:element name="SuppressionReferences">
+                  elementFormDefault="qualified"
+                  targetNamespace="http://schemas.microsoft.com/SystemsCenterConfigurationManager/2009/07/10/DesiredConfiguration"
+                  version="5">
+                  xmlns:rules="http://schemas.microsoft.com/SystemsCenterConfigurationManager/2009/06/14/Rules"
+                  xmlns:tns ="http://schemas.microsoft.com/SystemsCenterConfigurationManager/2009/07/10/DesiredConfiguration"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                # Do not install an older schema over a newer schema
+                $result = $COMPLIANT_CODE
+                $result = $NOT_COMPLIANT_CODE
+                </xs:choice>
+                </xs:element>
+                <xs:choice minOccurs="0" maxOccurs="1">
+                <xs:element name="BootCriticalEntry" type="tns:BootCriticalEntryType" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="ComputerPolicy" maxOccurs="1" minOccurs="1">
+                <xs:element name="CurrentComputerUserPolicy" maxOccurs="1" minOccurs="1">
+                <xs:element name="DeploymentTypeIntentExpression" type="tns:DeploymentTypeIntentExpressionType" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="ModelSection" type="tns:ModelSectionType" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="PlatformApplicabilityCondition" type="tns:PlatformApplicabilityConditionType" minOccurs="0"  maxOccurs="unbounded"/>
+                <xs:element name="Services" maxOccurs="unbounded" minOccurs="1">
+                <xs:element name="VirtualEnvironmentMemberExpression" type="tns:VirtualEnvironmentMemberExpressionType" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="VirtualEnvironmentMemberIntentExpression" type="tns:VirtualEnvironmentMemberIntentExpressionType" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="Windows8AppsComputerPolicy">
+                <xs:element name="Windows8AppsCurrentComputerUserPolicy">
+                <xs:element ref="tns:ApplicationReference" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="tns:ApplicationReference"/>
+                <xs:element ref="tns:BaselineReference" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="tns:BusinessPolicyReference"/>
+                <xs:element ref="tns:ExpressionOrOperandBase" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element ref="tns:NamespaceDeclarations">
+                <xs:element ref="tns:OperatingSystemReference" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="tns:OtherConfigurationItemReference" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="tns:Part" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="tns:RootComplexSetting"/>
+                <xs:element ref="tns:RuleExpression" minOccurs="1" maxOccurs="unbounded" />
+                <xs:element ref="tns:SoftwareUpdateBundleReference" />
+                <xs:element ref="tns:SoftwareUpdateReference" />
+                <xs:element ref="tns:SoftwareUpdateReference" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="tns:XPathExpression">
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                -->
+                account_sid: This will either be one of the well-known SID strings or a non-resolved name.
+                ace_flags:  Not used.
+                ace_type:   This will only allow for ALLOW and DENY type ACEs
+                ace_type;ace_flags;rights;object_guid;inherit_object_guid;account_sid
+                In the SccmAceString, the following conventions apply:
+                including the base container itself.
+                inherit_object_guid: Not used.
+                object_guid:         Not used.
+                rights:     The values used here are the entire set of possible string ACE rights
+                Standard ACE SDDL String Format:
+              </xs:choice>
+              </xs:sequence>
+              </xsd:sequence>
+              <xs:attribute name="Compatible" type="xs:boolean" use="optional" default="false" />
+              <xs:choice minOccurs="0" maxOccurs="unbounded">
+              <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:sequence>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute ref="xml:space" />
+              <xsd:sequence>
+            $parts = $version.ToString().Split(".")
+            $result = $COMPLIANT_CODE
+            $result = $NOT_COMPLIANT_CODE
+            $supportedSchema = $True
+            $template = $templateObj.GetContent().ReturnValue
+            $templateObj = [wmi] 'root\Microsoft\UEV:SettingsLocationTemplate="%%UEVTEMPLATEID%%"'
+            $ver = $parts[0] + "." + $parts[1]
+            : and then encoded with base64 encoding.
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : using a System.ComponentModel.TypeConverter
+            {
+            }
+            <!--No PlatformApplicabilityCondition means applicable to all platforms-->
+            </xs:complexType>
+            </xs:extension>
+            </xs:sequence>
+            </xsd:complexType>
+            <xs:complexType>
+            <xs:element name="ConfigurationPoint" type="xs:string" minOccurs="1" maxOccurs="1" nillable="false"/>
+            <xs:element name="ConfigurationPointContext" type="xs:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+            <xs:element name="DeploymentTypeReference" type="rules:DeploymentTypeReferenceType"/>
+            <xs:element name="MsiDiscoveryInfo" type="tns:MsiInfoType"/>
+            <xs:element name="ScriptDiscoveryInfo" type="tns:ScriptInfoType"/>
+            <xs:element name="ValueName" type="tns:RegistryValueNameType"/>
+            <xs:element name="ValuePattern" type="tns:RegistryNameFilterType" />
+            <xs:element ref="rules:CIMReference"/>
+            <xs:element ref="rules:OperatingSystemDiscoveryRule"/>
+            <xs:element ref="tns:DeploymentTypeExpression"/>
+            <xs:element ref="tns:DeploymentTypeIntentExpression"/>
+            <xs:element ref="tns:OperatingSystemDiscoveryInfo"/>
+            <xs:element ref="tns:VirtualEnvironmentExpression"/>
+            <xs:element ref="tns:VirtualEnvironmentMemberExpression"/>
+            <xs:element ref="tns:VirtualEnvironmentMemberIntentExpression"/>
+            <xs:extension base="xs:string">
+            <xs:pattern value="Enabled|Disabled|Cleared" />
+            <xs:pattern value="None|SyncProvider" />
+            <xs:pattern value="Running|Stopped|Paused" />
+            <xs:pattern value="Set|Clear|Unmanaged" />
+            <xs:sequence>
+            <xsd:complexType>
+            break;
+            else 
+            elseif ($templateObj.TemplateVersion -eq $proposedVersion)
+            elseif ($templateObj.TemplateVersion -lt $proposedVersion)
+            if (IsInstalledTemplateSchemaNewerThanProposed($templateObj.TemplateId))
+            If present and false, or missing, the surrounding Sdm contains additional
+            include ParentSimpleSettingReferences.
+            information not captured by the digest.-->
+            return $obj.count
+            return [float]$ver
+            return 0
+            surrounding Sdm is fully described by the digest and can be regnerated.
+            within an outer Sdm document. If present and true, it indicates that the
+        -   Added AuthoringVersion attribute
+        -   Added extensionElements at various places in the schema
+        -   Added ExternalConfigurationItemReference for supporting partially described CIs
+        -   Added ExternalRule into the SimpleSetting for supporting partially described CIs
+        -   Added ExternalXPathDiscoveryInfo into the OtherDiscoverySource for supporting partially described CIs
+        -   Added MinVersion attribute
+        -   Added wildcard extensions to several places in the schema for future extensions
+        -   Changed the RuleTypeBase's OperandA datatype to xs:string to allow the specification of empty strings
+           elementFormDefault="qualified"
+        -   Modified the RootComplexSettingType and ComplexSetting type. Now only RootComplexSettingType can
+           targetNamespace="http://schemas.microsoft.com/SystemsCenterConfigurationManager/2009/06/14/Rules"
+           version="1">
+           xmlns:tns ="http://schemas.microsoft.com/SystemsCenterConfigurationManager/2009/06/14/Rules" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          <!--
+          <!--Either MSI or Script based discovery-->
+          <!--No PlatformApplicabilityCondition means applicable to all platforms-->
+          </xs:choice>
+          </xs:choice>          
+          </xs:element>
+          </xs:element>          
+          </xs:sequence>
+          </xs:simpleContent>
+          </xsd:element>
+          <xs:any namespace="##other" processContents="skip" minOccurs="0" maxOccurs="unbounded" />
+          <xs:attribute name="End" type="xs:unsignedLong" use="required" />
+          <xs:attribute name="Start" type="xs:unsignedLong" use="required" />
+          <xs:attribute name="Value" type="xs:unsignedLong" use="required"/>
+          <xs:choice>
+          <xs:element name="Application" type="rules:ConfigurationItemReferenceType"/>
+          <xs:element name="ApplicationDeploymentRules" type="tns:ApplicationDeploymentRulesType"/>
+          <xs:element name="AssemblyName" type="tns:AssemblyNameType"/>
+          <xs:element name="Attribute" type="tns:NonEmptyStringType"/>
+          <xs:element name="BaseElement" type="xs:Name" />
+          <xs:element name="Baselines">
+          <xs:element name="BootCriticalEntries" minOccurs="0" maxOccurs="1">
+          <xs:element name="Class" type="tns:NonEmptyStringType"/>
+          <xs:element name="ColumnName" type="tns:NonEmptyStringType"/>
+          <xs:element name="Condition" type="tns:ConditionType"/>
+          <xs:element name="Database" type="tns:NonEmptyStringType"/>
+          <xs:element name="DeploymentTypeApplicationReference" type="tns:ConfigurationItemReferenceType"/>
+          <xs:element name="DeploymentTypeReference" type="tns:DeploymentTypeReferenceType"/>
+          <xs:element name="DiscoveryScriptBody" type="tns:ScriptDefinitionType" />
+          <xs:element name="DnName" type="tns:DnNameType"/>
+          <xs:element name="DriverIdentity" type="tns:DriverIdentityType"/>
+          <xs:element name="ExternalXPathDiscoveryInfo">
+          <xs:element name="FilePath" type="tns:FilePathType"/>
+          <xs:element name="Filter" type="tns:FileFilterType"/>
+          <xs:element name="Filter" type="tns:FolderFilterType"/>
+          <xs:element name="Filter" type="tns:LdapFilterType"/>
+          <xs:element name="Goal" type="tns:GoalType"/>
+          <xs:element name="Instance" type="tns:SqlInstanceNamePattern" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="Key" type="tns:RegistryKeyPathType" />
+          <xs:element name="Key" type="tns:RegistryKeyPathType"/>
+          <xs:element name="LdapPrefix" type="tns:LdapPrefixType" />
+          <xs:element name="ModelSections">
+          <xs:element name="Namespace" type="tns:WqlNamespaceType" />
+          <xs:element name="ObjectProperty" type="tns:KeyPropertyType" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element name="Operands">
+          <xs:element name="OperatingSystems">
+          <xs:element name="Operator" type="tns:OperatorType"/>
+          <xs:element name="OptionalItems">
+          <xs:element name="OtherConfigurationItems">
+          <xs:element name="Parts" minOccurs="0" maxOccurs="1">
+          <xs:element name="Path" type="tns:FilePathType"/>
+          <xs:element name="Path" type="tns:MetabasePathType"/>
+          <xs:element name="PlatformApplicabilityConditions" >
+          <xs:element name="ProductCode" type="xs:string" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="ProhibitedItems">
+          <xs:element name="Property" type="tns:NonEmptyStringType"/>
+          <xs:element name="PropertyID" type="xs:unsignedInt"/>
+          <xs:element name="Query" type="tns:SqlQueryStringType"/>
+          <xs:element name="RemediationScriptBody" type="tns:ScriptDefinitionType" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="RequiredItems">
+          <xs:element name="Rules" type="tns:RulesType" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="Settings" minOccurs="0" maxOccurs="1">
+          <xs:element name="Settings" type="tns:SettingsType" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="SoftwareUpdates">
+          <xs:element name="SupersededUpdates" minOccurs="0" maxOccurs="1">
+          <xs:element name="Updates">
+          <xs:element name="VirtualEnvironmentAndOperator" type="tns:VirtualEnvironmentAndOperatorType"/>
+          <xs:element name="VirtualEnvironmentOrOperator" type="tns:VirtualEnvironmentOrOperatorType"/>
+          <xs:element name="Where" type="tns:WqlWhereClauseType" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref ="tns:ExpressionBase"/>
+          <xs:element ref="rules:ConstantValueList" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="rules:PlatformApplicabilityCondition" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="rules:SettingReference" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="rules:VirtualEnvironmentRule" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="tns:Annotation" minOccurs="0"/>
+          <xs:element ref="tns:CIMDiscoverySource" />
+          <xs:element ref="tns:ConfigurationMetadata" />
+          <xs:element ref="tns:ConfigurationMetadata" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="tns:ConstantValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="tns:NamespaceDeclarations" minOccurs="0" maxOccurs="1" />
+          <xs:element ref="tns:OperatingSystemExpression"/>
+          <xs:element ref="tns:OperatingSystemExpression"/>          
+          <xs:element ref="tns:XPathExpression" />
+          <xs:sequence>
+          <xs:simpleContent>
+          <xsd:element name="assembly">
+          <xsd:element name="data">
+          <xsd:element name="metadata">
+          <xsd:element name="resheader">
+          The minimum version of the Configuration Manager processor required to process the instance document
+          The version of the Configuration Manager processor that the instance was authored against
+        - Removal of unsued/invalid elements
+        - Rule outside setting definition
+        - Rules based on new expression schema - rules.xsd
+        - Setting Reference
+        - Simple Rule, Conditional Rule, DeploymentType Rule, OperatingSystemDiscovery Condition, PlatformApplicability Rule
+        $complanceResult = $COMPLIANT_CODE
+        $complanceResult = $NOT_COMPLIANT_CODE
+        $config = Get-WmiObject -Namespace $NAMESPACE $currentHive
+        $config.$SETTING = $DESIRED_VALUE
+        $config.$SETTING = $null
+        $config.$SETTING = ($DESIRED_VALUE -eq "true")
+        $installedTemplateSchema = $t.ReturnValue
+        $key = Get-Item -LiteralPath "HKLM:\SOFTWARE\Microsoft\UEV\Agent" -ErrorAction SilentlyContinue
+        $obj = Get-WinEvent -FilterHashtable @{logname="Microsoft-User Experience Virtualization-App Agent/Operational";id=$id;starttime=((Get-Date).AddDays(-7))}
+        $result = $COMPLIANT_CODE
+        $result = $NOT_COMPLIANT_CODE
+        $result = $REMEDIATION_FAILED
+        $result = $UNSPECIFIED_ERROR
+        $settingConfig = Get-WmiObject -Namespace 'root\microsoft\uev' -Query "select * from ConfigurationItem where SettingName = '%%SETTING_NAME%%'"
+        $status = Get-Service -Name $serviceName
+        $t = Invoke-WmiMethod -Namespace root\microsoft\uev -Class SettingsLocationTemplate -Name GetSchemaByTemplateId -ArgumentList %%UEVTEMPLATEID%%
+        $templateObj = [wmi] 'root\Microsoft\UEV:SettingsLocationTemplate="%%UEVTEMPLATEID%%"'
+        $templateObj.Unregister()
+        $tempTemplateFile = [System.IO.Path]::GetTempFileName() | Rename-Item -NewName { $_ -replace 'tmp$', 'xml' } -PassThru
+        $version = $key.GetValue("Version", "0");
+        [InstanceCountNotZero(Query1) AND InstanceCountNotZero(Query2)]
+        [void]$config.Put()
+        {
+        }
+        } 
+        <!--Empty extension-->
+        <!--No specific schema for Platform Configuration Item-->
+        </xs:choice>
+        </xs:complexType>
+        </xs:documentation>
+        </xs:restriction>
+        </xs:sequence>
+        </xs:sequence>                        
+        </xsd:choice>
+        <comment>This is a comment</comment>
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <xs:attribute name="AllKeyPropertySpecified" type="xs:boolean" use="optional"/>
+        <xs:attribute name="ApplicableAtUserLogon" type="xs:boolean" use="optional" />
+        <xs:attribute name="ApplicationID" type="tns:NonEmptyStringType" use="required"/>
+        <xs:attribute name="AuthoringScopeId" type="xs:Name" use="required"/>
+        <xs:attribute name="Changeable" type="xs:boolean" use="required"/>
+        <xs:attribute name="Class" type="xs:string" use="required"/>
+        <xs:attribute name="CreateMissingPath" type="xs:boolean" use="optional" />
+        <xs:attribute name="DataType" type="rules:DataTypeType" use="required"/>
+        <xs:attribute name="DataType" type="tns:DataTypeType" use="required"/>
+        <xs:attribute name="Depth" type="tns:SearchDepthType" use="optional"/>
+        <xs:attribute name="DesiredState" type="tns:DeploymentTypeDesiredStates" use="required"/>
+        <xs:attribute name="DesiredState" type="tns:VirtualEnvironmentMemberDesiredStates" use="required"/>
+        <xs:attribute name="DetectionId" type="tns:NonEmptyStringType" use="required"/>
+        <xs:attribute name="DetectionType" type="tns:MacDetectionType" use="required" />
+        <xs:attribute name="Hive" type="tns:RegistryHiveType" use="required"/>
+        <xs:attribute name="IncludesSubOU" type="xs:boolean" use="required"/>
+        <xs:attribute name="Is64Bit" type="xs:boolean" use="optional"/>
+        <xs:attribute name="Is64Bit" type="xs:boolean" use="required"/>
+        <xs:attribute name="IsGroup" type="xs:boolean" use="optional"/>
+        <xs:attribute name="IsNode" type="xs:boolean" use="optional" />
+        <xs:attribute name="IsPerUser" type="xs:boolean" use="optional" />
+        <xs:attribute name="IsPerUser" type="xs:boolean" use="optional"/>
+        <xs:attribute name="IsPerUser" type="xs:boolean" use="required" />
+        <xs:attribute name="IsPropertyAccessorArray" type="xs:boolean" use="optional" />
+        <xs:attribute name="IsSingleton" type="xs:boolean" use="optional" />
+        <xs:attribute name="KeyName" type="tns:NonEmptyStringType" use="required" />
+        <xs:attribute name="LogicalName" type="xs:Name" use="required"/>
+        <xs:attribute name="Method" type="tns:SettingMethodTypes" use="optional"/>
+        <xs:attribute name="Name" type="xs:string" use="optional"/>
+        <xs:attribute name="Namespace" type="xs:string" use="required"/>        
+        <xs:attribute name="ObjectType" type="xs:string" use="optional"/>
+        <xs:attribute name="ObjectType" type="xs:string" use="required"/>        
+        <xs:attribute name="Property" type="xs:string" use="required"/>
+        <xs:attribute name="PropertyAccessor" type="xs:string" use="optional"/>
+        <xs:attribute name="PropertyPath" type="xs:string" use="optional"/>
+        <xs:attribute name="RuleId" type="xs:string" use="required"/>
+        <xs:attribute name="RuleLogicalName" type="xs:Name" use="required"/>
+        <xs:attribute name="ScriptType" type="tns:ScriptType" use="required"/>
+        <xs:attribute name="SettingLogicalName" type="xs:string" use="required"/>
+        <xs:attribute name="SettingSourceType" type="tns:SettingSourceTypes" use="required"/>
+        <xs:attribute name="Severity" type="rules:RuleSeverityType" use="required"/>
+        <xs:attribute name="TargetNamespace" type="xs:anyURI" use ="required" />
+        <xs:attribute name="TemplateName" type="xs:Name" use="required"/>
+        <xs:attribute name="TypeOfUri" type="tns:OmaUriType" use="optional" />
+        <xs:attribute name="Uri" type="xs:string" use="required"/>
+        <xs:attribute name="Value" type="xs:string" use="required"/>       
+        <xs:attribute name="Version" type="xs:unsignedInt" use="optional"/>
+        <xs:attribute name="Where" type="xs:string" use="optional"/>
+        <xs:choice minOccurs="0">
+        <xs:choice>
+        <xs:complexType>
+        <xs:documentation>
+        <xs:documentation>A hash of the file referred to by name. A hexadecimal string of length depending on the hash algorithm.</xs:documentation>
+        <xs:documentation>Algorithm used to create a hash of the file.</xs:documentation>
+        <xs:documentation>File version information</xs:documentation>
+        <xs:documentation>Import location, represented by a path (with file name), relative to import root.</xs:documentation>
+        <xs:documentation>Location (URL) of the file for download.</xs:documentation>
+        <xs:documentation>Name of the file on the system (including subfolders, relative to the component root).</xs:documentation>
+        <xs:documentation>Specifies whether the content of the file has been signed.</xs:documentation>
+        <xs:documentation>The size of the files in bytes</xs:documentation>
+        <xs:element name="Description" type="tns:LocalizableString" />
+        <xs:element name="DisplayName" type="tns:LocalizableString"  />
+        <xs:element name="NamespaceDeclaration" type="tns:XPathNamespaceDeclarationType" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="Provider" type="tns:Provider" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="tns:BaseReference" />
+        <xs:element ref="tns:ComplexSetting" />
+        <xs:element ref="tns:ConfigurationItem"/>
+        <xs:element ref="tns:ConfigurationItemWithContents"/>
+        <xs:element ref="tns:ExternalConfigurationItemReference" />
+        <xs:element ref="tns:SimpleSetting"/>
+        <xs:restriction base="xs:string">
+        <xs:sequence>
+        <xs:sequence>          
+        <xsd:choice maxOccurs="unbounded">
+        Added following features -
+        Allow for default registry value
+        catch
+        comment that references this schema's version attribute-->
+        else
+        if ($config.$SETTING -eq $DESIRED_VALUE)
+        if ($config.$SETTING -eq ($DESIRED_VALUE -eq "true"))
+        if ($obj)
+        if ($uevTemplateSchema -eq $appAgentSchama)
+        if ($version.ToString().Length -ge 2)
+        if (($settingConfig.SettingSource -eq 'Default') -or ($config.$SETTING -eq $null))
+        if (($status.Status -eq "Paused") -or ($status.Status -eq "Pausing"))
+        if (($status.Status -eq "Running") -or ($status.Status -eq "Starting"))
+        if (($status.Status -eq "Stopped") -or ($status.Status -eq "Stopping"))
+        Invoke-WmiMethod -Namespace root\Microsoft\UEV -Class SettingsLocationTemplate -Name Update -ArgumentList "$tempTemplateFile"
+        Remove-Item -Path "$tempTemplateFile"
+        return [boolean]$False
+        return [boolean]($uevTemplateSchema -lt $installedTemplateSchema)
+        return 0
+        return 2.0
+        Start-Service -Name $serviceName
+        Stop-Service -Name $serviceName
+        Suspend-Service -Name $serviceName
+        try
+        write-host "Failed to clear UE-V %%SETTING_NAME%%: " + $_;
+        write-host "Failed to set UE-V %%SETTING_NAME%%: " + $_;
+        Write-Host $error[0]
+      <!--
+      <!-- Add more scalar types here -->
+      <!-- Add more vector types here -->
+      <!-- Add new operators here -->
+      <!-- Add new operators here -->     
+      <!-- Provider and Object Model puts a limit on ModelName (AuthoringScope + LogicalName) to be upto 256 chars -->
+      <!--CIs derived from the base Configuration Manager types will not explicitly specify a base-->
+      <!--localhost or localhost\somename or localhost\*-->
+      </xs:annotation>
+      </xs:choice>
+      </xs:element>
+      </xs:extension>
+      </xs:extension>      
+      </xs:extension>                    
+      </xs:sequence>
+      </xsd:complexType>
+      <xs:annotation>
+      <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##other" processContents="skip" />
+      <xs:any namespace="##other" processContents="skip" minOccurs="0" maxOccurs="unbounded" />
+      <xs:attribute name="SmsUniqueIdentity" type="xs:string" use="optional" />
+      <xs:attribute name="Version" type="xs:string" use="optional" default="1.0" />
+      <xs:choice minOccurs="0" maxOccurs="1">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:choice>
+      <xs:element name="Applicability" type="tns:Applicability" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Applicability" type="tns:SettingApplicabilityType" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Code">
+      <xs:element name="Content" type="tns:Content" minOccurs="0" maxOccurs="1" />
+      <xs:element name="ContentDescription" type="rules:LocalizableString" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Definition" type="xs:string" />
+      <xs:element name="Description" type="xs:string"/>
+      <xs:element name="FileContent" type="tns:File" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="HwId" minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Language" type="tns:LanguageType" />
+      <xs:element name="Model" type="tns:DriverModelType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="NameSpace" type="xs:string" />
+      <xs:element name="Operation" type="tns:Operation" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Optimization" type="tns:OptimizationType" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Parameter" type="tns:PropertyBag" />
+      <xs:element name="Parameter" type="tns:PropertyBag" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element name="Property" type="tns:PropertyValue" />
+      <xs:element name="Query" type="xs:string" />
+      <xs:element name="Query1" type="tns:PlatformApplicabilityQueryType"/>
+      <xs:element name="Query2" type="tns:PlatformApplicabilityQueryType"/>
+      <xs:element name="Range">
+      <xs:element name="Script" type="tns:NonEmptyStringType" />
+      <xs:element name="StatusCode" type="tns:StatusCode" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element ref="rules:Annotation" />
+      <xs:element ref="rules:Annotation"/>
+      <xs:element ref="rules:DCMRule" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="rules:DeploymentTypeRule" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="rules:ExpressionBase"/>
+      <xs:element ref="tns:Annotation" minOccurs="0"/>
+      <xs:element ref="tns:ComplexSetting" />
+      <xs:element ref="tns:DiscoverySource" />
+      <xs:element ref="tns:ExpressionBase"/>
+      <xs:element ref="tns:OptimizationBase"/>
+      <xs:element ref="tns:RuleOverrideReference"/>
+      <xs:element ref="tns:RuleSeverityOverrideReference"/>
+      <xs:element ref="tns:SccmAceEntry" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="tns:SimpleSetting" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="tns:SimpleSetting"/>
+      <xs:enumeration value="ADQuery"/>
+      <xs:enumeration value="AllOf"/>
+      <xs:enumeration value="And"/>
+      <xs:enumeration value="AppBundle"/>
+      <xs:enumeration value="Assembly"/>
+      <xs:enumeration value="Attributes"/>
+      <xs:enumeration value="Base"/>
+      <xs:enumeration value="BeginsWith"/>
+      <xs:enumeration value="Between"/>
+      <xs:enumeration value="Boolean"/>
+      <xs:enumeration value="BooleanArray"/>
+      <xs:enumeration value="CacheType"/>
+      <xs:enumeration value="CIM"/>
+      <xs:enumeration value="Company"/>
+      <xs:enumeration value="Complex"/>
+      <xs:enumeration value="Contains"/>
+      <xs:enumeration value="Count"/>
+      <xs:enumeration value="Critical"/>
+      <xs:enumeration value="CriticalWithEvent"/>
+      <xs:enumeration value="Culture"/>
+      <xs:enumeration value="DateCreated"/>
+      <xs:enumeration value="DateModified"/>
+      <xs:enumeration value="DateTime"/>
+      <xs:enumeration value="DateTimeArray"/>
+      <xs:enumeration value="Detect" />
+      <xs:enumeration value="Double"/>
+      <xs:enumeration value="DoubleArray"/>
+      <xs:enumeration value="EndsWith"/>
+      <xs:enumeration value="Equals"/>
+      <xs:enumeration value="File"/>
+      <xs:enumeration value="FileSystemAccessControl"/>
+      <xs:enumeration value="FileSystemAccessControlArray"/>
+      <xs:enumeration value="FileSystemAttribute"/>
+      <xs:enumeration value="FileSystemAttributeArray"/>
+      <xs:enumeration value="Folder"/>
+      <xs:enumeration value="GreaterEquals"/>
+      <xs:enumeration value="GreaterThan"/>
+      <xs:enumeration value="HKEY_CLASSES_ROOT"/>
+      <xs:enumeration value="HKEY_CURRENT_CONFIG"/>
+      <xs:enumeration value="HKEY_CURRENT_USER"/>
+      <xs:enumeration value="HKEY_LOCAL_MACHINE"/>
+      <xs:enumeration value="HKEY_USERS"/>
+      <xs:enumeration value="I386"/>
+      <xs:enumeration value="IA64"/>
+      <xs:enumeration value="IisMetabase"/>
+      <xs:enumeration value="Informational"/>
+      <xs:enumeration value="Install" />
+      <xs:enumeration value="Int64"/>
+      <xs:enumeration value="Int64Array"/>
+      <xs:enumeration value="JScript" />
+      <xs:enumeration value="JScript"/>
+      <xs:enumeration value="LessEquals"/>
+      <xs:enumeration value="LessThan"/>
+      <xs:enumeration value="MacDetection"/>
+      <xs:enumeration value="MSI"/>      
+      <xs:enumeration value="None"/>
+      <xs:enumeration value="NoneOf"/>
+      <xs:enumeration value="NotBeginsWith"/>
+      <xs:enumeration value="NotContains"/>
+      <xs:enumeration value="NotEndsWith"/>
+      <xs:enumeration value="NotEquals"/>
+      <xs:enumeration value="Object"/>
+      <xs:enumeration value="ObjectArray"/>
+      <xs:enumeration value="OmaUri" />
+      <xs:enumeration value="OneLevel"/>
+      <xs:enumeration value="OneOf"/>
+      <xs:enumeration value="Optional"/>
+      <xs:enumeration value="Or"/>
+      <xs:enumeration value="Other"/>
+      <xs:enumeration value="Package"/>
+      <xs:enumeration value="ParameterizedSetting"/>
+      <xs:enumeration value="PlistKey"/>
+      <xs:enumeration value="PowerShell"/>
+      <xs:enumeration value="ProductName"/>
+      <xs:enumeration value="Prohibited"/>
+      <xs:enumeration value="PublicKeyToken"/>
+      <xs:enumeration value="Registry"/>
+      <xs:enumeration value="RegistryAccessControl"/>
+      <xs:enumeration value="RegistryAccessControlArray"/>
+      <xs:enumeration value="RegistryEx"/>
+      <xs:enumeration value="RegistryKey"/>
+      <xs:enumeration value="Remove" />
+      <xs:enumeration value="Required"/>
+      <xs:enumeration value="Script" />
+      <xs:enumeration value="Script"/>
+      <xs:enumeration value="SetEquals"/>
+      <xs:enumeration value="SHA1Hash"/>
+      <xs:enumeration value="ShellScript"/>
+      <xs:enumeration value="Size"/>
+      <xs:enumeration value="SqlQuery"/>
+      <xs:enumeration value="String"/>
+      <xs:enumeration value="StringArray"/>
+      <xs:enumeration value="Subtree"/>
+      <xs:enumeration value="Unknown"/>
+      <xs:enumeration value="Uri"/>      
+      <xs:enumeration value="Value"/>
+      <xs:enumeration value="VBScript" />
+      <xs:enumeration value="VBScript"/>
+      <xs:enumeration value="Version"/>
+      <xs:enumeration value="VersionArray"/>
+      <xs:enumeration value="Warning"/>
+      <xs:enumeration value="Win NT"/>
+      <xs:enumeration value="WindowsScript" />
+      <xs:enumeration value="Wql" />
+      <xs:enumeration value="WqlQuery"/>
+      <xs:enumeration value="x64"/>
+      <xs:enumeration value="XPathQuery"/>
+      <xs:extension base="rules:ConfigurationItemReferenceType">
+      <xs:extension base="tns:ConfigurationItemOverrideReferenceType">
+      <xs:extension base="tns:ConfigurationItemReferenceType">
+      <xs:extension base="tns:ConfigurationItemType">
+      <xs:extension base="tns:ConfigurationItemWithContentsType">
+      <xs:extension base="tns:ConstantValueType">
+      <xs:extension base="tns:DiscoverySourceType">
+      <xs:extension base="tns:ExpressionBaseType">
+      <xs:extension base="tns:ExpressionOrOperandBaseType">
+      <xs:extension base="tns:NonEmptyStringType">
+      <xs:extension base="tns:OperandBaseType">
+      <xs:extension base="tns:OptimizationBaseType">
+      <xs:extension base="tns:OtherConfigurationItemReferenceType">
+      <xs:extension base="tns:PartType">
+      <xs:extension base="tns:RuleBaseType">
+      <xs:extension base="tns:RuleBaseWithIdAndSeverityType">
+      <xs:extension base="tns:RuleOverrideReferenceType">
+      <xs:extension base="tns:SoftwareUpdateType">
+      <xs:minLength value="0" />
+      <xs:minLength value="1" />
+      <xs:minLength value="2" />
+      <xs:minLength value="20" />
+      <xs:minLength value="3" />
+      <xs:pattern value="(0|[1-5][0-9]{0,4}|[7-9][0-9]{0,3}|6[0-4][0-9]{0,3}|6[6-9][0-9]{0,2}|65|65[0-4][0-9]{0,2}|65[6-9][0-9]?|655|655[0-2][0-9]?|655[4-9]|6553[0-5]?).(0|[1-5][0-9]{0,4}|[7-9][0-9]{0,3}|6[0-4][0-9]{0,3}|6[6-9][0-9]{0,2}|65|65[0-4][0-9]{0,2}|65[6-9][0-9]?|655|655[0-2][0-9]?|655[4-9]|6553[0-5]?).(0|[1-5][0-9]{0,4}|[7-9][0-9]{0,3}|6[0-4][0-9]{0,3}|6[6-9][0-9]{0,2}|65|65[0-4][0-9]{0,2}|65[6-9][0-9]?|655|655[0-2][0-9]?|655[4-9]|6553[0-5]?).(0|[1-5][0-9]{0,4}|[7-9][0-9]{0,3}|6[0-4][0-9]{0,3}|6[6-9][0-9]{0,2}|65|65[0-4][0-9]{0,2}|65[6-9][0-9]?|655|655[0-2][0-9]?|655[4-9]|6553[0-5]?)" />
+      <xs:pattern value="[1-9]\.[0-9]{2}\.[0-9]{4}\.[0-9]" />
+      <xs:pattern value="[1-9]\.[0-9]{2}\.[0-9]{4}\.[0-9]{1,4}" />
+      <xs:pattern value="[a-zA-Z0-9\-]+://"/>
+      <xs:pattern value="\((A|D|OA|OD);[^;]*;((GA|GR|GW|GX|RC|SD|WD|WO|RP|WP|CC|DC|LC|SW|LO|DT|CR|KA|KR|KW|KX|FR|FW|FX|FA)+|(0x[0-9A-Fa-f]{1,8}));[^;]*;[^;]*;[^;]*\)"/>
+      <xs:pattern value="localhost|localhost\\[\w$#_-]+|localhost\\\*"/>
+      <xs:sequence>
+      <xsd:complexType>
+    # Compliant if setting does not exist
+    # Compliant if setting exists and is equal to desired value
+    # Lookup all UE-V template schemas supported by AppAgent. If the CM packaged
+    # Removes setting
+    # Returns true if the template that is currently installed has a template
+    # schema greater than the template being distributed by remediation script
+    # template is not supported by the agent, mark as compliant
+    # This should never get called because the discovery script should prevent it
+    # Updates setting to desired value
+    $appAgentConfig = Get-WmiObject -Namespace root\microsoft\uev Configuration
+    $appAgentSchemas = $appAgentConfig.SupportedTemplateSchemaVersions
+    $complanceResult = $NOT_COMPLIANT_CODE
+    $config = Get-WmiObject -namespace $NAMESPACE -Query "select * from %%USER_OR_MACHINE%%ConfiguredWindows8App where PackageFamilyName='$PACKAGE_FAMILY_NAME'"
+    $currentHive = "ComputerConfiguration"
+    $currentHive = "UserConfiguration"
+    $op = "EnableApp";
+    $op = "RemoveApp";
+    $result = $COMPLIANT_CODE
+    $result = $NO_ERROR
+    $result = $NOT_COMPLIANT_CODE
+    $result = $REMEDIATION_FAILED
+    $result = $UNSPECIFIED_ERROR
+    $supportedSchema = $False
+    $template = $templateObj.GetContent().ReturnValue
+    $templateObj = [wmi] 'root\Microsoft\UEV:SettingsLocationTemplate="%%UEVTEMPLATEID%%"'
+    ... ado.net/XML headers & schema ...
+    {
+    }
+    <!--The optional IsComplete attribute is used when the digest xml is embedded
+    <!--The same comments from the FolderType apply.-->
+    </data>
+    </xs:attribute>
+    </xs:choice>
+    </xs:complexContent>
+    </xs:complexType>
+    </xs:element>
+    </xs:restriction>
+    </xs:sequence>
+    </xs:simpleContent>
+    </xs:simpleType>
+    </xsd:element>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <value>2.0</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>text/microsoft-resx</value>
+    <xs:attribute name="ApplicableAtUserLogon" type="xs:boolean" use="optional" />
+    <xs:attribute name="AuthoringScopeId" type="tns:AuthoringScopeId" use="required"/>
+    <xs:attribute name="AuthoringScopeId" type="xs:Name" use="required"/>
+    <xs:attribute name="AuthoringVersion" type="tns:FunctionalVersion" use="optional">
+    <xs:attribute name="BuildVersion" type="xs:unsignedInt" use="required"/>
+    <xs:attribute name="Class" type="xs:string" use="required"/>
+    <xs:attribute name="ContentId" type="xs:string" use="required" />
+    <xs:attribute name="DataType" type="rules:DataTypeType" use="required"/>
+    <xs:attribute name="DataType" type="tns:DataTypeType" use="required"/>
+    <xs:attribute name="Date" type="xs:string" use="required"/>
+    <xs:attribute name="DisplayName" type="tns:NonEmptyStringType" use="required"/>
+    <xs:attribute name="Enabled" type="xs:boolean" use="required"/>
+    <xs:attribute name="HardwareComponent" type="xs:string" use="required"/>
+    <xs:attribute name="Hash" type="xs:hexBinary" use="optional" />
+    <xs:attribute name="Hash" type="xs:hexBinary" use="optional">
+    <xs:attribute name="HashAlgorithm" type="xs:string"  use="optional"/>
+    <xs:attribute name="HashAlgorithm" type="xs:string" use="optional">
+    <xs:attribute name="HashVersion" type="xs:unsignedLong" use="optional" />
+    <xs:attribute name="ID" type="xs:string" use="required"/>
+    <xs:attribute name="id" type="xs:string" use="required"/>
+    <xs:attribute name="ImportPath" type="xs:string" use="optional">
+    <xs:attribute name="INFFile" type="xs:string" use="required"/>
+    <xs:attribute name="IsComplete" type="xs:boolean" use="optional"/>
+    <xs:attribute name="IsFullySpecified" type="xs:boolean" use="required"/>
+    <xs:attribute name="IsHidden" type="xs:boolean" use="optional"/>
+    <xs:attribute name="IsPerUser" type="xs:boolean" use="required"/>
+    <xs:attribute name="LogicalName" type="tns:LogicalName" use="required"/>
+    <xs:attribute name="LogicalName" type="xs:Name" use="required"/>
+    <xs:attribute name="MajorVersion" type="xs:unsignedInt" use="required"/>
+    <xs:attribute name="ManufacturerId" type="xs:string" use="required"/>
+    <xs:attribute name="ManufacturerName" type="xs:string" use="required"/>
+    <xs:attribute name="MaxVersion" type="tns:PlatformMaxVersionType" use="required"/>
+    <xs:attribute name="MinorVersion" type="xs:unsignedInt" use="required"/>
+    <xs:attribute name="MinVersion" type="tns:FunctionalVersion" use="optional">
+    <xs:attribute name="MinVersion" type="tns:PlatformMinVersionType" use="required"/>
+    <xs:attribute name="Name" type="tns:DefinedPlatformNamesType" use="required"/>
+    <xs:attribute name="Name" type="tns:MethodType" use="required" />
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Name" type="xs:string" use="required" />
+    <xs:attribute name="Name" type="xs:string" use="required"/>
+    <xs:attribute name="Name" type="xs:string" use="required">
+    <xs:attribute name="Namespace" type="xs:anyURI" use="required"/>
+    <xs:attribute name="NonCompliantWhenSettingIsNotFound" type="xs:boolean" use="optional" />
+    <xs:attribute name="ObjectType" type="xs:string" use="optional"/>
+    <xs:attribute name="Platform" type="tns:DefinedPlatformsType" use="required"/>
+    <xs:attribute name="Prefix" type="tns:NamespacePrefixType" use="required"/>
+    <xs:attribute name="ProductCode" type="tns:NonEmptyStringType" use="required"/>
+    <xs:attribute name="Provider" type="xs:string" use="required"/>
+    <xs:attribute name="RequiresAllVersions" type="xs:boolean" use="optional"/>
+    <xs:attribute name="ResourceId" type="xs:ID" use="optional"/>
+    <xs:attribute name="RuleType" type="tns:ApplicabilityRuleType" />
+    <xs:attribute name="ScriptType" type="tns:ScriptType" use="required"/>
+    <xs:attribute name="ServicePackMajorVersion" type="xs:unsignedInt" use="optional"/>
+    <xs:attribute name="ServicePackMinorVersion" type="xs:unsignedInt" use="optional"/>
+    <xs:attribute name="Severity" type="tns:RuleSeverityType" use="required"/>
+    <xs:attribute name="Signed" type="xs:boolean" use="optional">
+    <xs:attribute name="Signed" type="xs:boolean" use="required"/>
+    <xs:attribute name="Signer" type="xs:string" use="optional"/>
+    <xs:attribute name="Size" type="xs:unsignedLong" use="optional">
+    <xs:attribute name="SourceType" type="xs:string" use="required" />
+    <xs:attribute name="SourceURL" type="xs:anyURI" use="optional">
+    <xs:attribute name="TargetOSVersion" type="xs:string" use="required"/>
+    <xs:attribute name="Text" type="xs:string" use="required" />
+    <xs:attribute name="Type" type="xs:string" use="required" />
+    <xs:attribute name="Type" type="xs:string" use="required"/>
+    <xs:attribute name="Value" type="xs:string" use="required" />
+    <xs:attribute name="Value" type="xs:string" use="required"/>
+    <xs:attribute name="Version" type="tns:FourPartVersion" use="optional">
+    <xs:attribute name="Version" type="tns:NonEmptyStringType" use="optional"/>
+    <xs:attribute name="Version" type="xs:string" use="required"/>
+    <xs:attribute name="Version" type="xs:unsignedInt" use="optional"/>
+    <xs:attribute name="Version" type="xs:unsignedInt" use="required"/>
+    <xs:attribute name="Version" type="xs:unsignedLong" use="optional"/>
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+    <xs:complexContent>
+    <xs:complexContent>      
+    <xs:complexType>
+    <xs:element name="UevAgentConfiguration">
+    <xs:restriction base="xs:ID">
+    <xs:restriction base="xs:Name">
+    <xs:restriction base="xs:string" />
+    <xs:restriction base="xs:string">
+    <xs:restriction base="xs:unsignedLong" />
+    <xs:sequence>
+    <xs:simpleContent>
+    <xs:simpleType name="DesiredStateString">
+    <xs:simpleType name="ServiceStateString">
+    <xs:simpleType name="SyncProviderString">
+    <xs:simpleType name="Windows8AppStateString">
+    <xsd:element name="root" msdata:IsDataSet="true">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    -->
+    associated with the data types.
+    Base:       Only the base container (typically specified via Path) is searched.
+    catch
+    Classes that don't support this are serialized and stored with the 
+    Each data row contains a name, and value. The row also contains a 
+    else
+    elseif ($desiredState -eq "Paused")
+    elseif ($desiredState -eq "Stopped")
+    Example:
+    extensible. For a given mimetype the value must be set accordingly:
+    finally
+    foreach ($appAgentSchama in $appAgentSchemas)
+    Get-CMBaseline -name $baselineName -OutVariable baseline
+    Get-CMBaselineXMLDefinition -name $baselineName -OutVariable baselineXml
+    Get-CMConfigurationItem -name $ciName -OutVariable ci
+    if (!(IsSchemaSupported))
+    if ($config -eq $null)
+    if ($desiredState -eq "Running")
+    if ($template.Length -eq 0)
+    if (($config -ne $null) -and !$config.Enabled)
+    if (($config -ne $null) -and $config.Enabled)
+    If the Query elements are not present, applicablity is True.
+    Invoke-WmiMethod -Namespace $NAMESPACE -class %%USER_OR_MACHINE%%ConfiguredWindows8App -name $op -ArgumentList $PACKAGE_FAMILY_NAME
+    Logically, platform applicability is a boolean value determined as follows (pseudocode):
+    Microsoft ResX Schema 
+    mimetype set.
+    mimetype: application/x-microsoft.net.object.binary.base64
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    mimetype: application/x-microsoft.net.object.soap.base64
+    name/value pairs.
+    namespace as an initial step toward schema consolidation.
+    New-CMBaseline -Description $baselineDescription -Name $baselineName
+    New-CMConfigurationItem -CreationType WindowsApplication -Description $ciDescription -Name $ciName
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    OneLevel:   Only the first level of containers beneath the base container is searched,
+    read any of the formats listed below.
+    Remove-CMConfigurationItem -Id $baseline[0].CI_ID -Force
+    Remove-CMConfigurationItem -Id $ci[0].CI_ID -Force
+    ResXResourceReader how to depersist the object. This is currently not 
+    return $complanceResult
+    return $COMPLIANT_CODE
+    return $result
+    return $supportedSchema
+    Software Updates when generating the Sdm v2 packages. They are copied to this
+    Subtree:    The entire subtree of containers is searched.
+    text/value conversion through the TypeConverter architecture. 
+    that is mostly human readable. The generation and parsing of the 
+    that the ResXResourceWriter will generate, however the reader can 
+    The attributes are UI hints only and should be ignored for discovery purposes.
+    The following definitions are taken from the schema definiton previously used by
+    The following definitions are used to support Driver Catalog driver definitions
+    The mimetype is used for serialized objects, and tells the 
+    The primary goals of this format is to allow a simple XML format 
+    There are any number of "resheader" rows that contain simple 
+    try
+    type or mimetype. Type corresponds to a .NET class that support 
+    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized with 
+    various data types are done through the TypeConverter classes 
+    Version 2.0
+    write-host "Failed to set UE-V " + $PACKAGE_FAMILY_NAME + ": " + $_;
+    write-host 'Installed' 
+  <!--
+  <!-- 
+  <!--  version 5 :
+  <!-- All abstract types end here -->
+  <!-- All abstract types start here -->
+  <!-- All common types end here -->
+  <!-- All common types start here -->
+  <!-- All non-abstract Expression types end here -->
+  <!-- All non-abstract Expression types start here -->
+  <!-- All non-abstract Operand types end here -->
+  <!-- All non-abstract Operand types start here -->
+  <!-- All non-abstract Rule types end here -->
+  <!-- All non-abstract Rule types start here -->
+  <!-- Annotation -->
+  <!-- CIMReference -->
+  <!-- CIReference -->
+  <!-- ConditionalRuleType -->
+  <!-- ConfigurationItemExpression -->
+  <!-- ConstantObject -->
+  <!-- ConstantValue -->
+  <!-- ConstantValueList -->
+  <!-- DataType -->
+  <!-- DeloymentTypeRuleType -->
+  <!-- DeploymentTypeExpression -->
+  <!-- DeploymentTypeIntentExpression -->
+  <!-- Expression -->
+  <!-- Expression Base-->
+  <!-- ExpressionOrOperand Base-->
+  <!-- Gloabl Settings CI-->
+  <!-- GlobalExpression -->
+  <!-- GlobalSettingReference -->
+  <!-- KeyProperty -->
+  <!-- Operand Base-->
+  <!-- OperatingSystemDiscoveryRuleType -->
+  <!-- OperatingSystemExpression -->
+  <!-- Operator -->
+  <!-- Optimizations -->
+  <!-- OUValue -->
+  <!-- PlatformApplicabiltyRuleType -->
+  <!-- Rule Base -->  
+  <!-- RuleExpression -->
+  <!-- RuleSeverity -->
+  <!-- RuleType -->
+  <!-- SettingReference -->
+  <!-- SettingSourceTypes -->
+  <!-- version 3 : 
+  <!-- version 4 : 
+  <!-- VirtualEnvironmentAndOperator -->
+  <!-- VirtualEnvironmentExpression -->
+  <!-- VirtualEnvironmentMemberExpression -->
+  <!-- VirtualEnvironmentMemberIntentExpression -->
+  <!-- VirtualEnvironmentOrOperator -->
+  <!-- VirtualEnvironmentRuleType -->
+  <!--Access control-->
+  <!--CI References, used by Baselines-->
+  <!--CI Types-->
+  <!--Configuration Item elements-->
+  <!--Discovery Source Types-->
+  <!--Discovery sources-->
+  <!--Elements-->
+  <!--Global Configuration Items-->
+  <!--Global Expression CI-->
+  <!--Import other schemas -->
+  <!--Note: It is a best-practice that instance documents conforming to this schema should include a 
+  <!--OperatingSystem Discovery information-->
+  <!--Part elements-->
+  <!--Part types-->
+  <!--Platform Configuration Item -->
+  <!--Rule override types-->
+  <!--Settings-->
+  <!--Should prohibit a value that begins with the word "where"-->
+  <!--Substitution group heads-->
+  <!--The digest root element-->
+  <!--Types-->
+  <!--Virtual Environment CI-->
+  <!--Virtual Environment elements -->
+  </resheader>
+  </xs:complexType>
+  </xs:element>
+  </xs:simpleType>
+  </xsd:schema>
+  <resheader name="reader">
+  <resheader name="resmimetype">
+  <resheader name="version">
+  <resheader name="writer">
+  <xs:complexType name="AccessControlListType">
+  <xs:complexType name="ActiveDirectoryDiscoveryType">
+  <xs:complexType name="Applicability">
+  <xs:complexType name="ApplicationDeploymentRulesType">
+  <xs:complexType name="ApplicationPolicyType">
+  <xs:complexType name="ApplicationType">
+  <xs:complexType name="AssemblyType">
+  <xs:complexType name="AuthorizationListType">
+  <xs:complexType name="BaselevelOptimizationType">
+  <xs:complexType name="BaselineType">
+  <xs:complexType name="BootCriticalEntryType">
+  <xs:complexType name="BusinessPolicyType">
+  <xs:complexType name="CIMDiscoverySource">
+  <xs:complexType name="CIMReferenceType">
+  <xs:complexType name="ComplexSettingType">
+  <xs:complexType name="ConditionalRuleType">
+  <xs:complexType name="ConditionType">
+  <xs:complexType name="ConfigurationItemExpressionType">
+  <xs:complexType name="ConfigurationItemOverrideReferenceType" abstract="true">
+  <xs:complexType name="ConfigurationItemReferenceType">
+  <xs:complexType name="ConfigurationItemType" abstract="true">
+  <xs:complexType name="ConfigurationItemWithContentsType" abstract="true">
+  <xs:complexType name="ConfigurationPolicyType">
+  <xs:complexType name="ConstantObjectType">
+  <xs:complexType name="ConstantValueListType">
+  <xs:complexType name="ConstantValueType">
+  <xs:complexType name="Content">
+  <xs:complexType name="DeploymentTypeExpressionType">
+  <xs:complexType name="DeploymentTypeIntentExpressionType">
+  <xs:complexType name="DeploymentTypeReferenceType">
+  <xs:complexType name="DeploymentTypeRuleType">
+  <xs:complexType name="DigestType">
+  <xs:complexType name="DiscoverySourceType" abstract="true">
+  <xs:complexType name="DriverIdentityType">
+  <xs:complexType name="DriverModelType">
+  <xs:complexType name="DriverType">
+  <xs:complexType name="ExpressionBaseType">
+  <xs:complexType name="ExpressionOrOperandBaseType">
+  <xs:complexType name="ExpressionType">
+  <xs:complexType name="ExternalConfigurationItemReferenceType">
+  <xs:complexType name="File">
+  <xs:complexType name="FileType">
+  <xs:complexType name="FolderType">
+  <xs:complexType name="GlobalExpressionConfigurationItemType">
+  <xs:complexType name="GlobalExpressionType">
+  <xs:complexType name="GlobalSettingReferenceType">
+  <xs:complexType name="GlobalSettingsConfigurationItemType">
+  <xs:complexType name="GoalType">
+  <xs:complexType name="IISMetabaseDiscoveryType">
+  <xs:complexType name="KeyPropertyType">
+  <xs:complexType name="LocalizableString">
+  <xs:complexType name="MacDetectionDiscoveryType">
+  <xs:complexType name="ModelSectionType">
+  <xs:complexType name="MsiInfoType">
+  <xs:complexType name="MSIType">
+  <xs:complexType name="OperandBaseType">
+  <xs:complexType name="OperatingSystemDiscoveryRuleType">
+  <xs:complexType name="OperatingSystemExpressionType">
+  <xs:complexType name="OperatingSystemType">
+  <xs:complexType name="Operation">
+  <xs:complexType name="OptimizationBaseType" abstract="true">
+  <xs:complexType name="OptimizationType">
+  <xs:complexType name="OSInfoType">
+  <xs:complexType name="OtherConfigurationItemReferenceType">
+  <xs:complexType name="OtherConfigurationItemType">
+  <xs:complexType name="OtherDiscoveryType">
+  <xs:complexType name="OUValueType">
+  <xs:complexType name="ParameterizedDiscoveryType">
+  <xs:complexType name="PartType" abstract="true">
+  <xs:complexType name="PlatformApplicabilityConditionType">
+  <xs:complexType name="PlatformConfigurationItemType">
+  <xs:complexType name="PlistKeyDiscoveryType">
+  <xs:complexType name="PropertyBag">
+  <xs:complexType name="PropertyValue">
+  <xs:complexType name="Provider">
+  <xs:complexType name="RegistryDiscoveryType">
+  <xs:complexType name="RegistryKeyType">
+  <xs:complexType name="RootComplexSettingType">
+  <xs:complexType name="RuleBaseType">
+  <xs:complexType name="RuleBaseWithIdAndSeverityType">
+  <xs:complexType name="RuleExpressionType">
+  <xs:complexType name="RuleOverrideReferenceType">
+  <xs:complexType name="RuleSeverityOverrideReferenceType">
+  <xs:complexType name="RulesType">
+  <xs:complexType name="RuleType">
+  <xs:complexType name="ScriptDefinitionType">
+  <xs:complexType name="ScriptDiscoveryType">
+  <xs:complexType name="ScriptInfoType">
+  <xs:complexType name="ScriptQuery">
+  <xs:complexType name="SettingApplicabilityType">
+  <xs:complexType name="SettingReferenceType">
+  <xs:complexType name="SettingsDefinitionType">
+  <xs:complexType name="SettingsType">
+  <xs:complexType name="SimpleSettingType">
+  <xs:complexType name="SoftwareUpdateBundleType">
+  <xs:complexType name="SoftwareUpdateType">
+  <xs:complexType name="SqlQueryDiscoveryType">
+  <xs:complexType name="StatusCode">
+  <xs:complexType name="UriDiscoveryType">
+  <xs:complexType name="VirtualEnvironmentConfigurationItemType">
+  <xs:complexType name="VirtualEnvironmentExpressionType">
+  <xs:complexType name="VirtualEnvironmentMemberExpressionType">
+  <xs:complexType name="VirtualEnvironmentMemberIntentExpressionType">
+  <xs:complexType name="VirtualEnvironmentRuleType">
+  <xs:complexType name="WQLQuery">
+  <xs:complexType name="WqlQueryDiscoveryType">
+  <xs:complexType name="XPathDiscoveryType">
+  <xs:complexType name="XPathNamespaceDeclarationType">
+  <xs:element name="ActiveDirectoryDiscoverySource" type="tns:ActiveDirectoryDiscoveryType" substitutionGroup="tns:DiscoverySource"/>
+  <xs:element name="Annotation">
+  <xs:element name="Application" type="tns:ApplicationType" substitutionGroup="tns:ConfigurationItemWithContents"/>
+  <xs:element name="ApplicationPolicy" type="tns:ApplicationPolicyType" substitutionGroup="tns:ConfigurationItem"/>
+  <xs:element name="ApplicationReference" type="rules:ConfigurationItemReferenceType"/>
+  <xs:element name="Assembly" type="tns:AssemblyType" substitutionGroup="tns:Part"/>
+  <xs:element name="AuthorizationList" type="tns:AuthorizationListType" substitutionGroup="tns:ConfigurationItem"/>
+  <xs:element name="BaselevelOptimization" type="tns:BaselevelOptimizationType" substitutionGroup="tns:OptimizationBase"/>
+  <xs:element name="Baseline" type="tns:BaselineType" substitutionGroup="tns:ConfigurationItem"/>
+  <xs:element name="BaselineReference" type="rules:ConfigurationItemReferenceType"/>
+  <xs:element name="BaseReference" type="rules:ConfigurationItemReferenceType"/>
+  <xs:element name="BusinessPolicy" type="tns:BusinessPolicyType" substitutionGroup="tns:ConfigurationItemWithContents"/>
+  <xs:element name="BusinessPolicyReference" type="rules:ConfigurationItemReferenceType"/>
+  <xs:element name="CIMDiscoverySource" type="tns:CIMDiscoverySource" substitutionGroup="tns:DiscoverySource"/>
+  <xs:element name="CIMReference" type="tns:CIMReferenceType" substitutionGroup="tns:OperandBase"/>
+  <xs:element name="ComplexSetting" type="tns:ComplexSettingType"/>
+  <xs:element name="ConditionalRule" type="tns:ConditionalRuleType"  substitutionGroup="tns:DCMRule"/>
+  <xs:element name="ConfigurationItem" type="tns:ConfigurationItemType" abstract="true"/>
+  <xs:element name="ConfigurationItemExpression" type="tns:ConfigurationItemExpressionType" substitutionGroup="tns:ExpressionBase"/>
+  <xs:element name="ConfigurationItemWithContents" type="tns:ConfigurationItemWithContentsType" abstract="true"/>
+  <xs:element name="ConfigurationMetadata">
+  <xs:element name="ConfigurationPolicy" type="tns:ConfigurationPolicyType" substitutionGroup="tns:ConfigurationItem"/>
+  <xs:element name="ConstantObject" type="tns:ConstantObjectType" substitutionGroup="tns:OperandBase"/>
+  <xs:element name="ConstantValue" type="tns:ConstantValueType" substitutionGroup="tns:OperandBase"/>
+  <xs:element name="ConstantValueList" type="tns:ConstantValueListType" substitutionGroup="tns:OperandBase"/>
+  <xs:element name="DCMRule" type="tns:RuleBaseWithIdAndSeverityType" substitutionGroup="tns:RuleBaseWithIdAndSeverity" abstract="true"/>
+  <xs:element name="DeploymentTypeExpression" type="tns:DeploymentTypeExpressionType" substitutionGroup="tns:ExpressionBase"/>
+  <xs:element name="DeploymentTypeIntentExpression" type="tns:DeploymentTypeIntentExpressionType" substitutionGroup="tns:ExpressionBase"/>
+  <xs:element name="DeploymentTypeRule" type="tns:DeploymentTypeRuleType" substitutionGroup="tns:RuleBaseWithIdAndSeverity"/>
+  <xs:element name="DesiredConfigurationDigest" type="tns:DigestType"/>
+  <xs:element name="DiscoverySource" type="tns:DiscoverySourceType" abstract="true"/>
+  <xs:element name="Driver" type="tns:DriverType" substitutionGroup="tns:ConfigurationItem"/>
+  <xs:element name="Expression" type="tns:ExpressionType" substitutionGroup="tns:ExpressionBase"/>
+  <xs:element name="ExpressionBase" type="tns:ExpressionBaseType" abstract="true" substitutionGroup="tns:ExpressionOrOperandBase"/>
+  <xs:element name="ExpressionOrOperandBase" type="tns:ExpressionOrOperandBaseType" abstract="true"/>
+  <xs:element name="ExternalConfigurationItemReference" type="tns:ExternalConfigurationItemReferenceType" />
+  <xs:element name="File" type="tns:FileType" substitutionGroup="tns:Part"/>
+  <xs:element name="Folder" type="tns:FolderType" substitutionGroup="tns:Part"/>
+  <xs:element name="GlobalExpression" type="tns:GlobalExpressionConfigurationItemType" substitutionGroup="tns:ConfigurationItemWithContents"/>
+  <xs:element name="GlobalExpression" type="tns:GlobalExpressionType" substitutionGroup="tns:ExpressionBase"/>
+  <xs:element name="GlobalSettingReference" type="tns:GlobalSettingReferenceType" substitutionGroup="tns:OperandBase"/>  
+  <xs:element name="GlobalSettings" type="tns:GlobalSettingsConfigurationItemType" substitutionGroup="tns:ConfigurationItemWithContents"/>
+  <xs:element name="IISMetabaseDiscoverySource" type="tns:IISMetabaseDiscoveryType" substitutionGroup="tns:DiscoverySource"/>
+  <xs:element name="MacDetectionDiscoverySource" type="tns:MacDetectionDiscoveryType" substitutionGroup="tns:DiscoverySource"/>
+  <xs:element name="MSI" type="tns:MSIType" substitutionGroup="tns:Part"/>
+  <xs:element name="NamespaceDeclarations">
+  <xs:element name="OperandBase" type="tns:OperandBaseType" abstract="true" substitutionGroup="tns:ExpressionOrOperandBase"/>
+  <xs:element name="OperatingSystem" type="tns:OperatingSystemType" substitutionGroup="tns:ConfigurationItemWithContents"/>
+  <xs:element name="OperatingSystemDiscoveryInfo" type="tns:OSInfoType"/>
+  <xs:element name="OperatingSystemDiscoveryRule" type="tns:OperatingSystemDiscoveryRuleType" substitutionGroup="tns:RuleBase"/>
+  <xs:element name="OperatingSystemExpression" type="tns:OperatingSystemExpressionType" substitutionGroup="tns:ExpressionBase"/>
+  <xs:element name="OperatingSystemReference" type="rules:ConfigurationItemReferenceType"/>
+  <xs:element name="OptimizationBase" type="tns:OptimizationBaseType" abstract="true" />
+  <xs:element name="OtherConfigurationItem" type="tns:OtherConfigurationItemType" substitutionGroup="tns:ConfigurationItem"/>
+  <xs:element name="OtherConfigurationItemReference" type="tns:OtherConfigurationItemReferenceType"/>
+  <xs:element name="OtherDiscoverySource" type="tns:OtherDiscoveryType" substitutionGroup="tns:DiscoverySource"/>
+  <xs:element name="OUValue" type="tns:OUValueType" substitutionGroup="tns:ConstantValue"/>
+  <xs:element name="ParameterizedDiscoverySource" type="tns:ParameterizedDiscoveryType" substitutionGroup="tns:DiscoverySource"/>
+  <xs:element name="Part" type="tns:PartType" abstract="true"/>
+  <xs:element name="Permissions" type="tns:AccessControlListType"/>
+  <xs:element name="Platform" type="tns:PlatformConfigurationItemType" substitutionGroup="tns:ConfigurationItemWithContents"/>
+  <xs:element name="PlatformApplicabilityCondition" type="tns:PlatformApplicabilityConditionType" substitutionGroup="tns:RuleBase"/>
+  <xs:element name="PlistKeyDiscoverySource" type="tns:PlistKeyDiscoveryType" substitutionGroup="tns:DiscoverySource"/>
+  <xs:element name="RegistryDiscoverySource" type="tns:RegistryDiscoveryType" substitutionGroup="tns:DiscoverySource"/>
+  <xs:element name="RegistryKey" type="tns:RegistryKeyType" substitutionGroup="tns:Part"/>
+  <xs:element name="RegistryKeyEx" type="tns:RegistryKeyType" substitutionGroup="tns:Part"/>
+  <xs:element name="RootComplexSetting" type="tns:RootComplexSettingType"/>
+  <xs:element name="Rule" type="tns:RuleType" substitutionGroup="tns:DCMRule"/>
+  <xs:element name="RuleBase" type="tns:RuleBaseType" abstract="true"/>
+  <xs:element name="RuleBaseWithIdAndSeverity" type="tns:RuleBaseWithIdAndSeverityType" abstract="true"/>
+  <xs:element name="RuleExpression" type="tns:RuleExpressionType" substitutionGroup="tns:ExpressionBase"/>
+  <xs:element name="RuleOverrideReference" type="tns:RuleOverrideReferenceType" />
+  <xs:element name="RuleSeverityOverrideReference" type="tns:RuleSeverityOverrideReferenceType"/>
+  <xs:element name="SccmAceEntry" type="tns:SccmAceString"/>
+  <xs:element name="ScriptDiscoverySource" type="tns:ScriptDiscoveryType" substitutionGroup="tns:DiscoverySource"/>
+  <xs:element name="SettingReference" type="tns:SettingReferenceType" substitutionGroup="tns:OperandBase"/>
+  <xs:element name="SettingsDefinition" type="tns:SettingsDefinitionType" substitutionGroup="tns:ConfigurationItem"/>
+  <xs:element name="SimpleSetting" type="tns:SimpleSettingType"/>
+  <xs:element name="SoftwareUpdate" type="tns:SoftwareUpdateType" substitutionGroup="tns:ConfigurationItem"/>
+  <xs:element name="SoftwareUpdateBundle" type="tns:SoftwareUpdateBundleType" substitutionGroup="tns:ConfigurationItem"/>
+  <xs:element name="SoftwareUpdateBundleReference" type="rules:ConfigurationItemReferenceType"/>
+  <xs:element name="SoftwareUpdateReference" type="rules:ConfigurationItemReferenceType"/>
+  <xs:element name="SqlQueryDiscoverySource" type="tns:SqlQueryDiscoveryType" substitutionGroup="tns:DiscoverySource"/>
+  <xs:element name="UriDiscoverySource" type="tns:UriDiscoveryType" substitutionGroup="tns:DiscoverySource"/>
+  <xs:element name="VirtualEnvironment" type="tns:VirtualEnvironmentConfigurationItemType" substitutionGroup="tns:ConfigurationItemWithContents"/>
+  <xs:element name="VirtualEnvironmentExpression" type="tns:VirtualEnvironmentExpressionType" substitutionGroup="tns:ExpressionBase"/>
+  <xs:element name="VirtualEnvironmentMemberExpression" type="tns:VirtualEnvironmentMemberExpressionType" substitutionGroup="tns:ExpressionBase"/>
+  <xs:element name="VirtualEnvironmentMemberIntentExpression" type="tns:VirtualEnvironmentMemberIntentExpressionType" substitutionGroup="tns:ExpressionBase"/>
+  <xs:element name="VirtualEnvironmentRule" type="tns:VirtualEnvironmentRuleType" substitutionGroup="tns:DCMRule"/>
+  <xs:element name="WqlQueryDiscoverySource" type="tns:WqlQueryDiscoveryType" substitutionGroup="tns:DiscoverySource"/>
+  <xs:element name="XPathDiscoverySource" type="tns:XPathDiscoveryType" substitutionGroup="tns:DiscoverySource"/>
+  <xs:element name="XPathExpression" type="tns:XPathExpressionType"/>
+  <xs:import namespace="http://schemas.microsoft.com/SystemsCenterConfigurationManager/2009/06/14/Rules"/>
+  <xs:simpleType name="ApplicabilityRuleType">
+  <xs:simpleType name="AssemblyNameType">
+  <xs:simpleType name="AssemblyPropertyNames">
+  <xs:simpleType name="AuthoringScopeId">
+  <xs:simpleType name="DataTypeType">
+  <xs:simpleType name="DefinedPlatformNamesType">
+  <xs:simpleType name="DefinedPlatformsType">
+  <xs:simpleType name="DeploymentTypeDesiredStates">
+  <xs:simpleType name="DnNameType">
+  <xs:simpleType name="FileFilterType">
+  <xs:simpleType name="FilePath">
+  <xs:simpleType name="FilePathType">
+  <xs:simpleType name="FilePropertyNames">
+  <xs:simpleType name="FolderFilterType">
+  <xs:simpleType name="FolderPathType">
+  <xs:simpleType name="FolderPropertyNames">
+  <xs:simpleType name="FourPartVersion">
+  <xs:simpleType name="FunctionalVersion">
+  <xs:simpleType name="LanguageType">
+  <xs:simpleType name="LdapFilterType">
+  <xs:simpleType name="LdapPrefixType">
+  <xs:simpleType name="LogicalName">
+  <xs:simpleType name="MacDetectionType">
+  <xs:simpleType name="MetabasePathType">
+  <xs:simpleType name="MethodType">
+  <xs:simpleType name="NamespacePrefixType">
+  <xs:simpleType name="NonEmptyStringType">
+  <xs:simpleType name="OmaUriType">
+  <xs:simpleType name="OperatorType">
+  <xs:simpleType name="PlatformApplicabilityQueryType">
+  <xs:simpleType name="PlatformMaxVersionType">
+  <xs:simpleType name="PlatformMinVersionType">
+  <xs:simpleType name="RegistryHiveType">
+  <xs:simpleType name="RegistryKeyPathType">
+  <xs:simpleType name="RegistryNameFilterType">
+  <xs:simpleType name="RegistryValueNameType">
+  <xs:simpleType name="RuleSeverityType">
+  <xs:simpleType name="SccmAceString">
+  <xs:simpleType name="ScriptType">
+  <xs:simpleType name="SearchDepthType">
+  <xs:simpleType name="SettingMethodTypes">
+  <xs:simpleType name="SettingSourceTypes">
+  <xs:simpleType name="SqlInstanceNamePattern">
+  <xs:simpleType name="SqlQueryStringType">
+  <xs:simpleType name="VirtualEnvironmentAndOperatorType">
+  <xs:simpleType name="VirtualEnvironmentMemberDesiredStates">
+  <xs:simpleType name="VirtualEnvironmentOrOperatorType">
+  <xs:simpleType name="WqlNamespaceType">
+  <xs:simpleType name="WqlWhereClauseType">
+  <xs:simpleType name="XPathExpressionType">
+  <xsd:schema id="root" xmlns = "" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+ $J%M
+!A valid CAB file name is required
+!Detection script must not be null
+!Settings element must not be null
+!This program cannot be run in DOS mode.
+"Error opening UE-V template: {0}
+#   %%HIVE%%\Software\Microsoft\UEV\Agent\Configuration\%%SETTING_NAME%%
+#   %%HIVE%%\Software\Microsoft\UEV\Agent\Configuration\Windows8AppList\%%PACKAGE_FAMILY_NAME%%
+#   %%HIVE%%\Software\Microsoft\UEV\Configuration\Agent\%%SETTING_NAME%%
+#   %SystemRoot%\System32\Winevt\Logs\Microsoft-User Experience Virtualization-App Agent%4Operational.evtx
+#  "Running", "Paused", "Starting", "Pausing", "Stopping", "Stopped"
+# an older version before allowing remediation to install a newer version.
+# been logged. This event indicates that a package has exceeded its recommended max
+# can be unregistered
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Deregisters a UE-V template
+# Detection script that checks to see if UEV is installed by looking for existence 
+# Enables, disables or clears the UE-V Win8 sync setting for %%PACKAGE_FAMILY_NAME%% 
+# Event log searched
+# Gets a baseline configuration digest from the CM site server.  Returns an empty baseline CI
+# Gets a configuration digest from the CM site server.  Returns an empty CI
+# if one does not exist on the server.
+# If the app is not installed, consider it compliant
+# in the %%USER_OR_MACHINE%% hive.
+# installed if this subroutine sends a "Installed" message to std out.
+# of the UE-V version number in the registry. Application is considered to be 
+# Registers a UE-V template
+# Registry key: HKLM\\SOFTWARE\Microsoft\UEV\Agent\Version
+# Registry location:
+# Registry update locations:
+# Scans the UE-V Operations event log to see if an event (id 4048) has 
+# Script Action: (?<action>[a-z]*)
+# Script Action: Detection
+# Script Action: Discovery
+# Script Action: Register
+# Script Action: Remediation
+# Script Action: Unregister
+# Script Type: PowerShell
+# Script Version: (?<version>[0-9]*)
+# Script Version: 1
+# Script Version: 2
+# Set or clear the UE-V %%SETTING_NAME%% in either the %%HIVE%% hive.
+# Sets or clears the UE-V %%SETTING_NAME%% in the %%HIVE%% hive.
+# Sets Windows 8 app registration the UE-V %%PACKAGE_FAMILY_NAME%% in %%HIVE%% hive to '%%DESIRED_STATE%%'
+# size. The scan searches for the event within the last 7 days.
+# This script checks to see if a template is installed so that it 
+# This script deregisters a template
+# This script registers a template
+# This script starts or stops or pauses a service based on the desired state.
+# This script validates that a service state matches the desired state.
+# This script verifies that a template does not exist or exists as
+# This setting only applies to Windows 8 / Server 2012 and above
+# UE-V Template Version: %%UEVTEMPLATEVERSION%%
+# UE-V Template Version: (?<version>-?[0-9a-fA-F]*)
+# valid status values are:
+#Blob
+#GUID
+#Strings
+#UE-V Template Distribution Baseline
+${action}
+${type}
+${version}
+$9b864d5a-ed47-4849-a791-799aee0b5fe4
+$baselineDescription = '%%CiDescription%%'
+$baselineName = '%%CiName%%'
+$ciDescription = '%%CiDescription%%'
+$ciName = '%%CiName%%'
+$COMPLIANT_CODE = 1
+$desiredState = "%%DESIRED_STATE%%"
+$NO_ERROR = 0
+$NOT_COMPLIANT_CODE = 0
+$op = "DisableApp"
+$osVersion = $osVersionInfo.major + $osVersionInfo.Minor / 10
+$osVersionInfo = [System.Environment]::OSVersion.Version[0] | select major, minor
+$pkgInfo = Get-AppxPackage | Where-Object {$_.PackageFamilyName -eq $PACKAGE_FAMILY_NAME } | Measure-Object
+$proposedVersion = %%PROPOSED_VERSION%%
+$REMEDIATION_FAILED = 1
+$result = $NO_ERROR
+$result = $NOT_COMPLIANT_CODE
+$result = Get-EventCount(4048)
+$result = IsCompliant;
+$result = RegisterTemplate
+$result = UnregisterTemplate
+$serviceName = "%%SERVICE_NAME%%"
+$uevTemplate = @"
+$uevTemplateSchema = "%%UEVTEMPLATESCHEMA%%"
+$uevVersion = GetUevVersion
+$UNSPECIFIED_ERROR = 2
+%%CiDescription%%
+%%CiName%%
+%%FORCE%%
+%%PROPOSED_VERSION%%
+%%SiteCode%%
+%%UEVTEMPLATE%%
+%%UEVTEMPLATEID%%
+%%UEVTEMPLATESCHEMA%%
+%%UEVTEMPLATEVERSION%%
+%Configuration digest must not be null
+)ScriptFactory: Unsupported script purpose
+*)J%<
+*Microsoft (R) Windows (R) Operating System
+*v ~,@j )UU
+.cctor
+.ctor
+.NETFramework,Version=v4.5
+.Script '{0}' is missing comment 'Script Type:'
+.text
+;Set script failed because an existing script was not found.
+?PowerShell script has invalid script type: '# Script Type: {0}'
+@.reloc
+\Detection script for UE-V template '{0}' is missing comment: '# Script Version: <version>'
+_)J%<
+_CorDllMain
+`.rsrc
+{{ <>h__TransparentIdentifier0 = {0}, xExpression = {1} }}
+{{ <>h__TransparentIdentifier1 = {0}, xRule = {1} }}
+{{ application = {0}, scriptDiscoveryInfo = {1} }}
+{{ AuthoringScopeId = {0} }}
+{{ LogicalName = {0} }}
+{{ LogicalName = {0}, Setting = {1} }}
+{{ platformApplicabilityCondition = {0}, operatingSystemExpression = {1} }}
+{{ reference = {0}, xOperands = {1} }}
+{{ Sc = {0}, Attr = {1} }}
+{{ TemplateValue = {0} }}
+{{ Text = {0}, Id = {1} }}
+{{ Text = {0}, Rule = {1} }}
+{0}.cab
++Error writing configuration item CAB: {0}
++Failed to write CAB: No configuration items
++UevTemplate: Could not load template: {0}
+</root>
+</xs:schema>
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<<>h__TransparentIdentifier0>i__Field
+<<>h__TransparentIdentifier0>j__TPar
+<<>h__TransparentIdentifier1>i__Field
+<<>h__TransparentIdentifier1>j__TPar
+<>9__10_0
+<>9__10_1
+<>9__11_0
+<>9__11_1
+<>9__11_2
+<>9__11_3
+<>9__12_0
+<>9__12_1
+<>9__12_2
+<>9__12_3
+<>9__13_0
+<>9__13_1
+<>9__13_2
+<>9__13_3
+<>9__14_0
+<>9__14_1
+<>9__14_2
+<>9__15_0
+<>9__15_1
+<>9__15_2
+<>9__15_3
+<>9__15_4
+<>9__15_5
+<>9__15_6
+<>9__16_0
+<>9__16_1
+<>9__17_0
+<>9__17_1
+<>9__17_2
+<>9__18_0
+<>9__19_0
+<>9__20_0
+<>9__21_0
+<>9__22_0
+<>9__22_1
+<>9__23_0
+<>9__35_0
+<>9__35_1
+<>9__35_2
+<>9__35_3
+<>9__38_0
+<>9__6_0
+<>9__7_0
+<>9__7_1
+<>9__8_0
+<>9__8_1
+<>9__9_0
+<>9__9_1
+<>9__9_2
+<>c__DisplayClass11_0
+<>c__DisplayClass7_0
+<>f__AnonymousType0`1
+<>f__AnonymousType1`1
+<>f__AnonymousType10`2
+<>f__AnonymousType11`1
+<>f__AnonymousType2`2
+<>f__AnonymousType3`2
+<>f__AnonymousType4`2
+<>f__AnonymousType5`2
+<>f__AnonymousType6`2
+<>f__AnonymousType7`2
+<>f__AnonymousType8`2
+<>f__AnonymousType9`2
+<>h__TransparentIdentifier2
+<application>i__Field
+<application>j__TPar
+<Attr>i__Field
+<Attr>j__TPar
+<AuthoringScopeId>i__Field
+<AuthoringScopeId>j__TPar
+<CiDescription>k__BackingField
+<CiName>k__BackingField
+<ConfigurationItems>k__BackingField
+<CreateBaseline>b__6_0
+<CreateOrUpdateBaseline>b__8_0
+<CreateOrUpdateBaseline>b__8_1
+<CreateOrUpdateCi>b__38_0
+<DetectionScript>k__BackingField
+<Digest>k__BackingField
+<DigestAuthoringScopeId>k__BackingField
+<DigestLogicalName>k__BackingField
+<DigestResxFileName>k__BackingField
+<DigestXmlFileName>k__BackingField
+<DiscoveryScript>k__BackingField
+<DiscoveryScriptName>k__BackingField
+<Error checking for UE-V template registration with CM: {0}
+<GetDigestAuthoringScopeId>b__7_0
+<GetDigestAuthoringScopeId>b__7_1
+<GetDigestLogicalName>b__8_0
+<GetDigestLogicalName>b__8_1
+<GetDigestVersion>b__9_0
+<GetDigestVersion>b__9_1
+<GetDigestVersion>b__9_2
+<GetRootComplexSettingElement>b__17_0
+<GetRootComplexSettingElement>b__17_1
+<GetRootComplexSettingElement>b__17_2
+<GetRuleElement>b__15_0
+<GetRuleElement>b__15_1
+<GetRuleElement>b__15_2
+<GetRuleElement>b__15_3
+<GetRuleElement>b__15_4
+<GetRuleElement>b__15_5
+<GetRuleElement>b__15_6
+<GetRulesElement>b__14_0
+<GetRulesElement>b__14_1
+<GetRulesElement>b__14_2
+<GetScript>b__22_0
+<GetScript>b__22_1
+<GetSimpleSettingElement>b__18_0
+<GetTemplateValue>b__19_0
+<Id>i__Field
+<Id>j__TPar
+<IncrementDigestVersion>b__10_0
+<IncrementDigestVersion>b__10_1
+<IsPerUser>k__BackingField
+<LoadDigest>b__35_0
+<LoadDigest>b__35_1
+<LoadDigest>b__35_2
+<LoadDigest>b__35_3
+<LogicalName>i__Field
+<LogicalName>j__TPar
+<Module>
+<operatingSystemExpression>i__Field
+<operatingSystemExpression>j__TPar
+<platformApplicabilityCondition>i__Field
+<platformApplicabilityCondition>j__TPar
+<reference>i__Field
+<reference>j__TPar
+<RegistrationAction>k__BackingField
+<RemediationScript>k__BackingField
+<RemediationScriptName>k__BackingField
+<ReplaceScript>b__23_0
+<root>
+<Rule>i__Field
+<Rule>j__TPar
+<RuleDescription>k__BackingField
+<RuleName>k__BackingField
+<SaveResources>b__11_0
+<SaveResources>b__11_1
+<SaveResources>b__11_2
+<SaveResources>b__11_3
+<SaveResources>b__4
+<Sc>i__Field
+<Sc>j__TPar
+<scriptDiscoveryInfo>i__Field
+<scriptDiscoveryInfo>j__TPar
+<SetComplianceRule>b__16_0
+<SetComplianceRule>b__16_1
+<SetDetectionScript>b__13_0
+<SetDetectionScript>b__13_1
+<SetDetectionScript>b__13_2
+<SetDetectionScript>b__13_3
+<SetSupportedPlatforms>b__12_0
+<SetSupportedPlatforms>b__12_1
+<SetSupportedPlatforms>b__12_2
+<SetSupportedPlatforms>b__12_3
+<Setting>i__Field
+<Setting>j__TPar
+<SettingDescription>k__BackingField
+<SettingLogicalName>k__BackingField
+<SettingName>k__BackingField
+<SiteCode>k__BackingField
+<SubstitutionParams>k__BackingField
+<TemplateValue>i__Field
+<TemplateValue>j__TPar
+<Text>i__Field
+<Text>j__TPar
+<UevTemplate>k__BackingField
+<UevTemplatePath>k__BackingField
+<UpdateBaseline>b__0
+<UpdateBaseline>b__7_1
+<UpdateSettingDescription>b__21_0
+<UpdateSettingDisplayName>b__20_0
+<ValidationMethod>k__BackingField
+<xExpression>i__Field
+<xExpression>j__TPar
+<Xmlns>k__BackingField
+<xOperands>i__Field
+<xOperands>j__TPar
+<xRule>i__Field
+<xRule>j__TPar
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1">
+<xs:schema id="DcmDigest"
+<xs:schema id="RulesSchema" 
+=Applies desired configuration for the UE-V Application Agent.
+=Could not find AuthoringScopeId for configuration item: {0}
+000004b0
+0Script '{0}' is missing comment 'Script Action:'
+1 )UU
+10.0.0.0
+10.0.10011.16384
+10.0.17763.1
+1If a UE-V template for {0} exists, unregister it.
+1Script '{0}' is missing comment 'Script Version:'
+2UE-V template is missing the template {0} element.
+3System.Resources.Tools.StronglyTypedResourceBuilder
+4.0.0.0
+5Failed to find configuration item: {0} on site: {1}
+8Could not find LogicalName for configuration item: {0}
+9Copyright (c) Microsoft Corporation. All rights reserved.
+9zr\|}n
+A required paramter is null
+Action`2
+AddAfterSelf
+AddScript
+Aggregate
+annotation
+Annotation
+Append
+Application
+applicationElement
+applicationReference
+ApplicationReference
+argName
+ArgumentNullException
+Assembly Version
+AssemblyCompanyAttribute
+AssemblyConfigurationAttribute
+AssemblyCopyrightAttribute
+AssemblyDescriptionAttribute
+AssemblyFileVersionAttribute
+AssemblyProductAttribute
+AssemblyTrademarkAttribute
+Attributes
+AuthoringScopeId
+baselineDescription
+baselineDigest
+BaselineItem
+baselineName
+BI_ERROR_CAB_DIRECTORY_NOT_FOUND
+BI_ERROR_CM_SERVICE_NOT_AVAILABLE
+BI_TEXT_DEFAULT_BASELINE_DESCRIPTION
+BI_TEXT_DEFAULT_BASELINE_DESCRIPTIONk
+BI_TEXT_DEFAULT_BASELINE_NAME
+BKeeps {0} UE-V template version and registration state up-to-date.
+cabFileName
+cabFullPath
+CabinetInfo
+catch
+CChecks that the UE-V template for {0} is registered to version {1}.
+cd -Path %%SiteCode%%:
+cDetection script for UE-V template '{0}' is missing comment: '# UE-V Template Version: <version>'
+Changeable
+CI_{0}.en-US.regx
+CI_{0}.xml
+CI_ERROR_AUTHORING_SCOPE_ID_NOT_FOUND
+CI_ERROR_CHECKING_CM_SERVER
+CI_ERROR_CONFIGURATION_ITEM_NOT_FOUND
+CI_ERROR_DETECTION_MISSING_SCRIPT_ACTION
+CI_ERROR_DETECTION_MISSING_SCRIPT_VERSION
+CI_ERROR_DETECTION_MISSING_TEMPLATE_VERSION
+CI_ERROR_LOGICAL_NAME_NOT_FOUND
+CI_ERROR_WRITING_CAB
+CI_TEXT_CONFIGURATION_ITEM_DESCRIPTION
+CI_TEXT_CONFIGURATION_ITEM_NAME
+CI_TEXT_REGISTER_SETTING_DESCRIPTION
+CI_TEXT_REGISTER_UEV_TEMPLATE
+CI_TEXT_UNREGISTER_SETTING_DESCRIPTION
+CI_TEXT_UNREGISTER_UEV_TEMPALTE
+CI_UevTemplateBaseline.en-US.resx
+CI_UevTemplateBaseline.xml
+CLSCompliantAttribute
+CmCmdLineArgException
+CmDigestException
+CmException
+CmScriptException
+CmUtilException
+Combine
+Comments
+CompanyName
+Compare
+CompilationRelaxationsAttribute
+CompilerGeneratedAttribute
+complexSettings
+CompressFiles
+ComputeHash
+ComVisibleAttribute
+Concat
+ConfigurationAction
+ConfigurationItem
+ConfigurationItemBase
+configurationItems
+ConstantValue
+content
+context
+Convert
+Copyright (c) Microsoft Corporation. All rights reserved.
+Create
+CreateBaseline
+CreateCi
+CreateDirectory
+CreateOrUpdateBaseline
+CreateOrUpdateCi
+CreateScript
+CultureInfo
+current
+DataType
+DebuggableAttribute
+DebuggerBrowsableAttribute
+DebuggerBrowsableState
+DebuggerHiddenAttribute
+DebuggerNonUserCodeAttribute
+DebuggingModes
+Descendants
+DescendantsAndSelf
+description
+Description
+DesiredConfigurationDigest
+DesiredConfigurationNs
+Detection
+Detection.ps1
+detectionScript
+digest
+'Digest is missing the 'Version' element
+DirectoryInfo
+DirectoryNotFoundException
+discoveryScript
+DiscoveryScriptBody
+discoveryScriptBody
+discoveryScriptName
+DisplayName
+displayName
+Dispose
+EditorBrowsableAttribute
+EditorBrowsableState
+elementName
+Elements
+elseif ($DESIRED_STATE -eq $CLEAR)
+elseif ($DESIRED_STATE -eq $CLEARED)
+elseif ($DESIRED_STATE -eq $DISABLED)
+elseif ($DESIRED_STATE -eq $UNMANAGED)
+Encoding
+Enumerable
+en-US
+Environment
+EqualityComparer`1
+Equals
+Error writing {0}: {1}
+ERROR_EMPTY_SCRIPT_FILE
+ERROR_FAILED_TO_FIND_SCRIPT
+ERROR_FAILED_TO_LOAD_SCRIPT
+ERROR_INVALID_NULL_SETTING
+ERROR_INVALID_PROGRAM_ARGMENT
+ERROR_MISSING_DIGEST_VERSION_ELEMENT
+ERROR_MISSING_SETTING_ELEMENT
+ERROR_NULL_CAB_FILE_NAME
+ERROR_NULL_CONFIGURATION_ITEMS_LIST
+ERROR_NULL_DETECTION_SCRIPT
+ERROR_NULL_DIGEST
+ERROR_NULL_REQUIRED_PARAM
+ERROR_NULL_SETTINGS_ELEMENT
+ERROR_SCRIPT_INVALID_SCRIPT_TYPE
+ERROR_SCRIPT_MISSING_ACTION
+ERROR_SCRIPT_MISSING_SCRIPT_TYPE
+ERROR_SCRIPT_MISSING_TEMPLATE_VERSION
+ERROR_SCRIPT_MISSING_VERSION
+ERROR_SET_SCRIPT_FAILED
+ErrorRecord
+EScript '{0}' is missing comment: '# UE-V Template Version: <version>'
+Except
+Exists
+Expression
+f J%M
+Failed to find script in {0}.
+Failed to load script: {0}
+false
+FileDescription
+fileName
+FileNotFoundException
+FileVersion
+First
+FirstOrDefault
+Format
+FrameworkDisplayName
+FSet script failed because setting containing the script was not found.
+fullPath
+Func`2
+Func`3
+function Get-EventCount($id)
+function GetUevVersion
+function IsCompliant
+function IsInstalledTemplateSchemaNewerThanProposed($installedTemplateId)
+function IsSchemaSupported()
+function RegisterTemplate
+function UnregisterTemplate
+GA collection of UE-V templates that will be registered or deregistered.
+GeneratedCodeAttribute
+get_<>h__TransparentIdentifier0
+get_<>h__TransparentIdentifier1
+get_application
+get_ASCII
+get_Assembly
+get_Attr
+get_AuthoringScopeId
+get_BI_ERROR_CAB_DIRECTORY_NOT_FOUND
+get_BI_ERROR_CM_SERVICE_NOT_AVAILABLE
+get_BI_TEXT_DEFAULT_BASELINE_DESCRIPTION
+get_BI_TEXT_DEFAULT_BASELINE_NAME
+get_CI_ERROR_AUTHORING_SCOPE_ID_NOT_FOUND
+get_CI_ERROR_CHECKING_CM_SERVER
+get_CI_ERROR_CONFIGURATION_ITEM_NOT_FOUND
+get_CI_ERROR_DETECTION_MISSING_SCRIPT_ACTION
+get_CI_ERROR_DETECTION_MISSING_SCRIPT_VERSION
+get_CI_ERROR_DETECTION_MISSING_TEMPLATE_VERSION
+get_CI_ERROR_LOGICAL_NAME_NOT_FOUND
+get_CI_ERROR_WRITING_CAB
+get_CI_TEXT_CONFIGURATION_ITEM_DESCRIPTION
+get_CI_TEXT_CONFIGURATION_ITEM_NAME
+get_CI_TEXT_REGISTER_SETTING_DESCRIPTION
+get_CI_TEXT_REGISTER_UEV_TEMPLATE
+get_CI_TEXT_UNREGISTER_SETTING_DESCRIPTION
+get_CI_TEXT_UNREGISTER_UEV_TEMPALTE
+get_CiDescription
+get_CiName
+get_ConfigurationItems
+get_Count
+get_Culture
+get_Current
+get_CurrentCulture
+get_Default
+get_DetectionScript
+get_Digest
+get_DigestAuthoringScopeId
+get_DigestContent
+get_DigestLogicalName
+get_DigestResxFileName
+get_DigestXmlFileName
+get_DiscoveryScript
+get_DiscoveryScriptName
+get_Error
+get_ERROR_EMPTY_SCRIPT_FILE
+get_ERROR_FAILED_TO_FIND_SCRIPT
+get_ERROR_FAILED_TO_LOAD_SCRIPT
+get_ERROR_INVALID_NULL_SETTING
+get_ERROR_INVALID_PROGRAM_ARGMENT
+get_ERROR_MISSING_DIGEST_VERSION_ELEMENT
+get_ERROR_MISSING_SETTING_ELEMENT
+get_ERROR_NULL_CAB_FILE_NAME
+get_ERROR_NULL_CONFIGURATION_ITEMS_LIST
+get_ERROR_NULL_DETECTION_SCRIPT
+get_ERROR_NULL_DIGEST
+get_ERROR_NULL_REQUIRED_PARAM
+get_ERROR_NULL_SETTINGS_ELEMENT
+get_ERROR_SCRIPT_INVALID_SCRIPT_TYPE
+get_ERROR_SCRIPT_MISSING_ACTION
+get_ERROR_SCRIPT_MISSING_SCRIPT_TYPE
+get_ERROR_SCRIPT_MISSING_TEMPLATE_VERSION
+get_ERROR_SCRIPT_MISSING_VERSION
+get_ERROR_SET_SCRIPT_FAILED
+get_ExportFolder
+get_Id
+get_InvariantCulture
+get_IsPerUser
+get_Key
+get_Length
+get_LogicalName
+get_Message
+get_Name
+get_NamespaceName
+get_operatingSystemExpression
+get_Parent
+get_platformApplicabilityCondition
+get_Properties
+get_reference
+get_RegistrationAction
+get_RemediationScript
+get_RemediationScriptName
+get_ResourceManager
+get_Rule
+get_RuleDescription
+get_RuleName
+get_Sc
+get_SC_DETECTION_SCRIPT_MISSING_ACTION
+get_SC_INVALID_SCRIPT_PURPOSE
+get_scriptDiscoveryInfo
+get_Setting
+get_SettingDescription
+get_SettingLogicalName
+get_SettingName
+get_SF_UNIMPLEMENTED_SCRIPT_TYPE_REQUESTED
+get_SiteCode
+get_Streams
+get_SubstitutionParams
+get_TC_ERROR_LOADING_TEMPLATE
+get_TC_ERROR_MISSING_TEMPLATE_ELEMENT
+get_TC_ERROR_TEMPLATE_NOT_FOUND
+get_TemplateFileNameWithoutExtension
+get_TemplateId
+get_TemplateName
+get_TemplateValue
+get_TemplateVersion
+get_Text
+get_TEXT_DEFAULT_POLICY_DESCRIPTION
+get_TEXT_DEFAULT_POLICY_NAME
+get_TEXT_SETTING_RULE_DESCRIPTION
+get_TEXT_SETTING_RULE_NAME
+get_UevTemplate
+get_UevTemplatePath
+get_UTF8
+get_ValidationMethod
+get_Value
+get_xExpression
+get_Xml
+get_XmlContent
+get_Xmlns
+get_xOperands
+get_xRule
+GetBaselineItemFromCm.ps1
+GetBytes
+Get-CMBaselineXMLDefinition -Name $baselineName -OutVariable baselineXml
+Get-CMConfigurationItem -Name $ciName -OutVariable ci
+GetCurrentMethod
+GetDigestAuthoringScopeId
+GetDigestLogicalName
+GetDigestVersion
+GetDiscoveryScriptAction
+GetDiscoveryScriptScriptVersion
+GetEnumerator
+GetEnvironmentVariable
+GetExecutingAssembly
+GetFileContentFromResource
+GetFileNameWithoutExtension
+GetFullPath
+GetHash
+GetHashCode
+GetItemFromCm.ps1
+GetManifestResourceStream
+GetRemediationScriptAction
+GetRemediationScriptVersion
+GetRootComplexSettingElement
+GetRuleElement
+GetRulesElement
+GetScript
+GetScriptAction
+GetScriptVersion
+GetSettingsLogicalName
+GetSimpleSettingElement
+GetString
+GetTemplateSchema
+GetTemplateValue
+GetTempPath
+GetTypeFromHandle
+GetUevTemplateVersion
+GuidAttribute
+HashAlgorithm
+HashSet`1
+hDetection script for UE-V template '{0}' is missing comment:: '# Script Action: <Register|Unregister>'
+Helpers
+http://schemas.microsoft.com
+http://schemas.microsoft.com/SystemsCenterConfigurationManager/2009/06/14/Rules
+http://schemas.microsoft.com/SystemsCenterConfigurationManager/2009/07/10/DesiredConfiguration
+http://www.w3.org/XML/1998/namespace
+ID-{0}
+IDictionary`2
+IDisposable
+IEnumerable`1
+IEnumerator
+IEnumerator`1
+if ($baselineXml.Capacity -eq 0)
+if ($ci.Capacity -eq 0)
+if ($DESIRED_STATE -eq $ENABLED)
+if ($DESIRED_STATE -eq $SET)
+if ($HIVE -eq "HKLM")
+if ($osVersion -lt 6.2)
+if ($pkgInfo.Count -eq 0)
+if ($uevVersion -ge 2.0)
+IFormatProvider
+IList`1
+import-module (Join-Path (split-path -Path $env:SMS_ADMIN_UI_PATH -Parent) 'ConfigurationManager.psd1')
+IncrementDigestVersion
+IndexOf
+innerException
+Int64
+InternalName
+InternalsVisibleToAttribute
+Invalid argument: {0} : {1}
+Invalid copy of null setting
+InvalidOperationException
+Invoke
+Is64Bit
+isBaseline
+IsMatch
+IsNullOrEmpty
+isPerUser
+IsPerUser
+items
+JScript
+KeyValuePair`2
+LegalCopyright
+LegalTrademarks
+LoadDigest
+LogicalName
+lSystem.Resources.ResourceReader, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet
+Maintain {0} UE-V Template
+MDetection script is missing comment: '# Script Action: <Register|Unregister>'
+message
+Method
+MethodBase
+Microsoft (R) Windows (R) Operating System
+Microsoft Corporation
+Microsoft.ConfigurationManagement.AdminConsole.Common.Cab
+Microsoft.Uev.CabUtil
+Microsoft.Uev.CmUtil
+Microsoft.Uev.CmUtil.dll
+Microsoft.Uev.CmUtil.pdb
+Microsoft.Uev.UevCmUtil
+Microsoft.Uev.UevCmUtil.Properties
+Microsoft.Uev.UevCmUtil.Properties.Resources
+Microsoft.Uev.UevCmUtil.Properties.Resources.resources
+Microsoft.Uev.UevCmUtil.UevScripts.{0}
+Microsoft.Uev.UevCmUtil.UevScripts.DcmDigest.xsd
+Microsoft.Uev.UevCmUtil.UevScripts.Detection.ps1
+Microsoft.Uev.UevCmUtil.UevScripts.GetBaselineItemFromCm.ps1
+Microsoft.Uev.UevCmUtil.UevScripts.GetItemFromCm.ps1
+Microsoft.Uev.UevCmUtil.UevScripts.PackageExceededMaxSizeDiscovery.ps1
+Microsoft.Uev.UevCmUtil.UevScripts.RegisterTemplateDiscovery.ps1
+Microsoft.Uev.UevCmUtil.UevScripts.RegisterTemplateRemediation.ps1
+Microsoft.Uev.UevCmUtil.UevScripts.RegistryPolicyDiscovery.ps1
+Microsoft.Uev.UevCmUtil.UevScripts.RegistryPolicyDiscoveryBoolean.ps1
+Microsoft.Uev.UevCmUtil.UevScripts.RegistryPolicyRemediation.ps1
+Microsoft.Uev.UevCmUtil.UevScripts.RegistryPolicyRemediationBoolean.ps1
+Microsoft.Uev.UevCmUtil.UevScripts.ResourcesData
+Microsoft.Uev.UevCmUtil.UevScripts.Rules.xsd
+Microsoft.Uev.UevCmUtil.UevScripts.ServiceStateDiscovery.ps1
+Microsoft.Uev.UevCmUtil.UevScripts.ServiceStateRemediation.ps1
+Microsoft.Uev.UevCmUtil.UevScripts.UevAgentConfiguration.xsd
+Microsoft.Uev.UevCmUtil.UevScripts.UnregisterTemplateDiscovery.ps1
+Microsoft.Uev.UevCmUtil.UevScripts.UnregisterTemplateRemediation.ps1
+Microsoft.Uev.UevCmUtil.UevScripts.Win8AppDiscovery.ps1
+Microsoft.Uev.UevCmUtil.UevScripts.Win8AppRemediation.ps1
+MoveNext
+mscoree.dll
+mscorlib
+NeutralResourcesLanguageAttribute
+NewGuid
+NonCompliantWhenSettingIsNotFound
+nScript '{0}' has invalid script type. Valid values are 'PowerShell', 'JScript' or 'VBScript'. Script Type: {1}
+o )UU
+op_Addition
+op_Equality
+op_Implicit
+op_Inequality
+Operands
+OperatingSystemExpression
+Operator
+OriginalFilename
+OSMS_ADMIN_UI_PATH environment variable not set. CM services are not accessible.
+Out-File -InputObject $uevTemplate -Encoding utf8 -LiteralPath "$tempTemplateFile"
+outputFolder
+PADPADP,U<
+Parse
+PlatformApplicabilityCondition
+policyDescription
+PolicyDiscovery
+PolicyItem
+policyName
+PolicyRemediation
+PowerShell
+preserve
+ProductName
+ProductVersion
+PSDataCollection`1
+PSDataStreams
+PSMemberInfo
+PSMemberInfoCollection`1
+PSObject
+PSPropertyInfo
+purpose
+Q )UU
+q)J%<
+ReadToEnd
+Regex
+RegexOptions
+Register
+Register UE-V template {0}
+RegisterDiscovery
+RegisterRemediation
+RegisterTemplateDiscovery.ps1
+RegisterTemplateRemediation.ps1
+registrationAction
+remediationScript
+RemediationScriptBody
+remediationScriptName
+Replace
+ReplaceScript
+ReplaceWith
+requiredItems
+RequiredItems
+resourceCulture
+ResourceId
+resourceMan
+ResourceNs
+ResourcesData
+Result
+resxFileFullName
+return $result
+RootComplexSetting
+rootComplexSettingElement
+RSDS\&
+Rule_{0}
+ruleDescription
+RuleExpression
+RuleId
+ruleName
+RuleNs
+ruleOperands
+Rules
+rules
+RuntimeCompatibilityAttribute
+RuntimeTypeHandle
+SaveDigest
+SaveOptions
+SaveResources
+SC_DETECTION_SCRIPT_MISSING_ACTION
+SC_INVALID_SCRIPT_PURPOSE
+script
+Script
+Script Action: (?<action>[a-z]*)
+Script file is empty: {0}
+Script Type: (?<type>[a-z]*)
+scriptBody
+scriptBodyName
+ScriptContainer
+ScriptContent
+scriptContent
+ScriptDiscoveryInfo
+ScriptDiscoverySource
+scriptElement
+ScriptFactory
+scriptFileName
+ScriptPurpose
+ScriptSetting_
+ScriptSetting_d0a57337-66f3-40c6-a082-bdf2ac0d0ea2
+scriptText
+ScriptType
+SDMPackageXML
+Select
+SelectMany
+SerializationInfo
+set_CiDescription
+set_CiName
+set_ConfigurationItems
+set_Culture
+set_DetectionScript
+set_Digest
+set_DigestAuthoringScopeId
+set_DigestLogicalName
+set_DigestResxFileName
+set_DigestXmlFileName
+set_DiscoveryScript
+set_DiscoveryScriptName
+set_IsPerUser
+set_RegistrationAction
+set_RemediationScript
+set_RemediationScriptName
+set_RuleDescription
+set_RuleName
+set_SettingDescription
+set_SettingLogicalName
+set_SettingName
+set_SiteCode
+set_SubstitutionParams
+set_UevTemplate
+set_UevTemplatePath
+set_ValidationMethod
+set_Value
+set_Xmlns
+SetComplianceRule
+SetDetectionScript
+Set-ExecutionPolicy -Force bypass
+SetSimpleSetting
+Set-StrictMode -Version latest
+SetSupportedPlatforms
+setting
+settingDescription
+settingLogicalName
+SettingLogicalName
+settingName
+SettingReference
+settings
+Settings
+SettingsDescription
+SettingsDisplayName
+SettingsLocationTemplate
+SettingSourceType
+SetValue
+Set-Variable -name CLEAR -value "CLEAR" -option constant
+Set-Variable -name CLEAR -value "Clear" -option constant
+Set-Variable -name CLEARED -value "Cleared" -option constant
+Set-Variable -name COMPLIANT_CODE -value 1 -option constant
+Set-Variable -name DESIRED_STATE -value "%%DESIRED_STATE%%"
+Set-Variable -name DESIRED_VALUE -value "%%SETTING_VALUE%%"
+Set-Variable -name DISABLED -value "Disabled" -option constant
+Set-Variable -name ENABLED -value "Enabled" -option constant
+Set-Variable -name HIVE -value %%HIVE%% 
+Set-Variable -name NAMESPACE -value "root\Microsoft\UEV"
+Set-Variable -name NO_ERROR -value 0 -option constant
+Set-Variable -name NOT_COMPLIANT_CODE -value 0 -option constant
+Set-Variable -name PACKAGE_FAMILY_NAME -value "%%PACKAGE_FAMILY_NAME%%"
+Set-Variable -name REMEDIATION_FAILED -value 1 -option constant
+Set-Variable -name SCRIPT_FAILURE -value 2 -option constant
+Set-Variable -name SET -value "Set" -option constant
+Set-Variable -name SETTING -value "%%SETTING_NAME%%"
+Set-Variable -name UNMANAGED -value "UNMANAGED" -option constant
+Set-Variable -name UNSPECIFIED_ERROR -value 1 -option constant
+Severity
+SF_UNIMPLEMENTED_SCRIPT_TYPE_REQUESTED
+SHA256
+simpleSetting
+SimpleSetting
+siteCode
+SMS_ADMIN_UI_PATH
+space
+StreamingContext
+StreamReader
+StreamWriter
+StringBuilder
+StringComparison
+StringFileInfo
+Substring
+System
+System.CodeDom.Compiler
+System.Collections
+System.Collections.Generic
+System.Collections.ObjectModel
+System.ComponentModel
+System.Core
+System.Diagnostics
+System.Globalization
+System.IO
+System.Linq
+System.Management.Automation
+System.Reflection
+System.Resources
+System.Runtime.CompilerServices
+System.Runtime.InteropServices
+System.Runtime.Serialization
+System.Runtime.Versioning
+System.Security.Cryptography
+System.Text
+System.Text.RegularExpressions
+System.Xml
+System.Xml.Linq
+TargetFrameworkAttribute
+TC_ERROR_LOADING_TEMPLATE
+TC_ERROR_MISSING_TEMPLATE_ELEMENT
+TC_ERROR_TEMPLATE_NOT_FOUND
+TEXT_DEFAULT_POLICY_DESCRIPTION
+TEXT_DEFAULT_POLICY_NAME
+TEXT_SETTING_RULE_DESCRIPTION
+TEXT_SETTING_RULE_NAME
+TextReader
+TextWriter
+ToArray
+ToInt32
+ToList
+ToString
+Translation
+UE-V Agent Policy
+UE-V template validation rule
+UevAgentConfig_{0}.en-US.regx
+UevAgentConfig_{0}.xml
+UevCmUtil.uev.ut
+UevTemplateContainer
+uevTemplateContainer
+uevTemplateElement
+UevTemplateException
+uevTemplatePath
+uevTemplateXmlContent
+UEVWorkingFolder
+Unregister
+Unregister UE-V template {0}
+UnregisterDiscovery
+UnregisterRemediation
+UnregisterTemplateDiscovery.ps1
+UnregisterTemplateRemediation.ps1
+UpdateSettingDescription
+UpdateSettingDisplayName
+v4.0.30319
+Validate template installation
+validationMethod
+Value
+value
+value__
+VarFileInfo
+VBScript
+Version
+VS_VERSION_INFO
+Where
+Windows/All_x64_Windows_7_Client
+Windows/All_x64_Windows_8_Client
+Windows/All_x64_Windows_Server_2008_R2
+Windows/All_x64_Windows_Server_8
+Windows/All_x86_Windows_7_Client
+Windows/All_x86_Windows_8_Client
+Windows/x64_Windows_7_Client
+Windows/x64_Windows_7_SP1
+Windows/x64_Windows_Server_2008_R2
+Windows/x64_Windows_Server_2008_R2_CORE
+Windows/x64_Windows_Server_2008_R2_SP1
+Windows/x64_Windows_Server_2008_R2_SP1_Core
+Windows/x86_Windows_7_Client
+Windows/x86_Windows_7_SP1
+W-J%M
+WrapNonExceptionThrows
+WriteCab
+write-host $result
+Write-Output $result
+X )UU
+XAttribute
+XContainer
+XElement
+XmlException
+XName
+XNamespace
+XNode
+XObject

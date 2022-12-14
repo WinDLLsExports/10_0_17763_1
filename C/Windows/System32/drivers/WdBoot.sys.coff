@@ -1,0 +1,83 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\WdBoot.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    cng.sys
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C0006058 Import Address Table
+             1C0006208 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         A67 ZwQueryValueKey
+                          C3 ExFreePoolWithTag
+                         39B IoWMIRegistrationControl
+                         25B InitSafeBootMode
+                         25C InitializeSListHead
+                          51 CmRegisterCallback
+                         9DB ZwClose
+                         A29 ZwOpenKey
+                          9C ExAllocatePoolWithTag
+                         154 ExpInterlockedPushEntrySList
+                          4B CmCallbackGetKeyObjectID
+                         AFF memcpy_s
+                         726 RtlAnsiStringToUnicodeString
+                         9FB ZwDeleteValueKey
+                         7F1 RtlInitAnsiString
+                         A9E ZwSetValueKey
+                         748 RtlCompareMemory
+                         6B7 PsGetVersion
+                         50F MmGetSystemRoutineAddress
+                          EB ExNotifyCallback
+                         B3A wcsstr
+                         75C RtlCopyUnicodeString
+                         7F8 RtlInitUnicodeString
+                          A9 ExCreateCallback
+                         5F4 ObfDereferenceObject
+                          54 CmUnRegisterCallback
+                         8D5 RtlUpcaseUnicodeChar
+                         152 ExpInterlockedFlushSList
+                         792 RtlEqualUnicodeString
+                         AB3 __C_specific_handler
+                         A64 ZwQuerySystemInformation
+                          9B ExAllocatePoolWithQuotaTag
+
+    cng.sys
+             1C0006000 Import Address Table
+             1C00061B0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           2 BCryptCreateHash
+                          1A BCryptHashData
+                          1C BCryptImportKeyPair
+                           8 BCryptDestroyHash
+                           1 BCryptCloseAlgorithmProvider
+                          12 BCryptFinishHash
+                          1E BCryptOpenAlgorithmProvider
+                          28 BCryptVerifySignature
+                          18 BCryptGetProperty
+                           9 BCryptDestroyKey
+
+  Summary
+
+        1000 .data
+        1000 .idata
+        1000 .pdata
+        1000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        2000 .text
+        1000 GFIDS
+        2000 INIT
+        3000 PAGE

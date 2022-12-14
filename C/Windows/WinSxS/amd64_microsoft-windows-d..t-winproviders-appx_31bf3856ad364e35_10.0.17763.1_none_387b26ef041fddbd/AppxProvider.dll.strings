@@ -1,0 +1,1891 @@
+                            (.appx or .appxbundle) in an image that are 
+                            a given package family. 
+                            application package must already be in the image.
+                            from the image. App packages will not be installed 
+                            hard-linking identical files across appx packages.
+                            image and sets them to install for each new user.
+                            package (.appx or .appxbundle). The specified  
+                            set to install for each new user.
+                            to be nonremovable by enterprise policy.
+                            when new user accounts are created.
+        /CustomDataPath:c:\Test\Apps\Custom.dat 
+        /DependencyPackagePath:C:\Test\Apps\MyPackedApp\Framework-x64.appx 
+        /DependencyPackagePath:C:\Test\Apps\MyPackedApp\Framework-x86.appx 
+        /FolderPath:c:\Test\Apps\MyUnpackedApp 
+        /LicensePath:c:\Test\Apps\MyPackedAppLicense.xml 
+        /NonRemovable:1 
+        /OptionalPackagePath:C:\Test\Apps\MyPackedApp\OptionalPackage.appxbundle 
+        /PackageFamily:microsoft.appx.app1_ac4zc6fex2xjp 
+        /PackageName:microsoft.appx.app1_1.0.0.0_neutral_en-us_ac4zc6fex2zjp 
+        /PackagePath:C:\Test\Apps\MyPackedApp\MainPackage.appxbundle 
+        /PackagePath:C:\Test\Apps\MyPackedApp\Package.appxbundle 
+        /SkipLicense 
+       /PackagePath:C:\Test\Apps\MyPackedApp\Package.appxbundle 
+       /SkipLicense /Region:all
+       /SkipLicense /Region:US
+       /SkipLicense /Region:US;CN;JP
+      DISM.exe /Image:C:\test\offline /Add-ProvisionedAppxPackage 
+      DISM.exe /Image:C:\test\offline /Get-ProvisionedAppxPackages
+      DISM.exe /Image:C:\test\offline /Optimize-ProvisionedAppxPackages 
+      DISM.exe /Image:C:\test\offline /Remove-ProvisionedAppxPackage 
+      DISM.exe /Image:C:\test\offline /Set-ProvisionedAppxDataFile 
+      DISM.exe /Online /Add-AppxUninstallBlocklistEntry 
+      DISM.exe /Online /Add-ProvisionedAppxPackage 
+      DISM.exe /Online /Get-AppxUninstallBlocklist 
+    Example:
+    Examples:
+  (.appx or .appxbundle) to modify. 
+  .xml file containing your application license. 
+  /PackageName:<PackageName>
+  /PackagePath when provisioning a line-of-business app online. 
+  [/CustomDataPath:<custom data path>]
+  [/CustomDataPath:<custom data path>] 
+  [/DependencyPackagePath:<dependency_package_path>] 
+  [/OptionalPackagePath:<optional_package_path>] 
+  [/Region:<regions>]
+  {[/LicensePath:<license_file_path>] | [/SkipLicense]} 
+  a main app package (.appx), any dependency packages, and the license file, 
+  Adds one or more packages to the image. 
+  and x64 dependency packages. When using the /FolderPath option you can also 
+  delimited list of region codes. 
+  Displays information about app packages (.appx or .appxbundle) in an 
+  for list of valid region codes. To provision a package in multiple regions, specify a semi-colon 
+  given package family. Using a NonRemovable argument of 1 makes the package family 
+  identical files with hardlinks. 
+  If the package has dependencies that are architecture-specific, you must 
+  image that are set to install for each new user.
+  image. For example, on an x64 target image, include a path to both the x86 
+  include them both in the AppX_folder_path. 
+  install all of the applicable architectures for the dependency on the target 
+  Lists the package families that cannot be removed due to Enterprise nonremovable 
+  nonremovable; an argument of 0 removes the policy. 
+  of the OS, or packages for which removal is restricted by other policies. 
+  Only use /SkipLicense with apps that do not require a license on a 
+  Optimizes the total file size of provisioned packages on the image by replacing  
+  or .appxbundle). 
+  or use /PackagePath to specify an .appx or .appxbundle file. You can use 
+  policy is unset. 
+  policy. Packages from families on the list cannot be removed unless the 
+  Removes app packages (.appx or .appxbundle) from the image. App packages 
+  scenarios can compromise an image. 
+  Sets a policy which prevents users from removing app packages that belong to a 
+  sideloading-enabled computer. Using /SkipLicense in other 
+  Specify the /Region 'all' if the package should be provisioned in all regions 
+  This command does not list packages that are nonremovable because they are part 
+  This command is not supported against an online image.
+  To specify specific regions, please see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 
+  Use /CustomDataPath to specify the custom data for the app package (.appx 
+  Use /CustomDataPath to specify the OEM custom data for the application. 
+  Use /FolderPath to specify a folder of unpacked package files containing 
+  Use /LicensePath with the /PackagePath option to specify the location of the 
+  Use /PackageName to specify the Package Full Name of the app package 
+  Use /Region when you want the package to be provisioned only in specific regions. 
+  will not be installed when new user accounts are created. 
+ }o4$W
+ A^_^
+ A_A^_
+ A_A^A\
+ A_A^A]A\_
+ H3E H3E
+ http://www.microsoft.com/windows0
+ Microsoft Corporation. All rights reserved.
+ Microsoft Operations Puerto Rico1&0$
+ Microsoft Operations Puerto Rico1'0%
+ Operating System
+ Optimize-ProvisionedAppxPackageswOptimizes provisioned appx footprint by 
+ Windows
+!|$ L
+!This program cannot be run in DOS mode.
+!u0A!0E3
+"Microsoft Time Source Master Clock0
+"Microsoft Window
+"Version : %1!d!.%2!d!.%3!d!.%4!d!
+$`2X`F
+$Microsoft Ireland Operations Limited1
+%4" %
+%d provisioned packages to check.
+%hs!%p: 
+%hs(%d) tid(%x) %08X %ws
+%hs(%d)\%hs!%p: 
+%Microsoft Windows Production PCA 2011
+%Microsoft Windows Production PCA 20110
+'%s' is a framework package, but passed through the main /packagepath parameter. It must be passed using the /dependencyPackagePath parameter.
+'%s' is an optional package, but passed through the main /packagepath parameter. It must be passed using the /optionalPackagePath parameter.
+'%s' is not a provisioned package.
+%s not found in the image!
+'%s' option ignored
+%s provisioned as full trust package.
+%s provisioned as partial trust package.
+%s%s%s
+%S:%d
+%s\%s
+%s\%s.mui
+%s\%s\%s.mui
+%s\ControlSet%03u
+%s\Select
+%s='%s'
+%SYSTEMDRIVE%\Program Files\WindowsApps
+&@8~8t
+(_^][
+(0x%x) Failed to remove temporary path %s.
+(caller: %p) 
+(hr:0x%x) Destaging framework %s failed
+(hr:0x%x) Failed to remove lower package version %s
+(hr:0x%x) Removing framework %s from the registry store failed
+(hr:0x%x) UpdateDependencies in the registry store failed
+(hr:0x%x) Updating packages in the registry store to use framework %s failed
+(XA;;0x1200A9;;;BU;(WIN://SYSAPPID Contains "
+)Microsoft Root Certificate Authority 20100
+,qEZtyAPkbCZ2xSQ5jYdlwMQ1opqbgm3j5q5vBWAlywY=0Z
+.?AU?$CAtlValidateModuleConfiguration@$00VCAppxProviderModule@@@ATL@@
+.?AU_ATL_MODULE70@ATL@@
+.?AUIClassFactory@@
+.?AUIDismAppxManager@@
+.?AUIDismAppxManager2@@
+.?AUIDismAppxManager3@@
+.?AUIDismAppxManager4@@
+.?AUIDismAppxManager5@@
+.?AUIDismAppxManager6@@
+.?AUIDismAppxPackageInfo@@
+.?AUIDismAppxPackageInfo2@@
+.?AUIDismAppxPackageInfoCollection@@
+.?AUIDismCommand@@
+.?AUIDismCommandCollection@@
+.?AUIDismHelpItem@@
+.?AUIDismHelpItemCollection@@
+.?AUIDismObject@@
+.?AUIDismProvider@@
+.?AUIDismProviderPrivate@@
+.?AUIDismServicingProvider@@
+.?AUIDismStringCollection@@
+.?AUIDismSupportCommands@@
+.?AUIDispatch@@
+.?AUIEnumVARIANT@@
+.?AUISupportErrorInfo@@
+.?AUIUnknown@@
+.?AV?$CAtlDllModuleT@VCAppxProviderModule@@@ATL@@
+.?AV?$CAtlModuleT@VCAppxProviderModule@@@ATL@@
+.?AV?$CComAggObject@VCAppxManager@@@ATL@@
+.?AV?$CComCoClass@VCAppxManager@@$1?CLSID_AppxManager@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCAppxPackageInfo@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCAppxPackageInfoCollection@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMCommand@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMCommandCollection@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMHelpItem@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMHelpItemCollection@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCStringCollection@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComContainedObject@VCAppxManager@@@ATL@@
+.?AV?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismAppxPackageInfo@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismAppxPackageInfo@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismAppxPackageInfo@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@
+.?AV?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCommand@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@
+.?AV?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismHelpItem@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@
+.?AV?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U_CopyVariantFromAdaptBstr@@V?$list@V?$CAdapt@VCComBSTR@ATL@@@ATL@@V?$allocator@V?$CAdapt@VCComBSTR@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@
+.?AV?$CComObject@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismAppxPackageInfo@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismAppxPackageInfo@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismAppxPackageInfo@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@@ATL@@
+.?AV?$CComObject@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCommand@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@@ATL@@
+.?AV?$CComObject@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismHelpItem@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@@ATL@@
+.?AV?$CComObject@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U_CopyVariantFromAdaptBstr@@V?$list@V?$CAdapt@VCComBSTR@ATL@@@ATL@@V?$allocator@V?$CAdapt@VCComBSTR@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@ATL@@@ATL@@
+.?AV?$CComObject@VCAppxManager@@@ATL@@
+.?AV?$CComObject@VCAppxPackageInfo@@@ATL@@
+.?AV?$CComObject@VCAppxPackageInfoCollection@@@ATL@@
+.?AV?$CComObject@VCDISMCommand@@@ATL@@
+.?AV?$CComObject@VCDISMCommandCollection@@@ATL@@
+.?AV?$CComObject@VCDISMHelpItem@@@ATL@@
+.?AV?$CComObject@VCDISMHelpItemCollection@@@ATL@@
+.?AV?$CComObject@VCStringCollection@@@ATL@@
+.?AV?$CComObjectCached@VCComClassFactory@ATL@@@ATL@@
+.?AV?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL@@
+.?AV?$CComObjectRootEx@VCComMultiThreadModelNoCS@ATL@@@ATL@@
+.?AV?$CComObjectRootEx@VCComSingleThreadModel@ATL@@@ATL@@
+.?AV?$CContainer@UIAppxBundleManifestPackageInfo@@VCApplicablePackages@@@@
+.?AV?$CContainer@UIAppxFile@@VPackageMonikerToPayload@@@@
+.?AV?$CContainer@VCPackageAdapter@@VCAdapterCollection@@@@
+.?AV?$CContainer@VPackageMonikerToPayload@@VCandidatePackages@@@@
+.?AV?$CModule@VCApplicabilityEngine@@@@
+.?AV?$CModule@VCAppxDeploymentClient@@@@
+.?AV?$CModule@VCAppxPackaging@@@@
+.?AV?$CModule@VCOemLicense@@@@
+.?AV?$ICollectionOnSTLImpl@V?$IDispatchImpl@UIDismAppxPackageInfoCollection@@$1?IID_IDismAppxPackageInfoCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@V?$list@V?$CAdapt@V?$CComPtr@UIDismAppxPackageInfo@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismAppxPackageInfo@@@ATL@@@ATL@@@std@@@std@@PEAUIDismAppxPackageInfo@@U?$_CopyItfFromAdaptItf@UIDismAppxPackageInfo@@@@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismAppxPackageInfo@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismAppxPackageInfo@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismAppxPackageInfo@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@2@@ATL@@
+.?AV?$ICollectionOnSTLImpl@V?$IDispatchImpl@UIDismCommandCollection@@$1?IID_IDismCommandCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@PEAUIDismCommand@@U?$_CopyItfFromAdaptItf@UIDismCommand@@@@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCommand@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@2@@ATL@@
+.?AV?$ICollectionOnSTLImpl@V?$IDispatchImpl@UIDismHelpItemCollection@@$1?IID_IDismHelpItemCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@PEAUIDismHelpItem@@U?$_CopyItfFromAdaptItf@UIDismHelpItem@@@@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismHelpItem@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@2@@ATL@@
+.?AV?$ICollectionOnSTLImpl@V?$IDispatchImpl@UIDismStringCollection@@$1?IID_IDismStringCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@V?$list@V?$CAdapt@VCComBSTR@ATL@@@ATL@@V?$allocator@V?$CAdapt@VCComBSTR@ATL@@@ATL@@@std@@@std@@PEAGU_CopyBstrFromAdaptBstr@@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U_CopyVariantFromAdaptBstr@@V?$list@V?$CAdapt@VCComBSTR@ATL@@@ATL@@V?$allocator@V?$CAdapt@VCComBSTR@ATL@@@ATL@@@std@@@std@@VCComMultiThreadModel@ATL@@@2@@ATL@@
+.?AV?$IDispatchImpl@UIDismAppxManager6@@$1?IID_IDismAppxManager6@@3U_GUID@@B$1?LIBID_AppxProviderLib@@3U3@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismAppxPackageInfo2@@$1?IID_IDismAppxPackageInfo2@@3U_GUID@@B$1?LIBID_AppxProviderLib@@3U3@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismAppxPackageInfoCollection@@$1?IID_IDismAppxPackageInfoCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismCommandCollection@@$1?IID_IDismCommandCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismHelpItemCollection@@$1?IID_IDismHelpItemCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismProvider@@$1?_GUID_33f93018_edb7_4092_978a_4b37d5dfb1c0@@3U__s_GUID@@B$1?LIBID_AppxProviderLib@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismProviderPrivate@@$1?_GUID_2114daec_42fd_4847_8a04_5f2dde3276a3@@3U__s_GUID@@B$1?LIBID_AppxProviderLib@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismServicingProvider@@$1?_GUID_c8292388_8d1d_4c34_9a41_8763fcd304f7@@3U__s_GUID@@B$1?LIBID_AppxProviderLib@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismStringCollection@@$1?IID_IDismStringCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismSupportCommands@@$1?_GUID_7234ec82_c68b_4c4e_ba1d_d333f5b87b37@@3U__s_GUID@@B$1?LIBID_AppxProviderLib@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IEnumOnSTLImpl@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismAppxPackageInfo@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismAppxPackageInfo@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismAppxPackageInfo@@@ATL@@@ATL@@@std@@@std@@@ATL@@
+.?AV?$IEnumOnSTLImpl@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCommand@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@@ATL@@
+.?AV?$IEnumOnSTLImpl@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismHelpItem@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@@ATL@@
+.?AV?$IEnumOnSTLImpl@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U_CopyVariantFromAdaptBstr@@V?$list@V?$CAdapt@VCComBSTR@ATL@@@ATL@@V?$allocator@V?$CAdapt@VCComBSTR@ATL@@@ATL@@@std@@@std@@@ATL@@
+.?AVbad_alloc@std@@
+.?AVCAdapterBase@@
+.?AVCAdapterCollection@@
+.?AVCandidatePackages@@
+.?AVCApplicabilityEngine@@
+.?AVCApplicablePackages@@
+.?AVCAppxDeploymentClient@@
+.?AVCAppxManager@@
+.?AVCAppxPackageInfo@@
+.?AVCAppxPackageInfoCollection@@
+.?AVCAppxPackaging@@
+.?AVCAppxProviderModule@@
+.?AVCAtlException@ATL@@
+.?AVCAtlModule@ATL@@
+.?AVCComClassFactory@ATL@@
+.?AVCComObjectRootBase@ATL@@
+.?AVCDISMCommand@@
+.?AVCDISMCommandCollection@@
+.?AVCDISMHelpItem@@
+.?AVCDISMHelpItemCollection@@
+.?AVCDismRequest@@
+.?AVCOemLicense@@
+.?AVCPackageAdapter@@
+.?AVCRefCounted@@
+.?AVCStringCollection@@
+.?AVexception@@
+.?AVlength_error@std@@
+.?AVlogic_error@std@@
+.?AVout_of_range@std@@
+.?AVPackageMonikerToPayload@@
+.?AVResultException@wil@@
+.\%s.mui
+.\%s\%s.mui
+.00cfg
+.application
+.CRT$XCA
+.CRT$XCL
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIZ
+.CRT$XLA
+.CRT$XLZ
+.data
+.data$brc
+.data$r$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.edata
+.gfids
+.giats
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.main
+.mainbundle
+.pdata
+.rdata
+.rdata$brc
+.rdata$r
+.rdata$T$brc
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zzzdbg
+.resource
+.rsrc
+.rsrc$01
+.rsrc$02
+.text
+.text$di
+.text$mn
+.text$mn$00
+.text$x
+.text$yd
+.tls$
+.tls$ZZZ
+.xdata
+.xdata$x
+/*[local-name()='Package']/*[local-name()='Applications']/*[local-name()='Application']/*[local-name()='Extensions']/*[local-name()='Extension' and @Category='windows.localExperiencePack']
+/Add-ProvisionedAppxPackage /FolderPath:<AppX_folder_path> [/SkipLicense] 
+/Add-ProvisionedAppxPackage /PackagePath:<main_package_path> 
+/Get-NonRemovableAppPolicy 
+/Get-ProvisionedAppxPackages 
+/Optimize-ProvisionedAppxPackages 
+/Remove-ProvisionedAppxPackage /PackageName:<PackageName> 
+/Set-NonRemovableAppPolicy /PackageFamily:<PackageFamilyName> /NonRemovable:<0|1> 
+/Set-ProvisionedAppxDataFile /CustomDataPath:<custom data path> 
+;\$X~
+;AppxPackageInfoCollectionWWW
+;l$`s[
+??0exception@@QEAA@AEBQEBD@Z
+??0exception@@QEAA@AEBV0@@Z
+??0exception@@QEAA@XZ
+??1exception@@UEAA@XZ
+??1type_info@@UEAA@XZ
+?terminate@@YAXXZ
+?what@exception@@UEBAPEBDXZ
+@.data
+@.didat
+@.reloc
+@8,1u
+@8=Au
+@8y(t
+@A\_^
+@A^_^
+@A__^
+@A_A^_
+@A_A^_^[
+@A_A^A]
+@A_A^A]A\_^[
+@A_A^A]A\_^]
+@SUVWATAUAVAWH
+@SUVWATAVAWH
+@SUVWAVH
+@SUVWAWH
+@SVWATAUAVAWH
+@SVWATAVAWH
+@SVWAVAWH
+@SVWH
+@USVWATAUAVAWH
+@USVWATAVAWH
+@USVWATAWH
+@USVWAVH
+@USVWAWH
+@USVWH
+@USWATAUAVAWH
+@USWH
+@UVWH
+@VWATH
+@VWAVH
+@VWAWH
+@xA9~$u
+[%hs(%hs)]
+[%hs]
+\$ A;
+\$ E3
+\$ UH
+\$ UVWAVAWH
+\$@Ic
+\$`H9|$X
+\$0fE
+\$hH;
+\$XH!
+\$xH;
+\\?\UNC
+\AppXAllUserStore.dll
+\AppxBlockMap.xml
+\AppxManifest.xml
+\AppxMetadata\AppxBundleManifest.xml
+\Custom.data
+\Implemented Categories
+\microsoft.system.package.metadata
+\OpcServices.dll
+\Program Files\WindowsApps
+\Required Categories
+\SysArm32
+\System32
+\System32\NtDll.dll
+\System32\SsShim.dll
+\SysWOW64
+] I+]
+]HE9,$
+__C_specific_handler
+__CxxFrameHandler3
+__dllonexit
+__RTDynamicCast
+_amsg_exit
+_CxxThrowException
+_initterm
+_lock
+_onexit
+_purecall
+_unlock
+_vscwprintf
+_vsnprintf_s
+_vsnwprintf
+_wcsicmp
+_wcsnicmp
+_XcptFilter
+`.rdata
+`A^_^[]
+`A__^[]
+`A_A^_^[
+`A_A^A]A\_^[
+`A_A^A]A\_^]
+{ AVH
+|$ AVH
+|$ E3
+|$ UATAUAVAWH
+|$`E3
+|$`fD
+|$8fD
+|$8H!|$@L
+|$HE3
+|$HfD
+|$HH!|$PA
+|$PE3
+|$XE3
+|hK,_
+} I+}
+~ I+~
+<unavailable>
+=L9o<
+>Ayhu*
+>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0
+>http://www.microsoft.com/pki/certs/MicTimStaPCA_2010-07-01.crt0
+040904B0
+0A^^[
+0A^_^
+0A__^
+0A_A^_
+0A_A^_^[
+0A_A^_^]
+0A_A^A\
+0A_A^A\_^][
+0A_A^A]A\_
+0H!t$PH!t$HH!t$@H
+1(0&0
+1.0,0
+10.0.17763.1
+10.0.17763.1 (WinBuild.160101.0800)
+100701213655Z
+111019184142Z
+180703204550Z
+180823202634Z
+190726204550Z0p1
+191123202634Z0
+1http://www.microsoft.com/PKI/docs/CPS/default.htm0@
+20180915045659.085Z0
+20180915125635Z
+20180916125635Z0v0<
+229879+4379540
+250701214655Z0|1
+261019185142Z0
+2ALb'
+2H!uH@
+3fD9t$P
+4?v'v
+8\$ht(H
+8A^_^[
+8A_A^^[
+9\$`uzH
+9\$pt[I
+9\$X|WH
+9\$x~\L
+9A98u6A9x
+9D$\t
+9D$\u
+9pPu|A
+9t$Hu
+A license file must be specified when installing app packages (.appx). If a license file is not required, use the /SkipLicense option. For more information, see the help.
+A license file path was not specified.
+A@D9x
+A^_^[]
+A^_^][
+A^A]]
+A_A]A\_]
+A_A^]
+A_A^_
+A_A^_^]
+A_A^A\
+A_A^A\_[
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[
+A_A^A\_^[]
+A_A^A]
+A_A^A]_]
+A_A^A]_^[]
+A_A^A]A\]
+A_A^A]A\_
+A_A^A]A\_[
+A_A^A]A\_[]
+A_A^A]A\_^[
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A9F(u
+A9w(u0I
+AcquireSRWLockExclusive
+AddDeprovisionedPackageMarking
+AddDeprovisionedPackageMarking '%s' hit error 0x%0x
+AddDeprovisionedPackageMarking %ws
+AddDeprovisionedPackageMarking %ws failed.
+Adding custom data to provisioned request.
+Adding dependencies to provisioning request.
+Adding main package to provisioning request.
+Adding optional packages to provisioning request.
+Adding: %s as applicable language.
+AddPackageToRegistryStore
+Add-ProvisionedAppxPackage
+Add-ProvisionedAppxPackage}Adds app packages (.appx or .appxbundle) to the
+AddProvisionedAppxPackageForCSP
+AddStagedPackageToRegistryStore
+AdjustTokenPrivileges
+advapi32
+advapi32.dll
+AhL!qpL!t$ L
+AllowExecution
+AllUsers
+AMD64 and ARM/ARM64 packages must be installed on a Windows image that has the same architecture. For more information, see the Help.
+Another operation on app packages (.appx) is in progress.
+apI94$
+api-ms-win-core-com-l1-1-0.dll
+api-ms-win-core-debug-l1-1-0.dll
+api-ms-win-core-errorhandling-l1-1-0.dll
+api-ms-win-core-file-l1-1-0.dll
+api-ms-win-core-file-l1-2-0.dll
+api-ms-win-core-file-l2-1-0.dll
+api-ms-win-core-handle-l1-1-0.dll
+api-ms-win-core-heap-l1-1-0.dll
+api-ms-win-core-heap-obsolete-l1-1-0.dll
+api-ms-win-core-io-l1-1-0.dll
+api-ms-win-core-kernel32-legacy-l1-1-0.dll
+api-ms-win-core-libraryloader-l1-1-0.dll
+api-ms-win-core-localization-l1-2-0.dll
+API-MS-Win-Core-LocalRegistry-L1-1-0.dll
+api-ms-win-core-memory-l1-1-0.dll
+api-ms-win-core-path-l1-1-0.dll
+api-ms-win-core-processenvironment-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-0.dll
+api-ms-win-core-profile-l1-1-0.dll
+api-ms-win-core-registry-l1-1-0.dll
+api-ms-win-core-string-l1-1-0.dll
+api-ms-win-core-string-l2-1-0.dll
+api-ms-win-core-synch-l1-1-0.dll
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-core-sysinfo-l1-1-0.dll
+api-ms-win-core-sysinfo-l1-2-0.dll
+api-ms-win-core-winrt-l1-1-0.dll
+api-ms-win-core-winrt-string-l1-1-0.dll
+api-ms-win-eventing-provider-l1-1-0
+api-ms-win-eventing-provider-l1-1-0.dll
+api-ms-win-security-base-l1-1-0.dll
+api-ms-win-security-provider-l1-1-0.dll
+api-ms-win-shcore-stream-l1-1-0.dll
+App packages (.appx) cannot be serviced on an offline image after a user has logged into the image. 
+APPID
+ApplyFrameworkPackageRootFolderACLs
+ApplyPackageRootFolderACLs
+ApplySharedFileACLs
+AppProvisioned
+APPX SERVICING COMMANDS:
+AppXAllUserStore.dll
+AppxApplicabilityEngine.dll
+AppxCommandsHInformation on the available app package (.appx or .appxbundle) commands
+AppxDeploymentClient.dll
+AppxDestagePackage
+AppxGetPackageInstalledLocation
+AppxGetStagedPackageFullNameFromFamilyName
+AppxIsStagedPackageStoreSigned
+AppxManager
+AppxManager classW 
+AppxManagerWd
+AppxPackageInfo classW
+AppxPackageInfo collection classWW
+AppxPackageInfoW
+AppxPackaging.dll
+AppxPreRegisterPackage
+AppxProvider
+AppxProvider 1.0 Type LibraryW
+AppxProvider.dll
+AppxProvider.DLL
+AppxProvider.dll
+AppxProvider.pdb
+AppxProviderJGetting the list of app packages (.appx or .appxbundle) in this image...
+AppxProvisioning.xml
+AppxRemovePackageForAllUsers
+appxStage-
+AppxStagePackage
+Architecture : %1
+arm64
+AsdgB
+At most one main package belonging to one architecture should be present in the directory. For more information, see the Help.
+ATAVAWH
+ATL$__a
+ATL$__m
+ATL$__z
+Attempting a best-efforts rollback for package %s. Errors during rollback will be ignored.
+AUAVAWH
+B H+B
+base\ntsetup\opktools\dism\providers\appxprovider\dll\appxmanager.cpp
+base\ntsetup\opktools\dism\providers\appxprovider\dll\appxpackageadapter.cpp
+bcrypt.dll
+BCryptCloseAlgorithmProvider
+BCryptCreateHash
+BCryptDestroyHash
+BCryptFinishHash
+BCryptHashData
+BCryptOpenAlgorithmProvider
+C$H;A$t
+CAdapterBase::Make
+CallContext:[%hs] 
+CApplicabilityEngine::CreateApplicabilityContext
+CApplicabilityEngine::FreeApplicabilityContext
+CApplicabilityEngine::FreeApplicablePackages
+CApplicabilityEngine::GetApplicablePackages
+CAppxDeploymentClient::AppxDestagePackage
+CAppxDeploymentClient::AppxGetPackageInstalledLocation
+CAppxDeploymentClient::AppxGetStagedPackageFullNameFromFamilyName
+CAppxDeploymentClient::AppxIsStagedPackageStoreSigned
+CAppxDeploymentClient::AppxPreRegisterPackage
+CAppxDeploymentClient::AppxRemovePackageForAllUsers
+CAppxDeploymentClient::AppxStagePackage
+CAppxDeploymentClient::IsPackageInstalled
+CAppxManager::AcquireSessionLockIfOnline
+CAppxManager::AddAllUserAppxLooseFiles
+CAppxManager::AddAllUserAppxPackage
+CAppxManager::AddAllUserAppxPackageForCSP
+CAppxManager::AddAllUserAppxPackageWithOptionalPackagesAndRegion
+CAppxManager::AddAppxUninstallBlocklistEntry
+CAppxManager::CreateAppxPackageInfo
+CAppxManager::ExecuteCmdLine
+CAppxManager::FillPackageInfoCollectionFromPackageInfoArray
+CAppxManager::Final_OnConnect
+CAppxManager::GetAllUserAppx
+CAppxManager::GetCommandCollection
+CAppxManager::GetHelpItemCollection
+CAppxManager::Initialize
+CAppxManager::InitializeResources
+CAppxManager::OnConnect
+CAppxManager::OptimizeAllUserAppx
+CAppxManager::PrintPackageInfo
+CAppxManager::ProcessCommandAddAllUserAppxLooseFiles
+CAppxManager::ProcessCommandAddAllUserAppxPackage
+CAppxManager::ProcessCommandGetAllUserAppx
+CAppxManager::ProcessCommandGetNonRemovableAppPolicy
+CAppxManager::ProcessCommandOptimizeAllUserAppx
+CAppxManager::ProcessCommandRemoveAllUserAppx
+CAppxManager::ProcessCommandSetNonRemovableAppPolicy
+CAppxManager::ProcessCommandSetProvisionedAppxDataFile
+CAppxManager::RemoveAllUserAppx
+CAppxManager::RemoveAppxUninstallBlocklistEntry
+CAppxManager::SetProvisionedAppxDataFile
+CAppxManager::ValidateRegion
+CAppxManager::VerifyCustomDataPathExists
+CAppxManager::VerifyPerUserStoreDoesNotExistIfRunningOffline
+CAppxManager::WriteMessageToConsole
+CAppxManager::WriteResourceToConsole
+CAppxPackageInfo::Create
+CAppxPackaging::CreateFactory
+CAppxPackaging::DllGetClassObject
+CDismContext::~CDismContext
+CDismContext::AddPackageToImage
+CDismContext::AddToMap
+CDismContext::AvailableOSLangPacks
+CDismContext::FinalizeChanges
+CDismContext::GetApplicabilityContext
+CDismContext::GetAppxDataFileTarget
+CDismContext::GetMainPackageFamilyName
+CDismContext::GetPackageFamilyFromFullName
+CDismContext::GetProvisionFactory
+CDismContext::GetProvisionReader
+CDismContext::GetProvisionWriter
+CDismContext::HashFiles
+CDismContext::IsPackageArchitectureApplicable
+CDismContext::IsPackageFramework
+CDismContext::IsPackageFullNameBundle
+CDismContext::RemovePackageFromImage
+CDismContext::ReplaceExistingFileWithHardlink
+CDismContext::TakeOwnershipOfSingleInstanceRoot
+CDismContext::WalkDirectoryTreeAndHardlink
+CDismContext::WriteSizeStats
+CDismRequest::AddAppxPackage
+CDismRequest::AddDependencyAppxPackage
+CDismRequest::AddPackage
+CDismRequest::AddPackageToList
+CDismRequest::ApplyForEveryPackage
+CDismRequest::CheckForExistingMainPackageAndRemove
+CDismRequest::CreateFromPackageSource
+CDismRequest::DerivedInitialize
+CDismRequest::GetMainPackage
+CDismRequest::ProvisionLicenses
+CDismRequest::ProvisionPackages::<lambda_b8c6e556ed5c7f98cf23786ce32ccd30>::operator ()
+CDismRequest::ProvisionPackagesOnline
+CDismRequest::RegisterStagedPackagesOnline::<lambda_211a34869aa6f835b5950e108c3c3d19>::operator ()
+CDismRequest::RemoveDeprovisionedPackageMarking
+CDismRequest::RemovePackages::<lambda_9b94996bf1effd4999a868f943d0c8d4>::operator ()
+CDismRequest::RemovePackagesOnline::<lambda_7ff11f20818ebddd60df0e29ebc19aa6>::operator ()
+CDismRequest::StageLooseFilePackagesOnline::<lambda_ac3e5d597e6d07911978d92d91cc889a>::operator ()
+CDismRequest::StagePackagesOnline
+CharLowerBuffW
+CharNextW
+CharUpperBuffW
+CheckPackagePreinstallPolicy
+Choosing not to destage package '%s' because it is installed/staged by other users
+Choosing not to remove license for package '%s' because it is installed/staged by other users
+Chttp://www.microsoft.com/pkiops/crl/MicWinProPCA2011_2011-10-19.crl0a
+CloseHandle
+CLSID\
+CLSIDFromString
+CModule<class CApplicabilityEngine>::LoadDynamic
+CModule<class CAppxDeploymentClient>::LoadDynamic
+CModule<class CAppxPackaging>::LoadDynamic
+CModule<class COemLicense>::LoadDynamic
+CoCreateGuid
+CoCreateInstance
+Code integrity footprint file not found for package %s.
+COemLicense::HrAddAppxLicense
+COemLicense::HrRemoveAppxLicense
+CoInitializeEx
+CompanyName
+CompareStringOrdinal
+CompareStringW
+Control\MUI\UILanguages
+CopyDirectoryDirCallback: The copy was canceled by the user.
+CopyDirectoryEx2: Failed to copy [%s] to [%s], GLE = 0x%x; will retry in %u ms; am on try %u.
+CopyDirectoryEx2: Specified directory [%s] doesn't exist
+CopyDirectoryFileCallback: The copy was canceled by the user.
+CopyDirectoryFileCallback: Unable to %s file from [%s] to [%s]; GLE = 0x%x
+CopyFileExW
+CopyFileW
+Copying from %s to %s.
+CoSetProxyBlanket
+CoTaskMemAlloc
+CoTaskMemFree
+CoUninitialize
+CPackageAdapter::AddDeprovisionedPackageMarking
+CPackageAdapter::AddPackageLicense
+CPackageAdapter::CreateForAdd
+CPackageAdapter::CreateForExistingDependencyPackage
+CPackageAdapter::CreateForRemove
+CPackageAdapter::CreateFromPath
+CPackageAdapter::DeregisterMainPackageAndGetDependencyPackages
+CPackageAdapter::DeregisterPackageOnline
+CPackageAdapter::DestagePackage
+CPackageAdapter::DestagePath
+CPackageAdapter::DetermineInstalledLocationOnline
+CPackageAdapter::GetOptionalPackagesForMainPackage
+CPackageAdapter::GetParentFolder
+CPackageAdapter::GetTargetManifestPath
+CPackageAdapter::HasInprocMediaExtensionCapability
+CPackageAdapter::HasOverlayCapability
+CPackageAdapter::HasOverlayExtensionCategory
+CPackageAdapter::IsLanguageOverlayPackage
+CPackageAdapter::IsPackageFramework
+CPackageAdapter::IsPackageOptional
+CPackageAdapter::PreRegisterPackage
+CPackageAdapter::ProvisionPackage
+CPackageAdapter::RegisterPackage
+CPackageAdapter::RegisterStagedPackageOnline
+CPackageAdapter::RemovePackage
+CPackageAdapter::RemovePackageLicense
+CPackageAdapter::RemovePackageOnline
+CPackageAdapter::RemovePackageSetupPhaseFromRegistry
+CPackageAdapter::RollbackPackage
+CPackageAdapter::RollbackPackageOnline
+CPackageAdapter::SetFrameworkACLs
+CPackageAdapter::SetPackageACLs
+CPackageAdapter::SetPackageACLsForPackageFamily
+CPackageAdapter::StagePackage
+CPackageAdapter::UpdateDependencies
+CPackageAdapter::ValidateMainPackageIsNotAFrameworkOrOptionalPackage
+CPackageAdapter::VerifyPackagePreInstallPolicy
+CreateApplicabilityContext
+Created Hardlink from %s to %s
+CreateDirectoryW
+CreateEventW
+CreateFileMappingW
+CreateFileW
+CreateHardlink from %s to %s failed
+CreateHardlinked from %s to %s
+CreateHardLinkW
+CreatePath: Unable to create [%s]; GLE = 0x%x
+CreatePath: Unable to create parent directory for [%s]; GLE = 0x%x
+CreateUri
+Creating provisioning request for package source.
+Creating provisioning request.
+Custom data for package %s will be placed in package %s.
+CustomDataPath
+D!l$PI
+D$ E3
+D$ fD
+D$ H+
+D$(" 
+D$@9t$D
+D$@I;
+D$`E3
+D$`H+
+D$0E3
+D$0H+
+D$8E3
+D$D9t$@u
+D$DDtRH
+D$HE3
+D$PI;
+d$XD9
+D$XE3
+d$XE3
+D9{ u
+D9|$`u
+D9d$p
+D9d$x
+D9l$@
+D9l$\
+D9l$\u]A
+D9L$h
+D9l$PuzA#
+D9t$X
+D9uo}
+Default
+DeleteAllPackagesFromPackageArray
+DeleteCriticalSection
+DeleteFileEx: hardlink given to us is: %s
+DeleteFileEx: Trying to set back attributes on: %s
+DeleteFileEx: Unable to allocate memory for the full path name; GLE = 0x%x
+DeleteFileEx: Unable to clear out attributes on [%s]; GLE = 0x%x
+DeleteFileEx: Unable to delete [%s]; GLE = 0x%x
+DeleteFileEx: Unable to get full path name on [%s]; GLE = 0x%x
+DeleteFileW
+DeletePackageInfo
+DeletePath: [%s] doesn't exist as a directory; nothing to delete.
+DeletePath: Cannot delete <null>.
+DeletePath: Failed to obliterate [%s] (GLE = 0x%x); retrying...
+DeletePath: Failed to obliterate [%s] after %d tries; GLE = 0x%x
+DeletePathEngine: Hit %d failure%s during recursive deletion of [%s]; 1st error = 0x%x, cd = [%s]
+DependencyPackagePath
+Detected that there is more than one logged on user session running while performing an online install.
+DeviceIoControl
+DisableThreadLibraryCalls
+DISM App Package (.appx) Provider
+DISM Appx Provider
+dismcore.tlbWW
+DisplayName : %1
+Displays information about app packages 
+DllCanUnloadNow
+DllGetClassObject
+DLLGetDISMProviderCLSID
+DllRegisterServer
+DllUnregisterServer
+DoesPerUserStoreExist
+E I+E
+E(=csm
+E8=csm
+Eh=csm
+EH=csm
+Ehttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z
+Ehttp://crl.microsoft.com/pki/crl/products/MicTimStaPCA_2010-07-01.crl0Z
+Ehttp://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt0
+Encountered failure while finalizing package provision list.
+Encountered failure while removing optional package %s
+Encountered failure while removing package %s
+Encountered failure while removing package %s.
+EnsureCustomDataDirectoryExists
+EnterCriticalSection
+EnterpriseUninstallBlockList
+EnumeratePathEx: Callback requested enumeration interruption or hit internal enumeration failure on [%s]; GLE = 0x%x
+EnumeratePathEx: Failed search path is >= MAX_PATH!
+EnumeratePathEx: FindFirstFile failed for [%s]; GLE = 0x%x
+EnumeratePathEx: Unable to construct path under [%s]; GLE = 0x%x
+EnumeratePathEx: Unable to enumerate [%s]; GLE = 0x%x
+EnumeratePathEx: Unable to get reparse tag for persistent reparse point; GLE = 0x%x
+en-US
+Error while querying the nonremovable app policy
+Errors encountered when removing package. Please see the Microsoft-Windows-AppxDeployment/Operational channel in EventLog for more details.
+Evaluating %s with property: %d
+EventRegister
+EventSetInformation
+EventUnregister
+EventWriteTransfer
+Ew;Eg
+Ew9Eg
+EX=csm
+Ex=csm
+Exception
+f9,Au
+f9,Ku
+f9<Au
+f9<Bu
+f9<Ku
+f94Bu
+f94Cu
+f94Ju
+f9D$Pt
+fA;TF
+fA9,Fu
+Failed AddToMap %s
+Failed creating hardlinktarget for %s
+Failed deleting file '%s'
+Failed deleting path '%s'
+Failed derived initialize.
+Failed GetCurrent
+Failed GetDigest %s
+Failed GetFiles
+Failed GetHasCurrent
+Failed GetName
+Failed GetSize
+Failed getting dependencyPackagePath at index %ld
+Failed getting licensePath at index %ld
+Failed getting optionalPackagePath at index %ld
+Failed getting the dependencyPackages collection count
+Failed getting the license collection count
+Failed getting the option string from token at index %d.
+Failed getting the optionalPackages collection count
+Failed getting the token at index %d.
+Failed getting the token collection count.
+Failed in GetHasCurrent for capability enumerator
+Failed in GetHasCurrent for capability enumerator.
+Failed inserting %s to digest map
+Failed inserting %s to hardlink target
+Failed inserting %s to hardlink targets map
+Failed MoveNext
+Failed processing command to add an uninstall blocklist entry
+Failed processing command to add Appx package
+Failed processing command to add loose files package
+Failed processing command to get Appx packages
+Failed processing command to get the uninstall blocklist
+Failed processing command to remove Appx package
+Failed processing command to set provisioned Appx custom data
+Failed to activate class Windows_Globalzation_GeographicRegion to validate regions. Skipping validation.
+Failed to add adapter into list for package '%s'.
+Failed to add Appx package
+Failed to add Appx package info object to the collection
+Failed to add custom data to provisioned request for package %s
+Failed to add dependency package %s for provisioning.
+Failed to add dependency package '%s' to adapter set for processing.
+Failed to add dependency path '%s' to collection
+Failed to add language %s to applicability context
+Failed to add license path '%s' to collection
+Failed to add loose file package
+Failed to add main application package %s for provisioning.
+Failed to add main bundle package for provisioning.
+Failed to add main package for provisioning.
+Failed to add optional package '%s' to adapter set for processing.
+Failed to add optional package full name %s to optional list
+Failed to add optional path '%s' to collection
+Failed to add package '%s' to adapter set for processing.
+failed to add package %s to provision list.
+Failed to add package '%s' to provision list.
+Failed to add package family %s to uninstall blocklist
+Failed to add resource package %s for provisioning.
+Failed to add scale %d to applicability context.
+Failed to add the command to the collection.
+Failed to add the help item to the collection.
+Failed to allocate memory for a string.
+Failed to allocate memory for dependencyPackageInfo array
+Failed to allocate memory for PackageId for moniker '%s'
+Failed to allocate memory for PackageId for pfullname '%s'
+Failed to allocate memory for packageInfo object
+Failed to append applicable package to list.
+Failed to append package root path.
+Failed to append windows app data root path.
+Failed to bundle manifest reader 2 interface
+Failed to calculate applicability context.
+Failed to calculate applicable packages for bundle.
+Failed to canonicalize '%s'.
+Failed to check install status of package'%s'
+Failed to check package for inprocMediaExtension capability.
+Failed to close writer on file %s.
+Failed to copy %s to %s
+Failed to create a new command collection.
+Failed to create a new command object.
+Failed to create a new help collection.
+Failed to create a new help object.
+Failed to create adapter for '%s'.
+Failed to create adapter for existing package '%s'.
+Failed to create an instance of CAppxPackageInfo.
+Failed to create applicability context.
+Failed to create applicable packages collection.
+Failed to create appx bundle factory.
+Failed to create appx bundle manifest reader for %s.
+Failed to create appx bundle reader.
+Failed to create appx factory.
+Failed to create AppX Provider session lock '%s' because another online session is processing the image
+Failed to create AppX Provider session lock primitive named '%s'.
+Failed to create appx provision factory.
+Failed to create block map reader
+Failed to create directory tree for '%s'.
+Failed to create extract stream at '%s' from bundle.
+Failed to create hardlink for file %s
+Failed to create instance of dependency package path collection
+Failed to create instance of license package path collection
+Failed to create instance of optional package collection
+Failed to create instance of optional package path collection
+Failed to create list of candidate packages.
+Failed to create manifest reader
+Failed to create message wrapper
+Failed to create or open Software key.
+Failed to create or open System key.
+Failed to create output stream for '%s'.
+Failed to create package adapter collection for adapter set.
+Failed to create package adapter for %s.
+Failed to create package adapter for '%s'.
+Failed to create package adapter.
+Failed to create package factory.
+Failed to create package set.
+Failed to create payload adapter for bundle.
+Failed to create payload adapter for package '%s'.
+Failed to create payload adapter for package from bundle.
+Failed to create payload adapter for package reader.
+Failed to create payload adapter for package.
+Failed to create provision package.
+Failed to create resouce package adapter for '%s'.
+Failed to create temp directory.
+Failed to create the Appx package collection ATL object.
+Failed to create the Appx package info collection from package info array.
+Failed to create the Appx package info object.
+Failed to create writer for file %s.
+Failed to deregister main package and get its dependent packages
+Failed to deregister packages.
+Failed to deregister related packages
+Failed to deregister staged package'%s'
+Failed to destage package'%s'
+Failed to destage packages.
+Failed to determine AppxAllUserStore flags for package %s
+Failed to determine if '%s' is a framework package.
+Failed to determine if '%s' is an optional package.
+Failed to determine if package %s is a language overlay package
+Failed to determine if package has Language Overlay capability
+Failed to determine if package has Language Overlay extension category
+Failed to determine if package is an applicable package from bundle.
+Failed to determine if the package in question contains any runFullTrust components.
+Failed to determine if TL ace is on file '%s'.
+Failed to determine installed location for package '%s' and its dependencies
+Failed to determine next main package dependency.
+Failed to determine system path on the image
+Failed to determine unpack location for package from bundle.
+Failed to determine whether package %s represents a framework.
+Failed to determine whether package full name %s represents a bundle.
+Failed to determine whether per-user store exists
+Failed to enable hardlinking
+Failed to enumerate languages.
+Failed to find an existing version for optional package %s in registry store
+Failed to find an existing version for package %s in registry store
+Failed to find existing version in registry for framework '%s'.
+Failed to find package '%s' in staged package list.
+Failed to flush pending changes.
+Failed to get all provisioned Appx packages collection
+Failed to get applicability context
+Failed to get appropriate data file target for package %s
+Failed to get architecture from package
+Failed to get blockmap footprint file for package %s.
+Failed to get blockmap stream
+Failed to get bundle footprint file.
+Failed to get bundle manifest reader for bundle.
+Failed to get bundle manifest reader.
+Failed to get class factory.
+Failed to get count of all provisioned Appx packages from collection
+Failed to get count of provisioned packages.
+Failed to get current capability from enumerator
+Failed to get current capability from enumerator.
+Failed to get current main package dependency.
+Failed to get current package from bundle.
+Failed to get dependency packages.
+Failed to get execution policy bool
+Failed to get file name for package from bundle'.
+Failed to get file size for '%s'
+Failed to get filename for package from bundle.
+Failed to get framework bool
+Failed to get framework bool value from poperties.
+Failed to get fullname for bundle.
+Failed to get FullName from package
+Failed to get identity for bundle.
+Failed to get IDismEventManager interface from driver provider parent.
+Failed to get installed location of package '%s' because it's not staged
+Failed to get installed location of package '%s'.
+Failed to get instance
+Failed to get internal manifest reader
+Failed to get internal manifest reader interface.
+Failed to get list of applicable packages for bundle.
+Failed to get list of application packages.
+Failed to get list of main bundle packages.
+Failed to get list of main packages.
+Failed to get main application from bundle.
+Failed to get main package dependencies.
+Failed to get main package dependency package family name.
+Failed to get main package family name for %s.
+Failed to get main package.
+Failed to get manifest footprint file for package %s.
+Failed to get manifest path for package '%s'
+Failed to get manifest properties
+Failed to get manifest reader for bundle.
+Failed to get manifest reader for package.
+Failed to get manifest reader from package
+Failed to get manifest reader from package. hr=0x%x.
+Failed to get manifest stream
+Failed to get name from package
+Failed to get optional packages for main package '%s'
+Failed to get package factory.
+Failed to get package family name for optional bundle
+Failed to get package full name at index %d.
+Failed to get package full name for package from bundle.
+Failed to get package full name for package.
+Failed to get package id at index %d.
+Failed to get package Id for optional bundle
+Failed to get package id for package from bundle.
+Failed to get package id for package.
+Failed to get package info from collection at index %d
+Failed to get package reader from stream for package from bundle.
+Failed to get package type for current package from bundle.
+Failed to get package version from package
+Failed to get packages enumerator for bundle.
+Failed to get payload file for package %s.
+Failed to get payload files for package %s.
+Failed to get payload for package from bundle.
+Failed to get payload stream for package from bundle.
+Failed to get properties.
+Failed to get provisioned package full name.
+Failed to get provisioned package properties.
+Failed to get provisioned package.
+Failed to get Region from package
+Failed to get resource Id from package
+Failed to get resource packages.
+Failed to get running exe folder path.
+Failed to get signature footprint file for package %s.
+Failed to get Software key path.
+Failed to get source file name.
+Failed to get source file stream for '%s'
+Failed to get staged package collection.
+Failed to get staged packages for package '%s'.
+Failed to get string collection interface from class
+Failed to get System key path.
+Failed to get the Dism Image from the os services provider.
+Failed to get the display type.
+Failed to get the image flags from the configuration object.
+Failed to get the list of packages to remove
+Failed to get the message from the resource file.
+Failed to get the message.
+Failed to get the option and its argument at index %d.
+Failed to get the OS architecture from the os services provider.
+Failed to get the OS state from the os services provider.
+Failed to get the package capability SID for package %s.
+Failed to get the package SID for package %s.
+Failed to get the parent configuration object.
+Failed to get the parent's interface from OnConnect
+Failed to get the physical location from the Dism image.
+Failed to get the windows directory from the os services provider.
+Failed to get underlying command collection class.
+Failed to get Windows capabilities list for package
+Failed to get Windows capabilities list for package.
+Failed to get Xml interface from internal reader
+Failed to hardlink
+Failed to hash files
+Failed to initialize members.
+Failed to initialize package adapter.
+Failed to initialize package set
+Failed to initialize the console event handler.
+Failed to initialize the instance of CAppxPackageInfo.
+Failed to initialize the message wrapper.
+Failed to insert adapter into dependency package list for package '%s'.
+Failed to insert adapter into main package list for package '%s'.
+Failed to insert blockmap file into payload adapter for package %s.
+Failed to insert footprint file into unpack list.
+Failed to insert manifest file into payload adapter for package %s.
+Failed to insert package '%s' into collection.
+Failed to insert package into collection.
+Failed to insert packageFamilyName into set.
+Failed to insert payload adapter into collection.
+Failed to insert payload file into unpack list for package %s.
+Failed to insert signature file into payload adapter for package %s.
+Failed to insert staged package adapter for '%s' into list.
+Failed to load AppxDeploymentClient.DLL.
+Failed to locate query node
+Failed to make child collection to hold staged packages.
+Failed to mount registry.
+Failed to move the next capability in enumerator.
+Failed to obtain carried dependencies list.
+Failed to obtain carried main list.
+Failed to obtain carried package list for target index %d.
+Failed to obtain dependency package list
+Failed to obtain dependent package manifest path for package '%s'
+Failed to obtain list of provisioned packages.
+Failed to obtain optional package list
+Failed to obtain package family name for %s
+Failed to obtain package family name for %s.
+Failed to obtain provision list factory.
+Failed to obtain provision list writer.
+Failed to obtain provisioning factory.
+Failed to obtain provisioning reader.
+Failed to open '%s'.
+Failed to optimize all provisioned Appx packages collection
+Failed to output the string to the console.
+Failed to pick main package.
+Failed to pre-register package %s while processing target type = %d
+Failed to print Warning message to the console about per-user store existing
+Failed to provision licenses.
+Failed to provision package %s while processing target type = %d
+Failed to provision packages.
+Failed to QI the CDISMHelpItemCollection for IDismHelpItemCollection.
+Failed to query the nonremovable app policy
+Failed to read %s from the image.
+Failed to register package %s
+Failed to register staged packages.
+Failed to remove existing package version for '%s'.
+Failed to remove license for package '%s'
+Failed to remove package '%s'
+Failed to remove package %s from config registry
+Failed to remove package '%s' from provision list.
+Failed to remove package %s while processing target type = %d
+Failed to remove package family %s from uninstall blocklist
+Failed to remove package for all users.
+Failed to remove package from all staged packages list in all user store
+Failed to remove related packages
+Failed to remove setupPhase for package %s from config registry
+Failed to reset unpacked package stream for read.
+failed to retrieve appxalluserstore flags for package %s
+Failed to retrieve AppxAllUserStore flags from manifest reader
+failed to retrieve manifest reader for package %s
+Failed to serialize applicability context
+Failed to set framework ACLs on %s.
+Failed to set main package family name from full name '%s'.
+Failed to set null region to empty string
+Failed to set package ACLs on %s.
+Failed to set shared file ACLs on %s.
+Failed to stage loose file packages.
+Failed to stage package %s while processing target type = %d
+Failed to stage package.
+Failed to stage packages through AppxDeploymentClient
+Failed to stage packages.
+Failed to take ownership of single instance root for %s
+Failed to translate package moniker to'%s' package family moniker
+Failed to uninstall becuase policy prevents the removal of this package
+Failed to unpack contents to '%s'.
+Failed to unpack file at index %d in unpack list.
+Failed to Unpack package '%s'
+Failed to unpack package to '%s'.
+Failed to validate main package parameter is not a framework or an optional package.
+Failed to write setupPhase for package %s
+Failed to write unpack package to '%s' from bundle.
+Failed when extracting parent folder from destination %s
+Failed when trying to convert package fullname %s to PackageId
+Failed when trying to convert package fullname '%s' to PackageId
+Failed when trying to convert package moniker '%s' to package family moniker
+Failed when trying to convert package moniker %s to PackageId
+Failed when trying to convert package moniker '%s' to PackageId
+Failed when trying to convert PackageId to package family moniker
+Failed when trying to get parent folder for '%s'
+Failed when trying to resolve architecture for package %s
+Failed while acquiring Appx Provider session lock
+Failed while adding license file '%s'
+Failed while adding license for package %s
+Failed while adding package %s since an equal or higher version of the package, %s, already exists
+Failed while adding package %s to the registered packages registry store
+Failed while adding package %s to the staged packages registry store
+Failed while checking IsStagedPackageStoreSigned
+Failed while checking pre-install permissions
+Failed while clearing error info after region validation error
+Failed while constructing path to custom data directory %s
+Failed while copying custom data file to %s
+Failed while copying directory %s
+Failed while copying file %s
+Failed while initializing optional package adapter for package '%s'
+Failed while initializing package adapter for package '%s'
+Failed while notifying all user install agent scheduler.
+Failed while Preregistering package '%s'
+Failed while processing argument '%s'; can only remove for all users in an online image.
+Failed while processing unknown argument '%s' at index %d.
+Failed while removing license for family moniker '%s'
+Failed while removing package %s from each user's registered packages registry store
+Failed while resolving architecture from package moniker %s
+Failed while searching for the license file
+Failed while searching for the license file %s
+Failed while searching uninstall blocklist
+Failed while setting ACLs for package with inprocMediaExtension capability on directory %s
+Failed while setting attributes to custom data directory %s
+Failed while setting framework package ACLs on directory %s
+Failed while setting Package SID ACE on directory %s
+Failed while testing applicability of package fullname '%s'
+Failed while testing applicability of package moniker '%s'
+Failed while trying to create custom data directory %s
+Failed while trying to destage path '%s'
+Failed while trying to determine whether custom data directory %s exists
+Failed while trying to ensure custom data directory '%s' exists
+Failed while trying to process unknown argument '%s'
+Failed while trying to process unknown argument '%s' for '%s' command
+Failed while trying to take ownership of '%s'
+Failed while trying to take ownership of package custom data directory '%s'
+Failed while trying to take ownership of package root '%s'
+Failed while trying to verify that per-user store does not exist when running offline
+Failed while validating region(s) '%s'. One or more specified regions are invalid
+Failed while verifying custom data path '%s' exists
+Failed while verifying directory '%s' exists
+Failed: no /%s argument provided
+FailFast
+FamilyMonikerStringToSid
+fC9<tu
+fD;TQ
+fD9!t
+fD9$_u
+fD9$ou
+fD9$Qu
+fD9*t
+fD9,{u
+fD9,Gu
+fD9,ku
+fD9,wu
+fD9,yu
+fD9,Zu
+fD9<Cu
+fD9<Yu
+fD9<Zu
+fD90u
+fD93t
+fD94Au
+fD94Bu
+fD94Hu
+fD97u-3
+fD9d}
+fD9t$PD
+fD9t]
+fE9$Fu
+fE9,Fu
+fE94|u
+fE94Du
+fF9$Gu
+File could not be read as an .Appx package, trying to read file as an .AppxBundle...
+File digest %s = %s
+FileDescription
+FileVersion
+Finalizing changes...
+FindClose
+FindExistingVersionInRegistryStore
+FindFirstFileNameW
+FindFirstFileW
+FindFullNameForFamilyNameInAppxAllUserStore
+FindNextFileNameW
+FindNextFileW
+FindResourceExW
+FolderPath
+For more information, see the help.
+FormatMessageW
+Found a main package: %s
+Framework
+FreeApplicabilityContext
+FreeApplicablePackages
+FreeLibrary
+G`9pxt'A
+GetAllNonInboxPackagesFromRegistryStore
+GetAllStagedPackagesForMainPackageFromRegistryStore
+GetApplicablePackages
+GetAppxAllUserStoreAllowExecuteFlag
+GetAppxProvisionFactory
+GetCurrentDirectoryW
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThreadId
+GetEnvironmentVariableW
+GetFileAttributesW
+GetFileInformationByHandle
+GetFullPathNameW
+GetLastError
+GetModuleFileNameW
+GetModuleHandleExW
+GetModuleHandleW
+GetNativeSystemInfo
+Get-NonRemovableAppPolicy
+Get-NonRemovableAppPolicykLists the package families configured 
+GetPackageArchitecture
+GetProcAddress
+GetProcessHeap
+Get-ProvisionedAppxPackages
+GetSecurityInfo
+GetSystemInfo
+GetSystemTimeAsFileTime
+GetTempPathW
+GetThreadLocale
+GetTickCount
+Getting optional package list for '%s' hit error 0x%0x
+GetVersionExW
+Global\DismAppxProviderOnline{4E349A62-112B-444A-946F-56F1ABB80762}
+H SVWAVH
+H UVWATAUAVAWH
+H WATAUAVAWH
+H!L$@I!
+H!T$8H
+H!w H!w(H!w0H
+H;]`u
+H;]Pu
+h_^[]
+H+N H9F H
+H9\$0t
+H9\$X
+H9_ s
+H9_ t
+H9_(t
+H9_@t
+H9_0t
+H9_8t
+H9_Ht
+H9{`t*H
+H90u%H
+H9C(u
+H9Q r/H
+H9q@H
+H9S(u
+H9t$P
+H9Yht*H
+hA^_^[
+HA^_^[
+HA^A\_^[]
+hA_A^A]A\_^][
+Hardlinking %s file to existing file %s
+HardlinkTarget::ApplySharedFileACLsIfNecessary
+HardlinkTarget::Create
+HasCentennial
+Hash files in %s package.
+HeapAlloc
+HeapDestroy
+HeapFree
+HeapReAlloc
+HeapSize
+HrAddAppxLicense
+HrRemoveAppxLicense
+https
+I0G1-0+
+ImageTopLevelHelp
+InitializeCriticalSection
+inProcessMediaExtension
+InternalName
+Invalid region: %s
+invalid string position
+invalid vector<T> subscript
+is NOT
+IsDebuggerPresent
+IsEnterprisePolicyEnabled
+iSHp6
+IsPackageFamilyInUninstallBlocklistByPackageFullName
+IsPackageInstalled
+K SVWH
+kernel32.dll
+KhH99t
+L!2L9
+L$ SUVWH
+L$ SVWH
+L$ SWH
+L$ USVWATAVH
+L$ USVWH
+l$@I9u
+L$0H;
+L$8E3
+L$8H3
+L$hE3
+L$HH;
+L$hH3
+L$PH3
+L$XE3
+L$XL+
+L9{@u
+L9{0t#H
+L9i0u
+L9t$`
+L9t$P
+LAppxProviderLibW
+LcA<E3
+Lct$`M
+LeaveCriticalSection
+Legal_Policy_Statement
+LegalCopyright
+LicensePath
+list<T> too long
+Listing Enterprise nonremovable app families:
+LoadLibraryExA
+LoadLibraryExW
+LoadResource
+LoadStringW
+localExperienceInternal
+LocalFree
+LockResource
+LogHr
+Loose files not supported for bundle packages.
+M!1L!p H
+M0K0I
+M94$t
+Main package not found
+Main packages %s and %s have the same architecture
+malloc
+MapViewOfFile
+memcmp
+memcpy_s
+memmove_s
+memset
+Method does not accept null arguments.
+Microsoft
+Microsoft Corporation
+Microsoft Corporation1
+Microsoft Corporation1&0$
+Microsoft Corporation1)0'
+Microsoft Corporation1.0,
+Microsoft Corporation1200
+Microsoft Time-Stamp PCA 2010
+Microsoft Time-Stamp PCA 20100
+Microsoft Time-Stamp Service
+Microsoft Time-Stamp Service0
+Microsoft Windows0
+Microsoft.Windows.Dism.AppxProvider
+Missing argument for the '%s' option.
+More than one main packages belonging to the same architecture were found.
+Msg:[%ws] 
+msvcrt.dll
+MUI\%04hx
+MultiByteToWideChar
+n L+n
+N0I!v(
+N0L0J
+nCipher NTS ESN:57F6-C1E0-554C1+0)
+neutral
+Neutral main packages %s cannot co-exist with a non-neutral main package
+No applicable main package was found for %s OS architecture
+No applicable main package was found for this platform.
+No main package dependencies -- failed to convert packageFullName %s to packageFamilyName.
+No main package dependencies for %s, this is a main package and not an optional package.
+No package families in the nonremovable app policy.
+No package reader found for %s, expected for bundles.
+No package reader found for %s, it is an appx bundle
+No packages found in single instance store.
+NonRemovable
+NotifyObject
+ntdll.dll
+NtSetInformationFile
+O:nr}
+o\$PH
+O0M0K
+oD$ f
+OemLicense.dll
+oK0D$"<
+oL$0f
+OLEAUT32.dll
+One or more of the specified regions are invalid. If specifying a list of regions, be sure to separate each region with a semicolon.
+onecore\base\appmodel\common\appxuninstallblocklist.cpp
+onecore\base\appmodel\common\registrykey.cpp
+onecore\base\appmodel\common\stringset.cpp
+onecore\base\appmodel\trust\trustlabelhelpersbase.cpp
+Opened extract stream at '%s' from bundle.
+OpenProcessToken
+Optimization is not needed for online provisioned packages, and not supported when online for offline provisioned packages.
+Optimize-ProvisionedAppxPackages
+Option '%s' must have value of either 0 or 1
+OptionalPackagePath
+OriginalFilename
+oT$@f
+Out of Memory
+OutputDebugStringW
+p WATAUAVAWH
+p WAVAWH
+PA^_^
+pA^_^[]
+PA^_^[]
+PA__^
+PA__^][
+pA_A]A\_^[]
+PA_A^_^]
+pA_A^A\_[
+PA_A^A\_^[]
+pA_A^A]A\_
+pA_A^A]A\_^[
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+Package %s %s a framework.
+Package %s cannot be modified because the folder was present when the machine was online, skip creating hardlinks.
+Package %s declares main package dependencies, this is an optional package.
+Package '%s' excluded as not applicable.
+Package %s has a main package dependency on %s.
+Package fullname '%s' is not applicable on this architecture, skipping.
+Package has Language Overlay capability
+Package has Language Overlay extension category
+Package moniker '%s' excluded as an existing version '%s' was found
+Package moniker '%s' excluded as not applicable on this architecture
+Package moniker '%s' is not applicable on this architecture
+PackageFamily
+PackageFamilyNameFromId
+PackageIdBasicFromFullName
+PackageMonikerToPayload::CreateForBundleReader
+PackageMonikerToPayload::CreateForMonikerAndPath
+PackageMonikerToPayload::CreateForPackageReader
+PackageMonikerToPayload::GetBundleManifestReader
+PackageMonikerToPayload::HardlinkFile
+PackageMonikerToPayload::Unpack
+PackageMonikerToPayload::UnpackFile
+PackageName
+PackageName : %1
+PackagePath
+PackageSidToPackageCapabilitySid
+PackageSource::CalculateApplicablePackagesForBundle
+PackageSource::GetAppxFactory
+PackageSource::GetBundleManifestReader
+PackageSource::GetPackagesFromPath
+PackageSource::GetPackagesFromReader
+PackageSource::GetTempUnpackLocation
+PackageSource::IsPackageApplicable
+PathAllocCanonicalize
+PID=%d TID=%d %s - %s
+PID=%d TID=%d %s - %s(hr:0x%x)
+Places custom data into the specified app 
+Please discard the changes and try again. For more information, see the help.
+Policies\Microsoft\Windows\Appx
+Pre-install policy check failed for package '%s'.
+Processed %d files in %s package.
+Processing '%d' options
+Processing '%s' option at index %d
+ProductName
+ProductVersion
+ProgIDFromCLSID
+ProgramData\Microsoft\Windows
+Provisioning request.
+Pu5Hc
+PucHc
+QHfA;TF
+QueryPerformanceCounter
+R!s4Z
+r~akow
+RaiseException
+ReadFile
+Received unexpected OS state from the os services provider: %d
+Redmond1
+RegCloseKey
+RegCreateKeyExW
+RegDeleteKeyExW
+RegDeleteKeyW
+RegDeleteValueW
+RegEnumKeyExW
+RegEnumValueW
+Region
+Regions : %1
+RegOpenKeyExW
+RegQueryInfoKeyW
+RegQueryValueExW
+RegSetValueExW
+ReleaseSRWLockExclusive
+RemoveDeprovisionedPackageMarking
+RemoveDeprovisionedPackageMarking %ws
+RemoveDeprovisionedPackageMarking %ws couldn't find main package
+RemoveDeprovisionedPackageMarking %ws failed.
+RemoveDeprovisionedPackageMarking %ws hit error 0x%0x
+RemovePackageFromRegistryStore
+RemovePackageFromRegistryStoreConfigIfExists
+Remove-ProvisionedAppxPackage
+RemoveProvisionedAppxPackageForAllUsersForCSP
+RemoveProvisionedAppxPackageForCSP
+Removes app packages (.appx or .appxbundle)
+RemoveStagedPackageFromRegistryStore
+RemoveStatusOfMainPackageForAllUsers
+ResourceId : %1
+ReturnHr
+RoGetActivationFactory
+Rollback for package %s complete.
+RollbackTakeOwnershipSession
+RSDSu
+RtlAllocateAndInitializeSid
+RtlAllocateHeap
+RtlCaptureContext
+RtlCompareUnicodeString
+RtlDeleteElementGenericTableAvl
+RtlEnumerateGenericTableWithoutSplayingAvl
+RtlEqualSid
+RtlFindAceByType
+RtlFreeHeap
+RtlFreeSid
+RtlInitializeGenericTableAvl
+RtlInitUnicodeString
+RtlInsertElementGenericTableAvl
+RtlLookupElementGenericTableAvl
+RtlLookupFunctionEntry
+RtlNtStatusToDosError
+RtlNumberGenericTableElementsAvl
+RtlVirtualUnwind
+s WAVAWH
+s$H9{`t*H
+SearchPathW
+SendMessageW
+SetFileAttributesW
+SetFilePointer
+SetLastError
+Set-NonRemovableAppPolicy
+Set-NonRemovableAppPolicy]Sets enterprise nonremovable policy for 
+Set-ProvisionedAppxDataFile
+Set-ProvisionedAppXDataFile
+SetThreadLocale
+SetThreadUILanguage
+Setting custom data file to %s to package %s
+SetUnhandledExceptionFilter
+setupPhase updated in AppxAllUserStore config registry for package %s, in offline mode 
+setupPhase updated in AppxAllUserStore config registry for package %s, in online mode
+SHA256
+Sharing violation while attempting to write %s.  Provision XML file not updated.
+SHCreateStreamOnFileW
+SizeofResource
+SkipLicense
+SkipLicense cannot be specified without enabling side-loading
+Skipping unpack of %s, it will be hardlinked later.
+Sleep
+SleepConditionVariableSRW
+SOFTWARE
+Software
+Software\Microsoft\Windows\CurrentVersion\AppReadiness
+String operation exception!
+string too long
+StringFileInfo
+StringFromGUID2
+SVAVAWH
+SVAVH
+SVWATAUAVAWH
+SVWATAUAWH
+SVWATAVAWH
+SVWAVAWH
+SVWAVH
+SWATAUAVAWH
+SWATAVAWH
+SWAVH
+System
+System32
+SYSTEMDRIVE
+t"D8=x
+t$ E3
+t$ UWATAVAWH
+t$ UWAVH
+t$ WAVAWH
+t$ WH
+T$(E3
+t$`fD9t$`t2H
+t$HE3
+t$PE3
+t$PHc
+T$t;T$p
+T$tD9|$p
+t$XE3
+t$xH;
+t)D9l$@t"D
+t.HcC<
+t^@8=
+t}H9D$h
+t+H9^
+t0fE9/t*
+t4A9~
+T6ChA
+TakeOwnershipOnFolder
+Taking ownership of %s.
+tef;9t`E3
+TerminateProcess
+Thales TSS ESN:B1B7-F67F-FEC21%0#
+The directory must contain an applicable package with a .main file extension. For more information, see the help.
+The folder %s does not exist, must have already been de-staged
+The license file must be located with the .main file in the directory specified by the /FolderPath option. If a license file is not required, use the /SkipLicense option. For more information, see the help.
+The license file was not found in the specified path.
+The number of optional package family names must match the number of external package Uris.
+The package does not meet the requirement for provisioning to the target image.  For more information, see the help.
+The package is not compatible with the architecture of the target image.
+The PackagePath parameter is not supported in this edition of Windows for offline servicing. Use the FolderPath parameter to add a folder of unpacked package files to the offline image in this session. For more information, see http://go.microsoft.com/fwlink/?LinkID=246281.
+This operation is not supported on the current host operating system.
+This operation is not supported while other users are logged on to the computer.
+TlP0X
+To add an app package (.appx) by using the /SkipLicense option, you must enable the AllowAllTrustedApps policy setting on a Windows edition that allows sideloading. For more information, see http://go.microsoft.com/fwlink/?LinkID=231020.
+Too many arguments for the '%s' command
+Total Size = %I64d, Hardlink size = %I64d, Written size = %I64d, Total distinct files = %d
+Translation
+tUfE9/tOI
+TYPELIB
+tzH9p
+u HcA<H
+u I+u
+U[Rich8
+u+D9Q
+U0S0Q
+UATAUAVAWH
+UAUAVH
+UAVAWH
+uHf9C
+umqbN
+Unable to Get all packages from registry store
+Unable to GetProcAddress 'AppxDestagePackage'
+Unable to GetProcAddress 'AppxGetInstalledLocation'
+Unable to GetProcAddress 'AppxGetStagedPackageFullNameFromFamilyName'
+Unable to GetProcAddress 'AppxIsStagedPackageStoreSigned'
+Unable to GetProcAddress 'AppxPreRegisterPackage'
+Unable to GetProcAddress 'AppxRemovePackageForAllUsers'
+Unable to GetProcAddress 'AppxStagePackage'
+Unable to GetProcAddress 'CreateApplicabilityContext'
+Unable to GetProcAddress 'DllGetClassObject'
+Unable to GetProcAddress 'FreeApplicabilityContext'
+Unable to GetProcAddress 'FreeApplicablePackages'
+Unable to GetProcAddress 'GetApplicablePackages'
+Unable to GetProcAddress 'HrAddAppxLicense'
+Unable to GetProcAddress 'HrRemoveAppxLicense'
+Unable to GetProcAddress 'IsPackageInstalled'
+Unable to LoadLibrary '%s'
+Unexpected '%s' argument
+Unexpected error while enumerating packages.
+UnhandledExceptionFilter
+unknown
+Unknown Error
+UnmapViewOfFile
+UnregisterClassA
+Unsupported package architecture %d in moniker  %s
+UpdateFrameworkPackageInRegistryStore
+UpdatePackageSetupPhase
+urlmon.dll
+user32.dll
+USER32.dll
+USVWATAUAVAWH
+USVWATAUAWH
+USVWAUAVAWH
+USVWAVH
+USVWH
+USWATAUAVAWH
+UVWATAUAVAWH
+UVWAVAWH
+UWATAUAWH
+UWATAVAWH
+UWAUAVAWH
+UWAVH
+UWAWH
+Validating appropriateness of custom data for %s
+Validating specified regions
+VarFileInfo
+vector<T> too long
+VirtualProtect
+VirtualQuery
+VS_VERSION_INFO
+vswprintf_s
+VWATAUAVAWH
+VWATAVAWH
+VWATH
+VWAVH
+VWAWH
+Wait for the current operation to complete and then retry the command. For more information, see the help.
+WaitForSingleObject
+WakeAllConditionVariable
+Washington1
+WATAUAVAWH
+WAVAWH
+wcscat_s
+wcschr
+wcscmp
+wcscpy_s
+wcsncpy_s
+wcsrchr
+wcstok_s
+WdsCopyFileEx: Failed to copy [%s] to [%s], GLE = 0x%x; will retry in %u ms
+WdsCopyFileEx: Failed to delete %s. GLE = 0x%x
+WdsCopyFileEx: Failed to strip file attributes for %s, will delete. GLE = 0x%x
+WdsRemoveDirectory: Unable to clear attributes on [%s]; GLE = 0x%x
+WdsRemoveDirectory: Unable to prepare path [%s]; GLE = 0x%x
+WdsRemoveDirectory: Unable to remove directory [%s]; GLE = 0x%x
+Will remove for all users
+WINDIR
+Windows.Globalization.GeographicRegion
+WindowsCreateStringReference
+WindowsDeleteString
+WindowsGetStringRawBuffer
+WINSTA.dll
+WinStationGetTermSrvCountersValue
+Writing temporary provision file: %s.
+Wrong number of arguments for the '%s' command
+x ATAVAWH
+x AVH
+x UAVAWH
+x_^[]
+x86a64
+xA_A\_^[]
+xA_A]A\_^[
+xA_A^A\_^[
+XA_A^A]A\_^
+xA_A^A]A\_^[]
+Y H93
+Y(H93
+y(uDH
+Y@H9;u%L
+You have exceeded the limit for the number of custom app packages (.appx) that you can provision. For more information, see the Help.
+z.9Wv

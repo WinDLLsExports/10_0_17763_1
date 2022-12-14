@@ -1,0 +1,3148 @@
+      
+                     
+                                                 Verbosity=minimal
+                                           Verbosity=diagnostic;Encoding=UTF-8
+                             /p:Configuration=Debug;TargetFrameworkVersion=v3.5
+                            and projects.
+                            and will be reused by subsequent builds (default)
+                            build log will be written.
+                            contents of an existing log file. 
+                            end.
+                            events, and messages
+                            for all logging messages.
+                            for example, UTF-8, Unicode, or ASCII
+                            logger.
+                            logging style of output when running in 
+                            message.                                           
+                            mode. This logging style is on by default. 
+                            non-multiprocessor mode.
+                            Not setting the switch overwrites the 
+                            properties at the start of each project build.    
+                            style even when running in non-multiprocessor
+                            switch appends the build log to the log file;
+                            the console buffer
+                            The default is not to append to the log file.
+                            to or overwrite the log file. Setting the
+                        /consoleloggerparameters:PerformanceSummary;NoSummary;
+                        Append--determines if the build log will be appended
+                        DisableConsoleColor--Use the default console colors
+                        DisableMPLogging-- Disable the multiprocessor
+                        EnableMPLogging--Enable the multiprocessor logging
+                        Encoding--specifies the encoding for the file, 
+                        ErrorsOnly--Show only errors.
+                        ForceNoAlign--Does not align the text to the size of
+                        LogFile--path to the log file into which the
+                        NoItemAndPropertyList--Don't show list of items and
+                        NoSummary--Don't show error and warning summary at the
+                        PerformanceSummary--Show time spent in tasks, targets
+                        ShowCommandLine--Show TaskCommandLineEvent messages  
+                        ShowEventId--Show eventId for started events, finished 
+                        ShowTimestamp--Display the Timestamp as a prefix to any
+                        Summary--Show error and warning summary at the end.
+                        Verbosity--overrides the /verbosity setting for this
+                        WarningsOnly--Show only warnings.
+                       /dl:MyLogger,C:\My.dll*ForwardingLogger,C:\Logger.dll
+                       /dl:XMLLogger,MyLogger,Version=1.0.2,Culture=neutral
+                       /fileLoggerParameters:LogFile=MyLog.log;Append;
+                       /flp:Summary;Verbosity=minimal;LogFile=msbuild.sum 
+                       /flp1:warningsonly;logfile=msbuild.wrn 
+                       /flp2:errorsonly;logfile=msbuild.err
+                       /ignoreprojectextensions:.sln
+                       /logger:XMLLogger,C:\Loggers\MyLogger.dll;OutputAsHTML
+                       /logger:XMLLogger,MyLogger,Version=1.0.2,Culture=neutral
+                       /nr:true
+                       /pp:out.txt
+                       /property:WarningLevel=2;OutDir=bin\Debug\
+                       /target:Resources;Compile
+                       /toolsversion:3.5
+                       /validate:MyExtendedBuildSchema.xsd
+                       /verbosity:quiet
+                       [<logger class>,]<logger assembly>[;<logger parameters>]
+                       [<partial or full namespace>.]<logger class name>
+                       {<assembly name>[,<strong name>] | <assembly file>}
+                     "msbuild[n].log". Events from all nodes are combined into
+                     "MSBuild<nodeid>.log". The location of the files and
+                     "n" if present can be a digit from 1-9, allowing up to 
+                     "n" if present can be a digit from 1-9.
+                     (1) the directory of msbuild.exe
+                     (2) the directory of the first project or solution built
+                     (Short form /dl)
+                     (Short form: /ds)
+                     (Short form: /flp[n])
+                     (Short form: /ignore)
+                     (Short form: /nr)
+                     (Short form: /pp)
+                     /fileloggerparameters is also used by any distributed
+                     /noautorsp)
+                     /tv)
+                     10 file loggers to be attached. (Short form: /fl[n])
+                     a project file is not specified, MSBuild searches the
+                     a single log. The location of the file and other
+                     about the configurations built and how they were
+                     and from where, and what they will contribute to
+                     Any response files named "msbuild.rsp" are automatically 
+                     available. Some additional available parameters are:
+                     build with. If the switch is not used, the default
+                     build, with their boundaries marked. This can be
+                     Causes a debugger prompt to appear immediately so that 
+                     comma to separate multiple targets, or specify each
+                     computer. (Short form: /m[:n])
+                     consumed from the following locations: 
+                     corresponding /filelogger[n] switch.
+                     create a log file for each node.
+                     Creates a single, aggregated project file by
+                     current working directory for a file that has a file
+                     Default verbosity is Detailed.
+                     different logger instance to each node. To specify
+                     Enables or Disables the reuse of MSBuild nodes.
+                     Example:
+                     Examples:
+                     extension that ends in "proj" and uses that file.
+                     False--Nodes will not remain after the build completes
+                     file logger, see description of /distributedFileLogger.
+                     form: /val)
+                     If a log file name is set through the fileLoggerParameters
+                     inlining all the files that would be imported during a
+                     is provided that will be used instead.
+                     List of extensions to ignore when determining which 
+                     Logs the build output to multiple log files, one log file
+                     MSBuild will use up to the number of processors on the 
+                     MSBuild XML and any tasks and loggers it uses.
+                     multiple loggers, specify each logger separately.
+                     multiple loggers, specify each logger separately. 
+                     multiple response files, specify each response file
+                     n[ormal], d[etailed], and diag[nostic]. (Short form: /v)
+                     other parameters for the fileLogger can be specified 
+                     parameters for the fileLogger can be specified through 
+                     Parameters to console logger. (Short form: /clp)
+                     per MSBuild node. The initial location for these files is
+                     project file to build. Use a semicolon or a comma 
+                     Provides any extra parameters for file loggers.
+                     scheduled to nodes. 
+                     semicolon or a comma to separate multiple properties, or
+                     separately.
+                     Shows detailed information at the end of the build
+                     specify each property separately. (Short form: /p)
+                     switch the distributed logger will use the fileName as a 
+                     target separately. (Short form: /t)
+                     template and append the node id to this fileName to 
+                     The <logger assembly> syntax is:
+                     The <logger class> syntax is:
+                     The <logger parameters> are optional, and are passed
+                     The <logger> syntax is:
+                     the addition of the "/fileLoggerParameters[n]" switch.
+                     The available parameters are:
+                     The available verbosity levels are: q[uiet], m[inimal],
+                     the build. By default the output is written to
+                     the console window. If the path to an output file 
+                     the current directory. By default the files are called 
+                     the file is in the current directory and named 
+                     The parameters are:
+                     The presence of this switch implies the 
+                     the property name, and <v> is the property value. Use a
+                     The same parameters listed for the console logger are
+                     The version of the MSBuild Toolset (tasks, targets, etc.)
+                     to separate multiple extensions.
+                     to the console. (Short form: /noconlog)
+                     to the logger exactly as you typed them. (Short form: /l)
+                     to use during build. This version will override the 
+                     True --Nodes will remain after the build completes
+                     Use this logger to log events from MSBuild, attaching a
+                     useful for figuring out what files are being imported
+                     value used is 1. If the switch is used without a value
+                     versions specified by individual projects. (Short form: 
+                     Visual Studio can be attached for you to debug the 
+                     with the addition of the "/fileLoggerParameters" switch.
+          <!-- Windows 7 and Server 2008 R2 -->
+          <!-- Windows 8 and Server 2012 -->
+          <!-- Windows 8.1 (Blue) and Server 2012 R2-->
+          <!-- Windows Threshold  -->
+          <!-- Windows Vista and Server 2008 -->
+          <supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />
+          <supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />
+          <supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />
+          <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
+          <supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />
+          level="asInvoker"
+          uiAccess="false"/>
+        </application>
+        <application>
+        <requestedExecutionLevel
+        MSBuild MyApp.csproj /t:Clean 
+        MSBuild MyApp.sln /t:Rebuild /p:Configuration=Release
+      </compatibility>
+      </requestedPrivileges>
+      <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+      <requestedPrivileges>
+    </security>
+    <security>
+    name="MSBuild"
+    version="3.5.0.0"
+   string matching (eg. 'true')
+  /consoleloggerparameters:<parameters>
+  /debug
+  /detailedsummary 
+  /distributedFileLogger                                                       
+  /distributedlogger:<central logger>*<forwarding logger>                     
+  /fileLogger[n]     Logs the build output to a file. By default
+  /fileloggerparameters[n]:<parameters>                                
+  /ignoreprojectextensions:<extensions>
+  /logger:<logger>   Use this logger to log events from MSBuild. To specify
+  /maxcpucount[:n]   Specifies the maximum number of concurrent processes to 
+  /noconsolelogger   Disable the default console logger and do not log events
+  /nodeReuse:<parameters>
+  /preprocess[:file] 
+  /property:<n>=<v>  Set or override these project-level properties. <n> is
+  /target:<targets>  Build these targets in this project. Use a semicolon or a
+  /toolsversion:<version>
+  /validate          Validate the project against the default schema. (Short
+  /validate:<schema> Validate the project against the specified schema. (Short
+  /verbosity:<level> Display this amount of information in the event log.
+  @<file>            Insert command-line settings from a text file. To specify
+  </trustInfo>
+  <assemblyIdentity
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+ )]]4
+ * Even for MRU size of zero there will still be some intern hits because of the tiny 
+ .NET Framework
+ [{10}]
+ [zi4
+ bytes)
+ Cdb4
+ chars)  Hits
+ chars) Held
+ Jc2I
+ KZr4
+ lZr4
+ Microsoft Corporation.  All rights reserved.
+ Microsoft Operations Puerto Rico1
+!\\\\\\\\(
+''!=''
+!Attempting to cancel the build...
+!This program cannot be run in DOS mode.
+"""""""""""""""""%""%""%""%""%""""""""""""""""""
+"%"%"%""%"%"%"%"
+"{0}" is not a valid item-spec modifier.
+"Could not find directory path: {0}
+"Microsoft Time Source Master Clock0
+##########Top Missed Strings:  
+##########Top Rejected Strings: 
+#Blob
+#GUID
+#MSBUILD : Logger error MSB1029: {0}
+#Strings
+$`2X`F
+$Microsoft Root Certificate Authority
+$Microsoft Root Certificate Authority0
+%*?@$();'
+%{0:x00}
+%f:\dd\tools\devdiv\FinalPublicKey.snk
+%MSB5010: No file format header found.
+-%r55
+&*.sf
+&*Fs^
+&MSBUILD : Configuration error {0}: {1}
+&uVZW
+(&)-*.,0.3152G3S4X5d?kLpMsPxQ{S~Y
+(,01a
+(]W%#
+({1} instances x each {2} chars = {3}KB wasted)
+({2}): 
+({2},{3}): 
+({2},{3},{7},{8}): 
+({2},{3}-{8}): 
+({2}-{7}): 
+({2}-{7},{3}): 
+(MSBUILD : error MSB1001: Unknown switch.
+(Parameter "{0}" cannot have zero length.
+)`'v4$
+)Microsoft Root Certificate Authority 20100
+)Microsoft Root Certificate Authority 20110
+)MSB5013: Error parsing a project section.
+-)r68
+)Unsupported .NET Framework version "{0}".
+*.*proj
+*.sln
+*?*kXIc
+*2r<J
+*Fro:
+*JrS`
+*MSBUILD : error MSB1007: Specify a logger.
+*MSBuild is expecting a valid "{0}" object.
+,7r>8
+,MSBUILD : MSB1044: Project is not valid. {0}
+.3r<>
+.cctor
+.config
+.ctor
+.failure.txt
+.J=,F
+.log;
+.metaproj
+.NET CLR Memory
+.proj
+.text
+.tq[m
+.vcproj
+/=aJcY
+/L|52
+/MSBUILD : error MSB1006: Property is not valid.
+/r$u,
+:MSBUILD : error MSB1005: Specify a property and its value.
+:MSBUILD : error MSB1026: Schema file '{0}' does not exist.
+;MSBUILD : error MSB1008: Only one project can be specified.
+;MSBUILD : error MSB1023: Cannot read the response file. {0}
+;nodereuse=false
+;Syntax:              MSBuild.exe [options] [project file]
+?http://crl.microsoft.com/pki/crl/products/microsoftrootcert.crl0T
+@.0+:
+@002400000c800000140100000602000000240000525341310008000001000100613399aff18ef1a2c2514a273a42d9042b72321f1757102df9ebada69923e2738406c21e5b801552ab8d200a65a235e001ac9adc25f2d811eb09496a4c6a59d4619589c69f5baf0c4179a47311d92555cd006acc8b5959f2bd6e10e360c34537a1d266da8085856583c85d81da7f3ec01ed9564c58d93d713cd0172c8e23a10f0239b80c96b07736f5d8b022542a4e74251a5f432824318b3539a5a087f8e53d2f135f9ca47f3bb2e10aff0af0849504fb7cea3ff192dc8de0edad64c68efde34c56d302ad55fd6e80f302d5efcdeae953658d3452561b5f36c542efdbdd9f888538d374cef106acf7d93a4445c3c73cd911f0571aaf3d54da12b11ddec375b3
+@Forcing load of Microsoft.Build.Engine because MSBUILDOLDOM=1...
+@MSBUILD : error MSB1019: Logger switch was not correctly formed.
+@MSBUILD : error MSB1047: File to preprocess to is not valid. {0}
+[Microsoft .NET Framework, version {1}]
+\\?\globalroot
+\MSBuild.Unittest, PublicKey=002400000480000094000000060200000024000052534131000400000100010007d1fa57c4aed9f0a32e84aa0faefd0de9e8fd6aec8f87fb03766c834c99921eb23be79ad9d5dcc1dd9ad236132102900b723cf980957fc4e177108fc607774f29e8320e92ea05ece4e821c0a5efe8f1645c4c0c93c1ab99285d622caa652c1dfad63d745d6f2de5f17e5eaf0fc4963d261c8a12436518206dc093344d5ad293
+\Performance
+]^v*X
+^[\{0}\{1}][\{0}\{1}][^\{0}\{1}]+[\{0}\{1}][^\{0}\{1}]+
+^[A-Za-z]:
+^MSBUILD : error MSB1034: Node number is not valid. Value must be an integer greater than zero.
+_^7c77
+__;_77
+__StaticArrayInitTypeSize=18
+_aBuff
+_node_
+`.rsrc
+`Ge`@N
+`H-)V
+{0,20:N0}
+{0,20:N2}
+{0} ({1},{2})
+{0} (TID {1}) {2,15} +{3,10}ms: {4}
+{0} unexpectedly empty
+{0} unexpectedly not a rooted path
+{0} unexpectedly null
+{0}\software\microsoft\msbuild\4.0
+{0}{0}
+{0}{1}{0}
+{5}: 
+{MSBUILD : error MSB1037: Specify one or more parameters for the console logger if using the /consoleLoggerParameters switch
+|---------------------------------------------------------------------------------|
+||{0,50}|{1,20:N0}|{2,8}|
+||{0,50}|{1}|{2,8}|
+|hK,_
+}}Y}Y}Y}Y}Y}YY}YYYYUYYUYUY}
+}YYUYYUUUYUUU
++ r#S
++Validating project using schema file "{0}".
+<.cctor>b__2_0
+</assembly>
+<?xml version="1.0" encoding="utf-8"?>
+<>1__state
+<>2__current
+<>4__this
+<>9__17_0
+<>9__24_0
+<>9__24_1
+<>9__24_2
+<>9__24_3
+<>9__24_4
+<>9__24_5
+<>c__DisplayClass0_0
+<>c__DisplayClass12_0
+<>c__DisplayClass29_0
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+<ByteBuffer>k__BackingField
+<CancelPending>k__BackingField
+<CharBuffer>k__BackingField
+<Column>k__BackingField
+<Console_CancelKeyPress>b__17_0
+<Encoding>k__BackingField
+<ExceptionMessage>k__BackingField
+<ExceptionMessageArgs>k__BackingField
+<FinalParameterValues>k__BackingField
+<GetEnumerator>d__17
+<http://www.microsoft.com/pki/certs/MicrosoftTimeStampPCA.crt0
+<InstantiateAndExecuteTaskInSTAThread>b__0
+<Line>k__BackingField
+<Module>
+<MSB5016: The name "{0}" contains an invalid character "{1}".
+<MSBUILD : error MSB1030: Maximum CPU count is not valid. {0}
+<MSBUILD : error MSB1031: Specify the maximum number of CPUs.
+<MSBUILD : error MSB1039: Specify the version of the toolset.
+<MSBUILD : error MSB1042: Node reuse value is not valid. {0}.
+<Next>k__BackingField
+<PacketPumpProc>b__0
+<PrivateImplementationDetails>
+<QueueThreadPoolWorkItemWithCulture>b__0
+<ReportStatistics>b__24_0
+<ReportStatistics>b__24_1
+<ReportStatistics>b__24_2
+<ReportStatistics>b__24_3
+<ReportStatistics>b__24_4
+<ReportStatistics>b__24_5
+<Result>k__BackingField
+<TaskException>k__BackingField
+<unknown>
+<Unrecognized solution version "{0}", attempting to continue.
+<Value>k__BackingField
+=============
+==============
+===================
+=====================
+=t]o-
+>http://www.microsoft.com/pki/certs/MicCodSigPCA_08-31-2010.crt0
+>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0
+>http://www.microsoft.com/pki/certs/MicTimStaPCA_2010-07-01.crt0
+0.>+T
+040904B0
+070403125309Z
+0B31F07FE164DD93AC9BEA9F9517786C7D713A1C
+0O)/;GY
+1(0&0
+1/0-0
+100701213655Z
+100831221932Z
+100ns
+110708205909Z
+160907175653Z
+160907175854Z
+180712200848Z
+180712201119Z
+180807090723Z0#
+180907175653Z0
+180907175854Z0
+190726200848Z0t1
+190726201119Z0t1
+1http://www.microsoft.com/PKI/docs/CPS/default.htm0@
+1Jv1=+r
+1MSBUILD : error MSB1012: Specify a response file.
+1Wu56
+200831222932Z0y1
+20180806214350Z
+20180807090728.094Z0
+20180807214350Z0w0=
+210403130309Z0w1
+229803+4379500
+230012+4379650
+250701214655Z0|1
+260708210909Z0~1
+2MSB4025: The project file could not be loaded. {0}
+2MSB5019: The project file is malformed: "{0}". {1}
+-2re9
+3"3&3
+3d31~
+3http://www.microsoft.com/pkiops/docs/primarycps.htm0@
+4.0.0.0
+4.7.3190.0
+4.7.3190.0 built by: NET472REL1LAST_C
+4MSB5020: Could not load the project file: "{0}". {1}
+4MSBUILD : error MSB1026: Schema file does not exist.
+5%hbl4
+5.5"5&5
+5MSB4103: "{0}" is not a valid logger verbosity level.
+5MSBUILD : error MSB1009: Project file does not exist.
+5MSBUILD : error MSB1016: Specify the verbosity level.
+5MSBUILD : MSB1046: The schema "{0}" is not valid. {1}
+6)Z)V
+6__76
+6+0@YHF
+6211.1-
+62LlL
+6MSBUILD : error MSB1018: Verbosity level is not valid.
+6MSBUILD : error MSB1022: Response file does not exist.
+7MSB5018: Failed to delete the temporary file "{0}". {1}
+7MSBUILD : error MSB1033: Node number is not valid. {0}.
+7MSBUILD : error MSB1040: ToolsVersion is not valid. {0}
+8.M*V
+8ef*V
+8http://www.microsoft.com/pki/certs/MicrosoftRootCert.crt0
+8MSB5004: The solution file has two projects named "{0}".
+8MSBUILD : error MSB1004: Specify the name of the target.
+8MSBUILD : error MSB1028: The logger failed unexpectedly.
+9!0f6
+9]mWY
+A value with the same key is already in the collection.
+A14p,C
+a5a866e1ee186f807668209f3b11236ace5e21f117803a3143abb126dd035d7d2f876b6938aaf2ee3414d5420d753621400db44a49c486ce134300a2106adb6bdb433590fef8ad5c43cba82290dc49530effd86523d9483c00f458af46890036b0e2c61d077d7fbac467a506eba29e467a87198b053c749aa2a4d2840c784e6d
+AbortingBuild
+ABp*!
+aBuff
+AccessControlType
+AccessedTime
+AccessViolationException
+Activator
+Active
+activeBuild
+add_AssemblyResolve
+add_CancelKeyPress
+add_DomainUnload
+add_OnLinkStatusChanged
+add_UnhandledException
+add_ValidationEventHandler
+AddAccessRule
+AddAtom
+AddFirst
+AddRange
+AddRef
+AddRemappedAssemblyName
+AddToOrUpdateList
+AddValue
+AfterTargets
+afterTargets
+AfterTargets
+AggregateParameters
+AJY2G
+allowEarlyCollection
+allowedExtensions
+AltDirectorySeparatorChar
+AmbiguousMatchException
+AmbiguousProjectError
+AmbiguousProjectError#
+AnyCPU
+anyPrefixingParameter
+AOC1'0%
+AParameters "{0}" and "{1}" must have the same number of elements.
+appDomainLifetimeObjects
+appDomainSetup
+AppendLine
+APPICON
+Architecture
+architecture
+architectureA
+architectureB
+ArchitectureValuesMatch
+ArgsReaderDelegate
+ArgsWriterDelegate
+ArgumentException
+ArgumentNullException
+ArgumentOutOfRangeException
+array
+arrayIndex
+ArrayList
+asAssemblyName
+assembly
+Assembly file path should be rooted
+AssemblyCompanyAttribute
+AssemblyCopyrightAttribute
+AssemblyDefaultAliasAttribute
+AssemblyDelaySignAttribute
+AssemblyDescriptionAttribute
+AssemblyFile
+assemblyFile
+AssemblyFileVersionAttribute
+AssemblyInformationalVersionAttribute
+AssemblyInfoToLoadedTypes
+AssemblyKeyFileAttribute
+AssemblyLoadInfo
+assemblyLoadInfo
+AssemblyLoadInfoWithFile
+AssemblyLoadInfoWithName
+AssemblyName
+assemblyName
+AssemblyNameComparer
+AssemblyNameExtension
+AssemblyNameFlags
+assemblyPaths
+AssemblyProductAttribute
+AssemblyResources
+AssemblySignatureKeyAttribute
+AssemblyTitleAttribute
+AssignViaEnvironment
+asString
+asString1
+asString2
+AsyncCallback
+asyncDataMonitor
+AtomName
+Attempting to change status to existing status {0}.
+AttemptToShortenPath
+attribute
+aUserParams
+AutoResetEvent
+autoResponseFileName
+AvailableExtendedVirtual
+AvailablePageFile
+AvailablePhysical
+AvailableVirtual
+backing
+badCommandLineArg
+badCommandLineArgValue
+BadImageFormatException
+baseHandshake
+basePath
+bbx2Q
+beforeTargets
+BeforeTargets
+begin
+BeginBuild
+BeginInvoke
+BeginRead
+BeginWaitForConnection
+Bhttp://www.microsoft.com/pki/certs/MicRooCerAut2011_2011_03_22.crt0
+BinaryFormatter
+BinaryWriter
+BindingFlags
+bInheritHandle
+binPath
+BitConverter
+bMSB5015: The properties could not be read from the WebsiteProperties section of the "{0}" project.
+BMSBUILD : error MSB1002: This switch does not take any parameters.
+BMSBUILD : error MSB1035: Specify the project extensions to ignore.
+BucketedPrioritizedStringList
+buffer
+bufferLength
+Build
+Build started.
+BuildAborted
+BuildAbortedException
+buildComplete
+buildEngine
+BuildEngineCallbacksInTaskHostUnsupported
+BuildEngineResult
+BuildError
+BuildErrorEvent
+buildErrorEventArgs
+BuildErrorEventArgs
+buildEvent
+BuildEventContext
+BuildFinishedEvent
+BuildFinishedEventArgs
+buildLifetimeObjects
+buildLock
+BuildMessageEvent
+buildMessageEventArgs
+BuildMessageEventArgs
+BuildParameters
+buildProcessEnvironment
+BuildProjectFile
+BuildProjectFilesInParallel
+BuildProjectWithOldOM
+BuildPropertyGroup
+BuildRequestBlocker
+BuildRequestConfiguration
+BuildRequestConfigurationResponse
+BuildRequestData
+BuildRequestUnblocker
+BuildResult
+BuildResultCode
+BuildStarted
+BuildStartedEvent
+BuildStartedEventArgs
+BuildStringFromResource
+BuildSubmission
+BuildWarningEvent
+BuildWarningEventArgs
+buildWarningEventArgs
+byteArray
+bytes
+c.R+'
+cache
+cacheDirectory
+cacheLock
+cacheOfLoadedTypesByFilter
+cacheOfLoadedTypesByFilterLock
+cacheOfReflectionOnlyLoadedTypesByFilter
+cacheOfReflectionOnlyLoadedTypesByFilterLock
+callback
+CancelAllSubmissions
+cancelComplete
+CancelTask
+candidate
+Cannot call this method when reading!
+Cannot call this method when writing!
+Cannot get reader from writer.
+Cannot get writer from reader.
+Cannot send when link status is not active. Current status {0}
+CannotAutoDisableAutoResponseFile
+Can't join on the same thread.
+capacity
+Capture
+cbParams
+cchBuffer
+centralLogger
+cHandles
+ChangeLinkStatus
+Changing link status from {0} to {1}
+CharArrayInternTarget
+CharArrayToString
+chars
+charsToEscape
+CheckForHardcodedSTARequirement
+Chttp://crl.microsoft.com/pki/crl/products/MicrosoftTimeStampPCA.crl0X
+Chttp://www.microsoft.com/pkiops/crl/MicCodSigPCA2011_2011-07-08.crl0a
+ClaimsIdentity
+CleanupTask
+ClearCacheDirectory
+Client connection failed but we will wait for another connection. Exception: {0}
+Client connection failed.  Exiting comm thread. {0}
+Client: rejected old host. Received byte {0} but this matched a byte to reject.
+ClientConnectTimeout
+clientHandshake
+clientIdentity
+Clone
+CloneCustomMetadata
+CloneForWriteIfNecessary
+CloneImmutable
+Close
+CloseHandle
+clrVersion
+CLSCompliantAttribute
+CMSB5009: Error parsing the nested project section in solution file.
+CodeMarkerEx
+CodeMarkerExStartEnd
+CodeMarkerStartEnd
+CollectionHelpers
+columnNumber
+columnNumberOfTask
+Combine
+commandLine
+commandLineArg
+commandLineArgs
+commandLineSwitches
+CommandLineSwitchException
+Comments
+CommunicationsUtilities
+CompanyName
+CompareBaseNamesStringWise
+CompareBaseNameTo
+CompareBaseNameToImpl
+CompareCulture
+CompareExchange
+ComparePublicKeyToken
+ComparePublicKeyTokens
+comparer
+CompareTo
+comparisonFlags
+CompilationRelaxationsAttribute
+CompilerGeneratedAttribute
+CompleteTask
+COMPLUS_INSTALLROOT
+ComVisibleAttribute
+Concat
+ConcurrentDictionary`2
+Condition
+condition
+Condition
+ConfigurationErrorsException
+ConfigurationFailurePrefixNoErrorCode
+ConflictingTaskAssembly
+Connect
+Connect() not valid on the out of proc endpoint.
+Connection timed out waiting a host to contact us.  Exiting comm thread.
+ConnectionFailed
+ConsiderDebuggerLaunch
+considerRetargetableFlag
+Console
+Console_CancelKeyPress
+ConsoleCancelEventArgs
+ConsoleCancelEventHandler
+consoleLoggerParameters
+consoleloggerparameters
+ConsoleLoggerParameters
+ConsoleSpecialKey
+ContainsEscapedWildcards
+ContainsKey
+ContainsReservedCharacters
+ContainsToolset
+ContainsValueAndIsEqual
+context
+ContinueOnError
+continueOnError
+ContinueOnError
+ContinueOnErrorValues
+Convert
+copyFrom
+CopyMemory
+CopyMetadataTo
+CopyOnWriteBackingDictionary`2
+CopyOnWriteDictionary`2
+Copyright (C) Microsoft Corporation. All rights reserved.
+CopyrightMessage
+count
+Count = 0
+counter
+COWAIT_ALERTABLE
+COWAIT_FLAGS
+COWAIT_NONE
+COWAIT_WAITALL
+CoWaitForMultipleHandles
+cpuCount
+CrashedAfterExecution
+CrashedDuringExecution
+CrashedDuringInitialization
+CreateAndConfigureLogger
+CreateAssemblyName
+CreateDelegate
+CreateDelegateRobust
+CreateDirectory
+CreateDomain
+CreatedTime
+CreateForwardingLoggerRecord
+CreateFromStream
+CreateFullName
+CreateInstance
+CreateInstanceAndUnwrap
+CreateInstanceFromAndUnwrap
+CreateLogger
+CreateNewTaskItemFrom
+CreatePipe
+CreateSharedBuffer
+CreateTask
+CreateText
+CreateUriFromPath
+CThe item metadata "%({0})" cannot be applied to the path "{1}". {2}
+culture
+CurrentArchitecture
+currentArchitecture
+CurrentArchitecture
+currentConfiguration
+currentDirectory
+currentInstance
+CurrentRuntime
+currentRuntime
+CustomAttributeFormatException
+CustomBuildEventArgs
+customEscapedMetadata
+customEventsLoaded
+d]\(1
+D=xz#
+DangerousGetHandle
+DataReceivedDelegate
+DateTime
+DateTimeKind
+DDBLD223A
+debug
+Debug
+debugCommunications
+debugDumpPath
+DebuggableAttribute
+Debugger
+debugger
+DebuggerDisplayAttribute
+DebuggerEnabled
+DebuggerHiddenAttribute
+DebuggerStepThroughAttribute
+DebuggingModes
+DebuggingSolutionFiles
+DebugTraceMessage
+decoder
+default
+DefaultDllImportSearchPathsAttribute
+DefaultMemberAttribute
+DefaultNodeConnectionTimeout
+defaultTargets
+DefaultTargets
+DefaultValue
+defaultValue
+defaultVerbosity
+defaultXmlNamespace
+DELETE
+DeleteAtom
+DeleteDirectoryNoThrow
+DeleteNoThrow
+DependsOnTargets
+dependsOnTargets
+DependsOnTargets
+Dequeue
+Description:         Builds the specified targets in the project file. If
+Deserialize
+DeserializeAndRoutePacket
+destination
+destinationItem
+detailed
+detailedsummary
+detailedSummary
+DetectedParameterizedSwitch
+DetectedParameterlessSwitch
+diagnostic
+dictionary
+dictionaryCreator
+DictionaryEntry
+directory
+Directory
+directory
+DirectoryExists
+DirectoryGetFiles
+DirectoryInfo
+DirectoryNotFound
+Disabled
+DisabledDueToDllImportException
+DisabledViaRegistryCheck
+DISABLEMPLOGGING
+Disconnecting voluntarily
+DisplayCopyrightMessage
+displayName
+DisposeCacheObjects
+DisposeObjects
+distributedFileLogger
+distributedfilelogger
+DistributedLogger
+distributedlogger
+DistributedLoggerRecord
+distributedLoggerRecords
+distributedLoggerSwitchParameters
+DllImportSearchPath
+DllInitPerf
+DllName
+DllNotFoundException
+DllPerfCodeMarker
+DllUnInitPerf
+DMicrosoft.Build.Collections.ReadOnlyEmptyList`1+<GetEnumerator>d__17
+dMSBuild.Whidbey.Unittest, PublicKey=002400000480000094000000060200000024000052534131000400000100010007d1fa57c4aed9f0a32e84aa0faefd0de9e8fd6aec8f87fb03766c834c99921eb23be79ad9d5dcc1dd9ad236132102900b723cf980957fc4e177108fc607774f29e8320e92ea05ece4e821c0a5efe8f1645c4c0c93c1ab99285d622caa652c1dfad63d745d6f2de5f17e5eaf0fc4963d261c8a12436518206dc093344d5ad293
+dontCreate
+dontTrack
+Double
+doubleQuotesRemoved
+doubleQuotesRemovedFromArg
+DrivePattern
+dummy
+DumpAllInCategory
+DumpCounter
+DumpCounters
+DumpExceptionToFile
+dumpFileName
+DuplicateProjectSwitchError
+duplicateSwitchErrorMessage
+dwActiveProcessorMask
+dwAllocationGranularity
+dwDesiredAccess
+dwDirectory
+dwDirectoryLength
+dwFlags
+dwlength
+dwNumberOfProcessors
+dwPageSize
+dwProcessId
+dwProcessorType
+dwTimeout
+dX<ut
+dySg}
+E"{0}" is a reserved item metadata, and cannot be modified or deleted.
+e_.,>
+E_ABORT
+E0C1)0'
+eDesiredAccess
+Ehttp://crl.microsoft.com/pki/crl/products/MicCodSigPCA_08-31-2010.crl0Z
+Ehttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z
+Ehttp://crl.microsoft.com/pki/crl/products/MicTimStaPCA_2010-07-01.crl0Z
+Ehttp://www.microsoft.com/pkiops/certs/MicCodSigPCA2011_2011-07-08.crt0
+Eliminated Chars
+Eliminated Strings*
+Elimination assumes that strings provided were unique objects.
+emptySplits
+EMSB5012: Unexpected end-of-file reached inside "{0}" project section.
+EMSBUILD : error MSB1021: Cannot create an instance of the logger. {0}
+eMSBUILD : error MSB1041: Specify one or more parameters for node reuse if using the /nodereuse switch
+EMSBUILD : MSB1045: Stopping because of syntax errors in project file.
+ENABLEMPLOGGING
+ENABLEMPLOGGING;
+enableMSBuildDebugTracing
+enableNodeReuse
+EnableStatisticsGathering
+EndBuild
+endColumnNumber
+Ending read loop
+EndInvoke
+endLineNumber
+EndOfStreamException
+endpoint
+EndRead
+EndsWith
+EndsWithSlash
+EndWaitForConnection
+Enqueue
+EnqueuePacket
+EnsureCapacity
+EnsureNoLeadingSlash
+EnsureNoTrailingSlash
+EnsureTrailingSlash
+Enter
+Entering read loop.
+enumerationComplete
+enumerator
+en-US
+environment
+environmentVariable
+EqualsIgnoreVersion
+EqualsImpl
+error
+ERROR_FILE_NOT_FOUND
+ERROR_INSUFFICIENT_BUFFER
+errorAndContinue
+ErrorAndContinue
+errorAndStop
+ErrorAndStop
+errorCode
+errorMessage
+ErrorUtilities
+EscapeCarriageReturn
+EscapeDisplayNameCharacters
+escapedItemSpec
+escapedMetadata
+EscapingUtilities
+escapingWasNecessary
+Estimated Eliminated Bytes
+EThe string "{0}" cannot be converted to a boolean (true/false) value.
+evaluate
+Evaluate
+Event type "{0}" was expected to be serializable using the .NET serializer. The event was not serializable and has been ignored.
+eventArg
+EventArgsFormatting
+eventHandler
+eventType
+EventWaitHandle
+Evidence
+Examples:
+exception
+Exception reading from server.  {0}
+Exception while deserializing packet {0}: {1}
+Exception while serializing packets: {0}
+exceptionFromExecution
+ExceptionHandling
+exceptionMessage
+exceptionMessageArgs
+Exclude
+exclude
+executablePath
+Execute
+executeTargets
+ExecuteTargets
+exeName
+exePath
+ExitStatus
+ExitType
+exitType
+ExpandEnvironmentVariables
+ExpectedEventToBeSerializable
+ExpensiveConvertToString
+extension
+Extension
+extension
+Extension
+ExtensionAttribute
+extensionsToIgnoreDictionary
+extensionToAdd
+ExtensionToAdd is not immutable
+externalProjectFinishedEventArgs
+ExternalProjectFinishedEventArgs
+externalProjectStartedEventArgs
+ExternalProjectStartedEventArgs
+ExtractAnyLoggerParameter
+ExtractAnyParameterValue
+ExtractMessageCode
+ExtractSwitchParameters
+f:\binaries\Intermediate\ndp_msbuild\xmakecommandline.csproj_1613737345\objr\amd64\MSBuild.pdb
+f^H*V
+factory
+FactoryForDeserialization
+FactoryForTranslation
+factoryMethod
+Failed to convert the handshake to big-endian. {0}
+FALSE
+false
+FatalError
+FILE_ATTRIBUTE_DIRECTORY
+FILE_ATTRIBUTE_READONLY
+FILE_ATTRIBUTE_REPARSE_POINT
+FILE_TYPE_CHAR
+fileAttributes
+fileColumn
+FileCopy
+FileCreate
+FileDelete
+FileDescription
+fileEndColumn
+fileEndLine
+FileExists
+FileExistsNoThrow
+FileInfo
+fileInfoLevel
+fileLine
+FileLoadException
+FileLocation
+filelogger
+filelogger1
+FileLogger1
+FileLogger2
+filelogger2
+FileLogger3
+filelogger3
+FileLogger4
+filelogger4
+filelogger5
+FileLogger5
+filelogger6
+FileLogger6
+FileLogger7
+filelogger7
+filelogger8
+FileLogger8
+filelogger9
+FileLogger9
+fileloggerparameters
+fileLoggerParameters
+FileLoggerParameters1
+fileloggerparameters1
+FileLoggerParameters2
+fileloggerparameters2
+fileloggerparameters3
+FileLoggerParameters3
+FileLoggerParameters4
+fileloggerparameters4
+fileloggerparameters5
+FileLoggerParameters5
+fileloggerparameters6
+FileLoggerParameters6
+fileloggerparameters7
+FileLoggerParameters7
+fileloggerparameters8
+FileLoggerParameters8
+fileloggerparameters9
+FileLoggerParameters9
+fileModifiedTimeUtc
+fileName
+Filename
+filename
+FileNotFoundException
+FileOrDirectoryExistsNoThrow
+filePart
+filePath
+fileSizeHigh
+fileSizeLow
+fileSpec
+FileStream
+FileSystemInfo
+FileTimeFormat
+FileUtilities
+FileUtilitiesRegex
+fileVersion
+FileVersion
+fileVersionChecked
+fileVersionHash
+Final buffer capacity should be sufficient for full path name and null terminator.
+finalParams
+FindAtom
+FindOnPath
+finishedEvent
+firstArgument
+FJZ)V
+FlagsAttribute
+Flavor=Retail
+fMSB5007: Error parsing the project configuration section in solution file. The entry "{0}" is invalid.
+'For switch syntax, type "MSBuild /help"
+format
+FormatEventMessage
+FormatResourceString
+FormatString
+formatstring
+forwardingLoggerDescription
+FrameworkLocationHelper.UnsupportedFrameworkVersion
+FreeEnvironmentStrings
+FreeLibrary
+From calculating based on the memorystream, about to read n = {0}. length = {1}, rawPosition = {2}, readLength = {3}, stringLength = {4}, currPos = {5}.
+From getting the length out of BaseStream.Read directly, about to read n = {0}. readLength = {1}, stringLength = {2}, currPos = {3}
+FromFileTimeUtc
+ftCreationTimeHigh
+ftCreationTimeLow
+ftLastAccessTimeHigh
+ftLastAccessTimeLow
+ftLastWriteTimeHigh
+ftLastWriteTimeLow
+fullPath
+FullPath
+fullpath
+FullPath
+Func`2
+FUSION_E_PRIVATE_ASM_DISALLOWED
+GatherAllSwitches
+GatherAutoResponseFileSwitches
+GatherCommandLineSwitches
+GatherParameterizedCommandLineSwitch
+GatherParameterlessCommandLineSwitch
+GatherResponseFileSwitch
+gatherStatistics
+GenerateHostHandshakeFromBase
+GenericComparer
+GenericComparerConsiderRetargetable
+get_ANSICodePage
+get_AppDomainSetup
+get_Assembly
+get_AssemblyFile
+get_AssemblyLocation
+get_AssemblyName
+get_AsyncWaitHandle
+get_BaseStream
+get_BuildProcessEnvironment
+get_ByteBuffer
+get_CancelPending
+get_Capacity
+get_CategoryName
+get_CentralLogger
+get_CharBuffer
+get_Chars
+get_Code
+get_CodePage
+get_Column
+get_ColumnNumber
+get_ColumnNumberOfTask
+get_ColumnNumberOfTaskNode
+get_CommandLine
+get_CommandLineArg
+get_Comparer
+get_ContinueOnError
+get_CounterName
+get_CounterType
+get_Culture
+get_CultureInfo
+get_CurrentCulture
+get_CurrentDirectory
+get_CurrentDomain
+get_CurrentExecutableConfigurationFilePath
+get_CurrentExecutableDirectory
+get_CurrentExecutableName
+get_CurrentExecutablePath
+get_CurrentThread
+get_CurrentUICulture
+get_Default
+get_DefaultBuildManager
+get_Dummy
+get_ElapsedMilliseconds
+get_Encoding
+get_EndColumnNumber
+get_EndLineNumber
+get_Entry
+get_ErrorCode
+get_EscapedCodeBase
+get_EventType
+get_Exception
+get_ExceptionMessage
+get_ExceptionMessageArgs
+get_ExceptionObject
+get_ExecutingAssemblyPath
+get_Exists
+get_File
+get_FileVersionHash
+get_FinalParameterValues
+get_First
+get_Flags
+get_ForwardingLoggerDescription
+get_FullName
+get_HasBeenLogged
+get_HasNoClones
+get_HasProcessorArchitectureInFusionName
+get_HasValue
+get_HelpKeyword
+get_Id
+get_Immutable
+get_Importance
+get_InitializationException
+get_InnerException
+get_Instance
+get_InvariantCulture
+get_IsAbsoluteUri
+get_IsAbstract
+get_IsArray
+get_IsClass
+get_IsConnected
+get_IsDummy
+get_IsEnabled
+get_IsEnum
+get_IsInvalid
+get_IsMarshalByRef
+get_IsRunningMultipleNodes
+get_IsSerializable
+get_IsSimpleName
+get_IsUnnamedAssembly
+get_IsValueCreated
+get_IsValueType
+get_ItemSpec
+get_Key
+get_Kind
+get_Last
+get_LastWriteTime
+get_LCID
+get_Length
+get_Line
+get_LineNumber
+get_LineNumberOfTask
+get_LineNumberOfTaskNode
+get_LinePosition
+get_LinkStatus
+get_LoadedAssembly
+get_LocalPath
+get_Location
+get_Loggers
+get_LoggerSwitchParameters
+get_Major
+get_ManagedThreadId
+get_MaxNodeCount
+get_MemoryUseLimit
+get_Message
+get_MetadataCount
+get_MetadataNames
+get_Minor
+get_Mode
+get_Name
+get_NewLine
+get_Next
+get_NodeBuildEvent
+get_NodeConnectionTimeout
+get_NodeId
+get_Now
+get_OEMCodePage
+get_OffsetToStringData
+get_Ordinal
+get_OrdinalIgnoreCase
+get_OSVersion
+get_Out
+get_OutputEncoding
+get_OverallResult
+get_Owner
+get_Parameters
+get_ParameterType
+get_PeakPagedMemorySize64
+get_PeakVirtualMemorySize64
+get_PeakWorkingSet64
+get_Platform
+get_Position
+get_PrepareForReuse
+get_PrivilegedProcessorTime
+get_ProcessorArchitecture
+get_ProcessorCount
+get_ProjectContextId
+get_ProjectFile
+get_ProjectFileOfTask
+get_ProjectFileOfTaskNode
+get_ProjectInstanceId
+get_RawValue
+get_Reader
+get_ReadOnlyEmptyInstance
+get_ReadOperation
+get_Reason
+get_RemappedFromEnumerator
+get_Result
+get_Retargetable
+get_SafeWaitHandle
+get_Schemas
+get_SenderName
+get_SessionId
+get_Size
+get_SourceUri
+get_SpecialKey
+get_StartTime
+get_StartupDirectory
+get_Subcategory
+get_SubmissionId
+get_Succeeded
+get_Success
+get_SystemDirectory
+get_Target
+get_TargetId
+get_TargetNames
+get_TaskException
+get_TaskExceptionMessage
+get_TaskExceptionMessageArgs
+get_TaskId
+get_TaskLocation
+get_TaskName
+get_TaskOutputParameters
+get_TaskParameters
+get_TaskResult
+get_TextInfo
+get_ThreadId
+get_Ticks
+get_Toolsets
+get_ToolsPath
+get_ToolsVersion
+get_TotalMilliseconds
+get_TotalProcessorTime
+get_Type
+get_UICulture
+get_Unicode
+get_UnnamedAssembly
+get_UserProcessorTime
+get_UtcNow
+get_Value
+get_Version
+get_WrappedParameter
+get_WrappedTask
+get_WriteOperation
+get_Writer
+GetAssembly
+GetAssemblyName
+GetAssemblyNameEx
+GetAssemblyNameFromDisplayName
+GetBaseHandshakeForContext
+GetBuffer
+GetBuildEventArgFromId
+GetBytes
+GetCacheDirectory
+GetCategories
+GetChars
+GetChildProcessIds
+GetClientHandshake
+GetCollectionForLifetime
+GetConfigurationBytes
+GetConsoleFallbackUICulture
+GetCounters
+GetCreationTime
+GetCurrent
+GetCurrentDirectory
+GetCurrentMSBuildArchitecture
+GetCurrentProcess
+GetCurrentTaskHostContext
+GetCustomAttributes
+GetDecoder
+GetDirectories
+GetDirectory
+GetDirectoryName
+GetDirectoryNameOfFullPath
+GetElementType
+GetEnvironmentCharArray
+GetEnvironmentStrings
+GetEnvironmentVariable
+GetEnvironmentVariables
+GetEquivalentCommandLineExceptProjectFile
+GetExecutingAssembly
+GetExplicitMSBuildArchitecture
+GetExplicitMSBuildRuntime
+GetExportedTypes
+GetExtension
+GetFileAttributesEx
+GetFileInfoNoThrow
+GetFileLoggerParameters
+GetFileNameWithoutExtension
+getFiles
+GetFileType
+GetFriendlyCounterType
+GetFullPath
+GetFullPathName
+GetFullPathNoThrow
+GetHandshakeHashCode
+GetHashCode
+GetHelpKeyword
+GetHexHash
+GetHostHandshake
+GetImpersonationUserName
+GetInstanceNames
+GetIntegerVariableOrDefault
+GetInterface
+GetItemSpecModifier
+GetLastAccessTime
+GetLastWin32Error
+GetLastWriteDirectoryUtcTime
+GetLastWriteFileUtcTime
+GetLazyCollectionForLifetime
+GetLoadedType
+GetLoadedTypeByTypeName
+GetLoggingEventId
+GetLongFilePath
+GetLongPathName
+GetMaxByteCount
+GetMemoryStatus
+GetMetadata
+GetMethod
+GetModuleFileName
+GetName
+GetNativeSystemInfo
+GetObjectData
+GetOEMCP
+GetParameterizedSwitchCommandLineArg
+GetParameterlessSwitchCommandLineArg
+GetParentProcessId
+GetPathRoot
+GetPathsHash
+GetProcAddress
+GetProcessById
+GetProcesses
+GetProperties
+GetProperty
+GetPublicKeyToken
+GetReadTranslator
+GetRegisteredTaskObject
+GetRequestedRuntimeInfo
+GetResourceString
+GetShortFilePath
+GetShortPathName
+GetSpecificFileLoggerParameters
+GetStdHandle
+GetString
+GetSystemInfo
+GetTaskHostClientHandshake
+GetTaskHostContext
+GetTaskHostHostHandshake
+GetTemporaryFile
+GetTempPath
+GetToolset
+GetType
+GetTypeCode
+GetTypeFromHandle
+GetWriteTranslator
+GetXmlLineAndColumn
+ginormous
+Ginormous (>=
+Ginormous Chars Saved
+Ginormous Misses
+Ginormous Strings MRU Size
+ginormousCharsSaved
+ginormousHits
+ginormousMisses
+ginormousSize
+GinormousThreshhold
+ginormousThreshhold
+GlobalMemoryStatusEx
+globalProperties
+gMSB5008: Error parsing the solution configuration section in solution file. The entry "{0}" is invalid.
+groupedFileLoggerParameters
+Guid should be unique
+guidData
+Gzp36
+H0F0D
+handle
+HandleConfigurationException
+HandleInheritability
+HandleNodeBuildComplete
+HandlePacket
+handler
+handles
+HandleShutdown
+HandleTaskHostConfiguration
+Handshake failed. Host user is {0} but we were created by {1}.
+Handshake failed. Received {0} from host not {1}. Probably the host is a different MSBuild build.
+HasExtension
+HashSet`1
+hasLoadInSeparateAppDomainAttribute
+HasLoadInSeparateAppDomainAttribute
+hasProcessorArchitectureInFusionName
+HasSameBacking
+HasSTAThreadAttribute
+hasSTAThreadAttribute
+HaveAnySwitchesBeenSet
+HaveErrors
+haveScannedPublicTypes
+heading
+helpKeyword
+HelpMessage_1_Syntax
+HelpMessage_10_PropertySwitch
+HelpMessage_11_LoggerSwitch
+HelpMessage_12_VerbositySwitch
+HelpMessage_13_ConsoleLoggerParametersSwitch
+HelpMessage_14_NoConsoleLoggerSwitch
+HelpMessage_15_ValidateSwitch
+HelpMessage_16_Examples
+HelpMessage_17_MaximumCPUSwitch
+HelpMessage_18_DistributedLoggerSwitch
+HelpMessage_19_IgnoreProjectExtensionsSwitch
+HelpMessage_2_Description
+HelpMessage_20_FileLoggerSwitch
+HelpMessage_21_DistributedFileLoggerSwitch
+HelpMessage_22_FileLoggerParametersSwitch
+HelpMessage_23_ToolsVersionSwitch
+HelpMessage_24_NodeReuse
+HelpMessage_25_PreprocessSwitch
+HelpMessage_26_DetailedSummarySwitch
+HelpMessage_27_DebuggerSwitch
+HelpMessage_3_SwitchesHeader
+HelpMessage_4_HelpSwitch
+HelpMessage_5_NoLogoSwitch
+HelpMessage_6_VersionSwitch
+HelpMessage_7_ResponseFile
+HelpMessage_8_NoAutoResponseSwitch
+HelpMessage_9_TargetSwitch
+HelpPrompt
+hkey_current_user
+hkey_local_machine
+hModule
+hMSB5003: Failed to create a temporary file. Temporary files folder is full or its path is incorrect. {0}
+hObject
+hostContext
+HostServices
+How did we manage to get a task parameter that isn't a valid parameter type?
+hProcess
+hReadPipe
+HResultFailed
+HResultSucceeded
+http://microsoft.com0
+http://microsoft.com0/
+http://schemas.microsoft.com/developer/msbuild/2003
+Huge Estimated Bytes Held
+Huge Strings  (>=
+Huge Strings MRU Size
+hugeMru
+hugeMruSize
+HugeMruSize
+HugeMruThreshhold
+hugeMruThreshhold
+hWritePipe
+HybridDictionary`2
+I  /help              Display this usage message. (Short form: /? or /h)
+I0G0E
+IAsyncResult
+IBuildEngine
+IBuildEngine2
+IBuildEngine3
+IBuildEngine4
+ICancelableTask
+ICollection
+ICollection`1
+IComparer
+IComparer`1
+Identity
+IdentityReference
+IDictionary
+IDictionary`2
+IDictionaryEnumerator
+IDisposable
+IEnumerable
+IEnumerable`1
+IEnumerator
+IEnumerator`1
+IEqualityComparer
+IEqualityComparer`1
+if Doubled
+if Halved
+if Infinite
+If MSBuild debugging does not work correctly, please verify that the "Just My Code" feature is enabled in Visual Studio, and that you have selected the managed debugger.
+If we have an exception message, the result type should be 'crashed' of some variety.
+If we have message args, we need a message.
+if Zero
+IFormatProvider
+ignore
+ignoreprojectextensions
+IgnoreProjectExtensions
+ignoreVersion
+Ihttp://crl.microsoft.com/pki/crl/products/MicRooCerAut2011_2011_03_22.crl0^
+IInternable
+Ij1..
+IList`1
+ILogger
+immutable
+importance
+Inactive
+include
+Include
+includedResponseFiles
+Incomplete header read from server.  {0} of {1} bytes read
+index
+IndexOfAny
+INFINITE
+InheritedFromUniqueProcessId
+InitializationError
+Initialize
+InitializeArray
+InitializeAsyncPacketThread
+initialized
+InitializeLifetimeService
+InitializeMismatchedEnvironmentTable
+initializeOnly
+InitializeRemappedFrom
+initialTargets
+InitialTargets
+InitPerformanceDll
+innerException
+innerExceptionValue
+INodeEndpoint
+INodePacket
+INodePacketFactory
+INodePacketHandler
+INodePacketTranslatable
+INodePacketTranslator
+input
+inputs
+Inputs
+Insert
+InstallHandler
+instance
+InstantiateAndExecuteTask
+InstantiateAndExecuteTaskInSTAThread
+Interlocked
+Intern Hits
+Intern Misses
+Intern Rejects (as shorter than 
+InternableToString
+InternalConstruct
+InternalDisconnect
+InternalErrorException
+InternalLoggerException
+InternalName
+InternalsVisibleToAttribute
+interned
+internEliminatedChars
+internEliminatedStrings
+internHits
+InterningBinaryReader
+InterningToString
+internMisses
+internRejects
+InternStringIfPossible
+InternWithStatistics
+InvalidCastException
+InvalidConfigurationFile
+InvalidExtensionToIgnore
+InvalidFilterCriteriaException
+InvalidLoggerError
+InvalidMaxCPUCountValue
+InvalidMaxCPUCountValueOutsideRange
+InvalidNodeNumberValue
+InvalidNodeNumberValueIsNegative
+InvalidNodeReuseValue
+InvalidOperationException
+InvalidPreprocessPath
+InvalidProjectFile
+InvalidProjectFileException
+InvalidPropertyError
+InvalidSchemaFile
+invalidSwitch
+InvalidSwitchIndicator
+InvalidTaskAttributeError
+InvalidToolsetDefinitionException
+InvalidToolsVersionError
+InvalidVerbosity
+InvalidVerbosityError
+IOException
+IOrderedEnumerable`1
+is64BitProcess
+IsAssignableFrom
+IsAssignableToITask
+IsBadlyCasedSpecialTaskAttribute
+IsCollectionEmptyOrUncreated
+IsCriticalException
+IsDefined
+IsDerivableItemSpecModifier
+isDesiredType
+IsEntered
+IsHexDigit
+IsInRole
+IsIoRelatedException
+IsItemSpecModifier
+IsLittleEndian
+IsMatch
+IsMetaprojectFilename
+IsNonBatchingTargetAttribute
+IsNullOrEmpty
+IsOrdinalEqualToStringOfSameLength
+isOutOfProc
+isParameterError
+isParameterErrorValue
+IsParameterizedSwitch
+IsParameterizedSwitchSet
+IsParameterlessSwitch
+IsParameterlessSwitchEnabled
+IsParameterlessSwitchSet
+IsPartialTypeNameMatch
+IsPathRooted
+IsRootedNoThrow
+isSimpleName
+IsSlash
+IsSolutionFilename
+IsSpecialTaskAttribute
+IsTaskClass
+isTaskExecuting
+IsValidInputParameter
+IsValidMSBuildArchitectureValue
+IsValidMSBuildRuntimeValue
+IsValidOutputParameter
+IsValidScalarInputParameter
+IsValidVectorInputParameter
+IsValueTypeOutputParameter
+IsVCProjFilename
+IsWhiteSpace
+IsXmlException
+It should not be possible to specify more than 1 project at a time.
+ITaskItem2
+ItemName
+itemName
+itemSpec
+IteratorStateMachineAttribute
+JMicrosoft.Build.Collections.ReadOnlyEmptyCollection`1+<GetEnumerator>d__17
+K  /version           Display version information only. (Short form: /ver)
+K  Setting '{0}' to '{1}' rather than the parent environment's value, '{2}'.
+k%l%m.n1o2p2q2r3s5t?uBvFwFxFyFzF{F|F}F~F
+kBuilding the projects in this solution one at a time. To enable parallel build, please add the "/m" switch.
+KeepDuplicateOutputs
+keepDuplicateOutputs
+KeepDuplicates
+keepDuplicates
+keepEmptySplits
+keepMetadata
+KeepMetadata
+kernel32.dll
+KERNEL32.DLL
+kernel32.dll
+kernel32Dll
+KeyCollection
+keyComparer
+KeyNotFoundException
+KeyValuePair`2
+KillTree
+kIx:T
+kMSB5002: The task executable has not completed within the specified limit of {0} milliseconds, terminating.
+KMSB5011: Parent project GUID not found in "{0}" project dependency section.
+KMSBUILD : Configuration error MSB1043: The application could not start. {0}
+kV2Er
+L&*H$_Z
+L0J0H
+label
+Label
+Large Estimated Bytes Held
+Large Strings  (>=
+Large Strings MRU Size
+largeMru
+largeMruSize
+LargeMruSize
+largeMruThreshhold
+LargeMruThreshhold
+lastBufferSizeNeeded
+LastIndexOf
+lastLoggedTicks
+Lazy`1
+leadingBytesToReject
+Legal_Policy_Statement
+Legal_policy_statement
+LegalCopyright
+Library
+lifetime
+lifetimeObjects
+lightUpKey
+lightUpKeyRead
+lightUpKeyResult
+lightUpRegistryKey
+lineNumber
+lineNumberOfTask
+Link not inactive.  Status is {0}
+LinkedList`1
+LinkedListNode`1
+LinkStatusChangedDelegate
+ListDictionaryEntryEnumerator`2
+Listen
+LMSBUILD : error MSB1025: An internal failure occurred while running MSBuild.
+loadedAssembly
+loadedType
+loadInfo
+LoadLibrary
+LoadProject
+Lock should already have been taken
+lockObject
+LogCustomEvent
+LogDebugCommunications
+LogError
+logError
+LogErrorDelegate
+LogErrorEvent
+LogErrorFromResource
+logfile
+logFile=
+logfile=msbuild
+logfile=msbuild.log;
+logger
+LoggerAbort
+LoggerCreationError
+loggerDescription
+LoggerFailure
+LoggerFailurePrefixNoErrorCode
+LoggerFailurePrefixWithErrorCode
+LoggerFatalError
+LoggerNotFoundError
+loggerParameters
+loggers
+loggerSwitchParameters
+LoggerVerbosity
+LoggingEventType
+LogMessage
+LogMessageEvent
+LogMessageFromResource
+LogMessagePacket
+LogMessagePacketBase
+LogWarningEvent
+LogWarningFromResource
+Long should be 8 bytes
+lpBuffer
+lpFileInformation
+lpMaximumApplicationAddress
+lpMinimumApplicationAddress
+lpNumberOfBytesRead
+lpOverlapped
+lpPipeAttributes
+lpSecurityDescriptor
+lpString
+lpSystemInfo
+lSystem.Resources.ResourceReader, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet
+lybOS
+M[H*V
+M^M*V
+M0K0I
+mai)3
+MakeRelative
+MakeRelativeUri
+ManualResetEvent
+MarkImmutable
+Marshal
+MarshalByRefObject
+MAX_PATH
+MaxCharsBuffer
+maxcpucount
+MaxCPUCount
+MaxListSize
+MaxPath
+MaxProcessInfoClass
+maxSplits
+MCx2O
+MemberAccessException
+MemberInfo
+MemoryLoad
+MemoryStream
+mergedArchitecture
+mergedRuntime
+message
+messageArgs
+MessageImportance
+messageResource
+messageResourceName
+messageResourceNameValue
+metadataName
+metadataValue
+method
+MethodAccessException
+methodInfo
+MethodInfo
+Microsoft
+Microsoft (R) Build Engine version {0}
+Microsoft Code Signing PCA
+Microsoft Code Signing PCA 2011
+Microsoft Code Signing PCA 20110
+Microsoft Code Signing PCA0
+Microsoft Corporation
+Microsoft Corporation0
+Microsoft Corporation1
+Microsoft Corporation1!0
+Microsoft Corporation1#0!
+Microsoft Corporation1&0$
+Microsoft Corporation1(0&
+Microsoft Corporation1200
+Microsoft Time-Stamp PCA
+Microsoft Time-Stamp PCA 2010
+Microsoft Time-Stamp PCA 20100
+Microsoft Time-Stamp PCA0
+Microsoft Time-Stamp Service
+Microsoft Time-Stamp Service0
+Microsoft.Build
+Microsoft.Build.BackEnd
+Microsoft.Build.BackEnd.Logging
+Microsoft.Build.BuildEngine
+Microsoft.Build.Collections
+Microsoft.Build.CommandLine
+Microsoft.Build.Engine
+Microsoft.Build.Engine,Version=4.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a
+Microsoft.Build.Evaluation
+Microsoft.Build.Exceptions
+Microsoft.Build.Execution
+Microsoft.Build.Framework
+Microsoft.Build.Framework.ITask
+Microsoft.Build.Framework.ITaskItem2.CloneCustomMetadataEscaped
+Microsoft.Build.Framework.ITaskItem2.EvaluatedIncludeEscaped
+Microsoft.Build.Framework.ITaskItem2.get_EvaluatedIncludeEscaped
+Microsoft.Build.Framework.ITaskItem2.GetMetadataValueEscaped
+Microsoft.Build.Framework.ITaskItem2.set_EvaluatedIncludeEscaped
+Microsoft.Build.Framework.ITaskItem2.SetMetadataValueLiteral
+Microsoft.Build.Internal
+Microsoft.Build.Logging
+Microsoft.Build.Logging.ConfigurableForwardingLogger
+Microsoft.Build.Logging.DistributedFileLogger
+Microsoft.Build.Shared
+Microsoft.Build.Tasks.Xaml.PartialClassGenerationTask
+Microsoft.Build.xsd
+Microsoft.Internal.Performance
+Microsoft.Internal.Performance.CodeMarkers.dll
+Microsoft.Win32
+Microsoft.Win32.SafeHandles
+microsoft1-0+
+milliseconds
+minimal
+MinValue
+mismatchedEnvironmentValues
+missedStrings
+misses
+Missing resource '{0}'
+MissingConsoleLoggerParameterError
+MissingFieldException
+MissingFileLoggerParameterError
+MissingIgnoreProjectExtensionsError
+MissingLoggerError
+MissingMaxCPUCountError
+MissingMethodException
+MissingNodeReuseParameterError
+missingParametersErrorMessage
+MissingProject
+MissingProjectError
+MissingPropertyError
+MissingResponseFileError
+MissingTargetError
+MissingToolsVersionError
+MissingVerbosityError
+ModifiedTime
+modifier
+ModifyingTaskHostEnvironmentHeader
+ModifyingTaskHostEnvironmentVariable
+module
+MOPR1'0%
+MoveNext
+MSB0001: Internal MSBuild Error: 
+MSB4077: The "{0}" task has been marked with the attribute LoadInSeparateAppDomain, but does not derive from MarshalByRefObject. Check that the task derives from MarshalByRefObject or AppDomainIsolatedTask.
+MSB4188: Build was canceled.
+MSB5014: File format version is not recognized.  MSBuild can only read solution files between versions {0}.0 and {1}.0, inclusive.
+MSB5022: The MSBuild task host does not support running tasks that perform IBuildEngine callbacks. If you wish to perform these operations, please run your task in the core MSBuild process instead.  A task will automatically execute in the task host if the UsingTask has been attributed with a "Runtime" or "Architecture" value, or the task invocation has been attributed with an "MSBuildRuntime" or "MSBuildArchitecture" value, that does not match the current runtime or architecture of MSBuild.
+MSB5023: Error parsing the nested project section in solution file. A project with the GUID "{0}" is listed as being nested under project "{1}", but does not exist in the solution.
+MSBuild
+MSBUILD : 
+MSBUILD : error 
+MSBUILD : error MSB1003: Specify a project or solution file. The current working directory does not contain a project or solution file.
+MSBUILD : error MSB1011: Specify which project or solution file to use because this folder contains more than one project or solution file.
+MSBUILD : error MSB1013: The response file was specified twice. A response file can be specified only once. Any files named "msbuild.rsp" in the directory of MSBuild.exe or in the directory of the first project or solution built (which if no project or solution is specified is the current working directory) were automatically used as response files.
+MSBUILD : error MSB1015: MSBuild does not run on this version of the operating system. It is only supported on Windows 2000, Windows XP, and later versions.
+MSBUILD : error MSB1020: The logger was not found. Check the following: 1.) The logger name specified is the same as the name of the logger class. 2.) The logger class is "public" and implements the Microsoft.Build.Framework.ILogger interface. 3.) The path to the logger assembly is correct, or the logger can be loaded using only the assembly name provided.
+MSBUILD : error MSB1027: The /noautoresponse switch cannot be specified in the MSBuild.rsp auto-response file, nor in any response file that is referenced by the auto-response file.
+MSBUILD : error MSB1036: There is an invalid extension in the /ignoreprojectextensions list. Extensions must start with a period ".", have one or more characters after the period and not contain any invalid path characters or wildcards.
+MSBUILD : error MSB1048: Solution files cannot be debugged directly. Run MSBuild first with an environment variable MSBUILDEMITSOLUTION=1 to create a corresponding ".sln.metaproj" file. Then debug that.
+MSBUILD : error MSB4192: The project file "{0}" is in the ".vcproj" or ".dsp" file format, which MSBuild cannot build directly. Please convert the project by opening it in the Visual Studio IDE or running the conversion tool, or, for ".vcproj", use MSBuild to build the solution file containing the project instead.
+MSBUILD : Logger error {0}: {1}
+MSBuild STA task runner thread
+MSBuild.
+MSBuild.exe
+msbuild.log
+MSBuild.rsp
+MSBuild.Strings
+MSBuild.Strings.resources
+MSBuild.Strings.shared
+MSBuild.Strings.shared.resources
+MSBuild_
+MSBuild_CommTrace_PID_{0}
+MSBuild_NodeShutdown_{0}.txt
+MSBuild{0}
+MSBuildApp
+MSBuildArchitecture
+msbuildArchitecture
+MSBuildArchitecture
+MSBuildArchitectureValues
+msbuildCodeOnly
+MSBUILDDEBUGCOMM
+MSBUILDDEBUGGING
+MSBUILDDEBUGONSTART
+MSBUILDDEBUGPATH
+MSBUILDDIRECTORYDELETERETRYCOUNT
+MSBUILDDIRECTORYDELETRETRYTIMEOUT
+MSBUILDDISABLENODEREUSE
+MSBUILDDONOTLAUNCHDEBUGGER
+MSBUILDDONOTTHROWINTERNAL
+MSBUILDDUMPPROCESSCOUNTERS
+MSBUILDENABLEDEBUGTRACING
+MSBUILDGINORMOUSINTERNTHRESHOLD
+MSBUILDHUGEINTERNSIZE
+MSBUILDHUGEINTERNTHRESHOLD
+MSBuildHybridDictThreshold
+MSBUILDLARGEINTERNSIZE
+MSBUILDLARGEINTERNTHRESHOLD
+MSBUILDLAUNCHDEBUGGER
+MSBUILDLOADALLFILESASWRITEABLE
+MSBuildLoadMicrosoftTargetsReadOnly
+msbuildlocation=
+MSBUILDLOGASYNC
+msbuildLogFileName
+MSBUILDLOGTASKINPUTS
+MSBUILDMEMORYUSELIMIT
+MSBUILDNODECONNECTIONTIMEOUT
+MSBUILDOLDOM
+MSBuildRuntime
+msbuildRuntime
+MSBuildRuntimeValues
+MSBUILDSMALLINTERNSIZE
+MSBUILDSMALLINTERNTHRESHOLD
+MSBUILDTASKHOSTABORTTASKONCANCEL
+MSBuildTaskHostDoNotUpdateEnvironment
+MSBuildTaskHostUpdateEnvironmentAndLog
+msbuildVersion
+MSBuildVersion
+mscoree.dll
+mscoreeDLL
+mscorlib
+MsgWaitOne
+MTAThreadAttribute
+MulticastDelegate
+multipleParametersAllowed
+MultipleSchemasError
+Must pass an enum type.
+mustBeZero
+N=|)H
+N0L0J
+NamedPipeServerStream
+NameInvalid
+NativeMethods
+NativeMethodsShared
+nBufferLength
+nCipher DSE ESN:843D-37F6-F1041%0#
+nCipher DSE ESN:B1B7-F67F-FEC21%0#
+nCipher NTS ESN:2665-4C3F-C5DE1+0)
+need a type filter
+Need item-spec to modify.
+Need modifier to apply to item-spec.
+NeedJustMyCode
+needToValidateProject
+NeutralResourcesLanguageAttribute
+newEnvironment
+NewGuid
+newLines
+newMode
+newStatus
+NextValue
+nLength
+nmode
+nNumberOfBytesToRead
+No packet handler for type {0}
+NoAutoResponse
+noautoresponse
+noautorsp
+noconlog
+noconsolelogger
+noConsoleLogger
+NoConsoleLogger
+Node shutting down with reason {0}.
+nodeBuildEvent
+nodeBuildEvent was null
+NodeConfiguration
+nodeEndpoint
+NodeEndpointOutOfProcBase
+NodeEndpointOutOfProcTaskHost
+NodeEngineShutdownReason
+nodeId
+nodemode
+NodeMode
+nodeNumber
+NodePacketDictionaryCreator`1
+NodePacketFactoryMethod
+NodePacketReadTranslator
+NodePacketType
+NodePacketValueFactory`1
+NodePacketWriteTranslator
+nodereuse
+NodeShutdown
+NodeShutdownReason
+NoLogo
+nologo
+noParameters
+normal
+NormalizePath
+not displayed
+Not Supported LoggingEventType {0}
+NotExpectedException
+NotExpectedFunctionException
+NotExpectedIoOrXmlException
+NotExpectedReflectionException
+NotExpectedRegistryException
+NotExpectedSerializationException
+NotImplementedException
+NotSupportedException
+nSize
+nStdHandle
+NTDLL.DLL
+nTimerID
+NtQueryInformationProcess
+nTu55
+Null strings not allowed.
+Nullable`1
+NullHandleRef
+NullIntPtr
+NumberOfParameterizedSwitches
+NumberOfParameterlessSwitches
+NumberStyles
+numBufferChars
+numericValue
+Nyf*V
+NyP)V
+O  /nologo            Do not display the startup banner and copyright message.
+o:q+-
+o:x+/
+O0M0K
+object
+Object is immutable cannot replace the version
+ObjectDisposedException
+ObjectSecurity
+oIoX]i*
+oK0D$"<
+oldMode
+oldom
+OldOMBuildProject
+ole32.dll
+OM_NotSupportedReadOnlyCollection
+OnDeserialized
+OnDeserializedAttribute
+Only UNC shares should be missing trailing slashes.
+OnSchemaValidationError
+oopTaskHostNode
+op_Equality
+op_GreaterThan
+op_GreaterThanOrEqual
+op_Inequality
+op_Subtraction
+OpenBaseKey
+OpenProcess
+OpenSubKey
+OperatingSystem
+Opportunistic Intern (
+OpportunisticIntern
+OrderByDescending
+OriginalFilename
+OriginalItemSpec
+other
+OutOfMemoryException
+OutOfProc Endpoint Packet Pump
+OutOfProcNode
+OutOfProcTaskAppDomainWrapper
+OutOfProcTaskAppDomainWrapperBase
+OutOfProcTaskHostNode
+OutOfProcTaskHostTaskResult
+Output
+output
+OutputAttribute
+Outputs
+outputs
+p  /noautoresponse    Do not auto-include any MSBuild.rsp files. (Short form:
+packet
+packetAvailable
+packetAvailable is null
+packetFactories
+packetFactory
+PacketFactoryRecord
+packetPump
+PacketPumpProc
+packetQueue
+packetQueue is null
+PacketReceived
+packetReceivedEvent
+packetStream
+packetType
+PADPADP
+PADPADPy
+param
+ParamArrayAttribute
+parameter
+Parameter "{0}" cannot be null.
+parameter1
+parameter1Name
+parameter2
+parameter2Name
+parameterizedSwitch
+parameterizedSwitches
+parameterizedSwitchesMap
+ParameterizedSwitchInfo
+ParameterizedThreadStart
+parameterlessSwitch
+parameterlessSwitches
+parameterlessSwitchesMap
+ParameterlessSwitchInfo
+parameterName
+parameterNames
+parameters
+parameterSeparators
+parametersToAggregate
+parameterType
+ParameterType
+parameterValue
+Parent disconnected abruptly
+Parent started connecting. Reading handshake from parent
+parentProcessId
+parentStartTime
+ParseLoggingParameter
+PartialComparisonFlags
+PartialNameCompare
+past end
+Past end of enumeration
+PathTooLongException
+pattern
+pConfigurationFile
+pdwIndex
+Peak Paged Memory
+Peak Privileged Processor Time
+Peak Total Processor Time
+Peak User Processor Time
+Peak Virtual Memory
+Peak Working Set
+PebBaseAddress
+PendBuildRequest
+PerformanceCounter
+PerformanceCounterCategory
+PerformanceCounterType
+pHandles
+PickedUpSwitchesFromAutoResponse
+PipeAccessRights
+PipeAccessRule
+PipeBufferSize
+PipeDirection
+pipeName
+PipeOptions
+PipeSecurity
+pipeServer
+PipeStream
+PipeStreamImpersonationWorker
+PipeTransmissionMode
+PlatformID
+PossiblyOmittedMaxCPUSwitch
+potentialProjectOrSolutionFiles
+prepareForReuse
+preprocess
+Preprocess
+preprocessWriter
+PresentationBuildTasks
+PrivateBuild
+Process
+Process ID
+PROCESS_ALL_ACCESS
+PROCESS_BASIC_INFORMATION
+PROCESS_CREATE_PROCESS
+PROCESS_CREATE_THREAD
+PROCESS_DUP_HANDLE
+PROCESS_QUERY_INFORMATION
+PROCESS_SET_INFORMATION
+PROCESS_SET_QUOTA
+PROCESS_SET_SESSIONID
+PROCESS_TERMINATE
+PROCESS_VM_OPERATION
+PROCESS_VM_READ
+PROCESS_VM_WRITE
+ProcessAccessToken
+ProcessAffinityMask
+ProcessBasePriority
+ProcessBasicInformation
+ProcessCommandLineSwitches
+ProcessConsoleLoggerSwitch
+ProcessDebugPort
+ProcessDefaultHardErrorMode
+ProcessDistributedFileLogger
+ProcessDistributedLoggerSwitch
+ProcessEnableAlignmentFaultFixup
+ProcessExceptionPort
+ProcessFileLoggers
+ProcessHandleCount
+processId
+processIdTokill
+PROCESSINFOCLASS
+ProcessIoCounters
+ProcessIoPortHandlers
+ProcessLdtInformation
+ProcessLdtSize
+ProcessLoggerSwitch
+ProcessLoggingSwitches
+ProcessMaxCPUCountSwitch
+ProcessNodeReuseSwitch
+PROCESSOR_ARCHITECTURE_AMD64
+PROCESSOR_ARCHITECTURE_ARM
+PROCESSOR_ARCHITECTURE_IA64
+PROCESSOR_ARCHITECTURE_INTEL
+ProcessorArchitecture
+ProcessPooledUsageAndLimits
+ProcessPreprocessSwitch
+ProcessPriorityBoost
+ProcessPriorityClass
+ProcessProjectSwitch
+ProcessPropertySwitch
+ProcessQuotaLimits
+ProcessRaisePriority
+ProcessTargetSwitch
+ProcessTimes
+ProcessToolsVersionSwitch
+ProcessUserModeIOPL
+ProcessValidateSwitch
+ProcessVerbositySwitch
+ProcessVmCounters
+ProcessWorkingSetWatch
+ProcessWx86Information
+procName
+ProductName
+ProductVersion
+Project
+project
+ProjectCollection
+projectFile
+projectFileName
+projectFileNames
+projectFileOfTask
+ProjectFinishedEvent
+ProjectLoadInfo
+ProjectNotFoundError
+ProjectSchemaErrorHalt
+ProjectSchemaValidationHandler
+projectsExtensionsToIgnore
+ProjectStartedEvent
+ProjectUpgradeNeededToVcxProj
+property
+propertyBag
+PropertyInfo
+propertyName
+PropertyName
+propertyValueSeparator
+pSize
+pStrings
+publicTypeNameToType
+pVersion
+pwszVersion
+Q".r+v
+QEX82q'
+Queue`1
+QueueThreadPoolWorkItemWithCulture
+QueueUserWorkItem
+quiet
+QuotingUtilities
+r:xcf.
+r~akow
+R0P0N
+RaiseLinkStatusChanged
+Reacquire
+READ_CONTROL
+Read7BitEncodedInt
+ReadBoolean
+ReadBuildMessageEventFromStream
+ReadBuildWarningEventFromStream
+ReadByte
+ReadBytes
+reader
+ReadEventFromStream
+ReadExternalProjectFinishedEventFromStream
+ReadExternalProjectStartedEventFromStream
+ReadFile
+ReadFromStream
+ReadInt16
+ReadInt32
+ReadInt64
+ReadITaskItem
+ReadLightupBool
+ReadLine
+ReadLongForHandshake
+readMethodCache
+ReadOnlyEmptyCollection`1
+readOnlyEmptyDictionary
+ReadOnlyEmptyDictionary`2
+ReadOnlyEmptyList`1
+ReadResponseFileError
+ReadString
+ReadTaskBuildErrorEventFromStream
+ReadTaskCommandLineEventFromStream
+ReadUInt16
+reason
+Received {0} from CoWaitForMultipleHandles, but expected 0 (S_OK)
+receivedCancel
+receivedPackets
+recursing
+recursive
+RecursiveDir
+Redmond1
+refCount
+refCount should not be less than 1.
+ReferenceEquals
+ReflectionOnlyLoad
+reflectionOnlyloadInfoToTypeLock
+ReflectionTypeLoadException
+registeredTaskObjectCache
+RegisteredTaskObjectCacheBase
+RegisteredTaskObjectLifetime
+RegisterLogger
+RegisterPacketHandler
+RegisterTaskObject
+Registry
+RegistryHive
+RegistryView
+registryView
+regRoot
+rejectedStrings
+rejectionByteToReturn
+rejects
+RelativeDir
+Release
+ReleaseHandle
+remappedFrom
+remoting
+RemotingServices
+remove
+Remove
+remove_AssemblyResolve
+remove_CancelKeyPress
+remove_OnLinkStatusChanged
+RemoveAssemblyResolver
+RemoveAt
+removeCarriageReturn
+RemoveFilesWithExtensionsToIgnore
+removeGlobalProperties
+RemoveHandler
+RemoveLast
+RemoveMetadata
+removeMetadata
+RemoveMetadata
+RemoveNulls
+RepeatedResponseFileError
+Replace
+ReplaceVersion
+ReportStatistics
+Requested
+required
+Required
+RequiredPlatform
+requiredPlatform
+RequiredRuntime
+requiredRuntime
+ResetBuildState
+ResolveAssembly
+ResolveAssemblyReference
+ResolveEventArgs
+ResolveEventHandler
+resolver
+resolverLoadedType
+ResourceManager
+resourceName
+ResourceUtilities
+ResponseFileNotFoundError
+result
+returns
+Returns
+returnTargetOutputs
+Reverse
+rMSB5005: Error parsing project section for project "{0}". The project file name "{1}" contains invalid characters.
+Root directory must have a trailing slash.
+RootDir
+RPC_S_CALLPENDING
+RSDSD
+RtlMoveMemory
+RunAsClient
+RunInSTAAttribute
+RunTask
+Runtime
+runtime
+RUNTIME_INFO_DONT_SHOW_ERROR_DIALOG
+runtimeA
+runtimeB
+RuntimeCompatibilityAttribute
+RuntimeFieldHandle
+RuntimeHelpers
+runtimeInfoFlags
+RuntimeTypeHandle
+RuntimeValuesMatch
+S_FALSE
+S0Q0O
+SafeFileHandle
+SafeHandle
+SafeHandleZeroOrMinusOneIsInvalid
+SafeProcessHandle
+SatelliteContractVersionAttribute
+savedEnvironment
+SaveLogicalProject
+ScanAssemblyForPublicTypes
+Schema validation
+schemaFile
+SchemaFileLocation
+SchemaNotFoundError
+SchemaNotFoundErrorWithFile
+SchemaValidationError
+Sd&Zc
+searchPattern
+SecurityAction
+SecurityAttributes
+SecurityCriticalAttribute
+SecurityException
+SecurityIdentifier
+SecurityPermissionAttribute
+SeekOrigin
+Select
+SendBuildEvent
+SendData
+sender
+senderName
+separator
+SerializationFormatter
+SerializationInfo
+Serialize
+set_BuildEngine
+set_ByteBuffer
+set_Cancel
+set_CancelPending
+set_Capacity
+set_CharBuffer
+set_Column
+set_CurrentCulture
+set_CurrentUICulture
+set_DefaultToolsVersion
+set_DetailedSummary
+set_EnableNodeReuse
+set_Encoding
+set_ExceptionMessage
+set_ExceptionMessageArgs
+set_FinalParameterValues
+set_ForwardingLoggers
+set_IsBackground
+set_IsValidated
+set_ItemSpec
+set_Line
+set_Loggers
+set_MaxNodeCount
+set_MemoryUseLimit
+set_Name
+set_Next
+set_NodeExeLocation
+set_OnlyLogCriticalEvents
+set_Parameters
+set_Position
+set_Result
+set_SchemaFile
+set_Target
+set_TaskException
+set_ToolsetDefinitionLocations
+set_UseSynchronousLogging
+set_ValidationType
+set_Value
+set_Verbosity
+set_Version
+set_XmlResolver
+SetApartmentState
+SetConfigurationBytes
+SetConsoleUI
+SetCurrentDirectory
+SetEnvironment
+SetEnvironmentVariable
+SetError
+SetErrorMode
+SetErrorMode_VistaAndOlder
+SetErrorMode_Win7AndNewer
+SetMetadata
+SetOwner
+SetParameterError
+SetParameterizedSwitch
+SetParameterlessSwitch
+SetProperty
+SetRemappedFromDefaultAfterSerialization
+SetSwitchError
+SetTaskHostEnvironment
+SetThreadErrorMode
+SetUnexpectedParametersError
+SetUnknownSwitchError
+SetValue
+Shared.CannotChangeItemSpecModifiers
+Shared.CannotConvertStringToBool
+Shared.FailedCreatingTempFile
+Shared.FailedDeletingTempFile
+Shared.InvalidFilespecForTransform
+Shared.InvalidProjectFile
+Shared.KillingProcess
+Shared.KillingProcessByCancellation
+Shared.ParameterCannotBeNull
+Shared.ParameterCannotHaveZeroLength
+Shared.ParametersMustHaveTheSameLength
+Shared.ProjectFileCouldNotBeLoaded
+Shared.TaskResourceNotFound
+Shared.TaskResourcesNotRegistered
+sharedBuffer
+SharedReadBuffer
+sharedReadBuffer
+sharedResources
+Should always have an explicit architecture when calling this method
+Should always have an explicit architecture when we call this method.
+Should always have an explicit runtime when calling this method
+Should always have an explicit runtime when we call this method.
+Should have been logged
+Should not get to the default of GetBuildEventArgFromId ID: 
+ShowHelpMessage
+ShowHelpPrompt
+showProjectFile
+SHOWPROJECTFILE=TRUE;
+showStackTrace
+ShowVersion
+shutdownEvent
+shutdownException
+shutdownReason
+Single
+SingleDictionaryEntryEnumerator
+SingleEnumerator
+sinkId
+SizeOf
+SkipVerification
+Sleep
+Small Estimated Bytes Held
+Small Strings (>=
+Small Strings MRU Size
+smallMru
+smallMruSize
+SmallMruSize
+smallMruThreshhold
+SmallMruThreshhold
+SMSB4132: The tools version "{0}" is unrecognized. Available tools versions are {1}.
+Software\Microsoft\MSBuild\4.0
+Solution file
+SolutionParseDuplicateProject
+SolutionParseInvalidProjectFileNameCharacters
+SolutionParseInvalidProjectFileNameEmpty
+SolutionParseInvalidProjectSolutionConfigurationEntry
+SolutionParseInvalidSolutionConfigurationEntry
+SolutionParseNestedProjectError
+SolutionParseNestedProjectUndefinedError
+SolutionParseNoHeaderError
+SolutionParseProjectDepGuidError
+SolutionParseProjectEofError
+SolutionParseProjectError
+SolutionParseVersionMismatchError
+SolutionParseWebProjectPropertiesError
+Some command line switches were read from the auto-response file "{0}". To disable this file, use the "/noautoresponse" switch.
+Split
+splitMarker
+SplitStringOnNewLines
+SplitUnquoted
+SplitUnquoted() must return at least one string, and no more than two.
+StackOverflowException
+STANDARD_RIGHTS_ALL
+startIndex
+StartLocalNode
+StartLocalNodeOldOM
+StartLocalNodeServer
+StartsWith
+STARTUP_LOADER_SAFEMODE
+startupDirectory
+startupFlags
+status
+STD_OUTPUT_HANDLE
+Stopwatch
+stopwatch
+store
+stream
+StreamingContext
+StreamReader
+StreamWriter
+StringArray
+StringBuilder
+StringBuilderInternTarget
+StringBuilderToString
+StringComparer
+StringComparison
+stringData
+StringFileInfo
+StringInternTarget
+strings
+StringSplitOptions
+stringToHash
+stringWithCarriageReturn
+strRegRoot
+stuff
+subcategory
+SubCategoryForSchemaValidationErrors
+SubCategoryForSolutionParsingErrors
+Substring
+Switch: {0}
+Switches:
+switchesFromAutoResponseFile
+switchesNotFromAutoResponseFile
+switchesToAppend
+switchName
+switchNames
+switchParameterIndicator
+switchParameters
+SYNCHRONIZE
+syntaxError
+System.Collections
+System.Collections.Concurrent
+System.Collections.Generic
+System.Collections.Generic.IEnumerator<T>.Current
+System.Collections.Generic.IEnumerator<T>.get_Current
+System.Collections.ICollection.CopyTo
+System.Collections.ICollection.Count
+System.Collections.ICollection.get_Count
+System.Collections.ICollection.get_IsSynchronized
+System.Collections.ICollection.get_SyncRoot
+System.Collections.ICollection.IsSynchronized
+System.Collections.ICollection.SyncRoot
+System.Collections.IDictionary.Add
+System.Collections.IDictionary.Clear
+System.Collections.IDictionary.Contains
+System.Collections.IDictionary.get_IsFixedSize
+System.Collections.IDictionary.get_IsReadOnly
+System.Collections.IDictionary.get_Item
+System.Collections.IDictionary.get_Keys
+System.Collections.IDictionary.get_Values
+System.Collections.IDictionary.GetEnumerator
+System.Collections.IDictionary.IsFixedSize
+System.Collections.IDictionary.IsReadOnly
+System.Collections.IDictionary.Item
+System.Collections.IDictionary.Keys
+System.Collections.IDictionary.Remove
+System.Collections.IDictionary.set_Item
+System.Collections.IDictionary.Values
+System.Collections.IEnumerable.GetEnumerator
+System.Collections.IEnumerator.Current
+System.Collections.IEnumerator.get_Current
+System.Collections.IEnumerator.Reset
+System.ComponentModel
+System.Configuration
+System.Core
+System.Diagnostics
+System.Globalization
+System.IDisposable.Dispose
+System.IO
+System.IO.Pipes
+System.Linq
+System.Reflection
+System.Resources
+System.Runtime.CompilerServices
+System.Runtime.InteropServices
+System.Runtime.Remoting
+System.Runtime.Serialization
+System.Runtime.Serialization.Formatters.Binary
+System.Security
+System.Security.AccessControl
+System.Security.Claims
+System.Security.Permissions
+System.Security.Permissions.SecurityPermissionAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Security.Policy
+System.Security.Principal
+System.Text
+System.Text.RegularExpressions
+System.Threading
+System.Xml
+System.Xml.Schema
+SYSTEM_INFO
+T~M*V
+T5fgr|
+tableOfItemSpecModifiers
+target
+TargetException
+TargetFinishedEvent
+TargetFinishedEventArgs
+TargetFinishedTranslator
+targetFinishedTranslator
+TargetInvocationException
+targetNames
+targetOutputs
+targetOutputsPerProject
+TargetParameterCountException
+targets
+TargetStartedEvent
+TargetStartedEventArgs
+Task runner for task 
+taskAppDomain
+taskAppDomain (in-proc)
+taskAppDomain (out-of-proc)
+taskAssemblyFile
+taskAssemblyFileToResolve
+taskCancelledEvent
+taskColumn
+TaskCommandLineEvent
+taskCommandLineEventArgs
+TaskCommandLineEventArgs
+taskCompleteEvent
+taskCompleteLock
+taskCompletePacket
+TaskCompleteType
+TaskEngineAssemblyResolver
+taskException
+taskExceptionMessage
+taskExceptionMessageArgs
+taskFactory
+TaskFactory
+taskFile
+TaskFinishedEvent
+TaskFinishedEventArgs
+taskHostConfiguration
+taskHostParameters
+TaskHostTaskCancelled
+TaskHostTaskComplete
+TaskInstantiationFailureError
+taskLine
+TaskLoader
+taskLocation
+taskName
+TaskName
+TaskNotMarshalByRef
+taskOutputParameters
+TaskParameter
+taskParameter
+taskParameters
+TaskParameterTaskItem
+TaskParameterType
+TaskParameterTypeVerifier
+taskParams
+taskResult
+taskRunnerFinished
+taskRunnerThread
+TaskStartedEvent
+TaskStartedEventArgs
+taskType
+taskWrapper
+terminatePacketPump
+TextWriter
+The "{0}" task has not registered its resources. In order to use the "TaskLoggingHelper.FormatResourceString()" method this task needs to register its resources either during construction, or via the "TaskResources" property.
+The double-quote character is not supported as a separator.
+The name portion of the switch cannot contain more quoting than the arg itself.
+The resource string "{0}" for the "{1}" task cannot be found. Confirm that the resource name "{0}" is correctly spelled, and the resource exists in the task's assembly.
+The resource string must exist.
+The specified key was not found in the collection.
+The string must exist.
+The switch name extracted from either the partially or completely unquoted arg should be the same.
+The task should be done executing before CompleteTask.
+There is no point calling this method for less than two splits.
+There should be some extensions to Ignore
+There should be some potential project or solution files
+This collection is read-only.
+ThreadAbortException
+ThreadErrorModeMinOsVersion
+threadId
+ThreadInterruptedException
+ThreadPool
+ThreadPoolExtensions
+threads
+ThrowErrors
+ThrowExceptionForErrorCode
+ThrowExceptionForHR
+throwExceptions
+ThrowForUrl
+throwIfPresent
+ThrowIfTypeDoesNotImplementToString
+ThrowInternalError
+ThrowInternalErrorUnreachable
+ThrowInvalidToolsVersionInitializationException
+Time Spent Interning
+timeout
+TimeSpan
+TMSB4008: A conflicting assembly for the task assembly "{0}" has been found at "{1}".
+ToArray
+ToByte
+ToByteArray
+ToInt32
+ToInt64
+ToObject
+toolsets
+ToolsVersion
+toolsversion
+toolsVersion
+TotalPageFile
+TotalPhysical
+TotalVirtual
+ToUpperInvariant
+trace
+Translate
+TranslateArray
+TranslateCulture
+TranslateDictionary
+TranslateDotNet
+TranslateEnum
+TranslateITaskItem
+TranslateITaskItemArray
+TranslateNullable
+Translation
+TranslationDirection
+translator
+treatAsLocalProperty
+TreatAsLocalProperty
+TrimAndStripAnyQuotes
+TrimEnd
+TrimStart
+TryAdd
+TryCreate
+TryGet
+TryGetValue
+TryIntern
+TryMergeArchitectureValues
+TryMergeRuntimeValues
+TryParse
+TryRemove
+TValue
+typefilter
+typeFilter
+TypeFilter
+TypeInitializationException
+TypeLoader
+typeName
+typeName1
+typeName2
+typeNameToType
+U0S0Q
+ug!2<
+ug(2=
+ug<+"
+ug=,~
+ugC+%
+uiCulture
+uintData
+ulongData
+uMSBUILD : error MSB1038: Specify one or more parameters for the file logger if using the /fileLoggerParameters switch
+UnauthorizedAccess
+UnauthorizedAccessException
+UNCPattern
+UnescapeAll
+UnescapeDataString
+unescapedString
+Unexpected
+Unexpected end of stream while reading for handshake
+UnexpectedParametersError
+unformatted
+unformattedMessage
+UNHANDLED EXCEPTIONS FROM PROCESS {0}:
+UnhandledExceptionEventArgs
+UnhandledExceptionEventHandler
+UnhandledExceptionHandler
+UninitializePerformanceDLL
+UnknownSwitchError
+UnloadProject
+unloadProjectsOnCompletion
+unnamedAssembly
+unquote
+Unquote
+unquotedCommandLineArg
+unquotedParameter
+unquoteParameters
+Unreachable?
+UnrecognizedSolutionComment
+UnrecognizedToolsVersion
+UnregisterPacketHandler
+UnregisterTaskObject
+UnsafeLoadFrom
+UnsupportedOS
+unused
+UnverifiableCodeAttribute
+updateEnvironment
+updateEnvironmentAndLog
+UpdateEnvironmentForMainNode
+UriFormatException
+UriKind
+UseCodeMarkers
+useResultsCache
+Using35Engine
+usingSwitchesFromAutoResponseFile
+UTF8Encoding
+UUZUUZ
+V=DIAG
+v4.0.30319
+validate
+Validate
+validate
+ValidateExtensions
+ValidationEventArgs
+value
+value__
+ValueCollection
+valueFactory
+valueName
+ValueTypeArray
+VarFileInfo
+verbosity
+VERBOSITY=
+VERBOSITY=DIAG
+verbositySwitchParameters
+VerifyProjectSchema
+VerifyResourceStringExists
+VerifyThrow
+VerifyThrowArgument
+VerifyThrowArgumentArraysSameLength
+VerifyThrowArgumentLength
+VerifyThrowArgumentLengthIfNotNull
+VerifyThrowArgumentNull
+VerifyThrowArgumentOutOfRange
+VerifyThrowInitializationExceptionWithResource
+VerifyThrowInternalLength
+VerifyThrowInternalLockHeld
+VerifyThrowInternalNull
+VerifyThrowInternalRooted
+VerifyThrowInvalidOperation
+VerifyThrowSupportedOS
+version
+VS_VERSION_INFO
+VSCodeMarkersEnabled
+WAIT_ABANDONED_0
+WAIT_OBJECT_0
+WAIT_TIMEOUT
+waitAll
+WaitAny
+WaitCallback
+WaitForMultipleObjects
+WaitForPipeDrain
+waitId {0} out of range.
+Waiting for connection {0} ms...
+WarnAndContinue
+warnAndContinue
+warning
+Washington1
+We must be able to extract the switch parameters.
+We must have either the assembly name or the assembly file/path.
+We must have the assembly the type was loaded from.
+We must have the type.
+We must not have both the assembly name and the assembly file/path.
+We should have a project file if we're going to build.
+We should never get an empty string passed to this method
+We should never have a null configuration during a BuildEngine callback!
+We should never have a null configuration when we're trying to log errors!
+We should never have a null configuration when we're trying to log messages!
+We should never have a null configuration when we're trying to log warnings!
+We should never have a task in the process of executing when we receive NodeBuildComplete.
+We should not have to resize the buffer twice.
+WeakReference
+wf~(1
+whatIfDoubled
+whatIfHalved
+whatIfInfinite
+whatIfZero
+Where
+Why are we getting a TaskHostConfiguration packet while we're still executing a task?
+wildcards
+Win32
+WIN32_FILE_ATTRIBUTE_DATA
+Win32Exception
+WindowsBuiltInRole
+WindowsIdentity
+WindowsPrincipal
+wProcessorArchitecture
+wProcessorLevel
+wProcessorRevision
+WqVNHE
+WrapNonExceptionThrows
+wrappedItem
+wrappedParameter
+wrappedTask
+wReserved
+Write
+write only
+WRITE_DAC
+WRITE_OWNER
+WriteAllText
+WriteBuildErrorEventToStream
+WriteBuildMessageEventToStream
+WriteBuildWarningEventToStream
+WriteByte
+WriteEventToStream
+WriteExternalProjectFinishedEventToStream
+WriteExternalProjectStartedEventToStream
+WriteITaskItem
+WriteLine
+WriteLongForHandshake
+writeMethodCache
+writer
+WriteTaskCommandLineEventToStream
+WriteToStream
+Writing handshake to parent
+X/1|<
+X]ZX*
+X32CLR2
+X32CLR4
+X64CLR2
+X64CLR4
+xbx2M
+XMakeAttributes
+xMaking the following modifications to the environment received from the parent node before applying it to the task host:
+xmlns
+XmlReader
+XmlReaderSettings
+XmlSchema
+XmlSchemaException
+XmlSchemaSet
+XmlSyntaxException
+XmlTextReader
+XMSBUILD : error MSB1024: Only one schema can be specified for validation of the project.
+Yield
+YMSB5006: Error parsing project section for project "{0}". The project file name is empty.
+YMSB5021: "{0}" and its child processes are being terminated in order to cancel the build.
+You do not have access to: {0}
+yyyy'-'MM'-'dd HH':'mm':'ss'.'fffffff
+z.9Wv
+z/Aq|]
+zMSBUILD : error MSB1032: Maximum CPU count is not valid. Value must be an integer greater than zero and no more than 1024.
+ZwHvp)a!

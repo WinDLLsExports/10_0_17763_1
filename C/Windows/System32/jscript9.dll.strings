@@ -1,0 +1,6880 @@
+                        onProgress(progressValue);
+                        traceAsyncCallbackComplete(carrier._asyncOpCausalityId, log_level_verbose);
+                        traceAsyncCallbackStart(carrier._asyncOpCausalityId, work_type_progress, log_level_verbose);
+                        updateAsyncCallbackRelation(carrier._asyncOpCausalityId, callback_status_error, log_level_verbose);
+                    }
+                    } catch (e) {
+                    } finally {
+                    creator.cancel();
+                    doComplete(carrier, result);
+                    doError(carrier, exception);
+                    error = exception;
+                    error = new AsyncBehaviorError(noErrorInErrorStateMsg, asyncOpType, asyncOpSource, asyncOpCausalityId);
+                    exception.asyncOpCausalityId = asyncOpCausalityId;
+                    exception.asyncOpSource = asyncOpSource;
+                    exception.asyncOpType = asyncOpType;
+                    getResultsOfAsyncOp(op2.operation, asyncOpType, asyncOpSource, asyncOpCausalityId);
+                    onProgress.setAsyncOpCausalityId(carrier._asyncOpCausalityId);
+                    result = getResultsOfAsyncOp(op2.operation, asyncOpType, asyncOpSource, asyncOpCausalityId);
+                    traceAsync = false;
+                    traceAsyncCallbackComplete(asyncOpCausalityId, log_level_required);
+                    traceAsyncCallbackStart(asyncOpCausalityId, work_type_completion, log_level_required);
+                    traceAsyncOperationComplete(asyncOpCausalityId, op_status_canceled, log_level_required);
+                    traceAsyncOperationComplete(asyncOpCausalityId, op_status_error, log_level_required);
+                    traceAsyncOperationComplete(asyncOpCausalityId, op_status_success, log_level_required);
+                    try {
+                    var noErrorInErrorStateMsg = errorStrings[0];
+                }
+                } catch (exception) {
+                } catch(exception) {
+                } else {
+                break;
+                callbackCompleted = true;
+                cancelAsyncOp(op, asyncOpType, asyncOpSource, asyncOpCausalityId);
+                complete(carrier._value);
+                doCancel(carrier);
+                doComplete(carrier, temp);
+                doDone(carrier, complete, error, progress, this);
+                doError(carrier, err);
+                doError(carrier, error);
+                doError(carrier, new AsyncBehaviorError(invalidStatusArgMsg, asyncOpType, asyncOpSource, asyncOpCausalityId));
+                doError(carrier, value);
+                doProgress(carrier, progressInfo);
+                err.asyncOpCausalityId = asyncOpCausalityId;
+                err.asyncOpSource = asyncOpSource;
+                err.asyncOpType = asyncOpType;
+                err.name = err.message;
+                error(carrier._value);
+                exception.asyncOpCausalityId = asyncOpCausalityId;
+                exception.asyncOpSource = asyncOpSource;
+                exception.asyncOpType = asyncOpType;
+                exception.originatedFromHandler = true;
+                if (carrier._state <= state_waiting) {
+                if (creator) {
+                if (onProgress.setAsyncOpCausalityId && typeof onProgress.setAsyncOpCausalityId === 'function') {
+                if (traceAsync) {
+                notifyError(listeners, carrier._value, carrier._asyncOpType, carrier._asyncOpSource, carrier._asyncOpCausalityId);
+                notifySuccess(listeners, carrier._value, carrier._asyncOpType, carrier._asyncOpSource, carrier._asyncOpCausalityId);
+                promise = promise || new AsyncOpPromise(this.operation, asyncOpType, asyncOpSource, asyncOpCausalityId);
+                promise.cancel();
+                promise.done(complete, error, progress);
+                return doThen(carrier, complete, error, progress, this);
+                return promise.then(complete, error, progress);
+                return;
+                temp = onComplete(value);
+                traceAsyncCallbackComplete(asyncOpCausalityId, log_level_required);
+                traceAsyncCallbackComplete(carrier._asyncOpCausalityId, log_level_required);
+                traceAsyncCallbackStart(carrier._asyncOpCausalityId, work_type_completion, log_level_required);
+                traceAsyncOperationComplete(asyncOpCausalityId, op_status_error, log_level_required);
+                try {
+                updateAsyncCallbackRelation(asyncOpCausalityId, callback_status_error, log_level_verbose);
+                var err = new Error('Canceled');
+                var error;
+                var invalidStatusArgMsg = errorStrings[1];
+                var result;
+                var temp = onError(value);
+            }
+            } else {
+            } finally {
+            },
+            };
+            cancel: { writable: false, enumerable: true, configurable: false, value: cancelFunction },
+            cancel: { writable: false, enumerable: true, configurable: false, value: function () {
+            carrier._value.cancel();
+            case op_status_canceled:
+            case op_status_error:
+            case op_status_success:
+            case state_fulfilled_error:
+            case state_fulfilled_success:
+            default:
+            doCancel(carrier);
+            doComplete(carrier, temp);
+            doError(carrier, exception);
+            doError(carrier, new AsyncBehaviorError(invalidSenderArgMsg, asyncOpType, asyncOpSource, asyncOpCausalityId));
+            done: { writable: false, enumerable: true, configurable: false, value: doneFunction }
+            done: { writable: false, enumerable: true, configurable: false, value: function (complete, error, progress) {
+            exception.asyncOpCausalityId = asyncOpCausalityId;
+            exception.asyncOpSource = asyncOpSource;
+            exception.asyncOpType = asyncOpType;
+            if (!exception.asyncOpType) {
+            if (carrier._state <= state_waiting) {
+            if (onCompletePresent && traceAsync === true && callbackCompleted === false) {
+            if (onCompletePresent) {
+            if (onErrorPresent && traceAsync === true && callbackCompleted === false) {
+            if (onErrorPresent) {
+            if (onProgress && typeof onProgress === 'function') {
+            if (op) {
+            onComplete.setAsyncOpCausalityId(asyncOpCausalityId);
+            onError.setAsyncOpCausalityId(asyncOpCausalityId);
+            op.progress = function (op2, progressInfo) {
+            operation: { writable: false, enumerable: true, configurable: false, value: op },
+            postError(carrier._value);
+            return;
+            stack.push(err.asyncOpType);
+            stack.push('WinRT Promise object for ' + err.asyncOpType);
+            then: { writable: false, enumerable: true, configurable: false, value: function (complete, error, progress) {
+            then: { writable: false, enumerable: true, configurable: false, value: thenFunction },
+            traceAsync = false;
+            try {
+            var invalidSenderArgMsg = errorStrings[2];
+            var onProgress = carrier._listeners[i].onProgress;
+            var temp = value;
+            var traceAsync = true;
+        (Debug && (Debug.setNonUserCodeExceptions = true));
+        _asyncOpCausalityId: asyncOpCausalityId
+        _asyncOpSource: asyncOpSource,
+        _asyncOpType: asyncOpType,
+        _cleanup: function () { creator = null; },
+        _cleanup: function () { op = null; },
+        _listeners: null,
+        _state: state_working,
+        _value: null,
+        }
+        } catch (exception) {
+        } else {
+        });
+        };
+        carrier._cleanup();
+        carrier._state = state_fulfilled_success;
+        carrier._state = state_waiting;
+        carrier: p.carrier,
+        complete.setAsyncOpCausalityId = setAsyncOpCausalityId;
+        completeValue.then(complete, error, progress);
+        debug_msTraceAsyncCallbackCompleted = Debug.msTraceAsyncCallbackCompleted;
+        debug_msTraceAsyncCallbackCompleted(logLevel);
+        doDone(carrier, complete, error, progress, that);
+        doNotify(carrier);
+        error.setAsyncOpCausalityId = setAsyncOpCausalityId;
+        for (var i = 0, len = carrier._listeners.length; i < len; i++) {
+        if (!isCanceled(carrier._value)) {
+        if (!op2 || !op2.operation) {
+        if (complete) {
+        if (err.originatedFromHandler) {
+        if (error) {
+        if (onCompletePresent && onComplete.setAsyncOpCausalityId && typeof onComplete.setAsyncOpCausalityId === 'function') {
+        if (onErrorPresent && onError.setAsyncOpCausalityId && typeof onError.setAsyncOpCausalityId === 'function') {
+        if ('set' in progressProperty) {
+        if (typeof carrier._value.cancel === 'function') {
+        Object.create(asyncOpWrapperPrototype, {
+        Object.create(thenPromisePrototype, {
+        onComplete: complete,
+        onError: error,
+        onProgress: progress
+        progress.setAsyncOpCausalityId = setAsyncOpCausalityId;
+        promise: p.promise,
+        return '["' + n + '"]';
+        return doThen(carrier, complete, error, progress, that);
+        return;
+        s += 'o' + wrap(stack[i]) + ' = function () { o' + wrap(stack[i - 1]) + '(); };';
+        stack.push('Promise handler');
+        stack.push('WinRT Promise object');
+        switch (carrier._state) {
+        switch (status) {
+        throw err;
+        traceAsyncCallbackStart = Debug.msTraceAsyncCallbackStarting;
+        traceAsyncOperationComplete = Debug.msTraceAsyncOperationCompleted;
+        try {
+        updateAsyncCallbackRelation = Debug.msUpdateAsyncCallbackRelation;
+        var callbackCompleted = false;
+        var carrier = listener.carrier;
+        var complete = function(value) { carrier._state = state_working; doComplete(carrier, value); };
+        var error = function(value) { carrier._state = state_working; doError(carrier, value); };
+        var listener = listeners[i];
+        var onComplete = listener.onComplete;
+        var onCompletePresent = onComplete && typeof onComplete === 'function';
+        var onError = listener.onError;
+        var onErrorPresent = onError && typeof onError === 'function';
+        var progress = function (value) { doProgress(carrier, value); };
+        var setAsyncOpCausalityId = function (id) { carrier._asyncOpCausalityId = id; };
+        var traceAsync = true;
+    (Debug && (Debug.setNonUserCodeExceptions = true));
+    .then(null, postError, null);
+    [native code]
+    [x-domain code]
+    }
+    } else {
+    });
+    };
+    callback_status_assign_delegate = Debug.MS_ASYNC_CALLBACK_STATUS_ASSIGN_DELEGATE || 0;
+    callback_status_cancel = Debug.MS_ASYNC_CALLBACK_STATUS_CANCEL || 3;
+    callback_status_error = Debug.MS_ASYNC_CALLBACK_STATUS_ERROR || 4;
+    callback_status_join = Debug.MS_ASYNC_CALLBACK_STATUS_JOIN || 1;
+    carrier._cleanup();
+    carrier._listeners = [];
+    carrier._listeners = carrier._listeners || [];
+    carrier._listeners.push({
+    carrier._state = state_fulfilled_error;
+    carrier._value = completeValue;
+    carrier._value = errorValue;
+    doNotify(carrier);
+    doThen(carrier, complete, error, progress, creatorPromise)
+    for (var i = 0, len = listeners.length; i < len; i++) {
+    for (var i = 1; i < stack.length; i++) {
+    function rethrowPromiseError() {
+    if (carrier._listeners) {
+    if (carrier._state !== state_working) {
+    if (carrier._state === state_fulfilled_error) {
+    if (carrier._state === state_fulfilled_success) {
+    if (carrier._state === state_waiting) {
+    if (carrier._state > state_waiting) {
+    if (Debug.msTraceAsyncCallbackCompleted && typeof Debug.msTraceAsyncCallbackCompleted === 'function') {
+    if (Debug.msTraceAsyncCallbackStarting && typeof Debug.msTraceAsyncCallbackStarting === 'function') {
+    if (Debug.msTraceAsyncOperationCompleted && typeof Debug.msTraceAsyncOperationCompleted === 'function') {
+    if (Debug.msUpdateAsyncCallbackRelation && typeof Debug.msUpdateAsyncCallbackRelation === 'function') {
+    if (err && err.asyncOpType) {
+    if (err && err.originatedFromHandler) {
+    if (invalid_async_operation_id != asyncOpCausalityId) {
+    if (isCanceled(err)) {
+    if (listeners && (listeners.length > 0)) {
+    if (progressProperty) {
+    if (typeof completeValue === 'object' && completeValue && typeof completeValue.then === 'function') {
+    Object.preventExtensions(cancelFunction);
+    Object.preventExtensions(thenFunction);
+    Object.preventExtensions(thenPromise);
+    Object.preventExtensions(wrapper);
+    op.completed = function (op2, status) {
+    op_status_canceled = Debug.MS_ASYNC_OP_STATUS_CANCELED || 2;
+    op_status_error = Debug.MS_ASYNC_OP_STATUS_ERROR || 3;
+    op_status_success = Debug.MS_ASYNC_OP_STATUS_SUCCESS || 1;
+    return { promise: thenPromise, carrier: carrier };
+    return err instanceof Error && err.name === 'Canceled';
+    return op.cancel();
+    return op.getResults();
+    return p.promise;
+    return s;
+    return wrapper;
+    s += 'o' + wrap(stack[0]) + ' = function () { rethrowPromiseError(); };';
+    s += 'o' + wrap(stack[stack.length - 1]);
+    setTimeout(eval(s), 0);
+    stack.push('WinRT Promise.done()');
+    this.asyncOpCausalityId = asyncOpCausalityId;
+    this.asyncOpSource = asyncOpSource;
+    this.asyncOpType = asyncOpType;
+    this.cancel = function () {
+    this.done = function (complete, error, progress) {
+    this.message = (message || '');
+    this.name = 'AsyncBehaviorError';
+    this.then = function (complete, error, progress) {
+    var cancelFunction = function () {
+    var carrier = {
+    var doneFunction = function (complete, error, progress) {
+    var listeners = carrier._listeners;
+    var p = createThenPromise(creatorPromise, carrier._asyncOpType, carrier._asyncOpSource, carrier._asyncOpCausalityId);
+    var progressProperty = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(op), 'progress');
+    var promise = null;
+    var s = createDebugStack(err);
+    var s = 'var o = {};';
+    var stack = [];
+    var that = this;
+    var thenFunction = function (complete, error, progress) {
+    var thenPromise =
+    var wrap = function (n) {
+    var wrapper =
+   !!!"""###$$$%%%&&&'''((()))
+   at 
+  !!""##$$%%&&''(())**++,,--..//00112233445566778899::;;<<==>>??
+ !"#$
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+ !"#4$%&'()*+,-.4/40414243
+ %u %s:
+ ( ) / / _ _ 
+ ( . D D j p t | 
+ (seen)
+ ** Error ***: unknown relationship flag
+ / _ 
+ ;T$`~
+ [ID unavailable]:
+ _^[H
+ _^]H
+ 3|$ 
+ 3D$8
+ 8,C09&M,C42
+ 9C }
+ 9G }
+ A^^]
+ A^_[
+ A^_]
+ A^_^
+ A^_^][
+ A^A\_^]
+ A^A]A\_^
+ A^A]A\_^][
+ A__^
+ A__^][
+ A_A\_^]
+ A_A]A\_^
+ A_A^[
+ A_A^_
+ A_A^_^[
+ A_A^_^]
+ A_A^_H
+ A_A^A\
+ A_A^A\_^
+ A_A^A\_^][
+ A_A^A]_^
+ A_A^A]_^][
+ A_A^A]A\_
+ A_A^A]A\_][
+ A_A^A]A\_^[
+ A_A^A]A\_^]
+ address: %p
+ Argument list too large to apply
+ B.C.
+ closed
+ external
+ external_dispatch
+ external_unknown
+ flags: (
+ getter
+ H3E H3E
+ has been deprecated. 
+ Hc\$H
+ Hc|$8H
+ Hct$HH
+ id: %u
+ index: %u
+ JScript
+ MH]LV
+ Microsoft Corporation. All rights reserved.
+ optional info records (%u)
+ pid: %u 
+ root
+ rsFlags:
+ scope[%u]:
+ setter
+ size: %u
+ size_approximate
+ size_unavailable
+ Specified DLL function not found
+ t!D;e(r
+ tBH;
+ tYE;
+ type: %s
+ value: %.2000s
+ value: %.200s
+ value: %f
+ WinRT_Delegate
+ WinRT_Instance
+ WinRT_Namespace
+ WinRT_RuntimeClass
+!&+TY:s:w
+!\$ I
+!\$ L
+!\$(E3
+!|$4H
+!~0!~4
+!8!S!
+!Can't perform requested operation
+!Can't rename with different drive
+!D$ D
+!D$ E3
+!D$(H
+!l$ H
+!This program cannot be run in DOS mode.
+""""A
+");} catch(e) {};
+"Function '%s' is not a constructor
+"Invalid procedure call or argument
+"Object doesn't support this action&Object doesn't support named arguments-Object doesn't support current locale setting
+"'this' is not of expected type: %s
+#%s: 'this' is not a Function object!%s: 'this' is not a String object"%s: 'this' is not a Boolean object
+#&Q$A
+#(#+#z#
+#ctor
+#T$(A
+#w5Hc
+$$$@$J$`$
+$__instance
+$~*E;
+$0< u
+$Invalid left-hand side in assignment
+$LcD$
+$u4LcI
+$vHD9A
+%%%02X
+%&'()*+,-./
+%``VW
+%02d%02d
+%02d:%02d:%02d 
+%2<,K0041,
+%3333
+%Automation server can't create object Class doesn't support Automation
+%Can't create necessary temporary file
+%D9o0u
+%hs!%p: 
+%hs(%d) tid(%x) %08X %ws
+%hs(%d)\%hs!%p: 
+%s %s %d 
+%s (%d)
+%s (%s:%d,%d)
+%s (0x%X)
+'%s' is not a boolean
+'%s' is not a date object
+'%s' is not a function
+'%s' is not a JavaScript object '%s' is not an enumerator object''%s' is not a regular expression object
+'%s' is not a number
+'%s' is not a string
+'%s' is not a VBArray
+%s is not an Array object
+%s is not an ArrayBuffer
+'%s' is not an indexable object
+%s is not an object or a string
+'%s' is null or not an object
+'%s' is undefined
+%s Loop%d (%s:%d,%d)
+%s%c%s
+%s%s%d
+%s.%s
+%s: argument is not an Object'%s: argument is not a JavaScript object%%s: argument is not a Function object$%s: argument is not a VBArray object!%s: argument is null or undefined-%s: argument is not an Object and is not null
+%s: invalid argument
+%s: 'key' is not an objectBOption value '%s' for '%s' is outside of valid range. Expected: %s
+%s: 'this' is not a %s object
+%s: 'this' is not a Date object!%s: 'this' is not a Number object"%s: 'this' is not a VBArray object%%s: 'this' is not a JavaScript object&%s: 'this' is not an Enumerator object!%s: 'this' is not a RegExp object
+'%s: 'this' is not an Inspectable Object-%s: could not convert argument to type 'char'-%s: could not convert argument to type 'GUID'2%s: could not convert return value to IInspectableICould not convert object to struct: object missing expected property '%s'
+%s: 'this' is not an Object
+%s: 'this' is null or undefined
+%s: type is not constructibleKCould not convert value to PropertyValue: %s not supported by PropertyValueICould not convert value to IInspectable: %s not supported by IInspectable
+%s["%s"]
+%s[%s]
+%s\%s
+%s\%s.mui
+%s\%s\%s.mui
+%This can't be used in a new statement
+%u##%s
+%UUUU+
+& <2g
+&%s is not an Array or arguments object
+&(8<>NJ
+&<WPW<TP\
+&7'D,3
+&Can't execute code from a freed script
+&CZv/2f<
+&f9GR
+&Invalid usage of 'eval' in strict mode+Invalid usage of 'arguments' in strict mode
+&'return' statement outside of function"Can't have 'break' outside of loop%Can't have 'continue' outside of loop
+&t=<'u
+(.*?)(?:-u)?$
+(@8l$ 
+'(@T=
+([^-]*)-?(.*)?
+([^_]*).*
+([^_]*)_?(.+)?
+(\$PfD
+(\.solo)?)\.([a-z]*)(\([0-9]\))?}
+(\.solo)?)\.([a-z]*)(\([0-9]\))?}'
+(_^[]
+(_^][
+(|$ H
+(|$`H
+(|$0A
+(|$0H
+(|$PH
+(<XP`
+(A\_^]
+(A^^][
+(A^_][
+(A^_^[
+(A^_^]
+(A^A\_^][
+(A__][
+(A__^[
+(A_A\_^][
+(A_A^_^
+(A_A^_^[]
+(A_A^_^][
+(A_A^_^][H
+(A_A^A\_][
+(A_A^A\_^[
+(A_A^A]_^]
+(A_A^A]A\_^][
+(caller: %p) 
+(D$ D
+(D$ E3
+(D$ f
+(D$ fD
+(D$ H
+(D$ I
+(D$ L
+(D$ Lc
+(D$@D
+(D$@f
+(D$@H
+(D$@L
+(D$`f
+(d$`fD
+(D$0f
+(D$0H
+(D$0I
+(D$0L
+(D$Pf
+(D$pf
+(D$Pf
+(D$pf
+(D$Pf
+(D$PH
+(D$PI
+(empty string)
+(f9D$xu'H
+(HcD$8
+(L$0fD
+(l$pfD
+(L;~(u
+(null)
+(T$ f
+(t$ H
+(T$@fD
+(t$@H
+(t$@H3
+(t$@I
+(t$@L
+(t$@zEuCH
+(t$`D
+(t$`H
+(t$03
+(T$0D
+(t$0H
+(t$0H3
+(t$0I
+(t$Pf
+(t$PH
+(t$pH
+(t$PH
+(t$pH
+(t$PH
+)(?:\.solo)?\.([a-z]*)(\([0-9]\))?}
+)\$PfD
+)|$`D
+)|$0D
+)0@`l
+)4$AWAVAUATWVSI+
+)D$ f
+)D$@H
+)d$`fD
+)D$`H
+)D$0f
+)D$0H
+)D$PD
+)D$pf
+)D$PH
+)DI2H
+''')'K'M'M'O'R'V'V'X'^'a'g'v'
+)L$@H
+)L$`H
+)L$0A
+)L$0fD
+)L$0fH
+)L$0I
+)l$pD
+)l$pfD
+)L$PH
+)L$pH
+)t$@A
+)T$@fD
+)t$@H
+)t$`D
+)t$0H
+)t$0H3
+)t$0I
+)t$pH
+** Error ***: invalid nameId
+** Error ***: property ID is 0
+*** Error: maxindent exceeded ***
+*** Error: Object missing from snapshot ***
+*** Error: Unexpected optional info type ***
+*** Error: Unexpected property type ***
+*>LmB^6o
+*C@7x
+*l2dL
+*tO=' 
+*u]H;
+, (Map)
+, (Set)
+, (WeakMap)
+, ...
+,\$0H
+,D$@=
+,D9L$,v
+,L$ H
+.?AUParseError@UnifiedRegex@@
+.?AVbad_alloc@std@@
+.?AVEvalDisabledException@Js@@
+.?AVexception@@
+.?AVExceptionBase@Js@@
+.?AVInternalErrorException@Js@@
+.?AVJsrtComException@@
+.?AVNotImplementedException@Js@@
+.?AVOperationAbortedException@Js@@
+.?AVOutOfMemoryException@Js@@
+.?AVParseExceptionObject@@
+.?AVRegExpExceptionObject@regex@@
+.?AVRejitException@Js@@
+.?AVResultException@wil@@
+.?AVScriptAbortException@Js@@
+.?AVStackOverflowException@Js@@
+.\%s.mui
+.\%s\%s.mui
+.00cfg
+.BI0D
+.bss$00
+.bss$dk00
+.bss$pr00
+.bss$zz
+.CRT$XCA
+.CRT$XCB
+.CRT$XCM
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIZ
+.CRT$XLA
+.CRT$XLZ
+.ctor
+.D$0z
+.D$8z
+.data
+.data$00
+.data$00$brc
+.data$dk00
+.data$dk00$brc
+.data$pr00
+.data$pr00$brc
+.data$r$brc
+.data$zz
+.data$zz$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.edata
+.gfids
+.giats
+.H>Vc
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.integer(2)}
+.integer}
+.Object doesn't support property or method '%s'
+.Object doesn't support this property or method
+.Object variable or With block variable not set
+.orpc$lp00jscript9.dll!20_pri7
+.orpc$zy
+.pdata
+.PEAVExceptionBase@Js@@
+.PEAVInternalErrorException@Js@@
+.PEAVJavascriptExceptionObject@Js@@
+.PEAVScriptAbortException@Js@@
+.PEAX
+.rdata
+.rdata$00
+.rdata$00$brc
+.rdata$brc
+.rdata$T$brc
+.rdata$zz
+.rdata$zz$brc
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.stls
+.text
+.text$di
+.text$lp00jscript9.dll!20_pri7
+.text$mn
+.text$mn$00
+.text$np
+.text$x
+.text$yd
+.text$zs
+.text$zy
+.text$zz
+.tkfE;
+.tls$
+.tls$ZZZ
+.u'fA9F
+.xdata
+.xdata$x
+// All rights reserved.
+// Copyright (c) Microsoft Corporation.
+/5wB$
+/D$0sk3
+/D9{ u"D
+/t[A;
+/tCfA;
+/w{tq
+:/u!H
+::$DATA
+:gt>f
+:gu&I
+:Gu3L
+:muOH
+:The remote server machine does not exist or is unavailable
+:Unable to set property '%s' of undefined or null reference:Unable to get property '%s' of undefined or null reference=Unable to delete property '%s' of undefined or null referenceWUnable to access property '%s': type 'VarDate' does not support user-defined properties7The value of the property '%s' is not a Function objectJThe value of the property '%s' is null or undefined, not a Function object
+;\$`r
+;\$hw
+;\$P|
+;\$pw
+;\$xr
+;]Hs3
+;_ s)H
+;{8s/
+;|$`~
+;|$0v
+;|$4r
+;|$hw
+;}8s<H
+;6t,H
+;A ul
+;Ctu`A
+;D$@|
+;D$`u
+;D$0t
+;D$8~
+;D$hr9H
+;D$hs.
+;D$hsxL
+;Function evaluation is disabled while debugging native codeTEvaluation of the JavaScript expression is not supported while debugging native code
+;G0s4H
+;GuHL
+;H0s"H
+;IcOX
+;L$8v
+;L$hr
+;L$Pr
+;l$x|
+;P0r/
+;Q s\A
+;Q s`A
+;Q skA
+;Q su
+;Q$s{H
+;Q(s_I
+;Q,rq;Q0wlH
+;Q0}GH
+;Qx|-H
+;Qx}NH
+;T$ }cH
+;T$`~
+;T$`r
+;T$`s#I
+;t$`sVL
+;T$0}
+;T$0}c
+;t$xr
+;t$Xt
+;U@tjH
+;w0s H
+;Y$s!H
+?"t(H
+?.u$H
+??0exception@@QEAA@AEBV0@@Z
+??0exception@@QEAA@XZ
+??1exception@@UEAA@XZ
+??1type_info@@UEAA@XZ
+?{t%H;
+?aCoc
+?GtHL
+?Gu3H
+?terminate@@YAXXZ
+@ ;A 
+@ 9D$`
+@ L;D$
+@"|$P
+@$D+@ H
+@(D8pt
+@(E9 uAH
+@(L;JPu
+@,D+@(H
+@.data
+@.didat
+@.reloc
+@:{8tFH
+@@A+@0
+@@A+@H
+@\;B(
+@0@8xZt
+@0@8xZu
+@09D$pt
+@0D8XZu
+@0H9H
+@0I+@ H
+@3\$xH
+@8-%++
+@8--[.
+@8_Pt
+@8{@u
+@8{Ht
+@8|$)
+@8|$)u
+@8|$*
+@8|$8tI
+@8|$A
+@8|$B
+@8|$p
+@8|$ptGH
+@8|$qL
+@8}@t-H
+@8}`uqA
+@8~8t
+@8=<Y9
+@82t]@8r
+@85(E;
+@8f9]
+@8h t
+@8hXA
+@8I+@ H
+@8I+I0I+@0H;
+@8l$@
+@8l$`
+@8o@uaH
+@8ptu
+@8t$pA
+@8t$xu@H
+@8t$xuBH
+@8xtu
+@8xzuiA
+@8y,t:
+@A\][
+@A]A\_^]
+@A^][
+@A^^[
+@A^_^
+@A^_^[]
+@A^_^][
+@A^A\_^]
+@A^A]^
+@A^A]_^]
+@A__]
+@A__^
+@A__^][
+@A_A\_^]
+@A_A]A\_^][
+@A_A^]
+@A_A^^][
+@A_A^_
+@A_A^_[]
+@A_A^_][
+@A_A^_^[
+@A_A^_^]
+@A_A^A\
+@A_A^A\_[
+@A_A^A\_^
+@A_A^A\_^[]
+@A_A^A\_^][
+@A_A^A]_^
+@A_A^A]_^[]
+@A_A^A]_^][
+@A_A^A]A\^][
+@A_A^A]A\_^[
+@A_A^A]A\_^]
+@fA9t
+@fE9T
+@H;G0
+@h2Ah$
+@HD+@`D+@0
+@i2Ai$
+@Lct$x3
+@LD+@HH
+@P2CP$
+@PD+@
+@PD+@0D+@
+@PH9APu"H
+@PI9APu
+@PI9BP
+@Qm6t
+@tcu H
+@xI+@pI
+[%hs(%hs)]
+[%hs]
+[%s returned]
+[...]
+[^_A\A]A^A_f
+[Array elements] count: %u
+['best fit', 'lookup']
+[Element attributes size] %u
+[Element text children size] %u
+[error : DumpHeap failed on EnumHeap]
+[error : DumpHeap failed on malloc]
+[error : DumpHeap failed on Next()]
+[error]
+[Events] count: %u
+[f9;u
+[Function name] %s
+[Globals]
+[Internal property]
+[l8JU
+[Map key-value pairs] count: %u
+[Map]
+[Methods]
+[number]
+[Object
+[object 
+[object Arguments]
+[object Array]
+[object ArrayBuffer]
+[object Boolean]
+[object CanvasPixelArray]
+[object Date]
+[object Error]
+[object Float32Array]
+[object Float64Array]
+[object Function]
+[object Int16Array]
+[object Int32Array]
+[object Int8Array]
+[object JSON]
+[object Math]
+[object Null]
+[object Number]
+[object Object]
+[object RegExp]
+[object String]
+[object Uint16Array]
+[object Uint32Array]
+[object Uint8Array]
+[object Uint8ClampedArray]
+[object Undefined]
+[Properties] count: %u
+[Prototype]
+[prototype]
+[Relationships] count: %u
+[Return value]
+[Scope]
+[Scopes] count: %u
+[Set values] count: %u
+[Set]
+[string]
+[Throw Stack Follows]
+[Uninitialized block variable]
+['UTC']
+[WeakMap key-value pairs] count: %u
+[WeakMap]
+\$ 8Gxu
+\$ A;
+\$ E+
+\$ E3
+\$ fD
+\$ t!
+\$ t'I
+\$ UH
+\$(9X8L
+\$(A;
+\$(E3
+\$(fD
+\$(H3
+\$(I;u(u
+\$(Lcu
+\$@|4H
+\$@E3
+\$@f;
+\$@H3
+\$@L;
+\$@t.I
+\$@t^H
+\$`9_hwf8
+\$`B9
+\$`D+
+\$`u_L
+\$0;C
+\$0;G
+\$0A;
+\$0E3
+\$0fA
+\$0H;
+\$0H9
+\$0Hc|$8L
+\$0I3
+\$0L;
+\$0M;
+\$0t.I
+\$0w2
+\$4E+
+\$8A+
+\$8D9/v0
+\$8E3
+\$8H;\$0
+\$8H9
+\$8Ic
+\$8L9](tsL
+\$8Mc
+\$h;\$`
+\$h;_ 
+\$h;_ s}H
+\$h;_ smH
+\$h;Z
+\$H;Z0sRH
+\$H@2
+\$h9u
+\$HD8\$`u8D9
+\$HE;
+\$HE3
+\$HfE;
+\$HH+
+\$HH9
+\$hH9
+\$hHc
+\$hLc
+\$p9~Dv3
+\$PA9
+\$PD;
+\$pE;
+\$pE3
+\$PE3
+\$pH;_
+\$Pu_I
+\$xE3
+\$XE3
+\$XfA;
+\$xfA;
+\\?\UNC\
+\\?\Volume
+\{year\.[a-z]*(\([0-9]\))?\}
+\D$HH
+\H;y u)H
+\u0000
+\UNC\
+] L9#u
+]0fA+
+]0Lcs
+]D+u0
+]D8set
+]Hu4H
+]oD8{
+]s5A;
+^[A-Z]{3}$
+_ 9\$pr
+_ u!H
+_@D9c8t
+__boundCompare
+__boundFormat
+__C_specific_handler
+__calendar
+__caseFirst
+__collation
+__currency
+__currencyDisplay
+__currencyDisplayToUse
+__CxxFrameHandler3
+__day
+__defineGetter__
+__defineSetter__
+__dllonexit
+__era
+__formatMatcher
+__formatterToUse
+__hour
+__hour12
+__ignorePunctuation
+__initializedCollator
+__initializedDateTimeFormat
+__initializedIntlObject
+__initializedNumberFormat
+__iob_func
+__isDecimalPointAlwaysDisplayed
+__locale
+__localeForCompare
+__localeMatcher
+__lookupGetter__
+__lookupSetter__
+__matcher
+__maximumFractionDigits
+__maximumSignificantDigits
+__minimumFractionDigits
+__minimumIntegerDigits
+__minimumSignificantDigits
+__minute
+__month
+__numberingSystem
+__numeric
+__patternStrings
+__proto__
+__relevantExtensionKeys
+__second
+__sensitivity
+__style
+__templateString
+__timeZone
+__timeZoneName
+__usage
+__useGrouping
+__weekday
+__windowsCalendar
+__windowsClock
+__year
+_amd64
+_amsg_exit
+_beginthreadex
+_callnewh
+_controlfp_s
+_CxxThrowException
+_flushall
+_HH#_ H
+_i64tow_s
+_initterm
+_itow_s
+_jscript
+_jscript_build
+_jscript_version
+_localtime64_s
+_lock
+_ltow
+_ltow_s
+_microsoft
+_onexit
+_purecall
+_snwprintf_s
+_stricmp
+_tzset
+_ui64tow_s
+_ultow_s
+_unlock
+_vscwprintf
+_vsnprintf_s
+_vsnwprintf
+_vsnwprintf_s
+_wasctime_s
+_wcsdup
+_wcsicmp
+_wcslwr_s
+_wcsnicmp
+_wfsopen
+_win64
+_wsplitpath_s
+_XcptFilter
+`.rdata
+`A^^[
+`A^_[
+`A^_^
+`A^_^[]
+`A^_^][
+`A^A\_^]
+`A^A]A\_^[]
+`A^A]A\_^][
+`A__[
+`A__^[]
+`A__^][
+`A_A\^][
+`A_A^_[]
+`A_A^_^[
+`A_A^_^]
+`A_A^A\_^
+`A_A^A\_^[]
+`A_A^A\_^][
+`A_A^A]^]
+`A_A^A]_^[]
+`A_A^A]_^][
+`A_A^A]A\]
+`A_A^A]A\^][
+`A_A^A]A\_^[
+`A_A^A]A\_^]
+`HD+``D
+`HD+`0D
+`PD+`0D+`
+`PH9P
+{$fE;
+{...}
+{0|uRH
+{0~upH
+{00000000-0000-0000-0000-000000000000}
+{0MubH
+{0MuYH
+{0OuD
+{1 r!
+{1 rI
+{16d51579-a30b-4c8b-a276-0ff4dc41e755}
+{1b7cd997-e5ff-4932-a7a6-2a9e636da385}
+{34a13fc7-86ab-42e6-a32c-b50666f04ff9}
+{842a1268-6e6a-465c-868f-8bc445b9828f}
+{8f97
+{8f97u#H
+{ActivationObject}
+{error}
+{exception}
+{H;{0rC
+{hH9C0u
+{Jf+{PH
+{Named Item}
+{PID}
+{UncallableMethodSignature}
+{VfD9
+{xf9G
+{year.abbreviated(2)}
+{year.full}
+|$ A+
+|$ E3
+|$ gt
+|$ I;
+|$ Ic
+|$$A;
+|$(A^
+|$(E2
+|$(E3
+|$(fE
+|$@;G
+|$@A8~a
+|$@Hc
+|$@t7H
+|$`;_ s{H
+|$`E3
+|$`f;|$hu
+|$0 u
+|$0;C
+|$0A;
+|$0E3
+|$0fA
+|$0fff
+|$0H#
+|$0t$H
+|$0xu3H
+|$4A;
+|$89\$@t
+|$8E3
+|$8FH
+|$8H;{0u
+|$8uhH
+|$H@8t$Pu
+|$H\H
+|$HA;
+|$hA;
+|$hE3
+|$HE3
+|$hFuAA
+|$hH;
+|$hH9
+|$HL;
+|$HMcJ
+|$ht;A
+|$hxH
+|$HxH
+|$hxumH
+|$p@2
+|$pE3
+|$pf;
+|$PfA
+|$pff
+|$PHcw
+|$PMu
+|$x;~ 
+|$X@2
+|$X8^ t
+|$XE3
+|$xE3
+|$XE3
+|$Xf;
+|$XH9
+|$xut
+|$XxH
+|QHcU
+|tMA;
+} L9w
+}"D8eou1
+})HcQ
+}@2ukD
+}@Hc_H;_`~RH
+}@t.H
+}_D9g
+}`fD9?u
+}6IcE
+}8A9~
+~ u+I
+~$LcS
+~%LcS
+~&LcS
+~(fD;`
+~(H9}
+~(Hc}XD
+~?LcK
+~`HcK L
+~~HcK L
+~0H+~(H
+~'LcS
+~-McP
+~sLcK H
++[String]
++{ Lc
+'+|HM
++0/Vz
++A 9D$@}$
++A 9D$@}.
++A 9D$P}=
++A 9D$P}A
++A D;
++A8Hc
++B(t/L
++Boolean
++Class
++Class+Class
++Class-Class
++D$ D
++D$xL
++DataView constructor argument %s is invalid?The function '%s' has an invalid signature and cannot be calledAThe property '%s' has an invalid signature and cannot be accessed|The runtimeclass %s that has Windows.Foundation.IPropertyValue as default interface is not supported as input parameter type{The object with interface Windows.Foundation.IPropertyValue that has runtimeclass name %s is not supported as out parameter
++DateTime-String
++Double
++h @8|$`
++h @8t$`t<D
++H D;
++HPHc
++Int32
++Int32-Class
++Int32-String
++Interface
++K4H;
++L$0;
++L$p;
++p0+x0
++r0+z0
++Single
++String
++String-Boolean
++String-Class
++String-String
++T$@H
++UInt32
++UInt32+Boolean
++UInt32+Class
++UInt32+Double
++UInt32+Int32
++UInt32+Interface
++UInt32+Single
++UInt32+String
++UInt32+UInt32
++UInt32-Boolean
++UInt32-Class
++UInt32-Double
++UInt32-Int32
++UInt32-Interface
++UInt32-Single
++UInt32-String
++UInt32-UInt32
++W0D+G0A;
++X Hc
++x`+X
++x0+X0
++Y0+y0H
++y0+Y0H
++Z0+z0H
+<"rI<'v
+<"v'<'t#H
+<"vr<'tnH
+<$HcB
+<$HcC
+<(IFn<G
+<(u=I
+<)tG<
+<*tC<,
+<.rCt
+<.t[<EtW<Xt~<etO<xtvL
+</script>
+<^.u2L!e
+<^:uuL
+<^th<]t$H
+<^-u0L
+<^-upL
+<_t7<]t3<at/H
+<}u5A
+<+v,<?t(<{t)2
+<0r@<9w<A
+<4w!<2s
+<7v1<Bvh<Gt
+<C,u$
+<C0uuHc
+<F$tV
+<gs:E
+<gt:<it
+<G-uP
+<H9C@u
+<HtC<G
+<Lt[<)
+<muNH
+<Pt&<Qv
+<Pu:H;
+<tlA+
+<ttA+
+<UuPH
+<UuWI
+<vaL9v(t[H
+<Variable uses an Automation type not supported in JavaScript
+<vbL9
+<xu1A
+===========>Starting Heap Dump for %s<===============
+==========>End Heap Dump<===============
+=File name or class name not found during Automation operation
+=yHaW
+>.tkf
+>@3j3
+>@8|$0
+>\uKA
+>0!e!
+>Etef
+>etUf
+>L!t$@H
+>L9}@u
+>xt{I
+0 0/01070?0?0
+0( ) 
+0:r4q:
+00000000
+000000000000000000
+0123456789:;<=>BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB?@A
+0123456789ABCDEF
+0123456789ABCDEF = 
+040904B0
+09AZ__az
+0A^^[
+0A^^]
+0A^_[
+0A^_]
+0A^_^
+0A^_^[]
+0A^_^][
+0A^A]A\_^
+0A^A]A\_^][
+0A__^
+0A__^][
+0A_A]_^[
+0A_A^^
+0A_A^^][
+0A_A^_
+0A_A^_][
+0A_A^_^[
+0A_A^_^]
+0A_A^A\_[
+0A_A^A\_]
+0A_A^A\_^
+0A_A^A\_^[]
+0A_A^A\_^][
+0A_A^A]][
+0A_A^A]_]
+0A_A^A]_^
+0A_A^A]_^[]
+0A_A^A]_^][
+0A_A^A]A\_
+0A_A^A]A\_][
+0A_A^A]A\_^[
+0A_A^A]A\_^]
+0Hc:H
+0Hc\$xH
+0HcA H
+0HcQ H
+0'with' statements are not allowed in strict mode;Duplicate formal parameter names not allowed in strict modeGOctal numeric literals and escape characters not allowed in strict mode
+10h0@&Z0h*
+10o0@&^0o`@
+10q0@&`0s
+11.00.17763.1
+11.00.17763.1 (WinBuild.160101.0800)
+12HourClock
+2 2C2`2{2
+'2<,E0041,
+'2<,I0241,
+24HourClock
+2Circular reference in value argument not supported
+2D$h$
+2D$x$
+2-digit
+2f,J04:?RN09rfVJ
+3<7|q
+3<7|s
+3<80K.G\`
+3<80K.h\c
+3<80K.I\a
+33333
+33333333H+
+3333C
+3H9}0
+3H9}0un
+3HcK H
+3The URI to be encoded contains an invalid character-The URI to be decoded is not a valid encoding/The number of fractional digits is out of range
+3v3{3
+4$D8oCt
+4%s: argument does not have a valid 'length' property&%s: Array or arguments object expected(Invalid operand to '%s': Object expected*Invalid operand to '%s': Function expected$Invalid descriptor for property '%s'5Cannot define property '%s': object is not extensible.Cannot redefine non-configurable property '%s'(Cannot modify non-writable property '%s'5Cannot modify property '%s': 'length' is not writable
+4@fE;
+40APf
+4Calling delete on '%s' is not allowed in strict mode
+4D:d0
+4pA;q(~
+4pE;q(~
+4sr0H
+4wr0H
+50{0D&d0{
+50~4D:b0
+50p0D&^0p
+50v0D&^0xl
+50w0D&b0w
+69|$4viH
+6H;t$P
+6L98H
+7BI0DVn^o
+7BI0DVnV\j~Bkfpf
+7Calling delete on expression not allowed in strict mode=Multiple definitions of a property not allowed in strict mode
+7D+6L
+7H;~(
+8#t!H
+8*rBf9(v-f90t(f
+8*u'H
+8,t#f
+8\$!u
+8\$)u
+8\$Hu
+8\u9I
+8]tQL
+8]tWA
+8_^[]
+8_^][
+8{u2H
+8}u,H
+86uAL
+8A]A\_]
+8A^^[]
+8A^^][
+8A^_^[
+8A^_^]
+8A^A]A\]
+8A_^][
+8A__^[
+8A_A^_^[]
+8A_A^_^][
+8A_A^A\_
+8A_A^A\_^[
+8A_A^A]^][
+8A_A^A]_][
+8A_A^A]_^[
+8A_A^A]A\_^
+8A_A^A]A\_^[]
+8A_A^A]A\_^][
+8Aft$L
+8Aft)L
+8au3fA
+8au6H
+8Bqt&A8@qt I
+8D$@t
+8D$@u
+8D$`t
+8D$`u
+8D$8tB
+8D$At
+8D$Ht
+8eu'H
+8Gu%;
+8H9oP
+8HcB L
+8L$@u
+8L$pL
+8lu*H
+8Required argument %s in DataView method is not specified
+8ru?H
+8ru+fA
+8SBu-H
+8T$@t
+8T$@u
+8ttgf
+8uu+fA
+8uu3H
+9$u&A
+9)~[E3
+9)~HE3
+9)~hE3
+9)~LE3
+9*rjfA
+9/u*H
+9/uc@8k
+9?t"fA
+9\$ |
+9\$ }
+9\$ u
+9\$$t
+9\$@|"H
+9\$@|*
+9\$4v
+9\$8u
+9\$Pt
+9\$xu
+9\$xvcL
+9]@soH
+9^ vL
+9_<u9
+9{ v#
+9{$vD
+9{(tWH
+9{(v9H
+9{(vb
+9{LtIA;
+9{LtTH
+9{uGL
+9|$ u
+9|$@t&M
+9|$@u_H
+9|$8t
+9|$ht
+9|$Ht
+9|$p@
+9|$X}KH;\$Ht.H
+9~xv<
+90t(D
+90tWA
+97t"H
+98rpf
+98u1H
+9ADw\3
+9C w@
+9D$ r
+9D$ s
+9D$@|
+9D$@u
+9D$0|
+9D$8r
+9D$8s
+9D$8s'
+9D$8w
+9D$HH
+9E rG
+9E v0
+9F u+H
+9F v2
+9G v9
+9h(tzH
+9H(v#L
+9HuPH
+9hxt}H
+9i v-
+9k0~EE3
+9L$ }
+9L$ r
+9L$0u5H
+9L$0w
+9L$Hu:
+9L$Xt
+9NatKu:
+9q(vnH
+9s v;
+9s8t6H
+9Status is 'error', but getResults did not return an error?Missing or invalid status parameter passed to completed handler?Missing or invalid sender parameter passed to completed handler
+9T$`A
+9T$`u
+9t$`vh
+9T$8I
+9t$Hu
+9U8tc
+9uSIc
+9w*L;
+9x8tDH
+9XXtiH
+9YDvFH
+9Z4uP
+A 8P t
+A A9B 
+A D8H1
+A H9A
+A!@0A
+A#@0;
+A#@0D
+A$+A A
+A(@8o
+A(A;A,s2
+A(D9B
+A(fE;
+A;^ r
+A;^ s
+A;~ r
+A;~ s+I
+A;D$\r
+A;E\r
+A;Ixs'A
+A;J t0H
+A;N s
+A;P$u
+A;P(}
+A;P<v
+A@+Ah+A0
+A@H+A H
+A@H9B@
+A@L!APH
+A]_^]
+A]A\^[]
+A]A\_[
+A]A\_^[]
+A^^[]
+A^_[]
+A^_^[
+A^_^[]
+A^_^][
+A^A\]
+A^A\^[
+A^A\^[]
+A^A\_^[]
+A^A\_^]
+A^A\_^][
+A^A]^[]
+A^A]_^[]
+A^A]A\_^
+A^A]A\_^[]
+A^A]A\_^][
+A__[]
+A__^[
+A__^[]
+A_A\_^[]
+A_A]_
+A_A]_^[]
+A_A]A\_^][
+A_A^]
+A_A^][
+A_A^^[
+A_A^_
+A_A^_[]
+A_A^_^[
+A_A^_^[]
+A_A^_^]
+A_A^_^][
+A_A^A\
+A_A^A\^[
+A_A^A\_[
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[
+A_A^A\_^[]
+A_A^A\_^][
+A_A^A]
+A_A^A]^[]
+A_A^A]_[]
+A_A^A]_]
+A_A^A]_^
+A_A^A]_^[
+A_A^A]_^[]
+A_A^A]A\[]
+A_A^A]A\]
+A_A^A]A\^[
+A_A^A]A\^[]
+A_A^A]A\_
+A_A^A]A\_[
+A_A^A]A\_^[
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A_A^A]A\_^][
+A+@ ;
+A+@ D;
+A+@(I
+A+@PH
+A+@X;
+A+B D;
+A+C D;
+A+C H
+A+G@I
+A+PHA+P
+A+x89hd
+A0;A(
+A0@hA
+A08XZ
+A0AiA
+A0H9A
+A2@h$
+A2@h$ 2
+A2@h$@2
+A2@hA
+A2@i$
+a2DVnB\
+A2HhA
+A2HiA
+A2IiA
+A2PhA
+A4E+A0D
+A8?uDH
+A8^HI
+A8~`t5H
+A8H+A(H
+A8H0u
+A8H9C@
+A8Zxt
+A9.vQI
+A9~ w
+A97v?H
+A9B w
+A9C v
+A9H u
+A9H$u
+A9H(u"
+A9n w
+A9T$0
+A9x@s
+AB8AA
+abbreviated
+abbreviated(1)
+abcdefghijklmnopqrstuvwxyz[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+ABCDEFGHIJKLMNOPQRSTUVWXYZ{|}~
+abstract
+accent
+AcquireSRWLockExclusive
+AcquireSRWLockShared
+ActivatableAttribute
+Active Scripting Engine
+Active Scripting Engine with Parsing
+ActiveXObject
+Actual Offset List
+AddAtomW
+addEventListener
+Address
+Adf9C
+ADVAPI32.dll
+Af ut
+AfD9!t
+af-ZA
+Agf9C
+AH+A`+A0
+AH+A`+A0A
+AH+A`+A0I
+AH+A`+A0L
+AH+A0
+AhA2@h$
+AhI9A`
+AlD+AhI
+Alignment for String16 Table
+all objects
+Allocate_Array
+Allocate_DOM_Object
+Allocate_Function
+Allocate_Object
+Allocate_PixelArray
+Allocate_WinRT_Collections_Object
+Allocate_WinRT_Delegate_Object
+Allocate_WinRT_Enum_Object
+Allocate_WinRT_EventHandler_Object
+Allocate_WinRT_JSProxy_Object
+Allocate_WinRT_Namespace_Object
+Allocate_WinRT_PropertyValue_Object
+Allocate_WinRT_RuntimeClass_Object
+Allocate_WinRT_Struct_Object
+Allocate_WinRT_TypedArray_Object
+AllocatedSize
+AllowUserConfig
+am-ET
+An exception occurred
+anchor
+anonymous
+Anonymous function
+anonymous()
+AP+A0
+AP+A0+A
+AP+y0+A
+AP+Y0+A
+aPD+a
+api-ms-win-core-delayload-l1-1-1.dll
+api-ms-win-core-processthreads-l1-1-2.dll
+api-ms-win-core-timezone-l1-1-0.dll
+api-ms-win-core-winrt-error-l1-1-1.dll
+api-ms-win-core-winrt-l1-1-0.dll
+api-ms-win-core-winrt-roparameterizediid-l1-1-0.dll
+api-ms-win-core-winrt-string-l1-1-0.dll
+api-ms-win-downlevel-advapi32-l1-1-0.dll
+api-ms-win-downlevel-ole32-l1-1-0.dll
+api-ms-win-downlevel-shlwapi-l1-1-0.dll
+api-ms-win-downlevel-version-l1-1-0.dll
+api-ms-win-ro-typeresolution-l1-1-0.dll
+Append
+append
+apply
+april
+ar-AE
+ar-BH
+ar-DZ
+ar-EG
+Argument not optional8Wrong number of arguments or invalid property assignment
+-Argument to the function '%s' is not optional
+ArgumentObject
+arguments
+ar-IQ
+ar-JO
+ar-KW
+ar-LB
+ar-LY
+ar-MA
+arn-CL
+ar-OM
+ar-QA
+Array
+Array object expected
+Array.prototype.concat
+Array.prototype.every
+Array.prototype.filter
+Array.prototype.forEach
+Array.prototype.indexOf
+Array.prototype.join
+Array.prototype.lastIndexOf
+Array.prototype.map
+Array.prototype.pop
+Array.prototype.push
+Array.prototype.reduce
+Array.prototype.reduceRight
+Array.prototype.reverse
+Array.prototype.shift
+Array.prototype.slice
+Array.prototype.some
+Array.prototype.sort
+Array.prototype.splice
+Array.prototype.toLocaleString
+Array.prototype.toString
+Array.prototype.unshift
+ArrayBuffer
+arrayBuffer
+ArrayBuffer
+ArrayBuffer object expected
+ArrayBuffer.prototype.slice
+ArrayInstanceForEach
+ArrayInstanceIndexOf
+ArrayInstanceJoin
+ArrayInstancePush
+ArrayObject
+ar-SA
+ar-SY
+ar-TN
+ar-YE
+Asf9C
+as-IN
+assert
+Assignment to const
+ASTSize
+AsyncBehaviorError.prototype = Object.create(Error.prototype);
+AsyncBehaviorError.prototype.constructor = AsyncBehaviorError;
+AsyncOperationId
+AsyncOpPromise.prototype = {};
+atan2
+ATAVAWH
+atEnd
+Attribute
+AUAVAWH
+august
+Automation error
+Auxiliary Structures
+Auxiliary-C1
+AVAWH
+Aw'W86KJ
+AXH9G w%D
+AXI9AP
+az-Cyrl
+az-Cyrl-AZ
+az-Latn
+az-Latn-AZ
+B IcH
+B IcI
+B L9@
+B L9P8u>H
+B M9J(I
+B u7I
+B(D8BHA
+B(H9H
+B(u8H
+B@H+B I
+B@L9$
+B\$PD
+'B\^z
+B0+B8
+B0A9C
+B49B0t'
+B8H+B H
+BackgroundMarkRescanCount
+Bad file mode
+Bad file name or number
+BailoutCount
+BailoutKind
+ba-RU
+basic
+bcrypt.dll
+BCryptGenRandom
+BD$`D;
+BD$H9D$@H
+be-BY
+best fit
+bg-BG
+Bh2Ah$
+Bh2Gh$
+BHfA9
+BHH9A u
+BindMoniker
+bin-NG
+BitFlags
+BJf+BP
+BJf+BPL
+blbdZar~Z_ZaZeZeZnblVuDo
+blink
+BLINK
+BlockSize
+bn-BD
+bn-IN
+bo-CN
+BoolArray
+Boolean
+boolean
+Boolean
+boolean
+-Boolean
+Boolean expected
+Boolean expected&Can't execute code from a freed script
+Boolean, (Object)
+Boolean.prototype.toString
+Boolean.prototype.valueOf
+BooleanArray
+BooleanObject
+BP2CP$
+BPI9CP
+break
+br-FR
+bs-BA-Cyrl
+bs-BA-Latn
+bs-Cyrl
+bs-Cyrl-BA
+bsearch
+bs-Latn
+bs-Latn-BA
+BSTR_UserFree64
+BSTR_UserMarshal64
+BSTR_UserSize64
+BSTR_UserUnmarshal64
+Bt$PD
+buffer
+builtInCallInstanceFunction
+builtInGetArrayLength
+builtInGlobalObjectEntryIsFinite
+builtInGlobalObjectEntryIsNaN
+builtInJavascriptArrayEntryForEach
+builtInJavascriptArrayEntryIndexOf
+builtInJavascriptArrayEntryJoin
+builtInJavascriptArrayEntryPush
+builtInJavascriptDateEntryGetDate
+builtInJavascriptDateEntryNow
+builtInJavascriptFunctionEntryBind
+builtInJavascriptObjectEntryDefineProperty
+builtInJavascriptObjectEntryGetOwnPropertyNames
+builtInJavascriptObjectEntryGetPrototypeOf
+builtInJavascriptObjectEntryHasOwnProperty
+builtInJavascriptObjectEntryIsExtensible
+builtInJavascriptRegExpEntryTest
+builtInJavascriptStringEntryMatch
+builtInJavascriptStringEntryReplace
+builtInJavascriptStringEntryToLowerCase
+builtInJavascriptStringEntryToUpperCase
+builtInMathAbs
+builtInMathFloor
+builtInMathMax
+builtInMathPow
+builtInRegexMatch
+builtInSetPrototype
+ByRef
+Byte Code Count
+BytecodeCount
+ByteCodeInLoopSize
+ByteCodeSize
+BytecodeSize
+ByteCodeSize
+byteLength
+byteOffset
+BYTES_PER_ELEMENT
+C ;C(tT3
+C @8x@t
+C 3F #
+C A9A v
+C H!{ H
+C HcK H
+C Hcs Lcw Lc
+C IcH8
+C(@8htu
+C(+C4H
+C(9C|uHH
+C(D8ptu
+C(H9C0u
+C(L98
+C(rMfD9
+C,9C(tSH
+C@+Ch+C0;
+C@D;A
+C@t$I
+C`H9D$(tCH+D$(H
+C`HcK 
+C`HcK M
+C0@t+
+C09D$$u
+C0f;x
+C0fA;
+C0H+C(H
+C0H9~(
+C0H9C8r\H
+C0H9x0
+C0HcK D
+C0HcK L
+C0L;C(
+C8H+C0H=
+C9fD9
+CacheIdToPropertyId
+cacheNumberFormat
+ca-ES
+ca-ES-valencia
+calendar
+callback
+CallContext:[%hs] 
+CallCount
+callee
+Caller
+caller
+CallerMethodID
+callInstanceFunc
+Cannot assign to '%s'
+Cannot assign to 'this'
+Cannot assign to variable
+Cannot define property '%s'
+Cannot define property+Typed array constructor argument is invalid"'this' is not a typed array object/Invalid offset/length when creating typed array6Invalid begin/end value in typed array subarray method!Invalid source in typed array set
+Cannot delete '%s'
+Cannot index object
+CanonicalizeLocaleList
+CanvasPixelArray
+Capacity
+caseFirst
+catch
+cc_on
+CD9L$(v
+CF<D+
+CH9{@v
+Char16
+CharArray
+charAt
+charCodeAt
+CHD+K0D+C0D+
+chr-Cher
+chr-Cher-US
+CJf+CP
+class
+Class
+class
+-Class
+Class(Map)
+Class(MapView)
+Class(Promise)
+Class(PropertyValue)
+Class(Vector)
+Class(VectorView)
+clear
+ClearedCount
+CloseHandle
+CloseThreadpoolTimer
+CLSID
+CLSID\%s\InProcServer32
+CLSIDFromProgID
+CLSIDFromProgIDEx
+CoCreateInstance
+co-FR
+CoGetClassObject
+collation
+Collator
+Collator.prototype.compare
+Collator.prototype.resolvedOptions
+collator_supportedLocalesOf
+CollectGarbage
+CollectionStartFlags
+CollectionTrigger
+COLOR
+Column
+column
+CommittedBytes
+CompanyName
+compare
+compareString
+CompareStringEx
+CompareStringW
+compile
+ComplexData
+concat
+configurable
+console.warn("
+const
+Const Count
+Const must be initialized.Const and let must be declared inside of block
+constructor
+constructorResult
+continue
+ConversionError
+correctDayHourMinuteSecondMonthPattern
+correctWeekdayEraMonthPattern
+CoTaskMemAlloc
+CoTaskMemFree
+count
+Count
+Count of Auxiliary Structures
+Count of bytes within Aux Blob
+Cp t'H
+CpA;N$
+CPI9E(
+Cpr\$
+create
+CreateBindCtx
+createDateTimeFormat
+createDebugDisposableObject
+CreateEventW
+CreateFileMappingW
+CreateFileW
+CreateMutexExW
+CreateObject
+CreateSemaphoreExW
+CreateThreadpoolTimer
+CRIM`
+CryptReleaseContext
+cs-CZ
+CStdStubBuffer_AddRef
+CStdStubBuffer_Connect
+CStdStubBuffer_CountRefs
+CStdStubBuffer_DebugServerQueryInterface
+CStdStubBuffer_DebugServerRelease
+CStdStubBuffer_Disconnect
+CStdStubBuffer_Invoke
+CStdStubBuffer_IsIIDSupported
+CStdStubBuffer_QueryInterface
+CttB@
+currency
+Currency code '%s' is invalid
+Currency code is invalid
+Currency code was not specified
+currencyCodeRE
+currencyDigits
+currencyDisplay
+Custom error
+CxA+P
+CXHcKHH
+CXHcMhH
+Cyclic __proto__ value
+cy-GB
+D!~ H
+D$ ;A
+D$ ;C
+D$ ;D$(
+D$ ;D$ps
+D$ ;H
+D$ ;J
+D$ A;
+D$ A+
+D$ A2
+D$ D9@
+D$ D9~
+D$ D9g
+D$ E;
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+d$ E3
+D$ E3
+D$ f9D$$v
+D$ f9D$$w
+D$ fA
+D$ fD
+D$ fD;
+D$ fE;
+-D$ H
+D$ H;
+D$ H+
+D$ H=
+D$ H3
+d$ H9
+D$ H9C(
+D$ H9D$ 
+D$ H9D$ t
+D$ H9D$ u
+D$ Hc\$$H3
+D$ HcK D
+D$ HcK L
+D$ HcU
+D$ Ht
+D$ I;
+D$ I3
+D$ Ic
+d$ L;
+D$ L+
+D$ L3
+D$ L9D$ 
+D$ L9D$ tU
+d$ M;
+D$ Mc
+D$ s$I
+D$$;L$Hv
+D$$3D$ 
+D$$fE;
+d$(A;T$
+D$(A+
+D$(E+
+D$(E3
+d$(E3
+D$(E3
+d$(E3
+D$(E3
+D$(fA
+D$(fD
+D$(H;
+D$(H+
+D$(H3
+D$(H9D$ th
+D$(H9h
+D$(Hc
+D$(I3
+D$(L+
+D$(L9@
+D$(L9H
+D$(Lc
+D$(UH
+D$,`!
+D$,D;
+D$,E;A
+D$@|B
+D$@+D$8H
+D$@=(
+D$@A+
+D$@D;
+D$@D+D$8H
+d$@D8j
+D$@E3
+d$@E3
+D$@E3
+D$@f9
+D$@fA
+D$@fA;
+D$@fD
+D$@fD90t
+D$@H;
+D$@H;D$8v
+D$@H3
+D$@Hc
+D$@HcC
+D$@I9D
+D$@L;
+D$@L+
+D$@t9
+d$@tv
+D$`;Ghr
+D$`E3
+d$`E3
+D$`E3
+D$`H;
+D$`H9
+D$`x"L
+D$0@8xHt@H
+D$09^
+D$0D;H
+d$0D9
+D$0E2
+D$0E3
+d$0E3
+D$0E3
+d$0E3
+D$0E3
+d$0E3
+D$0E3
+d$0E3
+D$0fA
+d$0fD
+D$0fD9 t
+D$0H;
+D$0H3
+D$0H9^(
+D$0Hc
+D$0I;
+D$0L;
+d$4A+
+D$4E3
+D$4fA
+D$4L;d$@
+D$4u+I
+D$4uCI
+D$8;A0s
+D$8;B0s
+D$8@2
+D$89H u
+d$8A;
+D$8A9@
+D$8D;
+D$8D;A0s
+D$8E3
+d$8E3
+D$8E3
+D$8fA
+D$8fD
+D$8H;
+D$8H+
+D$8H3
+D$8H9
+D$8Hc
+D$8HcD$@H
+D$8L;
+D$8L+
+D$8M;
+D$8Mc
+D$BE3
+D$dHc
+D$dLc
+D$DMc
+D$H;B0
+D$H;B0sE
+D$h@8xtu
+D$H9A
+D$H9A@uKH
+D$H9A@uXH
+D$H9D$ t
+D$HA;
+D$hD;
+D$HD;A
+D$HD9h(
+D$HE2
+D$HE3
+D$hE3
+D$HE3
+D$hE3
+D$HE3
+D$hE3
+D$HE3
+D$hE3
+D$HE3
+D$HfA
+D$HfD
+D$HfE
+D$HH;
+D$hH+
+D$HH9
+D$hH9F@t
+D$HHcK 
+D$HHcK D
+D$HL+@ I
+D$hMcA
+D$p8D$P
+D$p9\$D
+D$P9H
+D$pA+
+D$pD+
+D$PE3
+D$pE3
+D$PE3
+d$pE3
+D$PE3
+D$pE3
+D$PE3
+D$Pf;
+D$Pf;A rX
+D$pf90tMH
+D$PfA
+D$pfA9
+D$PfB
+D$PfD
+D$PfD;H
+D$PH;
+D$pH+
+D$PH9
+D$PHc
+D$PHcK D
+D$PL+
+d$PL9a 
+D$Px)I
+D$TD9p
+D$TE3
+D$xD8o@t@L9o8t
+D$xE;
+D$xE3
+d$XE3
+D$xE3
+D$XE3
+D$xE3
+D$XE3
+D$XfD
+D$xH;D$HH
+D$XH+
+D$XH9Y
+D$XI;
+d$XI;P(
+D$XIc{
+D$XIcI
+D$XIcR8H
+D$xL+
+D%s: The Inspectable object 'this' is released and cannot be accessed
+D)f`E3
+D)wdH
+D:L$`u]
+D;\$HrHH
+D;\$P
+D;|$xH
+D;}@sBL
+D;}ws
+D;A@t
+D;A0|
+D;D$ }aH
+D;d$@
+D;ews
+D;I(s>E
+D;J$r
+D;L$h}
+D;s r
+D;t$@
+D;T$@
+D;T$xs#H
+D;uws
+D;v r
+D;w(t
+D+@0D
+D+@PH
+D+~(A
+D+~(E
+D+A D
+D+C0D+C`
+D+EPA
+D+G,H
+D+H A
+D+h E
+D+i E
+D+I0E
+D+KHH
+D+l$(A
+D+p E
+D+p H
+D+p8D
+D+p8H
+D+y E
+D8@"t
+D8@Pt
+D8`8t
+D8`8u H
+D8`tu
+D8{`uF@
+D8{VtY
+D8|$@u*H
+D8|$0
+D8|$4
+D8|$At-L
+D8|$Xth
+D8}`u
+D8<(t>
+D8=FY:
+D88uC
+D8a8t
+D8c`u]@
+D8cpuA@
+D8cpuZ@
+D8D$ 
+D8D$0I
+D8d$p
+D8d$su
+D8d$xtVH
+D8H u
+D8HHt
+D8I@u
+D8K@u
+D8l$@
+D8L$`u
+D8l$AuQL
+D8l$B
+D8L$Xu
+D8Mwt
+D8mwu
+D8o@t?A
+D8o8H
+D8oPt-f
+D8ptu
+D8RLujH
+D8set
+D8set'H
+D8setSL9s8tML
+D8sft(H
+D8sft]H
+D8sftML9sHtGL
+D8sftpL9sHtj
+D8T$(~
+D8t$ht
+D8uwt
+D8y:tMH
+D9@@t
+D9\$H
+D9\$X
+D9_0u
+D9|$`
+D9|$D
+D9}`u 
+D9}wt
+D90t&H
+D90t7H
+D9a|u
+D9A0~ M
+D9c@|
+D9Chu
+D9D$ r
+D9d$h
+D9f8D
+D9gDtU
+D9gHt
+D9H@t
+D9J$v
+D9L$$v
+D9L$@
+D9l$`
+D9L$<
+D9L$0
+D9L$4
+D9L$4v
+D9L$8
+D9L$D
+D9L$H
+D9l$x
+D9n t
+D9P8t
+D9Q`~
+D9qhu
+D9T$$t
+D9t$X
+D9t$XtML
+D9uhu
+D9x8u I
+da-DK
+Data.prototype.toJSON
+DataView
+Date expected
+Date object expected
+Date.prototype.getDate
+Date.prototype.getDay
+Date.prototype.getFullYear
+Date.prototype.getHours
+Date.prototype.getMilliseconds
+Date.prototype.getMinutes
+Date.prototype.getMonth
+Date.prototype.getSeconds
+Date.prototype.getTime
+Date.prototype.getTimezoneOffset
+Date.prototype.getUTCDate
+Date.prototype.getUTCDay
+Date.prototype.getUTCFullYear
+Date.prototype.getUTCHours
+Date.prototype.getUTCMilliseconds
+Date.prototype.getUTCMinutes
+Date.prototype.getUTCMonth
+Date.prototype.getUTCSeconds
+Date.prototype.getVarDate
+Date.prototype.getYear
+Date.prototype.setDate
+Date.prototype.setFullYear
+Date.prototype.setHours
+Date.prototype.setMilliseconds
+Date.prototype.setMinutes
+Date.prototype.setMonth
+Date.prototype.setSeconds
+Date.prototype.setTime
+Date.prototype.setUTCDate
+Date.prototype.setUTCFullYear
+Date.prototype.setUTCHours
+Date.prototype.setUTCMilliseconds
+Date.prototype.setUTCMinutes
+Date.prototype.setUTCMonth
+Date.prototype.setUTCSeconds
+Date.prototype.setYear
+Date.prototype.toDateString
+Date.prototype.toISOString
+Date.prototype.toJSON
+Date.prototype.toLocaleDateString
+Date.prototype.toLocaleString
+Date.prototype.toLocaleTimeString
+Date.prototype.toString
+Date.prototype.toTimeString
+Date.prototype.toUTCString
+Date.prototype.valueOf
+DateInstanceGetDate
+DateNow
+DateObject
+DateTime
+DateTimeFormat
+DateTimeFormat.prototype.format
+DateTimeFormat.prototype.resolvedOptions
+dateTimeFormat_supportedLocalesOf
+dayofweek
+dayofweek.abbreviated
+dayofweek.full
+DCEndComplete
+DCEndInit
+DCStartComplete
+DCStartInit
+DD$pfD;
+DD$PH
+de-AT
+Debug
+DebugBreak
+debugger
+Debugger
+Debugger Scope Slot Array Property Count
+Debugger Scope Slot Array Size
+debuggerEnabled
+december
+de-CH
+decimal
+decodeURI
+decodeURIComponent
+de-DE
+default
+defaultLocale
+defineProperties
+defineProperty
+DelayLoadFailureHook
+Delegate
+delegate
+delete
+DeleteAtom
+DeleteCriticalSection
+de-LI
+delse
+de-LU
+denylist
+Dequeue
+description
+detail
+Device I/O error
+Device unavailable
+dimensions
+Disk full
+Disk not ready
+Display Name
+Division by zero
+DL0ebPh9
+DL0ibPh9
+DllCanUnloadNow
+DllGetActivationFactory
+DllGetClassObject
+DllRegisterServer
+DllUnregisterServer
+document
+DocumentId
+DOM object
+DOMObject
+Double
+double
+-Double
+DP0k<7NP0.`?
+dsb-DE
+Dt$0H
+DThe specified date is not available in the current locale's calendar
+dumpHeap
+dv-MV
+dz-BT
+E =csm
+E HcU(H
+E u&H
+E u0L
+E(=csm
+E(D8`t
+E.$`<@u,H
+E.tIH
+E;SLr
+E?D9Ewt
+e@8zPt
+E@9p0tPH
+E\$PD
+E`Lc(E
+E+FPI
+E+J E
+E0t5f
+E8~AA
+E8~Au
+E8=csm
+E8H@u
+E8H9~HtAD
+E8ytu
+E9 uHL
+E9~ht
+E9Axu
+E9SLv3A
+EcmaOptionsToWindowsTemplate
+ECMAScript Author
+Eh$P<
+Eh=csm
+EH=csm
+EH9~@v!H
+ehA_A^A]A\_^[]
+EHA9x@r
+eLcu(D9v
+Element
+el-GR
+Empty Nested Function
+en-029
+en-AU
+en-BZ
+en-CA
+Encoded Property Id
+EncodeSystemPointer
+encodeURI
+encodeURIComponent
+en-GB
+EngineInterface
+en-HK
+en-ID
+en-IE
+en-IN
+en-JM
+en-MY
+en-NZ
+en-PH
+en-SG
+ensure
+EnterCriticalSection
+en-TT
+enumerable
+EnumerationCompat
+Enumerator
+Enumerator object expected
+Enumerator object expected"Regular Expression object expected"Syntax error in regular expression
+Enumerator.prototype.atEnd
+Enumerator.prototype.item
+Enumerator.prototype.moveFirst
+Enumerator.prototype.moveNext
+en-US
+en-ZA
+en-ZW
+epA_A^A]A\_^]
+EPE;H
+EPHcP L
+Error
+error %d
+Error in loading DLL
+Error when correcting windows returned day/hour/minute/second/month pattern; regex returned null. 
+Error when correcting windows returned weekday/Era/Month pattern; regex returned null. 
+Error when correcting windows returned year; regex returned null
+Error.prototype.toString
+ErrorObject
+errorStrings
+es-419
+es-AR
+es-BO
+escape
+es-CL
+es-CO
+es-CR
+es-CU
+es-DO
+es-EC
+es-ES
+es-ES_tradnl
+es-GT
+es-HN
+es-MX
+es-NI
+es-PA
+es-PE
+es-PR
+es-PY
+es-SV
+es-US
+es-UY
+es-VE
+et-EE
+eu-ES
+eval code
+Eval error
+EvalError
+event
+EventData
+eventData
+EventData
+eventData
+EventData
+EventName
+EventRegister
+EventRegistrationToken
+EventRegistrationTokenType
+EventUnregister
+EventWrite
+EventWriteTransfer
+every
+EVNTx4
+EX=csm
+Ex=csm
+Exception
+Exception thrown and not caught/Function does not have a valid prototype object
+Expected '('
+Expected ')'
+Expected '/'
+Expected ':'
+Expected ';'
+Expected '@'
+Expected '@end'%Conditional compilation is turned off
+Expected ']'
+Expected '{'
+Expected '}'
+Expected '='
+Expected Architecture
+Expected Built-in Properties
+Expected 'catch'
+Expected constant
+Expected Function Body Size
+Expected hexadecimal digit
+Expected identifier
+Expected Number of OpCodes
+Expected 'var'A'throw' must be followed by an expression on the same source line
+Expected 'while'
+export
+ExPu&H
+ExPu6H
+extends
+ExtensionEnumeratorObject
+extensionFilter
+External_AddRef
+External_Release
+externalAddress
+ExternalObject
+Extra Slot
+F 9B s
+F 9C 
+F 9F$v/H
+F A;@ 
+F HcJ
+F IcH8
+F(@8htu
+F(D98ugA
+F(H9x
+F. uc2
+f;\$Xr
+f;^Pt
+f;_xr
+f;7uPI
+f;A rX
+f;A s
+f;D$ 
+f;D$,
+f;D$pu
+f;j(s6
+f;KDH
+F`A2@`$
+f+D$$f;D$(w
+f+L$(f;L$$
+F0+F8;F
+F0H;x(
+F0L9@
+F12\pdm.dll
+F8D)fd
+F8H9C@
+F8H9F@
+f9(w~H
+f9,^u
+f9,_u
+f9,~u
+f9,Cu
+f9,Fu
+f9,Gs
+f9,Hu
+f9,Ju
+f9,Wu
+f9/s"
+f9{Rt;
+f9|$ t
+f9<Au
+f9<Cu
+f9<Hu
+f9<pu
+f9<Xu
+f90tQH
+f94_u
+f94Au
+f94Bu
+f94Cu
+f94Hu
+f94Ku
+f94Pu
+f94yu
+f97t@fD9
+f98uMH
+f9C s
+f9CRA
+f9D$D
+f9D$Hu
+f9D$Pu
+f9D$Xu
+f9G s
+f9GRt
+f9oLt
+f9OLu
+f9oNt'@
+f9oNu
+f9ONu
+f9r8tK
+f9sPu
+f9T$Hu
+f9Xxt
+fA;,Ar
+fA;<_t9
+fA+nPI
+fA+VPI
+fA9,Au
+fA9,Bt
+fA9:t
+fA94|u
+fA94~u
+fA94FI
+fA94Vu
+fA94xu
+fA94Xu
+fA9D$
+fA9l}
+fA9t}
+FailFast
+FailFastIfDisconnectedDelegate
+fa-IR
+false
+FAULTREP.DLL
+fB9,Bu
+fB9,Gs
+fB9,Gu
+fB9\>
+fB9<@u
+fB9<^u
+fB9<xu
+fB94Bu
+fB94Cu
+FbfA;
+fC94Hu
+fclose
+fD;D$h
+fD;L$ sNfE;
+fD;L$hfD
+fD;L$hv
+fD;LH
+fD;LP
+fD;mD}
+fD;wxs#
+fD9$Au
+fD9$Gu
+fD9$Ju
+fD9$Ou
+fD9$Pu
+fD9$pu
+fD9$Pu
+fD9$Su
+fD9$W
+fD9,Au
+fD9,Bu
+fD9,Gu
+fD9,Ju
+fD9,W
+fD9,Yu
+fD9[*v"
+fD9{Pu
+fD9|$@H
+fD9<Au
+fD9<Bu
+fD9<Gu
+fD9<Hu
+fD9<Ku
+fD9<zu
+fD92u3H
+fD92u6f
+fD94_u
+fD94~H
+fD94~u
+fD94Au
+fD94Bu
+fD94Gu
+fD98t-
+fD98u
+fD9DL t
+fD9l]
+fE;|D
+fE9 s
+fE9"uUH
+fE9$~u
+fE9$Fu
+fE9$I
+fE9$ID
+fE9,Au
+fE9<$u
+fE9<Nu
+fE9du
+february
+fF9$@u
+fF9$pu
+fF9,qu
+fF9<@u
+fF9<Bu
+fF9<GtB
+fF94{u
+fF94Cu
+fF94Gu
+fF9d}
+ffffff
+fffffff
+ff-Latn
+ff-Latn-SN
+fflush
+ff-NG
+fG9,Hu
+fG9<Hu
+FHI;v@
+fi-FI
+File already exists
+File already open
+File not found
+FileDescription
+FileVersion
+FileVersionKind
+fil-PH
+filter
+filtered
+Fin (M)
+Fin (S)
+final
+Final
+Final Byte Code Size
+finally
+FindAtomW
+FindResourceExW
+FinWB (M)
+FinWB (S)
+First
+First String16 Index
+First Temp Reg
+fitter
+fixed
+FJf+FPL
+FL9c0
+Flags
+flags
+float
+Float Array
+Float32Array
+Float64Array
+floor
+FlushInstructionCache
+fo-FO
+fontcolor
+fontsize
+For loop not initialized
+forEach
+format
+formatDateTime
+formatMatcher
+FormatMessageW
+formatNumber
+FormObject
+Fp utI
+FpA;N$
+FpA;N$s
+fr-029
+FrameCount
+FrameNameBuffer
+FrameNameBufferCount
+Frames
+fr-BE
+fr-CA
+fr-CD
+fr-CH
+fr-CI
+fr-CM
+Free_Memory
+Free_Memory_Block
+Free_WinRT_Collections_Object
+Free_WinRT_Delegate_Object
+Free_WinRT_EventHandler_Object
+Free_WinRT_PropertyValue_Object
+FreeLibrary
+FreeLibraryAndExitThread
+FreeSize
+freeze
+fr-FR
+fr-HT
+friday
+fr-LU
+fr-MA
+fr-MC
+fr-ML
+fromCharCode
+FromGC
+fr-RE
+fr-SN
+FullJit
+Funcinfo Array
+FuncInfo nestedIndex
+FuncInfo scopeSlot
+Function
+function
+function 
+function anonymous
+function anonymous() {
+function AsyncBehaviorError(message, asyncOpType, asyncOpSource, asyncOpCausalityId) {
+function AsyncOpWrapper(op, asyncOpType, asyncOpSource, asyncOpCausalityId) {
+function cancelAsyncOp(op, asyncOpType, asyncOpSource, asyncOpCausalityId) {
+Function code
+Function Count
+function createDebugStack(err) {
+function doCancel(carrier) {
+function doComplete(carrier, completeValue) {
+function doDone(carrier, complete, error, progress, creatorPromise) {
+function doError(carrier, errorValue) {
+function doNotify(carrier) {
+function doProgress(carrier, progressValue) {
+function doThen(carrier, complete, error, progress, creatorPromise) {
+Function expected
+Function expected"Cannot assign to a function result
+Function expected/Property cannot have both accessors and a value
+function getResultsOfAsyncOp(op, asyncOpType, asyncOpSource, asyncOpCausalityId) {
+function isCanceled(err) {
+function notifyError(listeners, value, asyncOpType, asyncOpSource, asyncOpCausalityId) {
+function notifySuccess(listeners, value, asyncOpType, asyncOpSource, asyncOpCausalityId) {
+function postError(err) {
+function traceAsyncCallbackComplete(asyncOpCausalityId, logLevel) {
+function() {
+Function.prototype.apply
+Function.prototype.bind
+Function.prototype.call
+Function.prototype.toString
+FunctionDisplayName
+FunctionInstanceBind
+FunctionMethodID
+FunctionObject
+FunctionOffset
+Functions
+FunctionSize
+FunctionSourceID
+FvEC_
+fwprintf
+fwprintf_s
+FX8_Yt
+FXHcKhD
+fy-NL
+G +A 
+G 9F v
+G fD;
+G H9O
+G$H+A$H
+G(@8htu
+G(@8xt
+G(9D$ r
+G(D;@
+G(D8Ptu
+G(tGH
+G(uLH
+G@+G0
+G@9h4r{2
+G@9X0
+G@9x0t_
+G@L+G H
+G`H;GX
+G`H;GXsM
+G`H;GXss
+G`L;GX
+G09D$ 
+G09D$ r
+G0D:P
+g0D+`
+g0D+a
+G0D8#uxD8c
+G0HcG D
+G0I9Gh
+G0I9Ght
+G82C8$
+G8D9w4
+G8E8y
+G8HcT
+G8HcW@H
+G8LcG H
+ga-IE
+GCBucketNames
+GD$(D
+GD$@D
+GD$pD;
+Gd)G`D
+gd-GB
+GenerateBytecodeMethod
+Generic error
+GenuuQ
+get_Size
+get_Value
+GetACP
+getArrayLength
+getArrayType
+GetAt
+GetConsoleScreenBufferInfo
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+getDate
+GetDateFormatW
+getDay
+getDefaultLocale
+GetEnvironmentVariableW
+getExtensions
+GetFileVersionInfoExW
+GetFileVersionInfoSizeExW
+getFloat32
+getFloat64
+getFullYear
+getHiddenObject
+getHostInfo
+getHours
+getInt16
+getInt32
+getInt8
+getItem
+getItemAt
+GetLastError
+GetLocaleInfoW
+getMemoryInfo
+getMilliseconds
+getMinutes
+GetModuleFileNameA
+GetModuleFileNameW
+GetModuleHandleExW
+GetModuleHandleW
+getMonth
+GetNumberFormatW
+GetNumberOption
+GetObject
+GetOption
+getOwnPropertyDescriptor
+getOwnPropertyNames
+GetProcAddress
+GetProcessHeap
+GetProcessIoCounters
+getPrototypeOf
+getSeconds
+GetStdHandle
+GetStringTypeW
+GetSystemDefaultUILanguage
+GetSystemDirectoryW
+GetSystemInfo
+GetSystemTime
+GetSystemTimeAdjustment
+GetSystemTimeAsFileTime
+GetThreadContext
+GetTickCount
+getTime
+GetTimeFormatW
+GetTimeZoneInformation
+GetTimeZoneInformationForYear
+getTimezoneOffset
+getTypeHandlerName
+getUint16
+getUint32
+getUint8
+GetUserDefaultLCID
+GetUserDefaultLocaleName
+GetUserDefaultUILanguage
+getUTCDate
+getUTCDay
+getUTCFullYear
+getUTCHours
+getUTCMilliseconds
+getUTCMinutes
+getUTCMonth
+getUTCSeconds
+getValue
+getVarDate
+GetVarDateFunctionObject
+GetVersionExW
+getWorkingSet
+GetWriteWatch
+getYear
+GfA;K
+gfffA
+gfffffffH
+Gh2Bh$@0Gh
+gHf;_JsWH
+GHHcS
+GHIcV
+GHMcF
+gl-ES
+global
+Global code
+GlobalMemoryStatusEx
+GlobalObject
+gn-PY
+GPD+G
+GPD9]ht
+GPfD9h
+GPH!GXH
+GregorianCalendar
+gregory
+grfscr
+gsw-FR
+gt$fA
+gu-IN
+GXH+G`H
+GXLc|
+H +J 
+H <gs
+H 9L$
+H 9N`
+h L9;u
+H SUVWATAUAVAWH
+H SUVWATAUH
+H SUVWATAVAWH
+H SUVWAVAWH
+H SUVWAVH
+H SUVWH
+H SVWATAVAWH
+H SVWAVAWH
+H SVWAVH
+H SVWH
+H SWH
+H USH
+H USVATAUAVAWH
+H USVWATAUAVAWH
+H USVWATAUAWH
+H USVWATAVAWH
+H USVWAUAVAWH
+H USVWAVAWH
+H USVWAVH
+H USVWH
+H USWAVH
+H USWH
+h uTH
+H!\$ H
+H!\$ L
+H!_PH
+H!|$ H
+H!|$ I
+H!|$@
+H!>H!;H
+H!>H!}
+H!A !A(H
+H!C 3
+H!D$@L
+H!D$8H
+H!L$ H
+H!L$8H
+H!sPH
+H!t$ H
+H!t$ L
+H#}hI
+H#D$@H
+H#D$0H
+H#D$8H
+H#G H
+H#GXu?I
+H#L$ 
+H#T$HL
+H(9J(
+H(H;O
+H(H9J(u
+H(HcA
+H)Ch+
+H)Fh+
+H)GhH
+H;@ t
+H;@ t_H
+H;\$ A
+H;\$`r
+H;\$8
+H;\$P
+H;\$Xu
+H;^(u
+H;^@t
+H;^Pu
+H;_(u
+H;_0uC
+H;{(u
+H;{0u
+H;{8w
+H;|$ t
+H;~(u
+H;=S.*
+H;9t;H
+H;A@t
+H;A0r'
+H;C t*H
+H;C u
+H;C(t
+H;C(u
+H;C@uD3
+H;C0s f
+H;C8u
+H;CPuF3
+H;D$ 
+H;D$ t
+H;D$@r
+H;D$0u
+H;D$8u
+H;D$ht!H
+H;D$hu
+H;D$p
+H;D$pu
+H;D$Xt
+H;D$Xu
+H;E(H
+H;E@t
+H;E@u
+H;G(t<H
+H;G0v
+H;G8tBH
+H;G8tJH
+H;J@u
+H;KHu L
+H;Khw[H
+H;KhwtH
+H;KXw`H
+H;KXwwH
+H;L$8r
+H;L$pv
+H;l$pw^
+H;l$pw'L
+H;N8wXH;
+H;o u
+H;o(u
+H;Q@u
+H;Q0r
+H;QHv>H
+H;qPu3H
+H;QXu
+H;S8w
+H;S8w}D
+H;Shw"H
+H;sXu
+H;SXw"H
+H;T$ }
+H;T$(
+H;T$pt
+H;Vhw"H
+H;VXw"H
+H;w(A
+H;w0u!H
+H;W8t(
+H;W8w
+H;XPtJH
+H;yPt
+H;YPtKL
+H;yPu
+H;YPuFH
+H;YPu-H
+H;yPuUH
+H;ZPt
+H;ZPuoH
+H@H+H 
+h@H+h H
+H@I+H H
+H[2N[
+H[2O[
+h_^[]
+H_^[]
+h_^[]
+H_^][
+h_^][
+H_^][
+h_^][
+H_^][
+h_^][
+H_^][
+h_^][
+H_^][
+h_^][
+H_^][
+h_^][
+H_^][
+H+\$HD
+H+A H
+H+A u
+H+A(H
+H+A(u
+H+A0H
+H+C@H
+H+C@u
+H+C`H
+H+C0H
+H+CHH
+H+D$8H
+H+H0I
+H+K`H
+H+K0H;
+H+L$H
+H+Q u
+H+Q(u
+H0D8aZu
+H0f9P
+H3T$(
+H8_Pt
+H8H+H H
+H8H+H L
+H8L9Ahu
+H9(tDE
+H9(unH
+H9(uYH
+H9\$0t
+H9\$0t?H
+H9\$0u
+H9\$8
+H9\$8t
+H9\$P
+H9\$Xv,H
+H9]PH
+H9]Pt
+H9^(t
+H9^pu
+H9_(t'H
+H9_(u
+H9_htO
+H9{0u
+H9{8@
+H9{Hs<
+H9|$(r
+H9|$@r8
+H9|$8w
+H9|$xH
+H9}0u
+H9}0u3
+H9}0uS
+H9}8s9L
+H9>tIH
+H9>txLcu(D9v
+H9>u6Hc](H
+H93tb
+H97u"H
+H98u-M
+H9A u
+H9A u/H
+H9A(H
+H9A(u
+H9APu
+H9APu!H
+H9B upL
+H9C(u
+H9C8r
+H9C8t
+H9C8tdH
+H9D$ 
+H9D$ t>
+H9D$@u
+H9D$0u
+H9D$8
+H9D$8u
+H9D$H
+H9D$hrqI
+H9D$X
+H9E r-H
+H9E s!H
+H9E(u
+H9E@A
+H9E0r 
+H9E8u<2
+H9F t1H
+H9F(u
+H9F8t>H
+H9Fpt
+H9G(u
+H9H(t
+H9H(u
+H9H@t
+H9H0H
+H9H8u
+H9j(tKH
+H9k8t
+H9kPA
+H9l$@
+H9L$@u
+H9L$8s
+H9L$8v
+H9l$h
+H9L$puCL
+H9oXt
+H9P(t
+H9P(u
+H9PpI
+H9pXt
+H9q tp$
+H9q uUH
+H9Q(t
+H9QHu
+H9s`t
+H9sHu
+H9sPu
+H9t$hu
+H9T$pt
+H9T$XrIH
+H9t$Xt:L
+H9U(t
+H9w(u
+H9x@t
+H9XHtND
+H9XHu;D
+H9XHu6D
+H9xpt
+H9YHt
+H9YpL
+H9YPt
+H9ZPt
+hA]A\_[
+hA]A\_^][
+HA^^[]
+HA^^][
+hA^^][
+HA^^][
+HA^_][
+hA^_][
+HA^_][
+HA^_^[
+hA^_^[
+HA^_^[
+hA^_^[
+HA^_^[
+hA^_^[
+HA^_^[
+HA^_^]
+hA^_^]
+HA^_^]
+hA^A\^[
+HA^A\_^[]
+hA^A\_^[]
+HA^A\_^[]
+HA^A\_^][
+HA^A]A\_][
+HA__^]
+HA_A\_^][
+hA_A]_^][
+HA_A]A\^][
+HA_A]A\_][
+HA_A]A\_^[
+HA_A^
+HA_A^[]
+HA_A^][
+HA_A^^]
+HA_A^_^[]
+hA_A^_^[]
+HA_A^_^[]
+hA_A^_^[]
+HA_A^_^[]
+hA_A^_^[]
+HA_A^_^[]
+hA_A^_^[]
+HA_A^_^[]
+HA_A^_^][
+hA_A^_^][
+HA_A^_^][
+hA_A^_^][
+HA_A^_^][
+HA_A^A\[
+HA_A^A\]
+HA_A^A\_][
+HA_A^A\_^[
+hA_A^A\_^[
+HA_A^A\_^[
+hA_A^A\_^]
+HA_A^A]A\_[
+hA_A^A]A\_^
+hA_A^A]A\_^[]
+HA_A^A]A\_^[]
+hA_A^A]A\_^[]
+HA_A^A]A\_^[]
+hA_A^A]A\_^[]
+HA_A^A]A\_^[]
+hA_A^A]A\_^[]
+HA_A^A]A\_^[]
+hA_A^A]A\_^[]
+HA_A^A]A\_^[]
+hA_A^A]A\_^[]
+HA_A^A]A\_^[]
+HA_A^A]A\_^][
+hA_A^A]A\_^][
+HA_A^A]A\_^][
+hA_A^A]A\_^][
+HA_A^A]A\_^][
+hA_A^A]A\_^][
+HA_A^A]A\_^][
+hA_A^A]A\_^][
+HA_A^A]A\_^][
+hA_A^A]A\_^][
+HA_A^A]A\_^][
+hA_A^A]A\_^][
+HA_A^A]A\_^][
+hA_A^A]A\_^][
+HA_A^A]A\_^][
+hA_A^A]A\_^][
+HA_A^A]A\_^][
+hA_A^A]A\_^][
+HA_A^A]A\_^][
+hA_A^A]A\_^][
+ha-Latn
+ha-Latn-NG
+HasKey
+hasOwnProperty
+HasProperty
+HasTimedout
+haw-US
+Hc\$XH
+Hc](H
+Hc_ E3
+Hc{ A
+Hc|$ H
+Hc|$8H
+Hc|$hH
+Hc}XD+
+HcA@L
+HcAhH
+HcC H
+HcC`L
+HcChH
+HcChL
+HcClH
+HcD$ H
+HcD$$H
+HcD$(L
+HcD$@
+HcD$@H
+HcD$<
+HcD$<D
+HcD$<L
+HcD$DH
+HcD$H
+HcD$p
+HcD$pH
+HcD$PHcM
+HcD$x
+HcEgM
+HcF H
+HcFhH
+HcG H
+HcGhH
+HcH D
+HcH(D
+HcHdHc
+HcHHD
+HcI H
+HcIhD+@hH
+HcIHH
+HcJ 9J
+HcK L
+HcK,H
+HcL$ H
+HcL$83
+HcL$8H
+Hcl$H
+HcL$HH
+Hcl$X3
+Hcl$xH
+Hcl$XH
+HcN H
+HcO D
+Hco E3
+HcO H
+HcO L
+HcohI
+HcpHH
+HcQ H
+HcQ I
+Hcs E
+HcS E3
+HcS(LcC,H
+HcT$@3
+HcT$@H
+HcT$`L
+HcT$<D
+HcT$0H
+HcT$8H
+HcT$hH
+HcT$hL
+HcT$lH
+HcT$PH
+HcT$PL
+HcT$X
+HcU H
+HcV H
+HcV0D
+HcW H
+HcW0@
+HcxHH
+HcXpH
+HD;D$ }
+HeapAlloc
+HeapFree
+HeapHandle
+hebrew
+HebrewCalendar
+he-IL
+HH+H`
+hH+h`D
+HH9q 
+HHcO H
+HHH+H0H
+HHH+H0I
+HhH9y
+HiA2Ii
+hiddenObject
+hidePlatform
+hi-IN
+HijriCalendar
+history
+HostObject
+hour12
+HP+H0+H
+HPD+H0D+H
+hPD+x0+h
+HPH+H0H
+HPH+H0I
+HPH9O
+hr-BA
+HResult
+HResultTokenType
+hr-HR
+hsb-DE
+hu-HU
+Hx9KPH
+HxE;Q
+HXH9JXu
+hy-AM
+I ;J t
+I 9H 
+I(A+I0*
+I(H9H(
+I(I9M(
+I)O@f
+I)whH
+I;[(u
+I;[0wAA
+I;\$Pu)A
+I;\6(
+I;^(u
+I;E@th
+I;Q8w;H;
+I;t$(
+I;u(t
+I;vPu[I
+I;ZPu
+I+@0H
+I+A@H
+I+A8u
+I+M0I
+I+V8H
+I+V8I
+I<fA;
+i08_HuF
+I09L$8
+I9@8t
+I9_ u
+I9~ u
+I9~0u
+I9A t
+I9D$(u
+I9F(u
+I9G(u
+I9G8u
+I9t$P
+I9V(t
+I9v(u
+ibb-NG
+Ic@hI
+IcC H
+IcK8I
+IcO,I
+IcOPI
+IcP H
+IcS L
+IcU@H
+id-ID
+IEPREVIEW.EXE
+IEXPLORE.EXE
+if (Debug != undefined) {
+ig-NG
+ignoreCase
+ignorePunctuation
+iH+i`+i09
+IhA2Hh
+IHA9q
+ii-CN
+IIDFromString
+IIIIII
+IInspectable expectedDCould not convert object to struct: object missing expected property
+IJavascriptDispatchRemoteProxy
+Implemented Categories
+implements
+import
+In Param Count
+In strict mode, function declarations cannot be nested inside a statement or block. They may only appear at the top level or directly inside a function body.1The use of a keyword for an identifier is invalid>The use of a future reserved word for an identifier is invalidoThe use of a future reserved word for an identifier is invalid. The identifier name is reserved in strict mode.'Setter functions must have one argument
+index
+indexOf
+ineIuI
+Infinity
+-Infinity
+Information
+InitializeCollator
+InitializeCriticalSection
+InitializeCriticalSectionAndSpinCount
+InitializeCriticalSectionEx
+InitializeDateTimeFormat
+InitializeNumberFormat
+InitializeSListHead
+Inline Cache Count
+Inlinee
+InlineeMethodID
+InprocServer
+InprocServer32
+input
+Input past end of file
+Input was: '
+Insert
+insertAt
+Inspectable Object expected)Could not convert argument to type 'char')Could not convert argument to type 'GUID'
+instanceof
+Int Array
+Int16
+Int16Array
+Int32
+-Int32
+Int32Array
+Int64
+Int64Array
+Int8Array
+integer
+Integer Constant
+Integer Constant Value
+interface
+Interface
+-Interface
+InterlockedPopEntrySList
+InterlockedPushEntrySList
+internal
+Internal
+Internal error
+internal\sdk\inc\wil/Staging.h
+internal\sdk\inc\wil\Resource.h
+internal\sdk\inc\wil\safecast.h
+InternalName
+Internet Explorer
+Interpreted
+InterpretedCount
+Intl is not available.
+Intl.Collator.prototype.supportedLocalesOf
+Intl.DateTimeFormat.prototype.supportedLocalesOf
+Intl.NumberFormat.prototype.supportedLocalesOf
+Invalid arguments in DataView
+Invalid arguments in DataView8DataView operation access beyond specified buffer length
+Invalid character
+Invalid Date
+Invalid function argument
+invalid function signature
+invalid input parameter type
+Invalid 'length' property"Array or arguments object expected
+Invalid number
+Invalid Operand
+invalid ouput parameterNAccessing the 'arguments' property of a function is not allowed in strict mode
+Invalid property descriptor0Cannot define property: object is not extensible)Cannot redefine non-configurable property#Cannot modify non-writable property0Cannot modify property: 'length' is not writable
+invalid property signature
+Invalid range in character set
+Invalid replacer argument
+Invalid use of Null
+invariant
+Invoke
+invokeFunction
+isalpha
+IsArray
+isArray
+IsArray
+isArray
+IsBoxed
+IsDebuggerPresent
+IsDeferred
+isdigit
+isExtensible
+isFinite
+IsFrameNameIndex
+isFrozen
+isInJit
+IsInst Inline Cache Count
+is-IS
+islamic
+islamic-civil
+isNaN
+isPropertyRecord
+isPrototypeOf
+IsSaveOnClose
+isSealed
+isValid
+IsValidCodePage
+IsValidLocale
+isView
+iswalpha
+IsWellFormedCurrencyCode
+isWellFormedLanguageTag
+italics
+it-CH
+it-IT
+iu-CA-Latn
+iu-Cans
+iu-Cans-CA
+iu-Latn
+iu-Latn-CA
+IUnknown_AddRef_Proxy
+IUnknown_QueryInterface_Proxy
+IUnknown_Release_Proxy
+J@+J0
+J0@8iZu
+J0f9y
+ja-JP
+january
+japanese
+JapaneseCalendar
+JavaScript
+JavaScript Author
+JavaScript compilation error
+JavaScript Language
+JavaScript object expected
+JavaScript runtime error
+JavaScript1.1 Author
+JavaScript1.2 AuthorJavaScript1.3 Author
+JD+C,H
+JhA2Hh
+JhrD|
+JITDebug
+JitLevel
+JitLevelMap
+JITLoopBody
+JM8J8u
+JP+J0+J
+Js.HSTRINGIterable
+Js.HSTRINGIterator
+JS_DEBUG_SCOPE
+JS_PROFILER
+JsAddRef
+JsBc64b
+JsBcD
+JsBooleanToBool
+JsBoolToBoolean
+JsCallFunction
+JsCollectGarbage
+JsConstructObject
+JsConvertValueToBoolean
+JsConvertValueToNumber
+JsConvertValueToObject
+JsConvertValueToString
+JsCreateArray
+JsCreateContext
+JsCreateError
+JsCreateExternalObject
+JsCreateExternalType
+JsCreateFunction
+JsCreateObject
+JsCreateRangeError
+JsCreateReferenceError
+JsCreateRuntime
+JsCreateSyntaxError
+JsCreateTypedExternalObject
+JsCreateTypeError
+JsCreateURIError
+JScript
+JScript Author
+JScript Type Info
+JScript Type Library
+JScript.Compact Author
+Jscript_AsyncCausality_StackTrace
+Jscript_Backend_Bailout
+Jscript_Backend_Bailout_LoopBody
+Jscript_Backend_Inline
+JScript_ByteCodeDeserialize
+Jscript_GC_BackgroundMark
+Jscript_GC_BackgroundParallelMark
+Jscript_GC_BackgroundRescan
+Jscript_GC_BackgroundResetMarks
+Jscript_GC_BackgroundResetWriteWatch
+Jscript_GC_BackgroundScanRoots
+Jscript_GC_BackgroundSweep
+Jscript_GC_BackgroundZeroPage
+Jscript_GC_Bucket_Stats
+Jscript_GC_Clear_InlineCache
+Jscript_GC_DecommitConcurrentCollectPageAllocator
+Jscript_GC_Dispose
+Jscript_GC_EndMarkOnLowMemory
+Jscript_GC_FinishConcurrentWait
+Jscript_GC_FlushZeroPage
+Jscript_GC_IdleCollect
+Jscript_GC_Init
+Jscript_GC_Mark
+Jscript_GC_ParallelMark
+Jscript_GC_PreSweepCallback
+Jscript_GC_ProcessClientTrackedObject
+Jscript_GC_ProcessTrackedObject
+Jscript_GC_Rescan
+Jscript_GC_RescanMarkWait
+Jscript_GC_ResetMarks
+Jscript_GC_ResetWriteWatch
+Jscript_GC_ScanRoots
+Jscript_GC_ScanStack
+Jscript_GC_SetupBackgroundSweep
+Jscript_GC_Sweep
+Jscript_GC_SweepPartialReusePage
+Jscript_GC_SweepWeakRef
+Jscript_GC_SynchronousMarkWait
+Jscript_GC_TransferSweptObjects
+Jscript_GC2
+Jscript_Host_Native
+Jscript_Hosting_BinaryConsistencyInfo
+Jscript_Hosting_BinaryInconsistency
+Jscript_Internal_Generic_Event
+Jscript_Method_Jit
+Jscript_Page_Allocator_Size
+Jscript_Profile_Persistence
+Jscript_Projection_AddEventListener
+Jscript_Projection_ConstructRuntimeClass
+Jscript_Projection_GetBasicTypedArrayAsPropertyValue
+Jscript_Projection_GetExprFromConcreteTypeName
+Jscript_Projection_GetNonArrayBasicTypeAsPropertyValue
+Jscript_Projection_GetNonArrayTypeAsPropertyValue
+Jscript_Projection_GetTypedArrayAsPropertyValue
+Jscript_Projection_GetTypeFromTypeNameParts
+Jscript_Projection_GetTypeMetaDataInformation
+Jscript_Projection_InvokeEvent
+Jscript_Projection_InvokeEventEvParamPrep
+Jscript_Projection_InvokeNativeDelegate
+Jscript_Projection_InvokesJsDelegate
+Jscript_Projection_MethodCall
+Jscript_Projection_PropertyValueVarFromGRCN
+Jscript_Projection_RawMethodCall
+Jscript_Projection_ReferenceOrArrayGetValue
+Jscript_Projection_RemoveAllEventsAndEventHandlers
+Jscript_Projection_RemoveEventListener
+Jscript_Projection_ResolveType
+Jscript_Projection_SetEventHandler
+Jscript_Projection_VarFromGRCN
+Jscript_Projection_WriteInspectable
+Jscript_Projection_WriteIReference
+Jscript_Recycler_Allocation
+Jscript_SourceMapping
+Jscript_StackTrace
+jscript9
+JScript9 Language Authoring
+JScript9.dll
+JSCRIPT9.dll
+jscript9.dll
+jscript9.pdb
+Jscript9CEOSize
+Jscript9ContextSize
+Jscript9EngineSize
+Jscript9LibraryOffset
+Jscript9LibrarySize
+Jscript9NumberSize
+JScript9NumberUtilitiesOffset
+JScript9NumberUtilitiesSize
+Jscript9ScriptContextOffset
+Jscript9ScriptEngineOffset
+Jscript9TaggedIntSize
+Jscript9TypeIdLimit
+Jscript9TypeIdOffset
+Jscript9TypeOffset
+JScriptAsyncCausality
+JScriptAsyncCausality_V2
+JscriptBackend
+JScriptByteCode
+JScriptEndRundown
+JScriptExternalReferenceAddRef
+JScriptExternalReferenceRelease
+JScriptFrontend
+JScriptGarbageCollection
+JScriptGCBucketStats
+JScriptHosting
+JscriptJit
+JScriptJIT
+JScriptMemoryTracing
+JScriptObjectAllocation
+JScriptObjectCleanup
+JScriptProfile
+JScriptProjection
+JScriptRuntime
+JScriptSourceMapping
+JScriptStackTrace
+JScriptStartRundown
+JScriptTypeInfo
+JScriptTypeLib
+JSDeb.tlb
+JsDefineProperty
+JsDeleteIndexedProperty
+JsDeleteProperty
+JsDisableRuntimeExecution
+JsDisposeRuntime
+JsDoubleToNumber
+JsEnableRuntimeExecution
+JsEnumerateHeap
+JsEquals
+JsGetAndClearException
+JsGetCurrentContext
+JsGetDefaultTypeDescription
+JsGetExtensionAllowed
+JsGetExternalData
+JsGetExternalType
+JsGetFalseValue
+JsGetGlobalObject
+JsGetIndexedProperty
+JsGetNullValue
+JsGetOwnPropertyDescriptor
+JsGetOwnPropertyNames
+JsGetProperty
+JsGetPropertyIdFromName
+JsGetPropertyNameFromId
+JsGetPrototype
+JsGetRuntime
+JsGetRuntimeMemoryLimit
+JsGetRuntimeMemoryUsage
+JsGetStringLength
+JsGetTrueValue
+JsGetUndefinedValue
+JsGetValueType
+JsHasException
+JsHasExternalData
+JsHasIndexedProperty
+JsHasProperty
+JsHost.EXE
+JsIdle
+jsIntl.dll
+JsIntToNumber
+JsIsEnumeratingHeap
+JsIsRuntimeExecutionDisabled
+JsNumberToDouble
+JsParseScript
+JsParseSerializedScript
+JsPointerToString
+JsPreventExtension
+JsRelease
+JsRunScript
+JsRunSerializedScript
+JsSerializeScript
+JsSetCurrentContext
+JsSetException
+JsSetExternalData
+JsSetIndexedProperty
+JsSetProperty
+JsSetPrototype
+JsSetRuntimeBeforeCollectCallback
+JsSetRuntimeMemoryAllocationCallback
+JsSetRuntimeMemoryLimit
+JSSig.tlb
+JsStartDebugging
+JsStartProfiling
+JsStopProfiling
+JsStrictEquals
+JsStringToPointer
+JsValueToVariant
+jsVar
+JsVarAddRef
+JsVariantToValue
+JsVarRelease
+JsVarToExtension
+JsVarToScriptDirect
+julian
+JulianCalendar
+JXH9A
+k A;E
+K D;K
+k fA+
+k H9M
+K H9O
+K SUVWATAUAVAWH
+K SUVWAVH
+K SVWATAUAVAWH
+K SVWH
+K SWH
+K uYH
+K(D9a(
+K,+K(H
+K@@8t$`
+K@9A8t
+K@9y0t
+K@H9H@
+K@McB
+K`2H`
+K`E;H sAH
+K`LcC L
+K0fD9Px
+K0H9K8s
+K0LcC 
+K0LcC D
+K32GetModuleInformation
+K8H+K H
+K8HcT$H
+ka-GE
+KCannot initialize '%s' object: 'this' is already initialized as '%s' object7Cannot initialize '%s' object: 'this' is not extensible
+KERNEL32.DLL
+kernel32.dll
+KERNEL32.dll
+kernelbase.dll
+'key' is not an object&Option value is outside of valid range
+KEYWP
+KHA+~(
+KhLcC D
+kk-KZ
+kl-GL
+km-KH
+kn-IN
+kok-IN
+ko-KR
+korean
+KoreanCalendar
+KPD+K0D+
+Kpr+f
+kr-NG
+ks-Arab
+ks-Deva-IN
+ku-Arab
+ku-Arab-IQ
+KXD;y
+ky-KG
+L!D$8
+L!l$HD
+L!t$ H
+L#_ I
+L$ ;A
+l$ D;
+L$ E;
+L$ E+
+L$ E3
+l$ E3
+L$ E3
+l$ E3
+L$ E3
+l$ E3
+L$ E3
+l$ E3
+L$ E3
+l$ E3
+L$ eH
+L$ f;
+L$ fD
+L$ fE
+L$ H;
+L$ H3
+L$ H9L$ 
+L$ H9L$ t
+L$ H9T$ 
+L$ Hc
+L$ I;
+L$ I3
+L$ SH
+L$ SVH
+L$ SVWH
+l$ tGH
+L$ UH
+L$ USVWATAUAVAWH
+L$ USVWH
+L$$;J
+L$$9L$ |
+L$$A;
+L$$D+
+L$$Hc
+L$$LcC D
+L$(;J
+L$(A8
+L$(D;
+l$(D;
+L$(D+
+L$(E3
+l$(E3
+L$(E3
+l$(E3
+l$(fA+
+L$(fD
+l$(fD+}PH
+L$(H;
+l$(H;
+L$(H;
+L$(H3
+L$(H9|$(
+L$(H9D$(
+L$(H9t$(tr
+L$(I+
+L$(L9A
+L$@1A
+L$@9H8u
+L$@E3
+l$@E3
+L$@E3
+L$@f9
+L$@f9B
+l$@f9C
+L$@fA
+L$@fD
+L$@H3
+L$@H9D$P
+L$@H9J
+L$@H9L$@t32
+L$@Ic
+L$@Mc
+l$@uzH
+l$^fD9(u
+L$`9\$8u
+l$`A;E8rsA
+L$`E3
+l$`E3
+l$`H;
+L$`H3
+L$`Ic
+l$`M;
+l$`uEH
+L$0;A
+L$0;A8
+L$0~(
+L$0+A,=
+L$0+AL
+L$0A+
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0E3
+l$0E3
+L$0f;
+l$0fD
+L$0fH
+l$0H!|$ H
+L$0H;
+L$0H3
+L$0H9L$0
+L$0H9L$0t
+L$0H9y
+l$0I;
+L$0t#H
+L$0t6H
+L$2fD
+L$4E3
+l$69G
+L$8+K
+L$88Cpu
+L$8E3
+l$8E3
+L$8E3
+l$8E3
+L$8E3
+L$8fA
+L$8H!
+L$8H;^@
+L$8H3
+L$8H9J
+L$8Lc
+L$8Mc
+L$H;H
+l$h;l$pu
+l$HA+
+L$HD+
+L$HD9A(vIH
+l$HE2
+L$HE3
+L$hE3
+L$HE3
+L$hE3
+L$HE3
+L$hE3
+L$HE3
+L$hE3
+L$HE3
+L$hE3
+l$HE3
+L$HE3
+l$hE3
+L$HE3
+l$hE3
+L$hE3
+L$HE3
+L$hE3
+L$HfA
+l$hfE9~
+L$hH;
+l$hH;
+L$HH;]@t
+L$HH+
+L$HH3
+L$hH3
+L$HH3
+L$hH3
+L$HH3
+L$HHc
+L$HIc
+l$HL9eh
+L$P9~
+L$P9H
+L$PA;J w=
+L$PD9
+L$PE+
+l$PE2
+L$PE3
+L$pE3
+L$PE3
+l$pE3
+L$pE3
+L$PE3
+L$pE3
+L$PE3
+L$pE3
+l$pE3
+L$PE3
+l$Pf9P
+L$PfA
+L$PH;
+l$pH;
+L$pH;H
+l$pH;l$ 
+L$PH+
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$PH9_htJ
+L$pHc
+L$PIc
+L$pIc
+L$PIc
+l$pL;
+L$PL+
+L$PMc
+L$pt6H
+l$Pt-I
+L$TH;
+l$x;o0sTH
+L$X;y
+L$X9L$P
+L$XA;
+l$XA;
+L$XE;
+L$XE2
+l$XE3
+L$XE3
+l$XE3
+L$XE3
+L$xE3
+L$XE3
+L$xE3
+l$XE3
+l$XfA
+l$XfD
+L$XH3
+L$xH3
+L$XH3
+L$xH3
+l$XHc
+l$XHcl$@H
+L$XI;
+L$XL;
+L)ehL
+L;@(u
+L;[Hv
+L;~(t
+L;A0r
+L;B(t
+L;B8s
+L;C0r
+L;C8w
+L;D$pr
+L;H(u
+L;h0t
+L;h0uTI
+L;K0s
+L;K0w;A
+L;K0w]A
+L;l$`
+L;s u"H;{
+L;S0w=A
+L;T$(r
+L;T$(s
+L;t$@
+L;T$@v'A
+L;w(u
+L+D$@I
+L+sPL+
+L9@Pt
+L9`(A
+L9|$@t+D9`
+L9|$x
+L9~ u
+L93u3H
+L98taI
+L9a8u2
+L9Apt
+L9c0tPH
+L9d$ t2H
+L9E0t
+L9g(u
+L9h tmA
+L9h u
+L9h uaH
+L9h(u
+L9JHu
+L9k u
+L9M0t
+L9p tdH
+L9p(t
+L9q t
+L9Qhu
+L9s@u
+L9s0t#H
+L9s8u
+L9u(t
+L9v(u
+L9vxu3H
+L9yHu
+la-001
+Label not found6'default' can only appear once in a 'switch' statement%Expected identifier, string or number
+Label redefined
+Large
+Largest Literal Object Id
+lastIndex
+lastIndexOf
+lastMatch
+lastParen
+LastUnsafeExtensionReportTime
+lb-LU
+lbound
+Lc^ I
+Lc|$`B
+LcA H
+LcA<E3
+LcBhE
+LcC D
+LcC H
+LcC L
+LcC,3
+LcC0I
+LcD$ I
+LcD$(HcT$ I
+LcD$@H
+LcD$8L
+LcD$pI
+LcD$PI
+Lcd$PLcU
+LcE(H
+LcE`H
+LcF,H
+LcG D
+LcG@H
+LcG`M
+LcI H
+LcK H
+LcK$H
+LcK(H
+LcL$LH
+LCMapStringW
+LcN$H
+LcN$K
+LcN(H
+Lcu Hc}$
+Lcu(D9v
+LdrFastFailInLoaderCallout
+Leaf (M)
+Leaf (S)
+LeaveCriticalSection
+leftContext
+LegalCopyright
+length
+Let/Const redeclaration
+LEVL@
+Literal regex count
+Literal regex flags
+Literal regex source
+Literal regex source length
+LiveScript Author
+LOADER42.EXE
+LoadLibraryExA
+LoadLibraryExW
+LoadResource
+Local\SM0:%d:%d:%hs
+LocalAlloc
+Locale
+locale
+Locale
+locale
+Locale '%s' is not well-formed
+Locale is not well-formed
+localeCompare
+localeMatcher
+locales
+localesAcceptingCollationValues
+localeWithoutSubtags
+LocalFree
+Locals
+location
+LockResource
+LOG10E
+LOG2E
+LogHr
+lo-LA
+longdate
+Lookup
+lookup
+LookupSupportedLocales
+Loop Count
+Loop Header Array Exists
+Loop Header End
+Loop Header Start
+LoopNumber
+lower
+LT$8E
+lt-LT
+lu+fA
+lv-LV
+M(D82t`
+M(u<H
+M;C0s
+M;SXs
+M;SXs&A
+M;Z0w
+M@9y0
+M@f9K@
+M@f9K@t
+M+F M+N I
+M0fA+
+M8t2H
+M9`@u&H
+M9e t
+M9l$ 
+M9n tafD9}
+Magic
+malloc
+Map.prototype.clear
+Map.prototype.delete
+Map.prototype.forEach
+Map.prototype.has
+Map.prototype.set
+Map.prototype.size
+MapDataObject
+mappedDefaultLocale
+MapViewOfFile
+march
+match
+MAX_VALUE
+maximumFractionDigits
+maximumSignificantDigits
+McB,I
+McO(H
+memcmp
+memcpy
+memcpy_s
+memmove
+memmove_s
+MemoryAddress
+Memprotect_GC
+Memprotect_GC_Allocation
+Memprotect_GC_BackgroundMark
+Memprotect_GC_BackgroundParallelMark
+Memprotect_GC_BackgroundRescan
+Memprotect_GC_BackgroundResetMarks
+Memprotect_GC_BackgroundResetWriteWatch
+Memprotect_GC_BackgroundScanRoots
+Memprotect_GC_BackgroundSweep
+Memprotect_GC_BackgroundZeroPage
+Memprotect_GC_Bucket_Stats
+Memprotect_GC_DecommitConcurrentCollectPageAllocator
+Memprotect_GC_Dispose
+Memprotect_GC_EndMarkOnLowMemory
+Memprotect_GC_FinishConcurrentWait
+Memprotect_GC_FlushZeroPage
+Memprotect_GC_Heap_Size
+Memprotect_GC_IdleCollect
+Memprotect_GC_Mark
+Memprotect_GC_ParallelMark
+Memprotect_GC_PreSweepCallback
+Memprotect_GC_ProcessClientTrackedObject
+Memprotect_GC_ProcessTrackedObject
+Memprotect_GC_Rescan
+Memprotect_GC_RescanMarkWait
+Memprotect_GC_ResetMarks
+Memprotect_GC_ResetWriteWatch
+Memprotect_GC_ScanRoots
+Memprotect_GC_ScanStack
+Memprotect_GC_SetupBackgroundSweep
+Memprotect_GC_Sweep
+Memprotect_GC_SweepPartialReusePage
+Memprotect_GC_SweepWeakRef
+Memprotect_GC_SynchronousMarkWait
+Memprotect_GC_TransferSweptObjects
+Memprotect_GC_Unroot
+Memprotect_GC2
+MemProtectGarbageCollection
+MemProtectGCBucketStats
+MemProtectHeapSize
+MemProtectObjectAllocation
+memset
+message
+method
+MethodAddressRangeID
+MethodAddressRangeMap
+MethodDCEnd
+MethodDCStart
+MethodFlags
+MethodID
+MethodIDOrFrameNameIndex
+MethodLoad
+MethodName
+MethodRundown
+MethodRuntime
+MethodSize
+MethodStartAddress
+MethodUnload
+Microsoft 
+Microsoft Corporation
+microsoftedge.exe
+microsoftedgebchost.exe
+microsoftedgecp.exe
+microsoftedgedevtools.exe
+Microsoft-JScript
+MIN_VALUE
+minimumFractionDigits
+minimumIntegerDigits
+minimumSignificantDigits
+minute
+mi-NZ
+missing(
+missingInterface(
+MitigateSpectre
+mk-MK
+MkParseDisplayName
+ml-IN
+mn-Cyrl
+mni-IN
+mn-MN
+mn-Mong
+mn-Mong-CN
+mn-Mong-MN
+ModuleID
+ModuleSize
+moh-CA
+monday
+month
+month.abbreviated
+month.full
+month.numeric
+moveFirst
+moveNext
+MP<Fu4
+MPA+^(
+MPA+^(L
+MPA+~(
+mr-IN
+MS_ASYNC_CALLBACK_STATUS_ASSIGN_DELEGATE
+MS_ASYNC_CALLBACK_STATUS_CANCEL
+MS_ASYNC_CALLBACK_STATUS_CHOOSEANY
+MS_ASYNC_CALLBACK_STATUS_ERROR
+MS_ASYNC_CALLBACK_STATUS_JOIN
+MS_ASYNC_OP_STATUS_CANCELED
+MS_ASYNC_OP_STATUS_ERROR
+MS_ASYNC_OP_STATUS_SUCCESS
+ms-BN
+Msg:[%ws] 
+msGetWeakWinRTProperty
+MshtmlCEOSize
+MshtmlContextSize
+MshtmlEngineSize
+MshtmlLibraryOffset
+MshtmlLibrarySize
+MshtmlNumberSize
+MsHtmlNumberUtilitiesOffset
+MsHtmlNumberUtilitiesSize
+MshtmlScriptContextOffset
+MshtmlScriptEngineOffset
+MshtmlTaggIntSize
+MshtmlTypeIdLimit
+MshtmlTypeIdOffset
+MshtmlTypeOffset
+MSHTMPAD.EXE
+ms-MY
+msReleaseWinRTObject
+msSetWeakWinRTProperty
+msTraceAsyncCallbackCompleted
+msTraceAsyncCallbackStarting
+msTraceAsyncOperationCompleted
+msTraceAsyncOperationStarting
+msUpdateAsyncCallbackRelation
+msvcrt.dll
+mt-MT
+Mu:E3
+MultiByteToWideChar
+MulticastDelegate
+multiline
+my-MM
+N HcA
+N LcO
+N%s: an unexpected failure occurred while trying to obtain metadata information
+N;T$xw
+N@9y0tVH
+N[2H[
+N\$8H
+N0H;M
+N8A+N0
+N8E+N0I
+NameBuffer
+NameBufferCount
+Named argument not found
+NameIndex
+namespace
+narrow
+native
+navigator
+nb-NO
+nD$ H
+ND9\$H|@L
+NdrCStdStubBuffer_Release
+NdrDllCanUnloadNow
+NdrDllGetClassObject
+NdrDllRegisterProxy
+NdrDllUnregisterProxy
+NdrOleAllocate
+NdrOleFree
+NEGATIVE_INFINITY
+ne-IN
+ne-NP
+Nest Function Bodies
+Nested Count
+Nested Function
+new Arguments()
+new Array(...)
+new Boolean(...)
+new Date()
+new Function(...)
+new Number(...)
+new Object()
+new objects only
+new String(...)
+new_state_unavailable
+newValues
+NH+_(
+nHf;~JsiL
+NiA2Hi
+nL$(f
+nl-BE
+nl-NL
+nn-NO
+Normal (M)
+Normal (S)
+normalizeLanguageTag
+NormWB (M)
+NormWB (S)
+Not an object
+november
+nso-ZA
+nT$ H
+ntdll.dll
+nteluA3
+NtQueryWnfStateData
+NtUpdateWnfStateData
+Null Constant
+number
+Number
+number
+Number
+Number Constant
+Number Constant Value
+Number expected
+Number, (Object)
+Number.prototype.toExponential
+Number.prototype.toFixed
+Number.prototype.toLocaleString
+Number.prototype.toPrecision
+Number.prototype.toString
+Number.prototype.valueOf
+NumberFormat
+NumberFormat.prototype.format
+NumberFormat.prototype.resolvedOptions
+numberFormat_supportedLocalesOf
+numberingSystem
+NumberObject
+NumberOfSegments
+numeric
+NXH;N`u
+O +H 
+O fE;
+O HcA
+O HcP
+O(Hc\
+O,+O(H
+o@RSDS%
+O[2H[
+o\$PH
+O`H;OXs
+O`H;OXs2
+O`L;OX
+O`LcG 
+o<)o8H
+O8H+O(H
+O8HcG@;A
+Object
+object
+Object
+object
+Object expected
+Object member expected
+Object member not configurable!Variable undefined in strict mode_Accessing the 'caller' property of a function or arguments object is not allowed in strict modeTAccessing the 'callee' property of an arguments object is not allowed in strict mode@Assignment to read-only properties is not allowed in strict mode2Cannot create property for a non-extensible object
+Object not a collection
+Object not safe for creating
+Object not safe for scripting Object not safe for initializing
+Object or string expected
+Object required
+Object, (ActivationObject)
+Object, (Arguments)
+Object, (Array)
+Object, (ArrayBuffer)
+Object, (Date)
+Object, (Float32Array)
+Object, (Float64Array)
+Object, (Function)
+Object, (Global)
+Object, (Int16Array)
+Object, (Int32Array)
+Object, (Int8Array)
+Object, (Named Item)
+Object, (PixelArray)
+Object, (RegExp constructor)
+Object, (Regular Expression)
+Object, (Static Type)
+Object, (Uint16Array)
+Object, (Uint32Array)
+Object, (Uint8Array)
+Object, (Uint8ClampedArray)
+Object, SafeArray
+Object.create
+Object.defineProperties
+Object.defineProperty
+Object.freeze
+Object.getOwnPropertyDescriptor
+Object.getOwnPropertyNames
+Object.getPrototypeOf
+Object.isExtensible
+Object.isFrozen
+Object.isSealed
+Object.keys
+Object.preventExtensions
+Object.preventExtensions(asyncOpWrapperPrototype);
+Object.preventExtensions(thenPromisePrototype);
+Object.prototype.__defineGetter__
+Object.prototype.__defineSetter__
+Object.prototype.__lookupGetter__
+Object.prototype.__lookupSetter__
+Object.prototype.__proto__
+Object.prototype.hasOwnProperty
+Object.prototype.isPrototypeOf
+Object.prototype.propertyIsEnumerable
+Object.prototype.toLocaleString
+Object.prototype.valueOf
+Object.seal
+Object.setPrototypeOf
+ObjectDefineProperty
+objectDefineProperty
+ObjectGetOwnPropertyNames
+ObjectGetPrototypeOf
+ObjectInstanceHasOwnProperty
+ObjectIsExtensible
+ObjectObject
+ObjectSize
+oc-FR
+october
+oD$ f
+Od:L$P
+offset
+Offset into Aux Blob
+Offset Into Source
+Offset of Auxiliary Structures
+Offset of Functions
+Offset of Source Spans
+Offset of String16s
+offset or value
+Offset To Nested Function
+OhLcG 
+oL$0f
+old objects only
+OLE32.dll
+OLEAUT32.dll
+OLEScript
+om-ET
+OP+L$D
+OP8L$8
+OpenSemaphoreW
+OperationId
+options
+ORfA;
+OriginalFilename
+or-IN
+oT$@f
+Out of memory
+Out of stack space
+Out of string space
+Out Param Max Depth
+OutputDebugStringW
+Overflow
+oVf9l$"
+OXH;O`u>H
+OXH+O`HcD
+P +Q 
+P H;Q@t
+P"D9L$ v
+P$|:m:
+p$f9_ uJD
+P'%s' attribute on the property descriptor cannot be set to 'true' on this objectQ'%s' attribute on the property descriptor cannot be set to 'false' on this object
+P(LcC
+P@H+P H
+p@L+p H
+P0u(M
+P0u/M
+p4A+p0A
+p8H+p H
+pA\^[
+PA]^[
+PA^^[
+pA^^]
+PA^^]
+PA^_^
+pA^_^
+PA^_^
+pA^_^[]
+PA^_^[]
+pA^_^[]
+PA^_^[]
+pA^_^[]
+PA^_^[]
+pA^_^[]
+PA^_^[]
+pA^_^[]
+PA^_^[]
+PA^_^][
+pA^_^][
+PA^_^][
+pA^_^][
+PA^_^][
+pA^A\[
+pA^A\_^]
+PA^A]A\_^[]
+pA^A]A\_^[]
+pA_[]
+PA_^[
+PA__]
+pA_A\_^[
+PA_A\_^[
+pA_A]A\^[
+PA_A]A\_^[]
+pA_A]A\_^[]
+PA_A]A\_^][
+PA_A^^][
+PA_A^_[]
+PA_A^_^[
+PA_A^_^]
+pA_A^_^]
+PA_A^_^]
+PA_A^A\[]
+PA_A^A\_^
+PA_A^A\_^[]
+pA_A^A\_^[]
+PA_A^A\_^[]
+pA_A^A\_^[]
+PA_A^A\_^[]
+pA_A^A\_^[]
+PA_A^A\_^[]
+pA_A^A\_^[]
+PA_A^A\_^[]
+PA_A^A\_^][
+pA_A^A\_^][
+PA_A^A\_^][
+pA_A^A\_^][
+PA_A^A\_^][
+pA_A^A]_^[]
+PA_A^A]_^[]
+pA_A^A]_^[]
+PA_A^A]_^[]
+PA_A^A]_^][
+pA_A^A]_^][
+PA_A^A]_^][
+PA_A^A]A\]
+PA_A^A]A\^
+pA_A^A]A\^[]
+PA_A^A]A\^][
+PA_A^A]A\_[]
+PA_A^A]A\_^[
+pA_A^A]A\_^[
+PA_A^A]A\_^[
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+pa-Arab
+pa-Arab-PK
+package
+pa-IN
+pap-029
+param
+parse
+Parse error
+parseFloat
+parseInt
+ParseMethod
+Path not found
+Path/File access error
+PathFileExistsW
+PathFindFileNameW
+PathGetDriveNumberW
+PathIsFileSpecW
+PathIsLFNFileSpecW
+PathIsUNCW
+PathRemoveFileSpecW
+pcf;7u\D
+pdm.dll
+percent
+Permission denied
+pH+p`+p0
+PH+P`+P0D
+pH+p`+p0D
+pH+p`D
+pH9L$ tb
+Phase
+phoneb
+phonebk
+phonetic
+pinned
+pinyin
+platform
+pl-PL
+PolyInlineCacheSize
+POSITIVE_INFINITY
+PP+H0+P
+PP+P0+P
+pP+p0D+p
+PP+X0+P
+pPD+p
+PPH+P0
+PPH+P0H
+PreClearFreeSize
+preventExtensions
+private
+ProductName
+ProductVersion
+Profile ID
+Profiled Array Call Site Count
+Profiled Call Site Count
+Profiled Element Count
+Profiled Element Store Count
+Profiled Return Type Count
+Profiled Slot Count
+Profiled Temp Element Count
+ProgID
+pronun
+Property Id Array
+PropertyIdsForDebuggerScopeSlots
+PropertyIdsForScopeSlots
+propertyIsEnumerable
+protected
+prototype
+prs-AF
+PRVA8
+ps-AF
+pt-BR
+pt-PT
+public
+put_Completed
+Q t,H
+Q@H+Q H
+Q`+QH+Q
+q0A+6A;
+Q1%d>
+Q8H+Q H
+Qbf9S
+qfD9!
+qH+q`+q0
+QH9z t
+QhA2@i$
+QhA2Ph
+qHD+q`D+q0
+QHD9r 
+Qhu\E
+Qhu_E
+QP+Q0+Q
+qps-Latn-x-sh
+qps-ploc
+qps-ploca
+qps-plocm
+qqfD9
+qqqqqqqqQQ
+qsort
+qsort_s
+quc-Latn
+quc-Latn-GT
+QueryPerformanceCounter
+QueryPerformanceFrequency
+QueryProtectedPolicy
+QueryThreadCycleTime
+Queue
+quz-BO
+quz-EC
+quz-PE
+r Lcy
+r t!H
+r)H;9w$H
+r?A;v
+r@;N@w;I
+R@H9Q@
+r_fD9
+R_YjXk
+r0A;@
+r8wPA
+rA;F@w<H
+radstr
+RaiseAssert
+raiseAssert
+RaiseException
+RaiseFailFastException
+raiseInvalidCurrencyCode
+raiseInvalidDate
+raiseLocaleNotWellFormed
+raiseMissingCurrencyCode
+raiseNeedObject
+raiseNeedObjectOfType
+raiseNeedObjectOrString
+raiseNotAConstructor
+raiseObjectIsAlreadyInitialized
+raiseObjectIsNonExtensible
+raiseOptionValueOutOfRange
+raiseOptionValueOutOfRange_3
+raiseThis_NullOrUndefined
+random
+Range error
+RangeError
+realloc
+Reason
+ReasonBuffer
+ReasonLength
+Recurring functions on call stack truncated due to stack overflow
+RecyclerID
+Redeclaration of const '%s'
+Redeclaration of const property
+reduce
+reduceRight
+refA92t(A
+Reference error
+ReferenceError
+RegCloseKey
+RegCreateKeyExW
+RegDeleteKeyExW
+Regex: '
+RegexObject
+RegExp
+RegExp object expected
+RegExp.prototype.compile
+RegExp.prototype.exec
+RegExp.prototype.test
+RegExp.prototype.toString
+RegExpError
+RegGetValueW
+RegionClearedCount
+RegionScannedCount
+Register
+registerBuiltInFunction
+RegOpenKeyExW
+RegQueryValueExW
+RegSetValueExW
+RejitReason
+Relative Function ID
+ReleaseMutex
+ReleaseSemaphore
+ReleaseSRWLockExclusive
+ReleaseSRWLockShared
+Remove
+RemoveAtEnd
+removeEventListener
+replace
+replaceAll
+ReportFault
+require
+ReservedBytes
+ResetEvent
+ResetWriteWatch
+ResolveDelayLoadedAPI
+ResolveDelayLoadsFromDll
+resolvedOptions
+resolveLocaleBestFit
+resolveLocaleHelper
+resolveLocaleLookup
+ResolveLocaleName
+resolveLocales
+ResumeThread
+Rethunk
+return
+return ( 
+return AsyncOpWrapper;
+ReturnHr
+returnValue
+reverse
+reverseLocaleAcceptingCollationValues
+Rewritten BrProperty
+Rewritten Byte Code
+Rewritten ElementC
+Rewritten ElementC2
+Rewritten ElementRootU
+Rewritten ElementU
+Rewritten Op Code
+rH9k u
+RH9x0A
+rightContext
+rmA;@
+rm-CH
+RoClearError
+rOD;[
+rofD9
+RoGetActivationFactory
+RoGetParameterizedTypeInstanceIID
+ro-MD
+RoOriginateLanguageException
+Root Object Load Inline Cache Start
+Root Object Store Inline Cache Start
+RoParseTypeName
+ro-RO
+round
+rPA;A
+RPCRT4.dll
+rrA;P
+rSt_3
+RtlAddFunctionTable
+RtlAddGrowableFunctionTable
+RtlAreLongPathsEnabled
+RtlCaptureContext
+RtlDeleteFunctionTable
+RtlDeleteGrowableFunctionTable
+RtlDllShutdownInProgress
+RtlLookupFunctionEntry
+RtlNtStatusToDosErrorNoTeb
+RtlSubscribeWnfStateChangeNotification
+RtlUnsubscribeWnfNotificationWaitForCompletion
+RtlVirtualUnwind
+ru-MD
+RuntimeObject
+ru-RU
+rw-RW
+RXL+P I
+s @8~,
+S$fD;[*
+S(;S,
+S(;S,s}H
+S(9S,
+S(9S,u
+S@E;Q
+S@H;S(w
+S@H+S H
+S0H9JPu
+s8D;C
+s8H;A(u
+s9HcA
+SafeArrayObject
+sAHcA
+sah-RU
+sa-IN
+SATAUAWH
+SATAVAWH
+SATAVH
+saturday
+SAVAWH
+sbyte
+ScannedCount
+Scope
+Scope Slot Array Size
+screen
+SCRIPT
+script block
+ScriptContext
+ScriptContextCount
+ScriptContextDCEnd
+ScriptContextDCStart
+ScriptContextID
+ScriptContextLoad
+ScriptContextOnStartupComplete
+ScriptContextRundown
+ScriptContextRuntime
+ScriptContextUnload
+ScriptEngine
+ScriptEngineBuildVersion
+ScriptEngineMajorVersion
+ScriptEngineMinorVersion
+sd-Arab
+sd-Arab-PK
+sd-Deva-IN
+search
+SearchPathW
+secmgr
+second
+se-FI
+se-NO
+sensitivity
+september
+SerializationIndex
+Server
+se-SE
+Set.prototype.add
+Set.prototype.clear
+Set.prototype.delete
+Set.prototype.forEach
+Set.prototype.has
+Set.prototype.size
+SetAt
+setAt
+SetConsoleTextAttribute
+SetDataObject
+setDate
+SetEvent
+setFloat32
+setFloat64
+setFullYear
+setHiddenObject
+setHours
+setInt16
+setInt32
+setInt8
+SetLastError
+setMilliseconds
+setMinutes
+setMonth
+setNonUserCodeExceptions
+SetProtectedPolicy
+setPrototype
+setPrototypeOf
+setSeconds
+SetThreadpoolTimer
+SetThreadPriority
+SetThreadStackGuarantee
+setTime
+setUint16
+setUint32
+setUint8
+SetUnhandledExceptionFilter
+setUTCDate
+setUTCFullYear
+setUTCHours
+setUTCMilliseconds
+setUTCMinutes
+setUTCMonth
+setUTCSeconds
+setYear
+SHA1Hash
+shift
+short
+si-LK
+SimpleJit
+Single
+-Single
+size = 
+SizeCat
+SizeInBytes
+SizeofResource
+sk-SK
+Sleep
+SleepConditionVariableSRW
+slice
+SlotArrayDebuggerScope
+SlotIndexesForDebuggerScopeSlots
+sl-SI
+small
+SMALL
+small
+Smallest Literal Object Id
+sma-NO
+sma-SE
+smj-NO
+smj-SE
+smn-FI
+sms-FI
+Software\Microsoft\Active Setup\Installed Components\{89820200-ECBD-11CF-8B85-00AA005B4383}
+Software\Microsoft\Internet Explorer\JScriptLegacy
+Software\Microsoft\Internet Explorer\LowRegistry
+Software\Microsoft\Windows NT\CurrentVersion\AeDebug
+Software\Microsoft\Windows Script\Settings
+so-SO
+Source
+source
+Source
+source
+Source
+Source Char Start Offset
+Source Column Number
+Source Length
+Source Length in bytes
+Source Line Number
+Source Size
+Source Spans
+SourceCodeSize
+sourceCol
+SourceDCEnd
+SourceDCStart
+sourceDebugBreak
+SourceFlags
+SourceID
+SourceLoad
+SourceLocationColumnNumber
+SourceLocationLength
+SourceLocationLineNumber
+SourceLocationStartIndex
+SourceRequestFor
+sourceRow
+SourceUnload
+sourceUrl
+Span Sequence
+specific object
+splice
+split
+sq-AL
+SQRT1_2
+SQRT2
+sqrtf
+srand
+sr-BA-Cyrl
+sr-BA-Latn
+sr-Cyrl
+sr-Cyrl-BA
+sr-Cyrl-CS
+sr-Cyrl-ME
+sr-Cyrl-RS
+sRfA;
+sr-Latn
+sr-Latn-BA
+sr-Latn-CS
+sr-Latn-ME
+sr-Latn-RS
+sr-SP-Cyrl
+sr-SP-Latn
+stack
+stackTraceLimit
+standard
+Start
+Statement Buffer
+static
+std::exception: %hs
+StrCmpICW
+StrCmpLogicalW
+strike
+STRIKE
+strike
+String
+string
+String
+string
+-String
+String Constant 16
+String Constant 16 Value
+String expected
+String.fromCharCode
+String.prototype.charAt
+String.prototype.charCodeAt
+String.prototype.concat
+String.prototype.indexOf
+String.prototype.lastIndexOf
+String.prototype.localeCompare
+String.prototype.match
+String.prototype.replace
+String.prototype.search
+String.prototype.slice
+String.prototype.split
+String.prototype.substr
+String.prototype.substring
+String.prototype.toLowerCase
+String.prototype.toString
+String.prototype.toUpperCase
+String.prototype.trim
+String.prototype.valueOf
+String16
+String16 Count
+String16 Index
+String16 Indexes
+String16 Table
+StringFileInfo
+StringFromCLSID
+StringFromGUID2
+stringify
+StringInstanceReplace
+StringInstanceToLowerCase
+StringInstanceToUpperCase
+StringObject
+STRIP EMBEDDED HTML COMMENTS
+strippedDefaultLocale
+strncmp
+stroke
+StrTrimW
+style
+st-ZA
+SUATAUAVAWH
+SUATH
+SUAUAVAWH
+SUAVAWH
+SUAVH
+sub object
+Sub or Function not defined
+subarray
+Subscript out of range)This array is fixed or temporarily locked
+subset
+substr
+substring
+subTags
+sunday
+super
+supportedLocalesOf
+supportedLocalesOfWrapper
+SUVATAUAVAWH
+SUVATAUAWH
+SUVATAWH
+SUVAUAVAWH
+SUVAVAWH
+SUVAVH
+SUVAWH
+SUVWATAUAVAWH
+SUVWATAUAVAWHcL$pE
+SUVWATAUAVH
+SUVWATAUAWH
+SUVWATAVAWH
+SUVWATAVH
+SUVWATAWH
+SUVWAUAVAWH
+SUVWAUAWH
+SUVWAVAWH
+SUVWAVH
+SUVWAWH
+SUVWD
+SUVWH
+SUWATAUAVAWH
+SUWATAUAVH
+SUWATAUAWH
+SUWATAVAWH
+SUWAUAVAWH
+SUWAVAWH
+SUWAVH
+SUWAWH
+SVATAUAVAWH
+SVATAUAWH
+SVATAVAWH
+SVATAVH
+SVATH
+SVAUH
+SVAVAWH
+SVAVH
+SVAWH
+sv-FI
+sv-SE
+SVWATAUAVAWH
+SVWATAUAWH
+SVWATAVAWH
+SVWATAWH
+SVWAUAVAWH
+SVWAUAWH
+SVWAVAWH
+SVWAVH
+SVWAWH
+SVWUH
+SWATAUAVAWH
+SWATAUH
+SWATAVAWH
+SWAVAWH
+SWAVH
+SWAWH
+SweptBytes
+switch
+sw-KE
+swprintf_s
+symbol
+synchronized
+Syntax error
+SyntaxError
+syr-SY
+System.Attribute
+System.Enum
+System.Guid
+System.MulticastDelegate
+System.Object
+System.ValueType
+SystemTimeToTzSpecificLocalTime
+SystemTimeToTzSpecificLocalTimeEx
+t A;P
+t E9A
+t fff
+t!;W0}
+t!@8sxu
+t!HcD$0H
+t"D8{xu
+t"D85
+t"f9|$0t
+t"fA9
+t"LcG
+t#;2v
+t#9\$0u
+t#H9|$0u
+t#I;L$
+t#L!}
+t$ ;A 
+t$ A;
+t$ D;p
+t$ D+
+t$ E3
+T$ E3
+t$ E3
+T$ E3
+t$ E3
+T$ E3
+t$ E3
+T$ E3
+t$ E3
+T$ E3
+t$ E3
+T$ E3
+t$ E3
+T$ f;
+t$ fD9|$@D
+t$ ff
+t$ H;
+T$ H+
+t$ H3
+T$ H3
+t$ H9\$ 
+t$ H9D$ 
+t$ H9D$ t,H
+T$ H9L$ 
+t$ Ic
+t$ L#
+T$ L9@
+t$ L9D$ tCH
+t$ Lc
+t$$A9u
+t$$E;t$
+t$$E9t$
+T$$H3
+t$(;.
+T$(2B
+T$(9D$(L
+T$(D9R
+T$(E;
+t$(E3
+t$(H9D$(
+T$(H9Z
+T$(H9z
+t$(Hc
+T$(Hc
+T$(L9J
+t$,A9q
+T$,E3
+T$@A;
+T$@D8B
+T$@E2
+t$@E2
+T$@E3
+t$@E3
+T$@E3
+t$@E3
+T$@f;
+t$@fA
+t$@fE
+T$@H;
+T$@H+
+t$@Hc
+T$@I+
+t$@IcO
+t$@L9L$@M
+t$@tx
+T$`@8r
+T$`A9?~
+T$`E2
+T$`E3
+t$`H;
+t$`H;t$ u`H
+T$`Ic
+T$`L;
+t$<fD
+T$0;B
+t$0@"
+T$09|$@u
+T$09Q
+T$0A+
+T$0A9}`
+t$0E;
+T$0E2
+T$0E3
+t$0E3
+T$0E3
+t$0E3
+T$0E3
+t$0E3
+T$0E3
+t$0E3
+T$0E3
+t$0E3
+T$0fA
+T$0G9l
+T$0H;
+t$0H;/u%3
+T$0H3
+t$0H3
+t$0H9w0u
+t$0L9D$0
+t$0Mc
+t$0uSE
+T$8@8z
+T$8A8Z 
+t$8E3
+T$8E3
+t$8E3
+T$8E3
+t$8E3
+T$8E3
+t$8E3
+t$8f;
+T$8fD
+t$8ff
+t$8H;
+T$8H3
+T$8H9
+t$8H9w0uOH
+T$8Hc
+T$8I+
+T$8Ic
+T$8L;
+T$8L+
+t$8L3
+T$8L3
+t$8L3
+T$8L9B
+t$8T$
+T$D;Q
+T$DHc
+T$DIc
+t$E9H
+t$H;w0s H
+t$H;w0s!H
+t$H;w0s"H
+t$H;w0s(H
+T$H+H
+t$h9p
+T$HA;
+T$HD+
+t$HE2
+t$HE3
+T$HE3
+t$hE3
+T$HE3
+T$hE3
+T$HE3
+T$Hf9
+T$HfD
+t$HH;
+T$hH+
+t$hH+
+T$HHc
+T$HL;
+t$HL;
+t$M9t$
+t$P;O r,;O$H
+T$P@8z
+t$PA+
+t$PA9v
+t$pD+
+T$PE3
+t$pE3
+t$PE3
+T$pE3
+T$PE3
+T$pE3
+t$pE3
+t$PE3
+t$pE3
+T$PE3
+t$pH;
+T$pL!
+T$PL#
+T$PL;
+t$Pt"H
+t$PtOE
+T$TE3
+T$X+H
+T$XD+
+T$xE;
+T$xE3
+T$XE3
+t$xE3
+T$xE3
+T$XE3
+T$xE3
+T$XE3
+T$XfA+
+T$XfE
+t$XH#
+t$xHc
+T$XL;
+t$XLc
+T$XLc
+T$xu!
+t%D8e
+t%E9A
+t%HcT$PL
+t&D;7r!2
+t&fD9
+t(A9H
+t(H9\$@t
+t(L!}
+t)D9D$hu
+t*@8k
+t*90t
+t*HcK
+t,HcS
+t:fD;
+t:HcQhH
+t:I9)t
+t:I91t
+t;E8Yxu5D
+t;fA;
+t;H9H
+t;M91t
+t?D;ug~
+t?H9P
+t@@8~
+t@D9 u;H;p
+t@D9A
+t@D9c
+t\D9D$Xt
+t\L9X
+t^H!M7D
+t_H9s
+t-~'=5
+t+HcS
+t<9s8t7H
+t<HcX
+t-<Htv
+t=;t$hs7I
+t>HcC
+t0fD9:t*H
+t0H9k
+t0HcN
+t0M9Z
+t1D;T$xr[D;
+t2fA9
+t3@8o
+t3~-=
+t3E9J
+t3f;A
+t3H9|$8v,L
+t3I9G
+t59_8
+t6A;P
+t7D;K
+t7IcK
+t8H!|$ H
+t9HcY(
+tAA9X
+tafA;
+tAfD9[
+ta-IN
+taiwan
+TaiwanCalendar
+tAL9@
+ta-LK
+target
+tbHcT$0L
+tDfA;
+tdH;C
+tdHcK
+teD8uwt
+te-IN
+TEMP$
+TEMP(
+TEMP,
+TEMP@
+TEMP\
+TEMP|
+TEMP<
+TEMP0
+TEMP4
+TEMPD
+TEMPH
+TEMPh
+TEMPL
+template
+TEMPp
+TEMPt
+TEMPT
+TerminateProcess
+t-f;*t(A
+tF9S 
+tFD9]PL
+t-fE;
+tFH9w
+tg-Cyrl
+tg-Cyrl-TJ
+tgfA;
+tgH+D$XH
+th@8-J++
+ThaiCalendar
+The precision is out of range"Array or arguments object expected.Array length must be a finite positive integer6Array length must be assigned a finite positive number
+thH9\$ ta
+thHc_ E3
+'this' is not a DataView object
+'this' is null or undefined
+ThreadContext::globalListFirst
+ThreadContextID
+ThreadingModel
+throw
+throwExIfOOMOrSOE
+throws
+th-TH
+thursday
+tHv$f
+ti8D$`uXH
+ti9W 
+ti-ER
+ti-ET
+Timeout
+TimeSpan
+Timestamp
+timeZone
+timeZoneName
+tjH;(u\H
+tJI!K
+tjL9`
+tjLcy
+tKfA;H
+tkHcS
+tk-TM
+tLD9r
+tlH9;tgL
+TlsAlloc
+TlsFree
+TlsGetValue
+TlsSetValue
+tML+{
+tn-BW
+tNfD9?tHI
+tn-ZA
+toArray
+toDateString
+ToDateTimeOptions
+toExponential
+toFixed
+toGMTString
+toISOString
+toJSON
+tOLcL$ H
+toLocaleDateString
+toLocaleLowerCase
+toLocaleString
+toLocaleTimeString
+toLocaleUpperCase
+ToLogicalBoolean
+tolower
+toLowerCase
+ToNumber
+Too many files
+ToObject
+toPrecision
+toReturn
+toString
+ToString
+toString
+Total
+Total Size
+TotalBytes
+toTimeString
+ToUint32
+toUpperCase
+toUTCString
+tPD;[0}J
+tPH9;tKL
+tradnl
+transient
+Translation
+tr-TR
+try { 
+TryEnterCriticalSection
+tsD8{
+tSH;~(uM3
+tSHcL$8H
+ts-ZA
+ttA9E0
+ttH;E
+ttLc@ H
+tt-RU
+tUD8uxt!
+tuesday
+tVA;Q
+tVA8Z
+tVH!M/D
+twA;C
+tYA8[
+tYA8Z
+tYD8~
+Type '%s' not found*%s: function called with too few arguments
+Type error
+Type is not constructibleMCould not convert value to PropertyValue: Type not supported by PropertyValueKCould not convert value to IInspectable: Type not supported by IInspectableSCould not convert Date to Windows.Foundation.DateTime: value outside of valid rangeTCould not convert value to Windows.Foundation.TimeSpan: value outside of valid range5Invalid access to already released Inspectable Object2Cannot release already released Inspectable Object"'this' is not of the expected type/Illegal length and size specified for the arrayJAn unexpected failure occurred while trying to obtain metadata information
+Type mismatch
+TypedArrayObject
+TypeError
+TypeId
+TypeName
+typeof
+tZ;L$8}+I
+tz@8x
+tzm-Arab-MA
+tzm-Latn
+tzm-Latn-DZ
+tzm-Tfng
+tzm-Tfng-MA
+TzSpecificLocalTimeToSystemTime
+TzSpecificLocalTimeToSystemTimeEx
+u H9]
+U H9z
+u HcA<H
+u!9\$0u D
+u!H9\$8
+u!H9H
+u"HcE
+u"HcGhH
+u$D8~
+u$fA+
+u%fD93t
+u&fA;
+u&fD9[
+u(A;v r
+u(A8A
+u(D;v 
+u(H9F(
+u,H!M
+u,Hc} 
+u.9D$xu(H
+u\8QqtWH
+u|9G(tUH
+u}@8r
+u~@8{Pt
+u~f9]
+u+D8M
+u>H;U
+u0LcC
+u2028
+u2029
+u2H;|$Pt
+u3f9n
+u3IcK H
+u4A8[
+u4H;kXu.L;s8u(L;c@u"H;CHu
+u5M9Z
+u69D$p
+u6I;Z(L
+u6L9K
+u8fA;
+UATAUAVAWH
+UATAUAVH
+UATAVAWH
+UATAVH
+UAVAWH
+uB!D$ L
+ub9C(tYH
+uBD8}
+ubound
+-u-co-
+uD8Eou,L
+uD9}`t$A9
+udA9p
+uDH!G
+udH!L$(H
+uE8D$`t^I
+u'f9y
+uG8D$ uHI
+ug-CN
+u-H!C
+u'H9^
+uHD;v 
+uHD;v r
+uhD9n8
+uhH9l$hu
+uHL9c
+uI8HQu>L
+uIIc@
+UInt16
+Uint16Array
+UInt32
+-UInt32
+UInt32 Array Element
+Uint32Array
+UInt64
+Uint64Array
+UInt8
+Uint8Array
+Uint8ClampedArray
+uJH9s
+ukA9X
+uKH9^
+ukH9w(
+uk-UA
+ulong
+UmAlQuraCalendar
+umH9{(u
+uncallable
+Undefined
+undefined
+Undefined Constant
+Undefined identifier
+unescape
+Unexpected quantifier"Expected ']' in regular expression"Expected ')' in regular expression
+UnhandledExceptionFilter
+unihan
+unknown
+Unknown runtime error
+Unknown script code
+Unknown static interface
+Unknown type&Function called with too few arguments
+UnmapViewOfFile
+Unprojectable
+unshift
+unspecified
+Unterminated comment
+Unterminated string constant
+uOf9S
+uP!D$ L
+uPA9|$
+UPD;j
+updatePatternStrings
+upper
+uQ8T$XuKH
+uqHcO
+uRf9K
+URI error
+URIError
+ur-IN
+ur-PK
+usage
+USATAUAVAWH
+USATAVAWH
+USAVAWH
+USAWH
+Use before declaration7Cannot re-initialize 'this', object already initialized>Cannot initialize 'this' because it is a non-extensible object"'this' is not of the expected type
+use strict
+UsedBytes
+UsedPageSize
+useGrouping
+usH9w(u
+ushort
+USVATAUAVAWH
+USVATAUH
+USVATAVH
+USVAUAVAWH
+USVAUAVH
+USVAVH
+USVWATAUAVAWH
+USVWATAUAVH
+USVWATAUAWH
+USVWATAUH
+USVWATAVAWH
+USVWATAVH
+USVWATAVI
+USVWATAWH
+USVWAUAVAWH
+USVWAUAVH
+USVWAUAWH
+USVWAVAWH
+USVWAVH
+USVWAWH
+USVWH
+USWATAUAVAWH
+USWAUAVAWH
+USWAVAWH
+USWAVH
+USWAWH
+uT!|$ L
+uU!D$ L
+uUE8h@tOH
+UUUU3
+UUUUUUUUH
+UUUUw
+UVAUAVAWH
+UVAVAWH
+UVAVH
+UVWATAUAVAWH
+UVWATAUH
+UVWATAVAWH
+UVWATAVH
+UVWATAWH
+UVWATH
+UVWAUAVAWH
+UVWAUAVH
+UVWAUH
+UVWAVAWH
+UVWAVH
+UVWAWH
+uwA;N
+UWATAUH
+UWATAVAWH
+UWATH
+UWAUAVAWH
+UWAVH
+UWAWH
+uXH9]Pu
+uxH9E 
+uXu3@
+uxuLA
+uYH9~
+uz-Cyrl
+uz-Cyrl-UZ
+uzE8x
+uZHcF
+uz-Latn
+uz-Latn-UZ
+v(A9^
+v.fA;
+v?=) 
+v@E8q8
+v'<Jv
+v'=) 
+V0@ z
+V8D8@
+V8I+V0H
+Valid
+value
+valueOf
+Values
+values
+Values
+ValueType
+Var Array
+var AsyncOpPromise = function (op, asyncOpType, asyncOpSource, asyncOpCausalityId) {
+var asyncOpWrapperPrototype = {}
+var callback_status_assign_delegate = 0;
+var callback_status_cancel = 3;
+var callback_status_error = 4;
+var callback_status_join = 1;
+Var Count
+var createThenPromise = function (creator, asyncOpType, asyncOpSource, asyncOpCausalityId) {
+var debug = Debug;
+var debug_msTraceAsyncCallbackCompleted = function() { };
+var invalid_async_operation_id = 0;
+var log_level_important = 1;
+var log_level_required = 0;
+var log_level_verbose = 2;
+var op_status_canceled = 2;
+var op_status_error = 3;
+var op_status_success = 1;
+var state_fulfilled_error = 2;
+var state_fulfilled_success = 3;
+var state_waiting = 1;
+var state_working = 0;
+var thenPromisePrototype = {};
+var traceAsyncCallbackStart = function() { };
+var traceAsyncOperationComplete = function() { };
+var updateAsyncCallbackRelation = function() { };
+var work_type_completion = 0;
+var work_type_operation = 2;
+var work_type_progress = 1;
+VarFileInfo
+variant
+VARIANT_UserFree64
+VARIANT_UserMarshal64
+VARIANT_UserSize64
+VARIANT_UserUnmarshal64
+VATAUAVAWH
+VAUAVH
+VAVAWH
+VBArray
+VBArray expected
+VBArray.prototype.dimensions
+VBArray.prototype.getItem
+VBArray.prototype.lbound
+VBArray.prototype.toArray
+VBArray.prototype.ubound
+VBArray.prototype.valueOf
+VerQueryValueW
+ve-ZA
+VirtualAlloc
+VirtualFree
+VirtualProtect
+VirtualQuery
+Visited (M)
+Visited (S)
+vi-VN
+VMAP$
+VMAPd
+volatile
+VP+T$P
+vQLcI
+VS_VERSION_INFO
+vswprintf_s
+vufA;
+VWATAUAVAWH
+VWATAUAVH
+VWATAUAWH
+VWATAVAWH
+VWAUAVAWH
+VWAVAWH
+VWAVH
+VWAWH
+W +Q 
+W A+~(
+w HcO H
+w!D9L$8w
+w"D9D$8w
+W(HcOHH
+w/D9L$8w(
+W`H;WX
+w+D9D$8w$
+w+fD;.u
+W0D8B
+W0H9D
+w1D9L$8w*
+w4D9D$Hw-
+W8H+W L
+WaitForMultipleObjectsEx
+WaitForSingleObject
+WaitForSingleObjectEx
+WaitForThreadpoolTimerCallbacks
+WakeAllConditionVariable
+WATAUAVAWH
+WATAVAWH
+WAUAWH
+WAVAWH
+wcscat_s
+wcschr
+wcscmp
+wcscpy_s
+wcsncat_s
+wcsncmp
+wcsncpy_s
+wcsrchr
+wcsstr
+wcstok_s
+wcstoul
+w-D9D$8w&
+WeakMap
+WeakMap.prototype.clear
+WeakMap.prototype.delete
+WeakMap.prototype.get
+WeakMap.prototype.has
+WeakMap.prototype.set
+WeakMapDataObject
+WebAssembly compile error
+WebAssembly link error
+WebAssembly runtime error
+wednesday
+weekday
+WerGetFlags
+WerSetFlags
+WEVT_TEMPLATE
+WEVT<
+WH+W`D
+while
+WilError_02
+WilStaging_02
+win:Info
+win:Informational
+win:Start
+win:Stop
+window
+Windows
+Windows.Foundation.Collections.IIterable`1<Windows.Foundation.Collections.IKeyValuePair`2<String,
+Windows.Foundation.Collections.IIterator`1
+Windows.Foundation.Collections.IIterator`1<Windows.Foundation.Collections.IKeyValuePair`2<String,Object>>
+Windows.Foundation.Collections.IVectorView`1
+Windows.Foundation.DateTime
+Windows.Foundation.Diagnostics.AsyncCausalityTracer
+Windows.Foundation.EventRegistrationToken
+Windows.Foundation.GuidAttribute
+Windows.Foundation.HResult
+Windows.Foundation.IAsyncInfo
+Windows.Foundation.IReference`1
+Windows.Foundation.IReferenceArray`1
+Windows.Foundation.Metadata.ActivatableAttribute
+Windows.Foundation.Metadata.ContractVersionAttribute
+Windows.Foundation.Metadata.DefaultAttribute
+Windows.Foundation.Metadata.DefaultOverloadAttribute
+Windows.Foundation.Metadata.DeprecatedAttribute
+Windows.Foundation.Metadata.ExclusiveToAttribute
+Windows.Foundation.Metadata.GCPressureAttribute
+Windows.Foundation.Metadata.GuidAttribute
+Windows.Foundation.Metadata.LengthIsAttribute
+Windows.Foundation.Metadata.OverloadAttribute
+Windows.Foundation.Metadata.PreviousContractVersionAttribute
+Windows.Foundation.Metadata.StaticAttribute
+Windows.Foundation.Metadata.VersionAttribute
+Windows.Foundation.Metadata.WebHostHiddenAttribute
+Windows.Foundation.Point
+Windows.Foundation.PropertyValue
+Windows.Foundation.Rect
+Windows.Foundation.Size
+Windows.Foundation.TimeSpan
+Windows.Globalization.DateTimeFormatting.DateTimeFormatter
+windows.globalization.dll
+Windows.Globalization.Language
+Windows.Globalization.NumberFormatting.CurrencyFormatter
+Windows.Globalization.NumberFormatting.DecimalFormatter
+Windows.Globalization.NumberFormatting.IncrementNumberRounder
+Windows.Globalization.NumberFormatting.PercentFormatter
+Windows.Globalization.NumberFormatting.SignificantDigitsNumberRounder
+Windows.Storage.Streams.IBuffer
+Windows.Storage.Streams.IBuffer.byteLength
+WindowsCompareStringOrdinal
+WindowsCreateString
+WindowsCreateStringReference
+WindowsDeleteString
+WindowsDuplicateString
+WindowsGetStringRawBuffer
+WindowsToEcmaCalendar
+WindowsToEcmaCalendarMap
+WinRT error
+winrtDelegate
+WinRTError
+winrtInstance
+winrtNamespace
+WinRTObject
+winrtRuntimeClass
+wKfD;
+wND9D$HwGH
+wo-SN
+writable
+write
+writeln
+WT@8l$a
+wtu1fD
+WWAHost
+WWAHost.EXE
+wYD9L$HwR
+x AVH
+x D;K0}
+x IcR(McB,I
+x&IcR(
+x?E;B
+X_^[]
+x_^[]
+X_^[]
+x_^[]
+X_^[]
+x_^[]
+X_^[]
+x_^[]
+X_^[]
+X_^][
+x_H!|$8H
+x`+z\H
+x>H9\$Ht7H
+x4A+x0A
+x7I9A8
+xA^^[]
+xA^_[]
+XA^_^[
+xA^_^[
+XA^_^[
+xA^_^]
+XA^A\_^][
+xA_^][
+XA_^][
+xA__[]
+XA_A\_^][
+XA_A]A\[
+XA_A^_[
+XA_A^_^
+XA_A^_^[]
+xA_A^_^[]
+XA_A^_^[]
+xA_A^_^[]
+XA_A^_^[]
+xA_A^_^[]
+XA_A^_^][
+xA_A^_^][
+XA_A^_^][
+xA_A^_^][
+XA_A^_^][
+xA_A^A\_^[
+XA_A^A\_^[
+XA_A^A]A\][
+xA_A^A]A\_[
+xA_A^A]A\_^[]
+XA_A^A]A\_^[]
+xA_A^A]A\_^[]
+XA_A^A]A\_^[]
+xA_A^A]A\_^[]
+XA_A^A]A\_^[]
+xA_A^A]A\_^[]
+XA_A^A]A\_^[]
+xA_A^A]A\_^[]
+XA_A^A]A\_^[]
+xA_A^A]A\_^[]
+XA_A^A]A\_^[]
+xA_A^A]A\_^[]
+XA_A^A]A\_^[]
+xA_A^A]A\_^[]
+XA_A^A]A\_^[]
+xA_A^A]A\_^[]
+XA_A^A]A\_^][
+xA_A^A]A\_^][
+XA_A^A]A\_^][
+xA_A^A]A\_^][
+XA_A^A]A\_^][
+xA_A^A]A\_^][
+XA_A^A]A\_^][
+xA_A^A]A\_^][
+XA_A^A]A\_^][
+xA_A^A]A\_^][
+XA_A^A]A\_^][
+xA_A^A]A\_^][
+XA_A^A]A\_^][
+xA_A^A]A\_^][
+XA_A^A]A\_^][
+xb9\$xu
+xCH9]Pt
+XD$@H
+XD$0L
+XD$8H
+XD$HH
+XD$hH
+XH+X`
+xH+x`+x0
+XH+X`+X0H
+XHcl$H9n
+XHD+X`
+xHD+x`
+xHD+x`D+x0
+xHD+x`D+x0H
+xh-ZA
+XmtYA
+xP+h0D+x
+xP+p`+x
+XP+x`+X
+XP+X0+X
+xPD+`0D+x
+XPD+X0+X
+xPD+x0H
+xVH!|$ H
+year.abbreviated
+year.full
+YH+Y`
+yH+y`
+YH+Y`+Y0
+yH+y`+y0
+YH+Y`+Y0
+yH+y`+y0
+YH+Y`+Y0D
+YH+Y`H
+yH+Y0H+y0
+YHcl$H
+yi-001
+yield
+Yo{Z^
+yo-NG
+YP+y`+Y
+z#u!D
+z(L9w
+z0u.3
+z6u4H
+zc%C1
+zh-CHS
+zh-CHT
+zh-CN
+zh-Hans
+zh-Hant
+zh-HK
+zh-MO
+zh-SG
+zh-TW
+zP+r`+z
+zR`RO
+zu-ZA
+ZxfA9ZPttA8Z

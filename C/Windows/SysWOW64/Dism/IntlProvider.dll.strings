@@ -1,0 +1,1704 @@
+                            by setup.
+                            called system locale) and font settings in the 
+                            image.
+                            in the mounted offline image.
+                            mounted offline image.
+                            offline image.
+                            settings and languages.
+                            UI in the mounted offline image.
+                            use in the mounted offline image.
+                            values for the specified SKU language in the
+           lang.ini file. The existing lang.ini file will be overwritten.
+           non-Unicode programs will not be changed.
+           try, the /Set-SysLocale option will fail and the language for 
+        /Distribution:D:\distribution
+      DISM.exe /Image:C:\image /Distribution:c:\dist /Set-SetupUILang:en-US
+      DISM.exe /Image:C:\test\offline /Gen-LangIni 
+      DISM.exe /Image:C:\test\offline /Get-Intl
+      DISM.exe /Image:C:\test\offline /Get-Intl /Distribution:D:\distribution
+      DISM.exe /Image:C:\test\offline /Set-AllIntl:en-US
+      DISM.exe /Image:C:\test\offline /Set-InputLocale:0409:00000409
+      DISM.exe /Image:C:\test\offline /Set-InputLocale:en-US 
+      DISM.exe /Image:C:\test\offline /Set-LayeredDriver:1
+      DISM.exe /Image:C:\test\offline /Set-SKUIntlDefaults:en-US
+      DISM.exe /Image:C:\test\offline /Set-SysLocale:en-US
+      DISM.exe /Image:C:\test\offline /Set-TimeZone:"W. Europe Standard Time"
+      DISM.exe /Image:C:\test\offline /Set-UILang:en-US
+      DISM.exe /Image:C:\test\offline /Set-UILangFallback:en-US
+      DISM.exe /Image:C:\test\offline /SetUserLocale:en-US
+      DISM.exe /Online /Get-Intl
+    Example:
+    Examples:
+  /Set-UILang option is a partially localized language.
+  1: PC/AT Enhanced Keyboard (101/102-Key).
+  2: Korean PC/AT 101-Key Compatible Keyboard/MS Natural Keyboard (Type 1).
+  3: Korean PC/AT 101-Key Compatible Keyboard/MS Natural Keyboard (Type 2).
+  4: Korean PC/AT 101-Key Compatible Keyboard/MS Natural Keyboard (Type 3).
+  5: Korean Keyboard (103/106 Key).
+  6: Japanese Keyboard (106/109 Key).
+  A distribution is a folder that contains the source files for
+  A distribution path is required.
+  additional device drivers and application files.
+  and languages in the running operating system.
+  cannot be used, setup will fall back to English.
+  default UI language for setup.
+  Defines the default language that will be used by setup. If this language
+  DISM verifies that the specified time zone string is valid for the image.
+  Displays information about international settings and languages.
+  distribution.
+  font settings in the mounted offline image.
+  for formatting dates, times, currency, and numbers.
+  for offline images. The report does not include this setting for
+  Generates a new lang.ini file which is used by setup to define the language 
+  If used with any of the options used to specify the individual language or
+  image, the command will fail.
+  image.
+  image. This setting is used only when the language specified by the 
+  in the offline image.  
+  international settings and languages in the distribution is displayed.
+  layouts and time zone values in a mounted offline image to the
+  layouts to the specified language in the mounted offline image.
+  locales, then the individual settings take precedence.
+  mounted offline image. If the language is not installed in the Windows 
+  mounted offline image. The "Standards and formats" language is a
+  packs inside the image and outside in the distribution. It also defines the 
+  per-user setting that determines default sort order and the default settings
+  running operating systems.
+  Sets the "standards and formats" language (also called user locale) in the
+  Sets the default system UI language, the language for non-Unicode programs,
+  Sets the default system user interface (UI) language that is used in the
+  Sets the default time zone in a Windows image. Before setting the time zone,
+  Sets the fallback default language for the system UI in the mounted offline
+  Sets the input locales and keyboard layouts to use in the mounted offline
+  Sets the keyboard layered driver, with possible
+  Sets the language for non-Unicode programs (also called system locale) and
+  the "standards and formats" language and the input locales and keyboard
+  the "standards and formats" language and the input locales, keyboard 
+  The new Lang.ini file will be added to the sources folder of the Windows 
+  This command is not supported against an online image.
+  Use /Image to display information about international settings and languages
+  Use the /Online option to display information about international settings
+  values of 1 to 6, defined below:
+  WARNING: The default user locale and location is only reported
+  WARNING: You cannot set Unicode-only languages as the system locale. If you
+  WARNING: You will not be prompted for permission to overwrite an existing 
+  When used with the /Image and /Distribution options, information about
+  Windows default value specified by <language_name>.
+  Windows products that you install.  It may also contain
+ !"#$%&'()*+,-./0123456789:;<=>?@abcdefghijklmnopqrstuvwxyz[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+ http://www.microsoft.com/windows0
+ Microsoft Corporation. All rights reserved.
+ Microsoft Operations Puerto Rico1&0$
+ Microsoft Operations Puerto Rico1'0%
+ Operating System
+ SShDw
+ Windows
+! !!!"!#!$!%!&!'!(!)!*!+!,!-!.!/!0!1!2!3!4!5!6!7!8!9!:!;!<!=!>!?!@!A!B!C!D!E!F!G!H!I!J!K!L!M!N!O!P!Q!R!S!T!U!V!W!X!Y!Z![!\!]!^!_!p!q!r!s!t!u!v!w!x!y!z!{!|!}!~!
+!p!q!r!s!t!u!v!w!x!y!z!{!|!}!~!
+!This program cannot be run in DOS mode.
+"Microsoft Time Source Master Clock0
+"Microsoft Window
+"Reporting distribution languages.
+$`2X`F
+$Microsoft Ireland Operations Limited1
+'%APPID%' = s 'IntlProvider'
+%d = %s
+%Microsoft Windows Production PCA 2011
+%Microsoft Windows Production PCA 20110
+%s (GEOID = %d)
+%s = %d
+%s = %s
+%s%c%s%c
+%s.%s
+%s;%s
+%s\%s
+%s\%s.mui
+%s\%s\%s
+%s\%s\%s.mui
+%s\%sControl Panel\International
+%s\%sControl Panel\International\Geo
+%s\Control Panel\International
+%s\ControlSet%03u
+%s\ControlSet001\Control\Nls\CodePage
+%s\ControlSet001\Control\Nls\Language
+%s\ControlSet001\Control\Nls\Locale
+%s\ControlSet001\Control\TimeZoneInformation
+%s\locale.nls
+%s\Microsoft\Windows NT\CurrentVersion\Time Zones\
+%s\Microsoft\Windows NT\CurrentVersion\WinPE
+%s\ntuser.dat
+%s\Select
+%s\System32
+%s\system32\%s\tzres.dll.mui
+%s\system32\locale.nls
+&0,090H0
+&0C0f0
+(Default)
+)Microsoft Root Certificate Authority 20100
+*Reporting offline international settings.
+,1oRtlxvPMVLyUSrC78RAURn/kIbdI0dY/F7rHQEhY3c=0Z
+,Richk
+.?AU?$CAtlValidateModuleConfiguration@$00VCIntlProviderModule@@@ATL@@
+.?AU_ATL_MODULE70@ATL@@
+.?AUIClassFactory@@
+.?AUIDismCommand@@
+.?AUIDismCommandCollection@@
+.?AUIDismHelpItem@@
+.?AUIDismHelpItemCollection@@
+.?AUIDismIntl@@
+.?AUIDismIntlManager@@
+.?AUIDismObject@@
+.?AUIDismProvider@@
+.?AUIDismProviderPrivate@@
+.?AUIDismServicingProvider@@
+.?AUIDismSupportCommands@@
+.?AUIDispatch@@
+.?AUIEnumVARIANT@@
+.?AUIRegistrarBase@@
+.?AUISupportErrorInfo@@
+.?AUIUnknown@@
+.?AV?$CAtlDllModuleT@VCIntlProviderModule@@@ATL@@
+.?AV?$CAtlModuleT@VCIntlProviderModule@@@ATL@@
+.?AV?$CComAggObject@VCDISMIntlManager@@@ATL@@
+.?AV?$CComCoClass@VCDISMCommand@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMCommandCollection@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMHelpItem@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMHelpItemCollection@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMIntlManager@@$1?CLSID_CDismIntlManager@@3U_GUID@@B@ATL@@
+.?AV?$CComContainedObject@VCDISMIntlManager@@@ATL@@
+.?AV?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCommand@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@VCComSingleThreadModel@ATL@@@ATL@@
+.?AV?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismHelpItem@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@VCComSingleThreadModel@ATL@@@ATL@@
+.?AV?$CComObject@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCommand@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@VCComSingleThreadModel@ATL@@@ATL@@@ATL@@
+.?AV?$CComObject@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismHelpItem@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@VCComSingleThreadModel@ATL@@@ATL@@@ATL@@
+.?AV?$CComObject@VCDISMCommand@@@ATL@@
+.?AV?$CComObject@VCDISMCommandCollection@@@ATL@@
+.?AV?$CComObject@VCDISMHelpItem@@@ATL@@
+.?AV?$CComObject@VCDISMHelpItemCollection@@@ATL@@
+.?AV?$CComObject@VCDISMIntlManager@@@ATL@@
+.?AV?$CComObjectCached@VCComClassFactory@ATL@@@ATL@@
+.?AV?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL@@
+.?AV?$CComObjectRootEx@VCComSingleThreadModel@ATL@@@ATL@@
+.?AV?$ICollectionOnSTLImpl@V?$IDispatchImpl@UIDismCommandCollection@@$1?IID_IDismCommandCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@PAUIDismCommand@@U?$_CopyItfFromAdaptItf@UIDismCommand@@@@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCommand@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@VCComSingleThreadModel@ATL@@@2@@ATL@@
+.?AV?$ICollectionOnSTLImpl@V?$IDispatchImpl@UIDismHelpItemCollection@@$1?IID_IDismHelpItemCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@PAUIDismHelpItem@@U?$_CopyItfFromAdaptItf@UIDismHelpItem@@@@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismHelpItem@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@VCComSingleThreadModel@ATL@@@2@@ATL@@
+.?AV?$IDispatchImpl@UIDismCommandCollection@@$1?IID_IDismCommandCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismHelpItemCollection@@$1?IID_IDismHelpItemCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismIntl@@$1?_GUID_574fd8f3_bc64_455e_a0d8_bcf95d8819b1@@3U__s_GUID@@B$1?LIBID_IntlProviderLib@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismIntlManager@@$1?IID_IDismIntlManager@@3U_GUID@@B$1?LIBID_IntlProviderLib@@3U3@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismProvider@@$1?_GUID_33f93018_edb7_4092_978a_4b37d5dfb1c0@@3U__s_GUID@@B$1?LIBID_IntlProviderLib@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismProviderPrivate@@$1?_GUID_2114daec_42fd_4847_8a04_5f2dde3276a3@@3U__s_GUID@@B$1?LIBID_IntlProviderLib@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismServicingProvider@@$1?_GUID_c8292388_8d1d_4c34_9a41_8763fcd304f7@@3U__s_GUID@@B$1?LIBID_IntlProviderLib@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismSupportCommands@@$1?_GUID_7234ec82_c68b_4c4e_ba1d_d333f5b87b37@@3U__s_GUID@@B$1?LIBID_IntlProviderLib@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IEnumOnSTLImpl@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCommand@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@@ATL@@
+.?AV?$IEnumOnSTLImpl@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismHelpItem@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@@ATL@@
+.?AVbad_alloc@std@@
+.?AVCAtlException@ATL@@
+.?AVCAtlModule@ATL@@
+.?AVCComClassFactory@ATL@@
+.?AVCComObjectRootBase@ATL@@
+.?AVCDISMCommand@@
+.?AVCDISMCommandCollection@@
+.?AVCDISMHelpItem@@
+.?AVCDISMHelpItemCollection@@
+.?AVCDISMIntlManager@@
+.?AVCIntlProviderModule@@
+.?AVCRegObject@ATL@@
+.?AVexception@@
+.?AVlength_error@std@@
+.?AVlogic_error@std@@
+.?AVout_of_range@std@@
+.\%s.mui
+.\%s\%s.mui
+.00cfg
+.CRT$XCA
+.CRT$XCL
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIZ
+.CRT$XLA
+.CRT$XLZ
+.data
+.data$brc
+.data$r$brc
+.Default
+.edata
+.gfids
+.giats
+.idata
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.rdata
+.rdata$brc
+.rdata$r$brc
+.rdata$sxdata
+.rdata$T$brc
+.rdata$zzzdbg
+.Rm(,
+.rsrc$01
+.rsrc$02
+.text
+.text$di
+.text$mn
+.text$mn$01
+.text$x
+.text$yd
+.tls$
+.tls$ZZZ
+.xdata$x
+/Gen-LangIni /Distribution:<path_to_distribution>
+/Get-Intl [/Distribution:<path_to_distribution>]
+/Set-AllIntl:<language_name>
+/Set-InputLocale:{<locale_name> | <language_id>:<keyboard_layout>} 
+/Set-LayeredDriver:<layer ID>
+/Set-SetupUILang:<language_name>
+/Set-SKUIntlDefaults:<language_name>
+/Set-SysLocale:<locale_name>
+/Set-TimeZone:<timezone_name>
+/Set-UILang:<language_name>
+/Set-UILangFallback:<language_name>
+/Set-UserLocale:<locale_name>
+:$:,:4:<:D:L:T:\:d:l:t:|:
+:$:0:<:H:T:`:l:x:
+:&;A;l;
+:(:4:@:L:X:d:p:|:
+:);7;];k;
+:*:{:
+:`;m;
+:<:|:
+:<:d:
+:<:D:P:X:p:x:
+:<>E>R>[>
+:0:4:L:P:h:l:
+:0:F:R:
+:1:T:o:
+:3:F:y:
+:3;>;P;o;
+:5ye)
+:6:?:h:
+:7:W:a:o:
+:P:r:
+:S:n:
+; ;,;8;D;P;\;h;t;
+;";R;g;s;
+;";T;\;n;
+;$;,;4;<;D;L;T;\;d;l;p;t;x;|;
+;$;0;<;H;T;`;l;x;
+;%<*<x<
+;(;I;\;
+;)<@<W<}<
+;,;0;H;L;d;h;
+;,;L;l;
+;,<M<[<s<
+;.;5;<;B;y;
+;.<V<s<
+;:<R<c<}<
+;;;D;O;V;h;n;t;z;
+;;<F<X<
+;';K;d;j;q;x;
+;`<d<h<l<x<
+;+<G<
+;>;T;e;k;
+;0;8;@;H;P;X;d;
+;0<N<
+;0<T<
+;0u3f
+;0u5f
+;4;p;
+;G;Y;
+;I<k<|<
+? ?$?(?,?0?4?8?<?@?D?H?L?P?T?X?\?`?d?h?l?p?t?x?|?
+? ?$?(?,?0?4?8?<?D?H?L?P?X?\?`?h?l?p?t?x?
+? ?,?8?D?P?\?h?t?
+? ?G?
+?#?-?3?b?
+?#?D?
+?$?(?8?<?L?P?`?d?t?x?
+?,???p?
+?:?w?
+?;?Y?w?
+??0exception@@QAE@ABQBD@Z
+??0exception@@QAE@ABV0@@Z
+??0exception@@QAE@XZ
+??1exception@@UAE@XZ
+??1type_info@@UAE@XZ
+?-?3?{?
+?@?j?
+?+???E?Y?f?o?x?
+?<?D?L?X?`?
+?=u/W
+?0u,f
+?2?W?
+?5?_?t?
+?terminate@@YAXXZ
+?what@exception@@UBEPBDXZ
+@.reloc
+@.rsrc
+@_^[]
+@tzres.dll,-
+\Default
+\default\ntuser.dat
+\Implemented Categories
+\inf\fontsetup.inf
+\LangPacks
+\Required Categories
+\ServiceProfiles\LocalService\NTUSER.DAT
+\ServiceProfiles\NetworkService\NTUSER.DAT
+\sources\lang.ini
+\System32\config\default
+\System32\config\SOFTWARE
+\System32\config\SYSTEM
+\System32\config\systemprofile\ntuser.dat
+\Users
+^f90u
+^VSSh
+_ 9_$t
+__CxxFrameHandler3
+__dllonexit
+__RTDynamicCast
+_amsg_exit
+_callnewh
+_CIlog
+_CxxThrowException
+_errno
+_except_handler4_common
+_ftol2_sse
+_initterm
+_itow_s
+_lock
+_onexit
+_purecall
+_unlock
+_vscwprintf
+_vsnwprintf
+_wcsicmp
+_wcsnicmp
+_wtoi
+_XcptFilter
+`.data
+{07D014B0-FFEB-4c40-AEE1-508042786FC0}
+{bf1a281b-ad7b-4476-ac95-f47682990ce7}
+|hK,_
+}f/=i
+~dt(h
+< <,<8<D<P<\<h<t<
+< <0<@<P<`<p<
+< =l=
+<#<)<4<:<F<V<_<r<x<~<
+<#=M=
+<$<C<d<}<
+<%<H<S<[<
+<(<4<@<L<X<d<p<|<
+<@<~<
+<<<a<
+<0<V<l<
+<6=;=[=
+<8<@<L<l<t<
+<L<]<s<
+<L<{<
+<P=W=^=d=
+= =$=(=,=0=4=8=<=@=D=H=L=P=T=X=\=`=d=h=l=p=t=x=|=
+= =,=L=T=\=h=p=
+= =0=@=P=`=p=
+=">4>S>
+=$>*>7>K>j>u>
+=%=?=T=h=o=v=|=
+=%=c=
+=%>N>i>n>
+=(=4=@=L=X=d=p=|=
+=.=r=
+=^=p=w=~=
+=<=@=D=H=X=\=`=d=h=l=p=t=x=|=
+=0=L=
+=1=B=d=u=
+=4=@=^=j=
+=5=@=b=
+=5>^>y>
+=6=S=v=
+=6=t=
+=g>t>
+=L9o<
+=q=|=
+=X=z=
+> >$>(>,>0>4>8><>@>D>H>L>P>T>X>\>`>d>h>l>p>t>x>|>
+> >$>(>,>8><>@>D>H>L>P>T>X>\>`>d>h>l>p>t>x>|>
+> >$>4>8>H>L>\>`>p>t>
+>#>n>
+>$>0><>H>T>`>l>x>
+>%>,>2>k>
+>.>D>
+>/>5>;>A>G>M>W>\>b>j>x>
+>;?M?h?
+>-???F?M?S?t?
+>-><>r>
+>1?7?E?K?j?
+>6>V>s>
+>8>l>
+>9>D>t>
+>a>v>
+>H>\>l>|>
+>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0
+>http://www.microsoft.com/pki/certs/MicTimStaPCA_2010-07-01.crt0
+0 0$0(0,0004080<0@0D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+0 0$0,0004080<0@0D0H0L0P0T0\0`0d0h0l0t0x0|0
+0 0$00040P0T0p0t0
+0(0,0<0@0P0T0d0h0l0
+0(040@0L0X0d0p0|0
+0(0A0G0R0a0r0v0
+0*0^0x0
+0/1K1x1
+0:0C0Z0c0
+0:1s1
+0;0G0X0
+0+0I0g0
+000P0p0
+031<1J1
+0404:00000404;0409:00000409
+0409:00000409
+040904B0
+0411:00000411;0409:00000409
+0412:00000412;0409:00000409
+080\0
+0804:00000804;0409:00000409
+0F1d1s1|1
+1 1$1(1,1014181<1@1D1H1L1P1T1X1\1`1d1h1l1p1t1x1|1
+1 1$1(1,10181<1@1D1L1T1X1`1d1h1p1t1x1
+1 1$1<1@1X1\1`1t1x1
+1$101<1H1T1`1l1x1
+1$10181L1U1q1
+1$101L1h1
+1(0&0
+1,0*0
+1,1014181<1@1D1H1L1P1T1X1\1p1
+1/1G1
+1[1c1
+10.0.17763.1
+10.0.17763.1 (WinBuild.160101.0800)
+100701213655Z
+101@1d1p1x1
+10181@1\1d1l1
+111019184142Z
+1-141
+122A2F2c2
+13292N2
+161P1j1
+162S2q2
+180703204550Z
+180823202640Z
+181V1s1
+190726204550Z0p1
+191123202640Z0
+191W1v1
+1a2v2
+1http://www.microsoft.com/PKI/docs/CPS/default.htm0@
+1M1m1x1
+1M4L5E6
+1n2u2
+1U2g2
+1V2a2
+2 2$2(2,2024282<2@2D2H2L2P2T2X2\2`2d2h2l2p2t2x2|2
+2 2$2,20282P2T2l2p2
+2 2,282D2P2\2h2t2
+2 202@2P2d2h2l2p2x2|2
+2 282<2@2T2X2p2t2
+2"2)2E2
+2#2#3<3L3
+2$2,20242<2P2X2l2t2
+2*3;3
+2/2\2
+2/262b2
+2:2S2f2
+2:3m3
+2?2[2g2
+20180915005704Z
+20180915010243.389Z0
+20180916005704Z0t0:
+202D2L2T2\2d2p2
+202O2n2
+222J2m2
+229879+4379540
+23292B2I2U2[2d2k2
+250701214655Z0|1
+261019185142Z0
+272@2I2P2Y2b2s2
+272H2
+292P2b2n2{2
+2Sets the user locale in the mounted offline image.
+3 3$3(3,3034383<3@3D3H3L3P3T3X3\3`3d3h3l3p3t3x3
+3 3$3(3,3034383<3@3D3H3L3P3T3X3\3`3d3h3l3p3t3x3|3
+3 3(3@3D3\3`3x3|3
+3 3,333A3c3l3r3{3
+3 3@3H3P3\3|3
+3 30383<3D3H3L3T3
+3!3(3e3l3j5
+3"3,363@3J3T3^3w3
+3"4M4T4
+3%3+3S3_3y3
+3%4;4
+3(343@3L3X3d3p3|3
+3(3G3f3
+3(3h3
+3(3H3
+3(4/4f4
+3)4>4
+3)404P4
+3+3B3H3
+30343L3P3h3l3
+314=4K4
+323=3
+383F3s3~3
+3D3_3s3y3
+3Information on the available international commands
+4 4$4(4,4044484<4@4D4H4L4P4T4X4\4`4d4h4l4p4t4x4|4
+4 484H4X4h4x4
+4 7x7
+4!5g5m5
+4"4O4j4s4
+4$4,444<4D4L4T4\4d4l4t4|4
+4$404<4H4T4`4l4x4
+4$444@4H4h4
+4$4F4m4
+4(5B5W5d5
+4)5b5
+4,404H4L4d4h4
+4.444H4r4
+4:4G4M4]4}4
+4\4m4|4
+4+595O5b5l5u5~5
+4+5c5
+4>4E4Z4i4|4
+4-4H4\4b4h4u4
+4-5d5{5
+464Y4r4
+4A5H5h5
+4u5|5
+5 5$5(5,5054585<5@5D5H5L5P5T5X5\5`5d5h5l5p5t5x5|5
+5 5(5D5T5`5h5
+5 5,585D5P5\5h5t5
+5#6:6
+5$5,545<5D5L5T5\5d5l5t5|5
+5%5.5E5n5
+5%555P5
+5&636Q6f6s6y6
+5(5,5D5H5`5d5|5
+5(6]6j6
+5,5\5
+5<6M6x6
+5>5Y5a5~5
+50>0X0`0
+50545L5P5h5x5
+505K5_5w5
+555[5
+5i5o5
+5i6y6
+5K6T6]6f6o6x6
+5The other available languages in the distribution are
+5W5q5
+6 6$6(6,6064686<6@6P6\6h6t6
+6 6'6-6B6G6M6Q6V6\6q6
+6"7=7X7
+6#7.7
+6$6(6@6D6\6`6x6|6
+6$6,646<6D6L6T6\6d6l6t6|6
+6(6,606D6T6X6\6`6d6h6l6p6t6|6
+6(606P6l6|6
+6(646@6L6X6d6p6|6
+6)767k7x7
+6@6`6t6
+6@6x6(7
+6+6>6C6I6]6b6n6
+607x7
+637_7
+65001
+6F6Q6
+6G6A7H7
+6G6w6
+6International provider only supports offline images.
+6L6S6
+7 7$7<7@7X7\7t7x7
+7 7(70787@7H7P7X7`7d7h7l7p7t7x7|7
+7#7E7\7q7
+7$7,747<7D7L7T7\7d7l7t7|7
+7$707<7H7T7`7l7x7
+7&7/7S7
+707I7Z7i7s7{7
+747D7T7d7t7
+768B8Q8X8^8q8
+787H7T7t7
+7A8f8
+7I8|8
+7J7Y7
+8 8,848h8p8x8
+8 8,888D8P8\8h8t8
+8 888<8T8X8p8t8
+8 9Z9q9|9
+8!8'8R8n8t8
+8!9G9j9
+8#8(8.858?8C8S8Y8_8j8p8x8
+8$8,848<8D8L8T8\8d8l8t8|8
+8$81888n8
+8$9+9
+8&8?8K8`8z8
+8(808H8T8`8l8x8
+8,9i9
+8.878L8u8
+8@8d8
+868f8
+8B8]8p8w8~8
+8DmCDismIntlManager
+8H8]8
+8h9 :
+8k8|8
+8s8|8
+8V9t9
+8X8m8
+9 9&9.959
+9 9,989D9P9\9h9t9
+9 9@9L9l9t9
+9$9,949<9D9L9T9\9d9l9t9|9
+9&9A9
+9(949@9L9X9d9p9|9
+9;:s:
+9^$v#
+9^$vD
+9^:x:
+9^9e9q9x9
+9+92999?9W9c9
+9+9D9K9h9o9
+9<9H9h9
+9>uC!}
+909L9d9
+92:;:N:W:{:
+94989P9T9l9p9
+950.HK
+959P9
+9-9A9~9
+9C\tJ
+9f;:u
+9K9Z9o9
+9V$vG
+AcquireSRWLockExclusive
+Active keyboard(s) 
+ActiveTimeBias
+aDisplays information about the international 
+AdjustTokenPrivileges
+advapi32.dll
+ADVAPI32.dll
+Afghanistan Standard Time
+af-ZA
+am-ET
+API-MS-Win-Core-LocalRegistry-L1-1-0.dll
+APPID
+AppID
+Arab Standard Time
+Arabian Standard Time
+Arabic Standard Time
+ar-AE
+ar-BH
+ar-DZ
+ar-EG
+Argentina Standard Time
+ar-IQ
+ar-JO
+ar-KW
+ar-LB
+ar-LY
+ar-MA
+arn-CL
+ar-OM
+ar-QA
+ar-SA
+ar-SY
+ar-TN
+ar-YE
+as-IN
+AThe specified format option is not supported with this command.
+ATL$__a
+ATL$__m
+ATL$__z
+Atlantic Standard Time
+AUS Eastern Standard Time
+Available UI Languages
+az-Cyrl
+az-Cyrl-AZ
+Azerbaijan Standard Time
+az-Latn
+az-Latn-AZ
+bad allocation
+Bangladesh Standard Time
+ba-RU
+be-BY
+Belarus Standard Time
+bg-BG
+bin-NG
+bn-BD
+bn-IN
+bo-CN
+br-FR
+bs-Cyrl
+bs-Cyrl-BA
+bsearch
+bs-Latn
+bs-Latn-BA
+ca-ES
+ca-ES-valencia
+Cannot call GetEffectiveSystemUILanguage on an online image. Use GetSystemPreferredUILanguages instead.
+Cannot call GetInstallLanguage on an online image
+Cannot call SetAllIntlSettings on an online image
+Cannot call SetSkuIntlDefaults on an online image
+Cannot get target system windows directory
+Cape Verde Standard Time
+Caucasus Standard Time
+CDISMIntlManager::_GetOptionAndValue
+CDISMIntlManager::_IsWindowsPE
+CDISMIntlManager::_ProcessCommands
+CDISMIntlManager::_ValidateCommands
+CDISMIntlManager::DisplayAPIErrorMessage
+CDISMIntlManager::DisplayErrorMessageForUnrecognizedParameter
+CDISMIntlManager::DisplayOfflineAPIError
+CDISMIntlManager::DisplayStringWithFormat
+CDISMIntlManager::ExecuteCmdLine
+CDISMIntlManager::Final_OnConnect
+CDISMIntlManager::GetCommandCollection
+CDISMIntlManager::GetEffectiveSystemUILanguage
+CDISMIntlManager::GetHelpItemCollection
+CDISMIntlManager::GetInstallLanguage
+CDISMIntlManager::Initialize
+CDISMIntlManager::OnConnect
+CDISMIntlManager::SetAllIntlSettings
+CDISMIntlManager::SetSkuIntlDefaults
+CDISMIntlManager::WriteToConsoleAndLogFile
+Cdt*3
+Central America Standard Time
+Central Asia Standard Time
+Central Europe Standard Time
+Central European Standard Time
+Central Pacific Standard Time
+Central Standard Time (Mexico)
+CharLowerBuffW
+CharNextW
+Checking system for a preferred UI language
+China Standard Time
+chr-Cher
+chr-Cher-US
+Chttp://www.microsoft.com/pkiops/crl/MicWinProPCA2011_2011-10-19.crl0a
+cIntlProviderLibW
+CloseHandle
+CLSID
+CLSID = s '{2050733C-1AC8-4937-8C56-090DD4D8842F}'
+CLSID\
+CoCreateInstance
+co-FR
+CompanyName
+CompareStringW
+Component Categories
+Control Panel\International
+Control Panel\International\Geo
+Control\CMF\Config
+Control\CMF\LatestIndex
+Control\MUI\Settings
+Control\MUI\UILanguages
+Control\Nls\Language
+ControlSet%03d
+ControlSet001\Control\CommonGlobUserSettings\
+ControlSet001\Control\MUI\Settings
+ControlSet001\Control\Nls\Language
+ControlSet001\Control\TimeZoneInformation
+ControlSet001\Services\i8042prt\Parameters
+CopyFileW
+CoTaskMemAlloc
+CoTaskMemFree
+CoTaskMemRealloc
+Could not set input locale.
+Could not set install fallback.
+Could not set system locale.
+Could not set ui language fallback.$
+Could not set UI Language.
+Could not set user locale.
+CP.%s
+CP.%s.%s
+CreateFileMappingW
+CreateFileW
+cs-CZ
+CurrentControlSet
+CurVer = s 'IntlProvider.DismIntlManager.1'
+cy-GB
+D$ PVVV
+D$<PV
+da-DK
+DaylightBias
+DaylightName
+DaylightStart
+de-AT
+de-CH
+de-DE
+Default
+Default system UI language 
+Default time zone 
+DefaultFallback
+DefaultInstallSettings
+DefaultSettings
+Delete
+DeleteCriticalSection
+DeleteFileW
+de-LI
+de-LU
+DisableThreadLibraryCalls
+DISM International Provider
+DISM Intl Provider
+dismcore.tlbWW
+DismIntlManager ClassW
+Display
+DISTRIBUTION
+DllCanUnloadNow
+DllGetClassObject
+DLLGetDISMProviderCLSID
+DllRegisterServer
+DllUnregisterServer
+do&I3
+dsb-DE
+dv-MV
+Dynamic DST
+DynamicDaylightTimeDisabled
+dz-BT
+E. Africa Standard Time
+E. Europe Standard Time
+E. South America Standard Time
+Eastern Standard Time
+Egypt Standard Time
+Ehttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z
+Ehttp://crl.microsoft.com/pki/crl/products/MicTimStaPCA_2010-07-01.crl0Z
+Ehttp://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt0
+el-GR
+en-029
+en-AU
+en-BZ
+en-CA
+en-GB
+en-HK
+en-ID
+en-IE
+en-IN
+en-JM
+en-MY
+en-NZ
+en-PH
+en-SG
+EnterCriticalSection
+en-TT
+en-US
+en-us
+en-ZA
+en-ZW
+ERROR: An invalid hive specified.
+ERROR: An invalid locale specified.
+ERROR: An invalid path specified.
+ERROR: An invalid value specified.
+ERROR: API call failed with following error(s): %d.
+ERROR: Could not close the hives.
+ERROR: Could not create the new lang ini file. Please check the path.
+ERROR: Could not find the existing lang ini file.
+ERROR: Could not get info on the type of this installed language.
+ERROR: Could not load software hive.
+ERROR: Could not load system hive.
+ERROR: Could not load user hive.
+ERROR: Could not parse the command line.
+ERROR: Could not query default lang from ini file.
+ERROR: Could not replace the existing lang ini file.  The distribution may be invalid.
+ERROR: Couldn't determine current SKU defaults.
+ERROR: Couldn't query first installed lang from image.
+ERROR: dism.exe has encountered an error.
+ERROR: International provider failed with following error(s):
+ERROR: Multiple value specified where not allowed.
+ERROR: No default lang value specified and Gen-LangIni was not used.
+ERROR: No distribution path specified.
+ERROR: No image or hive path specified.
+ERROR: No image path specified.
+ERROR: No operation specified.
+ERROR: No UI Language was specified.
+ERROR: Out of Memory.
+ERROR: SKUDEFAULTS and ALL cannot be combined.
+ERROR: Specified default language is not an installed language.
+ERROR: Specified time zone is not defined in the image.
+es-419
+es-AR
+es-BO
+es-CL
+es-CO
+es-CR
+es-CU
+es-DO
+es-EC
+es-ES
+es-ES_tradnl
+es-GT
+es-HN
+es-MX
+es-NI
+es-PA
+es-PE
+es-PR
+es-PY
+es-SV
+es-US
+es-UY
+es-VE
+et-EE
+eu-ES
+F<sP 
+f97tA
+Failed getting the Windows directory location
+Failed to add the command to the collection.
+Failed to apply language settings: 0x%x
+Failed to compute offline image paths: 0x%x
+Failed to construct registry key name
+Failed to convert language ID 0x%s to a language name
+Failed to copy the Option to the out parameter.
+Failed to create a new command collection.
+Failed to create a new command object.
+Failed to determine whether target was Windows PE prior to disabling DST correction.
+Failed to generate registry key name
+Failed to get SKU defaults for language %s: 0x%x (extended: 0x%x)
+Failed to get target state.
+Failed to get the Configuration interface from the provider store.
+Failed to get the display type.
+Failed to get the format type.
+Failed to get the option and value.
+Failed to get the option.
+Failed to get the parent configuration object.
+Failed to get the parent's interface from OnConnect
+Failed to get the token.
+Failed to get underlying collection class.
+Failed to initialize the console handler.
+Failed to initialize the message wrapper.
+Failed to mount SYSTEM hive
+Failed to read InstallLanguage value from registry
+Failed to send the error message.
+Failed to to get the arguments value.
+fa-IR
+Fallback Languages
+Fallback Languages 
+Fd t&h
+ff-Latn
+ff-Latn-SN
+ff-NG
+FGWdI8
+fi-FI
+Fiji Standard Time
+FileDescription
+FileType
+FileVersion
+fil-PH
+FindClose
+FindFirstFileW
+FindNextFileW
+FindResourceExW
+FirstEntry
+FLE Standard Time
+fo-FO
+For more information, refer to the help for the %s option.
+ForceRemove
+ForceRemove {2050733C-1AC8-4937-8C56-090DD4D8842F} = s 'DismIntlManager Class'
+ForceRemove 'Programmable'
+FormatMessageW
+fr-029
+fr-BE
+fr-CA
+fr-CD
+fr-CH
+fr-CI
+fr-CM
+FreeLibrary
+fr-FR
+fr-HT
+fr-LU
+fr-MA
+fr-MC
+fr-ML
+fr-RE
+fr-SN
+fy-NL
+G4T4{4
+ga-IE
+gd-GB
+Generates a new lang.ini file.
+Gen-LangIni
+GEN-LANGINI
+Georgian Standard Time
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThreadId
+GetFileAttributesExW
+GetFileAttributesW
+GetGeoInfoW
+Get-Intl
+GET-INTL
+GetLastError
+GetLocalTime
+GetModuleFileNameW
+GetModuleHandleW
+GetPrivateProfileSectionNamesW
+GetPrivateProfileSectionW
+GetProcAddress
+GetProcessHeap
+GetSystemTimeAsFileTime
+GetTempFileNameW
+GetTempPathW
+GetThreadLocale
+GetTickCount
+GetVersionExW
+gl-ES
+GMT Standard Time
+gn-PY
+Greenland Standard Time
+Greenwich Standard Time
+gsw-FR
+GTB Standard Time
+gu-IN
+H0M0_0}0
+ha-Latn
+ha-Latn-NG
+Hardware
+Hardware Profiles\%04d
+Hardware Profiles\Current
+Hawaiian Standard Time
+haw-US
+HeapAlloc
+HeapDestroy
+HeapFree
+HeapReAlloc
+HeapSize
+he-IL
+hi-IN
+HKEY_CLASSES_ROOT
+HKEY_CURRENT_CONFIG
+HKEY_CURRENT_USER
+HKEY_DYN_DATA
+HKEY_LOCAL_MACHINE
+HKEY_PERFORMANCE_DATA
+HKEY_USERS
+hr-BA
+hr-HR
+hsb-DE
+Ht/f;
+Ht5f;
+hu-HU
+hy-AM
+I0G1-0+
+ibb-NG
+iCalendarType
+iCountry
+iCurrDigits
+iCurrency
+iDate
+id-ID
+iDigits
+iFirstDayOfWeek
+iFirstWeekOfYear
+ig-NG
+ii-CN
+iLZero
+image
+IMAGE
+ImageTopLevelHelp
+iMeasure
+India Standard Time
+iNegCurr
+iNegNumber
+InitializeCriticalSection
+InprocServer32 = s '%MODULE%'
+Input locale has been set to:
+INPUT.dll
+Install.CP.%s
+Installed language(s)+The default language in the distribution is
+InstallLanguage
+InstallLanguage1
+InstallLanguage2
+InstallLanguage3
+InstallLanguage4
+InstallLanguage5
+InstallLanguageFallback
+Interface
+InternalName
+INTERNATIONAL SERVICING COMMANDS:
+International settings cannot be displayed. The image must contain at
+InternationalCommands
+IntlManager
+IntlProvider 1.0 Type LibraryW
+IntlProvider.DismIntlManager = s 'DismIntlManager Class'
+IntlProvider.DismIntlManager.1 = s 'DismIntlManager Class'
+IntlProvider.DLL
+intlprovider.dll
+IntlProvider.dll
+'IntlProvider.DLL'
+IntlProvider.pdb
+Invalid locale.
+Invalid parameter passed to C runtime function.
+invalid string position
+INVALID VALUE
+iPaperSize
+Iran Standard Time
+iSHp6
+is-IS
+Israel Standard Time
+it-CH
+iTime
+iTimePrefix
+it-IT
+iTLZero
+iu-Cans
+iu-Cans-CA
+iu-Latn
+iu-Latn-CA
+j ^Vj
+j%Yf;
+j,hx`
+j\Xf9
+j\YWf
+j'^f;
+j-_Vh
+j{Xf;
+j{Xf9
+j=Xf9
+j0Xf9
+j0Yf;
+ja-JP
+Japanese Keyboard (106/109 Key)
+jd_f99u
+jHh8`
+Jordan Standard Time
+jSets the default system UI language that is used
+jWX^]
+jWX_[
+jWX_^
+jWX_^[
+jWX_^Y
+j'Xf;
+j'Xf9
+K0_0f0m0v0
+ka-GE
+kbd101.dll
+kbd101a.dll
+kbd101b.dll
+kbd101c.dll
+kbd103.dll
+kbd106.dll
+KERNEL32.dll
+Keyboard layered driver 
+kk-KZ
+kl-GL
+km-KH
+kn-IN
+kok-IN
+ko-KR
+Korea Standard Time
+Korean Keyboard (103/106 Key)
+Korean PC/AT 101-Key Compatible Keyboard/MS Natural Keyboard (Type 1)
+Korean PC/AT 101-Key Compatible Keyboard/MS Natural Keyboard (Type 2)
+Korean PC/AT 101-Key Compatible Keyboard/MS Natural Keyboard (Type 3)
+kr-NG
+ks-Arab
+ks-Deva-IN
+ku-Arab
+ku-Arab-IQ
+ky-KG
+L$ QVVV
+L$<QVP
+la-001
+language pack to the image and then run the command again.
+LanguageConfiguration
+LastEntry
+LAwV=x
+LayerDriver JPN
+LayerDriver KOR
+lb-LU
+least one language pack for the operating system to boot. Add a
+LeaveCriticalSection
+Legal_Policy_Statement
+LegalCopyright
+list<T> too long
+LoadLibraryExW
+LoadLibraryW
+LoadResource
+LoadStringW
+LocalAlloc
+Locale
+LocaleName
+LocalFree
+Location )Reporting online international settings.
+LockResource
+LogPixels
+lo-LA
+LookupPrivilegeValueW
+lp.cab
+lstrcmpiW
+lstrcmpW
+LSVW3
+lt-LT
+lv-LV
+M QRSP
+M0K0I
+MACCP
+malloc
+MapViewOfFile
+Mauritius Standard Time
+memcmp
+memcpy
+memcpy_s
+memmove_s
+memset
+Microsoft
+Microsoft Corporation
+Microsoft Corporation1
+Microsoft Corporation1&0$
+Microsoft Corporation1)0'
+Microsoft Corporation1.0,
+Microsoft Corporation1200
+Microsoft Time-Stamp PCA 2010
+Microsoft Time-Stamp PCA 20100
+Microsoft Time-Stamp Service
+Microsoft Time-Stamp Service0
+Microsoft Windows0
+Microsoft\Windows NT\CurrentVersion\FontDPI
+Microsoft\Windows NT\CurrentVersion\Time Zones
+Middle East Standard Time
+mi-NZ
+mk-MK
+ml-IN
+mn-Cyrl
+mni-IN
+mn-MN
+mn-Mong
+mn-Mong-CN
+mn-Mong-MN
+Module
+Module_Raw
+moh-CA
+Montevideo Standard Time
+Morocco Standard Time
+mr-IN
+ms-BN
+mSets the input locales and keyboard layouts to 
+ms-MY
+msvcrt.dll
+mt-MT
+MUI\%04hx
+MUI_Display
+MUI_Dlt
+MUI_Std
+MultiByteToWideChar
+Myanmar Standard Time
+my-MM
+N0L0J
+Namibia Standard Time
+Nation
+nb-NO
+nCipher NTS ESN:57F6-C1E0-554C1+0)
+ne-IN
+ne-NP
+Nepal Standard Time
+New Zealand Standard Time
+nl-BE
+nl-NL
+nn-NO
+No languages found Type : Fully localized language..Type : Partially localized language, MUI type.&A new Lang.ini file has been generated:The default language in Lang.ini file has been updated to:
+No preferred UI language found, falling back to install language
+NoRemove
+NoRemove AppID
+NoRemove CLSID
+Not installed.%PC/AT Enhanced Keyboard (101/102-Key)&Korean PC/AT 101-Key Keyboard (Type 1)&Korean PC/AT 101-Key Keyboard (Type 2)&Korean PC/AT 101-Key Keyboard (Type 3)
+nso-ZA
+ntdll.dll
+nThe %s option is not recognized in this context.
+ntuser.dat
+NumShape
+O(_^[
+O0M0K
+oc-FR
+OEMCP
+oK0D$"<
+OLE32.dll
+OLEAUT32.dll
+om-ET
+OpenProcessToken
+OriginalFilename
+or-IN
+oSets the fallback default language for the system 
+OutputDebugStringA
+OutputDebugStringW
+OverrideKeyboardIdentifier
+OverrideKeyboardSubtype
+OverrideKeyboardType
+pa-Arab
+pa-Arab-PK
+Pacific SA Standard Time
+Pacific Standard Time
+pa-IN
+Pakistan Standard Time
+pap-029
+Paraguay Standard Time
+PC/AT Enhanced Keyboard (101/102-Key)
+PCAT_101AKEY
+PCAT_101BKEY
+PCAT_101CKEY
+PCAT_101KEY
+PCAT_103KEY
+PCAT_106KEY
+PID=%d TID=%d %s - %s
+PID=%d TID=%d %s - %s(hr:0x%x)
+pl-PL
+PPPPP
+PreferredUILanguages
+PrivilegeCheck
+ProductName
+ProductVersion
+ProgID = s 'IntlProvider.DismIntlManager.1'
+ProgIDFromCLSID
+prs-AF
+ps-AF
+PSShl
+PSShT
+PSSSV
+PSVh4
+pt-BR
+pt-PT
+PVVhH~
+PVVht~
+PVWVh
+PWSShL
+q(9>u
+qps-Latn-x-sh
+qps-ploc
+qps-ploca
+qps-plocm
+QQQQQQQPQQQ
+QQQWV
+QQSVW
+QQSVW3
+QQSVWj`^
+QQSVWjU
+QQVj,^
+QSVW3
+quc-Latn
+quc-Latn-GT
+QueryPerformanceCounter
+QUIET
+quz-BO
+quz-EC
+quz-PE
+R!s4Z
+r~akow
+RaiseException
+realloc
+Redmond1
+RegCloseKey
+RegCreateKeyExW
+RegDeleteKeyExW
+RegDeleteKeyW
+RegDeleteValueW
+RegEnumKeyExW
+RegEnumValueW
+REGISTRY
+Registry object not initialized.
+RegLoadKeyW
+RegOpenKeyExW
+RegQueryInfoKeyW
+RegQueryValueExW
+RegSetValueExW
+RegUnLoadKeyW
+ReleaseSRWLockExclusive
+rm-CH
+Romance Standard Time
+ro-MD
+ro-RO
+RQRPh4
+RSDS@)i%3
+RtlSetThreadErrorMode
+ru-MD
+ru-RU
+Russian Standard Time
+rw-RW
+s$9>uC!}
+s$j S
+s1159
+s2359
+SA Eastern Standard Time
+SA Pacific Standard Time
+SA Western Standard Time
+sah-RU
+sa-IN
+Samoa Standard Time
+sCountry
+sCurrency
+sd-Arab
+sd-Arab-PK
+sDate
+sd-Deva-IN
+sDecimal
+SE Asia Standard Time
+SearchPathW
+SeBackupPrivilege
+SECURITY
+se-FI
+Select
+se-NO
+SeRestorePrivilege
+se-SE
+Set SKU default settings for:.Type : Partially localized language, LIP type.
+Set-AllIntl
+SET-ALLINTL
+Set-InputLocale
+SET-INPUTLOCALE
+SetLastError
+SET-LAYEREDDRIVER
+Set-LayeredDriver
+Sets all international settings to the default
+Sets keyboard layered driver.
+Sets the language for non-Unicode programs (also
+Set-SetupUILang
+SET-SETUPUILANG
+SET-SKUINTLDEFAULTS
+Set-SKUIntlDefaults
+Set-SysLocale
+SET-SYSLOCALE
+SetThreadLocale
+SetThreadUILanguage
+SET-TIMEZONE
+Set-TimeZone
+Set-UILang
+SET-UILANG
+SET-UILANGFALLBACK
+Set-UILangFallback
+SetUnhandledExceptionFilter
+setupapi.dll
+SetupCloseInfFile
+SetupInstallFromInfSectionW
+SetupOpenInfFileW
+SET-USERLOCALE
+Set-UserLocale
+sGrouping
+SHGetValueW
+SHLWAPI.dll
+si-LK
+Singapore Standard Time
+sIVVP
+SizeofResource
+sk-SK
+sLanguage
+Sleep
+SleepConditionVariableSRW
+sList
+sLongDate
+sl-SI
+sma-NO
+sma-SE
+smj-NO
+smj-SE
+smn-FI
+sMonDecimalSep
+sMonGrouping
+sMonThousandSep
+sms-FI
+sNativeDigits
+sNegativeSign
+Software
+so-SO
+South Africa Standard Time
+sPositiveSign
+sq-AL
+sr-Cyrl
+sr-Cyrl-BA
+sr-Cyrl-CS
+sr-Cyrl-ME
+sr-Cyrl-RS
+Sri Lanka Standard Time
+sr-Latn
+sr-Latn-BA
+sr-Latn-CS
+sr-Latn-ME
+sr-Latn-RS
+sShortDate
+sShortTime
+SSSSSSSPSSSV
+st2f;
+StandardBias
+StandardName
+StandardStart
+sThousand
+sTime
+sTimeFormat
+StrChrW
+String operation exception!
+string too long
+StringFileInfo
+StringFromGUID2
+st-ZA
+Successfully disabled DST correction in Windows PE target image.
+sv-FI
+SVh@[
+sv-SE
+SVWhD
+SVWQPQ
+sw-KE
+sYearMonth
+Syria Standard Time
+syr-SY
+System
+SYSTEM
+System locale 
+System locale has been set to:
+SYSTEM\CurrentControlSet\Control\MiniNT
+System\CurrentControlSet\Hardware Profiles\Current\Software\Fonts
+SystemHive.CP.%s
+SystemHive.CP.0
+SystemHive.Default
+SystemHive.DPI.%s
+t SSSj
+t!ShD
+t%j-^Sh
+t*jXY
+t/f;E
+t:SSSj
+t;f;E
+t}j;V
+t+f9L~
+t3f;E
+t5f;E
+t9f;E
+ta-IN
+Taipei Standard Time
+ta-LK
+TDefines the default language that will be used
+te-IN
+TerminateProcess
+t-f;E
+tFf99uA9>|
+tg-Cyrl
+tg-Cyrl-TJ
+Thales TSS ESN:728D-C45F-F9EB1%0#
+The time zone has been set to:
+The UI language fallback is 
+th-TH
+ti-ER
+ti-ET
+TimeZoneKeyName
+tJj'_
+tk-TM
+TlP0X
+tMj'_
+tn-BW
+tnj'[f;
+tn-ZA
+Tokyo Standard Time
+Tonga Standard Time
+Translation
+tr-TR
+TSets the default time zone in the mounted offline
+tSVW3
+tSWh9
+ts-ZA
+tt-RU
+Turkey Standard Time
+tVj'_
+tVVVVj
+TYPELIB
+TypeLib
+TYPELIB
+'TypeLib' = s '{31D22CFB-C0A3-4f68-938A-38087890A45A}'
+tzm-Arab-MA
+tzm-Latn
+tzm-Latn-DZ
+tzm-Tfng
+tzm-Tfng-MA
+u)SSSS
+u*j}Xf9
+u[f9G
+u_SSSSSSS
+u>VSh
+U0S0Q
+ug-CN
+UI language has been set to:%UI language fallback has been set to:
+UI language is not installed.
+uk-UA
+Ulaanbaatar Standard Time
+Unable to build path for WinPE key. HRESULT=0x%x
+Unable to determine target OS state. HRESULT=0x%x
+Unable to disable DST correction on Windows PE target.
+Unable to get path for system hive. HRESULT=0x%x
+Unable to mount registry.
+UnhandledExceptionFilter
+Unknown Error
+UnmapViewOfFile
+UnregisterClassA
+Unsupported or invalid target OS state.
+ur-IN
+ur-PK
+User locale for default user 
+User locale has been set to:
+User Profile
+USER32.dll
+uT-^~
+UTC+12
+UTC-02
+UTC-11
+utj{^
+uz-Cyrl
+uz-Cyrl-UZ
+uz-Latn
+uz-Latn-UZ
+V([_^
+val AppID = s '%APPID%'
+val ThreadingModel = s 'Apartment'
+VarFileInfo
+Venezuela Standard Time
+VersionIndependentProgID = s 'IntlProvider.DismIntlManager'
+ve-ZA
+vi-VN
+VS_VERSION_INFO
+vswprintf_s
+VVVVVVRj
+Vx9:u
+W. Central Africa Standard Time
+W. Europe Standard Time
+WakeAllConditionVariable
+WARNING: An invalid hive passed in. Ignoring the following hive:
+WARNING: Cannot query default language, falling back.
+WARNING: More than one installed language in the image, picking first.
+Washington1
+wcscat_s
+wcschr
+wcscpy_s
+wcsncpy_s
+wcstol
+wcstoul
+West Asia Standard Time
+West Pacific Standard Time
+WideCharToMultiByte
+Wj(Vj
+WjUPj
+wo-SN
+WriteFile
+x VVj
+x"SSj
+x"Vh0
+xh-ZA
+xrj\Yf9L~
+Y__^[
+yi-001
+yo-NG
+YSets all international settings in the mounted
+YYh`r
+YYWhxo
+z.9Wv
+Z<sP 
+zh-CN
+zh-Hans
+zh-Hant
+zh-HK
+zh-MO
+zh-SG
+zh-TW
+zu-ZA

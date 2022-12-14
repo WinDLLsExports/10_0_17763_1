@@ -1,0 +1,3320 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\ntoskrnl.exe
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ext-ms-win-ntos-werkernel-l1-1-0.dll
+    ext-ms-win-ntos-tm-l1-1-0.dll
+    HAL.dll
+    PSHED.dll
+    BOOTVID.dll
+    ext-ms-win-ntos-clipsp-l1-1-0.dll
+    kdcom.dll
+    ext-ms-win-ntos-kcminitcfg-l1-1-0.dll
+    ext-ms-win-ntos-ksr-l1-1-2.dll
+    ext-ms-win-ntos-trace-l1-1-0.dll
+    ext-ms-win-ntos-ksecurity-l1-1-1.dll
+    ext-ms-win-ntos-werkernel-l1-1-1.dll
+    ext-ms-win-ntos-ksigningpolicy-l1-1-0.dll
+    ext-ms-win-ntos-ucode-l1-1-0.dll
+    ext-ms-win-ntos-stateseparation-l1-1-0.dll
+    ext-ms-win-fs-clfs-l1-1-0.dll
+    CI.dll
+    msrpc.sys
+    cng.sys
+
+  Section contains the following imports:
+
+    ext-ms-win-ntos-werkernel-l1-1-0.dll
+             1404C16D8 Import Address Table
+             1404C2000 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           3 WerLiveKernelInitSystem
+
+    ext-ms-win-ntos-tm-l1-1-0.dll
+             1404C1440 Import Address Table
+             1404C1D68 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          39 TmPrePrepareEnlistment
+                          38 TmPrePrepareComplete
+                          37 TmIsTransactionActive
+                          36 TmIsKTMCommitCoordinator
+                          35 TmInitializeTransactionManager
+                          32 TmGetTransactionId
+                          31 TmFreezeTransactions
+                          30 TmEndPropagationRequest
+                          2F TmEnableCallbacks
+                          2E TmDereferenceEnlistmentKey
+                          2D TmCurrentTransaction
+                          2C TmCreateEnlistment
+                          2B TmCommitTransaction
+                          2A TmCommitEnlistment
+                          29 TmCommitComplete
+                          28 TmCancelPropagationRequest
+                          27 NtThawTransactions
+                          24 NtSetInformationTransaction
+                          23 NtSetInformationResourceManager
+                          22 NtSetInformationEnlistment
+                          20 NtRollbackTransaction
+                          1F NtRollbackEnlistment
+                          1E NtRollbackComplete
+                          1B NtRecoverTransactionManager
+                          1A NtRecoverResourceManager
+                          19 NtRecoverEnlistment
+                          3F TmRecoverEnlistment
+                          34 TmInitSystemPhase2
+                          33 TmInitSystem
+                           0 NtCommitComplete
+                           1 NtCommitEnlistment
+                          3A TmPrepareComplete
+                           3 NtCreateEnlistment
+                          40 TmRecoverResourceManager
+                          41 TmRecoverTransactionManager
+                          42 TmReferenceEnlistmentKey
+                          43 TmRenameTransactionManager
+                          44 TmRequestOutcomeEnlistment
+                          45 TmRollbackComplete
+                          46 TmRollbackEnlistment
+                          47 TmRollbackTransaction
+                          48 TmSetCurrentTransaction
+                          11 NtPrepareEnlistment
+                          4A TmSinglePhaseReject
+                          4B TmThawTransactions
+                          1C NtRegisterProtocolAddressInformation
+                          1D NtRenameTransactionManager
+                          3B TmPrepareEnlistment
+                           4 NtCreateResourceManager
+                           5 NtCreateTransaction
+                          25 NtSetInformationTransactionManager
+                          26 NtSinglePhaseReject
+                           6 NtCreateTransactionManager
+                           7 NtEnumerateTransactionObject
+                           8 NtFreezeTransactions
+                           9 NtGetNotificationResourceManager
+                           A NtOpenEnlistment
+                           B NtOpenResourceManager
+                          21 NtRollforwardTransactionManager
+                          49 TmShutdownSystem
+                           C NtOpenTransaction
+                           D NtOpenTransactionManager
+                           E NtPrePrepareComplete
+                           F NtPrePrepareEnlistment
+                          3C TmPropagationComplete
+                          3D TmPropagationFailed
+                           2 NtCommitTransaction
+                          3E TmReadOnlyEnlistment
+                          18 NtReadOnlyEnlistment
+                          17 NtQueryInformationTransactionManager
+                          16 NtQueryInformationTransaction
+                          15 NtQueryInformationResourceManager
+                          14 NtQueryInformationEnlistment
+                          13 NtPropagationFailed
+                          12 NtPropagationComplete
+                          10 NtPrepareComplete
+
+    HAL.dll
+             1404C1070 Import Address Table
+             1404C1998 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          39 HalReturnToFirmware
+                          20 HalGetProcessorIdByNtNumber
+                          1F HalGetMessageRoutingInfo
+                          21 HalGetVectorInput
+                          48 HalTranslateBusAddress
+                          2D HalQueryEnvironmentVariableInfoEx
+                          44 HalStartNextProcessor
+                          40 HalSetEnvironmentVariableEx
+                          2A HalPerformEndOfInterrupt
+                          54 KeStallExecutionProcessor
+                          19 HalGetBusDataByOffset
+                          2E HalQueryMaximumProcessorCount
+                          51 KdHvComPortInUse
+                          32 HalRegisterErrataCallbacks
+                           0 HalAcpiGetTableEx
+                          24 HalInitSystem
+                          3D HalSetBusDataByOffset
+                          31 HalRegisterDynamicProcessor
+                          43 HalStartDynamicProcessor
+                          28 HalIsHyperThreadingEnabled
+                          23 HalHandleNMI
+                          22 HalHandleMcheck
+                          13 HalEnumerateProcessors
+                          34 HalRequestClockInterrupt
+                           A HalCalibratePerformanceCounter
+                           D HalDisableInterrupt
+                          1B HalGetEnvironmentVariableEx
+                          1C HalGetInterruptTargetInformation
+                          25 HalInitializeBios
+                          42 HalSetRealTimeClock
+                          33 HalReportResourceUsage
+                           3 HalAllProcessorsStarted
+                          2F HalQueryRealTimeClock
+                          53 KeQueryPerformanceCounter
+                          11 HalEnableInterrupt
+                          36 HalRequestIpi
+                          45 HalStartProfileInterrupt
+                          46 HalStopProfileInterrupt
+                          27 HalInitializeProcessor
+                          3B HalSendSoftwareInterrupt
+                          3A HalSendNMI
+                          37 HalRequestIpiSpecifyVector
+                          38 HalRequestSoftwareInterrupt
+                          52 KeFlushWriteBuffer
+                          2B HalProcessorIdle
+                          1E HalGetMemoryCachingRequirements
+                           6 HalAllocateCrashDumpRegisters
+                          26 HalInitializeOnResume
+                          35 HalRequestDeferredRecoveryServiceInterrupt
+                          3F HalSetEnvironmentVariable
+                          1A HalGetEnvironmentVariable
+
+    PSHED.dll
+             1404C1210 Import Address Table
+             1404C1B38 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           8 PshedFreeMemory
+                          11 PshedReadErrorRecord
+                           4 PshedClearErrorRecord
+                           A PshedGetBootErrorPacket
+                           0 PshedAllocateMemory
+                           F PshedIsSystemWheaEnabled
+                           D PshedInitialize
+                           9 PshedGetAllErrorSources
+                           2 PshedAttemptErrorRecovery
+                          16 PshedWriteErrorRecord
+                           3 PshedBugCheckSystem
+                           7 PshedFinalizeErrorRecord
+                           1 PshedArePluginsPresent
+                           6 PshedEnableErrorSource
+                           5 PshedDisableErrorSource
+                           C PshedGetInjectionCapabilities
+                           E PshedInjectError
+                          14 PshedSetErrorSourceInfo
+
+    BOOTVID.dll
+             1404C1000 Import Address Table
+             1404C1928 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           B VidSolidColorFill
+                           8 VidScreenToBufferBlt
+                           0 VidBitBlt
+                           7 VidResetDisplay
+                           1 VidBitBltEx
+                           4 VidDisplayString
+                           6 VidInitialize
+                           9 VidSetScrollRegion
+                           A VidSetTextColor
+                           3 VidCleanUp
+                           2 VidBufferToScreenBlt
+
+    ext-ms-win-ntos-clipsp-l1-1-0.dll
+             1404C1370 Import Address Table
+             1404C1C98 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 ClipSpInitialize
+                           1 ClipSpUninitialize
+
+    kdcom.dll
+             1404C1718 Import Address Table
+             1404C2040 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           1 KdPower
+                           4 KdSetHiberRange
+                           3 KdSendPacket
+                           0 KdInitialize
+                           2 KdReceivePacket
+
+    ext-ms-win-ntos-kcminitcfg-l1-1-0.dll
+             1404C1388 Import Address Table
+             1404C1CB0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 CmCompleteInitMachineConfig
+                           1 CmSetInitMachineConfig
+
+    ext-ms-win-ntos-ksr-l1-1-2.dll
+             1404C13C0 Import Address Table
+             1404C1CE8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          13 KsrQueryMetadata
+                           4 KsrFreePersistedMemory
+                           8 KsrInitPageDatabase
+                          11 KsrPersistMemoryWithMetadata
+                           A KsrMdlToMemoryRuns
+                           6 KsrGetFirmwareInformation
+                           9 KsrInitSystem
+                           1 KsrCleanupPageDatabase
+                           0 KsrClaimPersistedMemory
+                           5 KsrFreePersistedMemoryBlock
+                           3 KsrEnumeratePersistedMemory
+
+    ext-ms-win-ntos-trace-l1-1-0.dll
+             1404C16A8 Import Address Table
+             1404C1FD0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 TraceInitSystem
+
+    ext-ms-win-ntos-ksecurity-l1-1-1.dll
+             1404C13A0 Import Address Table
+             1404C1CC8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 QueryUpdateFileEaAllowedExt
+
+    ext-ms-win-ntos-werkernel-l1-1-1.dll
+             1404C16E8 Import Address Table
+             1404C2010 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           5 WerLiveKernelSubmitReport
+                           4 WerLiveKernelOpenDumpFile
+                           1 WerLiveKernelCloseHandle
+                           2 WerLiveKernelCreateReport
+                           0 WerLiveKernelCancelReport
+
+    ext-ms-win-ntos-ksigningpolicy-l1-1-0.dll
+             1404C13B0 Import Address Table
+             1404C1CD8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           2 SeQuerySigningPolicyExt
+
+    ext-ms-win-ntos-ucode-l1-1-0.dll
+             1404C16B8 Import Address Table
+             1404C1FE0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 ExpMicrocodeInformationLoad
+                           1 ExpMicrocodeInformationUnload
+                           2 ExpMicrocodeInitialization
+
+    ext-ms-win-ntos-stateseparation-l1-1-0.dll
+             1404C1420 Import Address Table
+             1404C1D48 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           1 ExpInitializeStateSeparationPhase1
+                           0 ExpInitializeStateSeparationPhase0
+                           2 ExpInitializeStateSeparationPhase2
+
+    ext-ms-win-fs-clfs-l1-1-0.dll
+             1404C12B8 Import Address Table
+             1404C1BE0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          23 ClfsMgmtInstallPolicy
+                          25 ClfsMgmtRegisterManagedClient
+                           7 ClfsCreateLogFile
+                          21 ClfsMgmtDeregisterManagedClient
+                          14 ClfsGetLogFileInformation
+                          30 ClfsReadRestartArea
+                          1B ClfsLsnEqual
+                          2D ClfsReadLogRecord
+                          2E ClfsReadNextLogRecord
+                          39 ClfsTerminateReadLog
+                          3A ClfsWriteRestartArea
+                           A ClfsDeleteLogByPointer
+                           C ClfsDeleteMarshallingArea
+                          33 ClfsReserveAndAppendLog
+                          1D ClfsLsnInvalid
+                          10 ClfsFlushToLsn
+                          18 ClfsLsnContainer
+                          1E ClfsLsnLess
+                           8 ClfsCreateMarshallingArea
+                           0 ClfsAddLogContainer
+                          1A ClfsLsnDifference
+                           6 ClfsCloseLogFileObject
+
+    CI.dll
+             1404C1060 Import Address Table
+             1404C1988 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 CiInitialize
+
+    msrpc.sys
+             1404C1748 Import Address Table
+             1404C2070 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           F MesEncodeIncrementalHandleCreate
+                          11 MesIncrementalHandleReset
+                          2D NdrMesTypeDecode3
+                          30 NdrMesTypeEncode3
+                          40 RpcExceptionFilter
+                           B MesDecodeBufferHandleCreate
+                          10 MesHandleFree
+
+    cng.sys
+             1404C12A8 Import Address Table
+             1404C1BD0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          10 BCryptExportKey
+
+  Section contains the following exports for ntoskrnl.exe
+
+    00000000 characteristics
+    1FA44FC4 time date stamp
+        0.00 version
+           1 ordinal base
+        2892 number of functions
+        2886 number of names
+
+    ordinal hint RVA      name
+
+          7    0 007CC900 AlpcCreateSecurityContext
+          8    1 000D29D0 AlpcGetHeaderSize
+          9    2 000D2850 AlpcGetMessageAttribute
+         10    3 000D2970 AlpcInitializeMessageAttribute
+         11    4 008D5230 BgkDisplayCharacter
+         12    5 008D5300 BgkGetConsoleState
+         13    6 008D5350 BgkGetCursorState
+         14    7 008D53B0 BgkSetCursor
+         15    8 00161E70 CcAddDirtyPagesToExternalCache
+         16    9 00092620 CcAsyncCopyRead
+         17    A 000E8090 CcCanIWrite
+         18    B 0012B830 CcCoherencyFlushAndPurgeCache
+         19    C 006253A0 CcCopyRead
+         20    D 0003F1B0 CcCopyReadEx
+         21    E 00268C50 CcCopyWrite
+         22    F 000269D0 CcCopyWriteEx
+         23   10 00092250 CcCopyWriteWontFlush
+         24   11 00161C50 CcDeductDirtyPagesFromExternalCache
+         25   12 00268C80 CcDeferWrite
+         26   13 0076B5C0 CcFastCopyRead
+         27   14 00268E80 CcFastCopyWrite
+         28   15 0043D308 CcFastMdlReadWait
+         29   16 0011B3B0 CcFlushCache
+         30   17 0015AC70 CcFlushCacheToLsn
+         31   18 00269460 CcGetCachedDirtyPageCountForFile
+         32   19 00113400 CcGetDirtyPages
+         33   1A 00268780 CcGetFileObjectFromBcb
+         34   1B 002687A0 CcGetFileObjectFromSectionPtrs
+         35   1C 00268840 CcGetFileObjectFromSectionPtrsRef
+         36   1D 001149B0 CcGetFlushedValidData
+         37   1E 00269480 CcGetLsnForFileObject
+         38   1F 001619A0 CcGetNumberOfMappedPages
+         39   20 001285F0 CcInitializeCacheMap
+         40   21 000746D0 CcInitializeCacheMapEx
+         41   22 00269540 CcIsThereDirtyData
+         42   23 00269580 CcIsThereDirtyDataEx
+         43   24 0010E010 CcIsThereDirtyLoggedPages
+         44   25 0052AAB0 CcMapData
+         45   26 00589F80 CcMdlRead
+         46   27 0061EF60 CcMdlReadComplete
+         47   28 0026A5C0 CcMdlWriteAbort
+         48   29 00620EF0 CcMdlWriteComplete
+         49   2A 0052AB90 CcPinMappedData
+         50   2B 005F2970 CcPinRead
+         51   2C 00091F00 CcPrepareMdlWrite
+         52   2D 005D0AC0 CcPreparePinWrite
+         53   2E 0001A6F0 CcPurgeCacheSection
+         54   2F 00164630 CcRegisterExternalCache
+         55   30 000F98E0 CcRemapBcb
+         56   31 002691F0 CcRepinBcb
+         57   32 00269260 CcScheduleReadAhead
+         58   33 000932D0 CcScheduleReadAheadEx
+         59   34 000AE920 CcSetAdditionalCacheAttributes
+         60   35 000AE810 CcSetAdditionalCacheAttributesEx
+         61   36 0076B650 CcSetBcbOwnerPointer
+         62   37 002688E0 CcSetDirtyPageThreshold
+         63   38 000D9340 CcSetDirtyPinnedData
+         64   39 00129300 CcSetFileSizes
+         65   3A 000AE9D0 CcSetFileSizesEx
+         66   3B 00269880 CcSetLogHandleForFile
+         67   3C 0010A4D0 CcSetLogHandleForFileEx
+         68   3D 0015AF00 CcSetLoggedDataThreshold
+         69   3E 001091A0 CcSetParallelFlushFile
+         70   3F 00119780 CcSetReadAheadGranularity
+         71   40 00269280 CcSetReadAheadGranularityEx
+         72   41 0018DA80 CcTestControl
+         73   42 000ADF40 CcUninitializeCacheMap
+         74   43 00118BE0 CcUnmapFileOffsetFromSystemCache
+         75   44 00598920 CcUnpinData
+         76   45 0076B6B0 CcUnpinDataForThread
+         77   46 002692D0 CcUnpinRepinnedBcb
+         78   47 00268BF0 CcUnregisterExternalCache
+         79   48 0015B770 CcWaitForCurrentLazyWriterActivity
+         80   49 000D5DD0 CcZeroData
+         81   4A 00091540 CcZeroDataOnDisk
+         82   4B 0076D980 CmCallbackGetKeyObjectID
+         83   4C 0054C9F0 CmCallbackGetKeyObjectIDEx
+         84   4D 00556E60 CmCallbackReleaseKeyObjectIDEx
+         85   4E 00623160 CmGetBoundTransaction
+         86   4F 0076DAB0 CmGetCallbackVersion
+         87   50 004C52F0 CmKeyObjectType
+         88   51 006C3030 CmRegisterCallback
+         89   52 0076DAD0 CmRegisterCallbackEx
+         90   53 0076DB20 CmSetCallbackObjectContext
+         91   54 0076DD40 CmUnRegisterCallback
+         92   55 001B8B70 DbgBreakPoint
+         93   56 001B8B90 DbgBreakPointWithStatus
+         94   57 002EB6A0 DbgCommandString
+         95   58 00134C30 DbgLoadImageSymbols
+         96   59 001351E0 DbgPrint
+         97   5A 0015ACA0 DbgPrintEx
+         98   5B 002EB700 DbgPrintReturnControlC
+         99   5C 002EB750 DbgPrompt
+        100   5D 002EB790 DbgQueryDebugFilterState
+        101   5E 00180740 DbgSetDebugFilterState
+        102   5F 002EB7B0 DbgSetDebugPrintCallback
+        103   60 00686200 DbgkLkmdRegisterCallback
+        104   61 00794B50 DbgkLkmdUnregisterCallback
+        105   62 00795500 DbgkWerCaptureLiveKernelDump
+        106   63 004E7780 EmClientQueryRuleState
+        107   64 00796570 EmClientRuleDeregisterNotification
+        108   65 004E72E0 EmClientRuleEvaluate
+        109   66 00796650 EmClientRuleRegisterNotification
+        110   67 007968D0 EmProviderDeregister
+        111   68 00796A80 EmProviderDeregisterEntry
+        112   69 00694A40 EmProviderRegister
+        113   6A 00796AE0 EmProviderRegisterEntry
+        114   6B 00694AB0 EmpProviderRegister
+        115   6C 00099F10 EtwActivityIdControl
+        116   6D 0067DE60 EtwEnableTrace
+        117   6E 00076F30 EtwEventEnabled
+        118   6F 000069A0 EtwProviderEnabled
+        119   70 0055DEF0 EtwRegister
+        120   71 006254A0 EtwRegisterClassicProvider
+        121   72 0030DA50 EtwSendTraceBuffer
+        122   73 00672600 EtwSetInformation
+        123   74 0011B3E0 EtwTelemetryCoverageReport
+        124   75 0066DE50 EtwUnregister
+        125   76 00075CC0 EtwWrite
+        126   77 0067C670 EtwWriteEndScenario
+        127   78 00075D00 EtwWriteEx
+        128   79 0067C720 EtwWriteStartScenario
+        129   7A 0030D550 EtwWriteString
+        130   7B 000EBFC0 EtwWriteTransfer
+        131   7C 00128870 EtwpDisableStackWalkApc
+        132   7D 001288E0 EtwpReenableStackWalkApc
+        133   7E 00109100 ExAcquireAutoExpandPushLockExclusive
+        134   7F 000D3F90 ExAcquireAutoExpandPushLockShared
+        135   80 000D6690 ExAcquireCacheAwarePushLockExclusive
+        136   81 00319F10 ExAcquireCacheAwarePushLockExclusiveEx
+        137   82 000BC8A0 ExAcquireCacheAwarePushLockSharedEx
+        138   83 000BC700 ExAcquireFastMutex
+        139   84 000869F0 ExAcquireFastMutexUnsafe
+        140   85 001601C0 ExAcquireFastResourceExclusive
+        141   86 00160A50 ExAcquireFastResourceShared
+        142   87 00160820 ExAcquireFastResourceSharedStarveExclusive
+        143   88 000BCE40 ExAcquirePushLockExclusiveEx
+        144   89 000BCFF0 ExAcquirePushLockSharedEx
+        145   8A 000BE860 ExAcquireResourceExclusiveLite
+        146   8B 000BEAD0 ExAcquireResourceSharedLite
+        147   8C 000F9370 ExAcquireRundownProtection
+        148   8D 000F9320 ExAcquireRundownProtectionCacheAware
+        149   8E 00070AA0 ExAcquireRundownProtectionCacheAwareEx
+        150   8F 00070AF0 ExAcquireRundownProtectionEx
+        151   90 0010A9D0 ExAcquireSharedStarveExclusive
+        152   91 00160D70 ExAcquireSharedWaitForExclusive
+        153   92 000DBFF0 ExAcquireSpinLockExclusive
+        154   93 000A66A0 ExAcquireSpinLockExclusiveAtDpcLevel
+        155   94 0009C180 ExAcquireSpinLockShared
+        156   95 0009BB10 ExAcquireSpinLockSharedAtDpcLevel
+        157   96 00161F50 ExAllocateAutoExpandPushLock
+        158   97 00188370 ExAllocateCacheAwarePushLock
+        159   98 00563270 ExAllocateCacheAwareRundownProtection
+        160   99 00128640 ExAllocatePool
+        161   9A 003196B0 ExAllocatePoolWithQuota
+        162   9B 0005FE40 ExAllocatePoolWithQuotaTag
+        163   9C 0034D980 ExAllocatePoolWithTag
+        164   9D 000EB3C0 ExAllocatePoolWithTagPriority
+        165   9E 00166120 ExAllocateTimer
+        166   9F 000F2F50 ExBlockOnAddressPushLock
+        167   A0 000F3000 ExBlockPushLock
+        168   A1 000E8FB0 ExCancelTimer
+        169   A2 000E6DA0 ExCleanupAutoExpandPushLock
+        170   A3 00170E40 ExCleanupRundownProtectionCacheAware
+        171   A4 004C4258 ExCompositionObjectType
+        172   A5 000D00F0 ExConvertExclusiveToSharedLite
+        173   A6 0031A260 ExConvertFastResourceExclusiveToShared
+        174   A7 003182E0 ExConvertPushLockExclusiveToShared
+        175   A8 004C4260 ExCoreMessagingObjectType
+        176   A9 00621C80 ExCreateCallback
+        177   AA 001633B0 ExDeleteFastResource
+        178   AB 00119650 ExDeleteLookasideListEx
+        179   AC 001675F0 ExDeleteNPagedLookasideList
+        180   AD 001195D0 ExDeletePagedLookasideList
+        181   AE 000B4340 ExDeleteResourceLite
+        182   AF 000E7590 ExDeleteTimer
+        183   B0 004C4240 ExDesktopObjectType
+        184   B1 0015A390 ExDisableResourceBoostLite
+        185   B2 00160560 ExDisownFastResource
+        186   B3 000D51D0 ExEnterCriticalRegionAndAcquireFastMutexUnsafe
+        187   B4 000BE7A0 ExEnterCriticalRegionAndAcquireResourceExclusive
+        188   B5 000FA010 ExEnterCriticalRegionAndAcquireResourceShared
+        189   B6 0031AC20 ExEnterCriticalRegionAndAcquireSharedWaitForExclusive
+        190   B7 0031AC60 ExEnterPriorityRegionAndAcquireResourceExclusive
+        191   B8 000BAA30 ExEnterPriorityRegionAndAcquireResourceShared
+        192   B9 005F06E0 ExEnumHandleTable
+        193   BA 0084DD00 ExEnumerateSystemFirmwareTables
+        194   BB 004C4020 ExEventObjectType
+        195   BC 0031BFA0 ExExtendZone
+        196   BD 008511B0 ExFetchLicenseData
+        197   BE 00119690 ExFlushLookasideListEx
+        198   BF 00162020 ExFreeAutoExpandPushLock
+        199   C0 00319F60 ExFreeCacheAwarePushLock
+        200   C1 0008AD40 ExFreeCacheAwareRundownProtection
+        201   C2 0034B010 ExFreePool
+        202   C3 0034B030 ExFreePoolWithTag
+        203   C4 0010C410 ExGetCurrentProcessorCounts
+        204   C5 00318300 ExGetCurrentProcessorCpuUsage
+        205   C6 0031ACB0 ExGetExclusiveWaiterCount
+        206   C7 006225C0 ExGetFirmwareEnvironmentVariable
+        207   C8 00318340 ExGetFirmwareType
+        208   C9 00851300 ExGetLicenseTamperState
+        209   CA 000FE4B0 ExGetPreviousMode
+        210   CB 0031ACF0 ExGetSharedWaiterCount
+        211   CC 006C4690 ExGetSystemFirmwareTable
+        212   CD 00109350 ExInitializeAutoExpandPushLock
+        213   CE 001617D0 ExInitializeFastOwnerEntry
+        214   CF 001663C0 ExInitializeFastResource
+        215   D0 000E0BE0 ExInitializeLookasideListEx
+        216   D1 0015A230 ExInitializeNPagedLookasideList
+        217   D2 00614280 ExInitializePagedLookasideList
+        218   D3 000A2190 ExInitializePushLock
+        219   D4 00076FF0 ExInitializeResourceLite
+        220   D5 000A2190 ExInitializeRundownProtection
+        221   D6 00563380 ExInitializeRundownProtectionCacheAware
+        222   D7 00170E40 ExInitializeRundownProtectionCacheAwareEx
+        223   D8 0031C010 ExInitializeZone
+        224   D9 0031C1D0 ExInterlockedAddLargeInteger
+        225   DA 001596E0 ExInterlockedAddUlong
+        226   DB 0031C080 ExInterlockedExtendZone
+        227   DC 000FB340 ExInterlockedInsertHeadList
+        228   DD 000FB3C0 ExInterlockedInsertTailList
+        229   DE 0031C230 ExInterlockedPopEntryList
+        230   DF 0031C280 ExInterlockedPushEntryList
+        231   E0 000FB440 ExInterlockedRemoveHeadList
+        232   E1 0031A3B0 ExIsFastResourceContended
+        233   E2 001604D0 ExIsFastResourceHeld
+        234   E3 0015F7C0 ExIsFastResourceHeldExclusive
+        235   E4 006A2E30 ExIsManufacturingModeEnabled
+        236   E5 00127390 ExIsProcessorFeaturePresent
+        237   E6 000F6560 ExIsResourceAcquiredExclusiveLite
+        238   E7 000BAF90 ExIsResourceAcquiredSharedLite
+        239   E8 00173ED0 ExIsSoftBoot
+        240   E9 0015B430 ExLocalTimeToSystemTime
+        241   EA 00319190 ExNotifyBootDeviceRemoval
+        242   EB 000F6320 ExNotifyCallback
+        243   EC 000F9B10 ExQueryDepthSList
+        244   ED 0061A2B0 ExQueryFastCacheDevLicense
+        245   EE 0018D480 ExQueryPoolBlockSize
+        246   EF 0018D7F0 ExQueryTimerResolution
+        247   F0 00620400 ExQueryWnfStateData
+        248   F1 0005B3C0 ExQueueWorkItem
+        249   F2 00858F60 ExRaiseAccessViolation
+        250   F3 00858F80 ExRaiseDatatypeMisalignment
+        251   F4 002EC600 ExRaiseException
+        252   F5 00858FA0 ExRaiseHardError
+        253   F6 00119F50 ExRaiseStatus
+        254   F7 004C4250 ExRawInputManagerObjectType
+        255   F8 00172F30 ExReInitializeRundownProtection
+        256   F9 0008BCD0 ExReInitializeRundownProtectionCacheAware
+        257   FA 00172EB0 ExRealTimeIsUniversal
+        258   FB 003191E0 ExRegisterBootDevice
+        259   FC 00166E80 ExRegisterCallback
+        260   FD 0068DE40 ExRegisterExtension
+        261   FE 00164490 ExReinitializeFastResource
+        262   FF 000E72E0 ExReinitializeResourceLite
+        263  100 00107B50 ExReleaseAutoExpandPushLockExclusive
+        264  101 000F5F70 ExReleaseAutoExpandPushLockShared
+        265  102 000D4370 ExReleaseCacheAwarePushLockExclusive
+        266  103 00319FC0 ExReleaseCacheAwarePushLockExclusiveEx
+        267  104 000BCA50 ExReleaseCacheAwarePushLockSharedEx
+        268  105 0015FAC0 ExReleaseDisownedFastResource
+        269  106 0031A420 ExReleaseDisownedFastResourceExclusive
+        270  107 0031A530 ExReleaseDisownedFastResourceShared
+        271  108 000BFA10 ExReleaseFastMutex
+        272  109 000869B0 ExReleaseFastMutexUnsafe
+        273  10A 000FDDC0 ExReleaseFastMutexUnsafeAndLeaveCriticalRegion
+        274  10B 0015FE00 ExReleaseFastResource
+        275  10C 0031A650 ExReleaseFastResourceExclusive
+        276  10D 0031A780 ExReleaseFastResourceShared
+        277  10E 000BD330 ExReleasePushLockEx
+        278  10F 000BCBD0 ExReleasePushLockExclusiveEx
+        279  110 000BF930 ExReleasePushLockSharedEx
+        280  111 000BD620 ExReleaseResourceAndLeaveCriticalRegion
+        281  112 0031AD30 ExReleaseResourceAndLeavePriorityRegion
+        282  113 000E8C30 ExReleaseResourceForThreadLite
+        283  114 000BD760 ExReleaseResourceLite
+        284  115 000FA0F0 ExReleaseRundownProtection
+        285  116 000FB980 ExReleaseRundownProtectionCacheAware
+        286  117 0008AE40 ExReleaseRundownProtectionCacheAwareEx
+        287  118 0031B200 ExReleaseRundownProtectionEx
+        288  119 00103930 ExReleaseSpinLockExclusive
+        289  11A 000756A0 ExReleaseSpinLockExclusiveFromDpcLevel
+        290  11B 000FB720 ExReleaseSpinLockShared
+        291  11C 0009BAD0 ExReleaseSpinLockSharedFromDpcLevel
+        292  11D 0008FCE0 ExRundownCompleted
+        293  11E 0008BD20 ExRundownCompletedCacheAware
+        294  11F 004C4238 ExSemaphoreObjectType
+        295  120 00852520 ExSetFirmwareEnvironmentVariable
+        296  121 00851510 ExSetLicenseTamperState
+        297  122 001617A0 ExSetResourceOwnerPointer
+        298  123 000E8750 ExSetResourceOwnerPointerEx
+        299  124 000EB690 ExSetTimer
+        300  125 00318A40 ExSetTimerResolution
+        301  126 0031C5B0 ExShareAddressSpaceWithDevice
+        302  127 00319E20 ExSizeOfAutoExpandPushLock
+        303  128 00674CE0 ExSizeOfRundownProtectionCacheAware
+        304  129 00581010 ExSubscribeWnfStateChange
+        305  12A 0031CB90 ExSvmBeginDeviceReset
+        306  12B 0031CCD0 ExSvmFinalizeDeviceReset
+        307  12C 006485B0 ExSystemExceptionFilter
+        308  12D 00128DB0 ExSystemTimeToLocalTime
+        309  12E 000F3020 ExTimedWaitForUnblockPushLock
+        310  12F 004C5518 ExTimerObjectType
+        311  130 00164530 ExTryAcquireAutoExpandPushLockExclusive
+        312  131 00161670 ExTryAcquireAutoExpandPushLockShared
+        313  132 0031A060 ExTryAcquireCacheAwarePushLockExclusiveEx
+        314  133 0031A130 ExTryAcquireCacheAwarePushLockSharedEx
+        315  134 000F2950 ExTryAcquirePushLockExclusiveEx
+        316  135 000F21F0 ExTryAcquirePushLockSharedEx
+        317  136 000D78A0 ExTryAcquireSpinLockExclusiveAtDpcLevel
+        318  137 0031B270 ExTryAcquireSpinLockSharedAtDpcLevel
+        319  138 00119240 ExTryConvertPushLockSharedToExclusiveEx
+        320  139 000F2170 ExTryConvertSharedSpinLockExclusive
+        321  13A 000D71D0 ExTryQueueWorkItem
+        322  13B 000F28B0 ExTryToAcquireFastMutex
+        323  13C 0031ADB0 ExTryToAcquireResourceExclusiveLite
+        324  13D 0031A8C0 ExTryToConvertFastResourceSharedToExclusive
+        325  13E 0031A1F0 ExUnblockOnAddressPushLockEx
+        326  13F 0031A1F0 ExUnblockPushLockEx
+        327  140 001676E0 ExUnregisterCallback
+        328  141 008597A0 ExUnregisterExtension
+        329  142 0055C460 ExUnsubscribeWnfStateChange
+        330  143 008516E0 ExUpdateLicenseData
+        331  144 00573B90 ExUuidCreate
+        332  145 00173AA0 ExVerifySuite
+        333  146 000A1640 ExWaitForRundownProtectionRelease
+        334  147 0008BC20 ExWaitForRundownProtectionReleaseCacheAware
+        335  148 0031A240 ExWaitForUnblockPushLock
+        336  149 004C4248 ExWindowStationObjectType
+        337  14A 000D6A30 ExfAcquirePushLockExclusive
+        338  14B 000D6820 ExfAcquirePushLockShared
+        339  14C 0009A2E0 ExfReleasePushLock
+        340  14D 0009A3D0 ExfReleasePushLockExclusive
+        341  14E 0009A310 ExfReleasePushLockShared
+        342  14F 0009A420 ExfTryAcquirePushLockShared
+        343  150 000D43E0 ExfTryToWakePushLock
+        344  151 001ACDA0 ExfUnblockPushLock
+        345  152 001B8C90 ExpInterlockedFlushSList
+        346  153 001B8C10 ExpInterlockedPopEntrySList
+        347  154 001B8C50 ExpInterlockedPushEntrySList
+        348  155 001B8C00 FirstEntrySList
+        349  156 006193F0 FsRtlAcknowledgeEcp
+        350  157 000F47F0 FsRtlAcquireEofLock
+        351  158 005980C0 FsRtlAcquireFileExclusive
+        352  159 000BC280 FsRtlAcquireHeaderMutex
+        353  15A 000FEAD0 FsRtlAddBaseMcbEntry
+        354  15B 000FEAF0 FsRtlAddBaseMcbEntryEx
+        355  15C 000FE4D0 FsRtlAddLargeMcbEntry
+        356  15D 0026DD80 FsRtlAddMcbEntry
+        357  15E 00506F70 FsRtlAddToTunnelCache
+        358  15F 005013D0 FsRtlAddToTunnelCacheEx
+        359  160 005BC840 FsRtlAllocateExtraCreateParameter
+        360  161 00558060 FsRtlAllocateExtraCreateParameterFromLookasideList
+        361  162 0050E8A0 FsRtlAllocateExtraCreateParameterList
+        362  163 00126FB0 FsRtlAllocateFileLock
+        363  164 0026EBB0 FsRtlAllocatePool
+        364  165 0026EBE0 FsRtlAllocatePoolWithQuota
+        365  166 0026EC10 FsRtlAllocatePoolWithQuotaTag
+        366  167 0026EC40 FsRtlAllocatePoolWithTag
+        367  168 00796E10 FsRtlAllocateResource
+        368  169 000FB140 FsRtlAreNamesEqual
+        369  16A 0026E450 FsRtlAreThereCurrentOrInProgressFileLocks
+        370  16B 0013A870 FsRtlAreThereWaitingFileLocks
+        371  16C 0061EB40 FsRtlAreVolumeStartupApplicationsComplete
+        372  16D 00668580 FsRtlBalanceReads
+        373  16E 005E8F80 FsRtlCancellableWaitForMultipleObjects
+        374  16F 005E8950 FsRtlCancellableWaitForSingleObject
+        375  170 00164500 FsRtlChangeBackingFileObject
+        376  171 001264B0 FsRtlCheckLockForOplockRequest
+        377  172 000FC000 FsRtlCheckLockForReadAccess
+        378  173 000FBE40 FsRtlCheckLockForWriteAccess
+        379  174 00060810 FsRtlCheckOplock
+        380  175 000608C0 FsRtlCheckOplockEx
+        381  176 005030F0 FsRtlCheckUpperOplock
+        382  177 00796E60 FsRtlCopyRead
+        383  178 007970E0 FsRtlCopyWrite
+        384  179 00005160 FsRtlCreateSectionForDataScan
+        385  17A 005FE960 FsRtlCurrentBatchOplock
+        386  17B 001645B0 FsRtlCurrentOplock
+        387  17C 00798150 FsRtlCurrentOplockH
+        388  17D 00796E40 FsRtlDeleteExtraCreateParameterLookasideList
+        389  17E 00612270 FsRtlDeleteKeyFromTunnelCache
+        390  17F 00667590 FsRtlDeleteTunnelCache
+        391  180 00798010 FsRtlDeregisterUncProvider
+        392  181 006689C0 FsRtlDismountComplete
+        393  182 00798920 FsRtlDissectDbcs
+        394  183 000F31C0 FsRtlDissectName
+        395  184 00798A10 FsRtlDoesDbcsContainWildCards
+        396  185 00004300 FsRtlDoesNameContainWildCards
+        397  186 000FC090 FsRtlFastCheckLockForRead
+        398  187 000FBEE0 FsRtlFastCheckLockForWrite
+        399  188 0011E2B0 FsRtlFastUnlockAll
+        400  189 0026E5C0 FsRtlFastUnlockAllByKey
+        401  18A 00084910 FsRtlFastUnlockSingle
+        402  18B 00530460 FsRtlFindExtraCreateParameter
+        403  18C 00506F30 FsRtlFindInTunnelCache
+        404  18D 00501700 FsRtlFindInTunnelCacheEx
+        405  18E 0050E1D0 FsRtlFreeExtraCreateParameter
+        406  18F 0050E110 FsRtlFreeExtraCreateParameterList
+        407  190 00127D60 FsRtlFreeFileLock
+        408  191 005332C0 FsRtlGetEcpListFromIrp
+        409  192 00624EC0 FsRtlGetFileNameInformation
+        410  193 00516780 FsRtlGetFileSize
+        411  194 00104DD0 FsRtlGetIoAtEof
+        412  195 000FDE30 FsRtlGetNextBaseMcbEntry
+        413  196 0061EDF0 FsRtlGetNextExtraCreateParameter
+        414  197 0026E630 FsRtlGetNextFileLock
+        415  198 0026DDA0 FsRtlGetNextLargeMcbEntry
+        416  199 0026DE10 FsRtlGetNextMcbEntry
+        417  19A 00662730 FsRtlGetSectorSizeInformation
+        418  19B 00128CD0 FsRtlGetSupportedFeatures
+        419  19C 0015A500 FsRtlGetVirtualDiskNestingLevel
+        420  19D 007992C0 FsRtlHeatInit
+        421  19E 007993F0 FsRtlHeatLogIo
+        422  19F 007994D0 FsRtlHeatLogTierMove
+        423  1A0 00799530 FsRtlHeatUninit
+        424  1A1 00163380 FsRtlIncrementCcFastMdlReadWait
+        425  1A2 0026DCD0 FsRtlIncrementCcFastReadNoWait
+        426  1A3 0061CB70 FsRtlIncrementCcFastReadNotPossible
+        427  1A4 0026DCE0 FsRtlIncrementCcFastReadResourceMiss
+        428  1A5 00605080 FsRtlIncrementCcFastReadWait
+        429  1A6 006BF6B0 FsRtlInitExtraCreateParameterLookasideList
+        430  1A7 000053B0 FsRtlInitializeBaseMcb
+        431  1A8 000053D0 FsRtlInitializeBaseMcbEx
+        432  1A9 0010C6F0 FsRtlInitializeEofLock
+        433  1AA 00668540 FsRtlInitializeExtraCreateParameter
+        434  1AB 00668610 FsRtlInitializeExtraCreateParameterList
+        435  1AC 00129400 FsRtlInitializeFileLock
+        436  1AD 00122210 FsRtlInitializeLargeMcb
+        437  1AE 00797FD0 FsRtlInitializeMcb
+        438  1AF 0063A480 FsRtlInitializeOplock
+        439  1B0 00666A90 FsRtlInitializeTunnelCache
+        440  1B1 0050E830 FsRtlInsertExtraCreateParameter
+        441  1B2 0011A0F0 FsRtlInsertPerFileContext
+        442  1B3 00085510 FsRtlInsertPerFileObjectContext
+        443  1B4 00104C80 FsRtlInsertPerStreamContext
+        444  1B5 0026DCF0 FsRtlIsDaxVolume
+        445  1B6 00798A80 FsRtlIsDbcsInExpression
+        446  1B7 006097A0 FsRtlIsEcpAcknowledged
+        447  1B8 00606740 FsRtlIsEcpFromUserMode
+        448  1B9 007986E0 FsRtlIsExtentDangling
+        449  1BA 0060E2D0 FsRtlIsFatDbcsLegal
+        450  1BB 007990C0 FsRtlIsHpfsDbcsLegal
+        451  1BC 006428F0 FsRtlIsMobileOS
+        452  1BD 00003CE0 FsRtlIsNameInExpression
+        453  1BE 00003D70 FsRtlIsNameInUnUpcasedExpression
+        454  1BF 00122E20 FsRtlIsNonEmptyDirectoryReparsePointAllowed
+        455  1C0 0011E7F0 FsRtlIsNtstatusExpected
+        456  1C1 00109950 FsRtlIsPagingFile
+        457  1C2 00139CC0 FsRtlIsSystemPagingFile
+        458  1C3 0001EB30 FsRtlIsTotalDeviceFailure
+        459  1C4 00662B20 FsRtlIssueDeviceIoControl
+        460  1C5 0060CD60 FsRtlKernelFsControlFile
+        461  1C6 00357D70 FsRtlLegalAnsiCharacterArray
+        462  1C7 00797630 FsRtlLogCcFlushError
+        463  1C8 000F96A0 FsRtlLookupBaseMcbEntry
+        464  1C9 0026DE80 FsRtlLookupLargeMcbEntry
+        465  1CA 001098D0 FsRtlLookupLastBaseMcbEntry
+        466  1CB 0011F400 FsRtlLookupLastBaseMcbEntryAndIndex
+        467  1CC 0026DF30 FsRtlLookupLastLargeMcbEntry
+        468  1CD 0026DFB0 FsRtlLookupLastLargeMcbEntryAndIndex
+        469  1CE 0026E040 FsRtlLookupLastMcbEntry
+        470  1CF 0026E090 FsRtlLookupMcbEntry
+        471  1D0 000FFD00 FsRtlLookupPerFileContext
+        472  1D1 000F8FD0 FsRtlLookupPerFileObjectContext
+        473  1D2 000BC620 FsRtlLookupPerStreamContextInternal
+        474  1D3 0061E8E0 FsRtlMdlRead
+        475  1D4 0026DD20 FsRtlMdlReadComplete
+        476  1D5 000D6530 FsRtlMdlReadCompleteDev
+        477  1D6 00797890 FsRtlMdlReadDev
+        478  1D7 0061E860 FsRtlMdlReadEx
+        479  1D8 00797A80 FsRtlMdlWriteComplete
+        480  1D9 00619730 FsRtlMdlWriteCompleteDev
+        481  1DA 00798070 FsRtlMupGetProviderIdFromName
+        482  1DB 007980A0 FsRtlMupGetProviderInfoFromFileObject
+        483  1DC 0013A570 FsRtlNormalizeNtstatus
+        484  1DD 00799960 FsRtlNotifyChangeDirectory
+        485  1DE 005F5380 FsRtlNotifyCleanup
+        486  1DF 007999C0 FsRtlNotifyCleanupAll
+        487  1E0 005F3D90 FsRtlNotifyFilterChangeDirectory
+        488  1E1 005F5060 FsRtlNotifyFilterChangeDirectoryLite
+        489  1E2 005F3460 FsRtlNotifyFilterReportChange
+        490  1E3 00799A90 FsRtlNotifyFilterReportChangeLite
+        491  1E4 005F48C0 FsRtlNotifyFilterReportChangeLiteEx
+        492  1E5 00799AF0 FsRtlNotifyFullChangeDirectory
+        493  1E6 00799B60 FsRtlNotifyFullReportChange
+        494  1E7 005F54F0 FsRtlNotifyInitializeSync
+        495  1E8 00799BC0 FsRtlNotifyReportChange
+        496  1E9 006233D0 FsRtlNotifyUninitializeSync
+        497  1EA 00666CE0 FsRtlNotifyVolumeEvent
+        498  1EB 00563660 FsRtlNotifyVolumeEventEx
+        499  1EC 000D35E0 FsRtlNumberOfRunsInBaseMcb
+        500  1ED 0026E110 FsRtlNumberOfRunsInLargeMcb
+        501  1EE 0026E150 FsRtlNumberOfRunsInMcb
+        502  1EF 0061CB80 FsRtlOplockBreakH
+        503  1F0 0026ECD0 FsRtlOplockBreakToNone
+        504  1F1 0026ED30 FsRtlOplockBreakToNoneEx
+        505  1F2 00558160 FsRtlOplockFsctrl
+        506  1F3 00558180 FsRtlOplockFsctrlEx
+        507  1F4 005F7FE0 FsRtlOplockIsFastIoPossible
+        508  1F5 00601920 FsRtlOplockIsSharedRequest
+        509  1F6 001649F0 FsRtlOplockKeysEqual
+        510  1F7 0026FF10 FsRtlPostPagingFileStackOverflow
+        511  1F8 0026FF30 FsRtlPostStackOverflow
+        512  1F9 0061E7C0 FsRtlPrepareMdlWrite
+        513  1FA 00797AF0 FsRtlPrepareMdlWriteDev
+        514  1FB 0061E740 FsRtlPrepareMdlWriteEx
+        515  1FC 0066CF10 FsRtlPrepareToReuseEcp
+        516  1FD 00084D70 FsRtlPrivateLock
+        517  1FE 0013A5D0 FsRtlProcessFileLock
+        518  1FF 00622060 FsRtlQueryCachedVdl
+        519  200 00798700 FsRtlQueryInformationFile
+        520  201 00602010 FsRtlQueryKernelEaFile
+        521  202 001675C0 FsRtlQueryMaximumVirtualDiskNestingLevel
+        522  203 00167880 FsRtlRegisterFileSystemFilterCallbacks
+        523  204 006C8450 FsRtlRegisterFltMgrCalls
+        524  205 006C8440 FsRtlRegisterMupCalls
+        525  206 007980D0 FsRtlRegisterUncProvider
+        526  207 00798110 FsRtlRegisterUncProviderEx
+        527  208 006BCC00 FsRtlRegisterUncProviderEx2
+        528  209 000F3FE0 FsRtlReleaseEofLock
+        529  20A 005980E0 FsRtlReleaseFile
+        530  20B 00625580 FsRtlReleaseFileNameInformation
+        531  20C 000BF990 FsRtlReleaseHeaderMutex
+        532  20D 000FE680 FsRtlRemoveBaseMcbEntry
+        533  20E 0065C5C0 FsRtlRemoveDotsFromPath
+        534  20F 005303B0 FsRtlRemoveExtraCreateParameter
+        535  210 0026E170 FsRtlRemoveLargeMcbEntry
+        536  211 0026E1E0 FsRtlRemoveMcbEntry
+        537  212 0026FCF0 FsRtlRemovePerFileContext
+        538  213 00085420 FsRtlRemovePerFileObjectContext
+        539  214 0026FDF0 FsRtlRemovePerStreamContext
+        540  215 001287E0 FsRtlResetBaseMcb
+        541  216 0026E200 FsRtlResetLargeMcb
+        542  217 001230D0 FsRtlSendModernAppTermination
+        543  218 00673AE0 FsRtlSetDriverBacking
+        544  219 005F7670 FsRtlSetEcpListIntoIrp
+        545  21A 0061F690 FsRtlSetKernelEaFile
+        546  21B 0026E240 FsRtlSplitBaseMcb
+        547  21C 0026E3B0 FsRtlSplitLargeMcb
+        548  21D 00620560 FsRtlSyncVolumes
+        549  21E 005FF7E0 FsRtlTeardownPerFileContexts
+        550  21F 00536170 FsRtlTeardownPerStreamContexts
+        551  220 000FE580 FsRtlTruncateBaseMcb
+        552  221 000FE540 FsRtlTruncateLargeMcb
+        553  222 0026E430 FsRtlTruncateMcb
+        554  223 0026DB80 FsRtlTryToAcquireHeaderMutex
+        555  224 000738B0 FsRtlUninitializeBaseMcb
+        556  225 00127D90 FsRtlUninitializeFileLock
+        557  226 00123ED0 FsRtlUninitializeLargeMcb
+        558  227 00797FF0 FsRtlUninitializeMcb
+        559  228 000882E0 FsRtlUninitializeOplock
+        560  229 00114820 FsRtlUpdateDiskCounters
+        561  22A 00798180 FsRtlUpperOplockFsctrl
+        562  22B 0010ECA0 FsRtlValidateReparsePointBuffer
+        563  22C 006626B0 FsRtlVolumeDeviceToCorrelationId
+        564  22D 00404ED0 HalDispatchTable
+        565  22E 00799D10 HalExamineMBR
+        566  22F 00405840 HalPrivateDispatchTable
+        567  230 00176F20 HeadlessDispatch
+        568  231 003215B0 HviGetDebugDeviceOptions
+        569  232 001775C0 HviGetEnlightenmentInformation
+        570  233 003215F0 HviGetHardwareFeatures
+        571  234 00177580 HviGetHypervisorFeatures
+        572  235 00177920 HviGetHypervisorInterface
+        573  236 00321660 HviGetHypervisorVendorAndMaxFunction
+        574  237 003216B0 HviGetHypervisorVersion
+        575  238 00321700 HviGetImplementationLimits
+        576  239 001711F0 HviIsAnyHypervisorPresent
+        577  23A 001778E0 HviIsHypervisorMicrosoftCompatible
+        578  23B 00173EF0 HviIsHypervisorVendorMicrosoft
+        579  23C 00321750 HviIsIommuInUse
+        580  23D 002708D0 HvlGetLpIndexFromApicId
+        581  23E 003217A0 HvlInvokeFastExtendedHypercall
+        582  23F 003217F0 HvlInvokeHypercall
+        583  240 00273FD0 HvlPerformEndOfInterrupt
+        584  241 00270940 HvlQueryActiveHypervisorProcessorCount
+        585  242 00270970 HvlQueryActiveProcessors
+        586  243 00178B00 HvlQueryConnection
+        587  244 00270A00 HvlQueryHypervisorProcessorNodeNumber
+        588  245 00270A40 HvlQueryNumaDistance
+        589  246 00270B40 HvlQueryProcessorTopology
+        590  247 00270B60 HvlQueryProcessorTopologyCount
+        591  248 00270BA0 HvlQueryProcessorTopologyEx
+        592  249 00270C30 HvlQueryProcessorTopologyHighestId
+        593  24A 00276110 HvlReadPerformanceStateCounters
+        594  24B 00270540 HvlRegisterInterruptCallback
+        595  24C 0079A740 HvlRegisterWheaErrorNotification
+        596  24D 00270770 HvlUnregisterInterruptCallback
+        597  24E 0079A780 HvlUnregisterWheaErrorNotification
+        598  24F 0027C560 InbvAcquireDisplayOwnership
+        599  250 0027C5C0 InbvCheckDisplayOwnership
+        600  251 00177CA0 InbvDisplayString
+        601  252 0027C5F0 InbvEnableBootDriver
+        602  253 0018D9A0 InbvEnableDisplayString
+        603  254 0018DA40 InbvInstallDisplayStringFilter
+        604  255 0017BFE0 InbvIsBootDriverInstalled
+        605  256 00172ED0 InbvNotifyDisplayOwnershipChange
+        606  257 0027C680 InbvNotifyDisplayOwnershipLost
+        607  258 0027C6E0 InbvResetDisplay
+        608  259 0027C710 InbvSetScrollRegion
+        609  25A 0027C740 InbvSetTextColor
+        610  25B 0018D810 InbvSetVirtualFrameBuffer
+        611  25C 0027C770 InbvSolidColorFill
+        612  25D 0043D46C InitSafeBootMode
+        613  25E 000E0E30 InitializeSListHead
+        614  25F 001B8CC0 InterlockedPushListSList
+        615  260 000FF990 IoAcquireCancelSpinLock
+        616  261 000D7D90 IoAcquireRemoveLockEx
+        617  262 00124010 IoAcquireVpbSpinLock
+        618  263 004C5A50 IoAdapterObjectType
+        619  264 00282010 IoAdjustStackSizeForRedirection
+        620  265 002820E0 IoAllocateAdapterChannel
+        621  266 00282110 IoAllocateController
+        622  267 00187BE0 IoAllocateDriverObjectExtension
+        623  268 00167340 IoAllocateErrorLogEntry
+        624  269 00005920 IoAllocateIrp
+        625  26A 00061A40 IoAllocateIrpEx
+        626  26B 00092D40 IoAllocateMdl
+        627  26C 005E2DF0 IoAllocateMiniCompletionPacket
+        628  26D 002821B0 IoAllocateSfioStreamIdentifier
+        629  26E 00114250 IoAllocateWorkItem
+        630  26F 00095550 IoApplyPriorityInfoThread
+        631  270 007A6170 IoAssignResources
+        632  271 0079EBD0 IoAttachDevice
+        633  272 002821F0 IoAttachDeviceByPointer
+        634  273 00167540 IoAttachDeviceToDeviceStack
+        635  274 001217E0 IoAttachDeviceToDeviceStackSafe
+        636  275 00282220 IoBoostThreadIo
+        637  276 00092300 IoBuildAsynchronousFsdRequest
+        638  277 000813D0 IoBuildDeviceIoControlRequest
+        639  278 000F9530 IoBuildPartialMdl
+        640  279 00589EE0 IoBuildSynchronousFsdRequest
+        641  27A 00170950 IoCallDriver
+        642  27B 0079ECC0 IoCancelFileOpen
+        643  27C 001177A0 IoCancelIrp
+        644  27D 0079EE00 IoCheckDesiredAccess
+        645  27E 0050E290 IoCheckEaBufferValidity
+        646  27F 0065CA80 IoCheckFunctionAccess
+        647  280 005FA570 IoCheckLinkShareAccess
+        648  281 00660E60 IoCheckQuerySetFileInformation
+        649  282 0066AD50 IoCheckQuerySetVolumeInformation
+        650  283 0079EE40 IoCheckQuotaBufferValidity
+        651  284 005FA540 IoCheckShareAccess
+        652  285 0066D420 IoCheckShareAccessEx
+        653  286 00161C20 IoCleanupIrp
+        654  287 000D3800 IoClearActivityIdThread
+        655  288 00284140 IoClearAdapterCryptoEngineExtension
+        656  289 00284190 IoClearFsTrackOffsetState
+        657  28A 00282280 IoClearIrpExtraCreateParameter
+        658  28B 002822A0 IoCompleteRequest
+        659  28C 004C5460 IoCompletionObjectType
+        660  28D 006C06F0 IoConnectInterrupt
+        661  28E 0067A660 IoConnectInterruptEx
+        662  28F 0079EF00 IoConvertFileHandleToKernelHandle
+        663  290 0079F060 IoCopyDeviceObjectHint
+        664  291 00671C40 IoCreateArcName
+        665  292 0079F0E0 IoCreateController
+        666  293 005628C0 IoCreateDevice
+        667  294 00799D20 IoCreateDisk
+        668  295 006A1170 IoCreateDriver
+        669  296 0050C2D0 IoCreateFile
+        670  297 0050D220 IoCreateFileEx
+        671  298 0061EA20 IoCreateFileSpecifyDeviceObjectHint
+        672  299 006C2400 IoCreateNotificationEvent
+        673  29A 0066B970 IoCreateStreamFileObject
+        674  29B 00668640 IoCreateStreamFileObjectEx
+        675  29C 00565DA0 IoCreateStreamFileObjectEx2
+        676  29D 00565D60 IoCreateStreamFileObjectLite
+        677  29E 00622E40 IoCreateSymbolicLink
+        678  29F 0079F1E0 IoCreateSynchronizationEvent
+        679  2A0 006655B0 IoCreateSystemThread
+        680  2A1 0079F280 IoCreateUnprotectedSymbolicLink
+        681  2A2 00120AF0 IoCsqInitialize
+        682  2A3 001288A0 IoCsqInitializeEx
+        683  2A4 0010A760 IoCsqInsertIrp
+        684  2A5 0010A780 IoCsqInsertIrpEx
+        685  2A6 00166650 IoCsqRemoveIrp
+        686  2A7 0010C1A0 IoCsqRemoveNextIrp
+        687  2A8 002836A0 IoDecrementKeepAliveCount
+        688  2A9 0061AD30 IoDeleteController
+        689  2AA 0008B370 IoDeleteDevice
+        690  2AB 0061AD30 IoDeleteDriver
+        691  2AC 00674C70 IoDeleteSymbolicLink
+        692  2AD 0008B1A0 IoDetachDevice
+        693  2AE 004C6988 IoDeviceHandlerObjectSize
+        694  2AF 004CA180 IoDeviceHandlerObjectType
+        695  2B0 004C5820 IoDeviceObjectType
+        696  2B1 0067AEE0 IoDisconnectInterrupt
+        697  2B2 0067B060 IoDisconnectInterruptEx
+        698  2B3 004C5420 IoDriverObjectType
+        699  2B4 007A67C0 IoDuplicateDependency
+        700  2B5 0079F2E0 IoEnqueueIrp
+        701  2B6 00167630 IoEnumerateDeviceObjectList
+        702  2B7 00673220 IoEnumerateRegisteredFiltersList
+        703  2B8 0079F300 IoFastQueryNetworkAttributes
+        704  2B9 004C5300 IoFileObjectType
+        705  2BA 0060B920 IoForwardAndCatchIrp
+        706  2BB 0060B920 IoForwardIrpSynchronously
+        707  2BC 002822E0 IoFreeController
+        708  2BD 00282320 IoFreeErrorLogEntry
+        709  2BE 00061820 IoFreeIrp
+        710  2BF 000D6550 IoFreeMdl
+        711  2C0 005E2140 IoFreeMiniCompletionPacket
+        712  2C1 00282380 IoFreeSfioStreamIdentifier
+        713  2C2 0011D4E0 IoFreeWorkItem
+        714  2C3 000F6520 IoGetActivityIdIrp
+        715  2C4 000D3720 IoGetActivityIdThread
+        716  2C5 002841C0 IoGetAdapterCryptoEngineExtension
+        717  2C6 0018A7F0 IoGetAffinityInterrupt
+        718  2C7 00061E40 IoGetAttachedDevice
+        719  2C8 000754D0 IoGetAttachedDeviceReference
+        720  2C9 000B2DA0 IoGetBaseFileSystemDeviceObject
+        721  2CA 0079F340 IoGetBootDiskInformation
+        722  2CB 00694A80 IoGetBootDiskInformationLite
+        723  2CC 006755E0 IoGetConfigurationInformation
+        724  2CD 00683970 IoGetContainerInformation
+        725  2CE 00007010 IoGetCurrentProcess
+        726  2CF 00088980 IoGetDeviceAttachmentBaseRef
+        727  2D0 007A78F0 IoGetDeviceDirectory
+        728  2D1 0063BB40 IoGetDeviceInterfaceAlias
+        729  2D2 007A74C0 IoGetDeviceInterfacePropertyData
+        730  2D3 005DB3A0 IoGetDeviceInterfaces
+        731  2D4 006C4220 IoGetDeviceNumaNode
+        732  2D5 005672C0 IoGetDeviceObjectPointer
+        733  2D6 005C6CF0 IoGetDeviceProperty
+        734  2D7 005DF940 IoGetDevicePropertyData
+        735  2D8 00282480 IoGetDeviceToVerify
+        736  2D9 00164270 IoGetDiskDeviceObject
+        737  2DA 006B9780 IoGetDmaAdapter
+        738  2DB 007A7CF0 IoGetDriverDirectory
+        739  2DC 001252D0 IoGetDriverObjectExtension
+        740  2DD 005FEF00 IoGetFileObjectGenericMapping
+        741  2DE 0008CE90 IoGetFsTrackOffsetState
+        742  2DF 00284200 IoGetFsZeroingOffset
+        743  2E0 00156B10 IoGetGenericIrpExtension
+        744  2E1 0079F370 IoGetInitialStack
+        745  2E2 001291A0 IoGetInitiatorProcess
+        746  2E3 000FF730 IoGetIoAttributionHandle
+        747  2E4 000F92E0 IoGetIoPriorityHint
+        748  2E5 006C7D80 IoGetIommuInterface
+        749  2E6 005332C0 IoGetIrpExtraCreateParameter
+        750  2E7 00124C70 IoGetLowerDeviceObject
+        751  2E8 00282490 IoGetOplockKeyContext
+        752  2E9 00087CD0 IoGetOplockKeyContextEx
+        753  2EA 0010A9A0 IoGetPagingIoPriority
+        754  2EB 00060780 IoGetRelatedDeviceObject
+        755  2EC 000FC180 IoGetRequestorProcess
+        756  2ED 0018D7C0 IoGetRequestorProcessId
+        757  2EE 00128D40 IoGetRequestorSessionId
+        758  2EF 002824C0 IoGetSfioStreamIdentifier
+        759  2F0 00088040 IoGetSilo
+        760  2F1 0010A730 IoGetSiloParameters
+        761  2F2 00066990 IoGetStackLimits
+        762  2F3 007A0460 IoGetSymlinkSupportInformation
+        763  2F4 000B2DE0 IoGetTopLevelIrp
+        764  2F5 000F47C0 IoGetTransactionParameterBlock
+        765  2F6 002837D0 IoIncrementKeepAliveCount
+        766  2F7 0010C940 IoInitializeIrp
+        767  2F8 00161BD0 IoInitializeIrpEx
+        768  2F9 0079FFC0 IoInitializeMiniCompletionPacket
+        769  2FA 00166F70 IoInitializeRemoveLockEx
+        770  2FB 0079F390 IoInitializeTimer
+        771  2FC 0011A540 IoInitializeWorkItem
+        772  2FD 00159820 IoInvalidateDeviceRelations
+        773  2FE 00170970 IoInvalidateDeviceState
+        774  2FF 00108CE0 IoIrpHasFsTrackOffsetExtensionType
+        775  300 000CF590 IoIs32bitProcess
+        776  301 0010AA90 IoIsActivityTracingEnabled
+        777  302 00626800 IoIsFileObjectIgnoringSharing
+        778  303 00091EF0 IoIsFileOriginRemote
+        779  304 0013A420 IoIsInitiator32bitProcess
+        780  305 000867E0 IoIsOperationSynchronous
+        781  306 00116F60 IoIsSystemThread
+        782  307 008A8C00 IoIsValidIrpStatus
+        783  308 007A04B0 IoIsValidNameGraftingBuffer
+        784  309 007A7500 IoIsWdmVersionAvailable
+        785  30A 0027F440 IoLoadCrashDumpDriver
+        786  30B 00163390 IoMakeAssociatedIrp
+        787  30C 0008CB50 IoMakeAssociatedIrpEx
+        788  30D 007A8900 IoOpenDeviceInterfaceRegistryKey
+        789  30E 0060E010 IoOpenDeviceRegistryKey
+        790  30F 006BAA50 IoOpenDriverRegistryKey
+        791  310 0015AE60 IoPageRead
+        792  311 0008CE30 IoPropagateActivityIdToThread
+        793  312 0008C5F0 IoPropagateIrpExtension
+        794  313 0008C610 IoPropagateIrpExtensionEx
+        795  314 0067F2C0 IoQueryDeviceDescription
+        796  315 00610770 IoQueryFileDosDeviceName
+        797  316 00625460 IoQueryFileInformation
+        798  317 0018B6F0 IoQueryFullDriverPath
+        799  318 0079F440 IoQueryInformationByName
+        800  319 006B9920 IoQueryInterface
+        801  31A 00625550 IoQueryVolumeInformation
+        802  31B 0015B630 IoQueueThreadIrp
+        803  31C 0008CEF0 IoQueueWorkItem
+        804  31D 0008CF20 IoQueueWorkItemEx
+        805  31E 00283920 IoQueueWorkItemToNode
+        806  31F 00282500 IoRaiseHardError
+        807  320 002827B0 IoRaiseInformationalHardError
+        808  321 00799DD0 IoReadDiskSignature
+        809  322 0043A960 IoReadOperationCount
+        810  323 00799ED0 IoReadPartitionTable
+        811  324 0079A0B0 IoReadPartitionTableEx
+        812  325 0043A978 IoReadTransferCount
+        813  326 000F5270 IoRecordIoAttribution
+        814  327 006C73B0 IoRegisterBootDriverCallback
+        815  328 006BC2F0 IoRegisterBootDriverReinitialization
+        816  329 006C3F40 IoRegisterContainerNotification
+        817  32A 00670460 IoRegisterDeviceInterface
+        818  32B 006BC370 IoRegisterDriverReinitialization
+        819  32C 00673940 IoRegisterFileSystem
+        820  32D 0079F730 IoRegisterFsRegistrationChange
+        821  32E 006BF7B0 IoRegisterFsRegistrationChangeMountAware
+        822  32F 007A0D00 IoRegisterIoTracking
+        823  330 006B5640 IoRegisterLastChanceShutdownNotification
+        824  331 00669310 IoRegisterPlugPlayNotification
+        825  332 00173AC0 IoRegisterPriorityCallback
+        826  333 006B56C0 IoRegisterShutdownNotification
+        827  334 000E7C50 IoReleaseCancelSpinLock
+        828  335 00167830 IoReleaseRemoveLockAndWaitEx
+        829  336 00110E00 IoReleaseRemoveLockEx
+        830  337 00124510 IoReleaseVpbSpinLock
+        831  338 00560F40 IoRemoveLinkShareAccess
+        832  339 00560F20 IoRemoveShareAccess
+        833  33A 0079F750 IoReplaceFileObjectName
+        834  33B 007A7540 IoReplacePartitionUnit
+        835  33C 006951E0 IoReportDetectedDevice
+        836  33D 00944330 IoReportHalResourceUsage
+        837  33E 001523D0 IoReportInterruptActive
+        838  33F 00152C30 IoReportInterruptInactive
+        839  340 007A8FE0 IoReportResourceForDetection
+        840  341 007A91D0 IoReportResourceUsage
+        841  342 006BC9A0 IoReportRootDevice
+        842  343 00665A70 IoReportTargetDeviceChange
+        843  344 0008C020 IoReportTargetDeviceChangeAsynchronous
+        844  345 00286FA0 IoRequestDeviceEject
+        845  346 00286FC0 IoRequestDeviceEjectEx
+        846  347 007A96B0 IoRequestDeviceRemovalForReset
+        847  348 007A68F0 IoReserveDependency
+        848  349 0017C2B0 IoResolveDependency
+        849  34A 000F90D0 IoRetrievePriorityInfo
+        850  34B 0008C790 IoReuseIrp
+        851  34C 0008C960 IoSetActivityIdIrp
+        852  34D 000D3820 IoSetActivityIdThread
+        853  34E 00284240 IoSetAdapterCryptoEngineExtension
+        854  34F 00120C60 IoSetCompletionRoutineEx
+        855  350 007A6980 IoSetDependency
+        856  351 00670C00 IoSetDeviceInterfacePropertyData
+        857  352 00675940 IoSetDeviceInterfaceState
+        858  353 0066D4B0 IoSetDevicePropertyData
+        859  354 00282B10 IoSetDeviceToVerify
+        860  355 0079F830 IoSetFileObjectIgnoreSharing
+        861  356 00159600 IoSetFileOrigin
+        862  357 00284290 IoSetFsTrackOffsetState
+        863  358 002842F0 IoSetFsZeroingOffset
+        864  359 00284330 IoSetFsZeroingOffsetRequired
+        865  35A 0013B3E0 IoSetGenericIrpExtension
+        866  35B 00282B20 IoSetHardErrorOrVerifyDevice
+        867  35C 006678C0 IoSetInformation
+        868  35D 00282B40 IoSetIoAttributionIrp
+        869  35E 005E31C0 IoSetIoCompletion
+        870  35F 0006E5A0 IoSetIoCompletionEx
+        871  360 00104180 IoSetIoPriorityHint
+        872  361 00282B80 IoSetIoPriorityHintIntoFileObject
+        873  362 00095520 IoSetIoPriorityHintIntoThread
+        874  363 005F7670 IoSetIrpExtraCreateParameter
+        875  364 00560FD0 IoSetLinkShareAccess
+        876  365 00104A60 IoSetMasterIrpStatus
+        877  366 0079A160 IoSetPartitionInformation
+        878  367 0079A250 IoSetPartitionInformationEx
+        879  368 00560970 IoSetShareAccess
+        880  369 0066BC70 IoSetShareAccessEx
+        881  36A 0018D8F0 IoSetStartIoAttributes
+        882  36B 0079F860 IoSetSystemPartition
+        883  36C 00004BF0 IoSetThreadHardErrorMode
+        884  36D 000B2E00 IoSetTopLevelIrp
+        885  36E 00282BC0 IoSizeOfIrpEx
+        886  36F 00284390 IoSizeofGenericIrpExtension
+        887  370 0011CDD0 IoSizeofWorkItem
+        888  371 00282C00 IoStartNextPacket
+        889  372 00282C40 IoStartNextPacketByKey
+        890  373 00282C90 IoStartPacket
+        891  374 00282E00 IoStartTimer
+        892  375 004DD980 IoStatisticsLock
+        893  376 007A6460 IoSteerInterrupt
+        894  377 00282E30 IoStopTimer
+        895  378 00119790 IoSynchronousCallDriver
+        896  379 00096160 IoSynchronousPageWrite
+        897  37A 001514F0 IoTestDependency
+        898  37B 00070A90 IoThreadToProcess
+        899  37C 0015A3D0 IoTransferActivityId
+        900  37D 00287350 IoTranslateBusAddress
+        901  37E 0013C210 IoTryQueueWorkItem
+        902  37F 00120DE0 IoUninitializeWorkItem
+        903  380 0095FF10 IoUnregisterBootDriverCallback
+        904  381 007A03A0 IoUnregisterContainerNotification
+        905  382 0066CF20 IoUnregisterFileSystem
+        906  383 0079F9F0 IoUnregisterFsRegistrationChange
+        907  384 007A0E10 IoUnregisterIoTracking
+        908  385 006654F0 IoUnregisterPlugPlayNotification
+        909  386 00684BD0 IoUnregisterPlugPlayNotificationEx
+        910  387 00282E50 IoUnregisterPriorityCallback
+        911  388 004EF790 IoUnregisterShutdownNotification
+        912  389 00597860 IoUpdateLinkShareAccess
+        913  38A 00668920 IoUpdateShareAccess
+        914  38B 0013C3C0 IoValidateDeviceIoControlAccess
+        915  38C 00669AA0 IoVerifyPartitionTable
+        916  38D 0079FAA0 IoVerifyVolume
+        917  38E 007A0ED0 IoVolumeDeviceNameToGuid
+        918  38F 00566CF0 IoVolumeDeviceNameToGuidPath
+        919  390 00567010 IoVolumeDeviceToDosName
+        920  391 00566B10 IoVolumeDeviceToGuid
+        921  392 00566BA0 IoVolumeDeviceToGuidPath
+        922  393 00834920 IoWMIAllocateInstanceIds
+        923  394 006835B0 IoWMIDeviceObjectToInstanceName
+        924  395 0011E120 IoWMIDeviceObjectToProviderId
+        925  396 00834A70 IoWMIExecuteMethod
+        926  397 00683530 IoWMIHandleToInstanceName
+        927  398 0051AF70 IoWMIOpenBlock
+        928  399 006C3230 IoWMIQueryAllData
+        929  39A 00834BF0 IoWMIQueryAllDataMultiple
+        930  39B 0051AD30 IoWMIQuerySingleInstance
+        931  39C 00834CC0 IoWMIQuerySingleInstanceMultiple
+        932  39D 00612070 IoWMIRegistrationControl
+        933  39E 006756D0 IoWMISetNotificationCallback
+        934  39F 00834DA0 IoWMISetSingleInstance
+        935  3A0 00834EB0 IoWMISetSingleItem
+        936  3A1 00834FE0 IoWMISuggestInstanceName
+        937  3A2 000FB230 IoWMIWriteEvent
+        938  3A3 000F46D0 IoWithinStackLimits
+        939  3A4 00167460 IoWriteErrorLogEntry
+        940  3A5 0043A968 IoWriteOperationCount
+        941  3A6 0079A310 IoWritePartitionTable
+        942  3A7 0079A480 IoWritePartitionTableEx
+        943  3A8 0043A970 IoWriteTransferCount
+        944  3A9 000BB130 IofCallDriver
+        945  3AA 00069350 IofCompleteRequest
+        946  3AB 0028B0B0 KdAcquireDebuggerLock
+        947  3AC 0028B220 KdChangeOption
+        948  3AD 00438141 KdDebuggerEnabled
+        949  3AE 00438142 KdDebuggerNotPresent
+        950  3AF 0028AE50 KdDeregisterPowerHandler
+        951  3B0 0018D220 KdDisableDebugger
+        952  3B1 0028B290 KdEnableDebugger
+        953  3B2 004358C0 KdEnteredDebugger
+        954  3B3 00438178 KdEventLoggingEnabled
+        955  3B4 0018DA90 KdGetDebugDevice
+        956  3B5 00899F20 KdLogDbgPrint
+        957  3B6 0028BEF0 KdPollBreakIn
+        958  3B7 0028B490 KdPowerTransition
+        959  3B8 0028B4B0 KdPowerTransitionEx
+        960  3B9 0018D910 KdRefreshDebuggerNotPresent
+        961  3BA 0028AF80 KdRegisterPowerHandler
+        962  3BB 0028B650 KdReleaseDebuggerLock
+        963  3BC 008980F0 KdSetEventLoggingPresent
+        964  3BD 007C5220 KdSystemDebugControl
+        965  3BE 000D6610 KeAcquireGuardedMutex
+        966  3BF 0028C6C0 KeAcquireGuardedMutexUnsafe
+        967  3C0 000AF740 KeAcquireInStackQueuedSpinLock
+        968  3C1 000F4750 KeAcquireInStackQueuedSpinLockAtDpcLevel
+        969  3C2 0028FDC0 KeAcquireInStackQueuedSpinLockForDpc
+        970  3C3 0028F840 KeAcquireInStackQueuedSpinLockRaiseToSynch
+        971  3C4 00121100 KeAcquireInterruptSpinLock
+        972  3C5 000868C0 KeAcquireQueuedSpinLock
+        973  3C6 0028F8B0 KeAcquireQueuedSpinLockRaiseToSynch
+        974  3C7 0007E030 KeAcquireSpinLockAtDpcLevel
+        975  3C8 0028FE10 KeAcquireSpinLockForDpc
+        976  3C9 00085310 KeAcquireSpinLockRaiseToDpc
+        977  3CA 0028FF50 KeAcquireSpinLockRaiseToSynch
+        978  3CB 0028D890 KeAddGroupAffinityEx
+        979  3CC 0007DA50 KeAddProcessorAffinityEx
+        980  3CD 0028D8B0 KeAddProcessorGroupAffinity
+        981  3CE 006AF980 KeAddSystemServiceTable
+        982  3CF 002901F0 KeAddTriageDumpDataBlock
+        983  3D0 00006E10 KeAlertThread
+        984  3D1 006BC960 KeAllocateCalloutStack
+        985  3D2 006734C0 KeAllocateCalloutStackEx
+        986  3D3 0007E500 KeAndAffinityEx
+        987  3D4 00164AF0 KeAndGroupAffinityEx
+        988  3D5 00066930 KeAreAllApcsDisabled
+        989  3D6 000E48E0 KeAreApcsDisabled
+        990  3D7 0011EA80 KeAttachProcess
+        991  3D8 001B0F10 KeBugCheck
+        992  3D9 001B0F30 KeBugCheckEx
+        993  3DA 00070600 KeCancelTimer
+        994  3DB 000EA180 KeCancelTimer2
+        995  3DC 00281950 KeCapturePersistentThreadState
+        996  3DD 0007DAA0 KeCheckProcessorAffinityEx
+        997  3DE 000A1310 KeCheckProcessorGroupAffinity
+        998  3DF 000827F0 KeClearEvent
+        999  3E0 00078980 KeClockInterruptNotify
+       1000  3E1 0028DE30 KeClockTimerPowerChange
+       1001  3E2 0007E6A0 KeComplementAffinityEx
+       1002  3E3 00170490 KeConnectInterruptForHal
+       1003  3E4 0028E1A0 KeConvertAuxiliaryCounterToPerformanceCounter
+       1004  3E5 0028E1C0 KeConvertPerformanceCounterToAuxiliaryCounter
+       1005  3E6 0007E230 KeCopyAffinityEx
+       1006  3E7 000125B0 KeCountSetBitsAffinityEx
+       1007  3E8 00292350 KeCountSetBitsGroupAffinity
+       1008  3E9 000BBBF0 KeDelayExecutionThread
+       1009  3EA 0028E1E0 KeDeregisterBoundCallback
+       1010  3EB 00291160 KeDeregisterBugCheckCallback
+       1011  3EC 001704F0 KeDeregisterBugCheckReasonCallback
+       1012  3ED 0028E2C0 KeDeregisterNmiCallback
+       1013  3EE 007C6C90 KeDeregisterProcessorChangeCallback
+       1014  3EF 00123FE0 KeDetachProcess
+       1015  3F0 00292460 KeDispatchSecondaryInterrupt
+       1016  3F1 004C52CB KeDynamicPartitioningSupported
+       1017  3F2 000BAF70 KeEnterCriticalRegion
+       1018  3F3 000F4E10 KeEnterGuardedRegion
+       1019  3F4 00291250 KeEnterKernelDebugger
+       1020  3F5 0007DBE0 KeEnumerateNextProcessor
+       1021  3F6 00128E90 KeExpandKernelStackAndCallout
+       1022  3F7 00065070 KeExpandKernelStackAndCalloutEx
+       1023  3F8 0095D130 KeFindConfigurationEntry
+       1024  3F9 0095D160 KeFindConfigurationNextEntry
+       1025  3FA 0028D8D0 KeFindFirstSetLeftAffinityEx
+       1026  3FB 001194C0 KeFindFirstSetLeftGroupAffinity
+       1027  3FC 0028D910 KeFindFirstSetRightAffinityEx
+       1028  3FD 000E3C70 KeFindFirstSetRightGroupAffinity
+       1029  3FE 0011D950 KeFirstGroupAffinityEx
+       1030  3FF 0016E310 KeFlushCurrentTbImmediately
+       1031  400 001812F0 KeFlushEntireTb
+       1032  401 0010EC30 KeFlushIoBuffers
+       1033  402 000E4A60 KeFlushQueuedDpcs
+       1034  403 004F06A0 KeForceEnableNx
+       1035  404 0066C8B0 KeFreeCalloutStack
+       1036  405 001137B0 KeGenericCallDpc
+       1037  406 0010E120 KeGetClockOwner
+       1038  407 0028DE40 KeGetClockTimerResolution
+       1039  408 000F6510 KeGetCurrentIrql
+       1040  409 000FDEF0 KeGetCurrentNodeNumber
+       1041  40A 000D8340 KeGetCurrentProcessorNumberEx
+       1042  40B 00061610 KeGetCurrentThread
+       1043  40C 00066970 KeGetEffectiveIrql
+       1044  40D 0028DE60 KeGetNextClockTickDuration
+       1045  40E 000E32E0 KeGetProcessorIndexFromNumber
+       1046  40F 000A3080 KeGetProcessorNumberFromIndex
+       1047  410 0008BD60 KeGetRecommendedSharedDataAlignment
+       1048  411 00177960 KeGetXSaveFeatureFlags
+       1049  412 00955840 KeHwPolicyLocateResource
+       1050  413 0007DA20 KeInitializeAffinityEx
+       1051  414 000A2110 KeInitializeApc
+       1052  415 00281F90 KeInitializeCrashDumpHeader
+       1053  416 0008BBB0 KeInitializeDeviceQueue
+       1054  417 000E3170 KeInitializeDpc
+       1055  418 000E3950 KeInitializeEnumerationContext
+       1056  419 002923C0 KeInitializeEnumerationContextFromAffinity
+       1057  41A 00171090 KeInitializeEnumerationContextFromGroup
+       1058  41B 00062210 KeInitializeEvent
+       1059  41C 0008BFF0 KeInitializeGuardedMutex
+       1060  41D 00167E30 KeInitializeInterrupt
+       1061  41E 001311F0 KeInitializeMutant
+       1062  41F 001311D0 KeInitializeMutex
+       1063  420 00114F50 KeInitializeQueue
+       1064  421 007C6D60 KeInitializeSecondaryInterruptServices
+       1065  422 000B4200 KeInitializeSemaphore
+       1066  423 000A2190 KeInitializeSpinLock
+       1067  424 0017B870 KeInitializeThreadedDpc
+       1068  425 0011F4C0 KeInitializeTimer
+       1069  426 000EB060 KeInitializeTimer2
+       1070  427 000A1DA0 KeInitializeTimerEx
+       1071  428 002913B0 KeInitializeTriageDumpDataArray
+       1072  429 00293E40 KeInsertByKeyDeviceQueue
+       1073  42A 00293EF0 KeInsertDeviceQueue
+       1074  42B 002943F0 KeInsertHeadQueue
+       1075  42C 0011DFB0 KeInsertQueue
+       1076  42D 000066A0 KeInsertQueueApc
+       1077  42E 00075F90 KeInsertQueueDpc
+       1078  42F 00172700 KeInterlockedClearProcessorAffinityEx
+       1079  430 00171E80 KeInterlockedSetProcessorAffinityEx
+       1080  431 00171870 KeInvalidateAllCaches
+       1081  432 00294540 KeInvalidateRangeAllCaches
+       1082  433 00023B30 KeInvalidateRangeAllCachesNoIpi
+       1083  434 0016FF70 KeIpiGenericCall
+       1084  435 0005FB60 KeIsAttachedProcess
+       1085  436 0007D510 KeIsEmptyAffinityEx
+       1086  437 00184750 KeIsEqualAffinityEx
+       1087  438 0010C3F0 KeIsExecutingDpc
+       1088  439 0008E2F0 KeIsSingleGroupAffinityEx
+       1089  43A 0028D960 KeIsSubsetAffinityEx
+       1090  43B 007C5A00 KeIsWaitListEmpty
+       1091  43C 004C5BC4 KeLastBranchMSR
+       1092  43D 000BD5E0 KeLeaveCriticalRegion
+       1093  43E 000D3840 KeLeaveGuardedRegion
+       1094  43F 004EF970 KeLoadMTRR
+       1095  440 004C6D50 KeLoaderBlock
+       1096  441 000F9500 KeLowerIrql
+       1097  442 00170E40 KeNotifyProcessorFreezeSupported
+       1098  443 004C542B KeNumberProcessors
+       1099  444 00131DF0 KeOrAffinityEx
+       1100  445 00294700 KePrepareToDispatchVirtualProcessor
+       1101  446 0011EE60 KeProcessorGroupAffinity
+       1102  447 00294C00 KeProfileInterruptWithSource
+       1103  448 0000EC70 KePulseEvent
+       1104  449 0012FD70 KeQueryActiveGroupCount
+       1105  44A 001847F0 KeQueryActiveProcessorAffinity
+       1106  44B 0028F110 KeQueryActiveProcessorCount
+       1107  44C 00076440 KeQueryActiveProcessorCountEx
+       1108  44D 0028F1A0 KeQueryActiveProcessors
+       1109  44E 0028E490 KeQueryAuxiliaryCounterFrequency
+       1110  44F 000F97F0 KeQueryDpcWatchdogInformation
+       1111  450 0013AD30 KeQueryEffectivePriorityThread
+       1112  451 00122140 KeQueryGroupAffinity
+       1113  452 0028D9C0 KeQueryGroupAffinityEx
+       1114  453 007C71A0 KeQueryHardwareCounterConfiguration
+       1115  454 0028D4B0 KeQueryHeteroCpuPolicyThread
+       1116  455 000E2D90 KeQueryHighestNodeNumber
+       1117  456 0007EA90 KeQueryInterruptTimePrecise
+       1118  457 001316A0 KeQueryLogicalProcessorRelationship
+       1119  458 000A21B0 KeQueryMaximumGroupCount
+       1120  459 0028F1B0 KeQueryMaximumProcessorCount
+       1121  45A 00131FC0 KeQueryMaximumProcessorCountEx
+       1122  45B 000E3D10 KeQueryNodeActiveAffinity
+       1123  45C 00167900 KeQueryNodeMaximumProcessorCount
+       1124  45D 00128620 KeQueryPrcbAddress
+       1125  45E 00088900 KeQueryPriorityThread
+       1126  45F 001296C0 KeQueryRuntimeThread
+       1127  460 000A22A0 KeQuerySystemTimePrecise
+       1128  461 000F62F0 KeQueryTimeIncrement
+       1129  462 0006FBA0 KeQueryTotalCycleTimeThread
+       1130  463 000FBA00 KeQueryUnbiasedInterruptTime
+       1131  464 000F5690 KeQueryUnbiasedInterruptTimePrecise
+       1132  465 000F64C0 KeRaiseIrqlToDpcLevel
+       1133  466 0028F750 KeRaiseUserException
+       1134  467 000D35E0 KeReadStateEvent
+       1135  468 000D35E0 KeReadStateMutant
+       1136  469 000D35E0 KeReadStateMutex
+       1137  46A 000D35E0 KeReadStateQueue
+       1138  46B 000D35E0 KeReadStateSemaphore
+       1139  46C 0028C6B0 KeReadStateTimer
+       1140  46D 001AC2A0 KeReenterRetpolinedCode
+       1141  46E 0028E650 KeRegisterBoundCallback
+       1142  46F 0018AE30 KeRegisterBugCheckCallback
+       1143  470 0016D9C0 KeRegisterBugCheckReasonCallback
+       1144  471 0028E6C0 KeRegisterNmiCallback
+       1145  472 006BDA60 KeRegisterProcessorChangeCallback
+       1146  473 000BFA10 KeReleaseGuardedMutex
+       1147  474 0028C6E0 KeReleaseGuardedMutexUnsafe
+       1148  475 000E8EE0 KeReleaseInStackQueuedSpinLock
+       1149  476 0028FE50 KeReleaseInStackQueuedSpinLockForDpc
+       1150  477 000BF210 KeReleaseInStackQueuedSpinLockFromDpcLevel
+       1151  478 00122100 KeReleaseInterruptSpinLock
+       1152  479 00067F80 KeReleaseMutant
+       1153  47A 00067F60 KeReleaseMutex
+       1154  47B 00086960 KeReleaseQueuedSpinLock
+       1155  47C 0006E130 KeReleaseSemaphore
+       1156  47D 000F3F80 KeReleaseSpinLock
+       1157  47E 0028FED0 KeReleaseSpinLockForDpc
+       1158  47F 0007E0A0 KeReleaseSpinLockFromDpcLevel
+       1159  480 00293F70 KeRemoveByKeyDeviceQueue
+       1160  481 00294040 KeRemoveByKeyDeviceQueueIfBusy
+       1161  482 00294110 KeRemoveDeviceQueue
+       1162  483 002941A0 KeRemoveEntryDeviceQueue
+       1163  484 0028D9E0 KeRemoveGroupAffinityEx
+       1164  485 00082590 KeRemoveProcessorAffinityEx
+       1165  486 001191B0 KeRemoveProcessorGroupAffinity
+       1166  487 001250E0 KeRemoveQueue
+       1167  488 00131590 KeRemoveQueueDpc
+       1168  489 001315B0 KeRemoveQueueDpcEx
+       1169  48A 000C76A0 KeRemoveQueueEx
+       1170  48B 007C6360 KeRemoveSystemServiceTable
+       1171  48C 00293080 KeReportCacheIncoherentDevice
+       1172  48D 000827F0 KeResetEvent
+       1173  48E 0011EC90 KeRestoreExtendedProcessorState
+       1174  48F 000045C0 KeRestoreFloatingPointState
+       1175  490 0028D700 KeRevertToUserAffinityThread
+       1176  491 0028D750 KeRevertToUserAffinityThreadEx
+       1177  492 000E21A0 KeRevertToUserGroupAffinityThread
+       1178  493 0010E5B0 KeRundownQueue
+       1179  494 0011DC80 KeSaveExtendedProcessorState
+       1180  495 000045C0 KeSaveFloatingPointState
+       1181  496 001B1C30 KeSaveStateForHibernate
+       1182  497 000710D0 KeSetActualBasePriorityThread
+       1183  498 00112590 KeSetAffinityThread
+       1184  499 00071500 KeSetBasePriorityThread
+       1185  49A 000708C0 KeSetCoalescableTimer
+       1186  49B 00170E40 KeSetDmaIoCoherency
+       1187  49C 0006AD90 KeSetEvent
+       1188  49D 002922F0 KeSetEventBoostPriority
+       1189  49E 007C71F0 KeSetHardwareCounterConfiguration
+       1190  49F 0028D7F0 KeSetHeteroCpuPolicyThread
+       1191  4A0 001583C0 KeSetIdealProcessorThread
+       1192  4A1 00171E70 KeSetImportanceDpc
+       1193  4A2 0010C9E0 KeSetKernelStackSwapEnable
+       1194  4A3 007C63F0 KeSetLastBranchRecordInUse
+       1195  4A4 00071A00 KeSetPriorityThread
+       1196  4A5 0095FF30 KeSetProfileIrql
+       1197  4A6 00295AA0 KeSetSelectedCpuSetsThread
+       1198  4A7 0018D1C0 KeSetSystemAffinityThread
+       1199  4A8 0018D1E0 KeSetSystemAffinityThreadEx
+       1200  4A9 000E2430 KeSetSystemGroupAffinityThread
+       1201  4AA 00293270 KeSetTargetProcessorDpc
+       1202  4AB 00127CA0 KeSetTargetProcessorDpcEx
+       1203  4AC 000705E0 KeSetTimer
+       1204  4AD 0007F4C0 KeSetTimer2
+       1205  4AE 0006E730 KeSetTimerEx
+       1206  4AF 000FC4D0 KeShouldYieldProcessor
+       1207  4B0 00126D40 KeSignalCallDpcDone
+       1208  4B1 002932E0 KeSignalCallDpcSynchronize
+       1209  4B2 00082A30 KeStackAttachProcess
+       1210  4B3 002963A0 KeStallWhileFrozen
+       1211  4B4 007C6CB0 KeStartDynamicProcessor
+       1212  4B5 0007F3C0 KeSubtractAffinityEx
+       1213  4B6 0013D050 KeSweepLocalCaches
+       1214  4B7 001B20B0 KeSynchronizeExecution
+       1215  4B8 00153300 KeSynchronizeTimeToQpc
+       1216  4B9 002930A0 KeSystemFullyCacheCoherent
+       1217  4BA 000A07D0 KeTestAlertThread
+       1218  4BB 000FD890 KeTestSpinLock
+       1219  4BC 000F2890 KeTryToAcquireGuardedMutex
+       1220  4BD 0028F920 KeTryToAcquireQueuedSpinLock
+       1221  4BE 0028F9F0 KeTryToAcquireQueuedSpinLockRaiseToSynch
+       1222  4BF 0010D850 KeTryToAcquireSpinLockAtDpcLevel
+       1223  4C0 000FF330 KeUnstackDetachProcess
+       1224  4C1 001393F0 KeUpdateThreadTag
+       1225  4C2 005362C0 KeUserModeCallback
+       1226  4C3 000C20D0 KeWaitForMultipleObjects
+       1227  4C4 000C31F0 KeWaitForMutexObject
+       1228  4C5 000C31F0 KeWaitForSingleObject
+       1229  4C6 004FD3E0 KeWriteProtectPAT
+       1230  4C7 000F64F0 KfRaiseIrql
+       1231  4C8 00426680 KiBugCheckData
+       1232  4C9 000D3880 KiCheckForKernelApcDelivery
+       1233  4CA 0031DA50 KitLogFeatureUsage
+       1234  4CB 0068D700 KseQueryDeviceData
+       1235  4CC 007C9F80 KseQueryDeviceDataList
+       1236  4CD 0068D4A0 KseQueryDeviceFlags
+       1237  4CE 0068EE80 KseRegisterShim
+       1238  4CF 0068EEA0 KseRegisterShimEx
+       1239  4D0 007CA1A0 KseSetDeviceFlags
+       1240  4D1 007CA9A0 KseUnregisterShim
+       1241  4D2 006BA660 LdrAccessResource
+       1242  4D3 008137C0 LdrEnumResources
+       1243  4D4 00813A50 LdrFindResourceDirectory_U
+       1244  4D5 00813A70 LdrFindResourceEx_U
+       1245  4D6 006BA680 LdrFindResource_U
+       1246  4D7 00681D50 LdrResFindResource
+       1247  4D8 00683D50 LdrResFindResourceDirectory
+       1248  4D9 005FAD20 LdrResSearchResource
+       1249  4DA 004C4268 LpcPortObjectType
+       1250  4DB 007CC4F0 LpcReplyWaitReplyPort
+       1251  4DC 0053ACC0 LpcRequestPort
+       1252  4DD 00641560 LpcRequestWaitReplyPort
+       1253  4DE 006014F0 LpcRequestWaitReplyPortEx
+       1254  4DF 007CC510 LpcSendWaitReceivePort
+       1255  4E0 0081E6C0 LsaCallAuthenticationPackage
+       1256  4E1 0066D3D0 LsaDeregisterLogonProcess
+       1257  4E2 00626DB0 LsaFreeReturnBuffer
+       1258  4E3 0081E770 LsaLogonUser
+       1259  4E4 006757A0 LsaLookupAuthenticationPackage
+       1260  4E5 00675730 LsaRegisterLogonProcess
+       1261  4E6 004C542D Mm64BitPhysicalAddress
+       1262  4E7 007D03E0 MmAddPhysicalMemory
+       1263  4E8 007D0580 MmAddVerifierSpecialThunks
+       1264  4E9 007D0680 MmAddVerifierThunks
+       1265  4EA 001895A0 MmAdjustWorkingSetSize
+       1266  4EB 002A7AD0 MmAdvanceMdl
+       1267  4EC 002A83B0 MmAllocateContiguousMemory
+       1268  4ED 0018D070 MmAllocateContiguousMemorySpecifyCache
+       1269  4EE 0018D0A0 MmAllocateContiguousMemorySpecifyCacheNode
+       1270  4EF 000EE810 MmAllocateContiguousNodeMemory
+       1271  4F0 0065E9D0 MmAllocateMappingAddress
+       1272  4F1 002A8A00 MmAllocateMdlForIoSpace
+       1273  4F2 0018CA50 MmAllocateNodePagesForMdlEx
+       1274  4F3 007D0780 MmAllocateNonCachedMemory
+       1275  4F4 00171E00 MmAllocatePagesForMdl
+       1276  4F5 00136540 MmAllocatePagesForMdlEx
+       1277  4F6 001365A0 MmAllocatePartitionNodePagesForMdlEx
+       1278  4F7 0013AB10 MmAreMdlPagesCached
+       1279  4F8 004C53C8 MmBadPointer
+       1280  4F9 000919E0 MmBuildMdlForNonPagedPool
+       1281  4FA 0001B1F0 MmCanFileBeTruncated
+       1282  4FB 005223D0 MmChangeImageProtection
+       1283  4FC 005E9DA0 MmCommitSessionMappedView
+       1284  4FD 0012D100 MmCopyMemory
+       1285  4FE 005A0570 MmCopyVirtualMemory
+       1286  4FF 00116E80 MmCreateMdl
+       1287  500 007D0FB0 MmCreateMirror
+       1288  501 00516200 MmCreateSection
+       1289  502 00111320 MmDisableModifiedWriteOfSection
+       1290  503 00075590 MmDoesFileHaveUserWritableReferences
+       1291  504 00115160 MmFlushImageSection
+       1292  505 00115280 MmForceSectionClosed
+       1293  506 002A2920 MmForceSectionClosedEx
+       1294  507 000EDDE0 MmFreeContiguousMemory
+       1295  508 0013A800 MmFreeContiguousMemorySpecifyCache
+       1296  509 00662D00 MmFreeMappingAddress
+       1297  50A 007D0960 MmFreeNonCachedMemory
+       1298  50B 001255A0 MmFreePagesFromMdl
+       1299  50C 002A95D0 MmFreePagesFromMdlEx
+       1300  50D 002A8B30 MmGetCacheAttribute
+       1301  50E 0066D390 MmGetMaximumFileSectionSize
+       1302  50F 00114500 MmGetPhysicalAddress
+       1303  510 006BF410 MmGetPhysicalMemoryRanges
+       1304  511 006BF430 MmGetPhysicalMemoryRangesEx
+       1305  512 00593810 MmGetSectionInformation
+       1306  513 006367F0 MmGetSystemRoutineAddress
+       1307  514 002A8BF0 MmGetVirtualForPhysical
+       1308  515 002AA6C0 MmGrowKernelStack
+       1309  516 0036C998 MmHighestUserAddress
+       1310  517 002AA9D0 MmIsAddressValid
+       1311  518 008A3600 MmIsDriverSuspectForVerifier
+       1312  519 00133BF0 MmIsDriverVerifying
+       1313  51A 006BF9B0 MmIsDriverVerifyingByAddress
+       1314  51B 002AADA0 MmIsIoSpaceActive
+       1315  51C 002AA9F0 MmIsNonPagedSystemAddressValid
+       1316  51D 000993E0 MmIsRecursiveIoFault
+       1317  51E 0008D160 MmIsThisAnNtAsSystem
+       1318  51F 008A3440 MmIsVerifierEnabled
+       1319  520 007D19E0 MmLoadSystemImage
+       1320  521 005222D0 MmLockPagableDataSection
+       1321  522 005222D0 MmLockPagableImageSection
+       1322  523 0058E2F0 MmLockPagableSectionByHandle
+       1323  524 00645890 MmLockPreChargedPagedPool
+       1324  525 000EFB50 MmMapIoSpace
+       1325  526 000EFB90 MmMapIoSpaceEx
+       1326  527 002A87C0 MmMapLockedPages
+       1327  528 000781B0 MmMapLockedPagesSpecifyCache
+       1328  529 00189190 MmMapLockedPagesWithReservedMapping
+       1329  52A 002AC8B0 MmMapMdl
+       1330  52B 002AD720 MmMapMemoryDumpMdl
+       1331  52C 004E80C0 MmMapUserAddressesToPage
+       1332  52D 000EFB50 MmMapVideoDisplay
+       1333  52E 00613FB0 MmMapViewInSessionSpace
+       1334  52F 00613FE0 MmMapViewInSessionSpaceEx
+       1335  530 00631090 MmMapViewInSystemSpace
+       1336  531 006234D0 MmMapViewInSystemSpaceEx
+       1337  532 00512FF0 MmMapViewOfSection
+       1338  533 002A63E0 MmMarkPhysicalMemoryAsBad
+       1339  534 002A6A80 MmMarkPhysicalMemoryAsGood
+       1340  535 0010D8E0 MmMdlPageContentsState
+       1341  536 00123AB0 MmMdlPagesAreZero
+       1342  537 00687F20 MmObtainChargesToLockPagedPool
+       1343  538 005D9650 MmPageEntireDriver
+       1344  539 0058B200 MmPrefetchPages
+       1345  53A 00627B00 MmPrefetchVirtualAddresses
+       1346  53B 00032010 MmProbeAndLockPages
+       1347  53C 0054FFA0 MmProbeAndLockProcessPages
+       1348  53D 00107390 MmProbeAndLockSelectedPages
+       1349  53E 002A8C40 MmProtectMdlSystemAddress
+       1350  53F 00172F60 MmQuerySystemSize
+       1351  540 007D0440 MmRemovePhysicalMemory
+       1352  541 005D9BA0 MmResetDriverPaging
+       1353  542 007D1D30 MmReturnChargesToLockPagedPool
+       1354  543 005E4EA0 MmRotatePhysicalView
+       1355  544 004C53B0 MmSectionObjectType
+       1356  545 005F7400 MmSecureVirtualMemory
+       1357  546 00122F30 MmSetAddressRangeModified
+       1358  547 00138F30 MmSetBankedSection
+       1359  548 007D2FA0 MmSetGraphicsPtes
+       1360  549 007D1A40 MmSetPermanentCacheAttribute
+       1361  54A 000F1AD0 MmSizeOfMdl
+       1362  54B 0036C988 MmSystemRangeStart
+       1363  54C 002B32E0 MmTrimAllSystemPagableMemory
+       1364  54D 00674F60 MmUnloadSystemImage
+       1365  54E 0009A210 MmUnlockPagableImageSection
+       1366  54F 00066BC0 MmUnlockPages
+       1367  550 00648C60 MmUnlockPreChargedPagedPool
+       1368  551 000EE040 MmUnmapIoSpace
+       1369  552 00067540 MmUnmapLockedPages
+       1370  553 002A87F0 MmUnmapReservedMapping
+       1371  554 000EE040 MmUnmapVideoDisplay
+       1372  555 00622B70 MmUnmapViewInSessionSpace
+       1373  556 00528780 MmUnmapViewInSystemSpace
+       1374  557 00514D30 MmUnmapViewOfSection
+       1375  558 00594A50 MmUnsecureVirtualMemory
+       1376  559 0036C990 MmUserProbeAddress
+       1377  55A 008F0614 NlsAnsiCodePage
+       1378  55B 0088B348 NlsLeadByteInfo
+       1379  55C 008F0502 NlsMbCodePageTag
+       1380  55D 008F0500 NlsMbOemCodePageTag
+       1381  55E 008F0610 NlsOemCodePage
+       1382  55F 0088B340 NlsOemLeadByteInfo
+       1383  560 00859A40 NtAddAtom
+       1384  561 0050A3C0 NtAdjustPrivilegesToken
+       1385  562 005F1F60 NtAllocateLocallyUniqueId
+       1386  563 0061E040 NtAllocateUuids
+       1387  564 0052AD70 NtAllocateVirtualMemory
+       1388  565 00892730 NtBuildGUID
+       1389  566 0043D580 NtBuildLab
+       1390  567 00375B98 NtBuildNumber
+       1391  568 005ACC40 NtClose
+       1392  569 0018DD50 NtCommitComplete
+       1393  56A 0018DD70 NtCommitEnlistment
+       1394  56B 0018DD90 NtCommitTransaction
+       1395  56C 00623FF0 NtCompareSigningLevels
+       1396  56D 006043C0 NtConnectPort
+       1397  56E 0018DDB0 NtCreateEnlistment
+       1398  56F 0059B1E0 NtCreateEvent
+       1399  570 0050D3E0 NtCreateFile
+       1400  571 0018DDD0 NtCreateResourceManager
+       1401  572 00598540 NtCreateSection
+       1402  573 0018DDF0 NtCreateTransaction
+       1403  574 0018DE10 NtCreateTransactionManager
+       1404  575 005F40F0 NtDeleteAtom
+       1405  576 006751A0 NtDeleteFile
+       1406  577 005F09D0 NtDeviceIoControlFile
+       1407  578 0054CB40 NtDuplicateObject
+       1408  579 005197C0 NtDuplicateToken
+       1409  57A 0018DE30 NtEnumerateTransactionObject
+       1410  57B 00537DD0 NtFindAtom
+       1411  57C 005E52A0 NtFreeVirtualMemory
+       1412  57D 0018DE50 NtFreezeTransactions
+       1413  57E 005FD9A0 NtFsControlFile
+       1414  57F 00856F80 NtGetEnvironmentVariableEx
+       1415  580 0018DE70 NtGetNotificationResourceManager
+       1416  581 0043D560 NtGlobalFlag
+       1417  582 00890A28 NtImageInfo
+       1418  583 00557840 NtLockFile
+       1419  584 0063D0C0 NtMakePermanentObject
+       1420  585 00594B40 NtMapViewOfSection
+       1421  586 00612CA0 NtNotifyChangeDirectoryFile
+       1422  587 00612D00 NtNotifyChangeDirectoryFileEx
+       1423  588 0018DE90 NtOpenEnlistment
+       1424  589 0050D370 NtOpenFile
+       1425  58A 0059B1B0 NtOpenProcess
+       1426  58B 00599260 NtOpenProcessToken
+       1427  58C 0059ABF0 NtOpenProcessTokenEx
+       1428  58D 0018DEB0 NtOpenResourceManager
+       1429  58E 0051B660 NtOpenThread
+       1430  58F 00598B20 NtOpenThreadToken
+       1431  590 00598B40 NtOpenThreadTokenEx
+       1432  591 0018DED0 NtOpenTransaction
+       1433  592 0018DEF0 NtOpenTransactionManager
+       1434  593 0018DF10 NtPrePrepareComplete
+       1435  594 0018DF30 NtPrePrepareEnlistment
+       1436  595 0018DF50 NtPrepareComplete
+       1437  596 0018DF70 NtPrepareEnlistment
+       1438  597 0018DF90 NtPropagationComplete
+       1439  598 0018DFB0 NtPropagationFailed
+       1440  599 0060ED80 NtQueryDirectoryFile
+       1441  59A 005978E0 NtQueryDirectoryFileEx
+       1442  59B 00606750 NtQueryEaFile
+       1443  59C 00857890 NtQueryEnvironmentVariableInfoEx
+       1444  59D 005F4300 NtQueryInformationAtom
+       1445  59E 0018DFD0 NtQueryInformationEnlistment
+       1446  59F 00530F70 NtQueryInformationFile
+       1447  5A0 00533D50 NtQueryInformationProcess
+       1448  5A1 0018DFF0 NtQueryInformationResourceManager
+       1449  5A2 00536750 NtQueryInformationThread
+       1450  5A3 005B0360 NtQueryInformationToken
+       1451  5A4 0018E010 NtQueryInformationTransaction
+       1452  5A5 0018E030 NtQueryInformationTransactionManager
+       1453  5A6 007A15C0 NtQueryQuotaInformationFile
+       1454  5A7 00520870 NtQuerySecurityAttributesToken
+       1455  5A8 005F6070 NtQuerySecurityObject
+       1456  5A9 005ADCC0 NtQuerySystemInformation
+       1457  5AA 006079A0 NtQuerySystemInformationEx
+       1458  5AB 0054A4C0 NtQueryVolumeInformationFile
+       1459  5AC 005306A0 NtReadFile
+       1460  5AD 0018E050 NtReadOnlyEnlistment
+       1461  5AE 0018E070 NtRecoverEnlistment
+       1462  5AF 0018E090 NtRecoverResourceManager
+       1463  5B0 0018E0B0 NtRecoverTransactionManager
+       1464  5B1 00617750 NtRequestPort
+       1465  5B2 00601530 NtRequestWaitReplyPort
+       1466  5B3 0018E0D0 NtRollbackComplete
+       1467  5B4 0018E0F0 NtRollbackEnlistment
+       1468  5B5 0018E110 NtRollbackTransaction
+       1469  5B6 0081DE00 NtSetCachedSigningLevel
+       1470  5B7 007A0F60 NtSetEaFile
+       1471  5B8 00536540 NtSetEvent
+       1472  5B9 0018E130 NtSetInformationEnlistment
+       1473  5BA 00080270 NtSetInformationFile
+       1474  5BB 0051DC80 NtSetInformationProcess
+       1475  5BC 0018E150 NtSetInformationResourceManager
+       1476  5BD 00540DB0 NtSetInformationThread
+       1477  5BE 005059C0 NtSetInformationToken
+       1478  5BF 0018E170 NtSetInformationTransaction
+       1479  5C0 00529140 NtSetInformationVirtualMemory
+       1480  5C1 007A1CF0 NtSetQuotaInformationFile
+       1481  5C2 00503750 NtSetSecurityObject
+       1482  5C3 006656A0 NtSetVolumeInformationFile
+       1483  5C4 00850590 NtShutdownSystem
+       1484  5C5 0018E190 NtThawTransactions
+       1485  5C6 005B4EF0 NtTraceControl
+       1486  5C7 00073A00 NtTraceEvent
+       1487  5C8 005F7A40 NtUnlockFile
+       1488  5C9 0063A510 NtVdmControl
+       1489  5CA 005ADA80 NtWaitForSingleObject
+       1490  5CB 0052F7C0 NtWriteFile
+       1491  5CC 00674E60 ObAssignSecurity
+       1492  5CD 005B9930 ObCheckCreateObjectAccess
+       1493  5CE 0058AA80 ObCheckObjectAccess
+       1494  5CF 00537C90 ObCloseHandle
+       1495  5D0 00507620 ObCreateObject
+       1496  5D1 0068F5A0 ObCreateObjectType
+       1497  5D2 0057A9E0 ObDeleteCapturedInsertInfo
+       1498  5D3 0011C770 ObDereferenceObject
+       1499  5D4 000692F0 ObDereferenceObjectDeferDelete
+       1500  5D5 000B6D80 ObDereferenceObjectDeferDeleteWithTag
+       1501  5D6 005B7F60 ObDereferenceSecurityDescriptor
+       1502  5D7 0054CD00 ObDuplicateObject
+       1503  5D8 005F0630 ObFindHandleForObject
+       1504  5D9 007E4F70 ObGetFilterVersion
+       1505  5DA 00667570 ObGetObjectSecurity
+       1506  5DB 00612C30 ObGetObjectType
+       1507  5DC 005161B0 ObInsertObject
+       1508  5DD 006C2100 ObIsDosDeviceLocallyMapped
+       1509  5DE 002D1BA0 ObIsKernelHandle
+       1510  5DF 005B87C0 ObLogSecurityDescriptor
+       1511  5E0 00584050 ObMakeTemporaryObject
+       1512  5E1 00574BA0 ObOpenObjectByName
+       1513  5E2 005A7450 ObOpenObjectByNameEx
+       1514  5E3 0059ADB0 ObOpenObjectByPointer
+       1515  5E4 007E3ED0 ObOpenObjectByPointerWithTag
+       1516  5E5 0060D3D0 ObQueryNameInfo
+       1517  5E6 006131C0 ObQueryNameString
+       1518  5E7 005E6860 ObQueryObjectAuditingByHandle
+       1519  5E8 005AC580 ObReferenceObjectByHandle
+       1520  5E9 00536130 ObReferenceObjectByHandleWithTag
+       1521  5EA 005B78F0 ObReferenceObjectByName
+       1522  5EB 00005950 ObReferenceObjectByPointer
+       1523  5EC 000B45D0 ObReferenceObjectByPointerWithTag
+       1524  5ED 000FB580 ObReferenceObjectSafe
+       1525  5EE 000BFD00 ObReferenceObjectSafeWithTag
+       1526  5EF 00616DA0 ObReferenceSecurityDescriptor
+       1527  5F0 006BE920 ObRegisterCallbacks
+       1528  5F1 005B7F30 ObReleaseObjectSecurity
+       1529  5F2 005C7C40 ObSetHandleAttributes
+       1530  5F3 005B70E0 ObSetSecurityDescriptorInfo
+       1531  5F4 005B8C90 ObSetSecurityObjectByPointer
+       1532  5F5 007E4F80 ObUnRegisterCallbacks
+       1533  5F6 005E6100 ObWaitForMultipleObjects
+       1534  5F7 00683C10 ObWaitForSingleObject
+       1535  5F8 000BC320 ObfDereferenceObject
+       1536  5F9 000BFD50 ObfDereferenceObjectWithTag
+       1537  5FA 000BC3F0 ObfReferenceObject
+       1538  5FB 00075480 ObfReferenceObjectWithTag
+       1539  5FC 0045F108 POGOBuffer
+       1540  5FD 0055C9F0 PcwAddInstance
+       1541  5FE 00625970 PcwCloseInstance
+       1542  5FF 0055D780 PcwCreateInstance
+       1543  600 00674E00 PcwRegister
+       1544  601 00859B20 PcwUnregister
+       1545  602 00009CD0 PfFileInfoNotify
+       1546  603 00814DB0 PfxFindPrefix
+       1547  604 00814E90 PfxInitialize
+       1548  605 00814EB0 PfxInsertPrefix
+       1549  606 00814FD0 PfxRemovePrefix
+       1550  607 00170950 PoCallDriver
+       1551  608 00138F30 PoCancelDeviceNotify
+       1552  609 000D0510 PoClearPowerRequest
+       1553  60A 00139610 PoCpuIdledSinceLastCallImprecise
+       1554  60B 006677D0 PoCreatePowerRequest
+       1555  60C 00687340 PoCreateThermalRequest
+       1556  60D 005C98A0 PoDeletePowerRequest
+       1557  60E 007E9F30 PoDeleteThermalRequest
+       1558  60F 002D58B0 PoDirectedDripsClearDeviceFlags
+       1559  610 002D5900 PoDirectedDripsSetDeviceFlags
+       1560  611 007EB4D0 PoDisableSleepStates
+       1561  612 002D5F30 PoEndDeviceBusy
+       1562  613 000A21C0 PoEnergyEstimationEnabled
+       1563  614 000D7B10 PoFxActivateComponent
+       1564  615 00172C50 PoFxCompleteDevicePowerNotRequired
+       1565  616 002D6000 PoFxCompleteDirectedPowerTransition
+       1566  617 001210A0 PoFxCompleteIdleCondition
+       1567  618 00171C60 PoFxCompleteIdleState
+       1568  619 007EBB40 PoFxEnableDStateReporting
+       1569  61A 000D8770 PoFxIdleComponent
+       1570  61B 002D6040 PoFxIssueComponentPerfStateChange
+       1571  61C 002D6070 PoFxIssueComponentPerfStateChangeMultiple
+       1572  61D 00152010 PoFxNotifySurprisePowerOn
+       1573  61E 00152B10 PoFxPowerControl
+       1574  61F 002D6100 PoFxPowerOnCrashdumpDevice
+       1575  620 0018C950 PoFxProcessorNotification
+       1576  621 002D6160 PoFxQueryCurrentComponentPerfState
+       1577  622 007EBC50 PoFxRegisterComponentPerfStates
+       1578  623 006AD1B0 PoFxRegisterCoreDevice
+       1579  624 00684BF0 PoFxRegisterCrashdumpDevice
+       1580  625 006AD2D0 PoFxRegisterDevice
+       1581  626 0018A050 PoFxRegisterDripsWatchdogCallback
+       1582  627 007EBCD0 PoFxRegisterInternalDevice
+       1583  628 007EBE40 PoFxRegisterPlugin
+       1584  629 002D61C0 PoFxRegisterPluginEx
+       1585  62A 007EBE60 PoFxRegisterPrimaryDevice
+       1586  62B 0016B460 PoFxReportDevicePoweredOn
+       1587  62C 002D61E0 PoFxSetComponentLatency
+       1588  62D 002D6230 PoFxSetComponentResidency
+       1589  62E 002D6280 PoFxSetComponentWake
+       1590  62F 001889A0 PoFxSetDeviceIdleTimeout
+       1591  630 007EBF70 PoFxSetTargetDripsDevicePowerState
+       1592  631 00186090 PoFxStartDevicePowerManagement
+       1593  632 007EC0A0 PoFxUnregisterDevice
+       1594  633 002D2860 PoGetProcessorIdleAccounting
+       1595  634 00172B90 PoGetSystemWake
+       1596  635 006B9BB0 PoGetThermalRequestSupport
+       1597  636 002D2890 PoInitiateProcessorWake
+       1598  637 00139F30 PoLatencySensitivityHint
+       1599  638 00139CE0 PoNotifyMediaBuffering
+       1600  639 000D2E30 PoNotifyVSyncChange
+       1601  63A 000AE6B0 PoQueryWatchdogTime
+       1602  63B 007EDE90 PoQueueShutdownWorkItem
+       1603  63C 007EB5A0 PoReenableSleepStates
+       1604  63D 00686580 PoRegisterCoalescingCallback
+       1605  63E 0008B500 PoRegisterDeviceForIdleDetection
+       1606  63F 00138F30 PoRegisterDeviceNotify
+       1607  640 005CAA90 PoRegisterPowerSettingCallback
+       1608  641 002DA9F0 PoRegisterSystemState
+       1609  642 007EA5C0 PoReportDirectedDripsCandidateDevice
+       1610  643 0016CC90 PoRequestPowerIrp
+       1611  644 006A7750 PoRequestShutdownEvent
+       1612  645 002D5F40 PoSetDeviceBusyEx
+       1613  646 004EEDC0 PoSetFixedWakeSource
+       1614  647 0013F0B0 PoSetHiberRange
+       1615  648 002D5AA0 PoSetPowerButtonHoldState
+       1616  649 000D0610 PoSetPowerRequest
+       1617  64A 00165D10 PoSetPowerState
+       1618  64B 002DAAD0 PoSetSystemState
+       1619  64C 002D2680 PoSetSystemWake
+       1620  64D 002D26B0 PoSetSystemWakeDevice
+       1621  64E 006B9A70 PoSetThermalActiveCooling
+       1622  64F 007E9F60 PoSetThermalPassiveCooling
+       1623  650 00171FA0 PoSetUserPresent
+       1624  651 007EEBC0 PoShutdownBugCheck
+       1625  652 002D5F50 PoStartDeviceBusy
+       1626  653 00170E40 PoStartNextPowerIrp
+       1627  654 007EDF10 PoUnregisterCoalescingCallback
+       1628  655 00641E00 PoUnregisterPowerSettingCallback
+       1629  656 002DAB20 PoUnregisterSystemState
+       1630  657 00648080 PoUserShutdownCancelled
+       1631  658 00644D30 PoUserShutdownInitiated
+       1632  659 005FA7B0 ProbeForRead
+       1633  65A 005AFBA0 ProbeForWrite
+       1634  65B 00600000 PsAcquireProcessExitSynchronization
+       1635  65C 002E8390 PsAcquireSiloHardReference
+       1636  65D 0068F3F0 PsAllocSiloContextSlot
+       1637  65E 0065C6E0 PsAssignImpersonationToken
+       1638  65F 00569D30 PsAssignProcessToJobObject
+       1639  660 00090CC0 PsAttachSiloToCurrentThread
+       1640  661 00106EC0 PsChargePoolQuota
+       1641  662 0004CE30 PsChargeProcessNonPagedPoolQuota
+       1642  663 00509290 PsChargeProcessPagedPoolQuota
+       1643  664 00106EE0 PsChargeProcessPoolQuota
+       1644  665 005C8C00 PsChargeProcessWakeCounter
+       1645  666 00698B90 PsCreateSiloContext
+       1646  667 006289B0 PsCreateSystemThread
+       1647  668 00628A00 PsCreateSystemThreadEx
+       1648  669 00612FD0 PsDereferenceImpersonationToken
+       1649  66A 00625B30 PsDereferenceKernelStack
+       1650  66B 0061AD30 PsDereferencePrimaryToken
+       1651  66C 0011C770 PsDereferenceSiloContext
+       1652  66D 00090CA0 PsDetachSiloFromCurrentThread
+       1653  66E 00599130 PsDisableImpersonation
+       1654  66F 000BA6D0 PsEnterPriorityRegion
+       1655  670 006862D0 PsEstablishWin32Callouts
+       1656  671 00809790 PsFreeSiloContextSlot
+       1657  672 0080E640 PsGetContextThread
+       1658  673 00007010 PsGetCurrentProcess
+       1659  674 0008AD20 PsGetCurrentProcessId
+       1660  675 000D17C0 PsGetCurrentProcessSessionId
+       1661  676 000FBD20 PsGetCurrentProcessWin32Process
+       1662  677 00104C50 PsGetCurrentProcessWow64Process
+       1663  678 00075F30 PsGetCurrentServerSilo
+       1664  679 00809820 PsGetCurrentServerSiloName
+       1665  67A 000BB520 PsGetCurrentSilo
+       1666  67B 00061610 PsGetCurrentThread
+       1667  67C 0010C260 PsGetCurrentThreadId
+       1668  67D 00110E60 PsGetCurrentThreadPreviousMode
+       1669  67E 00096020 PsGetCurrentThreadProcess
+       1670  67F 0008AD20 PsGetCurrentThreadProcessId
+       1671  680 002E88B0 PsGetCurrentThreadStackBase
+       1672  681 002E88D0 PsGetCurrentThreadStackLimit
+       1673  682 00095E80 PsGetCurrentThreadTeb
+       1674  683 000F98C0 PsGetCurrentThreadWin32Thread
+       1675  684 000F4530 PsGetCurrentThreadWin32ThreadAndEnterCriticalRegion
+       1676  685 001169F0 PsGetEffectiveContainerId
+       1677  686 0008D6B0 PsGetEffectiveServerSilo
+       1678  687 000045C0 PsGetHostSilo
+       1679  688 00129740 PsGetJobLock
+       1680  689 00108B20 PsGetJobProperty
+       1681  68A 002E8F20 PsGetJobServerSilo
+       1682  68B 002E8900 PsGetJobSessionId
+       1683  68C 002E8F50 PsGetJobSilo
+       1684  68D 001267D0 PsGetJobUIRestrictionsClass
+       1685  68E 00809850 PsGetParentSilo
+       1686  68F 000F9850 PsGetPermanentSiloContext
+       1687  690 0013A2C0 PsGetProcessCommonJob
+       1688  691 001141A0 PsGetProcessCreateTimeQuadPart
+       1689  692 00123370 PsGetProcessDebugPort
+       1690  693 006014E0 PsGetProcessDxgProcess
+       1691  694 001273B0 PsGetProcessExitProcessCalled
+       1692  695 0080AFB0 PsGetProcessExitStatus
+       1693  696 00618010 PsGetProcessExitTime
+       1694  697 00089C20 PsGetProcessId
+       1695  698 0011ABA0 PsGetProcessImageFileName
+       1696  699 000746C0 PsGetProcessInheritedFromUniqueProcessId
+       1697  69A 00119770 PsGetProcessJob
+       1698  69B 00118080 PsGetProcessPeb
+       1699  69C 002E8920 PsGetProcessPriorityClass
+       1700  69D 00122ED0 PsGetProcessProtection
+       1701  69E 00004C20 PsGetProcessSectionBaseAddress
+       1702  69F 00616D40 PsGetProcessSecurityPort
+       1703  6A0 00123330 PsGetProcessSequenceNumber
+       1704  6A1 00096010 PsGetProcessServerSilo
+       1705  6A2 00110D70 PsGetProcessSessionId
+       1706  6A3 000D1E80 PsGetProcessSessionIdEx
+       1707  6A4 002E8AD0 PsGetProcessSignatureLevel
+       1708  6A5 002E8930 PsGetProcessSilo
+       1709  6A6 000739A0 PsGetProcessStartKey
+       1710  6A7 00114ED0 PsGetProcessWin32Process
+       1711  6A8 0011CDE0 PsGetProcessWin32WindowStation
+       1712  6A9 000FF230 PsGetProcessWow64Process
+       1713  6AA 00095FE0 PsGetServerSiloServiceSessionId
+       1714  6AB 00809880 PsGetSiloContainerId
+       1715  6AC 002E8420 PsGetSiloContext
+       1716  6AD 006C8070 PsGetSiloIdentifier
+       1717  6AE 00626EC0 PsGetSiloMonitorContextSlot
+       1718  6AF 002E8950 PsGetThreadCreateTime
+       1719  6B0 006228F0 PsGetThreadExitStatus
+       1720  6B1 00124E90 PsGetThreadFreezeCount
+       1721  6B2 00167930 PsGetThreadHardErrorsAreDisabled
+       1722  6B3 00115A10 PsGetThreadId
+       1723  6B4 00070A90 PsGetThreadProcess
+       1724  6B5 0011BD80 PsGetThreadProcessId
+       1725  6B6 0007FBF0 PsGetThreadProperty
+       1726  6B7 000AFF40 PsGetThreadServerSilo
+       1727  6B8 005D4BB0 PsGetThreadSessionId
+       1728  6B9 001143F0 PsGetThreadTeb
+       1729  6BA 000FDC10 PsGetThreadWin32Thread
+       1730  6BB 00128D00 PsGetVersion
+       1731  6BC 001072E0 PsGetWin32KFilterSet
+       1732  6BD 00540840 PsImpersonateClient
+       1733  6BE 004C52E0 PsInitialSystemProcess
+       1734  6BF 006988E0 PsInsertPermanentSiloContext
+       1735  6C0 008098A0 PsInsertSiloContext
+       1736  6C1 000BAF20 PsIsCurrentThreadInServerSilo
+       1737  6C2 00109180 PsIsCurrentThreadPrefetching
+       1738  6C3 0018A140 PsIsDiskCountersEnabled
+       1739  6C4 00064150 PsIsHostSilo
+       1740  6C5 0080AFC0 PsIsProcessBeingDebugged
+       1741  6C6 00624A10 PsIsProcessCommitRelinquished
+       1742  6C7 00809920 PsIsProcessInAppSilo
+       1743  6C8 00004C70 PsIsProtectedProcess
+       1744  6C9 00118140 PsIsProtectedProcessLight
+       1745  6CA 000A5BF0 PsIsSystemProcess
+       1746  6CB 00116F60 PsIsSystemThread
+       1747  6CC 00660230 PsIsThreadImpersonating
+       1748  6CD 000A3070 PsIsThreadTerminating
+       1749  6CE 0011DF60 PsIsWin32KFilterAuditEnabled
+       1750  6CF 0011DF90 PsIsWin32KFilterAuditEnabledForProcess
+       1751  6D0 001144B0 PsIsWin32KFilterEnabled
+       1752  6D1 001144E0 PsIsWin32KFilterEnabledForProcess
+       1753  6D2 004C53E8 PsJobType
+       1754  6D3 000BA700 PsLeavePriorityRegion
+       1755  6D4 0041FA10 PsLoadedModuleList
+       1756  6D5 0041F9A0 PsLoadedModuleResource
+       1757  6D6 0059B0C0 PsLookupProcessByProcessId
+       1758  6D7 0051B5D0 PsLookupProcessThreadByCid
+       1759  6D8 0051BBE0 PsLookupThreadByThreadId
+       1760  6D9 00809950 PsMakeSiloContextPermanent
+       1761  6DA 004C57D0 PsPartitionType
+       1762  6DB 004C52D0 PsProcessType
+       1763  6DC 00516680 PsQueryProcessAttributesByToken
+       1764  6DD 0011B0C0 PsQueryProcessCommandLine
+       1765  6DE 0080B000 PsQueryProcessExceptionFlags
+       1766  6DF 00502ED0 PsQueryTotalCycleTimeProcess
+       1767  6E0 005B4340 PsReferenceImpersonationToken
+       1768  6E1 00626BD0 PsReferenceKernelStack
+       1769  6E2 005166E0 PsReferencePrimaryToken
+       1770  6E3 00605EF0 PsReferenceProcessFilePointer
+       1771  6E4 00128660 PsReferenceSiloContext
+       1772  6E5 0080ECA0 PsRegisterPicoProvider
+       1773  6E6 0068F410 PsRegisterSiloMonitor
+       1774  6E7 006064B0 PsReleaseProcessExitSynchronization
+       1775  6E8 0051A970 PsReleaseProcessWakeCounter
+       1776  6E9 002E8450 PsReleaseSiloHardReference
+       1777  6EA 0080F430 PsRemoveCreateThreadNotifyRoutine
+       1778  6EB 0080F530 PsRemoveLoadImageNotifyRoutine
+       1779  6EC 008099F0 PsRemoveSiloContext
+       1780  6ED 00809A20 PsReplaceSiloContext
+       1781  6EE 00598FD0 PsRestoreImpersonation
+       1782  6EF 00605990 PsResumeProcess
+       1783  6F0 00111560 PsReturnPoolQuota
+       1784  6F1 0004F6F0 PsReturnProcessNonPagedPoolQuota
+       1785  6F2 00106E90 PsReturnProcessPagedPoolQuota
+       1786  6F3 0080BF40 PsRevertThreadToSelf
+       1787  6F4 0080BF70 PsRevertToSelf
+       1788  6F5 0080E660 PsSetContextThread
+       1789  6F6 00686560 PsSetCreateProcessNotifyRoutine
+       1790  6F7 00686320 PsSetCreateProcessNotifyRoutineEx
+       1791  6F8 00686380 PsSetCreateProcessNotifyRoutineEx2
+       1792  6F9 00686340 PsSetCreateThreadNotifyRoutine
+       1793  6FA 0080F610 PsSetCreateThreadNotifyRoutineEx
+       1794  6FB 0054AFC0 PsSetCurrentThreadPrefetching
+       1795  6FC 002E8A30 PsSetJobProperty
+       1796  6FD 0080DBD0 PsSetLegoNotifyRoutine
+       1797  6FE 00686360 PsSetLoadImageNotifyRoutine
+       1798  6FF 00686440 PsSetLoadImageNotifyRoutineEx
+       1799  700 00622C40 PsSetProcessDxgProcess
+       1800  701 00647B30 PsSetProcessFaultInformation
+       1801  702 005D45F0 PsSetProcessPriorityByClass
+       1802  703 002E8AA0 PsSetProcessPriorityClass
+       1803  704 0080B200 PsSetProcessSecurityPort
+       1804  705 0060F410 PsSetProcessWin32Process
+       1805  706 00624420 PsSetProcessWindowStation
+       1806  707 00167790 PsSetThreadHardErrorsAreDisabled
+       1807  708 00108920 PsSetThreadProperty
+       1808  709 00616260 PsSetThreadWin32Thread
+       1809  70A 004135D8 PsSiloContextNonPagedType
+       1810  70B 004135D0 PsSiloContextPagedType
+       1811  70C 006B9570 PsStartSiloMonitor
+       1812  70D 0080F910 PsSuspendProcess
+       1813  70E 00809BB0 PsTerminateServerSilo
+       1814  70F 0062F050 PsTerminateSystemThread
+       1815  710 004C52F8 PsThreadType
+       1816  711 008F06A4 PsUILanguageComitted
+       1817  712 0080E6A0 PsUnregisterSiloMonitor
+       1818  713 0008F670 PsUpdateComponentPower
+       1819  714 00114850 PsUpdateDiskCounters
+       1820  715 00537350 PsWow64GetProcessMachine
+       1821  716 00634410 PsWow64IsMachineSupported
+       1822  717 002E9860 PsWrapApcWow64Thread
+       1823  718 005EA930 RtlAbsoluteToSelfRelativeSD
+       1824  719 005627D0 RtlAddAccessAllowedAce
+       1825  71A 00674DD0 RtlAddAccessAllowedAceEx
+       1826  71B 00815240 RtlAddAccessAllowedObjectAce
+       1827  71C 006A0E00 RtlAddAccessDeniedAceEx
+       1828  71D 008152A0 RtlAddAccessDeniedObjectAce
+       1829  71E 00815300 RtlAddAccessFilterAce
+       1830  71F 005B8D90 RtlAddAce
+       1831  720 00565410 RtlAddAtomToAtomTable
+       1832  721 0008C1E0 RtlAddAtomToAtomTableEx
+       1833  722 00815550 RtlAddAuditAccessAceEx
+       1834  723 008155A0 RtlAddAuditAccessObjectAce
+       1835  724 0068E3B0 RtlAddProcessTrustLabelAce
+       1836  725 0069F7D0 RtlAddRange
+       1837  726 00815630 RtlAddResourceAttributeAce
+       1838  727 00110F50 RtlAllocateHeap
+       1839  728 005EF560 RtlAnsiCharToUnicodeChar
+       1840  729 0057FEC0 RtlAnsiStringToUnicodeSize
+       1841  72A 0057FD40 RtlAnsiStringToUnicodeString
+       1842  72B 00813750 RtlAppendAsciizToString
+       1843  72C 00622A90 RtlAppendStringToString
+       1844  72D 00090AE0 RtlAppendUnicodeStringToString
+       1845  72E 000CEAA0 RtlAppendUnicodeToString
+       1846  72F 00601F00 RtlAreAllAccessesGranted
+       1847  730 006261F0 RtlAreAnyAccessesGranted
+       1848  731 0008D4B0 RtlAreBitsClear
+       1849  732 00104D50 RtlAreBitsClearEx
+       1850  733 00111890 RtlAreBitsSet
+       1851  734 002ECE50 RtlAreBitsSetEx
+       1852  735 002EE680 RtlAssert
+       1853  736 000A8040 RtlAvlInsertNodeEx
+       1854  737 0002B190 RtlAvlRemoveNode
+       1855  738 008164C0 RtlCapabilityCheck
+       1856  739 008168A0 RtlCapabilityCheckForSingleSessionSku
+       1857  73A 001B8D30 RtlCaptureContext
+       1858  73B 00099D30 RtlCaptureStackBackTrace
+       1859  73C 00694D90 RtlCharToInteger
+       1860  73D 00124270 RtlCheckPortableOperatingSystem
+       1861  73E 0061F0B0 RtlCheckRegistryKey
+       1862  73F 008188F0 RtlCheckSystemBootStatusIntegrity
+       1863  740 002EC870 RtlCheckTokenCapability
+       1864  741 0008B660 RtlCheckTokenMembership
+       1865  742 0008B680 RtlCheckTokenMembershipEx
+       1866  743 0008D670 RtlClearAllBits
+       1867  744 000EDCF0 RtlClearAllBitsEx
+       1868  745 00114FB0 RtlClearBit
+       1869  746 00116BD0 RtlClearBitEx
+       1870  747 00083C50 RtlClearBits
+       1871  748 0001CFD0 RtlClearBitsEx
+       1872  749 00127000 RtlCmDecodeMemIoResource
+       1873  74A 0017B190 RtlCmEncodeMemIoResource
+       1874  74B 00119C50 RtlCompareAltitudes
+       1875  74C 001B9410 RtlCompareMemory
+       1876  74D 001B9490 RtlCompareMemoryUlong
+       1877  74E 00510670 RtlCompareString
+       1878  74F 00506FE0 RtlCompareUnicodeString
+       1879  750 00630770 RtlCompareUnicodeStrings
+       1880  751 0011C570 RtlCompressBuffer
+       1881  752 00813240 RtlCompressChunks
+       1882  753 00156AC0 RtlComputeCrc32
+       1883  754 00103990 RtlContractHashTable
+       1884  755 0062CC10 RtlConvertSidToUnicodeString
+       1885  756 0008E700 RtlCopyBitMap
+       1886  757 00109260 RtlCopyBitMapEx
+       1887  758 00664730 RtlCopyLuid
+       1888  759 00816910 RtlCopyLuidAndAttributesArray
+       1889  75A 001C3540 RtlCopyMemory
+       1890  75B 001B94C0 RtlCopyMemoryNonTemporal
+       1891  75C 0069FBD0 RtlCopyRangeList
+       1892  75D 0053A9D0 RtlCopySid
+       1893  75E 005B29B0 RtlCopySidAndAttributesArray
+       1894  75F 002EB640 RtlCopyString
+       1895  760 00061620 RtlCopyUnicodeString
+       1896  761 002EEB30 RtlCrc32
+       1897  762 00157F60 RtlCrc64
+       1898  763 005B8EC0 RtlCreateAcl
+       1899  764 0061F360 RtlCreateAtomTable
+       1900  765 001245D0 RtlCreateAtomTableEx
+       1901  766 00164D70 RtlCreateHashTable
+       1902  767 00164D50 RtlCreateHashTableEx
+       1903  768 00671770 RtlCreateHeap
+       1904  769 006C4390 RtlCreateRegistryKey
+       1905  76A 00563110 RtlCreateSecurityDescriptor
+       1906  76B 0063CB60 RtlCreateSystemVolumeInformationFolder
+       1907  76C 0062CF70 RtlCreateUnicodeString
+       1908  76D 00813060 RtlCreateUserThread
+       1909  76E 006A5F30 RtlCultureNameToLCID
+       1910  76F 00813AB0 RtlCustomCPToUnicodeN
+       1911  770 002EB5C0 RtlDecompressBuffer
+       1912  771 00130C90 RtlDecompressBufferEx
+       1913  772 00130560 RtlDecompressBufferEx2
+       1914  773 008133B0 RtlDecompressChunks
+       1915  774 00813600 RtlDecompressFragment
+       1916  775 00124320 RtlDecompressFragmentEx
+       1917  776 00084430 RtlDelete
+       1918  777 00503170 RtlDeleteAce
+       1919  778 005F4210 RtlDeleteAtomFromAtomTable
+       1920  779 001115F0 RtlDeleteElementGenericTable
+       1921  77A 000CF7F0 RtlDeleteElementGenericTableAvl
+       1922  77B 0013C720 RtlDeleteElementGenericTableAvlEx
+       1923  77C 0011BB90 RtlDeleteHashTable
+       1924  77D 00002430 RtlDeleteNoSplay
+       1925  77E 0069FE20 RtlDeleteOwnersRanges
+       1926  77F 0069FD70 RtlDeleteRange
+       1927  780 00625C60 RtlDeleteRegistryValue
+       1928  781 0008B230 RtlDeriveCapabilitySidsFromName
+       1929  782 00813690 RtlDescribeChunk
+       1930  783 005F4700 RtlDestroyAtomTable
+       1931  784 006682A0 RtlDestroyHeap
+       1932  785 00812B70 RtlDowncaseUnicodeChar
+       1933  786 005FEB30 RtlDowncaseUnicodeString
+       1934  787 002EBDC0 RtlDrainNonVolatileFlush
+       1935  788 005F9D00 RtlDuplicateUnicodeString
+       1936  789 00816220 RtlEmptyAtomTable
+       1937  78A 0011EB90 RtlEndEnumerationHashTable
+       1938  78B 00170E40 RtlEndStrongEnumerationHashTable
+       1939  78C 002EEAD0 RtlEndWeakEnumerationHashTable
+       1940  78D 000DEA20 RtlEnumerateEntryHashTable
+       1941  78E 00172B40 RtlEnumerateGenericTable
+       1942  78F 00122E60 RtlEnumerateGenericTableAvl
+       1943  790 000CF3D0 RtlEnumerateGenericTableLikeADirectory
+       1944  791 00122EE0 RtlEnumerateGenericTableWithoutSplaying
+       1945  792 000CF4F0 RtlEnumerateGenericTableWithoutSplayingAvl
+       1946  793 00816940 RtlEqualLuid
+       1947  794 000C9960 RtlEqualSid
+       1948  795 00004800 RtlEqualString
+       1949  796 0052F5E0 RtlEqualUnicodeString
+       1950  797 00819230 RtlEqualWnfChangeStamps
+       1951  798 002F1FB0 RtlEthernetAddressToStringA
+       1952  799 002F2200 RtlEthernetAddressToStringW
+       1953  79A 002F2270 RtlEthernetStringToAddressA
+       1954  79B 002F2C60 RtlEthernetStringToAddressW
+       1955  79C 0011ABB0 RtlExpandHashTable
+       1956  79D 00819240 RtlExtendCorrelationVector
+       1957  79E 002ECF10 RtlExtractBitMap
+       1958  79F 002ED0B0 RtlExtractBitMapEx
+       1959  7A0 002F2E40 RtlFillMemory
+       1960  7A1 000B5A50 RtlFindAceByType
+       1961  7A2 000A9470 RtlFindClearBits
+       1962  7A3 000DEEF0 RtlFindClearBitsAndSet
+       1963  7A4 0007F770 RtlFindClearBitsAndSetEx
+       1964  7A5 002ED270 RtlFindClearBitsEx
+       1965  7A6 00129A10 RtlFindClearRuns
+       1966  7A7 002EEA20 RtlFindClosestEncodableLength
+       1967  7A8 0050FE50 RtlFindExportedRoutineByName
+       1968  7A9 002ED570 RtlFindFirstRunClear
+       1969  7AA 001188F0 RtlFindLastBackwardRunClear
+       1970  7AB 0011C540 RtlFindLeastSignificantBit
+       1971  7AC 002ED590 RtlFindLongestRunClear
+       1972  7AD 005FB610 RtlFindMessage
+       1973  7AE 001140A0 RtlFindMostSignificantBit
+       1974  7AF 0008E1A0 RtlFindNextForwardRunClear
+       1975  7B0 000A53D0 RtlFindNextForwardRunClearCapped
+       1976  7B1 002ED830 RtlFindNextForwardRunClearEx
+       1977  7B2 006A6520 RtlFindRange
+       1978  7B3 00083DD0 RtlFindSetBits
+       1979  7B4 002ED850 RtlFindSetBitsAndClear
+       1980  7B5 00123B10 RtlFindSetBitsAndClearEx
+       1981  7B6 0007CB30 RtlFindSetBitsEx
+       1982  7B7 005FE6B0 RtlFindUnicodePrefix
+       1983  7B8 00601DF0 RtlFindUnicodeSubstring
+       1984  7B9 005B2F00 RtlFirstFreeAce
+       1985  7BA 002EBDF0 RtlFlushNonVolatileMemory
+       1986  7BB 002F2EF0 RtlFlushNonVolatileMemoryRanges
+       1987  7BC 0062CB00 RtlFormatCurrentUserKeyPath
+       1988  7BD 00813F40 RtlFormatMessage
+       1989  7BE 0050E4A0 RtlFreeAnsiString
+       1990  7BF 00110E80 RtlFreeHeap
+       1991  7C0 002F2F80 RtlFreeNonVolatileToken
+       1992  7C1 006756B0 RtlFreeOemString
+       1993  7C2 0069FF00 RtlFreeRangeList
+       1994  7C3 0050E4A0 RtlFreeUnicodeString
+       1995  7C4 005BD5E0 RtlGUIDFromString
+       1996  7C5 005FA010 RtlGenerate8dot3Name
+       1997  7C6 006A2EC0 RtlGenerateClass5Guid
+       1998  7C7 000CDFB0 RtlGetAce
+       1999  7C8 000E49B0 RtlGetActiveConsoleId
+       2000  7C9 002ECBF0 RtlGetAppContainerNamedObjectPath
+       2001  7CA 00816960 RtlGetAppContainerParent
+       2002  7CB 00562130 RtlGetAppContainerSidType
+       2003  7CC 002EE7B0 RtlGetCallersAddress
+       2004  7CD 00130D10 RtlGetCompressionWorkSpaceSize
+       2005  7CE 008130F0 RtlGetConsoleSessionForegroundProcessId
+       2006  7CF 005EC290 RtlGetControlSecurityDescriptor
+       2007  7D0 00167300 RtlGetCurrentServiceSessionId
+       2008  7D1 000045D0 RtlGetDaclSecurityDescriptor
+       2009  7D2 00642320 RtlGetDefaultCodePage
+       2010  7D3 00118540 RtlGetElementGenericTable
+       2011  7D4 002F1E90 RtlGetElementGenericTableAvl
+       2012  7D5 002F3070 RtlGetEnabledExtendedAndSupervisorFeatures
+       2013  7D6 00172850 RtlGetEnabledExtendedFeatures
+       2014  7D7 006A68B0 RtlGetFirstRange
+       2015  7D8 00623640 RtlGetGroupSecurityDescriptor
+       2016  7D9 00538760 RtlGetIntegerAtom
+       2017  7DA 006A6900 RtlGetLastRange
+       2018  7DB 00107350 RtlGetNextEntryHashTable
+       2019  7DC 006A6800 RtlGetNextRange
+       2020  7DD 002F2FA0 RtlGetNonVolatileToken
+       2021  7DE 00818440 RtlGetNtGlobalFlags
+       2022  7DF 0011BB20 RtlGetNtProductType
+       2023  7E0 00632D80 RtlGetNtSystemRoot
+       2024  7E1 00605EB0 RtlGetOwnerSecurityDescriptor
+       2025  7E2 0051BDF0 RtlGetPersistedStateLocation
+       2026  7E3 00187970 RtlGetProductInfo
+       2027  7E4 0050F400 RtlGetSaclSecurityDescriptor
+       2028  7E5 00816A30 RtlGetSessionProperties
+       2029  7E6 0067E600 RtlGetSetBootStatusData
+       2030  7E7 0060EC70 RtlGetSuiteMask
+       2031  7E8 006C71A0 RtlGetSystemBootStatus
+       2032  7E9 006C4C60 RtlGetSystemBootStatusEx
+       2033  7EA 00125430 RtlGetThreadLangIdByIndex
+       2034  7EB 00816A90 RtlGetTokenNamedObjectPath
+       2035  7EC 0060EBB0 RtlGetVersion
+       2036  7ED 005C02B0 RtlHashUnicodeString
+       2037  7EE 008197F0 RtlIdnToAscii
+       2038  7EF 00819820 RtlIdnToNameprepUnicode
+       2039  7F0 00819850 RtlIdnToUnicode
+       2040  7F1 00004670 RtlImageDirectoryEntryToData
+       2041  7F2 0009A530 RtlImageNtHeader
+       2042  7F3 0009C220 RtlImageNtHeaderEx
+       2043  7F4 00819290 RtlIncrementCorrelationVector
+       2044  7F5 00004C30 RtlInitAnsiString
+       2045  7F6 0017B690 RtlInitAnsiStringEx
+       2046  7F7 006C0980 RtlInitCodePageTable
+       2047  7F8 0011EEA0 RtlInitEnumerationHashTable
+       2048  7F9 000D06B0 RtlInitString
+       2049  7FA 002EB680 RtlInitStringEx
+       2050  7FB 00164420 RtlInitStrongEnumerationHashTable
+       2051  7FC 000BB470 RtlInitUnicodeString
+       2052  7FD 000CEB50 RtlInitUnicodeStringEx
+       2053  7FE 002EEAF0 RtlInitWeakEnumerationHashTable
+       2054  7FF 00114F40 RtlInitializeBitMap
+       2055  800 0018CF80 RtlInitializeBitMapEx
+       2056  801 00819370 RtlInitializeCorrelationVector
+       2057  802 001225B0 RtlInitializeGenericTable
+       2058  803 000D37A0 RtlInitializeGenericTableAvl
+       2059  804 006A0500 RtlInitializeRangeList
+       2060  805 00561D20 RtlInitializeSid
+       2061  806 002ECDF0 RtlInitializeSidEx
+       2062  807 006C6400 RtlInitializeUnicodePrefix
+       2063  808 00111680 RtlInsertElementGenericTable
+       2064  809 000CFA50 RtlInsertElementGenericTableAvl
+       2065  80A 001116F0 RtlInsertElementGenericTableFull
+       2066  80B 000CFAC0 RtlInsertElementGenericTableFullAvl
+       2067  80C 000DF270 RtlInsertEntryHashTable
+       2068  80D 005FE550 RtlInsertUnicodePrefix
+       2069  80E 0057FCA0 RtlInt64ToUnicodeString
+       2070  80F 005834D0 RtlIntegerToChar
+       2071  810 0062CDE0 RtlIntegerToUnicode
+       2072  811 00583440 RtlIntegerToUnicodeString
+       2073  812 002EDBF0 RtlInterlockedClearBitRun
+       2074  813 002EDCB0 RtlInterlockedSetBitRun
+       2075  814 00131080 RtlInterlockedSetClearRun
+       2076  815 002EDD70 RtlIntersectBitMaps
+       2077  816 0010C140 RtlIntersectBitMapsEx
+       2078  817 0069F480 RtlInvertRangeList
+       2079  818 0069F690 RtlInvertRangeListEx
+       2080  819 0017E610 RtlIoDecodeMemIoResource
+       2081  81A 00186850 RtlIoEncodeMemIoResource
+       2082  81B 00161AA0 RtlIpv4AddressToStringA
+       2083  81C 002F2020 RtlIpv4AddressToStringExA
+       2084  81D 00167950 RtlIpv4AddressToStringExW
+       2085  81E 00129550 RtlIpv4AddressToStringW
+       2086  81F 00161810 RtlIpv4StringToAddressA
+       2087  820 002F23B0 RtlIpv4StringToAddressExA
+       2088  821 00121500 RtlIpv4StringToAddressExW
+       2089  822 00121570 RtlIpv4StringToAddressW
+       2090  823 0013A100 RtlIpv6AddressToStringA
+       2091  824 002F20E0 RtlIpv6AddressToStringExA
+       2092  825 001666E0 RtlIpv6AddressToStringExW
+       2093  826 001667C0 RtlIpv6AddressToStringW
+       2094  827 002F2590 RtlIpv6StringToAddressA
+       2095  828 002F29B0 RtlIpv6StringToAddressExA
+       2096  829 0011F970 RtlIpv6StringToAddressExW
+       2097  82A 0011FA00 RtlIpv6StringToAddressW
+       2098  82B 002F39D0 RtlIsCloudFilesPlaceholder
+       2099  82C 00539230 RtlIsElevatedRid
+       2100  82D 00164620 RtlIsGenericTableEmpty
+       2101  82E 000CFDA0 RtlIsGenericTableEmptyAvl
+       2102  82F 00609CD0 RtlIsMultiSessionSku
+       2103  830 00816AC0 RtlIsMultiUsersInSessionSku
+       2104  831 00636D00 RtlIsNameLegalDOS8Dot3
+       2105  832 00122E40 RtlIsNonEmptyDirectoryReparsePointAllowed
+       2106  833 0081C050 RtlIsNormalizedString
+       2107  834 0018CB50 RtlIsNtDdiVersionAvailable
+       2108  835 0081A710 RtlIsPartialPlaceholder
+       2109  836 0081A720 RtlIsPartialPlaceholderFileHandle
+       2110  837 0081A780 RtlIsPartialPlaceholderFileInfo
+       2111  838 006A6670 RtlIsRangeAvailable
+       2112  839 00519AF0 RtlIsSandboxedToken
+       2113  83A 002F31B0 RtlIsServicePackVersionInstalled
+       2114  83B 0061A420 RtlIsStateSeparationEnabled
+       2115  83C 001156A0 RtlIsUntrustedObject
+       2116  83D 00819650 RtlIsValidOemCharacter
+       2117  83E 008191B0 RtlLCIDToCultureName
+       2118  83F 0057FF30 RtlLargeIntegerToChar
+       2119  840 005073C0 RtlLengthRequiredSid
+       2120  841 005B89E0 RtlLengthSecurityDescriptor
+       2121  842 000CE010 RtlLengthSid
+       2122  843 00814790 RtlLoadString
+       2123  844 00813130 RtlLocalTimeToSystemTime
+       2124  845 002F30A0 RtlLocateSupervisorFeature
+       2125  846 0067EAC0 RtlLockBootStatusData
+       2126  847 00538610 RtlLookupAtomInAtomTable
+       2127  848 00084150 RtlLookupElementGenericTable
+       2128  849 000CF740 RtlLookupElementGenericTableAvl
+       2129  84A 002F1E40 RtlLookupElementGenericTableFull
+       2130  84B 000CF670 RtlLookupElementGenericTableFullAvl
+       2131  84C 000F8820 RtlLookupEntryHashTable
+       2132  84D 00163530 RtlLookupFirstMatchingElementGenericTableAvl
+       2133  84E 0009C3F0 RtlLookupFunctionEntry
+       2134  84F 00533260 RtlMapGenericMask
+       2135  850 00120A40 RtlMapSecurityErrorToNtStatus
+       2136  851 00812F40 RtlMergeRangeLists
+       2137  852 001C3540 RtlMoveMemory
+       2138  853 0057FE30 RtlMultiByteToUnicodeN
+       2139  854 0057FEF0 RtlMultiByteToUnicodeSize
+       2140  855 00684500 RtlNextUnicodePrefix
+       2141  856 0081C0E0 RtlNormalizeString
+       2142  857 0058E310 RtlNtStatusToDosError
+       2143  858 0009A090 RtlNtStatusToDosErrorNoTeb
+       2144  859 00120870 RtlNumberGenericTableElements
+       2145  85A 00134A70 RtlNumberGenericTableElementsAvl
+       2146  85B 0008E410 RtlNumberOfClearBits
+       2147  85C 002EDF30 RtlNumberOfClearBitsEx
+       2148  85D 002EDF60 RtlNumberOfClearBitsInRange
+       2149  85E 0008E430 RtlNumberOfSetBits
+       2150  85F 002EDF90 RtlNumberOfSetBitsEx
+       2151  860 002EE130 RtlNumberOfSetBitsInRange
+       2152  861 00117E60 RtlNumberOfSetBitsUlongPtr
+       2153  862 00812BD0 RtlOemStringToCountedUnicodeString
+       2154  863 0065C8C0 RtlOemStringToUnicodeSize
+       2155  864 0065C740 RtlOemStringToUnicodeString
+       2156  865 0065C820 RtlOemToUnicodeN
+       2157  866 00680EB0 RtlOpenCurrentUser
+       2158  867 008130D0 RtlOpenImageFileOptionsKey
+       2159  868 006C5B80 RtlOsDeploymentState
+       2160  869 00001FF0 RtlOwnerAcesPresent
+       2161  86A 0011CEA0 RtlPcToFileHeader
+       2162  86B 00189100 RtlPcToFileName
+       2163  86C 0081C210 RtlPcToFilePath
+       2164  86D 005F4140 RtlPinAtomInAtomTable
+       2165  86E 001B95E0 RtlPrefetchMemoryNonTemporal
+       2166  86F 00510720 RtlPrefixString
+       2167  870 005BBAC0 RtlPrefixUnicodeString
+       2168  871 005F44A0 RtlQueryAtomInAtomTable
+       2169  872 00818450 RtlQueryDynamicTimeZoneInformation
+       2170  873 0060EE10 RtlQueryElevationFlags
+       2171  874 00613DD0 RtlQueryImageFileKeyOption
+       2172  875 005B83E0 RtlQueryInformationAcl
+       2173  876 0067C440 RtlQueryModuleInformation
+       2174  877 00007610 RtlQueryPackageClaims
+       2175  878 00007200 RtlQueryPackageIdentity
+       2176  879 0081A7E0 RtlQueryProcessPlaceholderCompatibilityMode
+       2177  87A 005BA8F0 RtlQueryRegistryValueWithFallback
+       2178  87B 0061C950 RtlQueryRegistryValues
+       2179  87C 0061F090 RtlQueryRegistryValuesEx
+       2180  87D 0081A810 RtlQueryThreadPlaceholderCompatibilityMode
+       2181  87E 00818470 RtlQueryTimeZoneInformation
+       2182  87F 002F4410 RtlQueryValidationRunlevel
+       2183  880 002F44D0 RtlRaiseCustomSystemEventTrigger
+       2184  881 002EC600 RtlRaiseException
+       2185  882 00119F50 RtlRaiseStatus
+       2186  883 00620B30 RtlRandom
+       2187  884 00138AD0 RtlRandomEx
+       2188  885 000B5BF0 RtlRbInsertNodeEx
+       2189  886 000B6170 RtlRbRemoveNode
+       2190  887 00116DF0 RtlRbReplaceNode
+       2191  888 002F1DD0 RtlRealPredecessor
+       2192  889 0011E5D0 RtlRealSuccessor
+       2193  88A 000DEB30 RtlRemoveEntryHashTable
+       2194  88B 0061BA50 RtlRemoveUnicodePrefix
+       2195  88C 00816AE0 RtlReplaceSidInSd
+       2196  88D 008136F0 RtlReserveChunk
+       2197  88E 001B8FE0 RtlRestoreContext
+       2198  88F 00818A40 RtlRestoreSystemBootStatusDefaults
+       2199  890 0050EDC0 RtlRunOnceBeginInitialize
+       2200  891 0061F190 RtlRunOnceComplete
+       2201  892 0050ECE0 RtlRunOnceExecuteOnce
+       2202  893 00640A10 RtlRunOnceInitialize
+       2203  894 0018BFC0 RtlSecondsSince1970ToTime
+       2204  895 002EB550 RtlSecondsSince1980ToTime
+       2205  896 006667C0 RtlSelfRelativeToAbsoluteSD
+       2206  897 008150A0 RtlSelfRelativeToAbsoluteSD2
+       2207  898 006849E0 RtlSetActiveConsoleId
+       2208  899 000A4240 RtlSetAllBits
+       2209  89A 0018A790 RtlSetAllBitsEx
+       2210  89B 0011BE70 RtlSetBit
+       2211  89C 00114190 RtlSetBitEx
+       2212  89D 0004F720 RtlSetBits
+       2213  89E 0007FB40 RtlSetBitsEx
+       2214  89F 00618500 RtlSetConsoleSessionForegroundProcessId
+       2215  8A0 00642970 RtlSetControlSecurityDescriptor
+       2216  8A1 005B8D30 RtlSetDaclSecurityDescriptor
+       2217  8A2 00818490 RtlSetDynamicTimeZoneInformation
+       2218  8A3 00562800 RtlSetGroupSecurityDescriptor
+       2219  8A4 00562860 RtlSetOwnerSecurityDescriptor
+       2220  8A5 002EE9E0 RtlSetPortableOperatingSystem
+       2221  8A6 0081A850 RtlSetProcessPlaceholderCompatibilityMode
+       2222  8A7 00561FF0 RtlSetSaclSecurityDescriptor
+       2223  8A8 00818A90 RtlSetSystemBootStatus
+       2224  8A9 00818AC0 RtlSetSystemBootStatusEx
+       2225  8AA 0081A890 RtlSetThreadPlaceholderCompatibilityMode
+       2226  8AB 008184B0 RtlSetTimeZoneInformation
+       2227  8AC 002EE3B0 RtlShiftLeftBitMap
+       2228  8AD 002EE420 RtlShiftLeftBitMapEx
+       2229  8AE 000B4520 RtlSidHashInitialize
+       2230  8AF 000CC440 RtlSidHashLookup
+       2231  8B0 002EC750 RtlSizeHeap
+       2232  8B1 000841D0 RtlSplay
+       2233  8B2 005CC550 RtlStringFromGUID
+       2234  8B3 0015D400 RtlStronglyEnumerateEntryHashTable
+       2235  8B4 00073970 RtlSubAuthorityCountSid
+       2236  8B5 00073980 RtlSubAuthoritySid
+       2237  8B6 00002650 RtlSubtreePredecessor
+       2238  8B7 002F1E10 RtlSubtreeSuccessor
+       2239  8B8 00812CE0 RtlSuffixUnicodeString
+       2240  8B9 006C2BB0 RtlSystemTimeToLocalTime
+       2241  8BA 00114B20 RtlTestBit
+       2242  8BB 002EE490 RtlTestBitEx
+       2243  8BC 00118160 RtlTimeFieldsToTime
+       2244  8BD 008131A0 RtlTimeToElapsedTimeFields
+       2245  8BE 002EB580 RtlTimeToSecondsSince1970
+       2246  8BF 001648B0 RtlTimeToSecondsSince1980
+       2247  8C0 00156500 RtlTimeToTimeFields
+       2248  8C1 002F47A0 RtlTraceDatabaseAdd
+       2249  8C2 002F4800 RtlTraceDatabaseCreate
+       2250  8C3 002F4970 RtlTraceDatabaseDestroy
+       2251  8C4 002F49C0 RtlTraceDatabaseEnumerate
+       2252  8C5 002F4A90 RtlTraceDatabaseFind
+       2253  8C6 002F4B00 RtlTraceDatabaseLock
+       2254  8C7 002F4B20 RtlTraceDatabaseUnlock
+       2255  8C8 002F4B40 RtlTraceDatabaseValidate
+       2256  8C9 00616290 RtlUTF8ToUnicodeN
+       2257  8CA 00636C10 RtlUnicodeStringToAnsiSize
+       2258  8CB 00636A30 RtlUnicodeStringToAnsiString
+       2259  8CC 00636C40 RtlUnicodeStringToCountedOemString
+       2260  8CD 00818330 RtlUnicodeStringToInt64
+       2261  8CE 005F1860 RtlUnicodeStringToInteger
+       2262  8CF 00636C10 RtlUnicodeStringToOemSize
+       2263  8D0 00637EC0 RtlUnicodeStringToOemString
+       2264  8D1 00813C10 RtlUnicodeToCustomCPN
+       2265  8D2 005F28F0 RtlUnicodeToMultiByteN
+       2266  8D3 006370A0 RtlUnicodeToMultiByteSize
+       2267  8D4 006370E0 RtlUnicodeToOemN
+       2268  8D5 00617570 RtlUnicodeToUTF8N
+       2269  8D6 0067E9E0 RtlUnlockBootStatusData
+       2270  8D7 000F98B0 RtlUnsignedMultiplyHigh
+       2271  8D8 001255E0 RtlUnwind
+       2272  8D9 0009C700 RtlUnwindEx
+       2273  8DA 00551940 RtlUpcaseUnicodeChar
+       2274  8DB 00526030 RtlUpcaseUnicodeString
+       2275  8DC 00812E30 RtlUpcaseUnicodeStringToAnsiString
+       2276  8DD 00636EA0 RtlUpcaseUnicodeStringToCountedOemString
+       2277  8DE 00637DE0 RtlUpcaseUnicodeStringToOemString
+       2278  8DF 00813D40 RtlUpcaseUnicodeToCustomCPN
+       2279  8E0 00637040 RtlUpcaseUnicodeToMultiByteN
+       2280  8E1 00636FE0 RtlUpcaseUnicodeToOemN
+       2281  8E2 00510830 RtlUpperChar
+       2282  8E3 005107D0 RtlUpperString
+       2283  8E4 005B3C10 RtlValidAcl
+       2284  8E5 0057F080 RtlValidRelativeSecurityDescriptor
+       2285  8E6 005B4370 RtlValidSecurityDescriptor
+       2286  8E7 005B3A80 RtlValidSid
+       2287  8E8 008193F0 RtlValidateCorrelationVector
+       2288  8E9 0010A300 RtlValidateUnicodeString
+       2289  8EA 0016ED10 RtlVerifyVersionInfo
+       2290  8EB 00125730 RtlVirtualUnwind
+       2291  8EC 00567010 RtlVolumeDeviceToDosName
+       2292  8ED 00099E70 RtlWalkFrameChain
+       2293  8EE 002EEB10 RtlWeaklyEnumerateEntryHashTable
+       2294  8EF 002F2FC0 RtlWriteNonVolatileMemory
+       2295  8F0 00619630 RtlWriteRegistryValue
+       2296  8F1 00818AF0 RtlZeroHeap
+       2297  8F2 0013A820 RtlZeroMemory
+       2298  8F3 0057FEC0 RtlxAnsiStringToUnicodeSize
+       2299  8F4 0065C8C0 RtlxOemStringToUnicodeSize
+       2300  8F5 00636C10 RtlxUnicodeStringToAnsiSize
+       2301  8F6 00636C10 RtlxUnicodeStringToOemSize
+       2302  8F7 000BFE80 SeAccessCheck
+       2303  8F8 00156C10 SeAccessCheckEx
+       2304  8F9 000CEED0 SeAccessCheckFromState
+       2305  8FA 000CEFE0 SeAccessCheckFromStateEx
+       2306  8FB 000CF0A0 SeAccessCheckWithHint
+       2307  8FC 005B3D90 SeAdjustAccessStateForAccessConstraints
+       2308  8FD 0081EC70 SeAdjustAccessStateForTrustLabel
+       2309  8FE 005EA370 SeAdjustObjectSecurity
+       2310  8FF 005F7340 SeAppendPrivileges
+       2311  900 0057EEC0 SeAssignSecurity
+       2312  901 00609DF0 SeAssignSecurityEx
+       2313  902 0081F750 SeAuditFipsCryptoSelftests
+       2314  903 0081FAE0 SeAuditHardLinkCreation
+       2315  904 0081FB00 SeAuditHardLinkCreationWithTransaction
+       2316  905 008203B0 SeAuditTransactionStateChange
+       2317  906 008225C0 SeAuditingAnyFileEventsWithContext
+       2318  907 00001ED0 SeAuditingAnyFileEventsWithContextEx
+       2319  908 008225E0 SeAuditingFileEvents
+       2320  909 00822620 SeAuditingFileEventsWithContext
+       2321  90A 002FF210 SeAuditingFileEventsWithContextEx
+       2322  90B 00822640 SeAuditingFileOrGlobalEvents
+       2323  90C 00822730 SeAuditingHardLinkEvents
+       2324  90D 00503220 SeAuditingHardLinkEventsWithContext
+       2325  90E 0050ADE0 SeAuditingWithTokenForSubcategory
+       2326  90F 005B31D0 SeCaptureSecurityDescriptor
+       2327  910 005B3F90 SeCaptureSubjectContext
+       2328  911 0059BF10 SeCaptureSubjectContextEx
+       2329  912 005EBF60 SeCheckForCriticalAceRemoval
+       2330  913 00823120 SeCloseObjectAuditAlarm
+       2331  914 00823180 SeCloseObjectAuditAlarmForNonObObject
+       2332  915 00684B50 SeCompareSigningLevels
+       2333  916 0011BD30 SeComputeAutoInheritByObjectType
+       2334  917 003003A0 SeConvertSecurityDescriptorToStringSecurityDescriptor
+       2335  918 00300460 SeConvertSidToStringSid
+       2336  919 000F8510 SeConvertStringSecurityDescriptorToSecurityDescriptor
+       2337  91A 00183840 SeConvertStringSidToSid
+       2338  91B 0051BAD0 SeCreateAccessState
+       2339  91C 0051BB20 SeCreateAccessStateEx
+       2340  91D 0053AA10 SeCreateClientSecurity
+       2341  91E 005B2BD0 SeCreateClientSecurityEx
+       2342  91F 00622D40 SeCreateClientSecurityFromSubjectContext
+       2343  920 002FF4D0 SeCreateClientSecurityFromSubjectContextEx
+       2344  921 00609F10 SeDeassignSecurity
+       2345  922 00507670 SeDeleteAccessState
+       2346  923 008231B0 SeDeleteObjectAuditAlarm
+       2347  924 008231D0 SeDeleteObjectAuditAlarmWithTransaction
+       2348  925 00311740 SeEtwWriteKMCveEvent
+       2349  926 00823240 SeExamineSacl
+       2350  927 008F0558 SeExports
+       2351  928 006BB4F0 SeFilterToken
+       2352  929 00090C60 SeFreePrivileges
+       2353  92A 0060BFF0 SeGetCachedSigningLevel
+       2354  92B 008246A0 SeGetLinkedToken
+       2355  92C 00824790 SeGetLogonSessionToken
+       2356  92D 004069F8 SeILSigningPolicyPtr
+       2357  92E 00824470 SeImpersonateClient
+       2358  92F 00630970 SeImpersonateClientEx
+       2359  930 0081E900 SeIsParentOfChildAppContainer
+       2360  931 005233D0 SeLocateProcessImageName
+       2361  932 005AAD30 SeLockSubjectContext
+       2362  933 00626360 SeMarkLogonSessionForTerminationNotification
+       2363  934 00626380 SeMarkLogonSessionForTerminationNotificationEx
+       2364  935 0058BF00 SeOpenObjectAuditAlarm
+       2365  936 006C5D40 SeOpenObjectAuditAlarmForNonObObject
+       2366  937 0058C3E0 SeOpenObjectAuditAlarmWithTransaction
+       2367  938 008235D0 SeOpenObjectForDeleteAuditAlarm
+       2368  939 00823630 SeOpenObjectForDeleteAuditAlarmWithTransaction
+       2369  93A 005B0310 SePrivilegeCheck
+       2370  93B 006692B0 SePrivilegeObjectAuditAlarm
+       2371  93C 008F0720 SePublicDefaultDacl
+       2372  93D 00617070 SeQueryAuthenticationIdToken
+       2373  93E 00538A90 SeQueryInformationToken
+       2374  93F 00825BB0 SeQuerySecureBootPlatformManifest
+       2375  940 006C81F0 SeQuerySecureBootPolicyValue
+       2376  941 005207B0 SeQuerySecurityAttributesToken
+       2377  942 00164360 SeQuerySecurityAttributesTokenAccessInformation
+       2378  943 00556480 SeQuerySecurityDescriptorInfo
+       2379  944 0061D3F0 SeQueryServerSiloToken
+       2380  945 005FD940 SeQuerySessionIdToken
+       2381  946 0058BE60 SeQuerySessionIdTokenEx
+       2382  947 006C7890 SeRegisterImageVerificationCallback
+       2383  948 008250A0 SeRegisterLogonSessionTerminatedRoutine
+       2384  949 006C43D0 SeRegisterLogonSessionTerminatedRoutineEx
+       2385  94A 005B3D60 SeReleaseSecurityDescriptor
+       2386  94B 005A5DC0 SeReleaseSubjectContext
+       2387  94C 002FF0C0 SeReportSecurityEvent
+       2388  94D 000033D0 SeReportSecurityEventWithSubCategory
+       2389  94E 00060140 SeSecurityAttributePresent
+       2390  94F 005334B0 SeSetAccessStateGenericMapping
+       2391  950 001097A0 SeSetAuditParameter
+       2392  951 0081E9D0 SeSetSecurityAttributesToken
+       2393  952 002FF9B0 SeSetSecurityAttributesTokenEx
+       2394  953 005B70A0 SeSetSecurityDescriptorInfo
+       2395  954 006193A0 SeSetSecurityDescriptorInfoEx
+       2396  955 005B3EC0 SeShouldCheckForAccessRightsFromParent
+       2397  956 0051BA00 SeSinglePrivilegeCheck
+       2398  957 002FDB20 SeSrpAccessCheck
+       2399  958 008F0728 SeSystemDefaultDacl
+       2400  959 008F09E0 SeSystemDefaultSd
+       2401  95A 00124E10 SeTokenFromAccessInformation
+       2402  95B 0065FE40 SeTokenImpersonationLevel
+       2403  95C 005ECB20 SeTokenIsAdmin
+       2404  95D 000F85A0 SeTokenIsRestricted
+       2405  95E 000F85C0 SeTokenIsWriteRestricted
+       2406  95F 008EF030 SeTokenObjectType
+       2407  960 00619B60 SeTokenType
+       2408  961 005AACF0 SeUnlockSubjectContext
+       2409  962 0081E270 SeUnregisterImageVerificationCallback
+       2410  963 00825140 SeUnregisterLogonSessionTerminatedRoutine
+       2411  964 00825210 SeUnregisterLogonSessionTerminatedRoutineEx
+       2412  965 005FC860 SeValidSecurityDescriptor
+       2413  966 002E9970 SkAcquirePushLockExclusive
+       2414  967 002E9970 SkAllocatePool
+       2415  968 002E9970 SkFreePool
+       2416  969 002E9970 SkInitializePushLock
+       2417  96A 0018DA80 SkIsSecureKernel
+       2418  96B 002E9970 SkQuerySecureKernelInformation
+       2419  96C 002E9970 SkReleasePushLockExclusive
+       2420  96D 0018E1B0 TmCancelPropagationRequest
+       2421  96E 0018E1D0 TmCommitComplete
+       2422  96F 0018E1F0 TmCommitEnlistment
+       2423  970 0018E210 TmCommitTransaction
+       2424  971 0018E230 TmCreateEnlistment
+       2425  972 0018E250 TmCurrentTransaction
+       2426  973 0018E270 TmDereferenceEnlistmentKey
+       2427  974 0018E290 TmEnableCallbacks
+       2428  975 0018E2B0 TmEndPropagationRequest
+       2429  976 004C5A58 TmEnlistmentObjectType
+       2430  977 0018E2D0 TmFreezeTransactions
+       2431  978 0018E2F0 TmGetTransactionId
+       2432  979 0018DD30 TmInitSystem
+       2433  97A 0018DD10 TmInitSystemPhase2
+       2434  97B 0018E310 TmInitializeTransactionManager
+       2435  97C 0018E330 TmIsKTMCommitCoordinator
+       2436  97D 0018E350 TmIsTransactionActive
+       2437  97E 0018E370 TmPrePrepareComplete
+       2438  97F 0018E390 TmPrePrepareEnlistment
+       2439  980 0018E3B0 TmPrepareComplete
+       2440  981 0018E3D0 TmPrepareEnlistment
+       2441  982 0018E3F0 TmPropagationComplete
+       2442  983 0018E410 TmPropagationFailed
+       2443  984 0018E430 TmReadOnlyEnlistment
+       2444  985 0018E450 TmRecoverEnlistment
+       2445  986 0018E470 TmRecoverResourceManager
+       2446  987 0018E490 TmRecoverTransactionManager
+       2447  988 0018E4B0 TmReferenceEnlistmentKey
+       2448  989 0018E4D0 TmRenameTransactionManager
+       2449  98A 0018E4F0 TmRequestOutcomeEnlistment
+       2450  98B 004C5948 TmResourceManagerObjectType
+       2451  98C 0018E510 TmRollbackComplete
+       2452  98D 0018E530 TmRollbackEnlistment
+       2453  98E 0018E550 TmRollbackTransaction
+       2454  98F 0018E570 TmSetCurrentTransaction
+       2455  990 0018E590 TmSinglePhaseReject
+       2456  991 0018E5B0 TmThawTransactions
+       2457  992 004C5940 TmTransactionManagerObjectType
+       2458  993 004C5670 TmTransactionObjectType
+       2459  994 007FFC60 TtmNotifyDeviceArrival
+       2460  995 007FFF60 TtmNotifyDeviceDeparture
+       2461  996 00800020 TtmNotifyDeviceInput
+       2462  997 001703E0 VerSetConditionMask
+       2463  998 00309140 VfCheckNxPagePriority
+       2464  999 00309160 VfCheckNxPageProtection
+       2465  99A 00309180 VfCheckNxPoolType
+       2466  99B 001726A0 VfFailDeviceNode
+       2467  99C 003091A0 VfFailDriver
+       2468  99D 003091D0 VfFailSystemBIOS
+       2469  99E 00309210 VfInsertContext
+       2470  99F 008A7CC0 VfIsRuleClassEnabled
+       2471  9A0 001726E0 VfIsVerificationEnabled
+       2472  9A1 003092E0 VfQueryDeviceContext
+       2473  9A2 00309580 VfQueryDispatchTable
+       2474  9A3 00309320 VfQueryDriverContext
+       2475  9A4 00309360 VfQueryIrpContext
+       2476  9A5 003093A0 VfQueryThreadContext
+       2477  9A6 003093E0 VfRemoveContext
+       2478  9A7 0079B100 VslCreateSecureSection
+       2479  9A8 0079B4C0 VslDeleteSecureSection
+       2480  9A9 0018C090 VslExchangeEntropy
+       2481  9AA 0027A5B0 VslGetSecurePciDeviceAlternateFunctionNumberForVtl0Dma
+       2482  9AB 0027A630 VslGetSecurePciEnabled
+       2483  9AC 006BD8F0 VslQuerySecureDevice
+       2484  9AD 0027B070 VslRetrieveMailbox
+       2485  9AE 0085E180 WheaAddErrorSource
+       2486  9AF 0085E300 WheaAttemptPhysicalPageOffline
+       2487  9B0 004F4470 WheaConfigureErrorSource
+       2488  9B1 0031FF60 WheaDeferredRecoveryService
+       2489  9B2 0031EF90 WheaGetErrorSource
+       2490  9B3 0018A0F0 WheaInitializeDeferredRecoveryObject
+       2491  9B4 0031F9F0 WheaInitializeRecordHeader
+       2492  9B5 00176E50 WheaLogInternalEvent
+       2493  9B6 0085E3D0 WheaRegisterInUsePageOfflineNotification
+       2494  9B7 0031EFC0 WheaReportHwError
+       2495  9B8 0031FFA0 WheaRequestDeferredRecovery
+       2496  9B9 0085E550 WheaUnregisterInUsePageOfflineNotification
+       2497  9BA 0030E1F0 WmiGetClock
+       2498  9BB 0067CCE0 WmiQueryTraceInformation
+       2499  9BC 001042A0 WmiTraceMessage
+       2500  9BD 0030E260 WmiTraceMessageVa
+       2501  9BE 0031DC00 XIPDispatch
+       2502  9BF 001ADA40 ZwAccessCheckAndAuditAlarm
+       2503  9C0 001AE240 ZwAddBootEntry
+       2504  9C1 001AE260 ZwAddDriverEntry
+       2505  9C2 001ADD40 ZwAdjustPrivilegesToken
+       2506  9C3 001AE2E0 ZwAlertThread
+       2507  9C4 001AE320 ZwAllocateLocallyUniqueId
+       2508  9C5 001AE340 ZwAllocateReserveObject
+       2509  9C6 001AD820 ZwAllocateVirtualMemory
+       2510  9C7 001AE3A0 ZwAllocateVirtualMemoryEx
+       2511  9C8 001AE3C0 ZwAlpcAcceptConnectPort
+       2512  9C9 001AE3E0 ZwAlpcCancelMessage
+       2513  9CA 001AE400 ZwAlpcConnectPort
+       2514  9CB 001AE420 ZwAlpcConnectPortEx
+       2515  9CC 001AE440 ZwAlpcCreatePort
+       2516  9CD 001AE460 ZwAlpcCreatePortSection
+       2517  9CE 001AE480 ZwAlpcCreateResourceReserve
+       2518  9CF 001AE4A0 ZwAlpcCreateSectionView
+       2519  9D0 001AE4C0 ZwAlpcCreateSecurityContext
+       2520  9D1 001AE4E0 ZwAlpcDeletePortSection
+       2521  9D2 001AE500 ZwAlpcDeleteResourceReserve
+       2522  9D3 001AE520 ZwAlpcDeleteSectionView
+       2523  9D4 001AE540 ZwAlpcDeleteSecurityContext
+       2524  9D5 001AE560 ZwAlpcDisconnectPort
+       2525  9D6 001AE5C0 ZwAlpcOpenSenderProcess
+       2526  9D7 001AE5E0 ZwAlpcOpenSenderThread
+       2527  9D8 001AE600 ZwAlpcQueryInformation
+       2528  9D9 001AE620 ZwAlpcQueryInformationMessage
+       2529  9DA 001AE660 ZwAlpcSendWaitReceivePort
+       2530  9DB 001AE680 ZwAlpcSetInformation
+       2531  9DC 001AE6C0 ZwAssignProcessToJobObject
+       2532  9DD 001AE6E0 ZwAssociateWaitCompletionPacket
+       2533  9DE 001AE0C0 ZwCancelIoFile
+       2534  9DF 001AE720 ZwCancelIoFileEx
+       2535  9E0 001AE140 ZwCancelTimer
+       2536  9E1 001AE780 ZwCancelWaitCompletionPacket
+       2537  9E2 001ADCE0 ZwClearEvent
+       2538  9E3 001AD700 ZwClose
+       2539  9E4 001ADC80 ZwCloseObjectAuditAlarm
+       2540  9E5 001AE7A0 ZwCommitComplete
+       2541  9E6 001AE7C0 ZwCommitEnlistment
+       2542  9E7 001AE7E0 ZwCommitRegistryTransaction
+       2543  9E8 001AE800 ZwCommitTransaction
+       2544  9E9 001AE880 ZwCompareTokens
+       2545  9EA 001AE8E0 ZwConnectPort
+       2546  9EB 001AE940 ZwCreateDirectoryObject
+       2547  9EC 001AE9A0 ZwCreateEnlistment
+       2548  9ED 001ADE20 ZwCreateEvent
+       2549  9EE 001ADFC0 ZwCreateFile
+       2550  9EF 001AEA00 ZwCreateIoCompletion
+       2551  9F0 001AEA20 ZwCreateJobObject
+       2552  9F1 001AD8C0 ZwCreateKey
+       2553  9F2 001AEA60 ZwCreateKeyTransacted
+       2554  9F3 001AEB40 ZwCreatePartition
+       2555  9F4 001ADEC0 ZwCreateProcessEx
+       2556  9F5 001AEBE0 ZwCreateProfileEx
+       2557  9F6 001AEC00 ZwCreateRegistryTransaction
+       2558  9F7 001AEC20 ZwCreateResourceManager
+       2559  9F8 001ADE60 ZwCreateSection
+       2560  9F9 001AEC80 ZwCreateSymbolicLinkObject
+       2561  9FA 001AECC0 ZwCreateTimer
+       2562  9FB 001AED40 ZwCreateTransaction
+       2563  9FC 001AED60 ZwCreateTransactionManager
+       2564  9FD 001AEDA0 ZwCreateWaitCompletionPacket
+       2565  9FE 001AEDE0 ZwCreateWnfStateName
+       2566  9FF 001AEE80 ZwDeleteBootEntry
+       2567  A00 001AEEA0 ZwDeleteDriverEntry
+       2568  A01 001AEEC0 ZwDeleteFile
+       2569  A02 001AEEE0 ZwDeleteKey
+       2570  A03 001AEF40 ZwDeleteValueKey
+       2571  A04 001AEF60 ZwDeleteWnfStateData
+       2572  A05 001AEF80 ZwDeleteWnfStateName
+       2573  A06 001AD600 ZwDeviceIoControlFile
+       2574  A07 001AEFC0 ZwDisplayString
+       2575  A08 001ADCA0 ZwDuplicateObject
+       2576  A09 001ADD60 ZwDuplicateToken
+       2577  A0A 001AF020 ZwEnumerateBootEntries
+       2578  A0B 001AF040 ZwEnumerateDriverEntries
+       2579  A0C 001ADB60 ZwEnumerateKey
+       2580  A0D 001AF080 ZwEnumerateTransactionObject
+       2581  A0E 001AD780 ZwEnumerateValueKey
+       2582  A0F 001ADE80 ZwFlushBuffersFile
+       2583  A10 001AF120 ZwFlushBuffersFileEx
+       2584  A11 001AF160 ZwFlushInstructionCache
+       2585  A12 001AF180 ZwFlushKey
+       2586  A13 001AF1C0 ZwFlushVirtualMemory
+       2587  A14 001AD8E0 ZwFreeVirtualMemory
+       2588  A15 001ADC40 ZwFsControlFile
+       2589  A16 001AF260 ZwGetCachedSigningLevel
+       2590  A17 001AF340 ZwGetNextProcess
+       2591  A18 001AF360 ZwGetNextThread
+       2592  A19 001AF3A0 ZwGetNotificationResourceManager
+       2593  A1A 001AF3E0 ZwImpersonateAnonymousToken
+       2594  A1B 001AF480 ZwInitiatePowerAction
+       2595  A1C 001ADF00 ZwIsProcessInJob
+       2596  A1D 001AF500 ZwLoadDriver
+       2597  A1E 001AF540 ZwLoadKey
+       2598  A1F 001AF580 ZwLoadKeyEx
+       2599  A20 001AF5A0 ZwLockFile
+       2600  A21 001AF5C0 ZwLockProductActivationKeys
+       2601  A22 001AF600 ZwLockVirtualMemory
+       2602  A23 001AF640 ZwMakeTemporaryObject
+       2603  A24 001AF680 ZwManagePartition
+       2604  A25 001ADA20 ZwMapViewOfSection
+       2605  A26 001AF700 ZwModifyBootEntry
+       2606  A27 001AF720 ZwModifyDriverEntry
+       2607  A28 001AF740 ZwNotifyChangeDirectoryFile
+       2608  A29 001AF760 ZwNotifyChangeDirectoryFileEx
+       2609  A2A 001AF780 ZwNotifyChangeKey
+       2610  A2B 001AF7C0 ZwNotifyChangeSession
+       2611  A2C 001AE020 ZwOpenDirectoryObject
+       2612  A2D 001AF7E0 ZwOpenEnlistment
+       2613  A2E 001ADD20 ZwOpenEvent
+       2614  A2F 001ADB80 ZwOpenFile
+       2615  A30 001AF840 ZwOpenJobObject
+       2616  A31 001AD760 ZwOpenKey
+       2617  A32 001AF860 ZwOpenKeyEx
+       2618  A33 001AF880 ZwOpenKeyTransacted
+       2619  A34 001AF8A0 ZwOpenKeyTransactedEx
+       2620  A35 001AF920 ZwOpenPartition
+       2621  A36 001AD9E0 ZwOpenProcess
+       2622  A37 001AF960 ZwOpenProcessToken
+       2623  A38 001ADB20 ZwOpenProcessTokenEx
+       2624  A39 001AF980 ZwOpenRegistryTransaction
+       2625  A3A 001AF9A0 ZwOpenResourceManager
+       2626  A3B 001ADC00 ZwOpenSection
+       2627  A3C 001AF9E0 ZwOpenSession
+       2628  A3D 001AFA00 ZwOpenSymbolicLinkObject
+       2629  A3E 001AFA20 ZwOpenThread
+       2630  A3F 001AD9A0 ZwOpenThreadToken
+       2631  A40 001ADB00 ZwOpenThreadTokenEx
+       2632  A41 001AFA40 ZwOpenTimer
+       2633  A42 001AFA60 ZwOpenTransaction
+       2634  A43 001AFA80 ZwOpenTransactionManager
+       2635  A44 001AE100 ZwPowerInformation
+       2636  A45 001AFAC0 ZwPrePrepareComplete
+       2637  A46 001AFAE0 ZwPrePrepareEnlistment
+       2638  A47 001AFB00 ZwPrepareComplete
+       2639  A48 001AFB20 ZwPrepareEnlistment
+       2640  A49 001AFBA0 ZwPropagationComplete
+       2641  A4A 001AFBC0 ZwPropagationFailed
+       2642  A4B 001ADF20 ZwProtectVirtualMemory
+       2643  A4C 001AFBE0 ZwPulseEvent
+       2644  A4D 001AFC20 ZwQueryBootEntryOrder
+       2645  A4E 001AFC40 ZwQueryBootOptions
+       2646  A4F 001AD7C0 ZwQueryDefaultLocale
+       2647  A50 001ADDA0 ZwQueryDefaultUILanguage
+       2648  A51 001ADBC0 ZwQueryDirectoryFile
+       2649  A52 001AFC80 ZwQueryDirectoryFileEx
+       2650  A53 001AFCA0 ZwQueryDirectoryObject
+       2651  A54 001AFCC0 ZwQueryDriverEntryOrder
+       2652  A55 001AFCE0 ZwQueryEaFile
+       2653  A56 001AFD00 ZwQueryFullAttributesFile
+       2654  A57 001AFD40 ZwQueryInformationByName
+       2655  A58 001AFD60 ZwQueryInformationEnlistment
+       2656  A59 001AD740 ZwQueryInformationFile
+       2657  A5A 001AFD80 ZwQueryInformationJobObject
+       2658  A5B 001AD840 ZwQueryInformationProcess
+       2659  A5C 001AFDC0 ZwQueryInformationResourceManager
+       2660  A5D 001AD9C0 ZwQueryInformationThread
+       2661  A5E 001AD940 ZwQueryInformationToken
+       2662  A5F 001AFDE0 ZwQueryInformationTransaction
+       2663  A60 001AFE00 ZwQueryInformationTransactionManager
+       2664  A61 001AFE40 ZwQueryInstallUILanguage
+       2665  A62 001AFE60 ZwQueryIntervalProfile
+       2666  A63 001AD7E0 ZwQueryKey
+       2667  A64 001AFEA0 ZwQueryLicenseValue
+       2668  A65 001AD720 ZwQueryObject
+       2669  A66 001AFF60 ZwQueryQuotaInformationFile
+       2670  A67 001ADF40 ZwQuerySection
+       2671  A68 001AFF80 ZwQuerySecurityAttributesToken
+       2672  A69 001AFFA0 ZwQuerySecurityObject
+       2673  A6A 001B0000 ZwQuerySymbolicLinkObject
+       2674  A6B 001B0040 ZwQuerySystemEnvironmentValueEx
+       2675  A6C 001ADBE0 ZwQuerySystemInformation
+       2676  A6D 001B0060 ZwQuerySystemInformationEx
+       2677  A6E 001B0080 ZwQueryTimerResolution
+       2678  A6F 001AD800 ZwQueryValueKey
+       2679  A70 001AD980 ZwQueryVirtualMemory
+       2680  A71 001ADE40 ZwQueryVolumeInformationFile
+       2681  A72 001B00A0 ZwQueryWnfStateData
+       2682  A73 001B00C0 ZwQueryWnfStateNameInformation
+       2683  A74 001AD5E0 ZwReadFile
+       2684  A75 001B0140 ZwReadOnlyEnlistment
+       2685  A76 001B0160 ZwRecoverEnlistment
+       2686  A77 001B0180 ZwRecoverResourceManager
+       2687  A78 001B01A0 ZwRecoverTransactionManager
+       2688  A79 001AD640 ZwRemoveIoCompletion
+       2689  A7A 001B0240 ZwRemoveIoCompletionEx
+       2690  A7B 001B0280 ZwRenameKey
+       2691  A7C 001B02C0 ZwReplaceKey
+       2692  A7D 001B0320 ZwRequestPort
+       2693  A7E 001AD960 ZwRequestWaitReplyPort
+       2694  A7F 001B0340 ZwResetEvent
+       2695  A80 001B0380 ZwRestoreKey
+       2696  A81 001B03E0 ZwRollbackComplete
+       2697  A82 001B0400 ZwRollbackEnlistment
+       2698  A83 001B0420 ZwRollbackRegistryTransaction
+       2699  A84 001B0440 ZwRollbackTransaction
+       2700  A85 001B0480 ZwSaveKey
+       2701  A86 001B04A0 ZwSaveKeyEx
+       2702  A87 001B04E0 ZwSecureConnectPort
+       2703  A88 001B0520 ZwSetBootEntryOrder
+       2704  A89 001B0540 ZwSetBootOptions
+       2705  A8A 001B0560 ZwSetCachedSigningLevel
+       2706  A8B 001B0600 ZwSetDefaultLocale
+       2707  A8C 001B0620 ZwSetDefaultUILanguage
+       2708  A8D 001B0640 ZwSetDriverEntryOrder
+       2709  A8E 001B0660 ZwSetEaFile
+       2710  A8F 001AD6E0 ZwSetEvent
+       2711  A90 001B0700 ZwSetInformationEnlistment
+       2712  A91 001ADA00 ZwSetInformationFile
+       2713  A92 001B0720 ZwSetInformationJobObject
+       2714  A93 001B0740 ZwSetInformationKey
+       2715  A94 001AE0A0 ZwSetInformationObject
+       2716  A95 001AD8A0 ZwSetInformationProcess
+       2717  A96 001B0760 ZwSetInformationResourceManager
+       2718  A97 001AD6C0 ZwSetInformationThread
+       2719  A98 001B07A0 ZwSetInformationToken
+       2720  A99 001B07C0 ZwSetInformationTransaction
+       2721  A9A 001B0800 ZwSetInformationVirtualMemory
+       2722  A9B 001B0840 ZwSetIntervalProfile
+       2723  A9C 001B0860 ZwSetIoCompletion
+       2724  A9D 001B0880 ZwSetIoCompletionEx
+       2725  A9E 001B0900 ZwSetQuotaInformationFile
+       2726  A9F 001B0920 ZwSetSecurityObject
+       2727  AA0 001B0960 ZwSetSystemEnvironmentValueEx
+       2728  AA1 001B0980 ZwSetSystemInformation
+       2729  AA2 001B09C0 ZwSetSystemTime
+       2730  AA3 001AE160 ZwSetTimer
+       2731  AA4 001B0A20 ZwSetTimerEx
+       2732  AA5 001B0A40 ZwSetTimerResolution
+       2733  AA6 001AE120 ZwSetValueKey
+       2734  AA7 001B0A80 ZwSetVolumeInformationFile
+       2735  AA8 001B0B40 ZwStartProfile
+       2736  AA9 001B0B60 ZwStopProfile
+       2737  AAA 001B0C20 ZwTerminateJobObject
+       2738  AAB 001ADAA0 ZwTerminateProcess
+       2739  AAC 001B0CA0 ZwTraceControl
+       2740  AAD 001AE0E0 ZwTraceEvent
+       2741  AAE 001B0CC0 ZwTranslateFilePath
+       2742  AAF 001B0D00 ZwUnloadDriver
+       2743  AB0 001B0D20 ZwUnloadKey
+       2744  AB1 001B0D40 ZwUnloadKey2
+       2745  AB2 001B0D60 ZwUnloadKeyEx
+       2746  AB3 001B0D80 ZwUnlockFile
+       2747  AB4 001B0DA0 ZwUnlockVirtualMemory
+       2748  AB5 001ADA60 ZwUnmapViewOfSection
+       2749  AB6 001B0E00 ZwUpdateWnfStateData
+       2750  AB7 001AE080 ZwWaitForMultipleObjects
+       2751  AB8 001AD5A0 ZwWaitForSingleObject
+       2752  AB9 001AD620 ZwWriteFile
+       2753  ABA 001ADDE0 ZwYieldExecution
+       2754  ABB 0018DAE0 __C_specific_handler
+       2755  ABC 001B9600 __chkstk
+       2756  ABD 00170E40 __misaligned_access
+       2757  ABE 0018EAA0 _finite
+       2758  ABF 00193E90 _i64toa_s
+       2759  AC0 00194190 _i64tow_s
+       2760  AC1 0018EAD0 _itoa
+       2761  AC2 00193EC0 _itoa_s
+       2762  AC3 0018EB80 _itow
+       2763  AC4 001941C0 _itow_s
+       2764  AC5 0018EC60 _local_unwind
+       2765  AC6 00193EC0 _ltoa_s
+       2766  AC7 001941C0 _ltow_s
+       2767  AC8 001944B0 _makepath_s
+       2768  AC9 0031C530 _purecall
+       2769  ACA 001BA7F0 _setjmp
+       2770  ACB 001BA8B0 _setjmpex
+       2771  ACC 0018ECA0 _snprintf
+       2772  ACD 001945F0 _snprintf_s
+       2773  ACE 001946C0 _snscanf_s
+       2774  ACF 0018ED50 _snwprintf
+       2775  AD0 00194700 _snwprintf_s
+       2776  AD1 001947E0 _snwscanf_s
+       2777  AD2 00194820 _splitpath_s
+       2778  AD3 0018EE80 _stricmp
+       2779  AD4 0018EEA0 _strlwr
+       2780  AD5 0018EF30 _strnicmp
+       2781  AD6 0018EF50 _strnset
+       2782  AD7 00194AC0 _strnset_s
+       2783  AD8 0018EF70 _strrev
+       2784  AD9 0018EFB0 _strset
+       2785  ADA 00194B50 _strset_s
+       2786  ADB 0018F220 _strtoui64
+       2787  ADC 0018E670 _strupr
+       2788  ADD 0018F250 _swprintf
+       2789  ADE 00193EF0 _ui64toa_s
+       2790  ADF 001941F0 _ui64tow_s
+       2791  AE0 00193F10 _ultoa_s
+       2792  AE1 00194210 _ultow_s
+       2793  AE2 0018E7C0 _vsnprintf
+       2794  AE3 00194620 _vsnprintf_s
+       2795  AE4 0018E6C0 _vsnwprintf
+       2796  AE5 00194730 _vsnwprintf_s
+       2797  AE6 0018F310 _vswprintf
+       2798  AE7 0018F3D0 _wcsicmp
+       2799  AE8 0018F430 _wcslwr
+       2800  AE9 0018F490 _wcslwr_s
+       2801  AEA 0018F510 _wcsnicmp
+       2802  AEB 0018F580 _wcsnset
+       2803  AEC 0018F5B0 _wcsnset_s
+       2804  AED 0018F640 _wcsrev
+       2805  AEE 0018F690 _wcsset_s
+       2806  AEF 0018F6F0 _wcsupr
+       2807  AF0 00194BB0 _wmakepath_s
+       2808  AF1 00194D20 _wsplitpath_s
+       2809  AF2 0018F720 _wtoi
+       2810  AF3 0018F740 _wtol
+       2811  AF4 0018E9F0 atoi
+       2812  AF5 0018EA10 atol
+       2813  AF6 0018F770 bsearch
+       2814  AF7 0018F880 bsearch_s
+       2815  AF8 0018F9B0 isdigit
+       2816  AF9 0018F9E0 islower
+       2817  AFA 0018FA10 isprint
+       2818  AFB 0018FA40 isspace
+       2819  AFC 0018FA70 isupper
+       2820  AFD 0018FAD0 iswalnum
+       2821  AFE 0018FAF0 iswdigit
+       2822  AFF 0018FB10 iswspace
+       2823  B00 0018FAA0 isxdigit
+       2824  B01 0018DCC0 longjmp
+       2825  B02 0018FB30 mbstowcs
+       2826  B03 0018FC10 mbtowc
+       2827  B04 0018FC70 memchr
+       2828  B05 0018FCA0 memcmp
+       2829  B06 001C3540 memcpy
+       2830  B07 00194FE0 memcpy_s
+       2831  B08 001C3540 memmove
+       2832  B09 00195080 memmove_s
+       2833  B0A 001C3880 memset
+       2834  B0B 008F0ACC psMUITest
+       2835  B0C 0018FD80 qsort
+       2836  B0D 00190140 qsort_s
+       2837  B0E 00190530 rand
+       2838  B0F 00190570 sprintf
+       2839  B10 001950E0 sprintf_s
+       2840  B11 00190600 sqrt
+       2841  B12 00190710 sqrtf
+       2842  B13 00190560 srand
+       2843  B14 00195160 sscanf_s
+       2844  B15 00190800 strcat
+       2845  B16 001951C0 strcat_s
+       2846  B17 00190960 strchr
+       2847  B18 001909A0 strcmp
+       2848  B19 001908A0 strcpy
+       2849  B1A 00195260 strcpy_s
+       2850  B1B 00190A60 strlen
+       2851  B1C 00190B20 strncat
+       2852  B1D 001952F0 strncat_s
+       2853  B1E 0018E8A0 strncmp
+       2854  B1F 00190CD0 strncpy
+       2855  B20 00195400 strncpy_s
+       2856  B21 00190E40 strnlen
+       2857  B22 00190E60 strrchr
+       2858  B23 00190EA0 strspn
+       2859  B24 0018E960 strstr
+       2860  B25 001954F0 strtok_s
+       2861  B26 0018F250 swprintf
+       2862  B27 00193E00 swprintf_s
+       2863  B28 00195660 swscanf_s
+       2864  B29 00190F70 tolower
+       2865  B2A 00190FB0 toupper
+       2866  B2B 00191020 towlower
+       2867  B2C 00191050 towupper
+       2868  B2D 00135230 vDbgPrintEx
+       2869  B2E 002EBAE0 vDbgPrintExWithPrefix
+       2870  B2F 001910E0 vsprintf
+       2871  B30 00195110 vsprintf_s
+       2872  B31 00193E30 vswprintf_s
+       2873  B32 00191100 wcscat
+       2874  B33 001956C0 wcscat_s
+       2875  B34 00191170 wcschr
+       2876  B35 001911A0 wcscmp
+       2877  B36 00191140 wcscpy
+       2878  B37 00195760 wcscpy_s
+       2879  B38 001911E0 wcscspn
+       2880  B39 00191230 wcslen
+       2881  B3A 00191250 wcsncat
+       2882  B3B 001957F0 wcsncat_s
+       2883  B3C 001912A0 wcsncmp
+       2884  B3D 001912E0 wcsncpy
+       2885  B3E 00195910 wcsncpy_s
+       2886  B3F 00191330 wcsnlen
+       2887  B40 00191360 wcsrchr
+       2888  B41 001913A0 wcsspn
+       2889  B42 001913F0 wcsstr
+       2890  B43 00191460 wcstombs
+       2891  B44 00191760 wcstoul
+       2892  B45 00191850 wctomb
+          1      00625420 [NONAME]
+          2      001AED80 [NONAME]
+          3      0031B760 [NONAME]
+          4      00166150 [NONAME]
+          5      0027B490 [NONAME]
+          6      000FD960 [NONAME]
+
+  Summary
+
+       61000 .data
+       18000 .edata
+        3000 .idata
+       5D000 .pdata
+       B2000 .rdata
+        A000 .reloc
+       3B000 .rsrc
+      32D000 .text
+       17000 ALMOSTRO
+        9000 CACHEALI
+        2000 CFGRO
+        8000 GFIDS
+       7C000 INIT
+       17000 INITDATA
+       19000 INITKDBG
+        3000 KVASCODE
+      396000 PAGE
+        7000 PAGEBGFX
+       13000 PAGEDATA
+        3000 PAGEHDLS
+        5000 PAGEKD
+       1A000 PAGELK
+        F000 PAGEVRFD
+       31000 PAGEVRFY
+        6000 POOLCODE
+        1000 PROTDATA
+        1000 RETPOL

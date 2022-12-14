@@ -1,0 +1,648 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\wow64.dll
+
+File Type: DLL
+
+  Image has the following dependencies:
+
+    ntdll.dll
+    wow64win.dll
+
+  Section contains the following exports for wow64.dll
+
+    00000000 characteristics
+    14B8BDFD time date stamp
+        0.00 version
+           1 ordinal base
+          29 number of functions
+          29 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0000F230 Wow64AllocThreadHeap
+          2    1 0001F240 Wow64AllocateHeap
+          3    2 0000F260 Wow64AllocateTemp
+          4    3 0000F190 Wow64ApcRoutine
+          5    4 0001FB40 Wow64CheckIfNXEnabled
+          6    5 0001E5A0 Wow64DispatchExceptionCHPE
+          7    6 0001FBD0 Wow64EmulateAtlThunk
+          8    7 0001F260 Wow64FreeHeap
+          9    8 0000F1C0 Wow64FreeThreadHeap
+         10    9 0001E300 Wow64GetWow64ImageOption
+         11    A          Wow64IsControlFlowGuardEnforced (forwarded to NTDLL.LdrControlFlowGuardEnforced)
+         12    B 0000F330 Wow64IsStackExtentsCheckEnforced
+         13    C 00017710 Wow64KiUserCallbackDispatcher
+         14    D 0000CD40 Wow64LdrpInitialize
+         15    E 00008840 Wow64LogPrint
+         16    F 0001EB50 Wow64NotifyUnsimulateComplete
+         17   10 0001F330 Wow64PassExceptionToGuest
+         18   11 0001F500 Wow64PrepareForDebuggerAttach
+         19   12 00017510 Wow64PrepareForException
+         20   13 00020950 Wow64ProcessPendingCrossProcessItems
+         21   14 0001E740 Wow64RaiseException
+         22   15 00008030 Wow64ShallowThunkAllocObjectAttributes32TO64_FNC
+         23   16 00008780 Wow64ShallowThunkAllocSecurityQualityOfService32TO64_FNC
+         24   17 000091C0 Wow64ShallowThunkSIZE_T32TO64
+         25   18 0000C4A0 Wow64ShallowThunkSIZE_T64TO32
+         26   19 0001EEA0 Wow64SuspendLocalThread
+         27   1A 00007630 Wow64SystemServiceEx
+         28   1B 0001FE50 Wow64ValidateUserCallTarget
+         29   1C 0001FF40 Wow64ValidateUserCallTargetFilter
+
+  Section contains the following imports:
+
+    ntdll.dll
+             180037938 Import Address Table
+             1800453B8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         8F5 memcpy
+                         2EA RtlCaptureContext
+                         4CA RtlLookupFunctionEntry
+                         5F2 RtlVirtualUnwind
+                         1FD NtRaiseException
+                         604 RtlWow64GetCpuAreaInfo
+                         3FF RtlGetExtendedContextLength
+                         45D RtlInitializeExtendedContext
+                         605 RtlWow64GetCurrentCpuArea
+                         108 NtContinue
+                         26D NtTestAlert
+                         451 RtlInitUnicodeString
+                          90 LdrQueryImageFileExecutionOptions
+                         1F6 NtQueryValueKey
+                         882 __C_specific_handler
+                          8B LdrLockLoaderLock
+                          AE LdrUnlockLoaderLock
+                         8BB _vsnprintf
+                          23 DbgPrintEx
+                         8BD _vsnwprintf
+                         418 RtlGetNtSystemRoot
+                          89 LdrLoadDll
+                         446 RtlInitAnsiString
+                          80 LdrGetProcedureAddress
+                          AD LdrUnloadDll
+                         1F1 NtQuerySystemInformation
+                         1E9 NtQuerySection
+                         440 RtlImageNtHeaderEx
+                         1BF NtProtectVirtualMemory
+                         466 RtlInitializeSRWLock
+                         330 RtlCreateHashTable
+                         2A5 RtlAcquireSRWLockExclusive
+                         53E RtlRemoveEntryHashTable
+                         53B RtlReleaseSRWLockExclusive
+                          FB NtClose
+                         67A TpReleaseWait
+                         10F NtCreateEvent
+                         65B TpAllocWait
+                         686 TpSetWait
+                         46D RtlInsertEntryHashTable
+                         687 TpSetWaitEx
+                          AA LdrSystemDllInitBlock
+                         195 NtOpenDirectoryObject
+                         452 RtlInitUnicodeStringEx
+                         1AA NtOpenSection
+                          7F LdrGetKnownDllSectionHandle
+                         18C NtMapViewOfSection
+                         3C5 RtlFindExportedRoutineByName
+                         27A NtUnmapViewOfSection
+                         5E7 RtlUserThreadStart
+                         1D5 NtQueryInformationProcess
+                         26C NtTerminateThread
+                         43F RtlImageNtHeader
+                         43E RtlImageDirectoryEntryToData
+                         4DF RtlNtdllName
+                         199 NtOpenFile
+                         1E3 NtQueryObject
+                         325 RtlCopyUnicodeString
+                         2D6 RtlAppendUnicodeToString
+                         2D5 RtlAppendUnicodeStringToString
+                         4F1 RtlPrefixUnicodeString
+                         92F wcsncmp
+                         3AA RtlEqualUnicodeString
+                         525 RtlRaiseStatus
+                         203 NtReadVirtualMemory
+                         1A5 NtOpenProcess
+                         1AE NtOpenThread
+                         1D7 NtQueryInformationThread
+                         28C NtWriteVirtualMemory
+                         337 RtlCreateProcessParametersWithTemplate
+                         21E NtResumeThread
+                         4F2 RtlPrepareForProcessCloning
+                         133 NtCreateUserProcess
+                         308 RtlCompleteProcessCloning
+                         26B NtTerminateProcess
+                         37A RtlDestroyProcessParameters
+                         318 RtlCopyContext
+                         608 RtlWow64GetProcessMachines
+                         12B NtCreateThread
+                         606 RtlWow64GetCurrentMachine
+                         12C NtCreateThreadEx
+                         149 NtDuplicateObject
+                         612 RtlWow64SuspendThread
+                         267 NtSuspendThread
+                         282 NtWaitForMultipleObjects
+                          D0 NtAlertThreadByThreadId
+                         235 NtSetEvent
+                         27F NtWaitForAlertByThreadId
+                         491 RtlIsCurrentThread
+                         243 NtSetInformationThread
+                         284 NtWaitForSingleObject
+                         2A6 RtlAcquireSRWLockShared
+                         4C8 RtlLookupEntryHashTable
+                         413 RtlGetNextEntryHashTable
+                         53C RtlReleaseSRWLockShared
+                          8D LdrProcessInitializationComplete
+                         3FD RtlGetEnabledExtendedFeatures
+                         4BA RtlLocateLegacyContext
+                         2CB RtlAllocateHeap
+                         3DD RtlFreeHeap
+                         524 RtlRaiseException
+                         4DD RtlNtStatusToDosError
+                         607 RtlWow64GetEquivalentMachineCHPE
+                         166 NtGetContextThread
+                         4FE RtlQueryEnvironmentVariable_U
+                         456 RtlInitializeBitMapEx
+                         5A9 RtlTestBitEx
+                          6A LdrControlFlowGuardEnforced
+                         1F7 NtQueryVirtualMemory
+                          22 DbgPrint
+                         63A RtlpQueryProcessDebugInformationFromWow64
+                         19C NtOpenKey
+                         934 wcsrchr
+                         447 RtlInitAnsiStringEx
+                         4A3 RtlIsProcessorFeaturePresent
+                         127 NtCreateSection
+                         610 RtlWow64PushCrossProcessWork
+                         490 RtlIsCurrentProcess
+                         609 RtlWow64GetSharedInfoProcess
+                         60E RtlWow64PopAllCrossProcessWork
+                         60F RtlWow64PopCrossProcessWork
+                          6D LdrDisableThreadCalloutsForDll
+                         5BF RtlUnhandledExceptionFilter
+                         8F9 memset
+                         8F7 memmove
+                         895 _local_unwind
+                         883 __chkstk
+                         222 NtRollbackRegistryTransaction
+                         124 NtCreateProfileEx
+                         1A1 NtOpenMutant
+                          C0 NtAccessCheckAndAuditAlarm
+                          CC NtAdjustPrivilegesToken
+                         258 NtSetTimer2
+                         213 NtReplacePartitionUnit
+                         1A7 NtOpenProcessTokenEx
+                         236 NtSetEventBoostPriority
+                         206 NtRecoverTransactionManager
+                         10E NtCreateEnlistment
+                          25 DbgPrompt
+                         24F NtSetQuotaInformationFile
+                         239 NtSetIRTimer
+                         1E1 NtQueryMultipleValueKey
+                         1E4 NtQueryOpenSubKeys
+                         20E NtRemoveIoCompletionEx
+                         11A NtCreateMailslotFile
+                         220 NtRollbackComplete
+                         146 NtDisableLastKnownGood
+                          E0 NtAlpcDeletePortSection
+                         16E NtGetNotificationResourceManager
+                         185 NtMakePermanentObject
+                         1A6 NtOpenProcessToken
+                         21A NtResetEvent
+                         238 NtSetHighWaitLowEventPair
+                          D1 NtAllocateLocallyUniqueId
+                         1C3 NtQueryBootEntryOrder
+                         1F3 NtQuerySystemTime
+                          C5 NtAccessCheckByTypeResultListAndAuditAlarmByHandle
+                         179 NtIsSystemResumeAutomatic
+                          F6 NtCancelSynchronousIoFile
+                         15E NtFlushWriteBuffer
+                         160 NtFreeVirtualMemory
+                         1C2 NtQueryAuxiliaryCounterFrequency
+                         1FA NtQueryWnfStateNameInformation
+                         271 NtTraceEvent
+                         18D NtMapViewOfSectionEx
+                         10B NtCreateDirectoryObject
+                         122 NtCreateProcessEx
+                         135 NtCreateWaitablePort
+                         1C4 NtQueryBootOptions
+                         147 NtDisplayString
+                         224 NtRollforwardTransactionManager
+                         183 NtLockRegistryKey
+                         194 NtNotifyChangeSession
+                         130 NtCreateTokenEx
+                         12E NtCreateTimer2
+                         165 NtGetCompleteWnfStateSubscription
+                         1AD NtOpenSymbolicLinkObject
+                         24B NtSetIoCompletionEx
+                          DA NtAlpcConnectPortEx
+                         25E NtSetWnfProcessNotificationEvent
+                          15 CsrAllocateMessagePointer
+                         16A NtGetMUIRegistryInfo
+                         26E NtThawRegistry
+                         10C NtCreateDirectoryObjectEx
+                         262 NtSinglePhaseReject
+                         14A NtDuplicateToken
+                         280 NtWaitForDebugEvent
+                         115 NtCreateJobSet
+                         153 NtFilterBootOption
+                         17F NtLoadKey2
+                         11F NtCreatePort
+                         24A NtSetIoCompletion
+                         214 NtReplyPort
+                         13D NtDeleteDriverEntry
+                         16B NtGetNextProcess
+                         257 NtSetTimer
+                         131 NtCreateTransaction
+                         211 NtRenameTransactionManager
+                         289 NtWriteFile
+                          F5 NtCancelIoFileEx
+                         1DB NtQueryInformationWorkerFactory
+                         144 NtDeleteWnfStateName
+                         27B NtUnmapViewOfSectionEx
+                         274 NtUnloadDriver
+                         20A NtReleaseMutant
+                         151 NtEnumerateValueKey
+                         277 NtUnloadKeyEx
+                         27C NtUnsubscribeWnfStateChange
+                         136 NtCreateWnfStateName
+                         1FB NtQueueApcThread
+                         265 NtSubscribeWnfStateChange
+                          E5 NtAlpcImpersonateClientContainerOfPort
+                         286 NtWaitHighEventPair
+                         232 NtSetDefaultUILanguage
+                         1BD NtPropagationComplete
+                          CA NtAddDriverEntry
+                         288 NtWorkerFactoryWorkerReady
+                          CF NtAlertThread
+                         159 NtFlushInstallUILanguage
+                         23D NtSetInformationJobObject
+                         21B NtResetWriteWatch
+                         126 NtCreateResourceManager
+                         156 NtFindAtom
+                         24E NtSetLowWaitHighEventPair
+                         197 NtOpenEvent
+                         1AB NtOpenSemaphore
+                          E1 NtAlpcDeleteResourceReserve
+                         14D NtEnumerateDriverEntries
+                         223 NtRollbackTransaction
+                         1A9 NtOpenResourceManager
+                         1E7 NtQueryPortInformationProcess
+                          D9 NtAlpcConnectPort
+                         105 NtCompleteConnectPort
+                         1E8 NtQueryQuotaInformationFile
+                         1BB NtPrivilegeObjectAuditAlarm
+                         162 NtFreezeTransactions
+                         158 NtFlushBuffersFileEx
+                         1EE NtQuerySymbolicLinkObject
+                         138 NtDebugActiveProcess
+                         193 NtNotifyChangeMultipleKeys
+                         1E6 NtQueryPerformanceCounter
+                         1F2 NtQuerySystemInformationEx
+                         20F NtRemoveProcessDebug
+                          FE NtCommitEnlistment
+                          C9 NtAddBootEntry
+                         17E NtLoadKey
+                          D8 NtAlpcCancelMessage
+                         201 NtReadOnlyEnlistment
+                         23F NtSetInformationObject
+                         278 NtUnlockFile
+                         1A0 NtOpenKeyedEvent
+                         216 NtReplyWaitReceivePortEx
+                         231 NtSetDefaultLocale
+                          1A CsrClientCallServer
+                         254 NtSetSystemPowerState
+                         110 NtCreateEventPair
+                         171 NtImpersonateAnonymousToken
+                         1CF NtQueryInformationAtom
+                          16 CsrCaptureMessageBuffer
+                         1B7 NtPrePrepareEnlistment
+                         173 NtImpersonateThread
+                         253 NtSetSystemInformation
+                         106 NtCompressKey
+                         1B8 NtPrepareComplete
+                         17B NtListenPort
+                         21F NtRevertContainerImpersonation
+                         244 NtSetInformationToken
+                         23C NtSetInformationFile
+                          C2 NtAccessCheckByTypeAndAuditAlarm
+                         1F4 NtQueryTimer
+                         234 NtSetEaFile
+                         259 NtSetTimerEx
+                         103 NtCompareSigningLevels
+                         24D NtSetLowEventPair
+                         21D NtResumeProcess
+                         11C NtCreateNamedPipeFile
+                         1F9 NtQueryWnfStateData
+                         18E NtModifyBootEntry
+                          EB NtAlpcRevokeSecurityContext
+                          F1 NtAssociateWaitCompletionPacket
+                         1FF NtReadFile
+                         148 NtDrawText
+                         1B6 NtPrePrepareComplete
+                         198 NtOpenEventPair
+                         174 NtInitializeEnclave
+                         1B1 NtOpenTimer
+                          1D CsrGetProcessId
+                         17A NtIsUILanguageComitted
+                         181 NtLockFile
+                         16C NtGetNextThread
+                         1D3 NtQueryInformationJobObject
+                         15B NtFlushKey
+                         13E NtDeleteFile
+                         102 NtCompareObjects
+                         22A NtSetBootEntryOrder
+                          18 CsrCaptureMessageString
+                          D3 NtAllocateUserPhysicalPages
+                          DD NtAlpcCreateResourceReserve
+                          DE NtAlpcCreateSectionView
+                         170 NtGetWriteWatch
+                         192 NtNotifyChangeKey
+                         1CB NtQueryDriverEntryOrder
+                         209 NtReleaseKeyedEvent
+                         3F5 RtlGetCurrentProcessorNumberEx
+                         1B0 NtOpenThreadTokenEx
+                         114 NtCreateJobObject
+                         242 NtSetInformationSymbolicLink
+                          C3 NtAccessCheckByTypeResultList
+                         150 NtEnumerateTransactionObject
+                         1BC NtPrivilegedServiceAuditAlarm
+                         1B5 NtPowerInformation
+                         215 NtReplyWaitReceivePort
+                         1D8 NtQueryInformationToken
+                          D5 NtAllocateVirtualMemory
+                         246 NtSetInformationTransactionManager
+                         250 NtSetSecurityObject
+                         1C9 NtQueryDirectoryFileEx
+                         283 NtWaitForMultipleObjects32
+                          EF NtAreMappedFilesTheSame
+                          E6 NtAlpcImpersonateClientOfPort
+                         1CC NtQueryEaFile
+                         285 NtWaitForWorkViaWorkerFactory
+                         272 NtTranslateFilePath
+                         113 NtCreateIoCompletion
+                          BE NtAcceptConnectPort
+                          DF NtAlpcCreateSecurityContext
+                         13C NtDeleteBootEntry
+                          F9 NtCancelWaitCompletionPacket
+                         13A NtDelayExecution
+                         229 NtSerializeBoot
+                         4B3 RtlLengthSid
+                         1C0 NtPulseEvent
+                          E7 NtAlpcOpenSenderProcess
+                         230 NtSetDefaultHardErrorPort
+                         249 NtSetIntervalProfile
+                          F0 NtAssignProcessToJobObject
+                         101 NtCompactKeys
+                         276 NtUnloadKey2
+                         26A NtTerminateJobObject
+                         176 NtInitializeRegistry
+                         1C1 NtQueryAttributesFile
+                         217 NtReplyWaitReplyPort
+                          1E CsrIdentifyAlertableThread
+                         1FE NtRaiseHardError
+                         184 NtLockVirtualMemory
+                         145 NtDeviceIoControlFile
+                         1B9 NtPrepareEnlistment
+                         134 NtCreateWaitCompletionPacket
+                         22F NtSetDebugFilterState
+                         1B3 NtOpenTransactionManager
+                         178 NtIsProcessInJob
+                         204 NtRecoverEnlistment
+                         1DA NtQueryInformationTransactionManager
+                         233 NtSetDriverEntryOrder
+                          E9 NtAlpcQueryInformation
+                          EE NtApphelpCacheControl
+                         123 NtCreateProfile
+                         157 NtFlushBuffersFile
+                          F7 NtCancelTimer
+                         164 NtGetCachedSigningLevel
+                         1AC NtOpenSession
+                         1EF NtQuerySystemEnvironmentValue
+                         119 NtCreateLowBoxToken
+                          FC NtCloseObjectAuditAlarm
+                         177 NtInitiatePowerAction
+                         263 NtStartProfile
+                         19B NtOpenJobObject
+                         18B NtMapUserPhysicalPagesScatter
+                         281 NtWaitForKeyedEvent
+                          F4 NtCancelIoFile
+                         1DE NtQueryIoCompletion
+                         260 NtShutdownWorkerFactory
+                         207 NtRegisterProtocolAddressInformation
+                          C6 NtAcquireProcessActivityReference
+                         10D NtCreateEnclave
+                          C8 NtAddAtomEx
+                         1ED NtQuerySemaphore
+                         163 NtFsControlFile
+                         13B NtDeleteAtom
+                         219 NtRequestWaitReplyPort
+                         1D9 NtQueryInformationTransaction
+                         322 RtlCopySid
+                         120 NtCreatePrivateNamespace
+                         287 NtWaitLowEventPair
+                         25F NtShutdownSystem
+                         241 NtSetInformationResourceManager
+                          E2 NtAlpcDeleteSectionView
+                         169 NtGetDevicePowerState
+                          1B CsrClientConnectToServer
+                         275 NtUnloadKey
+                         20D NtRemoveIoCompletion
+                         18F NtModifyDriverEntry
+                          EA NtAlpcQueryInformationMessage
+                         1A2 NtOpenObjectAuditAlarm
+                         279 NtUnlockVirtualMemory
+                         1CD NtQueryEvent
+                         1CA NtQueryDirectoryObject
+                         125 NtCreateRegistryTransaction
+                         1D2 NtQueryInformationFile
+                          CB NtAdjustGroupsToken
+                          1C CsrFreeCaptureBuffer
+                         228 NtSecureConnectPort
+                          C1 NtAccessCheckByType
+                         15F NtFreeUserPhysicalPages
+                         1C5 NtQueryDebugFilterState
+                         200 NtReadFileScatter
+                         252 NtSetSystemEnvironmentValueEx
+                         152 NtExtendSection
+                         25A NtSetTimerResolution
+                         154 NtFilterToken
+                         1E0 NtQueryLicenseValue
+                         1D4 NtQueryInformationPort
+                          BF NtAccessCheck
+                         60B RtlWow64GetThreadSelectorEntry
+                         237 NtSetHighEventPair
+                         18A NtMapUserPhysicalPages
+                         28D NtYieldExecution
+                         16D NtGetNlsSectionPtr
+                         100 NtCommitTransaction
+                         141 NtDeletePrivateNamespace
+                         19A NtOpenIoCompletion
+                         1AF NtOpenThreadToken
+                         26F NtThawTransactions
+                         17D NtLoadEnclaveData
+                         11B NtCreateMutant
+                         155 NtFilterTokenEx
+                         208 NtRegisterThreadTerminatePort
+                          D6 NtAllocateVirtualMemoryEx
+                         28A NtWriteFileGather
+                         1EC NtQuerySecurityPolicy
+                          C4 NtAccessCheckByTypeResultListAndAuditAlarm
+                         118 NtCreateKeyedEvent
+                         270 NtTraceControl
+                         22D NtSetCachedSigningLevel2
+                         137 NtCreateWorkerFactory
+                          20 CsrVerifyRegion
+                         12A NtCreateSymbolicLinkObject
+                          CD NtAdjustTokenClaimsAndDeviceGroups
+                         255 NtSetSystemTime
+                         1F0 NtQuerySystemEnvironmentValueEx
+                         1D0 NtQueryInformationByName
+                         269 NtTerminateEnclave
+                         23E NtSetInformationKey
+                         1C7 NtQueryDefaultUILanguage
+                         27D NtUpdateWnfStateData
+                         10A NtCreateDebugObject
+                         172 NtImpersonateClientOfPort
+                         221 NtRollbackEnlistment
+                         1BA NtPrivilegeCheck
+                         167 NtGetCurrentProcessorNumber
+                         240 NtSetInformationProcess
+                         107 NtConnectPort
+                         212 NtReplaceKey
+                          D7 NtAlpcAcceptConnectPort
+                         143 NtDeleteWnfStateData
+                         256 NtSetThreadExecutionState
+                         1BE NtPropagationFailed
+                         129 NtCreateSemaphore
+                         15C NtFlushProcessWriteBuffers
+                         168 NtGetCurrentProcessorNumberEx
+                         245 NtSetInformationTransaction
+                          F2 NtCallEnclave
+                         14C NtEnumerateBootEntries
+                          FA NtClearEvent
+                         1A3 NtOpenPartition
+                         180 NtLoadKeyEx
+                         251 NtSetSystemEnvironmentValue
+                         227 NtSaveMergedKeys
+                         1D6 NtQueryInformationResourceManager
+                         14F NtEnumerateSystemEnvironmentValuesEx
+                          D4 NtAllocateUuids
+                         261 NtSignalAndWaitForSingleObject
+                         226 NtSaveKeyEx
+                         1DC NtQueryInstallUILanguage
+                         1FC NtQueueApcThreadEx
+                         11D NtCreatePagingFile
+                         121 NtCreateProcess
+                         175 NtInitializeNlsFiles
+                         1A4 NtOpenPrivateNamespace
+                         268 NtSystemDebugControl
+                          DB NtAlpcCreatePort
+                         247 NtSetInformationVirtualMemory
+                         186 NtMakeTemporaryObject
+                         20B NtReleaseSemaphore
+                         189 NtMapCMFModule
+                         196 NtOpenEnlistment
+                         1F8 NtQueryVolumeInformationFile
+                         23A NtSetInformationDebugObject
+                         182 NtLockProductActivationKeys
+                          E3 NtAlpcDeleteSecurityContext
+                         1EA NtQuerySecurityAttributesToken
+                         104 NtCompareTokens
+                         128 NtCreateSectionEx
+                          FD NtCommitComplete
+                         161 NtFreezeRegistry
+                          FF NtCommitRegistryTransaction
+                         111 NtCreateFile
+                         1A8 NtOpenRegistryTransaction
+                         12D NtCreateTimer
+                         15D NtFlushVirtualMemory
+                         1D1 NtQueryInformationEnlistment
+                         1C8 NtQueryDirectoryFile
+                         1E2 NtQueryMutant
+                         205 NtRecoverResourceManager
+                         22B NtSetBootOptions
+                         11E NtCreatePartition
+                         1EB NtQuerySecurityObject
+                         132 NtCreateTransactionManager
+                         25B NtSetUuidSeed
+                          ED NtAlpcSetInformation
+                         23B NtSetInformationEnlistment
+                         264 NtStopProfile
+                          D2 NtAllocateReserveObject
+                         20C NtReleaseWorkerFactoryWorker
+                         1C6 NtQueryDefaultLocale
+                         139 NtDebugContinue
+                         28B NtWriteRequestData
+                         109 NtConvertBetweenAuxiliaryCounterAndPerformanceCounter
+                         1DD NtQueryIntervalProfile
+                         25D NtSetVolumeInformationFile
+                          F8 NtCancelTimer2
+                          14 CsrAllocateCaptureBuffer
+                          E8 NtAlpcOpenSenderThread
+                         202 NtReadRequestData
+                         12F NtCreateToken
+                         17C NtLoadDriver
+                         248 NtSetInformationWorkerFactory
+                         140 NtDeleteObjectAuditAlarm
+                         1B2 NtOpenTransaction
+                         112 NtCreateIRTimer
+                         188 NtManagePartition
+                          E4 NtAlpcDisconnectPort
+                         14B NtEnableLastKnownGood
+                         190 NtNotifyChangeDirectoryFile
+                          EC NtAlpcSendWaitReceivePort
+                          CE NtAlertResumeThread
+                         266 NtSuspendProcess
+                         24C NtSetLdtEntries
+                          DC NtAlpcCreatePortSection
+                         1F5 NtQueryTimerResolution
+                         1CE NtQueryFullAttributesFile
+                         191 NtNotifyChangeDirectoryFileEx
+                         22C NtSetCachedSigningLevel
+                         218 NtRequestPort
+                         5DA RtlUpcaseUnicodeString
+                         5D9 RtlUpcaseUnicodeChar
+                         60C RtlWow64IsWowGuestMachineSupported
+                         1DF NtQueryKey
+                         13F NtDeleteKey
+                         14E NtEnumerateKey
+                         1E5 NtQueryOpenSubKeysEx
+                         142 NtDeleteValueKey
+                         225 NtSaveKey
+                         210 NtRenameKey
+                         21C NtRestoreKey
+                         19D NtOpenKeyEx
+                         117 NtCreateKeyTransacted
+                         116 NtCreateKey
+                         19F NtOpenKeyTransactedEx
+                         25C NtSetValueKey
+                         3B5 RtlExpandEnvironmentStrings_U
+                         336 RtlCreateProcessParametersEx
+                          67 LdrAddRefDll
+                         397 RtlEncodeSystemPointer
+                         355 RtlDecodeSystemPointer
+                          17 CsrCaptureMessageMultiUnicodeStringsInPlace
+                         928 wcscmp
+
+    wow64win.dll
+             180038AF8 Import Address Table
+             180046578 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           0 sdwhcon
+                           1 sdwhwin32
+
+  Summary
+
+        1000 .data
+        1000 .mrdata
+        5000 .pdata
+       14000 .rdata
+        1000 .reloc
+        1000 .rsrc
+       35000 .text

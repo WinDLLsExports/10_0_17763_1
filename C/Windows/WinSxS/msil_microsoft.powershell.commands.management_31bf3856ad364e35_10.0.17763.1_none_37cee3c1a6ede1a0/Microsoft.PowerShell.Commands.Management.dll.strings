@@ -1,0 +1,6355 @@
+      
+        
+          
+              
+                
+                  
+                    <xsd:attribute name="Name" type="cps:NonEmptyString" use="required" />
+                  </xsd:extension>
+                  <xsd:extension base="xsd:string">
+                  Get-MyObject -ExcludeObjectId 123,456
+                  Get-MyObject -LiteralName p*,q* 
+                  Get-MyObject -MaxWorkingSet 123
+                  Get-MyObject -MinWorkingSet 123
+                  Get-MyObject -Name p*,q* 
+                  Get-MyObject -ObjectId 123,456
+                  SELECT * FROM MyObject WHERE ((Name = &quot;p*&quot;) OR (Name = &quot;q*&quot;)) 
+                  SELECT * FROM MyObject WHERE ((Name like &quot;p%&quot;) OR (Name like &quot;q%&quot;)) 
+                  SELECT * FROM MyObject WHERE ((NOT Name = 123) AND (NOT Name = 456)) 
+                  SELECT * FROM MyObject WHERE ((ObjectId = 123) OR (ObjectId = 456)) 
+                  SELECT * FROM MyObject WHERE (WorkingSet &gt;= 123)
+                  SELECT * FROM MyObject WHERE (WorkingSet =&lt; 123)
+                &lt;CmdletParameterMetadata PSName=&quot;LiteralName&quot; /&gt;
+                (i.e. "Networking.MyEnum" will become "Microsoft.PowerShell.Cmdletization.GeneratedTypes.Networking.MyEnum").
+                (i.e. the name should be "Networking.MyEnum" rather than "MyEnum").
+                </xsd:simpleContent>
+                <xsd:attribute name="Name" type="cps:EnumValueName" use="required" />
+                <xsd:attribute name="Value" type="xsd:integer" use="required" />
+                <xsd:element name="Parameter" type="cps:InstanceMethodParameterMetadata" maxOccurs="unbounded" />
+                <xsd:element name="Parameter" type="cps:StaticMethodParameterMetadata" maxOccurs="unbounded" />
+                <xsd:field xpath="@Aliases" />
+                <xsd:field xpath="@CmdletParameterSet" />
+                <xsd:field xpath="@DefaultCmdletParameterSet" />
+                <xsd:field xpath="@PSName" />
+                <xsd:selector xpath=".//cps:CmdletMetadata" />
+                <xsd:selector xpath=".//cps:CmdletParameterMetadata" />
+                <xsd:selector xpath=".//cps:Method" />
+                <xsd:simpleContent>
+                BitwiseFlags attribute specifies if the .NET enum will be decorated with a System.FlagsAttribute.                
+                byte (System.Byte), 
+                C# Language Specification allows (in section 4.1.9 "Enumeration types") only the following
+                EnumName attribute specifies the name of a .NET enum.
+                int (System.Int32), 
+                long (System.Int64),
+                sbyte (System.SByte), 
+                short (System.Int16), 
+                The following cmdlet invocation:
+                The name should include a namespace to avoid naming conflicts 
+                The system will prefix the name of the enum with the following namespace: "Microsoft.PowerShell.Cmdletization.GeneratedTypes"
+                This is the name to use in a PSType attribute.
+                uint (System.UInt32), 
+                ulong (System.UInt64).
+                Underlying type of the enum.
+                underlying types: 
+                ushort (System.UInt16), 
+                When referring to the enum in types.ps1xml and format.ps1xml files, one has to use the full, prefixed name of the enum.
+                will be translated into the following WQL query:
+              - only objects with a property value *not* equal to the cmdlet parameter argument will be processed.
+              - only objects with a property value equal to the cmdlet parameter argument will be processed.
+              - only objects with a property value greater than or equal to the cmdlet parameter argument will be processed.
+              - only objects with a property value less than or equal to the cmdlet parameter argument will be processed.
+              &lt;!-- &quot;LiteralName&quot; is used as the cmdlet parameter name --&gt;
+              &lt;!-- &quot;Name&quot; is used as the cmdlet parameter name --&gt;
+              &lt;/RegularQuery&gt;
+              &lt;RegularQuery AllowGlobbing=&quot;false&quot;&gt;
+              &lt;RegularQuery AllowGlobbing=&quot;true&quot; /&gt;
+              ...
+              </xsd:complexType>
+              </xsd:documentation>
+              </xsd:keyref>
+              </xsd:sequence>
+              </xsd:unique>
+              <xsd:attribute name="DefaultCmdletParameterSet" type="cps:ParameterSetName" use="optional" />
+              <xsd:complexType>
+              <xsd:documentation xml:lang="en-us">
+              <xsd:field xpath="@ParameterName" />
+              <xsd:field xpath="@Position" />
+              <xsd:keyref name="DefaultCmdletParameterSetKeyRef" refer="cps:UniqueParameterSetNamesInStaticCmdlet">
+              <xsd:selector xpath=".//cps:CmdletParameterMetadata" />
+              <xsd:selector xpath=".//cps:Parameter" />
+              <xsd:sequence>
+              <xsd:unique name="UniqueCmdletParameterAliasesUnderGetCmdletParametersElement_1">
+              <xsd:unique name="UniqueCmdletParameterNamesUnderGetCmdletParametersElement_1">
+              <xsd:unique name="UniqueParameterSetNamesInStaticCmdlet">
+              AllowGlobbing attribute specifies if strings with globbing characters (wildcards) are supported.  
+              CmdletParameterSet attribute specifies the name of a cmdlet parameter set associated with the static method.
+              CmdletParameterSets attribute is a whitespace-separated list of names of parameter sets,
+              Comparison of strings and characters is always case-insensitive.
+              Example for &lt;ExcludeQuery&gt; element that is applied to an ObjectId property:
+              Example for &lt;MaxValueQuery&gt; element that is applied to an WorkingSet property:
+              Example for &lt;MinValueQuery&gt; element that is applied to an WorkingSet property:
+              Example for &lt;RegularQuery AllowGlobbing=&quot;false&quot; &gt; element that is applied to a Name property:
+              Example for &lt;RegularQuery AllowGlobbing=&quot;true&quot; &gt; element that is applied to a Name property:
+              Example for &lt;RegularQuery&gt; element that is applied to an ObjectId property:
+              Example of a wildcard: "foo*" (matches all strings beginning with "foo")
+              ExcludeQuery element defines a cmdlet parameter that limits which objects will be processed by the cmdlet
+              If AllowGlobbing attribute is ommited then its value is based on the type of the filtered property.
+              If CmdletParameterSet is ommited, then the name of the cmdlet parameter set is auto-generated based on the name of the method.
+              If this parameter is ommited, then the cmdlet parameter belongs to all parameter sets.
+              Language-Tag = Primary-tag *( "-" Subtag )
+              MaxValueQuery element defines a cmdlet parameter that limits which objects will be processed by the cmdlet
+              MinValueQuery element defines a cmdlet parameter that limits which objects will be processed by the cmdlet
+              Primary-tag = 1*8ALPHA
+              RegularQuery element defines a cmdlet parameter that limits which objects will be processed by the cmdlet
+              Subtag = 1*8ALPHA
+              that the cmdlet parameter should belong to.
+            &lt;/Property&gt;
+            &lt;Property PropertyName=&quot;Name&quot;&gt;
+            </xsd:annotation>
+            </xsd:complexType>
+            </xsd:documentation>
+            </xsd:element>
+            </xsd:extension>
+            </xsd:key>
+            </xsd:unique>
+            <xsd:annotation>
+            <xsd:complexType>
+            <xsd:documentation xml:lang="en-us">
+            <xsd:element name="AllowedValue" type="xsd:string" maxOccurs="unbounded" />
+            <xsd:element name="Association" type="cps:Association" maxOccurs="unbounded" />
+            <xsd:element name="Cmdlet" type="cps:InstanceCmdletMetadata" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="Cmdlet" type="cps:StaticCmdletMetadata">
+            <xsd:element name="CmdletOutputMetadata" type="cps:CmdletOutputMetadata" minOccurs="0" />
+            <xsd:element name="CmdletParameterMetadata" type="cps:CmdletParameterMetadataForGetCmdletFilteringParameter" />
+            <xsd:element name="Data" maxOccurs="unbounded">
+            <xsd:element name="GetCmdlet" type="cps:GetCmdletMetadata" minOccurs="0" />
+            <xsd:element name="GetCmdletParameters" type="cps:GetCmdletParameters">
+            <xsd:element name="Option" type="cps:QueryOption" maxOccurs="unbounded" />
+            <xsd:element name="Property" type="cps:PropertyMetadata" maxOccurs="unbounded" />
+            <xsd:element name="Type" type="cps:TypeMetadata" />
+            <xsd:element name="Value" maxOccurs="unbounded">
+            <xsd:extension base="cps:CommonCmdletMetadata">
+            <xsd:key name="UniqueParameterNamesWithinMethod">
+            <xsd:key name="UniqueParameterNamesWithinStaticMethod">
+            <xsd:unique name="UniquePositionWithinMethodParameters">
+            <xsd:unique name="UniquePositionWithinStaticMethodParameters">
+            DefaultNoun element specified the default noun for cmdlets defined in this document.
+            Version element is semantically equivalent to the ModuleVersion entry in a module manifest (psd1) file.
+           RFC-1766 defines the format of a culture identifier as:
+          "cim:CreateInstance" is mapped to the WMI's static, intrinsic CreateInstance method.  Names of method parameters have to map to names of properties.
+          "cim:DeleteInstance" is mapped to the WMI's instance, intrinsic DeleteInstance method.  All method parameters are ignored.
+          "cim:ModifyInstance" is mapped to the WMI's instance, intrinsic ModifyInstance method.  Names of method parameters have to map to names of properties.
+          </xsd:annotation>
+          </xsd:attribute>
+          </xsd:choice>
+          </xsd:complexContent>
+          </xsd:documentation>
+          </xsd:element>
+          </xsd:sequence>
+          <xsd:annotation>
+          <xsd:attribute name="BitwiseFlags" type="xsd:boolean" use="optional">
+          <xsd:attribute name="EnumName" type="cps:EnumTypeName" use="required">
+          <xsd:attribute name="Max" type="xsd:integer" use="required" />
+          <xsd:attribute name="Max" type="xsd:nonNegativeInteger" use="required" />
+          <xsd:attribute name="Min" type="xsd:integer" use="required" />
+          <xsd:attribute name="Min" type="xsd:nonNegativeInteger" use="required" />
+          <xsd:attribute name="UnderlyingType" type="cps:PowerShellTypeIdentifier" use="optional">
+          <xsd:choice maxOccurs="unbounded">
+          <xsd:complexContent>
+          <xsd:documentation xml:lang="en-us">
+          <xsd:documentation>
+          <xsd:element name="CmdletOutputMetadata" type="cps:CmdletOutputMetadata" minOccurs="0" />
+          <xsd:element name="CmdletParameterMetadata" type="cps:CmdletParameterMetadataForInstanceMethodParameter" minOccurs="0" />
+          <xsd:element name="CmdletParameterMetadata" type="cps:CmdletParameterMetadataForStaticMethodParameter" minOccurs="0" />
+          <xsd:element name="Parameters" minOccurs="0">
+          <xsd:field xpath="@Aliases" />
+          <xsd:field xpath="@Name" />
+          <xsd:field xpath="@PropertyName" />
+          <xsd:field xpath="@PSName" />
+          <xsd:selector xpath=".//cps:CmdletParameterMetadata" />
+          <xsd:selector xpath=".//cps:Data" />
+          <xsd:selector xpath=".//cps:Property" />
+          <xsd:selector xpath=".//cps:Value" />
+          <xsd:sequence>
+          Aliases attribute specifies a white-space separated list of aliases for the cmdlet parameter.
+          Aliases attribute specifies a white-space separated list of aliases for the cmdlet.
+          and provide descriptive error message if it cannot invoke the WMI provider - i.e. if the client attempts to use a non-existant method, property or parameter).
+          Association attribute is equivalent to the associationClassName parameter of EnumerateAssociatedInstances method of Microsoft.Management.Infrastructure.CimSession class.
+          Association attribute specifies the name of the association between the cmdlet argument and the instances the cmdlet acts against.
+          before cmdlet parameters defined under Method element. 
+          ClassName attribute specified the class that the cmdlets work against.
+          ClassVersion attribute describes the version of the implementation of the class from the ClassName attribute.
+          cmdlet invocations into queries and method invocations.  
+          CmdletAdapter attribute specifies which .NET class is responsible for translating
+          ConfirmImpact attribute determines the default -Confirm and -WhatIf behavior.
+          ConfirmImpact attribute is equivalent to the ConfirmImpact property of System.Management.Automation.CmdletAttribute.
+          ConfirmImpact attribute specifies the impact of the cmdlet.
+          Contents of the ClassVersion attribute are passed without interpretation inside
+          ETSType attribute is equivalent to System.Management.Automation.PSTypeNameAttribute.
+          ETSType attribute specifies the PowerShell type name of the type of the cmdlet parameter.
+          Example:
+          Example: "http://go.microsoft.com/fwlink/?LinkID=113309"
+          Example: "Microsoft.Management.Infrastructure.CimInstance#Win32_Process"
+          Example: "root/cimv2/Win32_Process"
+          Example: "System.String"
+          HelpUri attribute is equivalent to the HelpUri property of System.Management.Automation.CmdletAttribute
+          HelpUri attribute is used for the following help experience: Get-Help -Online &lt;cmdlet name&gt;
+          HelpUri attribute specifies the URI with the help content.
+          If Position attribute is ommited, then the cmdlet parameter cannot be used positionally - the user always has to explicitly specify the name of the parameter.
+          If PSName attribute is ommited then it is based on the contents of PropertyName or ParameterName or OptionName attribute (whichever one is applicable).
+          If the Noun attribute is ommited, then contents of the DefaultNoun element are used.
+          If this attribute is ommited, then by default the cmdlets are translated into WMI queries and method invocations. 
+          If WMI infrastructure can invoke the WMI provider, then the provider is responsible for further versioning decisions.
+          MethodName attribute specified the name of the method that the cmdlet invocations are mapped to.
+          Noun attribute is equivalent to the nounName parameter of System.Management.Automation.CmdletAttribute constructor.
+          Noun attribute specifies the noun of the cmdlet.
+          Please refer to Cmdlet Design Guidelines for a list of approved verbs.
+          Position attribute specifies position of the cmdlet parameter.
+          Presence of the ConfirmImpact attribute is equivalent to setting to true the SupportsShouldProcess property of System.Management.Automation.CmdletAttribute.
+          PSName attribute specifies the name of a cmdlet parameter.
+          PSType attribute specifies the name of the .NET type of the cmdlet parameter.
+          ResultRole attribute is equivalent to the resultRole parameter of EnumerateAssociatedInstances method of Microsoft.Management.Infrastructure.CimSession class.
+          ResultRole attribute specifies the role of the cmdlet argument (in the association between the cmdlet argument and the instances the cmdlet acts against).
+          ResultRole should be the name of a property on the class specified in the Association attribute.
+          Some method names are recognized and handled in a special way. 
+          SourceRole attribute is equivalent to the sourceRole parameter of EnumerateAssociatedInstances method of Microsoft.Management.Infrastructure.CimSession class.
+          SourceRole attribute specifies the role of the cmdlet argument (in the association between the cmdlet argument and the instances the cmdlet acts against).
+          SourceRole should be the name of a property on the class specified in the Association attribute.
+          System may change relative parameter positions to guarantee that cmdlet parameters defined by GetCmdletParameters element are always
+          The class specified here has to be derived from Microsoft.PowerShell.Cmdletization.CmdletAdapter class.
+          Verb attribute is equivalent to the verbName parameter of System.Management.Automation.CmdletAttribute constructor.
+          Verb attribute specifies the verb of the cmdlet.
+          WMI infrastructure will compare this value against the contents of the [ClassVersion] qualifier of the WMI class
+          WMI's custom operation option named "MI_OPERATIONOPTIONS_PROVIDERVERSION".
+        - To allow the Get cmdlet to have different GetCmdletParameters than other cmdlets (for example to make all parameters optional for Get cmdlet, but make some parameters mandatory for other cmdlets)
+        - To change the verb of the cmdlet (for example to use &quot;Find&quot; where appropriate)
+        - To define aliases for the cmdlet
+        - To use obsolete attribute for the cmdlet
+        $result = $true
+        $result[$computerName] = $false
+        $result[$computerName] = $true
+        $ret = Invoke-Command -ComputerName $computerName {$true} -SessionOption (New-PSSessionOption -NoMachineProfile) -ErrorAction SilentlyContinue
+        $ret = Invoke-Command -ComputerName $computerName {$true} -SessionOption (New-PSSessionOption -NoMachineProfile) -ErrorAction SilentlyContinue -Credential $array[0]
+        </xsd:annotation>
+        </xsd:attribute>
+        </xsd:complexType>
+        </xsd:documentation>
+        </xsd:element>
+        </xsd:key>
+        </xsd:sequence>
+        </xsd:unique>
+        <xsd:annotation>
+        <xsd:attribute name="AllowGlobbing" type="xsd:boolean" use="optional">
+        <xsd:attribute name="CmdletParameterSet" type="cps:ParameterSetName" use="optional">
+        <xsd:attribute name="CmdletParameterSets" type="cps:NonEmptyListOfParameterSetNames" use="optional">
+        <xsd:attribute name="ErrorOnNoMatch" type="xsd:boolean" use="optional" />
+        <xsd:attribute name="ValueFromPipeline" type="xsd:boolean" use="optional" />
+        <xsd:attribute name="ValueFromPipelineByPropertyName" type="xsd:boolean" use="optional" />
+        <xsd:complexType>
+        <xsd:documentation xml:lang="en-us">
+        <xsd:documentation>
+        <xsd:element name="Class" type="cps:ClassMetadata" />
+        <xsd:element name="Enums" type="cps:EnumMetadata" minOccurs="0" />
+        <xsd:element name="ExcludeQuery" type="cps:WildcardablePropertyQuery">
+        <xsd:element name="MaxValueQuery" type="cps:PropertyQuery">
+        <xsd:element name="MinValueQuery" type="cps:PropertyQuery">
+        <xsd:element name="RegularQuery" type="cps:WildcardablePropertyQuery">
+        <xsd:key name="PropertyNameUnderQueryableProperties">
+        <xsd:key name="UniqueNamesOfEnumValues">
+        <xsd:key name="UniqueNamesOfPrivateDataElements">
+        <xsd:list itemType="cps:Alias" />
+        <xsd:list itemType="cps:ParameterSetName" />
+        <xsd:sequence>
+        <xsd:unique name="UniqueCmdletParameterAliasesUnderGetCmdletParametersElement_2">
+        <xsd:unique name="UniqueCmdletParameterAliasesUnderGetCmdletParametersElement_3">
+        <xsd:unique name="UniqueCmdletParameterNamesUnderGetCmdletParametersElement_2">
+        <xsd:unique name="UniqueCmdletParameterNamesUnderGetCmdletParametersElement_3">
+        <xsd:unique name="UniqueCmdletParameterNamesUnderMethodElement_1">
+        <xsd:unique name="UniqueCmdletParameterNamesUnderMethodElement_2">
+        1) cmdlet parameters defined through GetCmdletParameters elements
+        2) cmdlet parameters mapped to input parameters of the method defined by Method element
+        All defined components MUST be integers greater than or equal to 0.
+        Cmdlet element under InstanceCmdlets element defines a cmdlet that wraps an instance method.
+        Cmdlet element under StaticCmdlets element defines a cmdlet that wraps one or more static methods.
+        Cmdlet parameters of a cmdlet defined this way are a sum of 
+        Cmdlet parameters of a cmdlet defined this way are mapped to input parameters of methods defined by Method element
+        Each wrapped method corresponds to a parameter set of the cmdlet.
+        For example, if the major number is 6, the minor number is 2, the build number is 1, and the revision number is 3, then string representation of the version would be "6.2.1.3".
+        GetCmdlet element defines cmdlet metadata for the cmdlet that queries for object instances.
+        GetCmdlet element is typically used for one of the following items:
+        GetCmdletParameters element defines cmdlet parameters used to select object instances.
+        If GetCmdlet element is ommited, then the default verb (&quot;Get&quot;) and noun (based on &lt;DefaultNoun&gt; element) are going to be used.
+        Represents a version number that consist of two to four components: major, minor, build, and revision.
+        String representation of a version is "major.minor[.build[.revision]]" (optional components are shown in square brackets).
+   - ' ' - unspecified in the docs, but apparently allowed (i.e. between NamespaceTypeName and AssemblyNameSpec in the TypeName production
+      <!-- ValidatePattern omitted - CDXML does not allow DOS attacks against PS client --> 
+      <!-- ValidateScript omitted - CDXML does not allow execution of arbitrary code in PS client --> 
+      </xsd:annotation>
+      </xsd:choice>
+      </xsd:documentation>
+      </xsd:element>
+      </xsd:extension>
+      </xsd:sequence>
+      </xsd:simpleType>
+      <xsd:annotation>
+      <xsd:choice maxOccurs="unbounded">
+      <xsd:documentation xml:lang="en-us">
+      <xsd:documentation>
+      <xsd:element name="AllowEmptyCollection" minOccurs="0" />
+      <xsd:element name="AllowEmptyString" minOccurs="0" />
+      <xsd:element name="AllowNull" minOccurs="0" />
+      <xsd:element name="AssociatedInstance">
+      <xsd:element name="CmdletAdapterPrivateData" minOccurs="0">
+      <xsd:element name="CmdletMetadata" type="cps:CommonCmdletMetadata" />
+      <xsd:element name="CmdletMetadata">
+      <xsd:element name="CmdletParameterMetadata" type="cps:CmdletParameterMetadataForGetCmdletFilteringParameter" minOccurs="0" />
+      <xsd:element name="CmdletParameterMetadata" type="cps:CmdletParameterMetadataForGetCmdletParameter" minOccurs="0" />
+      <xsd:element name="DefaultNoun" type="cps:Noun">
+      <xsd:element name="Enum" maxOccurs="unbounded">
+      <xsd:element name="ErrorCode" minOccurs="0">
+      <xsd:element name="GetCmdletParameters" type="cps:GetCmdletParameters" minOccurs="0">
+      <xsd:element name="InstanceCmdlets" minOccurs="0">
+      <xsd:element name="Method" type="cps:InstanceMethodMetadata">
+      <xsd:element name="Method" type="cps:StaticMethodMetadata" maxOccurs="unbounded">
+      <xsd:element name="Obsolete" type="cps:ObsoleteAttributeMetadata" minOccurs="0" />
+      <xsd:element name="QueryableAssociations" minOccurs="0">
+      <xsd:element name="QueryableProperties" minOccurs="0">
+      <xsd:element name="QueryOptions" minOccurs="0">
+      <xsd:element name="ReturnValue" minOccurs="0">
+      <xsd:element name="StaticCmdlets" minOccurs="0">
+      <xsd:element name="Type" type="cps:TypeMetadata" />
+      <xsd:element name="ValidateCount" minOccurs="0">
+      <xsd:element name="ValidateLength" minOccurs="0">
+      <xsd:element name="ValidateNotNull" minOccurs="0" />
+      <xsd:element name="ValidateNotNullOrEmpty" minOccurs="0" />
+      <xsd:element name="ValidateRange" minOccurs="0">
+      <xsd:element name="ValidateSet" minOccurs="0">
+      <xsd:element name="Version" type="cps:VersionString">
+      <xsd:enumeration value="High" />
+      <xsd:enumeration value="Low" />
+      <xsd:enumeration value="Medium" />
+      <xsd:enumeration value="None" />
+      <xsd:extension base="cps:CmdletParameterMetadata">
+      <xsd:extension base="cps:CmdletParameterMetadataForGetCmdletParameter">
+      <xsd:extension base="cps:CommonMethodMetadata">
+      <xsd:extension base="cps:CommonMethodParameterMetadata">
+      <xsd:extension base="cps:PropertyQuery">
+      <xsd:field xpath="@Aliases" />
+      <xsd:field xpath="@EnumName" />
+      <xsd:maxLength value="100" />
+      <xsd:maxLength value="1000" />
+      <xsd:maxLength value="200" />
+      <xsd:minLength value="1" />
+      <xsd:pattern value="&clrTypeRegex;" />
+      <xsd:pattern value="&csharpIdentifierRegex;" />
+      <xsd:pattern value="&csharpNamespaceRegex;" />
+      <xsd:pattern value="&powerShellAliasRegex;" />
+      <xsd:pattern value="&powerShellCmdletParameterRegex;" /> 
+      <xsd:pattern value="&powerShellNounRegex;" />
+      <xsd:pattern value="&powerShellParameterSetRegex;" /> 
+      <xsd:pattern value="&powerShellVerbRegex;" />
+      <xsd:pattern value="[12]?[0-9]{1,9}\.[12]?[0-9]{1,9}(\.[12]?[0-9]{1,9}(\.[12]?[0-9]{1,9})?)?" />
+      <xsd:selector xpath=".//cps:CmdletMetadata" />
+      <xsd:selector xpath=".//cps:Enums/cps:Enum" />
+      <xsd:sequence>
+      <xsd:simpleType>
+      A ".cdxml" file can be imported into a PowerShell session directly by Import-Module cmdlet,
+      a module manifest (a ".psd1" file) and then importing the ".psd1" file by Import-Module cmdlet.
+      A PowerShell CIM Module defines a set of cmdlets that interact with a CIM class.      
+      A PowerShell CIM Module needs to be saved in a file with ".cdxml" extension.
+      or by referring to the ".cdxml" file from NestedModules or RootModule entry of
+   - '-' - required for Culture property of an Assembly.  
+      This schema defines the format of PowerShell CIM Modules.
+    $Gui = (Get-WindowsFeature Server-Gui-Shell).Installed
+    $ret = $null
+   - '&amp;' - part of ReferenceTypeSpec production in BNF at http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx
+   - '&quot;' - unspecified in the docs, but used in the examples at http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx (i.e. Culture="")
+   - '*' - part of ReflectionDimension production in BNF at http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx
+   - ',' - part of ReflectionDimension and TypeName productions in BNF at http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx
+   - '.' - part of ReflectionDimension and NamespaceTypeName productions in BNF at http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx
+   - '[' and ']' - part of ArrayTypeSpec production in BNF at http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx
+   - '\' - an escape character specified at http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx
+   - '_' (ASCII 95) is the only character in \p{Pc} class out of the first 0..255 characters
+    {
+    }
+   - '+' - part of NestedTypeName production in BNF at http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx
+    </xsd:annotation>
+    </xsd:attribute>
+    </xsd:complexContent>
+    </xsd:complexType>
+    </xsd:documentation>
+    </xsd:key>
+    </xsd:restriction>
+    </xsd:sequence>
+    </xsd:unique>
+    <xsd:annotation>
+    <xsd:attribute name="Aliases" type="cps:NonEmptyListOfAliases" use="optional">
+    <xsd:attribute name="Association" type="cps:NonEmptyString" use="required">
+    <xsd:attribute name="ClassName" type="cps:NonEmptyString" use="required">
+    <xsd:attribute name="ClassVersion" type="cps:NonEmptyString" use="optional">
+    <xsd:attribute name="CmdletAdapter" type="cps:PowerShellTypeIdentifier" use="optional">
+    <xsd:attribute name="ConfirmImpact" type="cps:ConfirmImpact" use="optional">
+    <xsd:attribute name="DefaultCmdletParameterSet" type="cps:ParameterSetName" use="optional" />
+    <xsd:attribute name="DefaultValue" type="xsd:string" use="optional" />
+    <xsd:attribute name="ETSType" type="cps:NonEmptyString" use="optional">
+    <xsd:attribute name="HelpUri" type="xsd:anyURI" use="optional">
+    <xsd:attribute name="IsMandatory" type="xsd:boolean" use="optional" />
+    <xsd:attribute name="Message" type="cps:ObsoleteMessage" use="optional" />
+    <xsd:attribute name="MethodName" type="cps:NonEmptyString" use="required">
+    <xsd:attribute name="Noun" type="cps:Noun" use="optional">
+    <xsd:attribute name="OptionName" type="cps:NonEmptyString" use="required" />
+    <xsd:attribute name="ParameterName" type="cps:NonEmptyString" use="required" />
+    <xsd:attribute name="Position" type="xsd:nonNegativeInteger" use="optional">
+    <xsd:attribute name="PropertyName" type="cps:NonEmptyString" use="required" />
+    <xsd:attribute name="PSName" type="cps:CmdletOutputName" use="optional" />
+    <xsd:attribute name="PSName" type="cps:CmdletParameterName" use="optional">
+    <xsd:attribute name="PSType" type="cps:PowerShellTypeIdentifier" use="required">
+    <xsd:attribute name="ResultRole" type="cps:NonEmptyString" use="required">
+    <xsd:attribute name="SourceRole" type="cps:NonEmptyString" use="required">
+    <xsd:attribute name="Verb" type="cps:Verb" use="required">
+    <xsd:complexContent>
+    <xsd:complexType>
+    <xsd:documentation xml:lang="en-us">
+    <xsd:key name="UniqueNamesOfEnums">
+    <xsd:restriction base="xsd:string">
+    <xsd:restriction>
+    <xsd:sequence>
+    <xsd:unique name="UniqueCmdletAliases">
+   - '=' - part of AssemblyProperty production in BNF at http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx
+    elementFormDefault="qualified"
+    else
+    if ($array[0] -eq $null)
+    if ($Gui -eq $false)
+    if ($ret -eq $true)
+    Import-Module ServerManager
+   - No characters in the first 0..255 characters belong to \p{Cf}, \p{Mn}, \p{Mc}
+    targetNamespace="http://schemas.microsoft.com/cmdlets-over-objects/2009/11"
+    xmlns:cps="http://schemas.microsoft.com/cmdlets-over-objects/2009/11"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   but those characters classes seem risky wrt code injection attacks, so they were
+   removed above.  
+  <!-- # CLASS #################################################### -->
+  <!-- # CMDLETS ################################################## -->
+  <!-- # COMMON PROPERTIES/PARAMETERS METADATA##################### -->
+  <!-- # ENUM ##################################################### -->
+  <!-- # METHODS ################################################## -->
+  <!-- # PROPERTIES METADATA ###################################### -->
+  <!-- # SIMPLE TYPES ############################################# -->
+  <!-- ############################################################ -->
+  <!ENTITY clrTypeRegex "[&csharpIdentifierOtherCharacterRegex;&clrTypeSpecialCharacterRegex;]{1,1000}">
+  <!ENTITY clrTypeSpecialCharacterRegex "\,\=\ \+\&amp;\*\[\]\.\\\-\&quot;">
+  <!ENTITY csharpIdentifierFirstCharacterRegex "&csharpIdentifierLetterCharacterRegex;_">
+  <!ENTITY csharpIdentifierLetterCharacterRegex "\p{Lu}\p{Ll}\p{Lt}\p{Lm}\p{Lo}\p{Nl}">
+  <!ENTITY csharpIdentifierOtherCharacterRegex "&csharpIdentifierLetterCharacterRegex;\p{Nd}_">
+  <!ENTITY csharpIdentifierRegex "[&csharpIdentifierFirstCharacterRegex;][&csharpIdentifierOtherCharacterRegex;]{0,100}">
+  <!ENTITY csharpNamespaceRegex "(&csharpIdentifierRegex;)(\.&csharpIdentifierRegex;){0,10}">
+  <!ENTITY powerShellAliasCharacterRegex "&powerShellNounCharacterRegex;_-">
+  <!ENTITY powerShellAliasRegex "[&powerShellAliasCharacterRegex;]{1,100}">
+  <!ENTITY powerShellCmdletParameterCharacterRegex "&powerShellNounCharacterRegex;_">
+  <!ENTITY powerShellCmdletParameterRegex "[&powerShellCmdletParameterCharacterRegex;]{1,100}">
+  <!ENTITY powerShellNounCharacterRegex "&powerShellVerbCharacterRegex;\p{Nd}">
+  <!ENTITY powerShellNounRegex  "[&powerShellNounCharacterRegex;]{1,100}">
+  <!ENTITY powerShellParameterSetRegex "[^,;]{1,100}">
+  <!ENTITY powerShellVerbCharacterRegex "\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Lm}">
+  <!ENTITY powerShellVerbRegex  "[&powerShellVerbCharacterRegex;]{1,100}">
+  </xsd:annotation>
+  </xsd:complexType>
+  </xsd:element>
+  </xsd:simpleType>
+  <xsd:annotation>
+  <xsd:complexType name="Association">
+  <xsd:complexType name="ClassMetadata">
+  <xsd:complexType name="CmdletOutputMetadata">
+  <xsd:complexType name="CmdletParameterMetadata">
+  <xsd:complexType name="CmdletParameterMetadataForGetCmdletFilteringParameter">
+  <xsd:complexType name="CmdletParameterMetadataForGetCmdletParameter">
+  <xsd:complexType name="CmdletParameterMetadataForInstanceMethodParameter">
+  <xsd:complexType name="CmdletParameterMetadataForStaticMethodParameter">
+  <xsd:complexType name="CommonCmdletMetadata">
+  <xsd:complexType name="CommonMethodMetadata">
+  <xsd:complexType name="CommonMethodParameterMetadata">
+  <xsd:complexType name="EnumMetadata">
+  <xsd:complexType name="GetCmdletMetadata">
+  <xsd:complexType name="GetCmdletParameters">
+  <xsd:complexType name="InstanceCmdletMetadata">
+  <xsd:complexType name="InstanceMethodMetadata">
+  <xsd:complexType name="InstanceMethodParameterMetadata">
+  <xsd:complexType name="ObsoleteAttributeMetadata">
+  <xsd:complexType name="PropertyMetadata">
+  <xsd:complexType name="PropertyQuery">
+  <xsd:complexType name="QueryOption">
+  <xsd:complexType name="StaticCmdletMetadata">
+  <xsd:complexType name="StaticMethodMetadata">
+  <xsd:complexType name="StaticMethodParameterMetadata">
+  <xsd:complexType name="TypeMetadata">
+  <xsd:complexType name="WildcardablePropertyQuery">
+  <xsd:element name="PowerShellMetadata">
+  <xsd:simpleType name="Alias">
+  <xsd:simpleType name="CmdletOutputName">
+  <xsd:simpleType name="CmdletParameterName">
+  <xsd:simpleType name="ConfirmImpact">
+  <xsd:simpleType name="EnumTypeName">
+  <xsd:simpleType name="EnumValueName">
+  <xsd:simpleType name="NonEmptyListOfAliases">
+  <xsd:simpleType name="NonEmptyListOfParameterSetNames">
+  <xsd:simpleType name="NonEmptyString">
+  <xsd:simpleType name="Noun">
+  <xsd:simpleType name="ObsoleteMessage">
+  <xsd:simpleType name="ParameterSetName">
+  <xsd:simpleType name="PowerShellTypeIdentifier">
+  <xsd:simpleType name="Verb">
+  <xsd:simpleType name="VersionString">
+ - the C# spec allows \p{Pc}\p{Cf}\p{Mn}\{Mc} in csharpIdentifierOtherCharacterRegex, 
+ And 
+ AND 
+ And State !='Stopped'
+ clrTypeRegex and clrTypeSpecialCharacterRegex are based on http://msdn.microsoft.com/en-us/library/yfsftwz6.aspx
+ clrTypeSpecialCharacterRegex includes the following characters;
+ csharpIdentifierRegex based on C# Language Specification 3.0, section 2.4.2 Idenfifiers
+ from 
+ OR SequenceNumber = 
+ Restarting computer {0}
+ Restarting computers...
+ Service '{1} ({0})' stop failed.
+ Set file '{0}' to the clipboard.
+ where 
+ WHERE 
+ where  description = '
+ where  SequenceNumber = 
+!b"k"j#7$
+!Cannot connect to CIM server. {0}
+!Name: {0} Provider: {1} Root: {2}
+!This program cannot be run in DOS mode.
+!Waiting for WinRM connectivity...
+"!(!.!U!j!
+"*"V"t"
+".#8#>#D#S#r#
+"Append {0} files to the clipboard.
+"Service '{1} ({0})' resume failed.
+"Set string '{0}' to the clipboard.
+"SystemRestore service is disabled.
+"The path specified does not exist.
+################################################################### -->
+-#-*-C-x-
+#Append file '{0}' to the clipboard.
+#Blob
+#Creating a system restore point ...
+#GUID
+#Loading network adapter information
+#Service '{1} ({0})' suspend failed.
+#Strings
+#Waiting for the restart to begin...
+$08EC3E00-50B0-11CF-960C-0080C7F4EE85
+$177160CA-BB5A-411C-841D-BD38FACDEAA0
+$1F8352C0-50B0-11CF-960C-0080C7F4EE85
+$286E6F1B-7113-4355-9562-96B7E9D64C54
+$744129E0-CBE5-11CE-8350-444553540000
+$866738B9-6CF2-4DE8-8767-F794EBE74F4E
+$A4C6892C-3BA9-11D2-9DEA-00C04FB16162
+$array = @($input)
+$BBCBDE60-C3FF-11CE-8350-444553540000
+$C94F0AD0-F363-11D2-A327-00C04F8EEC7F
+$CIM method {1} on the {0} CIM object
+$D8F015C0-C278-11CE-A49E-444553540000
+$EAA7C309-BBEC-49D5-821D-64D966CB667F
+$EDC817AA-92B8-11D1-B075-00C04FC33AA5
+$EFD84B2D-4BCF-4298-BE25-EB542A59FBDA
+$F0D2D8EF-3890-11D2-BF8B-00C04FB93661
+$FAC32C80-CBE4-11CE-8350-444553540000
+$Failed to start service '{1} ({0})'.
+$Loading operating system information
+$MACHINE.ACC
+$result
+$result = $false
+$result = @{}
+$serverManagerModule = Get-Module -ListAvailable | ? {$_.Name -eq 'ServerManager'}
+%9&N&T&
+%Append string '{0}' to the clipboard.
+%Running the following operation: {0}.
+%SystemDrive%
+%The specified parameter is not valid.
+&#'1'W'x'
+&$&G&z&
+&%rl8
+-&++s
+&All of the contents of the Recycle Bin
+&Error adding '{0}' to the network: {1}
+&Open
+&P'x(
+(&(objectClass=computer)(|(cn=
+(({0} = {1}) OR ({0} = {2}))
+({0} = {1})
+({0} LIKE {1})
+(Enable the {0} and restart the computer.
+)(dn=
+)-)B)M)
+)Do you want to delete the specified item?
+)The AsJob Parameter Set is not supported.
+*!*,*6*
+*brBR
+*Error removing '{0}' from the network: {1}
+*Microsoft (R) Windows (R) Operating System
+*Waiting for service '{1} ({0})' to stop...
+,>,U,[,
+,8r:B
+,The user does not have sufficient privilege.
+,Waiting for service '{1} ({0})' to resume...
+."+&(>
+.$rEz
+.&rEz
+.cctor
+.ctor
+.Microsoft.PowerShell.Commands.ControlPanelItem
+.NETFramework,Version=v4.5
+.text
+.Waiting for Windows PowerShell connectivity...
+/Cannot remove drive '{0}' because it is in use.
+/The {0} parameter is not supported for CoreCLR.
+/The path to the "{1}" computer cannot be found.
+:All of the contents of the Recycle Bin for the '{0}' drive
+:Cannot move item because the item at '{0}' does not exist.
+:Raw can only be combined with Text or FileDropList format.
+:The "{2}" source is already registered with the "{0}" log.
+;Cannot find any control panel item with the given name {0}.
+;Cannot remove computer '{0}' because it is not in a domain.
+;The {0} cmdlet is not supported on this version of Windows.
+;The user does not have access to the requested information.
+?Cannot find any control panel item with the given category {0}.
+?Do you want to remove the "{0}" source from the "{1}" computer?
+?R?b?q?
+@.reloc
+@Parameters "{0}" and "{1}" cannot be specified at the same time.
+@The changes will take effect after you restart the computer {1}.
+@The system restore infrastructure cannot create a restore point.
+@W@e@
+@wPG6lRqg
+[::1]
+[Parameter WsmanAuthentication should not be specified when the DCOM protocol is in use. {0}
+[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+[The parameters Timeout, For, and Delay are valid only when the parameter Wait is specified.
+[The secure channel between the local computer and the domain {0} was successfully repaired.
+\Are you sure you want to perform the Stop-Process operation on the following item: {0}({1})?
+\root\cimv2
+\root\default
+]Cannot find a process with the name "{0}". Verify the process name and call the cmdlet again.
+]Skip computer '{0}' with new name '{1}' because the new name is the same as the current name.
+^[a-z]{1}$|^[a-z]{1}:$|^[a-z]{1}:\\$
+__CLASS
+__MI_OPERATIONOPTIONS_IMPROVEDPERF_STREAMING
+__Namespace
+__PATH
+__SERVER
+__Server
+_activity
+_activityId
+_activityIdToLastProgressRecord
+_after
+_allControlPanelItems
+_alreadyReachedCompletedState
+_argumentlist
+_asbaseobject
+_asjob
+_asString
+_authentication
+_backCount
+_before
+_behaviorOnNoMatch
+_cancel
+_cancellationTokenSource
+_Cannot get domain information about the local computer because of the following exception: {0}.
+_canonicalName
+_canonicalNameSpecified
+_category
+_categoryResourceFile
+_categorySpecified
+_cimQuery
+_cimSensitiveValueConverter
+_cimTypedExpectedPropertyValue
+_class
+_cmdletDefinitionContext
+_cmdletInvocationContext
+_compName
+_computerInfos
+_computerName
+_computername
+_containsLocalHost
+_context
+_CorDllMain
+_credential
+_dcomAuthentication
+_defaultCimSession
+_delay
+_delaySpecified
+_description
+_dict
+_dictModificationLock
+_domainCredential
+_domainName
+_drive
+_dynamicParameters
+_entryType
+_entryTypes
+_eventId
+_exit
+_fileversioninfo
+_filters
+_force
+_fullLocalMachineName
+_gcHandle
+_globalJobNumberCounter
+_impersonation
+_includeUserName
+_indexes
+_indicator
+_instanceIds
+_isDcomAuthenticationSpecified
+_isImpersonationSpecified
+_isProtocolSpecified
+_jobContext
+_jobHadErrors
+_jobNumber
+_jobSpecificCustomOptions
+_jobStateLock
+_jobWasStarted
+_jobWasStopped
+_joinDomainflags
+_joinOptions
+_keys
+_laststatus
+_list
+_loaduserprofile
+_localCredential
+_logName
+_matchingProcesses
+_maximumKilobytes
+_message
+_messageResourceFile
+_methodInvocationInfo
+_methodSubject
+_module
+_myJobNumber
+_myLock
+_name
+_namespace
+_nameSpecified
+_newComputerName
+_newest
+_newName
+_newNameForLocalHost
+_nonewwindow
+_numberOfMatchingResults
+_numberOfReportedSessionTerminatingErrors
+_numberOfResultsFromMi
+_numberOfSessions
+_originalExpectedPropertyValue
+_originalInstance
+_ouPath
+_overflowaction
+_parameterResourceFile
+_passthru
+_passThru
+_path
+_pathInfo
+_percent
+_powershell
+_privateData
+_processName
+_propertyValueFilters
+_protocol
+_random
+_rawData
+_reader
+_redirectstandarderror
+_redirectstandardinput
+_redirectstandardoutput
+_resourceFile
+_resourceUri
+_resourceUriHasBeenCalculated
+_restart
+_restorepoint
+_restorepointtype
+_resultFromCreateInstance
+_resultFromGetInstance
+_resultFromModifyInstance
+_resultFromModifyInstanceHasBeenPassedThru
+_retention
+_schemaConformanceLevel
+_searcher
+_server
+_serviceName
+_sessionToIsConnected
+_sessionToIsTerminated
+_shortLocalMachineName
+_sleepAndRetryDelayRangeMs
+_sleepAndRetryExtraDelayMs
+_sleepAndRetryTimer
+_source
+_sources
+_status
+_stopIsCalled
+_string
+_tailSpecified
+_temporaryInstance
+_throttlelimit
+_throttleLimitIsSetExplicitly
+_timeout
+_timeoutInMilliseconds
+_timeoutSpecified
+_timer
+_timeUp
+_totalCountSpecified
+_trackedDisposables
+_transportProtocol
+_uniqueComputerNames
+_unjoinDomainCredential
+_unsecure
+_usedefaultcredential
+_useEnumerateInstances
+_useEnumerateInstancesInsteadOfWql
+_username
+_userRespondedYesToAtLeastOneShouldProcess
+_userWasPromptedForContinuationOfProcessing
+_validatedComputerNames
+_verb
+_VtblGap1_2
+_VtblGap1_3
+_VtblGap1_4
+_VtblGap2_10
+_VtblGap2_2
+_VtblGap3_1
+_wait
+_waitFor
+_waitForSpecified
+_waitHandler
+_waitOnComputers
+_wildcardsEnabled
+_windowstyle
+_windowstyleSpecified
+_workGroup
+_workgroupName
+_workingdirectory
+_wqlQuery
+_writer
+_wsmanAuthentication
+`.rsrc
+`Cannot establish the WMI connection to the computer '{0}' with the following error message: {1}.
+`Failed to restart the computer {0}. Access rights {1} cannot be enabled for the calling process.
+`Parameters DcomAuthentication and Impersonation cannot be specified with the WSMan protocol. {0}
+{{|}}~[\]^:;<=>?@!"#$%^`()+/,
+{0} ({1})
+{0} <= {1}
+{0} >= {1}
+{0}"{1}"
+{0}: {1}
+{0}:{1}
+{0}:{1}:{2}
+{The computer {0} is skipped. Fail to retrieve its LastBootUpTime via the WMI service with the following error message: {1}.
+|The operating system reported an error when writing the event entry to the event log. A Windows error code is not available.
+}Microsoft.PowerShell.Cmdletization.Cim.ClientSideQuery+CimInstanceRegularFilter+<GetNotFoundErrors_IfThisIsTheOnlyFilter>d__2
+~The command cannot disable System Restore on the {0} drive. You may not have sufficient permissions to perform this operation.
++Include System Drive in the list of Drives.
++Waiting for service '{1} ({0})' to start...
+<!-- ##################################################################
+<!DOCTYPE HTML  PUBLIC "-//W3C//DTD HTML 4.0  Transitional//EN">
+<!DOCTYPE schema [
+<!--EndFragment-->
+<!--StartFragment-->
+<*<3<?<Q<
+<.ctor>b__0_0
+<.ctor>b__0_1
+<.ctor>b__0_2
+<.ctor>b__0_3
+<.ctor>b__1_0
+<.ctor>b__1_1
+<.ctor>b__1_2
+</body></html>
+</html>
+</xsd:schema>
+<?xml version="1.0" encoding="utf-8"?>
+<\s*/\s*b\s*o\s*d\s*y
+<\s*/\s*h\s*t\s*m\s*l
+<\s*b\s*o\s*d\s*y
+<\s*h\s*t\s*m\s*l
+<<<<<<<<1
+<<<<<<<<2
+<<<<<<<<3
+<<<<<<<<4
+<>1__state
+<>2__current
+<>4__this
+<>7__wrap1
+<>9__0
+<>9__0_0
+<>9__0_1
+<>9__0_2
+<>9__0_3
+<>9__1_0
+<>9__1_1
+<>9__10_0
+<>9__11_0
+<>9__16_1
+<>9__18_0
+<>9__29_0
+<>9__8_0
+<>9__8_1
+<>c__29`1
+<>c__DisplayClass1_0
+<>c__DisplayClass1_1
+<>c__DisplayClass1_2
+<>c__DisplayClass1_3
+<>c__DisplayClass1_4
+<>c__DisplayClass1_5
+<>c__DisplayClass1_6
+<>c__DisplayClass12_0
+<>c__DisplayClass14_0
+<>c__DisplayClass16_0
+<>c__DisplayClass17_0
+<>c__DisplayClass19_0
+<>c__DisplayClass2_0
+<>c__DisplayClass24_0
+<>c__DisplayClass29_0
+<>c__DisplayClass34_0
+<>c__DisplayClass4_0
+<>c__DisplayClass59_0
+<>c__DisplayClass6_0
+<>c__DisplayClass61_0
+<>c__DisplayClass63_0
+<>c__DisplayClass64_0
+<>c__DisplayClass72_0
+<>l__initialThreadId
+<>m__Finally1
+<>o__14
+<>o__15
+<>o__18
+<>o__20
+<>p__0
+<>p__1
+<>p__2
+<AddressWidth>k__BackingField
+<Append>k__BackingField
+<Architecture>k__BackingField
+<AssociateCimInstanceWithCustomOptions>b__0
+<AssociateSessionOfOriginWithInstance>b__0
+<Availability>k__BackingField
+<AvailableSecurityProperties>k__BackingField
+<BehaviorOnNoMatch>k__BackingField
+<BiosBIOSVersion>k__BackingField
+<BiosBuildNumber>k__BackingField
+<BiosCaption>k__BackingField
+<BiosCharacteristics>k__BackingField
+<BiosCodeSet>k__BackingField
+<BiosCurrentLanguage>k__BackingField
+<BiosDescription>k__BackingField
+<BiosEmbeddedControllerMajorVersion>k__BackingField
+<BiosEmbeddedControllerMinorVersion>k__BackingField
+<BiosFirmwareType>k__BackingField
+<BiosIdentificationCode>k__BackingField
+<BiosInstallableLanguages>k__BackingField
+<BiosInstallDate>k__BackingField
+<BiosLanguageEdition>k__BackingField
+<BiosListOfLanguages>k__BackingField
+<BiosManufacturer>k__BackingField
+<BiosName>k__BackingField
+<BiosOtherTargetOS>k__BackingField
+<BiosPrimaryBIOS>k__BackingField
+<BiosReleaseDate>k__BackingField
+<BiosSeralNumber>k__BackingField
+<BiosSMBIOSBIOSVersion>k__BackingField
+<BiosSMBIOSMajorVersion>k__BackingField
+<BiosSMBIOSMinorVersion>k__BackingField
+<BiosSMBIOSPresent>k__BackingField
+<BiosSoftwareElementState>k__BackingField
+<BiosStatus>k__BackingField
+<BiosSystemBiosMajorVersion>k__BackingField
+<BiosSystemBiosMinorVersion>k__BackingField
+<BiosTargetOperatingSystem>k__BackingField
+<BiosVersion>k__BackingField
+<BlockingWriteError>b__0
+<CalculateJobSpecificCustomOptions>b__10_0
+<ClientSideQuery>k__BackingField
+<CmdletDefinitionContext>k__BackingField
+<CmdletInvocationContext>k__BackingField
+<CmdletInvocationInfo>k__BackingField
+<CmdletizationClassName>k__BackingField
+<CmdletizationClassVersion>k__BackingField
+<CmdletizationModuleVersion>k__BackingField
+<CodeIntegrityPolicyEnforcementStatus>k__BackingField
+<CollectPropertyNames>b__0
+<ComputerName>k__BackingField
+<ConnectionID>k__BackingField
+<ConnectionStatus>k__BackingField
+<ConvertFromCimToDotNet>b__0
+<ConvertFromCimToDotNet>b__1
+<ConvertFromCimToDotNet>b__2
+<ConvertFromCimToDotNet>b__3
+<ConvertFromCimToDotNet>b__4
+<ConvertFromCimToDotNet>b__5
+<ConvertFromCimToDotNet>b__6
+<CpuStatus>k__BackingField
+<Credential>k__BackingField
+<CsAdminPasswordStatus>k__BackingField
+<CsAutomaticManagedPagefile>k__BackingField
+<CsAutomaticResetBootOption>k__BackingField
+<CsAutomaticResetCapability>k__BackingField
+<CsBootOptionOnLimit>k__BackingField
+<CsBootOptionOnWatchDog>k__BackingField
+<CsBootROMSupported>k__BackingField
+<CsBootStatus>k__BackingField
+<CsBootupState>k__BackingField
+<CsCaption>k__BackingField
+<CsChassisBootupState>k__BackingField
+<CsChassisSKUNumber>k__BackingField
+<CsCurrentTimeZone>k__BackingField
+<CsDaylightInEffect>k__BackingField
+<CsDescription>k__BackingField
+<CsDNSHostName>k__BackingField
+<CsDomain>k__BackingField
+<CsDomainRole>k__BackingField
+<CsEnableDaylightSavingsTime>k__BackingField
+<CsFrontPanelResetStatus>k__BackingField
+<CsHypervisorPresent>k__BackingField
+<CsInfraredSupported>k__BackingField
+<CsInitialLoadInfo>k__BackingField
+<CsInstallDate>k__BackingField
+<CsKeyboardPasswordStatus>k__BackingField
+<CsLastLoadInfo>k__BackingField
+<CsManufacturer>k__BackingField
+<CsModel>k__BackingField
+<CsName>k__BackingField
+<CsNetworkAdapters>k__BackingField
+<CsNetworkServerModeEnabled>k__BackingField
+<CsNumberOfLogicalProcessors>k__BackingField
+<CsNumberOfProcessors>k__BackingField
+<CsOEMStringArray>k__BackingField
+<CsPartOfDomain>k__BackingField
+<CsPauseAfterReset>k__BackingField
+<CsPCSystemType>k__BackingField
+<CsPCSystemTypeEx>k__BackingField
+<CsPhyicallyInstalledMemory>k__BackingField
+<CsPowerManagementCapabilities>k__BackingField
+<CsPowerManagementSupported>k__BackingField
+<CsPowerOnPasswordStatus>k__BackingField
+<CsPowerState>k__BackingField
+<CsPowerSupplyState>k__BackingField
+<CsPrimaryOwnerContact>k__BackingField
+<CsPrimaryOwnerName>k__BackingField
+<CsProcessors>k__BackingField
+<CsResetCapability>k__BackingField
+<CsResetCount>k__BackingField
+<CsResetLimit>k__BackingField
+<CsRoles>k__BackingField
+<CsStatus>k__BackingField
+<CsSupportContactDescription>k__BackingField
+<CsSystemFamily>k__BackingField
+<CsSystemSKUNumber>k__BackingField
+<CsSystemType>k__BackingField
+<CsThermalState>k__BackingField
+<CsTotalPhysicalMemory>k__BackingField
+<CsUserName>k__BackingField
+<CsWakeUpType>k__BackingField
+<CsWorkgroup>k__BackingField
+<CurrentClockSpeed>k__BackingField
+<DataWidth>k__BackingField
+<DebugActionPreference>k__BackingField
+<Description>k__BackingField
+<DeviceGuardAvailableSecurityProperties>k__BackingField
+<DeviceGuardCodeIntegrityPolicyEnforcementStatus>k__BackingField
+<DeviceGuardRequiredSecurityProperties>k__BackingField
+<DeviceGuardSecurityServicesConfigured>k__BackingField
+<DeviceGuardSecurityServicesRunning>k__BackingField
+<DeviceGuardSmartStatus>k__BackingField
+<DeviceGuardUserModeCodeIntegrityPolicyEnforcementStatus>k__BackingField
+<DHCPEnabled>k__BackingField
+<DHCPServer>k__BackingField
+<DiscardJobOutputs>b__29_0
+<Do you want to remove the "{0}" log from the "{1}" computer?
+<DoCreateQueryJob>b__0
+<ErrorActionPreference>k__BackingField
+<ErrorMessageGenerator>k__BackingField
+<FixComments>k__BackingField
+<Force>k__BackingField
+<Format>k__BackingField
+<GenerateNotFoundErrors>b__18_0
+<GetErrorReportingDelegate>b__0
+<GetMatchCondition>b__0
+<GetMatchCondition>b__16_1
+<GetMethodInputParameters>b__8_0
+<GetMethodInputParameters>b__8_1
+<GetMethodOutputParameters>b__11_0
+<GetNotFoundErrors_IfThisIsTheOnlyFilter>d__2
+<GetTracker>b__0
+<HadMatches>k__BackingField
+<HandleJobOutput>b__0
+<HandleJobOutput>b__1
+<HotFixID>k__BackingField
+<html>
+<html><body>
+<HyperVisorPresent>k__BackingField
+<HyperVRequirementDataExecutionPreventionAvailable>k__BackingField
+<HyperVRequirementSecondLevelAddressTranslation>k__BackingField
+<HyperVRequirementVirtualizationFirmwareEnabled>k__BackingField
+<HyperVRequirementVMMonitorModeExtensions>k__BackingField
+<Id>k__BackingField
+<InputObject>k__BackingField
+<InstalledOn>k__BackingField
+<IPAddresses>k__BackingField
+<IsResultMatchingClientSideQuery>b__0
+<KeyboardLayout>k__BackingField
+<ListAvailable>k__BackingField
+<LiteralPath>k__BackingField
+<LogonServer>k__BackingField
+<Manufacturer>k__BackingField
+<MarkSessionAsTerminated>b__0
+<MaxClockSpeed>k__BackingField
+<Module>
+<Name>k__BackingField
+<NamespaceOverride>k__BackingField
+<NumberOfCores>k__BackingField
+<NumberOfLogicalProcessors>k__BackingField
+<OnCompleted>b__15_0
+<OnCompleted>b__18_0
+<OnCompleted>b__3_0
+<OnError>b__0
+<OnNext>b__0
+<OsArchitecture>k__BackingField
+<OsBootDevice>k__BackingField
+<OsBuildNumber>k__BackingField
+<OsBuildType>k__BackingField
+<OsCodeSet>k__BackingField
+<OsCountryCode>k__BackingField
+<OsCSDVersion>k__BackingField
+<OsCurrentTimeZone>k__BackingField
+<OsDataExecutionPrevention32BitApplications>k__BackingField
+<OsDataExecutionPreventionAvailable>k__BackingField
+<OsDataExecutionPreventionDrivers>k__BackingField
+<OsDataExecutionPreventionSupportPolicy>k__BackingField
+<OsDebug>k__BackingField
+<OsDistributed>k__BackingField
+<OsEncryptionLevel>k__BackingField
+<OsForegroundApplicationBoost>k__BackingField
+<OsFreePhysicalMemory>k__BackingField
+<OsFreeSpaceInPagingFiles>k__BackingField
+<OsFreeVirtualMemory>k__BackingField
+<OsHardwareAbstractionLayer>k__BackingField
+<OsHotFixes>k__BackingField
+<OsInstallDate>k__BackingField
+<OsInUseVirtualMemory>k__BackingField
+<OsLanguage>k__BackingField
+<OsLastBootUpTime>k__BackingField
+<OsLocalDateTime>k__BackingField
+<OsLocale>k__BackingField
+<OsLocaleID>k__BackingField
+<OsManufacturer>k__BackingField
+<OsMaxNumberOfProcesses>k__BackingField
+<OsMaxProcessMemorySize>k__BackingField
+<OsMuiLanguages>k__BackingField
+<OsName>k__BackingField
+<OsNumberOfLicensedUsers>k__BackingField
+<OsNumberOfProcesses>k__BackingField
+<OsNumberOfUsers>k__BackingField
+<OsOperatingSystemSKU>k__BackingField
+<OsOrganization>k__BackingField
+<OsOtherTypeDescription>k__BackingField
+<OsPAEEnabled>k__BackingField
+<OsPagingFiles>k__BackingField
+<OsPortableOperatingSystem>k__BackingField
+<OsPrimary>k__BackingField
+<OsProductSuites>k__BackingField
+<OsProductType>k__BackingField
+<OsRegisteredUser>k__BackingField
+<OsSerialNumber>k__BackingField
+<OsServerLevel>k__BackingField
+<OsServicePackMajorVersion>k__BackingField
+<OsServicePackMinorVersion>k__BackingField
+<OsSizeStoredInPagingFiles>k__BackingField
+<OsStatus>k__BackingField
+<OsSuites>k__BackingField
+<OsSystemDevice>k__BackingField
+<OsSystemDirectory>k__BackingField
+<OsSystemDrive>k__BackingField
+<OsTotalSwapSpaceSize>k__BackingField
+<OsTotalVirtualMemorySize>k__BackingField
+<OsTotalVisibleMemorySize>k__BackingField
+<OsType>k__BackingField
+<OsUptime>k__BackingField
+<OsVersion>k__BackingField
+<OsWindowsDirectory>k__BackingField
+<PassThru>k__BackingField
+<Path>k__BackingField
+<PowerPlatformRole>k__BackingField
+<ProcessorID>k__BackingField
+<ProcessorType>k__BackingField
+<ProcessRecord>b__0
+<PromptUserCallback>b__0
+<PromptUserCallback>b__1
+<Property>k__BackingField
+<PropertyName>k__BackingField
+<PropertyValue>k__BackingField
+<Repair>k__BackingField
+<RequiredSecurityProperties>k__BackingField
+<Role>k__BackingField
+<SecurityServicesConfigured>k__BackingField
+<SecurityServicesRunning>k__BackingField
+<Server>k__BackingField
+<Session>k__BackingField
+<ShouldProcessOptimization>k__BackingField
+<ShouldReportErrorOnNoMatches_IfMultipleFilters>b__1_0
+<ShouldReportErrorOnNoMatches_IfMultipleFilters>b__1_1
+<SleepAndRetry_OnWakeup>b__23_0
+<SocketDesignation>k__BackingField
+<StartJob>b__32_0
+<StartJob>b__32_1
+<Status>k__BackingField
+<SupportsShouldProcess>k__BackingField
+<TargetObject>k__BackingField
+<ThrottleLimit>k__BackingField
+<Timeout>k__BackingField
+<TimeZone>k__BackingField
+<UserModeCodeIntegrityPolicyEnforcementStatus>k__BackingField
+<Value>k__BackingField
+<VerboseActionPreference>k__BackingField
+<Wait>k__BackingField
+<WarningActionPreference>k__BackingField
+<WindowsBuildLabEx>k__BackingField
+<WindowsCurrentVersion>k__BackingField
+<WindowsEditionId>k__BackingField
+<WindowsInstallationType>k__BackingField
+<WindowsInstallDateFromRegistry>k__BackingField
+<WindowsProductId>k__BackingField
+<WindowsProductName>k__BackingField
+<WindowsRegisteredOrganization>k__BackingField
+<WindowsRegisteredOwner>k__BackingField
+<WindowsSystemRoot>k__BackingField
+<WindowsVersion>k__BackingField
+<WriteMessageCallback>b__0
+<WriteProgress>b__0
+<WriteProgressCallback>b__0
+<WsmanAuthentication>k__BackingField
+<xsd:schema 
+=!a!x!
+=$=,=2=
+=>?J?h?}?
+=c>v>
+=Cannot find any control panel item that has a canonical name.
+=Computer name {0} cannot be resolved with the exception: {1}.
+=System.Management.ManagementObject#root\default\SystemRestore
+=The "{2}" source is already registered on the "{1}" computer.
+=The time zone name '{0}' was not found on the local computer.W
+=This functionality is not supported on this operating system.
+>d:\os\public\amd64fre\internal\strongnamekeys\fake\windows.snk
+>System.Management.ManagementObject#root\cimv2\Win32_PingStatus
+>The computer has been restored to the specified restore point.
+-0.'/O/j/
+000004b0
+0'Cannot access dependent services of '{1} ({0})'
+0Cannot find any service with display name '{1}'.
+0Cannot find any service with service name '{0}'.
+0g1p1y1
+0Html can only be combined with Html Text format.
+0Microsoft Windows PowerShell Management Commands
+0Microsoft.PowerShell.Commands.ComputerChangeInfo
+0Testing connection to computer '{0}' failed: {1}
+0The last attempt to restore the computer failed.
+1!2_2
+1)2Q2v2
+1. Verify that the target computer('{0}') is running.
+10.0.10011.16384
+10.0.17763.1
+13709620-C279-11CE-A49E-444553540000
+1The specified server name {0} cannot be resolved.
+1This command cannot be run due to the error: {0}.
+1Verifying that the computer has been restarted...
+2. Specify full computer name of the target computer('{0}').
+2Cannot enumerate the modules of the "{0}" process.
+2Creating a system restore point... {0}% Completed.
+3%3<3I3g3
+3.0.0.0
+3Cannot rename because item at '{0}' does not exist.
+3System.Resources.Tools.StronglyTypedResourceBuilder
+4.0.0.0
+4<EZr{
+424V4z4
+5#5X5a5d5u596B6K6
+5Cannot move item because the item at '{0}' is in use.
+5Cannot remove the item at '{0}' because it is in use.
+5Cannot rename the item at '{0}' because it is in use.
+5TextFormatType can only be combined with Text format.
+5The CIM method returned the following error code: {0}
+5The combined service types are not supported for now.
+6Cannot find a process with the process identifier {1}.
+6Cannot use transaction. The transaction has timed out.
+6T6g6
+6The command is not supported on this operating system.
+6X<x<
+767N7p7
+7Parameter {0} should be specified to compose the query.
+7Specify a valid value for the number of retention days.
+7The source name "{2}" does not exist on computer "{1}".
+8 808
+8The flag '{0}' is valid only if flag '{1}' is specified.
+8The Log name "{0}" does not exist in the computer "{1}".
+9/9N9a9g9
+9::`:i:r:
+9Copyright (c) Microsoft Corporation. All rights reserved.
+9Do you want to clear the "{0}" log on the computer "{1}"?
+9The last attempt to restore the computer was interrupted.
+9The Win32_OperatingSystem WMI object cannot be retrieved.
+A new system restore point cannot be created because one has already been created within the past {0} minutes. The frequency of restore point creation can be changed by creating the DWORD value 'SystemRestorePointCreationFrequency' under the registry key 'HKLM\Software\Microsoft\Windows NT\CurrentVersion\SystemRestore'. The value of this registry key indicates the necessary time interval (in minutes) between two restore point creation. The default value is 1440 minutes (24 hours).
+aCannot find any Control Panel item with the given name {0} that satisfies the specified category.
+Access is denied. Try running the command again in a session that has been opened with elevated user rights (that is, Run as Administrator).
+'Access to the "{1}" computer is denied.
+AccessDenied
+AccessIsDenied
+AccessIsDeniedJ
+accessMask
+AccessViolationException
+AccountCreate
+AccountOU
+ACPowerRestored
+Action`1
+Action`2
+actionAgainstResults
+ActionPreferenceNotSupportedByCimCmdletAdapter
+Activator
+ActiveMaximumTransmissionUnit
+actualPropertyValue
+ActualValueGreaterThanOrEqualToExpectedValue
+ActualValueLessThanOrEqualToExpectedValue
+AdapterType
+AdapterTypeID
+Add Content
+add_Completed
+add_DataAdded
+add_Exited
+add_JobUnblocked
+add_ObjectReady
+add_OperationComplete
+add_ShutdownComplete
+add_StateChanged
+add_ThrottleComplete
+add_Unsubscribed
+add_WmiOperationState
+AddChildJobAndPotentiallyBlock
+AddChildJobWithoutBlocking
+AddComputerActionDomain
+AddComputerActionWorkgroup
+AddComputerCommand
+AddComputerException
+AddComputerToSameDomain
+AddComputerToSameDomain/
+AddComputerToSameWorkgroup
+AddContentAction
+AddContentCommand
+AddContentTarget
+AddIdempotent
+AddIfValidService
+AddOperation
+AddOrSetProperty
+AddOrUpdate
+AddPropertyValueFilter
+AddQueryOption
+AddRange
+Address
+Address='
+AddressResolutionException
+AddrOfPinnedObject
+AddScript
+AddSeconds
+AddShowComputerNameMarker
+AddUserNameToProcess
+AddValue
+AddWqlCondition
+AdjustTokenPrivileges
+AdjustTokenPrivilegesApiDllName
+AdminLocked
+advapi32
+advapi32.dll
+After you leave the domain, you will need to know the password of the local Administrator account to log onto this computer. Do you wish to continue?
+AggregateException
+AliasAttribute
+AllAccess
+Alloc
+AllocatedBaseSize
+AllocCoTaskMem
+AllocHGlobal
+allowedPropertyValues
+AllowEmptyCollectionAttribute
+allowEmptyResult
+AllowEmptyStringAttribute
+allowNonexistingPaths
+AllowNullAttribute
+allProcesses
+allServices
+Alpha
+alreadyFailing
+AlwaysOff
+AlwaysOn
+amended
+APMTimer
+append
+AppendClipboardContent
+AppendLine
+AppendMultipleFilesToClipboard
+AppendMultipleFilesToClipboard'
+AppendSingleFileToClipboard
+AppendSingleFileToClipboardK
+AppliancePC
+APPLICATION_INSTALL
+APPLICATION_UNINSTALL
+Apply
+appName
+ArchitectureSensitiveAttribute
+argument
+ArgumentException
+argumentList
+arguments
+ArpAlwaysSourceRoute
+ArpUseEtherSNAP
+ArrayList
+arrayType
+ASERIES
+asHtml
+AsJob
+asJob
+AsJobParameterSet
+AsJobSet
+AsJobSet"
+AsnEncodedData
+AsPSObject
+assembly
+Assembly Version
+AssemblyCompanyAttribute
+AssemblyConfigurationAttribute
+AssemblyCopyrightAttribute
+AssemblyDelaySignAttribute
+AssemblyDescriptionAttribute
+AssemblyFileVersionAttribute
+AssemblyInformationalVersionAttribute
+AssemblyKeyFileAttribute
+AssemblyName
+AssemblyProductAttribute
+AssemblyTitleAttribute
+AssertIntrinsicCimType
+AssertIntrinsicCimValue
+AssertNotDisposed
+AssetTag
+AssignProcessToJobObject
+AssociateCimInstanceWithCustomOptions
+associatedInstance
+associatedObject
+AssociateSessionOfOriginWithInstance
+associationName
+async
+AThe {2} CIM method exposed by the {0} class on the {1} CIM server
+atleastOneChildJobFailed
+AttachDebugger
+AttachDebuggerReturnCode2
+AttachDebuggerReturnCode21
+AttachDebuggerReturnCode21=
+AttachDebuggerReturnCode3
+AttachDebuggerReturnCode3d
+AttachDebuggerReturnCode8
+AttachDebuggerReturnCode9
+AttachDebuggerToProcess
+Attaching {0} = {1}
+AttachNotes
+ATTUNIX
+Audio
+AuditMode
+Authenticating
+Authentication
+AuthenticationFailed
+AuthenticationLevel
+authenticationLevel
+AuthenticationSucceeded
+AuthenticationTypes
+authority
+AutomationNull
+AutoSense
+availableDrives
+b{0}: A CimSession to the CIM server uses the DCOM protocol, which does not support the {1} switch.
+BackOfficeComponents
+BackReaderEncodingNotSupportedException
+BackupDomainController
+baseboard
+baseEventArgs
+baseQuery
+BaseVirtualizationSupport
+Basic
+bAtLeastOneObject
+bCannot find any Control Panel item that satisfies the specified category and has a canonical name.
+BCannot stop service '{1} ({0})' because it has dependent services.
+BeforeOpenStreams
+Begin
+BeginProcessing
+binaryPathName
+binding
+BindingFlags
+bInheritHandle
+bInheritHandles
+bJobFailed
+blockedChildJobsCount
+BlockingWriteError
+Boolean
+BootOptionAction
+BS2000
+BSDUNIX
+bstrPropName
+bThe attempt to repair the secure channel between the local computer and the domain {0} has failed.
+bThis command cannot be run completely because the system cannot find all the information required.
+buffer
+Buffer
+BufferLength
+buffersize
+BufferSize=
+BuildCommandLine
+BuildErrorMessage
+BuildEventQuery
+BuildLabEx
+BusinessNEdition
+ByLiteralPath6
+ByPathT
+ByPathU
+Bytes
+cachelock
+CalculateJobSpecificCustomOptions
+CalculatePossibleShouldProcessOptimization
+CalculateProgressPercentage
+CallShouldProcess
+CallSite
+CallSite`1
+CallSiteBinder
+Cancel
+CancellationTokenSource
+CANCELLED_OPERATION
+cancelToken
+CanCreateNewRestorePoint
+Cannot find drive. A drive with the name '{0}' does not exist. Please run the '{1}' cmdlet to see the available Fixed drives in the system.
+Cannot find the {0} class on the {1} CIM server.  Verify the value of the ClassName xml attribute in Cmdlet Definition XML and retry. Valid class name example: ROOT\cimv2\Win32_Process.
+Cannot find the {2} output parameter of the {1} method of the {0} CIM object.  Verify the value of the ParameterName attribute in Cmdlet Definition XML and retry.
+Cannot reset the secure channel password for the account of the local computer. The local computer is not currently part of a domain.
+Cannot reset the secure channel password for the computer account in the domain. Operation failed with the following exception: {0}.
+Cannot validate the time interval for restore point creation. It failed to retrieve the last restore point with the following error message: {0}.
+CannotCreateRestorePointWarning
+CannotFindMachineAccount
+CannotFindMachineAccountFromDomain
+CannotFindMachineAccountFromServer
+CannotGetOperatingSystemObject
+CannotRenameMultipleComputers
+CannotResolveComputerName
+CannotResolveServerName
+CannotStarttheProcess
+CannotWaitLocalComputer
+CanonicalName
+CanonicalNameParameterSet
+CanonicalNames
+CanonicalNamew
+caption
+Capture
+CategoryNames
+cbJobObjectLength
+cbReserved2
+CCannot enumerate the file version information of the "{0}" process.
+cCannot find the requested hotfix on the '{0}' computer. Verify the input and run the command again.
+CCannot stop process "{0} ({1})" because of the following error: {2}
+CCIM query for instances of the {0} class on the {1} CIM server: {2}
+CentralProcessor
+Change
+ChangeServiceConfig2W
+ChangeServiceConfigW
+channel
+charsToCopy
+CheckDeviceGuardLicense
+checkDuplicates
+CheckForSevereException
+CheckJobStatus
+Checkpoint
+CheckpointComputerCommand
+CheckpointComputerNotSupported
+CheckpointComputerPointNotCreated
+CheckpointComputerServiceDisabled
+CheckProviderCapabilities
+ChildItem
+ChildItemCmdletProviderIntrinsics
+childJob
+ChildJobFlags
+childName
+childNames
+childPath
+childrenSet
+CIM intrinsic type
+CIM query for enumerating instances of the {0} class on the {1} CIM server, that are associated with the following instance: {2}
+cim:CreateInstance
+cim:DeleteInstance
+cim:ModifyInstance
+cim:operationOption:
+CimAsyncMultipleResults`1
+CimAsyncResult`1
+CimAsyncStatus
+CimCallbackMode
+CimChildJobBase`1
+cimClassName
+CimCmdletAdapter
+CimCmdletAdapter_DebugInquire
+CimCmdletAdapter_RemoteDcomDoesntSupportExtendedSemantics
+CimCmdletAdapter_WarningInquire
+CimCmdletAdapter_WarningStop
+CimCmdletDefinitionContext
+CimCmdletInvocationContext
+CimConversion_CimIntrinsicValue
+CimConversion_WqlQuery
+CimConverter
+CimCustomOptionsDictionary
+cimError
+cimException
+CIMExtensions
+CimFlags
+CIMHelper
+cimInstance
+CimInstanceAssociationFilter
+CimInstanceExcludeFilter
+CimInstanceFilterBase
+CimInstanceMaxFilter
+CimInstanceMinFilter
+CimInstancePropertyBasedFilter
+CimInstanceRegularFilter
+CimInstanceToCustomOptions
+cimInstanceToSessionOfOrigin
+cimIntrinsicValue
+CimJob
+CimJob_
+CimJob_AssociationDescription
+CimJob_BrokenCimSession
+CimJob_BrokenSession
+CimJob_ComputerNameConcatenationTemplate
+CimJob_ErrorCodeFromMethod
+CimJob_ExternalError
+CimJob_GenericCimFailure
+CimJob_InvalidClassName
+CimJob_InvalidOutputParameterName
+CimJob_MethodDescription
+CimJob_MismatchedTypeOfPropertyReturnedByQuery
+CimJob_NotFound_ComplexCase
+CimJob_NotFound_SimpleGranularCase_Equality
+CimJob_NotFound_SimpleGranularCase_Wildcard
+CimJob_PropertyTypeUnexpectedByClientSideQuery
+CimJob_SafeAssociationDescription
+CimJob_SafeMethodDescription
+CimJob_SafeQueryDescription
+CimJob_SleepAndRetryVerboseMessage
+CimJob_VerboseExecutionMessage
+CimJobContext
+CimJobException
+CIMJobType
+CimKeyedCollection`1
+CimMethodParameter
+CimMethodResult
+CimMethodResultBase
+CimMethodStreamedResult
+cimNamespace
+CimNamespace
+CimNamespaceParameter
+cimObject
+CimOperatingSystemNamespace
+CimOperatingSystemShutdownMethod
+CimOperationFlags
+cimOperationOptions
+CimOperationOptions
+CimOperationOptionsHelper
+CimPromptType
+CimProperty
+cimProperty
+CimQuery
+CimQueryDialect
+CimReadOnlyKeyedCollection`1
+CimResponseType
+cimSession
+CimSession
+CimUriPrefix
+CimValueConverter
+ClaimsIdentity
+class
+Class
+class
+-Class
+className
+ClassName
+ClassNames
+classT
+Clear
+ClearCachedData
+ClearContentCommand
+ClearContentDynamicParameters
+ClearEventLogCommand
+ClearEventLogWarning
+Clearing {0}
+Clearing Recycle Bin
+ClearItemCommand
+ClearItemDynamicParameters
+ClearItemPropertyCommand
+ClearPropertyDynamicParameters
+Clear-RecycleBin
+ClearRecycleBinCommand
+ClearRecycleBinContent
+ClearRecycleBinContentForDrive
+ClearRecycleBinContentForDrive(
+ClearRecycleBinProgressActivity
+ClearRecycleBinProgressActivityd
+ClearRecycleBinResources
+ClearRecycleBinResources.resources
+ClearRecycleBinStatusDescriptionByDrive
+ClearRecycleBinStatusDescriptionByDrivez
+ClearRecycleBinStatusDescriptionForAllDrives
+ClientSideShouldProcess
+ClientSideWriteVerbose
+ClientToken
+Clipboard
+ClipboardCleared
+ClipboardClearedp
+ClipboardFormat
+ClipboardResources
+ClipboardResources.resources
+Clone
+CloseAllStreams
+CloseContent
+CloseHandle
+CloseHandleApiDllName
+CloseServiceHandle
+closureOverAsJob
+closureOverParentJob
+closureSafeSessionWasAlreadyTerminated
+ClrFacade
+ClusterServerEdition
+cmdCount
+cmdlet
+CmdletAdapter`1
+CmdletAttribute
+cmdletizationClassName
+cmdletizationClassVersion
+cmdletizationModuleVersion
+CmdletizationQuery_NotFound
+CmdletizationResources
+CmdletizationResources.resources
+CmdletMethodInvoker`1
+cmdletName
+cmdletOutput
+CmdletProviderManagementIntrinsics
+CmdletsOverObjects
+cmdLine
+CoClassAttribute
+CodeCompileUnit
+CodeDomProvider
+CodeGeneratorOptions
+CodeIntegrity-AllowConfigurablePolicy
+CodeNamespace
+CodeNamespaceCollection
+CodeTypeDeclaration
+CodeTypeDeclarationCollection
+CodeTypeMember
+CollectPropertyNames
+COMException
+command
+CommandBaseStrings
+CommandDiscovery
+CommandNotFoundException
+CommandProcessorBase
+CommandsCommon
+CommandTypes
+Comments
+Commit
+CommitAction
+CommonInit
+CommunicationsServer
+CompanyName
+Compare
+CompareControlPanelItems
+CompareExchange
+CompareTo
+CompareVerbActionOpen
+Comparison`1
+CompilationRelaxationsAttribute
+Compile
+CompileAssemblyFromSource
+CompilerGeneratedAttribute
+CompilerParameters
+CompilerResults
+Complete
+Completed.
+Completed: {0}/{1}.
+CompletedEventArgs
+CompletedEventHandler
+CompleteTransactionCommand
+compname
+Component
+ComponentID
+ComputeClusterEdition
+Computer
+computer
+Computer
+Computer '{0}' successfully joined the workgroup '{1}', but could not be renamed to '{2}' with the following error message: {3}.
+Computer '{0}' was successfully joined to the new domain '{1}', but renaming it to '{2}' failed with the following error message: {3}.
+Computer '{0}' was successfully unjoined from domain '{1}', but failed to join the new domain '{2}' with the following error message: {3}.
+Computer '{0}' was successfully unjoined from the domain '{1}', but it failed to join the workgroup '{2}' with the following error message: {3}.
+ComputerAccessDenied
+ComputerInfo
+ComputerInfoResources
+ComputerInfoResources.resources
+ComputerMachinePassword
+ComputerName
+computerNames
+ComputerNamesAreEqual
+ComputerNameSpecifiedWithPath
+ComputerNotInDomain
+ComputerResources
+ComputerResources.resources
+ComputerRestore
+ComputerRestorePoint
+ComputerSecureChannel
+computerSystem
+computerSystemQuery
+ComputerWMIHelper
+ComVisibleAttribute
+Concat
+ConcurrentDictionary`2
+condition
+ConditionalAttribute
+ConditionalWeakTable`2
+ConfigManagerErrorCode
+ConfigManagerUserConfig
+ConfigOptions
+Confirm
+-Confirm
+ConfirmImpact
+ConfirmStopProcess
+connectedSession
+ConnectGetWMI
+Connecting
+ConnectInvokeWmi
+Connection
+ConnectorPresent
+ConnectRemoveWmi
+ConnectSetWmi
+Consistency
+ConstructLocation
+container
+containerSpecified
+Contains
+ContainsFileDropList
+ContainsKey
+ContainsSystemDrive
+ContainsText
+ContainsWildcardCharacters
+ContainVerbOpen
+content
+Content
+ContentCmdletProviderIntrinsics
+ContentHolder
+contentHolders
+contentList
+ContentPathsCache
+contentStreams
+contentWritersOpen
+ContradictParametersSpecified
+Control Panel\International
+ControlPanelItem
+ControlPanelItemBaseCommand
+ControlPanelItemCmdletNotSupported
+ControlPanelItemFilterList
+ControlPanelItemParameterSet
+controlPanelItems
+ControlPanelItemT
+ControlPanelResources
+ControlPanelResources.resources
+ControlPanelShellFolder
+Conversion
+Convert
+convert
+Convert
+ConvertActualValueToExpectedType
+ConvertArrayToCollection
+ConvertCimErrorToErrorCategory
+ConvertCimExceptionToErrorCategory
+ConvertCimNativeErrorCodeToErrorCategory
+ConvertFromCimToDotNet
+ConvertFromDotNetToCim
+ConvertPathCommand
+Copy {0} to {1}
+CopyContainers
+CopyFilesToClipboard
+CopyItemCommand
+CopyItemDynamicParameters
+CopyItemPropertyCommand
+CopyPropertyDynamicParameters
+Copyright (c) Microsoft Corporation.  All rights reserved.
+Copyright (c) Microsoft Corporation. All rights reserved.
+CopyTo
+CopyToExistingPrompt
+CopyToExistingPrompt 
+CoreCommandWithCredentialsBase
+Could not enable drive {0}.
+-Could not get objects from namespace {0}. {1}
+Could not register for event. The class name is invalid. Valid class names consist of letters, digits and the underscore character.
+CouldNotAccessDependentServices
+CouldNotDebugProcess
+CouldnotEnumerateFileVer
+CouldnotEnumerateModuleFileVer
+CouldnotEnumerateModules
+CouldNotNewService
+CouldNotNewServiceDescription
+CouldNotResumeService
+CouldNotResumeServiceNotRunning
+CouldNotResumeServiceNotSupported
+CouldNotSetService
+CouldNotSetServiceDescription
+CouldNotStartService
+CouldNotStopProcess
+CouldNotStopService
+CouldNotSuspendService
+CouldNotSuspendServiceNotRunning
+CouldNotSuspendServiceNotSupported
+CpuArchitecture
+CpuAvailability
+CREATE_ALWAYS
+CreateAction
+CreateCimSession
+CreateConnectionOptions
+CreateCustomOutputObject
+CreateDefaultCimSession
+CreateEventSource
+CreateFileW
+CreateFromAnyException
+CreateFromCimException
+CreateFromMethodErrorCode
+CreateFullOutputObject
+CreateInstance_MethodName
+CreateInstanceAsync
+CreateInstanceJob
+CreateJobContext
+CreateJobObject
+CreateNew
+CreateOnlyFlagNotSpecifiedWithClassPath
+CreateOperationOptions
+CreateOrJoin
+CreateProcessWithLogonW
+CreateRestorePoint
+CreateServiceW
+CreateSession
+CreateSpecificCulture
+CreateValueCallback
+CreateWithFullControl
+CreateWithoutJobContext
+creationFlags
+CreationTime
+Credential
+-Credential
+CredentialAttribute
+CredentialGuard
+Credentials
+CredentialsRequired
+CredSSP
+Critical
+CS$<>8__locals1
+CSharpBinderFlags
+CSharpCodeProvider
+CSName
+CultureInfo
+curDomainName
+Current transaction}
+currentCommandContext
+currentContentItem
+currentContext
+currentOperation
+CurrentProviderLocation
+currentStage
+CurrentUsage
+currentUserName
+currentValue
+currentValueSetTime
+CurrentVersion
+CurrentVoltage
+curWorkgroupName
+CustomOperationOptionPrefix
+customOptions
+DataAddedEventArgs
+DatabasePath
+DatacenterEdition
+DatacenterServerCoreEdition
+DatacenterServerEdition
+DataExecutionPrevention_32BitApplications
+DataExecutionPrevention_Available
+DataExecutionPrevention_Drivers
+DataExecutionPrevention_SupportPolicy
+DateTimeOffset
+DaylightBias
+DaylightDate
+DayOfWeek
+DC_OS
+DCannot debug process "{0} ({1})" because of the following error: {2}
+DcomAuthentication
+DcomProtocol
+DeadGWDetectEnabled
+DEBUG
+Debug
+DebuggableAttribute
+DebuggerError
+DebuggerHiddenAttribute
+DebuggerNonUserCodeAttribute
+DebuggingModes
+DebugProcessCommand
+DebugRecord
+DECNT
+Decrement
+Dedicated
+Default
+DEFAULT_THROTTLE_LIMIT
+DefaultIPGateway
+DefaultMemberAttribute
+DefaultNamespace
+DefaultParameterSet
+DefaultParameterSetName
+DefaultQueryDialect
+DefaultSession
+DefaultSet
+DefaultSetK
+DefaultSetT
+DefaultT
+DefaultThrottleLimit
+DefaultTOS
+DefaultTTL
+DeferSPNSet
+Degraded
+DeleteEventSource
+DeleteHasChildrenPrompt
+DeleteInstance_MethodName
+DeleteInstanceAsync
+DeleteInstanceJob
+DeletePrompt
+dependentServices
+dependentservices
+dependsOn
+Deployable
+depth
+Dequeue
+Description
+descriptionOfTargetType
+designForTestability_SkipFailFast
+desiredAccess
+Destination
+destination
+DEVICE_DRIVER_INSTALL
+deviceGuard
+DeviceGuardConfigCodeIntegrityStatus
+DeviceGuardHardwareSecure
+DeviceGuardInfo
+DeviceGuardNamespace
+DeviceGuardSoftwareSecure
+DeviceName
+DeviceWakeUpEnable
+dException getting "Modules" or "FileVersion": "This feature is not supported for remote computers.".
+DHCPLeaseExpires
+DHCPLeaseObtained
+DictionaryEntry
+DidSessionAlreadyPassedConnectivityTest
+Digest
+DigitalUNIX
+DirectoryInfo
+DirectoryNotFoundException
+DirectorySearcher
+DirectoryServicesCOMException
+directRead
+Disable
+DisableAllPrivilegs
+DisableChannel
+DisableComputerRestoreCommand
+DisabledByBIOS
+DisabledByUser
+DisableFlowControlForPendingCmdletActionsQueue
+DisableFlowControlForPendingJobsQueue
+DiscardJobOutputs
+discardNonPipelineResults
+Disconnecting
+DiscoverAny
+DiscoveryClientDocumentCollection
+DiscoveryClientProtocol
+DiscoveryDocument
+DispIdAttribute
+displayName
+displayNames
+DisplayNameT
+disposed
+disposing
+Distinct
+DMAProtection
+DNSDomain
+DNSDomainSuffixSearchOrder
+DNSEnabledForWINSResolution
+DNSHostName
+DNSServerSearchOrder
+DoAddComputerAction
+DoCreateInstanceMethodInvocationJob
+DoCreateQueryJob
+DoCreateStaticMethodInvocationJob
+DoesProviderSupportShouldProcess
+Domain
+domain
+Domain
+Domain+
+DomainCredential
+DomainDNSRegistrationEnabled
+DomainParameterSet
+DomainT
+DoNotOverwrite
+DoNotReboot
+DoPauseService
+DoRemoveComputerAction
+DoRenameComputerAction
+DoRenameComputerDcom
+DoRenameComputerWsman
+DoResumeService
+DoStartService
+DoStopService
+dotNetObject
+dotNetType
+Double
+DoubleComputerName
+DoWaitForStatus
+dPassword
+DriveManagementIntrinsics
+DriveMatchingCoreCommandBase
+driveName
+DriveNotFound
+DriveNotFoundException
+drivePath
+DriverDate
+DriverDateData
+DriverDescription
+DriverMajorNdisVersion
+DriverMinorNdisVersion
+DriverName
+DriveRootNotNetworkPath
+DriverProvider
+DriverVersionString
+drives
+drivesList
+DSPProcessor
+dThis command stopped operation because process "{0} ({1})" is not stopped in the specified time-out.
+DuplicateEntry
+dUserName
+dwCreationDisposition
+dwCreationFlags
+dwDesiredAccess
+dwErrorControl
+dwFillAttribute
+dwFlags
+dwFlagsAndAttributes
+dwInfoLevel
+dwProcessId
+dwServiceType
+dwShareMode
+dwStartType
+dwThreadId
+dwXCountChars
+dwXSize
+dwYCountChars
+dwYSize
+DYNAMIC_TIME_ZONE_INFORMATION
+DynamicDaylightTimeDisabled
+ECannot find any Control Panel item with the given canonical name {0}.
+EditionID
+EditorBrowsableAttribute
+EditorBrowsableState
+effectiveActionPreference
+ElementAt
+EmptyArray
+Enable
+enable
+enableAllPrivileges
+EnableChannel
+EnableComputerNoSystemDrive
+EnableComputerRestoreCommand
+EnableComputerRestoreInvalidDrive
+EnableComputerRestoreNotEnabled
+EnableTokenPrivilege
+Encrypt128Bits
+Encrypt40Bits
+EncryptNBits
+EndFragment:<<<<<<<<4      
+EndHTML:<<<<<<<<2      
+EndOfChildJobs
+EndPointInterface
+EndProcessing
+EndSelection:<<<<<<<<4
+EndSubmitOperations
+EndsWith
+EnforcementMode
+eNo {2} objects found with property '{0}' equal to '{1}'.  Verify the value of the property and retry.
+eNo {2} objects found with property '{0}' matching '{1}'.  Verify the value of the property and retry.
+Enqueue
+EnsureCapacity
+Enter
+EnterpriseEdition
+EnterpriseServer
+EnterpriseServerCoreEdition
+EnterpriseServerIA64Edition
+entry
+EnumConverter`1
+EnumerableExtensions
+EnumerateAssociatedInstancesAsync
+EnumerateAssociatedInstancesJob
+EnumerateInstancesAsync
+EnumerationOptions
+enumOptions
+en-US
+EnvironmentBlock
+environmentBlock
+EnvironmentBlockTooLong
+EnvironmentVariableTarget
+Equals
+Error
+Error renaming '{0}': {1}
+Error_Category
+error_Code
+ERROR_SERVICE_ALREADY_RUNNING
+ERROR_SERVICE_NOT_ACTIVE
+ERROR_WSMAN_QUOTA_MAX_COMMANDS_PER_SHELL_PPQ
+ERROR_WSMAN_QUOTA_MAX_OPERATIONS
+ERROR_WSMAN_QUOTA_MAX_OPERATIONS_USER_PPQ
+ERROR_WSMAN_QUOTA_MAX_PLUGINOPERATIONS_PPQ
+ERROR_WSMAN_QUOTA_MAX_PLUGINSHELLS_PPQ
+ERROR_WSMAN_QUOTA_MAX_SHELLS
+ERROR_WSMAN_QUOTA_MAX_SHELLS_PPQ
+ERROR_WSMAN_QUOTA_MAX_SHELLUSERS
+ERROR_WSMAN_QUOTA_MAX_USERS_PPQ
+ERROR_WSMAN_QUOTA_MIN_REQUIREMENT_NOT_AVAILABLE_PPQ
+ERROR_WSMAN_QUOTA_SYSTEM
+ERROR_WSMAN_QUOTA_USER
+ErrorBase
+errorCategory
+ErrorCategoryInfo
+ErrorCleared
+errorcode
+ErrorCode_Interface
+ErrorCode_Service
+errorCodeFromMethod
+ErrorDescription
+ErrorFQEID
+ErrorHandlingBehavior
+errorId
+errorMessage
+errorRecord
+Escape
+EscapePath
+escaperequired
+EService '{1} ({0})' cannot be created due to the following error: {2}
+EService '{1} ({0})' cannot be resumed due to the following error: {2}
+EService '{1} ({0})' cannot be started due to the following error: {2}
+EService '{1} ({0})' cannot be stopped due to the following error: {2}
+eSystem.Diagnostics.Process, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+EThe command is not supported in this version of the operating system.
+eventArgs
+EventArrived
+EventHandler`1
+EventLog
+EventLogEntry
+EventLogEntryCollection
+EventLogEntryType
+EventLogNotFound
+EventlogResources
+EventlogResources.resources
+EventSourceCreationData
+eventvwr.exe
+EventWaitHandle
+EventWatcherOptions
+exception
+exceptionfromnewthread
+ExceptionSafeWrapper
+exceptionThrownOnCmdletThread
+exclude
+ExcludeByProperty
+excludedPropertyValues
+executableFileName
+ExecutionContext
+existingHandle
+ExpandEnvironmentVariables
+ExpandWildcardPropertyNames
+expectedDotNetType
+expectedPropertyValue
+Expression`1
+ExtClock
+ExtendedProperty
+ExtendedTypeSystem
+ExtensionAttribute
+ExtensionMethods
+ExtractCimNamespaceAndClassName
+ExtrinsicMethodInvocationJob
+Failed to run {1}.  {0}
+FailedToClearRecycleBin
+FailedToGetClipboard
+FailedToSetClipboard
+FailToConnectToComputer
+FailToGetDomainInformation
+FailToJoinDomainFromWorkgroup
+FailToJoinNewDomainAfterUnjoinOldDomain
+FailToJoinWorkGroup
+FailToRename
+FailToRenameAfterJoinDomain
+FailToRenameAfterJoinWorkgroup
+FailToRenameComputer
+FailToResetPasswordOnDomain
+FailToResetPasswordOnLocalMachine
+FailToRetrieveLastRestorePoint
+FailToSwitchFromDomainToWorkgroup
+FailToTestSecureChannel
+FailToUnjoinDomain
+FailureAudit
+FallbackDefaultThrottleLimit
+FALSE
+FFailed to stop the computer {0} with the following error message: {1}.
+FieldInfo
+FILE_ATTRIBUTE_NORMAL
+FILE_SHARE_READ
+FILE_SHARE_WRITE
+FileDescription
+FileInfo
+fileList
+FileName
+FileNotFoundException
+FileSystem
+FileSystemContentReaderWriter
+FileSystemInfo
+FileSystemProviderStrings
+FileVersion
+filter
+FilterByAssociatedInstance
+FilterByMaxPropertyValue
+FilterByMinPropertyValue
+FilterByProperty
+FilterMatch
+FiltersMatch
+FindOne
+FindSystemTimeZoneById
+finishedChildJobsCount
+FinishProgressReporting
+firmwareType
+First
+FJoinOptions
+Flags
+FlagsAttribute
+flagSpecified
+Folder Options
+Folder2
+FolderItem2
+FolderItems
+FolderItems2
+FolderItems3
+FolderItemVerb
+FolderItemVerbs
+for all drives
+for the '{0}' drive
+foreach ($computerName in $array[1])
+formatErrorMessage
+FormatException
+FormatLine
+ForwardAllResultsToCmdlet
+ForwardBufferMemory
+foundAssociatedOptions
+FreeBSD
+FreeCoTaskMem
+FreeHGlobal
+FreeLsaString
+fRetention days is valid only if the overflow action is "OverwriteOlder". Please change  and try again.
+FromMilliseconds
+FromMinutes
+FromSeconds
+FromTicks
+fService '{1} ({0})' cannot be resumed because the service does not support being suspended or resumed.
+fSystem.Diagnostics.EventLog, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089kSystem.Diagnostics.EventLogEntry, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089ZSystem.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+fuFlags
+FullDNSRegistrationEnabled
+FullDuplex
+FullServer
+Func`1
+Func`2
+Func`3
+FUnjoinOptions
+g' Bp
+GatewayCostMetric
+GCHandle
+GCHandleType
+GenerateCodeFromCompileUnit
+GeneratedCodeAttribute
+GenerateNotFoundErrors
+GenerateParentJobName
+GenerateRandomName
+GenerateWebReferences
+GenerateWebServiceProxyAssembly
+GENERIC_READ
+GENERIC_WRITE
+get__ParameterSetName
+get_AccessDenied
+get_AccessIsDenied
+get_Activity
+get_ActivityId
+get_AddComputerActionDomain
+get_AddComputerActionWorkgroup
+get_AddComputerToSameDomain
+get_AddComputerToSameWorkgroup
+get_AddContentAction
+get_AddContentTarget
+get_AddressWidth
+get_After
+get_AllControlPanelItems
+get_AllProcesses
+get_AllServices
+get_Amended
+get_Append
+get_AppendClipboardContent
+get_AppendMultipleFilesToClipboard
+get_AppendSingleFileToClipboard
+get_Architecture
+get_ArgumentList
+get_Arguments
+get_AsBaseObject
+get_AsHtml
+get_AsJob
+get_AsOutputType
+get_Assembly
+get_AsString
+get_AttachDebuggerReturnCode2
+get_AttachDebuggerReturnCode21
+get_AttachDebuggerReturnCode3
+get_AttachDebuggerReturnCode8
+get_AttachDebuggerReturnCode9
+get_Authentication
+get_Authority
+get_Availability
+get_AvailableSecurityProperties
+get_BaseObject
+get_BaseUtcOffset
+get_Before
+get_BehaviorOnNoMatch
+get_BinaryPathName
+get_Bindings
+get_BiosBIOSVersion
+get_BiosBuildNumber
+get_BiosCaption
+get_BiosCharacteristics
+get_BiosCodeSet
+get_BiosCurrentLanguage
+get_BiosDescription
+get_BiosEmbeddedControllerMajorVersion
+get_BiosEmbeddedControllerMinorVersion
+get_BiosFirmwareType
+get_BiosIdentificationCode
+get_BiosInstallableLanguages
+get_BiosInstallDate
+get_BiosLanguageEdition
+get_BiosListOfLanguages
+get_BiosManufacturer
+get_BiosName
+get_BiosOtherTargetOS
+get_BiosPrimaryBIOS
+get_BiosReleaseDate
+get_BiosSeralNumber
+get_BiosSMBIOSBIOSVersion
+get_BiosSMBIOSMajorVersion
+get_BiosSMBIOSMinorVersion
+get_BiosSMBIOSPresent
+get_BiosSoftwareElementState
+get_BiosStatus
+get_BiosSystemBiosMajorVersion
+get_BiosSystemBiosMinorVersion
+get_BiosTargetOperatingSystem
+get_BiosVersion
+get_BoundParameters
+get_BufferSize
+get_CannotCreateRestorePointWarning
+get_CannotFindMachineAccountFromDomain
+get_CannotFindMachineAccountFromServer
+get_CannotGetOperatingSystemObject
+get_CannotRenameMultipleComputers
+get_CannotResolveComputerName
+get_CannotResolveServerName
+get_CannotStarttheProcess
+get_CannotWaitLocalComputer
+get_CanonicalName
+get_CanPauseAndContinue
+get_CanStop
+get_CanWrite
+get_Capacity
+get_Category
+get_CategoryInfo
+get_CategoryResourceFile
+get_Chars
+get_ChildItem
+get_ChildJobs
+get_ChildName
+get_ChildPath
+get_CimCmdletAdapter_DebugInquire
+get_CimCmdletAdapter_RemoteDcomDoesntSupportExtendedSemantics
+get_CimCmdletAdapter_WarningInquire
+get_CimCmdletAdapter_WarningStop
+get_CimConversion_CimIntrinsicValue
+get_CimConversion_WqlQuery
+get_CimInstanceProperties
+get_CimJob_AssociationDescription
+get_CimJob_BrokenSession
+get_CimJob_ComputerNameConcatenationTemplate
+get_CimJob_ErrorCodeFromMethod
+get_CimJob_GenericCimFailure
+get_CimJob_InvalidClassName
+get_CimJob_InvalidOutputParameterName
+get_CimJob_MethodDescription
+get_CimJob_MismatchedTypeOfPropertyReturnedByQuery
+get_CimJob_NotFound_ComplexCase
+get_CimJob_NotFound_SimpleGranularCase_Equality
+get_CimJob_NotFound_SimpleGranularCase_Wildcard
+get_CimJob_SafeAssociationDescription
+get_CimJob_SafeMethodDescription
+get_CimJob_SafeQueryDescription
+get_CimJob_SleepAndRetryVerboseMessage
+get_CimJob_VerboseExecutionMessage
+get_CimSensitiveValueConverter
+get_CimSession
+get_CimType
+get_CimTypedExpectedPropertyValue
+get_Class
+get_ClassName
+get_ClassNameOrNullIfResourceUriIsUsed
+get_ClassVersion
+get_ClearEventLogWarning
+get_ClearRecycleBinContent
+get_ClearRecycleBinContentForDrive
+get_ClearRecycleBinProgressActivity
+get_ClearRecycleBinStatusDescriptionByDrive
+get_ClearRecycleBinStatusDescriptionForAllDrives
+get_ClientSideQuery
+get_ClientSideShouldProcess
+get_ClientSideWriteVerbose
+get_ClipboardCleared
+get_Cmdlet
+get_CmdletDefinitionContext
+get_CmdletInvocationContext
+get_CmdletInvocationInfo
+get_CmdletizationClassName
+get_CmdletizationClassVersion
+get_CmdletizationModuleVersion
+get_CmdletProviderContext
+get_CodeIntegrityPolicyEnforcementStatus
+get_CommandInfo
+get_CommandMetadata
+get_CommandOrigin
+get_CommandRuntime
+get_CommitAction
+get_CompiledAssembly
+get_ComputerAccessDenied
+get_ComputerName
+get_ComputerNamesAreEqual
+get_ComputerNotInDomain
+get_Confirm
+get_ConfirmStopProcess
+get_ConnectionID
+get_ConnectionStatus
+get_Container
+get_Content
+get_Context
+get_ContradictParametersSpecified
+get_ControlPanelItemCmdletNotSupported
+get_CopyToExistingPrompt
+get_CouldNotAccessDependentServices
+get_CouldNotDebugProcess
+get_CouldnotEnumerateFileVer
+get_CouldnotEnumerateModuleFileVer
+get_CouldnotEnumerateModules
+get_CouldNotNewService
+get_CouldNotNewServiceDescription
+get_CouldNotResumeService
+get_CouldNotResumeServiceNotRunning
+get_CouldNotResumeServiceNotSupported
+get_CouldNotSetService
+get_CouldNotSetServiceDescription
+get_CouldNotStartService
+get_CouldNotStopProcess
+get_CouldNotStopService
+get_CouldNotSuspendService
+get_CouldNotSuspendServiceNotRunning
+get_CouldNotSuspendServiceNotSupported
+get_Count
+get_CpuStatus
+get_CreateAction
+get_CreateNoWindow
+get_Credential
+get_CsAdminPasswordStatus
+get_CsAutomaticManagedPagefile
+get_CsAutomaticResetBootOption
+get_CsAutomaticResetCapability
+get_CsBootOptionOnLimit
+get_CsBootOptionOnWatchDog
+get_CsBootROMSupported
+get_CsBootStatus
+get_CsBootupState
+get_CsCaption
+get_CsChassisBootupState
+get_CsChassisSKUNumber
+get_CsCurrentTimeZone
+get_CsDaylightInEffect
+get_CsDescription
+get_CsDNSHostName
+get_CsDomain
+get_CsDomainRole
+get_CsEnableDaylightSavingsTime
+get_CsFrontPanelResetStatus
+get_CsHypervisorPresent
+get_CsInfraredSupported
+get_CsInitialLoadInfo
+get_CsInstallDate
+get_CsKeyboardPasswordStatus
+get_CsLastLoadInfo
+get_CsManufacturer
+get_CsModel
+get_CsName
+get_CsNetworkAdapters
+get_CsNetworkServerModeEnabled
+get_CsNumberOfLogicalProcessors
+get_CsNumberOfProcessors
+get_CsOEMStringArray
+get_CsPartOfDomain
+get_CsPauseAfterReset
+get_CsPCSystemType
+get_CsPCSystemTypeEx
+get_CsPhyicallyInstalledMemory
+get_CsPowerManagementCapabilities
+get_CsPowerManagementSupported
+get_CsPowerOnPasswordStatus
+get_CsPowerState
+get_CsPowerSupplyState
+get_CsPrimaryOwnerContact
+get_CsPrimaryOwnerName
+get_CsProcessors
+get_CsResetCapability
+get_CsResetCount
+get_CsResetLimit
+get_CsRoles
+get_CsStatus
+get_CsSupportContactDescription
+get_CsSystemFamily
+get_CsSystemSKUNumber
+get_CsSystemType
+get_CsThermalState
+get_CsTotalPhysicalMemory
+get_CsUserName
+get_CsWakeUpType
+get_CsWorkgroup
+get_Culture
+get_CurrentClockSpeed
+get_CurrentCulture
+get_CurrentFileSystemLocation
+get_CurrentLocation
+get_CurrentManagedThreadId
+get_CurrentPSTransaction
+get_CurrentRunspace
+get_CurrentThread
+get_DataWidth
+get_DateTime
+get_DaylightName
+get_DcomAuthentication
+get_Debug
+get_DebugActionPreference
+get_DebuggerError
+get_DebugPreference
+get_DefaultSession
+get_DefaultThrottleLimit
+get_Definition
+get_Delay
+get_DeleteHasChildrenPrompt
+get_DeletePrompt
+get_DependentServices
+get_DependsOn
+get_Depth
+get_Description
+get_DescriptionResource
+get_Destination
+get_DeviceGuardAvailableSecurityProperties
+get_DeviceGuardCodeIntegrityPolicyEnforcementStatus
+get_DeviceGuardRequiredSecurityProperties
+get_DeviceGuardSecurityServicesConfigured
+get_DeviceGuardSecurityServicesRunning
+get_DeviceGuardSmartStatus
+get_DeviceGuardUserModeCodeIntegrityPolicyEnforcementStatus
+get_DHCPEnabled
+get_DHCPServer
+get_DidUserSuppressTheOperation
+get_DirectRead
+get_DisplayName
+get_Documents
+get_Domain
+get_DomainCredential
+get_DomainName
+get_DoubleComputerName
+get_Drive
+get_DriveLetter
+get_DriveNotFound
+get_DriveType
+get_DuplicateEntry
+get_EnableAllPrivileges
+get_Entries
+get_EntryType
+get_Error
+get_ErrorAction
+get_ErrorActionPreference
+get_ErrorCode
+get_ErrorData
+get_ErrorMessageGenerator
+get_ErrorRecord
+get_ErrorSource
+get_EventId
+get_Exception
+get_Exclude
+get_ExpectingInput
+get_ExposeCimNamespaceParameter
+get_FailSafeDescription
+get_FailToConnectToComputer
+get_FailToGetDomainInformation
+get_FailToJoinDomainFromWorkgroup
+get_FailToJoinNewDomainAfterUnjoinOldDomain
+get_FailToJoinWorkGroup
+get_FailToRename
+get_FailToRenameAfterJoinDomain
+get_FailToRenameAfterJoinWorkgroup
+get_FailToResetPasswordOnDomain
+get_FailToResetPasswordOnLocalMachine
+get_FailToRetrieveLastRestorePoint
+get_FailToSwitchFromDomainToWorkgroup
+get_FailToTestSecureChannel
+get_FailToUnjoinDomain
+get_FileName
+get_FilePath
+get_FileVersionInfo
+get_Filter
+get_Finished
+get_FixComments
+get_Flags
+get_For
+get_Force
+get_Format
+get_FullName
+get_FullyQualifiedErrorId
+get_GetContent_TailAndHeadCannotCoexist
+get_GetContent_TailNotSupported
+get_HadMatch
+get_HadMatches
+get_HasAccess
+get_HasExited
+get_HasMoreData
+get_HasSucceeded
+get_HasValue
+get_HostName
+get_HotFixID
+get_HResult
+get_HyperVisorPresent
+get_HyperVRequirementDataExecutionPreventionAvailable
+get_HyperVRequirementSecondLevelAddressTranslation
+get_HyperVRequirementVirtualizationFirmwareEnabled
+get_HyperVRequirementVMMonitorModeExtensions
+get_Id
+get_ImmediateBaseObject
+get_Impersonation
+get_Include
+get_IncludeUserName
+get_IncludeUserNameRequiresElevation
+get_IncorrectNewNameNumber
+get_Independent
+get_Index
+get_InnerException
+get_InputObject
+get_InstalledOn
+get_InstanceId
+get_InstanceMembers
+get_Internal
+get_InternalException
+get_InvalidApplication
+get_InvalidArgument
+get_InvalidCastException
+get_InvalidComputerNameFormat
+get_InvalidDomainNameFormat
+get_InvalidDrive
+get_InvalidDriveNameFormat
+get_InvalidDriveType
+get_InvalidHtmlCombine
+get_InvalidInput
+get_InvalidJoinOptions
+get_InvalidNewName
+get_InvalidOverflowAction
+get_InvalidParameterDCOMNotSupported
+get_InvalidParameterForCoreClr
+get_InvalidParameterForDCOM
+get_InvalidParameterForWSMan
+get_InvalidParameterSetAsJob
+get_InvalidRawCombine
+get_InvalidRestorePoint
+get_InvalidStartProcess
+get_InvalidTypeCombine
+get_InvalidUri
+get_InvalidUserError
+get_InvariantCulture
+get_InvocationName
+get_InvokeProvider
+get_IPAddresses
+get_IsAbsolute
+get_IsAllocated
+get_IsArray
+get_IsCancellationRequested
+get_IsClass
+get_IsEnum
+get_IsGenericType
+get_IsInitOnly
+get_IsInvalid
+get_IsNt
+get_IsOpen
+get_IsPresent
+get_IsRunningInBackground
+get_IsTerminatingError
+get_IsValid
+get_IsValuePresent
+get_Item
+get_ItemNotFound
+get_ItemType
+get_ItemValue
+get_JobContext
+get_JobHadErrors
+get_JobRepository
+get_JobStateInfo
+get_JoinNetworkFailed
+get_Key
+get_KeyboardLayout
+get_Keys
+get_LanguageName
+get_LastStatus
+get_Leaf
+get_Length
+get_LimitEventLogWarning
+get_List
+get_ListAvailable
+get_LiteralName
+get_LiteralPath
+get_LoadingBiosInfo
+get_LoadingComputerInfo
+get_LoadingHotPatchInfo
+get_LoadingMotherboardInfo
+get_LoadingNetworkAdapterInfo
+get_LoadingOperationSystemInfo
+get_LoadingProcessorInfo
+get_LoadingRegistryInfo
+get_LoadUserProfile
+get_Local
+get_LocalCredential
+get_Locale
+get_LocalShutdownPrivilege
+get_Location
+get_Log
+get_LogDoesNotExist
+get_LogName
+get_LogonServer
+get_LogReadError
+get_MachineName
+get_Major
+get_Manufacturer
+get_MaxClockSpeed
+get_MaximumSize
+get_Message
+get_MessageId
+get_MessageResourceFile
+get_MethodName
+get_MethodSubject
+get_MinimumRetentionDays
+get_Minor
+get_Module
+get_Modules
+get_ModuleVersion
+get_MoveItemDoesntExist
+get_MoveItemInUse
+get_MultipleMatchingTimeZones
+get_MyCommand
+get_MyInvocation
+get_Name
+get_Namespace
+get_NamespaceOverride
+get_NamespacePath
+get_Namespaces
+get_NativeErrorCode
+get_NeedAdminPrivilegeToResetPassword
+get_NetworkDown
+get_NetworkPathNotFound
+get_NewComputerName
+get_NewDriveConfirmAction
+get_NewDriveConfirmResourceTemplate
+get_Newest
+get_NewLine
+get_NewName
+get_NewNameIsOldName
+get_NewObject
+get_NewSubscriber
+get_NoAccess
+get_NoAppendableClipboardContent
+get_NoComputerNameWithFileVersion
+get_NoControlPanelItemFoundForGivenCanonicalName
+get_NoControlPanelItemFoundForGivenCanonicalNameWithCategory
+get_NoControlPanelItemFoundForGivenCategory
+get_NoControlPanelItemFoundForGivenInstance
+get_NoControlPanelItemFoundForGivenName
+get_NoControlPanelItemFoundForGivenNameWithCategory
+get_NoControlPanelItemFoundWithNullCanonicalName
+get_NoControlPanelItemFoundWithNullCanonicalNameWithCategory
+get_NoDebuggerFound
+get_NoEntriesFound
+get_NoNewWindow
+get_NoPingResult
+get_NoProcessFoundForGivenId
+get_NoProcessFoundForGivenName
+get_NoQualifier
+get_NoResorePoint
+get_NoServiceFoundForGivenDisplayName
+get_NoServiceFoundForGivenName
+get_NoSupportForCombinedServiceType
+get_NoSystemDrive
+get_NotDisabled
+get_NotEnabled
+get_NotSupported
+get_NotValidDrive
+get_Now
+get_NoWait
+get_NumberOfCores
+get_NumberOfLogicalProcessors
+get_OffsetToStringData
+get_OldComputerName
+get_OperationFailed
+get_Options
+get_OrdinalIgnoreCase
+get_OriginalExpectedPropertyValue
+get_OsArchitecture
+get_OsBootDevice
+get_OsBuildNumber
+get_OsBuildType
+get_OsCodeSet
+get_OsCountryCode
+get_OsCSDVersion
+get_OsCurrentTimeZone
+get_OsDataExecutionPrevention32BitApplications
+get_OsDataExecutionPreventionAvailable
+get_OsDataExecutionPreventionDrivers
+get_OsDataExecutionPreventionSupportPolicy
+get_OsDebug
+get_OsDistributed
+get_OsEncryptionLevel
+get_OsForegroundApplicationBoost
+get_OsFreePhysicalMemory
+get_OsFreeSpaceInPagingFiles
+get_OsFreeVirtualMemory
+get_OsHardwareAbstractionLayer
+get_OsHotFixes
+get_OsInstallDate
+get_OsInUseVirtualMemory
+get_OsLanguage
+get_OsLastBootUpTime
+get_OsLocalDateTime
+get_OsLocale
+get_OsLocaleID
+get_OsManufacturer
+get_OsMaxNumberOfProcesses
+get_OsMaxProcessMemorySize
+get_OsMuiLanguages
+get_OsName
+get_OsNumberOfLicensedUsers
+get_OsNumberOfProcesses
+get_OsNumberOfUsers
+get_OsOperatingSystemSKU
+get_OsOrganization
+get_OsOtherTypeDescription
+get_OsPAEEnabled
+get_OsPagingFiles
+get_OsPortableOperatingSystem
+get_OsPrimary
+get_OsProductSuites
+get_OsProductType
+get_OsRegisteredUser
+get_OsSerialNumber
+get_OsServerLevel
+get_OsServicePackMajorVersion
+get_OsServicePackMinorVersion
+get_OsSizeStoredInPagingFiles
+get_OsStatus
+get_OsSuites
+get_OsSystemDevice
+get_OsSystemDirectory
+get_OsSystemDrive
+get_OsTotalSwapSpaceSize
+get_OsTotalVirtualMemorySize
+get_OsTotalVisibleMemorySize
+get_OsType
+get_OsUptime
+get_OSVersion
+get_OsVersion
+get_OsWindowsDirectory
+get_OSWritingError
+get_OUPath
+get_OuterXml
+get_OutParameters
+get_Output
+get_OverflowAction
+get_ParameterConfliction
+get_ParameterName
+get_ParameterNotSupported
+get_ParameterResourceFile
+get_Parameters
+get_ParameterSetName
+get_ParameterType
+get_ParameterTypeName
+get_ParameterUsage
+get_Parent
+get_ParentPath
+get_ParsePathFormatError
+get_PassThru
+get_PassThruObject
+get_Password
+get_Path
+get_PathDoesNotExist
+get_PathInfo
+get_PathType
+get_PermissionDenied
+get_Persist
+get_PersistNotSupported
+get_Platform
+get_PowerPlatformRole
+get_Present
+get_PrivateData
+get_PrivilegeNotEnabled
+get_Process_is_not_terminated
+get_ProcessName
+get_ProcessNameForConfirmation
+get_ProcessNotTerminated
+get_ProcessorID
+get_ProcessorType
+get_ProductSuites
+get_Progress
+get_ProgressActivity
+get_ProgressStatusCompleted
+get_ProgressStatusCreatingRestorePoint
+get_Properties
+get_Property
+get_PropertyName
+get_PropertyType
+get_PropertyValue
+get_PropertyValueFilters
+get_Protocol
+get_Provider
+get_ProviderContentCloseError
+get_ProviderContentReadError
+get_ProviderContentWriteError
+get_ProviderPath
+get_ProviderSeekError
+get_ProviderSupportsShouldProcess
+get_PSDrive
+get_PSModuleInfo
+get_PSPath
+get_PSProvider
+get_PutType
+get_Qualifier
+get_Query
+get_Quiet
+get_Raw
+get_RawData
+get_ReadCount
+get_Reader
+get_RecordType
+get_Recurse
+get_RedirectionParams
+get_RedirectStandardError
+get_RedirectStandardInput
+get_RedirectStandardOutput
+get_ReferencedAssemblies
+get_Relative
+get_RemoteShutdownPrivilege
+get_RemoveComputerConfirm
+get_RemoveDriveConfirmAction
+get_RemoveDriveConfirmResourceTemplate
+get_RemoveDriveInUse
+get_RemoveEventLogWarning
+get_RemoveFailed
+get_RemoveItemInUse
+get_RemoveItemWithChildren
+get_RemoveSourceWarning
+get_RenameCommandWsmanAuthParamConflict
+get_RenamedItemInUse
+get_RenameFailed
+get_RenameItemDoesntExist
+get_Repair
+get_RepairSecureChannelFail
+get_RepairSecureChannelSucceed
+get_RequiredSecurityProperties
+get_RequiredServices
+get_ResetComputerMachinePassword
+get_ResetComputerNotInDomain
+get_Resolve
+get_ResourceManager
+get_ResourceUri
+get_Restart
+get_RestartComplete
+get_RestartComputerAction
+get_RestartcomputerFailed
+get_RestartComputerInvalidParameter
+get_RestartComputerSkipped
+get_RestartMultipleComputersActivity
+get_RestartNeeded
+get_RestartSingleComputerActivity
+get_RestoreFailed
+get_RestoreInterrupted
+get_RestorePoint
+get_RestorePointNotCreated
+get_RestorePointType
+get_RestoreSuceess
+get_Result
+get_Results
+get_ResumeServiceFailed
+get_ResumingService
+get_RetentionDays
+get_RetrievedDynamicParameters
+get_ReturnValue
+get_Role
+get_RollbackAction
+get_RollbackPreference
+get_Root
+get_SchemaConformanceLevel
+get_Scope
+get_ScriptBlock
+get_SecureChannelAlive
+get_SecureChannelBroken
+get_SecurityServicesConfigured
+get_SecurityServicesRunning
+get_Server
+get_ServiceDisabled
+get_ServiceHasDependentServices
+get_ServiceHasDependentServicesNoForce
+get_ServiceIsDependentOnNoForce
+get_ServiceName
+get_ServiceNameForConfirmation
+get_ServicesDependedOn
+get_Session
+get_SessionBasedWrapper_ShouldProcessVsJobConflict
+get_SessionState
+get_SetClipboardContent
+get_SetContentAction
+get_SetContentTarget
+get_SetMultipleFilesToClipboard
+get_SetSingleFileToClipboard
+get_ShortName
+get_ShouldProcessMessage
+get_ShouldProcessOptimization
+get_ShowComputerName
+get_SkipTestConnection
+get_SocketDesignation
+get_Source
+get_SourceDoesNotExist
+get_SourceExistInComp
+get_SourceExistWithLog
+get_Stack
+get_StackName
+get_StandardName
+get_StartingService
+get_StartServiceFailed
+get_StartupType
+get_State
+get_Status
+get_StatusDescription
+get_StatusMessage
+get_StopCommandAuthProtcolConflict
+get_StopCommandParamMessage
+get_StopCommandParamWSManAuthConflict
+get_StopCommandWSManAuthProtcolConflict
+get_StopcomputerFailed
+get_StoppingService
+get_StopServiceFailed
+get_Suites
+get_SuppliedComputerName
+get_SupportsShouldProcess
+get_SuppressWildcardExpansion
+get_SuspendingService
+get_SuspendServiceFailed
+get_SystemRestoreNotSupported
+get_SystemRestoreServiceDisabled
+get_Tail
+get_TargetObject
+get_TestComputerNotInDomain
+get_TextFormatType
+get_ThrottleLimit
+get_TimeGenerated
+get_Timeout
+get_TimeoutError
+get_TimeToLive
+get_TimeZone
+get_TimeZoneNameNotFound
+get_Title
+get_Token
+get_TotalCount
+get_TotalMinutes
+get_TransactedScript
+get_TransactionManager
+get_TransactionResource
+get_TransactionTimedOut
+get_TruncateNetBIOSName
+get_TruncateNetBIOSNameCaption
+get_TypeNames
+get_Types
+get_Unicode
+get_UnjoinDomainCredential
+get_Unsecure
+get_Uri
+get_UseDefaultCredential
+get_UseEnumerateInstancesInsteadOfWql
+get_UseNewEnvironment
+get_UserModeCodeIntegrityPolicyEnforcementStatus
+get_UserName
+get_UseShell
+get_UseShellExecute
+get_UtcNow
+get_UTF8
+get_Value
+get_ValueOutofRange
+get_Values
+get_Vendor
+get_VendorResource
+get_Verb
+get_VerbActionOpen
+get_Verbose
+get_VerboseActionPreference
+get_VerbosePreference
+get_Verbs
+get_VerifyRebootStage
+get_Version
+get_Wait
+get_WaitForMultipleComputers
+get_WaitForPowerShell
+get_WaitForRestartToBegin
+get_WaitForWinRM
+get_WaitForWMI
+get_WaitOnIdleProcess
+get_WaitOnItself
+get_Warning
+get_WarningActionPreference
+get_WarningPreference
+get_WhatIf
+get_WindowsBuildLabEx
+get_WindowsCurrentVersion
+get_WindowsEditionId
+get_WindowsInstallationType
+get_WindowsInstallDateFromRegistry
+get_WindowsProductId
+get_WindowsProductName
+get_WindowsRegisteredOrganization
+get_WindowsRegisteredOwner
+get_WindowsSystemRoot
+get_WindowStyle
+get_WindowsVersion
+get_WmiFilterInvalidClass
+get_WmiInvalidClass
+get_WmiMethodNameForConfirmation
+get_WmiNamespaceConnect
+get_WmiParameterMissing
+get_WmiQueryFailure
+get_WmiState
+get_WorkgroupName
+get_WorkingDirectory
+get_Writer
+get_WsmanAuthentication
+get_Xml_cmdletsOverObjectsXsd
+get_Year
+GetAcceptedPaths
+GetAll
+GetAllAtScope
+GetArgumentsOfType
+GetArrayRank
+GetAtScope
+GetAudioStream
+GetBooleanProperty
+GetByteCount
+GetBytes
+GetCategoryMap
+GetChildItemCommand
+GetChildItemsDynamicParameters
+GetChildNamesDynamicParameters
+GetCimClassName
+GetCimException
+GetCimInstancesFromArguments
+GetCimMethodParametersCollection
+GetCimNamespace
+GetCimOperation
+GetCimType
+GetCimTypeEnum
+GetClassNameFromQuery
+GetClipboardCommand
+GetClipboardContentAsFileList
+GetClipboardContentAsText
+GetCommandTextFromInvocationInfo
+Get-ComputerInfo
+GetComputerInfoCommand
+GetComputerInfoPropertyNames
+GetComputerRestorePointCommand
+GetComputerRestorePointNotSupported
+GetComputerStatusObject
+GetConnectionOption
+GetConnectionOptions
+GetContentCommand
+GetContentReaderDynamicParameters
+GetContentReaders
+GetContentWriterDynamicParameters
+GetContentWriters
+GetControlPanelItemByCanonicalName
+GetControlPanelItemByCategory
+GetControlPanelItemByName
+GetControlPanelItemCommand
+GetControlPanelItemsByInstance
+GetConvertibleCimType
+GetCreateInstanceOperation
+GetCurrent
+GetCurrentContext
+GetCurrentProcess
+GetCurrentProcessApiDllName
+GetCustomAttributes
+GetDefaultBehaviorWhenNoMatchesFound
+GetDefaultCimSession
+GetDefaultEncoding
+GetDescription
+GetDeviceGuard
+GetDirectoryEntry
+GetDriveNoMatchingDrive
+GetDrivePath
+GetDriveQualifiedPath
+GetDrives
+GetDynamicNamespace
+GetElementType
+GetEmptyInstance
+GetEnumerable
+GetEnvironmentVariable
+GetEnvironmentVariables
+GetErrorMessageForNotFound
+GetErrorMessageForNotFound_ForEquality
+GetErrorMessageForNotFound_ForWildcard
+GetErrorReportingDelegate
+GetEventLogCommand
+GetEventLogNoEntriesFound
+GetEventLogs
+GetExceptionIfBrokenSession
+GetExecutingAssembly
+GetExecutionContextFromTLS
+GetField
+GetFileDropList
+GetFileName
+GetFilterClassName
+GetFirmwareType
+GetFirmwareTypeDllName
+GetFirst
+GetFolderPath
+GetGenericArguments
+GetGenericTypeDefinition
+GetGetInstanceOperation
+GetGranularNotFoundError
+GetHalVersion
+GetHashCode
+GetHostEntry
+GetHostEntryAsync
+GetHostName
+GetHotFixCommand
+GetHotFixNoEntriesFound
+GetHtmlDataString
+GetHyperVisorInfo
+GetImage
+GetImpliedSession
+GetInstanceAsync
+GetInstances
+GetInt32
+GetInvalidCastException
+GetItemCommand
+GetItemDynamicParameters
+GetItemPropertyCommand
+GetItemPropertyValueCommand
+GetJobSpecificCustomOptions
+GetLanguageName
+GetLastRestoreStatus
+GetLastWin32Error
+GetLocalAdminUserName
+GetLocale
+GetLocationCommand
+GetLocationNoMatchingDrive
+GetLocationNoMatchingProvider
+GetLogonServer
+GetMachineNames
+GetMainModule
+GetMatchCondition
+GetMatchConditionForEqualityOperator
+GetMatchConditionForLikeOperator
+GetMatchingDrives
+GetMatchingLogs
+GetMethodInputParameters
+GetMethodInputParametersCore
+GetMethodOutputParameters
+GetMethodParameters
+GetNames
+GetNetworkAdapters
+GetNetworkCredential
+GetNewSink
+GetNotFoundErrors_IfThisIsTheOnlyFilter
+GetNumberOfSessions
+GetObjectData
+GetObjectList
+GetOne
+GetOrAdd
+GetOtherInfo
+GetParent
+GetPercentageComplete
+GetPhysicallyInstalledSystemMemory
+GetPhysicallyInstalledSystemMemoryDllName
+GetPowerManagementCapabilities
+GetProcessById
+GetProcessCommand
+GetProcessEnvironment
+GetProcesses
+GetProcessModuleFileVersionInfo
+GetProcessors
+GetProperties
+GetProperty
+GetPropertyDynamicParameters
+GetPropertyValue
+GetProviderVersionExpectedByJob
+GetPSDriveCommand
+GetPSProviderCommand
+GetQueryBuilder
+GetQueryJob
+GetQueryString
+GetRandomPassword
+GetRawProcessHandle
+GetReader
+GetReferencedAssemblies
+GetRenameComputerStatusObject
+GetResolvedPaths
+GetResolvedProviderPathFromPSPath
+GetResolvedPSPathFromPSPath
+GetSafeFileHandleForRedirection
+GetSafeProcessHandle
+GetScopeString
+GetSddl
+GetServerLevels
+GetServiceCommand
+GetServices
+GetSessionAssociatedWithPipelineObject
+GetSessionOfOriginFromCimInstance
+GetSessionOfOriginFromInstance
+GetSessionsToActAgainst
+GetSingleProvider
+GetSnapshot
+GetSourceObject
+GetSourceObjectEventName
+GetStdHandle
+GetString
+GetStringFromSecureString
+GetSystemTimeZones
+GetText
+GetTimeZoneCommand
+GetTimeZoneInformationForYear
+GetTimeZoneInformationForYearApiDllName
+GetTokenInformation
+GetTracer
+GetTracker
+GetTransactionCommand
+GetType
+GetTypeCode
+GetTypeFromCLSID
+GetTypeFromHandle
+GetTypeInfo
+GetTypes
+GetUnderlyingType
+GetUnresolvedProviderPathFromPSPath
+GetValueKind
+GetValueNames
+GetValueOrDefault
+GetValues
+GetVariableValue
+Get-Volume
+GetWinNtCurrentVersion
+GetWMICOMException
+GetWMIManagementException
+Get-WMIObject
+GetWmiObjectCommand
+GetWmiQueryString
+GetWriter
+GlobalRandom
+GNUHurd
+GService '{1} ({0})' cannot be suspended due to the following error: {2}
+GSystem.Management.ManagementObject#root\cimv2\Win32_QuickFixEngineering
+GThe number of new names is not equal to the number of target computers.
+gThis command cannot be run because Redirection parameters cannot be used with UseShellExecute parameter
+GuidAttribute
+hadMatch
+hal.dll
+halVersion
+HandleChildJobStateChanged
+HandleJobOutput
+HandleJobUnblocked
+HandleOperationComplete
+HandleThrottleComplete
+HandleWMIState
+HardwareDisabled
+HardwareInterface
+HardwareMalfunction
+HardwareNotPresent
+HardwareSecurity
+HasChildItems
+HashSet`1
+Hashtable
+hasSucceeded
+HaveAllDependentServicesStopped
+hCannot rename multiple computers. The NewName parameter is valid only if a single computer is specified.
+Height
+helper
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113278
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113282
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113283
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113284_
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113289TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113292
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113293
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113308
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113310
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113314TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113319
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113320
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113321
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113324TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113327
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113329
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113332TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113337TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113345L
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113346TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113347_
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113350
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113351
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113353
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113354
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113357
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113359
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113369z
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113370b
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113373
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113374
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113376
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113381TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113382
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113383
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113384
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113385
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113386
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113392
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113395
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113396
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113397
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113399TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113402TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113404
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113406
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113412j
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113414
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113416
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=113418`
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135194TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135197s
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135198TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135200g
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135206m
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135207Q
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135209n
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135215B
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135217TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135220
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135227TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135235TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135238
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135245TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135246TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135248TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135252N
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135253TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135254
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135257TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135261
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135262k
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135263TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135266TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135268e
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135271y
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135277
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=135281TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=137749t
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=2199823
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=219983
+HelpUri.https://go.microsoft.com/fwlink/?LinkID=219990TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkId=389281
+HelpUri.https://go.microsoft.com/fwlink/?LinkId=524082TU
+HelpUri.https://go.microsoft.com/fwlink/?LinkId=526219
+HelpUri.https://go.microsoft.com/fwlink/?LinkId=526220
+HelpUri.https://go.microsoft.com/fwlink/?LinkId=799466
+HelpUri.https://go.microsoft.com/fwlink/?LinkId=799468
+HelpUri.https://go.microsoft.com/fwlink/?LinkId=799469
+hexString
+Hidden
+HigherLayerInterfaceIndices
+HNo matching {1} objects found by {0}. Verify query parameters and retry.
+hObject
+holder
+HomeBasicEdition
+HomeBasicNEdition
+HomeEdition
+HomePremiumEdition
+HomeServerEdition
+HostingBoard
+HostProtectionAttribute
+HotFix
+hotFixes
+HotFixID= '
+HotFixResources
+HotFixResources.resources
+HotSwappable
+HP_MPE
+hSCManager
+hSCManagerOrService
+hService
+HService '{1} ({0})' cannot be configured due to the following error: {2}
+hService '{1} ({0})' cannot be suspended because the service does not support being suspended or resumed.
+hStdError
+hStdInput
+hStdOutput
+hTemplateFile
+HThe registry key for the log "{0}" for source "{2}" could not be opened.
+hThread
+http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2
+HttpWebClientProtocol
+HWND_BROADCAST
+hyperV
+HyperVInfo
+HypervisorEnforcedCodeIntegrity
+HypervisorPresent
+i/B(e
+I_NetLogonControl2
+ICannot parse path because path '{0}' does not have a qualifier specified.
+ICollection
+ICollection`1
+ICommandRuntime
+IComparable
+IComparer`1
+IContainsErrorRecord
+IContentReader
+IContentWriter
+IConvertible
+ICredentials
+Identify
+IdentityNotMappedException
+IdentityReference
+IDictionary
+IDictionary`2
+IDictionaryEnumerator
+IDisposable
+IdParameterSet
+IdWithUserName
+IdWithUserNameParameterSet
+IdWithUserNameT
+IDynamicParameters
+IEnumerable
+IEnumerable`1
+IEnumerator
+IEnumerator`1
+IEqualityComparer`1
+if ($serverManagerModule -ne $null)
+IFailed to restart the computer {0} with the following error message: {1}.
+IFormatProvider
+IGMPLevel
+IList
+IList`1
+IMFilter
+Impersonation
+ImpersonationLevel
+impersonationLevel
+include
+IncludeExcludeAdd
+IncludeUserNameRequiresElevation
+IncorrectNewNameNumber
+Increment
+independent
+index
+individualCondition
+Inferno
+Information
+InfoTip
+Initial
+InitializeErrorRecord
+InitializeErrorRecordCore
+InitLsaString
+inner
+innerAction
+innerException
+inputContainsWildcard
+InputObject
+inputObject
+InputObject
+inputobject
+InputObject 
+InputObjectParameterSet
+InputObjectT
+InputObjectWithUserName
+InputObjectWithUserNameParameterSet
+InputObjectWithUserNameT
+InputVarPath
+inquireMessageGetter
+Insert
+Installable
+InstallationType
+InstallDate
+Installed
+InstalledBy
+InstallError
+InstallInvoke
+instance
+instanceRelatedToThisOperation
+instancesRelatedToThisOperation
+InstantinateWebServiceProxy
+InsufficientPermissions
+InsufficientPermissionsError
+InteractiveUNIX
+InterfaceAdminStatus
+InterfaceDescription
+InterfaceGuid
+InterfaceIndex
+InterfaceName
+InterfaceOperationalStatus
+InterfaceType
+Interlocked
+InternalCommand
+InternalDeserializer
+internalException
+InternalName
+InTest
+IntPtr
+intRestorePoint
+IntrospectionExtensions
+INVALID_HANDLE_VALUE
+INVALID_NAMESPACE_IDENTIFIER
+INVALID_QUERY_IDENTIFIER
+InvalidAddress
+InvalidApplication
+InvalidArgument
+InvalidCimQueryCast
+InvalidCimToDotNetCast
+InvalidClass
+InvalidComputerName
+InvalidComputerNameFormat
+InvalidDomainNameFormat
+InvalidDotNetToCimCast
+InvalidDrive
+InvalidDriveNameFormat
+InvalidDriveType
+InvalidHtmlCombine
+InvalidInput
+InvalidJoinOptions
+InvalidNewName
+InvalidOperationException
+InvalidOverflowAction
+InvalidParameter
+InvalidParameterDCOMNotSupported
+InvalidParameterForCoreClr
+InvalidParameterForDCOM
+InvalidParameterForWSMan
+InvalidParameterSetAsJob
+InvalidRawCombine
+InvalidRestorePoint
+InvalidStartProcess
+InvalidTypeCombine
+InvalidUri
+InvalidUserError
+invocationInfo
+InvocationToTracker
+Invoke
+InvokeItemCommand
+InvokeItemDynamicParameters
+InvokeMethod
+InvokeMethodAsync
+InvokeMethodOptions
+InvokeUsingCmdlet
+InvokeVerb
+InvokeWin32ShutdownUsingWsman
+InvokeWMICOMException
+InvokeWMIManagementException
+InvokeWmiMethod
+Invoke-WMIMethod
+Invoking {0}
+IObservable`1
+IObserver`1
+IOException
+IPAddress
+IPConnectionMetric
+IPEnabled
+IPEndPoint
+IPFilterSecurityEnabled
+IPHostEntry
+IPPortSecurityEnabled
+IPSecPermitIPProtocols
+IPSecPermitTCPPorts
+IPSecPermitUDPPorts
+IPSubnet
+IPUseZeroBroadcast
+IPXAddress
+IPXEnabled
+IPXFrameType
+IPXMediaType
+IPXNetworkNumber
+IPXVirtualNetNumber
+isAbsolute
+IsAbsoluteSet
+isAbsoluteSet
+IsAbsoluteSet
+IsAbsoluteSet~
+IsAbsoluteSetC
+IsAbsoluteSetT
+IsAdministrator
+IsAssignableFrom
+IsBooleanType
+IsCimIntrinsicScalarType
+IsComputerNameValid
+IsContainer
+IScriptCommandInfo
+iSCSIInterface
+IsCurrentLocationOrAncestor
+isDateSpecified
+isDefaultSetParameterSpecified
+isDisposed
+isDisposing
+iService '{1} ({0})' was created, but its description cannot be configured due to the following error: {2}
+ISessionBoundQueryBuilder`1
+isFilterSpecified
+IsFinishedState
+IShellDispatch
+IShellDispatch2
+IShellDispatch3
+IShellDispatch4
+IShellDispatch5
+IShellDispatch6
+isHtmlSet
+IsLetterOrDigit
+isLiteralPath
+isLocal
+isLocalhost
+IsLocalizedNamespace
+IsLocked
+IsMatch
+IsMatchCore
+IsMatchingResult
+IsMatchingValue
+IsNull
+IsNullOrEmpty
+IsNullOrWhiteSpace
+IsNumeric
+IsPassThruObjectNeeded
+IsProcessOwnedByCurrentUser
+IsProviderQualified
+IsPSAbsolute
+isRawSet
+IsRestorePointCreated
+IsResultMatchingClientSideQuery
+IsRunningOnProcessorArchitectureARM
+IsSameType
+IsServerCoreOrHeadLessServer
+IsSessionTerminated
+IsShowComputerNameMarkerPresent
+isStaticCmdlet
+IsSupportedSession
+isTerminatedValueInDictionary
+isTextFormatTypeSet
+isThrowError
+IsTrue
+isValid
+IsValidDrive
+IsValidPattern
+IsWsManQuotaReached
+ItemExistsDynamicParameters
+ItemNotFound
+ItemNotFoundException
+ItemProperty
+ItemPropertyValue
+Items
+ItemsT
+IteratorStateMachineAttribute
+iThe class name {0} is invalid. Valid class names consist of letters, digits, '_', '?', '*', '-' and "[]".
+iThis Windows PowerShell Snap-In contains management cmdlets that are used to manage Windows components.  
+IThrottleOperation
+IWSManConnectionOptionsEx2
+IWSManEx
+IWSManSession
+IxWorks
+J@JuMM
+JavaVM
+JCannot find the computer account for the local computer in the domain {0}.
+JCannot stop service '{1} ({0})' because it is dependent on other services.
+JInvalid input. The following formats are supported: '{0}', '{1}' or '{2}'.
+jobDescription
+JobDone
+JobDoneForWin32Shutdown
+jobHandle
+JOBOBJECT_BASIC_PROCESS_ID_LIST
+jobObjectHandle
+JobObjectInfoClass
+jobOutputsToDiscard
+Join in domain '{0}'
+Join in workgroup '{0}'
+JoinDomainOrWorkgroup
+JoinNetworkFailed
+JoinPathCommand
+JoinReadOnly
+JoinWithNewName
+jParameter WsmanAuthentication cannot be specified with DcomAuthentication or Impersonation parameters. {0}
+jResetting the secure channel password for the local computer failed with the following error message: {0}.
+JService '{1} ({0})' cannot be resumed because it is not currently running.
+kCannot find any control panel item with the given canonical name {0} that satisfies the specified category.
+KCannot find the Control Panel item based on the given instance of type {0}.
+KeepAliveInterval
+KeepAliveTime
+Kerberos
+kernel32.dll
+keyboards
+KeyCollection
+KeyedCollection`2
+KeyValuePair`2
+KFail to rename computer '{0}' to '{1}' due to the following exception: {2}.
+kSystem.Diagnostics.ProcessModule, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089mSystem.Diagnostics.FileVersionInfo, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089eSystem.Diagnostics.Process, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+KThe secure channel between the local computer and the domain {0} is broken.
+kThere's no content in Clipboard or the content format is not compatible. Set input object to the Clipboard.
+kThis command cannot attach the debugger to the process due to {0} because no default debugger is available.
+L"The password of the secure channel between '{0}' and '{1}' has been reset."
+L2CacheSize
+L2CacheSpeed
+L3CacheSize
+L3CacheSpeed
+Lambda
+language
+LanguagePrimitives
+LANRemote
+LastBootUpTime
+LastErrorCode
+LastIndexOf
+LastStatus
+LastStatusT
+lastTimeProgressWasWritten
+Lazy`1
+lCannot copy because the specified destination already exists. Do you want to overwrite the existing content?
+LCannot remove computer(s) from the domain because the local network is down.
+lCannot verify the secure channel for the local computer. Operation failed with the following exception: {0}.
+LCIDToLocaleName
+LCIDToLocaleNameDllName
+LDAP://
+LDcomAuthentication is not supported. Please use WsmanAuthentication instead.
+LDo you want to change the properties of the "{0}" log on the "{1}" computer?
+LeafSet
+leafSet
+LeafSet
+LeafSetT
+LegalCopyright
+licenseProperty
+Limit
+LimitEventLogCommand
+LimitEventLogWarning
+LINUX
+list,
+ListAvailable
+ListAvailable@
+listOfValidServices
+literalChildrenSet
+LiteralItems
+LiteralItemsT
+LiteralNameT
+LiteralPath
+LiteralPathParameterSet
+LiteralPathSet
+literalPathSet
+LiteralPathSet
+LiteralPathSetT
+LiteralPathT
+LoadEnvironmentVariable
+Loading BIOS information
+Loading Computer information
+Loading hot-patch information
+Loading motherboard information
+Loading processor information
+Loading registry information
+LoadingBiosInfo
+LoadingComputerInfo
+LoadingHotPatchInfo
+LoadingHotPatchInfo8
+LoadingMotherboardInfo
+LoadingMotherboardInfoW
+LoadingNetworkAdapterInfo
+LoadingNetworkAdapterInfox
+LoadingOperationSystemInfo
+LoadingProcessorInfo
+LoadingRegistryInfo
+LoadPercentage
+LoadUnsafeXmlDocument
+Local
+Local shutdown access rights
+Local System
+locale
+LOCALE_NAME_MAX_LENGTH
+localeID
+LocaleIdToLocaleName
+localeName
+localeNameSize
+LocalFree
+localhost
+localhostStr
+localMachineName
+LocalParameterSet
+LocalPipeline
+LocalRunspace
+LocalShutdownPrivilege
+LocalT
+Location
+LocationGlobber
+locationSet
+LocationT
+LockOutTime
+Log "{0}" could not be read to completion due to the following error. This may have occurred because the log was cleared while still being read. {1}
+LogCommandHealthEvent
+LogDoesNotExist
+LogName
+logname
+LogName
+LogNameT
+LOGON_NETCREDENTIALS_ONLY
+LOGON_WITH_PROFILE
+logonFlags
+LogonFlags
+logonServer
+LOGONSERVER
+LogProviderHealthEvent
+LogReadError
+LookupAccountSid
+LookupCommandInfo
+LookupPrivilegeTokenApiDllName
+LookupPrivilegeValue
+LookupSystemTimeZoneInfoByName
+LowerLayerInterfaceIndices
+lpApplicationName
+lParam
+lpBinaryPathName
+lpCommandLine
+lpCurrentDirectory
+lpDatabaseName
+lpDependencies
+lpDescription
+lpDesktop
+lpDisplayName
+lpdwResult
+lpdwTagId
+lpEnvironment
+lpFileName
+lpFunctionCode
+lpInfo
+lpInputData
+lpJobAttributes
+lpJobObjectInfo
+lpLoadOrderGroup
+lpLuid
+lpMachineName
+lpName
+lpPassword
+lpProcessAttributes
+lpProcessInformation
+lpQueryLevel
+lpReserved
+lpReserved2
+lpReturnLength
+lpSecurityAttributes
+lpSecurityDescriptor
+lpServerName
+lpServiceName
+lpServiceStartName
+lpStartupInfo
+lpSystemName
+lpThreadAttributes
+lpTimeZoneInformation
+lpTitle
+LSA_ACCESS
+LSA_OBJECT_ATTRIBUTES
+LSA_UNICODE_STRING
+LsaClose
+LsaCreateSecret
+LsaFreeMemory
+LsaNtStatusToWinError
+LsaOpenPolicy
+LsaOpenSecret
+LsaQuerySecret
+LsaSetSecret
+LService '{1} ({0})' cannot be suspended because it is not currently running.
+lSystem.Resources.ResourceReader, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet
+LThe computer did not finish restarting within the specified time-out period.
+MACAddress
+machineName
+machinenames
+MACHKernel
+MACROS
+MailAddress
+MajorDriverVersion
+MakeArrayType
+MakeBaseObjectArray
+MakeConverter
+MakeLocale
+MakeProductSuites
+Management PSSnapIn
+ManagementBaseObject
+ManagementClass
+ManagementDateTimeConverter
+ManagementEventWatcher
+ManagementException
+ManagementMshSnapInResources
+ManagementMshSnapInResources,Description
+ManagementMshSnapInResources,Vendor
+ManagementMshSnapInResources.resources
+ManagementObject
+managementObject
+ManagementObjectCollection
+ManagementObjectEnumerator
+ManagementObjectSearcher
+ManagementOperationObserver
+ManagementOptions
+ManagementQuery
+ManagementScope
+ManagementStatus
+Mandatory
+ManualResetEvent
+ManualResetEventSlim
+MapReturnCodeToErrorMessage
+MarkSessionAsConnected
+MarkSessionAsTerminated
+Marshal
+MatchFormat
+MatchingProcesses
+MatchingServices
+MatchingServicesByDisplayName
+MatchingServicesByInput
+MatchingServicesByServiceName
+matchList
+MatchMode
+MathProcessor
+Maximum
+MaximumEnumValue
+MaximumLength
+maxkbSpecified
+MaxMachineNameLength
+MaxNumberControlled
+maxPropertyValue
+MaxRetryDelayMs
+MaxSpeed
+MaxValue
+MayLeakOnAbort
+MediaConnectState
+MediaDuplexState
+MemberAttributes
+MemberServer
+MemberWorkstation
+MemoryInKilobytes
+MergeOptions
+MessageChannel
+methodInvocationInfo
+MethodInvocationInfo
+MethodInvocationJobBase`1
+methodName
+methodParameter
+MethodParameterBindings
+methodResult
+MI_OPERATIONOPTIONS_POWERSHELL_CMDLETNAME
+MI_OPERATIONOPTIONS_POWERSHELL_COMPUTERNAME
+MI_OPERATIONOPTIONS_POWERSHELL_MODULEVERSION
+MI_OPERATIONOPTIONS_PROVIDERVERSION
+MiClientApiError_
+Microsoft
+Microsoft (R) Windows (R) Operating System
+Microsoft Corporation
+Microsoft Windows PowerShell Management Commands
+Microsoft.CSharp
+Microsoft.CSharp.RuntimeBinder
+Microsoft.Management.Infrastructure
+Microsoft.Management.Infrastructure.Generic
+Microsoft.Management.Infrastructure.Options
+Microsoft.PowerShell
+Microsoft.PowerShell.Cim
+Microsoft.PowerShell.Cmdletization
+Microsoft.PowerShell.Cmdletization.Cim
+Microsoft.PowerShell.Cmdletization.ISessionBoundQueryBuilder<Microsoft.Management.Infrastructure.CimSession>.GetTargetSession
+Microsoft.PowerShell.Commands
+Microsoft.PowerShell.Commands.Internal
+Microsoft.PowerShell.Commands.Management
+Microsoft.PowerShell.Commands.Management.dll
+Microsoft.PowerShell.Commands.Management.pdb
+Microsoft.PowerShell.Commands.NewWebserviceProxy.AutogeneratedTypes.
+Microsoft.PowerShell.Commands.NewWebserviceProxy.AutogeneratedTypes.WebServiceProxy
+Microsoft.PowerShell.Management
+Microsoft.PowerShell.Security
+Microsoft.RegionAndLanguage
+Microsoft.Win32
+Microsoft.Win32.SafeHandles
+Microsoft.WSMan.Management
+MicrosoftHyperVServer
+MicrosoftNetworkAdapter
+MicrosoftNetworkAdapterNamespace
+Minimum
+MinorDriverVersion
+minPropertyValue
+MinRetryDelayMs
+Minute
+MinValue
+MiscInfoGroup
+ModemRing
+MODIFY_SETTINGS
+ModifyInstance_MethodName
+ModifyInstanceAsync
+ModifyInstanceJob
+ModifyLocalCimInstance
+ModifyOverflowPolicy
+Monitor
+Month
+moreData
+MountDefaultDrive
+MoveItem
+MoveItemCommand
+MoveItemDoesntExist
+MoveItemDynamicParameters
+MoveItemInUse
+MoveItemPropertyCommand
+MoveNext
+MovePropertyDynamicParameters
+Moving {0} to {1}
+MParameter WsmanAuthentication cannot be specified with the DCOM protocol. {0}
+mPath
+mscoree.dll
+mscorlib
+MSDOS
+MSFT_NetAdapter
+MshCommandRuntime
+MshLog
+MThe registry key for the log "{0}" could not be opened on the computer "{1}".
+MtuSize
+MUILanguages
+MultipleMatchingTimeZones
+MultipleMatchingTimeZonesError
+MultipleServiceCommandBase
+MyClass
+myMode
+myProcess_Exited
+n+I%+
+n0z!k
+namedProperties
+NameJ
+Namek
+nameOfCommandLineParameter
+nameOfService
+Nameq
+nameSet
+nameSetT
+NameSpace
+nameSpace
+namespaceOverride
+namespaceParameter
+namespaceSpecified
+NamespaceSpecifiedWithPath
+NameT
+nameToCheck
+NameWithUserName
+NameWithUserNameParameterSet
+NameWithUserNameT
+NanoServer
+nativeErrorCode
+NativeMethod
+NavigationCommands
+NavigationResources
+NavigationResources.resources
+nComputer '{0}' failed to join domain '{1}' from its current workgroup '{2}' with following error message: {3}.
+NCR3000
+NdisMedium
+NdisPhysicalMedium
+NeedAdminPrivilegeToResetPassword
+needsClientSideFiltering
+NeedToEnablePrivilege
+Negotiate
+Netapi32.dll
+netapi32.dll
+NetApiBufferFree
+NetBIOS name will be truncated.
+NetBIOSNameMaxLength
+NetBSD
+NetConnectionID
+NetConnectionStatus
+NetEnabled
+NETLOGON_CONTROL_REDISCOVER
+NETLOGON_CONTROL_TC_QUERY
+NETLOGON_INFO_2
+NetLogonInfo2
+NetLuid
+NetLuidIndex
+NetWare
+networkAdapters
+NetworkAddresses
+NetworkDown
+NetworkPathNotFound
+NeutralResourcesLanguageAttribute
+New drive
+NewArgumentNullException
+newcomputername
+newCustomOptions
+NewDriveConfirmAction
+NewDriveConfirmResourceTemplate
+NewDriveDynamicParameters
+NewEventLogCommand
+NewEventlogException
+NewInvalidOperationException
+NewItemCommand
+NewItemDynamicParameters
+NewItemPropertyCommand
+NewNameIsOldName
+NewPropertyDynamicParameters
+NewPSDriveCommand
+NewServiceCommand
+NewState
+newSubscriber_Unsubscribed
+newValue
+NewWebServiceProxy
+NextStep
+nextTestList
+No matches found
+NoAccess
+NoAppendableClipboardContent
+NoComputerNameWithFileVersion
+NoControlPanelItemFoundForGivenCanonicalName
+NoControlPanelItemFoundForGivenCanonicalName=
+NoControlPanelItemFoundForGivenCanonicalNameWithCategory
+NoControlPanelItemFoundForGivenCategory
+NoControlPanelItemFoundForGivenInstance
+NoControlPanelItemFoundForGivenName
+NoControlPanelItemFoundForGivenNameWithCategory
+NoControlPanelItemFoundWithNullCanonicalName
+NoControlPanelItemFoundWithNullCanonicalNameWithCategory
+NoCredentialsT
+NoDebuggerFound
+NoEntriesFound
+NoExtendedSemanticsSupportInRemoteDcomProtocol
+NonblockingShouldProcess
+-NoNewWindow
+NonRecoverable
+NonUpdateFlagSpecifiedWithInstancePath
+NonWildcardEqual
+NoPingResult
+NoProcessFoundForGivenId
+NoProcessFoundForGivenName
+noqualifier
+noQualifierSet
+NoQualifierSet
+NoQualifierSetT
+NoResorePoint
+NormalizeRelativePath
+NoServiceFoundForGivenDisplayName
+NoServiceFoundForGivenName
+NoSupportForCombinedServiceType
+NoSystemDrive
+NOT ({0})
+NotApplicable
+NotConfigured
+NotDisabled
+NotEnabled
+NotFound
+NotImplemented
+NotImplementedException
+NotIntalled
+noToAll
+NotReady
+NotStarted
+NotSupported
+NotSupportedException
+NotSupportedU
+NotUserRemovable
+NotValidDrive
+nowait
+nParameters DcomAuthentication and Impersonation should not be specified when the WSMan protocol is in use. {0}
+NTAccount
+nThis command cannot be run because "{0}" and "{1}" are same. Give different inputs and Run your command again.
+Nullable`1
+NumberOfAssignedProcess
+numberOfCharacters
+NumberOfEnabledCore
+NumberOfFunctionKeys
+numberOfProcessesToWaitFor
+NumberOfProcessIdsInList
+NumberStyles
+NumForwardPackets
+oAdministrator rights are required to reset the secure channel password on the local computer. Access is denied.
+oAn object at the specified path {0} does not exist, or has been filtered by the -Include or -Exclude parameter.
+object)
+objectAttributes
+ObjectDisposedException
+ObjectEventRegistrationBase
+ObjectGetOptions
+objectInstance
+ObjectName
+objectName
+objectQuery
+ObjectQuery
+ObjectReadyEventArgs
+ObjectReadyEventHandler
+ObjectSecurity
+objectToDelete
+objectToModify
+ObjectToWqlLiteral
+OCannot add computer '{0}' to domain '{1}' because it is already in that domain.
+OF_READWRITE
+OffDuty
+OffLine
+offset
+oldcomputername
+oldDomainName
+oldProgressRecord
+oldValue
+oldValueSetTime
+OnCompleted
+OnError
+OneService
+OnNext
+OnTimedEvent
+op_Equality
+op_Explicit
+op_GreaterThan
+op_GreaterThanOrEqual
+op_Implicit
+op_Inequality
+op_LessThan
+op_Subtraction
+OPEN_EXISTING
+OpenProcessToken
+OpenProcessTokenApiDllName
+OpenSCManagerW
+OpenServiceW
+OpenSubKey
+OpenVMS
+OperationalStatusDownDefaultPortNotAuthenticated
+OperationalStatusDownInterfacePaused
+OperationalStatusDownLowPowerState
+OperationalStatusDownMediaDisconnected
+OperationCanceledException
+OperationFailed
+operationOptions
+OperationStateEventArgs
+OptIn
+optionName
+options
+optionsFromCommandLine
+optionValue
+OptOut
+OriginalFilename
+OriginInfo
+OS_390
+OS400
+OSArchitecture
+OSEncryptionLevel
+OSInfoGroup
+OSLanguage
+OSProductSuite
+OSType
+OSWritingError
+Other
+OtherFamilyDescription
+OtherIdentifyingInfo
+otherInfo
+OtherLinkTechnology
+OtherNetworkPortType
+OtherPortType
+outputAction
+OutputEvents
+outputObject
+OutputTypeAttribute
+overflowSpecified
+OverwriteAsNeeded
+OverwriteOlder
+ownsHandle
+p*rP;
+PADPADP
+PADPADP.
+PADPADP>
+PADPADPa
+pageFileUsage
+PalmPilot
+ParamArrayAttribute
+Parameter WsmanAuthentication cannot be specified with the DCOM protocol. Parameter WSManAuthentication is valid only when the WSMan protocol is used.
+Parameter WsmanAuthentication is valid only if the WSMan protocol is used. Parameters DcomAuthentication (Authentication) and Impersonation are valid only if the DCOM protocol is used.
+Parameter WsmanAuthentication is valid only when the WSMan protocol is used. Parameters DcomAuthentication and Impersonation are valid only when the DCOM protocol is used.
+ParameterAttribute
+ParameterConfliction
+ParameterExpression
+ParameterNotSupported
+parameters
+ParameterSetName
+ParameterUsage
+parent
+parentJob
+parentPath
+ParentSet
+parentSet
+ParentSet
+ParentSetT
+ParseChildName
+ParseParent
+ParsePathFormatError
+PartNumber
+PartOfDomain
+passThrough
+PassThroughContentCommandBase
+PassThroughItemPropertyCommandBase
+Password
+password
+PasswordLength
+passwordLength
+PasswordPass
+path,
+Path: {0}
+PathDoesNotExist
+pathInfo
+PathInfoStack
+PathIntrinsics
+paths
+pathSet
+pathSetT
+pathsToResolve
+PathT
+pathT
+PathT
+PathUtils
+pattern
+Pause
+Paused
+PCIPME
+PdcConnectionStatus
+pdtzi
+PeakUsage
+pendingStatus
+PerceivedSeverity
+percentageCompleted
+percentComplete
+PerformanceServer
+PermanentAddress
+PermissionDenied
+persist
+pfResult
+PhysicalAdapter
+PhysicalAddress
+physicallyInstalledMemory
+PingException
+pingStatusObj
+PInvokeDllNames
+PipelineStoppedException
+pipingPaths
+PlatformID
+PlatformInvokes
+PMTUBHDetectEnabled
+PMTUDiscoveryEnabled
+PNPDeviceID
+PnPDeviceID
+policyHandle
+PopLocation
+PopLocationCommand
+PortNumber
+Position
+potentiallyBrokenSession
+POWER_PLATFORM_ROLE_V1
+POWER_PLATFORM_ROLE_V2
+PowerCycle
+PowerCyclingSupported
+PowerDeterminePlatformRoleEx
+PowerDeterminePlatformRoleExDllName
+PoweredOn
+PowerOff
+PowerPC
+powerPlatformRole
+PowerSaveHibernate
+PowerSaveLowPowerMode
+PowerSaveSoftOff
+PowerSaveStandby
+PowerSaveUnknown
+PowerSaveWarning
+PowerSavingModesEnteredAutomatically
+PowerShell
+PowerShellConnectionTest
+PowerStateSettable
+PowerSwitch
+Powrprof.dll
+Predicate`1
+PrependComputerNameToMessage
+PreviousState
+PrimaryAddressResolutionStatus
+PrimaryDomainController
+PRIVILEGE_SET
+PrivilegeCheck
+PrivilegeCheckApiDllName
+PrivilegeCount
+PrivilegeNotEnabled
+Process
+process
+Process is not terminated
+PROCESS_INFORMATION
+ProcessBaseCommand
+ProcessCollection
+ProcessCommandException
+ProcessComparison
+ProcessDCOMProtocol
+processDCOMProtocolForTestConnection
+processId
+ProcessId
+ProcessIdList
+processIds
+processList
+ProcessManager
+ProcessModule
+ProcessModuleCollection
+ProcessName
+ProcessNameForConfirmation
+processNames
+ProcessNativeMethods
+ProcessNotTerminated
+ProcessorId
+processors
+ProcessOutParameter
+processOutput
+ProcessPingStatus
+ProcessRecord
+ProcessResources
+ProcessResources.resources
+ProcessStartInfo
+ProcessWindowStyle
+ProcessWSManProtocol
+ProcessWSManProtocolForTestConnection
+Product
+ProductId
+ProductName
+ProductVersion
+progress
+ProgressActivity
+progressRecord
+progressRecordType
+ProgressRecordType
+ProgressStatusCompleted
+ProgressStatusCreatingRestorePoint
+PromiscuousMode
+promptType
+PromptUserCallback
+property
+Property
+propertyBag
+PropertyCmdletProviderIntrinsics
+PropertyCollection
+PropertyData
+PropertyDataCollection
+PropertyDataEnumerator
+propertyName
+propertyNames
+propertyPSObjectLiteralPathSet
+propertyPSObjectLiteralPathSetT
+propertyPSObjectPathSet
+propertyPSObjectPathSetT
+PropertySettingJob`1
+propertyTable
+propertyValue
+PropertyValueCollection
+PropertyValueExcludeFilter
+propertyValueFilter
+propertyValueLiteralPathSet
+propertyValueLiteralPathSetT
+PropertyValueMaxFilter
+PropertyValueMinFilter
+propertyValuePathSet
+propertyValuePathSetT
+PropertyValueRegularFilter
+propertyValues
+Protocol
+provider
+ProviderContentCloseError
+ProviderContentReadError
+ProviderContentWriteError
+ProviderInfo
+ProviderInvocationException
+ProviderName: {0}
+providerNames
+ProviderNotFoundException
+ProviderSeekError
+PSArgumentException
+PSArgumentNullException
+PSArgumentOutOfRangeException
+PSChildName
+PSCmdlet
+PSCredential
+PSCredentialDelimiter
+psDataCollection
+PSDataCollection`1
+PSDrive
+PSDriveInfo
+PSEventSubscriber
+PSEventUnsubscribedEventArgs
+PSEventUnsubscribedEventHandler
+PSInvalidCastException
+PSInvalidOperationException
+psLocalCredential
+PSManagementPSSnapIn
+PSMemberInfo
+PSMemberInfoCollection`1
+PSMemberInfoInternalCollection`1
+PSNoteProperty
+PSNotSupportedException
+PSParentPath
+PSPath
+psPath
+PSPath
+PSPrimitiveDictionary
+PSProperty
+PSPropertyInfo
+PSProvider
+PSReference
+PSSnapinQualifiedName
+PSStreamObject
+PSStreamObjectType
+PSTraceSource
+PSTransactionContext
+PSTransactionManager
+PsUtils
+PSWmiChildJob
+PSWmiJob
+pszRootPath
+PtrToStructure
+PushCurrentLocation
+PushLocationCommand
+PutOptions
+Qjy#Rn4
+qThe specified path is a container that has child items. Do you want to delete this container and its child items?
+QualifierSet
+qualifierSet
+QualifierSet
+QualifierSetT
+query
+query 
+query+
+queryBuilder
+queryDescription
+QueryDialect
+QueryFirstInstance
+queryInformation
+QueryInformationJobObject
+QueryInstances
+QueryInstancesAsync
+QueryInstancesJob
+QueryJobBase
+QueryLanguageKey
+queryOptions
+queryT
+Queue`1
+QueueUserWorkItem
+Quiesced
+Quiet
+quiet
+QuietParameterSet
+quietResults
+RaiseOperationCompleteEvent
+RaiseWmiOperationState
+RandomNumberGenerator
+rCannot wait for the local computer to restart. The local computer is ignored when the Wait parameter is specified.
+ReadAll
+ReadCount
+readerPaths
+ReadOnlyCollection`1
+ReadOnlyCollectionBase
+ReadWithoutWaitingChanges
+reason
+Reboot
+RebootComplete
+ReceiveLinkSpeed
+recurse
+RecycleBin
+RecycleFlags
+RedirectionParams
+RedirectionPath
+RedirectStandardError
+RedirectStandardInput
+RedirectStandardInput '
+RedirectStandardOutput
+regCurVer
+Regex
+RegexOptions
+RegionCanonicalName
+Register
+RegisteredOrganization
+RegisteredOwner
+RegisterWmiEventCommand
+RegistryKey
+RegistryValueKind
+RegularName
+RegularNameParameterSet
+RegularNames
+RegularNameT
+RegularParameterSet
+RegWinNtCurrentVersion
+relative
+ReleaseHandle
+ReleaseId
+ReliabilityContractAttribute
+ReliantUNIX
+Remote
+Remote shutdown access rights
+RemoteDiscoveryHelper
+RemoteParameterSet
+RemoteShutdownPrivilege
+RemoteT
+RemoteV
+RemotingCapability
+RemotingConstants
+RemotingErrorRecord
+Remove
+Remove Drive
+remove_JobUnblocked
+remove_OperationComplete
+remove_ShutdownComplete
+remove_WmiOperationState
+RemoveComputerCommand
+RemoveComputerConfirm
+RemoveComputerException
+RemoveDriveConfirmAction
+RemoveDriveConfirmResourceTemplate
+RemoveDriveInUse
+RemoveEventLogCommand
+RemoveEventLogWarning
+RemoveFailed
+RemoveItem
+RemoveItemCommand
+RemoveItemDynamicParameters
+RemoveItemInUse
+RemoveItemPropertyCommand
+RemoveItemWithChildren
+RemoveNotStoppedServices
+RemovePropertyDynamicParameters
+RemovePSDriveCommand
+RemoveQualifier
+RemoveSourceWarning
+RemoveWMICOMException
+RemoveWMIManagementException
+RemoveWmiObject
+Remove-WMIObject
+Rename
+Rename {0} to {1}
+RenameCommandWsmanAuthParamConflict
+RenameComputer
+RenameComputerChangeInfo
+RenameComputerCommand
+RenameComputerException
+RenamedItemInUse
+RenameFailed
+RenameItemCommand
+RenameItemDoesntExist
+RenameItemDynamicParameters
+RenameItemPropertyCommand
+RenamePropertyDynamicParameters
+RepairSecureChannelFail
+RepairSecureChannelSucceed
+Replace
+Replaceable
+ReportJobFailure
+Repository`1
+requestedProperties
+RequestedSpeed
+RequiredPrivileges
+requiredservices
+RequirementsDescription
+RequiresDaughterBoard
+Reserved
+Reset
+ResetComputerMachinePassword
+ResetComputerMachinePasswordCommand
+ResetComputerNotInDomain
+ResetMachineAccountPassword
+ResetSecureChannel
+Resolve
+resolve
+ResolveAll
+ResolveFilePath
+ResolvePathCommand
+ResolvePaths
+resourceCulture
+resourceId
+resourceIdPending
+resourceMan
+resourceString
+ResourceUri
+Restart
+Restart is complete
+RestartComplete
+RestartComputerAction
+RestartComputerCommand
+RestartcomputerFailed
+RestartComputerInvalidParameter
+RestartComputerSkipped
+RestartComputerTimeout
+RestartComputerTimeoutException
+RestartMultipleComputersActivity
+RestartNeeded
+RestartOneComputerUsingDcom
+RestartServiceCommand
+RestartSingleComputerActivity
+Restore
+RestoreComputerCommand
+RestoreComputerNotSupported
+RestoreFailed
+RestoreInterrupted
+RestorePointNotCreated
+RestoreSuceess
+RestoreTokenPrivilege
+result
+resultRole
+results
+Resume
+ResumeServiceCommand
+ResumeServiceFailed
+ResumeThread
+ResumingService
+retentionSpecified
+RetrieveMatchingProcessesById
+RetrieveMatchingProcessesByProcessName
+RetrieveProcessesByInput
+RetrieveProcessUserName
+returnCode
+ReturnContainers
+ReturnValue
+Revision
+Rhapsody
+Rollback
+RollbackAction
+rollbackPreference
+RollbackSeverity
+root/cimv2
+root/StandardCimv2
+root\cimv2
+root\Microsoft\Windows\DeviceGuard
+RootDirectory
+RSDSf
+RThis command stopped operation of "{0} ({1})" because of the following error: {2}.
+RunAs
+RunAsJob
+RunInstallerAttribute
+Running
+RunningOrFullPower
+RuntimeCompatibilityAttribute
+RuntimeDefinedParameter
+RuntimeDefinedParameterDictionary
+RuntimeException
+RuntimeHelpers
+RuntimeTypeHandle
+SafeFileHandle
+SafeGetProcessId
+SafeGetProcessName
+SafeHandle
+SafeHandleZeroOrMinusOneIsInvalid
+SafeInvoke
+SafeJobHandle
+SafeLocalMemHandle
+SafeNativeMethods
+SafeRefresh
+SafeThreadHandle
+SAMAPI
+SC_MANAGER_CONNECT
+SC_MANAGER_CREATE_SERVICE
+ScanForwardsForTail
+SCannot enumerate the modules and the file version information of the "{0}" process.
+SCannot set the local time zone because the name '{0}' resolves to multiple entries.
+sCannot stop service '{1} ({0})' because it has dependent services. It can only be stopped if the Force flag is set.
+SCOOpenServer
+scope
+SCOUnixWare
+SE_PRIVILEGE_ENABLED
+SE_REMOTE_SHUTDOWN_NAME
+SE_SHUTDOWN_NAME
+SE_TIME_ZONE_NAME
+searchProcess
+SearchResolutionOptions
+SearchResult
+Second
+SecondLevelAddressTranslationExtensions
+secondsRemaining
+SecondsToWaitForRestartToBegin
+SECRET_QUERY_VALUE
+SECRET_SET_VALUE
+secretHandle
+SecretKey
+secretName
+SecureBoot
+SecureChannelAlive
+SecureChannelBroken
+SecureMemoryOverwrite
+SecureStringToCoTaskMemUnicode
+SECURITY_ATTRIBUTES
+SecurityAction
+SecurityDescriptorCommandsBase
+SecurityException
+SecurityIdentifier
+SecurityPermissionAttribute
+SecurityQualityOfService
+SeekContentPosition
+SeekItemsBackward
+SeekOrigin
+SeekPositionForTail
+Select
+select 
+select * from 
+SELECT * FROM 
+SELECT * from 
+Select * from 
+SELECT * FROM CIM_DataFile Where Name='{0}'
+select * from meta_class
+select * from meta_class where __class like '
+select * from SystemRestore
+select * from SystemRestore where SequenceNumber = 
+Select * from Win32_ComputerSystem
+select * from Win32_ComputerSystem
+Select * from Win32_OperatingSystem
+select * from Win32_OperatingSystem
+Select * From Win32_OperatingSystem
+Select * From Win32_Process Where ProcessId=
+Select * from Win32_QuickFixEngineering
+Select * from Win32_QuickFixEngineering where (
+Select * from Win32_Service Where name = 'Winmgmt'
+Select * From Win32_Service Where ProcessId=
+selectionMode
+SelectionMode
+selectrequired
+sender
+SendMessageTimeout
+SendMessageTimeoutApiDllName
+SensitiveString
+sequenceNumber
+SequenceNumber
+sequenceNumberLock
+Sequent
+SeRemoteShutdownPrivilege
+SerializationFormatter
+SerializationInfo
+Server
+Server Core
+Server2008Enterprise
+ServerCore
+ServerCoreWithManagementTools
+ServerForSmallBusinessEdition
+ServerFoundation
+Server-Gui-Mgmt
+Server-Gui-Shell
+serverLevel
+serverName
+serverNameSpecified
+Service
+service
+Service
+SERVICE_AUTO_START
+SERVICE_CHANGE_CONFIG
+SERVICE_CONFIG_DESCRIPTION
+SERVICE_DEMAND_START
+SERVICE_DESCRIPTIONW
+SERVICE_DISABLED
+SERVICE_ERROR_NORMAL
+SERVICE_NO_CHANGE
+SERVICE_QUERY_CONFIG
+SERVICE_WIN32_OWN_PROCESS
+ServiceBaseCommand
+ServiceCommandException
+ServiceComparison
+ServiceController
+serviceController
+ServiceControllerStatus
+ServiceDescriptionImporter
+ServiceDisabled
+ServiceHasDependentServices
+ServiceHasDependentServicesNoForce
+ServiceIsDependentOnNoForce
+ServiceName
+ServiceNameForConfirmation
+serviceNames
+ServiceOperationBaseCommand
+ServiceResources
+ServicesDependedOn
+ServiceStartMode
+serviceStatus
+SeShutdownPrivilege
+Session
+session
+SessionBasedCmdletAdapter`2
+SessionBasedWrapper_ShouldProcessVsJobConflict
+sessionForJob
+sessionForMethodInvocationJob
+sessionOfOrigin
+SessionStateException
+SessionStateInternal
+SessionStateOverflowException
+SessionStateStrings
+SessionStateUtilities
+sessionWasAlreadyTerminated
+sessionWasSpecified
+Set {0} files to the clipboard.
+Set Content
+set_Action
+set_Activity
+set_AddressWidth
+set_After
+set_AllowAutoRedirect
+set_Amended
+set_Append
+set_Architecture
+set_ArgumentList
+set_Arguments
+set_AsBaseObject
+set_AsHtml
+set_AsJob
+set_AsString
+set_Attributes
+set_Authentication
+set_Authority
+set_Availability
+set_AvailableSecurityProperties
+set_Before
+set_BehaviorOnNoMatch
+set_BinaryPathName
+set_Bindings
+set_BiosBIOSVersion
+set_BiosBuildNumber
+set_BiosCaption
+set_BiosCharacteristics
+set_BiosCodeSet
+set_BiosCurrentLanguage
+set_BiosDescription
+set_BiosEmbeddedControllerMajorVersion
+set_BiosEmbeddedControllerMinorVersion
+set_BiosFirmwareType
+set_BiosIdentificationCode
+set_BiosInstallableLanguages
+set_BiosInstallDate
+set_BiosLanguageEdition
+set_BiosListOfLanguages
+set_BiosManufacturer
+set_BiosName
+set_BiosOtherTargetOS
+set_BiosPrimaryBIOS
+set_BiosReleaseDate
+set_BiosSeralNumber
+set_BiosSMBIOSBIOSVersion
+set_BiosSMBIOSMajorVersion
+set_BiosSMBIOSMinorVersion
+set_BiosSMBIOSPresent
+set_BiosSoftwareElementState
+set_BiosStatus
+set_BiosSystemBiosMajorVersion
+set_BiosSystemBiosMinorVersion
+set_BiosTargetOperatingSystem
+set_BiosVersion
+set_BufferSize
+set_CancellationToken
+set_CanonicalName
+set_Category
+set_CategoryResourceFile
+set_ChildName
+set_ChildPath
+set_CimSession
+set_Class
+set_ClientSideQuery
+set_CmdletDefinitionContext
+set_CmdletInvocationContext
+set_CmdletInvocationInfo
+set_CmdletizationClassName
+set_CmdletizationClassVersion
+set_CmdletizationModuleVersion
+set_CodeGenerationOptions
+set_CodeIntegrityPolicyEnforcementStatus
+set_ComputerName
+set_ConnectionID
+set_ConnectionStatus
+set_Container
+set_Count
+set_CpuStatus
+set_CreateNoWindow
+set_Credential
+set_Credentials
+set_CsAdminPasswordStatus
+set_CsAutomaticManagedPagefile
+set_CsAutomaticResetBootOption
+set_CsAutomaticResetCapability
+set_CsBootOptionOnLimit
+set_CsBootOptionOnWatchDog
+set_CsBootROMSupported
+set_CsBootStatus
+set_CsBootupState
+set_CsCaption
+set_CsChassisBootupState
+set_CsChassisSKUNumber
+set_CsCurrentTimeZone
+set_CsDaylightInEffect
+set_CsDescription
+set_CsDNSHostName
+set_CsDomain
+set_CsDomainRole
+set_CsEnableDaylightSavingsTime
+set_CsFrontPanelResetStatus
+set_CsHypervisorPresent
+set_CsInfraredSupported
+set_CsInitialLoadInfo
+set_CsInstallDate
+set_CsKeyboardPasswordStatus
+set_CsLastLoadInfo
+set_CsManufacturer
+set_CsModel
+set_CsName
+set_CsNetworkAdapters
+set_CsNetworkServerModeEnabled
+set_CsNumberOfLogicalProcessors
+set_CsNumberOfProcessors
+set_CsOEMStringArray
+set_CsPartOfDomain
+set_CsPauseAfterReset
+set_CsPCSystemType
+set_CsPCSystemTypeEx
+set_CsPhyicallyInstalledMemory
+set_CsPowerManagementCapabilities
+set_CsPowerManagementSupported
+set_CsPowerOnPasswordStatus
+set_CsPowerState
+set_CsPowerSupplyState
+set_CsPrimaryOwnerContact
+set_CsPrimaryOwnerName
+set_CsProcessors
+set_CsResetCapability
+set_CsResetCount
+set_CsResetLimit
+set_CsRoles
+set_CsStatus
+set_CsSupportContactDescription
+set_CsSystemFamily
+set_CsSystemSKUNumber
+set_CsSystemType
+set_CsThermalState
+set_CsTotalPhysicalMemory
+set_CsUserName
+set_CsWakeUpType
+set_CsWorkgroup
+set_Culture
+set_CurrentClockSpeed
+set_CurrentOperation
+set_DataWidth
+set_DcomAuthentication
+set_DebugActionPreference
+set_Delay
+set_DependentServices
+set_DependsOn
+set_Depth
+set_Description
+set_Destination
+set_DeviceGuardAvailableSecurityProperties
+set_DeviceGuardCodeIntegrityPolicyEnforcementStatus
+set_DeviceGuardRequiredSecurityProperties
+set_DeviceGuardSecurityServicesConfigured
+set_DeviceGuardSecurityServicesRunning
+set_DeviceGuardSmartStatus
+set_DeviceGuardUserModeCodeIntegrityPolicyEnforcementStatus
+set_DHCPEnabled
+set_DHCPServer
+set_DirectRead
+set_DisplayName
+set_Domain
+set_DomainCredential
+set_DomainName
+set_Drive
+set_DriveLetter
+set_DynamicParameters
+set_EnableAllPrivileges
+set_EnableMethodResultStreaming
+set_EnablePrivileges
+set_EnableRaisingEvents
+set_EntryType
+set_EnumerateDeep
+set_ErrorActionPreference
+set_ErrorDetails
+set_ErrorMessageGenerator
+set_EventId
+set_Exclude
+set_FileName
+set_FilePath
+set_FileVersionInfo
+set_Filter
+set_Finished
+set_FixComments
+set_Flags
+set_For
+set_Force
+set_Format
+set_GenerateExecutable
+set_GenerateInMemory
+set_HadMatches
+set_HasSucceeded
+set_HotFixID
+set_HyperVisorPresent
+set_HyperVRequirementDataExecutionPreventionAvailable
+set_HyperVRequirementSecondLevelAddressTranslation
+set_HyperVRequirementVirtualizationFirmwareEnabled
+set_HyperVRequirementVMMonitorModeExtensions
+set_Id
+set_Impersonation
+set_Include
+set_IncludeUserName
+set_Independent
+set_Index
+set_InputObject
+set_InstalledOn
+set_InstanceId
+set_IPAddresses
+set_IsAbsolute
+set_IsBackground
+set_IsClass
+set_IsValid
+set_IsValuePresent
+set_Item
+set_ItemType
+set_KeyboardLayout
+set_LastStatus
+set_Leaf
+set_List
+set_ListAvailable
+set_LiteralName
+set_LiteralPath
+set_LoadUserProfile
+set_LocalCredential
+set_Locale
+set_LogName
+set_LogonServer
+set_MachineName
+set_Manufacturer
+set_MaxClockSpeed
+set_MaximumKilobytes
+set_MaximumSize
+set_Message
+set_MessageResourceFile
+set_Module
+set_Name
+set_Namespace
+set_NamespaceOverride
+set_NamespacePath
+set_NewComputerName
+set_Newest
+set_NewName
+set_NoNewWindow
+set_NoQualifier
+set_NoWait
+set_NumberOfCores
+set_NumberOfLogicalProcessors
+set_OldComputerName
+set_OperationState
+set_Options
+set_OsArchitecture
+set_OsBootDevice
+set_OsBuildNumber
+set_OsBuildType
+set_OsCodeSet
+set_OsCountryCode
+set_OsCSDVersion
+set_OsCurrentTimeZone
+set_OsDataExecutionPrevention32BitApplications
+set_OsDataExecutionPreventionAvailable
+set_OsDataExecutionPreventionDrivers
+set_OsDataExecutionPreventionSupportPolicy
+set_OsDebug
+set_OsDistributed
+set_OsEncryptionLevel
+set_OsForegroundApplicationBoost
+set_OsFreePhysicalMemory
+set_OsFreeSpaceInPagingFiles
+set_OsFreeVirtualMemory
+set_OsHardwareAbstractionLayer
+set_OsHotFixes
+set_OsInstallDate
+set_OsInUseVirtualMemory
+set_OsLanguage
+set_OsLastBootUpTime
+set_OsLocalDateTime
+set_OsLocale
+set_OsLocaleID
+set_OsManufacturer
+set_OsMaxNumberOfProcesses
+set_OsMaxProcessMemorySize
+set_OsMuiLanguages
+set_OsName
+set_OsNumberOfLicensedUsers
+set_OsNumberOfProcesses
+set_OsNumberOfUsers
+set_OsOperatingSystemSKU
+set_OsOrganization
+set_OsOtherTypeDescription
+set_OsPAEEnabled
+set_OsPagingFiles
+set_OsPortableOperatingSystem
+set_OsPrimary
+set_OsProductSuites
+set_OsProductType
+set_OsRegisteredUser
+set_OsSerialNumber
+set_OsServerLevel
+set_OsServicePackMajorVersion
+set_OsServicePackMinorVersion
+set_OsSizeStoredInPagingFiles
+set_OsStatus
+set_OsSuites
+set_OsSystemDevice
+set_OsSystemDirectory
+set_OsSystemDrive
+set_OsTotalSwapSpaceSize
+set_OsTotalVirtualMemorySize
+set_OsTotalVisibleMemorySize
+set_OsType
+set_OsUptime
+set_OsVersion
+set_OsWindowsDirectory
+set_OUPath
+set_OverflowAction
+set_ParameterResourceFile
+set_ParameterType
+set_Parent
+set_ParentPath
+set_PassThru
+set_Password
+set_Path
+set_PathType
+set_PercentComplete
+set_Persist
+set_PowerPlatformRole
+set_PreserveInvocationInfoOnce
+set_ProcessName
+set_ProcessorID
+set_ProcessorType
+set_PromptUser
+set_PromptUserMode
+set_Property
+set_PropertyName
+set_PropertyType
+set_PropertyValue
+set_Protocol
+set_Provider
+set_PSDrive
+set_PSJobTypeName
+set_PSPath
+set_PSProvider
+set_PutType
+set_Qualifier
+set_Query
+set_QueryString
+set_Quiet
+set_Raw
+set_RawData
+set_ReadCount
+set_RecordType
+set_Recurse
+set_RedirectStandardError
+set_RedirectStandardInput
+set_RedirectStandardOutput
+set_Relative
+set_Repair
+set_RequiredSecurityProperties
+set_RequiredServices
+set_Resolve
+set_ResourceUri
+set_ResourceUriPrefix
+set_Restart
+set_RestorePoint
+set_RestorePointType
+set_RetentionDays
+set_Role
+set_RollbackPreference
+set_Root
+set_Scope
+set_SecondsRemaining
+set_SecurePassword
+set_SecurityServicesConfigured
+set_SecurityServicesRunning
+set_Server
+set_ServiceName
+set_Session
+set_ShouldProcessOptimization
+set_SocketDesignation
+set_Source
+set_Stack
+set_StackName
+set_StartupType
+set_State
+set_Status
+set_SuppliedComputerName
+set_SupportsShouldProcess
+set_SuppressOutputForwarding
+set_SuppressWildcardExpansion
+set_SyncObject
+set_Tail
+set_TargetName
+set_TargetObject
+set_TargetType
+set_TextFormatType
+set_ThrottleLimit
+set_Timeout
+set_TimeToLive
+set_TimeZone
+set_TotalCount
+set_TransactedScript
+set_TreatWarningsAsErrors
+set_Type
+set_UnjoinDomainCredential
+set_Unsecure
+set_Uri
+set_UseAmendedQualifiers
+set_UseDefaultCredential
+set_UseDefaultCredentials
+set_UseNewEnvironment
+set_UserModeCodeIntegrityPolicyEnforcementStatus
+set_UserName
+set_Username
+set_UseShellExecute
+set_UsesResultsCollection
+set_Value
+set_Verb
+set_Verbose
+set_VerboseActionPreference
+set_Wait
+set_WarningActionPreference
+set_WarningLevel
+set_WindowsBuildLabEx
+set_WindowsCurrentVersion
+set_WindowsEditionId
+set_WindowsInstallationType
+set_WindowsInstallDateFromRegistry
+set_WindowsProductId
+set_WindowsProductName
+set_WindowsRegisteredOrganization
+set_WindowsRegisteredOwner
+set_WindowsSystemRoot
+set_WindowStyle
+set_WindowsVersion
+set_WmiState
+set_WorkgroupName
+set_WorkingDirectory
+set_WriteError
+set_WriteErrorMode
+set_WriteMessage
+set_WriteProgress
+set_WsmanAuthentication
+SetAccessToken
+Set-Clipboard
+SetClipboardCommand
+SetClipboardContent
+SetCompletedJobState
+SetContentAction
+SetContentCommand
+SetContentTarget
+SetCustomOption
+SetCustomOptions
+SetDefaultLocationStack
+SetDynamicTimeZoneApiDllName
+SetDynamicTimeZoneInformation
+SetErrorCategory
+SetErrorId
+SetFileDropList
+SetFilters
+SetHandle
+SeTimeZonePrivilege
+SetInvocationInfo
+SetItemCommand
+SetItemDynamicParameters
+SetItemPropertyCommand
+SetJobState
+SetLocation
+SetLocationCommand
+SetMultipleFilesToClipboard
+SetObjectDataMember
+SetObjectDataMembers
+SetOption
+SetPassword
+SetPromptUserRegularMode
+SetPropertyDynamicParameters
+SetPropertyValue
+SetSecurityDescriptorSddlForm
+SetServiceCommand
+SetSingleFileToClipboard
+SetStatusMessage
+SetTargetObject
+SetText
+SetTimeZoneCommand
+SetTimeZoneFailed
+SetTimeZoneFailedError
+SettingID
+SetUpComputerInfoUsingDcom
+SetUpComputerInfoUsingWsman
+SetValue
+SetWMICOMException
+SetWmiInstance
+Set-WMIInstance
+SetWmiInstanceBuildManagementPath
+SetWmiInstanceGetObject
+SetWmiInstanceGetPipelineObject
+SetWMIManagementException
+shell:::{26EE0668-A00A-44D7-9371-BEB064C98683}
+shell:::{26EE0668-A00A-44D7-9371-BEB064C98683}\0
+Shell32
+Shell32.dll
+ShellFolderItem
+SHEmptyRecycleBin
+SHERB_NOCONFIRMATION
+SHERB_NOPROGRESSUI
+SHERB_NOSOUND
+ShouldContinue
+shouldKillCurrentProcess
+ShouldProcessPossibleOptimization
+ShouldProcessReason
+ShouldProcessServiceOperation
+ShouldReportErrorOnNoMatches_IfMultipleFilters
+ShowComputerNameNoteProperty
+ShowControlPanelItemCommand
+ShowEventLogCommand
+SID_AND_ATTRIBUTES
+SID_NAME_USE
+Single
+SingleOrDefault
+sinkCompleted
+SizeOf
+Skip computer '{0}' with new name '{1}' because the new name is not valid. The new computer name entered is not properly formatted. Standard names may contain letters (a-z, A-Z), numbers (0-9), and hyphens (-), but no spaces or periods (.). The name may not consist entirely of digits, and may not be longer than 63 characters.
+SkipSystemRestoreOperationForARMPlatform
+SkipTestConnection
+skipTestConnection
+SkipVerification
+Slate
+slc.dll
+Sleep
+SleepAndRetry
+SleepAndRetry_OnWakeup
+SLGetWindowsInformationDWORD
+sList
+SlotLayout
+SmallBusinessServer
+SmallBusinessServerEdition
+SmallBusinessServerPremiumCore
+SmallBusinessServerPremiumEdition
+SmallBusinessServerRestricted
+SMTO_ABORTIFHUNG
+sNamespace
+Software\Microsoft\Windows NT\CurrentVersion
+SOFTWARE\Microsoft\Windows NT\CurrentVersion
+Software\Microsoft\Windows NT\CurrentVersion\Server\ServerLevels
+Software\Microsoft\Windows NT\CurrentVersion\SystemRestore
+SOHOServer
+Solaris
+Source
+SourceDoesNotExist
+SourceExistInComp
+SourceExists
+SourceExistWithLog
+sourceHash
+SourceParameterSet
+sourceRole
+SourceT
+sourceValue
+SpecialFolder
+SpecialRequirements
+SpecialVariables
+Split
+SplitPathCommand
+srccodeCache
+Stack
+Stack@
+stackName
+stackNames
+StackOverflowException
+stackSet
+stackSwitch
+StackT
+StageVerification
+StandaloneServer
+StandaloneWorkstation
+Standard
+StandardBias
+StandardDate
+StandardServerCoreEdition
+Start
+StartableJob
+Started
+StarterEdition
+StartFragment:<<<<<<<<3      
+StartHTML:<<<<<<<<1      
+startInfo
+startinfo
+StartingService
+StartJob
+startLocalTime
+StartMode
+StartOperation
+Start-Process
+StartProcessCommand
+StartSelection:<<<<<<<<3      
+StartServiceCommand
+StartServiceFailed
+StartsWith
+starttime
+startTime
+StartTransactionCommand
+STARTUPINFO
+startupType
+startUtcTime
+StartWithCreateProcess
+StartWithShellExecute
+stateEventArgs
+stateInfo
+STATUS_ACCESS_DENIED
+STATUS_OBJECT_NAME_NOT_FOUND
+StatusCode
+statusDescription
+StatusInfo
+statusMessage
+Stepping
+SThe Uniform Resource Identifier (URI) cannot be null or empty. Provide a valid URI.
+StopAllOperations
+StopCommandAuthProtcolConflict
+StopCommandParamMessage
+StopCommandParamWSManAuthConflict
+StopCommandWSManAuthProtcolConflict
+StopComputerCommand
+StopComputerException
+StopcomputerFailed
+stopContextCollection
+StopDependentService
+StopJob
+stopMessageGetter
+StopOperation
+Stopped
+Stopping
+StoppingService
+StopProcessCommand
+StopProcessing
+StopServiceCommand
+StopServiceFailed
+StorageEnterpriseServerEdition
+StorageExpressServerEdition
+StorageServerEdition
+StorageServerEnterpriseCore
+StorageServerExpressCore
+StorageServerStandardCore
+StorageServerWorkgroupCore
+StorageStandardServerEdition
+StorageWorkgroupServerEdition
+streamedResult
+StreamingContext
+String argument may not be null or empty
+String too long
+StringBuilder
+StringCollection
+StringComparer
+StringComparison
+StringDictionary
+StringEnumerator
+StringFileInfo
+StringSplitOptions
+StringT
+StringToCoTaskMemAuto
+StringToCoTaskMemUni
+StringToHGlobalUni
+StringUtil
+StringWriter
+StructureToPtr
+Subscribe
+Substring
+Subtract
+SuccessAudit
+SuiteMask
+suiteMask
+SunOS
+SupportedMaximumTransmissionUnit
+SupportsShouldProcess
+supportsShouldProcess
+SupportsShouldProcess
+SupportsTransactions
+SuppressFinalize
+SuppressUnmanagedCodeSecurityAttribute
+suppressWildcardExpansion
+Suspend
+SuspendingService
+SuspendServiceCommand
+SuspendServiceFailed
+SVCHOST
+SwitchParameter
+syncObject
+sysdrive
+System.ApplicationName
+System.CodeDom
+System.CodeDom.Compiler
+System.Collections
+System.Collections.Concurrent
+System.Collections.Generic
+System.Collections.Generic.IEnumerable<Microsoft.PowerShell.Cmdletization.Cim.ClientSideQuery.NotFoundError>.GetEnumerator
+System.Collections.Generic.IEnumerator<Microsoft.PowerShell.Cmdletization.Cim.ClientSideQuery.NotFoundError>.Current
+System.Collections.Generic.IEnumerator<Microsoft.PowerShell.Cmdletization.Cim.ClientSideQuery.NotFoundError>.get_Current
+System.Collections.IEnumerable.GetEnumerator
+System.Collections.IEnumerator.Current
+System.Collections.IEnumerator.get_Current
+System.Collections.IEnumerator.Reset
+System.Collections.ObjectModel
+System.Collections.Specialized
+System.ComponentModel
+System.ControlPanel.Category
+System.Core
+System.Data.dll
+System.Diagnostics
+System.Diagnostics.Process#IncludeUserName
+System.DirectoryServices
+System.dll
+System.Drawing
+System.Globalization
+System.IDisposable.Dispose
+System.IO
+System.Linq
+System.Linq.Expressions
+System.Management
+System.Management.Automation
+System.Management.Automation.ConfirmImpact, System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Management.Automation.IDynamicParameters.GetDynamicParameters
+System.Management.Automation.Internal
+System.Management.Automation.PathInfo, System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Management.Automation.PathInfoStack, System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Management.Automation.Provider
+System.Management.Automation.ProviderInfo, System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Management.Automation.PSDriveInfo, System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Management.Automation.PSTransaction, System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Management.Automation.Remoting
+System.Management.Automation.Remoting.Internal
+System.Management.Automation.RemotingCapability, System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+System.Management.Automation.Runspaces
+System.Net
+System.Net.Mail
+System.Net.NetworkInformation
+System.Reflection
+System.Resources
+System.Runtime.CompilerServices
+System.Runtime.ConstrainedExecution
+System.Runtime.InteropServices
+System.Runtime.InteropServices.CustomMarshalers.EnumeratorToEnumVariantMarshaler, CustomMarshalers, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Runtime.Serialization
+System.Runtime.Versioning
+System.Security
+System.Security.AccessControl
+System.Security.Claims
+System.Security.Cryptography
+System.Security.Cryptography.X509Certificates
+System.Security.Permissions
+System.Security.Permissions.HostProtectionAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Security.Permissions.SecurityPermissionAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Security.Principal
+System.ServiceProcess
+System.ServiceProcess.ServiceController, System.ServiceProcess, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Text
+System.Text.RegularExpressions
+System.Threading
+System.Threading.Tasks
+System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+System.Web.Services
+System.Web.Services.Description
+System.Web.Services.Discovery
+System.Web.Services.dll
+System.Web.Services.Protocols
+System.Windows.Forms
+System.Xml
+System.Xml.dll
+System.Xml.Serialization
+SystemCreationClassName
+SystemDefaultCharSize
+systemDirectory
+SystemElementState
+SystemException
+systemInfo
+SystemInfoGroup
+systemName
+SystemRestore
+SystemRestoreNotSupported
+SystemRestorePointCreationFrequency
+SystemRestoreServiceDisabled
+SystemRoot
+SystemTime
+SystemUtilities
+SystemWebAssemblyNotFound
+TailAndHeadCannotCoexist
+TailNotSupported
+TandemNSK
+TandemNT
+target
+Target
+TargetFrameworkAttribute
+targetInstance
+TargetInvocationException
+targetObj
+targetObject
+targetStatus
+Task`1
+Taskbar and Start Menu
+TCIM query for enumerating associated instance of the {0} class on the {1} CIM server
+TcpipNetbiosOptions
+TcpMaxConnectRetransmissions
+TcpMaxDataRetransmissions
+TcpNumConnections
+TcpUseRFC1122UrgentPointer
+TcpWindowSize
+TdcConnectionStatus
+TempPageFile
+TerminalServices
+TerminalServicesSingleSession
+terminatedSession
+terminating
+terminatingErrorTracker
+TerminatingErrorTracker
+TestComputerNotInDomain
+TestComputerSecureChannelCommand
+TestConnectionCommand
+TestConnectionException
+TestHeadlessServerScript
+TestPathCommand
+TestPathType
+TestPowerShell
+TestPowershellScript
+TestRestartStageUsingDcom
+TestRestartStageUsingWsman
+TestWinrmConnection
+TestWmiConnectionUsingWsman
+TextDataFormat
+textFormat
+TextWriter
+The {0} command cannot complete, because the {1} server is currently busy.  The command will be automatically resumed in {2:f2} seconds.
+The Clipboard has been cleared.
+The cmdlet does not fully support the Inquire action for debug messages.  Cmdlet operation will continue during the prompt.  Select a different action preference via -Debug switch or $DebugPreference variable, and try again.
+The cmdlet does not fully support the Inquire action for warnings.  Cmdlet operation will continue during the prompt.  Select a different action preference via -WarningAction parameter or $WarningPreference variable, and try again.
+The cmdlet does not fully support the Stop action for warnings.  Cmdlet operation will be stopped with a delay.  Select a different action preference via -WarningAction parameter or $WarningPreference variable, and try again.
+The command cannot be used to configure the service '{0}' because access to computer '{1}' is denied. Run Windows PowerShell as admin and run your command again.
+The command cannot restore the computer because "{0}" has not been set as valid restore point. Enter a valid restore point in the RestorePoint parameter, and then try again.
+The command cannot turn off the restore computer infrastructure because the supplied drive is not valid. Enter a valid drive in the Drive parameter, and then try again.
+The command cannot turn on the restore computer infrastructure on the specified computer because the supplied drive is not valid. Enter a valid drive in the Drive parameter, and then try again.
+The drive with the name '{0}' is not a Fixed drive and does not support the Recyle Bin. Please run the '{1}' cmdlet to see the available Fixed drives in the system.
+The following computer name is not valid: {0}. Make sure that the computer name is not longer than 255 characters, that it does not contain two or more consecutive dots, that it does not begin with a dot, that it does not contain only numeric characters, and that it does not contain any of the following characters:  
+The 'IncludeUserName' parameter requires elevated user rights. Try running the command again in a session that has been opened with elevated user rights (that is, Run as Administrator).
+The item at {0} has children and the Recurse parameter was not specified. If you continue, all children will be removed with the item. Are you sure you want to continue?
+The namespace navigation tracer
+The NetBIOS name of the computer is limited to 15 bytes, which is 15 characters in this case. The NetBIOS name will be shortened to "{0}", which may cause conflicts under NetBIOS name resolution. Do you wish to continue?
+The operation cannot be performed because the system restore APIs are not supported on the Advanced RISC Machine (ARM) platform.
+The value specified for the NewComputerName parameter is the same as the value of the ComputerName parameter. Provide a different value for the NewComputerName parameter.
+The value supplied for MaximumSize parameter has to be in the range of 64 KB to 4GB with an increment of 64 KB. Please enter a proper value and then retry.
+This command cannot be run because either the parameter "{0}" has a value that is not valid or cannot be used with this command. Give a valid input and Run your command again.
+This command cannot be run because the debugger cannot be attached to the process "{0} ({1})". Specify another process and Run your command.
+This command cannot be run because the input "{0}" is not a valid Application.  Give a valid application and run your command again.
+This command cannot be run due to error 1783. The possible cause of this error can be using of a non-existing user "{0}". Please give a valid user and run your command again.
+This command cannot be run due to the following error: the service cannot be started because it is disabled or does not have enabled devices associated with it.
+This command stopped operation because it cannot wait on 'System Idle' process. Specify another process and Run your command again.
+This operation is not supported for this cmdlet.
+This PSSnapIn contains general management cmdlets used to manage Windows components.
+ThreadCount
+threadHandle
+ThreadPool
+ThreadStart
+throttleLimit
+throttleLimt
+ThrottleManager
+throttleManager
+ThrottlingJob
+ThrowFirstErrorOrDoNothing
+ThrowOutLsaError
+ThrowTerminatingError
+ThrowWin32Error
+TimedPowerOnSupported
+TimeOfLastReset
+Timeout
+timeOut
+TimeoutError
+TimeoutMins
+TimeoutMSec
+TimeoutSec
+timeOutSpecified
+TimerCallback
+TimeSpan
+timetolive
+TimeToLive=
+TimeZone
+timeZone
+TimeZoneHelper
+TimeZoneInfo
+TimeZoneKeyName
+TimeZoneNameNotFound
+TimeZoneNameNotFoundU
+TimeZoneNotFound
+TimeZoneNotFoundError
+TimeZoneNotFoundException
+TimeZoneResources
+TimeZoneResources.resources
+TimeZoneTarget
+Title
+ToArray
+TObjectInstance
+ToByteArray
+ToCharArray
+ToDmtfDateTime
+ToInt32
+token
+TOKEN_ADJUST_PRIVILEGES
+TOKEN_INFORMATION_CLASS
+TOKEN_PRIVILEGE
+TOKEN_PRIVILEGES
+TOKEN_QUERY
+TOKEN_USER
+TokenHandle
+ToList
+ToLowerInvariant
+ToString
+totalCount
+TotalCount
+ToUInt32
+ToUpperInvariant
+ToWql
+tracer
+TraceSourceAttribute
+TRANSACTED_SCRIPT_EXCEPTION
+transactedScript
+Transaction
+TRANSACTION_TIMEOUT
+TransactionResource
+TransactionResources
+TransactionResources.resources
+TransactionTimedOut
+Translate
+Translation
+TransmitLinkSpeed
+TransportProtocol
+TruncateNetBIOSName
+TruncateNetBIOSNameCaption
+TrustedDcName
+Try below options and Run the command again.
+TryAdd
+TryConvertTo
+TryCreate
+TryGetValue
+TryHasExited
+TryParse
+TryParseHex
+TryPathGet
+TService '{1} ({0})' description cannot be configured due to the following error: {2}
+TSession
+tThe command cannot locate the "{0}" restore point. Verify the "{0}" sequence number, and then try the command again.
+TThis command cannot be run on target computer('{1}') due to following error: {0}.{2}
+tThis command stopped operation because it cannot wait on itself. Specify another process and Run your command again.
+TypeIdentifierAttribute
+TypeInformation
+TypeNameForProcessWithUserName
+U6000
+UCannot add computer '{0}' to workgroup '{1}' because it is already in that workgroup.
+UInt16
+UInt64
+UltimateEdition
+UnaryExpression
+UnauthorizedAccessException
+UnblockJob
+Undefined
+UndoTransactionCommand
+unfilteredPaths
+unicode
+UniqueId
+UnixSecondsToDateTime
+UnjoinDomainOrWorkgroup
+Unknown failure.
+UnmanagedCode
+UnsecuredJoin
+Unspecified
+UnverifiableCodeAttribute
+uParameter WsmanAuthentication should not be specified with DcomAuthentication and Impersonation at the same time. {0}
+UpdateProgress
+UpgradeMethod
+upTime
+UriCache
+UriKind
+UsageRestriction
+UseDefaultCredential
+UseDefaultCredentials
+user32.dll
+UsermodeCodeIntegrityPolicyEnforcementStatus
+UserName
+userName
+UseShell
+UseShellExecute
+UseShellExecute0
+UseTransactionCommand
+UThe parameter '{0}' is not supported for the cmdlet '{1}' on this edition of Windows.
+uTimeout
+v4.0.30319
+ValidateClassFormat
+ValidateComputerName
+ValidateComputerNames
+ValidateLengthAttribute
+validateNewName
+ValidateNotNullAttribute
+ValidateNotNullOrEmptyAttribute
+ValidateRangeAttribute
+ValidateSetAttribute
+ValidDrivePath
+Value
+value
+value__
+ValueFromPipeline
+ValueFromPipelineByPropertyName
+ValueOutofRange
+ValueParameterSet
+ValueT
+ValueType
+VarFileInfo
+VariablePath
+Vendor
+verbActionName
+VerbActionOpen
+VerbActionOpenName
+verboseDescription
+VerboseRecord
+verboseWarning
+Verbs
+VerifyRebootStage
+VerifySecureChannel
+VerifyStage
+Version
+Version:0.9      
+VFailed to join computer '{0}' to workgroup '{1}' with the following error message: {2}
+VideoProcessor
+Virtual
+VirtualizationBasedSecurityStatus
+VirtualizationFirmwareEnabled
+VlanID
+VM_ESA
+VMMonitorModeExtensions
+Volatile Environment
+VoltageCaps
+Vp%%[
+VS_VERSION_INFO
+VThe secure channel between the local computer and the domain {0} is in good condition.
+vVerb
+VxWorks
+WaitCallback
+WaitForExit
+WaitForMultipleComputers
+WaitForPowerShell
+WaitForRestartToBegin
+waitForServiceToStop
+WaitForServiceTypes
+WaitForWinRM
+WaitForWMI
+waithandle
+waitHandle
+waitHandleToUse
+-Waiting for service '{1} ({0})' to suspend...
+Waiting for WMI connectivity...
+WaitOne
+WaitOnIdleProcess
+WaitOnItself
+WaitProcessCommand
+WarnAboutUnsupportedActionPreferences
+Warning
+WarningAction
+WarningRecord
+WCannot find the computer account for the local computer from the domain controller {0}.
+wCannot verify the secure channel password for the local computer. The local computer is not currently part of a domain.
+WdmInterface
+WebException
+WebReference
+WebReferenceCollection
+WebReferenceOptions
+WebServerCore
+WebServerEdition
+WebServiceBindingAttribute
+WebServiceProxy
+WebServiceResources
+WebServiceResources.resources
+Weight
+WhatIf
+-WhatIf
+Where
+whichHandle
+WildcardOptions
+wildcardPattern
+WildcardPattern
+WildcardPatternException
+WildcardPatternToCimQueryParser
+WildcardToWqlLikeOperand
+Win32_BaseBoard
+Win32_BIOS
+Win32_ComputerSystem
+Win32_ComputerSystem.Name="
+Win32_DeviceGuard
+Win32_Keyboard
+Win32_NetworkAdapter
+Win32_NetworkAdapterConfiguration
+Win32_OperatingSystem
+Win32_OperatingSystem=@
+Win32_PageFileUsage
+Win32_PhysicalMemory
+Win32_PingStatus
+Win32_Processor
+Win32_QuickFixEngineering
+Win32_Service
+Win32_TimeZone
+Win32Exception
+Win32Native
+Win32shutdown
+Win32Shutdown
+Win32shutdown
+WIN3x
+WIN95
+WIN98
+Win9XUpgrade
+WINCE
+Windows2000
+WindowsEmbedded
+WindowsEmbeddedHandheld
+WindowsEmbeddedIndustry
+WindowsEnterprise
+WindowsErrorReporting
+WindowsHome
+WindowsHomeServer
+WindowsIdentity
+WindowsIotCore
+WindowsMobile
+WindowsProfessionalWithMediaCenter
+WindowsRT
+WindowsServerDatacenterNoHyperVCore
+WindowsServerDatacenterNoHyperVFull
+WindowsServerEnterpriseNoHyperVCore
+WindowsServerEnterpriseNoHyperVFull
+WindowsServerHyperCoreV
+WindowsServerStandardNoHyperVCore
+WindowsServerStandardNoHyperVFull
+WindowsSmallBusinessServer2011Essentials
+WindowsThinPC
+-WindowStyle
+WindowsUltimate
+WINNT
+WinRM
+WinrmConnectionTest
+WINSEnableLMHostsLookup
+WINSHostLookupFile
+WINSPrimaryServer
+WINSScopeID
+WINSSecondaryServer
+withCategoryFilter
+WM_SETTINGCHANGE
+WMI_Class_ComputerSystem
+WMI_Class_OperatingSystem
+WMI_Class_PingStatus
+WMI_Class_Service
+WMI_Class_SystemRestore
+WMI_Path_CIM
+WMI_Path_Default
+WmiAsyncCmdletHelper
+WmiBaseBoard
+WmiBaseCmdlet
+WmiBios
+WMIClass
+wmiClass
+WmiClassBase
+wmiClassName
+WmiComputerSystem
+WmiConnectionTest
+WmiDeviceGuard
+WmiEvent
+WmiFilterInvalidClass
+WmiInstance
+WmiInvalidClass
+WmiInvalidClassk
+WmiJob
+WmiJobStateEventArgs
+WMIJobType
+WmiKeyboard
+WMiLogicalMemory
+WmiMethod
+WmiMethodNameForConfirmation
+WmiMsftNetAdapter
+wmiNamespace
+WmiNamespaceConnect
+WmiNetworkAdapter
+WmiNetworkAdapterConfiguration
+WmiObject
+wmiObject
+WmiOperatingSystem
+WmiPageFileUsage
+WmiParameterMissing
+WmiProcessor
+WmiQueryFailure
+WmiResources
+WmiResources.resources
+wmiSinkArray
+wmiState
+Workgroup
+WORKGROUP
+WorkgroupParameterSet
+WorkingDirectory
+WorkrGroupMachine
+WorkStation
+wParam
+WQL literal
+wqlCondition
+WQLQuery-
+WQLQuery@
+WqlQueryAll
+WrapNonExceptionThrows
+WrapOutputInPSObject
+wrappedDictionary
+Write
+WriteContentCommandBase
+WriteContentObject
+WriteDebug
+WriteEntry
+WriteErrorCallback
+WriteErrorHelper
+WriteEventLogCommand
+WriteLine
+WriteMessageCallback
+WriteNonTerminatingError
+WriteObject
+WriteOutTimeoutError
+WriteProgressCallback
+writerPaths
+WriteVerboseStartOfCimOperation
+WriteWarning
+wShowWindow
+WSMan
+WsmanAuthentication
+WSManClass
+WsManErrorCode
+WsmanProtocol
+wType of {0} property ({1}) doesn't match the CIM type ({2}) associated with the type declared in Cmdlet Definition XML.
+wYear
+X500DistinguishedName
+X509Certificate2
+XENIX
+XFailed to unjoin computer '{0}' from domain '{1}' with the following error message: {2}.
+Xml_cmdletsOverObjectsXsd
+XmlNode
+XThe specified path is not a valid win32 application. Try again with the UseShellExecute.
+yesToAll
+zCIM cmdlets do not support the {0} parameter together with the AsJob parameter.  Remove one of these parameters and retry.
+ZeroFreeCoTaskMemUnicode
+ZSystem.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+ZSystem.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+ZSystem.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089_System.IO.FileInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089gSystem.Drawing.Image, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a]System.IO.Stream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+zThe domain in computer name '{0}' is not valid. Make sure that the domain exists and that the name is a valid domain name.

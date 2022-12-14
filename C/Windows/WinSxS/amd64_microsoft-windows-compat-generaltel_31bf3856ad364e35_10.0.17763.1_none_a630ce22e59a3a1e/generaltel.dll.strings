@@ -1,0 +1,6332 @@
+      
+      Information only, not used by code.
+      Information only, not used by code. Sets expectation on when data point will be disabled, unless set to always. 
+      Information only, this helps determine how long data point remains enabled
+      Monthy means we will collect it if we have not collected it in the last 28 days
+      Values: 1 Month increments, up to 12 Months | Always.  Example: 6Months
+      Values: 1601 | 1602 | etc. 
+      Values: ON | OFF
+      Valules: YES | NO
+    <!--
+    <CITTSwitch Name="CITT_EXE"                         CollectData="ON"    Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <CITTSwitch Name="CITT_MODULE"                      CollectData="ON"    Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="ACRONIS_BACKUP_STATE"                           CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="ADDITIONAL_MARKERS"                             CollectData="ON"   Duration="Always"   Frequency="Monthly" ReleaseAdded="1503" UEXIndicatorData="YES"/>
+    <ExtraTelemetrySwitch Name="BOOT_CONFIG_DATA"                               CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="BROWSER_SETTINGS"                               CollectData="ON"   Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="CBS_ERROR_INFO"                                 CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="CBS_LOG_SIZE"                                   CollectData="OFF"  Duration="6Months"  Frequency="Monthly" ReleaseAdded="1507"/>
+    <ExtraTelemetrySwitch Name="CHROME_APPS_DATA"                               CollectData="ON"   Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="CHROME_RLZ"                                     CollectData="ON"   Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="CORRUPTION_EVENTS"                              CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="CORRUPTION_STATE"                               CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="CPU_ID_DATA "                                   CollectData="ON"   Duration="Always"   Frequency="Monthly" ReleaseAdded="1503" UEXIndicatorData="YES"/>
+    <ExtraTelemetrySwitch Name="CRASHDUMP_INFO"                                 CollectData="OFF"  Duration="3Months"  Frequency="Monthly" ReleaseAdded="1601"/>
+    <ExtraTelemetrySwitch Name="CUSTOM_SHIM_DATABASE"                           CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="DOMAIN_JOINED_NOISY"                            CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="EXE_SIGNING_INFO"                               CollectData="ON"   Duration="Always"   Frequency="Monthly" ReleaseAdded="1702"/>
+    <ExtraTelemetrySwitch Name="FILES_WITH_COMPAT_LAYERS_APPLIED_DATA"          CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="FIRMWARE_TYPE_DATA"                             CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="GEO_ID"                                         CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="GWX_TASK"                                       CollectData="OFF"  Duration="6Months"  Frequency="Monthly" ReleaseAdded="1601"/>
+    <ExtraTelemetrySwitch Name="IE_BROWSER_EMULATION_POLICY_LIST_DATA"          CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="IE_BROWSER_EMULATION_QUIRKS_POLICY_LIST_DATA"   CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="INSTALLED_DOT_NET_FRAMEWORKS"                   CollectData="ON"   Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="MANUFACTURER_DATE"                              CollectData="ON"   Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="MAX_DISPLAY_RESOLUTION_DATA"                    CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="MICROCODE_INFO"                                 CollectData="ON"   Duration="Always"   Frequency="Monthly" ReleaseAdded="1610"/>
+    <ExtraTelemetrySwitch Name="MICROPHONE_INFO"                                CollectData="OFF"  Duration="Always"   Frequency="Monthly" ReleaseAdded="1503" UEXIndicatorData="YES"/>
+    <ExtraTelemetrySwitch Name="MSA_USER_INFO"                                  CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="MUI_INFORMATION"                                CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="NT_POWER_INFORMATION_DATA"                      CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="OFFICE_ADDINS"                                  CollectData="ON"   Duration="Always"   Frequency="Daily"   ReleaseAdded="1712"/>
+    <ExtraTelemetrySwitch Name="OFFICE_INFO"                                    CollectData="ON"   Duration="Always"   Frequency="Daily"   ReleaseAdded="1709"/>
+    <ExtraTelemetrySwitch Name="OFFICE_INSIGHTS"                                CollectData="ON"   Duration="Always"   Frequency="Daily"   ReleaseAdded="1712"/>
+    <ExtraTelemetrySwitch Name="OFFICE_VBA"                                     CollectData="ON"   Duration="Always"   Frequency="Daily"   ReleaseAdded="1712"/>
+    <ExtraTelemetrySwitch Name="PAPER_LICENSE"                                  CollectData="ON"   Duration="Always"   Frequency="Monthly" ReleaseAdded="1508" UEXIndicatorData="YES"/>
+    <ExtraTelemetrySwitch Name="PERF_TRACK_SCENARIO_OCCURRENCES"                CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="POWER_TRACKER_DATA"                             CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="PREVIOUS_UPGRADE_DATA"                          CollectData="OFF"  Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="RAC_ID"                                         CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="REDIRECTED_PROFILES_DATA"                       CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="SDEV_TABLE_DATA"                                CollectData="ON"   Duration="Always"   Frequency="Monthly" ReleaseAdded="1702"/>
+    <ExtraTelemetrySwitch Name="SECURE_BOOT_DATA"                               CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="SETUP_COMPAT_CHECKS"                            CollectData="ON"   Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="SMBIOS_UUID"                                    CollectData="OFF"  Duration="24Months" Frequency="Monthly" ReleaseAdded="1507"/>
+    <ExtraTelemetrySwitch Name="STARTUP_APPLICATIONS_DATA"                      CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="STORAGE"                                        CollectData="ON"   Duration="Always"   Frequency="Monthly" ReleaseAdded="1612"/>
+    <ExtraTelemetrySwitch Name="SUPPORTED_GRAPHICS_DX_VERSIONS"                 CollectData="ON"   Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="USER_ACCOUNT_TYPE_ENUMERATION"                  CollectData="ON"   Duration="Always"   Frequency="Monthly" ReleaseAdded="1505"/>
+    <ExtraTelemetrySwitch Name="WIDI_CONNECTION_DATA"                           CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="WIN_SAT_METRICS"                                CollectData="ON"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="WIN_SAT_WMI_METRICS"                            CollectData="ON"   Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="WINDOWS_GENUINE_STATE"                          CollectData="ON"   Duration="Always"   Frequency="Monthly" ReleaseAdded="1503" UEXIndicatorData="YES"/>
+    <ExtraTelemetrySwitch Name="WINDOWS_LICENSING_DATA"                         CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="WINSXS_SIZE"                                    CollectData="OFF"  Duration="6Months"  Frequency="Monthly" ReleaseAdded="1507"/>
+    <ExtraTelemetrySwitch Name="WLAN_FAT_DRIVER_INFO"                           CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="WM_DEVICE_CENTER_LAST_SYNC_TIME_ITEMS_DATA"     CollectData="OFF"  Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <ExtraTelemetrySwitch Name="WSMTDATA"                                       CollectData="ON"   Duration="Always"   Frequency="Monthly" ReleaseAdded="1604"/>
+    <FileSwitch Name="ALLFILES"                         CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="BIOS"                         CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="BROWSER_DETAILS"              CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="CBS_INFO"                     CollectData="OFF"   Duration="6Months"  Frequency="Monthly" ReleaseAdded="1507"/>
+    <RegistrySwitch Name="CHROME"                       CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="CONTROL_PANEL"                CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="DELL"                         CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="DISK_DRIVE"                   CollectData="ON"    Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="DISK_DRIVE_SESSION_DURATION"  CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="HARDWARE_DETAILS"             CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="HTTP_HANDLER"                 CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="ID"                           CollectData="ON"    Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="ID_LEGACY"                    CollectData="OFF"   Duration="Never"    Frequency="Monthly" ReleaseAdded="1603"/>
+    <RegistrySwitch Name="IE"                           CollectData="ON"    Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="IE_ENTMODE"                   CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="IE_VERSION"                   CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="IE_VERSION_CONTROL"           CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="LANGUAGES"                    CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="MRT"                          CollectData="ON"    Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="OFFICE"                       CollectData="ON"    Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="ONEDRIVE"                     CollectData="OFF"   Duration="Always"   Frequency="Monthly" ReleaseAdded="1508"/>
+    <RegistrySwitch Name="OS_DETAILS"                   CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="SECURE_BOOT"                  CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="SECURITY"                     CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="SENSOR_DETAILS"               CollectData="ON"    Duration="24Months" Frequency="Monthly" ReleaseAdded="1603"/>
+    <RegistrySwitch Name="STREAM_SYS"                   CollectData="OFF"   Duration="OneTime"  Frequency="Monthly" ReleaseAdded="1510"/>
+    <RegistrySwitch Name="STUDY_ID"                     CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1507"/>
+    <RegistrySwitch Name="SYSPREP"                      CollectData="ON"    Duration="24Months" Frequency="Monthly" ReleaseAdded="1604"/>
+    <RegistrySwitch Name="TECH_BENCH"                   CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1507"/>
+    <RegistrySwitch Name="UPGRADE_CONTROL"              CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="UPGRADE_DETAILS"              CollectData="ON"    Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="VLITE"                        CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="WER"                          CollectData="ON"    Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="WIN_SAT"                      CollectData="ON"    Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="WINDOWS_EXPERIENCE"           CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <RegistrySwitch Name="WINDOWS_UPDATE"               CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <UserCxtSwitch Name="ALLUSERCXTSWITCH"              CollectData="ON"    Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <WMISwitch Name="DISK_INFORMATION"                  CollectData="ON"    Duration="Always"   Frequency="Monthly" ReleaseAdded="1503" UEXIndicatorData="YES"/>
+    <WMISwitch Name="HARDWARE_DETAILS"                  CollectData="ON"    Duration="Always"   Frequency="Monthly" ReleaseAdded="1503" UEXIndicatorData="YES"/>
+    <WMISwitch Name="HARDWARE_DETAILS_DISABLED"         CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <WMISwitch Name="OS_DETAILS"                        CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <WMISwitch Name="PERF_CONFIDENCE"                   CollectData="ON"    Duration="Always"   Frequency="Monthly" ReleaseAdded="1503" UEXIndicatorData="YES"/>
+    <WMISwitch Name="POWER_BATTERY"                     CollectData="ON"    Duration="Always"   Frequency="Monthly" ReleaseAdded="1503" UEXIndicatorData="YES"/>
+    <WMISwitch Name="SECURITY_SOFTWARE"                 CollectData="ON"    Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <WMISwitch Name="SECURITY_SOFTWARE_FW"              CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <WMISwitch Name="SERVER_OS_DETAILS"                 CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    <WMISwitch Name="SERVICE_CONFIG"                    CollectData="ON"    Duration="Always"   Frequency="Monthly" ReleaseAdded="1503"/>
+    <WMISwitch Name="SERVICING"                         CollectData="OFF"   Duration="Onetime"  Frequency="Monthly" ReleaseAdded="1503"/>
+    -->
+    CollectData - Used by Gentel to determine whether to invoke the code to collect data for the group
+    Duration - Information about how long requestor wants to collect the data.  
+    Frequency - How often we will collect the data.  Daily means we collect it everytime gentel is run. 
+    ReleaseAdded - The iteration in which the data point was added.  
+    Switch Details
+    UEXIndicatorData - This switch provides data important to UEX Indicators so should not be disabled
+    User context switches are not fully supported and support for controlling individual datapoints in user context will be added later. This controls running all user context datapoints. 
+ 5q\N
+ A^_^
+ A^A\_
+ A^A]A\_^
+ A_A\_^]
+ A_A^_
+ A_A^A\
+ A_A^A]
+ A_A^A]A\_
+ Checksum
+ H;]Pu
+ H3E H3E
+ http://www.microsoft.com/windows0
+ InventoryMiscellaneousCITAdd
+ InventoryMiscellaneousOfficeAddInAdd
+ InventoryMiscellaneousOfficeAddInRemove
+ InventoryMiscellaneousOfficeAddInStartSync
+ InventoryMiscellaneousOfficeIdentifiersAdd
+ InventoryMiscellaneousOfficeIdentifiersStartSync
+ InventoryMiscellaneousOfficeIESettingsAdd
+ InventoryMiscellaneousOfficeIESettingsStartSync
+ InventoryMiscellaneousOfficeInsightsAdd
+ InventoryMiscellaneousOfficeInsightsRemove
+ InventoryMiscellaneousOfficeInsightsStartSync
+ InventoryMiscellaneousOfficeProductsAdd
+ InventoryMiscellaneousOfficeProductsStartSync
+ InventoryMiscellaneousOfficeSettingsAdd
+ InventoryMiscellaneousOfficeSettingsStartSync
+ InventoryMiscellaneousOfficeVBAAdd
+ InventoryMiscellaneousOfficeVBARemove
+ InventoryMiscellaneousOfficeVBARuleViolationsAdd
+ InventoryMiscellaneousOfficeVBARuleViolationsRemove
+ InventoryMiscellaneousOfficeVBARuleViolationsStartSync
+ InventoryMiscellaneousOfficeVBAStartSync
+ InventoryMiscellaneousUexIndicatorAdd
+ InventoryMiscellaneousUexIndicatorRemove
+ InventoryMiscellaneousUexIndicatorStartSync
+ Microsoft Corporation. All rights reserved.
+ Microsoft Operations Puerto Rico1&0$
+ Microsoft Operations Puerto Rico1'0%
+ Operating System
+ Windows
+!\$ H
+!\$@!\$T!\$PD
+!\$@H
+!\$8H
+!D$HH
+!D$PL
+!l$(H!l$ 
+!t$(H
+!This program cannot be run in DOS mode.
+"2 X6
+"Microsoft Time Source Master Clock0
+"Microsoft Window
+"Microsoft Windows Verification PCA
+"Microsoft Windows Verification PCA0
+"offline_enabled": 
+#LInventoryMiscellaneousSetupBootedFromVHDStartSync
+$`2X`F
+$H9C s/H
+$I9A 
+$Microsoft Ireland Operations Limited1
+$Microsoft Ireland Operations Limited1&0$
+$Microsoft Root Certificate Authority0
+$r$A;
+%02d%01d%05d
+%02d/%02d/%02d %02d:%02d:%02d
+%02I32x
+%04d-%02d-%02dT%02d:%02d:%02dZ
+%4hu-%2hu-%2hu
+%d.%d
+%d.%d.%d.%d
+%d\{00000000-0000-0000-0000-000000000000}\ListItems
+%hs!%p: 
+%hs(%d) tid(%x) %08X %ws
+%hs(%d)\%hs!%p: 
+%I32x
+%I64u
+%ls version block after re-mapping as image [%x]
+%ls#%lu
+%ls%02d
+%ls%ls
+%ls-%ls
+%ls%ls%lu
+%ls%ls\Addins
+%ls.tmp
+%ls\%ls
+%ls\%ls%ls\Addins
+%ls\%ls\%ls
+%ls\%ls\%ls\%ls
+%ls\%ls\%ls\ActiveX
+%ls\%ls\Client
+%ls\%ls\Full
+%ls\%lsOffice\%ls\%ls\%ls
+%ls\Network
+%ls\SOFTWARE\Google\Common\Rlz\RLZs
+%ls\Software\Microsoft\Internet Explorer\ContinuousBrowsing
+%ls\Software\Microsoft\Internet Explorer\Main
+%ls\Software\Microsoft\Internet Explorer\SearchScopes
+%ls\SOFTWARE\Microsoft\Office\%ls\%ls
+%ls\SOFTWARE\Microsoft\Office\%ls\%ls\Security\Trusted Documents\TrustRecords
+%ls\SOFTWARE\Microsoft\Office\%ls\Common\Roaming\Identities
+%ls\SOFTWARE\Microsoft\Office\%ls\Outlook\Resiliency\CrashingAddinList
+%ls\SOFTWARE\Microsoft\OfficeCompat\%ls\Insights
+%ls\SOFTWARE\Microsoft\OneDrive\Accounts
+%ls\Software\Microsoft\Windows\Shell
+%ls_%ld
+%ls_%ls_%lu
+%ls_%lu
+%ls|%ls
+%ls|%ls|%ls
+%lsData
+%lsUserBrowserHomepage
+%lsUserBrowserSearchSettings
+%lsUserBrowserStartupSettings%lu
+%Microsoft Windows Production PCA 2011
+%Microsoft Windows Production PCA 20110
+%programfilesnative%
+%s#%d
+%s#%s
+%s,%s,%d,
+%s\%s
+%s\appdata\roaming\Mozilla\Firefox\Profiles
+%s\hiberfil.sys
+%s\Layers
+%s\pagefile.sys
+%s\Temp\AslLog_%S_%s_%d.txt
+%s\Users
+%sysnative%
+%system32%
+%systemdrive%\Program Files
+%systemroot%
+%systemroot%\system32
+%UNKNOWNPATH%
+%windir%
+%windir%\csup.txt
+%windir%\System32\BrowserChoice.exe
+%x,%x,%x,%x
+&3Kr-j
+("browser.search.defaultenginename",
+("browser.startup.homepage",
+("browser.startup.page",
+(_^][
+(A_A^A]A\_^][
+(caller: %p) 
+(D$0H
+(L$0I
+)D$P3
+)D$pH
+)Microsoft Root Certificate Authority 20100
+*HcD$P
+*y!EV
+, <^w
+,PWpFgUrYXDeqVimIYvbvM+P/VCVbtO+q1zgmOaGtOus=0Z
+.?AV_com_error@@
+.?AVbad_alloc@std@@
+.?AVCAtlException@ATL@@
+.?AVexception@@
+.?AVinvalid_argument@std@@
+.?AVlength_error@std@@
+.?AVlogic_error@std@@
+.?AVout_of_range@std@@
+.?AVResultException@wil@@
+.00cfg
+.CRT$XCA
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIZ
+.CRT$XLA
+.CRT$XLZ
+.data
+.data$brc
+.data$r$brc
+.default
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.edata
+.gfids
+.giats
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.pdata
+.rdata
+.rdata$brc
+.rdata$T$brc
+.rdata$zETW0
+.rdata$zETW1
+.rdata$zETW2
+.rdata$zETW9
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.securom
+.text
+.text$di
+.text$mn
+.text$mn$00
+.text$x
+.text$yd
+.tls$
+.tls$ZZZ
+.xdata
+.xdata$x
+/A8vQH
+/F8v2H
+/fD9{
+:_wE0<
+;\$@r
+;\$Pr
+;\$Tr
+;|$xr
+;LS7[
+;VHu9D
+;WHu8E
+??-??-????
+??_V@YAXPEAX@Z
+??0exception@@QEAA@AEBQEBD@Z
+??0exception@@QEAA@AEBQEBDH@Z
+??0exception@@QEAA@AEBV0@@Z
+??0exception@@QEAA@XZ
+??1exception@@UEAA@XZ
+??1type_info@@UEAA@XZ
+??3@YAXPEAX@Z
+?ffffff
+?http://crl.microsoft.com/pki/crl/products/microsoftrootcert.crl0T
+?terminate@@YAXXZ
+?what@exception@@UEBAPEBDXZ
+@.data
+@.didat
+@.reloc
+@8,1u
+@8=L<
+@9D$0r
+@A^_^
+@A^A\_^]
+@A_A^]
+@A_A^_
+@A_A^_^]
+@A_A^A\
+@A_A^A\_^[]
+@A_A^A\_^][
+@A_A^A]A\_^]
+@H!\$(L
+@SUVWATAUAVAWH
+@SUVWATAVAWH
+@SUVWAVH
+@SVWATAUAVAWH
+@SVWAVH
+@SVWH
+@UATAUAVAWH
+@USVWATAUAVAWH
+@USVWATAVAWH
+@USVWAUAVAWH
+@USVWAVAWH
+@USVWAVH
+@USVWH
+@USWH
+@UVWH
+@WATAUAVAW
+@WAVAWH
+[ VWAVH
+[%hs(%hs)]
+[%hs]
+[CProgCacheUtils::ConvertDevicePathToDrivePath] [0x%x] Failed to put drive path together
+[CProgCacheUtils::ConvertDevicePathToDrivePath] Bad length for resulting drive path: %d
+\$ A;
+\$ D9l$`u
+\$ E3
+\$ UH
+\$ UVAVH
+\$ UVWATAUAVAWH
+\$ UVWAVAWH
+\$ UVWH
+\$ VWAVH
+\$(E3
+\$@@8
+\$@D9%
+\$@E3
+\$`A9t$8t]3
+\$`E3
+\$0E3
+\$8E3
+\$hH3\$ 
+\$p9XHu
+\$PE3
+\$PufI
+\$XE3
+\$XH;
+\$XL9d$`
+\\.\#:
+\\.\%s
+\\.\?:
+\\.\PHYSICALDRIVE%d
+\\.\PhysicalDrive%d
+\\.\PHYSICALDRIVE%u
+\\.\X:
+\\?\GLOBALROOT
+\Acronis\TrueImageHome\Database\archives.xml
+\AppData\Local\Google\Chrome\User Data\Default\Extensions\
+\AppPatch
+\appraiser
+\Client
+\CLSID
+\CustomSDB
+\Device\HarddiskVolume
+\File MRU
+\Full
+\FVEAPI.DLL
+\Logs\CBS
+\manifest.json
+\Microsoft\Windows\Application Experience
+\Microsoft\Windows\Setup\gwx
+\Microsoft\Windows\Setup\GWXTriggers
+\prefs.js
+\REGISTRY\A\
+\Registry\Machine
+\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Custom
+\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\InstalledSDB
+\Registry\Machine\Software\Microsoft\Windows NT\CurrentVersion\ProfileList
+\Registry\Machine\Software\Microsoft\Windows\CurrentVersion
+\Settings
+\Setup.evtx
+\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags
+\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\CIT
+\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\CIT\Proc
+\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\CIT\System
+\StringFileInfo\%04X%04X\%s
+\StringFileInfo\000004B0\
+\StringFileInfo\000004E4\
+\StringFileInfo\040904B0\
+\StringFileInfo\040904E4\
+\SysARM32
+\SysNative
+\System Volume Information\FVE.{e40ad34d-dae9-4bc7-95bd-b16218c10f72}.X
+\System Volume Information\FVE2.{e40ad34d-dae9-4bc7-95bd-b16218c10f72}.X
+\System32
+\System32\Winevt\Logs\Setup.evtx
+\SystemRoot\
+\SYSTEMROOT\
+\SysWOW64
+\tkfB
+\users\
+\VarFileInfo\Translation
+\WinSxS
+]0[0Y
+]H9]8
+]HD9e8wgL
+__C_specific_handler
+__CxxFrameHandler3
+__dllonexit
+__TlgCV__
+_amsg_exit
+_callnewh
+_CxxThrowException
+_errno
+_initterm
+_lock
+_onexit
+_purecall
+_set_errno
+_strlwr_s
+_strnicmp
+_unlock
+_VBA_PROJECT_CUR
+_vscwprintf
+_vsnprintf
+_vsnprintf_s
+_vsnwprintf
+_wcsicmp
+_wcslwr
+_wcslwr_s
+_wcsnicmp
+_wcstoui64
+_wfopen_s
+_wgetenv_s
+_wtof
+_wtoi
+_wtol
+_XcptFilter
+` AUAVAWH
+` UAVAWH
+`.rdata
+`A^_^
+`A_A^_^]
+`A_A^A]A\_^[
+{ UATAUAVAWH
+{%08lx-%04hx-%04hx-%02hx%02hx-%02hx%02hx%02hx%02hx%02hx%02hx}
+{%08X-%04X-%04X-%02X%02X-%02X%02X%02X%02X%02X%02X}
+{11517B7C-E79D-4e20-961B-75A811715ADD}
+{R6me
+|$ AVH
+|$ E3
+|$ UATAUAVAWH
+|$ UATAVH
+|$ UAVAWH
+|$ UH
+|$ uIL
+|$(E3
+|$(H!t$ H
+|$@D9=
+|$@E3
+|$\.t
+|$\.t2H
+|$`D9
+|$|xu.
+|$<9~Ht
+|$0D9=
+|$0E3
+|$0Nu4H
+|$8E3
+|$d;|$TH
+|$HE3
+|$P @
+|$P9=
+|$PD9%
+|$PE3
+|$PfD
+|$xE;
+|$xE3
+|$XfD
+|$xfD
+|^^ Yh
+|hK,_
+|vstolocal
+}}H<&
+~D$ f
++T$0E3
++T$HH
+</Switches>
+<?xml version="1.0"?>
+<@fE;4
+<NfA;
+<Switches>
+=H;t$Pu
+=Hv#1
+=zdbft
+>(uBI
+>@u-L
+>=u;A
+>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0
+>http://www.microsoft.com/pki/certs/MicTimStaPCA_2010-07-01.crt0
+0.0.0.0
+000000FF1CE
+0000da39a3ee5e6b4b0d3255bfef95601890afd80709
+0123456789abcdef
+040904B0
+0A^_^
+0A^_^[]
+0A^A\_^]
+0A^A]A\_^
+0A_A^_
+0A_A^_^[
+0A_A^_H
+0A_A^A\
+0A_A^A\_^
+0A_A^A\_^][
+0A_A^A]
+0A_A^A]A\_
+0A_A^A]A\_^[
+0A_A^A]A\_^]
+0A_A^A]A\_H
+0fD;7t]
+0FF1CE}
+0-K4B
+0x%I64X
+0x%lX
+0x800f0816
+1(0&0
+1/0-0
+10.0.17763.1
+10.0.17763.1 (WinBuild.160101.0800)
+100701213655Z
+111019184142Z
+160211232409Z
+16to32
+171005173456Z
+180703204550Z
+180823202627Z
+180823202649Z
+181005173456Z0p1
+190726204550Z0p1
+191123202627Z0
+191123202649Z0
+1http://www.microsoft.com/PKI/docs/CPS/default.htm0@
+1u(9_
+2#K.s
+20180915002813Z
+20180915045338.996Z0
+20180915045340.122Z0
+20180915065200Z
+20180916002813Z0w0=
+20180916065200Z0w0=
+210509232813Z0
+229879+4379540
+230038+2426910
+250701214655Z0|1
+261019185142Z0
+3/.ap
+32to64
+333333
+4@fE;,
+7daystodie.exe
+8_^][
+8A^_^[
+8A_A^_^[]
+8BSJBt
+8http://www.microsoft.com/pki/certs/MicrosoftRootCert.crt0
+8to16
+9)~L3
+9\$`t
+9\$|r
+9\$0t
+9\$Du
+9\$PA
+9\$pH
+9] vOH
+9]P|XH
+9|$`v
+9|$Ht5D
+9|$pt
+9|$pu
+9|$Xu
+9D$@t
+9D$xt
+9G@ur
+9G<uz
+9GDuj
+9GHub
+9GLuZ
+9GPuR
+9GTuJ
+9GXuB
+9L$Hu
+9L$xu#
+9M;x s]H
+9q8t3L
+9rHt#
+9t$\t
+9t$\tME
+9t$DtIH
+9t$Hu
+9t$pt
+9u@uDL
+9z8uE
+A![ M
+A]A\]
+A^_^[
+A^_^[]
+A^_^][
+A^A\]
+A^A\_
+A^A\_^]
+A^A]]
+A_A\]
+A_A\_
+A_A]_
+A_A]A\_]
+A_A^]
+A_A^]H
+A_A^_
+A_A^_^[]
+A_A^_^]
+A_A^A\
+A_A^A\_]
+A_A^A\_^
+A_A^A\_^[]
+A_A^A\_^][
+A_A^A]
+A_A^A]_]
+A_A^A]_^
+A_A^A]_^[]
+A_A^A]A\]
+A_A^A]A\_
+A_A^A]A\_^[
+A_A^A]A\_^[]
+A_A^A]A\_^]
+A8~3u!H9
+A84?u
+A9t$<t
+ab.elgoog
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/%ls
+about:blank
+about:Tabs
+ac.adanac-oidar.ici
+ac.cbc
+ac.cg.rehtaew
+ac.elgoog
+ac.elgoog.swen
+ac.eonac.rf
+ac.esserpal
+ac.ijijik
+ac.nortoediv.bewleirruoc
+ac.nozama
+ac.nst
+ac.ocitapmys
+ac.octsoc
+ac.pooleht
+ac.sdr
+ac.sulpcp
+ac.tcennocwahs
+ac.wahs.liambew
+ac.wahs.mw
+ac.yabe
+AC_MonitorOff_Duration
+AC_MonitorOn_Duration
+ac3sp.exe
+ac4bfsp.exe
+accdb
+accdt
+Access
+AccountID
+AccountType
+aces.exe
+AcGenral.dll
+AcLayers.dll
+AcMonitorOffDuration
+AcMonitorOnDuration
+ACPITableDataProtectionFlags
+AcquireSRWLockExclusive
+acres.dll
+AcRes.dll
+ACRONIS_BACKUP_STATE
+AcronisBackupExists
+AcSpecfc.dll
+action
+ActiveSession
+ActiveX
+Activity
+ActivityResults
+AcWinRT.dll
+acwow64.dll
+AcXtrnal.dll
+Add-in Manager
+AddinCLSID
+AddinCrash
+AddInId
+AddinLoad
+Addins
+AddinType
+AddinUsage
+ADDITIONAL_MARKERS
+address family not supported
+address in use
+address not available
+address_family_not_supported
+address_in_use
+address_not_available
+AddressWidth
+AdjustTokenPrivileges
+advapi32
+advapi32.dll
+ADVAPI32.dll
+AdvertisingID
+AeComputeFileHash
+AeComputeFileHashFromHandle
+AEINV.dll
+aepic.dll
+AEPIC.dll
+aeriaignite.exe
+age3.exe
+AggregationPeriodInS
+alienware
+Alignment error in the end of file view for CRC checksum
+ALLFILES
+AllocateAndInitializeSid
+Allow SRS CE Full OAB Download
+Allow SRS Full OAB Download
+AllowTelemetry
+AllowTelemetry_PolicyManager
+ALLUSERCXTSWITCH
+already connected
+Already initialized [%#x]
+already_connected
+AlternateLba
+am.iwni
+am.mai
+am.oc.elgoog
+Amcache
+amcache-
+Amcache.hve
+AmiClearProviderData [%d]
+AmiFixKeyPermissionsRecursive
+AmiFixKeyPermissionsRecursive failed [%d]
+AmiFixKeyPermissionsRecursiveHelper
+AmiFixKeyPermissionsRecursiveHelper failed [%d]
+AmiHiveOwnerCorrect
+AmiHivePermissionsCorrect
+AmiOverridePath
+AmipCreateNewCacheFile
+AmipCreateNewCacheFile [%d]
+AmiProviderGetMetadata [%d]
+AmiProviderInit
+AmiProviderInit [%d]
+AmiProviderSetMetadata [%d]
+AmipStoreInitialize
+AmipStoreInitialize [%d]
+AmipTryAcquireProviderMutex
+AmipVerifyCachePermissionsCorrect
+AmiRegGetStoreFullPath
+AmiStoreInitialize
+AmiUtilityGetPersistedLocation [%#x]
+AmiUtilityGetPersistedLocation failed [%#x]
+AmiUtilityGivePrivilegesToServices
+AmiUtilityGivePrivilegesToServices failed [%d]
+AmiUtilityInitSecurityDescriptor
+AmiUtilityInitSecurityDescriptor failed [%d]
+AmiUtilityRegEnsureKey
+AmiUtilityRegGetValue
+AmiUtilityRegOpenKey
+AmiUtilityRegSetValue
+AmiUtilitySetPrivilege
+An RtlString API failed [%x]
+an.moc.elgoog
+Analysis ToolPak - VBA
+Ansi string is too long to convert at %d
+Antispyware
+Antivirus
+aok hd.exe
+api-ms-win-core-delayload-l1-1-1.dll
+api-ms-win-core-winrt-l1-1-0.dll
+api-ms-win-core-winrt-string-l1-1-0.dll
+api-ms-win-eventing-provider-l1-1-0
+api-ms-win-eventing-provider-l1-1-0.dll
+api-ms-win-security-lsalookup-l1-1-2.dll
+AppCompat\Programs
+AppCompatFlags
+AppId
+AppInfo
+Application
+AppPatch64
+appraiser.sdb
+aq.moc.elgoog
+archeage.exe
+ArchiveDatabase
+argument list too long
+argument out of domain
+arma2oa.exe
+arma3.exe
+as.moc.elgoog
+as.vog.zifah
+ASL_LOG FAIL: 
+AslAnsiStringCreate
+AslEnvBuildBasic
+AslEnvExpandStrings
+AslEnvExpandStrings failed [%x]
+AslEnvExpandStrings2
+AslEnvExpandStrings2 failed to expand strings for %ws [%x]
+AslEnvGetProcessWowInfo
+AslEnvGetProcessWowInfo failed [%x]
+AslEnvGetSysNativeDirPathForGuestBuf
+AslEnvGetSystem32DirPathBuf
+AslEnvGetSystem32DirPathBuf failed [%x]
+AslEnvVarQuery failed [%x]
+AslFileAllocAndGetAttributes
+AslFileAttributeToString
+AslFileKindDetailToString
+AslFileMapping::AttributeToString
+AslFileMapping::GetAttribute
+AslFileMappingCreate
+AslFileMappingEnsure
+AslFileMappingEnsure failed [%x]
+AslFileMappingEnsureMappedAs
+AslFileMappingEnsureMappedAs failed [%x]
+AslFileMappingGetFileKindDetail
+AslFileMappingGetFileKindDetails failed [%x]
+AslFileMappingGetImageTypeEx
+AslFileMappingGetImageTypeEx failed [%x]
+AslFileMappingGetNtHeaders
+AslGuidFromString
+AslGuidToString
+AslPathCombine
+AslPathCombine failed [%x]
+AslPathToSystemPathBuf
+AslPathToSystemPathBuf failed [%x]
+AslpEnvResolveVars
+AslpEnvResolveVars failed [%x]
+AslpEnvResolveVars failed to fail properly for null buffer
+AslpFileGet16BitDescription
+AslpFileGet16BitModuleName
+AslpFileGetChecksum
+AslpFileGetChecksum failed [%x]
+AslpFileGetChecksumAttributes
+AslpFileGetChecksumAttributes called with a partial view which is not supported
+AslpFileGetChecksumAttributes failed [%x]
+AslpFileGetClrVersion
+AslpFileGetClrVersion failed [%x]
+AslpFileGetClrVersionAttribute
+AslpFileGetClrVersionAttribute failed [%x]
+AslpFileGetCrcChecksum
+AslpFileGetCrcChecksum failed [%x]
+AslpFileGetExeWrapper
+AslpFileGetExportName
+AslpFileGetFileKindDetailAttribute
+AslpFileGetFileKindDetailAttribute failed [%x]
+AslpFileGetHeaderAttributesNE
+AslpFileGetHeaderAttributesNE failed [%x]
+AslpFileGetHeaderAttributesPE
+AslpFileGetHeaderAttributesPE failed [%x]
+AslpFileGetImageNtHeader
+AslpFileGetImageNtHeader failed [%x]
+AslpFileGetNtHeaderAttributes
+AslpFileGetPeExportNameExeWrapper
+AslpFileGetPeExportNameExeWrapper failed [%x]
+AslpFileGetVersionAttributes
+AslpFileGetVersionAttributes failed [%x]
+AslpFileGetVersionBlock
+AslpFileGetVersionBlock failed [%x]
+AslpFileHasActiveMarkWrapper
+AslpFileHasActiveMarkWrapper failed (FileSize: %I64u) [%x]
+AslpFileHasActiveMarkWrapper failed [%x]
+AslpFileLargeEnsureLargeFileMapping
+AslpFileLargeEnsureLargeFileMapping failed [%x]
+AslpFileLargeGetChecksum
+AslpFileLargeGetChecksum failed [%x]
+AslpFileLargeGetChecksumAttributes
+AslpFileLargeGetChecksumAttributes failed to get checksum attributes [%x]
+AslpFileLargeGetCrcChecksum
+AslpFileLargeMapCreate
+AslpFileMakeStringVersionAttributes
+AslpFileMakeStringVersionAttributes failed [%x]
+AslpFileMappingGetFileKind
+AslpFileMappingGetFileKind failed %S [%x]
+AslpFileQuery16BitDescription
+AslpFileQuery16BitDescription failed [%x]
+AslpFileQuery16BitModuleName
+AslpFileQuery16BitModuleName failed [%x]
+AslpFileQueryExportName
+AslpFileQueryExportName failed [%x]
+AslpFileQueryVersionString
+AslpFileQueryVersionString failed [%x]
+AslpFileVerQueryBlock
+AslpFileVerQueryBlock failed [%x]
+AslRegistryBuildMachinePath
+AslRegistryBuildMachinePath failed for %ws [%x]
+AslRegistryGetKey
+AslRegistryGetString
+AslRegistryGetStringExpand
+AslRegistryGetUInt32
+AslRegistryGetUInt32_UStr
+AslRegistryGetUInt64
+AslRegistryGetUInt64_UStr
+AslRegistryOpenKey
+AslRegistryOpenKey passed bad Path [%x]
+AslStringAnsiToUnicode
+AslStringAnsiToUnicode failed [%x]
+AslStringDuplicate
+AslStringDuplicate failed [%x]
+AslStringDuplicate failed with "%s" [%x]
+AslStringDuplicateA
+AslStringXmlSanitize failed [%x]
+AslTelemetryCreate
+assemblyIdentity
+ASSOCIATORS OF{Win32_DiskPartition.DeviceID='%ls'} WHERE AssocClass = Win32_LogicalDiskToPartition
+ATAVAWH
+Atom(TM)CPUZ2760@1.80GHz
+atpvbaen.xlam
+AttachVirtualDisk
+Attempt to read past the end of the database offset 0x%lx size 0x%lx (0x%lx)
+au.moc.elgoog
+au.xednay
+AUAVAWH
+AudienceData
+AudienceId
+AuditBoot
+AUElevateNonAdmins
+AUIncludeRecommended
+AUOptions
+Authu
+AuthUsesFlags
+AutoLoad
+Automation
+az.oc.asba
+az.oc.bewm
+az.oc.bnf
+az.oc.elgoog
+az.oc.knabdradnats
+bad address
+bad allocation
+bad file descriptor
+bad message
+Bad parameter [%d]
+bad_address
+bad_file_descriptor
+base\appcompat\programs\generaltel\generaltel.cpp
+base\appcompat\programs\generaltel\usercontext.cpp
+BaseBoardManufacturer
+BaseBoardProduct
+BaseBoardVersion
+BatteryDesignedCapacity
+BatteryFullChargedCapacity
+BatteryRemainingCapacity
+battle.net.exe
+bcrypt.dll
+BCryptCloseAlgorithmProvider
+BCryptCreateHash
+BCryptDestroyHash
+BCryptFinishHash
+BCryptGetProperty
+BCryptHashData
+BCryptOpenAlgorithmProvider
+bf3.exe
+bf4.exe
+BinaryPath
+BinFileTimestamp
+BinFileVersion
+bioshockinfinite.exe
+BiosMajorRelease
+BiosMinorRelease
+BIOSReleaseDate
+BIOSVendor
+BIOSVersion
+bitlocker                       
+Bitmaps
+BitPeriodInS
+bl.moc.elgoog
+blackops.exe
+BMSRE3
+BMSRH
+BMSRL
+BOOT_CONFIG_DATA
+BootedFromAuditMode
+BootedFromVHD
+BootPartition
+BootSect
+BootVolume
+borderlands2.exe
+borderlandspresequel.exe
+broken pipe
+Browser
+BROWSER_DETAILS
+BROWSER_SETTINGS
+BrowserChoiceEnabled
+BrowserChoicePresent
+BrowserFlags
+Buffer overflow
+Buffer too small. Avail: %d, Need: %d
+BuildLab
+BuildLabEx
+BusType
+BytesPerLogicalSector
+BytesPerPhysicalSector
+BytesPerSector
+C !\$@L
+C(9G(uMH
+C(D9` t'L
+C(H;C(H
+C@9G@uU
+C\$0H
+C\$XH
+C84'u
+Cache
+CacheDisable
+CalculateCensusId
+CallContext:[%hs] 
+CallNtPowerInformation
+cAMDu
+Can't read database header
+Capability
+Capacity
+CBS_ERROR_INFO
+CBS_INFO
+CBS_LOG_SIZE
+CBSErrorInfo%02d
+CBSLastSuccessfulScavenge
+CbsLogSizeBytes
+cc.tnerrotartxe
+CD$(fD
+CD$(I
+CD$8H
+CD$HfD
+ce.moc.elgoog
+CEIPEnable
+Celeron(R)CPU807@1.50GHz
+Celeron(R)CPU807UE@1.00GHz
+Celeron(R)CPU827E@1.40GHz
+Celeron(R)CPU847@1.10GHz
+Celeron(R)CPU847E@1.10GHz
+Celeron(R)CPU857@1.20GHz
+Celeron(R)CPU867@1.30GHz
+Celeron(R)CPU877@1.40GHz
+Celeron(R)CPU887@1.50GHz
+Celeron(R)CPUB710@1.60GHz
+Celeron(R)CPUB720@1.70GHz
+Celeron(R)CPUB800@1.50GHz
+Celeron(R)CPUB810@1.60GHz
+Celeron(R)CPUB810E@1.60GHz
+Celeron(R)CPUB815@1.60GHz
+Celeron(R)CPUB820@1.70GHz
+Celeron(R)CPUB830@1.80GHz
+Celeron(R)CPUB840@1.90GHz
+Celeron(R)CPUG440@1.60GHz
+Celeron(R)CPUG460@1.80GHz
+Celeron(R)CPUG465@1.90GHz
+Celeron(R)CPUG470@2.00GHz
+Celeron(R)CPUG530@2.40GHz
+Celeron(R)CPUG530T@2.00GHz
+Celeron(R)CPUG540@2.50GHz
+Celeron(R)CPUG540T@2.10GHz
+Celeron(R)CPUG550@2.60GHz
+Celeron(R)CPUG550T@2.20GHz
+Celeron(R)CPUG555@2.70GHz
+Census
+centel.dll
+ChannelName
+CharLowerW
+checksum
+ChecksumDictionary
+CHROME
+CHROME_APPS_DATA
+CHROME_RLZ
+ChromeOSLaunchMode
+Chttp://www.microsoft.com/pkiops/crl/MicWinProPCA2011_2011-10-19.crl0a
+CITT_EXE
+CITT_MODULE
+CITTelControl
+CITTSwitch
+civilizationbe_dx11.exe
+civilizationv.exe
+civilizationv_dx11.exe
+civilizationv_tablet.exe
+CL$(H
+CL$HL
+CL$PE3
+CL$PL
+classes
+ClickToRun\Configuration
+CloseEventLog
+CloseHandle
+CloseThreadpoolTimer
+Cloud
+Cloverview
+CLR version string null or too long
+CLSIDFromProgID
+CoCreateFreeThreadedMarshaler
+CoCreateGuid
+CoCreateInstance
+CodeBase
+CodeIntegrity.Telemetry
+codwaw.exe
+CoInitialize
+CoInitializeEx
+CollectData
+CollectionStartTime
+ComfUp
+CommandLineToArgvW
+CommercialDataOptIn
+CommercialId
+CommitTransaction
+CommonFilesDir
+CommonFilesDir (x86)
+CommonProgramFiles
+CommonProgramFiles(x86)
+Compact Disk
+CompanyName
+compaq
+CompareStringOrdinal
+CompatLayer
+Compress callback failed to compress the sdb
+Compress callback was not set. Unable to compress SDB.
+Conditional Sum Wizard
+ConfigureTelemetryOptInChangeNotification
+ConfigureTelemetryOptInSettingsUx
+connection aborted
+connection already in progress
+connection refused
+connection reset
+connection_aborted
+connection_already_in_progress
+connection_refused
+connection_reset
+ConstructPartialMsgVW
+Control Panel\Desktop
+Control Panel\International
+Control Panel\International\User Profile
+CONTROL_PANEL
+ControlPaneliCalendarType
+ControlPaneliFirstdayOfWeek
+ControlPanelLanguages
+ControlPanelLocaleName
+ControlPanelNumShape
+ControlPanelsCurrency
+ControlPanelsLanguage
+ControlPanelsShortDate
+ControlPanelsShortTime
+ControlPanelsThousand
+ControlPanelsTime
+ConvertSidToStringSidW
+ConvertStringSidToSidW
+CopyFileW
+CopySid
+Core(TM)i3-2100CPU@3.10GHz
+Core(TM)i3-2100TCPU@2.50GHz
+Core(TM)i3-2102CPU@3.10GHz
+Core(TM)i3-2105CPU@3.10GHz
+Core(TM)i3-2120CPU@3.30GHz
+Core(TM)i3-2120TCPU@2.60GHz
+Core(TM)i3-2125CPU@3.30GHz
+Core(TM)i3-2130CPU@3.40GHz
+Core(TM)i3-2310ECPU@2.10GHz
+Core(TM)i3-2310MCPU@2.10GHz
+Core(TM)i3-2312MCPU@2.10GHz
+Core(TM)i3-2328MCPU@2.20GHz
+Core(TM)i3-2330ECPU@2.20GHz
+Core(TM)i3-2330MCPU@2.20GHz
+Core(TM)i3-2340UECPU@1.30GHz
+Core(TM)i3-2348MCPU@2.30GHz
+Core(TM)i3-2350MCPU@2.30GHz
+Core(TM)i3-2357MCPU@1.30GHz
+Core(TM)i3-2365MCPU@1.40GHz
+Core(TM)i3-2367MCPU@1.40GHz
+Core(TM)i3-2370MCPU@2.40GHz
+Core(TM)i3-2375MCPU@1.50GHz
+Core(TM)i3-2377MCPU@1.50GHz
+Core(TM)i5-2300CPU@2.80GHz
+Core(TM)i5-2310CPU@2.90GHz
+Core(TM)i5-2320CPU@3.00GHz
+Core(TM)i5-2380PCPU@3.10GHz
+Core(TM)i5-2390TCPU@2.70GHz
+Core(TM)i5-2400CPU@3.10GHz
+Core(TM)i5-2400SCPU@2.50GHz
+Core(TM)i5-2405SCPU@2.50GHz
+Core(TM)i5-2410MCPU@2.30GHz
+Core(TM)i5-2415MCPU@2.30GHz
+Core(TM)i5-2430MCPU@2.40GHz
+Core(TM)i5-2435MCPU@2.40GHz
+Core(TM)i5-2450MCPU@2.50GHz
+Core(TM)i5-2450PCPU@3.20GHz
+Core(TM)i5-2467MCPU@1.60GHz
+Core(TM)i5-2500CPU@3.30GHz
+Core(TM)i5-2500KCPU@3.30GHz
+Core(TM)i5-2500SCPU@2.70GHz
+Core(TM)i5-2500TCPU@2.30GHz
+Core(TM)i5-2510ECPU@2.50GHz
+Core(TM)i5-2515ECPU@2.50GHz
+Core(TM)i5-2520MCPU@2.50GHz
+Core(TM)i5-2537MCPU@1.40GHz
+Core(TM)i5-2540MCPU@2.60GHz
+Core(TM)i5-2550KCPU@3.40GHz
+Core(TM)i5-2557MCPU@1.70GHz
+Core(TM)i7-2600CPU@3.40GHz
+Core(TM)i7-2600KCPU@3.40GHz
+Core(TM)i7-2600SCPU@2.80GHz
+Core(TM)i7-2610UECPU@1.50GHz
+Core(TM)i7-2617MCPU@1.50GHz
+Core(TM)i7-2620MCPU@2.70GHz
+Core(TM)i7-2630QMCPU@2.00GHz
+Core(TM)i7-2635QMCPU@2.00GHz
+Core(TM)i7-2637MCPU@1.70GHz
+Core(TM)i7-2640MCPU@2.80GHz
+Core(TM)i7-2649MCPU@2.30GHz
+Core(TM)i7-2655LECPU@2.20GHz
+Core(TM)i7-2657MCPU@1.60GHz
+Core(TM)i7-2670QMCPU@2.20GHz
+Core(TM)i7-2675QMCPU@2.20GHz
+Core(TM)i7-2677MCPU@1.80GHz
+Core(TM)i7-2700KCPU@3.50GHz
+Core(TM)i7-2710QECPU@2.10GHz
+Core(TM)i7-2715QECPU@2.10GHz
+Core(TM)i7-2720QMCPU@2.20GHz
+Core(TM)i7-2760QMCPU@2.40GHz
+Core(TM)i7-2820QMCPU@2.30GHz
+Core(TM)i7-2860QMCPU@2.50GHz
+Core(TM)i7-2920XMCPU@2.50GHz
+Core(TM)i7-2960XMCPU@2.70GHz
+Core(TM)i7-3930KCPU@3.20GHz
+Core(TM)i7-3970XCPU@3.50GHz
+CorrelationVectors
+CORRUPTION_EVENTS
+CORRUPTION_STATE
+CoSetProxyBlanket
+CoTaskMemAlloc
+CoTaskMemFree
+CoTaskMemRealloc
+CoUninitialize
+Count
+Counts
+CoWaitForMultipleHandles
+CPU_ID_DATA
+CpuFamily
+CpuId1Eax
+CpuId1Ebx
+CpuId1Ecx
+CpuId1Edx
+CpuIdData
+CpuIdHv0Eax
+CpuIdHv0Ebx
+CpuIdHv0Ecx
+CpuIdHv0Edx
+CpuIdHv1Eax
+CpuIdHv1Ebx
+CpuIdHv1Ecx
+CpuIdHv1Edx
+CpuIdHv2Eax
+CpuIdHv2Ebx
+CpuIdHv2Ecx
+CpuIdHv2Edx
+CpuIdHv3Eax
+CpuIdHv3Ebx
+CpuIdHv3Ecx
+CpuIdHv3Edx
+CpuIdHv4Eax
+CpuIdHv4Ebx
+CpuIdHv4Ecx
+CpuIdHv4Edx
+CpuIdHv5Eax
+CpuIdHv5Ebx
+CpuIdHv5Ecx
+CpuIdHv5Edx
+CpuIdHv6Eax
+CpuIdHv6Ebx
+CpuIdHv6Ecx
+CpuIdHv6Edx
+CpuIdHv7Eax
+CpuIdHv7Ebx
+CpuIdHv7Ecx
+CpuIdHv7Edx
+CpuIdHv8Eax
+CpuIdHv8Ebx
+CpuIdHv8Ecx
+CpuIdHv8Edx
+CpuModel
+CpuStepping
+CpuUPExpressCompressThroughput
+CRASHDUMP_INFO
+CrashDumpEnabled
+CrashEpoch
+CrcFileStart  : %I64u
+CrcViewOffset : %I64u
+CreateEventExW
+CreateEventW
+CreateFileMappingW
+CreateFileW
+CreateMutexExW
+CreateMutexW
+CreateProcessAsUserW
+CreateSemaphoreExW
+CreateSemaphoreW
+CreateThreadpoolTimer
+CreateTransaction
+CreateVirtualDisk
+CreateWaitableTimerW
+CreateWellKnownSid
+CreateXmlReader
+cross device link
+crossfire.exe
+CryptAcquireContextW
+CryptCreateHash
+CryptDestroyHash
+CryptGenRandom
+CryptGetHashParam
+CryptHashData
+CryptReleaseContext
+crysis3.exe
+CSDBuildNumber
+CSDVersion
+csgo.exe
+cstrike - online.exe
+cstrike.exe
+CT$0L
+CT$8H
+CT$hH
+CT$PL
+culture
+CurrentBuild
+CurrentBuildNumber
+CurrentHorizontalResolution
+CurrentIP
+CurrentPowerPolicy
+CurrentTimeLocal
+CurrentType
+CurrentVersion
+CurrentVerticalResolution
+curse.exe
+curseclient.exe
+Custom
+Custom\Custom64
+CUSTOM_SHIM_DATABASE
+D!|$<
+D!t$@E3
+D$ E3
+d$ E3
+D$ E3
+D$ fD
+D$ H!|$8H
+D$ H;
+D$(E3
+D$(fA
+D$(H!t$ 3
+D$(H;
+D$(H9
+D$,:8
+D$@D9a t
+D$@E3
+D$@fD
+D$@M;
+D$\;D$`
+D$`E3
+D$`f;
+d$`fD
+D$`H;
+D$`H9D$hA
+D$09D$X
+D$0D95s
+D$0E;
+D$0E3
+D$0fD
+D$0H;
+D$4fD
+D$8E3
+d$8fD
+D$8H!t$8H
+D$8H+D$`H
+D$h;D$d}5
+D$H;D$p
+D$HD9|$pL
+D$HE3
+D$hH;
+D$hIc
+D$PE3
+D$pE3
+D$pf;
+D$PfD98t
+D$PfD98u
+D$PH!D$0
+D$PH;
+d$PH9}
+D$PL+
+D$Ps L
+d$ptkM
+D$x95
+D)Rich
+D;d$@
+D|$PL
+D3D11.dll
+D3D11CreateDevice
+D9%]v
+D9%GX
+D9%JO
+D9%T\
+D9?v+H
+D9|$@
+D9|$0
+D9|$H
+D9|$X
+D9}Ht;f9E8u
+D9}oA
+D9-~<
+D9=7(
+D9=fB
+D95+5
+D95B!
+D9-6%
+D9d$ 
+D9d$@
+D9d$@t
+D9d$\
+D9d$Du
+D9d$H
+D9d$Tv+
+D9K(t
+D9l$`u
+D9q0tVH
+D9t$@H
+D9t$0
+D9t$p
+D9t$P
+Daily
+daorigins.exe
+darksoulsii.exe
+data.exe
+DATA_ONLY
+Data0
+Data1
+Data10
+Data11
+Data12
+Data13
+Data14
+Data17
+Data18
+Data19
+Data2
+Data20
+Data21
+Data3
+Data4
+Data5
+Data6
+Data7
+Data8
+Data9
+DatabaseDescription
+DatabaseInstallTimeStamp
+DatabasePath
+DatabaseRuntimePlatform
+DatabaseType
+DataNamespace
+DataPointName
+DataPointValue
+DateInstalled
+dayz.exe
+db.moc.elgoog
+DC_MonitorOff_Duration
+DC_MonitorOff_Energy
+DC_MonitorOn_Duration
+DC_MonitorOn_Energy
+DcMonitorOffDuration
+DcMonitorOffEnergy
+DcMonitorOnDuration
+DcMonitorOnEnergy
+Dd$hH
+Dd$XH
+DD$XH
+ddzrpg.exe
+dE7,:
+dead island epidemic - crib.exe
+DebugBreak
+DedicatedSystemMemory
+DedicatedVideoMemory
+DefaultScope
+DelayLoadFailureHook
+DeleteCriticalSection
+DeleteFileW
+DellAMService
+DellLogonPolicy
+DellPasswordTile
+DellReplaceCAD
+DellSmartCard
+DellWaveSecureLogin
+DellWvTiles
+depdetct
+dependencyType
+dependentAssembly
+DependsOn
+Description
+Design
+Design_x64
+DesignedCapacity
+destination address required
+destination_address_required
+DetachVirtualDisk
+device or resource busy
+DeviceHotplug
+DeviceId
+DeviceIdForODC
+DeviceIoControl
+dfx.exe
+di.oc.elgoog
+diablo iii.exe
+Did not find
+DiffPri_IsDomainJoined
+DigitalProductId4
+directory not empty
+DirectoryName
+Disable8.1OSUpgrade
+Disabled
+DisableDeviceDelete
+DisableDiagnosticDataViewer
+DisableOSUpgrade
+DisableTelemetryOptInChangeNotification
+DisableTelemetryOptInSettingsUx
+Disk.%d
+DISK_DRIVE
+DISK_DRIVE_SESSION_DURATION
+DISK_INFORMATION
+DiskCorruptionEvent
+DiskCorruptionEvent41
+DiskCorruptionEvent55
+DiskCorruptionEvent7
+DiskId
+DiskIndex
+DiskInfo
+DiskLength
+DiskPartitionInfo
+DiskPartitionInfo%02d
+DisplayName
+Dl$hH
+Dl$PH
+Dl$XL
+DLdE3
+DN fE
+dnf.exe
+DoCensusRun
+DocumentInsights::AggregateDocsFromSettings
+DocumentInsights::CollectLocalMru
+DocumentInsights::CollectRoamingMru
+DocumentInsights::CollectTrustedDocuments
+DocumentInsights::CreateEvents
+dofus.exe
+Domain
+DOMAIN_JOINED_NOISY
+DoNotAllowIE10
+DoNotAllowIE11
+DoNotAllowIE9
+DoNotOfferIE11
+DoNotOfferIE11AU
+dontstarve_steam.exe
+DOS_MODULE
+dota.exe
+DownlevelBuildNumber
+dragonnest.exe
+DriveLetter
+DriveLetters
+DriverRepairExecuted
+DriversMissingFromWinSxs
+DriveType
+drvmain.sdb
+Dt$PH
+Dt$XH
+DTAge
+DuplicateTokenEx
+DuplicateVBA
+DVDTelemetrySessionStartDate
+DX 10_0
+DX 10_1
+DX 11_0
+DX 9_1
+DX 9_2
+DX 9_3
+DXVersion
+E!f9G:u5
+E#9G\u:
+E#f9G<u+
+E%f9G>u!
+E(=csm
+E)f9GBu
+E/9Ghu"
+E/H9G
+E;9Gtu
+E?9Gxu
+E?zdbfD
+E+9Gdu*
+E+f9GDu
+e0c0a
+E39Glu
+E79Gpu
+E8=csm
+E'9G`u2
+ea.elgoog
+eb.atiz
+eb.azapak
+eb.azrops
+eb.cbk
+eb.cbk.enilnocbk
+eb.dalbswuein
+eb.djit
+eb.draadnats
+eb.eitcadered
+eb.elgoog
+eb.gni.gniknabe
+eb.nlh
+eb.sdnahed2
+eb.sitrofsabirappnb
+eb.suifleb
+eb.tenelet
+eb.tenelet.latropifiw
+eb.tenelet.liam
+eb.tenneroines
+eb.tenyks
+ed.1dnu1.emoh
+ed.42tuocsneilibommi
+ed.bew
+ed.bew.ehcus
+ed.bew.rotagivan
+ed.dlib
+ed.dnalhcstuedlebak
+ed.dra
+ed.effaleips
+ed.ehcstueddeus
+ed.elgoog
+ed.elgoog.etalsnart
+ed.elgoog.swen
+ed.elibom
+ed.elibom.nehcus
+ed.enilnorettew
+ed.enilno-t
+ed.enilno-t.liame
+ed.fdz
+ed.hcokfehc
+ed.kehtaidemdra
+ed.klatidla
+ed.knabtsop.gniknab
+ed.knabzremmoc.nednuk
+ed.legeips
+ed.lhd.plon
+ed.loa
+ed.nozama
+ed.obihct
+ed.otto
+ed.pihc
+ed.ppitkcik
+ed.retsneftrats
+ed.rettew
+ed.rocra
+ed.sdneirfyats
+ed.sucof
+ed.teneerf
+ed.uahcssegat
+ed.vt-n
+ed.yabe
+ed.yabe.negieznanielk
+ed.yabe.ningis
+ed.yabe.ym
+EditionID
+ee.elgoog
+ee.iten
+E'f9G@u
+effffff
+EG9qHt
+EGu#L
+E'H!EoH
+Eh=csm
+EH=csm
+Ehttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z
+Ehttp://crl.microsoft.com/pki/crl/products/MicTimStaPCA_2010-07-01.crl0Z
+Ehttp://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt0
+ei.elgoog
+ElapsedTimeString
+ElementName
+ElevateNonAdmins
+elsword.exe
+em.atceridajor
+em.enilno-oediv-vt-eerf
+em.yfitcennoc
+emachines
+EMET.dll
+EMET64.dll
+emoh.buhemohtb
+emoh.ifiwelibom
+emoh.m
+Enable
+Enable Wave Secure Login
+EnableAutoUpgrade
+EnableAutoUpgradeNative
+EnableAutoUpgradeWow64
+Enabled
+EnableTraceEx2
+EncryptedProtected
+EncryptedUnknown
+EncryptedUnprotected
+EncryptionState
+END_OF_LIST
+EnterCriticalSection
+entiu
+EntriesLba
+EntryCount
+EntryId
+EntryIdMax
+EntrySize
+EnumerateCachedInsightEvents
+EnumerateOfficeAddins
+EnumerateOfficeDocuments
+ep.moc.elgoog
+ep.neibsapc
+ep.oicremocle
+EqualSid
+ERROR
+Error 0x%ld: Failed to re-enable Compat-Gentel custom trigger.
+Error accessing the cache: %d %ws
+Error getting ptr to tag data
+Error getting StringRef
+Error reading buffer
+Error reading data
+Error reading size data
+Error reading tag
+Error reading tag data
+ERROR#%s#%d
+ErrorCode
+ErrorGettingData
+es.aedron
+es.aedron.tavirp
+es.ailet
+es.atel
+es.elgoog
+es.gta
+es.id
+es.ihms
+es.knabdews
+es.knabdews.knabtenretni
+es.knabes.vv
+es.lepsaksnevs
+es.nd
+es.neknabslednah
+es.neknabslednah.eruces
+es.nesserpxe
+es.tedalbnotfa
+es.tekcolb
+es.tratsrepus
+es.tratstenretni
+es.tvs
+es.yabetaripeht
+es.yalptvs
+EtwEventEnabled
+EtwEventRegister
+EtwEventUnregister
+EtwEventWrite
+EtwTraceMessage
+Euro Currency Tools
+eurotool.xlam
+eurotrucks2.exe
+ev.oc.elgoog
+Event
+Event/System[EventID=1001]
+Event/System[EventID=41]
+Event/System[EventID=55]
+Event/System[EventID=7]
+EventRegister
+EventSetInformation
+EventUnregister
+EventWrite
+EventWriteTransfer
+EvtClose
+EvtCreateRenderContext
+EvtNext
+EvtQuery
+EvtRender
+EX=csm
+Ex=csm
+Excel
+excel.exe
+Exception
+Exception encountered [%x]
+Exception retrieving version block [%x] for '%ls'
+ExchangeProviderFlags
+ExclusionApps
+EXE_SIGNING_INFO
+executable format error
+EXFAT   
+Exists
+Expand callback failed to expand SDB
+ExpandEnvironmentStringsW
+ExpectedFrameCount
+Export directory invalid or invalid image format
+Export directory pointer invalid (points to location outside file), invalid image format
+exprwd.exe
+ExtraInfo
+ExtraTelemetrySwitch
+F(H;F(H
+F8<(u
+F8D1 t
+f9,Au
+f9,Hu
+f9,Ku
+f9,Xu
+f9,zu
+f9\$@t
+f9\$P
+f9] t
+f9]pt
+f9<Au
+f9<Fu
+f9<Hu
+f9<iu
+f9<Qt
+f9<Xu
+f94Au
+f94Bu
+f94Cu
+f94Gu
+f94Hu
+f94Ku
+f94Su
+f94Xu
+f9D$p
+f9D$PH
+f9D$PL
+f9G,u{
+f9G.uq
+f9G0ug
+f9G2u]
+f9G4uS
+f9G6uI
+f9G8u?
+f9L$`
+f9L$`u!
+f9L$PH
+f9t$0uG
+f9t$P
+fA;z*
+fA9,Au
+fA9<@u
+fA94@u
+fA94Au
+fA94Du
+fA94Fu
+fA9tE
+fA9TM
+fA9z*v$A
+factor
+Failed to allocate %d bytes
+Failed to allocate %d bytes for user key buffer
+Failed to allocate ami store [%d]
+Failed to allocate DB structure
+Failed to allocate registration info
+Failed to allocate zdb buffer.
+Failed to cat string [%x]
+Failed to clearn gentel cache %#x
+Failed to close sdb file handle [%x]
+Failed to close the InstalledSDB key [%d]
+Failed to convert attribute to string [%x]
+Failed to copy the InstalledSDB child key name (index %d) [%d]
+Failed to create event [%d]
+Failed to create file mapping [%x]
+Failed to create semaphore [%d]
+Failed to create test key under provider: %ws [%d]
+Failed to create timer [%d]
+Failed to delete test key under provider: %ws [%d]
+Failed to duplicate database description [%d]
+Failed to duplicate path [%d]
+Failed to duplicate reg key path string [%d]
+Failed to enum sdb value index %d of exe index %d [%x]
+Failed to enumerate key Custom index %d [%x]
+Failed to enumerate key InstalledSDB index %d [%d]
+Failed to find sysmain.sdb
+Failed to find the Cor20Header
+Failed to get attribute index %u [%x]
+Failed to get key [%d]
+Failed to get ntheaders [%x]
+Failed to get root key [%d]
+Failed to get root tag
+Failed to get SDB Guid from Key name (index %d) [%d]
+Failed to get store full path [%d]
+Failed to get sysmain path.
+Failed to get system root directory [%x]
+Failed to get the database id
+Failed to get the database ID
+Failed to give privilege [%d]
+Failed to initialize security descriptor [%d]
+Failed to initialize store [%d]
+Failed to initialize store [%d] - Attempting to reset cache permissions
+Failed to initialize UtcThrottle [%d]
+Failed to map SDB [%x]
+Failed to map sysmain.sdb [%d]
+Failed to open gentel office addins cache %#x
+Failed to open gentel office addins usage cache %#x
+Failed to open gentel office identifier cache %#x
+Failed to open gentel office ie settings cache %#x
+Failed to open gentel office insights cache %#x
+Failed to open gentel office products cache %#x
+Failed to open gentel office settings cache %#x
+Failed to open gentel office VBA cache %#x
+Failed to open gentel office VBA rule violation cache %#x
+Failed to open InstalledSDB child key (index %d) [%d]
+Failed to open key "%ws" [%d]
+Failed to open key "%ws" [%x]
+Failed to open reg key [%x]
+Failed to open SDB - File size too large or small.
+Failed to open sysmain.sdb [%d]
+Failed to open timer [%d]
+Failed to printf the Custom EXE key path (index %d) [%x]
+Failed to printf the Custom\Layers key path [%x]
+Failed to query key "%ws" [%x]
+Failed to query key value [%x]
+Failed to read a string
+Failed to read database header
+Failed to read database id 0x%lx
+Failed to read expanded database header
+Failed to sort index
+Failed to store Ami cache path [%d]
+Failed to upcase unicode string "%ws"
+Failed to update store permissions [%d]
+Failed to write compressed sdb.
+Failed to write end list tag for the string table
+Failed to write padding data 1 byte
+Failed to write stringtable item
+Failed to write the data
+Failed to write the sdb [%x]
+Failed to write the zdb [%x]
+Failed to write the zdb header [%x]
+Failed to write to provider: %ws [%d]
+Failed trying to query value "%ws" [%d]
+FailFast
+falloutnv.exe
+False
+false
+FamilySafetyConfigured
+farcry3.exe
+farcry3_d3d11.exe
+farmingsimulator2013game.exe
+farmingsimulator2015game.exe
+FastS4Support
+FATDriverPresent
+fB94Au
+fC9<Au
+fclose
+fD;3u
+fD;l$(t^H
+fD9 t
+fD9!t
+fD9$Au
+fD9$Bu
+fD9$Cu
+fD9$Ft
+fD9$Fu
+fD9$Gu
+fD9$Hu
+fD9$ou
+fD9$Ou
+fD9$Pu
+fD9$V
+fD9$Xu
+fD9(u
+fD9)t
+fD9)u
+fD9,_u
+fD9,Au
+fD9,Cu
+fD9,Fu
+fD9,Gu
+fD9,Hu
+fD9,pu
+fD9,Qu
+fD9,Xu
+fD9.I
+fD9/u
+fD9<{u
+fD9<~u
+fD9<Au
+fD9<Bu
+fD9<Fu
+fD9<Hu
+fD9<Xu
+fD9<xu
+fD9<Xu
+fD9<Zu
+fD92t
+fD92u
+fD94^u
+fD94Au
+fD94Bu
+fD94Cu
+fD94Fu
+fD94Gu
+fD94Hu
+fD94Pu
+fD94Xu
+fD94xu
+fD94Xu
+fD94zu
+fD98t
+fD9d$X
+fD9dE
+fD9t]
+fD9t}
+fD9u0t
+fD9ug
+fD9z*vh
+fE9!t
+fE9$Fu
+fE9$Gu
+fE9,@u
+fE9,Du
+fE9<@u
+fE9<Du
+fE9<Fu
+fE90u
+fE94@u
+fE94Au
+fE94Du
+fE94Gu
+fE94pu
+fE99u1
+fE9DE
+fE9dE
+fE9DE
+fE9dE
+fE9dN
+fE9LE
+fE9Lm
+fE9LN
+fE9T]
+fE9tE
+fF9$xu
+fF9,ru
+fF9,st
+fF9<qu
+ffxiv.exe
+fifa.exe
+fifa14.exe
+fifa15.exe
+fifaworld.exe
+fifazf.exe
+file exists
+File mapping invalid
+File mapping invalid [%x]
+File mapping not a PE [%x]
+File MRU
+file too large
+file:
+file://
+FileDescription
+FileId
+FileID
+FileId
+filename too long
+filename_too_long
+FILES_WITH_COMPAT_LAYERS_APPLIED_DATA
+FileSize
+FileSize      : %I64u
+FileSwitch
+FileSystem
+FileTimeToSystemTime
+FileVersion
+FindClose
+FindFirstFileExW
+FindFirstFileW
+FindNextFileW
+FindResourceW
+Firefox
+Firewall
+FIRMWARE_TYPE_DATA
+FirmwareType
+FirstLba
+Flags
+Flags:%d; DatabasePath:%ws
+fm.exe
+FolderName
+Format Error
+FormatMessageW
+Found
+FoundCBS
+FoundIncrement
+FoundInstall
+FoundOCM
+FoundRelease
+FoundServicing
+FoundSP
+FoundTargetVersion
+fread
+FreeLibrary
+FreePropVariantArray
+FreeSid
+FreeSpace
+Frequency
+FriendlyName
+frozen throne.exe
+frxmain.sdb
+fsx.exe
+FudH;
+fujitsu
+FullChargedCapacity
+FullPath
+FullSync
+function not supported
+FveAddAuthMethodInformation
+FveAddTrustedWimData
+FveCheckSuspendBitLockerOnUpgrade
+FveCloseVolume
+FveCommitChanges
+FveDeleteAuthMethod
+FveDetectTelemetry
+FveDisableAuthenticationW
+FveEnableAuthenticationW
+-FVE-FS-
+FveGetAuthMethodInformation
+FveGetSecureBootBindingState
+FveGetStatus
+FveGetStatusBasicW
+FveOpenVolumeW
+FveRemoveTrustedWimData
+FveSetFipsAllowDisabled
+G(H;G(H
+ga.eriwemirp
+Gamer
+garena_room.exe
+gateway
+gb.elgoog
+gb.rid
+gb.vba
+ge.moc.elgoog
+General Telemetry
+GeneralMarkers
+generaltel
+GeneralTel.dll
+GeneralTel.pdb
+GeneralTelemetryElapsedTime
+GeneralTelMarkersWritten
+generic
+Gentel_Run_Cpu_0.1gCycles
+GentelLastMonthlyRun
+GentelOfficeIESettings AddItem failed %#x
+GentelOfficeSettings AddItem failed %#x
+GENUINE
+Genuine
+Genuu
+GEO_ID
+GeoId
+GetAppInventory
+GetCITDataApr
+GetCITTelemetryPoints
+GetComputerNameExW
+GetComputerNameW
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+GetDateFormatW
+GetFileAttributesExW
+GetFileAttributesW
+GetFileSize
+GetLastError
+GetLocalTime
+GetLogicalDriveStringsW
+GetLongPathNameW
+GetModuleFileNameA
+GetModuleFileNameW
+GetModuleHandleExW
+GetModuleHandleW
+GetNativeSystemInfo
+GetOfficeAddInsTelemetry
+GetOfficeIdentifiers
+GetOfficeIeSettings
+GetOfficeInsightsTelemetry
+GetOfficeProductInformation
+GetOfficeSettings
+GetOfficeVBATelemetry
+GetPathFunction (for SdbFileType %d, IsLtRs3: %d) failed [%x]
+GetProcAddress
+GetProcessHeap
+GetProductInfo
+GetStorageDependencyInformation
+GetSystemDirectoryW
+GetSystemFirmwareTable
+GetSystemMetrics
+GetSystemTime
+GetSystemTimeAsFileTime
+GetSystemWindowsDirectory [%d]
+GetSystemWindowsDirectoryW
+GetTempFileNameW
+GetTempFileNameW [%d]
+GetTempPathW
+GetTempPathW [%d]
+GetTickCount
+GetTickCount64
+GetTimeFormatW
+GetTokenInformation
+GetTraceEnableFlags
+GetTraceEnableLevel
+GetTraceLoggerHandle
+GetUserGeoID
+GetVersion [%#x]
+GetVersionExW
+GetVirtualDiskInformation
+GetVirtualDiskPhysicalPath
+GetWindowsDirectoryW
+gg.po
+ghostreconphantoms.exe
+gigabyte
+Global\%lsSemaphore
+Global\%lsTimer
+Global\AmiProviderMutex_
+Global\AmiUtcThrottlingSemaphore
+Global\AmiUtcThrottlingTimer2
+gn.moc.elgoog
+goatgame - win32 - shipping.exe
+gro.aidepikiw
+gro.allizom
+gro.eciffoerbil
+gro.eciffonepo
+gro.egnahc
+gro.egroffdp
+gro.epacsotohp
+gro.etnenamrepresiak
+gro.evom-yas
+gro.hcraesylimaf
+gro.idivi
+gro.laredefyvan
+gro.naloediv
+gro.oel
+gro.praa
+gro.sdiksbp
+gro.sdl
+gro.setyberawlam
+gro.sndnyd
+gro.ssapifiw
+gro.tsilsgiarc
+gro.vtcrm
+gro.wj
+groove.exe
+Groups/ArchiveGroup
+gs.moc.elgoog
+gta - vc.exe
+gta_sa.exe
+gtaiv.exe
+gw2.exe
+GWX_TASK
+H SUVWATAVAWH
+H UATAUAVAWH
+h UAVAWH
+H WATAUAVAWH
+h WAVAWH
+H!\$ 3
+H!\$ H
+H!\$ L
+H!\$(H
+H!\$@H
+H!\$0
+H!\$0D
+H!\$0E3
+H!\$0H!\$(H!\$ 3
+H!\$0L
+H!\$83
+H!\$H
+H!\$hH
+H!\$HL
+H!\$xH
+H!] H
+H!]83
+H!|$0D
+H!|$8H
+H!D$ H
+H!D$HL
+H!E H
+H!t$ H
+H!t$(
+H!t$@H
+H!t$8H!t$0
+H;;t1H
+H;\$pr"M
+H;]Pu
+H;|$X
+H;|$Xs
+H;0u2H
+H;0u5
+H;C(H
+H;C(L
+H;D$HH
+H;F(H
+H;G(H
+H;G(u
+H;G0t
+H;H A
+H;J sXH
+H;l$`
+H;T$8w
+H;t$pr
+H_^[]
+H+L$8H
+H+s8I+
+H+T$8H
+H0F0D
+H9;ucH
+H9] H
+H9](H
+H9_HsTH
+H9|$X
+H9} r
+H9}@r
+H9~0w
+H9B(r
+H9C s&H
+H9sPuLA
+H9t$@
+H9t$@u L
+H9t$X
+hA_A^A]A\_^][
+HARDWARE\DESCRIPTION\System\BIOS
+HARDWARE\DESCRIPTION\System\CentralProcessor
+HARDWARE_DETAILS
+HARDWARE_DETAILS_DISABLED
+HashDigestLength
+HasPaperLicense
+HasVBA
+hb.moc.elgoog
+hc.ecnaniftsop.ecnanif-e
+hc.elgoog
+hc.frs
+hc.hcraes.let
+hc.kcilb
+hc.nim02
+hc.niweulb
+hc.niweulb.bhzhcir
+hc.niweulb.hhzhcir
+hc.niweulb.oss
+hc.odracir
+hc.raesefas
+hc.regieznasegat
+hc.tceridnesieffiar.bt
+hc.xmg
+HcD$@H
+HcEHH
+HeaderSize
+HeapAlloc
+HeapFree
+HeapReAlloc
+hearthstone.exe
+Height
+heroesandgeneralsdesktop.exe
+heroesofthestorm.exe
+heroesofthestorm_x64.exe
+hewlett packard
+hewlett-packard
+HiberFileSize
+hl.exe
+hl2.exe
+hlds.exe
+HorizontalResolution
+host unreachable
+host_unreachable
+hostIsBootedFromAuditMode
+HotFixID
+hp.moc.elgoog
+ht.ni.555
+ht.ni.anerag
+ht.ni.gg
+ht.oc.elgoog
+ht.oc.sia
+ht.oc.tenretnieurt
+html.xlam
+HTTP_HANDLER
+HWIDs
+I;@(H
+I;G(H
+I0G0E
+I0G1-0+
+I9|$0t\L
+I9Q0w
+I9R0w
+I9v0w
+iCalendarType
+ID_LEGACY
+Identifier
+identifier removed
+IE_BROWSER_EMULATION_POLICY_LIST_DATA
+IE_BROWSER_EMULATION_QUIRKS_POLICY_LIST_DATA
+IE_ENTMODE
+IE_VERSION
+IE_VERSION_CONTROL
+IeBrowserEmulationPolicyListData%02d
+IeBrowserEmulationQuirksPolicyListData%02d
+IeClearableListDataUserFilter
+IeEnterpriseModeEnable
+IeEnterpriseModeSiteList
+IeIndexId
+IeVersion
+if.42imous
+if.acerof
+if.aedron.1olos
+if.elgoog
+if.ely
+if.ely.aneera
+if.irot
+if.ithelatli
+if.po
+if.sotialneeteitamli
+if.suakkiev
+if.tamonasatli
+if.vtm
+iFirstdayOfWeek
+ifiw.elibomenofadov
+IIDFromString
+illegal byte sequence
+in.moc.elgoog
+Inaccessible
+inappropriate io control operation
+IncludeRecommendedUpdates
+Increment
+Index
+Index referenced by 0x%x is not valid
+IndexID
+IndicatorTelemetry
+IndicatorValue
+ineIu
+InitializeCriticalSection
+InitializeCriticalSectionEx
+InitializeSecurityDescriptor
+InitializeSecurityDescriptor failed [%d]
+InitOnceGetStringTableOffset
+InitOnceGetStringTableOffset succeeded but failed to find string table
+InjectDLL
+InprocServer32
+Input DB was either too large or too small.
+Input DB was not in a valid state.
+Install
+install
+InstallationType
+InstallDate
+INSTALLED_DOT_NET_FRAMEWORKS
+InstalledHotfixes
+InstalledOn
+InstalledSDB child key name was too long (index %d).
+InstalledSDB child key was considerably larger than the size of a GUID string [%d]
+InstalledUILanguage
+InstalledUILanguage%02d
+InstallRoot
+InstanceGuid
+InstancePath
+Intel
+Intel(R)
+IntendedState
+internal\sdk\inc\wil\resource.h
+InternalName
+Internet
+Internet Assistant VBA
+InternetCrackUrlW
+interrupted
+invalid argument
+Invalid COM Descriptor virtual address encountered
+Invalid combination of Host/Current processor architectures passed to AslpEnvResolveVars Host: %x4 Current: %x4
+Invalid COR20 Metadata signature encountered
+Invalid COR20 Metadata virtual address encountered
+invalid hash bucket count
+Invalid new buffer size
+Invalid parameter
+Invalid parameters [%x]
+Invalid pdb
+invalid seek
+invalid stol argument
+invalid string position
+Invalid tagid 0x%lx
+Invalid total buffer size
+Invalid value type
+invalid_argument
+INVALID_LICENSE
+inventoryId
+InventoryMiscellaneous
+InventoryMiscellaneousAdd
+InventoryMiscellaneousAntispywareInformation
+InventoryMiscellaneousAntispywareInformationAdd
+InventoryMiscellaneousAntispywareInformationStartSync
+InventoryMiscellaneousAntivirusInformation
+InventoryMiscellaneousAntivirusInformationAdd
+InventoryMiscellaneousAntivirusInformationStartSync
+InventoryMiscellaneousAppliedCompatLayers
+InventoryMiscellaneousAppliedCompatLayersAdd
+InventoryMiscellaneousAppliedCompatLayersStartSync
+InventoryMiscellaneousBrowserStartupSettings
+InventoryMiscellaneousBrowserStartupSettingsAdd
+InventoryMiscellaneousBrowserStartupSettingsStartSync
+InventoryMiscellaneousCBS
+InventoryMiscellaneousCBSAdd
+InventoryMiscellaneousCBSStartSync
+InventoryMiscellaneousChromeApp
+InventoryMiscellaneousChromeAppAdd
+InventoryMiscellaneousChromeAppStartSync
+InventoryMiscellaneousChromeRlz
+InventoryMiscellaneousChromeRlzAdd
+InventoryMiscellaneousChromeRlzStartSync
+InventoryMiscellaneousCIT
+InventoryMiscellaneousCITModuleLoaded
+InventoryMiscellaneousCITModuleLoadedAdd
+InventoryMiscellaneousCITModuleLoadedStartSync
+InventoryMiscellaneousCpuid
+InventoryMiscellaneousCpuidAdd
+InventoryMiscellaneousCpuidStartSync
+InventoryMiscellaneousCrashDump
+InventoryMiscellaneousCrashDumpAdd
+InventoryMiscellaneousCrashDumpStartSync
+InventoryMiscellaneousCustomSdbRegistration
+InventoryMiscellaneousCustomSdbRegistrationAdd
+InventoryMiscellaneousCustomSdbRegistrationStartSync
+InventoryMiscellaneousDiscCorruption
+InventoryMiscellaneousDiscCorruptionAdd
+InventoryMiscellaneousDiscCorruptionStartSync
+InventoryMiscellaneousDiskInfo
+InventoryMiscellaneousDiskInfoAdd
+InventoryMiscellaneousDiskInfoStartSync
+InventoryMiscellaneousDiskPartitionInfo
+InventoryMiscellaneousDiskPartitionInfoAdd
+InventoryMiscellaneousDiskPartitionInfoStartSync
+InventoryMiscellaneousFirewallInformation
+InventoryMiscellaneousFirewallInformationAdd
+InventoryMiscellaneousFirewallInformationStartSync
+InventoryMiscellaneousGptDisk
+InventoryMiscellaneousGptDiskAdd
+InventoryMiscellaneousGptDiskStartSync
+InventoryMiscellaneousGWXTaskInfo
+InventoryMiscellaneousGWXTaskInfoAdd
+InventoryMiscellaneousGWXTaskInfoStartSync
+InventoryMiscellaneousInstalledDotNetFramework
+InventoryMiscellaneousInstalledDotNetFrameworkAdd
+InventoryMiscellaneousInstalledDotNetFrameworkStartSync
+InventoryMiscellaneousInstalledHotfixes
+InventoryMiscellaneousInstalledHotfixesAdd
+InventoryMiscellaneousInstalledHotfixesStartSync
+InventoryMiscellaneousMarker
+InventoryMiscellaneousMbrDisk
+InventoryMiscellaneousMbrDiskAdd
+InventoryMiscellaneousMbrDiskStartSync
+InventoryMiscellaneousMicrocodeInformation
+InventoryMiscellaneousMicrocodeInformationAdd
+InventoryMiscellaneousMicrocodeInformationStartSync
+InventoryMiscellaneousMicrophoneData
+InventoryMiscellaneousMicrophoneDataAdd
+InventoryMiscellaneousMicrophoneDataStartSync
+InventoryMiscellaneousMonitorData
+InventoryMiscellaneousMonitorDataAdd
+InventoryMiscellaneousMonitorDataStartSync
+InventoryMiscellaneousOfficeAddIn
+InventoryMiscellaneousOfficeAddInStartSync
+InventoryMiscellaneousOfficeAddInUsage
+InventoryMiscellaneousOfficeAddInUsageAdd
+InventoryMiscellaneousOfficeAddInUsageRemove
+InventoryMiscellaneousOfficeAddInUsageStartSync
+InventoryMiscellaneousOfficeIdentifiers
+InventoryMiscellaneousOfficeIdentifiersStartSync
+InventoryMiscellaneousOfficeIESettings
+InventoryMiscellaneousOfficeIESettingsStartSync
+InventoryMiscellaneousOfficeInsights
+InventoryMiscellaneousOfficeInsightsStartSync
+InventoryMiscellaneousOfficeProducts
+InventoryMiscellaneousOfficeProductsStartSync
+InventoryMiscellaneousOfficeSettings
+InventoryMiscellaneousOfficeSettingsStartSync
+InventoryMiscellaneousOfficeVBA
+InventoryMiscellaneousOfficeVBARuleViolations
+InventoryMiscellaneousOfficeVBARuleViolationsStartSync
+InventoryMiscellaneousOfficeVBAStartSync
+InventoryMiscellaneousPerfTrackScenarioOccurrences
+InventoryMiscellaneousPerfTrackScenarioOccurrencesAdd
+InventoryMiscellaneousPerfTrackScenarioOccurrencesStartSync
+InventoryMiscellaneousPhysicalDiskInfo
+InventoryMiscellaneousPhysicalDiskInfoAdd
+InventoryMiscellaneousPhysicalDiskInfoStartSync
+InventoryMiscellaneousPowerTrackerData
+InventoryMiscellaneousPowerTrackerDataAdd
+InventoryMiscellaneousPowerTrackerDataStartSync
+InventoryMiscellaneousPreviousUpgrades
+InventoryMiscellaneousPreviousUpgradesAdd
+InventoryMiscellaneousPreviousUpgradesStartSync
+InventoryMiscellaneousProcessorInformation
+InventoryMiscellaneousProcessorInformationAdd
+InventoryMiscellaneousProcessorInformationStartSync
+InventoryMiscellaneousRedirectedProfile
+InventoryMiscellaneousRedirectedProfileAdd
+InventoryMiscellaneousRedirectedProfileStartSync
+InventoryMiscellaneousSdevData
+InventoryMiscellaneousSdevDataAdd
+InventoryMiscellaneousSdevDataStartSync
+InventoryMiscellaneousSecureBootData
+InventoryMiscellaneousSecureBootDataAdd
+InventoryMiscellaneousSecureBootDataStartSync
+InventoryMiscellaneousServerFeatureInformation
+InventoryMiscellaneousServerFeatureInformationAdd
+InventoryMiscellaneousServerFeatureInformationStartSync
+InventoryMiscellaneousServices
+InventoryMiscellaneousServicesAdd
+InventoryMiscellaneousServicesStartSync
+InventoryMiscellaneousSetupBootedFromAuditMode
+InventoryMiscellaneousSetupBootedFromAuditModeAdd
+InventoryMiscellaneousSetupBootedFromAuditModeStartSync
+InventoryMiscellaneousSetupBootedFromVHD
+InventoryMiscellaneousSetupBootedFromVHDAdd
+InventoryMiscellaneousSetupBootedFromVHDStartSync
+InventoryMiscellaneousSetupPendingFirmwareUpdateWithPower
+InventoryMiscellaneousSetupPendingFirmwareUpdateWithPowerAdd
+InventoryMiscellaneousSetupPendingFirmwareUpdateWithPowerStartSync
+InventoryMiscellaneousStartSync
+InventoryMiscellaneousStartupApp
+InventoryMiscellaneousStartupAppAdd
+InventoryMiscellaneousStartupAppStartSync
+InventoryMiscellaneousSupportedSleepStates
+InventoryMiscellaneousSupportedSleepStatesAdd
+InventoryMiscellaneousSupportedSleepStatesStartSync
+InventoryMiscellaneousUexIndicator
+InventoryMiscellaneousUser
+InventoryMiscellaneousUserAccountTypeEnumeration
+InventoryMiscellaneousUserAccountTypeEnumerationAdd
+InventoryMiscellaneousUserAccountTypeEnumerationStartSync
+InventoryMiscellaneousUserAdd
+InventoryMiscellaneousUserStartSync
+InventoryMiscellaneousVolumeInfo
+InventoryMiscellaneousVolumeInfoAdd
+InventoryMiscellaneousVolumeInfoStartSync
+InventoryMiscellaneousWAMAccounts
+InventoryMiscellaneousWAMAccountsAdd
+InventoryMiscellaneousWAMAccountsStartSync
+InventoryMiscellaneousWifi
+InventoryMiscellaneousWifiAdd
+InventoryMiscellaneousWifiStartSync
+InventoryMiscellaneousWinSATMetrics
+InventoryMiscellaneousWinSATMetricsAdd
+InventoryMiscellaneousWinSATMetricsStartSync
+InventoryMiscellaneousWMDCLastSyncTime
+InventoryMiscellaneousWMDCLastSyncTimeAdd
+InventoryMiscellaneousWMDCLastSyncTimeStartSync
+InventoryVersion
+io error
+ioSize
+iostream
+iostream stream error
+IPCAH
+is a directory
+is.elgoog
+isaac.exe
+IsAdmin
+IsBootPartition
+IsBootVolume
+IsBuiltIn
+IsCensusDisabled
+IsClient
+IsDebuggerPresent
+isdigit
+IsFull
+iSHp6
+IsHypervisorPresent
+IsIommuSupported
+IsMSA
+IsOsPreRS1
+IsPrimaryPartition
+IsSecureBootBound
+IsSLATSupported
+isspace
+Issues
+Issues_x64
+IssuesNone
+IssuesNone_x64
+IsSystemVolume
+IsVirtualizationSupported
+iswdigit
+IsWellKnownSid
+IsWiDiConnectionMade
+ItemKey
+iw3mp.exe
+iw3sp.exe
+iw4sp.exe
+iw5sp.exe
+iw6sp64_ship.exe
+J tEA
+JanFebMarAprMayJunJulAugSepOctNovDec
+justcause2.exe
+K H9H0s6H
+K SVWH
+K tEA
+kcaptej.ym
+kd.2vt
+kd.abd
+kd.aedron
+kd.aedron.knabten
+kd.cdt.liam
+kd.elgoog
+kd.iibuj
+kd.imd
+kd.in
+kd.knabeksnad
+kd.knabeksnad.2knabten
+kd.knabtenaedron
+kd.netsop-sdnallyj
+kd.rd
+kd.skob-e
+kd.tb
+kd.tedalbartske
+Kdf99t
+KERNEL32.DLL
+KERNEL32.dll
+kernelbase.dll
+Kernel-ProductInfo
+KeyboardFilterShim.dll
+kh.moc.cbsh
+kh.moc.elgoog
+kh.moc.oohay
+kl.elgoog
+kp.moc.elgoog
+ks.elgoog
+ks.manzoz
+ksp.exe
+ktmw32.dll
+ku.oc.2o
+ku.oc.cbb
+ku.oc.cbsh
+ku.oc.ediwnoitan
+ku.oc.eerht
+ku.oc.egnaro
+ku.oc.elgoog
+ku.oc.enilnoliam
+ku.oc.enilno-xafilah
+ku.oc.evomthgir
+ku.oc.hpargelet
+ku.oc.klatklat
+ku.oc.knabsdyoll
+ku.oc.liamyliad
+ku.oc.loa
+ku.oc.nopuorg
+ku.oc.nosmoht
+ku.oc.nozama
+ku.oc.redartotua
+ku.oc.rednatnas
+ku.oc.rosivdapirt
+ku.oc.sogra
+ku.oc.syalcrab
+ku.oc.yabe
+ku.oc.ynos
+ku.oc.yrettol-lanoitan
+ku.vog
+ku.vog.crmh
+ku.vog.eciffotem
+ku.vog.tcerid
+L!t$0L!t$8L!t$HH
+L!t$8E3
+L!t$8L!t$0L!t$(L!t$ L!t$H3
+L$ E3
+l$ E3
+L$ SUVWH
+L$ SVWH
+L$ SWH
+L$ UVWAVAWH
+l$ VWAVH
+l$(E3
+L$(E3
+l$(E3
+L$(E3
+L$(H3
+L$@E3
+l$@E3
+L$@E3
+L$@H;
+L$@H3
+L$@I;
+L$\f;
+L$`@2
+L$`D95
+L$`E3
+L$`eH
+L$`H3
+L$`L;
+L$`LcA<M
+L$0E3
+L$0H3
+L$0I;
+L$4fD
+L$8E3
+L$8H;
+L$8H3
+L$8M;
+L$hD8u
+L$HE3
+L$hE3
+L$HE3
+L$hE3
+L$HE3
+L$HH!\$ E3
+L$HH;
+L$hH3
+L$HH3
+L$hHcA<L
+L$LE3
+L$lf;
+L$PE3
+l$PE3
+L$PE3
+L$pE3
+L$PE3
+L$pE3
+L$PE3
+L$pE3
+L$PE3
+L$PfB
+L$PH3
+L$pH3
+L$PH3
+L$pH3
+L$PH3
+L$PH9
+L$pI;
+L$PI;
+L$pL;
+L$XE3
+l$XE3
+L$xE3
+l$xE3
+L$XE3
+L$xE3
+L$XE3
+L$XH+
+L$XH3
+L$XHcA<L
+L$xI;
+L;@ A
+L;d$@
+L2CacheSize
+L2CacheSpeed
+L3CacheSize
+L3CacheSpeed
+L9{@u
+L9{0t#H
+L9|$`
+L9|$`tc
+L9d$H
+L9d$pu
+L9d$xt
+L9d$Xt eH
+L9H s
+L9l$X
+L9MXH
+L9o@t
+L9t$X
+L9y sEL
+Languages
+LANGUAGES
+LastCreatedDate
+LastLba
+LastRuntime
+LastSuccessfullScavenge
+LastTaskResult
+launch_mode
+Layers
+lc.elgoog
+lc.soitis
+LcA<E3
+LcD$0A
+LdrResFindResource failed %ls [%x]
+LdrResFindResource failed [%x]
+LdrResFindResource returned null version block with status: [%x]
+LdrResSearchResource
+league of legends.exe
+LeaveCriticalSection
+left4dead2.exe
+LegacyBIOS
+Legal_Policy_Statement
+LegalCopyright
+Length
+lenovo
+levart.uburur
+lg.oog
+li.oc.01anan
+li.oc.allaw
+li.oc.elgoog
+li.oc.milaopahknab
+li.oc.okam
+li.oc.tenap
+li.oc.teny
+li.oc.trats
+li.oc.u4knil
+Limit Manual OAB Download
+Limit SRS Incremental Download
+LimitEnhancedDiagnosticDataWindowsAnalytics
+list<T> too long
+LL$0L
+ln.adnuf
+ln.anigaptrats
+ln.azadak
+ln.bewroines
+ln.da
+ln.elgoog
+ln.elgoog.swen
+ln.enilnoreew
+ln.faargelet
+ln.gaadnavnpk
+ln.gni
+ln.gni.njim
+ln.ha
+ln.jiretolstaats
+ln.knabobar
+ln.knabobar.nereiknab
+ln.liamnpk.liambew
+ln.lntsop.tekkapnjim
+ln.lxltr
+ln.oggiz
+ln.oggiz.liam
+ln.ormanba
+ln.radarneiub
+ln.son
+ln.staalptkram
+ln.tavdiurk
+ln.tendnaleez
+ln.tnarksklov
+ln.un
+LoadBehavior
+LoadEpoch
+LoadLibraryExA
+LoadLibraryExW
+LoadLibraryW
+LoadResource
+Local
+Local Disk
+Local Settings\Software\Microsoft\Windows\CurrentVersion\SyncMgr\HandlerInstances
+Local\SM0:%d:%d:%hs
+LocalAlloc
+LocaleName
+LocalFree
+LocalServer32
+Locked
+LockResource
+LogExts.dll
+LogFlags
+LogHr
+LogonPolicy
+LogShim.dll
+lolclient.exe
+Lookup Wizard
+lookup.xlam
+LookupAccountNameW
+LookupAccountSidW
+LookupPrivilegeValueW
+lp.2o.atzcop
+lp.airetni
+lp.airetni.atzcop
+lp.atezag
+lp.atezag.nsmortem
+lp.elgoog
+lp.kn
+lp.orgella
+lp.pw
+lp.pw.atzcop
+lp.pw.liforp
+lp.pw.trops
+lp.teno
+lp.teno.atzcop
+lp.teno.icsomodaiw
+lp.teno.otnok
+lp.teno.tropsorue
+lp.xlo
+lp.yrg
+LsaLookupUserAccountType
+lstrcmpiA
+lstrcmpiW
+lstrcmpW
+lt.eivomralos
+luadgmgt.dll
+luapriv.dll
+m(H9}`r
+M;P(M
+M;y s:H
+M`L9MxH
+M~S-Ogs",
+M0!M E
+M0K0I
+MachineId
+Macro
+Macros
+mafia2.exe
+Magic does not match a valid value: 0x%lx
+MajorVersion
+MajorVersion mismatch, MajorVersion 0x%lx Expected 0x%lx
+malloc
+Manifest
+Manufacturer
+MANUFACTURER_DATE
+map/set<T> too long
+maplestory.exe
+MapViewOfFile
+MasterShim.dll
+MAX_DISPLAY_RESOLUTION_DATA
+MaxClockSpeed
+MaxMonitorResolution%02d
+mb_warband.exe
+MbrEntry0Active
+MbrEntry0Type
+MbrEntry1Active
+MbrEntry1Type
+MbrEntry2Active
+MbrEntry2Type
+MbrEntry3Active
+MbrEntry3Type
+MbrId
+MbrSignature
+mbstowcs_s
+MediaHotplug
+MediaRemovable
+MediaType
+memcmp
+memcpy
+memcpy_s
+memmove
+memset
+MergeVirtualDisk
+Message
+message size
+Message too long!
+message_size
+Messages
+Metric
+MetricCategory
+MetricDXVersion
+MetricExpectedFrameCount
+MetricFactor
+MetricHeight
+MetricIOSize
+MetricKind
+MetricReason
+Metrics
+MetricScore
+MetricSubcategory
+MetricUnits
+MetricValue
+MetricWidth
+mf.ksa
+mhmain.exe
+mi.afyasana
+MICROCODE_INFO
+MicrocodeInfo
+MICROPHONE_INFO
+MicrophoneData%02d
+MicrophonePresent
+MicrophoneState
+microsoft
+Microsoft
+Microsoft Base Cryptographic Provider v1.0
+Microsoft Compatibility Appraiser
+Microsoft Corporation
+Microsoft Corporation1
+Microsoft Corporation1&0$
+Microsoft Corporation1)0'
+Microsoft Corporation1.0,
+Microsoft Corporation1+0)
+Microsoft Corporation1-0+
+Microsoft Corporation1200
+Microsoft Office
+Microsoft Primitive Provider
+Microsoft Time-Stamp PCA 2010
+Microsoft Time-Stamp PCA 20100
+Microsoft Time-Stamp Service
+Microsoft Time-Stamp service
+Microsoft Time-Stamp service0
+Microsoft Time-Stamp Service0
+Microsoft Windows0
+Microsoft.Windows.Compatibility.Asl
+Microsoft.Windows.Inventory.Core
+Microsoft.Windows.Inventory.General
+Microsoft.Windows.Inventory.Indicators
+microsoft1-0+
+micro-star
+MigrationScope
+minecraft.exe
+MinorVersion
+missing required argument [%d]
+mkke.exe
+moc.0063
+moc.01a
+moc.101draziw
+moc.101kc
+moc.10elibom
+moc.1eganam-tsil
+moc.1elziizidicnabay
+moc.1evihcra-ngiapmac
+moc.1obyak
+moc.1tceriderorez
+moc.21ewqwzym
+moc.2cf
+moc.2evihcra-ngiapmac
+moc.321oah
+moc.321oat
+moc.35
+moc.361
+moc.37171
+moc.3m
+moc.3smiseht
+moc.42radarthgilf
+moc.42swen
+moc.4lennahc
+moc.4mac
+moc.5432
+moc.562
+moc.563eciffo
+moc.563teb
+moc.599eraweerf
+moc.5osexa
+moc.621
+moc.6543
+moc.6ovq
+moc.6retnectidercenilno
+moc.703sg
+moc.71idasop
+moc.733
+moc.7muoy
+moc.7rebah
+moc.8861
+moc.896nav
+moc.896nuf
+moc.8enoq
+moc.8y
+moc.94yreviled
+moc.966877
+moc.9934
+moc.9pmj
+moc.9v
+moc.aa
+moc.aasu
+moc.ababila
+moc.abiekten
+moc.abihsot
+moc.abn
+moc.abud
+moc.aceerfa
+moc.aciremafoknab
+moc.acitoretil
+moc.acram
+moc.adarubispeh
+moc.adoga
+moc.ae
+moc.aeki
+moc.afif
+moc.agnyz
+moc.aideefem
+moc.aidemnigriv
+moc.aidemoetem
+moc.aidemtxen
+moc.aidemuodov
+moc.aidepxe
+moc.aidivn
+moc.aidoveunle
+moc.aikiw
+moc.aikon
+moc.ailet
+moc.ailurt
+moc.aisa-ynos
+moc.al411
+moc.amarailzih
+moc.amarosruob
+moc.amraktiderc
+moc.amupelif
+moc.anerag
+moc.anihcba
+moc.anihcbmc
+moc.areitnom
+moc.ariva
+moc.arodnap
+moc.aroook
+moc.aropilf
+moc.artslet
+moc.arumgolb
+moc.atled
+moc.atseifibom
+moc.atsivsuedama
+moc.aulinim
+moc.avaj
+moc.balmog
+moc.balrar
+moc.bawhcs
+moc.bdmi
+moc.bewehtekilew
+moc.blm
+moc.blown
+moc.bt-ksa
+moc.bulcsmas
+moc.bulcyas
+moc.bup2m
+moc.bupedeiger
+moc.bvt
+moc.bwtensd
+moc.bzknil
+moc.canf
+moc.capsel
+moc.cbb
+moc.cbic
+moc.cbnc
+moc.cbnsm
+moc.ccwt
+moc.ces-kcilc
+moc.cetnamys
+moc.cfnpse
+moc.ciffartomm
+moc.cinotfos
+moc.citatsmaets
+moc.cjkh
+moc.cmpu
+moc.cnp
+moc.cnyalp
+moc.cpuuv
+moc.cpymotog
+moc.cs-ohuzim
+moc.cvq
+moc.cwt
+moc.daelecurb
+moc.dapkooc
+moc.dapttaw
+moc.deedni
+moc.deefzzub
+moc.deepsrewopcp
+moc.deggat
+moc.derahs4
+moc.derewopmaets
+moc.detcennocph
+moc.detinu
+moc.dhy
+moc.dipucko
+moc.divili
+moc.dj
+moc.dleifelttab
+moc.dleihstopstoh
+moc.dlrowltn
+moc.dma
+moc.dmbew
+moc.dnif22
+moc.dnif-tekcor
+moc.dnopgib
+moc.dnuorgrednuw
+moc.dpada
+moc.drac-cbms
+moc.dracrevocsid
+moc.dracustimedi
+moc.draobkcalb
+moc.draugnav
+moc.drowyeknaerok
+moc.dt
+moc.duolcdnuos
+moc.duolci
+moc.eabofni
+moc.eboda
+moc.ebutuoy
+moc.ecafkrejlatot
+moc.eciffo
+moc.ecnarfoetem
+moc.ecnarusnisremraf
+moc.ecnaun
+moc.ecnerefer
+moc.ecnereferdrow
+moc.ecrof
+moc.ecrofeg
+moc.ecrofselas
+moc.edamew
+moc.edarte
+moc.edartirema
+moc.edarttocs
+moc.ediugcedoc
+moc.ediugvt
+moc.ediwdnif
+moc.eefacm
+moc.eertmug
+moc.eevirp-etnev
+moc.efacydnah
+moc.efasp
+moc.efildnoces
+moc.efilgnitrops
+moc.eganam-tsil
+moc.egapdniftaerg
+moc.egaphcraes
+moc.egapkcab
+moc.egap-teews
+moc.egaptrats
+moc.egatirehym
+moc.egatselpam
+moc.egdelwonktnaveler
+moc.egnahcxlm
+moc.egrofemag
+moc.einegobom
+moc.ekameerf
+moc.ekin
+moc.ekit-l
+moc.elbacrenrawemit
+moc.elbondnasenrab
+moc.elcaro
+moc.eldood
+moc.elgemo
+moc.elgoog
+moc.elibom-t
+moc.elifsey
+moc.elipgod
+moc.elpoep
+moc.elppa
+moc.elzillufimlif
+moc.emag1125
+moc.emag4da
+moc.emagm
+moc.emagnah
+moc.emagttn
+moc.emagyoj
+moc.emohgi
+moc.emohsemaglla
+moc.emohtapohs
+moc.emohtola
+moc.eneselzi
+moc.enilnoiknat
+moc.enilnonootrachctaw
+moc.enilno-ratsdliw
+moc.enilnorgnmda
+moc.enilnoseiromemyalp
+moc.enilnosllorcsredle
+moc.enilnotfosorcim
+moc.enilnotnuocca
+moc.enilnoxamorcim
+moc.enilnoxirtic
+moc.enilnoybara
+moc.eno
+moc.enohpswodniw
+moc.enolatipac
+moc.enozgij
+moc.enoznepotb
+moc.epacsenur
+moc.eporue-nonac
+moc.eporue-nospe
+moc.epyks
+moc.erackcilctniop
+moc.erahsrednow
+moc.eraw121
+moc.erawmv
+moc.erawtfosamgine
+moc.erawtfoshcn
+moc.erawypsitnarepus
+moc.eriatilosfodlrow
+moc.erifaidem
+moc.eriwymgnortsmra
+moc.ero42elosli
+moc.erocxda
+moc.erotstfosorcim
+moc.erutcurtsni
+moc.esahc
+moc.esuohemag
+moc.esuomcba
+moc.etabrutahc
+moc.etadbad
+moc.etad-lliw-uoy
+moc.etan
+moc.etatslla
+moc.eticxe
+moc.etilessh
+moc.etinin
+moc.etive
+moc.etlrsd
+moc.etonreve
+moc.etronab
+moc.ettioled
+moc.eucserniemgol
+moc.eulbinu
+moc.eulbtej
+moc.evil
+moc.evileivoom
+moc.eviluzobyc
+moc.evitom
+moc.evreshf
+moc.eww
+moc.eyehserf
+moc.ezalb
+moc.ezalbeht
+moc.fcns-segayov
+moc.ffider
+moc.fop
+moc.f-q-a
+moc.frep-spmida
+moc.g-da-sm
+moc.ggewen
+moc.ghi
+moc.gnajom
+moc.gnamp
+moc.gnawiatgnod
+moc.gnefi
+moc.gnefoab
+moc.gnib
+moc.gniberolpxe
+moc.gnibrevocsid
+moc.gnifrusartlu
+moc.gnik
+moc.gnikoob
+moc.gniroodpu
+moc.gnisworbhcet
+moc.gniteemotog
+moc.gnivresdanepo
+moc.gnix
+moc.gnusmas
+moc.golebat
+moc.gorfmac
+moc.grebmoolb
+moc.gss
+moc.gubrehtaew
+moc.gva
+moc.hcp
+moc.hcraes2ssr
+moc.hcraes-atled
+moc.hcraesbewym
+moc.hcraes-decnahne
+moc.hcraes-esworb
+moc.hcraes-layor
+moc.hcraes-liamidercni
+moc.hcraeslog
+moc.hcraes-nomead
+moc.hcraes-okod
+moc.hcraesoneub
+moc.hcraespsni
+moc.hcraes-rabidercni
+moc.hcraes-skcapteews
+moc.hctam
+moc.hctaperawtfoslacitirc
+moc.hctawtekram
+moc.hello
+moc.hsacda
+moc.hsifpans
+moc.htapllatsni
+moc.htimshcet
+moc.htlaehanehta
+moc.htua-krowten
+moc.hyaerok
+moc.iajag
+moc.iapiem
+moc.ibanukir
+moc.ibsenilno
+moc.ibu
+moc.iddk
+moc.iekkin
+moc.ielnux
+moc.ifiwelibomiewauh
+moc.ifiwgnirednaw
+moc.ihasa
+moc.ihsabodoy
+moc.ijij
+moc.ironelif
+moc.is
+moc.itepeslatrop
+moc.ivort
+moc.iyiqi
+moc.iyissxd
+moc.izik
+moc.ji-c
+moc.jsw
+moc.kaelevil
+moc.kaewtsys
+moc.kcajcigam
+moc.kcilcnda
+moc.kcin
+moc.kciuqxi
+moc.kcodrats
+moc.kcotsrevo
+moc.keesdnahcraes
+moc.klatlap
+moc.knabaitocs
+moc.knabcfdh
+moc.knabdt
+moc.knabiroow
+moc.knabitic
+moc.knablayor
+moc.knablayorcbr
+moc.knabsu
+moc.knabtenretnieruces
+moc.knilrebyc
+moc.knilyrutnec
+moc.kodelif
+moc.koobecaf
+moc.kooltuo
+moc.koonas
+moc.krahsevoorg
+moc.krapyalp
+moc.krowtendoof
+moc.krowtennootrac
+moc.krowtenrehtaeweht
+moc.krutrebah
+moc.ksa
+moc.ksedfer
+moc.ksedhcraes
+moc.ksedotua
+moc.ksidagev
+moc.ksooz
+moc.kv
+moc.laer
+moc.lahamten
+moc.laicnedifnocle
+moc.laicosgnivil
+moc.laideeps
+moc.laidhcraesym
+moc.laog
+moc.lapssentifym
+moc.lapyap
+moc.larw
+moc.leroc
+moc.letni
+moc.levart-uyknah
+moc.lezae
+moc.lfn
+moc.lhn
+moc.liam
+moc.liamdnaebolgeht
+moc.liamg
+moc.liamhateehc
+moc.liamidercni
+moc.liamoohay
+moc.liamtoh
+moc.llafrats
+moc.llamerapnop
+moc.llamt
+moc.llebdrakcap
+moc.lled
+moc.llimorcam
+moc.llodrats
+moc.loa
+moc.lob
+moc.loghcraes
+moc.lome
+moc.loocsmeg
+moc.lruynit
+moc.lsaidemabmas
+moc.lsk
+moc.mada4mada
+moc.maertsohte
+moc.majaw
+moc.majlamina
+moc.margatsni
+moc.mdpna
+moc.mh
+moc.miteews
+moc.mmd
+moc.mocidniatat
+moc.mokelet
+moc.molyz
+moc.mooznoitan
+moc.mortsdron
+moc.motmot
+moc.mralaenoz
+moc.mrofirip
+moc.mrofobor
+moc.muiralp
+moc.muz
+moc.mvxdom
+moc.mxsuiris
+moc.nafabew
+moc.nahnihs
+moc.naidraugeht
+moc.naknak
+moc.nal
+moc.natike
+moc.nawoud
+moc.ndcbab
+moc.ndrnc
+moc.ndu
+moc.nednibihas
+moc.nerftrams
+moc.ngi
+moc.niarbtuo
+moc.nideknil
+moc.niemgol
+moc.nienut
+moc.nihsot
+moc.nimrag
+moc.niralc
+moc.niugnepbulc
+moc.nnc
+moc.nodelbmiw
+moc.nof
+moc.noicomorpodnum
+moc.noidem
+moc.noihsnuf
+moc.noisivinu
+moc.noitan
+moc.noitavonniynihs
+moc.noitcennocrelaed
+moc.noitomyliad
+moc.nolem
+moc.nolybab
+moc.nomklc
+moc.nonac
+moc.nopuorg
+moc.nospe
+moc.noswaleiuqcaj
+moc.notgnitnuh
+moc.notlih
+moc.notron
+moc.noxen
+moc.nozama
+moc.nozirev
+moc.npk
+moc.npse
+moc.nsg
+moc.nsh
+moc.nsm
+moc.nuf4cilc
+moc.nufnaeb
+moc.nusohc
+moc.nwottniop
+moc.oaboat
+moc.oakak
+moc.obiauk
+moc.obiew
+moc.obolg
+moc.obrv
+moc.ocset
+moc.ocsic
+moc.octik
+moc.octsoc
+moc.odiparboj
+moc.odmij
+moc.odomoc
+moc.odovidiv
+moc.odpans
+moc.ods
+moc.oeineg
+moc.oemiv
+moc.oetemeniahcal
+moc.ofnicircnpse
+moc.ofnixamorcim
+moc.og
+moc.ogel
+moc.ogivort
+moc.ogkcudkcud
+moc.ogobh
+moc.ogop
+moc.ografsllew
+moc.oicogenmob
+moc.oidarwonyalp
+moc.oidutslausiv
+moc.oimaronap
+moc.ojelif
+moc.oloapnasasetni
+moc.olqinu
+moc.omb
+moc.omiay
+moc.omocodatat
+moc.omocodym
+moc.omzigs
+moc.onitnerrot
+moc.onuj
+moc.oodab
+moc.oohay
+moc.oolabmys
+moc.ooooof
+moc.oopmahsa
+moc.oowt
+moc.oozlevart
+moc.opmeitle
+moc.oppihelif
+moc.opsnas
+moc.oratonom
+moc.orcimdnert
+moc.oren
+moc.orex
+moc.orpatadlla
+moc.os
+moc.ovonel
+moc.ozayg
+moc.pacpop
+moc.pag
+moc.pda
+moc.ph
+moc.phemosewa
+moc.pilcinim
+moc.pizniw
+moc.plehtsuc
+moc.pmihcliam
+moc.pohpihratsdlrow
+moc.popdp
+moc.potemag
+moc.pothsalps
+moc.potsemag
+moc.ppaefilysae
+moc.ppaxobg
+moc.pucaet
+moc.pu-enut
+moc.puhcteks
+moc.pukcab
+moc.pukcabcpym
+moc.puorg-ortem
+moc.puyhgnon
+moc.qci
+moc.qq
+moc.rabidercni
+moc.rabloot-deifitrec
+moc.rablootruo
+moc.rablootselpmis
+moc.rablootsys
+moc.rabrepleh
+moc.racsan
+moc.ralullecaedi
+moc.ratiug-etamitlu
+moc.ratsbk
+moc.ratstej
+moc.rawala
+moc.rcstnrp
+moc.rdrvpc
+moc.rebiv
+moc.reca
+moc.recnepsdnaskram
+moc.redaolnwodbf
+moc.redaolnwoddty
+moc.redartotua
+moc.redliubreerac
+moc.rednefedtib
+moc.rednifdneirftluda
+moc.rednifefas
+moc.refsnartew
+moc.reganamdaolnwodtenretni
+moc.reggolb
+moc.regnessemlooc
+moc.regnessemsey
+moc.regrahcelet-a-uej
+moc.rehtaew
+moc.rehtaewucca
+moc.rehtorb
+moc.reilfemag
+moc.reitnorf
+moc.rekop888
+moc.relletten
+moc.remagcp
+moc.remlifews
+moc.remmay
+moc.remocnab
+moc.renaelcesiw
+moc.rennurdaor
+moc.rennurvlf
+moc.resitliamda
+moc.resworbhcrot
+moc.retsafcp
+moc.retsmahx
+moc.rettew
+moc.rettiwt
+moc.revan
+moc.reweivmaet
+moc.reyalpmk
+moc.reyalpsb
+moc.reyalpserta
+moc.rezeed
+moc.rezimitpoelifdecnavda
+moc.rianayrkoob
+moc.rjkcin
+moc.rkcilf
+moc.rlbmut
+moc.roodevil
+moc.rosivdapirt
+moc.rotalsnarttfosorcim
+moc.rotalumis-gnimraf
+moc.rotlaer
+moc.rr
+moc.rtpar
+moc.rugmi
+moc.ruotagp
+moc.sa
+moc.saguodamarod
+moc.samse
+moc.satrefopotsam
+moc.sbaltaerhtgva
+moc.sbc
+moc.sbu
+moc.scigolsua
+moc.scirtlauq
+moc.sdacdca
+moc.sdaklc
+moc.sdaugt
+moc.sdnegelfoeugael
+moc.sdoomecaf
+moc.sdoomnufhcraes
+moc.sebucedis
+moc.secalpoolabmys
+moc.secivresatadojniaz
+moc.secivresdaelgoog
+moc.secivres-gniknabi
+moc.secruoserettioled
+moc.sedadilituednollimnu
+moc.segapwolley
+moc.sehcraessbew
+moc.selpats
+moc.selzzupwasgijeht
+moc.semag
+moc.semag8z
+moc.semagairea
+moc.semagcra
+moc.semagedireerf
+moc.semaggnitcidda
+moc.semaghsifgib
+moc.semag-htamlooc
+moc.semagikeerf
+moc.semaglaerym
+moc.semaglayor
+moc.semagogslrig
+moc.semagratskcor
+moc.semagsao
+moc.semitaidni
+moc.semityn
+moc.semoh-atled
+moc.senihcame
+moc.sepicerlla
+moc.seripmefoegrof
+moc.serocsncilc
+moc.setadpu-td
+moc.setamssalc
+moc.setarime
+moc.sewol
+moc.siaple
+moc.siloperg
+moc.siwelnhoj
+moc.skcapteews
+moc.skcubgaws
+moc.sknatfodlrow
+moc.skrowtenabura
+moc.slavir
+moc.sletoh
+moc.slhok
+moc.slmxelf
+moc.smaceerfym
+moc.smetsystsuj
+moc.sneerglaw
+moc.snidrajsed
+moc.snoiger
+moc.snoitulosrucnoc
+moc.snopuoc
+moc.soedivx
+moc.soicnunalim
+moc.soidutsemagdoog
+moc.sonimod
+moc.sosa
+moc.spemi
+moc.sppa-deifitrec
+moc.sppatiudnoc
+moc.sppa-tiudnoc
+moc.spsu
+moc.spu
+moc.sraes
+moc.sregor
+moc.srehctawthgiew
+moc.sretuer
+moc.sseleriwnozirev
+moc.sserpdrow
+moc.sserpxeila
+moc.sserpxenacirema
+moc.stelf
+moc.stluserhcraesym
+moc.stnemomepyks
+moc.stnemyapbeweruces
+moc.stropselol
+moc.stropsnakkin
+moc.stropssbc
+moc.stropsxof
+moc.stropsyks
+moc.sttat
+moc.su
+moc.suletym
+moc.sulp-agimo
+moc.sulpegamier
+moc.susa
+moc.sutatsnoitallatsni
+moc.svc
+moc.swanozama
+moc.swencbn
+moc.swenxof
+moc.swodniw
+moc.sxnda
+moc.sycam
+moc.syevrusdiulf
+moc.sys-gnivres
+moc.taborca
+moc.tb
+moc.tbb
+moc.t-bulc
+moc.tcatnoctnatsnoc
+moc.tcejorpyeknil
+moc.tcennocnospe
+moc.tcetorpyna
+moc.tegrat
+moc.tejysae
+moc.temocta
+moc.tenalpratseivom
+moc.tenc
+moc.tenettioled
+moc.ten-laicnanif
+moc.tensehguhym
+moc.tenym
+moc.tercessairotciv
+moc.tese
+moc.tfosaval
+moc.tfosnacs
+moc.tfosnoisufni
+moc.tfosoedivdvd
+moc.tfosorcim
+moc.tfosrehtorb
+moc.tfosremrofrep
+moc.tfosuvlos
+moc.tfosyls
+moc.tfosyralg
+moc.thgilfniogog
+moc.tibdeeps
+moc.tiboi
+moc.tibtif
+moc.tidder
+moc.tiudnoc
+moc.tiutni
+moc.tluavenilno
+moc.tnegnatdliw
+moc.tnemegrahcelet-enoz
+moc.tnenimi
+moc.tnerrottib
+moc.tnerrotu
+moc.tniccav
+moc.tniccbt
+moc.tnioperahs
+moc.tniopgib
+moc.tnirps
+moc.tnissbgts
+moc.tnuocsidc
+moc.toorbew
+moc.topedemoh
+moc.topsgolb
+moc.topsppa
+moc.tracefas
+moc.traehi
+moc.tramlaw
+moc.tratnaived
+moc.trats-xam
+moc.tratsym
+moc.trevnocesiw
+moc.troperegdurd
+moc.troperrehcaelb
+moc.troppusrevird
+moc.tsacilletni
+moc.tsacmoc
+moc.tsacpos
+moc.tsava
+moc.tseretnip
+moc.tseuqpam
+moc.tsewhtuos
+moc.tsewtan
+moc.tsew-ttn-bulc
+moc.tsilsgiarc
+moc.tsissaotog
+moc.tsiwtemag
+moc.tsopnotgniffuh
+moc.tsopnotgnihsaw
+moc.tsurtadanacdt
+moc.tsurtnus
+moc.tta
+moc.ttn
+moc.ttoirram
+moc.tuhazzip
+moc.tuoba
+moc.tupniremusnoc
+moc.txenecruos
+moc.udiab
+moc.uduv
+moc.uhos
+moc.ukakak
+moc.ukuoy
+moc.uluh
+moc.unhcraes
+moc.uodut
+moc.uogos
+moc.uoguk
+moc.ustijuf
+moc.utesoys
+moc.uussi
+moc.uvmi
+moc.uyki
+moc.uzobyc
+moc.virf
+moc.vixysatnaflanif
+moc.vtcerid
+moc.vti
+moc.vtm
+moc.vtmog
+moc.vtoodym
+moc.vtpp
+moc.weivsorx
+moc.wohe
+moc.wolliz
+moc.wonanerag
+moc.wontrats
+moc.wonyenomnre
+moc.wow
+moc.w-stelf
+moc.xamswen
+moc.xebew
+moc.xedef
+moc.xehcyap
+moc.xelpaidem
+moc.xemlet
+moc.xilften
+moc.xiw
+moc.xob
+moc.xobder
+moc.xobni
+moc.xobpord
+moc.xobx
+moc.xoc
+moc.xolbor
+moc.xvid
+moc.xxnx
+moc.xyntfos
+moc.yabe
+moc.yadot
+moc.yadotasu
+moc.yadotmocaidem
+moc.yalpfx
+moc.yalpi
+moc.yalplaer
+moc.yapila
+moc.yaplairt
+moc.yapnet
+moc.yawetag
+moc.yawetagelbib
+moc.yawym
+moc.ycagel
+moc.yddanla
+moc.yek
+moc.yeknomyevrus
+moc.yektfosorcimteg
+moc.yennepcj
+moc.yensid
+moc.yfitops
+moc.yks
+moc.yksrepsak
+moc.ylbeew
+moc.ylfrettuhs
+moc.yliluz
+moc.ynos
+moc.ynye
+moc.yppam
+moc.yrellagei
+moc.yreviledvog
+moc.yrotsit
+moc.yrrebkcalb
+moc.yrtsecna
+moc.yste
+moc.ytfin
+moc.ytfin-golococ
+moc.yticolevart
+moc.yticyalpym
+moc.ytiledif
+moc.ytinummocmaets
+moc.ytirucesadnap
+moc.ytisomul
+moc.yubtseb
+moc.yxxilf
+moc.yy
+moc.zmt
+moc.zzijuoy
+moc.zzuoh
+ModuleBinFileVersion
+ModulePath
+MoH!E/
+MoveFileExW
+MrtId
+MrtVersion
+MSA_USER_INFO
+msaccess.exe
+mse7.exe
+Msg:[%ws] 
+msimain.sdb
+mspub.exe
+msvcrt.dll
+MUI_INFORMATION
+MultiByteToWideChar
+N0L0J
+nal.ecivedlsd
+Names
+NativeDriverPresent
+nba2k14.exe
+nba2k15.exe
+nba2konline.exe
+nc.063.oah
+nc.063.resworb
+nc.981.dg
+nc.gnisir.oah
+nc.moc.anis
+nc.moc.bcc
+nc.moc.cbci
+nc.moc.e7
+nc.moc.ovonel
+nc.owuk.emag
+nc.ulp.agt
+nCipher NTS ESN:57F6-C1E0-554C1+0)
+NDPChildKeyName
+NDPKeyRelPath
+NE16_MODULE
+NETAPI32.dll
+NetApiBufferFree
+NetLocalGroupGetMembers
+NetUserEnum
+NetUserGetInfo
+network down
+Network Drive
+network reset
+network unreachable
+network_down
+network_reset
+network_unreachable
+neverwinter.exe
+NextRuntime
+nexusclient.exe
+nfs11.exe
+nfs13.exe
+nfs14.exe
+nfsw.exe
+nh.elgoog
+ni.aidnistm
+ni.aidnistm.ezalbmym
+ni.emgol.stnuocca
+ni.letria.elgnodg3
+ni.oc.ctcri
+ni.oc.ecivediewauh
+ni.oc.elgoog
+ni.oc.mocr
+ni.oc.tcennoctenecnailer
+ni.odamih
+nniv.lleckrut
+no buffer space
+no child process
+No Drive Type
+No expand callback method set. Cannot expand ZDB file.
+no link
+no lock available
+no message
+no message available
+no protocol option
+No return context was supplied for InitOnceGetStringTableOffset
+No Root Directory
+no space on device
+no stream resources
+No stringtable in DB
+no such device
+no such device or address
+no such file or directory
+no such process
+no_buffer_space
+no_protocol_option
+NoData
+NoData#%lu
+NoOfWAMAccounts
+not a directory
+not a socket
+not a stream
+Not an index
+Not applicable
+not connected
+not enough memory
+not supported
+not_a_socket
+not_connected
+NotEvaluated
+NotSpecified
+NotSupported
+NoVBA
+NT_POWER_INFORMATION_DATA
+NtClose
+ntdll.dll
+ntelu
+NtEnumerateKey
+NtEnumerateValueKey
+NTFS    
+NtLoadKeyEx
+NtOpenKey failed for %ws [%x]
+NtQueryInformationFile failed [%x]
+NtQueryKey
+NtQueryLicenseValue
+NtQuerySecurityPolicy
+NtQuerySystemEnvironmentValueEx
+NtQuerySystemInformation
+NtWriteFile
+NumberOfCores
+NumberOfEntries
+NumberOfLogicalProcessors
+NumberOfMissedRuns
+NumComponentsRemoved
+NumPartitions
+NumShape
+nv.anerag.hnimneil
+nv.emagno
+nv.moc.elgoog
+nv.moc.h42
+nv.moc.irtnad
+nv.nabal
+nv.uadcab
+o\$PH
+O0M0K
+O365ProPlusRetail.TenantId
+OAudienceData
+OAudienceId
+ob.moc.elgoog
+OBfPptShow12
+OBfPptShow8
+OBfPptShowME
+OBfPptSlide12
+OBfPptSlide8
+OBfPptSlideME
+OBfPptTemplate12
+OBfPptTemplate8
+OBfPptTemplateME
+OBfTheme
+OBfVisio
+OBfWordDoc12
+OBfWordDoc8
+OBfWordDocME
+OBfWordRtf8
+OBfWordTemplate12
+OBfWordTemplate8
+OBfWordTemplateME
+OBfWordXml
+OBfXlAddin
+OBfXlSheet12
+OBfXlSheet8
+OBfXlSheetBinaryMacro
+OBfXlSheetMacro
+OBfXlTemplate
+OBfXlWorkspace
+OBfXlXml
+objectInstanceId
+ObjectLength
+objectType
+oc.afyasana
+oc.moc.elgoog
+oc.zooiv
+OC2rApps
+OC2rSkus
+oD$ f
+od.moc.elgoog
+OEMID
+OemInformation
+OemManufacturerDate
+OEMRevision
+Office
+OFFICE
+OFFICE_ADDINS
+OFFICE_INFO
+OFFICE_INSIGHTS
+OFFICE_VBA
+OfficeAddInCache AddItem failed %#x
+OfficeAddInCache BatchBegin failed %#x
+OfficeAddInCache BatchEnd failed %#x
+OfficeAddInUsageCache AddItem failed %#x
+OfficeAddInUsageCache BatchBegin failed %#x
+OfficeAddInUsageCache BatchEnd failed %#x
+OfficeApplication
+OfficeArchitecture
+OfficeIdentfiers
+OfficeIeFeatureControls
+OfficeInfoCache AddItem failed %#x
+OfficeInsightsCache AddItem failed %#x
+OfficeInsightsCache BatchBegin failed %#x
+OfficeInsightsCache BatchEnd failed %#x
+OfficeProducts
+OfficeReliabilityMID
+OfficeReliabilityUID
+OfficeSettings
+OfficeVBA Cache BatchBegin failed %#x
+OfficeVBACache BatchEnd failed %#x
+OfficeVBACache Cache AddItem failed %#x
+OfficeVBARuleViolation Cache BatchBegin failed %#x
+OfficeVBARuleViolationCache AddItem failed %#x
+OfficeVBARuleViolationCache BatchEnd failed %#x
+OfficeVersion
+OFFLINE
+OfflineEnabled
+Offset and region size add up to cause an integer overflow or underflow
+ofni.erahsagem
+ofni.erahsrb
+ofni.hcraesotsaf
+ofni.hcraesotyzae
+ofni.iassek
+ofni.nushcraes
+ofni.oka-yonip
+ofni.sehcraesgniziama
+ofni.sgnihcraestsaf
+ofni.txenecruos
+OIeFeatureAddon
+OIeMachineLockdown
+OIeMimeHandling
+OIeMimeSniffing
+OIeNoAxInstall
+OIeNoDownload
+OIeObjectCaching
+OIePasswordDisable
+OIeSafeBind
+OIeSecurityBand
+OIeUncSaveCheck
+OIeValidateUrl
+OIeWebOcPopup
+OIeWinRestrict
+OIeZoneElevate
+oj.elgoog
+oK0D$"<
+oL$0f
+Older
+ole32.dll
+OLEAUT32.dll
+OMsiApps
+on.1knaberaps
+on.bnd
+on.elgoog
+on.enilno
+on.gv
+on.krn
+on.los
+on.nedistrats
+on.nnif
+on.retehyncba
+on.ry
+on.tedalbgad
+onecore\base\telemetry\permission\product\telemetrypermission.cpp
+ONEDRIVE
+OneNote
+onenote.exe
+OpenBackupEventLogW
+OpenProcessToken
+OpenSemaphoreW
+OpenTempProvider [%#x]
+OpenThreadToken
+OpenVirtualDisk
+OpenWaitableTimerW
+OperatingSystemSKU
+operation canceled
+operation in progress
+operation not permitted
+operation not supported
+operation would block
+operation_in_progress
+operation_not_supported
+operation_would_block
+OPlatform
+OProductCodes
+OptimizeForMarkers
+OptInLevel
+Options
+or.elgoog
+or.maetson
+or.vt-looc
+origin.exe
+OriginalFilename
+OriginalName
+OS_DETAILS
+OsArchitecture
+osu!.exe
+oT$@f
+ot.dneselif
+ot.gsa
+ot.k4eivom
+ot.ssakcik
+OTenantId
+Other
+OTHER-CDROM-DVDTelemetrySessionCount
+OTHER-CDROM-DVDTelemetrySessionDuration
+OTHER-DISK-DVDTelemetrySessionCount
+OTHER-DISK-DVDTelemetrySessionDuration
+Out of memory
+Out of memory [%x]
+Outlook
+outlook.exe
+OutlookCrashingAddin
+OutputDebugStringA
+OutputDebugStringW
+OverflowData
+Override
+OVersion
+overwolf.exe
+owner dead
+OWowMID
+OXProvAllowCE
+OXProvAllowSrs
+OXProvLimitOab
+OXProvLimitSrs
+p AWH
+p WATAUAVAWH
+p WAUAWH
+p WAVAWH
+P0H9Q s
+PA^_^
+pA^_^
+PA^_^
+PA^_^[]
+pA_A^_^]
+PA_A^_^]
+PA_A^A\_^[]
+pA_A^A]A\_^]
+PA_A^A]A\_^]
+PackageIdentifier
+packard bell
+PageFileSize
+Paper
+PAPER_LICENSE
+ParentID
+PartB_Ms.Device.DeviceInventoryChange
+Partitions
+PartitionStyle
+PasswordTileEnabled
+PathAddExtensionW
+PathAppendW
+PathCreateFromUrlW
+PathFileExistsW
+PathFindExtensionW
+PathFindFileNameW
+PathName
+PathRemoveExtensionW
+PathRemoveFileSpecW
+PathStripPathW
+payday2_win32_release.exe
+pcamain.sdb
+PCSystemType
+PDB was not supplied for InitOnceGetStringTableOffset
+PdupAddGeneralTelemetryNode
+PE32_ARM
+PE32_CLR_32
+PE32_CLR_IL
+PE32_CLR_IL_PREFER32
+PE32_I386
+PE32_UNKNOWN
+PE64_AMD64
+PE64_ARM64
+PE64_CLR_64
+PE64_IA64
+PE64_UNKNOWN
+Pending
+PendingFirmwareUpdateWithPower
+Pentium(R)CPU957@1.20GHz
+Pentium(R)CPU967@1.30GHz
+Pentium(R)CPU977@1.40GHz
+Pentium(R)CPU987@1.50GHz
+Pentium(R)CPU997@1.60GHz
+Pentium(R)CPUB940@2.00GHz
+Pentium(R)CPUB950@2.10GHz
+Pentium(R)CPUB960@2.20GHz
+Pentium(R)CPUB970@2.30GHz
+Pentium(R)CPUB980@2.40GHz
+Pentium(R)CPUG620@2.60GHz
+Pentium(R)CPUG620T@2.20GHz
+Pentium(R)CPUG622@2.60GHz
+Pentium(R)CPUG630@2.70GHz
+Pentium(R)CPUG630T@2.30GHz
+Pentium(R)CPUG640@2.80GHz
+Pentium(R)CPUG640T@2.40GHz
+Pentium(R)CPUG645@2.90GHz
+Pentium(R)CPUG645T@2.50GHz
+Pentium(R)CPUG840@2.80GHz
+Pentium(R)CPUG850@2.90GHz
+Pentium(R)CPUG860@3.00GHz
+Pentium(R)CPUG860T@2.60GHz
+Pentium(R)CPUG870@3.10GHz
+PERF_CONFIDENCE
+PERF_TRACK_SCENARIO_OCCURRENCES
+PerfTrackScenarioId
+PeriodStartLocal
+permission denied
+permission_denied
+PermissionsCheckTestKey
+pes2013.exe
+pes2014.exe
+PhysicalDiskInfo
+PhysicalDiskInfo%02d
+PhysicalMemory
+PicFreeFileInfo
+PicRetrieveFileInfo
+PIRWake
+pj.0026sic
+pj.abema
+pj.abema.egapym
+pj.abema.ggip
+pj.abema.golb
+pj.aellim.tga
+pj.agbm-oohay
+pj.arakike
+pj.atnop
+pj.awiad
+pj.cinosanap
+pj.cinosanap.bulc
+pj.drowj.hcraes
+pj.drowj.trats
+pj.egarotserif
+pj.emagwow
+pj.emurugeduf
+pj.en.arukas
+pj.en.azi
+pj.en.cnt
+pj.en.ebolgib
+pj.en.emoh
+pj.en.esseneb
+pj.en.moc-t
+pj.en.nco
+pj.en.netukar
+pj.en.oog
+pj.en.qaz
+pj.en.ten-os
+pj.enoua
+pj.erapnop
+pj.erotscetnamys
+pj.etadputrams.ipa
+pj.etist
+pj.etist.rpr
+pj.g-fhm.srebmem-goc
+pj.gfum.cs
+pj.gfum.kb
+pj.gfum.rc
+pj.gnippohsten7
+pj.hcpohs
+pj.hcraesinu
+pj.ihciniam
+pj.ikiwikiw
+pj.iknet
+pj.ivance
+pj.ixim
+pj.lenap-hcraeser
+pj.liammaerd.klc
+pj.lo-ocmaniadnab.ogsm
+pj.mocjym
+pj.ngisedemag
+pj.niriek
+pj.nonac.bewc
+pj.nopamuk
+pj.nopuorg
+pj.nosiamelleb
+pj.nospe
+pj.nospe.ym
+pj.oc.1010
+pj.oc.adnoh
+pj.oc.alocacoc
+pj.oc.ana
+pj.oc.arumon
+pj.oc.awiad
+pj.oc.bcj
+pj.oc.btj
+pj.oc.cbms
+pj.oc.cesibs
+pj.oc.ces-netukar
+pj.oc.chd
+pj.oc.ckt
+pj.oc.cla
+pj.oc.dlrow-p
+pj.oc.drac-netukar
+pj.oc.dracnosias
+pj.oc.elgoog
+pj.oc.elicec
+pj.oc.emagnah
+pj.oc.emitivan
+pj.oc.eticxe
+pj.oc.ihcinops
+pj.oc.iruimoy
+pj.oc.iustam
+pj.oc.ivang
+pj.oc.kazkaz
+pj.oc.kbten
+pj.oc.keesofni
+pj.oc.kk-ioyay
+pj.oc.knab-netukar
+pj.oc.knabohuzim
+pj.oc.knabtennapaj
+pj.oc.laj
+pj.oc.luksa
+pj.oc.metsys-lap
+pj.oc.mmd
+pj.oc.naduroj
+pj.oc.nassin
+pj.oc.nessin
+pj.oc.netukar
+pj.oc.noea
+pj.oc.noipam
+pj.oc.noxen
+pj.oc.nozama
+pj.oc.okkincbms
+pj.oc.omsociawi
+pj.oc.oohay
+pj.oc.orcimdnert
+pj.oc.otamayokenoruk
+pj.oc.pbiekkin
+pj.oc.pxe-awagas
+pj.oc.rehtorb
+pj.oc.rg-anoser
+pj.oc.sonid
+pj.oc.sserpmi
+pj.oc.tenadnap
+pj.oc.tenapaj
+pj.oc.tiurcer
+pj.oc.tniopg
+pj.oc.tramofni
+pj.oc.tsaerj
+pj.oc.tsegidflog
+pj.oc.ubak
+pj.oc.vtijuf
+pj.oc.weivrac
+pj.oc.wowow
+pj.oc.xenom
+pj.oc.yliad
+pj.oc.ynos
+pj.oc.yrotnus
+pj.oedivocin
+pj.oedivocin.eruces
+pj.oedivocin.evil
+pj.oedivocin.hc
+pj.og.amj
+pj.og.arj
+pj.og.krowolleh
+pj.og.wlhm
+pj.ohgnug.enilnokorangar
+pj.okidar
+pj.olbema
+pj.opina
+pj.orcimdnert.efas
+pj.ozoz
+pj.qofni
+pj.reppeptoh
+pj.reppeptoh.ytuaeb
+pj.revan.emotam
+pj.ro.agpl
+pj.ro.alalp
+pj.ro.awj
+pj.ro.fnckt
+pj.ro.khn
+pj.roodevil.golb
+pj.rotinom-euc
+pj.secalpabihsot
+pj.seiticoeg
+pj.swenrehtaew
+pj.tenoe
+pj.ten-oel
+pj.tfoscn
+pj.tfosgnik.emoh
+pj.tfosgnik.meo
+pj.tsew-stelf.ofni-elif
+pj.tsopnapaj.knab-pj
+pj.tsopnapaj.tsop
+pj.uluh
+pj.wonivan
+pj.xep
+pj.xqd.aborih
+pj.ynos
+pj.ynos.oiavym
+planetside2_x64.exe
+Platform
+pocketrpg.exe
+pointblank.exe
+policymanager.dll
+PolicyManager_FreeGetPolicyData
+PolicyManager_GetPolicy
+pooc.swc
+PortableOperatingSystem
+portal2.exe
+POWER_BATTERY
+POWER_TRACKER_DATA
+powerpnt.exe
+PowerPoint
+POWRPROF.dll
+pptview.exe
+PreferredUILanguages
+Previous Update Revision
+Previous Update Signature
+PREVIOUS_UPGRADE_DATA
+PreviousUpdateRevision
+PreviousUpgradeBuild
+PrimaryAdapterString
+PrimaryLba
+PrimaryMonitor
+PrimaryPartition
+PRINT
+Privileges
+ProcessorInformation
+ProductCompany
+ProductId
+ProductName
+ProductRevision
+ProductState
+ProductVersion
+ProfileHash
+ProfileImagePath
+ProfilesDirectory
+Progid
+ProgramData
+ProgramFiles
+ProgramFiles(x86)
+ProgramFilesDir
+ProgramFilesDir (x86)
+ProgramId
+ProgramID
+ProgramId
+PROPSYS.dll
+PropVariantToStringAlloc
+Protected
+protocol error
+protocol not supported
+protocol_not_supported
+Provider
+ProviderName argument is null [%#x]
+ProviderSyncId
+ProviderVersion
+ProVL
+ProVLDomain
+ProVLDomainWSUS
+Public
+PuCHc
+Pulled out a non-stringtable item
+qi.elgoog
+Qkkbal
+qsort
+QueryDosDeviceW
+QueryPerformanceCounter
+QueryProcessCycleTime
+Queued
+R!s4Z
+r,ccs=UTF-16LE
+r,ccs=UTF-8
+r~akow
+ra.bog.dadlaugiratcenoc
+ra.moc.elgoog
+ra.moc.erbilodacrem
+ra.moc.mbc
+ra.moc.noicanal
+ra.moc.oralc
+RAC_ID
+RacId
+RacSqmID
+RACStudyId
+RaiseException
+RaiseFailFastException
+RAM Disk
+rb.moc.arret
+rb.moc.bb
+rb.moc.elgoog
+rb.moc.emagno
+rb.moc.ervilodacrem
+rb.moc.gi
+rb.moc.ikaxiab
+rb.moc.io
+rb.moc.koobecaf
+rb.moc.lou
+rb.moc.ocsedarb
+rb.moc.oohay
+rb.moc.oralc
+rb.moc.ovitisopodnum
+rb.moc.oviv
+rb.moc.rednatnas
+rb.moc.sanacirema
+rb.moc.sbrcilc
+rb.moc.topsgolb
+rb.moc.uati
+rb.moc.xlo
+rb.vog.adnezaf
+rb.vog.axiac
+rb.vog.ps
+rbIcP,H
+rc.oc.elgoog
+read only file system
+ReadEventLogW
+ReadFile
+Reading from unfinished list
+Ready
+realloc
+Reason
+RecordId
+Redirected
+REDIRECTED_PROFILES_DATA
+RedirectEXE
+Redmond1
+RegCloseKey
+RegCreateKeyEx failed [%d]
+RegCreateKeyExW
+RegCreateKeyTransactedW
+RegCreateKeyW
+RegDbDescription
+RegDbFileCompareFlags
+RegDbId
+RegDbPath
+RegDbTimeStamp
+RegDbType
+RegDbValidationFlags
+RegDeleteKeyExW
+RegDeleteKeyValueW
+RegDeleteKeyW
+RegDeleteTreeW
+RegDeleteValueW
+RegEnumKeyEx failed [%d]
+RegEnumKeyExW
+RegEnumKeyW
+RegEnumValueW
+RegGetValue failed [%d]
+RegGetValueW
+RegisterTraceGuidsW
+RegistrySwitch
+RegLoadAppKey failed [%d]
+RegLoadAppKeyW
+RegLoadKey failed [%d]
+RegLoadKeyW
+RegOpenKey failed [%d]
+RegOpenKeyEx failed [%d]
+RegOpenKeyExW
+RegOpenKeyW
+RegQueryInfoKeyW
+RegQueryValueExW
+RegSaveKeyEx failed [%d]
+RegSaveKeyExW
+RegSetKeySecurity
+RegSetKeySecurity failed [%d]
+RegSetKeyValueW
+RegSetValueEx failed [%d]
+RegSetValueExW
+RegUnLoadKeyW
+Release
+ReleaseMutex
+ReleaseSemaphore
+ReleaseSRWLockExclusive
+reliccoh2.exe
+RemainingCapacity
+Re-mapped file as image to get version block: %ls
+RemLimited
+RemLimited_x64
+Removable Disk
+RemSignificant
+RemSignificant_x64
+ReparsePoint
+ReplaceCADWithFingerprintSwipe
+ResendNeeded
+Reserved.PlatformSigned
+ResolveDelayLoadedAPI
+ResolveDelayLoadsFromDll
+resource deadlock would occur
+resource unavailable try again
+result out of range
+RetailerName
+ReturnHr
+Revision
+RevisionMatches
+rf.1ft
+rf.1ft.soediv
+rf.cic
+rf.ecnarf-tseuo
+rf.ednomel
+rf.eerf.arbmiz
+rf.eerf.ifiw
+rf.eerf.liatrop
+rf.eerf.pmi
+rf.egnaro
+rf.egnaro.22liambew
+rf.egnaro.3vtneilcecapse
+rf.egnaro.c1liambew
+rf.egnaro.d1liambew
+rf.egnaro.di
+rf.egnaro.e1liambew
+rf.egnaro.eiregassem
+rf.egnaro.erbifal
+rf.egnaro.f1liambew
+rf.egnaro.g1liambew
+rf.egnaro.h1liambew
+rf.egnaro.iwww
+rf.egnaro.j1liambew
+rf.egnaro.k1liambew
+rf.egnaro.m1liambew
+rf.egnaro.n1liambew
+rf.egnaro.orp
+rf.egnaro.p1liambew
+rf.egnaro.r
+rf.egnaro.strops
+rf.egnaro.utca
+rf.egnaro.w5elacovetiob
+rf.elarenegeteicos.eruces
+rf.elarenegeteicos.sreilucitrap
+rf.elatsopeuqnabal
+rf.elatsopeuqnabal.engilnesetpmocsov
+rf.elbaciremun.liambew
+rf.elgoog
+rf.elgoog.swen
+rf.engrape-essiac
+rf.epiuqel
+rf.etuoderal
+rf.iolpme-elop
+rf.iolpme-elop.tadidnac
+rf.jdf
+rf.lcl.eruces
+rf.leicoetem
+rf.leutumtiderc
+rf.loa
+rf.lsdaecila
+rf.moceletseugyuob.xobb
+rf.nilehcimaiv
+rf.niocnobel
+rf.niocnobel.2www
+rf.nozama
+rf.ogzoow
+rf.oohay
+rf.oragifel
+rf.rfs
+rf.rfs.11-eiregassem
+rf.rfs.21-eiregassem
+rf.rfs.31-eiregassem
+rf.rfs.ifiw
+rf.senuajsegap
+rf.tenalpratseivom
+rf.tropsorue
+rf.ump
+rf.xuej
+rf.yabe
+rf.yalp6
+rg.elgoog
+rg.ni
+rh.elgoog
+rk.erotsnotron
+rk.kcilcpot
+rk.oc.aerokimj
+rk.oc.draugemag
+rk.oc.edisnipf
+rk.oc.eertgat
+rk.oc.elgoog
+rk.oc.elifagem
+rk.oc.elifgib
+rk.oc.eliftrams
+rk.oc.elpt
+rk.oc.gmietan
+rk.oc.isbe
+rk.oc.kbi
+rk.oc.kcilccn
+rk.oc.ksidew
+rk.oc.ksidt
+rk.oc.nevni
+rk.oc.noitcua
+rk.oc.oggniw
+rk.oc.qoop
+rk.oc.sbk
+rk.oc.sbs
+rk.oc.sdnegelfoeugael
+rk.oc.slootla
+rk.oc.tekramg
+rk.oc.ts11
+rk.oc.velif
+rk.sloot-nomead
+rk.tsebog
+robloxplayerbeta.exe
+robloxstudiobeta.exe
+robocraft.exe
+RoGetActivationFactory
+RoInitialize
+rome2.exe
+ROOT\CIMV2
+ROOT\CIMV2\POWER
+ROOT\MICROSOFT\WINDOWS\STORAGE
+ROOT\SECURITYCENTER2
+ROOT\WMI
+RoUninitialize
+rp.moc.elgoog
+RPCRT4.dll
+RSDSWn
+rt.moc.egapemoh
+rt.moc.elgoog
+rt.moc.knabsi
+rt.moc.lleckrut
+rt.moc.teyillim
+rt.moc.teyirruh
+rt.moc.xednay
+rt.vog.bem
+RtlAdjustPrivilege
+RtlAllocateAndInitializeSid
+RtlAllocateAndInitializeSid failed [%d]
+RtlAllocateHeap
+RtlAnsiStringToUnicodeString
+RtlAnsiStringToUnicodeString failed [%x]
+RtlAppendUnicodeStringToString
+RtlAppendUnicodeToString
+RtlCaptureContext
+RtlCompareMemory
+RtlComputeCrc32
+RtlCopyUnicodeString
+RtlDecompressBuffer
+RtlDeleteCriticalSection
+RtlDllShutdownInProgress
+RtlDoesFileExists_U
+RtlDosPathNameToNtPathName_U_WithStatus
+RtlDosPathNameToNtPathName_U_WithStatus failed for %S [%x]
+RtlDosPathNameToRelativeNtPathName_U
+RtlEnterCriticalSection
+RtlEqualString
+RtlFileMapInitializeByFilePath failed %S [%x]
+RtlFileMapMapView failed [%x]
+RtlFreeHeap
+RtlFreeSid
+RtlFreeUnicodeString
+RtlGetNativeSystemInformation
+RtlGetNativeSystemInformation failed [%x]
+RtlGetNtSystemRoot
+RtlGetPersistedStateLocation
+RtlGetThreadErrorMode
+RtlGUIDFromString
+RtlGUIDFromString failed [%x]
+RtlImageDirectoryEntryToData
+RtlImageDirectoryEntryToData returned ExportDirectory that was too small
+RtlInitAnsiString
+RtlInitializeCriticalSection
+RtlInitString
+RtlInitUnicodeString
+RtlInitUnicodeStringEx
+RtlInitUnicodeStringEx failed [%x]
+RtlLeaveCriticalSection
+RtlLookupFunctionEntry
+RtlMultiByteToUnicodeN
+RtlNtStatusToDosError
+RtlRandomEx
+RtlReAllocateHeap
+RtlReleaseRelativeName
+RtlRunOnceExecuteOnce
+RtlRunOnceExecuteOnce failed for InitOnceGetStringTableOffset [%x]
+RtlSecondsSince1970ToTime
+RtlSetThreadErrorMode
+RtlStringCchCatW failed [%x]
+RtlStringCchCatW failed to append key name (index %d) [%d]
+RtlStringCchCatW failed to append path separator (index %d) [%d]
+RtlStringCchCopyA failed [%x]
+RtlStringCchCopyW failed [%x]
+RtlStringCchCopyW failed to copy FileName [%x]
+RtlStringCchCopyW failed to copy installed sdb key path (index %d) [%d]
+RtlStringCchLengthA failed [%x]
+RtlStringCchLengthW failed [%x]
+RtlStringCchPrintfW failed [%x]
+RtlStringFromGUID
+RtlTimeToTimeFields
+RtlUpcaseUnicodeChar
+RtlUpcaseUnicodeString
+RtlVerifyVersionInfo
+RtlVirtualUnwind
+RtlxAnsiStringToUnicodeSize
+RuleViolations
+rundll32 %ls,RunInUserCxt %hs %ls %ls
+RunGeneralTelemetry
+RunGeneralTelemetry, CPU cycles, LowPart=%u, HighPart=%u
+RunGeneralTelemetry, Invalid parameter
+RunGeneralTelemetryComInitialized
+RunInUserCxtW
+Running
+RunSystemContextCensus
+RunUserContextCensus
+rust.exe
+s WATAUAVAWH
+s$fD;{*
+s+H;{
+s-1-5-18
+s-1-5-19
+s-1-5-20
+S3Support
+S4Support
+s59L$Hu
+s9f9>t4
+saintsrowiv.exe
+samcli.dll
+samp.exe
+samsung
+SandyBridge
+sc2.exe
+ScheduledTask%02d
+Score
+score
+Score_x64
+sCurrency
+SDB compression algorithm does not match callback algorithm.
+SDB file too small to be valid
+SDB is not compressed
+SdbBeginWriteListTag
+SdbCloseDatabase
+SdbContainsFixOfInterest
+SdbContainsLibrary
+SdbContainsNonSysDllRef
+SdbContainsPatchDef
+SdbCustomDbRegInfoEnumerate
+SdbDbId
+SdbDescription
+SdbEndWriteListTag
+SdbFileDetails missing array item for SdbFileType: %d
+SdbFileDetails missing function pointer for path.
+SdbFileId
+SdbFileInfoGet
+SdbFileSize
+SdbFindNextTag
+SdbFoundRedirectExe
+sdbft ;
+SdbGetDatabaseID
+SdbGetNextChild
+SdbGetStringTagPtr
+SdbGetTagDataSize
+SdbGetTagFromTagID
+SdbMakeIndexKeyFromStringEx
+SdbOpenDatabaseEx
+SdbpCustomDbRegInfoCheckForExePointer
+SdbpGetMappedData
+SdbpGetMappedStringFromTable
+SdbpGetMappedTagData
+SdbpGetNextTagId
+SdbpGetPathAppPatch
+SdbpGetPathAppPatchPreRS3
+SdbpGetPathAppraiser
+SdbpGetPathCustomSdb
+SdbpGetPathCustomSdbPreRS3
+SdbpGetPathSystem
+SdbpGetProcessHostGuestArchitectures
+SdbpGetProcessHostGuestArchitectures failed [%x]
+SdbpGetStringTableItemFromStringRef
+SdbpGetStringTableItemFromStringRef failed to get tagid for string ref
+SdbpGetSystemSdbFilePath
+SdbpGetTagHeadSize
+SdbpOpenCompressedDatabase
+SdbpOpenCompressedDatabase failed to allocate expanded buffer - out of memory
+SdbpOpenCompressedDatabase failed to open compressed database.
+SdbpOpenDatabaseInMemory
+SdbpReadMappedData
+SdbpReadStringRef
+SdbpReadTagData
+SdbpSortIndex
+SdbpValidateAndApplyCompatFlags
+SdbpWriteBufferedData
+SdbpWriteCompressedDatabase
+SdbpWriteDatabase
+SdbpWriteDatabase failed
+SdbpWriteTagData
+SdbReadable
+SdbReadBinaryTag
+SdbValidationFlags
+SdbVersion
+SDEV_TABLE_DATA
+SDEVA
+SDEVTableData
+sDH!\$xH
+se.arret
+se.avbb
+se.axiacal.latrop
+se.bog.airatubirtaicnega
+se.elgoog
+se.evtr
+se.moc.topsgolb
+se.nozama
+se.odnumle
+se.opmeitle
+Secondary Start Pages
+Sector0
+SECURE_BOOT
+SECURE_BOOT_DATA
+SecureBoot
+SecureBootData%02d
+SecureBootEnabled
+SecureBootState
+SECURITY
+SECURITY_SOFTWARE
+SECURITY_SOFTWARE_FW
+SELECT * FROM AntiSpywareProduct
+SELECT * FROM AntiVirusProduct
+SELECT * FROM BatteryFullChargedCapacity
+SELECT * FROM BatteryStaticData
+SELECT * FROM BatteryStatus
+SELECT * FROM FirewallProduct
+SELECT * FROM SoftwareLicensingProduct WHERE PartialProductKey <> NULL AND ApplicationID = "55c92734-d682-4d71-983e-d6ec3f16059f" AND Description <> NULL
+SELECT * FROM Win32_ComputerSystem
+SELECT * FROM Win32_DiskDrive
+SELECT * FROM Win32_DiskDrive WHERE Index = %d
+SELECT * FROM Win32_DiskPartition
+SELECT * FROM Win32_LogicalDisk
+SELECT * FROM Win32_OperatingSystem
+SELECT * FROM Win32_PhysicalMemory
+SELECT * FROM Win32_PowerPlan WHERE IsActive = TRUE
+SELECT * FROM Win32_Processor
+SELECT * FROM Win32_QuickFixEngineering
+SELECT * FROM Win32_ServerFeature
+SELECT * FROM Win32_Service
+SELECT * FROM Win32_VideoController
+SELECT * FROM Win32_Volume
+SELECT MediaType, BusType FROM MSFT_PhysicalDisk WHERE SerialNumber = '%s'
+SendFullTelemetry
+SENSOR_DETAILS
+SerialNumber
+SERVER_OS_DETAILS
+ServerFeature
+SERVICE_CONFIG
+Services
+Servicing
+SERVICING
+SeSystemEnvironmentPrivilege
+SetEntriesInAcl [%d]
+SetEntriesInAclW
+SetErrorMode
+SetEvent
+SetLastError
+SetSecurityDescriptorDacl
+SetSecurityDescriptorDacl failed [%d]
+SetSecurityDescriptorOwner
+SetSecurityDescriptorOwner failed [%d]
+SetThreadpoolTimer
+SetThreadToken
+SetUnhandledExceptionFilter
+SETUP_COMPAT_CHECKS
+SETUPAPI.dll
+SetupDiDestroyDeviceInfoList
+SetupDiEnumDeviceInfo
+SetupDiEnumDeviceInterfaces
+SetupDiGetClassDevsExW
+SetupDiGetClassDevsW
+SetupDiGetDeviceInstanceIdW
+SetupDiGetDeviceInterfaceDetailW
+SetupDiGetDevicePropertyW
+SetupDiOpenDevRegKey
+SetVersion [%#x]
+SetVirtualDiskInformation
+SetWaitableTimer
+sfc.dll
+SfcIsFileProtected
+shadowofmordor.exe
+SharedComputerLicensing
+SharedVideoMemory
+SHCreateStreamOnFileW
+sHD8|9
+SHELL32.dll
+SHGetKnownFolderPath
+SHLWAPI.dll
+ShouldAMServiceEnableTilesCP
+ShouldSuspendBitlocker
+ShowBlankPage
+ShowHomepages
+ShowLastSession
+Shttp://www.microsoft.com/pkiops/crl/Microsoft%20Windows%20Verification%20PCA(1).crl0q
+si.lbm
+si.rekcoltup
+simcity.exe
+-Simple
+SingleBitmapSize
+SiteList
+Size of sysmain.sdb is too small to be valid.
+SIZE_T arithmetic failed [%x]
+SizeofResource
+sLanguage
+SLC.dll
+SLClose
+Sleep
+SleepConditionVariableSRW
+SleepStatesSupported
+SLGetLicensingStatusInformation
+SLGetProductSkuInformation
+SLIsWindowsGenuineLocal
+SLOpen
+SmartCardPKITileEnabled
+SMBIOS_UUID
+SMBIOSUUID
+smite.exe
+sniperelite3.exe
+Software\Classes\CLSID\%ls
+SOFTWARE\Classes\Excel.Addin
+SOFTWARE\Classes\Excel.Sheet.12
+SOFTWARE\Classes\Excel.Sheet.8
+SOFTWARE\Classes\Excel.SheetBinaryMacroEnabled.12
+SOFTWARE\Classes\Excel.SheetMacroEnabled.12
+SOFTWARE\Classes\Excel.Template
+SOFTWARE\Classes\Excel.Workspace
+SOFTWARE\Classes\Excelxmlss
+SOFTWARE\Classes\http\shell\open\command
+SOFTWARE\Classes\OfficeTheme.12
+SOFTWARE\Classes\PowerPoint.Show.12
+SOFTWARE\Classes\PowerPoint.Show.8
+SOFTWARE\Classes\PowerPoint.ShowMacroEnabled.12
+SOFTWARE\Classes\PowerPoint.SlideShow.12
+SOFTWARE\Classes\PowerPoint.SlideShow.8
+SOFTWARE\Classes\PowerPoint.SlideShowMacroEnabled.12
+SOFTWARE\Classes\PowerPoint.Template.12
+SOFTWARE\Classes\PowerPoint.Template.8
+SOFTWARE\Classes\PowerPoint.TemplateMacroEnabled.12
+SOFTWARE\Classes\Visio.Drawing.11
+SOFTWARE\Classes\Word.Document.12
+SOFTWARE\Classes\Word.Document.8
+SOFTWARE\Classes\Word.DocumentMacroEnabled.12
+SOFTWARE\Classes\Word.RTF.8
+SOFTWARE\Classes\Word.Template.12
+SOFTWARE\Classes\Word.Template.8
+SOFTWARE\Classes\Word.TemplateMacroEnabled.12
+SOFTWARE\Classes\wordxmlfile
+Software\Google\Chrome\Metro
+Software\Intel Corporation\Intel WiDi\WFDAgent\Profiles
+SOFTWARE\Microsoft\
+SOFTWARE\Microsoft\DVDNavigator
+SOFTWARE\Microsoft\FamilySafety
+SOFTWARE\Microsoft\Internet Explorer
+SOFTWARE\Microsoft\Internet Explorer\BrowserEmulation\ClearableListData
+SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_ADDON_MANAGEMENT
+SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_HTTP_USERNAME_PASSWORD_DISABLE
+SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_LOCALMACHINE_LOCKDOWN
+SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_MIME_HANDLING
+SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_MIME_SNIFFING
+SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_OBJECT_CACHING
+SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_RESTRICT_ACTIVEXINSTALL
+SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_RESTRICT_FILEDOWNLOAD
+SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_SAFE_BINDTOOBJECT
+SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_SECURITYBAND
+SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_UNC_SAVEDFILECHECK
+SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_VALIDATE_NAVIGATE_URL
+SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_WEBOC_POPUPMANAGEMENT
+SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_WINDOW_RESTRICTIONS
+SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_ZONE_ELEVATION
+SOFTWARE\Microsoft\Internet Explorer\Setup\10.0
+SOFTWARE\Microsoft\Internet Explorer\Setup\11.0
+SOFTWARE\Microsoft\Internet Explorer\Setup\9.0
+SOFTWARE\Microsoft\Internet Explorer\Suggested Sites
+SOFTWARE\Microsoft\NET Framework Setup\NDP
+SOFTWARE\Microsoft\Office
+SOFTWARE\Microsoft\Office\
+SOFTWARE\Microsoft\Office\ClickToRun\Configuration
+SOFTWARE\Microsoft\Office\ClickToRun\ProductReleaseIDs
+SOFTWARE\Microsoft\Office\ClickToRun\REGISTRY\MACHINE\Software\Classes\
+Software\Microsoft\Office\ClickToRun\REGISTRY\MACHINE\Software\Classes\%lsCLSID\%ls
+SOFTWARE\Microsoft\Office\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\
+SOFTWARE\Microsoft\Office\ClickToRun\REGISTRY\MACHINE\Software\Microsoft\Office\
+SOFTWARE\Microsoft\Office\ClickToRun\REGISTRY\MACHINE\Software\RegisteredApplications
+SOFTWARE\Microsoft\Office\ClickToRun\REGISTRY\MACHINE\Software\Wow6432Node\Microsoft\
+SOFTWARE\Microsoft\Office\ClickToRun\REGISTRY\MACHINE\Software\Wow6432Node\Microsoft\Office\
+SOFTWARE\Microsoft\Office\ClickToRun\REGISTRY\USERS\.DEFAULT\Software\Microsoft\
+SOFTWARE\Microsoft\Office\ClickToRun\REGISTRY\USERS\.DEFAULT\Software\Microsoft\Office\
+SOFTWARE\Microsoft\Office\Common
+SOFTWARE\Microsoft\OfficeCompat
+SOFTWARE\Microsoft\OfficeCompat\VBA
+SOFTWARE\Microsoft\OneDrive
+Software\Microsoft\Reliability Analysis\RAC
+SOFTWARE\Microsoft\RemovalTools\MRT
+SOFTWARE\Microsoft\SQMClient
+SOFTWARE\Microsoft\SQMClient\Reliability
+SOFTWARE\Microsoft\SQMClient\Windows
+SOFTWARE\Microsoft\SQMClient\Windows\CommonDatapoints
+SOFTWARE\Microsoft\Virtual Machine\Guest\Parameters
+SOFTWARE\Microsoft\WebcamTelemetry
+SOFTWARE\Microsoft\Win7RtmToSp1
+Software\Microsoft\Windows NT\CurrentVersion
+SOFTWARE\Microsoft\Windows NT\CurrentVersion
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\{11517B7C-E79D-4e20-961B-75A811715ADD}
+Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\ClientTelemetry
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\ClientTelemetry
+Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\ClientTelemetry\WAMAccounts
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Shared
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\TechBench
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\FveDetect
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\FveDetect\Cache
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\PowerTracker\Data
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winsat
+SOFTWARE\Microsoft\Windows\CurrentVersion
+Software\Microsoft\Windows\CurrentVersion\AdvertisingInfo
+SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\%ls
+SOFTWARE\Microsoft\Windows\CurrentVersion\Diagnostics\PerfTrack\ScenarioOccurrences
+SOFTWARE\Microsoft\Windows\CurrentVersion\OEMInformation
+SOFTWARE\Microsoft\Windows\CurrentVersion\Parental Controls\Users
+Software\Microsoft\Windows\CurrentVersion\Policies\DataCollection
+Software\Microsoft\Windows\CurrentVersion\Policies\DataCollection\Users
+SOFTWARE\Microsoft\Windows\CurrentVersion\PPI\WelcomeSettings
+Software\Microsoft\Windows\CurrentVersion\Run
+SOFTWARE\Microsoft\Windows\CurrentVersion\SideBySide
+SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall
+SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate
+SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update
+SOFTWARE\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice
+SOFTWARE\Microsoft\Windows\Windows Error Reporting
+SOFTWARE\Policies\Microsoft\Internet Explorer\BrowserEmulation\PolicyList
+SOFTWARE\Policies\Microsoft\Internet Explorer\BrowserEmulation\QuirksPolicyList
+SOFTWARE\Policies\Microsoft\Internet Explorer\Main
+SOFTWARE\Policies\Microsoft\Internet Explorer\Main\EnterpriseMode
+Software\Policies\Microsoft\Windows\DataCollection
+SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting
+SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
+Software\Policies\Microsoft\WindowsStore
+SOFTWARE\SOFTWARE\Microsoft\Exchange\Exchange Provider
+SOFTWARE\vLite
+SOFTWARE\Wave Systems Corp.\Authentication Manager
+SOFTWARE\Wow6432Node\BrowserChoice
+SOFTWARE\Wow6432Node\Microsoft\NET Framework Setup\NDP
+SOFTWARE\Wow6432Node\Microsoft\Office\Common
+SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall
+SOFTWARE\Wow6432Node\Policies\Microsoft\Internet Explorer\Main
+SoftwareType
+Solver Add-in
+solver.xlam
+Source
+Source OS
+south park - the stick of truth.exe
+sp.elgoog
+SpanStats
+spDesign.exe
+SpecifiedPageUrls
+speed.exe
+speed2.exe
+spintires.exe
+sporeapp.exe
+sprintf_s
+SqmId
+SqmStudyId
+sr.elgoog
+sShortDate
+sShortTime
+StandardUserHash
+starcraft ii.exe
+starcraft.exe
+Start
+Start Page
+StartingOffset
+StartMode
+StartTimeLocal
+StartTraceW
+STARTUP_APPLICATIONS_DATA
+State
+state not recoverable
+Stats
+Status
+Status_%d_%d_%d
+steam.exe
+StgIsStorageFile
+StgOpenStorage
+sThousand
+sTime
+stol argument out of range
+StopTraceW
+STORAGE
+strchr
+StrCmpIW
+strcpy_s
+stream timeout
+STREAM_SYS
+StreamSysHWID
+string too long
+StringCchPrintf failed %#x
+StringCchPrintfW [%#x]
+StringFileInfo
+StringFromCLSID
+StringFromGUID2
+strncmp
+strncpy_s
+strnlen
+StrRChrW
+strstr
+StrStrIW
+strtol
+STUDY_ID
+StudyId
+su.ap.etats
+su.frusartlu
+sumif.xlam
+Summary
+Supported
+supported
+SUPPORTED_GRAPHICS_DX_VERSIONS
+SupportedGraphicsDXVersion
+SusClientId
+SUVWATAUAVAWH
+SUVWATAVAWH
+SVWATAUAVAWH
+SVWAVAWH
+SVWAVH
+Switches
+Switches.xml
+swprintf_s
+swscanf_s
+swtor.exe
+syncId
+SyncTime
+sysmain.sdb
+SYSPREP
+SysprepCleanupEnableCustomTrigger
+System
+system
+SYSTEM\CurrentControlSet\Control
+SYSTEM\CurrentControlSet\Control\CrashControl
+SYSTEM\CurrentControlSet\Control\MUI\UILanguages
+SYSTEM\CurrentControlSet\Control\SecureBoot
+SYSTEM\CurrentControlSet\Services\WerSvc
+System\Setup
+SYSTEM\Setup\
+System\Setup\Status
+System\Setup\Status\AuditBootVolatile
+SYSTEM\Setup\Upgrade
+SystemData
+SystemDrive
+SystemDrive=
+SystemDriveTooFull
+SystemFamily
+SystemHttpHandler
+SystemManufacturer
+SystemProductName
+SystemRoot
+systemroot
+SystemRoot
+SystemRoot=
+SystemSKU
+SystemTimeToFileTime
+SystemVolume
+t!fA;
+t"D8=
+t$ E3
+T$ E3
+t$ E3
+t$ UAVAWH
+t$ UWATAUAWH
+t$ UWATAVAWH
+t$ UWAUAVAWH
+t$ UWAVH
+t$ WATAUAVAWH
+t$ WATAWH
+t$ WAVAWH
+t$ WH
+T$(E3
+T$@fE
+T$\9T$`
+t$`8_
+T$`E3
+t$`fD
+T$|D;
+t$<t?@
+t$0E3
+T$0E3
+t$0H9
+t$8E3
+T$8H!\$8
+T$h9T$d
+t$HD9=.
+T$HE3
+t$HE3
+t$HH;E
+t$hH+
+T$lD9|$0
+t$pE3
+t$PE3
+t$PfE
+t$tE3
+t$x9\$T
+t$XE3
+t$xfD
+T$XH!\$pH
+t&LcC
+t(f9)t#
+t(HcC
+t{H9~
+t{HcC
+t{HcL$ HcD$$H
+t=f9/t8H
+t6fD9[
+t6mp.exe
+t6sp.exe
+ta.elgoog
+ta.enork
+ta.fro
+ta.lov
+ta.nebahlliw
+ta.nesieffiar.gniknab
+ta.xmg
+tac.elgoog
+TagID 0x%08X, Tag %04X not BINARY type
+TagID 0x%08X, Tag %04X not STRINGREF type
+TAMPERED
+TargetVersion
+TargetVersionUpgradeExperienceIndicators
+TaskCount
+TaskIndex
+tcfD;+u
+tCH;0u/H
+tCH;2u/H
+td@8=
+TECH_BENCH
+TechBenchRetailerName
+TechBenchVersion
+TelCacheProvider::GetVersion
+TelCacheProvider::Initialize
+TelCacheProvider::OpenTempProvider
+TelCacheProvider::SetVersion
+TelemetryClient
+TelemetryPermission-AllowDisable
+TelemetryPermission-DefaultLevel
+ten.1a
+ten.6655
+ten.aasees
+ten.aidempmk
+ten.asile
+ten.cbm
+ten.dhiamaka
+ten.dhsemlifagem
+ten.dirgpukcab
+ten.dlrowmf
+ten.eerfrohcna
+ten.efact
+ten.egrofecruos
+ten.elbramten
+ten.elttab
+ten.enilnovtritsissa
+ten.erahsedils
+ten.erahsraeb
+ten.eriw2
+ten.etadpurevird
+ten.etsopal
+ten.evilerahs
+ten.gnimagraw
+ten.gnusmas
+ten.hc2
+ten.hcraesbewdlrow
+ten.hcraesefas
+ten.hcraes-retteb
+ten.hcraesteg
+ten.hcraes-tluafed
+ten.hcraes-www
+ten.hsemi
+ten.iamaka
+ten.kcapcinhcet
+ten.kcilcelbuod
+ten.knilhtrae
+ten.knilneddus
+ten.knilyrutnec
+ten.liamtiurf
+ten.llebitannicnic
+ten.maertsdniw
+ten.muad
+ten.mumitpo
+ten.nalaj
+ten.nanserb
+ten.ndcbf
+ten.nevaehytic
+ten.ngisucod
+ten.noitcifnaf
+ten.nospe
+ten.noxen
+ten.nozirev
+ten.ntavo
+ten.nwot777
+ten.oediv-ore
+ten.oelat
+ten.ogob-ih
+ten.oohay
+ten.oonz
+ten.orezten
+ten.pohspn
+ten.reliamreyalp
+ten.retrahc
+ten.revreseruces
+ten.rineval
+ten.rku
+ten.sabirappnb
+ten.sdt
+ten.slmefas
+ten.slrigtcefrep
+ten.snaerokyab
+ten.sserpxenv
+ten.sulet
+ten.svlf
+ten.tenatsac
+ten.tenih
+ten.tenxip
+ten.tfarcenim
+ten.tropyaw
+ten.tsacmoc
+ten.tsetdeeps
+ten.tta
+ten.vixip
+ten.vresmiu
+ten.vt-emmargorp
+ten.vt-looc
+ten.x5z
+ten.xedmay
+ten.xmg
+ten.xoc
+ten.yawwow
+tera.exe
+TerminateProcess
+terraria.exe
+tesv.exe
+text file busy
+tFH;:u2
+tg.moc.elgoog
+tgfA;
+Thales TSS ESN:7D2E-3782-B0F71%0#
+Thales TSS ESN:E041-4BEE-FA7E1%0#
+The cache %ws does not yet exist.  Creating a new one.
+theforest.exe
+This is not a list tag
+ThrottleUtc
+ThrottlingCleanupEvent null value
+ThrottlingSemaphore null value
+ThrottlingTimer null value
+ti.acilbbuper
+ti.ailatimocelet
+ti.ailatimocelet.cscaaa
+ti.ailatimocelet.tenemoh
+ti.asna
+ti.attezzag
+ti.ecila.ecilaossor
+ti.elgoog
+ti.elgoog.etalsnart
+ti.elgoog.swen
+ti.enofadov.irotatnoc
+ti.ereirroc
+ti.ert.tenretni
+ti.ilacsit
+ti.ilacsit.liam
+ti.nopuorg
+ti.nozama
+ti.oetemli
+ti.oiligriv
+ti.oiligriv.liam
+ti.orebil
+ti.orebil.atebliam
+ti.orebil.atsop
+ti.orebil.nigol
+ti.otibus
+ti.tenretnimit
+ti.tesaidem.42mocgt
+ti.vog.etartneaiznega
+ti.vtze
+ti.yabe
+timed out
+timed_out
+TimeLoaded
+Timestamp
+titanfall.exe
+tl.elgoog
+tl.ifled
+tl.seireshctaw
+TlP0X
+tm.moc.elgoog
+tmfA;
+TMSAMVOF
+tNH;{
+tombraider.exe
+too many files open
+too many files open in system
+Too many index entries for tag %04x, key %04x
+too many links
+too many symbolic link levels
+too_many_files_open
+ToolVersion
+toshiba
+Total
+totalcmd64.exe
+TotalMonitorPixels
+Touch
+tp.aloba
+tp.elgoog
+tp.opas
+tp.vog.sacnanifsadlatrop
+tpfD9[
+TRACE
+TraceEvent
+TraceMessage
+TraceMessageVa
+Translation
+Trying to operate on non-list, non-root tag
+Trying to read mapped data past the end of the database offset 0x%x size 0x%x
+ts3.exe
+ts3client_win32.exe
+ts3w.exe
+ts4.exe
+tt.elgoog
+TUUUUUU
+tyH!\$pH
+tyI;u
+Types
+u @8t$0H
+u HcA<H
+u.fD;R
+u:9uHu9H
+u|L9H
+u<9D$Dt69D$Ht0
+U0S0Q
+ua.moc.artslet
+ua.moc.ban
+ua.moc.captsew
+ua.moc.eertmug
+ua.moc.egaeht
+ua.moc.elgoog
+ua.moc.enozrehtaew
+ua.moc.etatselaer
+ua.moc.hms
+ua.moc.kees
+ua.moc.knabmmoc
+ua.moc.lfa
+ua.moc.nsmenin
+ua.moc.oozsutpo
+ua.moc.snoitomorpsdraweryadyreve
+ua.moc.swen
+ua.moc.syubylf
+ua.moc.yabe
+ua.moc.zna
+ua.ten.cba
+ua.ten.tenii
+ua.ude.aw
+ua.ude.civ
+ua.vog.dlq
+ua.vog.mob
+ua.vog.ota
+uacdetct
+UATAUAVAWH
+UATAVH
+UAUAVH
+UAVAWH
+ub9\$Pu\3
+ude.xineohp
+ue.renuthcuoc
+ue.sknatfodlrow
+ue.tese.og
+ue.ynos.oiav
+ue.ztnerrot
+UEXIndicatorData
+uh.elgoog
+uh.ogiro
+uh.paltrats
+uh.paniam
+uh.xedni
+Uhttp://www.microsoft.com/pkiops/certs/Microsoft%20Windows%20Verification%20PCA(1).crt0
+ul.elgoog
+ulL9H
+um.elgoog
+Undefined
+Unencrypted
+UnexpectedSetting
+Unhandled ASL_FILE_KIND: %d
+Unhandled ASL_FILE_KIND_DETAIL: %d
+UnhandledExceptionFilter
+UNINITIALIZED
+units
+unity.exe
+unknown
+UNKNOWN
+Unknown
+unknown error
+UNKNOWN_VALUE_%I64u
+UnknownStatus
+UnmapViewOfFile
+UnregisterTraceGuids
+unsupported
+unturned.exe
+Update Revision
+Update Signature
+Update Status
+Updated store permissions
+UpdateRevision
+UpdateStatus
+UpdateUnhide
+UPGRADE_CONTROL
+UPGRADE_DETAILS
+UpgradeGeneralize
+uplay.exe
+ur.23dontese.pohs
+ur.ahepa
+ur.atlabew.emoh
+ur.ay
+ur.balfart
+ur.cbr
+ur.elgoog
+ur.ikinssalkondo
+ur.knabrebs.enilno
+ur.liam
+ur.liam.adogop
+ur.liam.e
+ur.liam.fw
+ur.liam.htua
+ur.liam.og
+ur.liam.r
+ur.liam.ym
+ur.maerts
+ur.moceletre.ofni
+ur.oetemsig
+ur.otiva
+ur.relbmar
+ur.relbmar.avon
+ur.relbmar.swen
+ur.sig2.knil
+ur.sknatfodlrow
+ur.tsava
+ur.xednay
+ur.xednay.adogop
+ur.xednay.cisum
+ur.xednay.liam
+ur.xednay.resworb
+ur.xednay.spam
+ur.xednay.ssap
+ur.xednay.swen
+ur.yiksrogvo
+ur.yticyalpym
+UrlEscapeW
+urlmon.dll
+URLOpenBlockingStreamW
+us.prd.dived
+UsageEpoch
+User MRU
+USER_ACCOUNT_TYPE_ENUMERATION
+USER32.dll
+UserCxtSwitch
+UserDefaultBrowser
+UserFilter
+UserFolder
+UserHash
+UserHttpHandler
+UserId
+UserProfile_%d
+UserProfileRoot
+UserType
+UserUILanguages
+USVWATAUAVAWH
+USVWATAVAWH
+USVWAVAWH
+USVWAVH
+USVWH
+uT!\$8H
+uT@8=)
+uT@8=F
+UtcSyncId
+UtcThrottle::Initialize
+UtcThrottle::InitializeSecurityDesc
+UtcThrottle::Throttle
+UuidCreate
+UVWATAUAVAWH
+UVWATAVH
+UVWATAWH
+UVWAVAWH
+UWATAVAWH
+UWAUAVAWH
+UWAVH
+UWAWH
+Validation
+Validation_x64
+Value
+value too large
+VarFileInfo
+VbrJump
+VbrOem
+VDiskLoadVirtDiskAPI: Unable to dynamically bind to VirtDisk.dll APIs; hr = 0x%X.
+vector<T> too long
+VendorId
+VerifyVersionInfoW
+VerSetConditionMask
+Version
+Version block has bad size
+Version block invalid
+Version block out of range
+VersionBlock is too long
+VersionBlock not long enough
+VersionToReport
+VerticalResolution
+VeryHi
+VideoMemoryBandwidth
+VideoMemorySize
+ViewFileOffset: %I64u
+ViewFileSize  : %u
+virtdisk.dll
+VirtualAlloc
+VirtualFree
+VirtualMachineID
+Visio
+visio.exe
+vl.elgoog
+vl.ifled
+vl.meiguard
+VLITE
+VLiteCleanupExecuted
+vLiteCleanupExecuted
+VLiteComponentsRemoved
+vLiteKeyCouldNotDelete
+VLiteKeyCouldNotDelete
+VLiteKeyDeletedSuccessfully
+vLiteKeyDeletedSuccessfully
+VLiteKeyNotDeletedNotUpgrade
+vLiteKeyNotDeletedNotUpgrade
+vLiteRegKeyFound
+VLiteRegKeyFound
+vog.aaon
+vog.ac
+vog.asan
+vog.av
+vog.de
+vog.hin
+vog.rehtaew
+vog.sbojasu
+vog.sri
+vog.yn
+VOLUME
+VolumeCorruptionState
+VolumeInfo
+VolumeInfo%02d
+VolumeInfo%lc
+VolumeLicense
+vs.moc.elgoog
+VS_VERSION_INFO
+vt.enda.rvld
+vt.erahsefas
+vt.hctiwt
+vt.iar
+vt.maertsu
+vt.nuf
+vt.spp.ld
+vt.vaw
+vt.xoftuo
+VtKH;
+VWATAUAVH
+VWATAVAWH
+VWAUAVAWH
+VWAVH
+W(H9T$8
+WaitForMultipleObjects
+WaitForSingleObject
+WaitForSingleObjectEx
+WaitForThreadpoolTimerCallbacks
+WakeAllConditionVariable
+WakeDisplayOnPresence
+WAMAccount
+WAMAccountCount
+war3.exe
+warcraft iii.exe
+warframe.x64.exe
+Washington1
+WATAUAVAWH
+WATAVH
+watch_dogs.exe
+WAVAWH
+wcscat_s
+wcschr
+wcscmp
+wcscpy_s
+wcscpy_s failed
+wcsncmp
+wcsrchr
+wcsstr
+wcstok_s
+wcstol
+WDSCORE.dll
+WdsSetupLogMessageW
+WerDisabled
+WerId
+WerPolicyDisabled
+WerService
+WerUserDisabled
+wevtapi.dll
+w-H9S
+WIDI_CONNECTION_DATA
+Width
+WifiNic
+WifiNic%02d
+WifiNicPresent
+WilError_02
+WIN_SAT
+WIN_SAT_METRICS
+WIN_SAT_WMI_METRICS
+WIN16
+WIN32
+Win7RtmToSP1DriverRepairExecuted
+Win7RtmToSP1DriversMissingFromWinSxs
+Win7RtmToSP1UpdateUnhide
+winbio.dll
+WinBioEnumBiometricUnits
+WinBioFree
+WinDir=
+Windows
+Windows.Internal.Security.Authentication.Web.TokenBrokerInternal
+WINDOWS_EXPERIENCE
+WINDOWS_GENUINE_STATE
+WINDOWS_LICENSING_DATA
+WINDOWS_UPDATE
+WindowsCreateStringReference
+WindowsGenuineState
+WindowsGetStringRawBuffer
+WindowsLicensing
+WindowsLiveID
+WinEICPU
+WinEIDesktopGraphics
+WinEIDisk
+WinEIGamingGraphics
+WinEIIsValid
+WinEIMemory
+WININET.dll
+winproj.exe
+WinSAT/Metrics
+WinSAT/Metrics/GraphicsMetrics/VideoMemBandwidth
+WinSAT/SystemConfig/Graphics/AdapterDescription
+WinSAT/SystemConfig/Graphics/DedicatedVideoMemory
+WinSAT/WinSPR/CpuScore
+WinSAT/WinSPR/DiskScore
+WinSAT/WinSPR/GamingScore
+WinSAT/WinSPR/GraphicsScore
+WinSAT/WinSPR/MemoryScore
+WinSATCpuScore
+WinsatCpuUPExpressCompressThroughput
+WinsatDedicatedSystemMemory
+WinSATDedicatedVideoMemory
+WinsatDedicatedVideoMemory
+WinSATDiskScore
+WinSATGamingScore
+WinSATGraphicsScore
+WinSATMemoryScore
+WinSATMetrics.%03d
+WinsatPrimaryAdapterString
+WinSATPrimaryVideoAdapter
+WinsatSharedVideoMemory
+WinsatTotalMonitorPixels
+WinSATVideoMemoryBandwidth
+WinsatVideoMemoryBandwidth
+WinsatVideoMemorySize
+WinSqmIsOptedInEx
+WINSXS_SIZE
+WinSxSSizeBytes
+winword.exe
+Wizard
+wizardgraphicalclient.exe
+wk.moc.elgoog
+WLAN_FAT_DRIVER_INFO
+wlanapi.dll
+WlanCloseHandle
+WlanEnumInterfaces
+WlanFreeMemory
+WlanGetInterfaceCapability
+WlanOpenHandle
+WM_DEVICE_CENTER_LAST_SYNC_TIME_ITEMS_DATA
+WMC-CDROM-DVDTelemetrySessionCount
+WMC-CDROM-DVDTelemetrySessionDuration
+WMC-DISK-DVDTelemetrySessionCount
+WMC-DISK-DVDTelemetrySessionDuration
+WMDCLastSyncTime
+WMDCLastSyncTime%02d
+WMISwitch
+WMP-CDROM-DVDTelemetrySessionCount
+WMP-CDROM-DVDTelemetrySessionDuration
+WMP-DISK-DVDTelemetrySessionCount
+WMP-DISK-DVDTelemetrySessionDuration
+wn>Jj
+worldoftanks.exe
+worldofwarplanes.exe
+wow - 64.exe
+wow.exe
+Wow6432Node\
+WriteFile
+WritePermissionsCheck
+wrong protocol type
+wrong_protocol_type
+WSMTDATA
+wt.anerag.lol
+wt.moc.elgoog
+wt.moc.emohcp
+wt.moc.iyaw
+wt.moc.netur
+wt.moc.oohay
+wt.moc.remag
+wt.moc.yliadelppa
+WTSAPI32.dll
+WTSEnumerateSessionsW
+WTSFreeMemory
+WTSGetActiveConsoleSessionId
+WTSQueryUserToken
+WUServer
+WvTilesCredProviderEnabled
+x ATAVAWH
+x AVH
+x UATAUAVAWH
+x UATAUH
+x UATAWH
+x UAVAWH
+X UVWH
+x!fD9t$Xt
+X"D9d$D
+X_^[]
+X15-38996
+X15-39026
+X15-39034
+X15-39042
+X15-39145
+X15-39161
+X15-39211
+X15-39217
+X15-39218
+X15-39324
+X15-39326
+X15-39328
+X15-39330
+X15-39759
+X15-39760
+X15-39761
+X18-21668
+X18-21673
+X18-52137
+X18-52138
+X18-84707
+X18-95461
+X18-95462
+X18-95463
+X18-95496
+X9D1(u
+X9D1(u+
+Xeon(R)CPUE31235@3.20GHz
+Xeon(R)CPUE31260L@2.40GHz
+Xeon(R)CPUE3-1290V2@3.70GHz
+xIH9s0t
+xm.bog.ssmi
+xm.bog.tas
+xm.cay
+xm.cay.hcraes
+xm.moc.elgoog
+xm.moc.erbilodacrem
+xm.moc.lasrevinule
+XmlLite.dll
+xN9u8t
+xob.ztirf
+xQ9\$@wK
+xRfD9u
+xuH97u
+xXD9d$@tQ
+y;2uQ
+yb.xednay
+yc.moc.elgoog
+yl.fda
+yl.moc.elgoog
+ym.moc.elgoog
+You must be logged on as Administrator/System [%d]
+You must be logged on as Administrator/System to access the cache.
+yp.moc.elgoog
+yu.moc.elgoog
+z.9Wv
+z+mF0
+zc.elgoog
+zc.eziveletaksec
+zc.maerts
+zc.manzes
+zc.manzes.hcraes
+zc.manzes.isacop
+zc.manzes.liame
+zc.murtnec
+zc.murtnec.liam
+zc.nzs.nigol
+zc.repus
+zc.sendi
+zc.trops
+zc.yknivon
+zc.ypam
+zd.elgoog
+ZERO_BYTE
+zf9E8u2
+zib.evolpihc
+zk.xednay
+zn.oc.captsew
+zn.oc.dlarehzn
+zn.oc.elgoog
+zn.oc.emedart
+zn.oc.ffuts
+zn.oc.nsm
+zn.oc.zna
+ZwClose
+ZwCreateFile
+ZwCreateSection
+ZwCreateSection failed [%x]
+ZwMapViewOfSection
+ZwMapViewOfSection failed to map the end of the file [%x]
+ZwMapViewOfSection failed to map the start of the file [%x]
+ZwOpenKey
+ZwQueryInformationFile
+ZwQuerySystemInformation
+ZwQuerySystemInformation failed [%x]
+ZwQueryValueKey
+ZwUnmapViewOfSection

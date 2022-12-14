@@ -1,0 +1,682 @@
+      
+          
+                  
+                               Each name is the displayName of the GPO in AD.
+                               Each path is a path to a registry policy file.
+                             Includes root Certificate Authority certificates.
+                           joining the domain.
+                      joining the domain in.
+                      the domain in.
+                  an administrator.
+                  This option requires that you are running as
+                  to simulate setup. Then reboot to complete the ODJ.
+                 This command must be run as a local Administrator.
+                 This option requires a reboot for changes to be applied.
+          /SAVEFILE <FilePath>
+          level="asInvoker"
+          Note: Other parameters are optional
+          uiAccess="false"/>
+        </requestedPrivileges>
+        <autoElevate>true</autoElevate>
+        <requestedExecutionLevel
+       %1!s!
+       </security>
+       ClientSiteName: %9!s!
+       DcSiteName: %8!s!
+       DnsDomainName: %2!wZ!
+       DnsForestName: %3!wZ!
+       DnsForestName: %6!s!
+       DomainControllerAddress: %2!s!
+       DomainControllerAddressType: 0x%3!x!
+       DomainControllerName: %1!s!
+       DomainGuid: %4!s!
+       DomainName: %5!s!
+       Flags: 0x%7!x!
+       Name: %1!wZ!
+       Sid: %5!s!
+      /CERTTEMPLATE <Name> - Optional <Name> of machine certificate template.
+      /DCNAME <DC> - Optional <DC> to target for account creation
+      /DEFPWD - Use default machine account password (not recommended)
+      /DOMAIN <Name> - <Name> of the domain to join
+      /DOWNLEVEL - Support using a Windows Server 2008 DC or earlier
+      /DSITE <Name> - Opt. <Name> of dynamic site to initially put the computer 
+      /LOADFILE <FilePath> - <FilePath> specified previously via /SAVEFILE
+      /LOCALOS - Allows /WINDOWSPATH to specify the locally running OS.
+      /MACHINE <Name> - Host <Name> of the computer joining the domain
+      /MACHINEOU <OU> - Optional <OU> where the account is created
+      /NETBIOS <Name> - Opt. Netbios <Name> of the computer joining the domain.
+      /NOSEARCH - Skip account conflict detection, requires DCNAME (faster)
+      /POLICYNAMES <Name(s)> - Opt. semicolon-separated list of policy names.
+      /POLICYPATHS <Path(s)> - Opt. semicolon-separated list of policy paths.
+      /PRIMARYDNS <Name> - Opt. <Name> of primary DNS domain of the computer
+      /PRIMEREG - Stores blob in local registry, re-run djoin.exe
+      /PRINTBLOB - Return base64 encoded metadata blob for an answer file
+      /PROVISIONDATA - Output from a previous PROVISION invocation
+      /PSITE <Name> - Opt. <Name> of persistent site to put the computer joining
+      /REUSE - Reuse any existing account (password will be reset)
+      /ROOTCACERTS - Opt. include root Certificate Authority certificates.
+      /SAVEFILE <FilePath> - Save provisioning data to a file at <FilePath>
+      /WINDOWSPATH <Path> - <Path> to the Windows directory in an offline image
+      <requestedPrivileges>
+      hive at <FilePath>.
+     name="Microsoft-Windows-UnattendedJoin"
+     processorArchitecture="amd64"
+     type="win32"/>
+    <security>
+    Options:
+   </asmv3:windowsSettings>
+   <asmv3:windowsSettings xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">
+   Blob size: %2!d!
+   Blob version: %1!d!
+   DcInfo:
+   DomainDnsPolicy:
+   lpDomain: %1!s!
+   lpMachineName: %2!s!
+   lpMachinePassword: <omitted>
+   Options: 0x0
+   Unknown version!
+  /DUMP <FilePath> - Dump a provisioning blob's contents from <FilePath>
+  /FORCEERROR - Test mode only, NetJoinDomain failure simulated
+  /PROVISION  - Provision a computer account in the domain
+  /REQUESTODJ  - Request offline domain join at next boot
+  /REQUESTODJ - Request offline domain join at next boot
+  /SAVETOHIVE <FilePath> - Store results of a /PROVISION operation to a registry
+  /TEST - Test mode, NetJoinDomain is not actually called
+  <!-- Identify the application security requirements. -->
+  </trustInfo>
+  <assemblyIdentity version="1.0.0.0"
+  <description>Domain Join Tool</description>
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+ !"#$%&'()*+,-./0123
+ A_A^_
+ A_A^A\
+ configured
+ H3E H3E
+ Microsoft Corporation. All rights reserved.
+ Operating System
+ Windows
+!This program cannot be run in DOS mode.
+%2!s!
+%s: %s = [%s]
+%s: %s data could not be base64 decoded
+%s: %s requires that JoinDomain be set.
+%s: %sOrchestrateStartSystemServices failed: 0x%x, last error is 0x%x
+%s: ...one or more are not...waiting for auto start services...
+%s: Allowing ODJ on local running OS per override switch /LOCALOS
+%s: At least one of JoinWorkgroup/JoinDomain must be specified: 0x%x
+%s: Calling DsGetDcName for %s...
+%s: Checking that auto start services have started.
+%s: Constructed domain parameter [%s]
+%s: DebugJoin invoked...
+%s: DsGetDcName failed: 0x%x, last error is 0x%x, will retry in %d seconds...
+%s: DsGetDcName returned [%s]
+%s: DsGetDcName test failed: 0x%x, last error is 0x%x, breaking if debugger attached...
+%s: Dumping a provisioning blob from a file: %s
+%s: Enabled DC Locator ETW tracing. Log file: %ws
+%s: Exit, returning 0x%x
+%s: Failed to determine the local Windows installation path: %d
+%s: Failed to load all required input parameters, error occured processing [%s]: 0x%x
+%s: Failed to load provision data from file: %s: %d
+%s: Failed to open registry key [%s]: 0x%x
+%s: Failed to open registry key [SYSTEM\CurrentControlSet\Services\Tcpip\Parameters]: 0x%x
+%s: Failed to open SCM handle.  Error 0x%x.
+%s: Failed to open service handle for service %ws.  Error 0x%x.
+%s: Failed to pack the provisioning data
+%s: Failed to query service %ws.  Error 0x%x.
+%s: Failed to read registry value [SYSTEM\CurrentControlSet\Services\Tcpip\Parameters!NV Hostname]: 0x%x
+%s: Failed to request offline domain join
+%s: Failed to start service %ws.  Error 0x%x.
+%s: Failed to write new hostname "%ws": 0x%x
+%s: Invalid input parameter combination
+%s: Joining workgroup [%s]...
+%s: Loading input parameters...
+%s: Loading provision data from file: %s
+%s: Manually updated Hostname to "%ws".
+%s: NetJoinDomain attempt failed because account exists: 0x%x, will try to reuse existing account...
+%s: NetJoinDomain attempt failed because Win8 DC required: 0x%x, will try to find a Win8 DC...
+%s: NetJoinDomain attempt failed: 0x%x, will retry in %d seconds...
+%s: NetJoinDomain failed error code is [%d]
+%s: NetJoinDomain not supported
+%s: NetJoinDomain succeeded!
+%s: NetUseAdd bad parameter is %lu
+%s: NetUseAdd test failed: 0x%x, last error is 0x%x, breaking if debugger attached...
+%s: NetUseAdd to %ws returned %lu
+%s: NetUseDel on %ws failed with %d
+%s: NetUseDel test failed: 0x%x, last error is 0x%x, breaking if debugger attached...
+%s: NetUseDel with force on %ws failed with %d
+%s: NullSession NetUseAdd to %ws returned %lu
+%s: Offline domain join failed: %d
+%s: Offline domain join request completed successfully.
+%s: Offline domain join requested
+%s: Passing %s or setting %s requires: %s, %s, and %s must be NULL
+%s: Passing %s requires explicitly setting %s
+%s: Processing offline domain join
+%s: Provision computer account
+%s: PROVISIONDATA could not be base64 decoded
+%s: Provisioning blob will be placed in the registry to allow setup testing
+%s: Provisioning blob will be read from a file %s
+%s: Provisioning blob will be saved to a file %s
+%s: Provisioning blob will be saved to a registry hive: %s
+%s: Test mode - actual join will not be performed
+%s: The operation will target the DC: %s
+%s: Timeout while waiting for service %ws to start.  Timeout 0x%xms.
+%s: Trying add to %ws using NULL Session
+%s: UjDebugManageIPCConnect: server name %ws too long - error out
+%s: UjStartDCLocatorTraceSession: EnableTrace failed with error 0x%x
+%s: UjStartDCLocatorTraceSession: ExpandEnvironmentStringsW failed for %ws, last error is 0x%x
+%s: UjStartDCLocatorTraceSession: LocalAlloc failed for buffer size %d
+%s: UjStartDCLocatorTraceSession: StartTraceW failed with error 0x%x
+%s: UjStopDCLocatorTraceSession: ControlTraceW (EVENT_TRACE_CONTROL_STOP) failed with error 0x%x
+%s: UjStopDCLocatorTraceSession: LocalAlloc failed for buffer size %d
+%s: Unable to join; gdwError = 0x%x
+%s: Using default machine account password
+%s: Warning! Skipping account conflict search per request
+%s: Will fallback to pre-ldap provisioning algorithm
+%s: Will include root Certificate Authority certificates
+%s: Will return base64 encoded metadata blob
+%s: Will reuse any existing account (password will be reset)
+%windir%\Panther\UnattendGC
+%windir%\Panther\UnattendGC\UnattendedJoinDCLocator.etl
+%ws%ws
+%ws%ws%ws
+%ws\%ws
+(_^][
+**     %ls
+** Cannot load string resource %d, error %d:
+.00cfg
+.CRT$XCA
+.CRT$XCAA
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIY
+.CRT$XIZ
+.data
+.data$brc
+.didat$2
+.didat$3
+.didat$4
+.didat$5
+.didat$6
+.didat$7
+.gfids
+.giats
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.pdata
+.rdata
+.rdata$brc
+.rdata$zzzdbg
+.rsrc
+.rsrc$01
+.rsrc$02
+.text
+.text$di
+.text$mn
+.text$mn$00
+.text$x
+.text$yd
+.xdata
+/DSITE and /PSITE may not be specified at the same time.
+/LOCALOS operates on the local registry, this OS is configured
+/LOCALOS specified but the current OS does not support domain join functionality.
+/PRIMEREG operates on the local registry. Therefore /WINDOWSPATH
+/REQUESTODJ only operates on an offline (not running) Windows image 
+/REQUESTODJ operates on a Windows image. Supply a
+?456789:;<=
+?terminate@@YAXXZ
+@.data
+@.didat
+@.reloc
+@A_A^A]A\_^]
+@SUVWATAVAWH
+@USVWATAUAVAWH
+[%S] %S
+\$ UH
+\$ UVWATAUAVAWH
+\$8E3
+\\?\UNC
+\IPC$
+__C_specific_handler
+__CxxFrameHandler3
+__dllonexit
+__iob_func
+__set_app_type
+__setusermatherr
+__wgetmainargs
+_amsg_exit
+_cexit
+_commode
+_exit
+_fmode
+_initterm
+_lock
+_onexit
+_unlock
+_vsnprintf
+_vsnwprintf
+_wcsicmp
+_wcsnicmp
+_wtoi
+_XcptFilter
+`.rdata
+|$0A^A]
+<!-- Copyright (c) Microsoft Corporation -->
+</asmv3:application>
+</assembly>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<asmv3:application>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1"  xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0">
+<unknown>
+040904B0
+0A_A^A\
+0A_A^A\_^][
+0A_A^A]A\_
+10.0.17763.1
+10.0.17763.1 (WinBuild.160101.0800)
+A reboot is required for changes to be applied.
+A_A^A\_^
+A_A^A\_^][
+A_A^A]A\]
+A_A^A]A\_^[]
+AccountData
+Advanced options:
+advapi32.dll
+AdvHelp
+api-ms-win-core-console-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-0.dll
+api-ms-win-core-delayload-l1-1-1.dll
+api-ms-win-core-errorhandling-l1-1-0.dll
+api-ms-win-core-file-l1-1-0.dll
+api-ms-win-core-handle-l1-1-0.dll
+api-ms-win-core-heap-l1-1-0.dll
+api-ms-win-core-heap-l2-1-0.dll
+api-ms-win-core-libraryloader-l1-2-0.dll
+api-ms-win-core-localization-l1-2-0.dll
+api-ms-win-core-processenvironment-l1-1-0.dll
+api-ms-win-core-processthreads-l1-1-0.dll
+api-ms-win-core-profile-l1-1-0.dll
+api-ms-win-core-registry-l1-1-0.dll
+api-ms-win-core-rtlsupport-l1-1-0.dll
+api-ms-win-core-synch-l1-1-0.dll
+api-ms-win-core-synch-l1-2-0.dll
+api-ms-win-core-sysinfo-l1-1-0.dll
+api-ms-win-eventing-classicprovider-l1-1-0.dll
+api-ms-win-eventing-controller-l1-1-0.dll
+api-ms-win-eventing-legacy-l1-1-0.dll
+api-ms-win-eventing-provider-l1-1-0.dll
+api-ms-win-service-management-l1-1-0.dll
+api-ms-win-service-winsvc-l1-1-0.dll
+as a domain controller. The operation is not supported.
+Base64 decoding blob...
+by default. The path supplied [%1!s!] is the current running Windows 
+Can't retrieve message string %d (0x%x), error %d.
+CertTemplate
+CertTemplate:%s
+CloseHandle
+CloseServiceHandle
+CompanyName
+Computer provisioning completed successfully.
+Computer provisioning failed: 0x%1!x!.
+ComputerName
+ConstructPartialMsgVA
+ConstructPartialMsgVW
+ControlTraceW
+CreateDirectoryW
+CreateEventW
+CreateFileW
+CreatePath: Unable to create [%s]; GLE = 0x%x
+CreatePath: Unable to create parent directory for [%s]; GLE = 0x%x
+Credentials
+CurrentIP
+D$ E3
+D$ I;
+D$(E3
+D$@E3
+d$0E3
+D$4A+
+D$8E3
+D$HE3
+D8eHt
+D9d$p
+D9eXt
+DbgPrint
+DCName
+Debug mode: Breaking to debugger on%s error: %d
+Debug mode: Will break on error: %s
+DebugJoin
+DebugJoin unattend directive is being ignored due to not running under a Kernel debugger session
+DebugJoinOnlyOnThisError
+DefPwd
+DelayLoadFailureHook
+DeleteCriticalSection
+DeleteFileW
+djoin.exe
+djoin.exe /PROVISION /DOMAIN <DomainName> /MACHINE <MachineName>
+djoin.exe /REQUESTODJ /LOADFILE <FilePath> /WINDOWSPATH <Path>
+djoin.exe again with the same machine name.
+djoin.pdb
+Domain
+Domain: %s
+Downlevel
+DsGetDcNameW
+DSite
+DynamicSite:%s
+E/D!E
+EnableTrace
+Encoded provision data received:%s
+EnterCriticalSection
+en-US
+EventRegister
+EventUnregister
+EventWrite
+Examples:
+ExpandEnvironmentStringsW
+f9,Au
+f9<Au
+f94Gu
+f9H\u
+fA;z*
+fA9z*v$A
+Failed to create the registry key %1!s!: 0x%2!x!.
+Failed to create the registry value [%1!s!]: 0x%2!x!.
+Failed to load provision data from the file [%1!s!]: 0x%2!x!
+Failed to load provisioning data from the file [%1!s!]: 0x%2!x!.
+Failed to open the registry key %1!s!: 0x%2!x!.
+Failed to prime provisioning data in the registry: 0x%1!x!.
+Failed to provision [%1!s!] in the domain [%2!s!]: 0x%3!x!.
+Failed to save provisioning data to the file [%1!s!]: 0x%2!x!.
+fB9<pu
+fD!E7H
+fD9$_u
+fD9$Au
+fD9$Bu
+fD9$Nu
+fD9$Ou
+fD9$ou
+fD9,Au
+fD9,Cs
+fD9,Ss
+fD9,yu
+fD9,Zu
+fD91tV=
+fD9z*vV
+fE9$Fu
+fE9$Gu
+fE9$Pu
+FileDescription
+FileVersion
+ForceError
+FormatMessageW
+FreeLibrary
+fwprintf
+GetConsoleOutputCP
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThreadId
+GetFileAttributesW
+GetFileSize
+GetFullPathNameW
+GetLastError
+GetModuleFileNameW
+GetModuleHandleW
+GetProcAddress
+GetProcessHeap
+GetStdHandle
+GetSystemTimeAsFileTime
+GetTickCount
+GetTickCount64
+GetTraceEnableFlags
+GetTraceEnableLevel
+GetTraceLoggerHandle
+GetVersionExW
+GetWindowsDirectoryW
+Global\OOBE_MACHINE_NAME_DONE
+Global\SC_AutoStartComplete
+H SVWH
+HA_A^A]A\_^[]
+HcA<H
+HeapAlloc
+HeapFree
+HeapSetInformation
+Hostname
+Identification
+InitializeCriticalSection
+installation. To override the default behavior and target the currently 
+InternalName
+Invalid input parameter combination.
+is an invalid parameter in combination with /PRIMEREG.
+It may be necessary to specify /REUSE when running
+J tEA
+JoinDomain
+JoinWorkgroup
+K tEA
+L$ SUVWH
+L$ SVWH
+L$ SWH
+L$ UH
+L$(E3
+L$8E3
+L$PH3
+L9UWt
+LanmanWorkstation
+LcA<E3
+LeaveCriticalSection
+LegalCopyright
+LoadFile
+Loading provisioning data from the following file: [%1!s!].
+LoadLibraryExW
+LoadStringW
+LocalAlloc
+LocalFree
+LocalOS
+logoncli.dll
+Machine
+Machine:%s
+MachineObjectOU
+MachineOU
+MachineOU:%s
+MachinePassword
+malloc
+memcpy
+memset
+Message 0x%x not found. Error %d.
+Microsoft
+Microsoft Corporation
+Microsoft-Windows-UnattendedJoin
+mpssvc
+msvcrt.dll
+NetApiBufferAllocate
+NetApiBufferFree
+Netbios
+NetbiosName:%s
+NetCreateProvisioningPackage
+netjoin.dll
+NetJoinDomain
+NetpAnalyzeProvisioningPackage
+NetpProvDomainJoinLicensingCheck
+NetpRequestProvisioningPackageInstallForIMC
+netprovfw.dll
+NetProvisionComputerAccount
+NetRequestProvisioningPackageInstall
+NetUseAdd
+NetUseDel
+netutils.dll
+NoSearch
+NtAdjustPrivilegesToken
+NtClose
+ntdll.dll
+NtDuplicateToken
+NtOpenProcessToken
+NtSetInformationThread
+NV Hostname
+o\$PH
+oD$ f
+oL$0f
+onecore\base\ntsetup\lib\unattendlog\src\unattendlog.cpp
+OpenEventW
+OpenSCManagerW
+OpenServiceW
+OrchestrateStartSystemServices: Timed out waiting for autostart services to start; timeout = %d ms.
+OrchestrateStartSystemServices: Timed out while waiting for SCM to create autostart-done event; timeout = %d ms.
+OrchestrateStartSystemServices: Unable to create/open event that signals autostart services have started; hr = 0x%x
+OrchestrateStartSystemServices: Unable to create/open event to trigger start of autostart services; hr = 0x%x
+OrchestrateStartSystemServices: Unable to set event to trigger start of autostart services; hr = 0x%x
+OrchestrateStartSystemServices: Unknown error occurred while waiting for services to start; hr = 0x%x
+OriginalFilename
+oT$@f
+p WATAUAVAWH
+PA_A^A]A\_^]
+pA_A^A]A\_^]
+Password
+path to this image via /WINDOWSPATH.
+PersistentSite:%s
+PolicyNames
+PolicyNames:%s
+PolicyPaths
+PolicyPaths:%s
+PrimaryDNS
+PrimaryDSDomain:%s
+PrimeReg
+PrintBlob
+printf
+ProductName
+ProductVersion
+Provision
+PROVISION requires DOMAIN, MACHINE and SAVEFILE: 0x%1!x!.
+ProvisionData
+Provisioning
+Provisioning data is primed in the registry, Run djoin.exe again to simulate setup.
+Provisioning data was saved successfully to [%1!s!].
+Provisioning string (%1!ul! bytes): 
+Provisioning the computer...
+PSite
+QueryPerformanceCounter
+QueryServiceStatus
+ReadFile
+RegCloseKey
+RegCreateKeyExW
+RegDeleteValueW
+RegisterTraceGuidsW
+RegLoadKeyW
+RegOpenKeyExW
+RegQueryValueExW
+RegSaveKeyExW
+RegSetValueExW
+RegUnLoadKeyW
+RequestODJ
+ResolveDelayLoadedAPI
+Reuse
+RootCACerts
+RPCRT4.dll
+RpcStringFreeW
+RSDS(
+RtlAllocateHeap
+RtlCaptureContext
+RtlFreeHeap
+RtlGetNtProductType
+RtlLookupFunctionEntry
+RtlNtStatusToDosError
+RtlVirtualUnwind
+running local operating system also specify /LOCALOS.
+s$fD;{*
+SaveFile
+SaveToHive
+secret not logged
+Sequence
+SetEvent
+SetLastError
+setlocale
+SetThreadPreferredUILanguages
+Setting timeout period to default, user specified value of: %s minutes is out of range (5-60)
+Setting timeout period to user specified value of: %s minutes
+SetUnhandledExceptionFilter
+Simulated setup offline domain join request completed successfully.
+Sleep
+Software\Microsoft\Windows NT\CurrentVersion
+Software\Microsoft\Windows NT\CurrentVersion\UnattendSettings\Microsoft-Windows-UnattendedJoin\Identification
+specialize
+StartServiceW
+StartTraceW
+StringFileInfo
+Successfully provisioned [%1!s!] in the domain [%2!s!].
+Successfully stored the encoded provisioning blob in [%1!s!] beneath [HKLM\\%2!s!].
+SUVWATAVAWH
+swprintf_s
+SYSTEM\ControlSet001\Control\ComputerName\ComputerName
+SYSTEM\CurrentControlSet\Services\Tcpip\Parameters
+T$@E3
+t$0E3
+T$hE3
+t=D9%
+tef;9t`E3
+TerminateProcess
+TestMode enabled, Orchestrate* API errors ignored - 
+TESTMODE, decoding...
+The base64 blob was decoded, unpacking...
+The blob decoded successfully. Printing...
+The decoded value from the file [%1!s!] is not valid: 0x%2!x!.
+The offline domain join request completed. [TESTMODE - Dumping blob]
+The offline domain join request failed: 0x%1!x!.
+The operation is not supported.
+The PROVISIONDATA value could not be unpacked: 0x%1!x!.
+The PROVISIONDATA value is not valid: 0x%1!x!.
+The provisioning data could not be loaded: 0x%1!x!.
+The provisioning data could not be unpacked: 0x%1!x!.
+The provisioning data is not valid: 0x%1!x!.
+The provisioning request completed successfully.
+The simulated setup offline domain join request failed: 0x%1!x!.
+This operating system is configured as a domain controller. 
+TimeoutPeriodInMinutes
+To provision a computer account in the domain:
+To request the local machine to perform an offline domain join:
+TraceEvent
+Translation
+u HcA<H
+u%s: Begin
+u*9Q<|%
+u`@8=
+Unattended Join
+Unattended Setup Generic Command For Domain Join
+UnattendedJoinDCLocator
+UnattendLogWV
+UnattendSettings
+UnhandledExceptionFilter
+Unknown
+UnregisterTraceGuids
+UnsecureJoin
+Usage: djoin.exe [/OPTIONS]
+Username
+USVWATAUAVAWH
+UuidCreate
+UuidToStringW
+UVWATAUAVAWH
+UWAWH
+VarFileInfo
+VS_VERSION_INFO
+VWATAVAWH
+WaitForSingleObject
+WAVAWH
+wcschr
+wcscpy_s
+wcsrchr
+wdscore.dll
+WdsGenericSetupLogInit
+WdsSetupLogDestroy
+-WdsSetupLogInit
+WdsSetupLogMessageA
+WdsSetupLogMessageW
+WindowsPath
+WindowsPath specified:%s
+wkscli.dll
+wprintf
+WriteFile
+wVfD91H
+x ATAVAWH
+x AUAVI
+x AVH
+x UATAUAVAWH

@@ -1,0 +1,91 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\devauthe.sys
+
+File Type: DLL
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    cng.sys
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C000D0A8 Import Address Table
+             1C000D1E0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         74C RtlCompareMemory
+                         AF4 atoi
+                         B1F strncpy
+                         8BC RtlTimeFieldsToTime
+                          9C ExAllocatePoolWithTag
+                          C3 ExFreePoolWithTag
+                         760 RtlCopyUnicodeString
+
+    cng.sys
+             1C000D000 Import Address Table
+             1C000D138 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          14 BCryptGenRandom
+                          23 BCryptSecretAgreement
+                           A BCryptDestroySecret
+                           5 BCryptDeriveKey
+                          10 BCryptExportKey
+                          15 BCryptGenerateKeyPair
+                          11 BCryptFinalizeKeyPair
+                           2 BCryptCreateHash
+                          1A BCryptHashData
+                           D BCryptEncrypt
+                           9 BCryptDestroyKey
+                          18 BCryptGetProperty
+                          28 BCryptVerifySignature
+                          1E BCryptOpenAlgorithmProvider
+                           B BCryptDuplicateHash
+                          12 BCryptFinishHash
+                           1 BCryptCloseAlgorithmProvider
+                           8 BCryptDestroyHash
+                          1C BCryptImportKeyPair
+                          25 BCryptSignHash
+
+  Section contains the following exports for DevAuthE.sys
+
+    00000000 characteristics
+    F73D586E time date stamp
+        0.00 version
+           1 ordinal base
+          10 number of functions
+          10 number of names
+
+    ordinal hint RVA      name
+
+          1    0 000013A0 DevAuthExportKey
+          2    1 00001450 DevAuthGetDeviceInfo
+          3    2 00001240 DevAuthGetHostMessage
+          4    3 000011F0 DevAuthGetStatus
+          5    4 000015F0 DevAuthGetTelemetryInfo
+          6    5 00001300 DevAuthProcessDeviceMessage
+          7    6 000010D0 DevAuthRegister
+          8    7 00001120 DevAuthUnregister
+          9    8 00001010 DllInitialize
+         10    9 0000E010 DllUnload
+
+  Summary
+
+        1000 .data
+        1000 .edata
+        1000 .idata
+        1000 .pdata
+        3000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        7000 .text
+        1000 GFIDS
+        1000 INIT
+        1000 PAGE

@@ -1,0 +1,268 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\vmbus.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    HAL.dll
+    hvsocket.sys
+    vmbkmcl.sys
+    winhv.sys
+    WDFLDR.SYS
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C001A058 Import Address Table
+             1C001A738 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         493 KeRundownQueue
+                          C3 ExFreePoolWithTag
+                         9E3 ZwClose
+                         70F PsTerminateSystemThread
+                         668 PsCreateSystemThreadEx
+                         44C KeQueryActiveProcessorCountEx
+                         7FC RtlInitUnicodeString
+                         7EC RtlGetVersion
+                          75 EtwUnregister
+                         513 MmGetSystemRoutineAddress
+                          70 EtwRegister
+                         39D IoWMIRegistrationControl
+                         ABB __C_specific_handler
+                         54F MmUnlockPages
+                         53B MmProbeAndLockPages
+                         108 ExReleaseFastMutex
+                         26B IoAllocateMdl
+                         49C KeSetEvent
+                         2BF IoFreeMdl
+                          83 ExAcquireFastMutex
+                         41B KeInitializeEvent
+                         4C5 KeWaitForSingleObject
+                         AE4 _vsnwprintf
+                         45B KeQueryNodeActiveAffinity
+                         749 RtlCmDecodeMemIoResource
+                         45A KeQueryMaximumProcessorCountEx
+                         30E IoOpenDeviceRegistryKey
+                         353 IoSetDevicePropertyData
+                         40E KeGetProcessorIndexFromNumber
+                         455 KeQueryHighestNodeNumber
+                         3AA IofCompleteRequest
+                         AA6 ZwSetValueKey
+                         3C9 KeAcquireSpinLockRaiseToDpc
+                         13E ExUnblockOnAddressPushLockEx
+                         796 RtlEqualUnicodeString
+                         5F8 ObfDereferenceObject
+                          9C ExAllocatePoolWithTag
+                         8CE RtlUnicodeStringToInteger
+                         3C7 KeAcquireSpinLockAtDpcLevel
+                          9F ExBlockOnAddressPushLock
+                         47F KeReleaseSpinLockFromDpcLevel
+                         528 MmMapLockedPagesSpecifyCache
+                         334 IoReleaseCancelSpinLock
+                         74F RtlCompareUnicodeString
+                          FC ExRegisterCallback
+                          84 ExAcquireFastMutexUnsafe
+                         24D HvlUnregisterInterruptCallback
+                         3F2 KeEnterCriticalRegion
+                          A9 ExCreateCallback
+                         30D IoOpenDeviceInterfaceRegistryKey
+                         2D5 IoGetDeviceObjectPointer
+                         24B HvlRegisterInterruptCallback
+                         109 ExReleaseFastMutexUnsafe
+                         43D KeLeaveCriticalRegion
+                         7C4 RtlGUIDFromString
+                         2DA IoGetDmaAdapter
+                         760 RtlCopyUnicodeString
+                         3AD KdDebuggerEnabled
+                         4F9 MmBuildMdlForNonPagedPool
+                          56 DbgBreakPointWithStatus
+                         551 MmUnmapIoSpace
+                         50F MmGetPhysicalAddress
+                         23F HvlInvokeHypercall
+                         526 MmMapIoSpaceEx
+                         3B6 KdPollBreakIn
+                         420 KeInitializeQueue
+                         487 KeRemoveQueue
+                         42C KeInsertQueue
+                         3D9 KeBugCheckEx
+                         5FA ObfReferenceObject
+                         A97 ZwSetInformationThread
+                         47D KeReleaseSpinLock
+                         4A9 KeSetSystemGroupAffinityThread
+                         A6C ZwQuerySystemInformation
+                         40F KeGetProcessorNumberFromIndex
+                          F1 ExQueueWorkItem
+                         552 MmUnmapLockedPages
+                         449 KeQueryActiveGroupCount
+                         4AB KeSetTargetProcessorDpcEx
+                         4C7 KfRaiseIrql
+                         441 KeLowerIrql
+                         492 KeRevertToUserGroupAffinityThread
+                         240 HvlPerformEndOfInterrupt
+                         115 ExReleaseRundownProtection
+                         402 KeFlushQueuedDpcs
+                         3DA KeCancelTimer
+                         3E9 KeDelayExecutionThread
+                          8C ExAcquireRundownProtection
+                         425 KeInitializeTimer
+                          D5 ExInitializeRundownProtection
+                          F8 ExReInitializeRundownProtection
+                         146 ExWaitForRundownProtectionRelease
+                         4AC KeSetTimer
+                         11D ExRundownCompleted
+                         417 KeInitializeDpc
+                         42E KeInsertQueueDpc
+                          7B EtwWriteTransfer
+                         31C IoQueueWorkItem
+                         2C2 IoFreeWorkItem
+                         26E IoAllocateWorkItem
+                         232 HviGetEnlightenmentInformation
+                         234 HviGetHypervisorFeatures
+                         792 RtlEnumerateGenericTableWithoutSplayingAvl
+                         849 RtlLookupElementGenericTableAvl
+                         77A RtlDeleteElementGenericTableAvl
+                         803 RtlInitializeGenericTableAvl
+
+    HAL.dll
+             1C001A000 Import Address Table
+             1C001A6E0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          54 KeStallExecutionProcessor
+
+    hvsocket.sys
+             1C001A038 Import Address Table
+             1C001A718 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           B HvSocketProviderStart
+                           C HvSocketProviderStop
+                           6 HvSocketFillInterface
+
+    vmbkmcl.sys
+             1C001A3B0 Import Address Table
+             1C001AA90 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           F VmbChannelGetParentDeviceObject
+                          13 VmbChannelGetTargetDeviceObject
+                           5 VmbChannelCreateGpadlFromMdl
+                           C VmbChannelGetNumaNodeMap
+                          28 VmbChannelPacketShortLifetime
+                          23 VmbChannelPacketDeferToPassive
+                          4A VmbSizeofChannel
+                          34 VmbChannelSetTransactionQuota
+                          30 VmbChannelSetIncomingProcessingAtPassive
+                          27 VmbChannelPacketGetExternalData
+                          24 VmbChannelPacketDeferUntilPolled
+                          2F VmbChannelSetIncomingPollOnCompletion
+                          43 VmbPacketInitialize
+                          33 VmbChannelSetPollingMode
+                          41 VmbPacketGetChannel
+                          15 VmbChannelGetVMBusInterface
+                          44 VmbPacketSend
+                          12 VmbChannelGetStatistics
+                          1A VmbChannelInitSetMaximumExternalData
+                          21 VmbChannelInitialize
+                           E VmbChannelGetPacketDescriptor
+                          31 VmbChannelSetInterruptLatency
+                          1E VmbChannelInitSetShortLifetimeThreshold
+                          16 VmbChannelGetVirtualProcessorCount
+                          17 VmbChannelInitSetClientContextSize
+                          22 VmbChannelPacketComplete
+                          1B VmbChannelInitSetMaximumPacketSize
+                          35 VmbChannelSizeofPacket
+                          42 VmbPacketGetPointer
+                           A VmbChannelGetInterfaceInstance
+                          3E VmbPacketAllocate
+                          14 VmbChannelGetTargetProcessorIndex
+                          49 VmbPacketSetPointer
+                          3B VmbClientChannelInitSetTargetPnp
+                          38 VmbChannelUpdateInterruptProcessor
+                          18 VmbChannelInitSetFlags
+                          1F VmbChannelInitSetStateChangeCallbacks
+                          3A VmbClientChannelInitSetTargetFile
+                           3 VmbChannelCleanup
+                          32 VmbChannelSetPointer
+                          2B VmbChannelPurge
+                          20 VmbChannelInitSuppressQueueManagement
+                          19 VmbChannelInitSetFriendlyName
+                           8 VmbChannelEnable
+                          2C VmbChannelSendInterrupt
+                           2 VmbChannelAllocate
+                          46 VmbPacketSendWithExternalPfns
+                          2D VmbChannelSendSynchronousRequest
+                          45 VmbPacketSendWithExternalMdl
+                          26 VmbChannelPacketGetClientContext
+                          48 VmbPacketSetCompletionRoutine
+                           4 VmbChannelCreateGpadlFromBuffer
+                          2A VmbChannelPollRingBuffer
+                          2E VmbChannelSetAllowableDpcCpuUsage
+                          3C VmbClientChannelInitSetTargetProcessorIndex
+                          1D VmbChannelInitSetProcessPacketCallbacks
+                          1C VmbChannelInitSetPrimaryChannel
+                           6 VmbChannelDeleteGpadl
+                          37 VmbChannelUpdateClientContextSize
+                          25 VmbChannelPacketFail
+                           B VmbChannelGetMmioSpace
+                          40 VmbPacketFree
+                          36 VmbChannelStart
+                          10 VmbChannelGetPointer
+                           D VmbChannelGetOfferData
+                           7 VmbChannelDisable
+                           9 VmbChannelGetClientStatsBuffer
+                          39 VmbClientChannelInitSetRingBufferPageCount
+                          29 VmbChannelPause
+                          11 VmbChannelGetRingBuffer
+
+    winhv.sys
+             1C001A5E8 Import Address Table
+             1C001ACC8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           3 WinHvAllocateOverlayPages
+                           B WinHvGetSintMessage
+                           8 WinHvFreeOverlayPages
+                          14 WinHvSetSint
+                          13 WinHvSetEndOfMessage
+                           F WinHvPostMessage
+                           E WinHvNtProcessorToVpIndex
+                          17 WinHvSignalEvent
+                          12 WinHvReconnectSynic
+                           A WinHvGetSintEventFlags
+
+    WDFLDR.SYS
+             1C001A010 Import Address Table
+             1C001A6F0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           9 WdfVersionUnbindClass
+                           6 WdfVersionBind
+                           7 WdfVersionBindClass
+                           8 WdfVersionUnbind
+
+  Summary
+
+        5000 .data
+        3000 .idata
+        2000 .pdata
+        3000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        B000 .text
+        1000 GFIDS
+        1000 INIT
+        4000 NONPAGE
+        8000 PAGE

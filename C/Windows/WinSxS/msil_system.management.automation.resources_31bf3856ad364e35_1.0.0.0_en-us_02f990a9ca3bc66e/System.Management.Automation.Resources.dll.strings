@@ -1,0 +1,3410 @@
+     ! SET-MULTIPLE ${0} = '{1}'.
+    ! CALL function '{0}'
+    ! CALL method '{0}'
+    ! CALL script '{0}'
+    ! CALL scriptblock.
+    ! SET ${0} = '{1}'.
+    "get-help about_commonparameters".
+    1. Starting or restarting (if already started) the WinRM service
+    1. Stop and disable the WinRM service.
+    2. Delete the listener that accepts requests on any IP address.
+    2. Setting the WinRM service type to auto start
+    3. Creating a listener to accept requests on any IP address
+    3. Disable the firewall exceptions for WS-Management communications.
+    4. Enabling firewall exception for WS-Management traffic (for http only).
+    4. Restore the value of the LocalAccountTokenFilterPolicy to 0, which restricts remote access to members of the Administrators group on the computer.
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer and OutVariable. For more information, type,
+    This cmdlet supports the common parameters: Verbose, Debug,
+  {0}, {1,-16} Continue execution
+ "#requires -pssnapin <psSnapInName> [-version <major.minor>]"
+ "#requires -shellid <shellID>"
+ "#requires -version <major.minor>"
+ {6} parameter requires a string.G
+ Cannot bind parameter '{1}'. {6}
+ Cannot convert note "{0}":"{1}".
+ Client side receive call failed.
+ CloseError: ({1}:{2}) [{0}], {3}
+ Company or vendor of this module
+ End the operation with an error.
+ FromStdErr: ({1}:{2}) [{0}], {3}
+ Member "{0}" is already present.
+ Member "{0}" must not be present
+ Missing '{' in switch statement.
+ Module manifest for module '{0}'
+ Redirection to '{0}' failed: {1}
+ The file could not be read: {0}.
+ The hash literal was incomplete.
+ The member "{0}" is not present.
+ This includes:
+ WriteError: ({1}:{2}) [{0}], {3}
+!(c) {0} {1}. All rights reserved.
+!A key at this path already exists
+!Cannot copy item {0} onto itself.
+!Cannot find Help for topic "{0}".
+!Cannot locate history for Id {0}.
+!Cannot write to the registry key.
+!DeviceError: ({1}:{2}) [{0}], {3}
+!Execution status of last command.
+!For technical information, type: 
+!InvalidData: ({1}:{2}) [{0}], {3}
+!InvalidType: ({1}:{2}) [{0}], {3}
+!Line breakpoint on '{0}:{1}, {2}'
+!Name of the current console file.
+!ParserError: ({1}:{2}) [{0}], {3}
+!Path {0} is not an absolute path.
+!Registering session configuration
+!Remote host call to "{0}" failed.
+!SyntaxError: ({1}:{2}) [{0}], {3}
+!The subkey argument is not valid.
+!There is no source code available
+!This program cannot be run in DOS mode.
+!Version of PSObject is not valid.
+""{0}" failed on property "{1}" {2}
+"{0}" cannot be changed.
+"{0}" is a ReadOnly property.
+"{0}" returned a null value.
+'"{0}" should have at least one element.
+"A name argument must be specified.
+"Action to take for this exception:
+"Aliases to export from this module
+"AuthorizationManager check failed.
+"Cannot convert null to type "{0}".
+"Cmdlets to export from this module
+"Item: {0} Property: {1} Value: {2}
+"member "{0}" must have type "{1}".
+"Missing ) at end of subexpression.
+"Missing } at end of variable name.
+"Missing closing ')' in expression.
+"No parameter matches criteria {0}.
+"NotInstalled: ({1}:{2}) [{0}], {3}
+"NotSpecified: ({1}:{2}) [{0}], {3}
+"Remote Session closed for Uri {0}.
+"Removing the imported "{0}" alias.
+"ResourceBusy: ({1}:{2}) [{0}], {3}
+"Restart-Service"
+"Standard Input handle is not open.
+"The command {0} was not found, but does exist in the current location. Windows PowerShell doesn't load commands from the current location by default. If you trust this command, instead type `"{1}`". See `"get-help about_Command_Precedence`" for more details."
+"The member name "{0}" is reserved.
+"Too many scopes have been created.
+"u*9'
+"Unknown assignment operator '{0}'.
+"Unrecognized token in source text.
+"UserName is not in correct format.
+#{0}Redirect location reported: {1}.
+#A value argument must be specified.
+#Blob
+#Connecting to remote server failed.
+#Copyright statement for this module
+#Deserialized remoting data is null.
+#Dot-sourcing the script file '{0}'.
+#GUID
+#InvalidResult: ({1}:{2}) [{0}], {3}
+#MetadataError: ({1}:{2}) [{0}], {3}
+#Missing argument in parameter list.
+#Missing expression in foreach loop.
+#Missing statement body in {0} loop.
+#No files matching '{0}' were found.
+#No object found for referenceId {0}
+#Parameter {0} requires an argument.
+#Parameter {6} is specified already.
+#Requires has specified only a shellID. #Requires needs to specify a required Windows PowerShell snap-in when running in Windows PowerShell.
+#Strings
+#The base transaction is not active.
+$"{0}" needs to be a positive number.
+$An error of type "{0}" has occurred.
+$Bad argument to operator '{0}': {1}.
+$Cannot access a closed registry key.
+$Error in decoding Maximum runspaces.
+$Error in decoding Minimum runspaces.
+$Error in decoding PipelineStateInfo.
+$Error in decoding RunspaceStateInfo.
+$Functions to export from this module
+$Incomplete variable reference token.
+$Missing ] at end of attribute token.
+$Missing variable name after foreach.
+$Multiple matches found for name {0}.
+$Node of type "{0}" was not expected.
+$NotImplemented: ({1}:{2}) [{0}], {3}
+$Null is specified as dictionary key.
+$ObjectNotFound: ({1}:{2}) [{0}], {3}
+$ResourceExists: ({1}:{2}) [{0}], {3}
+$Serialized xml is nested too deeply.
+$t!C)
+$The adapted type "{0}" is not valid.
+$The member "{0}" is already present.
+$The switch statement was incomplete.
+$Variables to export from this modulej
+%An empty pipe element is not allowed.
+%An ExecutionContext has not been set.
+%An expression was expected after '('.
+%Braced variable name cannot be empty.
+%InvalidArgument: ({1}:{2}) [{0}], {3}
+%Missing closing ')' in subexpression.
+%Node "{0}" should have an inner text.
+%Object "{0}" is reported as an error.
+%Pipeline doesn't contain any command.
+%Removing the imported "{0}" function.
+%Removing the imported "{0}" variable.
+%Sending data to remote server failed.
+%The remote pipeline has been stopped.
+%tOhgvz
+%Windows PowerShell Credential Request
+&{0} does not contain item with id {1}.
+&Always run
+&Array assignment to [{0}] failed: {1}.
+&Break
+&Continue
+&Do not run
+&Error in decoding PowerShellStateInfo.
+&Halt Command
+&InvalidOperation: ({1}:{2}) [{0}], {3}
+&Missing name after 'function' keyword.
+&OperationStopped: ({1}:{2}) [{0}], {3}
+&OperationTimeout: ({1}:{2}) [{0}], {3}
+&PermissionDenied: ({1}:{2}) [{0}], {3}
+&Remoting data is missing {0} property.
+&Run once
+&Session Configuration "{0}" not found.
+&Suspend
+&The base transaction has not been set.
+&The item at path '{0}' already exists.
+&The property "{0}" has not been found.
+&Use `{ instead of { in variable names.
+&Windows PowerShell Credential Request 
+( {0}, {1,-16} Displays this help message
+({0}, {1}({2}) : Error in type "{3}": {4}
+(Cannot bind positional parameters '{1}'.
+(Category: 
+(Creating the "{0}" module manifest file.
+(default choices are {0})
+(default is "{0}")
+(default)
+(Error in decoding RunspacePoolStateInfo.
+(Expected XML tag "{0}" instead of "{1}".
+(Global Assembly Cache) {0}
+(ID used to uniquely identify this module
+(Invalid combination of options to -split
+(Invalid regular expression pattern: {0}.
+(Missing '(' after '{0}' in if statement.
+(Missing opening '(' after keyword '{0}'.
+(Program '{0}' failed to execute: {1}{2}.
+(Property {0} does not exist at path {1}.
+(Remote Session is not available for {0}.
+(Sending data to a remote command failed.
+)    ! Trap or Catch generic; caught [{0}]
+)   ! Setting parameterized property '{0}'
+) {0}, Get-PSCallStack  Display call stack
+)A transaction argument must be specified.
+)Argument: '{0}' should be a {1}. Use {2}.
+)Cannot find trace source with name '{0}'.
+)Cannot have two [ref] in a type sequence.
+)Catch block must be the last catch block.
+)Fragment blob length is out of range: {0}
+)Missing ']' after array index expression.
+)Node "{0}" should not have an inner text.
+)Operation not allowed on source location.
+)Receiving data from remote server failed.
+)Remoting data is missing CallId property.
+)Requested registry access is not allowed.
+)ResourceUnavailable: ({1}:{2}) [{0}], {3}
+)The background process exited abnormally.
+)There are no more objects to deserialize.
+)Type "{0}" should be a PSPropertyAdapter.
+)Z6Q+
+*A non-empty subkey name must be specified.
+*A variable with name '{0}' already exists.
+*Bad console file.  Element {0} is invalid.
+*Cannot load Help file "{0}". Details: {1}.
+*Cannot load resource string with id "{0}".
+*Cannot load resource with base name "{0}".
+*Cannot locate history for commandline {0}.
+*Cannot restore attributes on item {0}: {1}
+*Client has requested to close the session.
+*CodeProperty should have getter or setter.
+*Key for dictionary entry is not specified.
+*Missing or invalid array index expression.
+*Missing while or until keyword in do loop.
+*Multiple matches found for session ID {0}.
+*Multiple matches found for Session ID {0}.
+*No value specified for the Args parameter.
+*Parameter name or value must be specified.
+*Remote host method {0} is not implemented.
+*Server has requested to close the session.
+*The following member name is reserved: {0}
+*The item at the path '{0}' does not exist.
+*The right operand of '-as' must be a type.
+*The right operand of '-is' must be a type.
+*The specified privilege name is not valid.
+*The specified registry key does not exist.
+*Variable breakpoint on '${0}' ({1} access)
+,Error at XPath {0} in file {1}: Invalid {2}.
+,Item with specified name {0} already exists.
+,Missing 'in' after variable in foreach loop.
+,Missing statement after '=' in hash literal.
+,ScriptProperty should have getter or setter.
+,The maximum pool size cannot be less than 1.
+,The minimum pool size cannot be less than 1.
+,The wait handle type "{0}" is not supported.
+,Unable to access PublicKeyToken information.
+,Value for dictionary entry is not specified.
+.Bad regular expression supplied to '{0}': {1}.
+.Cannot bind parameter '{1}' to the target. {6}
+.Could not compare "{0}" to "{1}". Error: "{2}"
+.File {0} already exists and {1} was specified.
+.File {0} already exists and {1} was specified.ns
+.l(,`
+.Missing close brace in Data section statement.
+.Missing expression after unary operator '{0}'.
+.Missing function body in function declaration.
+.Missing statement after '=' in named argument.
+.Operation not allowed on destination location.
+.ParameterBinding({0}): name="{1}"; value="{2}"
+.Pipeline Id "{0}" was not found on the server;
+.Property '{0}' cannot be found for type '{1}'.
+.Provider "{0}" cannot be loaded. Details: {1}.
+.Remoting data is missing destination property.
+.Save operation failed. Cannot remove file {0}.
+.text
+.The '{0}' operator is reserved for future use.
+.The current provider ({0}) cannot open a file.
+.The path does not refer to a file system path.
+.Variable breakpoint on '{0}:${1}' ({2} access)
+/    ! Trap or Catch on matching exception [{0}]
+/"{0}" cannot be greater than or equal to "{1}".
+/Action is not supported when forwarding events.
+/Ambiguous parameter '-{0}'
+/Cannot convert value from type {0} to type {1}.
+/Cannot run Enter-PSSession from a nested prompt
+/Current Node type is {0}. Expected type is {1}.
+/Get accessor for property "{0}" is unavailable.
+/Internal error - unexpected unary operator {0}.
+/Missing '=' operator after key in hash literal.
+/Missing property name after reference operator.
+/Operator '{0}' is not supported for type '{1}'.
+/Set accessor for property "{0}" is unavailable.
+/The adapter cannot get the properties of "{0}".
+/The Catch block is missing its statement block.
+/The operation '[{0}] {1} [{2}]' is not defined.
+/The root of the drive '{0}' cannot be modified.
+:$(subexpression) starting:
+:[ref] cannot be applied to a variable that does not exist.
+:Cannot exit nested prompt because no nested prompts exist.u
+:Cannot retrieve the dynamic parameters for the cmdlet. {6}
+:Cannot set percent because {0} cannot be greater than 100.
+:Dictates action taken when Progress Records are delivered.
+:Do you want to run software from this untrusted publisher?
+:Error at XPath {0} in file {1}: {2} is an empty attribute.
+:Error at XPath {0} in file {1}: An expression is expected.
+:Error at XPath {0} in file {1}: Assembly {2} is not found.
+:Error at XPath {0} in file {1}: Missing script block text.
+:Help file "{0}" is not a valid xml document. Details: {1}.
+:Index operation failed; the array index evaluated to null.
+:Missing closing ')' after expression part of foreach loop.
+;Cannot access command '{0}' because it is a private command
+;Cannot add history because input object has invalid format.
+;Cannot bind argument to parameter '{1}' because it is null.
+;Cannot convert the "{0}" value of type "{1}" to type "{2}".
+;Cannot execute a document in the middle of a pipeline: {0}.
+;Cannot invoke pipeline because it has been invoked earlier.
+;Cannot use transaction. The transaction has been committed.
+;Causes errors to be displayed with the source of the error.
+;Cmdlets derived from PSCmdlet cannot be invoked directly.  
+;Error at XPath {0} in file {1}: {2} is a missing attribute.
+;Error at XPath {0} in file {1}: Invalid script block "{2}".
+;Name attribute for dictionary key is incorrectly specified.
+;Name of the Windows PowerShell host required by this module
+;Options are not allowed on -split operator with a predicate
+;Parameter '{1}' cannot be specified in parameter set '{6}'.
+;Privilege must be reverted before changing its state again.
+;Prompt response has a prompt id "{0}" that cannot be found.
+;Registry subkeys should not be greater than 255 characters.
+;The AllScope option cannot be removed from the alias '{0}'.
+;The following errors occurred when loading console {0}: {1}
+;The scope number '{0}' exceeds the number of active scopes.
+;The terminator '{0}' is missing from the multiline comment.
+;Type "{0}" should be a TypeConverter or an PSTypeConverter.
+?$aDG+
+?Cannot apply update, object is not a supported collection type.
+?Cannot find any Windows PowerShell snap-in information for {0}.
+?Cannot rename alias because alias {0} is read-only or constant.
+?Cannot set active transaction. No transaction has been created.
+?Continue and do not inquire to continue again for this session.
+?Drive containing a view of the aliases stored in session state.
+?DriveCmdletProvider methods are not supported by this provider.
+?Error at XPath {0} in file {1}: A positive integer is expected.
+?Opening remote Session failed with unexpected state. State {0}.
+?Private data to pass to the module specified in ModuleToProcess
+?Remote host method data decoding is not supported for type {0}.
+?Remote host method data encoding is not supported for type {0}.
+?The invocation of RemoveDrive on the '{0}' provider failed. {1}
+?The state of the runspace pool is not valid for this operation.
+?The text encoding used when piping text to a native executable.
+?You cannot index into a {0} dimensional array with index [{1}].
+?Your connection has been redirected to the following URI: "{0}"
+@.reloc
+@Bad console file extension. Console file extension must be psc1.
+@Cannot find an overload for "{0}" and the argument count: "{1}".
+@Error at XPath {0} in file {1}: Control cannot have a null Name.
+@Error at XPath {0} in file {1}: Empty custom control token list.
+@Expressions are only allowed as the first element of a pipeline.
+@File {0} cannot be loaded because its content could not be read.
+@File {0} is signed but the signer is not trusted on this system.
+@Required element "PSConsoleFile" in {0} is missing or incorrect.
+@The adapter cannot determine whether property "{0}" is gettable.
+@The adapter cannot determine whether property "{0}" is settable.
+@The following exception occurred while retrieving members: "{0}"
+@The starting line must be a positive integer no greater than {0}
+@Unexpected type of encoded command (expected PSObject, got {0}).
+[A token that is not valid was found in the list of supported commands for the Data section.
+[Alias is not writeable because alias {0} is read-only or constant and cannot be written to.
+[Cannot set the value for property "{0}" because the object has type "{1}" instead of "{2}".
+[Client negotiation timer has expired. The negotiation timeout interval is {0} milliseconds.
+[Error at XPath {0} in file {1}: Cannot have SelectionSetName and TypeName at the same time.
+[Launching a program to show online help failed. No program is associated to launch Uri {0}.
+[Script files (.ps1) that are run in the caller's environment prior to importing this module
+[Server negotiation timer has expired. The negotiation timeout interval is {0} milliseconds.
+[The following exception occurred while retrieving the write state for property "{1}": "{0}"
+[The maximum number of WSMan uri redirections to allow while connecting to a remote machine.
+[The param statement cannot be used if arguments were specified in the function declaration.
+\Attempting to perform the GetItem operation on the '{0}' provider failed for path '{1}'. {2}
+\Attempting to perform the SetItem operation on the '{0}' provider failed for path '{1}'. {2}
+\Cannot convert value "{0}" to type "{1}" because no commas are allowed for this enumeration.
+\Cannot roll back transaction. The transaction has already been rolled back or has timed out.
+\Cannot set active transaction. The active transaction has been rolled back or has timed out.
+\The server did not respond with an encrypted session key within the specified timeout period
+]Attempting to perform the CopyItem operation on the '{0}' provider failed for path '{1}'. {2}
+]Attempting to perform the MoveItem operation on the '{0}' provider failed for path '{1}'. {2}
+]Cannot find required information in registry or missing key files.  Cannot load some cmdlets.
+]Cannot proceed with byte encoding. When using byte encoding the content must be of type byte.
+]Error at XPath {0} in file {1}: Out Of Band views can only have CustomControl or ListControl.
+]File {0} cannot be loaded because you have elected to never run software from this publisher.
+]This cmdlet requires a transaction. Run the command again with the -UseTransaction parameter.
+]This operation cannot be performed on a binary module. Please try again with a script module.
+^":\a6
+^Attempting to perform the ClearItem operation on the '{0}' provider failed for path '{1}'. {2}
+^Can only save a file when you are in a file provider. Current provider is not a file provider.
+^Cannot process path because the specified path refers to an item that is outside the basePath.
+^Cannot use interface. The IPropertyCmdletProvider interface is not supported by this provider.
+^Function {0} cannot be created because function capacity {1} has been exceeded for this scope.
+^Invalid type of key: {0}.  PSPrimitiveDictionary class accepts only keys of type System.String
+^Mandatory value {0} is not in correct format for registry key {1}.  Expected format is string.
+^Run the script from this publisher now, and do not prompt me to run this script in the future.
+^The getter method should be public, non void, static, and have one parameter of type PSObject.
+^The property is not a multi-valued property. To remove this property, use Remove-ItemProperty.
+^The syntax is not supported by this runspace. This might be because it is in no-language mode.
+^Unknown element "{0}" was received. This might happen if the remote process exited abnormally.
+_'{0}' already exists as a cmdlet Provider. Only one cmdlet Provider can exist for a given name.
+_An error has occurred which PowerShell is unable to handle. Remote session may have terminated.
+_Attempting to perform the ItemExists operation on the '{0}' provider failed for path '{1}'. {2}
+_Attempting to perform the RemoveItem operation on the '{0}' provider failed for path '{1}'. {2}
+_Attempting to perform the RenameItem operation on the '{0}' provider failed for path '{1}'. {2}
+_Cannot process the cmdlet. A cmdlet name must consist of a verb and noun pair separated by '-'.
+_Cannot set "{0}" because only unique attributes or unique non attributed leaf nodes can be set.
+_Cannot use interface. The IContentCmdletProvider interface is not implemented by this provider.
+_CorDllMain
+_Error at XPath {0} in file {1}: Column header definition is invalid; all headers are discarded.
+_Pause the current pipeline and return to the command prompt. Type "{0}" to resume the pipeline.
+_The item cannot be renamed because an item with that name already exists in the same container.
+_The type is not a known type for the file system. Only "file" and "directory" can be specified.
+`"Received data has stream id index "{0}". Only Standard Output stream id index "0" is supported.
+`.rsrc
+`Attempting to perform the GetProperty operation on the '{0}' provider failed for path '{1}'. {2}
+`Attempting to perform the IsValidPath operation on the '{0}' provider failed for path '{1}'. {2}
+`Attempting to perform the NewItem operation on the '{0}' provider failed for the path '{1}'. {2}
+`Attempting to perform the NewProperty operation on the '{0}' provider failed for path '{1}'. {2}
+`Attempting to perform the SetProperty operation on the '{0}' provider failed for path '{1}'. {2}
+`Existing filter {0} cannot be made constant. Filters can be made constant only at creation time.
+`The call to Windows API GetStdHandle to get Standard Error handle resulted with error code: {0}.
+`The call to Windows API GetStdHandle to get Standard Input handle resulted with error code: {0}.
+`The identifier {0} is invalid for a History identifier. Specify a positive number and try again.
+`The provider '{0}' cannot be used to resolve the path '{1}' because of an error in the provider.
+`The total data received from the remote client exceeded allowed maximum. Allowed maximum is {0}.
+`The total data received from the remote server exceeded allowed maximum. Allowed maximum is {0}.
+`There were errors loading TypeTable. Look in the Errors property to get detailed error messages.
+`Windows PowerShell provider '{0}' is present more than once in Windows PowerShell snap-in '{1}'.
+{0,4}+ {1}
+{0} ({1})
+{0} (Path: '{1}')
+{0} (Version {1})
+{0} attribute was expected.
+{0} cannot be null or empty.
+{0} is not a valid class path.
+{0} is not a valid path.
+{0} To automatically connect to the redirected URI, verify "{1}" property of session preference variable "{2}" and use "{3}" parameter on the cmdlet.
+{0} XML tag is not recognized.
+{0}, {1}
+{0}, {1} : {2}
+{0}, {1} : File not found.
+{0}, {1}({2}) : Error: {3}
+{0}. Negotiation with the client failed. Make sure the client is compatible with the build {1} and the protocol version {2} of PowerShell.
+{0}. Negotiation with the server failed. Make sure the server is compatible with the build {1} and the protocol version {2} of PowerShell.
+{0}...{1}
+{0}: Line {1}
+{Once a transaction is started, only commands that get called with the -UseTransaction flag become part of that transaction.
+|Cannot process argument because the value of argument "{0}" is null. Change the value of argument "{0}" to a non-null value.
+|Invalid variable reference. '$' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+|String multiplication results with more than "{0}" characters are not allowed in restricted language mode or a Data section.
+|The dynamic parameters for the InvokeDefaultAction operation cannot be retrieved from the '{0}' provider for path '{1}'. {2}
+}Cannot accept the MaxRange and MinRange parameter type. Both parameters must be objects that implement IComparable interface.
+}The specified script file '{0}' could not be processed because the file was not found. Please correct the path and try again.
+~Contains information about the remote user starting the remote session. This variable is available only from a remote session.
+~The argument '{0}' is not recognized as a cmdlet, possibly because it does not derive from the Cmdlet or PSCmdlet classes: {1}
+~The index specified is less than zero or greater than the number of items in the buffer. Index should be in the range {0}-{1}.
+~The specified transaction or Transaction.Current must match the transaction used to create or open this TransactedRegistryKey.
++ {3}
++A drive with the name '{0}' already exists.
++Access to the registry key '{0}' is denied.
++Cannot access command because it is private
++Cannot convert value to type System.String.
++Cannot find a provider with the name '{0}'.
++Cannot save file. Save operation cancelled.
++cmdlet {0} at command pipeline position {1}
++Count cannot be combined with multiple Ids.
++Duplicate parameter ${0} in parameter list.
++Error text is empty for error "{0}" : "{1}"
++Expected ';', '}}' or end-of-line, not {0}.
++List of all files packaged with this module
++Node "{0}" should not have "{1}" attribute.
++Not Enough permission to perform operation.
++OuN-
++Performing operation "{0}" on Target "{1}".
++Received unsupported remote host call: {0}.
++Receiving data for a remote command failed.
++Running startup script threw an error: {0}.
++Starting a command on remote server failed.
++Supply values for the following parameters:
++The alias "{0}" is declared multiple times.
++The alias with name "{0}" contains a cycle.
++The execution objects available to cmdlets.
++The keys in the dictionary must be strings.
++The software settings for the current user.
++Unable to index into an object of type {0}.
++unknown Encoding {0}; legal values are {1}.
++Windows PowerShell Credential Request : {0}
+< {0}, {1,-16} Step out of the current function, script, etc.
+<A COM object was accessed after it was already released: {0}
+<Both "{0}" and "{1}" must be specified in the "{2}" section.
+<CommonParameters>
+<Error at XPath {0} in file {1}: {2} is an unknown attribute.
+<Error at XPath {0} in file {1}: A Boolean value is expected.
+<Error with error code {0} occurred while calling method {1}.
+<Exception type {0} is already handled by a previous handler.
+<Incomplete 'try' statement. A try statement requires a body.
+<Module>
+<Nested pipeline should execute only from a running pipeline.
+<Required element "PSVersion" in {0} is missing or incorrect.
+<Running command "{0}" to create a new Session Configuration.
+<Session Configuration "{0}" is not a PowerShell based shell.
+<The '{0}' operator works only on variables or on properties.
+<The AllScope option cannot be removed from the filter '{0}'.
+<The specified RegistryKeyPermissionCheck value is not valid.
+<Type files (.ps1xml) to be loaded when importing this module
+<Value of depth parameter must be greater than or equal to 1.
+=[ref] can only be the final type in type conversion sequence.
+=Array assignment failed because index '{0}' was out of range.
+=Assemblies that must be loaded prior to importing this module
+=Cannot remove variable {0} because it is owned by the system.
+=Error at XPath {0} in file {1}: Node should be an XmlElement.
+=If true, WhatIf is considered to be enabled for all commands.G
+=Minimum version of the .NET Framework required by this module
+=Name attribute for dictionary value is incorrectly specified.
+=Node "{0}" cannot have "{1}" as a child node. Node Path: {2}.
+=Only administrators can override the Thread Options remotely.
+=Parameter attributes need to be a constant or a script block.
+=Remote registry operations are not allowed with transactions.
+=Session parameter can be used only with PSRemotingJob objects
+=The host does not support Enter-PSSession and Exit-PSSession.
+=The input to the script block for parameter '{1}' failed. {6}
+=The line count must be a positive integer no greater than {0}
+=The maximum number of history objects to retain in a session.
+> {0}, {1,-16} Single step (step into functions, scripts, etc.)
+>A parameter cannot be found that matches parameter name '{1}'.
+>An error occurred while enumerating through a collection: {0}.
+>Cannot bind positional parameters because no names were given.
+>Cannot convert a script block with a top-level trap statement.
+>Cannot delete a subkey tree because the subkey does not exist.
+>Cannot find drive. A drive with the name '{0}' does not exist.
+>Cannot process argument transformation on parameter '{1}'. {6}
+>Count cannot be combined with multiple CommandLine parameters.
+>Dictates the action taken when a Verbose message is delivered.
+>Dictates the action taken when a Warning message is delivered.
+>Encountered end of line while processing a type literal token.
+>Error at XPath {0} in file {1}: Node {2} cannot have children.
+>Format files (.ps1xml) to be loaded when importing this module
+>Remote host method was invoked on an unknown target class: {0}
+>Report the error then continue with the next script statement.
+>State of current Job instance is not valid for this operation.
+>The AllScope option cannot be removed from the function '{0}'.
+>The AllScope option cannot be removed from the variable '{0}'.
+>Unexpected type of remoting data (expected PSObject, got {0}).
+040904b0
+0A {0} cannot be specified when {1} is specified.
+0A number cannot be both long and floating point.
+0An unhandled COM interop exception occurred: {0}
+0Cannot convert a null reference to a value type.
+0Cannot retrieve an instance of CommandDiscovery.
+0Cannot validate argument on parameter '{1}'. {6}
+0Default session options for new remote sessions.
+0Duplicate named arguments '{0}' are not allowed.
+0Error at XPath {0} in file {1}: Duplicated node.
+0Executable script code found in signature block.
+0Missing condition in if statement after '{0} ('.
+0Missing statement block after {0} ( condition ).
+0No Session Configuration matches criteria "{0}".
+0The adapter cannot get property "{0}" for "{1}".
+0The cmdlet is not supported by the custom shell.
+0The Data section is missing its statement block.
+0The specified wildcard pattern is not valid: {0}\
+1                     lines starting from line <m>
+1Argument '{0}' is not recognized as a cmdlet: {1}
+1Cannot access member "{0}" outside of a PSObject.
+1Cannot convert value to type "{0}".  Error: "{1}"
+1Cannot find path '{0}' because it does not exist.
+1Cannot use transaction. No transaction is active.
+1Causes errors to be displayed with a stack trace.
+1Command execution stopped due to the Stop policy.
+1Deserialization of Encrypted Secure String failed
+1Error at XPath {0} in file {1}: Missing Node {2}.
+1Error at XPath {0} in file {1}: Missing property.
+1First fragment's IsStartFragment flag is not set.
+1Missing ')' after expression in switch statement.
+1Missing expression after '(' in switch statement.
+1No value was specified for the Command parameter.
+1Sx<nUG
+1The configuration settings for the local machine.
+1The Finally block is missing its statement block.
+1The Try statement is missing its statement block.
+1This is a reference to the host of this Runspace.
+1TypeAdapter ignored since it was already present.
+2    ! CALL function '{0}'  (defined in file '{1}')
+2 {0}, {1,-16} Stop execution and exit the debugger
+2"{0}" is not a standard member and will be ignored
+2*Qg4zK
+2Are you sure you want to perform this action?
+2Cannot modify function {0} because it is constant.
+2Cannot process xml from '{0}' stream of '{1}': {2}
+2Cannot remove function {0} because it is constant.
+2Continue with only the next step of the operation.
+2Culture of the current Windows PowerShell Session.
+2Error at XPath {0} in file {1}: Invalid {2} value.
+2Missing the opening brace "{" in the Data section.
+2Skip this operation and all subsequent operations.
+2State of pipeline is not valid for this operation.
+2State of runspace is not valid for this operation.
+2The adapter cannot get the type of property "{0}".
+2The maximum number of drives allowed in a session.
+2The object does not contain a security descriptor.
+2Unexpected token '{0}' in expression or statement.
+3An object at the specified path {0} does not exist.
+3Cannot compare "{0}" because it is not IComparable.
+3Cannot modify function {0} because it is read-only.
+3Cannot process file because file {0} was not found.
+3Container cannot be copied onto existing leaf item.
+3Error at XPath {0} in file {1}: {2} failed to load.
+3MatchType must be 'Command', 'Error', or 'Dynamic'.
+3Missing expression after '{0}' in pipeline element.
+3Missing statement block in switch statement clause.
+3Remoting data is missing RemotingDataType property.
+3Remoting data is missing target interface property.
+3Rule must be a ScriptBlock for dynamic match types.
+3S5xJC
+3The "=" operator is missing after a named argument.
+3The '{0}' resolved to more than one location stack.
+3The adapter cannot get the type hierarchy of "{0}".
+3The adapter cannot get the value of property "{0}".
+3The adapter cannot set the value of property "{0}".
+3The maximum number of aliases allowed in a session.
+3The path '{0}' is shorter than the base path '{1}'.
+3TtJ-
+3TypeConverter ignored since it was already present.
+3Value should be "true" or "false" instead of "{0}".
+3Version information for current PowerShell session.
+4*Y27+ 
+4{0} is not supported by the requested help category.
+4A switch statement can have only one default clause.
+4Alias {0} cannot be modified because it is constant.
+4Argument: '{0}' should not be a {1}. Do not use {2}.
+4Cannot commit transaction. No transaction is active.
+4Cannot modify variable {0} because it is a constant.
+4Fk2'pk
+4Missing or invalid property reference or expression.
+4Received remoting data with unsupported action: {0}.
+4The "{0}" parameter must contain at least one value.
+4The Invoke-History cmdlet is getting called in loop.
+4The maximum number of errors to retain in a session.
+4The parameter name "{0}" is reserved for future use.
+4The specified RegistryValueKind is an invalid value.
+4This operation is not supported on remote instances.
+4You can add another hash table only to a hash table.
+5{0} cannot be false when language mode is {1} or {2}._)
+5A {0} value must be specified for session option {1}.
+5Alias {0} cannot be modified because it is read-only.
+5Cannot find alias because alias '{0}' does not exist.
+5Dictates the view mode to use when displaying errors.
+5Drive root "{0}" does not exist or it's not a folder.
+5Error at XPath {0} in file {1}: {2} is an empty node.
+5Exception calling "{0}" with "{1}" argument(s): "{2}"
+5Expected "{0}" and "{1}" attributes in "{2}" element.
+5Expected XML tag "{0}" instead of node of type "{1}".
+5Filter {0} cannot be modified because it is constant.
+5Remoting data is missing Session InstanceId property.
+5Script command clause '{0}' has already been defined.
+5Specified RemoteRunspaceInfo objects have duplicates.
+5The contents of the {0} primitive type are not valid.
+5The maximum number of functions allowed in a session.
+5The maximum number of variables allowed in a session.
+5UI Culture of the current Windows PowerShell Session.
+5Unable to load type "{0}" specified in "{1}" section.
+5Unrecognized error category {4}: ({1}:{2}) [{0}], {3}
+5You cannot call a method on a null-valued expression.
+6    ! SET-MULTIPLE ${0} assigned remaining {1} values.
+6.1.7600.16385
+6Assigning to array element at index [{0}] failed: {1}.
+6Cannot convert value "{0}" to type "{1}". Error: "{2}"
+6Cannot sign code. The hash algorithm is not supported.
+6Cannot use transaction. The transaction has timed out.G
+6Duplicate keys '{0}' are not allowed in hash literals.
+6Error at XPath {0} in file {1}: Missing Node from {2}.
+6Error at XPath {0} in file {1}: View cannot be loaded.
+6Filter {0} cannot be modified because it is read-only.
+6Item: {0} SourceProperty: {1} DestinationProperty: {2}
+6Missing file specification after redirection operator.
+6Native API call to ReadFile failed. Error code is {0}.
+6ParentActivityId cannot be the same as the ActivityId.
+6Received unsupported RemotingTargetInterface type: {0}
+6Running command "{0}" to enable Session Configuration.
+6The registry key at the specified path does not exist.
+6The runspace pool specified is not in an opened state.
+6There were errors in loading the format data file: {0}
+7AppName where the remote connection will be established
+7Cannot roll back transaction. No transaction is active.
+7Cannot use [ref] with other types in a type constraint.
+7Error at XPath {0} in file {1}: {2} is an unknown node.
+7Error at XPath {0} in file {1}: An integer is expected.
+7Error at XPath {0} in file {1}: Invalid property entry.
+7Incorrect thread for enabling or disabling a privilege.
+7Invalid filename argument to -file in switch statement.
+7Mandatory value {0} not specified for registry key {1}.
+7Native API call to WriteFile failed. Error code is {0}.
+7Node "{0}" cannot be present. Nodes allowed are: "{1}".
+7Parent folder of the host application of this Runspace.
+7Received remoting data with unsupported data type: {0}.
+7Running command "{0}" to disable Session Configuration.
+7Valid value for parameter is PipelineResultTypes.Error.
+8 {0}, {1,-16} List source code for the current script.  
+8Cannot copy item. Item at the path '{0}' does not exist.
+8Cannot use transaction. No transaction has been started.
+8Causes errors to be displayed with the inner exceptions.
+8Description of the functionality provided by this module
+8Directory {0} cannot be removed because it is not empty.
+8Do not continue processing, throw the exception instead.
+8Error at XPath {0} in file {1}: Missing a format string.
+8Error at XPath {0} in file {1}: Missing definition list.
+8Missing closing ')' after expression in '{0}' statement.
+8Not enough data is available to process the {0} element.
+8Note: {0} entries were cleared from the session history.
+8Registry key name must start with a valid base key name.
+8Running command "{0}" to remove a Session Configuration.
+8Skip this operation and proceed with the next operation.
+8The error stream for this command is already redirected.
+8The parameter {0} is not valid for the switch statement.
+8The string starting:
+8The Try statement is missing its Catch or Finally block.
+8The value {0} is not a supported ActionPreference value.
+8Unable to assign to an index into an object of type {0}.
+8Unexpected type of {0} property (expected {1}, got {2}).
+8Valid value for parameter is PipelineResultTypes.Output.
+8zI?u
+9    ! Trap or Catch on [{0}]; subclass of exception [{1}]
+9Cannot write input as there are no more running pipelines
+9Dictates action taken when an Debug message is delivered.
+9Dictates action taken when an Error message is delivered.
+9Error at XPath {0} in file {1}: Missing inner text value.
+9The output stream for this command is already redirected.
+9Unable to access Windows PowerShell registry information.
+9Unable to load assembly "{0}" specified in "{1}" section.
+9Version of incoming PSObject is {0}. Expected value is 1.5
+A cmdlet threw an exception after calling ThrowTerminatingError.
+A command is referenced that is not allowed. Only convertfrom-* commands are supported in restricted language mode or a Data section.
+A script or application on the {0} remote computer is attempting to read the buffer contents on the PowerShell host. This is not allowed and the call has been suppressed.
+A script or application on the {0} remote computer is requesting to read a line securely. Enter sensitive information like your credentials only if you trust the remote computer and the application or script requesting it.
+A script or application on the {0} remote computer is sending a Prompt request. When prompted, enter sensitive information like your credentials or password only if you trust the remote computer and the application or script requesting it.
+A variable that cannot be referenced in restricted language mode or a Data section is being referenced. Variables that can be referenced include the following: $PSCulture, $PSUICulture, $true, $false, and  $null.
+A"{0}" must be present when the "{1}" is "{2}" and "{3}" is "{4}".
+AA previous error caused all serialization settings to be ignored.
+AAlias was not removed because alias {0} is constant or read-only.
+aAttempting to perform the ClearContent operation on the '{0}' provider failed for path '{1}'. {2}
+aAttempting to perform the CopyProperty operation on the '{0}' provider failed for path '{1}'. {2}
+aAttempting to perform the GetChildName operation on the '{0}' provider failed for path '{1}'. {2}
+aAttempting to perform the MoveProperty operation on the '{0}' provider failed for path '{1}'. {2}
+aCannot find an appropriate constructor to instantiate the custom attribute object for type '{0}'.
+aCannot get or execute command. The maximum number of parameter sets for this command is exceeded.
+ACannot get property value because "{0}" is a write-only property.
+ACannot rename filter because filter {0} is read-only or constant.
+ACannot write to function {0} because it is read-only or constant.
+Accept pipeline input?       
+Accept wildcard characters?  
+AcceptsPipelineInput
+AcceptsWildCardCharacters
+AccessControl_InvalidGroup
+AccessControl_InvalidHandleP
+AccessControl_InvalidOwnerk
+AccessControl_NoAssociatedSecurity
+AccessControl_UnexpectedError
+AccessMemberOutsidePSObject
+ActionAndForwardNotSupported
+ActionPreferenceStop
+Add Property Value At
+AddHashTableToNonHashTable
+AddHistoryInvalidInput
+AdditionalInfo:
+AdditionalListHelp1
+AdditionalListHelp2N
+AdditionalListHelp3
+AddPropertyValueAtAction
+AddPropertyValueAtResourceTemplate
+AddPSSnapInBadMonadVersion
+AError loading help content for {0} from file "{1}". Details: {2}.
+AItem '{0}' cannot be created because the value was not specified.
+AKey {0} has been created, however default value could not be set.
+AliasAllScopeOptionCannotBeRemoved
+AliasAlreadyExists=
+AliasCannotBeMadeConstant
+AliasDeclaredMultipleTimes
+AliasDriveDescription
+AliasesToExport
+AliasIsConstant
+AliasIsReadOnly
+AliasNotFound
+AliasNotRemovable
+AliasNotResolvedException-
+AliasNotWritable
+AliasOverflow
+AliasParameterNameAlreadyExistsForCommand
+All strings are null or empty.
+AllNullOrEmptyStringsErrorTemplate
+AllowedNodesSeparator
+AmbiguousParameter
+AmbiguousParameterBaseMessage6
+AmbiguousParameterExtendMessageg
+AmbiguousParameterSetl
+AmbiguousPatht
+AmbiguousPositionalParameter
+AmbiguousPositionalParameterNoName
+AmpersandNotAllowed
+An error occurred attempting to create an instance of the provider. The provider type name of '{0}' could not be found in the assembly.
+'An error occurred creating the pipeline
+aNode "{0}" should be present zero or one time under "{1}". The parent node "{1}" will be ignored.
+AnotherSessionStateProxyInProgress
+Answer
+Answer>
+ApartmentStateMismatch
+ApartmentStateMismatchCurrentThreadt
+ARemote host method was invoked without specifying a target class.
+Arg_EnumIllegalVal
+Arg_Name
+Arg_RegBadKeyKind
+Arg_RegInvalidKeyName
+Arg_RegKeyNotFound
+Arg_RegKeyStrEmpty
+Arg_RegKeyStrLenBug
+Arg_RegSetBadArrType
+Arg_RegSetMismatchedKind
+Arg_RegSetStrArrNull
+Arg_RegSubKeyAbsent
+Arg_RegSubKeyValueAbsent
+Arg_RegValueNameStrLenBug
+Arg_Value
+Arg_ValueDataLenBug
+ArgMayNotBeNegative
+ArgMayNotBeNullOrEmptyF
+ArgRegKeyDelHive
+Argument
+Argument_InvalidPrivilegeName
+Argument_InvalidRegistryKeyPermissionCheck
+Argument_InvalidSafeHandle
+ArgumentException_RegSubKeyAbsent
+ArgumentException_TransactionAbsent
+ArgumentNull
+ArgumentOutOfRange
+ArgumentTransformationArgumentsShouldBeStringsv
+ArrayAssignmentFailed
+ArrayReferenceNotSupportedInDataSection
+ArraySliceAssignmentFailed
+ARunning command "{0}" to update Session Configuration properties.
+AScript module or binary module file associated with this manifest
+AsOperatorRequiresType
+ASource and destination path did not resolve to the same provider.
+AssemblyInGAC
+AssemblyLoadAttributesNotFound
+AssemblyNotFound
+AssemblyNotRegistered3
+AssignmentStatementNotSupportedInDataSection
+AsyncResultNotOwned
+At {0}:{1} char:{2}
+At char:{0}
+AThe '{0}' operator works only on numbers. The operand is a '{1}'.
+aThe call to Windows API GetStdHandle to get Standard Output handle resulted with error code: {0}.
+aThe operation cannot be performed because the destination path is subordinate to the source path.
+aThe script failed due to call depth overflow.  The call depth reached {0} and the maximum is {1}.z
+aThe variable cannot be validated because the value {1} is not a valid value for the {0} variable.
+AThis command will clear all the entries from the session history.
+aThis Windows PowerShell snap-in contains cmdlets used to manage components of Windows PowerShell.
+AttributeExpected
+AttributesNotAllowedY
+AttributesNotSupported
+AUpdate is not supported for runspace configuration category {0}. 
+Authenticode.en.resources
+AuthenticodePromptCaption
+AuthenticodePromptText_UnknownPublisher
+AuthenticodePromptText<
+Author of this module
+Author$
+AuthorizationManagerBase.en.resources
+AuthorizationManagerDefaultFailureReason
+AutomationExceptions.en.resources
+B <enter>             Repeat last command if it was {0}, {1} or {2}
+b"{0}" and "{1}" parameters cannot be specified together. Specify either "{0}" or  "{1}" parameter.
+B${{variable}} reference starting:
+B{0}, {1} : File skipped because it was already present from "{2}".
+BackupParserMessage
+BackupParserMessageWithException
+Bad numeric constant: {0}.
+BadAtParam
+BadConsoleExtensiono
+BadConsoleVersion
+BadCountFormat
+BadEnumeration
+BadExpression
+BadlyFormedCmdlet
+BadMonadVersion
+BadNumericConstant
+BadOperatorArgument
+BadRegularExpression
+BadReplaceArgument
+BadStartFormat
+BadTemplate
+BadXMLElementFound
+BadXMLFormat
+BaseCmdletInformationF
+BasePathLengthError
+BaseTransactionMustBeFirst
+BaseTransactionNotActiveP
+BaseTransactionNotSetu
+bAttempting to perform the ClearProperty operation on the '{0}' provider failed for path '{1}'. {2}
+bAttempting to perform the GetChildItems operation on the '{0}' provider failed for path '{1}'. {2}
+bAttempting to perform the GetChildNames operation on the '{0}' provider failed for path '{1}'. {2}
+bAttempting to perform the GetParentPath operation on the '{0}' provider failed for path '{1}'. {2}
+BCannot access the variable '${0}' because it is a private variable
+BCannot overwrite variable {0} because it is read-only or constant.
+BCannot perform operation because operation "{0}" is not supported.
+bCannot process multiple history commands. Only a single command can be executed by invoke-history.
+bCannot write shell configuration data into temporary file {0}. Try again. Reason for failure: {1}.
+BCmdlet '{0}' does not support parameter '{1}' in a remote session.
+BCreation of nested pipelines is not supported in remote runspaces.
+bEndpointConfiguration with Id {0} does not exist on the remote server. Contact your administrator.
+BlankTemplate
+BlobLengthNotInRangeO
+BreakHelpMessage
+BreakLabel
+Breakpoint {0} will not be hit
+BThe '{0}' member is invalid in the module manifest file '{2}': {1}
+bThe following exception occurred while retrieving the type for parameterized property "{1}": "{0}"
+BThe mandatory value {0} is not specified for the {1} registry key.
+bThe pipeline failed due to call depth overflow. The call depth reached {0} and the maximum is {1}.
+bThere were errors loading Formattable. Look in the Errors property to get detailed error messages.
+ByteEncodingError
+C"{0}" must be a valid index into "{1}". "{2}" is not a valid index.
+cA command is required to add a parameter. A command must be added to {0} before adding a parameter.
+CA positional parameter cannot be found that accepts argument '{1}'.
+CA PSProperty or PSMethod object cannot be added to this collection.
+Can only convert a script block that contains exactly one pipeline or command. Expressions or control structures aren't permitted. Make sure the script block contains exactly one pipeline or command.
+CanConvertOneClauseOnly
+CanConvertOneOutputErrorRedir
+Cannot bind cmdlet {0} because parameter '{1}' is of type '{2}' and the Add() method cannot be identified, or multiple Add() methods exist. {6}
+Cannot bind cmdlet {0} because runtime-defined parameter '{1}' was added to the RuntimeDefinedParameterDictionary with key '{6}'. The key must be the same as RuntimeDefinedParameter.Name.
+Cannot bind parameter because parameter '{1}' is specified more than once. To provide multiple values to parameters that can accept multiple values, use the array syntax. For example, "-parameter value1,value2,value3".
+Cannot complete pipeline execution because it hasn't been started yet. You must call the Begin() method before calling End() on a steppable pipeline.
+Cannot continue to execute cmdlet because all cmdlet execution was stopped by the Stop policy. Determine why cmdlet execution was stopped.
+Cannot convert null to type "{0}" due to invalid enumeration values. Specify one of the following enumeration values and try again. The possible enumeration values are "{1}".
+Cannot convert value "{0}" to type "{1}" because at least two matches were found ({2}, {3}) and only one match is allowed for this enumeration.
+Cannot convert value "{0}" to type "{1}" due to invalid enumeration values. Specify one of the following enumeration values and try again. The possible enumeration values are "{2}".
+Cannot convert value "{0}" to type "{1}", parameters of this type only accept booleans or numbers, use $true, $false, 1 or 0 instead.
+Cannot create a code method because of the method format. The method should be public, static, and have one parameter of type PSObject.
+Cannot create new drive because the name specified in the PSDriveInfo '{0}' does not match the drive name specified in the path '{1}'.
+Cannot create RunspaceConfiguration object because assembly attribute of type RunspaceConfigurationType is not defined in assembly {0}. 
+Cannot create RunspaceConfiguration object because there are more than one assembly attribute of type RunspaceConfigurationType defined in assembly {0}.
+Cannot evaluate parameter '{1}' because its argument is specified as a script block and there is no input. A script block cannot be evaluated without input.
+Cannot execute the pipeline because the first cmdlet in the pipeline is trying to read input from a previous cmdlet. Either modify the first cmdlet, remove the first cmdlet, or add the cmdlet whose output is needed by the first cmdlet, then execute the pipeline again.
+Cannot expand the splatted variable '@{0}'. Splatted variables cannot be used as part of a property or array expression. Assign the result of the expression to a temporary variable then splat the temporary variable instead.
+Cannot export to this file because file {0} is read-only. Change the read-only attribute of the file to read-write, or export to a different file.
+Cannot find a provider with the name '{0}'. The name is not in the proper format. A provider name may only be alpha-numeric characters or a Windows PowerShell snap-in name followed by a single '\' followed by alpha-numeric characters.
+'Cannot find a variable with name '{0}'.
+Cannot generate a PowerShell object for a ScriptBlock dereferencing variables undeclared in the param(...) block.  Name of undeclared variable: {0}.
+Cannot generate a PowerShell object for a ScriptBlock which invokes pipelines, commands or functions to evaluate arguments of the main pipeline.
+Cannot get help from remote runspace, because the runspace is not opened.  Open the runspace by running one of implicit remoting commands and then try getting the help again.
+Cannot index into a null array.
+-Cannot initialize attributes for "{0}": "{1}"
+Cannot load module '{0}' because the module nesting limit has been reached. Modules can only be nested to {1} levels. Please reexamine the order in which you are loading modules so that they aren't as deeply nested then try running your script again.
+Cannot locate history.
+Cannot locate last history..
+Cannot move the item because the destination resolved to multiple paths. Specify a destination path that resolves to a single destination and try again.
+Cannot move the item because the source path points to one or more items and the destination path is not a container. Validate that the destination path is a container and try again.
+Cannot process argument because the argument value is a non-string. Arguments to parameters with the ArgumentTransformationAttribute specified should be strings.
+Cannot process argument because the value of argument "{0}" is invalid. Change the value of the "{0}" argument and run the operation again.
+Cannot process argument because the value of argument "{0}" is out of range.  Change argument "{0}" to  a value that is within range.
+Cannot process returned information because the information returned from the provider Start method was for a different provider than the one passed.
+Cannot process the "#requires" statement at line {0} because it is not in the correct format.
+Cannot process the "#requires" statement at line {0} because the value of argument {1} is invalid. Specify a valid Windows PowerShell version of the format major.minor version.
+Cannot process the "#requires" statement at line {0} because the Windows PowerShell snap-in name '{1}' can only have alpha-numeric, dash, underscore or period characters.
+Cannot process the cmdlet instance because the cmdlet instances is being used by another pipeline. Please contact Microsoft Support Services.
+Cannot process the cmdlet number. The ReadFromCommand function must specify the Id of a cmdlet that has already been added to the pipeline. Please contact Microsoft Support Services.
+Cannot process variable because variable path '{0}' resolved to multiple items. You can get or set the variable value only one item at a time.
+Cannot read the output specified by the ReadFromCommand and ReadErrorQueue functions because another cmdlet is already reading that output. Please contact Microsoft Support Services.
+Cannot remove item {0}: {1}
+Cannot remove the Windows PowerShell snap-in {0} because it is a system snap-in. Verify the name of the snap-in being removed and try again.
+Cannot remove the Windows PowerShell snap-in {0} because it is not loaded. Verify the name of the snap-in being removed and try again.
+Cannot remove variable {0} because it is constant or read-only. If the variable is read-only, try the operation again specifying the Force option.
+Cannot resolve alias '{0}' because it refers to term '{1}', which is not recognized as a cmdlet, function, operable program, or script file. Verify the term and try again.
+Cannot retrieve dynamic parameters for the cmdlet. Dynamic parameter '{1}' specified parameter set '{6}' which was not statically defined for this cmdlet. New parameter sets may not be defined as dynamic parameters, although dynamic parameters may join parameter sets which were statically defined.
+Cannot set the location because path '{0}' resolved to multiple containers. You can only the set location to a single container at a time.
+Cannot use '&' to invoke in the context of binary module '{0}'. Specify a non-binary module after the '&' and try the operation again.
+CannotAddPropertyOrMethod3
+CannotChangeReservedMemberx
+CannotClearProperty
+CannotConvertArgument
+CannotConvertArgumentNoMessage
+CannotConvertToGenericType
+CannotCreatePipeline
+CannotExtractAddMethod
+CannotFindConstructorForCustomAttribute
+CannotFindRegistryKey
+CannotFindRegistryKeyPathY
+CannotGetStdErrHandle
+CannotGetStdInHandle
+CannotGetStdOutHandle
+CannotIndex
+CannotInvokePSCmdletsDirectly
+CannotLaunchURI
+CannotLoadDefault
+CannotLoadDefaults
+CannotOpenAgainl
+CannotOpenAgainO
+CannotRemoveDefault
+CannotRemoveItem
+CannotRemoveJob
+CannotRemovePSSnapIn
+CannotRenameAlias
+CannotRenameFilter
+CannotRenameFunction
+CannotRenameVariable
+CannotRestoreAttributes
+CannotSetNonManagementObject
+CannotSetValueForMemberType
+CanOnlyBeUsedFromWithinAModule
+CanOnlyConvertOnePipeline
+CantActivateDocumentInPipeline
+CantCastCommandToPSObject
+CantCastParameterToPSObject
+CantCastPropertyToExpectedType
+CantCastRemotingDataToPSObject
+CantConvertEmptyPipeline
+CantConvertScriptBlockWithNoContext
+CantConvertScriptBlockWithTrap
+CantConvertWithCommandInvocations
+CantConvertWithDotSourcing
+CantConvertWithScriptBlockInvocation
+CantConvertWithScriptBlocks
+CantConvertWithUndeclaredVariables
+CantInvokeInBinaryModule
+CantUseAsCustomObjectWithBinaryModule
+CAPABILITIES
+Capabilities
+Category
+cAttempting to perform the RemoveProperty operation on the '{0}' provider failed for path '{1}'. {2}
+cAttempting to perform the RenameProperty operation on the '{0}' provider failed for path '{1}'. {2}
+cAttribute cannot be added because it would cause the variable {0} with value {1} to become invalid.
+cCannot process drive name because the drive name contains one or more invalid characters; ~ / \ . :
+CCannot register for event. An event with name '{0}' does not exist.
+CCannot set the ConsoleFileName variable to {0}. File {0} was saved.
+cCommand execution stopped because the preference variable "{0}" or common parameter is set to Stop.
+CCommand execution stopped because the user interrupted the command.
+CError at XPath {0} in file {1}: {2} and {3} are mutually exclusive.
+CError at XPath {0} in file {1}: A non-negative integer is expected.
+CertNotGoodForSigning
+CExpected only one attribute with the name "{0}" in the {1} element.
+ChangePropertyAfterOpen
+ChangeStaticMember
+Choice[{0}]: 
+Choice_AlwaysRun
+Choice_AlwaysRun_Help
+Choice_DoNotRun
+Choice_DoNotRun_Help
+Choice_NeverRun
+Choice_NeverRun_Help
+Choice_RunOnce
+Choice_RunOnce_Help
+Choice_Suspend
+Choice_Suspend_Help
+ChoiceMessage
+chOq1i
+Clear Content
+Clear Item
+Clear Property
+Clear Property Directory
+Clear Property File
+ClearContentActionFile
+ClearContentDynamicParametersProviderException
+ClearContentesourceTemplate
+ClearContentProviderException
+ClearHistoryResult=
+ClearHistoryWarningw
+ClearItemAction
+ClearItemDynamicParametersProviderException
+ClearItemProviderException
+ClearItemResourceTemplate
+ClearPropertyAction
+ClearPropertyActionDirectory
+ClearPropertyActionFile
+ClearPropertyDynamicParametersProviderException
+ClearPropertyProviderException
+ClearPropertyResourceTemplate
+Client side send call failed.
+ClientKeyExchangeFailed
+ClientNegotiationFailed
+ClientNegotiationTimeout
+ClientNotFoundCapabilityProperties
+ClientReceiveFailed
+ClientRequestedToCloseSession
+ClientSendFailed
+CliXmlError
+Close call completed.
+Close is called.
+CloseCompleted
+CloseError
+CloseExCallBackError
+CloseFailed
+CloseIsCalled
+CLRVersion;
+cMandatory value {0} is not in correct format for registry key {1}.  Expected format is multistring.
+Cmdlet {0}
+CmdletDoesNotDeriveFromCmdletType
+CmdletFormatInvalid
+CmdletNameAmbiguous
+CmdletNotAvailable
+CmdletNotFoundException
+CmdletNotInAllowedListForDataSection
+CmdletProvider_NotSupported
+CmdletProviderAlreadyExists
+CmdletRequiresUseTx
+CMDLETS SUPPORTED
+Cmdlets Supported: 
+CmdletsSupported
+CmdletsSupportedCaps
+CmdletsToExport
+CodeMethodMethodFormat
+CodePropertyGetterAndSetterNull
+CodePropertyGetterFormat
+CodePropertySetterFormat
+CodePropertyShouldHaveGetterOrSetter
+COMException
+Command breakpoint on '{0}'
+Command breakpoint on '{0}:{1}'
+Command halted by user.
+CommandArgsOnlyForSingleCmdlet
+CommandBaseStrings.en.resources
+CommandBreakpointString
+CommandDiscoveryMissing
+CommandHandleIsNull
+CommandHealthContext
+CommandIsPrivate
+CommandLifecycleContext
+CommandLine=[CommandLine]
+CommandMetadataMissingCommandName
+CommandName=[CommandName]
+CommandNameNotCmdlet
+CommandNotFoundException
+CommandPath=[CommandPath]
+CommandProcessorAlreadyUsed
+CommandReceiveExCallBackError
+CommandReceiveExFailed
+CommandScriptBreakpointString
+CommandSendExCallBackError
+CommandSendExFailed
+CommandType=[CommandType]
+CommittedTransactionForCommit
+CommittedTransactionForRollback
+CommonParameters
+CompanyName
+ComparisonFailure
+CompiledCommandParameterMemberMustBeFieldOrProperty
+ComputerNameParamNotSupported
+ConcurrentInvokeNotAllowed
+Confirm
+ConfirmPreferenceDescription
+ConfirmRemoveModule
+ConnectExCallBackError
+ConnectExFailed
+ConnectFailed
+Connection attempt failed.
+ConsoleCannotbeConvertedToString
+ConsoleDescription
+ConsoleFileNameNotResolved
+ConsoleFileReadOnly
+ConsoleFileWildCardsNotSupported
+ConsoleInfoErrorStrings.en.resources
+ConsoleLoadFailure
+ConsoleVariableCannotBeSet
+ContainerCmdletProvider_NotSupported
+ContainerInvalidOperationTemplate
+Content:
+ContentColon
+-Continue with all the steps of the operation.
+Continue with this operation?
+Continue.
+ContinueAllHelpMessage=
+ContinueAllLabell
+ContinueHelp
+ContinueHelpMessage
+ContinueLabel
+ContinueOneHelpMessagey
+ContinueOneLabel
+ControlAndLabel
+ControlLabelWithoutExpression
+Copy Directory
+Copy File
+Copy Item
+Copy Key
+Copy Property
+CopyContainerItemToLeafError
+CopyContainerToContainerWithoutRecurseOrContainer
+CopyError
+CopyItemAction
+CopyItemActionDirectory
+CopyItemActionFile
+CopyItemDoesntExist
+CopyItemDynamicParametersProviderException
+CopyItemProviderException
+CopyItemResourceFileTemplate
+CopyItemResourceTemplate"
+CopyItemSourceAndDestinationNotSameProvider
+CopyKeyAction
+CopyKeyResourceTemplate
+CopyPropertyAction
+CopyPropertyDynamicParametersProviderException
+CopyPropertyProviderException
+CopyPropertyResourceTemplate
+Copyright
+Copyright (c) Microsoft Corporation. All rights reserved.
+CopyToInvocationException
+Core Windows PowerShell snap-in
+CoreMshSnapInResources.en.resources
+Could not bind parameter 'Type'. Could not convert "{0}" to "{1}". The possible enumeration values are "String, ExpandString, Binary, DWord, MultiString, QWord, Unknown".
+Could not find item {0}.
+Could not process combined Begin/Process/End clauses with command text. A script or function can either have begin/process/end clauses or command text but not both.
+CouldNotFindEvent1
+cPause the current operation and enter a command prompt. Type "exit" to resume the paused operation.
+Create Directory
+Create File
+CreatingModuleManifestFile
+Credential.en.resources
+CredentialAttribute.en.resources
+CredentialAttribute_Prompt
+CredentialAttribute_Prompt_Caption
+Credentials_NotSupported
+CredUI.en.resources
+cRegistryKey.SetValue does not support arrays of type '{0}'. Only Byte[] and String[] are supported.
+CRelative Uris are not supported in the creation of remote Sessions.
+cRun the script from this publisher now, and continue to prompt me to run this script in the future.
+CSCDoubleParameterOutOfRangez
+CSCmdsShellNotFound
+CSCmdsShellNotPowerShellBased
+CSCmdsTypeNeedsAssembly
+CSShouldProcessAction
+CSShouldProcessTarget
+CSShouldProcessTargetAdminEnable
+CThe '{0}' keyword is not supported in this version of the language.
+CThe drive containing the list of loaded providers and their drives.
+cThe following exception occurred while retrieving the string representation for method "{1}": "{0}"
+CThe following exception occurred while retrieving the string: "{0}"
+cThe invocation of Close on the '{0}' provider's content reader or writer failed for path '{1}'. {2}
+CThe length of the specified value data exceeds the maximum of 1 MB.
+CThe minimum pool size cannot be greater than the maximum pool size.
+CThe path '{0}' referred to an item that was outside the base '{1}'.
+CThe token '{0}' is not a valid statement separator in this version.
+CThis operation is currently not supported in the remoting scenario.
+CThis property cannot be changed after the runspace has been opened.
+cUnable to find type [{0}]: Make sure that the assembly containing this type is loaded. Details: {1}
+Current process ID.
+CustomAttributeTypeNotFound
+CustomShellNotFound
+CVersion {0} of Windows PowerShell is not available on this machine.
+CycleInAlias
+D{0} is an invalid scheme value. Valid values are "http" and "https".
+DataSectionNameHasAlreadyBeenUsed
+DataSectionStatementNotSupportedInDataSection
+dAttempting to perform the IsItemContainer operation on the '{0}' provider failed for path '{1}'. {2}
+DCannot change the member created from the type configuration: "{0}".
+DCannot create a new drive because type '{0}' is not of type "drive".
+DCannot perform operation because operation "{0}" is not implemented.
+dCannot process the "#requires" statement at line {0} because the argument to parameter {1} is empty.
+DCannot process the argument because {0} may not be a negative value.
+DCannot set the Value property for PSMemberInfo object of type "{0}".
+DCauses errors to be displayed with a description of the error class.
+DCommand execution stopped because the user selected the Halt option.
+DcsScriptMessageV
+DcsShouldProcessTarget
+DcsWarningMessage
+DDictates the limit of enumeration on formatting IEnumerable objects.
+dDynamic parameters for RenameProperty cannot be retrieved for the '{0}' provider for path '{1}'. {2}
+'Deadlock detected: ({1}:{2}) [{0}], {3}
+DeadlockDetected"
+DebuggerStrings.en.resources
+DebugPreferenceDescription
+DecodingErrorForErrorRecord
+DecodingErrorForMaxRunspaces
+DecodingErrorForMinRunspaces
+DecodingErrorForPipelineStateInfo
+DecodingErrorForPowerShellStateInfo
+DecodingErrorForRunspacePoolStateInfo
+DecodingErrorForRunspaceStateInfo
+Default value                
+DefaultChoice
+DefaultChoicesForMultipleChoices#
+DefaultCompanyName
+DefaultCopyrightMessage
+DefaultCtorMessageTemplate
+DefaultMshSnapinNotPresent
+DefaultRemotingExceptionMessage
+DefaultValueName
+Definition:
+DefinitionColon
+DelimiterError
+DepthOfOneRequired
+dError at XPath {0} in file {1}: Header item count = {2} does not match default row item count = {3}.
+Description
+DESCRIPTION
+Description
+DescriptionsStrings.en.resources
+DeserializationMemoryQuota[
+DeserializationTooDeep
+-Deserialized objects exceed the memory quota.
+DeserializedObjectIsNull
+DeserializeSecureStringFailed
+Destination: {0}
+DestinationChildOfSource
+DestinationContainerInvalidOperationTemplate
+DetailedDescription
+DetailSequence=[DetailSequence]
+DetailTotal=[DetailTotal]
+DeviceErrorK
+dExisting function {0} cannot be made constant. Functions can be made constant only at creation time.
+dExisting variable {0} cannot be made constant. Variables can be made constant only at creation time.
+Dictates when confirmation should be requested. Confirmation is requested when the ConfirmImpact of the operation is equal to or greater than $ConfirmPreference. If $ConfirmPreference is None, actions will only be confirmed when Confirm is specified.
+DictionaryKeyNotSpecified
+DictionaryValueNotSpecified
+DInvalid console file. Only one instance of element "{0}" is allowed.
+Directory: 
+DirectoryDisplayGrouping
+DirectoryExist
+DirectoryNotEmpty
+DirectoryReparsePoint
+Disabling the session configurations does not undo all the changes made by the Enable-PSRemoting or Enable-PSSessionConfiguration cmdlet. You might have to manually undo the changes by following these steps.
+DiscoveryExceptions.en.resources
+DNested pipeline cannot be invoked asynchronously. Use Invoke method.
+DNo snap-ins have been registered for Windows PowerShell version {0}.
+Do not run the script from this publisher now, and do not prompt me to run this script in future. Future attempts to run this script will result in a silent failure.
+Do you want to continue?
+DollarHookDescription
+DollarNullDescription
+DollarPSCultureDescription
+DollarPSUICultureDescription
+dOnly PowerShell script files are allowed for FilePath parameter. Specify a file with .ps1 extension.
+DotNetFrameworkVersion
+DotSourcingNotSupportedInDataSection
+DottingScriptFile
+DoWhileStatementNotSupportedInDataSection
+DPort number {0} is out or range. Valid range is between 1 and 65535.
+DriveAlreadyExists
+DriveCmdletProvider_NotSupported
+DriveNameIllegalCharacters
+DriveNotFound
+DriveOverflow
+DriveRemovalPreventedByProvider
+DriveRootError
+DRIVES
+Drives
+DThe 'from' keyword is not supported in this version of the language.
+dThe 'help' parameter is not recognized as a valid HelpInfo object created by the 'get-help' command.
+DThe variable '${0}' cannot be retrieved because it has not been set.
+DuplicateAssemblyName
+DuplicateCmdletName
+DuplicateCmdletProviderName
+DuplicatedNode
+DuplicateFile
+DuplicateFormalParameter
+DuplicateInitializationParameterFound
+DuplicateKeyInHashLiteral
+DuplicateMember
+DuplicateNamedArgument
+DuplicateParameterDefinition
+DuplicateScriptCommandClause
+DuplicateScriptName
+DYNAMIC PARAMETERS
+DynamicParameters
+DynamicParametersCannotCreateParameterSets
+DynamicParametersWrongType
+eAn error '{0}' occurred while processing this script. Text describing this error could not be loaded.
+ECannot bind argument to parameter '{1}' because it is an empty array.
+ECannot call method. The provider does not support the use of filters.
+ECannot delete temporary file {0}. Try again. Reason for failure: {1}.
+ECannot remove provider because removal of providers is not supported.
+ECannot rename function because function {0} is read-only or constant.
+ECannot rename variable because variable {0} is read-only or constant.
+eCannot sign code. The TimeStamp server URL must be fully qualified in the form of http://<server url>
+EcsScriptMessageV
+EcsShouldProcessTarget
+EcsWSManQCCaption
+EcsWSManQCQuery
+EcsWSManShouldProcessDesc
+EDcsRequiresElevation
+Ellipsize
+EmptyAppliesTo
+EmptyAttribute
+EmptyBracedVariableName
+EmptyCatchNotLast
+EmptyChoicesError>
+EmptyCustomControlList
+EmptyModuleManifest
+EmptyNode
+EmptyPipeElement
+EmptyVariableReference
+EndBraceExpectedAtEndOfVariableName
+EndBracketExpectedAtEndOfSubExpression
+EndOfLineInTypeLiteralToken
+EndSquareBracketExpectedAtEndOfAttribute
+EndSquareBracketExpectedAtEndOfType
+eNew shell successfully registered. However cannot delete temporary file {0}. Reason for failure: {1}.
+EngineHealthContext
+EngineLifecycleContext
+EngineVersion=[EngineVersion]
+Enter your credentials.
+Enter your credentials. 
+EnterExitNestedPromptOutOfSync
+EnterHelp
+EntryShouldBeMshXml
+EnumerationException
+EnvironmentDriveDescription
+EqualsNotSupported
+ERemotingCaption
+ERemotingQuery
+Error formatting a string: {0}.
+Error in decoding data received from remote machine. Need at least {0} bytes of data to decode a deserialized object received from remote machine. This may happen if the fragments are not properly constructed by the remote machine or the data might have been tampered with.
+Error in decoding ErrorRecord.
+Error in file {0}: {1}
+ErrorActionPreferenceDescription
+ErrorAlreadyRedirected
+ErrorCategory.en.resources
+ErrorCategory=[ErrorCategory]
+ErrorConvertingNote
+ErrorDetailsEmptyTemplate
+ErrorId=[ErrorId]
+ErrorInFile
+ErrorLoadingModulesOnRunspaceOpen
+ErrorMessage=[ErrorMessage]
+ErrorPackage.en.resources
+ErrorPackageRemoting.en.resources
+ErrorPreferenceStop
+ErrorStreamingNotEnabled
+ErrorViewDescription
+ERunning command "{0}" to get PowerShell based Session Configurations.
+EThe custom attribute type '{0}' is not derived from System.Attribute.
+EThe drive containing a view of the functions stored in session state.
+EThe following exception occurred while retrieving member "{1}": "{0}"
+EThe member "{0}" is already present from the extended type data file.
+EThe ShellID identifies the current shell.  This is used by #Requires.
+EventingResources.en.resources
+Example
+EXAMPLE
+ExampleHelpInfo
+Examples
+EXAMPLES
+ExampleUpperCase
+Exception
+Exception calling "{0}" : "{1}"
+Exception getting "{0}": "{1}"
+Exception setting "{0}": "{1}"
+Exception: {0}
+ExceptionActionPromptCaption
+ExceptionClass=[ExceptionClass]
+ExceptionGettingMember
+ExceptionGettingMembers
+ExceptionRetrievingMethodDefinitions
+ExceptionRetrievingMethodString
+ExceptionRetrievingParameterizedPropertyDefinitions
+ExceptionRetrievingParameterizedPropertyReadState
+ExceptionRetrievingParameterizedPropertyString
+ExceptionRetrievingParameterizedPropertytype
+ExceptionRetrievingParameterizedPropertyWriteState
+ExceptionRetrievingPropertyAttributes
+ExceptionRetrievingPropertyReadState
+ExceptionRetrievingPropertyString
+ExceptionRetrievingPropertyType
+ExceptionRetrievingPropertyWriteState
+ExceptionRetrievingTypeNameHierarchy
+ExceptionTypeAlreadyCaught
+ExceptionWhenGetting
+ExceptionWhenSetting
+ExecutionAlreadyStarted
+ExecutionContextDescription
+ExecutionContextNotSet
+ExitNonExistentNestedPromptErrorJ
+ExpandableStringNotSupportedInDataSection
+ExpandableStringsNotSupportedInDataSectionCmdletList
+ExpectBoolean
+ExpectedEndOfLine
+ExpectedExpression
+ExpectedNodeNameInstead
+ExpectedNodeTypeInstead
+ExpectedValueExpression
+ExpectExpression
+ExpectInteger
+ExpectNaturalNumber
+ExpectPositiveInteger
+ExportConsoleCannotDeleteFile
+Exporting alias '{0}'.
+Exporting cmdlet '{0}'.
+Exporting function '{0}'.
+Exporting variable '{0}'.
+ExportingAlias
+ExportingCmdlet
+ExportingFunction
+ExportingVariable
+ExpressionsMustBeFirstInPipeline
+ExtendedTypeSystem.en.resources
+F{0}, {1} : File skipped because it does not have the ps1xml extension.
+FAlias not allowed because an alias with the name '{0}' already exists.
+false
+FalseShort
+FatalErrorCausingClose
+fAttempting to perform the HasChildItems operation on the '{0}' provider failed for the path '{1}'. {2}
+FCannot access session state resource because it is a private resource 
+FCannot bind argument to parameter '{1}' because it is an empty string.
+FCannot commit transaction. The transaction has already been committed.
+fCannot open the runspace pool because it is not in the 'BeforeOpen' state. The current state is '{0}'.
+FCannot process command. The parameter '{0}' is defined multiple times.
+fCannot retrieve message "{0}" "{1}" "{2}". Template string format is invalid in template string "{3}".
+FDrive '{0}' cannot be removed because the provider '{1}' prevented it.
+FError at XPath {0} in file {1}: "{2}" is not an valid alignment value.
+File {0} cannot be loaded because its execution is blocked by software restriction policies. For more information, contact your system administrator.
+File {0} cannot be loaded because the execution of scripts is disabled on this system. Please see "get-help about_signing" for more details.
+File {0} cannot be loaded. {1}.
+File {0} is published by {1}. This publisher is explicitly untrusted on your system. The script will not execute on the system. Please see "get-help about_signing" for more details.
+FileDescription
+FileError
+FileExistsNoClobber
+FileLineError
+FileLineTypeError
+FileList
+FileNameCaptionForExportConsole
+FileNameNotResolved
+FileNamePromptMessage
+FileNotFound
+FileOpenError
+FilePathNotFromFileSystemProvider
+FilePathShouldPS1Extension
+FileReadError
+FileSystemProviderStrings.en.resources
+FileVersion
+Filter_NotSupported
+FilterAllScopeOptionCannotBeRemoved
+FilterCannotBeMadeConstant
+FilterIsConstant
+FilterIsReadOnly
+Filters
+FILTERS
+FirstCommandCannotHaveInput
+Flow control statements such as Break, Continue, Return, Exit, and Throw are not allowed in restricted language mode or a Data section.
+FlowControlStatementNotSupportedInDataSection
+FMinimum version of the Windows PowerShell host required by this module
+fName: {0}. This will allow administrators to remotely run Windows PowerShell commands on this computer
+FNested PowerShell cannot be invoked asynchronously. Use Invoke method.
+-Folder containing the current user's profile.
+For more information, type: C
+Force closed.
+ForceClosed
+ForeachStatementNotSupportedInDataSection
+FormatAndOut.XmlLoading.en.resources
+FormatEnunmerationLimitDescription
+FormatError
+FormatFileNotRooted
+FormatLoadingErrors
+FormatsFileNotFound
+FormatsToProcess
+FormattableLoadErrors
+ForWhileStatementNotSupportedInDataSection
+FParameter set cannot be resolved using the specified named parameters.
+FPath specified for FilePath parameter is not from FileSystem provider.
+FragmetIdsNotInSequence
+FRequested remote Session with client InstanceId "{0}" cannot be found.
+FromKeywordNotAllowed
+FromStdErrn
+FRunspaceConfiguration-derived type {1} is not defined in assembly {0}.
+fThe following exception occurred while retrieving the string representation for property "{1}" : "{0}"
+FThe parameter "{0}" is declared in parameter-set "{1}" multiple times.
+FThe security identifier is not allowed to be the owner of this object.
+FThe 'trap' statement was incomplete. A trap statement requires a body.
+fThe TypeTable cannot be updated because the TypeTable might have been created outside of the Runspace.
+FThe Windows PowerShell snap-in '{0}' is not installed on this machine.
+FThis provider does not support security descriptor related operations.
+FullHelpInfo
+FunctionAllScopeOptionCannotBeRemoved
+FunctionCannotBeMadeConstant
+FunctionDeclarationNotSupportedInDataSection
+FunctionDriveDescription
+FunctionIsConstant
+FunctionIsReadOnly
+FunctionNotRemovable
+FunctionNotWritable
+FunctionOverflow
+FunctionsToExport
+GAccess is denied. You need to run this cmdlet from an elevated process.
+gAttempting to perform the MakePath operation operation on the '{0}' provider failed for path '{1}'. {2}
+GCannot convert '{6}' to the type '{2}' required by parameter '{1}'. {7}
+gCannot invoke pipeline because runspace is not in the Opened state. Current state of runspace is '{0}'.
+GCannot open file because the current provider ({0}) cannot open a file.
+gCannot rename item because the path resolved to multiple items. Only one item can be renamed at a time.
+gCannot use interface. The IDynamicPropertyCmdletProvider interface is not implemented by this provider.
+GCannot validate argument '{0}' because it is not a valid variable name.
+gCommand execution stopped because the preference variable "{0}" or common parameter is set to Stop: {1}
+gContainer cannot be copied to another container. The -Recurse or -Container parameter is not specified.
+GcsScriptMessageV
+GDelimiter cannot be specified when reading the stream a byte at a time.
+GDo not report this error, just continue with the next script statement.
+GeneralError
+Generated by: {0}
+Generated on: {0}
+GError at XPath {0} in file {1}: There must be at least one default {2}.
+GetChildNameProviderException
+GetChildNamesDynamicParametersProviderException
+GetChildNamesProviderException
+GetChildrenDynamicParametersProviderException
+GetChildrenProviderException
+GetContentReaderDynamicParametersProviderException
+GetContentReaderProviderException
+GetContentWriterDynamicParametersProviderException
+GetContentWriterProviderException
+GetDefaultValueFailed
+GetDynamicParametersException
+GetErrorText.en.resources
+GetItemDynamicParametersProviderException
+GetItemProviderException
+GetParentPathProviderException
+GetProperties
+GetProperty
+GetPropertyDynamicParametersProviderException
+GetPropertyProviderException
+GetSecurityDescriptorProviderException
+GetStackTraceHelp
+GetTypeNameHierarchyError
+GetWithoutGetterException
+gIncorrect Windows PowerShell version {0}. Windows PowerShell version {1} is supported on this computer.
+Global scope cannot be removed.
+GlobalScopeCannotRemove
+gNode "{0}" was not found. It should be present once under "{1}". The parent node "{1}" will be ignored.
+gNode type "{0}" is unknown in the {1} element. Only the "{2}" node type is expected in the {1} element.
+GProcessor architecture (None, X86, Amd64, IA64) required by this module
+gProvider methods not processed. The ContainerCmdletProvider methods are not supported by this provider.
+GRequired element "ConsoleSchemaVersion" in {0} is missing or incorrect.
+GScriptBlock should only be specified as value to the Command parameter.
+gSoftware {0} is published by an unknown publisher. It is recommended that you do not run this software.
+gThe '{0}' member, which was imported from module '{1}', cannot be removed for the following reason: {2}
+GThe at parameter must be an integer to index a specific property value.
+gThe current processor architecture is: {0}.  The module '{1}' requires the following architecture: {2}.
+gThe Data section variable "{0}" has already been used for an existing variable or another Data section.
+GThe drive containing a view of those variables stored in session state.
+GThe Export-ModuleMember cmdlet can only be called from inside a module.
+GThe identifier {0} is invalid. Specify a positive number and try again.
+gThe protocol specified in the Uri "{0}" is not supported. Only "{1}" and "{2}" protocols are supported.
+gUnable to remove module '{0}' because it is read-only. Use the -force flag to remove read-only modules.
+GValue should be "true" or "false" instead of "{0}" for "{1}" attribute.
+h""}o
+hA parameter binding error occurred for object {0}; the message string cannot be loaded for {1}.{2} : {3}
+Halt this command.
+HaltCommandException
+HaltHelpMessage
+HaltLabel
+hAmpersand not allowed. The & operator is reserved for future use; use "&" to pass ampersand as a string.
+HasChildItemsProviderException
+hAttempting to perform the InvokeDefaultAction operation on the '{0}' provider failed for path '{1}'. {2}
+hCannot compare PSDriveInfo. A PSDriveInfo instance can be compared only to another PSDriveInfo instance.
+HCannot perform operation because object "{0}" has already been disposed.
+hCannot perform the ClearContent operation. The ClearContent operation is not supported by this provider.
+HCannot process Help category because "{0}" is not a valid Help category.
+HCannot reflect on entry assembly to find out RunspaceConfigurationType. 
+hCmdletProvider could not stream the results because no Cmdlet was specified to stream the error through.
+HelpCategoryInvalid]
+HelpCommandHelp
+HelpDisplayStrings.en.resources
+HelpErrors.en.resources
+HelpFileLoadFailure
+HelpFileNotAccessible
+HelpFileNotValid
+HelpInfoObjectRequiredP
+HelpLoadError
+HelpNotFound
+HEmpty ${} variable reference, there should be a name between the braces.
+HEnterNestedPrompt has not been called as many times as ExitNestedPrompt.
+HError at XPath {0} in file {1}: {2}, {3} and {4} are mutually exclusive.
+HError at XPath {0} in file {1}: An Out Of Band view cannot have GroupBy.
+History.en.resources
+HKCUDriveDescription
+HKLMDriveDescription
+HMinimum version of the Windows PowerShell engine required by this module
+HOMEDescription
+HomePathNotSet
+HostDoesNotSupportPushRunspace
+HostFunctionNotImplemented&
+HostId=[HostId]
+HostInNestedPrompt
+HostInterfaceExceptionsStrings.en.resources
+HostName=[HostName]
+HostVersion=[HostVersion]
+hPath cannot be processed because it resolved to more than one file; can process only one file at a time.
+hPipeline input cannot be processed because the default value of parameter '{1}' cannot be retrieved. {6}
+HProperty '{0}' cannot be found on this object. Make sure that it exists.
+hThe following exception occurred while retrieving the read state for parameterized property "{1}": "{0}"
+HThe NavigationCmdletProvider methods are not supported by this provider.
+HThere is an error launching the background process. Error reported: {0}.
+HThis property cannot be changed after the runspace pool has been opened.
+hUnable to remove module '{0}' because it is required by '{1}'. Use the -force flag to remove the module.
+HVersion value {0} is not specified or is incorrect for registry key {1}.
+HYou can only use the '=' operator when assigning to a list of variables.
+I {0}, {1,-16} Step to next statement (step over functions, scripts, etc.)
+IA switch statement must have one of '-file filename' or '( expression )'.
+iCannot convert an empty script block. Make sure the script block contains exactly one pipeline or command
+iCannot generate a PowerShell object for a ScriptBlock that does not have an associated execution context.
+iCannot open runspace because runspace is not in the BeforeOpen state. Current state of runspace is '{0}'.
+iCannot perform operation because runspace is not in the Opened state. Current state of runspace is '{0}'.
+iCannot perform operation because the runspace pool is not in the '{0}' state. The current state is '{1}'.
+ICannot process names because no TypeNames were found for referenceId {0}.
+ICannot retrieve the string resource because the reader has been disposed.
+ICannot roll back transaction. The transaction has already been committed.
+IConnecting to remote server failed with the following error message : {0}
+IContent_Clear_NotSupported
+IContent_Seek_NotSupported
+IContentCmdletProvider_NotSupported
+IDNotFound
+IDynamicPropertyCmdletProvider_NotSupported
+iFile {0} is published by {1} and is not trusted on your system. Only run scripts from trusted publishers.
+IfStatementMissingCondition
+Illegal enum value: {0}.
+Importing alias '{0}'.
+Importing cmdlet '{0}'.
+Importing function '{0}'.
+Importing variable '{0}'.
+ImportingAlias
+ImportingCmdlet
+ImportingFunction
+ImportingNonStandardNoun
+ImportingNonStandardNounVerbose
+ImportingNonStandardVerb
+ImportingNonStandardVerbVerbose
+ImportingNonStandardVerbVerboseSuggestion
+ImportingVariable
+IMultiple help topics are found, use only one help topic with -{0} option.
+Incomplete string token.
+IncompleteDollarSubexpressionReference
+IncompleteDollarVariableReference
+IncompleteHashLiteral
+IncompleteString
+IncompleteSwitchStatement
+IncompleteVariableReference
+IncorrectHeaderItemCount
+IncorrectRowItemCount
+IncorrectValueForCommandParameter4
+IncorrectValueForFormatParameter}
+IndexOperationFailed
+IndexOutOfRange
+IndexOutOfRange1
+Information({0}): "{1}"
+InitializeDefaultDrivesException
+InitialSessionStateNull
+InputObjectMissingMandatory
+InputObjectNotBound
+INPUTS
+InputType
+InquireCaptionDefault
+InquireCtrlC
+InquireHalt
+InternalHostStrings.en.resources
+InternalHostUserInterfaceStrings.en.resources
+InternalName
+Invalid assignment expression. The left hand side of an assignment operator needs to be something that can be assigned to like a variable or a property.
+Invalid handle specified.
+Invalid Module Manifest path '{0}'. The path argument must resolve to a single file in the file system with a '.psd1' extension. Please fix the path specification and try again.
+Invalid parameter '{0}'
+Invalid type of value: {0}.  PSPrimitiveDictionary class accepts only values of types that are serializable in all major-version compatible versions of PowerShell remoting.
+InvalidAdaptedType
+InvalidAlignmentValue
+InvalidArgument
+InvalidCastCannotRetrieveString
+InvalidCastException
+InvalidCastExceptionEnumerationMoreThanOneValue
+InvalidCastExceptionEnumerationNoFlagAndComma
+InvalidCastExceptionEnumerationNoValue
+InvalidCastExceptionEnumerationNull
+InvalidCastExceptionForBooleanArgumentValue
+InvalidCastExceptionNoStringForConversion
+InvalidCastExceptionWithInnerException
+InvalidCastFromNull
+InvalidChoiceHotKeyErrorg
+InvalidCmdletNameFormat
+InvalidColumnHeader
+InvalidCommandNumber
+InvalidComObjectException
+InvalidComponent
+InvalidComputerName
+InvalidControlForOutOfBandView
+InvalidCountValue
+InValidCustomAttributeType
+InvalidData
+InvalidDataSectionBody
+InvalidDefaultChoiceForMultipleSelection
+InvalidDictionaryKeyName
+InvalidDictionaryValueName
+InvalidDotNetFrameworkVersion
+InvalidElementTag
+InvalidEndOfLine
+InvalidEntryAssembly
+InvalidErrorCategory
+InvalidFilenameOption
+InvalidFunctionParameter
+InvalidHashAlgorithm
+InvalidIdGetHistory
+InvalidJobStateGeneral
+InvalidLabelCharacter
+InvalidLeftHandSide
+InvalidMatchType
+InvalidMetadataForCurrentValue
+InvalidModuleExtension
+InvalidModuleManifest
+InvalidModuleManifestMember
+InvalidModuleManifestPath
+InvalidModuleSpecificationMember
+InvalidNode
+InvalidNodeType
+InvalidNodeValue
+InvalidOperation
+InvalidOperation_MustBeSameThread
+InvalidOperation_MustRevertPrivilege
+InvalidOperation_MustUseSameTransaction
+InvalidOperation_NeedTransaction
+InvalidOperation_NoSecurityDescriptor
+InvalidOperation_NotAssociatedWithTransaction
+InvalidOperation_RegRemoveSubKey
+InvalidOperation_RemoteNotAllowed
+InvalidOperationOnBinaryModule
+InvalidParameter
+InvalidParameterForDataSectionStatement
+InvalidPattern
+InvalidPipelineStateStateGeneral
+InvalidPowerShellHostName
+InvalidPowerShellHostVersion
+InvalidPowerShellStateGeneral
+InvalidPrimitiveType
+InvalidProcessorArchitecture
+InvalidPropertyEntry
+InvalidProviderInfo
+InvalidProviderInfoNull
+InvalidPSSnapInNameR
+InvalidReferenceId
+InvalidRegularExpression
+InvalidResult
+InvalidRunspacePoolState
+InvalidRunspacePoolStateGeneral
+InvalidRunspaceState
+InvalidRunspaceStateGeneral
+InvalidSchemeValue
+InvalidScriptBlock
+InvalidScriptBlockInDataSection
+InvalidSplitOptionCombination
+InvalidSplitOptionWithPredicate
+InvalidStateCreateNested
+InvalidSwitchFlag
+InvalidThreadOptionsChange
+InvalidTokenForDataSectionCmdletList
+InvalidType
+InvalidTypeHierarchyReferenceId
+InvalidURI
+InvalidUserNameFormat
+InvalidValueFailure
+InvalidValueMyResult
+InvalidValueToResult
+InvalidVariableReference
+InvalidVersion
+InvalidWMIClassPath
+InvalidWMIPath
+Invoke Item
+InvokeDefaultActionDynamicParametersProviderException
+InvokeDefaultActionProviderException
+InvokeHistoryLoopDetected
+InvokeHistoryMultipleCommandsError
+InvokeItemAction
+InvokeItemResourceFileTemplate
+InvokeMethodOnNull
+IOperation not processed. Location provided does not allow this operation.
+IPCCloseTimedOut
+IPCErrorProcessingServerData
+IPCExceptionLaunchingProcess
+IPCInsufficientDataforElement
+IPCNoSignalForSession
+IPCOnlyTextExpectedInDataElement
+IPCServerProcessExited
+IPCServerProcessReportedError
+IPCSignalTimedOut
+IPCSupportsOnlyDefaultAuth
+IPCUnknownCommandGuid
+IPCUnknownElementReceived
+IPCUnknownNodeType
+IPCWowComponentNotPresent
+IPCWrongAttributeCountForDataElement
+IPCWrongAttributeCountForElement
+iPipeline not executed because a pipeline is already executing. Pipelines cannot be executed concurrently.
+IPropertyCmdletProvider_NotSupported
+IRedirection is not allowed in restricted language mode or a Data section.
+is missing the closing ')'.
+is missing the closing '}}'.
+is missing the terminator: {1}.
+ISecurityDescriptorCmdletProvider_NotSupported
+IsHiddenNotSupported
+IsHiddenValueShouldBeTrueOrFalse
+IsItemContainerDynamicParametersProviderException
+IsItemContainerProviderException
+IsOperatorRequiresType
+IsValidPathProviderException
+Item: {0}
+Item: {0} Destination: {1}
+Item: {0} NewName: {1}
+Item: {0} Property: {1}
+Item: {0} Property: {1} At: {2}
+Item: {0} Type: {1}
+Item: {0} Type: {1} Value: {2}
+Item: {0} Value: {1}
+ItemCmdletProvider_NotSupported
+ItemDoesNotExist
+ItemExistsDynamicParametersProviderException
+ItemExistsProviderException
+ItemNotFound
+ItemNotFoundInRepository
+IThe "Type" node must have "Members", "TypeConverters", or "TypeAdapters".
+IThe {0} operator only permits 2 elements on the right-hand side, not {1}.
+IThe background process reported an error with the following message: {0}.
+IThe drive containing a view of the environment variables for the process.
+iThe following exception occurred while retrieving the definitions for parameterized property "{1}": "{0}"
+iThe following exception occurred while retrieving the write state for parameterized property "{1}": "{0}"
+iThe specified module '{0}' was not loaded because no valid module file was found in any module directory.
+iThe TransactedRegistryKey object is not associated with a transaction because it is for a predefined key.
+IUnable to assign to a dictionary of type {0} when the key is of type {1}.
+iWqyn
+J{0} For more information, see the about_Remote_Troubleshooting Help topic.
+J{0} is a NTFS junction point. Use the Force parameter to delete or modify.
+jA Begin statement block, Process statement block, or parameter statement is not allowed in a Data section.
+jA SessionStateProxy method call is in progress. Concurrent SessionStateProxy method calls are not allowed.
+jAttempting to perform the GetSecurityDescriptor operation on the '{0}' provider failed for path '{1}'. {2}
+jAttempting to perform the NormalizeRelativePath operation on the '{0}' provider failed for path '{1}'. {2}
+jAttempting to perform the SetSecurityDescriptor operation on the '{0}' provider failed for path '{1}'. {2}
+jCannot access Help file "{0}" because the current user is not authorized to access the file. Details: {1}.
+JCannot bind argument to parameter '{1}' because it is an empty collection.
+JCannot create a new provider because type '{0}' is not of type "provider".
+JCannot create drive. The provider does not support the use of credentials.
+JCannot create provider because creation of new providers is not supported.
+jCannot process the "#requires" statement at line {0} because a closing quote is missing from argument {1}.
+jCannot sign file because the system does not support signing operations on files without a file extension.
+jDo not run the script from this publisher now, and continue to prompt me to run this script in the future.
+JDot sourcing is not allowed in restricted language mode or a Data section.
+JError at XPath {0} in file {1}: Resource {2} in assembly {3} is not found.
+JError at XPath {0} in file {1}: There cannot be more than one default {2}.
+JobWithSpecifiedInstanceIdNotCompleted
+JobWithSpecifiedInstanceIdNotFound
+JobWithSpecifiedNameNotCompleted
+JobWithSpecifiedNameNotFound
+JobWithSpecifiedSessionIdNotCompleted
+JobWithSpecifiedSessionIdNotFound
+jParameter cannot be processed because the parameter name '{1}' is ambiguous. Possible matches include:{6}.
+jParameter declarations are a comma-separated list of variable names with optional initializer expressions.
+jThe Formattable cannot be updated because the Formattable might have been created outside of the Runspace.
+jThe specified authentication mechanism "{0}" is not supported. Only "{1}" is supported for this operation.
+JThe variable syntax cannot be used to get or set data in the provider. {2}
+JUnable to access Windows PowerShell PowerShellEngine registry information.
+JUnexpected type of encoded command parameter (expected PSObject, got {0}).
+K{0}, {1} : File skipped because of the following validation exception: {2}.
+K8ObLPigL
+kA parameter binding error occurred for object {0}; the message string cannot be formatted for {1}.{2} : {3}
+KA parameter with the name '{0}' was defined multiple times for the command.
+kA Session State error occurred for object {0}, but the message string could not be loaded for {1}.{2} : {3}
+kAn exception was thrown when trying to call "{0}" to extract the contents of an object of type "{1}": "{2}"
+KAttempting to perform the Start operation on the '{0}' provider failed. {1}
+KCannot find the registry key: "{0}{1}", using "{2}" to load the help files.
+KCannot invoke this function because the current host does not implement it.
+KCannot move because the destination path can resolve only to a single path.
+KError at XPath {0} in file {1}: {2} cannot be specified with an expression.
+KeyAlreadyExists
+KeyCreatedValueFailed
+KeyDoesNotExist
+KeyMustBeString
+KeyTypeMismatch
+KItem: {0} SourceProperty: {1} DestinationItem: {2} DestinationProperty: {3}
+KMethod calls are not allowed in restricted language mode or a Data section.
+KMultiple ambiguous overloads found for "{0}" and the argument count: "{1}".
+KRemote Command: {0}, associated with job whose session identifier is "{1}".
+KRemote Command: {0}, associated with job whose session identifier is '{1}'.
+KSending data to remote server failed with the following error message : {0}
+kThe "{0}" parameter of the Data section is not valid. The valid Data section parameter is SupportedCommand.
+kThe argument is null or empty. Supply an argument that is not null or empty and then try the command again.
+KThe argument is null. Supply a non-null argument and try the command again.
+kThe Cmdlet provider cannot stream the results because no Cmdlet was specified to stream the output through.
+KThe following error occurred while loading the extended type data file: {0}
+kThe following unknown list modifier was detected: '{0}'. Valid list modifiers are Add, Remove, and Replace.
+KThis {0} object was not created by calling {1} on this PowerShell instance.
+KUnknown element {0} found. "{1}" should have "{2}" and "{3}" elements only.
+L                     to start from line <m>, and "list <m> <n>" to list <n> 
+L                     Use "list" to start from the current line, "list <m>"  
+L"{0}" must specify a PowerShell script file that ends with extension ".ps1".
+L>p]N
+LAssignment failed because [{0}] doesn't contain a settable property '{1}()'.
+Last fragment's IsEndFragment flag is not set. This may happen if the fragments are not properly constructed by the remote machine or the data might have been tampered with.
+lAttempting to perform the NewDrive operation on the '{0}' provider failed for the drive with root '{1}'. {2}
+lCannot perform operation because the runspace is not in the '{0}' state. Current state of runspace is '{1}'.
+lCannot perform the operation because the pipeline is started. Stop the pipeline and try the operation again.
+LCannot rename because the target specified represents a path or device name.
+LCmdlet '{0}' is present more than once in Windows PowerShell snap- in '{1}'.
+LegalCopyright
+LEither both "{0}" and "{1}" must be specified or both must not be specified.
+LessThanErrorTemplate 
+Line breakpoint on '{0}:{1}'
+LineBreakpointString
+-List of all modules packaged with this module
+ListHelp
+ListModifierDisallowedKey
+ListSeparator
+LMethod invocation failed because [{0}] doesn't contain a method named '{1}'.
+LMinimum version of the common language runtime (CLR) required by this module
+LoadHelpFileForTargetFailed
+Loading '{0}' from path '{1}'.
+Loading module from path '{0}'.
+LoadingFile
+LoadingModule
+LoadTagFailed
+LocationFormat
+Logging.en.resources
+LPath {0} is not fully qualified. Specify a fully qualified format file path.
+LReceived packet not destined for me: myself = {0}, packet destination = {1}.
+lSystem.Resources.ResourceReader, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet
+LThe command handle returned from the WinRS API WSManRunShellCommand is null.
+LThe file '{0}' is not allowed because it does not have the extension '.ps1'.
+LThe method cannot be invoked because the pool has been closed or has failed.
+LThe 'ModuleName' member is not present in the hashtable describing a module.
+lThe Windows PowerShell snap-in module {0} does not have required Windows PowerShell snap-in strong name {1}.
+LWindows PowerShell snap-in "{0}" is loaded with the following warnings:  {1}
+M"{0}", "{1}" must be specified in "{2}" section to dynamically load assembly.
+m"A=7#
+M'{0}' already exists as a cmdlet. Only one cmdlet can exist for a given name.
+M'{0}' already exists as a script. Only one script can exist for a given name.
+m4TI?
+MakePathProviderException
+MamlInvalidChildNodeCountError
+MamlInvalidChildNodeError
+MandatoryValueNotInCorrectFormat
+MandatoryValueNotInCorrectFormat_
+MandatoryValueNotInCorrectFormatMultiString
+MandatoryValueNotPresent
+ManifestHeaderLine1
+ManifestHeaderLine2
+ManifestHeaderLine3
+ManifestMemberNotFound
+MaxAliasCountDescription
+MaxDriveCountDescription
+MaxErrorCountDescription
+MaxFunctionCountDescription
+MaxHistoryCountDescription
+MaxPoolLessThan1
+MaxVariableCountDescription
+mCannot export a console file because no console file has been specified. Do you want to continue with export?
+MCannot find location stack '{0}'. It does not exist or it is not a container.
+MCannot generate a PowerShell object for a ScriptBlock that uses dot sourcing.
+mCannot process returned information because the information returned from the provider Start method was null.
+mCannot remove provider {0}. All drives associated with provider {0} must be removed before it can be removed.
+MCannot sign code. The specified certificate is not suitable for code signing.
+Member "{0}" must be a note.
+MemberAlreadyPresent
+MemberAlreadyPresentFromTypesXml
+MemberMustBePresent
+MemberNotPresent
+MemberShouldBeNote
+MemberShouldHaveType
+MemberShouldNotBePresent
+Metadata.en.resources
+MetadataError
+MetadataMemberInitialization
+-Method failed with unexpected error code {0}.
+MethodAmbiguousException
+MethodArgumentConversionException
+MethodArgumentCountException
+MethodCallNotSupportedInDataSection
+MethodInvocationException
+MethodNotFound
+Microsoft (R) Windows (R) Operating System
+Microsoft Corporation
+mIncorrect Windows PowerShell version {0}. Windows PowerShell version {1} is supported in the current console.
+MiniShellErrors.en.resources
+MinPoolGreaterThanMaxPool
+MinPoolLessThan1
+MInvalid character '{0}', labels can only contain characters, numbers and '_'.
+'Missing ')' in function parameter list.
+Missing ')' in method call.
+Missing ] at end of type token.
+'Missing closing '}' in statement block.
+-Missing condition in switch statement clause.
+'Missing expression after '{0}' in loop.
+Missing expression after '{0}'.
+'Missing key before '=' in hash literal.
+-Missing statement block after 'else' keyword.
+'Missing statement body in foreach loop.
+MissingArgument
+MissingArrayIndexExpression
+MissingAttribute
+MissingCallId
+MissingCatchHandlerBlock
+MissingCatchOrFinally
+MissingCloseBraceInDataSectionStatement
+MissingCurlyBraceInSwitchStatement
+MissingDataType
+MissingDestination
+MissingEndCurlyBrace
+MissingEndMultiLineComment
+MissingEndParenthesisAfterForeach
+MissingEndParenthesisAfterStatement
+MissingEndParenthesisInExpression
+MissingEndParenthesisInFunctionParameterList
+MissingEndParenthesisInIfStatement
+MissingEndParenthesisInMethodCall
+MissingEndParenthesisInSubexpression
+MissingEndParenthesisInSwitchStatement
+MissingEndSquareBracket
+MissingEqualsInHashLiteral
+MissingEqualsInNamedArgument
+MissingExpression
+MissingExpressionAfterKeyword
+MissingExpressionAfterOperator
+MissingExpressionAfterToken
+MissingExpressionInNamedArgument
+MissingFilenameOption
+MissingFileSpecification
+MissingFinallyStatementBlock
+MissingForeachExpression
+MissingForeachStatement
+MissingFunctionBody
+MissingInInForeach
+MissingInnerText
+MissingIsEndFragment
+MissingIsStartFragment
+MissingKeyInHashLiteral
+MissingLoopStatement
+MissingMandatoryParameter
+MissingMethodName
+MissingNameAfterFunctionKeyword
+MissingNode
+MissingNodeFromList
+MissingOpenBraceInDataSectionStatement
+MissingOpenParenthesisAfterKeyword
+MissingProperty
+MissingPropertyName
+MissingPropertyReference
+MissingRunspaceId
+MissingStatementBlock
+MissingStatementBlockAfterElse
+MissingStatementBlockForDataSection
+MissingStatementInHashLiteral
+MissingSwitchConditionExpression
+MissingSwitchStatementClause
+MissingSwitchValueExpression
+MissingTarget
+MissingTargetClass
+MissingTrapStatement
+MissingTryStatement
+MissingTryStatementBlock
+MissingTypeLiteralToken
+MissingValueForSupportedCommandInDataSectionStatement
+MissingVariableNameAfterForeach
+MissingWhileOrUntilInDoWhile
+MName of the session configuration which will be loaded on the remote computer
+ModuleAssemblyFound
+ModuleIsConstant
+ModuleIsReadOnly
+ModuleIsRequired
+ModuleList
+ModuleManifestInsufficientCLRVersion
+ModuleManifestInsufficientModuleVersion
+ModuleManifestInsufficientPowerShellVersion
+ModuleManifestInvalidManifestMember
+ModuleManifestInvalidValue
+ModuleManifestMissingModuleVersion
+ModuleManifestNestedModulesCantGoWithModuleToProcess
+ModuleNotFound
+Modules.en.resources
+ModuleTooDeeplyNested
+ModuleToProcess
+ModuleVersion
+MonadConsoleNotFound
+MonadEngineRegistryAccessFailed
+MonadRootRegistryAccessFailed
+MonadVersionNotFound
+Move Directory
+Move File
+Move Item
+Move Property
+MoveItemAction
+MoveItemActionDirectory
+MoveItemActionFile
+MoveItemDynamicParametersProviderException
+MoveItemOneDestination
+MoveItemPathMultipleDestinationNotContainer
+MoveItemProviderException
+MoveItemResourceFileTemplate
+MoveItemResourceTemplate
+MoveItemSourceAndDestinationNotSameProvider
+MovePropertyAction
+MovePropertyDestinationResolveToSingle
+MovePropertyDynamicParametersProviderException
+MovePropertyProviderException
+MovePropertyResourceTemplate
+mPause the current pipeline and return to the command prompt. Type exit to resume execution when you are done.
+mscoree.dll
+MSending data to a remote command failed with the following error message: {0}
+MshHostRawUserInterfaceStrings.en.resources
+MshShellIdDescription
+MshSignature.en.resources
+MshSignature_HashMismatch
+MshSignature_Incompatible
+MshSignature_Incompatible_HashAlgorithm
+MshSignature_NotSigned
+MshSignature_NotSupportedFileFormat
+MshSignature_NotSupportedFileFormat_NoExtension
+MshSignature_NotTrusted
+MshSignature_Valid
+MshSnapInCmdletResources.en.resources
+MshSnapinDoesNotExist
+MshSnapinInfo.en.resources
+MshSnapinQualifiedError
+MThe state of the current PowerShell instance is not valid for this operation.
+MThis {0} object was not created by calling {1} on this RunspacePool instance.
+MultipleMshSnapinsElementNotSupported
+MultipleOnlineTopicsNotSupported
+MultipleSwitchDefaultClauses
+must have the terminator: {1} at the beginning of the line.*
+MustBeAdminToOverrideThreadOptions
+MustBeFileSystemPath
+MutuallyExclusiveNode
+mVariable to hold the Email Server. This can be used instead of HostName parameter in Send-MailMessage cmdlet.
+N3$pJq$
+nA Session State error occurred for object {0}, but the message string could not be formatted for {1}.{2} : {3}
+Name: {0}
+Name: {0} SDDL: {1}
+Name=[AdditionalInfo_Name1];Value=[AdditionalInfo_Value1]
+Name=[AdditionalInfo_Name2];Value=[AdditionalInfo_Value2]
+Name=[AdditionalInfo_Name3];Value=[AdditionalInfo_Value3]
+Namec
+named
+NamedCommandIsPrivate
+NamedParameter
+NamedParameterNotFound
+NAn error occurred attempting to create an instance of the provider '{0}'. {1} 
+NativeCP.en.resources
+NativeReadFileFailed
+NativeWriteFileFailed
+NavigationCmdletProvider_NotSupported
+nBad Console file. Multiple entries found for element PSConsoleFile. Only one entry supported for this version.
+NCannot call method. The content Seek method is not supported by this provider.
+NCannot load Windows PowerShell snap-in {0} because of the following error: {1}
+NCannot retrieve message "{0}" "{1}" "{2}" because assembly was not registered.
+NCannot use transaction. The transaction has been rolled back or has timed out.
+NcsCannotDeleteFile
+NcsCannotDeleteFileAfterInstall
+NcsCannotWritePluginContent
+NcsScriptMessageV
+NcsShouldProcessTargetSDDL
+Ne&ver run
+NeedMultidimensionalIndex
+NError at XPath {0} in file {1}: {2} cannot be specified without an expression.
+NError at XPath {0} in file {1}: At least one list view item must be specified.
+NError at XPath {0} in file {1}: The XML Element {2} does not allow attributes.
+NestedModules
+NestedPipelineInvokeAsync
+NestedPipelineNoParentPipeline
+NestedPipelineNotSupported
+NestedPowerShellInvokeAsync
+NestedPromptLevelDescription
+New Item
+New Property
+NewCommandState=[NewCommandState]
+NewDriveCredentials_NotSupported
+NewDriveDynamicParametersProviderException
+NewDriveProviderException
+NewDriveProviderFailed
+NewDriveRootDoesNotExist
+NewEngineState=[NewEngineState]
+NewItemAction
+NewItemAction>
+NewItemActionDirectory
+NewItemActionFile
+NewItemActionTemplate
+NewItemAlreadyExists
+NewItemCannotModifyDriveRoot
+NewItemDriveNameConflict
+NewItemDynamicParametersProviderException
+NewItemProviderException
+NewItemProviderNameConflict
+NewItemResourceTemplate
+NewItemResourceTemplateH
+NewItemResourceTemplateWithType
+NewItemTypeDrive
+NewItemTypeProvider
+NewItemValueMustBeProviderInfo
+NewItemValueMustBePSDriveInfo
+NewItemValueNotSpecified
+NewPropertyAction
+NewPropertyDynamicParametersProviderException
+NewPropertyProviderException
+NewPropertyResourceTemplate
+NewProviderState=[NewProviderState]
+NewRunspaceAmbiguosAuthentication
+NewValue=[NewValue]
+NModules to import as nested modules of the module specified in ModuleToProcess
+No [PSVersion] attribute was found for Windows PowerShell type {0}. Add a PSVersion attribute to the type using [PSVersion(Windows PowerShell SnapinBase.PSEngineVersion)].
+No commands are specified.
+No modules were removed. Verify that the specification of modules to remove is correct and those modules exist in the runspace.
+No to A&ll
+No value exists with that name.
+NoAttributesFoundForParamElement
+NoChildrenAllowed
+NoCommandInPipeline
+NoCommandToInvoke
+NoCountWithMultipleCmdLine
+NoCountWithMultipleIds
+NoDefaultShapeEntry
+NoDefinitionList
+NodeNotFoundAtLeastOnce
+NodeNotFoundOnce
+NodeShouldHaveInnerText
+NodeShouldNotHaveInnerText
+NodeWithExpression
+NodeWithoutExpression
+NoFormatString
+NoHistoryForCommandline
+NoHistoryForId
+NoHistoryFound
+NoLastHistoryEntryFound
+NoListViewItem
+NoModulesRemoved
+NoMoreInputWrites
+NoMshSnapinPresentForVersion
+NonExistentInitialSessionStateProvider
+NonExistingVariableReference
+NonHyphenTerminatingErrors
+NonPositiveNumberErrorTemplateQ
+NonRefArgumentToRefParameter
+NON-TERMINATING ERRORS
+NonTerminatingError({0}): "{1}"
+NonVoidDelegateNotSupportedv
+NonXmlElementNode
+NoParmsFound
+NoPipelineWhenSessionStateProxyInProgress
+NoPropertiesInSplatting
+NoProperty
+NoPSSnapInsFound
+NormalizeRelativePathLengthLessThanBase
+NormalizeRelativePathOutsideBase
+NormalizeRelativePathProviderException
+NoScriptBlockText
+NoSessionStateProxyWhenPipelineInProgress
+NoSourceCode
+NotAClsCompliantFieldProperty
+NotAdefinedOperationForTypeType
+NotADictionary
+NotAStandardMember
+NotEnoughHeaderForRemoteDataObject
+Notes
+NOTES
+NotIcomparable
+NotImplemented
+NotInstalled
+NotMoreThanOnceOne
+NotMoreThanOnceZeroOrOne
+NotProviderQualifiedPath
+NoTransactionActive
+NoTransactionActiveForCommit
+NoTransactionActiveForRollback
+NoTransactionAvailable
+NoTransactionForActivation
+NoTransactionForActivationBecauseRollback
+NoTransactionStarted
+NoTransactionStartedFromCommit
+NoTransactionStartedFromRollback
+NotSpecified
+NotSupported
+NotSupported_KernelTransactions
+NotTheSameTypeOrNotIcomparable
+NoURIFound
+NoValueForCommandParameter
+NoValueForInputFormatParameter
+NoValueForOutputFormatParameter
+NoValuesSpecifiedForArgs
+nProperty cannot be cleared because the property is not supported. Only the Attributes property can be cleared.
+NThe {0} path is not fully qualified. Specify a fully qualified type file path.L
+nThe assembly '{0}' was not loaded because no assembly was found. Please check the assembly name and try again.
+NThe base transaction cannot be set after other transactions have been created.
+nThe dynamic parameters for the IsItemContainer cannot be retrieved from the '{0}' provider for path '{1}'. {2}
+nThe provider does not support transactions. Perform the operation again without the -UseTransaction parameter.
+NThe proxy command cannot be generated because the CommandMetadata has no name.
+NThe security identifier is not allowed to be the primary group of this object.
+nThis cmdlet requires an active transaction. The current transaction has already been committed or rolled back.
+NullArray
+NullArrayIndex
+NullAsDictionaryKey
+NullControlName
+NullOrEmptyErrorTemplate
+NullReturnValueError
+NumberBothLongAndFloatingPoint
+OArray assignment to [{0}] failed because assignment to slices is not supported.
+OArray references are not allowed in restricted language mode or a Data section.
+oAttempting to perform the StartDynamicParameters operation on the '{0}' provider failed for the path '{1}'. {2}
+Object "{0}" is the wrong type to return from the dynamicparam block.  The dynamicparam block must return either $null or an object with type [System.Management.Automation.RuntimeDefinedParameterDictionary]
+ObjectDisposed
+ObjectDisposed_RegKeyClosed
+ObjectId cannot be less than or equal to 0. This may happen if the fragments are not properly constructed by the remote machine or the data might have been tampered with.
+ObjectIdCannotBeLessThanZero
+ObjectIdsNotMatching
+ObjectIsTooBig
+ObjectNotFound
+oCannot find the type for custom attribute '{0}'. Make sure that the assembly that contains this type is loaded.
+OCannot process command because of one or more missing mandatory parameters:{1}.
+OCannot retrieve message "{0}" "{1}" "{2}". Template string exists but is blank.
+ODictates what type of prompt should be displayed for the current nesting level.
+ODynamic parameters for NewDrive cannot be retrieved for the '{0}' provider. {1}
+OError at XPath {0} in file {1}: Cannot have control and Label at the same time.
+OExpected only two attributes with the names "{0}" and "{1}" in the {2} element.
+One or more computer names is not valid. If you are trying to pass a Uri, use the -ConnectionUri parameter or pass Uri objects instead of strings.
+One or more errors occurred processing the module '{0}' specified in the InitialSessionState object used to create this runspace. See the ErrorRecords property for a complete list of errors. The first error was: {1}
+OnlyAbleToComparePSDriveInfo
+OnlyConvertFromCmdletsAreSupportedInDataSection
+OnlyOneParameterListAllowed
+ONode "{0}" can have at maximum {2} child node(s) of type "{1}". Node Path: {3}.
+OpenBraceNeedsToBeBackTickedInVariableName
+OpenError
+OpenError: ({1}:{2}) [{0}], {3}
+OperationNotSupportedForRemoting
+OperationStopped
+OperationTimeout
+OperatorFailed
+OperatorNotSupportedForType
+OperatorNotSupportedInDataSection
+OperatorRequiresNumber
+OperatorRequiresVariableOrProperty
+OProcessing data from remote server failed with the following error message: {0}
+OriginalFilename
+ORunspace cannot be closed while a SessionStateProxy method call is in progress.
+OSpecified RemoteRunspaceInfo objects have exceeded the maximum allowable limit.
+OStandard Input handle cannot be set to no wait state. System error code is {0}.
+OThe function definition '{0}' contained a scope qualifier but no function name.
+OThe length of the specified value name exceeds the maximum of 16383 characters.
+OThe Try statement is not allowed in restricted language mode or a Data section.
+OUnable to create a drive with the specified root. The root path does not exist.
+Out of process memory.
+OutFile_DidNotResolveFile
+OutFile_MultipleFilesNotSupportedS
+OutFile_ReadWriteFileNotFileSystemProvider
+OutFile_WriteToFileEncodingUnknown
+OutOfBandGroupByConflict
+OutOfMemory
+Output
+OUTPUT
+Output:
+OutputAlreadyRedirected
+OutputColon
+OutputEncodingDescription
+OUTPUTS
+OutputStreamingNotEnabled
+PADPADP
+PADPADP-
+PADPADP%C
+PADPADP&
+PADPADP)
+PADPADP,
+PADPADP/
+PADPADP?
+PADPADP@
+PADPADP~D
+PADPADP<v
+PADPADP8
+PADPADPA
+PADPADPb$B
+PADPADPc
+PADPADPd
+PADPADPHq
+PADPADPk
+PADPADPM
+PADPADPO
+PADPADPp
+PADPADPs]
+pAlias {0} cannot be made constant after it has been created. Aliases can only be made constant at creation time.
+Parameter '{0}' with value '{1}' cannot be processed because it is not a cmdlet and cannot be processed by the CommandProcessor.
+ParameterAlreadyBound
+ParameterArgumentTransformationError
+ParameterArgumentTransformationErrorMessageOnly
+ParameterArgumentValidationError
+ParameterArgumentValidationErrorEmptyArrayNotAllowed
+ParameterArgumentValidationErrorEmptyCollectionNotAllowed
+ParameterArgumentValidationErrorEmptyStringNotAllowed
+ParameterArgumentValidationErrorNullNotAllowed
+ParameterAttributeArgumentNeedsToBeConstantOrScriptBlock
+ParameterBinderStrings.en.resources
+ParameterBindingFailed
+ParameterDeclarationNotSupportedInDataSection
+ParameterDeclaredInParameterSetMultipleTimes
+ParameterDefaultValue
+ParameterizedPropertyAssignmentFailed
+ParameterNameAlreadyExistsForCommand
+ParameterNameConflictsWithAlias
+ParameterNameOrValueNeeded
+ParameterNotInParameterSet
+ParameterNotValidInRemoteRunspace
+ParameterPosition
+ParameterRequired
+ParameterRequiresArgument
+ParameterRequiresCommand
+Parameters
+PARAMETERS
+ParameterSpecifiedAlready
+ParamNotSupported
+Parent process ID.
+ParentActivityIdCantBeActivityId
+Parser.en.resources
+ParserError
+ParsingTooManyParameterSets
+PathNotAbsolute
+PathNotFound
+PathOutSideBasePath
+PathResolvedToMultiple
+PathUtils.en.resources
+PauseHelpMessage
+PauseLabel
+PCannot convert argument "{0}", with value: "{1}", for "{2}" to type "{3}": "{4}"
+PCannot export to a console because no console is loaded or no name is specified.
+pCannot find the path "{0}" specified in the registry key: "{1}{2}". Using "{3}" to load the configuration files.
+pCannot load the Windows PowerShell snap-in because of an error reading the registry information for the snap-in.
+PCannot register for event. Events that require a return value are not supported.
+PercentMayNotBeMoreThan100
+Performing operation "{0}".
+PermissionDenied
+PermissionError
+PFile {0} cannot be loaded because you have elected to not run this software now.
+PIDDescription
+PipeAlreadyTaken
+Pipeline.en.resources
+PipelineDepthException
+PipelineExecuteRequiresAtLeastOneCommand
+PipelineExecutionDetailContext
+PipelineExecutionInformation
+PipelineExecutionNonTerminatingError
+PipelineExecutionParameterBinding
+PipelineExecutionTerminatingError
+PipelineId=[PipelineId]
+PipelineIdsDoNotMatch
+PipelineNotFoundOnServer
+PipelineNotStarted
+PipelineReInvokeNotAllowed
+PipelineStopped
+PipelineStoppedException
+PipelineValueRequired
+pName: {0} SDDL: {1}. This will allow selected users to remotely run Windows PowerShell commands on this computer
+PNo value specified for the InputFormat parameter. Legal values are Text and Xml.
+pNode "{0}" was not found. It should be present at least once under "{1}". The parent node "{1}" will be ignored.
+PortIsOutOfRange
+Position?                    
+PositionalParameterNotFound
+Possible matches are
+PowerShell client does not support the {0} {1} negotiated by the server. Make sure the server is compatible with the build {2} and the protocol version {3} of PowerShell.
+PowerShell server does not support the {0} {1} negotiated by the client. Make sure the client is compatible with the build {2} and the protocol version {3} of PowerShell.
+PowerShellHostName
+PowerShellHostVersion
+PowerShellStrings.en.resources
+PowerShellVersion
+PPIDDescription
+PPipeline cannot be invoked while a SessionStateProxy method call is in progress.
+PProvider execution stopped because the provider does not support this operation.
+PreferenceInvalid
+PreferenceStop
+PRegistry key has subkeys and recursive removes are not supported by this method.
+PreviousEngineState=[PreviousEngineState]
+PreviousValue=[PreviousValue]
+PrimitiveHashtableInvalidKey
+PrimitiveHashtableInvalidValue
+PrivateData
+-Processing halted; script was too complicated
+Processing the module manifest file '{0}' did not result in a valid manifest object. Update the file to contain a valid Windows PowerShell module manifest. A valid manifest can be created using the New-ModuleManifest cmdlet.
+ProcessorArchitecture
+ProductName
+ProductVersion
+ProgramFailedToExecute
+ProgressPreferenceDescription
+ProgressRecordStrings.en.resources
+PromptCaption
+PromptEmptyDescriptionsError
+PromptForCredential_DefaultCaption
+PromptForCredential_DefaultMessage(
+PromptForCredential_DefaultTargetB
+PromptForExportConsole
+PromptHelp
+PromptMessage
+Property {0} does not exist.
+PropertyAlreadyExists
+PropertyGetError
+PropertyIsGettableError
+PropertyIsSettableError
+PropertyNotAtPath
+PropertyNotFound
+PropertyNotFoundForType
+PropertyNotFoundInTypeDescriptor
+PropertyNotFoundStrict
+PropertyNotMultivalued
+PropertyNotMultivaluedChange
+PropertyReferenceNotSupportedInDataSection
+PropertySetError
+PropertyTypeError
+ProtocolNotSupported
+PROVIDER NAME
+ProviderBaseSecurity.en.resources
+ProviderCannotBeUsedAsVariable
+ProviderContentCloseError
+ProviderContentReadError
+ProviderContentWriteError
+ProviderCtorException
+ProviderDriveDescription
+ProviderHealthContext
+ProviderImplementationInconsistent
+ProviderLifecycleContext
+ProviderLoadError
+ProviderName
+ProviderName=[ProviderName]
+ProviderNameAmbiguous
+ProviderNameNotValid
+ProviderNotFound
+ProviderNotFoundBadFormat
+ProviderNotFoundInAssembly
+ProviderNotSupported
+ProviderProviderCannotCreateProvider
+ProviderProviderCannotRemoveProvider
+ProviderProviderPathFormatException
+ProviderSeekError
+ProviderStartException
+ProviderVariableSyntaxInvalid
+Proxy credentials cannot be specified when using the following proxy access type: {0}. Either specify a different access type, or do not specify proxy credentials.
+ProxyAmbiguosAuthentication
+ProxyCommandStrings.en.resources
+ProxyCredentialWithoutAccess
+PSCommandStrings.en.resources
+PSDataBufferStrings.en.resources
+PSDefaultSessionOptionDescription
+PSEmailServerDescription
+PSHOMEDescription
+PSHostDescription
+PSListModifier.en.resources
+PSSenderInfoDescription
+PSSessionAppName
+PSSessionConfigurationName
+PSSnapInAlreadyExists
+PSSnapInAssemblyNameMismatch
+PSSnapInDoesNotExist
+PSSnapInDuplicateCmdlets
+PSSnapInDuplicateProviders
+PSSnapInLoadFailure
+PSSnapInLoadWarning
+PSSnapInNameVersion
+PSSnapInNotFound
+PSSnapInReadError
+PSVersionAttributeNotExist
+PSVersionTableDescription
+PThe '{0}' operator is not allowed in restricted language mode or a Data section.
+PThe client did not respond with a public key within the specified timeout period
+pThe dynamic parameters for the GetItem operation cannot be retrieved from the '{0}' provider for path '{1}'. {2}
+pThe dynamic parameters for the NewItem operation cannot be retrieved from the '{0}' provider for path '{1}'. {2}
+pThe dynamic parameters for the SetItem operation cannot be retrieved from the '{0}' provider for path '{1}'. {2}
+PThe operation cannot be performed. This Cmdlet is not supported in custom shell.
+pThe script block cannot be converted to a PowerShell object because it contains forbidden redirection operators.
+pThe specified provider name '{0}' cannot be used because it contains one or more invalid characters: \ [ ] ? * :
+PThe Trap statement is not allowed in restricted language mode or a Data section.
+PublicKeyTokenAccessFailed
+PushedRunspaceMustBeOpen
+PWriteDebug stopped because the value of the DebugPreference variable was 'Stop'.
+qAn error occurred when loading the system Windows PowerShell snap-ins. Please contact Microsoft Support Services.
+QCannot commit transaction. The transaction has been rolled back or has timed out.
+QCannot perform operation because the wildcard path {0} did not resolve to a file.
+QCannot process the argument because {0} may not be null or an empty string value.
+QContent reader cannot be retrieved for the '{0}' provider for the path '{1}'. {2}
+QContent writer cannot be retrieved for the '{0}' provider for the path '{1}'. {2}
+QExpandable strings are not allowed in restricted language mode or a Data section.
+QForeach statements are not allowed in restricted language mode or a Data section.
+QProcessing data for a remote command failed with the following error message: {0}
+QRegistry transactions are not supported in the current Operating System platform.
+QStarting a command on remote server failed with the following error message : {0}
+qThe dynamic parameters for the CopyItem operation cannot be retrieved from the '{0}' provider for path '{1}'. {2}
+qThe dynamic parameters for the MoveItem operation cannot be retrieved from the '{0}' provider for path '{1}'. {2}
+QThe following exception occurred while retrieving the type name hierarchy: "{0}".
+qThe provider does not support the use of credentials. Perform the operation again without specifying credentials.
+QThis is a system Windows PowerShell snap-in that is loaded by Windows PowerShell.
+Question:
+QuestionColon
+QYou must provide a value expression on the right-hand side of the '{0}' operator.
+R'{0}' already exists as an assembly. Only one assembly can exist for a given name.
+RCannot create a KTM handle without a Transaction.Current or specified transaction.
+RClosing remote server shell instance failed with the following error message : {0}
+RCreation failed because the provider does not allow the creation of the new drive.
+RcsScriptMessageV
+ReadCalledAfterDone
+ReadError
+ReadError: ({1}:{2}) [{0}], {3}
+ReadOnlyProperty
+Reason_DisallowedBySafer
+Reason_DoNotRun
+Reason_FileContentUnavailable
+Reason_NeverRun
+Reason_NotTrusted
+Reason_RestrictedMode
+Reason_Unknown
+ReceivedDataSizeExceededMaximumClient
+ReceivedDataSizeExceededMaximumServer
+ReceivedDataStreamIsNotStdout
+ReceivedObjectSizeExceededMaximumClient
+ReceivedObjectSizeExceededMaximumServer
+ReceivedUnsupportedAction
+ReceivedUnsupportedDataType
+ReceivedUnsupportedRemoteHostCall
+ReceivedUnsupportedRemotingTargetInterfaceType
+ReceiveExCallBackError
+ReceiveExFailed
+RedirectedException8
+RedirectedURINotWellFormatted
+RedirectionFailed
+RedirectionNotSupported
+RedirectionNotSupportedInDataSection
+RefArgumentToNonRefParameter
+'Reference type is expected in argument.
+ReferenceNeedsToBeByItselfInTypeConstraint
+ReferenceNeedsToBeByItselfInTypeSequence
+ReferenceNeedsToBeLastTypeInTypeConversion
+ReferenceTypeExpected
+RegistryPathNotFound
+RegistryProviderStrings.en.resources
+RELATED LINKS
+RelatedLinks
+RelativeUriForRunspacePathNotSupported
+REMARKS
+RemarksSection
+Remote Session open failed.
+RemoteFilePromptCaption
+RemoteFilePromptText
+RemoteHostCallFailed
+RemoteHostDataDecodingNotSupported
+RemoteHostDataEncodingNotSupported
+RemoteHostDecodingFailed
+RemoteHostGetBufferContents
+RemoteHostMethodNotImplemented
+RemoteHostPromptForCredentialModifiedCaption
+RemoteHostPromptForCredentialModifiedMessage
+RemoteHostPromptSecureStringPrompt
+RemoteHostReadLineAsSecureStringPrompt
+RemoteOperationNotSupported
+RemoteRunspaceClosed
+RemoteRunspaceDoesNotSupportPushRunspace
+RemoteRunspaceHasMultipleMatchesForSpecifiedName
+RemoteRunspaceHasMultipleMatchesForSpecifiedRunspaceId
+RemoteRunspaceHasMultipleMatchesForSpecifiedSessionId
+RemoteRunspaceInfoHasDuplicates
+RemoteRunspaceInfoLimitExceeded
+RemoteRunspaceNotAvailable
+RemoteRunspaceNotAvailableForSpecifiedComputer
+RemoteRunspaceNotAvailableForSpecifiedName
+RemoteRunspaceNotAvailableForSpecifiedRunspaceId
+RemoteRunspaceNotAvailableForSpecifiedSessionId
+RemoteRunspaceOpenFailed
+RemoteRunspaceOpenUnknownState
+RemoteRunspacePoolNotOpened
+-Remoting data is missing MethodName property.
+Remoting data is too large to be reassembled from the fragments. This may happen if length of the data in a fragment is greater than Int32.Max or the data might have been tampered with.
+RemotingDestinationNotForMe
+RemotingErrorIdStrings.en.resources
+Remove Directory
+Remove File
+Remove Item
+Remove Key
+Remove Property
+Remove Property Value At
+RemoveDriveProviderException
+RemoveDriveRoot
+RemoveDrivesBeforeRemovingProvider
+RemoveItemActionDirectory
+RemoveItemActionFile
+RemoveItemActionh
+RemoveItemDynamicParametersProviderException
+RemoveItemProviderException
+RemoveItemResourceTemplateu
+RemoveKeyAction
+RemoveKeyResourceTemplate
+RemovePropertyAction
+RemovePropertyDynamicParametersProviderException
+RemovePropertyProviderException
+RemovePropertyResourceTemplate
+RemovePropertyValueAtAction
+RemovePropertyValueAtResourceTemplate
+RemovePSJobWhatIfTarget
+RemovingImportedAlias
+RemovingImportedFunction
+RemovingImportedVariable
+Rename Directory
+Rename File
+Rename Item
+Rename Property
+RenameError
+RenameItemAction
+RenameItemActionDirectory
+RenameItemActionFile
+RenameItemAlreadyExists
+RenameItemDoesntExist
+RenameItemDynamicParametersProviderException
+RenameItemProviderException
+RenameItemResourceFileTemplate
+RenameItemResourceTemplate
+RenameMultipleItemError
+RenamePropertyAction
+RenamePropertyDynamicParametersProviderException
+RenamePropertyProviderException
+RenamePropertyResourceTemplate
+ReportErrorShowExceptionClassDescription
+ReportErrorShowInnerExceptionDescription
+ReportErrorShowSourceDescription
+ReportErrorShowStackTraceDescription
+Required?                    
+RequiredAssemblies
+RequiredModuleMissingModuleName
+RequiredModuleMissingModuleVersion
+RequiredModuleNotLoaded
+RequiredModuleNotLoadedWrongGuid
+RequiredModuleNotLoadedWrongVersion
+RequiredModules
+RequiresInterpreterNotCompatible
+RequiresInterpreterNotCompatibleNoPath
+RequiresMissingPSSnapIns
+RequiresPSVersionNotCompatible
+RequiresShellIDInvalidForSingleShell
+ReservedIdentifier
+ReservedKeywordNotAllowed
+ReservedMemberName
+ReservedNameMember
+ReservedParameterName
+ResourceBaseNameFailure
+ResourceBusy
+ResourceExists
+ResourceIdFailure
+ResourceIsPrivate
+ResourceNotFound
+ResourceReaderDisposed
+ResourceStringFormatError
+ResourceStringLoadError
+ResourceUnavailable
+ResponsePromptIdCannotBeFound
+Restarting WinRM service"
+RestartWSManRequiredShowUI
+RestartWSManServiceAction
+RestartWSManServiceMessageV
+RestartWSManServiceTarget
+ReturnType
+rHome location for this provider is not set. To set the home location, call "(get-psprovider '{0}').Home = 'path'".
+rObjects cannot be added to a closed buffer. Make sure the buffer is open for Add and Insert operations to succeed.V
+RProperty references are not allowed in restricted language mode or a Data section.
+rSession already exists. Trying to create Session again with the same client Session InstanceId {0} is not allowed.
+RThe command '{0}' is not in allowed in restricted language mode or a Data section.
+rThe dynamic parameters for the ClearItem operation cannot be retrieved from the '{0}' provider for path '{1}'. {2}
+RThe following exception was thrown when trying to enumerate the collection: "{0}".
+rThe name of the current PowerShell host is: '{0}'. The module '{1}' requires the following PowerShell host: '{2}'.
+rThe provider name specified in the PSDriveInfo '{0}' does not match the provider name specified in the path '{1}'.
+RThe switch statement is not allowed in restricted language mode or a Data section.
+RuleMustBeScriptBlock5
+Run only scripts that you trust. While scripts from the Internet can be useful, this script can potentially harm your computer. Do you want to run {0}?
+Running command "{0}" to enable this machine for remote management through WinRM service.
+RunShellCommandExCallBackError
+RunShellCommandExFailed
+Runspace.en.resources
+RunspaceAlreadyExists
+RunspaceCannotBeFound
+RunspaceCloseInvalidWhileSessionStateProxy
+RunspaceConfigurationAttributeDuplicateJ
+RunspaceConfigurationAttributeNotExist
+RunspaceId=[RunspaceId]
+RunspaceIdsDoNotMatch
+RunspaceInit.en.resources
+RunspaceNotBelongsToPool
+RunspaceNotInOpenedState
+RunspaceNotOpenForPipeline
+RunspaceParamNotSupported
+RunspacePoolClosed
+RunspacePoolNotOpeneds
+RunspacePoolStrings.en.resources
+RuntimeDefinedParameterNameMismatch
+rWhen the runspace is set to re-use thread, the apartment state in the invocation settings must match the runspace.
+S&ilently Continue
+S{0} is not valid value for parameter {1}. Value must be greater than or equal to 0.
+S'{0}' resolved to a provider name that was ambiguous. Possible matches include:{1}.
+SaveDefaultError
+SCannot process path '{0}' because the the target represents a reserved device name.
+sCannot use the interface because the ISecurityDescriptorCmdletProvider interface is not supported by this provider.
+ScopeDepthOverflow
+ScopedFunctionMustHaveName
+ScopeIDExceedsAvailableScopes
+ScriptBlockArgumentInvocationFailed
+ScriptBlockArgumentNoInput
+ScriptBlockArgumentNoOutput
+ScriptBlockDelegateInvokedFromWrongThread
+ScriptBlockInvokeOnOneClauseOnly
+ScriptBlockNotSupportedInDataSection
+ScriptCallDepthException
+ScriptName=[ScriptName]
+ScriptPropertyShouldHaveGetterOrSetter
+ScriptRequiresEmptyArgument
+ScriptRequiresInvalidFormat
+ScriptRequiresInvalidPSSnapInName
+ScriptRequiresInvalidVersion
+ScriptRequiresMissingQuote
+ScriptRequiresShellIDNotFound
+ScriptsFileNotFound
+ScriptsNotAllowed
+ScriptsToProcess
+ScriptsToProcessIncorrectExtension
+ScriptTooComplicated
+ScsScriptMessageV
+ScsShouldProcessTargetSDDL
+SecondFailure
+Security Warning
+Security_RegistryPermission
+SecurityDescriptorInterfaceNotSupported
+SelectionSetNameAndTypeName
+SendExCallBackError
+SendExFailed
+SequenceNumber=[SequenceNumber]
+Serialization.en.resources
+SerializationSettingsIgnored
+Serializer was closed.
+SError at XPath {0} in file {1}: Cannot have control or Label without an expression.
+ServerKeyExchangeFailed
+ServerNegotiationFailed
+ServerNegotiationTimeout
+ServerNotFoundCapabilityProperties
+ServerProcessExited
+ServerRequestedToCloseSession
+Session configuration "{0}" is not found. Running command "{1}" to create "{0}" session configuration. This will restart WinRM service.
+Session must be open.
+SessionDoesNotSupportDebugger
+SessionStateProviderBaseStrings.en.resources
+SessionStateStrings.en.resources
+Set Item
+Set Property
+Set Property Directory
+Set Property File
+Set Property Value At
+SetItemAction
+SetItemDynamicParametersProviderException
+SetItemProviderException
+SetItemResourceTemplate
+SetPropertyAction
+SetPropertyActionDirectory
+SetPropertyActionFile
+SetPropertyDynamicParametersProviderException
+SetPropertyProviderException
+SetPropertyResourceTemplate
+SetPropertyValueAtAction
+SetPropertyValueAtResourceTemplate
+SetSecurityDescriptorProviderException
+SettingsContext
+SetWithoutSetterException
+Severity=[Severity]
+SharedFormattableCannotBeUpdated
+SharedTypeTableCannotBeUpdated
+SHORT DESCRIPTION
+ShortDescription
+ShouldContinueNoHelp
+ShouldContinueNoLabel
+ShouldContinueNoToAllHelp
+ShouldContinueNoToAllLabel
+ShouldContinuePromptCaption
+ShouldContinuePromptMessage
+ShouldContinueSuspendHelp
+ShouldContinueSuspendLabel
+ShouldContinueYesHelp
+ShouldContinueYesLabel
+ShouldContinueYesToAllHelp
+ShouldContinueYesToAllLabel
+ShouldProcessMessage
+ShouldProcessWarningFallback
+ShouldProcessWhatIfMessage
+ShowUIAndSDDLCannotExist
+Signature verified.
+SilentlyContinueHelpMessage
+SilentlyContinueLabel
+SIncorrect value {6} specified for the {7} parameter. Legal values are Text and Xml.
+SkipAllHelpMessage
+SkipAllLabel
+SkipOneHelpMessage
+SkipOneLabel
+Some imported command names contain one or more of the following restricted characters: # , ( ) {{ }} [ ] & - / \ $ ^ ; : " ' < > | ? @ ` * % + = ~
+Some imported command names include unapproved verbs which might make them less discoverable.  Use the Verbose parameter for more detail or type Get-Verb to see the list of approved verbs.
+SourceContainerInvalidOperationTemplate
+Specified Uri {0} is not valid.
+SpecifiedVersionNotFound
+SplattingNotPermitted
+SplattingNotPermittedInArgumentList
+SProperty '{0}' cannot be found on this object; make sure it exists and is settable.
+StackNameResolvedToMultiple
+StackNotFound
+StartDynamicParmatersProviderException
+StartupScriptNotCorrect
+StartupScriptThrewTerminatingError
+State of PowerShell instance is not valid to create a nested PowerShell instance. Nested PowerShell should be created only for a running PowerShell instance.
+StatementBreakpointString
+StdInCannotBeSetToNoWait
+StdInIsNotOpen
+StepHelp
+StepOutHelp
+StepOverHelp
+SThe "{0}" executable is not present. Make sure that WOW64 components are installed.
+sThe dynamic parameters for the GetChildNames operation cannot retrieved from the '{0}' provider for path '{1}'. {2}
+sThe dynamic parameters for the ItemExists operation cannot be retrieved from the '{0}' provider for path '{1}'. {2}
+sThe dynamic parameters for the RemoveItem operation cannot be retrieved from the '{0}' provider for path '{1}'. {2}
+sThe dynamic parameters for the RenameItem operation cannot be retrieved from the '{0}' provider for path '{1}'. {2}
+sThe following exception occurred while retrieving the string representation for parameterized property "{1}": "{0}"
+sThe module '{0}' requires the following version of the .NET Framework: {1}.  The required version is not installed.
+SThe provider '{0}' cannot be used to get or set data using the variable syntax. {2}
+sThe signature cannot be verified because it is incompatible with the current system. The hash algorithm is invalid.
+SThere is an error processing data from the background process. Error reported: {0}.
+StopHelp
+Stopping
+StopPSJobWhatIfTarget
+StrictModeFunctionCallWithParens
+StringFileInfo
+StringMultiplyToolongInDataSection
+StringResourceNotFound
+StringValueExpectedForFormatParameter
+SubscriberExists
+Suggested Action: 
+SuggestedActionColon
+Suggestion_CommandExistsInCurrentDirectoryj
+Suggestion_StartTransaction
+Suggestion_UseTransaction
+SuggestionStrings.en.resources
+SuspendHelpMessage
+SuspendLabel
+SwitchStatementNotSupportedInDataSection
+SYNOPSIS
+Synopsis
+Syntax
+SYNTAX
+SyntaxError
+System.Management.Automation.resources
+System.Management.Automation.resources.dll
+Target Object Type:   
+TargetCannotContainDeviceName
+TargetObjectTypeColon
+TASK: 
+Tasks
+TASKS
+TAssignment statements are not allowed in restricted language mode or a Data section.
+tAttempting to save a console file with no name. Use export-console with the Path parameter to save the console file.
+tCannot add Windows PowerShell snap-in {0} because it is already added. Verify the name of the snap-in and try again.
+TCannot create variable {0} because variable capacity {1} is exceeded for this scope.
+TCannot find the registry key: "{0}{1}", using "{2}" to load the configuration files.
+tCannot generate a PowerShell object for a ScriptBlock that tries to pass other script blocks inside argument values.
+TCannot remove the drive root in this way. Use "Remove-PSDrive" to remove this drive.
+TCannot subscribe to event. A subscriber with source identifier '{0}' already exists.
+Term:
+TermColon
+TERMINATING ERRORS
+TerminatingError({0}): "{1}"
+TerminatingErrors
+TerminatorExpectedAtEndOfString
+TextForCharPositionMessage
+TextForPositionMessage
+TextForWordLine
+TFunction declarations are not allowed in restricted language mode or a Data section.
+The "#requires" statement must be in one of the following formats:
+The "{0}" argument does not contain a valid Windows PowerShell version. Supply a valid version number and then try the command again.
+The "{1}" validation script for the argument with value "{0}" did not return true. Determine why the validation script failed and then try the command again.
+The {0} argument is greater than the maximum allowed range of {1}. Supply an argument that is less than {1} and then try the command again.
+The {0} argument is less than the minimum allowed range of {1}. Supply an argument that is greater than {1} and then try the command again.
+The '{0}' module cannot be imported because its manifest contains one or more members that are not valid. The valid manifest members are ({1}). Remove the members that are not valid ({2}), then try to import the module again.
+The '{0}' operator failed: {1}.
+The {0} parameter is already specified in the {1} section. Contact your administrator to make sure that {0} is specified only once.
+The argument "{0}" does not belong to the set "{1}" specified by the ValidateSet attribute. Supply an argument that is in the set and then try the command again.
+The argument cannot be validated because its type "{0}" is not the same type ({1}) as the maximum and minimum limits of the parameter. Make sure the argument is of type {1} and then try the command again.
+The argument is null, empty, or an element of the argument collection contains a null value. Supply a collection that does not contain any null values and then try the command again.
+The argument is null, or an element of the argument collection contains a null value. Supply a collection that does not contain any null values and then try the command again.
+The argument length of {1} is too long. Shorten the length of the argument to less than or equal to "{0}" and then try the command again.
+The attribute cannot be set because attributes are not supported. Only the following attributes can be set: Archive, Hidden, Normal, ReadOnly, or System.
+The body of the Data section is not valid. The Data section body can be only a convert-* command invocation optionally enclosed by an If statement.
+The Catch block is missing a type literal token after the comma. Remove the comma if only one type is referenced, or add another type.
+The client did not receive a response for close operation in the specified time interval. This might happen when a command is not responding to a stop message in a timely manner.
+The client did not receive a response for signal operation in the specified time interval. This might happen when a command is not responding to a stop message in a timely manner.
+The close call failed.
+The cmdlet name "{0}" cannot be validated because it is not in the correct format. Cmdlet names must include a verb and a noun separated by a "-", such as "Get-Process".
+The command cannot find the job because the {0} name was not found. Verify the value of the Name parameter, and then try the command again.
+The command cannot find the job because the {0} session identifier was not found. Verify the value of the Id parameter and then try the command again.
+The command cannot find the job with the {0} instance identifier because the identifier was not found. Verify the value of the InstanceId parameter, and then try the command again.
+The command cannot remove the job because it does not exist or because it is a child job. Child jobs can be removed only by removing the parent job.
+The command cannot remove the job with the {0} session identifier and the {1} instance identifier because the job is not finished. To remove the job, first stop the job or use the Force parameter.
+The command cannot remove the job with the {0} session identifier and the {1} name because the job is not finished. To remove the job, first stop the job, or use the Force parameter.
+The command cannot remove the job with the {0} session identifier because the job is not finished. To remove the job, first stop the job, or use the Force parameter.
+The command cannot retrieve the jobs of the specified computers. The ComputerName parameter can be used only with jobs creating using PowerShell remoting.
+The command could not be retrieved because the ArgumentList parameter can be specified only when retrieving a single cmdlet or script.
+The command name '{0}' contains one or more of the following restricted characters: # , ( ) {{ }} [ ] & - / \ $ ^ ; : " ' < > | ? @ ` * % + = ~
+The command name '{0}' includes an unapproved verb which might make it less discoverable. The suggested alternative verbs are "{1}".
+The contents of file {0} may have been tampered because the hash of the file does not match the hash stored in the digital signature. The script will not execute on the system. Please see "get-help about_signing" for more details.
+The current deserialized object size of the data received from remote client exceeded allowed maximum object size. The current deserialized object size is {0}. Allowed maximum object size is {1}.
+The current deserialized object size of the data received from remote server exceeded allowed maximum object size. The current deserialized object size is {0}. Allowed maximum object size is {1}.
+The current PowerShell host is: '{0}' (version {1}). The module '{2}' requires a minimum PowerShell host version of '{3}' to execute.
+The current session does not support debugging; execution will continue.
+The EndpointConfiguration with the {0} identifier does not give a valid initial session state on the remote computer. Contact your administrator.
+The expression after '{0}' in a pipeline element produced an invalid object. It must result in a command name, script block or CommandInfo object.
+The extension '{0}' is not a valid module extension. The supported module extensions are '.dll', '.ps1', '.psm1' and '.psd1'. Correct the extension then try adding the file '{1}' again.
+The field/property: "{0}" for type: "{1}" differs only in case from the field/property: "{2}". Failed to use non CLS compliant type.
+The file {0} is not digitally signed. The script will not execute on the system. Please see "get-help about_signing" for more details.
+The first exception was "{0}" with stack trace "{1}".
+The format of the specified snap-in name was not valid.  Windows PowerShell snap-in names can only contain alpha-numeric characters, dashes, underscores and periods. Correct the name and then try the operation again.
+The FragmentId's of the same object must be in sequence with increment of 1. This may happen if the fragments are not properly constructed by the remote machine or the data might have been tampered with.
+The function or command was called as if it were a method. Parameters should be separated by spaces. For information about parameters, see the about_Parameters Help topic.
+The hashtable describing a module contains one or more members that are not valid.  The valid members are ({0}). Remove the members that are not valid ({1}), then try again.
+The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+The member '{0}' in the module manifest is invalid: {1}. Please make sure that a valid value is specified for this field in file '{2}'.
+The member 'ModuleVersion' is not present in the module manifest. This member must exist and be assigned a version number of the form 'n.n.n.n'. Please add the missing member to the file '{0}'.
+The module manifest '{0}' could not be processed because it is not a valid PowerShell restricted language file. Please remove the elements that are not permitted by the restricted language: {1}
+The module manifest member 'NestedModules' cannot be used if 'ModuleToProcess' member is a binary module. Please fix the module manifest file at '{0}' and try again.
+The module to process '{0}', listed in field '{1}' of module manifest '{2}' was not processed because no valid module was found in any module directory.
+The 'ModuleVersion' member is not present in the hashtable describing a module. This member must exist and be assigned a version number of the form 'n.n.n.n'.
+The number of characters ({1}) in the argument is too small. Specify an argument whose length is greater than or equal to "{0}" and then try the command again.
+The number of supplied arguments ({1}) exceeds the maximum number of allowed arguments ({0}). Specify less than {0} arguments and then try the command again.
+The number of supplied arguments ({1}) is less than the minimum number of allowed arguments ({0}). Specify more than {0} arguments and then try the command again.
+The online version of this Help topic cannot be displayed because there is no Uri for online Help in the "Related Links" section of the cmdlet Help topic.
+The operation cannot be performed because a command has already been started. Wait for the command to complete, or stop it, and then try the operation again.
+The path is not in the correct format. Paths may contain only provider and drive names separated by forwardslashes or backslashes.
+The path is not in the correct format. Provider paths must contain a provider Id, followed by "::", followed by a provider specific path.
+The pipeline has been stopped.
+The property already exists.
+The required module '{1}' with GUID '{2}' is not loaded. Load the module or remove the module from 'RequiredModules' in the file '{0}'.
+The required module '{1}' with version '{2}' is not loaded. Load the module or remove the module from 'RequiredModules' in the file '{0}'.
+The runspace pool is closed.
+The SafeHandle is not valid.
+The script '{0}' cannot be run because it contained a "#requires" statement at line {1} for Windows PowerShell version {2}. The version required by the script does not match the currently running version of Windows PowerShell version {3}.
+The script '{0}' cannot be run because it contained a "#requires" statement at line {1} with a shell ID of {2} that is incompatible with the current shell.
+The script '{0}' cannot be run because it contained a "#requires" statement at line {1} with a shell ID of {2} that is incompatible with the current shell. To run this script you must use the shell located at '{3}'.
+The script '{0}' cannot be run because it contained a "#requires" statement for which there was no valid registration in the Windows Registry for the specified shell ID '{1}'.
+The script '{0}' cannot be run because the following snap-ins that are specified by the "#requires" statements of the script are missing: {1}.
+The script block cannot be converted, because it contains more than one clause. Expressions or control structures aren't permitted. Make sure the script block contains exactly one pipeline or command.
+The script block cannot be invoked because it contains more than one clause. The Invoke() method can only be used on script blocks containing a single clause.
+The second exception was "{2}" with stack trace "{3}". Determine why these exception were thrown and try again.
+The server process has exited.
+The setter method should be public, void, static, and have two parameters. The first parameter should be of type PSObject. The second parameter is needed if a getter method is also available, and should have the same type as the return type for the getter method.
+The specified format data file '{0}' could not be processed because the file was not found. Please correct the path and try again.
+The specified maximum argument length is smaller than the specified minimum argument length. Update the ValidateLength attribute for the parameter.
+The specified maximum number of arguments for a parameter is smaller than the specified minimum number of arguments. Update the ValidateCount attribute for the parameter.
+The specified maximum range cannot be accepted because it is less than the specified minimum range. Update the ValidateRange attribute for the parameter.
+The specified minimum range ({0}) cannot be accepted because it is not the same type as the specified maximum range ({1}). Update the ValidateRange attribute for the parameter.
+-The specified registry subkey does not exist.
+The specified type data file '{0}' could not be processed because the file was not found. Please correct the path and try again.
+The splatting operator '@' cannot be used to reference variables in an expression. '@{0}' can be used only as an argument to a command. To reference variables in an expression use '${0}'.
+The term '{0}' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+The thread options can only be changed if the apartment state is MTA, the current options are UseNewThread or UseCurrentThread and the new value is ReuseThread.
+The Use-Transaction cmdlet is intended for scripting of transaction-enabled .NET objects. Its ScriptBlock should contain nothing else.Wx
+The ValidateCount attribute cannot be applied to a non-array parameter. Either remove the attribute from the parameter or make the parameter an array parameter.
+The ValidateLength attribute cannot be applied to a parameter that is not a string or string[] parameter. Make the parameter a string or string[] parameter.
+The version '{0}' of module '{1}' does not meet the required minimum version '{2}'. Please verify the version number and try loading the module again.
+The version of the loaded CLR is '{0}'. The module '{1}' requires a minimum CLR version of '{2}' to execute. Please verify the installation of the CLR and try again.
+The version of the loaded PowerShell is '{0}'. The module '{1}' requires a minimum PowerShell version of '{2}' to execute. Please verify the installation of the PowerShell and try again.
+The WriteObject and WriteError methods cannot be called after the pipeline has been closed. Please contact Microsoft Support Services.
+The WriteObject and WriteError methods cannot be called from outside the overrides of the BeginProcessing, ProcessRecord, and EndProcessing methods, and only from that same thread. Validate that the cmdlet makes these calls correctly, or please contact Microsoft Support Services.
+There is no Runspace available to run scripts in this thread. You can provide one in the DefaultRunspace property of the System.Management.Automation.Runspaces.Runspace type. The script block you attempted to invoke was: {0}
+ThreeMutuallyExclusiveNode
+TimeStampUrlRequired
+Title:
+TitleColon
+TNo value is specified for the OutputFormat parameter. Legal values are Text and Xml.
+To see the examples, type: 
+TokenAfterEndOfValidScriptText
+Too many errors in file {0}.
+TooManyDefaultShapeEntry
+TooManyErrors
+ToStringException
+tParameter alias cannot be specified because an alias with the name '{0}' was defined multiple times for the command.
+TraceEnteringFunction
+TraceEnteringFunctionDefinedInFile
+TraceEnteringScript
+TraceEnteringScriptBlock
+TraceMethodCall
+TraceParameterizedPropertySet
+TraceScriptLineMessage
+TraceSetMultipleIndex
+TraceSetMultipleRemaining
+TraceSourceNotFound
+TraceVariableAssignment
+'Transaction related error {0} occurred.
+Transaction_Error
+TransactionRolledBackForCommit
+TransactionRolledBackForRollback
+Transactions_NotSupported
+TransactionStrings.en.resources
+TransactionTimedOut
+Translation
+TrapOnExceptionMatch
+TrapOnGenericException
+TrapOnSubclassMatch
+TrapStatementNotSupportedInDataSection
+TroubleShootingHelpTopic
+TrueShort
+TryStatementNotSupportedInDataSection
+TScript block literals are not allowed in restricted language mode or a Data section.
+tThe destination "{0}" requested the connection to be redirected to "{1}". However "{1}" is not a well formatted URI.
+tThe dynamic parameters for the CopyProperty operation cannot be retrieved for the '{0}' provider for path '{1}'. {2}
+tThe dynamic parameters for the GetProperty operation cannot be retrieved from the '{0}' provider for path '{1}'. {2}
+tThe dynamic parameters for the MoveProperty operation cannot be retrieved for the '{0}' provider for path '{1}'. {2}
+tThe dynamic parameters for the NewProperty operation cannot be retrieved from the '{0}' provider for path '{1}'. {2}
+tThe dynamic parameters for the SetProperty operation cannot be retrieved from the '{0}' provider for path '{1}'. {2}
+TThe following errors occurred when updating the assembly list for the runspace: {0}.
+TThe following exception occurred while retrieving the type for property "{1}": "{0}"
+TThe signature cannot be verified because it is incompatible with the current system.
+TThe string starting:
+tUnable to remove module '{0}' because it is marked as constant. A module cannot be removed if it is marked constant.
+Type: 
+TypeAdapterAlreadyPresent
+TypeColon
+TypeConverterAlreadyPresent
+TypeIsNotTypeAdapter
+TypeIsNotTypeConverter
+TypeNeedsAssembly
+TypeNodeShouldHaveMembersOrTypeConverters
+TypeNotFound
+TypeNotFoundWithMessage
+TypeParameterBindingFailure
+TypesFileNotFound
+TypesToProcess
+TypesXml.en.resources
+TypesXmlError
+TypeTableLoadErrors
+uCannot compare "{0}" to "{1}" because the objects are not the same type or the object "{0}" does not implement "{2}".
+uCannot execute pipeline because there are no commands. Add at least one command to the pipeline and execute it again.
+UCannot process the hot key because a question mark ("?") cannot be used as a hot key.
+UCannot release the runspace to this pool as the runspace doesn't belong to this pool.
+UCannot sign file because the system does not support signing operations on {0} files.
+uCommand execution stopped because the preference variable "{0}" or common parameter is set to an invalid value "{1}".
+Unable to perform a security operation on an object that has no associated security. This can happen when trying to get an ACL of an anonymous kernel object.
+UnableToInstantiateTypeAdapter
+UnableToInstantiateTypeConverter
+UnableToLoadAssembly
+UnableToLoadType
+UnableToRemoveModuleMember
+UnauthorizedAccess_RegistryKeyGeneric_Key
+UnauthorizedAccess_RegistryNoWrite
+UndefinedRunspaceConfigurationType
+Unexpected attribute '{0}'.
+Unexpected ObjectId received. This may happen if the fragments are not properly constructed by the remote machine or the data might have been tampered with.
+UnexpectedAttribute
+UnexpectedNodeType
+UnexpectedToken
+UnexpectedUnaryOperator
+UnexpectedVersion
+Unknown
+Unknown error: {0}.
+UnknownAssignmentOperator
+UnknownAttribute
+UnknownError_Num
+UnknownNode
+UnknownTargetClass
+UnknownType
+UnrecognizedToken
+UnsupportedPreferenceError
+UnsupportedWaitHandleType
+UParameter declarations are not allowed in restricted language mode or a Data section.
+UPath length too short. The length of path cannot be less than the length of basePath.
+UpdateAssemblyErrors
+UpdateFailedm
+UpdateNotSupportedForConfigurationCategory
+UPipeline Id "{0}" does not match the currently executing pipeline's InstanceId "{1}".
+URegistryKey.SetValue does not allow a String[] that contains a null String reference.
+URIEndPointNotResolved
+URIRedirectionReported
+URIRedirectWarningToHost
+UriSpecifiedNotValid
+UseLocalScopeNotAllowed
+UserId=[User]
+USplatted variables like '@{0}' cannot be part of a comma-separated list of arguments.
+uThe argument "{0}" does not match the "{1}" pattern. Supply an argument that matches "{1}" and try the command again.
+UThe console file is not valid because the Windows PowerShell snap-in name is missing.
+uThe dynamic parameters for the ClearContent operation cannot be retrieved from the '{0}' provider for path '{1}'. {2}
+UtilityFileExistsNoClobber
+UWildcards are not supported for FilePath parameter. Specify a path without wildcards.
+ValidateCountMaxLengthFailure
+ValidateCountMaxLengthSmallerThanMinLength
+ValidateCountMinLengthFailure
+ValidateCountNotInArray
+ValidateFailureResult
+ValidateLengthMaxLengthFailure
+ValidateLengthMaxLengthSmallerThanMinLength
+ValidateLengthMinLengthFailure
+ValidateLengthNotString
+ValidateNotNullCollectionFailure
+ValidateNotNullFailure
+ValidateNotNullOrEmptyCollectionFailure
+ValidateNotNullOrEmptyFailure
+ValidatePatternFailure
+ValidateRangeElementType
+ValidateRangeGreaterThanMaxRangeFailure
+ValidateRangeMaxRangeSmallerThanMinRange
+ValidateRangeMinRangeMaxRangeType
+ValidateRangeNotIComparable
+ValidateRangeSmallerThanMinRangeFailure
+ValidateScriptFailure
+ValidateSetFailure
+ValidateSetSeparator
+ValidateVariableName
+ValidateVersionFailure
+ValidationException
+ValueNullReference
+ValueShouldBeTrueOrFalse
+VarFileInfo
+VariableAllScopeOptionCannotBeRemoved
+VariableAlreadyExists
+VariableBreakpointString
+VariableCannotBeMadeConstant
+VariableDriveDescription
+VariableIsConstant
+VariableIsPrivate
+VariableIsUndefined
+VariableName=[VariableName]
+VariableNotFound
+VariableNotRemovable
+VariableNotRemovableSystem
+VariableNotWritable
+VariableOverflow
+VariablePathResolvedToMultiple
+VariableReferenceNotSupportedInDataSection
+VariableScriptBreakpointString
+VariablesToExport
+VCannot create an instance of the type converter for type "{0}" due to exception "{1}".
+VCannot evaluate parameter '{1}' because its argument input did not produce any output.;
+VCannot set "{0}" because only strings can be used as values to set XmlNode properties.
+VEnd the operation with an error and do not inquire to continue again for this session.
+Vendor
+VerboseHelpInfo
+VerbosePreferenceDescription
+Version number of this module.
+VersionValueInCorrect
+VFailure in decoding data from the remote host. There was an error in the network data.
+ViewNotLoaded
+VS_VERSION_INFO
+VThe data statement is not allowed in restricted language mode or another Data section.
+vThe dynamic parameters for the ClearProperty operation cannot be retrieved from the '{0}' provider for path '{1}'. {2}
+vThe dynamic parameters for the GetChildItems operation cannot be retrieved from the '{0}' provider for path '{1}'. {2}
+VUnable to find type [{0}]: make sure that the assembly containing this type is loaded.
+wA command is required to add a parameter. A command must be added to the PowerShell instance before adding a parameter.
+Warning: This credential is being requested by a script or application on the {0} remote computer. Enter your credentials only if you trust the remote computer and the application or script requesting it.
+WarningBreakpointWillNotBeHit
+WarningPreferenceDescription
+WCannot call methods. The ItemCmdletProvider methods are not supported by this provider.
+WCannot generate a PowerShell object for a ScriptBlock that invokes other script blocks.
+WCannot process 'switch' statement because of missing filename argument to -file option.
+wCannot save the console file because wildcard characters were used. Specify a console file without wildcard characters.
+WFor and While statements are not allowed in restricted language mode or a Data section.
+WFor instructions about how to customize your debugger prompt, type "help about_prompt".
+What if: {0}
+WhatIfPreferenceDescription
+When the runspace is set to use the current thread the apartment state in the invocation settings must match that of the current thread.
+WhitespaceBeforeHereStringFooter
+WildCardErrorFilePathParameter
+WildcardPattern.en.resources
+WinRM Quick Configuration
+WinRM service must be restarted before a UI can be displayed for SecurityDescriptor selection. Restart WinRM service and run the command: "{0}"
+WMIMethodInvocationException
+wNo Windows PowerShell snap-ins matching the pattern '{0}' were found. Check the pattern and then try the command again.r
+wParameter '{0}' cannot be specified because it conflicts with the parameter alias of the same name for parameter '{1}'.
+WriteDebugLineStoppedError
+WriteError
+WriteNotPermitted
+WriteOnlyProperty
+WriteToClosedBuffer
+WriteToClosedPipeline
+WrongSessionOptionValue
+WsmanMaxRedirectionCountVariableDescription
+wThe dynamic parameters for the RemoveProperty operation cannot be retrieved from the '{0}' provider for path '{1}'. {2}
+wThe property is not a multi-valued property and values cannot be added to it. To change the value use Set-ItemProperty.
+wThe required module '{1}' is not loaded. Load the module or remove the module from 'RequiredModules' in the file '{0}'.
+X:p<^XpC/
+x{0} cannot be specified as a proxy authentication mechanism. Only {1},{2} or {3} are supported for proxy authentication.
+XAlias {0} cannot be created because alias capacity {1} has been exceeded for this scope.
+xAn error '{0}' occurred while processing this script. Text describing this error could not be loaded due to error '{1}'.
+xCannot perform operation because operation "{0}" is invalid. Remove operation "{0}", or investigate why it is not valid.
+xCannot perform operation because the path resolved to more than one file. This command cannot operate on multiple files.
+xCannot set new item value because parameter "value" must be of type ProviderInfo when "type" is specified as "provider".
+xCannot set new item value because the parameter "value" must be of type PSDriveInfo when "type" is specified as "drive".
+XDrive {0} cannot be created because drive capacity {1} has been exceeded for this scope.
+XError at XPath {0} in file {1}: No type or condition is specified for applying the view.
+xjWFy
+XmlNodeSetRestrictions
+XmlNodeSetShouldBeAString
+XModules that must be imported into the global environment prior to importing this module
+XName: {0} SDDL: {1}. This will disable access to this session configuration for everyone
+xThe dynamic parameters for the GetContentReader operation cannot be retrieved for the '{0}' provider for path '{1}'. {2}
+xThe dynamic parameters for the GetContentWriter operation cannot be retrieved for the '{0}' provider for path '{1}'. {2}
+XThe invocation of Read on the '{0}' provider's content reader failed for path '{1}'. {2}
+XThe invocation of Seek on the '{0}' provider's content writer failed for path '{1}'. {2}
+xWindows PowerShell cannot create an instance of the type adapter for type "{0}" because of the following exception: {1}.
+YA pipeline is already executing. Concurrent SessionStateProxy method call is not allowed.
+YAttempting to perform the InitializeDefaultDrives operation on the '{0}' provider failed.
+Ybe{Y&
+YCannot load Help file. The following {1} error(s) happened while loading help file "{0}".
+YCannot register Cmdlet provider because a Cmdlet provider with name '{0}' already exists.
+YCannot register for event. Source identifier '{0}' is reserved for the PowerShell engine.
+YData for the non active command with the identifier {0} was received. Received data: {1}.
+yError at XPath {0} in file {1}: Row item count = {2} on alternative set #{3} does not match default row item count = {4}.
+Yes to &All
+YMissing an argument for parameter '{1}'. Specify a parameter of type '{2}' and try again.
+ypeFileNotRooted
+YReceived client Session InstanceId "{0}" does not matching my Session's InstanceId "{1}".
+YReferences to the null variable always return the null value. Assignments have no effect.
+YThe command name '{0}' includes an unapproved verb which might make it less discoverable.
+YThe following exception occurred while retrieving the definitions for method "{1}": "{0}"
+YThe invocation of Write on the '{0}' provider's content writer failed for path '{1}'. {2}
+yThe SupportedCommand parameter of the Data section is missing a value. Supply a cmdlet or function name to the parameter.
+YThe term '{0}' resolved to a cmdlet name that is ambiguous. Possible matches include:{1}.
+yThe type of the value object did not match the specified RegistryValueKind or the object could not be properly converted.
+ZA {0} message to a session is not supported. A {0} message must be sent only to a command.
+ZCannot get or set the property value. The "{0}" argument should be of type "{1}" or "{2}".
+ZCannot move because the source and destination paths did not resolve to the same provider.
+ZCannot process an element with node type "{0}". Only {1} and {2} node types are supported.
+zCannot save the file because the file name format is invalid. Specify a file name using the command: export-console -path.
+ZEnter-PSSession failed because the remote Session does not provide commands that it needs.
+ZError at XPath {0} in file {1}: String {2} from resource {3} in assembly {4} is not found.
+ZExpandable strings are not allowed in the list of supported commands for the Data section.
+zNo custom object was returned for module '{0}' because the -AsCustomObject parameter can only be used with script modules.
+ZNode "{0}" should be present only once under "{1}". The parent node "{1}" will be ignored.
+ZParameter could not be declared. Parameters can be declared only on fields and properties.
+ZThe Do and While statements are not allowed in restricted language mode or a Data section.
+ZThe following exception occurred while retrieving the attributes for property "{1}": "{0}"
+ZThe following exception occurred while retrieving the read state for property "{1}": "{0}"
+zThe input object cannot be bound because it did not contain the information required to bind all mandatory parameters: {6}
+Zw1w>

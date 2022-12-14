@@ -1,0 +1,186 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\winquic.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    HAL.dll
+    WDFLDR.SYS
+    NETIO.SYS
+    cng.sys
+    ksecdd.sys
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C0023128 Import Address Table
+             1C0023510 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         80C RtlInsertEntryHashTable
+                         7DB RtlGetNextEntryHashTable
+                         84C RtlLookupEntryHashTable
+                         77C RtlDeleteHashTable
+                          AB ExDeleteLookasideListEx
+                          D0 ExInitializeLookasideListEx
+                         124 ExSetTimer
+                          AF ExDeleteTimer
+                          9E ExAllocateTimer
+                          A1 ExCancelTimer
+                         119 ExReleaseSpinLockExclusive
+                         11B ExReleaseSpinLockShared
+                          94 ExAcquireSpinLockShared
+                          92 ExAcquireSpinLockExclusive
+                         7F8 RtlInitEnumerationHashTable
+                          73 EtwSetInformation
+                         7FC RtlInitUnicodeString
+                          75 EtwUnregister
+                         513 MmGetSystemRoutineAddress
+                          70 EtwRegister
+                         39D IoWMIRegistrationControl
+                         2BE IoFreeIrp
+                         4F9 MmBuildMdlForNonPagedPool
+                         269 IoAllocateIrp
+                         34B IoReuseIrp
+                         552 MmUnmapLockedPages
+                         528 MmMapLockedPagesSpecifyCache
+                         2F7 IoInitializeIrp
+                         286 IoCleanupIrp
+                         48D KeResetEvent
+                         88A RtlRemoveEntryHashTable
+                          D5 ExInitializeRundownProtection
+                         78A RtlEndEnumerationHashTable
+                         78D RtlEnumerateEntryHashTable
+                         767 RtlCreateHashTableEx
+                         5E8 ObReferenceObjectByHandle
+                         568 NtClose
+                         710 PsThreadType
+                         49C KeSetEvent
+                         47D KeReleaseSpinLock
+                         423 KeInitializeSpinLock
+                         667 PsCreateSystemThread
+                         5F8 ObfDereferenceObject
+                         3C9 KeAcquireSpinLockRaiseToDpc
+                         40A KeGetCurrentProcessorNumberEx
+                         14E ExfReleasePushLockShared
+                         14B ExfAcquirePushLockShared
+                         115 ExReleaseRundownProtection
+                          8C ExAcquireRundownProtection
+                         AD5 _strnicmp
+                          7B EtwWriteTransfer
+                          F8 ExReInitializeRundownProtection
+                         146 ExWaitForRundownProtectionRelease
+                         4C5 KeWaitForSingleObject
+                         67C PsGetCurrentThreadId
+                         B21 strnlen
+                         41B KeInitializeEvent
+                          EC ExQueryDepthSList
+                         154 ExpInterlockedPushEntrySList
+                         153 ExpInterlockedPopEntrySList
+                          C3 ExFreePoolWithTag
+                          9C ExAllocatePoolWithTag
+                         14D ExfReleasePushLockExclusive
+                         45A KeQueryMaximumProcessorCountEx
+                         14A ExfAcquirePushLockExclusive
+                         8C9 RtlUTF8ToUnicodeN
+                         760 RtlCopyUnicodeString
+
+    HAL.dll
+             1C0023000 Import Address Table
+             1C00233E8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          53 KeQueryPerformanceCounter
+
+    WDFLDR.SYS
+             1C0023038 Import Address Table
+             1C0023420 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           9 WdfVersionUnbindClass
+                           6 WdfVersionBind
+                           8 WdfVersionUnbind
+                           7 WdfVersionBindClass
+
+    NETIO.SYS
+             1C0023010 Import Address Table
+             1C00233F8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         20E WskReleaseProviderNPI
+                         20A WskCaptureProviderNPI
+                         20D WskRegister
+                         20B WskDeregister
+
+    cng.sys
+             1C0023060 Import Address Table
+             1C0023448 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          14 BCryptGenRandom
+                          16 BCryptGenerateSymmetricKey
+                           2 BCryptCreateHash
+                          1A BCryptHashData
+                           8 BCryptDestroyHash
+                           1 BCryptCloseAlgorithmProvider
+                           D BCryptEncrypt
+                          1E BCryptOpenAlgorithmProvider
+                           4 BCryptDecrypt
+                           9 BCryptDestroyKey
+                          12 BCryptFinishHash
+
+    ksecdd.sys
+             1C00230C0 Import Address Table
+             1C00234A8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          53 SspiCreateAsyncContext
+                          5A SspiGetAsyncCallStatus
+                          5F SspiSetAsyncNotifyCallback
+                          54 SspiDeleteSecurityContextAsync
+                           0 AcceptSecurityContext
+                          57 SspiFreeAsyncContext
+                          39 QueryContextAttributesW
+                           1 AcquireCredentialsHandleW
+                          38 MapSecurityError
+                          50 SspiAcquireCredentialsHandleAsyncW
+                          2D FreeCredentialsHandle
+                          32 InitializeSecurityContextW
+
+  Section contains the following exports for winquic.sys
+
+    00000000 characteristics
+    BFE89A0C time date stamp
+        0.00 version
+           1 ordinal base
+           1 number of functions
+           1 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00001740 WinQuicOpenEx
+
+  Summary
+
+        1000 .data
+        1000 .edata
+        2000 .idata
+        1000 .pdata
+        2000 .rdata
+        1000 .reloc
+        1000 .rsrc
+       1E000 .text
+        1000 GFIDS
+        1000 INIT
+        1000 PAGE

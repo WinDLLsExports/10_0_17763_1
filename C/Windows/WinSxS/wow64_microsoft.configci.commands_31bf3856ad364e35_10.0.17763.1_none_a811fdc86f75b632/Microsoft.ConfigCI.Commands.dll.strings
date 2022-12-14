@@ -1,0 +1,2406 @@
+                   <xs:element ref="AllowedSigners" minOccurs="0" maxOccurs="1"/>
+                   <xs:element ref="DeniedSigners" minOccurs="0" maxOccurs="1"/>
+                   <xs:element ref="FileRulesRef" minOccurs="0" maxOccurs="1"/>
+                  Id for this macro is "runtime.windows", the macro would be referenced as $(runtime.windows).
+                  Required. The Id for this macro, used in macro references. For example, if the
+                  Required. The value that will be substituted for macro references in macro- enabled XML attributes.
+                 <xs:element ref="AllowedSigners" minOccurs="0" maxOccurs="1"/>
+                 <xs:element ref="DeniedSigners" minOccurs="0" maxOccurs="1"/>
+                 <xs:element ref="FileRulesRef" minOccurs="0" maxOccurs="1"/>
+                </xs:documentation>
+                <xs:documentation>
+                <xs:element ref="Allow"  minOccurs="0" maxOccurs="10000000" />
+                <xs:element ref="AllowedSigner" minOccurs="1" maxOccurs="10000000" />
+                <xs:element ref="AllowedSigners" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="CertEKU" minOccurs="0" maxOccurs="255"/>
+                <xs:element ref="CertIssuer" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="CertOemID" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="CertPublisher" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="CertRoot" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="DeniedSigner" minOccurs="1" maxOccurs="10000000" />
+                <xs:element ref="DeniedSigners" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="Deny"  minOccurs="0" maxOccurs="10000000" />
+                <xs:element ref="EKU"  minOccurs="0" maxOccurs="255" />
+                <xs:element ref="ExceptAllowRule" minOccurs="0" maxOccurs="10000000"/>
+                <xs:element ref="ExceptDenyRule" minOccurs="0" maxOccurs="10000000"/>
+                <xs:element ref="FileAttrib"  minOccurs="0" maxOccurs="10000000" />
+                <xs:element ref="FileAttribRef" minOccurs="0" maxOccurs="10000000"/>
+                <xs:element ref="FileRuleRef" minOccurs="1" maxOccurs="10000000" />
+                <xs:element ref="FileRulesRef" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="ProductSigners" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="Signer"  minOccurs="0" maxOccurs="10000000" />
+                <xs:element ref="SigningScenario"  minOccurs="0" maxOccurs="255" />
+                <xs:element ref="TestSigners" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="TestSigningSigners" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="UpdatePolicySigner"  minOccurs="0" maxOccurs="10000000" />
+                A FileAttribRef is used to reference a FILE_ATTRIB rule through ID
+                A Signer
+                Allow Rule ID should start with ID_ALLOW_
+                An AllowedSigner defines a signer with condition (with exceptions)
+                An DeniedSgner defines a deny rule
+                Collection of EKUs.
+                Collection of File Rules.
+                Collection of signers.
+                Collection of SigningScenarios
+                Colletion of AllowedSigner
+                Colletion of DeniedSigner
+                Define a file allow rule
+                Define a File deny rule
+                Define a generic file attribute rule than can be combined with Signers
+                Define a Signer
+                Define a Signing Scenario
+                Define a Signing Scenario type
+                Define an EKU
+                defines a signer for System Integrity Policy Updating
+                Deny Rule ID should start with ID_DENY_
+                EKU ID type starts with ID_EKU_
+                ExceptAllowRule rule is an allow rule type. It makes specific deny Signer conditional.
+                ExceptDenyRule rule is a deny rule type. It makes specific allow Signer conditional.
+                FileRulesRef is a collection of FileRuleRef
+                Generic file rule ID should start with ID_FILEATTRIB_
+                If the allow Signer rule allows, but the exception condition met, then the result is deny.
+                Multiple ID_ALLOW_ or ID_DENY_ separated by ','
+                Multiple ID_SIGNINGSCENARIO_ seperated by ','
+                Signer ID should start with ID_SIGNER_
+                Signing Scenario ID type starts with ID_SIGNGINGSCENARIO_
+                Used to reference an file rule through rule ID
+               <xs:attribute name="ID" type="EKUType" use="required"/>
+              </xs:annotation>
+              </xs:sequence>
+              <xs:annotation>
+              <xs:element name="Rule" type="RuleType" minOccurs="0" maxOccurs="65535"/>            
+              A Macro element defines a text substitution macro that can be used in other elements.
+              Collection of UpdatePolicySigner.
+              Macros are referenced using NMAKE syntax, i.e. $(runtime.windows).
+            <!-- Value is either wellknow Root ID or TBS hash, both in hexBinary form-->
+            <!-- Work around with XSD.exe http://connect.microsoft.com/VisualStudio/feedback/details/471297 -->
+            </xs:all>
+            </xs:attribute>
+            </xs:choice>
+            </xs:documentation>
+            </xs:sequence>
+            <xs:all minOccurs="1" maxOccurs="1">
+            <xs:attribute name="AllowRuleID" type="AllowType" use="required" />
+            <xs:attribute name="AppIDs" type="AppIdType" use="optional" />
+            <xs:attribute name="DenyRuleID" type="DenyType" use="required" />
+            <xs:attribute name="FileDescription" type="xs:string" use="optional" />
+            <xs:attribute name="FileName" type="xs:string" use="optional" />
+            <xs:attribute name="FriendlyName" type="SignerNameType" use="optional" />
+            <xs:attribute name="FriendlyName" type="xs:string" use="optional" />
+            <xs:attribute name="Hash" type="xs:hexBinary" use="optional" />
+            <xs:attribute name="ID" type="AllowType" use="required" />
+            <xs:attribute name="ID" type="DenyType" use="required" />
+            <xs:attribute name="ID" type="EKUType" use="required" />
+            <xs:attribute name="ID" type="FileAttribType" use="required" />
+            <xs:attribute name="Id" type="MacroIdType" use="required">
+            <xs:attribute name="ID" type="SignerIdType" use="required" />
+            <xs:attribute name="ID" type="SigningScenarioIDType" use="required" />
+            <xs:attribute name="InheritedScenarios" type="SigningScenarioIDsType" use="optional" />
+            <xs:attribute name="InternalName" type="xs:string" use="optional" />
+            <xs:attribute name="MaximumFileVersion" type="VersionExType" use="optional" />
+            <xs:attribute name="MinimumFileVersion" type="VersionExType" use="optional" />
+            <xs:attribute name="MinimumHashAlgorithm" type="UShortType" use="optional" />
+            <xs:attribute name="Name" type="SignerNameType" use="required" />
+            <xs:attribute name="PackageFamilyName" type="xs:string" use="optional" />
+            <xs:attribute name="PackageVersion" type="VersionExType" use="optional" />
+            <xs:attribute name="ProductName" type="xs:string" use="optional" />
+            <xs:attribute name="RuleID" type="FileAttribType" use="required" />
+            <xs:attribute name="RuleID" type="RuleIdType" use="optional" />
+            <xs:attribute name="SignerId" type="SignerIdType" use ="required" />
+            <xs:attribute name="SignTimeAfter" type="SignTimeType" use="optional" />
+            <xs:attribute name="Type" type="CertEnumType" use="required" />
+            <xs:attribute name="Value" type="MacroValueStringType" use="required">
+            <xs:attribute name="Value" type="xs:hexBinary" use="required" />
+            <xs:attribute name="Value" type="xs:string" use="required"/>
+            <xs:attribute name="Value" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="Workaround" type="xs:string" />
+            <xs:choice minOccurs="1" maxOccurs="10000000">
+            <xs:choice minOccurs="1" maxOccurs="255">
+            <xs:documentation>
+            <xs:element ref="CertEKU" minOccurs="1" maxOccurs="1"/>
+            <xs:element ref="CertOemID" minOccurs="0" maxOccurs="1"/>
+            <xs:element ref="CertPublisher" minOccurs="0" maxOccurs="1"/>
+            <xs:element ref="CertRoot" minOccurs="1" maxOccurs="1"/>
+            <xs:element ref="ProductSigners" minOccurs="1" maxOccurs="1"/>
+            <xs:element ref="TestSigners" minOccurs="0" maxOccurs="1"/>
+            <xs:element ref="TestSigningSigners" minOccurs="0" maxOccurs="1"/>
+            <xs:enumeration value="TBS"/>
+            <xs:enumeration value="Wellknown"/>
+            <xs:minLength value="1"/>
+            <xs:minLength value="10"/>
+            <xs:pattern value="((ID_ALLOW_[A-Z][_A-Z0-9]*))*((ID_DENY_[A-Z][_A-Z0-9]*))*" />
+            <xs:pattern value="((ID_SIGNINGSCENARIO_[A-Z][_A-Z0-9]*)[,]?)*" />
+            <xs:pattern value="ID_ALLOW_[A-Z][_A-Z0-9]*" />
+            <xs:pattern value="ID_DENY_[A-Z][_A-Z0-9]*" />
+            <xs:pattern value="ID_EKU_[A-Z][_A-Z0-9]*" />
+            <xs:pattern value="ID_FILEATTRIB_[A-Z][_A-Z0-9]*" />
+            <xs:pattern value="ID_SIGNER_[A-Z][_A-Z0-9]*" />
+            <xs:pattern value="ID_SIGNINGSCENARIO_[A-Z][_A-Z0-9]*" />
+            <xs:sequence minOccurs="1"  maxOccurs="1">
+            <xs:sequence minOccurs="1" maxOccurs="1">
+            <xs:sequence>
+          </xs:annotation>
+          </xs:complexType>
+          <xs:annotation>
+          <xs:complexType>
+         </xs:complexType>
+         <xs:element name="HvciOptions" type="DWordType" minOccurs="0" maxOccurs="1"/>
+         <xs:element ref="CiSigners" minOccurs="0" maxOccurs="1"/>
+         <xs:element ref="EKUs" minOccurs="0" maxOccurs="1"/>
+         <xs:element ref="FileRules" minOccurs="0" maxOccurs="1"/>
+         <xs:element ref="Macros" minOccurs="0" maxOccurs="1"/>
+         <xs:element ref="Settings" minOccurs="0" maxOccurs="1"/>
+         <xs:element ref="Signers" minOccurs="0" maxOccurs="1"/>
+         <xs:element ref="SigningScenarios" minOccurs="0" maxOccurs="1"/>
+         <xs:element ref="UpdatePolicySigners" minOccurs="0" maxOccurs="1"/>
+        ((\$\([a-zA-Z_][a-zA-Z_0-9.]*\))+)
+        (^[^\$]([a-zA-Z0-9\-_!@#%\^\.,;:=\+~`'\{\}\(\)\[\]\$ \\])*)
+        </xs:annotation>
+        </xs:complexType>
+        </xs:element>
+        </xs:restriction>
+        </xs:sequence>
+        <xs:annotation>
+        <xs:attribute name="ID" type="SignerIdType" use="required" />
+        <xs:attribute name="Name" type="SignerNameType" use="required" />
+        <xs:complexType>
+        <xs:element name="Macro" minOccurs="1" maxOccurs="unbounded">
+        <xs:element name="Option" type="OptionType"/>
+        <xs:element name="PlatformID" type="GuidType" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="PolicyTypeID" type="GuidType" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="Rules">
+        <xs:element name="Value" type="SettingValueType"/>
+        <xs:element name="VersionEx" type="VersionExType" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="CiSigner"  minOccurs="0" maxOccurs="10000000" />
+        <xs:element ref="Setting"  minOccurs="0" maxOccurs="65535" />
+        <xs:restriction base="xs:string">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+        AppIDs may use either macros only (and be multi-valued). For example $(Adobe65)$(TestApp)
+        Collection of CiSigner.
+        Collection of setting elements.
+        defines a signer that CI will trust for CI signing levels.
+        or they may be a string that does not begin with a $ and be single valued
+      <!-- Accepts Macros only-->
+      </xs:all>
+      </xs:choice>
+      </xs:documentation>
+      </xs:sequence>
+      <xs:all>
+      <xs:attribute name="FriendlyName" type="xs:string" use="optional" />
+      <xs:attribute name="Key" type="xs:string" use="required" />
+      <xs:attribute name="Provider" type="xs:string" use="required" />
+      <xs:attribute name="SignerId" type="SignerIdType" use ="required" />
+      <xs:attribute name="ValueName" type="xs:string" use="required" />
+      <xs:choice minOccurs="1" maxOccurs="10000000">
+      <xs:choice minOccurs="1" maxOccurs="65535">
+      <xs:choice>
+      <xs:documentation>
+      <xs:element name="Binary" type="xs:hexBinary" />
+      <xs:element name="Boolean" type="BooleanType" />
+      <xs:element name="DWord" type="DWordType" />
+      <xs:element name="String" type="xs:string" />
+      <xs:enumeration value="Allowed:Kits Signers"/>
+      <xs:enumeration value="Allowed:Non-Microsoft UEFI Applications For BitLocker"/>
+      <xs:enumeration value="Allowed:Prerelease Signers"/>
+      <xs:enumeration value="Disabled:Flight Signing"/>
+      <xs:enumeration value="Disabled:Script Enforcement"/>
+      <xs:enumeration value="Disabled:UMCI Debug Options TCB Lowering"/>
+      <xs:enumeration value="Disabled:UMCI USN 0 Protection"/>
+      <xs:enumeration value="Disabled:Winload Debugging Mode Menu"/>
+      <xs:enumeration value="Enabled:Advanced Boot Options Menu"/>
+      <xs:enumeration value="Enabled:Always Use Policy"/>
+      <xs:enumeration value="Enabled:Audit Mode"/>
+      <xs:enumeration value="Enabled:Boot Audit On Failure"/>
+      <xs:enumeration value="Enabled:Boot Menu Protection"/>
+      <xs:enumeration value="Enabled:Conditional Windows Lockdown Policy"/>
+      <xs:enumeration value="Enabled:Developer Mode Dynamic Code Trust"/>
+      <xs:enumeration value="Enabled:Dynamic Code Security"/>
+      <xs:enumeration value="Enabled:Inherit Default Policy"/>
+      <xs:enumeration value="Enabled:Intelligent Security Graph Authorization"/>
+      <xs:enumeration value="Enabled:Invalidate EAs on Reboot"/>
+      <xs:enumeration value="Enabled:Managed Installer"/>
+      <xs:enumeration value="Enabled:Secure Setting Policy"/>
+      <xs:enumeration value="Enabled:Strong Crypto For Code Integrity"/>
+      <xs:enumeration value="Enabled:UMCI Trust USN 0"/>
+      <xs:enumeration value="Enabled:UMCI"/>
+      <xs:enumeration value="Enabled:Unsigned System Integrity Policy"/>
+      <xs:enumeration value="Enabled:Update Policy No Reboot"/>
+      <xs:enumeration value="Enabled:Windows Lockdown Trial Mode"/>
+      <xs:enumeration value="Required:Enforce Store Applications"/>
+      <xs:enumeration value="Required:EV Signers"/>
+      <xs:enumeration value="Required:WHQL"/>
+      <xs:field xpath="@Id" />
+      <xs:maxLength value="32767"/>
+      <xs:minLength value="1"/>
+      <xs:minLength value="3"/>
+      <xs:pattern value="(\$\([a-zA-Z_][a-zA-Z_0-9.]*\))+" />
+      <xs:pattern value="(^[^\$]([a-zA-Z0-9\-_!@#%\^\.,;:=\+~`'\{\}\(\)\[\]\$ \\])*)|((\$\([a-zA-Z_][a-zA-Z_0-9.]*\))+)" />
+      <xs:pattern value="[0-9]*.[0-9]*.[0-9]*.[0-9]*" />
+      <xs:pattern value="[a-zA-Z_][a-zA-Z_0-9.]*" />
+      <xs:pattern value="[a-zA-Z0-9\-_!@#%\^\.,;:=\+~`'\{\}\(\)\[\]\$ \\]*" />
+      <xs:pattern value="\{[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}\}"/>
+      <xs:restriction base="xs:unsignedShort"/>
+      <xs:selector xpath="ps:Macro" />
+      <xs:sequence>
+     </xs:restriction>
+    <!-- Allow element -->
+    <!-- Allow File Rule ID Type-->
+    <!-- Allowed Signer element-->
+    <!-- Allowed Signers element-->
+    <!-- Certificate EKU -->
+    <!-- Certificate Issuer-->
+    <!-- Certificate OEM ID-->
+    <!-- Certificate Publisher -->
+    <!-- certificate to chain to-->
+    <!-- Define File Rule Collection-->
+    <!-- Define one EKU -->
+    <!-- Denied Signer element-->
+    <!-- Denied Signers element-->
+    <!-- Deny File Rule element-->
+    <!-- Deny File RUle ID Type-->
+    <!-- EKU Type-->
+    <!-- EKUs Element-->
+    <!-- ExceptAllowRule element-->
+    <!-- ExceptDenyRule element-->
+    <!-- File Rule ID Type -->
+    <!-- FileRuleRef Element -->
+    <!-- FileRulesRef Element-->
+    <!-- Generic file attribute type that can be used directly inside a signer-->
+    <!-- Product Signers-->
+    <!-- Signer ID Type -->
+    <!-- Signer Type-->
+    <!-- SignerNameType-->
+    <!-- Signing Scenario ID Type -->
+    <!-- Signing Scenario IDs Type-->
+    <!-- Signing Scenario Type-->
+    <!-- Test Signers-->
+    <!-- TestSiging Signers-->
+    <!-- Type of CertificateToChainTo-->
+    <!-- Update Policy Signer-->
+    </xs:annotation>
+    </xs:choice>
+    </xs:complexType>
+    </xs:element>
+    </xs:restriction>
+    </xs:sequence>
+    </xs:simpleType>
+    </xs:unique>
+    <xs:annotation>
+    <xs:choice>
+    <xs:complexType name="SignerType">
+    <xs:complexType name="SigningScenarioType">
+    <xs:complexType>
+    <xs:element name="Allow">
+    <xs:element name="AllowedSigner">
+    <xs:element name="AllowedSigners">
+    <xs:element name="CertEKU">
+    <xs:element name="CertIssuer">
+    <xs:element name="CertOemID">
+    <xs:element name="CertPublisher">
+    <xs:element name="CertRoot">
+    <xs:element name="DeniedSigner">
+    <xs:element name="DeniedSigners">
+    <xs:element name="Deny">
+    <xs:element name="EKU">
+    <xs:element name="EKUs">
+    <xs:element name="ExceptAllowRule">
+    <xs:element name="ExceptDenyRule">
+    <xs:element name="FileAttrib">
+    <xs:element name="FileAttribRef">
+    <xs:element name="FileRuleRef">
+    <xs:element name="FileRules">
+    <xs:element name="FileRulesRef">
+    <xs:element name="ProductSigners">
+    <xs:element name="Signers">
+    <xs:element name="SigningScenario">
+    <xs:element name="SigningScenarios">
+    <xs:element name="TestSigners">
+    <xs:element name="TestSigningSigners">
+    <xs:element name="UpdatePolicySigner">
+    <xs:element name="UpdatePolicySigners">
+    <xs:restriction base="xs:boolean"/>
+    <xs:restriction base="xs:dateTime">
+    <xs:restriction base="xs:string">
+    <xs:restriction base="xs:unsignedInt"/>
+    <xs:restriction base="xs:unsignedLong"/>
+    <xs:sequence>
+    <xs:simpleType name="AllowType">
+    <xs:simpleType name="CertEnumType">
+    <xs:simpleType name="DenyType">
+    <xs:simpleType name="EKUType">
+    <xs:simpleType name="FileAttribType">
+    <xs:simpleType name="RuleIdType">
+    <xs:simpleType name="SignerIdType">
+    <xs:simpleType name="SignerNameType">
+    <xs:simpleType name="SigningScenarioIDsType">
+    <xs:simpleType name="SigningScenarioIDType">
+    <xs:unique name="UniqueMacroId">
+    elementFormDefault="qualified"
+    targetNamespace="urn:schemas-microsoft-com:sipolicy"
+    xmlns:ps="urn:schemas-microsoft-com:sipolicy"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="urn:schemas-microsoft-com:sipolicy"
+  <!-- A {00000000-0000-0000-0000-000000000000} GUID type -->
+  <!-- AppIDs Type -->
+  <!-- Collection of Setting-->
+  <!-- Macro Type -->
+  <!-- Macro Value String Type -->
+  <!-- Macros -->
+  <!-- Secure Setting <Provider,Key,Value> -->
+  <!-- Secure Setting Value Type -->
+  <!-- Sid Type -->
+  <!-- Signers for CI -->
+  <!-- SignTime Type -->
+  <!-- System Integrity Policy Version-->
+  <!-- The SI Policy definition-->
+  <!--File Path -->
+  </xs:complexType>
+  </xs:element>
+  </xs:simpleType>
+  <xs:complexType name="RuleType">
+  <xs:complexType name="SettingValueType">
+  <xs:element name="CiSigner">
+  <xs:element name="CiSigners">
+  <xs:element name="Macros">
+  <xs:element name="Setting">
+  <xs:element name="Settings">
+  <xs:element name="Signer">
+  <xs:element name="SiPolicy">
+  <xs:simpleType name="AppIdType">
+  <xs:simpleType name="BooleanType">
+  <xs:simpleType name="DWordType">
+  <xs:simpleType name="FilePathType">
+  <xs:simpleType name="GuidType">
+  <xs:simpleType name="MacroIdType">
+  <xs:simpleType name="MacroValueStringType">
+  <xs:simpleType name="OptionType">
+  <xs:simpleType name="QWordType">
+  <xs:simpleType name="SidType">
+  <xs:simpleType name="SignTimeType">
+  <xs:simpleType name="UShortType">
+  <xs:simpleType name="VersionExType">
+ .%(2
+ Enabled:Invalidate EAs on Reboot
+ FileAttribute
+ FileRule
+ Hash 
+ SignedVersion
+ Too much {0} rules defined: {1}.
+!"Checking files against catalogs"
+!"No Eku with ID {0} in document."
+!"Null ID in AddExceptionFileRule"
+!This program cannot be run in DOS mode.
+""Rule with ID {0} not in document"
+""The file at {0} was inaccessible"
+"{0} does not exist"
+-"{0} is an unacceptable SignerRule attribute"
+"A null EKU ID was discovered"
+-"Attempting to construct rule from null cert"
+"Attempting to edit null doc"
+"Checking for Catalog Signers"
+-"Could not acquire Algorithm Context for {0}"
+"Could not close file handle"
+"Could not close map handle"
+"Could not decode {0}"
+"Could not hash {0} with {1}"
+"CreateFileMapping failed"
+'"Driver file {0} in Registry not found"
+"EKU {0} not in rule {1}"
+"Enabled:Advanced Boot Options Menu
+"Error {0} was thrown while cleaning up the shadowcopy.  Policy creation aborted as this signals a corrupt state. This may be due to an interaction between the shadowcopy functionality and low disk space on the target drive.  Please free up some disk space or attempt to rescan with the -NoShadowCopy option"
+"Error bad version comparison"
+"Error: File not found: {0}"
+"Exception {0} not in rule {1}"
+"File at path {0} has a null or empty Original and Internal name in VersionInfo.  Cannot create name based rule.  Creating Hash based rule instead."
+"Generating Rules"
+"GetFileSize failed"
+"ImageNtHeader failed"
+"Invalid option {0}"
+"MapViewOfFile failed"
+"Parsing Catalogs"
+"Progress:"
+"Provided ID not found"
+'"Provided rule type {0} not supported."
+'"Rule {0} does not have any attributes"
+"Scan completed successfully"
+"Unable to create a shadowcopy of the target drive. Files that are in use may generate warnings and fail to be scanned. To enable shadowcopy, ensure that powershell is running as administrator and that the Win32_Shadowcopy service is enabled."
+"Unable to generate rules for all scanned files at the requested level.  A list of files not covered by the current policy can be found at {0}.  If it is safe to not include these files, no action needs to be taken, otherwise a more complete policy may be created using the -fallback switch"
+"Unexpected NTSTATUS: {0}"
+"UnmapViewOfFile failed"
+#"No exceptions present in rule {0}"
+#"Scanning... This may take a while"
+#Blob
+#Enabled:Windows Lockdown Trial Mode
+#GUID
+#Invalid signing scenario value {0}.
+#Required:Enforce Store Applications
+#Strings
+$"An EKU oid encoding error occurred"
+$"ImageDirectoryEntryToDataEx failed"
+$Disabled:Winload Debugging Mode Menu
+$Incorrect authentication data: 0x{0}
+$There is an invalid allow rule: {0}.
+%- (2
+%The signer ID Macro {0} is incorrect.
+&+*(2
+-&+-sS
+&Incorrect SBCP Policy file format {0}.
+&Variable is currently undefined: 0x{0}
+(CiSigner should not have wellknown root.
+(Disabled:UMCI Debug Options TCB Lowering
+(Enabled:Strong Crypto For Code Integrity
+(Enabled:Unsigned System Integrity Policy
+)Enabled:Developer Mode Dynamic Code Trust
+)Secure Setting value type {0} is invalid.
+)There is an invalid deny rul with ID {0}.
+*.cat
+*.dll
+*.sys
+*[@ID='
+*Microsoft (R) Windows (R) Operating System
+*Vr!"
+,Cmdlet not supported on this platform: 0x{0}
+,New policy version is less than old version:
+."Cannot obtain full path from audit entry {0}"
+."GetCertAtLevel called with invalid level {0}"
+./si:CiSigners
+./si:EKUs
+./si:FileRules
+./si:HvciOptions
+./si:Rules
+./si:Settings
+./si:Signers
+./si:SigningScenarios/si:SigningScenario[@Value="12"]/si:ProductSigners/si:AllowedSigners
+./si:SigningScenarios/si:SigningScenario[@Value="12"]/si:ProductSigners/si:DeniedSigners
+./si:SigningScenarios/si:SigningScenario[@Value="12"]/si:ProductSigners/si:FileRulesRef
+./si:SigningScenarios/si:SigningScenario[@Value="131"]/si:ProductSigners/si:AllowedSigners
+./si:SigningScenarios/si:SigningScenario[@Value="131"]/si:ProductSigners/si:DeniedSigners
+./si:SigningScenarios/si:SigningScenario[@Value="131"]/si:ProductSigners/si:FileRulesRef
+./si:UpdatePolicySigners
+./si:VersionEx
+.cctor
+.ctor
+.NETFramework,Version=v4.6
+.text
+.Writing staged policy path to system variable.
+/"Malformed Code Integrity Policy. No {0} node."
+/There is an invalid deny rule which has ID {0}.
+/There is an invalid file rule which has ID {0}.
+;Signing scenario {0} inherits invalid signing scenario {1}.
+@"Warning: Could not open file {0}, file not scanned for imports"
+@.reloc
+@k+uAB
+\$\(([^\(\)]+)\)
+\\?\GLOBALROOT
+\\?\GLOBALROOT\Device\Mup\
+\Boot\Resources
+\bootres.dll.mui
+\catroot\
+\drivers\
+\DriverStore\FileRepository\
+\FileDescription
+\InternalName
+\OriginalFileName
+\ProductName
+\VarFileInfo\Translation
+]"Unable to find a signing certificate for file at path {0}.  Cannot create signer based rule"
+_[A-Z]_[A-F0-9]+
+_CorDllMain
+`.rsrc
+{00AAC56B-CD44-11d0-8CC2-00C04FC295EE}
+{2E07F7E4-194C-4D20-B7C9-6F44A6C5A234}
+{A244370E-44C9-4C06-B551-F6016E563076}
+{zqZ|
++"{0} is an unacceptable FileRule attribute"
++"{0} is not an acceptable Rule type value."
++Enabled:Conditional Windows Lockdown Policy
+<"Error getting cryptographic service provider.  hResult={0}"
+</xs:schema>
+<?xml version="1.0" encoding="utf-8"?>
+<>9__49_0
+<>9__49_1
+<AppID>k__BackingField
+<AppIDRef>k__BackingField
+<AttributesEqual>b__49_0
+<AttributesEqual>b__49_1
+<d:\os\public\x86fre\internal\strongnamekeys\fake\windows.snk
+<FileDescription>k__BackingField
+<FileName>k__BackingField
+<FilePath>k__BackingField
+<FileVersion>k__BackingField
+<FileVersionRef>k__BackingField
+<FriendlyName>k__BackingField
+<Hash>k__BackingField
+<Hash256>k__BackingField
+<Id>k__BackingField
+<InternalName>k__BackingField
+<isPE>k__BackingField
+<Module>
+<Name>k__BackingField
+<PackageFamilyName>k__BackingField
+<PackageVersion>k__BackingField
+<PageHash>k__BackingField
+<PageHash256>k__BackingField
+<ProductName>k__BackingField
+<Root>k__BackingField
+<SIPHash256>k__BackingField
+<TypeId>k__BackingField
+<UserMode>k__BackingField
+<xs:schema
+="Could not access subdirectory {0} a symlink cycle may exist"
+>"CreateFileMapping failed, since mapped object already exists"
+>"Malformed Code Integrity Policy. Node at {0} cannot be found"
+0.0.0.0
+000004b0
+01082B06010505070303
+0Deny signer allow except rule ID {0} is invalid.
+0Enabled:Intelligent Security Graph Authorization
+1"Invalid RuleSubject when appending MergeId: {0}"
+1"Malformed policy: rule node has no option child"
+1.2.840.113549.1.1.11
+1.2.840.113549.1.1.12
+1.2.840.113549.1.1.13
+1.2.840.113549.1.1.4
+1.2.840.113549.1.1.5
+1.3.14.3.2.29
+1.3.6.1.4.1.311.10.3.5
+1.3.6.1.4.1.311.2.1.12
+10.0.0.0
+10.0.10011.16384
+10.0.17763.1
+1SV@.
+2"Invalid level specified for rule generation: {0}"
+2.5.29.37
+2There is no Macros defined, but {0} is referenced.
+3"Attempting to construct rule from null driverfile"
+3"Error:  Unable to open catalog file.  hResult={0}"
+3"Provided Exception ID {0} not present in document"
+3:V<M
+364)4
+3Allow signer exception deny rule ID {0} is invalid.
+4"Attempting to construct rule from null leaf or pca"
+4.6.1586.0
+5"An error occurred while processing subdirectory {0}"
+5Allowed:Non-Microsoft UEFI Applications For BitLocker
+5The secure setting provider, key or value is invalid.
+5There is no macro defined for {0}, referenced in {1}.
+65535.65535.65535.65535
+7"The catalog file {0} threw an error and wasn't parsed"
+8File rule has an invalid type other than Deny and Allow.
+9 E!Q"R#S$T%U&V'`(a)j*y+
+9BA61D3F-E73A-11d0-8CD2-00C04FC295EE
+9Copyright (c) Microsoft Corporation. All rights reserved.
+9Device Guard is not available in this edition of Windows.
+9MSI and Script EventLog not found, auditing only PE Rules
+9New policy publisher not in the list of accepted updates.
+A"Incorrectly formatted FileRule of type {0}, could not obtain ID"
+AccessViolationException
+AccessVioloationException
+Action
+Action)
+Action:
+ActionUnknown
+actualSize
+add_ekus
+add_ex
+add_ValidationEventHandler
+AddCatalogCertificates
+AddDocRule
+AddEku
+addEkus
+AddException
+AddExceptionOrAttributeFileRule
+addExceptions
+AddFileRule
+AddNamespace
+AddOption
+AddPolicy
+AddRange
+AddRule
+AddSecureSetting
+AddSignerRule
+AddSignerRuleCommand
+AdjustTokenPrivileges
+advapi32.dll
+algName
+AliasAttribute
+AllocCoTaskMem
+AllocHGlobal
+Allow
+allow
+Allow
+ALLOW_TYPE
+Allowed:Debug Policy Augmented
+Allowed:Kits Signers
+Allowed:Prerelease Signers
+AllowedKitsSigners
+AllowedNonMicrosoftUEFIApplicationsForBitLocker
+AllowedPrereleaseSigners
+AllowedSigner
+allowedSignerField
+allowedSignersField
+allowFileNameFallbacks
+AllowRuleID
+allowRuleIDField
+AllowSignerExceptDenyRuleID
+AllowSignerExceptDenyRuleID&
+AllSettings
+AnonymousType
+Append
+AppendChild
+AppendMergeId
+appID
+appIDsField
+ApplockerEventLogNotFound
+ApplockerEventLogNotFound[
+AppxPackage
+ArgumentException
+array
+arrayIndex
+AsnEncodedData
+AsnEncodedDataCollection
+Assembly Version
+AssemblyCompanyAttribute
+AssemblyCopyrightAttribute
+AssemblyDelaySignAttribute
+AssemblyFileVersionAttribute
+AssemblyKeyFileAttribute
+AssemblyProductAttribute
+AThere are more than one signing scenarios have the same ID = {0}.
+attributes
+AttributesEqual
+AttributeTypeAndAction
+attType
+audit
+AuditBadPath
+AuditNotFound
+AuditNotLocal
+Authenticode SIP Sha256
+Auto generated policy on 
+B"Bad TypeID given to Rule Constructor (this is a developer error)"
+BadTypeID
+BadVersionCompare
+baseNode
+baseNodesDict
+BCRYPT_SHA1_ALGORITHM
+BCRYPT_SHA256_ALGORITHM
+BeginProcessing
+Binary
+binaryfilepath
+binaryFilePath
+BinaryWriter
+BinaryZSystem.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+bInheritHandle
+binWriter
+Boolean
+Boolean[System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+bootResources
+BSigned policy is required, but no UpdatePolicySigner is specified.
+buffer
+bufferSize
+Build
+BuildOptionFlags
+BuildPFNDictionary
+c"File at path {0} has a null or empty Original name in VersionInfo.  Cannot create name based rule"
+C689AABA-8E78-11d0-8C47-00C04FC295EE
+CalculateFileHash
+CalculateTBS
+cAlternate
+Capture
+CatalogFile
+CatalogFile/CRYPTCATMEMBER/ReferenceTag
+CatalogHandle
+catalogPath
+CatalogToXml
+CatError
+CatFilePath
+CatParser
+cbEncoded
+cbStruct
+cdwTrustStepErrors
+CERT_SIGNED_CONTENT_INFO
+CertEKU
+certEKUField
+CertEnumType
+CertExpired
+certificatePath
+certIssuerField
+certOemIDField
+certPublisherField
+CertRoot
+certRootField
+CertVersion
+cFileName
+chainIn
+CharacteristicsOrOriginalFirstThunk
+CheckingCatalogsActivity
+CheckingFilesAgainstCats
+CheckingForCatSigners
+chStores
+CIDictionary`2
+CIPolicy
+CIPolicyException
+CIPolicyIdInfo
+CIPolicyInfo
+CIPolicyInfoSizeError
+CIPolicyRule
+CIPolicySetting
+CIPolicyVersion
+CiSigner
+CiSignerCantHaveWellknownRoot
+CiSigners
+ciSignersField
+Cleanup
+Clear
+ClientAccessible
+CloseHandle
+CmdletAttribute
+CMSG_ENCODED_MESSAGE
+CodeIntegrity.cat
+CodeIntegrity-AllowConfigurablePolicy
+CODEINTEGRITYPOLICY_OPTION_AUDIT_ENABLED
+CODEINTEGRITYPOLICY_OPTION_ENABLED
+CompanyName
+Compare
+CompareByteArray
+compareExceptions
+compareFileAttributes
+CompareFileRule
+CompareSettingRule
+compareVersion
+Comparison`1
+CompilationRelaxationsAttribute
+CompilerGeneratedAttribute
+ComputeFirstPageHash
+ComputeHash
+ComVisibleAttribute
+Concat
+Console
+ConsoleColor
+ContainedInList
+Container
+Contains
+ContainsKey
+Context
+ConvertFrom
+ConvertFromCIPolicyCommand
+ConvertNativePathToNonNativePath
+ConvertOriginalPathToShadowCopyPath
+ConvertPathsToShadowCopyPath
+ConvertShadowCopyPathToOriginalOrNonNativePath
+Copyright (c) Microsoft Corporation. All rights reserved.
+CopyTo
+CouldNotAccessSubdirectoryDenied
+CouldNotAccessSubdirectorySymlink
+CouldNotAcquireContext
+CouldNotCloseFileHandle
+CouldNotCloseMapHandle
+CouldNotDecode
+CouldNotHash
+CouldNotObtainID
+CouldNotOpenFile
+Create
+CreateBaseNode
+CreateComment
+CreateElement
+CreateFileMapping
+CreateFileMappingAlreadyExists
+CreateFileMappingFailed
+CreateFileW
+CreateFromSignedFile
+createIfAbsent
+CreateNavigator
+CreateXmlDeclaration
+CRYPT_ALGORITHM_IDENTIFIER
+CRYPT_ATTRIBUTE_TYPE_VALUE
+CRYPT_BIT_BLOB
+CRYPT_DATA_BLOB
+CRYPT_DECODE_TO_BE_SIGNED_FLAG
+CRYPT_INTEGER_BLOB
+CRYPT_OBJID_BLOB
+CRYPT_PROVIDER_DATA
+CRYPT_PROVIDER_SGNR
+CRYPT_SUBJTYPE_CABINET_IMAGE
+CRYPT_SUBJTYPE_CATALOG_IMAGE
+CRYPT_SUBJTYPE_CTL_IMAGE
+CRYPT_VERIFYCONTEXT
+Crypt32
+crypt32.dll
+CryptAcquireContext
+CRYPTCAT_ATTR_AUTHENTICATED
+CRYPTCAT_ATTR_DATAASCII
+CRYPTCAT_ATTR_DATABASE64
+CRYPTCAT_ATTR_DATAREPLACE
+CRYPTCAT_ATTR_NAMEASCII
+CRYPTCAT_ATTR_NAMEOBJID
+CRYPTCAT_ATTR_UNAUTHENTICATED
+CryptCATAdminAcquireContext2
+CryptCATAdminCalcHashFromFileHandle
+CryptCATAdminCalcHashFromFileHandle2
+CryptCATAdminReleaseContext
+CRYPTCATATTRIBUTE
+CryptCATClose
+CryptCATEnumerateAttr
+CryptCATEnumerateCatAttr
+CryptCATEnumerateMember
+CryptCATGetMemberInfo
+CRYPTCATMEMBER
+CryptCATOpen
+CryptDecodeObject
+CryptMsgGetParam
+CRYPTOAPI_BLOB
+CryptoConfig
+CryptographicAttributeObject
+CryptographicAttributeObjectCollection
+CryptographicAttributeObjectEnumerator
+CryptographicException
+CryptProviderHandle
+CryptReleaseContext
+CryptSIPRetrieveSubjectGuid
+csCertChain
+csCounterSigners
+cSecondarySigs
+csSigners
+CultureInfo
+cUnusedBits
+CurrentCmdlet
+currentFileNameLevel
+d"File at path {0} in the audit log was not found.  It has likely been deleted since it was last run"
+DataType
+DateTime
+DbgHelp.dll
+DE351A43-8E59-11d0-8C47-00C04FC295EE
+DebuggableAttribute
+DebuggerStepThroughAttribute
+DebuggingModes
+debugMode
+Decode
+defaultConstructor
+DefaultMemberAttribute
+delete
+Delete
+DeniedSigner
+deniedSignerField
+deniedSignersField
+DENY_TYPE
+DenyRuleID
+denyRuleIDField
+DenySignerAllowExceptRuleID
+Dequeue
+Deserialize
+DesignerCategoryAttribute
+detail
+DeviceIoControl
+deviceName
+DeviceObject
+dfsigInfo
+Digest
+directory
+DirectoryEntry
+DirectoryInfo
+directoryPath
+DirectoryWalker
+dirPath
+disable
+disableAllowed
+Disabled:Flight Signing
+Disabled:Script Enforcement
+Disabled:UMCI USN 0 Protection
+DisabledFlightSigning
+DisabledScriptEnforcement
+DisabledUMCIDebugOptionsTCBLowering
+DisabledUMCIUSN0Protection
+DisabledWinloadDebuggingModeMenu
+disall
+Dispose
+docEkus
+docRules
+DocumentHasNode
+Driver Signing Scenarios
+DRIVER_FILE_SIGNER_INFO
+DriverAllowedSigners
+DriverBinaryName
+DriverDeniedSigners
+DriverFile
+DriverFileList3
+DriverFileListT
+DriverFilePath
+driverFilePath
+DriverFilePathT
+DriverFileRulesRef
+driverFiles
+Drivers
+Drivers?
+DriversT
+DThere is an invalid allow rule {0} which has both Hash and FileName.
+DuplicatedSigningScenarioIDs
+DuplicateRuleIdError
+dwCertEncodingType
+dwCreationDisposition
+dwDesiredAccess
+dwEncoding
+dwError
+dwFileAttributes
+dwFileDateLS
+dwFileDateMS
+dwFileFlags
+dwFileFlagsMask
+dwFileOffsetHigh
+dwFileOffsetLow
+dwFileOS
+dwFileSubtype
+dwFileType
+dwFileVersionLS
+dwFileVersionMS
+dwFlags
+dwFlagsAndAttributes
+dwIndex
+dwIoControlCode
+dwLen
+dwMaximumSizeHigh
+dwMaximumSizeLow
+dwNumberOfBytesToMap
+DWord
+DWordZSystem.UInt32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+dwParamType
+dwProductVersionLS
+dwProductVersionMS
+dwRegPolicySettings
+dwRegSecuritySettings
+dwReserved0
+dwReserved1
+dwShareMode
+dwSignature
+dwSignerType
+dwStrucVersion
+dwVerifiedSigIndex
+dXa M
+e"An error occurred attempting to access catalogs, no catalog signatures were included with this scan"
+E"File {0} hash was inaccessible, this file was not included in rules"
+e"Incorrectly formatted document: Unexpected child of signer scenarioNode (expecting only exceptions)"
+EditCIPolicyRule
+EKU_CODE_SIGNING_VALUE
+ekuCount
+EkuEncodingError
+EkuNotInDocument
+EkuNotInRule
+eKUsField
+ekuToCheck
+EnableAdvancedPrivileges
+enabled
+Enabled:Advanced Boot Options Menu
+Enabled:Always Use Policy
+Enabled:Audit Mode
+Enabled:Boot Audit On Failure
+Enabled:Boot Menu Protection
+Enabled:Dynamic Code Security
+Enabled:Inherit Default Policy
+Enabled:Intelligent Security Graph Authorization
+Enabled:Invalidate EAs on Reboot
+Enabled:Managed Installer
+Enabled:Secure Setting Policy
+Enabled:UMCI
+Enabled:UMCI Trust USN 0
+Enabled:Unsigned System Integrity Policy
+Enabled:Update Policy No Reboot
+EnabledAdvancedBootOptionsMenu
+EnabledAlwaysUsePolicy
+EnabledAuditMode
+EnabledBootAuditOnFailure
+EnabledBootMenuProtection
+EnabledConditionalWindowsLockdownPolicy
+EnabledDeveloperModeDynamicCodeTrust
+EnabledDynamicCodeSecurity
+EnabledInheritDefaultPolicy
+EnabledIntelligentSecurityGraphAuthorization
+EnabledInvalidateEAsonReboot
+EnabledManagedInstaller
+EnabledSecureSettingPolicy
+EnabledStrongCryptoForCodeIntegrity
+EnabledUMCI
+EnabledUMCITrustUSN0
+EnabledUnsignedSystemIntegrityPolicy
+EnabledUpdatePolicyNoReboot
+EnabledWindowsLockdownTrialMode
+EnablePrivilege
+EncodedIndirectData
+EncodedMemberInfo
+EncodeOID
+EndProcessing
+EndsWith
+EntryPointNotFoundException
+Environment
+Equals
+error
+ERROR_ALREADY_EXISTS
+ERROR_BAD_EXE_FORMAT
+ERROR_INSUFFICIENT_BUFFER
+ErrorBadStatus
+ErrorCategory
+ErrorCode
+ErrorGettingCryptServiceProvider
+ErrorRecord
+ErrorsProcessingSubDirectory
+EventLogNotFoundException
+EventLogReader
+EventProperty
+EventRecord
+ExceptAllowRule
+exceptAllowRuleField
+ExceptDenyRule
+exceptDenyRuleField
+ExceptionIdNotFound
+ExceptionNotInRule
+F"Incorrectly formatted document: there must be one node with ID = {0}"
+fallback
+fallbackQueue
+FFor {0}, MinimumFileVersion {1} is bigger than MaximumFileVersion {2}.
+File Rules
+FILE_ATTRIB_TYPE
+FILE_FLAG_BACKUP_SEMANTICS
+FILE_FLAG_NO_BUFFERING
+FILE_MAP_READ
+FILE_READ_ATTRIBUTES
+FILE_SHARE_DELETE
+FILE_SHARE_READ
+FILE_SHARE_WRITE
+FILE_SYSTEM_DRIVER_SERVICE
+FILE_VER_GET_NEUTRAL
+FILE_WRITE_ATTRIBUTES
+FileAttrib
+FileAttribRef
+fileAttribRefField
+FileDescription
+fileDescription
+FileDescription:
+fileDescriptionField
+FileDescriptionStringName
+FileException
+FileExists
+FileInaccessible
+FileInfoPtr
+FileMode
+fileName
+filename
+fileNameField
+fileNameLevel
+FileNoSIP
+FileNotFound
+FileNotFoundException
+filePart
+filePath
+filePathInput
+filePathToHash
+fileReference
+FileRule"
+FileRuleComparer
+fileRuleCount
+FileRuleRef
+fileRuleRefField
+FileRules
+fileRulesField
+FileRulesMatch
+fileRulesRefField
+FileStream
+FileSystemInfo
+FILETIME
+FileVersion
+filter
+Finalize
+FindClose
+FindFirstFile
+FindNextFile
+FindPackagesForUser
+findPFNMatch
+flProtect
+fOpenedFile
+Format
+FormatException
+FormatImagePath
+ForwarderChain
+FoundHeader
+foundRule
+FreeCoTaskMem
+FreeHGlobal
+FriendlyName
+friendlyName
+friendlyNameField
+ftCreationTime
+ftLastAccessTime
+ftLastWriteTime
+fullFilePath
+fullPath
+Func`2
+G"An Error occurred while processing {0}. Message: {1}. Error Code: {2}"
+g"File {0} does not have a SIP or was inaccessible and cannot be included in the Configurable CI Policy"
+GCLargeObjectHeapCompactionMode
+GCSettings
+GeneratedCodeAttribute
+GeneratingRules
+GeneratingRulesActivity
+GENERIC_READ
+GENERIC_WRITE
+get_AddEkus
+get_AddExceptions
+get_AllowedSigner
+get_AllowedSigners
+get_AllowFileNameFallbacks
+get_AllowRuleID
+get_AppID
+get_AppIDRef
+get_AppIDs
+get_Attributes
+get_Audit
+get_BinaryFilePath
+get_CertEKU
+get_Certificate
+get_CertificatePath
+get_Certificates
+get_CertIssuer
+get_CertOemID
+get_CertPublisher
+get_CertRoot
+get_ChainElements
+get_ChildNodes
+get_CiSigners
+get_Count
+get_Current
+get_CurrentCulture
+get_CurrentFileSystemLocation
+get_DebugMode
+get_Delete
+get_DeniedSigner
+get_DeniedSigners
+get_Deny
+get_DenyRuleID
+get_DigestAlgorithm
+get_DisableAllowed
+get_DocumentElement
+get_DriverFilePath
+get_DriverFiles
+get_EKUs
+get_Empty
+get_Enabled
+get_EnhancedKeyUsages
+get_ExceptAllowRule
+get_ExceptDenyRule
+get_Extensions
+get_Fallback
+get_FamilyName
+get_FileAttribRef
+get_FileDescription
+get_FileName
+get_FilePath
+get_FileRuleRef
+get_FileRules
+get_FileRulesRef
+get_FileVersion
+get_FileVersionRef
+get_FirstChild
+get_FriendlyName
+get_FullName
+get_Hash
+get_Hash256
+get_HashPath
+get_HasValue
+get_Help
+get_HvciOptions
+get_HvciOptionsSpecified
+get_ID
+get_Id
+get_InheritedScenarios
+get_InnerXml
+get_InstalledLocation
+get_InternalName
+get_InvariantCulture
+get_isPE
+get_IsReadOnly
+get_Issuer
+get_Item
+get_Item1
+get_Item2
+get_ItemOf
+get_Items
+get_Kernel
+get_Key
+get_Keys
+get_LargeObjectHeapCompactionMode
+get_Length
+get_Level
+get_Macro
+get_Macros
+get_MaximumFileVersion
+get_Message
+get_MinimumFileVersion
+get_MinimumHashAlgorithm
+get_MinimumHashAlgorithmSpecified
+get_Name
+get_NamespaceURI
+get_NameTable
+get_NodeType
+get_None
+get_NoScript
+get_NoShadowCopy
+get_Now
+get_OemId
+get_Oid
+get_OmitPaths
+get_Option
+get_OutputFilePath
+get_Package
+get_PackageFamilyName
+get_PackageVersion
+get_PageHash
+get_PageHash256
+get_ParentNode
+get_Path
+get_PathToCatroot
+get_PercentComplete
+get_PlatformID
+get_PolicyId
+get_PolicyName
+get_PolicyPaths
+get_PolicyTypeID
+get_Position
+get_ProductName
+get_ProductSigners
+get_Properties
+get_Provider
+get_Publisher
+get_RawData
+get_RemoveEkus
+get_RemoveExceptions
+get_Root
+get_RType
+get_RuleID
+get_Rules
+get_ScanPath
+get_ScriptFileNames
+get_Settings
+get_SignedAttributes
+get_SignerId
+get_SignerInfos
+get_Signers
+get_SigningScenarios
+get_SignTimeAfter
+get_SignTimeAfterSpecified
+get_SIPHash256
+get_SpecificFileNameLevel
+get_Strict
+get_Subject
+get_SystemDirectory
+get_TestSigners
+get_TestSigningSigners
+get_Ticks
+get_Type
+get_TypeId
+get_Update
+get_UpdatePolicySigners
+get_User
+get_UserMode
+get_UserPEs
+get_Value
+get_ValueName
+get_Values
+get_ValueType
+get_Version
+get_VersionEx
+get_Workaround
+get_XmlFilePath
+GetAbsoluteFilePath
+GetAllEkus
+GetAttribute
+GetAuthenticodeSha256Hash
+GetBytes
+GetCatalogCertificates
+GetCatalogFiles
+GetCertAtInvalidLevel
+GetCertAtLevel
+GetCIPolicy
+GetCIPolicyIdInfo
+GetCIPolicyInfoCommand
+GetCorrectFileNameKey
+GetCurrentProcess
+GetDirectories
+GetDrivers
+GetEku
+GetEnvironmentVariable
+GetExceptionForHR
+GetExecutingAssembly
+GetFileAttributesW
+GetFileRule
+GetFiles
+GetFileSize
+GetFileSizeFailed
+GetFileVersionInfoEx
+GetFileVersionInfoSizeEx
+GetFirstPageHash
+GetFolderDllKernelDrivers
+GetFolderPath
+GetFolderPEs
+GetFolderSysFiles
+GetFullPath
+GetFullPathName
+GetFullPathNameW
+GetHighestId
+GetHRForLastWin32Error
+GetImports
+GetInstances
+GetLastWin32Error
+GetManifestResourceStream
+GetMethodParameters
+GetMultipleEmbeddedSigs
+GetNode
+GetOptions
+GetPathRoot
+GetPropertyValue
+GetRules
+GetRuleSubject
+GetSecureSettings
+GetSettingValues
+GetShadowCopyAndNewPath
+GetSignerRule
+GetSIPSha256Hash
+GetString
+GetSubDirs
+GetSubKeyNames
+GetSystemDriver
+GetTempFileName
+GetType
+GetTypeFromHandle
+getUserPEs
+GetValueOrDefault
+GetValues
+GetWhqlEKU
+GetWhqlOpusInfos
+H"Unexpected CIPolicyInfo size returned by NTQuerySystemInformation: {0}'
+HandleProcessCorruptedStateExceptionsAttribute
+HasDuplicateEkuId
+hashAlgorithm
+hashes
+hashField
+HashInaccessible
+hashName
+HashSet`1
+hasSIP
+HasWhqlEKU
+hCryptMsg
+hDevice
+Helper
+hexBinary
+hexBinaryh
+hFile
+hFileIn
+hFileMappingObject
+hFindFile
+hObject
+hProv
+hStateData
+hTemplateFile
+HvciOptions
+HVCIOptions
+hvciOptionsField
+hvciOptionsFieldSpecified
+hWndParent
+I"Could not access subdirectory (permission denied) directory not scanned"
+ICollection`1
+ID_ALLOW_A_
+ID_DENY_D_
+ID_EKU_E_
+ID_FILEATTRIB_F_
+ID_SIGNER_F_
+ID_SIGNER_S_
+ID_SIGNER_W_
+ID_SIGNINGSCENARIO_DRIVERS_1
+ID_SIGNINGSCENARIO_WINDOWS
+idField
+IDisposable
+IdNotFound
+idToRemove
+IEnumerable
+IEnumerable`1
+IEnumerator
+IEnumerator`1
+IFormatProvider
+IgnoreCase
+IList`1
+IMAGE_DIRECTORY_ENTRY_EXPORT
+IMAGE_DIRECTORY_ENTRY_IMPORT
+IMAGE_DIRECTORY_ENTRY_RESOURCE
+IMAGE_IMPORT_BY_NAME
+IMAGE_IMPORT_DESCRIPTOR
+ImageBase
+ImageDirectoryEntryToDataEx
+ImageDirectoryEntryToDataExFailed
+ImageNtHeader
+ImageNtHeaderFailed
+ImagePath
+imagePath
+ImagePathNotFound
+ImageRvaToVa
+ImportParser
+imports
+IncorrectSBCPPolicyFormat
+IncorrectVersions
+index
+IndirectDataStructure
+Information
+inheritedScenariosField
+InheritInvalidSigningScenario
+initializeContainers
+InitializeNamespaceManager
+initializeOids
+inner
+InsertAfter
+InsertBefore
+internalDictionary
+InternalName
+internalName
+InternalName:
+internalNameField
+InternalNameStringName
+IntPtr
+Invalid  file rule ID: {0}
+Invalid AllowedSigner object.
+Invalid EKU ID {0}.
+Invalid signer {0}.
+Invalid signer ID {0}.
+Invalid signer id macro in AllowedSigners.
+Invalid SigningScenario object.
+INVALID_FILE_ATTRIBUTES
+INVALID_HANDLE_VALUE
+InvalidAllowedSigner
+InvalidAllowRule
+InvalidAllowRuleV3
+InvalidCertRoot
+InvalidDenyRule
+InvalidDenyRuleV3
+InvalidEkuID
+InvalidFileRule
+InvalidFileRuleType
+InvalidFileRuleV3
+InvalidLevel
+InvalidLicense
+InvalidOperationException
+InvalidOption
+InvalidPolicy
+InvalidPolicyFile
+InvalidPolicyVersion
+InvalidPublisherInList
+InvalidRuleID
+InvalidSecureSettingPKV
+InvalidSettingValueType
+InvalidSigner
+InvalidSignerID
+InvalidSignerIDMacro
+InvalidSigningScenario
+InvalidSigningScenarioValue
+InvalidSubjectDuringMergeIdAppend
+InvalidVersion
+InvokeMethod
+InvokeMethodOptions
+IOrderedEnumerable`1
+IsEquivalent
+IsNullable
+IsPathRooted
+issuer
+isUserPE
+IsUserPE
+itemField
+itemsField
+kernel
+KERNEL_DEVICE_DRIVER_SERVICE
+kernel32
+kernel32.dll
+kernelbase.dll
+keyField
+KeyValuePair`2
+LastIndexOf
+LastRvaSection
+LeafCertificate
+LegalCopyright
+level
+LicenseCheck
+licenseProperty
+LocalMachine
+LookupNamespace
+LookupPrivilegeValue
+lpBaseAddress
+lpBytesReturned
+lpData
+lpdwHandle
+lpFileName
+lpFileSizeHigh
+lpFindFileData
+lpInBuffer
+lplpBuffer
+lpName
+lpOutBuffer
+lpOverlapped
+lpSecurityAttributes
+lpSubBlock
+lpszStructType
+lptstrFilename
+lSystem.Resources.ResourceReader, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089#System.Resources.RuntimeResourceSet
+m"Unable to find a signing certificate with a WHQL EKU for file at path {0}.  Cannot create signer based rule"
+Macro
+macroField
+macrosField
+MacrosMacro
+Major
+MalformedRuleOption
+ManagementBaseObject
+ManagementClass
+ManagementException
+ManagementObject
+ManagementObjectCollection
+ManagementObjectEnumerator
+Mandatory
+mapEkuId2Index
+mapFileRuleId2Index
+mapMacroId2Value
+MappedAsImage
+mapScenarioId2Index
+mapSignerId2Index
+MapViewOfFile
+MapViewOfFileFailed
+Marshal
+MAX_PATH
+MaxEkuIdReached
+maximumFileVersionField
+MD5CryptoServiceProvider
+MemberFlags
+MemberHandle
+MemoryStream
+Merge
+MergeCIPolicy
+mergeId
+MergeID
+message
+Microsoft (R) Windows (R) Operating System
+Microsoft Corporation
+Microsoft.ConfigCI.Commands
+Microsoft.ConfigCI.Commands.CIPolicy.xsd
+Microsoft.ConfigCI.Commands.dll
+Microsoft.ConfigCI.Commands.pdb
+Microsoft.ConfigCI.Commands.resources
+Microsoft.SecureBoot.UserConfig
+Microsoft.Win32
+Microsoft.Win32.SafeHandles
+Microsoft.Windows.Appx.PackageManager.Commands
+Microsoft-Windows-Applocker/MSI and Script
+Microsoft-Windows-CodeIntegrity/Operational
+minimumFileVersionField
+minimumHashAlgorithmField
+minimumHashAlgorithmFieldSpecified
+Minor
+MinValue
+MLxqR
+MM-dd-yyyy
+MoveNext
+mscoree.dll
+mscorlib
+nameField
+Namespace"urn:schemas-microsoft-com:sipolicy
+Namespace"urn:schemas-microsoft-com:sipolicyA
+Namespace"urn:schemas-microsoft-com:sipolicyT
+native
+NCertificate root type is invalid. It must be wellknown or defined by TBS hash.
+NeutralResourcesLanguageAttribute
+NewCIPolicy
+NewCIPolicyRule
+newEku
+newFileRule
+newst
+NextPolicyFormatVersion
+nFileSizeHigh
+nFileSizeLow
+nInBufferSize
+NoBaseNode
+NoCatalogs
+NodeAtPathNotFound
+NoDiskSpaceShadowCopyError
+NoExceptionsInRule
+NoMacroDefined
+None(
+NoNodeWithID
+noScript
+noShadowCopy
+NoSigner
+NoSuchMacroDefined
+NotAcceptableRuleTypeValue
+NotImplementedException
+NotSupportedException
+NoUpdatePolicySigner
+nOutBufferSize
+NoVersionInfoName
+NoVersionInfoNamePublisherRule
+NoWHQLSigner
+nsManager
+ntdll.dll
+NtHeaders
+NtQuerySystemInformation
+Nullable`1
+NullCert
+NullDoc
+NullDriverFile
+NullEkuIdDiscovered
+NullIdException
+NullLeafOrPca
+numBufferChars
+O"Unrecognized/Unsupported SignatureAlgorithm {0} by cert {1}. CertRoot not set"
+ObjectID
+oemId
+OfType
+OID_EKU
+OidCollection
+OidEnumerator
+omitPaths
+op_Equality
+op_Explicit
+op_Implicit
+op_Inequality
+OPEN_EXISTING
+OpenFile
+OpenFileMapping
+OpenFlags
+OpenProcessToken
+OpenSubKey
+Option
+option
+Options
+OptionType
+OrderBy
+OriginalFilename
+OriginalFileName
+OriginalFileName:
+OriginalFileNameStringName
+OriginalPathRoot
+outputFilePath
+package
+PackagedAppCatalogs
+packageFamilyName
+PackageFamilyName:
+packageFamilyNameField
+PackageFamilyNameT
+PackageId
+PackageManager
+packageVersion
+packageVersionField
+PADPADP
+padwTrustStepErrors
+Page Sha1
+Page Sha256
+PAGE_READONLY
+PAGE_READWRITE
+pahStores
+ParameterAttribute
+ParameterSetName
+Parse
+ParseCatalogFile
+ParseName
+ParsingCatalogsActivity
+ParsingCats
+pasCertChain
+pasCounterSigners
+pasSigners
+PathDoesNotExist
+PathInfo
+PathIntrinsics
+pathLen
+pathsToConvert
+pathToCatRoot
+pathToCatroot
+pathToConvert
+PathTooLongException
+pbData
+pbEncoded
+pbHash
+pBlock
+PcaCertificate
+pcbData
+pcbHash
+pcbStructInfo
+pChainContext
+pCryptoPolicy
+PerAppBadLevel
+pFileMappigAttributes
+pfnMappingTable
+PFNPublisher
+pgActionID
+pgActionId
+pgKnownSubject
+pgSubsystem
+phCatAdmin
+phtok
+PlatformID
+platformIDField
+pluid
+pMoreInfo
+policy
+Policy file is invalid.
+Policy in registry is invalid
+PolicyCallbackData
+PolicyFormatVersionV3
+PolicyFormatVersionV4
+PolicyFormatVersionV5
+PolicyGuid
+policyId
+PolicyInfo
+policyName
+policyPaths
+PolicyToAdd
+PolicyTypeID
+policyTypeIDField
+Position
+potentiallyRelative
+pPublisherInfo
+PrevAttribute
+PrevCatalogMemeber
+previousValues
+privilege
+processHandle
+ProcessRecord
+productName
+ProductName
+ProductName:
+productNameField
+ProductNameStringName
+ProductSigners
+productSignersField
+ProductVersion
+Progress
+progress
+ProgressRecord
+ProgressRecordType
+PropagateError
+PropagateErrorMessage
+propertyValue
+PROV_RSA_FULL
+ProvFlags
+Provider
+provider
+providerField
+ProviderType
+ProviderUnknown
+pSignatureSettings
+psPfns
+psSigner
+pStrongHashPolicy
+pszAlgId
+pszObjId
+PtrToStringAnsi
+PtrToStringAuto
+PtrToStructure
+PublicVersion
+publisher
+puLen
+pvData
+pvStructInto
+pWintrustData
+pwszHashAlgorithm
+pWVTData
+QueryDosDevice
+Queue`1
+R"{0} is not local and can not be included via audit scan, please include manually"
+r"Cannot generate new EKU ID as highest possible ID is already present in policy, please defragment policy EKU IDs"
+ReadAuditEventLogs
+ReadByte
+ReadDriverFolders
+ReadDriverFoldersRoot
+ReadEvent
+readInfFiles
+ReadInt32
+ReadInt64
+ReadRegistry
+readSys32SysFiles
+readSysFiles
+ReferenceTag
+Regex
+RegexOptions
+RegistryKey
+relen
+Remove
+remove_ekus
+remove_ex
+RemoveChild
+RemoveCIPolicyRule
+RemoveEku
+removeEkus
+RemoveException
+removeExceptions
+RemoveOption
+RemoveRule
+RemoveSecureSetting
+requested
+Required:Enforce Store Applications
+Required:EV Signers
+Required:WHQL
+RequiredEnforceStoreApplications
+RequiredEVSigners
+RequiredWHQL
+Reserved
+Reserved2
+ResetColor
+ResourceManager
+RestorePrivileges
+Revision
+RevocationChecks
+RootCertificate
+RTL_SHA256_HASH_LEN
+Rule with Duplicate Id {0}
+rule1
+rule2
+RuleAttribute
+ruleAttributes
+RuleGetDuplicate
+RuleHasDuplicate
+RuleID
+RuleId
+ruleId
+ruleIDField
+RuleLevel
+ruleList
+RuleNoAttributes
+RuleNotInDocument
+RuleOption
+rules
+Rules
+rulesField
+RulesFromDrivers
+RulesT
+ruleSubject
+ruleToAdd
+ruleType
+RuleType
+RuleTypeNotSupported
+RuntimeCompatibilityAttribute
+RuntimeTypeHandle
+S@TAUAVDWGXIYIZI[I\I]I^I_I`IaIbIcIdIeIfJgJhJiJjJkJlKmKnLoN
+SafeFileHandle
+Scanning
+ScanningActivity
+scanPath
+ScanSuccessful
+ScanUnsuccessful
+scenario
+scenarioIndex2Value
+scenarioNode
+ScpyInstance
+ScpyPath
+scpyPath
+Script Placeholder
+scriptFileNames
+ScriptPlaceHolderFileName
+SE_BACKUP_NAME
+SE_PRIVILEGE_DISABLED
+SE_PRIVILEGE_ENABLED
+SE_RESTORE_NAME
+SE_SECURITY_NAME
+SeBackupPrivilege
+SECTION_MAP_READ
+SecurityAction
+SecurityPermissionAttribute
+SeekOrigin
+SelectNodes
+SelectSingleNode
+sender
+SequenceEqual
+SeRestorePrivilege
+SERVICE_RECOGNIZER_DRIVER
+SeSecurityPrivilege
+SessionState
+set_AddEkus
+set_AddExceptions
+set_AllowedSigner
+set_AllowedSigners
+set_AllowFileNameFallbacks
+set_AllowRuleID
+set_AppID
+set_AppIDRef
+set_AppIDs
+set_Audit
+set_BinaryFilePath
+set_CertEKU
+set_CertificatePath
+set_CertIssuer
+set_CertOemID
+set_CertPublisher
+set_CertRoot
+set_CiSigners
+set_DebugMode
+set_Delete
+set_DeniedSigner
+set_DeniedSigners
+set_Deny
+set_DenyRuleID
+set_DisableAllowed
+set_DriverFilePath
+set_DriverFiles
+set_EKUs
+set_Enabled
+set_ExceptAllowRule
+set_ExceptDenyRule
+set_Fallback
+set_FileAttribRef
+set_FileDescription
+set_FileName
+set_FilePath
+set_FileRuleRef
+set_FileRules
+set_FileRulesRef
+set_FileVersion
+set_FileVersionRef
+set_ForegroundColor
+set_FriendlyName
+set_Hash
+set_Hash256
+set_HashPath
+set_Help
+set_HvciOptions
+set_HvciOptionsSpecified
+set_Id
+set_ID
+set_InheritedScenarios
+set_InnerText
+set_InternalName
+set_isPE
+set_Issuer
+set_Item
+set_Items
+set_Kernel
+set_Key
+set_LargeObjectHeapCompactionMode
+set_Level
+set_Macro
+set_Macros
+set_MaximumFileVersion
+set_MinimumFileVersion
+set_MinimumHashAlgorithm
+set_MinimumHashAlgorithmSpecified
+set_Name
+set_None
+set_NoScript
+set_NoShadowCopy
+set_OemId
+set_OmitPaths
+set_Option
+set_OutputFilePath
+set_Package
+set_PackageFamilyName
+set_PackageVersion
+set_PageHash
+set_PageHash256
+set_PathToCatroot
+set_PercentComplete
+set_PlatformID
+set_PolicyId
+set_PolicyName
+set_PolicyPaths
+set_PolicyTypeID
+set_ProductName
+set_ProductSigners
+set_Provider
+set_Publisher
+set_RecordType
+set_RemoveEkus
+set_RemoveExceptions
+set_Root
+set_RType
+set_RuleID
+set_Rules
+set_ScanPath
+set_Schemas
+set_ScriptFileNames
+set_Settings
+set_SignerId
+set_Signers
+set_SigningScenarios
+set_SignTimeAfter
+set_SignTimeAfterSpecified
+set_SIPHash256
+set_SpecificFileNameLevel
+set_StatusDescription
+set_Strict
+set_TestSigners
+set_TestSigningSigners
+set_Type
+set_TypeId
+set_Update
+set_UpdatePolicySigners
+set_User
+set_UserMode
+set_UserPEs
+set_ValidationType
+set_Value
+set_ValueName
+set_ValueType
+set_Version
+set_VersionEx
+set_Workaround
+set_XmlFilePath
+set_XmlResolver
+SetCIPolicyIdInfo
+SetCIPolicySetting
+SetCIPolicyVersionCommand
+SetHVCIOptions
+SetHVCIOptionsCommand
+SetPolicyVersion
+SetPropertyValue
+SetRuleOptionCommand
+Setting
+SettingRuleComparer
+settingsField
+SettingValueType
+sftVerifyAsOf
+SHA1_HASH_ALGID
+SHA1CryptoServiceProvider
+Sha256
+SHA256
+sha256Authenticode
+SHA256CryptoServiceProvider
+SHA384
+SHA384CryptoServiceProvider
+SHA512
+SHA512CryptoServiceProvider
+ShadowcopyFailure
+ShadowCopyKeeper
+ShadowCopyPathRoot
+ShadowID
+si:AllowedSigner[@SignerId='
+si:CiSigner[@SignerId='
+si:DeniedSigner[@SignerId='
+si:EKU
+si:FileRuleRef[@RuleID='
+si:Signer[@ID='
+si:UpdatePolicySigner[@SignerId='
+SIConvertToBinaryFile
+SignatureAlgorithm
+signatures
+SignedCms
+SignedScript
+SignedVersion
+Signer
+signer
+-Signer file reference rule ID {0} is invalid.
+SignerFileRefRuleID
+SignerId
+signerIdField
+signerIn
+SignerInfo
+SignerInfoCollection
+SignerInfoEnumerator
+SignerRule
+SignerRule5
+signerRuleCount
+Signers
+signers
+signersField
+SigningScenario
+SigningScenarios
+signingScenariosField
+signTimeAfterField
+signTimeAfterFieldSpecified
+SIP_INDIRECT_DATA
+SIPClientData
+SiPolicy
+siPolicy
+SIPolicyCalculateScenarioIndexToValue
+SIPolicyConvertAllowedSigners
+SIPolicyConvertCiSignerRef
+SIPolicyConvertDeniedSigners
+SIPolicyConvertFileFule
+SIPolicyConvertFileFuleV3
+SIPolicyConvertFileRuleV4
+SIPolicyConvertFileRuleV5
+SIPolicyConvertRequiredFileRules
+SIPolicyConvertScenario
+SIPolicyConvertSecureSettings
+SIPolicyConvertSigner
+SIPolicyConvertSignerRef
+SIPolicyConvertSignerV3
+SIPolicyParseStrings
+SIValidateAllowRule
+SIValidateCertRoot
+SIValidateDenyRule
+SIValidateFileAttribRule
+SIValidateSigner
+SIValidateSigningScenario
+SizeOf
+SkipVerification
+slc.dll
+SLGetWindowsInformationDWORD
+SPC_SP_OPUS_INFO
+SPC_SP_OPUS_INFO_OBJID
+SPC_SP_OPUS_INFO_STRUCT
+SpecialFolder
+specificFileNameLevel
+Split
+sSettings
+Stack`1
+StartsWith
+StateAction
+STATUS_INFO_LENGTH_MISMATCH
+STATUS_SUCCESS
+StorageFolder
+StreamWriter
+strict
+String
+StringBuilder
+StringComparison
+StringFileInfo
+StringFileInfo\
+StringSplitOptions
+StringToCoTaskMemAuto
+stringToWrite
+StringVersionToNumber
+StringZSystem.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+StructSize
+StructureSize
+StructureToPtr
+SubjectFormUnknown
+SubjectNotTrusted
+SubjectType
+Substring
+Success
+SwitchParameter
+sys32DllScan
+System
+System.CodeDom.Compiler
+System.Collections
+System.Collections.Generic
+System.Collections.IEnumerable.GetEnumerator
+System.ComponentModel
+System.Core
+System.Diagnostics
+System.Diagnostics.Eventing.Reader
+System.Globalization
+System.IO
+System.Linq
+System.Management
+System.Management.Automation
+System.Reflection
+System.Resources
+System.Runtime
+System.Runtime.CompilerServices
+System.Runtime.ExceptionServices
+System.Runtime.InteropServices
+System.Runtime.InteropServices.ComTypes
+System.Runtime.Versioning
+System.Security
+System.Security.Cryptography
+System.Security.Cryptography.Pkcs
+System.Security.Cryptography.X509Certificates
+System.Security.Permissions
+System.Security.Permissions.SecurityPermissionAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+System.Text
+System.Text.RegularExpressions
+System.Xml
+System.Xml.Schema
+System.Xml.Serialization
+System.Xml.XPath
+SYSTEM\CurrentControlSet\Services
+SYSTEM_CODEINTEGRITYPOLICY_INFORMATION
+SYSTEM_CODEINTEGRITYPOLICY_INFORMATION_SIZE
+system32\
+SystemCodeIntegrityPolicyInformation
+SystemDriver
+systemInfoClass
+systemInformation
+SystemInformationClass
+systemInformationSize
+TargetFrameworkAttribute
+TargetInvocationException
+testSignersField
+testSigningSignersField
+TextWriter
+The version is incorrect {0}.
+'There is invalid file rule with ID {0}.
+throwError
+ThrowTerminatingError
+TimeDateStamp
+ToBeSigned
+ToByteArray
+ToFileTime
+ToInt32
+TOKEN_ADJUST_PRIVILEGES
+TOKEN_QUERY
+TokPriv1Luid
+ToList
+ToLower
+ToLowerInvariant
+TooMuchDefinedFormat
+ToString
+ToUInt16
+Translation
+TranslationTable
+TrimEnd
+TrimStart
+TryGetCertificate
+TryGetRule
+TryGetValue
+Tuple`2
+TValue
+typeField
+UIChoice
+UIContext
+UInt32
+UnableToOpenCatFile
+UnacceptableFileRuleAttribute
+UnacceptableSignerRuleAttribute
+UnauthorizedAccessException
+UnexpectedChildOfSignerScenarioNode
+UnicodeEncoding
+UnionChoice
+UnmapViewOfFile
+UnmapViewOfFileFailed
+UnsupportedSigAlg
+UnsupportedSigAlgFIPS
+UntrustedRootCert
+UnverifiableCodeAttribute
+update
+UpdatePolicySigner
+UpdatePolicySigners
+updatePolicySignersField
+UpdateRule
+UpdateSigner
+URLReference
+urn:schemas-microsoft-com:sipolicy
+user32.dll
+UserAllowedSigners
+UserDeniedSigners
+UserFileRulesRef
+userMode
+userPEs
+utf-8
+v4.0.30319
+ValidateNotNullOrEmptyAttribute
+ValidatePolicyMsg
+ValidateSetAttribute
+ValidateXmlFile
+ValidateXmlFileCallback
+Validating policy file.
+ValidationEventArgs
+value
+Value
+value__
+ValueCollection
+valueField
+ValueFromPipeline
+ValueName
+valueName
+valueNameField
+ValuePointer
+ValueSize
+valueType
+ValueTypeBinary
+ValueTypeBoolean
+ValueTypeString
+ValueTypeUlong
+valueWriter
+VarFileInfo
+VarNotFoundException
+Verifying rules.
+VerifyingRules
+VerQueryValue
+version
+version.dll
+VersionEx
+versionExField
+VersionGreater
+VersionInfo
+verStr
+Volume
+VS_FIXEDFILEINFO
+VS_VERSION_INFO
+WaitForPendingFinalizers
+wantedId
+warning
+Wellknown
+WHQL_EKU_OID
+WHQL_OPUS_INFO_DATA
+WHQLFilePublisher
+WHQLPublisher
+WIN32_FIND_DATA
+Win32_ShadowCopy
+windir
+Windows
+Windows.ApplicationModel
+Windows.Management.Deployment
+Windows.Storage
+WinTrust
+wintrust.dll
+Wintrust.dll
+WINTRUST_ACTION_GENERIC_VERIFY_V2
+WINTRUST_ACTION_GENERIC_VERIFY_V2_STRING
+WinTrustData
+WinTrustFileInfo
+WintrustSignatureSettings
+WinVerifyTrust
+WinVerifyTrustResult
+workaroundField
+wPer-Application rules can only be made at the FileName, FilePublisher, Hash, SignedVersion, or WHQLFilePublisher level.
+WrapNonExceptionThrows
+WriteCountedAlignedBytes
+WriteLine
+WriteObject
+WriteProgress
+WriteString
+WriteStringValue
+WriteTo
+WriteVerbose
+WriteWarning
+Writing policy binary file.
+WritingBinPolicyMsg
+WritingStagedPolicyVariable
+WTD_STATEACTION_CLOSE
+WTD_STATEACTION_VERIFY
+WTHelperProvDataFromStateData
+X509_CERT
+X509_CHOICE_OF_TIME
+X509_PKCS7_ENCODING
+X509Certificate
+X509Certificate2
+X509Certificate2Collection
+X509Chain
+X509ChainElement
+X509ChainElementCollection
+X509EnhancedKeyUsageExtension
+X509Extension
+X509ExtensionCollection
+X509ExtensionEnumerator
+XmlArrayItemAttribute
+XmlAttribute
+XmlAttributeAttribute
+XmlAttributeCollection
+XmlComment
+XmlDocument
+XmlElement
+XmlElementAttribute
+XmlEnumAttribute
+xmlErrorMessage
+xmlFilePath
+xmlfilepath
+XmlIgnoreAttribute
+xmlIsValid
+XmlNamedNodeMap
+XmlNamespaceManager
+XmlNameTable
+XmlNode
+XmlNodeList
+XmlNodeType
+xmlns
+XmlPolicy
+xmlPolicyPath
+XmlReader
+XmlReaderSettings
+XmlRootAttribute
+XmlSchema
+XmlSchemaSet
+XmlSerializer
+XmlTextReader
+XmlTypeAttribute
+XPathNavigator
+xpaths
+Y"Cert {0} has a SignatureAlgorithm {1} which is not supported by FIPS.  CertRoot not set"
+ZERO_ULONG

@@ -1,0 +1,107 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\USBCAMD2.sys
+
+File Type: DLL
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    STREAM.SYS
+    USBD.SYS
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C000B040 Import Address Table
+             1C000B1E0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          46 IoAllocateIrp
+                          15 ExAllocatePoolWithTag
+                          C8 KeReleaseSpinLockFromDpcLevel
+                          2A ExInterlockedRemoveHeadList
+                          A2 IofCallDriver
+                          D8 KeWaitForSingleObject
+                          D2 KeSetPriorityThread
+                         122 PsTerminateSystemThread
+                          4F IoCancelIrp
+                          31 ExQueueWorkItem
+                          B5 KeInitializeSpinLock
+                          C6 KeReleaseSemaphore
+                         12E RtlCompareMemory
+                          AC KeDelayExecutionThread
+                          C1 KeReadStateSemaphore
+                         101 ObfDereferenceObject
+                         121 PsCreateSystemThread
+                         147 RtlInitUnicodeString
+                          D0 KeSetEvent
+                          FD ObReferenceObjectByHandle
+                         17D ZwQueryValueKey
+                          B2 KeInitializeEvent
+                         16B ZwClose
+                          A6 KeAcquireSpinLockAtDpcLevel
+                          1D ExFreePool
+                          C7 KeReleaseSpinLock
+                          27 ExInterlockedInsertTailList
+                          63 IoFreeIrp
+                          26 ExInterlockedInsertHeadList
+                          B4 KeInitializeSemaphore
+                          A7 KeAcquireSpinLockRaiseToDpc
+
+    STREAM.SYS
+             1C000B000 Import Address Table
+             1C000B1A0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          12 StreamClassRegisterAdapter
+                           F StreamClassQueryMasterClockSync
+                          15 StreamClassStreamNotification
+                           7 StreamClassDeviceNotification
+
+    USBD.SYS
+             1C000B028 Import Address Table
+             1C000B1C8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           D USBD_ParseConfigurationDescriptorEx
+                           6 USBD_CreateConfigurationRequestEx
+
+  Section contains the following exports for USBCAMD2.SYS
+
+    00000000 characteristics
+    1D49C699 time date stamp
+        0.00 version
+           1 ordinal base
+           8 number of functions
+           8 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00002620 DllUnload
+          2    1 00002B90 USBCAMD_AdapterReceivePacket
+          3    2 00005B80 USBCAMD_ControlVendorCommand
+          4    3 00001010 USBCAMD_Debug_LogEntry
+          5    4 00002630 USBCAMD_DriverEntry
+          6    5 00005D30 USBCAMD_GetRegistryKeyValue
+          7    6 00002DD0 USBCAMD_InitializeNewInterface
+          8    7 00004B80 USBCAMD_SelectAlternateInterface
+
+  Summary
+
+        1000 .data
+        1000 .edata
+        1000 .guids
+        1000 .idata
+        1000 .pdata
+        1000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        7000 .text
+        1000 GFIDS
+        1000 INIT

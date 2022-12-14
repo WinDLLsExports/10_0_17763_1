@@ -1,0 +1,243 @@
+Microsoft (R) COFF/PE Dumper Version 14.29.30137.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\System32\drivers\watchdog.sys
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    ntoskrnl.exe
+    ext-ms-win-ntos-werkernel-l1-1-0.dll
+
+  Section contains the following imports:
+
+    ntoskrnl.exe
+             1C000B030 Import Address Table
+             1C000B340 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         398 IoWMIOpenBlock
+                         399 IoWMIQueryAllData
+                         AE2 _vsnprintf
+                         8F0 RtlWriteRegistryValue
+                         4C7 KfRaiseIrql
+                         441 KeLowerIrql
+                         3D9 KeBugCheckEx
+                          5A DbgPrintEx
+                          5C DbgPrompt
+                         3B9 KdRefreshDebuggerNotPresent
+                         3AD KdDebuggerEnabled
+                         3AE KdDebuggerNotPresent
+                         3E9 KeDelayExecutionThread
+                          D2 ExInitializePagedLookasideList
+                         41B KeInitializeEvent
+                         667 PsCreateSystemThread
+                         5E8 ObReferenceObjectByHandle
+                         9E3 ZwClose
+                         49C KeSetEvent
+                         5F8 ObfDereferenceObject
+                         87C RtlQueryRegistryValuesEx
+                         7C8 RtlGetActiveConsoleId
+                         4B2 KeStackAttachProcess
+                         4C0 KeUnstackDetachProcess
+                         153 ExpInterlockedPopEntrySList
+                         48D KeResetEvent
+                         154 ExpInterlockedPushEntrySList
+                          EC ExQueryDepthSList
+                         70F PsTerminateSystemThread
+                         675 PsGetCurrentProcessSessionId
+                         673 PsGetCurrentProcess
+                         A31 ZwOpenKey
+                         A0C ZwEnumerateKey
+                         A6F ZwQueryValueKey
+                          75 EtwUnregister
+                          70 EtwRegister
+                          73 EtwSetInformation
+                          7B EtwWriteTransfer
+                         674 PsGetCurrentProcessId
+                         67C PsGetCurrentThreadId
+                          6C EtwActivityIdControl
+                          76 EtwWrite
+                         47A KeReleaseMutex
+                         4C5 KeWaitForSingleObject
+                          C3 ExFreePoolWithTag
+                         41F KeInitializeMutex
+                          AD ExDeletePagedLookasideList
+                          9C ExAllocatePoolWithTag
+                         461 KeQueryTimeIncrement
+                         417 KeInitializeDpc
+                         427 KeInitializeTimerEx
+                         402 KeFlushQueuedDpcs
+                         3C9 KeAcquireSpinLockRaiseToDpc
+                         47D KeReleaseSpinLock
+                         4AE KeSetTimerEx
+                         3DA KeCancelTimer
+                         488 KeRemoveQueueDpc
+                         3C7 KeAcquireSpinLockAtDpcLevel
+                         45F KeQueryRuntimeThread
+                         47F KeReleaseSpinLockFromDpcLevel
+                         42E KeInsertQueueDpc
+                         5FA ObfReferenceObject
+                         2CF IoGetDeviceAttachmentBaseRef
+                         7FC RtlInitUnicodeString
+                         423 KeInitializeSpinLock
+                         7EC RtlGetVersion
+                         AB9 ZwWriteFile
+                         6D6 PsLookupProcessByProcessId
+                         7F5 RtlInitAnsiString
+                         698 PsGetProcessImageFileName
+                         72A RtlAnsiStringToUnicodeString
+                         AEA _wcsnicmp
+                         7E0 RtlGetNtSystemRoot
+                         7C3 RtlFreeUnicodeString
+                         320 IoRaiseInformationalHardError
+                         73A RtlCaptureContext
+                         3DC KeCapturePersistentThreadState
+                         74C RtlCompareMemory
+                          F6 ExRaiseStatus
+                          6E EtwEventEnabled
+                         A91 ZwSetInformationFile
+
+    ext-ms-win-ntos-werkernel-l1-1-0.dll
+             1C000B000 Import Address Table
+             1C000B310 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           1 WerLiveKernelCloseHandle
+                           5 WerLiveKernelSubmitReport
+                           2 WerLiveKernelCreateReport
+                           4 WerLiveKernelOpenDumpFile
+                           0 WerLiveKernelCancelReport
+
+  Section contains the following exports for watchdog.sys
+
+    00000000 characteristics
+    8D7A0DF0 time date stamp
+        0.00 version
+           1 ordinal base
+         103 number of functions
+         103 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0000DDD0 DMgrAcquireGdiViewId
+          2    1 0000EB10 DMgrGetSmbiosInfo
+          3    2 0000E0E0 DMgrIsSetupRunning
+          4    3 0000EE30 DMgrReleaseGdiViewId
+          5    4 0000E000 DMgrWriteDeviceCountToRegistry
+          6    5 0000D540 DisplayLogSetMonitorPowerStage
+          7    6 0000D1A0 DisplayRestoreVidPnJournalBegin
+          8    7 0000D230 DisplayRestoreVidPnJournalFinalize
+          9    8 0000D3E0 DisplayRestoreVidPnResult
+         10    9 0000C3E0 DisplayScenarioJounralSetTSDDDState
+         11    A 0000C310 DisplayScenarioJournalBegin
+         12    B 0000CA90 DisplayScenarioJournalCCDRetrieval
+         13    C 0000C200 DisplayScenarioJournalDPIInfo
+         14    D 0000CB00 DisplayScenarioJournalDisplayUniquenessIncremented
+         15    E 0000C5C0 DisplayScenarioJournalFinalize
+         16    F 0000F290 DisplayScenarioJournalRetry
+         17   10 0000C450 DisplayScenarioJournalSetActualPathModality
+         18   11 000014F0 DisplayScenarioJournalSetCommitVidPnStatus
+         19   12 0000C0F0 DisplayScenarioJournalSetExpectedPathModality
+         20   13 0000D0F0 DisplayScenarioJournalSetSDCPathsAndModes
+         21   14 00004A40 DisplayScenarioJournalSetSetTimingPathInfo
+         22   15 0000C010 DisplayScenarioJournalSetSpecializedData
+         23   16 0000C550 DisplayScenarioJournalSetUniqueness
+         24   17 0000D980 DisplayScenarioJournalVidPnSourceVisibility
+         25   18 0000DF80 SMgrGdiCallout
+         26   19 0000EF20 SMgrGetActiveSessionProcess
+         27   1A 0000EFC0 SMgrGetNumberOfSessions
+         28   1B 0000D7C0 SMgrNotifySessionChange
+         29   1C 0000DA60 SMgrRegisterGdiCallout
+         30   1D 00001DE0 SMgrRegisterSessionChangeCallout
+         31   1E 000049D0 SMgrUnregisterSessionChangeCallout
+         32   1F 0000E390 VpInitialize
+         33   20 0000F2F0 WdAllocateDeferredWatchdog
+         34   21 0000F420 WdAllocateWatchdog
+         35   22 00005800 WdAttachContext
+         36   23 00005830 WdCompleteEvent
+         37   24 0000F590 WdDbgCreateSnapshot
+         38   25 0000EFD0 WdDbgDestroySnapshot
+         39   26 0000F730 WdDbgReportCancel
+         40   27 0000F770 WdDbgReportComplete
+         41   28 0000F7C0 WdDbgReportCreate
+         42   29 0000F800 WdDbgReportQueryInfo
+         43   2A 0000F840 WdDbgReportRecreate
+         44   2B 0000F9E0 WdDbgReportSecondaryData
+         45   2C 00005880 WdDereferenceObject
+         46   2D 000058B0 WdDetachContext
+         47   2E 00005AA0 WdDiagGetEtwHandle
+         48   2F 0000E230 WdDiagInit
+         49   30 00005AB0 WdDiagIsTracingEnabled
+         50   31 000105A0 WdDiagNotifyUser
+         51   32 000107A0 WdDiagShutdown
+         52   33 00004C50 WdEnterMonitoredSection
+         53   34 00004CF0 WdExitMonitoredSection
+         54   35 0000F3E0 WdFreeDeferredWatchdog
+         55   36 0000F4F0 WdFreeWatchdog
+         56   37 000058E0 WdGetDeviceObject
+         57   38 00005910 WdGetLastEvent
+         58   39 00005920 WdGetLowestDeviceObject
+         59   3A 0000DAF0 WdInitialize
+         60   3B 00001ED0 WdIsDebuggerPresent
+         61   3C 00003D80 WdLogEvent5_WdAssertion
+         62   3D 00004000 WdLogEvent5_WdCriticalError
+         63   3E 000040F0 WdLogEvent5_WdDebug
+         64   3F 000011B0 WdLogEvent5_WdDmmEvent
+         65   40 00001170 WdLogEvent5_WdError
+         66   41 000012B0 WdLogEvent5_WdEvent
+         67   42 00004370 WdLogEvent5_WdLowResource
+         68   43 00001B40 WdLogEvent5_WdPower
+         69   44 00001270 WdLogEvent5_WdPresentTokenEvent
+         70   45 00001230 WdLogEvent5_WdTrace
+         71   46 000011F0 WdLogEvent5_WdWarning
+         72   47 00001AB0 WdLogGetEventOrder
+         73   48 000045F0 WdLogGetRecentEvents
+         74   49 00004700 WdLogNewEntry5_WdAssertion
+         75   4A 00004780 WdLogNewEntry5_WdCriticalError
+         76   4B 00004800 WdLogNewEntry5_WdDebug
+         77   4C 00001470 WdLogNewEntry5_WdDmmEvent
+         78   4D 00001A30 WdLogNewEntry5_WdError
+         79   4E 000010F0 WdLogNewEntry5_WdEvent
+         80   4F 00004880 WdLogNewEntry5_WdLowResource
+         81   50 00001AC0 WdLogNewEntry5_WdPower
+         82   51 00001370 WdLogNewEntry5_WdPresentTokenEvent
+         83   52 000012F0 WdLogNewEntry5_WdTrace
+         84   53 000013F0 WdLogNewEntry5_WdWarning
+         85   54 00004D50 WdMadeAnyProgress
+         86   55 00004900 WdQueryDebugFlag
+         87   56 00005940 WdReferenceObject
+         88   57 0000EFD0 WdRegFreeInfo
+         89   58 0000F000 WdRegOpenSubkey
+         90   59 0000F090 WdRegRetrieveSubkeyInfo
+         91   5A 0000F190 WdRegRetrieveValueInfo
+         92   5B 00004D80 WdResetDeferredWatch
+         93   5C 000052A0 WdResetWatch
+         94   5D 00004DE0 WdResumeDeferredWatch
+         95   5E 00005350 WdResumeWatch
+         96   5F 00004E10 WdStartDeferredWatch
+         97   60 00005440 WdStartWatch
+         98   61 00004EC0 WdStopDeferredWatch
+         99   62 00005520 WdStopWatch
+        100   63 00004FB0 WdSuspendDeferredWatch
+        101   64 00005600 WdSuspendWatch
+        102   65 00010230 WdpDbgReportCreateFromDump
+        103   66 0000E3B0 WdpInterfaceReferenceNop
+
+  Summary
+
+        1000 .data
+        1000 .edata
+        1000 .idata
+        1000 .pdata
+        3000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        5000 .text
+        1000 GFIDS
+        1000 INIT
+        5000 PAGE

@@ -1,0 +1,1066 @@
+                            images.
+                            mounted images.
+                            or a FFU file.
+                            read-only split WIM (SWM) files.
+        /ApplyDir:D:\ /Index:1 
+        /FileSize:650 
+        /MountDir:C:\test\offline 
+        /MountDir:C:\test\offline /ReadOnly 
+      DISM.exe /Apply-Image /ImageFile:install.swm /SWMFile:install*.swm 
+      DISM.exe /Apply-Image /ImageFile:install.wim /Index:1 /ApplyDir:D:\ 
+      DISM.exe /Cleanup-Mountpoints 
+      DISM.exe /Commit-Image /MountDir:C:\test\offline 
+      DISM.exe /Get-ImageInfo /ImageFile:C:\test\images\myimage.ffu 
+      DISM.exe /Get-ImageInfo /ImageFile:C:\test\images\myimage.vhd /Index:1 
+      DISM.exe /Get-ImageInfo /ImageFile:C:\test\images\myimage.wim 
+      DISM.exe /Get-MountedImageInfo 
+      DISM.exe /Mount-Image /ImageFile:C:\test\images\myimage.vhd /Index:1 
+      DISM.exe /Mount-Image /ImageFile:C:\test\images\myimage.wim /Index:1 
+      DISM.exe /Remount-Image /MountDir:C:\test\offline 
+      DISM.exe /Split-Image /ImageFile:install.wim /SWMFile:split.swm 
+      DISM.exe /Unmount-Image /MountDir:C:\test\offline /Commit 
+      DISM.exe /Unmount-Image /MountDir:C:\test\offline /Discard 
+    Example: 
+    Examples: 
+  /Commit [/Append] [/CheckIntegrity]}
+  /ImageFile:<path_to_image_file> /SWMFile:<path_to_swm> /FileSize:<MB-Size> 
+  /MountDir:<target_mount_directory> [/ReadOnly] [/Optimize] [/CheckIntegrity] 
+  /Unmount-Image option is used. 
+  [/CheckIntegrity] 
+  [/NoRpFix] [/SWMFile:<pattern>] [/ConfirmTrustedFile] [/WIMBoot] [/Compact] [/EA]
+  {/Index:<image_index> | /Name:<image_name>} 
+  {/Index:<image_index> | /Name:<image_name>} [/CheckIntegrity] [/Verify] 
+  Applies an image to a specified drive. 
+  Applies changes to the mounted image. The image remains mounted until the 
+  contains. 
+  created file. 
+  Deletes resources associated with a corrupted mounted image. 
+  discard the changes. 
+  Displays information about mounted images, including whether the image 
+  Displays information about the images that the specified WIM or VHD file 
+  https://go.microsoft.com/fwlink/?LinkID=309482 for more information about 
+  images that can be recovered by using the /Remount-Image command. 
+  is ready for servicing, needs a remount, or is an invalid image. 
+  Mounts the image to the specified directory so that it is available for 
+  pattern and location of split files. 
+  Recovers an orphaned image mount directory. 
+  servicing. 
+  Splits an existing .wim file into multiple read-only split WIM files. 
+  supported platforms. 
+  This command does not unmount a mounted image. It also does not delete 
+  Unmounts the WIM or VHD. Use /Commit to save the changes or /Discard to 
+  Use /Append to add the image to an existing .wim file. 
+  Use /CheckIntegrity to detect and track WIM file corruption. 
+  Use /CheckIntegrity to stop the operation if WIM file corruption is detected.
+  Use /Compact to apply the image in compact mode. 
+  Use /ConfirmTrustedFile to validate the image for Trusted Desktop. See 
+  Use /EA to apply extended attributes. 
+  Use /FileSize to specify the maximum size in megabytes (MB) for each 
+  Use /NoRpFix to disable the reparse point tag fix. 
+  Use /Optimize when mounting an image to reduce initial mount time. 
+  Use /ReadOnly to set the mounted image to have read-only permissions. 
+  Use /SFUFile to reference split FFU files (SFUs). <pattern> is the naming 
+  Use /SWMFile to reference split WIM files (SWMs). <pattern> is the naming 
+  Use /Verify to check for errors and file duplication. 
+  Use /WIMBoot to apply the image with WIMBoot configuration. 
+ http://www.microsoft.com/windows0
+ Microsoft Corporation. All rights reserved.
+ Microsoft Operations Puerto Rico1&0$
+ Microsoft Operations Puerto Rico1'0%
+ Operating System
+ Windows
+!This program cannot be run in DOS mode.
+"/Cleanup-Mountpoints does not take any other arguments or options"
+"/Get-MountedImageInfo does not take any other arguments or options"
+"<>|*?:
+"Call into specific imaging provider failed for CreateDismImage."
+"Call into specific imaging provider failed for GetImageInfoCollection."
+"CleanupMountpoints for %s has failed."
+"Could not find image manager interface."
+"Could not get option and argument"
+"Could not get provider %s."
+"Could not get the FFU provider."
+"Could not get the VHD provider."
+"Could not get the WIM provider."
+"Failed to get the filename extension of the image file."
+"GetMountedImageInfoCollection for %s has failed."
+"Internal call to CleanupMountpoints has failed"
+"Microsoft Time Source Master Clock0
+"Microsoft Window
+"The specified image does not exist in the specified image container."
+"VHDX images are not supported in this version of Windows."
+$`2X`F
+$Microsoft Ireland Operations Limited1
+%1 (Default)
+%Microsoft Windows Production PCA 2011
+%Microsoft Windows Production PCA 20110
+%S:%d
+%s\%s
+%s\%s.mui
+%s\%s\%s.mui
+(0Q0^0s0x0
+)Index : %1!d!
+)Microsoft Root Certificate Authority 20100
+,070h0n0
+,FbOm9EU/tYeQf3lBa2Levud+QKMa41ZZxdfyOFxxNSc=0Z
+.?AU?$CAtlValidateModuleConfiguration@$00VCImagingProviderModule@@@ATL@@
+.?AU_ATL_MODULE70@ATL@@
+.?AUIClassFactory@@
+.?AUIDismCommand@@
+.?AUIDismCommandCollection@@
+.?AUIDismHelpItem@@
+.?AUIDismHelpItemCollection@@
+.?AUIDismImageManager@@
+.?AUIDismMountedImageInfoCollection@@
+.?AUIDismObject@@
+.?AUIDismProvider@@
+.?AUIDismProviderPrivate@@
+.?AUIDismSupportCommands@@
+.?AUIDispatch@@
+.?AUIEnumVARIANT@@
+.?AUISupportErrorInfo@@
+.?AUIUnknown@@
+.?AV?$CAtlDllModuleT@VCImagingProviderModule@@@ATL@@
+.?AV?$CAtlModuleT@VCImagingProviderModule@@@ATL@@
+.?AV?$CComAggObject@VCGenericImagingManager@@@ATL@@
+.?AV?$CComCoClass@VCDISMCommand@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMCommandCollection@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMHelpItem@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCDISMHelpItemCollection@@$1?GUID_NULL@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCGenericImagingManager@@$1?CLSID_GenericImagingManager@@3U_GUID@@B@ATL@@
+.?AV?$CComCoClass@VCGenericMountedImageInfoCollection@@$1?CLSID_GenericMountedImageInfoCollection@@3U_GUID@@B@ATL@@
+.?AV?$CComContainedObject@VCGenericImagingManager@@@ATL@@
+.?AV?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCommand@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@VCComSingleThreadModel@ATL@@@ATL@@
+.?AV?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismHelpItem@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@VCComSingleThreadModel@ATL@@@ATL@@
+.?AV?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismMountedImageInfo@@@@V?$vector@V?$CAdapt@V?$CComPtr@UIDismMountedImageInfo@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismMountedImageInfo@@@ATL@@@ATL@@@std@@@std@@VCComSingleThreadModel@ATL@@@ATL@@
+.?AV?$CComObject@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCommand@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@VCComSingleThreadModel@ATL@@@ATL@@@ATL@@
+.?AV?$CComObject@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismHelpItem@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@VCComSingleThreadModel@ATL@@@ATL@@@ATL@@
+.?AV?$CComObject@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismMountedImageInfo@@@@V?$vector@V?$CAdapt@V?$CComPtr@UIDismMountedImageInfo@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismMountedImageInfo@@@ATL@@@ATL@@@std@@@std@@VCComSingleThreadModel@ATL@@@ATL@@@ATL@@
+.?AV?$CComObject@VCDISMCommand@@@ATL@@
+.?AV?$CComObject@VCDISMCommandCollection@@@ATL@@
+.?AV?$CComObject@VCDISMHelpItem@@@ATL@@
+.?AV?$CComObject@VCDISMHelpItemCollection@@@ATL@@
+.?AV?$CComObject@VCGenericImagingManager@@@ATL@@
+.?AV?$CComObject@VCGenericMountedImageInfoCollection@@@ATL@@
+.?AV?$CComObjectCached@VCComClassFactory@ATL@@@ATL@@
+.?AV?$CComObjectRootEx@VCComMultiThreadModel@ATL@@@ATL@@
+.?AV?$CComObjectRootEx@VCComSingleThreadModel@ATL@@@ATL@@
+.?AV?$ICollectionOnSTLImpl@V?$IDispatchImpl@UIDismCommandCollection@@$1?IID_IDismCommandCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@PAUIDismCommand@@U?$_CopyItfFromAdaptItf@UIDismCommand@@@@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCommand@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@VCComSingleThreadModel@ATL@@@2@@ATL@@
+.?AV?$ICollectionOnSTLImpl@V?$IDispatchImpl@UIDismHelpItemCollection@@$1?IID_IDismHelpItemCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@PAUIDismHelpItem@@U?$_CopyItfFromAdaptItf@UIDismHelpItem@@@@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismHelpItem@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@VCComSingleThreadModel@ATL@@@2@@ATL@@
+.?AV?$ICollectionOnSTLImpl@V?$IDispatchImpl@UIDismMountedImageInfoCollection@@$1?IID_IDismMountedImageInfoCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@V?$vector@V?$CAdapt@V?$CComPtr@UIDismMountedImageInfo@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismMountedImageInfo@@@ATL@@@ATL@@@std@@@std@@PAUIDismMountedImageInfo@@U?$_CopyItfFromAdaptItf@UIDismMountedImageInfo@@@@V?$CComEnumOnSTL@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismMountedImageInfo@@@@V?$vector@V?$CAdapt@V?$CComPtr@UIDismMountedImageInfo@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismMountedImageInfo@@@ATL@@@ATL@@@std@@@std@@VCComSingleThreadModel@ATL@@@2@@ATL@@
+.?AV?$IDispatchImpl@UIDismCommandCollection@@$1?IID_IDismCommandCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismHelpItemCollection@@$1?IID_IDismHelpItemCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismImageManager@@$1?_GUID_a654ff2f_d9fa_4df1_aabf_982c0a3c5f52@@3U__s_GUID@@B$1?LIBID_DismLib@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismMountedImageInfoCollection@@$1?IID_IDismMountedImageInfoCollection@@3U_GUID@@B$1?m_libid@CAtlModule@ATL@@2U_GUID@@A$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismProvider@@$1?_GUID_33f93018_edb7_4092_978a_4b37d5dfb1c0@@3U__s_GUID@@B$1?LIBID_DismLib@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismProviderPrivate@@$1?_GUID_2114daec_42fd_4847_8a04_5f2dde3276a3@@3U__s_GUID@@B$1?LIBID_DismLib@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IDispatchImpl@UIDismSupportCommands@@$1?_GUID_7234ec82_c68b_4c4e_ba1d_d333f5b87b37@@3U__s_GUID@@B$1?LIBID_DismLib@@3U_GUID@@B$00$0A@VCComTypeInfoHolder@ATL@@@ATL@@
+.?AV?$IEnumOnSTLImpl@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismCommand@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismCommand@@@ATL@@@ATL@@@std@@@std@@@ATL@@
+.?AV?$IEnumOnSTLImpl@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismHelpItem@@@@V?$list@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismHelpItem@@@ATL@@@ATL@@@std@@@std@@@ATL@@
+.?AV?$IEnumOnSTLImpl@UIEnumVARIANT@@$1?IID_IEnumVARIANT@@3U_GUID@@BUtagVARIANT@@U?$_CopyVariantFromAdaptItf@UIDismMountedImageInfo@@@@V?$vector@V?$CAdapt@V?$CComPtr@UIDismMountedImageInfo@@@ATL@@@ATL@@V?$allocator@V?$CAdapt@V?$CComPtr@UIDismMountedImageInfo@@@ATL@@@ATL@@@std@@@std@@@ATL@@
+.?AVbad_alloc@std@@
+.?AVCAtlException@ATL@@
+.?AVCAtlModule@ATL@@
+.?AVCComClassFactory@ATL@@
+.?AVCComObjectRootBase@ATL@@
+.?AVCDISMCommand@@
+.?AVCDISMCommandCollection@@
+.?AVCDISMHelpItem@@
+.?AVCDISMHelpItemCollection@@
+.?AVCGenericImagingManager@@
+.?AVCGenericMountedImageInfoCollection@@
+.?AVCImagingProviderModule@@
+.?AVexception@@
+.?AVlength_error@std@@
+.?AVlogic_error@std@@
+.?AVout_of_range@std@@
+.\%s.mui
+.\%s\%s.mui
+.00cfg
+.CRT$XCA
+.CRT$XCL
+.CRT$XCU
+.CRT$XCZ
+.CRT$XIA
+.CRT$XIAA
+.CRT$XIZ
+.CRT$XLA
+.CRT$XLZ
+.data
+.data$brc
+.data$r$brc
+.edata
+.gfids
+.giats
+.idata
+.idata$2
+.idata$3
+.idata$4
+.idata$5
+.idata$6
+.rdata
+.rdata$brc
+.rdata$r$brc
+.rdata$sxdata
+.rdata$T$brc
+.rdata$zzzdbg
+.rsrc$01
+.rsrc$02
+.text
+.text$di
+.text$mn
+.text$mn$01
+.text$x
+.text$yd
+.tls$
+.tls$ZZZ
+.xdata$x
+/Apply-Image /ImageFile:<path_to_image_file> /ApplyDir:<target_directory> 
+/Cleanup-Mountpoints 
+/Commit-Image /MountDir:<target_mount_directory> [/Append] [/CheckIntegrity] 
+/Get-ImageInfo /ImageFile:<image_file> [/Index:<image_index> | /Name:<image_name>] 
+/Get-MountedImageInfo 
+/Mount-Image /ImageFile:<path_to_image_file> 
+/Remount-Image /MountDir:<target_mount_directory> 
+/Split-Image 
+/Unmount-Image /MountDir:<target_mount_directory> {/Discard | 
+: :$:(:,:0:4:8:<:@:D:L:T:X:\:`:d:l:p:t:x:
+: :4:D:H:L:d:h:l:p:t:
+:!:&:G:\:g:l:
+:!;,;1;S;_;
+:":-:2:D:P:k:v:
+:":r:
+:$:,:4:<:D:L:X:|:
+:$:-:N:e:q:
+:&:+:F:Q:V:j:{:
+:&:6:;:L:_:j:o:
+:*:5:J:Q:X:^:
+:*:6:H:O:V:\:|:
+:*:Y:l:}:
+:':>:\:t:
+:';M;r;
+:?;J;O;m;
+:+:6:C:N:S:d:
+:3:>:C:R:c:v:
+:6:A:c:
+:E:N:W:h:
+:U:`:e:
+; ;$;(;,;@;P;T;X;p;t;x;|;
+; ;(;,;0;4;8;<;@;D;H;L;P;T;X;\;`;d;h;l;p;t;x;|;
+;";-;2;J;U;Z;p;x;
+;";?;H;Q;b;
+;$;,;4;<;D;L;T;\;d;l;t;|;
+;$;4;@;`;h;p;x;
+;%;,;2;];p;
+;%;+;l;w;
+;%<P<[=
+;&;+;2;K;X;c;h;o;
+;(;8;=;h;
+;(</<
+;);>;
+;<;t;
+;0;9;B;[;v;
+;1;<;A;w;
+;4<E<^<e<
+;6;\;
+;9<D<I<~<
+;A;\;
+;H<j<
+;P;n;z;
+? ?$?<?@?X?\?t?x?
+? ?@?H?P?\?|?
+? ?0?T?\?d?l?t?|?
+?$?<?G?L?p?}?
+?$?<?L?
+?%?*?:?K?R?Y?_?
+?%?.?5?>?G?X?
+?%?N?[?n?s?
+?&?9?S?t?
+?(?,?0?4?8?<?P?`?d?h?l?p?t?x?|?
+?)?a?m?r?
+??0exception@@QAE@ABQBD@Z
+??0exception@@QAE@ABV0@@Z
+??0exception@@QAE@XZ
+??1exception@@UAE@XZ
+??1type_info@@UAE@XZ
+?'?4???D?X?c?
+?+?C?[?a?g?t?
+?1?@?G?M?b?g?m?q?v?|?
+?6?\?u?
+?8?D?Z?y?
+?I?|?
+?terminate@@YAXXZ
+?what@exception@@UBEPBDXZ
+@.reloc
+@.rsrc
+@pw*R
+[SQVV
+\HIGHPART
+\Implemented Categories
+\LOWPART
+\Required Categories
+__CxxFrameHandler3
+__dllonexit
+__RTDynamicCast
+_amsg_exit
+_callnewh
+_CxxThrowException
+_errno
+_except_handler4_common
+_initterm
+_lock
+_onexit
+_purecall
+_unlock
+_vscwprintf
+_vsnwprintf
+_wcsicmp
+_wcsnicmp
+_wtoi64
+_XcptFilter
+`.data
+|hK,_
+}Zh$O
++Recovers an orphaned image mount directory.
+< <$<(<,<0<4<8<<<@<D<H<L<T<X<`<d<h<l<t<x<|<
+< <@<
+< <+<8<C<H<Y<q<
+<!=Y=
+<&<+<L<a<l<q<
+<&=A=T=_=
+<(=2=H=s=
+<(=3=8=c=n=s=
+<)<l<
+<,<?<c<m<z<
+<,<0<H<L<P<d<h<
+<.<5<<<B<
+<:<`<
+<:<Q<k<~<
+<_R8b
+<<<i<
+<==D=N=W=
+<'=B=M=V=_=p=
+<1<h<
+<2===B=]=d=
+<4<<<D<L<T<\<d<l<x<
+<4<I<f<u<
+<4=p=
+<8<@<H<d<l<t<
+<9=W=c=
+<M<m<
+<undefined>
+= =(=8=\=d=l=t=|=
+=#=(=X=d=z=
+=#>2>=>B>X>`>r>y>
+=$=,=8=@=X=
+=$=<=G=L=_=d=z=
+=(=,=D=H=`=d=|=
+=,=0=4=L=P=T=h=x=|=
+=;=H=
+=@=K=P=d=
+=@=t=
+=0><>T>
+=2=7=I=U=v=
+=I=T=Y=w=
+=L9o<
+> >,>L>X>x>
+> >4>8>P>T>h>l>
+>">)>0>_>
+>$>(>@>D>\>`>x>|>
+>$>,>4><>D>L>T>\>d>p>
+>%>*>a>o>
+>%>g>u>
+>,>l>
+>.>:>J>U>Z>m>r>|>
+>/>@>P>U>e>u>|>
+>/>6>=>C>`>k>p>
+>?usf9F
+>@>J>X>c>h>~>
+>\?f?
+>4???D?
+>8>E>P>U>
+>a>l>~>
+>E>P>a>s>
+>http://www.microsoft.com/pki/certs/MicRooCerAut_2010-06-23.crt0
+>http://www.microsoft.com/pki/certs/MicTimStaPCA_2010-07-01.crt0
+0 0$0(0,00040@0D0H0P0T0p0t0
+0 0$0(0,0004080<0@0D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+0 080<0T0X0p0t0
+0!0=0
+0!02060X0e0
+0#0Y0
+0$0(0@0P0`0p0
+0(050H0M0c0k0
+0(0H0P0X0`0h0p0x0
+0(1d1
+0)0.0P0\0j0u0z0
+0*1E1X1q1z1
+0.0E0P0m0
+0:0D0U0
+0<0D0L0X0`0
+0'0/0A0H0O0U0
+001F1\1
+0'060K0R0Y0_0
+0'090@0G0P0l0
+0-0H0
+040904B0
+041?1D1U1l1u1
+0G1Z1e1j1
+'0n0t0
+0Qhle
+1 1$1(1,1014181<1@1D1H1L1P1T1X1\1`1d1h1l1p1t1x1|1
+1 1)1Q1l1x1
+1 181<1T1X1p1
+1!141B1G1
+1!2,212B2V2]2d2m2
+1"1*1<1C1J1S1m1z1
+1"1L1v1
+1$1)1>1M1b1i1p1v1
+1(0&0
+1,1014181<1@1D1H1L1P1X1`1p1t1x1|1
+1,141<1D1L1T1\1d1l1t1
+1,2L2[2o2u2
+1,2L2[2o2u2|2
+1.141H1m1
+1.161H1O1V1\1
+1/0-0
+1-{cR
+1+2=2X2
+1=1L1
+10.0.17763.1
+10.0.17763.1 (WinBuild.160101.0800)
+100701213655Z
+101K1U1^1o1
+101T1p1
+111019184142Z
+12171H1V1g1o1
+141=1F1n1|1
+14181P1T1h1l1
+180703204550Z
+180823202625Z
+181@1H1P1X1`1l1
+190726204550Z0p1
+191123202625Z0
+191y1
+1http://www.microsoft.com/PKI/docs/CPS/default.htm0@
+1p2{2
+1U1[1h1|1
+1U1x1
+2 2$2(2,2024282<2@2D2H2L2P2T2X2\2`2d2h2l2p2t2x2|2
+2"2I2f2
+2#2*21272S2Z2e2j2
+2#23282a2n2|2
+2%272>2E2N2[2b2
+2(20282@2H2P2X2d2
+2(3t3
+2)262A2F2\2d2
+2.324
+2@2V2_2h2
+2+242?2F2X2^2d2j2p2v2}2
+20180915002332Z
+20180915010246.928Z0
+20180916002332Z0w0=
+213:3T3\3
+213^3i3n3
+2-24292?2E2K2Q2a2r2v2
+229879+4379540
+242>2Y2p2
+24282P2T2l2p2
+242x2
+250701214655Z0|1
+261019185142Z0
+282@2H2L2P2X2l2
+282x2
+2a2h2
+2D2x2
+2e3p3u3
+2U2`2e2
+3 3$3(3,3034383<3@3D3H3L3P3T3X3\3`3d3h3l3p3t3x3|3
+3!3&383D3V3]3d3j3
+3$3*363F3O3b3h3n3t3z3
+3$3,343<3D3L3T3\3d3l3t3|3
+3&333z3
+3&4C4f4
+3(30383D3L3l3t3|3
+3(3H3X3|3
+3(4p4
+3*313
+3,303H3L3d3h3
+3,373<3M3a3h3o3u3
+303I3\3x3
+303P3x3
+314<4A4c4o4}4
+3'3<3C3J3P3u3
+353?3M3X3]3s3{3
+353_3
+393I3
+3Rh4i
+3Y4g4
+4 4$4(4,4044484<4@4D4H4L4P4T4X4\4`4d4h4l4p4t4x4|4
+4 4(4L4`4t4|4
+4 4D4L4T4\4d4l4t4|4
+4"4'4B4I4
+4"4'4X4c4h4
+4"535[5e5s5~5
+4#444H4O4V4\4x4
+4&424^4i4n4
+4(40484@4T4\4p4x4
+4*555:5P5X5j5q5x5~5
+4,4=4D4K4T4s4
+4[4f4k4
+4+5=5X5
+4+565;5V5]5
+40444L4P4h4l4
+4'404>4G4p4{4
+445V5
+4'4h4
+454G4X4
+464P4Z4h4p4
+484Q4_4t4
+494y4
+4k4v4{4
+5 5$5(5,5054585<5@5D5H5L5P5T5X5\5`5d5p5
+5 5(5@5H5P5t5|5
+5 545E5L5S5Y5~5
+5#5(5>5F5X5_5f5l5
+5#6.636N6U6
+5$5,545<5D5P5X5
+5%5F5R5Y5^5c5i5r5w5}5
+5&5/585A5
+5&5F5c5
+5&6/6@6
+5(585H5X5h5x5
+5,575<5C5T5_5l5w5|5
+5.595F5Q5V5g5
+5;6F6K6f6m6
+5[6k6{6
+5>6q6
+505D5n5
+595@5
+5T6Z6c6j6v6|6
+6 6%6H6X6c6h6z6
+6 606@6P6`6p6
+6$7(70787P7
+6%6,626\6j6u6z6
+6%6:6P6\6k6
+6(6@6L6X6d6p6|6
+6)64696@6Z6j6o6v6
+6)666S6a6z6
+6)74797M7s7~7
+6,646<6D6L6T6\6d6l6t6|6
+6:7R7
+6[6j6~6
+6`7e7o7|7
+6|6g7
+606L6\6h6p6
+6'6/6A6H6O6U6
+6'60696@6I6R6c6
+687=7O7m7
+6N7\7i7|7
+6Z6p6
+7 7@7L7l7x7
+7 727>7f7p7}7
+7 7D7L7T7\7d7l7t7|7
+7#7(787I7P7W7`7
+7$7(787<7L7P7`7d7t7x7
+7$878B8G8r8}8
+7%7*7W7e7{7
+7&7,7P7
+7(858
+7>7I7N7y7
+708@9
+738=8K8V8[8q8y8
+768T8c8l8u8
+7'82878v8
+787I7_7
+797Y7
+7B7M7R7
+7O7a7l7q7
+8 8,898U8l8
+8 838R8a8o8
+8!8)8K8P8Z8g8z8
+8!949S9b9p9
+8#9)9/959B9W9
+8$8,848<8D8L8X8x8
+8$8/848D8T8[8b8k8
+8$848@8`8l8t8
+8&949?9D9Z9
+8(8,8<8@8P8T8d8h8x8|8
+8(8,8D8H8`8d8|8
+8,9k9z9
+8\8|8
+8+848=8F8W8
+82888J8P8
+879E9P9U9k9s9
+8J8U8Z8
+9 9(9D9T9`9h9
+9!:Y:p:
+9!9,919C9O9a9h9o9u9
+9$9,949<9D9L9T9\9d9l9t9|9
+9$949D9T9X9`9d9h9l9p9t9x9|9
+9&:1:B:s:
+9&9/989A9W9d9
+9&91969h9
+9(9,9094989<9P9`9d9h9
+9(9?9K9R9c9w9
+9)9d9k9y9
+9/9:9?9S9d9k9r9x9
+9/9D9O9T9u9
+9@:T:d:t:
+9\:w:
+9+9V9q9
+949U9
+9'9@9I9s9
+9M9|9
+9P9[9`9
+A required option is missing from the command-line.
+AcquireSRWLockExclusive
+advapi32.dll
+ADVAPI32.dll
+Antitheft Version : %1
+API-MS-Win-Core-LocalRegistry-L1-1-0.dll
+append
+APPID
+Applies an image.
+applydir
+applydrive
+Apply-Image
+apply-image
+Architecture : %1
+Architecture : arm
+Architecture : arm64
+Architecture : ia64
+Architecture : Unknown
+Architecture : x64
+Architecture : x86
+ATL$__a
+ATL$__m
+ATL$__z
+c(L&.
+calloc
+Certificate :
+CGenericImagingManager::CleanupMountpoints
+CGenericImagingManager::CreateDismImage
+CGenericImagingManager::DisplayArchProperty
+CGenericImagingManager::DisplayCompressionProperty
+CGenericImagingManager::DisplayLanguageProperty
+CGenericImagingManager::DisplayNumberProperty
+CGenericImagingManager::DisplayPlatformIdProperty
+CGenericImagingManager::DisplaySigningCertificateProperty
+CGenericImagingManager::DisplayStringProperty
+CGenericImagingManager::DisplayTimeProperty
+CGenericImagingManager::DisplayVersionProperty
+CGenericImagingManager::DisplayWIMBootProperty
+CGenericImagingManager::ExecuteCmdLine
+CGenericImagingManager::Final_OnConnect
+CGenericImagingManager::GetCommandCollection
+CGenericImagingManager::GetHelpItemCollection
+CGenericImagingManager::GetImageInfoCollection
+CGenericImagingManager::GetMountedImageInfoCollection
+CGenericImagingManager::InternalCmdApply
+CGenericImagingManager::InternalCmdCleanup
+CGenericImagingManager::InternalCmdCommit
+CGenericImagingManager::InternalCmdFFUApply
+CGenericImagingManager::InternalCmdFFUSplit
+CGenericImagingManager::InternalCmdGetInfo
+CGenericImagingManager::InternalCmdGetMountedInfo
+CGenericImagingManager::InternalCmdMount
+CGenericImagingManager::InternalCmdRemount
+CGenericImagingManager::InternalCmdSplit
+CGenericImagingManager::InternalCmdUnmount
+CGenericImagingManager::InternalCmdWimApply
+CGenericImagingManager::InternalCmdWimSplit
+CGenericImagingManager::InternalDisplayAdvancedInfo
+CGenericImagingManager::InternalDisplayBasicInfo
+CGenericImagingManager::InternalDisplayBasicInfoComplete
+CGenericImagingManager::InternalOpGetImageByIndex
+CGenericImagingManager::InternalOpGetImageByName
+CGenericImagingManager::InternalOpMount
+CGenericImagingManager::OnConnect
+CGenericImagingManager::ValidateOptionHasArgString
+CGenericImagingManager::ValidateOptionHasArgUlong
+CGenericImagingManager::WriteMessageToConsole
+CGenericImagingManager::WriteResourceToConsole
+CGenericMountedImageInfoCollection::CreateGenericMountedImageInfoCollection
+CGenericMountedImageInfoCollection::Initialize
+CharLowerBuffW
+CharNextW
+Check the image container first for existing images.
+checkintegrity
+Chttp://www.microsoft.com/pkiops/crl/MicWinProPCA2011_2011-10-19.crl0a
+CIL31
+CImagingProviderLibWW
+cleanup-mountpoints
+Cleanup-MountpointsWDeletes resources associated with corrupted
+CloseHandle
+CLSID\
+CoCreateInstance
+commit
+commit-image
+Commit-Image,Saves changes to a mounted WIM or VHD image.
+CompanyName
+CompareStringW
+Compression : %1
+Compression : Default
+Compression : LZNT1
+Compression : None
+Compression : XPRESS
+Compression : XPRESS Huffman
+configfile
+CoTaskMemFree
+Could not write a warning message to the console about ignored arguments. hr = 0x%x
+Created : %1
+Created : %1 - %2
+CreateFileMappingW
+CreateFileW
+DeleteCriticalSection
+Description : %3
+Details for image : %1
+Directories : %1
+DisableThreadLibraryCalls
+discard
+DISM Generic Imaging Provider
+DISM Imaging Provider
+dismcore.tlbWW
+DllCanUnloadNow
+DllGetClassObject
+DLLGetDISMProviderCLSID
+DllRegisterServer
+DllUnregisterServer
+Edition : %1
+Ehttp://crl.microsoft.com/pki/crl/products/MicRooCerAut_2010-06-23.crl0Z
+Ehttp://crl.microsoft.com/pki/crl/products/MicTimStaPCA_2010-07-01.crl0Z
+Ehttp://www.microsoft.com/pkiops/certs/MicWinProPCA2011_2011-10-19.crt0
+Ensure that /%1 or /%2 is specified.
+EnterCriticalSection
+en-US
+F0K0k0
+Failed getting the option string from token at index %d.
+Failed getting the token collection count.
+Failed getting the token count at index %d.
+Failed to add the command to the collection.
+Failed to create a new command collection.
+Failed to create a new command object.
+Failed to get IDismEventManager interface from driver provider parent.
+Failed to get the Configuration interface from the provider store.
+Failed to get the display type.
+Failed to get the FFU provider interface from the provider store.
+Failed to get the format type.
+Failed to get the ImagingProvider.dll message wrapper instance.
+Failed to get the message from the resource file.
+Failed to get the message.
+Failed to get the parent's interface from OnConnect
+Failed to get the WimImageManager3 provider interface from the provider store.
+Failed to get underlying collection class.
+Failed to initialize the console event handler.
+Failed to initialize the message handler.
+Failed to output the string to the console.
+Failed to QI the CDISMHelpItemCollection for IDismHelpItemCollection.
+Fbad allocation
+FFU image specified
+FfuManager
+Ffuprovider.dll
+FileDescription
+Files : %1
+filesize
+FileTimeToLocalFileTime
+FileTimeToSystemTime
+FileVersion
+FindResourceExW
+Fonecore\base\ntsetup\opktools\dism\providers\imagingprovider\dll\genericmountedimageinfocollection.cpp
+For more information about valid syntax, refer to the help.
+For more information, refer to the help.
+FormatMessageW
+FreeLibrary
+GENERIC IMAGING COMMANDS:
+GenericImagingManager
+GenericImagingManagerWWWd
+GenericImagingMountedImageInfoCollection Class
+GenericMountedImageInfoCollectionWWW 
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThreadId
+GetDateFormatW
+get-imageinfo
+Get-ImageInfo\Displays information about images in a WIM, a VHD
+GetLastError
+GetLocaleInfoW
+GetModuleFileNameW
+GetModuleHandleW
+get-mountedimageinfo
+Get-MountedImageInfoRDisplays information about mounted WIM and VHD
+GetNumberFormatW
+GetProcAddress
+GetProcessHeap
+GetSystemTimeAsFileTime
+GetThreadLocale
+GetTickCount
+GetTimeFormatW
+GetVersionExW
+globalroot
+Hal : %1
+HeapAlloc
+HeapDestroy
+HeapFree
+HeapReAlloc
+HeapSize
+I0G1-0+
+Image File : %2
+Image Index : %3!d!
+IMAGE\CREATIONTIME
+IMAGE\DIRCOUNT
+IMAGE\FFU
+IMAGE\FFU\ANTITHEFTVERSION
+IMAGE\FFU\CATALOG
+IMAGE\FFU\CATALOG\ISSUER
+IMAGE\FFU\CATALOG\SERIAL
+IMAGE\FFU\CATALOG\SUBJECT
+IMAGE\FFU\COMPRESSION
+IMAGE\FFU\MINSECTORCOUNT
+IMAGE\FFU\PLATFORMIDS\PLATFORMID[*]
+IMAGE\FFU\SECTORSIZE
+IMAGE\FFU\STORECOUNT
+IMAGE\FFU\UEFI
+IMAGE\FILECOUNT
+IMAGE\LASTMODIFICATIONTIME
+IMAGE\TOTALBYTES
+IMAGE\WIMBOOT
+IMAGE\WINDOWS\ARCH
+IMAGE\WINDOWS\EDITIONID
+IMAGE\WINDOWS\HAL
+IMAGE\WINDOWS\INSTALLATIONTYPE
+IMAGE\WINDOWS\LANGUAGES\DEFAULT
+IMAGE\WINDOWS\LANGUAGES\LANGUAGE[*]
+IMAGE\WINDOWS\PRODUCTSUITE
+IMAGE\WINDOWS\PRODUCTTYPE
+IMAGE\WINDOWS\SYSTEMROOT
+IMAGE\WINDOWS\VERSION\BUILD
+IMAGE\WINDOWS\VERSION\MAJOR
+IMAGE\WINDOWS\VERSION\MINOR
+IMAGE\WINDOWS\VERSION\SPBUILD
+IMAGE\WINDOWS\VERSION\SPLEVEL
+imagefile
+Imaging provider did not recognize the command string, passing on.
+ImagingCommands.Information on the available imaging commands.
+ImagingManager ClassWW.
+ImagingProvider
+ImagingProvider 1.0 Type LibraryWW
+ImagingProvider.dll
+ImagingProvider.DLL
+ImagingProvider.dll
+ImagingProvider.pdb
+index
+InitializeCriticalSection
+Installation : %1
+InternalName
+Invalid
+Invalid file extension for the image file: "%s"
+Invalid parameter passed to C runtime function.
+invalid string position
+iSHp6
+Issuer : %1
+iswalpha
+j Xf9
+j Yf;
+j:Xf9C
+j\Xf9
+j\Xf9C
+j\Xf9F
+j\Yf;
+j\Zf;
+KERNEL32.dll
+Languages :
+Languages : %1
+LeaveCriticalSection
+Legal_Policy_Statement
+LegalCopyright
+list<T> too long
+LoadLibraryExW
+LoadResource
+LoadStringW
+LocalFree
+LocalTopLevelHelp
+LockResource
+M0K0I
+malloc
+MapViewOfFile
+memcmp
+memcpy_s
+memmove_s
+memset
+Method does not accept null arguments.
+Microsoft
+Microsoft Corporation
+Microsoft Corporation1
+Microsoft Corporation1&0$
+Microsoft Corporation1)0'
+Microsoft Corporation1.0,
+Microsoft Corporation1200
+Microsoft Time-Stamp PCA 2010
+Microsoft Time-Stamp PCA 20100
+Microsoft Time-Stamp Service
+Microsoft Time-Stamp Service0
+Microsoft Windows0
+Minimum Sector Count : %1
+Modified : %1
+Modified : %1 - %2
+mountdir
+Mounted images:
+Mounted Read/Write : %4
+mount-image
+Mount-Image'Mounts an image from a WIM or VHD file.
+msvcrt.dll
+MUI\%04hx
+N0L0J
+Name : %2
+nCipher NTS ESN:57F6-C1E0-554C1+0)
+Needs Remount
+No imaging provider supported CreateDismImage for this path
+No mounted images found.
+ntdll.dll
+O0M0K
+oK0D$"<
+OLE32.dll
+OLEAUT32.dll
+onecore\base\ntsetup\opktools\dism\providers\imagingprovider\dll\genericimagingmanager.cpp
+optimize
+OriginalFilename
+OutputDebugStringA
+OutputDebugStringW
+PID=%d %s - %s(hr:0x%x)
+PID=%d TID=%d %s - %s
+PID=%d TID=%d %s - %s(hr:0x%x)
+Platform Ids :
+Platform Ids : %1
+PPPPP
+ProductName
+ProductSuite : %1
+ProductType : %1
+ProductVersion
+ProgIDFromCLSID
+PSSSV
+q(9>u
+QueryPerformanceCounter
+R!s4Z
+r~akow
+RaiseException
+readonly
+realloc
+Redmond1
+RegCloseKey
+RegDeleteKeyExW
+RegDeleteKeyW
+RegOpenKeyExW
+RegQueryInfoKeyW
+ReleaseSRWLockExclusive
+Remount-Image
+remount-image
+RtlVerifyVersionInfo
+SearchPathW
+Sector Size : %1 bytes
+Serial : %1
+ServicePack Build : %1
+ServicePack Level : %1
+SetLastError
+SetThreadLocale
+SetThreadUILanguage
+SetUnhandledExceptionFilter
+sfufile
+Size : %1 bytes
+Sj RP
+Sleep
+SleepConditionVariableSRW
+split-image
+Split-ImagehSplits an existing .wim file into multiple 
+SSSSSSSPSSSV
+Status : %5
+Store Count : %1
+String operation exception!
+string too long
+StringFileInfo
+StringFromGUID2
+Subject : %1
+swmfile
+SWRich
+System Root : %1
+t SSSj
+t"h06
+t:SSSj
+t?j:Xf9F
+taWhlC
+tehxR
+TerminateProcess
+Thales TSS ESN:B8EC-30A4-71441%0#
+The /%1 and /%2 options cannot be used together on the command-line.
+The /%1 option is missing an argument.
+The /%1 option is not recognized in this context.
+The /%1!s! option does not take arguments. 
+The argument specified with the /Format option is not supported with this command.
+The command-line is missing the /%1 option.
+The provider %s does not support CreateDismImage on %s
+The specified image does not exist in the specified image container.
+The unsupported arguments were ignored. For more information, refer to the help.
+tihXO
+tJj:Xf9C
+tK97t(
+TlP0X
+tMWhtC
+tMWhti
+towlower
+Translation
+Try the command again without the argument. For more information, refer to the help.
+tUhxO
+TYPELIB
+u@h`8
+u_SSSSSSS
+U0S0Q
+Uefi : %1
+uGf9G
+uhh8O
+uLhXO
+umhxR
+UnhandledExceptionFilter
+Unknown Error
+UnmapViewOfFile
+unmount-image
+Unmount-Image$Unmounts a mounted WIM or VHD image.
+USER32.dll
+V([_^
+VarFileInfo
+vector<T> too long
+VerSetConditionMask
+Version : %1
+Version : %1.%2.%3
+VHD image specified
+VHD operations do not support the /Optimize or /CheckIntegrity arguments.
+VHDManager
+Vhdprovider.dll
+VHDX images are not supported in this version of Windows.
+VS_VERSION_INFO
+vswprintf_s
+vt%f)B
+WakeAllConditionVariable
+Washington1
+wcscat_s
+wcschr
+wcscpy_s
+wcsncpy_s
+wcsrchr
+wcstoul
+WIM Bootable : %1
+WIM image specified
+wimgapi.dll
+WimManager
+Wimprovider.dll
+WVPVh
+XMount Dir : %1
+Y__^[
+YYhhA
+YYhxE
+YYShPX
+YYShx9
+YYShxJ
+YYWh`>
+YYWhhA
+YYWhp=
+z.9Wv
